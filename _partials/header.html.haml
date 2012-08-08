@@ -1,0 +1,27 @@
+<!--#if expr='1<0' -->
+#awestructnavwrapper
+  #branding
+    #logo 
+      %a{:href => "http://www.jboss.org", :title=>"Homepage" }
+        %strong JBoss Community
+        %span 
+    -# end logo 
+    #primarynav
+      %ul.sf-menu
+        %li#primary-nav-home 
+          %a.menu-title.sf-with-ul{:href => "http://www.jboss.org/developer"} Get Started
+        %li#primary-nav-getinvolved
+          %a.menu-title{:href => "http://www.jboss.org/contribute"} Get Involved
+        %li#primary-nav-projects
+          %a.menu-title.sf-with-ul{:href => "http://www.jboss.org/projects" } Projects
+        %li.enterprise
+          %a.menu-title{:href => "http://www.redhat.com/products/jbossenterprisemiddleware" } Products
+    -# END of primarynav 
+
+    -# Utility controls
+    #nav-meta
+      %ul
+        %li#jbssologininfo1
+        %li#jbssologininfo2
+    -# end nav-meta 
+    %a#tab.tabnav-opened { :href => "http://www.jboss.org/" } Search

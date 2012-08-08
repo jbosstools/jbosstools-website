@@ -1,5 +1,112 @@
 // I gather this file is a starting point for the project.
-@import "bootstrap";
 
 // Include responsive Bootstrap styles
 // @import "bootstrap-responsive";
+
+body {
+  background-color: #F3F3F3;
+}
+
+#wrap-content {
+  height: 100%;
+}
+#wrapper-3b {
+  float: left;
+  display: inline; /* IE 6 */
+  margin:0px;
+  width: 700px;
+  width: 100%; 
+  overflow:hidden;
+  -webkit-border-radius:0px 0px 4px 4px; 
+  -moz-border-radius:0px 0px 4px 4px; 
+  border-radius:0px 0px 4px 4px; 
+  line-height:1.5;
+  background-color:#FFF;
+  padding-bottom:20px;
+} 
+
+#headingCarousel {
+  margin-top:30px;
+  margin-bottom:30px;
+}
+
+.center {
+  margin-left:auto;
+  margin-right:auto;
+}
+
+p  {
+  text-align: justify;
+}
+
+
+#container-reduced .row-fluid {
+  width: 80%; 
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#menu.row-fluid  {
+  width: 60%; 
+  margin-bottom: 50px;
+}
+
+#sections.row-fluid {
+	text-align:left;  
+}
+
+.row-fluid h3 {
+	text-align:center;  
+}
+
+.details p {
+  margin: 0px;
+}
+
+.item {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+
+$title-font-size: 20px;
+
+@mixin fontsize() {
+  font-size: $title-font-size;
+}
+
+@mixin bg-image($url) {
+ background-image:url($url);
+ background-repeat: no-repeat;
+ background-position: center top;
+ padding-top: 64px;
+  
+}
+#install {
+  @include fontsize();
+  @include bg-image("http://jboss.org/dms/jbossway/icon_quickstart_64px.png");
+}
+
+#features {
+  @include fontsize();
+  @include bg-image("http://jboss.org/dms/jbossway/icon_features_64px.png");
+}
+
+#videos {
+  @include fontsize();
+  @include bg-image("http://jboss.org/dms/jbossway/icon_video_64px.png");
+}
+
+#community {
+  @include fontsize();
+  @include bg-image("http://jboss.org/dms/jbossway/icon_subscribe_64px.png");
+}
+
+
+
+
+
+
