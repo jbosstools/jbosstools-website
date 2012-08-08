@@ -1,6 +1,7 @@
 .project
 _tmp
 _site
+site
 .awestruct
 
 # Compiled source #
