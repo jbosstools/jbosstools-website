@@ -1,0 +1,28 @@
+---
+layout: default
+---
+#wrap-content 
+  #wrapper-3b  
+    #container-reduced
+      #menu.row-fluid 
+        .span12
+          %a.span3#install{:href => "install"} Install 
+          .span3#features.selected Features
+          %a.span3#videos{:href => "videos"} Videos
+          %a.span3#community{:href => "community"} Community
+          
+      .row-fluid 
+        .span12
+          - features = site.features.values 
+          - features = features.sort{|l,r| l.features_index <=> r.features_index}
+          - for feature in features
+            .feature 
+              %img{:src=>"#{site.base_url}#{feature.image_url}", :alt=>"#{feature.title}"}
+              %h4 #{feature.title}
+              #{feature.content}
+              - if feature.url?  
+                %a{:href=>feature.url} Read more... 
+ 
+  
+  
+

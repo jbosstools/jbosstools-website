@@ -1,7 +1,7 @@
 ---
 title: 'Face-to-Face Team Meeting'
-event_date: September 2012
-effective_date: 20120901
+event_date: December 2012
+effective_date: 20121201
 location: Brno, Czech Republic
 ---
 Most of the team members will get to Brno (Czech Republic) for the annual face-to-face meeting, 

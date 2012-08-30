@@ -1,7 +1,7 @@
 ---
 title: EclipseCon Europe
 event_date: October 23-25, 2012
-effective_date: 201210123
+effective_date: 20121023
 location: Ludwigsburg, Germany
 url: http://www.eclipsecon.org/europe2012/
 ---
