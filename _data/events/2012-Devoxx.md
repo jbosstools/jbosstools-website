@@ -1,6 +1,6 @@
 ---
 title: Devoxx
-event_date: November 12th til 16th 2012
+event_date: November 12-16 2012
 effective_date: 20121112
 location: Antwerp, Belgium
 url: http://devoxx.com/display/DV12/Home

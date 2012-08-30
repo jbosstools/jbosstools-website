@@ -1,8 +1,8 @@
 title: JBoss Tools
 profiles:
   development:
+    base_url: http://localhost:4242/
   staging:
     base_url: https://staging-jbosstools.rhcloud.com/site/
   production:
     base_url: http://torquebox.org/
-    food: biscuit
