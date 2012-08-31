@@ -3,3 +3,39 @@
 # available.  Otherwise it will execute while your application is stopped
 # before the deploy step.  This script gets executed directly, so it
 # could be python, php, ruby, etc.
+
+cd ${OPENSHIFT_REPO_DIR}libs
+
+mkdir -p ${OPENSHIFT_DATA_DIR}gems
+
+export GEM_HOME=${OPENSHIFT_DATA_DIR}gems 
+export GEM_PATH=${OPENSHIFT_DATA_DIR}gems
+
+echo "* Setting up environment"
+
+if gem list | grep awestruct
+then
+  
+  echo "  * Check for new Awestruct version"
+
+  gem update awestruct --no-ri --no-rdoc
+  gem cleanup
+
+else
+  
+  echo "  * Installing awestruct"
+
+  gem install awestruct --no-ri --no-rdoc
+
+fi
+
+export PATH=$GEM_PATH/bin:$PATH
+
+echo "* Generating site"
+
+awestruct -P production -g
+
+mkdir -p ${OPENSHIFT_REPO_DIR}php
+mv _site/* ${OPENSHIFT_REPO_DIR}php
+
+echo "* Done"
