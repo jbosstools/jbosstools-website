@@ -10,7 +10,7 @@ mkdir -p ${OPENSHIFT_DATA_DIR}gems
  
 export GEM_HOME=${OPENSHIFT_DATA_DIR}gems 
 export GEM_PATH=${OPENSHIFT_DATA_DIR}gems
-
+ 
 echo "* Setting up environment"
 
 if gem list | grep awestruct
