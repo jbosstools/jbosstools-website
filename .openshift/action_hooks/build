@@ -37,7 +37,7 @@ mkdir -p ${OPENSHIFT_REPO_DIR}php
 rm -rf ${OPENSHIFT_REPO_DIR}php/*
 
 cd $OPENSHIFT_REPO_DIR
-awestruct -P production -g
+awestruct -P preview -g
 mv _site/* ${OPENSHIFT_REPO_DIR}php
 
 echo "* Done"
