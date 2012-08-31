@@ -7,7 +7,7 @@
 cd ${OPENSHIFT_REPO_DIR}libs
 
 mkdir -p ${OPENSHIFT_DATA_DIR}gems
-
+ 
 export GEM_HOME=${OPENSHIFT_DATA_DIR}gems 
 export GEM_PATH=${OPENSHIFT_DATA_DIR}gems
 
