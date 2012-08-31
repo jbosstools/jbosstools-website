@@ -33,9 +33,11 @@ export PATH=$GEM_PATH/bin:$PATH
 
 echo "* Generating site"
 
-awestruct -P production -g
-
 mkdir -p ${OPENSHIFT_REPO_DIR}php
+rm -rf ${OPENSHIFT_REPO_DIR}php/*
+
+cd $OPENSHIFT_REPO_DIR
+awestruct -P production -g
 mv _site/* ${OPENSHIFT_REPO_DIR}php
 
 echo "* Done"
