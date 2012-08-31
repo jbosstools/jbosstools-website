@@ -134,7 +134,11 @@ $title-font-size: 20px;
   @include bg-image("http://jboss.org/dms/jbossway/icon_subscribe_64px.png");
 }
 
-.selected {
+a.selected {
+  color:#88201B;
+}
+
+a.selected:hover {
   color:#88201B;
 }
 
