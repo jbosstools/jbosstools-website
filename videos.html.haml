@@ -1,6 +1,8 @@
 ---
 layout: default
 ---
+%link{ :rel=>"stylesheet", :type=>"text/css", :href=>"/stylesheets/movies.css", :media=>"screen, projection"}
+   
 #wrap-content 
   #wrapper-3b  
     #container-reduced
@@ -12,21 +14,18 @@ layout: default
           %a.span3#community{:href => "community.html"} Community
           
       .row-fluid 
+        .playerbox
+          #player
+            %iframe{ :src => "http://player.vimeo.com/video/39743315?portrait=0" }
+      .row-fluid 
         .span12 
-        -# files are fetched in a pre-defined order (using filename)
-        - index = site.videos[:index2]
-        - for category in index.categories
-          %div #{category.title} 
-          - for movie in category.movies
-            %span #{movie.title} (#{movie.vimeo_id}) 
-          
-            
-      -# videos = section.videos 
-      -# for video in videos do 
-      -#  %span #{video.title} (#{video.vimeo_id}) 
-         
-         
- 
-  
-  
-
+          -# files are fetched in a pre-defined order (using filename)
+          - index = site.videos[:index]
+          - for category in index.categories
+            .span4
+              %h5 #{category.title}
+              %ul.items
+                - for movie in category.movies
+                  %li
+                    %a.videocontrol{:href =>"#{movie.vimeo_id}" } #{movie.title} 
+                  
