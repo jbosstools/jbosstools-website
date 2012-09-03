@@ -1,0 +1,91 @@
+---
+title: 'JBoss Tools and Developer Studio Candidate Release'
+author: 'Max Rydahl Andersen'
+layout: blog-post
+tags: [ jbosstools, eclipse, maven, m2e, openshift, m2e-wtp, jbosscentral ]
+orignallink: ''
+---
+<body>
+<div class="jive-rendered-content">
+<p>The release candidate of JBoss Tools and Developer Studio is now available - mainly with bugfixes but also a few nice improvements for AS 7, OpenShift and Maven integration.</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4854-18193/jbosstolsdevstudio.png"><img alt="jbosstolsdevstudio.png" class="jive-image-thumbnail jive-image" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4854-18193/jbosstolsdevstudio.png" style="margin: 12px auto; display: block;" width="620"></a></p>
+<h4 style="color: #333333; font-weight: bold; padding-top: 10px; padding-right: 0pt; padding-bottom: 4px; padding-left: 0pt; font-size: 13pt; text-align: center; margin: 0pt;">CR1</h4>
+<p style="text-align: center; padding: 0pt; margin: 0pt;">Developer Studio: [<a class="jive-link-external-small" href="http://devstudio.jboss.com/earlyaccess">Download</a>] | Tools: [<a class="jive-link-external-small" href="http://www.jboss.org/tools/download/dev" target="_top">Download</a>] [<a class="jive-link-external-small" href="http://download.jboss.org/jbosstools/updates/development/indigo/">Update Site</a>] | [<a class="jive-link-external-small" href="http://docs.jboss.org/tools/whatsnew" target="_top">What's New</a>] [<a class="jive-link-external-small" href="http://www.jboss.com/index.html?module=bb&amp;op=viewforum&amp;f=201" target="_top">Forums</a>] [<a class="jive-link-external-small" href="http://jira.jboss.com/jira/browse/JBIDE" target="_top">JIRA</a>] [<a class="jive-link-external-small" href="http://twitter.com/jbosstools" target="_top">Twitter</a>]</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>JBoss Tools is a set of plugins for Eclipse that complements, enhances and goes beyond the support that exists for JBoss and related technologies in the default Eclipse distribution.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>JBoss Developer Studio is a fully bundled Eclipse distribution which not only includes majority of JBoss Tools but also all its needed dependencies and 3rd party plugins allowing for an easy one-click and no-fuss installation.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>If you are into doing your own bleeding edge eclipse plugin assembly, JBoss tools is for you; if you are more into having something that "Just Works" then JBoss Developer Studio is the way to go.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h2>Installation</h2>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><em>JBoss Developer Studio</em> comes with everything pre-bundled in its installer. Simply <a class="jive-link-external-small" href="http://devstudio.jboss.com/earlyaccess">download it</a> and run it like this:</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<!--[CodeBlockStart:2f55c9ba-8830-4351-8c1d-964ab37e8676]--><pre class="jive-pre"><code class="jive-code">java -jar jbdevstudio-&lt;installername&gt;.jar
+</code></pre>
+<!--[CodeBlockEnd:2f55c9ba-8830-4351-8c1d-964ab37e8676]--><p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><strong>Note:</strong> if you are on Windows or Mac OSX 64-bit we recommend you ensure to select the 32-bit option in the multi-platform installer to get Visual Page editor working and use much less memory.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><em>JBoss Tools</em> requires a bit more:</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>This release requires at least Eclipse 3.7.2 but we recommend using the <a class="jive-link-external-small" href="http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/indigosr2">Eclipse 3.7.2 JEE Bundle</a> since then you get most of the dependencies preinstalled.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Once you have installed Eclipse, you either find us on<a class="jive-link-external-small" href="http://marketplace.eclipse.org/content/jboss-tools-indigo"> Eclipse Marketplace under "JBoss Tools (Indigo)"</a> or use our update site directly.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>The update site URL to use from Help &gt; Install New Software... is:</p>
+<pre class="jive-pre"><p><a class="jive-link-external-small" href="http://download.jboss.org/jbosstools/updates/development/indigo/">http://download.jboss.org/jbosstools/updates/development/indigo/</a></p></pre>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Note: SOA tooling for BPEL, Drools, Guvnor, jBPM, ESB, Modeshape, pi4soa, Savara, SwitchYard &amp; Teiid are no longer included in the JBoss Tools release. They will be available separately.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h2>JBoss AS 7</h2>
+<p>The server adapter for JBoss AS 7 had a series improvements done in its handling of remote management and JMX connections. One thing that is relevant is that because of AS 7.1 <a class="jive-link-blog-small" href="https://community.jboss.org/community/tools/blog/2012/02/29/excited-about-jboss-as-71-part-ii-developer-friendly-security">Secure by default</a> approach when you launch remotely the management services are not autoatmically exposed. We keep that secure-by-default in the tools, but now also provides a simple checkbox to allow you to expose the management service when we launch it to actually remotely manage the server. </p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://issues.jboss.org/secure/attachment/12354382/JBIDE-11921.png"><img alt="https://issues.jboss.org/secure/attachment/12354382/JBIDE-11921.png" class="jive-image" src="https://issues.jboss.org/secure/attachment/12354382/JBIDE-11921.png"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Of course just exposing the port does not make it fully available before you have added a user to the server. You can read about how to do that in <a class="jive-link-blog-small" href="https://community.jboss.org/community/tools/blog/2012/02/29/excited-about-jboss-as-71-part-ii-developer-friendly-security">this blog</a>.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>And finally the server adapter now works with IPv6, allows deploying outside of the deployments folder and it does not choke on a space in the server part - Hurray! </p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h2>OpenShift, now faster and more patient</h2>
+<p>One of the most common bug report we got in the Beta's (thank you for the feedback!) was that when creating OpenShift applications our wizard would time out and you would have to manually import the project again. We now have extended the timeout period to three minutes to accomodate for overloads, network latency etc. but also given you the option to wait some more for the OpenShift provisioning to be fully done.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>A new feature of the application creation wizard is also to be able to set the size of the Gear your application will run on and to enable scaling for your applications.</p>
+<p><a href="http://docs.jboss.org/tools/whatsnew/openshift/images/gears-and-scaling.png"><img alt="http://docs.jboss.org/tools/whatsnew/openshift/images/gears-and-scaling.png" class="jive-image" src="http://docs.jboss.org/tools/whatsnew/openshift/images/gears-and-scaling.png"></a></p>
+<p>Mind you that the list of possible gears depends on your users permissions.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Various actions like Tail Files, Environment variables and Port Forwarding which previously were only available in OpenShift Explorer is now also available from the OpenShift server adapter.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="http://docs.jboss.org/tools/whatsnew/openshift/images/server-adapter-actions.png"><img alt="http://docs.jboss.org/tools/whatsnew/openshift/images/server-adapter-actions.png" class="jive-image" src="http://docs.jboss.org/tools/whatsnew/openshift/images/server-adapter-actions.png"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>And for those users with large set of applications or slow networks we've made the loading of OpenShift metadata more incremental giving you faster feedback,especially on networks far away from the OpenShift servers.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h2>Maven and Endorsed Libraries</h2>
+<p>If you have ever had to fight with using JavaEE 6 Webservices on Java 6 with Maven and Eclipse at the same time you know what a pain having to use that combination can be because JavaEE 6 Webservices are actually using libraries that are not available before Java 7. Meaning you have to configure and setup endorsed libraries in Eclipse, which actually does not have such a feature exposed on projects, but only at the JVM level setup. Thus its "easy" for running applications but not when compiling.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>In Maven there are various tricks to solve this and none of them are obeyed/understood by m2eclipse - but not anymore.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="http://docs.jboss.org/tools/whatsnew/images/endorsed_libs.png"><img alt="http://docs.jboss.org/tools/whatsnew/images/endorsed_libs.png" class="jive-image" src="http://docs.jboss.org/tools/whatsnew/images/endorsed_libs.png"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>We've added a Maven configurator which will look for the common tricks to set and configure endorsed libraries and when they are found inject an "Endorsed Library" classpath container with the approprate classpath entries.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Allowing you to not have to worry about this anymore when using Maven + Eclipse. Fred writes more in detail about how this works in <a class="jive-link-external-small" href="http://docs.jboss.org/tools/whatsnew/maven/maven-news-3.3.0.CR1.html">What's New</a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h2>Pixel Density</h2>
+<p>And an example of where the little details matters comes that BrowserSim now has controls for pixel density allowing you to get a better and closer representative layout of your mobile applications.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="http://docs.jboss.org/tools/whatsnew/vpe/images/3.3.0.CR1/pixel-ratio.png"><img alt="http://docs.jboss.org/tools/whatsnew/vpe/images/3.3.0.CR1/pixel-ratio.png" class="jive-image" src="http://docs.jboss.org/tools/whatsnew/vpe/images/3.3.0.CR1/pixel-ratio.png"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h2>...and more</h2>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>As usual screenshots and more explanation of what is new are available from the <a class="jive-link-external-small" href="http://docs.jboss.org/tools/whatsnew" target="_top">What's New</a> site!</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Let us know what you think and remember that <a class="jive-link-external-small" href="http://www.jboss.org/events/JUDCon/2012/boston/agenda/day1track1">Xavier</a> and <a class="jive-link-external-small" href="http://www.jboss.org/events/JUDCon/2012/boston/agenda/day2track1">I will be</a> showing a lot of these features at JUDCon and <a class="jive-link-external-small" href="http://www.redhat.com/summit/">Red Hat Summit w/JBoss World</a> end of this month with a GA release. See you there ?</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Have fun,</p>
+<p>Max</p>
+</div>
+<!-- [DocumentBodyEnd:b23a507f-c025-44fd-8936-051ce003c7ca] -->
+</body>

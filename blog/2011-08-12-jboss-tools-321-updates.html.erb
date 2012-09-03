@@ -1,0 +1,35 @@
+---
+title: 'JBoss Tools 3.2.1 updates'
+author: 'Max Rydahl Andersen'
+layout: blog-post
+tags: [ jbosstools, eclipse ]
+orignallink: ''
+---
+<body>
+<div class="jive-rendered-content">
+<p style="text-align: center; padding: 0pt; margin: 0pt;"><br><a href="http://in.relation.to/service/File/10824"><img alt="http://in.relation.to/service/File/10824" class="jive-image" src="http://in.relation.to/service/File/10824" style="margin: 12px; border: 0px initial initial;"></a></p>
+<h4 style="color: #333333; font-weight: bold; padding-top: 10px; padding-right: 0pt; padding-bottom: 4px; padding-left: 0pt; font-size: 13pt; text-align: center; margin: 0pt;">3.2.1</h4>
+<p style="text-align: center; padding: 0pt; margin: 0pt;">[<a class="jive-link-external-small" href="http://www.jboss.org/tools/download" target="_top">Download</a>] [<a class="jive-link-external-small" href="http://download.jboss.org/jbosstools/updates/stable/helios/">Update Site</a>] [<a class="jive-link-external-small" href="http://marketplace.eclipse.org/content/jboss-tools-1">Market Place</a>] [<a class="jive-link-external-small" href="http://docs.jboss.org/tools/whatsnew" target="_top">What's New</a>] [<a class="jive-link-external-small" href="http://docs.jboss.org/tools/3.2.0.Beta1/" target="_top">Documentation</a>] [<a class="jive-link-external-small" href="http://www.jboss.com/index.html?module=bb&amp;op=viewforum&amp;f=201" target="_top">Forums</a>] [<a class="jive-link-external-small" href="http://jira.jboss.com/jira/browse/JBIDE" target="_top">JIRA</a>] [<a class="jive-link-external-small" href="http://twitter.com/jbosstools" target="_top">Twitter</a>]</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Earlier this week we pushed out an update of 3.2.1 to our updatesite. This release contains a <a class="jive-link-external-small" href="https://issues.jboss.org/secure/IssueNavigator.jspa?reset=true&amp;jqlQuery=project+%3D+JBIDE+AND+fixVersion+in+%28%223.2.1.GA%22%2C%223.2.1.M1%22%2C+%223.2.1.Final%22%2C+%223.2.1.CR1%22%2C+%223.2.1.CR2%22%2C+%223.2.1.CR3%22%2C+%223.2.1.CR4%22%29">bunch of bugfixes</a> and one main component change that requires care when upgrading. Read below for details.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<blockquote class="jive-quote"><p>Remember JBoss Tools 3.2.x is for Eclipse 3.6/Helios, if you are on Eclipse 3.7/Indigo use <a class="jive-link-blog-small" href="https://community.jboss.org/community/tools/blog/2011/06/28/fast-faster-jboss-tools-33-m2">JBoss Tools 3.3.*</a> instead.</p></blockquote>
+<h3>Installation/Upgrade</h3>
+<p>The component upgrade we've done is to move our JBoss Maven integration from m2eclipse 0.12 to support m2eclipse 1.0.0 since it is a massive speed improvement compared to previous releases of m2eclipse.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>This unfortunately mean that if you used our JBoss Tools Maven integration you have to uninstall JBoss Tools Maven integration and m2eclipse 0.12 to be able to upgrade because m2eclipse changed bundle id's in their migration to Eclipse.org.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Same goes if you wish to install you need to be sure you do not have m2eclipse 0.12 installed.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>You can uninstall Eclipse components in the "About Eclipse" and click "Installation Details" and uinstall all the "JBoss Tools Maven"&#160; or "m2eclipse" components under "Installed Software" and click uninstall.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>After this you should be able to update without any problems.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>If everything fails a full installation would be the way forward. You can see the details for that at the <a class="jive-link-blog-small" href="https://community.jboss.org/community/tools/blog/2011/02/21/jboss-tools-32-is-finally-here">JBoss Tools 3.2.0 release blog.</a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Have fun!</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>p.s. this is also my last blog before my vacation so be gentle and see you again in September <img height="16px" src="https://community.jboss.org/4.5.6/images/emoticons/happy.gif" width="16px"></p>
+</div>
+<!-- [DocumentBodyEnd:3ee52ef2-5924-444d-884b-70502fe0f3c0] -->
+</body>

@@ -1,0 +1,124 @@
+---
+title: 'show-domain-info: openshift-java-client in a nutshell'
+author: 'Max Rydahl Andersen'
+layout: blog-post
+tags: [  ]
+orignallink: ''
+---
+<body>
+<div class="jive-rendered-content">
+<p>At JBoss Tools we created a java client that allows you to talk to the <a class="jive-link-external-small" href="https://openshift.redhat.com/app/">OpenShift</a> PaaS: <a class="jive-link-external-small" href="https://github.com/openshift/openshift-java-client">openshift-java-client</a>. The library is already used in the <a class="" href="https://community.jboss.org/en/tools/blog/tags/openshift">OpenShift tooling</a> in <a class="jive-link-external-small" href="http://www.jboss.org/tools/">JBoss Tools</a>, the <a class="jive-link-external-small" href="https://github.com/forge/plugin-openshift-express/">Forge plugin</a> and <a class="jive-link-external-small" href="http://www.appcelerator.com/platform/titanium-studio">Appcelerators</a> tooling for OpenShift.</p>
+<p>This blog post will show you how to use okthis API in your very own java programs. We'll develop a command line tool that displays informations equivalent to what you get when running <strong>rhc domain show</strong> with the <a class="jive-link-external-small" href="https://openshift.redhat.com/community/developers/install-the-client-tools">OpenShift command line tools</a>: It displays basic informations about your user.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<!--[CodeBlockStart:ad259ce6-f3ae-4c9d-af21-12d346add881]--><pre class="jive-pre"><code class="jive-code jive-java">User Info
+=========
+Namespace: andre
+&#160; RHLogin: andre.dietisheim@redhat.com
+&#160;
+&#160;
+Application Info
+================
+kitchensink
+&#160;&#160;&#160; Framework: jbossas-7
+&#160;&#160;&#160;&#160; Creation: 2012-08-10T11:24:13-04:00
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; UUID: 8ad0d94f39aa4295a0049de8b8b5ef55
+&#160;&#160;&#160;&#160;&#160; Git URL: ssh:<font color="darkgreen">//&lt;SOMEID&gt;@kitchensink-andre.rhcloud.com/~/git/kitchensink.git/</font>
+&#160;&#160; Public URL: http:<font color="darkgreen">//kitchensink-andre.rhcloud.com/</font>
+&#160;
+&#160;
+ Embedded: 
+&#160;&#160;&#160;&#160;&#160; jenkins-client-1.4 - Job URL: https:<font color="darkgreen">//jenk-andre.rhcloud.com/job/kitchensink-build/</font>
+</code></pre>
+<!--[CodeBlockEnd:ad259ce6-f3ae-4c9d-af21-12d346add881]--><p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>You'll find the sourcecode for this example at github: <a class="jive-link-external-small" href="https://github.com/adietish/show-domain-info">https://github.com/adietish/show-domain-info</a>. All the code that is shown in this blog is contained within the <a class="jive-link-external-small" href="https://github.com/adietish/show-domain-info/blob/master/src/main/java/com/redhat/openshift/examples/domaininfo/Main.java">Main</a> class.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>If you want to dig futher, you'll get a more complete example that includes jenkins in <a class="jive-link-wiki-small" href="https://community.jboss.org/docs/DOC-19828">this</a> wiki article.</p>
+<h1>Openshift-java-client 2.0</h1>
+<p>The <a class="jive-link-external-small" href="https://github.com/openshift/openshift-java-client">openshift-java-client</a> is a java library that allows java programs to talk to the OpenShift PaaS. It talks to the new OpenShift <a class="jive-link-external-small" href="https://openshift.redhat.com/community/sites/default/files/documents/OpenShift-2.0-REST_API_Guide-en-US.pdf">RESTful service</a> and allows users to create, modify and destroy OpenShift resources: domains, applications, cartridges, etc.It is hosted on github at <a class="jive-link-external-small" href="https://github.com/openshift/openshift-java-client">https://github.com/openshift/openshift-java-client</a> and is available under the <a class="jive-link-external-small" href="http://www.eclipse.org/legal/epl-v10.html">Ecilpse Public License</a>.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><strong style="font-family: 'Lucida Grande', Arial, Helvetica, sans-serif; background-color: #ffffff;">Note: </strong></p>
+<blockquote class="jive-quote">
+<p>Openshift-java-client 1.x was talking to the legacy service in OpenShift. 2.0 switched to the new RESTful service. </p>
+<p>The legacy service is not maintained any more and will fade away at some point. Users of the 1.x client should migrate to the 2.0 client. </p>
+<p>The migration should be pretty much without hassles. Even though 2.0 is a complete rewrite, the API stayed pretty much the same/very close.</p>
+</blockquote>
+<h1>Requirements</h1>
+<ul>
+<li>You need an account on OpenShift. (If you have no account yet, you'd have to <a class="jive-link-external-small" href="https://openshift.redhat.com/app/account/new">signup</a> first)</li>
+<li>Make sure you have an OpenShift domain and some applications (to get some meaningful output)</li>
+</ul>
+<h1>Launch Parameters</h1>
+<p><span>To keep the implemenation simple, the program we're about to write, only accept 2 parameters on the command line:<br></span></p>
+<ol>
+<li>username</li>
+<li>password</li>
+</ol>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Launching the program with maven would look like this:</p>
+<!--[CodeBlockStart:47512c5d-2589-4afe-9f53-c5b870cdc9b4]--><pre class="jive-pre"><code class="jive-code">mvn test -Dusername=&lt;username&gt; -Dpassword=&lt;password&gt;</code></pre>
+<!--[CodeBlockEnd:47512c5d-2589-4afe-9f53-c5b870cdc9b4]--><h1>Project Setup</h1>
+<p>We have to make sure that we have the <a class="jive-link-external-small" href="https://github.com/openshift/openshift-java-client">openshift-java-client</a> available on our classpath. The client library is available at <a class="jive-link-external-small" href="https://github.com/openshift/openshift-java-client">https://github.com/openshift/openshift-java-client</a>. You could clone the repo and build your own jar by telling maven to <span style="color: #ff0000;">"mvn clean package"</span>. But even simpler is to add it as dependency to your <a class="jive-link-external-small" href="https://github.com/adietish/show-domain-info/blob/master/pom.xml#L8">pom</a>, since the client library is available from central as maven artifact:</p>
+<!--[CodeBlockStart:f72886ba-ff88-434e-b415-9e3359789343]--><pre class="jive-pre"><code class="jive-code jive-xml"><span class="jive-xml-tag">&lt;dependency&gt;</span>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;groupId&gt;</span>com.openshift<span class="jive-xml-tag">&lt;/groupId&gt;</span>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;artifactId&gt;</span>openshift-java-client<span class="jive-xml-tag">&lt;/artifactId&gt;</span>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;version&gt;</span>2.0.0<span class="jive-xml-tag">&lt;/version&gt;</span>
+<span class="jive-xml-tag">&lt;/dependency&gt;</span>
+</code></pre>
+<!--[CodeBlockEnd:f72886ba-ff88-434e-b415-9e3359789343]--><p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h1>Connect to OpenShift</h1>
+<p>After we did some basic command line parameter parsing (that we skipped here on puropose) we'd have to get in touch with the OpenShift PaaS. Using the <a class="jive-link-external-small" href="https://github.com/openshift/openshift-java-client">openshift-java-client</a> you'd tell the <a class="jive-link-external-small" href="https://github.com/adietish/openshift-java-client/blob/master/src/main/java/com/openshift/client/OpenShiftConnectionFactory.java">OpenShiftConnectionFactory</a> to create a connection for you. To create this connection you'll have to provide some parameters: </p>
+<h3>Server url</h3>
+<p>First of all you need to give it the url of the OpenShift PaaS. You may either hard code it or ask the OpenShift configuration for it:</p>
+<!--[CodeBlockStart:14a52f9d-47c6-4b89-873a-9c3fed7f31ab]--><pre class="jive-pre"><code class="jive-code jive-java"><font color="navy"><b>new</b></font> OpenShiftConfiguration().getLibraServer()
+</code></pre>
+<!--[CodeBlockEnd:14a52f9d-47c6-4b89-873a-9c3fed7f31ab]--><p>The OpenShiftConfiguration class parses the OpenShift <a class="jive-link-external-small" href="http://docs.redhat.com/docs/en-US/OpenShift/2.0/html/Getting_Started_Guide/sect-Getting_Started_Guide-OpenShift_Client_Tools-Configuring_Client_Tools.html">configuration files</a> you may have on your machine (~/.openshift/express.conf, C:/Documents and Settings/user/.openshift/express.conf etc.). Those usually get created once you installed the <a class="jive-link-external-small" href="http://docs.redhat.com/docs/en-US/OpenShift/2.0/html/User_Guide/chap-User_Guide-OpenShift_Command_Line_Interface.html">rhc command line </a>tools. In case you dont have any configuration yet, <a class="jive-link-external-small" href="https://github.com/adietish/openshift-java-client/blob/master/src/main/java/com/openshift/client/configuration/OpenShiftConfiguration.java">OpenShiftConfiguration</a> holds some meaningful <a class="jive-link-external-small" href="https://github.com/openshift/openshift-java-client/blob/master/src/main/java/com/openshift/client/configuration/DefaultConfiguration.java">defaults</a> and points to <a class="jive-link-external-small" href="http://openshift.redhat.com" target="_blank">http://openshift.redhat.com</a>. On the other hand, our configuration class also allows you to override settings by putting them to the <a class="jive-link-external-small" href="https://github.com/openshift/openshift-java-client/blob/master/src/main/java/com/openshift/client/configuration/SystemProperties.java">system configuration</a> as you would do if you want to switch to the OpenShift <a class="jive-link-external-small" href="https://openshift.redhat.com/community/wiki/getting-started-with-openshift-origin-livecd">liveCD</a> temporarly. You would then simply add the following to the command line when launching the java virtual machine:</p>
+<!--[CodeBlockStart:3ffea38f-598c-436e-857a-0608debab308]--><pre class="jive-pre"><code class="jive-code jive-java">-Dlibra_server=127.0.0.1
+</code></pre>
+<!--[CodeBlockEnd:3ffea38f-598c-436e-857a-0608debab308]--><h3>Client id</h3>
+<p>The connection factory also requires you to provide your very own client id. This client id is used when the openshift-java-client talks to the OpenShift REST service. It'll get included in the user-agent string that tells OpenShift what client it is talking to. We use the name of our example, <span style="color: #ff0000; font-size: 12px; background-color: #ffffff; font-family: Consolas, 'Liberation Mono', Courier, monospace;">"show-domain-info<span style="color: #ff0000; font-family: Consolas, 'Liberation Mono', Courier, monospace; font-size: 12px; background-color: #ffffff;">"</span></span>.</p>
+<h3>Username and Password</h3>
+<p>Last but not least, you also have to give it your OpenShift credentials, the ones we got from the command-line.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<!--[CodeBlockStart:e0995f76-de76-4d54-893d-28932bfb7868]--><pre class="jive-pre"><code class="jive-code jive-java">String openshiftServer = <font color="navy"><b>new</b></font> OpenShiftConfiguration().getLibraServer();
+IOpenShiftConnection connection = <font color="navy"><b>new</b></font> OpenShiftConnectionFactory().getConnection(<font color="red">"show-domain-info"</font>, <font color="red">"myuser"</font>, <font color="red">"mypassword"</font>, openshiftServer);
+</code></pre>
+<!--[CodeBlockEnd:e0995f76-de76-4d54-893d-28932bfb7868]--><p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Once you have your connection you can get a <a class="jive-link-external-small" href="https://github.com/openshift/openshift-java-client/blob/master/src/main/java/com/openshift/client/IUser.java">IUser</a> instance which will allow you to create your domain and applications:</p>
+<!--[CodeBlockStart:158ef420-39c1-45d8-adcd-99c5d3b3f033]--><pre class="jive-pre"><code class="jive-code jive-java">IUser user = connection.getUser();
+</code></pre>
+<!--[CodeBlockEnd:158ef420-39c1-45d8-adcd-99c5d3b3f033]--><p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h1>Print the User Infos</h1>
+<p>The first information block involves basic user informations. The username is available from your <a class="jive-link-external-small" href="https://github.com/adietish/openshift-java-client/blob/master/src/main/java/com/openshift/client/IUser.java">IUser</a> instance:</p>
+<!--[CodeBlockStart:a6fdeb75-f1fd-492c-825f-0c8fdc144d59]--><pre class="jive-pre"><code class="jive-code jive-java">System.out.println(<font color="red">"RHLogin:\t"</font> + user.getRhlogin());
+</code></pre>
+<!--[CodeBlockEnd:a6fdeb75-f1fd-492c-825f-0c8fdc144d59]--><p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>The other value that we want to display, the domain namespace, is accessible from your OpenShift <a class="jive-link-external-small" href="https://github.com/adietish/openshift-java-client/blob/master/src/main/java/com/openshift/client/IDomain.java">IDomain</a>. We'll get it from the the user instance and print its id (namespace).</p>
+<!--[CodeBlockStart:1a223844-6402-458c-a5f7-2cf65dd24c70]--><pre class="jive-pre"><code class="jive-code jive-java">IDomain domain = user.getDefaultDomain();
+System.out.println(<font color="red">"Namespace:\t"</font> + domain.getId());
+</code></pre>
+<!--[CodeBlockEnd:1a223844-6402-458c-a5f7-2cf65dd24c70]--><h1>Print the Application Infos</h1>
+<p>The second portion printed by "rhc domain show" is reporting your users applications. All OpenShift applications are held in a list within your domain. We simply get the list and iterate over it's entries:</p>
+<!--[CodeBlockStart:0478e198-e532-4901-984d-010298e91411]--><pre class="jive-pre"><code class="jive-code jive-java"><font color="navy"><b>for</b></font> (IApplication application : domain.getApplications()) <font color="navy">{</font>
+</code></pre>
+<!--[CodeBlockEnd:0478e198-e532-4901-984d-010298e91411]--><p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>The required values - name, framework, creation time etc. - are now available within each <a class="jive-link-external-small" href="https://github.com/adietish/openshift-java-client/blob/master/src/main/java/com/openshift/client/IApplication.java">IApplication</a> instance:</p>
+<!--[CodeBlockStart:dfb9bad5-d56c-4355-ab53-5a9cca6f2ad4]--><pre class="jive-pre"><code class="jive-code jive-java">System.out.println(application.getName());
+System.out.println(<font color="red">"\tFramework:\t"</font> + application.getCartridge().getName());
+System.out.println(<font color="red">"\tCreation:\t"</font> + application.getCreationTime());
+System.out.println(<font color="red">"\tUUID:\t\t"</font> + application.getUUID());
+System.out.println(<font color="red">"\tGit URL:\t"</font> + application.getGitUrl());
+System.out.println(<font color="red">"\tPublic URL:\t"</font> + application.getApplicationUrl() + <font color="red">"\n"</font>);
+</code></pre>
+<!--[CodeBlockEnd:dfb9bad5-d56c-4355-ab53-5a9cca6f2ad4]--><p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>An application may have several cartridges embedded (MySql, Postgres, Jenkins etc.). These cartridges are reported by by the application. We get the list of cartridges and inspect at each of them:</p>
+<!--[CodeBlockStart:9298933d-026f-4c08-a708-fd0735721d19]--><pre class="jive-pre"><code class="jive-code jive-java"><font color="navy"><b>for</b></font>(IEmbeddedCartridge cartridge : application.getEmbeddedCartridges()) <font color="navy">{</font>
+</code></pre>
+<!--[CodeBlockEnd:9298933d-026f-4c08-a708-fd0735721d19]--><p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>We then want to know bout a cartridge's (<a class="jive-link-external-small" href="https://github.com/adietish/openshift-java-client/blob/master/src/main/java/com/openshift/client/IEmbeddedCartridge.java">IEmbeddedCartridge</a>), name and url:</p>
+<!--[CodeBlockStart:7d2b5416-f3cd-45fc-9c92-f45e4239eaf0]--><pre class="jive-pre"><code class="jive-code jive-java">System.out.println(<font color="red">"\t"</font> + cartridge.getName() + <font color="red">" - URL:"</font> + cartridge.getUrl());
+</code></pre>
+<!--[CodeBlockEnd:7d2b5416-f3cd-45fc-9c92-f45e4239eaf0]--><p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>That is it - you now have an app that can talk to OpenShift via its <a class="jive-link-external-small" href="https://openshift.redhat.com/community/sites/default/files/documents/OpenShift-2.0-REST_API_Guide-en-US.pdf">REST API</a>. If you want to do more we also have this <a class="jive-link-wiki-small" href="https://community.jboss.org/docs/DOC-19828">article</a> that shows how to perform actual operations against your OpenShift applications. Hope you enjoy it and let us know what you build with it!</p>
+</div>
+<!-- [DocumentBodyEnd:e7b8973f-6505-42c9-8a8f-45737dcf81ad] -->
+</body>

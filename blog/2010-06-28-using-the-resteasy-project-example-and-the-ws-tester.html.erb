@@ -1,0 +1,62 @@
+---
+title: 'Using the RESTeasy Project Example and the WS Tester'
+author: 'Max Rydahl Andersen'
+layout: blog-post
+tags: [ jboss, service, jbds, eclipse, ws, tools, java, rest, resteasy, web, jax-rs, services, tooling, jax-ws, tester, restful ]
+orignallink: ''
+---
+<body>
+<div class="jive-rendered-content">
+<p>Now that the WS Tester is getting more stable and feature complete, I wanted to try it against a RESTeasy web service (JAX-RS) deployed against one of our own runtimes. I simply used the steps we'd defined earlier for using the RESTeasy project example on <a class="" href="https://community.jboss.org/docs/DOC-14693">this wiki page</a>.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>To do this yourself, follow these steps:</p>
+<ol>
+<li><p>Grab a recent build of JBoss Tools 3.2 (go [<a class="jive-link-external-small" href="http://download.jboss.org/jbosstools/builds/nightly/" target="_blank">http://download.jboss.org/jbosstools/builds/nightly/</a> and use the latest trunk build). Install it into an Eclipse 3.6 (Helios) instance.</p></li>
+<li><p>Make sure you have an EAP 5 or SOA-P 5 runtime ready with RESTeasy installed.</p></li>
+<li><p>Fire up your Eclipse workbench and follow the steps <a class="" href="https://community.jboss.org/docs/DOC-14693">here</a> to get your RESTful web service project into your workbench (steps 1 through 10).</p></li>
+<li><p>Get a bit familiar with the WS Tester by checking out <a class="" href="https://community.jboss.org/community/jbosstools/blog/2010/05/26/testing-web-services">this post</a> and <a class="" href="https://community.jboss.org/community/jbosstools/blog/2010/06/04/testing-web-services-from-wsdls">this post</a>.</p></li>
+<li><p>Open the WS Tester view by selecting Window-&gt;Show View-&gt;Other... Drill down until you find "JBoss Tools Web Services" and select the Web Service Tester.</p></li>
+<li>
+<p>To post a new customer to the service database:</p>
+<ul>
+<li><p>Select JAX-RS as your Web Service Type.</p></li>
+<li><p>Switch the HTTP Method to "POST".</p></li>
+<li><p><span>Type in your Service URL: </span><a class="jive-link-external-small" href="http://localhost:8080/simple/rest-services/customers" target="_blank">http://localhost:8080/simple/rest-services/customers</a><span>.</span></p></li>
+<li>
+<p>Put in your sample XML in the Request Body tab:</p>
+<pre><code>&lt;customer&gt;<br clear="none">&lt;first-name&gt;Bill&lt;/first-name&gt;<br clear="none">&lt;last-name&gt;Burke&lt;/last-name&gt;<br clear="none">&lt;street&gt;256 Red Hat Lane&lt;/street&gt;<br clear="none">&lt;city&gt;Boston&lt;/city&gt;<br clear="none">&lt;state&gt;MA&lt;/state&gt;&lt;zip&gt;02115&lt;/zip&gt;<br clear="none">&lt;country&gt;USA&lt;/country&gt;<br clear="none">&lt;/customer&gt;</code></pre>
+</li>
+<li><p>On the Request Header tab, add "content-type=application/xml" as the lone header.</p></li>
+<li><p>Click the Invoke button.</p></li>
+<li><p><span>You won't see anything in the Response Body tab to the right, but if you go to the Response Header, you should see "[HTTP/1.1 201 Created]" as the top line in the list. You should also see the Location (</span><a class="jive-link-external-small" href="http://localhost:8080/simple/rest-services/customers/#" target="_blank">http://localhost:8080/simple/rest-services/customers/#</a><span> where # is the record number for the entry).</span></p></li>
+</ul>
+</li>
+<li>
+<p>To retrieve a record from the service:&#160;&#160;&#160;&#160;&#160; </p>
+<ul>
+<li><p>Change the HTTP Method to "GET".</p></li>
+<li><p><span>Change the Service URL to the Location value you saw in step 6 (</span><a class="jive-link-external-small" href="http://localhost:8080/simple/rest-services/customers/1" target="_blank">http://localhost:8080/simple/rest-services/customers/1</a><span>)</span></p></li>
+<li><p>Click the Invoke button.<br><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-1841-3575/rest_get_1.jpg"><img alt="rest_get_1.jpg" class="jive-image-thumbnail jive-image" height="243" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-1841-3575/450-243/rest_get_1.jpg" width="450"></a></p></li>
+<li><p>This time you should see the XML record in the Response Body tab and [HTTP/1.1 200 OK] as the first Response Header.<br><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-1841-3576/rest_get_1_headers.jpg"><img alt="rest_get_1_headers.jpg" class="jive-image" height="322" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-1841-3576/310-322/rest_get_1_headers.jpg" width="310"></a></p></li>
+</ul>
+</li>
+<li>
+<p>To update a record from the service:</p>
+<ul>
+<li><p>Change the HTTP Method to "PUT".</p></li>
+<li><p>Leave the URL the same (for the record you want to update).</p></li>
+<li>
+<p>Provide the updated XML for the record:</p>
+<pre><code>&lt;customer&gt;<br clear="none">&lt;first-name&gt;Gary&lt;/first-name&gt;<br clear="none">&lt;last-name&gt;Lamperillo&lt;/last-name&gt;<br clear="none">&lt;street&gt;123 Red Hat Court&lt;/street&gt;<br clear="none">&lt;city&gt;Venice&lt;/city&gt;<br clear="none">&lt;state&gt;CA&lt;/state&gt;<br clear="none">&lt;zip&gt;90291&lt;/zip&gt;<br clear="none">&lt;country&gt;USA&lt;/country&gt;<br clear="none">&lt;/customer&gt;</code></pre>
+</li>
+<li><p>Click the Invoke button.</p></li>
+<li><p>Like when you POSTed before, you won't see anything in the Response Body, but you should see [HTTP/1.1 204 No Content] as the first item in the Response Header list.</p></li>
+<li><p>To verify that the data went through correctly, we can do another GET - simply switch the HTTP Method to "GET" and click Invoke again.<br><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-1841-3577/rest_get_2.jpg"><img alt="rest_get_2.jpg" class="jive-image-thumbnail jive-image" height="244" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-1841-3577/450-244/rest_get_2.jpg" width="450"></a></p></li>
+<li><p>Now we should see the updated data appear in the Response Body and [HTTP/1.1 200 OK] as the first item in the Response Header list.</p></li>
+</ul>
+</li>
+</ol>
+<p>And that's it! Pretty easy. Didn't even have to leave Eclipse to test!</p>
+</div>
+<!-- [DocumentBodyEnd:7c356714-97d3-4403-85da-dd5fc4d2a125] -->
+</body>

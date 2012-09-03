@@ -1,0 +1,65 @@
+---
+title: 'JBoss Tools Tycho Build Code Coverage Report'
+author: 'Max Rydahl Andersen'
+layout: blog-post
+tags: [ jbosstools, build, thyco, eclemma, coverage ]
+orignallink: ''
+---
+<body>
+<div class="jive-rendered-content">
+<p>JBoss Tools tycho build now provides code coverage report for eclipse-test-plugins. All eclipse-test-plugin pom.xml files provide meta information about what bundles are instrumented and what classes are included in coverage report through properties:</p>
+<ul>
+<li>emma.filter - emma filter to define what packages to include to or to exclude from report</li>
+<li>emma.instrument.bundles - comma separated list of bundles to be instrumented on the fly during tests execution</li>
+</ul>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Here is an example from org.jboss.tools.common.test plug-ins</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<!--[CodeBlockStart:5ec2eca1-6224-4732-8c5e-475afe38d958]--><pre class="jive-pre"><code class="jive-code jive-xml"><span class="jive-xml-tag">&lt;properties&gt;</span>
+&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;emma.filter&gt;</span>org.jboss.tools.common*<span class="jive-xml-tag">&lt;/emma.filter&gt;</span>
+&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;emma.instrument.bundles&gt;</span>org.jboss.tools.common<span class="jive-xml-tag">&lt;/emma.instrument.bundles&gt;</span>
+<span class="jive-xml-tag">&lt;/properties&gt;</span>
+</code></pre>
+<!--[CodeBlockEnd:5ec2eca1-6224-4732-8c5e-475afe38d958]--><p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>To enable code coverage report generation during build</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<!--[CodeBlockStart:0f7f3b85-2287-4349-b2ce-6a39eeb42ca2]--><pre class="jive-pre"><code class="jive-code">-Dcoverage
+</code></pre>
+<!--[CodeBlockEnd:0f7f3b85-2287-4349-b2ce-6a39eeb42ca2]--><p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>system property should be added to build command line. It activates maven coverage profile to generate coverage reports on per test plug-in basis in text and xml formats. Text reports are printed out to the build console output like</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<!--[CodeBlockStart:7cbf2559-575a-4dcc-b398-62c42995fa9f]--><pre class="jive-pre"><code class="jive-code">&#160;&#160;&#160;&#160; [echo] [EMMA v2.0.5312 report, generated Wed Jul 07 12:11:50 PDT 2010]
+&#160;&#160;&#160;&#160; [echo] -------------------------------------------------------------------------------
+&#160;&#160;&#160;&#160; [echo] OVERALL COVERAGE SUMMARY:
+&#160;&#160;&#160;&#160; [echo] 
+&#160;&#160;&#160;&#160; [echo] [class, %]&#160;&#160;&#160;&#160; [method, %]&#160;&#160;&#160;&#160; [block, %]&#160;&#160;&#160;&#160; [line, %]&#160;&#160;&#160;&#160; [name]
+&#160;&#160;&#160;&#160; [echo] 61%&#160; (22/36)!&#160;&#160;&#160;&#160; 28%&#160; (93/328)!&#160;&#160;&#160;&#160; 17%&#160; (1056/6326)!&#160;&#160;&#160;&#160; 20%&#160; (308.2/1575)!&#160;&#160;&#160;&#160; all classes
+&#160;&#160;&#160;&#160; [echo] 
+&#160;&#160;&#160;&#160; [echo] OVERALL STATS SUMMARY:
+&#160;&#160;&#160;&#160; [echo] 
+&#160;&#160;&#160;&#160; [echo] total packages:&#160;&#160;&#160;&#160; 8
+&#160;&#160;&#160;&#160; [echo] total classes:&#160;&#160;&#160;&#160; 36
+&#160;&#160;&#160;&#160; [echo] total methods:&#160;&#160;&#160;&#160; 328
+&#160;&#160;&#160;&#160; [echo] total executable files:&#160;&#160;&#160;&#160; 28
+&#160;&#160;&#160;&#160; [echo] total executable lines:&#160;&#160;&#160;&#160; 1575
+&#160;&#160;&#160;&#160; [echo] 
+&#160;&#160;&#160;&#160; [echo] COVERAGE BREAKDOWN BY PACKAGE:
+&#160;&#160;&#160;&#160; [echo] 
+&#160;&#160;&#160;&#160; [echo] [class, %]&#160;&#160;&#160;&#160; [method, %]&#160;&#160;&#160;&#160; [block, %]&#160;&#160;&#160;&#160; [line, %]&#160;&#160;&#160;&#160; [name]
+&#160;&#160;&#160;&#160; [echo] 0%&#160;&#160; (0/1)!&#160;&#160;&#160;&#160; 0%&#160;&#160; (0/7)!&#160;&#160;&#160;&#160; 0%&#160;&#160; (0/78)!&#160;&#160;&#160;&#160; 0%&#160;&#160; (0/16)!&#160;&#160;&#160;&#160; org.jboss.tools.common.preferences
+&#160;&#160;&#160;&#160; [echo] 0%&#160;&#160; (0/2)!&#160;&#160;&#160;&#160; 0%&#160;&#160; (0/40)!&#160;&#160;&#160;&#160; 0%&#160;&#160; (0/492)!&#160;&#160;&#160;&#160; 0%&#160;&#160; (0/125)!&#160;&#160;&#160;&#160; org.jboss.tools.common.text
+&#160;&#160;&#160;&#160; [echo] 17%&#160; (1/6)!&#160;&#160;&#160;&#160; 4%&#160;&#160; (3/77)!&#160;&#160;&#160;&#160; 4%&#160;&#160; (92/2401)!&#160;&#160;&#160;&#160; 4%&#160;&#160; (24.9/562)!&#160;&#160;&#160;&#160; org.jboss.tools.common.util
+&#160;&#160;&#160;&#160; [echo] 67%&#160; (4/6)!&#160;&#160;&#160;&#160; 35%&#160; (11/31)!&#160;&#160;&#160;&#160; 19%&#160; (77/396)!&#160;&#160;&#160;&#160; 23%&#160; (23.2/102)!&#160;&#160;&#160;&#160; org.jboss.tools.common.reporting
+&#160;&#160;&#160;&#160; [echo] 75%&#160; (6/8)!&#160;&#160;&#160;&#160; 33%&#160; (25/75)!&#160;&#160;&#160;&#160; 21%&#160; (367/1734)!&#160;&#160;&#160;&#160; 24%&#160; (99.2/419)!&#160;&#160;&#160;&#160; org.jboss.tools.common.xml
+&#160;&#160;&#160;&#160; [echo] 75%&#160; (3/4)!&#160;&#160;&#160;&#160; 48%&#160; (11/23)!&#160;&#160;&#160;&#160; 24%&#160; (135/562)!&#160;&#160;&#160;&#160; 32%&#160; (44.1/139)!&#160;&#160;&#160;&#160; org.jboss.tools.common
+&#160;&#160;&#160;&#160; [echo] 75%&#160; (3/4)!&#160;&#160;&#160;&#160; 42%&#160; (23/55)!&#160;&#160;&#160;&#160; 36%&#160; (153/422)!&#160;&#160;&#160;&#160; 36%&#160; (52.4/144)!&#160;&#160;&#160;&#160; org.jboss.tools.common.log
+&#160;&#160;&#160;&#160; [echo] 100% (5/5)&#160;&#160;&#160;&#160; 100% (20/20)&#160;&#160;&#160;&#160; 96%&#160; (232/241)&#160;&#160;&#160;&#160; 95%&#160; (64.4/68)&#160;&#160;&#160;&#160; org.jboss.tools.common.zip
+&#160;&#160;&#160;&#160; [echo] -------------------------------------------------------------------------------
+<br><br><br><br><br><br></code></pre>
+<!--[CodeBlockEnd:7cbf2559-575a-4dcc-b398-62c42995fa9f]--><p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Reports are generated to /target/emma folder of test plug-in.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>To enable code coverage for your test plug-in just add properties listed above to your plug-in pom.xml file and activate coverage profile as it explained above.</p>
+</div>
+<!-- [DocumentBodyEnd:88e3912d-f44d-4427-b6ea-745d559ceb81] -->
+</body>

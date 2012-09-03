@@ -1,0 +1,245 @@
+---
+title: 'm2e(clipse)-wtp 0.13.0 : New &amp; Noteworthy'
+author: 'Max Rydahl Andersen'
+layout: blog-post
+tags: [ eclipse, maven, release, wtp, m2e, indigo ]
+orignallink: ''
+---
+<body>
+<div class="jive-rendered-content">
+<h3> <span style="color: #666699;">Embracing Indigo<br></span>
+</h3>
+<p><span id="internal-source-marker_0.6966659519821405">So, Eclipse 3.7 a.k.a. Indigo has been released. This year, 62 Eclipse projects were&#160; made available on the same day. Part of the release train is M2E 1.0.0, which succesfully graduated from the Eclipse incubator. Congrats to all the teams involved!</span></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>m2e-wtp 0.13.0 is finally available as well. Last minute bugs prevented an earlier release and made our lives a bit difficult, but thanks to Igor Fedorenko, we made it. As you will discover, t<span id="internal-source-marker_0.6966659519821405">he WTP integration with Maven is thighter than ever! The complete release notes are available <a class="jive-link-external-small" href="https://issues.sonatype.org/secure/ReleaseNote.jspa?projectId=10310&amp;version=11013">here</a>, but let's take a quick look at what's new and noteworthy :</span></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h3><span style="color: #666699;">Discovery / installation<br></span></h3>
+<p>Once m2e is installed, there are several ways to install m2e-wtp. First you need to wipe the m2eclipse-extras update site from your memory (and eclipse), it only contains m2e 0.12.0 compatible plugins : </p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><span style="color: #ff0000;"><strong>IMPORTANT UPDATE</strong></span> :<span style="color: #ff0000;"> m2e-wtp has been temporarily removed from the m2e marketplace (<a class="jive-link-external-small" href="http://dev.eclipse.org/mhonarc/lists/m2e-users/msg00938.html">http://dev.eclipse.org/mhonarc/lists/m2e-users/msg00938.html</a>). Please consider option #3 while we're working on fixing the problem.</span></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><span style="color: #ff0000;"><strong>IMPORTANT UPDATE (02/08/2011)</strong></span> :<span style="color: #ff0000;">the m2e marketplace issue is fixed with m2e-wtp 0.13.1 : </span><a class="" href="https://community.jboss.org/community/tools/blog/2011/08/01/m2eclipse-wtp-0131-back-to-the-m2e-marketplace">http://community.jboss.org/en/tools/blog/2011/08/01/m2eclipse-wtp-0131-back-to-the-m2e-marketplace</a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>1) Import existing Java EE projects into the workspace; You'll be proposed to install the m2e-wtp plugin :</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><span style="color: #666699;"><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-3913-16576/m2e-wtp-discovery.jpg"><img alt="m2e-wtp-discovery.jpg" class="jive-image-thumbnail jive-image" height="463" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-3913-16576/450-463/m2e-wtp-discovery.jpg" width="450"></a></span></p>
+<p>click on Finish and the installation will proceed. Your projects will be imported but the workspace will have to be restarted.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>2) Go to Window &gt; Preferences &gt; Maven &gt; Discovery and click on "Open catalog". Select m2e and proceed with the installation.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>3) Old school installation : Use this update site : <span style="font-size: 10pt;"><a class="jive-link-external-small" href="https://repository.sonatype.org/content/sites/forge-sites/m2eclipse-wtp/0.13.0/S/0.13.0.20110623-0455/">https://repository.sonatype.org/content/sites/forge-sites/m2eclipse-wtp/0.13.0/S/0.13.0.20110623-0455/</a>&#160; </span></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><span style="color: #ff0000;"><strong>IMPORTANT UPDATE 2</strong></span> :<span style="color: #ff0000;"> m2e-wtp 0.13.1 is available from a new update site url (</span><a class="jive-link-external-small" href="http://dev.eclipse.org/mhonarc/lists/m2e-users/msg00938.html">http://download.jboss.org/jbosstools/updates/m2eclipse-wtp/</a><span style="color: #ff0000;">). </span></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h3> <span style="color: #666699;">Experimental war overlay support</span>
+</h3>
+<p>Finally, after all these years, m2e-wtp offers support for <a class="jive-link-external-small" href="http://maven.apache.org/plugins/maven-war-plugin/overlays.html">maven war overlays</a>. The idea is to share common resources between several web applications. One use case could be to easily share logos, style sheets etc... in a corporate environment. All you need to do is declare in your web application pom.xml a dependency to another war artifact. </p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<!--[CodeBlockStart:4412e673-dce8-4ac1-b3a2-e9bef7e8fbe6]--><pre class="jive-pre"><code class="jive-code jive-xml"><span class="jive-xml-tag"><span>&lt;project xmlns="</span><a class="jive-link-external-small" href="http://maven.apache.org/POM/4.0.0" target="_blank">http://maven.apache.org/POM/4.0.0</a><span>" xmlns:xsi="</span><a class="jive-link-external-small" href="http://www.w3.org/2001/XMLSchema-instance" target="_blank">http://www.w3.org/2001/XMLSchema-instance</a><span>"
+&#160;&#160;&#160; xsi:schemaLocation="</span><a class="jive-link-external-small" href="http://maven.apache.org/POM/4.0.0" target="_blank">http://maven.apache.org/POM/4.0.0</a><span> </span><a class="jive-link-external-small" href="http://maven.apache.org/xsd/maven-4.0.0.xsd" target="_blank">http://maven.apache.org/xsd/maven-4.0.0.xsd</a><span>"&gt;</span></span>
+&#160;&#160;&#160; <span class="jive-xml-tag">&lt;modelVersion&gt;</span>4.0.0<span class="jive-xml-tag">&lt;/modelVersion&gt;</span>
+&#160;&#160;&#160; <span class="jive-xml-tag">&lt;groupId&gt;</span>foo.bar<span class="jive-xml-tag">&lt;/groupId&gt;</span>
+&#160;&#160;&#160; <span class="jive-xml-tag">&lt;artifactId&gt;</span>war<span class="jive-xml-tag">&lt;/artifactId&gt;</span>
+&#160;&#160;&#160; <span class="jive-xml-tag">&lt;version&gt;</span>0.0.1-SNAPSHOT<span class="jive-xml-tag">&lt;/version&gt;</span>
+&#160;&#160;&#160; <span class="jive-xml-tag">&lt;packaging&gt;</span>war<span class="jive-xml-tag">&lt;/packaging&gt;</span>
+&#160;&#160;&#160; <span class="jive-xml-tag">&lt;dependencies&gt;</span>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;dependency&gt;</span>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;groupId&gt;</span>foo.bar<span class="jive-xml-tag">&lt;/groupId&gt;</span>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;artifactId&gt;</span>overlaid<span class="jive-xml-tag">&lt;/artifactId&gt;</span>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;version&gt;</span>0.0.1-SNAPSHOT<span class="jive-xml-tag">&lt;/version&gt;</span>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;type&gt;</span>war<span class="jive-xml-tag">&lt;/type&gt;</span>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;/dependency&gt;</span>
+&#160;&#160;&#160; <span class="jive-xml-tag">&lt;/dependencies&gt;</span>
+<span class="jive-xml-tag">&lt;/project&gt;</span>
+</code></pre>
+<!--[CodeBlockEnd:4412e673-dce8-4ac1-b3a2-e9bef7e8fbe6]--><p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>By default, all the contents of the overlaid artifact will be copied to the deployment directory of the web application, minus the MANIFEST.MF. <strong>The resources of the web application take precedence, in case of duplicate files</strong>.</p>
+<p>If your project depends on a war archive (from your local repository), that dependency will be unzipped under target/m2e-wtp/overlays/&lt;dependency&gt;/ before being deployed to your server, according to the overlay configuration (you can select what files are included/excluded). For instance :</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<!--[CodeBlockStart:fddf7f8f-cda2-4f01-a98c-2ba8c84ac9a4]--><pre class="jive-pre"><code class="jive-code jive-xml"><span class="jive-xml-tag">&lt;plugin&gt;</span>
+&#160;&#160;&#160; <span class="jive-xml-tag">&lt;groupId&gt;</span>org.apache.maven.plugins<span class="jive-xml-tag">&lt;/groupId&gt;</span>
+&#160;&#160;&#160; <span class="jive-xml-tag">&lt;artifactId&gt;</span>maven-war-plugin<span class="jive-xml-tag">&lt;/artifactId&gt;</span>
+&#160;&#160;&#160; <span class="jive-xml-tag">&lt;version&gt;</span>2.1.1<span class="jive-xml-tag">&lt;/version&gt;</span>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;configuration&gt;</span>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;overlays&gt;</span>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;overlay&gt;</span>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;groupId&gt;</span>foo.bar<span class="jive-xml-tag">&lt;/groupId&gt;</span>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;artifactId&gt;</span>overlaid<span class="jive-xml-tag">&lt;/artifactId&gt;</span>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;excludes&gt;</span>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;exclude&gt;</span>WEB-INF/lib/*<span class="jive-xml-tag">&lt;/exclude&gt;</span>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;/excludes&gt;</span>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;/overlay&gt;</span>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;/overlays&gt;</span>
+&#160;&#160;&#160; <span class="jive-xml-tag">&lt;/configuration&gt;</span>
+<span class="jive-xml-tag">&lt;/plugin&gt;</span>
+</code></pre>
+<!--[CodeBlockEnd:fddf7f8f-cda2-4f01-a98c-2ba8c84ac9a4]--><p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>... won't deploy the jars from overlaid (project or archive)/WEB-INF/lib</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>If the dependency is another web project in your workspace, the deployed resources will be dynamically determined from the overlay configuration and any file changed in the overlaid project will be automatically redeployed to the target server.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Below is an example where the "war" project depends on an "overlaid" war project and hudson-war-2.0.1.war(before you asked, it's because this one is available in central). The images/hudson.png file is present in both overlay artifacts. The file is picked from "overlaid", since it's declared first in the pom. The deployed "war" project is a fully fledged CI server</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-3913-16569/war-overlay.jpg"><img alt="war-overlay.jpg" class="jive-image-thumbnail jive-image" height="232" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-3913-16569/450-232/war-overlay.jpg" width="450"></a></p>
+<p>As of now, unsupported features of war overlays are :</p>
+<p>- filtering</p>
+<p>- exclusions of resources from the main project (defined as &lt;overlay&gt;&lt;/overlay&gt;)</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>There's plenty of room for performance optimizations, and it still needs to be tested "on the field" so please, please, do not consider this feature as production ready, it's still experimental.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Also note that the WTP overlay metadata format (in .settings/org.eclipse.wst.common.component) has changed and is incompatible with older development builds of m2e-wtp 0.13.0. So if you used previous nightly builds, you should reimport your projects without their eclipse metadata (.project, .classpath, .settings/)</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h3><span style="color: #666699;">Removal of WTP classpath libraries</span></h3>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-3913-16570/classpath-containers.jpg"><img alt="classpath-containers.jpg" class="jive-image" height="419" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-3913-16570/253-419/classpath-containers.jpg" style="float: left;" width="253"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Since its infancy, m2e-wtp suffered from outstanding classpath resolution issues when unit tests were being run. It turned out some dependencies were being leaked by the WebApp and EAR classpath libraries, installed by default on Java EE projects. Having these libraries also required extra code complexity to move workspace dependencies from one library to the other. In m2e-wtp 0.13.0, a rather radical solution was taken : remove these WTP libraries after they're being automatically added by WTP. Guess what? it solved all the classpath issues occurring during tests and simplified the code. So from now on, you will just see the following libraries in the project explorer </p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>: </p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h3></h3>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h3><span style="color: #666699;">'Deployed Resources' node in the Project View</span></h3>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-3913-16572/deployed-folders.jpg"><img alt="deployed-folders.jpg" class="jive-image" height="577" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-3913-16572/236-577/deployed-folders.jpg" style="float: right;" width="236"></a></p>
+<p style="text-align: left;">Previous m2-wtp versions displayed a <strong>Web Resources</strong> node, for Web projects, or <strong>Application Resources</strong> for EARs, in the Project View. These nodes aggregate the content that must be deployed on the server / packaged in the final archive. A <strong>Web Resources </strong>node is already provided by JBoss Tools for projects having the JSF Facet installed. So, in order to avoid confusion<span id="internal-source-marker_0.6966659519821405">, the nodes contributed by m2e</span><span id="internal-source-marker_0.6966659519821405">-wtp have been renamed more appropria</span><span id="internal-source-marker_0.6966659519821405">tely to <strong>Deployed Resources </strong></span>:</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h3><span style="color: #666699;">Maven-generated MANIFEST.MF<br></span></h3>
+<p>Up until now, in m2e-wtp, the manifest was generated "manually" using WTP's API, for web projects only. In the process, the man</p>
+<p>ifest kinda fixed some maven shortcomings in order to handle skinny wars (didn't add a classpath prefix for EJBs, contrary to maven). Now, for Web, EAR, EJB, Utility and Connector projects, the manifest is generated via a call to the Maven's archiver.</p>
+<p>That means no more impedance mismatch between Maven and Eclipse manifests. <a class="jive-link-external-small" href="http://maven.apache.org/shared/maven-archiver/index.html">Manifest customization</a> is reflected on the fly in the generated file.</p>
+<p>For jar, ejb and connector projects, it is generated under target/classes. For web projects, it goes under </p>
+<p>target/m2e-wtp/web-resources/ and for EARs, goes under target/m2e-wtp/ear-resources/ </p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-3913-16571/manifest-support.jpg"><img alt="manifest-support.jpg" class="jive-image-thumbnail jive-image" height="232" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-3913-16571/450-232/manifest-support.jpg" width="450"></a></p>
+<p>Since the EAR library is gone, the manifest is no longer used to reflect compile classpath within Eclipse and is only used for runtime classpath resolution. </p>
+<p>Since it now follows the same rules as Maven, how do you handle skinny wars with EJBs and classpath prefix? One solution is to use your own Class-Path entry, which will be appended with the classpath computed by the maven archiver. So, for instance :</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<!--[CodeBlockStart:e4d29042-6d64-477f-81d9-22a2a7cef8df]--><pre class="jive-pre"><code class="jive-code jive-xml"><span class="jive-xml-tag">&lt;plugin&gt;</span>
+&#160;&#160;&#160; <span class="jive-xml-tag">&lt;groupId&gt;</span>org.apache.maven.plugins<span class="jive-xml-tag">&lt;/groupId&gt;</span>
+&#160;&#160;&#160; <span class="jive-xml-tag">&lt;artifactId&gt;</span>maven-war-plugin<span class="jive-xml-tag">&lt;/artifactId&gt;</span>
+&#160;&#160;&#160; <span class="jive-xml-tag">&lt;version&gt;</span>2.1.1<span class="jive-xml-tag">&lt;/version&gt;</span>
+&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;configuration&gt;</span>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;warSourceExcludes&gt;</span>WEB-INF/lib/*.jar<span class="jive-xml-tag">&lt;/warSourceExcludes&gt;</span>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;archive&gt;</span>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;manifest&gt;</span>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;addClasspath&gt;</span>true<span class="jive-xml-tag">&lt;/addClasspath&gt;</span>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;classpathPrefix&gt;</span>lib/<span class="jive-xml-tag">&lt;/classpathPrefix&gt;</span>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;/manifest&gt;</span>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;manifestEntries&gt;</span>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;Class-Path&gt;</span>sample-ejb-${pom.version}.jar<span class="jive-xml-tag">&lt;/Class-Path&gt;</span>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;/manifestEntries&gt;</span>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;/archive&gt;</span>
+&#160;&#160;&#160; <span class="jive-xml-tag">&lt;/configuration&gt;</span>
+<span class="jive-xml-tag">&lt;/plugin&gt;</span>
+</code></pre>
+<!--[CodeBlockEnd:e4d29042-6d64-477f-81d9-22a2a7cef8df]--><p>will generate something like :</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<blockquote class="jive-quote"><p>Manifest-Version: 1.0<br> Built-By: fbricon<br>Build-Jdk: 1.6.0_24<br>Class-Path:<strong> sample-ejb-0.0.1-SNAPSHOT.jar</strong> lib/sample-util-0.0.1-SNAPSH<br> OT.jar<br>Created-By: Maven Integration for Eclipse</p></blockquote>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Of course, the <strong>"Created-By: Maven Integration for Eclipse"</strong> entry can be overwritten using your own value :</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<!--[CodeBlockStart:b4f05ad9-e4cf-4d4c-98ba-a8d854547b0c]--><pre class="jive-pre"><code class="jive-code jive-xml"><span class="jive-xml-tag">&lt;manifestEntries&gt;</span>
+&#160; <span class="jive-xml-tag">&lt;Created-By&gt;</span>My kick-ass IDE<span class="jive-xml-tag">&lt;/Created-By&gt;</span>
+ <span class="jive-xml-tag">&lt;/manifestEntries&gt;</span>
+</code></pre>
+<!--[CodeBlockEnd:b4f05ad9-e4cf-4d4c-98ba-a8d854547b0c]--><p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Finally, we tried to delete all MANIFESTS.MFs automatically generated by WTP. So hopefully, your source control shouldn't be polluted anymore.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h3><span style="color: #666699;">Support for EAR Resource filtering</span></h3>
+<p>m2e-wtp now supports <a class="jive-link-external-small" href="http://maven.apache.org/plugins/maven-ear-plugin/examples/filtering-sources.html">EAR resource filtering</a>, pretty much the same way <a class="" href="https://community.jboss.org/community/tools/blog/2011/05/03/m2eclipse-wtp-0120-new-noteworthy">Web projects do</a>. Just add the filtering attribute to your maven-ear-plugin configuration :</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<!--[CodeBlockStart:6f582753-5e53-4c55-919a-d0e18c8a8c92]--><pre class="jive-pre"><code class="jive-code jive-xml"><span class="jive-xml-tag">&lt;plugins&gt;</span>
+&#160; <span class="jive-xml-tag">&lt;plugin&gt;</span>
+&#160;&#160;&#160; <span class="jive-xml-tag">&lt;groupId&gt;</span>org.apache.maven.plugins<span class="jive-xml-tag">&lt;/groupId&gt;</span>
+&#160;&#160;&#160; <span class="jive-xml-tag">&lt;artifactId&gt;</span>maven-ear-plugin<span class="jive-xml-tag">&lt;/artifactId&gt;</span>
+&#160;&#160;&#160; <span class="jive-xml-tag">&lt;version&gt;</span>2.6<span class="jive-xml-tag">&lt;/version&gt;</span>
+&#160;&#160;&#160; <span class="jive-xml-tag">&lt;configuration&gt;</span>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;filtering&gt;</span>true<span class="jive-xml-tag">&lt;/filtering&gt;</span>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160; ...
+&#160;&#160;&#160; <span class="jive-xml-tag">&lt;/configuration&gt;</span>
+&#160; <span class="jive-xml-tag">&lt;/plugin&gt;</span>
+<span class="jive-xml-tag">&lt;/plugins&gt;</span>
+</code></pre>
+<!--[CodeBlockEnd:6f582753-5e53-4c55-919a-d0e18c8a8c92]--><p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Filtered resources are generated under target/m2e-wtp/ear-resources/</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-3913-16573/ear-filtering.jpg"><img alt="ear-filtering.jpg" class="jive-image-thumbnail jive-image" height="232" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-3913-16573/450-232/ear-filtering.jpg" width="450"></a></p>
+<h3><span style="color: #666699;">Dropped support for Eclipse 3.5 and older versions</span></h3>
+<p>In order to support war overlays, m2e-wtp 0.13.0 is taking advantage of several APIs that were made available in Eclipse 3.6 ( Helios). The direct consequence is it's not longer compatible with Eclipse 3.5 (Galileo) based platforms and of course older versions. However it's been tested against Eclipse 3.6 and 3.7 on the continuous integration server at JBoss.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h3><span style="color: #666699;">Now, what next?</span></h3>
+<p>Well, we're gonna see how the overlay support stands in the wild. If necessary, one or more 0.13.x bugfixes can be made available "quickly". One of the problem that delayed this release is a <a class="jive-link-external-small" href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=350138">conflict</a> between m2e-wtp and the pom properties configurator. This lead us to remove the latter from m2e marketplace catalog to avoid confusion. I hope we can find a solution quickly in order to restore that plugin in the marketplace. </p>
+<p>Next version (0.14.) should include Dali support, Application Client packaging support, bug fixes and <a class="jive-link-external-small" href="https://issues.sonatype.org/browse/MECLIPSEWTP#selectedTab=com.atlassian.jira.plugin.system.project%3Aroadmap-panel">more</a>... </p>
+<p>As always, if you find any issue or would like to see new useful features in m2e-wtp, please open a ticket at <a class="jive-link-external-small" href="https://issues.sonatype.org/browse/MECLIPSEWTP">https://issues.sonatype.org/browse/MECLIPSEWTP</a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Enjoy,</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Fred.</p>
+<p><a class="jive-link-external-small" href="https://twitter.com/#!/fbricon">https://twitter.com/#!/fbricon</a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>PS: Again, special kudos to Igor Fedorenko who supported me during this not-so-trivial release.</p>
+</div>
+<!-- [DocumentBodyEnd:a9264fef-e0ee-4619-9eed-e48856502566] -->
+</body>

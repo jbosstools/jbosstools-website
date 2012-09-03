@@ -1,0 +1,122 @@
+---
+title: 'CSS and JS minification using Eclipse, Maven and WRO4J'
+author: 'Max Rydahl Andersen'
+layout: blog-post
+tags: [ eclipse, maven, optimization, m2e, m2e-wtp, jbosscentral, wro4j, minification ]
+orignallink: ''
+---
+<body>
+<div class="jive-rendered-content">
+<p>While developping web applications, it's common best practice to minify (and sometimes obfuscate) static resources such as javascript and css files.</p>
+<p>Such resource processing can be done either at build time or at run time, depending on the tools you're using.</p>
+<p>Surprisingly, tooling and documentation is rather scarce when it comes to web resource optimization in the Eclipse World. </p>
+<p>On the other hand, maven has a wide variety of plugins wrapping around well-known 3rd party optimizers. In particular, <a class="jive-link-external-small" href="http://code.google.com/p/wro4j/">Web Resource Optimizer for Java</a>, a.k.a WRO4J is a :</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<!--[CodeBlockStart:ec79949b-126f-4f00-8456-085a4b39e10b]--><pre class="jive-pre"><code class="jive-code">"Free and Open Source Java project which brings together almost all the modern web tools: JsHint, CssLint, JsMin, 
+Google Closure compressor, YUI Compressor, UglifyJs, Dojo Shrinksafe, Css Variables Support, JSON Compression, 
+Less, Sass, CoffeeScript and much more. In the same time, the aim is to keep it as simple as possible and as 
+extensible as possible in order to be easily adapted to application specific needs."
+<br><br>
+http://code.google.com/p/wro4j/
+<br><br></code></pre>
+<!--[CodeBlockEnd:ec79949b-126f-4f00-8456-085a4b39e10b]--><p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>While WRO4J can be used at runtime, it also provides a maven plugin if you prefer a build time approach : <a class="jive-link-external-small" href="http://code.google.com/p/wro4j/wiki/MavenPlugin">wro4j-maven-plugin</a>,.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Since Eclipse WTP allows you to incrementally deploy changed resources in your workspace directly to your prefered application server, </p>
+<p>having a way to do on-the-fly resource optimization deployment would be great, wouldn't it? </p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Now, m2e (the Maven Integration for Eclipse plugin) users probably know, or will know soon enough, that m2e doesn't run maven plugins it doesn't know about. So having </p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<!--[CodeBlockStart:67915f21-d877-4223-b493-6a27e5194a67]--><pre class="jive-pre"><code class="jive-code jive-xml"><span class="jive-xml-tag">&lt;plugins&gt;</span>
+&#160; <span class="jive-xml-tag">&lt;plugin&gt;</span>
+&#160;&#160;&#160; <span class="jive-xml-tag">&lt;groupId&gt;</span>ro.isdc.wro4j<span class="jive-xml-tag">&lt;/groupId&gt;</span>
+&#160;&#160;&#160; <span class="jive-xml-tag">&lt;artifactId&gt;</span>wro4j-maven-plugin<span class="jive-xml-tag">&lt;/artifactId&gt;</span>
+&#160;&#160;&#160; <span class="jive-xml-tag">&lt;version&gt;</span>${wro4j.version}<span class="jive-xml-tag">&lt;/version&gt;</span>
+&#160;&#160;&#160; <span class="jive-xml-tag">&lt;executions&gt;</span>
+&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;execution&gt;</span>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;phase&gt;</span>compile<span class="jive-xml-tag">&lt;/phase&gt;</span>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;goals&gt;</span>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;goal&gt;</span>run<span class="jive-xml-tag">&lt;/goal&gt;</span>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;/goals&gt;</span>
+&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;/execution&gt;</span>
+&#160;&#160;&#160; <span class="jive-xml-tag">&lt;/executions&gt;</span>
+&#160;&#160;&#160; <span class="jive-xml-tag">&lt;configuration&gt;</span>
+&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;targetGroups&gt;</span>all<span class="jive-xml-tag">&lt;/targetGroups&gt;</span>
+&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;destinationFolder&gt;</span>${basedir}/src/main/webapp/wro/<span class="jive-xml-tag">&lt;/destinationFolder&gt;</span>
+&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;contextFolder&gt;</span>${basedir}/src/main/webapp/<span class="jive-xml-tag">&lt;/contextFolder&gt;</span>
+&#160;&#160;&#160; <span class="jive-xml-tag">&lt;/configuration&gt;</span>
+&#160; <span class="jive-xml-tag">&lt;/plugin&gt;</span>
+<span class="jive-xml-tag">&lt;/plugins&gt;</span>
+</code></pre>
+<!--[CodeBlockEnd:67915f21-d877-4223-b493-6a27e5194a67]--><p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>would result in the dreaded <a class="jive-link-external-small" href="http://wiki.eclipse.org/M2E_plugin_execution_not_covered">"plugin execution not covered"</a> error. Indeed, since Eclipse is all about incremental building (i.e. builds modified resources as soon as they're saved), </p>
+<p>triggering long-running maven plugin every time a file is changed in the workspace would be a disaster. So m2e requires users to be explicit about what maven plugins should be run and when. </p>
+<p>As a consequence, in order for these unknown plugins to be run on incremental builds, users need to modify their project pom.xml (or their parent pom.xml) and add a lifecycle-mapping configuration like (in the case of wro4j) :</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<!--[CodeBlockStart:e30abf2f-4816-4e26-819b-49d97bbef73e]--><pre class="jive-pre"><code class="jive-code jive-xml">
+<br><br><br><br><br><br><span class="jive-xml-tag">&lt;pluginManagement&gt;</span>
+<br><br><span class="jive-xml-tag">&lt;plugins&gt;</span>
+&#160;&#160;&#160; <span class="jive-xml-comment">&lt;!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.--&gt;</span>
+&#160;&#160;&#160; <span class="jive-xml-tag">&lt;plugin&gt;</span>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;groupId&gt;</span>org.eclipse.m2e<span class="jive-xml-tag">&lt;/groupId&gt;</span>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;artifactId&gt;</span>lifecycle-mapping<span class="jive-xml-tag">&lt;/artifactId&gt;</span>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;version&gt;</span>1.0.0<span class="jive-xml-tag">&lt;/version&gt;</span>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;configuration&gt;</span>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;lifecycleMappingMetadata&gt;</span>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;pluginExecutions&gt;</span>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;pluginExecution&gt;</span>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;pluginExecutionFilter&gt;</span>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;groupId&gt;</span>ro.isdc.wro4j<span class="jive-xml-tag">&lt;/groupId&gt;</span>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;artifactId&gt;</span>wro4j-maven-plugin<span class="jive-xml-tag">&lt;/artifactId&gt;</span>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;versionRange&gt;</span>[1.0,)<span class="jive-xml-tag">&lt;/versionRange&gt;</span>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;goals&gt;</span>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;goal&gt;</span>run<span class="jive-xml-tag">&lt;/goal&gt;</span>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;/goals&gt;</span>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;/pluginExecutionFilter&gt;</span>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;action&gt;</span>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;execute/&gt;</span>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;/action&gt;</span>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;/pluginExecution&gt;</span>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;/pluginExecutions&gt;</span>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;/lifecycleMappingMetadata&gt;</span>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="jive-xml-tag">&lt;/configuration&gt;</span>
+&#160;&#160;&#160; <span class="jive-xml-tag">&lt;/plugin&gt;</span>
+&#160;&#160;&#160; ...
+<span class="jive-xml-tag">&lt;/plugins&gt;</span>
+<br><br></code></pre>
+<!--[CodeBlockEnd:e30abf2f-4816-4e26-819b-49d97bbef73e]--><p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Eventually, that lifecycle mapping would execute WRO4J on each and every file change in your project. That's a bit extreme, but the biggest problem is the generated files wouldn't be synchronized with the workspace so wouldn't be deployed automatically on a WTP server.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Here comes the <a class="jive-link-external-small" href="https://github.com/jbosstools/m2e-wro4j">m2e-wro4j</a> connector : it's an eclipse plugin (in its early phase) that :</p>
+<ul>
+<li>doesn't need the extra wro4j-maven-plugin lifecycle mapping</li>
+<li>allows wro4j-maven-plugin to be invoked when .js, .css, .coffee, .less, .scss files are modified. Modifying the pom.xml also triggers the m2e-wro4j connector.</li>
+<li>is always invoked on clean builds</li>
+<li>updates the output folders so the changes can be visible directly in Eclipse and deployed directly via WTP if needed</li>
+<li>automatically translates <strong>${project.build.directory}/${project.build.finalName}/</strong> output directories to <strong>${project.build.directory}/m2e-wtp/web-resources/</strong> if m2e-wtp is detected</li>
+<li>Provides a wro4j-maven-plugin template, available on ctrl+space in the pom editor, in the &lt;plugins&gt; section :</li>
+</ul>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4446-17791/wro4j-template.png"><img alt="wro4j-template.png" class="jive-image-thumbnail jive-image" height="185" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4446-17791/450-185/wro4j-template.png" width="450"></a></p>
+<p>Using the above wro4j-maven-plugin configuration, and provided you have an wro.xml descriptor under <em>src/main/webapp/WEB-INF</em>, you can see in the following example the 2 css files are combined and minified into one all.css file under <em>/target/m2e-wtp/web-resources/resources/styles/</em> and the javascript file is minified under <em>/target/m2e-wtp/web-resources/resources/styles/all.js</em></p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4446-17792/wro4j-optimization.png"><img alt="wro4j-optimization.png" class="jive-image-thumbnail jive-image" height="180" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4446-17792/450-180/wro4j-optimization.png" width="450"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>If you're interested in trying m2e-wro4j, you can install it from the following p2 update site : <a class="jive-link-external-small" href="http://download.jboss.org/jbosstools/updates/m2e-wro4j/">http://download.jboss.org/jbosstools/updates/m2e-wro4j/</a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Please be aware this initial version is really in its alpha stage (was coded in a day). Issues can be opened at <a class="jive-link-external-small" href="https://github.com/jbosstools/m2e-wro4j/issues">https://github.com/jbosstools/m2e-wro4j/issues</a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>For all your WRO4J or wro4j-maven-plugin specific issues, I strongly encourage you to :</p>
+<ul>
+<li>read the WRO4J <a class="jive-link-external-small" href="http://code.google.com/p/wro4j/wiki/GettingStarted">getting started page</a> and the<a class="jive-link-external-small" href="http://code.google.com/p/wro4j/wiki/MavenPlugin"> Maven plugin documentation</a> </li>
+<li>ask the google group directly : <a class="jive-link-external-small" href="http://groups.google.com/group/wro4j?pli=1">http://groups.google.com/group/wro4j</a>
+</li>
+</ul>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Hope it helps.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><span style="color: #ff0000;"><strong>19/01/2012 Important update : the github repo was transfered to the jbosstools organization under <a class="jive-link-external-small" href="https://github.com/jbosstools/m2e-wro4j/">https://github.com/jbosstools/m2e-wro4j/</a></strong></span>. <span style="color: #ff0000;"><strong>You must manually update your upstream repository url.</strong></span></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Fred</p>
+</div>
+<!-- [DocumentBodyEnd:56f19ede-1cd4-49c7-bd79-70fad3c7662c] -->
+</body>
