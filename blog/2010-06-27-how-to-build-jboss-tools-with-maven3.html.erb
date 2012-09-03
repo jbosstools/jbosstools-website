@@ -1,0 +1,88 @@
+---
+title: 'How to Build JBoss Tools with Maven3'
+author: 'Max Rydahl Andersen'
+layout: blog-post
+tags: [ jbosstools, tools, build, jbt, tips, tycho, maven3 ]
+orignallink: ''
+---
+<body>
+<div class="jive-rendered-content">
+<p style="text-align: center;"><span style="font-size: 18pt;"><em><strong style="color: #ff0000;">[Note: This blog has been replaced by a more up to date <a class="jive-link-wiki-small" href="https://community.jboss.org/docs/DOC-15513">wiki page</a>.]</strong></em></span></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Current trunk version of JBoss Tools can be built with maven 3 and make it faster and easier for everyone.</p>
+<h2>Prerequisites</h2>
+<ol>
+<li>Java 1.6 SDK</li>
+<li>Maven 3.beta1</li>
+<li>About 6 GB of free disk space if you want to run all integration tests for (JBoss AS, Seam and Web Services Tools)</li>
+<li>subversion client 1.6.X (should work with lower version as well)</li>
+</ol>
+<h2>Environment Setup</h2>
+<h3>Maven and Java</h3>
+<p>Make sure your maven 3 is available by default and Java 1.6 is used.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<!--[CodeBlockStart:ce55c6d3-cfaa-4069-9e88-952cef683029]--><pre class="jive-pre"><code class="jive-code">mvn -version
+</code></pre>
+<!--[CodeBlockEnd:ce55c6d3-cfaa-4069-9e88-952cef683029]--><p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>should print out something like</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<!--[CodeBlockStart:a0c7e5dd-dbcf-44b6-ae72-019f429dd6bd]--><pre class="jive-pre"><code class="jive-code">Apache Maven 3.0-alpha-7 (r921173; 2010-03-09 14:31:07-0800)
+Java version: 1.6.0_18
+Java home: /usr/lib/jvm/java-6-openjdk/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux" version: "2.6.32-22-generic-pae" arch: "i386" Family: "unix"
+</code></pre>
+<!--[CodeBlockEnd:a0c7e5dd-dbcf-44b6-ae72-019f429dd6bd]--><h3>Sources</h3>
+<p>Checkout sources from anonymous SVN like</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<!--[CodeBlockStart:3514ea28-e32a-48ba-be3d-c73d91eff54d]--><pre class="jive-pre"><code class="jive-code">svn co https://svn.jboss.org/repos/jbosstools/trunk jbosstools-src
+</code></pre>
+<!--[CodeBlockEnd:3514ea28-e32a-48ba-be3d-c73d91eff54d]--><p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>This will take some time dependent on your bandwidth</p>
+<h2>Build Strategies</h2>
+<p>All commands below is assuming that commands are executed in jbosstools-src folder after sources checked out as it suggested above.</p>
+<p>There are several strategies to chose from building everything to build particular component or part of it like all plug-ins, all tests, all features, particular plugin/feature.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Target platform should be built first like</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<!--[CodeBlockStart:5eac3d50-f52d-44d8-999e-5229345ec495]--><pre class="jive-pre"><code class="jive-code">$mvn -f build/target-platform/pom.xml
+</code></pre>
+<!--[CodeBlockEnd:5eac3d50-f52d-44d8-999e-5229345ec495]--><p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>If you want to just compile the modules, tests can be skipped by adding system property -Dmaven.test.skip=true and you should be able to faster verify compile issues.</p>
+<h3>Build/Test Everything</h3>
+<p>Current version cannot be build without local changes because of problem with with drools component, so to go with this scenario you need to remove drools references from pom.xml and site/site.xml. After that to build/test everything use:</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<!--[CodeBlockStart:ebfad69d-d253-43a7-a7ee-b6b00d2079e2]--><pre class="jive-pre"><code class="jive-code">$mvn clean install
+</code></pre>
+<!--[CodeBlockEnd:ebfad69d-d253-43a7-a7ee-b6b00d2079e2]--><h3>Build/Test Particular Component with Dependencies</h3>
+<p>For convenience there are aggregator projects defined for each component. It provides a simple way to build/test components with dependencies.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<!--[CodeBlockStart:deb561ad-a580-4c97-a884-54f8c6d219f5]--><pre class="jive-pre"><code class="jive-code">$mvn clean install -f build/component/${component.name}.xml
+</code></pre>
+<!--[CodeBlockEnd:deb561ad-a580-4c97-a884-54f8c6d219f5]--><p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>where ${component.name} is component you want to build/test. Currently build/component folder contains aggregator projects for:</p>
+<ol>
+<li> tests, </li>
+<li>jmx, </li>
+<li>archives, </li>
+<li>as, </li>
+<li>common, </li>
+<li>seam</li>
+</ol>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>more is coming soon.</p>
+<h3>Build/Test Single Component</h3>
+<p>Be aware that to get this work all dependencies for this component must be installed in maven repo. It can be done by build everything first or by build component and its dependencies using aggregated project as it explained above. You can skip tests for this build and then enable them back when you run single component build.</p>
+<p>To build single component use pom.xml in component's folder like it is shown below.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<!--[CodeBlockStart:5336817b-7c10-4ab3-bd1f-409243e5f2a2]--><pre class="jive-pre"><code class="jive-code jive-java">$mvn clean install -f $<font color="navy">{</font>component.name<font color="navy">}</font>/pom.xml
+</code></pre>
+<!--[CodeBlockEnd:5336817b-7c10-4ab3-bd1f-409243e5f2a2]--><p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>where ${component.name} is component's root folder name. For instance to build jmx component use command below</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<!--[CodeBlockStart:bb13f659-c4de-4985-8936-550c9ed67041]--><pre class="jive-pre"><code class="jive-code">$mvn clean install -f jmx/pom.xml
+</code></pre>
+<!--[CodeBlockEnd:bb13f659-c4de-4985-8936-550c9ed67041]-->
+</div>
+<!-- [DocumentBodyEnd:adfb780d-2330-4f82-a8b9-f48da29c9be9] -->
+</body>

@@ -1,0 +1,73 @@
+---
+title: 'Excited about JBoss AS 7.1 Part II: Developer Friendly Security'
+author: 'Max Rydahl Andersen'
+layout: blog-post
+tags: [ jbosstools, eclipse, security, jbosscentral, as7.1 ]
+orignallink: ''
+---
+<body>
+<div class="jive-rendered-content">
+<p>I&#8217;m posting about three features which I have had a personal interest in making it into AS 7.1 and the upcoming JBoss Enterprise Application Platform (EAP) 6.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Today the topic is how AS 7 is secured but still stays developer friendly by default.</p>
+<h1 id="develperfriendlysecurity">Developer Friendly Security</h1>
+<p>Security is one of those things you know is important but also knows it risk ending up making your and your user life miserable to get started with your product.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>One of the big challenges AS have had over the years is that while it tried to be developer friendly out of the box by not being secured by default, developers forgot or simply did not know how to actually ensure the server was secured for proper production deployments.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>This previous default out of the box behavior have led to several security issues for AS. Which if you are using an older AS version in production should go and <a class="jive-link-wiki-small" href="https://community.jboss.org/docs/DOC-15220">verify you are not unknowingly exposed to</a>.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>All of these security defaults was mostly fixed by using EAP which is secured by default, but then as sideeffect needed additional configuration to be usable for development. </p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>In AS 7.1 things are different. Here the server is now by default not exposed on external interfaces and there are simply no users registered that can login remotely. </p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>But does this mean you now have to go and add a user before being able to use the server ? Do you have to configure the examples to use this new user and type in a password for doing deployments ?</p>
+<p>No - you don&#8217;t have to! AS 7.1 has this great trick that when you connect to the management services the server will send a &#8220;secret key&#8221; challenge to the client which it can only answer if it has physical direct access to the filesystem with the same permissions as the user that is running the server.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p> <a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4663-18050/default_as7_security.png"><img alt="default_as7_security.png" class="jive-image" height="353" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4663-18050/310-353/default_as7_security.png" width="310"></a> </p>
+<p>This means that if you as a developer run AS 7.1 and want to do some local management operations on it you do not have to setup any users nor configure your examples or tools to use the server - it will <em>just work</em> out of the box in the development scenario and if you go and deploy the server into production &#8220;as-is&#8221; it will not be exposing any internals unless. Big win for security and for developer usability!</p>
+<h2 id="settingupauser">Setting up a user</h2>
+<p>There are though one case where you have to setup an user as a developer. To access the web-based admin console (<code><a class="jive-link-external-small" href="http://localhost:8080/console" target="_blank">http://localhost:8080/console</a></code>) you are using a browser and this goes on over HTTP within a browser which cannot (safely and portable) get access to the local secret key AS 7.1 generates.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Luckily adding a user is easy todo and if you try and access the web console AS 7 will even tell you how to do it, but let me repeat it here for completeness.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>To add a auser you go into your AS 7 installation and run <code>bin/add-user.sh</code>. For the default case you can accept the default choices by pressing enter twice and just enter username/password and verify the username is correct.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>It should look something like this:</p>
+<pre><code>$ cd jboss-as-7.1.0.Final
+$ bin/add-user.sh
+<br><br>
+What type of user do you wish to add? 
+a) Management User (mgmt-users.properties) 
+b) Application User (application-users.properties)
+(a): 
+<br><br>
+Enter the details of the new user to add.
+Realm (ManagementRealm) : 
+<br><br>
+Enter the details of the new user to add.
+Realm (ManagementRealm) : 
+Username : max
+Password : ******
+Re-enter Password : ***** 
+About to add user 'max' for realm 'ManagementRealm'
+Is this correct yes/no? yes
+Added user 'max' to file '/Users/max/runtimes/jboss-as-7.1.0.Final/standalone/configuration/mgmt-users.properties'
+Added user 'max' to file '/Users/max/runtimes/jboss-as-7.1.0.Final/domain/configuration/mgmt-users.properties'
+</code></pre>
+<p>The two lines reveals what this <code>add-user.sh</code> actually does: update the <code>mgmt-users.properties</code> files found in the standalone and domain mode configuration.</p>
+<p>If you wanted to you could update these property files manually since it is just pairs of username and a hashed password - but using <code>bin/add-user.sh</code> is by far the simplest approach.</p>
+<p>Now with this user added the remote running tools can connect to AS 7 as long as they provide the username and password.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h2 id="jbosstoolsandsecurity">JBoss Tools and Security</h2>
+<p>By default JBoss Tools server adapter will use the local secret key generated by AS 7.1, but in case you are running remotely you will need to tell JBoss Tools which username and password to use.</p>
+<p>This is done by double-clicking the server in the server view which will open the server editor. In here there is a &#8220;Management Login Credentials&#8221; section.</p>
+<p> <a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4663-18052/managementlogincredentials.png"><img alt="managementlogincredentials.png" class="jive-image" height="104" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4663-18052/310-104/managementlogincredentials.png" width="310"></a> </p>
+<p>Now if AS 7.1 requires a username/password JBoss Tools will be able to login to the server remotely to perform management operations.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h2 id="tomorrow">Tomorrow</h2>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Tomorrow the topic is on how<a class="jive-link-blog-small" href="https://community.jboss.org/community/tools/blog/2012/03/01/excited-about-jboss-as-71-part-iii-quickstarts-frenzy"> AS 7.1 comes with a large set of Quickstarts</a> which runs out-of-the-box from command line, JBoss Tools or your second-favorite IDE. </p>
+</div>
+<!-- [DocumentBodyEnd:3e9ff266-167f-4342-9ad3-8e68369b5027] -->
+</body>

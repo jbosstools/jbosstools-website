@@ -1,0 +1,42 @@
+---
+title: 'm2e(clipse)-wtp 0.13.1 : Back to the m2e marketplace'
+author: 'Max Rydahl Andersen'
+layout: blog-post
+tags: [  ]
+orignallink: ''
+---
+<body>
+<div class="jive-rendered-content">
+<p><span>As I mentioned in the previous blog post (</span><a class="" href="https://community.jboss.org/community/tools/blog/2011/06/23/m2eclipse-wtp-0130-new-noteworthy" target="_blank">http://community.jboss.org/en/tools/blog/2011/06/23/m2eclipse-wtp-0130-new-noteworthy</a><span>), m2e-wtp had to be pulled out of the m2e marketplace, as it forced its installation for all non-WTP systems.</span></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>In order to fix this issue, the code responsible for generating the MANIFEST.MF for all projects had to be integrated into the mavenarchiver feature. </p>
+<p>That means m2e-wtp 0.13.1 now requires the installation of mavenarchiver from the m2e-extras update site. It will be discovered automatically from the new m2e-wtp update site, hosted by Red Hat, so it will be completely transparent for new users.</p>
+<p>However, please note that the mavenarchiver feature replaces the pomproperties one, so the<strong> pomproperties must be uninstalled before upgrading m2e-wtp</strong>.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Thus, the preferred ways to install m2e-wtp remain :</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>1) Import existing Java EE projects into the workspace; You'll be proposed to install the m2e-wtp plugin :</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4023-16816/m2e-wtp-detection.png"><img alt="m2e-wtp-detection.png" class="jive-image-thumbnail jive-image" height="469" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4023-16816/450-469/m2e-wtp-detection.png" width="450"></a></p>
+<p>click on Finish and the installation will proceed. Your projects will be imported but the workspace will have to be restarted.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>2) Go to Window &gt; Preferences &gt; Maven &gt; Discovery and click on "Open catalog". Select m2e-wtp and proceed with the installation.</p>
+<p> <a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4023-16814/m2e-wtp-marketplace.png"><img alt="m2e-wtp-marketplace.png" class="jive-image-thumbnail jive-image" height="495" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4023-16814/450-495/m2e-wtp-marketplace.png" width="450"></a></p>
+<p>3) Old school installation : Use this JBoss / Red Hat update site : <a class="jive-link-external-small" href="http://dev.eclipse.org/mhonarc/lists/m2e-users/msg00938.html">http://download.jboss.org/jbosstools/updates/m2eclipse-wtp/</a><span style="font-size: 10pt;">&#160; </span></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>While reviewing the installation details, you can see that mavenarchiver 0.14.0 will be found and installed automatically (provided there is not a more recent version already installed)</p>
+<p> <a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4023-16815/m2e-wtp-installation.png"><img alt="m2e-wtp-installation.png" class="jive-image-thumbnail jive-image" height="275" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4023-16815/450-275/m2e-wtp-installation.png" width="450"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><span>Other that the changes necessary to reinstate m2e-wtp to the m2e marketplace, There is only one other bugfix in 0.13.1, which fixes deployment of war archives overlays in Windows (</span><a class="jive-link-external-small" href="https://issues.sonatype.org/secure/ReleaseNote.jspa?projectId=10310&amp;version=11271" target="_blank">https://issues.sonatype.org/secure/ReleaseNote.jspa?projectId=10310&amp;version=11271</a><span>).</span></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><strong>UPDATE (03/08/2011) : </strong>m2e-wtp is now also available from the <a class="jive-link-external-small" href="http://marketplace.eclipse.org/content/maven-integration-eclipse-wtp">Eclipse Marketplace</a>. However, it seems some people are unable to install it directly. Please note that m2e-wtp requires m2e 1.0. So, if it's not installed already, Eclipse must be able to find it in the available update sites. </p>
+<p>m2e can be installed from either <a class="jive-link-external-small" href="http://download.eclipse.org/releases/indigo">http://download.eclipse.org/releases/indigo</a> (for Indigo) or <a class="jive-link-external-small" href="http://download.eclipse.org/technology/m2e/releases/">http://download.eclipse.org/technology/m2e/releases/</a> (for Helios and Indigo).</p>
+<p>The change in m2e's namespace (org.maven.ide -&gt; org.eclipse.m2e) between m2e 0.12.x and 1.0 renders updates impossible from m2e-wtp 0.12.x to 0.13.x. Thus you have no choice but to uninstall m2e &lt; 1.0 and m2e-wtp &lt; 0.13 before proceeding with m2e-wtp 0.13.x's installation.</p>
+<p>(I hope I'm clear enough :-))</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Enjoy,</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Fred.</p>
+<p><a class="jive-link-external-small" href="https://twitter.com/#%21/fbricon">https://twitter.com/#!/fbricon</a></p>
+</div>
+<!-- [DocumentBodyEnd:34e953e3-4b4c-4c45-9ef3-f220684a6eeb] -->
+</body>

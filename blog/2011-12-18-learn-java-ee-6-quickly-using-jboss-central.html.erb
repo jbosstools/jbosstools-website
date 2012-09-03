@@ -1,0 +1,103 @@
+---
+title: 'Learn Java EE 6 quickly using JBoss Central'
+author: 'Max Rydahl Andersen'
+layout: blog-post
+tags: [ jboss, jbosstools, eclipse, maven, jbossas, deployment, arquillian, m2eclipse, as7, quickstart, jbosscentral ]
+orignallink: ''
+---
+<body>
+<div class="jive-rendered-content">
+<p>The <strong>JBoss Central</strong> editor includes several quickstarts that provide a quick run-through of Java EE 6 features.</p>
+<p>The quickstarts are based on amazing Pete Muir's JBoss AS7 quickstarts - <a class="jive-link-external-small" href="https://docs.jboss.org/author/display/AS7/Getting+Started+Developing+Applications+Guide">JBoss AS 7.0 - Getting Started Developing Applications Guide</a></p>
+<p>and are adapted to work with Eclipse/JBoss Tools. </p>
+<p>This blog guides you how to install <strong>JBoss Tools 3.3</strong> and start work with Java EE 6 using these tutorials. </p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h4>Installing JBoss Tools 3.3</h4>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p> In order to install <strong>JBoss Tools 3.3</strong>, you need to perform the following steps: </p>
+<ul>
+<li>install <a class="jive-link-external-small" href="http://www.eclipse.org/downloads/packages/eclipse-ide-java-developers/indigosr1">Eclipse Java EE IDE for Web Developers</a><p>&#160; Download the appropriate archive for your OS, unpack it and start Eclipse.&#160;&#160; </p>
+</li>
+<li>&#160; Call <strong>Help&gt;Install New Software</strong>..., click the <strong>Add</strong> button and enter the following update site: </li>
+</ul>
+<p>&#160; <a class="jive-link-external-small" href="http://download.jboss.org/jbosstools/updates/development/indigo/">http://download.jboss.org/jbosstools/updates/development/indigo/</a></p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4362-17647/jeeblog1.png"><img alt="jeeblog1.png" class="jive-image-thumbnail jive-image" height="382" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4362-17647/450-382/jeeblog1.png" width="450"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<ul><li>select the <strong>Abridged JBoss Tools 3.3</strong> category<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4362-17648/jeeblog2.png"><img alt="jeeblog2.png" class="jive-image-thumbnail jive-image" height="382" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4362-17648/450-382/jeeblog2.png" width="450"></a></p>
+<p>&#160; Click <strong>Next</strong>, <strong>Next</strong>, check "<strong>I accept the terms of the license agreements</strong>" and click <strong>Finish</strong>.</p>
+</li></ul>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<ul>
+<li>Wait for Eclipse to download and install the <strong>JBoss Tools 3.3</strong>.&#160;&#160; </li>
+<li>Restart Eclipse when required.&#160;&#160;&#160; </li>
+</ul>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>You have installed <strong>JBoss Tools 3.3</strong>.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h4>JBoss Quickstarts (JBoss Central)</h4>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>After Eclipse restarts, you will get the <strong>JBoss Central</strong> editor.</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4362-17598/jeeblog3.png"><img alt="jeeblog3.png" class="jive-image-thumbnail jive-image" height="297" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4362-17598/450-297/jeeblog3.png" width="450"></a></p>
+<p>Expand the <strong>JBoss Quickstart</strong> widget in the <strong>Project Examples</strong> section</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4362-17599/jeeblog4.png"><img alt="jeeblog4.png" class="jive-image" height="152" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4362-17599/310-152/jeeblog4.png" width="310"></a></p>
+<p>The <strong>helloworld, numberguess, login and kitchensink</strong> quickstarts will guide you through creating a Java EE 6 application.</p>
+<p>Here I will describe to you how to create the <strong>helloworld</strong> application.&#160; The rest of the applications are used in a similar way, but they introduce new concepts as shown in the following figures: </p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4362-17600/jeeblog5.png"><img alt="jeeblog5.png" class="jive-image" height="103" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4362-17600/310-103/jeeblog5.png" width="310"></a></p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4362-17601/jeeblog6.png"><img alt="jeeblog6.png" class="jive-image" height="116" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4362-17601/310-116/jeeblog6.png" width="310"></a></p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4362-17602/jeeblog7.png"><img alt="jeeblog7.png" class="jive-image" height="172" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4362-17602/310-172/jeeblog7.png" width="310"></a></p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4362-17603/jeeblog8.png"><img alt="jeeblog8.png" class="jive-image" height="145" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4362-17603/310-145/jeeblog8.png" width="310"></a></p>
+<p>The <strong>HTML5</strong> is a template project that doesn't include any cheat sheet. </p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4362-17604/jeeblogX.png"><img alt="jeeblogX.png" class="jive-image" height="107" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4362-17604/310-107/jeeblogX.png" width="310"></a></p>
+<h4>Helloworld quickstart</h4>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>In order to create the <strong>helloworld</strong> Java EE 6 application, you have to do the following: </p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<ol>
+<li>click the <strong>Helloworld</strong> project example in the <strong>JBoss Central</strong> editor<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4362-17605/jeeblog9.png"><img alt="jeeblog9.png" class="jive-image" height="182" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4362-17605/310-182/jeeblog9.png" width="310"></a></p>
+</li>
+<li>
+<strong>JBoss Tools</strong> will warn you that you have to install JBoss AS 7.0 or 7.1 in order to create, deploy and run this application. <br>If you have already installed and configured JBoss AS 7.x, you won't see any requirement and will be able to skip to the step <strong>3</strong>.&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <ul>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<li> If you have already downloaded JBoss AS 7.x, you will be able to configure it using the <strong>Install</strong> button.<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4362-17606/jeeblog10.png"><img alt="jeeblog10.png" class="jive-image-thumbnail jive-image" height="495" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4362-17606/450-495/jeeblog10.png" width="450"></a></p>
+<p>Add the directory where you downloaded your JBoss AS and <strong>JBoss Tools</strong> will configure a JBoss AS 7.x server for you. </p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+</li>
+<li>If you don't have any JBoss AS 7.x server, click the <strong>Download and Install...</strong> button and <strong>JBoss Tools</strong> will, for you, download JBoss AS 7.0.2<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4362-17607/jeeblog11.png"><img alt="jeeblog11.png" class="jive-image-thumbnail jive-image" height="138" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4362-17607/450-138/jeeblog11.png" width="450"></a></p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4362-17608/jeeblog12.png"><img alt="jeeblog12.png" class="jive-image" height="123" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4362-17608/310-123/jeeblog12.png" width="310"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+</li>
+</ul>
+</li>
+<li>When the JBoss AS is installed and configured, you will get the following dialog:<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4362-17609/jeeblog13.png"><img alt="jeeblog13.png" class="jive-image" height="158" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4362-17609/310-158/jeeblog13.png" width="310"></a></p>
+<p>Click the <strong>Start</strong> button. </p>
+<p>The <strong>jboss-as-helloworld</strong> project will be imported and you will get the <strong>helloworld</strong> cheat sheet that will help you to review the application. </p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4362-17610/jeeblog14.png"><img alt="jeeblog14.png" class="jive-image" height="192" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4362-17610/252-192/jeeblog14.png" width="252"></a></p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4362-17611/jeeblog15.png"><img alt="jeeblog15.png" class="jive-image" height="355" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4362-17611/310-355/jeeblog15.png" width="310"></a></p>
+<p>Read the introduction to learn how the application works and click <strong>Click to Begin</strong>. </p>
+<p>The following screen will appear: </p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4362-17612/jeeblog16.png"><img alt="jeeblog16.png" class="jive-image" height="423" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4362-17612/310-423/jeeblog16.png" width="310"></a></p>
+<p>After reading a detailed description, click <strong>Click when complete</strong>. </p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4362-17613/jeeblog17.png"><img alt="jeeblog17.png" class="jive-image" height="426" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4362-17613/310-426/jeeblog17.png" width="310"></a></p>
+<p>The <strong>HelloWorldServlet.java</strong> section explains the <strong>HelloWorld</strong> servlet in detail.&#160; When clicking the action, the cheat sheet will open the appropriate section of the code. </p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4362-17614/jeeblog18.png"><img alt="jeeblog18.png" class="jive-image-thumbnail jive-image" height="253" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4362-17614/450-253/jeeblog18.png" width="450"></a></p>
+<p>Run or skip all the actions in the <strong>HelloWorldServlet.java</strong> section. You will get the <strong>HelloService.java</strong> section. </p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4362-17615/jeeblog19.png"><img alt="jeeblog19.png" class="jive-image" height="407" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4362-17615/310-407/jeeblog19.png" width="310"></a></p>
+<p>Click <strong>Click to perform</strong>. The following screen will show up: </p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4362-17616/jeeblog20.png"><img alt="jeeblog20.png" class="jive-image-thumbnail jive-image" height="217" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4362-17616/450-217/jeeblog20.png" width="450"></a></p>
+<p>That's it. You are ready to deploy and run the application on the JBoss AS 7 server you previously installed and configured. <br>Click <strong>Click to perform</strong></p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4362-17617/jeeblog21.png"><img alt="jeeblog21.png" class="jive-image" height="412" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4362-17617/310-412/jeeblog21.png" width="310"></a></p>
+<p>Click <strong>Next</strong></p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4362-17618/jeeblog22.png"><img alt="jeeblog22.png" class="jive-image" height="412" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4362-17618/310-412/jeeblog22.png" width="310"></a></p>
+<p>Finally, click the <strong>Finish</strong> button. </p>
+<p>The cheat sheet will start the server, deploy the application and open it in a browser. </p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4362-17619/jeeblog23.png"><img alt="jeeblog23.png" class="jive-image-thumbnail jive-image" height="333" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4362-17619/450-333/jeeblog23.png" width="450"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+</li>
+</ol>
+<p>In a similar way, you will be able to create and review the <strong>numberguess</strong>, <strong>login</strong> and <strong>kitchensink</strong> applications. <strong>Kitchensink</strong> is an especially interesting application. In addition to explaining many Java EE 6 features (CDI, JSF, EJB, JTA, Bean Validation, JAX-RS, Arquillian), it automatically runs an Arquillian test and enables you to create your starting project. <br>Some advanced Java EE developers might also be interested in reviewing this application. </p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4362-17821/jeeblog24.png"><img alt="jeeblog24.png" class="jive-image" height="592" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4362-17821/310-592/jeeblog24.png" width="310"></a></p>
+</div>
+<!-- [DocumentBodyEnd:760284b2-6b4b-49f0-8fc9-03e05d0dafcd] -->
+</body>
