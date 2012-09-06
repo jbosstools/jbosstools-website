@@ -3,7 +3,7 @@ layout: features_layout
 title: OpenShift
 authors: [xcoulon]
 highlighted_feature: true
-image_url: /images/features-openshift_283px.png
+image_url: ../images/features/features-openshift_283px.png
 feature_order: 4
 
 summary: JBoss Tools for OpenShift offers a feature complete environment to work with OpenShift. 
@@ -13,17 +13,17 @@ summary: JBoss Tools for OpenShift offers a feature complete environment to work
   and access your data and remotely debug the running application thanks to ssh port-forwarding.
 ---
 * * *
-#### Application creation and import wizard ![Wizard](/images/features-openshift_283px.png)
+#### Application creation and import wizard ![Wizard](../images/features/features-openshift_283px.png)
 Todo...
 
 * * *
-#### Server Adapter ![Server Adapter](/images/features-openshift_283px.png)
+#### Server Adapter ![Server Adapter](../images/features/features-openshift_283px.png)
 Todo...
 
 * * *
-#### Port-forwarding ![Port-forwarding](/images/features-openshift_283px.png)
+#### Port-forwarding ![Port-forwarding](../images/features/features-openshift_283px.png)
 Todo...
 
 * * *
-#### Remote debugging ![Remote-debugging](/images/features-openshift_283px.png)
+#### Remote debugging ![Remote-debugging](../images/features/features-openshift_283px.png)
 Todo...
