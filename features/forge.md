@@ -9,12 +9,12 @@ summary: Forge integration allows developers to use the familiar terminal or com
 ---
 * * *
 
-#### Forge Console ![Forge Console](../images/features/features-forge_237px.png)
+#### Forge Console ![Forge Console](../../images/features/features-forge_237px.png)
 
 Todo...
 
 * * *
 
-#### Workspace synchronization ![Workspace synchronization](../images/features/features-forge_237px.png)
+#### Workspace synchronization ![Workspace synchronization](../../images/features/features-forge_237px.png)
 
 Todo...

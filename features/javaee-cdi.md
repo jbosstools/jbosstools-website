@@ -10,24 +10,24 @@ summary: Context and Dependency Injection (CDI) tooling allows you to easily add
  create new projects with the CDI wizard. The tooling also provides you with validation, code completion and hyperlink navigation.
 ---
 * * *
-#### CDI Nature ![CDI](../images/features/features-cdi_308px.png)
+#### CDI Nature ![CDI](../../images/features/features-cdi_308px.png)
 Todo...
 
 * * *
-#### Content Assist ![CDI](../images/features/features-cdi_308px.png)
+#### Content Assist ![CDI](../../images/features/features-cdi_308px.png)
 Todo...
 
 * * *
-#### Hyperlink Navigation ![CDI](../images/features/features-cdi_308px.png)
-Todo...
-
-* * *
-
-#### EL support ![CDI](../images/features/features-cdi_308px.png)
+#### Hyperlink Navigation ![CDI](../../images/features/features-cdi_308px.png)
 Todo...
 
 * * *
 
-#### Validation ![CDI](../images/features/features-cdi_308px.png)
+#### EL support ![CDI](../../images/features/features-cdi_308px.png)
+Todo...
+
+* * *
+
+#### Validation ![CDI](../../images/features/features-cdi_308px.png)
 Todo...
 
