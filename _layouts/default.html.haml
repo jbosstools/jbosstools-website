@@ -25,9 +25,9 @@ layout: base
             %a.span2{:href => "/blog"} 
               %h4#community Blog
             
-        - if (page.selected_tab != null) 
+        - if (page.tab != null) 
           %script{:type => "text/javascript"}
-            $("##{page.selected_tab}").addClass("selected");     
+            $("##{page.tab}").addClass("selected");     
 
         ~content
 
