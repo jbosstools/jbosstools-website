@@ -14,11 +14,13 @@ layout: base
           
         #menu.row-fluid 
           .span12
-            %a.span4{:href => "/guides"} 
+            %a.span3{:href => "/installation"} 
+              %h4#guides Installation 
+            %a.span3{:href => "/guides"} 
               %h4#guides Guides 
-            %a.span4{:href => "/features"} 
+            %a.span3{:href => "/features"} 
               %h4#features Features
-            %a.span4{:href => "/community"} 
+            %a.span3{:href => "/community"} 
               %h4#community Community
             
         - if (page.selected_tab != null) 
