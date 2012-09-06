@@ -44,6 +44,17 @@ $title-font-size: 20px;
  padding-top: 64px;
   
 }
+#menu.row-fluid  {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#installation {
+  @include bg-image("http://jboss.org/dms/jbossway/icon_quickstart_64px.png");
+}
+
 #guides {
   @include bg-image("http://jboss.org/dms/jbossway/icon_tutorial_64px.png");
 }
@@ -87,11 +98,6 @@ p  {
   margin-right: auto;
 }
 
-#menu.row-fluid  {
-  width: 60%; 
-  margin-top: 40px;
-  margin-bottom: 40px;
-}
 
 #sections.row-fluid {
 	text-align:left;  

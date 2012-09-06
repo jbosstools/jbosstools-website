@@ -14,14 +14,18 @@ layout: base
           
         #menu.row-fluid 
           .span12
-            %a.span3{:href => "/installation"} 
+            %a.span2{:href => "/installation"} 
               %h4#installation Installation 
-            %a.span3{:href => "/guides"} 
+            %a.span2{:href => "/guides"} 
               %h4#guides Guides 
-            %a.span3{:href => "/features"} 
+            %a.span2{:href => "/features"} 
               %h4#features Features
-            %a.span3{:href => "/community"} 
+            %a.span2{:href => "/videos"} 
+              %h4#community Videos
+            %a.span2{:href => "/community"} 
               %h4#community Community
+            %a.span2{:href => "/blog"} 
+              %h4#community Blog
             
         - if (page.selected_tab != null) 
           %script{:type => "text/javascript"}
