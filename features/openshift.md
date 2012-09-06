@@ -13,17 +13,17 @@ summary: JBoss Tools for OpenShift offers a feature complete environment to work
   and access your data and remotely debug the running application thanks to ssh port-forwarding.
 ---
 * * *
-#### Application creation and import wizard ![Wizard](../images/features/features-openshift_283px.png)
+#### Application creation and import wizard ![Wizard](../../images/features/features-openshift_283px.png)
 Todo...
 
 * * *
-#### Server Adapter ![Server Adapter](../images/features/features-openshift_283px.png)
+#### Server Adapter ![Server Adapter](../../images/features/features-openshift_283px.png)
 Todo...
 
 * * *
-#### Port-forwarding ![Port-forwarding](../images/features/features-openshift_283px.png)
+#### Port-forwarding ![Port-forwarding](../../images/features/features-openshift_283px.png)
 Todo...
 
 * * *
-#### Remote debugging ![Remote-debugging](../images/features/features-openshift_283px.png)
+#### Remote debugging ![Remote-debugging](../../images/features/features-openshift_283px.png)
 Todo...

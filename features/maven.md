@@ -8,13 +8,13 @@ feature_order: 3
 ---
 
 * * *
-#### Dynamic Web Projects / m2e integration ![Integration](../images/features/features-maven_346px.png)
+#### Dynamic Web Projects / m2e integration ![Integration](../../images/features/features-maven_346px.png)
 Todo...
 
 * * *
-#### Profile Selection ![Profile selection](../images/features/features-maven_346px.png)
+#### Profile Selection ![Profile selection](../../images/features/features-maven_346px.png)
 Todo...
 
 * * *
-#### JAX-RS, CDI et al. integration ![Integration](../images/features/features-maven_346px.png)
+#### JAX-RS, CDI et al. integration ![Integration](../../images/features/features-maven_346px.png)
 Todo...
