@@ -1,0 +1,46 @@
+---
+layout: default
+selected_tab: guides
+categories:
+  - title: "Installation"
+    movies:
+      - title: "Eclipse Marketplace"
+        vimeo_id: "39743315"
+      - title: "JBDS 5 Installation, HTML5, Mobile and OpenShift"
+        vimeo_id: "39606090"
+  - title: "Technology Introduction"
+    movies:
+      - title: "Java EE 6 + Arquillian"
+        vimeo_id: "39607154"
+      - title: "Richfaces 4 Desktop &amp; Mobile"
+        vimeo_id: "39607711"
+      - title: "Forge in JBoss Developer Studio 5"
+        vimeo_id: "39608223"
+      - title: "Google Web Toolkit"
+        vimeo_id: "39743919"
+  - title: "Reverse Engineering / CRUD Generation"
+    movies:
+      - title: "Hibernate Tools Reverse Engineering"
+        vimeo_id: "39608294"
+      - title: "Forge Reverse Engineering"
+        vimeo_id: "39608326"
+---
+%link{ :rel=>"stylesheet", :type=>"text/css", :href=>"/stylesheets/movies.css", :media=>"screen, projection"}
+   
+.row-fluid 
+  .playerbox
+    #player
+      %iframe{ :src => "http://player.vimeo.com/video/39743315?portrait=0" }
+.row-fluid 
+  .span12 
+    -# files are fetched in a pre-defined order (using filename)
+    - for category in page.categories
+      .span4
+        %h5 #{category.title}
+        %ul.items
+          - for movie in category.movies
+            %li
+              %a.videocontrol{:href =>"#{site.url}videos/#{movie.vimeo_id}" } #{movie.title} 
+                  
+%script{ :type => "text/javascript", :src => "./javascripts/jquery.js"}
+%script{ :type => "text/javascript", :src => "./javascripts/videos.js"}

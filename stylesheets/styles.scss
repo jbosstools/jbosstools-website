@@ -7,6 +7,9 @@ body {
   background-color: #F3F3F3;
 }
 
+$font-red-color: #88201B;
+
+
 #wrap-content {
   height: 100%;
 }
@@ -24,6 +27,43 @@ body {
   background-color:#FFF;
   padding-bottom:20px;
 } 
+
+// ****************************************
+// Menu items
+// ****************************************
+$title-font-size: 20px;
+
+@mixin fontsize() {
+  font-size: $title-font-size;
+}
+
+@mixin bg-image($url) {
+ background-image:url($url);
+ background-repeat: no-repeat;
+ background-position: center top;
+ padding-top: 64px;
+  
+}
+#guides {
+  @include bg-image("http://jboss.org/dms/jbossway/icon_tutorial_64px.png");
+}
+
+#features {
+  @include bg-image("http://jboss.org/dms/jbossway/icon_features_64px.png");
+}
+
+#videos {
+  @include bg-image("http://jboss.org/dms/jbossway/icon_video_64px.png");
+}
+
+#community {
+  @include bg-image("http://jboss.org/dms/jbossway/icon_subscribe_64px.png");
+}
+
+
+// ****************************************
+// Carousel on welcome page
+// ****************************************
 
 #headingCarousel {
   margin-top:50px;
@@ -75,78 +115,59 @@ p  {
   margin-right: 10px;
 }
 
-.feature {
+// ******************************************
+// Features
+// ******************************************
+
+
+.feature-headers {
+  margin-bottom: 50px;
+}
+
+.feature-header {
+  display: inline;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.feature-header.selected {
+  color: $font-red-color;
+}
+
+
+.features h4 {
+  text-align : left;
+  padding-bottom: 10px;
+}
+
+.features hr {
   clear:both;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-left: 10px;
-  margin-right: 10px;
-  text-align: left;
-}
-
-div.feature p {
-  padding-top: 10px;
-  padding-bottom: 2px;
-  margin-bottom: 0px;
-}
-
-.feature:nth-child(odd) img{
-  float:left;
-  padding-right: 20px;
   margin-bottom: 30px;
 }
-.feature:nth-child(even) img {
+
+.features h4:nth-child(even) img {
   float: right;
   padding-left: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
-$title-font-size: 20px;
-
-@mixin fontsize() {
-  font-size: $title-font-size;
+.features h4:nth-child(odd) img {
+  float: left;
+  padding-right: 20px;
+  margin-bottom: 20px;
 }
 
-@mixin bg-image($url) {
- background-image:url($url);
- background-repeat: no-repeat;
- background-position: center top;
- padding-top: 64px;
-  
-}
-#install {
-  @include fontsize();
-  @include bg-image("http://jboss.org/dms/jbossway/icon_quickstart_64px.png");
+.features ul {
+  text-align: left;
+  padding-left: 30px;
+  overflow: auto;
 }
 
-#features {
-  @include fontsize();
-  @include bg-image("http://jboss.org/dms/jbossway/icon_features_64px.png");
+.features a {
+  text-align:left;
 }
-
-#videos {
-  @include fontsize();
-  @include bg-image("http://jboss.org/dms/jbossway/icon_video_64px.png");
+a h4.selected {
+  color: $font-red-color;
 }
-
-#community {
-  @include fontsize();
-  @include bg-image("http://jboss.org/dms/jbossway/icon_subscribe_64px.png");
-}
-
-a.selected {
-  color:#88201B;
-}
-
-a.selected:hover {
-  color:#88201B;
-}
-
-
-
-
-
-
-
 
 

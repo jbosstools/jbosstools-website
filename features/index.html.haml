@@ -1,0 +1,24 @@
+---
+layout: default
+selected_tab: features
+---
+.row-fluid 
+  .span12
+    - features = site.features 
+    - features = features.sort{|l,r| l.order <=> r.order}
+    .features 
+      - for feature in features
+        %hr
+        %h4 
+          %a{:href=>feature.url} 
+            #{feature.title}
+          %a{:href=>feature.url} 
+            %img{:src=>"#{site.base_url}#{feature.image_url}", :alt=>"#{feature.title}"}
+        %p 
+          #{feature.summary}
+          %br
+          %a{:href=>feature.url} Read more... 
+   
+  
+  
+

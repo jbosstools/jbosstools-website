@@ -1,0 +1,16 @@
+---
+layout: default
+selected_tab: features
+---
+.row-fluid 
+  .span12
+    .feature-headers
+      - for feature in site.features.sort{|l,r| l.order <=> r.order}.each do
+        - if(feature.title == page.feature.title) 
+          %h4.feature-header.selected #{feature.title}
+        - else 
+          %a{:href => "#{feature.url}"}<
+            %h4.feature-header #{feature.title}
+    - feature = page.feature
+    .features
+      #{feature.content}
