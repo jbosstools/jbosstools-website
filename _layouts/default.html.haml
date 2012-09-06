@@ -4,9 +4,29 @@ layout: base
 #top_subnav_branding 
   .community-banner
     %a{ :border=>"0", :href => "#{site.base_url}/index.html"}
-      %img{ :alt=>"JBoss Tools", :src => "./images/tools-banner-1180px.jpg"}
+      %img{ :alt=>"JBoss Tools", :src => "#{site.base_url}/images/tools-banner-1180px.jpg"}
 #wrapper-2
-  ~ content
+  #wrap-content 
+    #wrapper-3b  
+      #container-reduced
+        - if (page.display_carousel == true) 
+          = partial( 'carousel.html.haml' )
+          
+        #menu.row-fluid 
+          .span12
+            %a.span4{:href => "/guides"} 
+              %h4#guides Guides 
+            %a.span4{:href => "/features"} 
+              %h4#features Features
+            %a.span4{:href => "/community"} 
+              %h4#community Community
+            
+        - if (page.selected_tab != null) 
+          %script{:type => "text/javascript"}
+            $("##{page.selected_tab}").addClass("selected");     
+
+        ~content
+
   -# help the wrapper-2 container include the content and display a proper border around it.
   %div{:style => "clear:both; height:100%;"} 
 
