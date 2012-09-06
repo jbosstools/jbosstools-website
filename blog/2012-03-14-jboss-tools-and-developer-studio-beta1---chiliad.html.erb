@@ -1,0 +1,157 @@
+---
+title: 'JBoss Tools and Developer Studio Beta1 - Chiliad!'
+author: 'Max Rydahl Andersen'
+layout: blog-post
+tags: [ jboss, seam, devstudio, maven, jaxrs, cdi, forge, eap6, jbosscentral ]
+orignallink: ''
+---
+<body>
+<div class="jive-rendered-content">
+<p>In celebration that <a class="jive-link-external-small" href="https://twitter.com/#!/dhinojosa">@dhinojosa</a> became our <a class="jive-link-external-small" href="http://t.co/PGfwnlCb">chiliad follower</a> on <a class="jive-link-external-small" href="https://twitter.com/#!/jbosstools">@jbosstools</a> we are releasing Beta1 of both JBoss Tools and JBoss Developer Studio today!</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4854-18193/jbosstolsdevstudio.png"><img alt="jbosstolsdevstudio.png" class="jive-image-thumbnail jive-image" height="177" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4854-18193/450-177/jbosstolsdevstudio.png" style="margin: 12px auto; display: block;" width="450"></a></p>
+<h4 style="color: #333333; font-weight: bold; padding-top: 10px; padding-right: 0pt; padding-bottom: 4px; padding-left: 0pt; font-size: 13pt; text-align: center; margin: 0pt;">Beta1 (Chiliad)</h4>
+<p style="text-align: center; padding: 0pt; margin: 0pt;">Developer Studio: [<a class="jive-link-external-small" href="http://devstudio.jboss.com/earlyaccess">Download</a>] | Tools: [<a class="jive-link-external-small" href="http://www.jboss.org/tools/download/dev" target="_top">Download</a>] [<a class="jive-link-external-small" href="http://download.jboss.org/jbosstools/updates/development/indigo/">Update Site</a>] | [<a class="jive-link-external-small" href="http://docs.jboss.org/tools/whatsnew" target="_top">What's New</a>] [<a class="jive-link-external-small" href="http://www.jboss.com/index.html?module=bb&amp;op=viewforum&amp;f=201" target="_top">Forums</a>] [<a class="jive-link-external-small" href="http://jira.jboss.com/jira/browse/JBIDE" target="_top">JIRA</a>] [<a class="jive-link-external-small" href="http://twitter.com/jbosstools" target="_top">Twitter</a>]</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>JBoss Tools is a set of plugins for Eclipse that complements, enhances and goes beyond the support that exist for JBoss and related technologies in the default Eclipse distribution.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>JBoss Developer Studio is a fully bundled Eclipse distribution which not only includes majority of JBoss Tools but also all its needed dependencies and 3rd party plugins allowing for an easy one-click installation and no-fuzz installation.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>If you are into doing your own bleeding edge eclipse plugin assembly, JBoss tools is for you, if you are more into having something that "Just Works" then JBoss Developer Studio is the way to go.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h2>Installation</h2>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><em>JBoss Developer Studio</em> comes with everything pre-bundled in its installer. Simply <a class="jive-link-external-small" href="http://devstudio.jboss.com/earlyaccess">download it</a> and run it like this:</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<!--[CodeBlockStart:92420656-c578-48bc-be32-e238357b4c8c]--><pre class="jive-pre"><code class="jive-code">java -jar jbdevstudio-&lt;installername&gt;.jar
+</code></pre>
+<!--[CodeBlockEnd:92420656-c578-48bc-be32-e238357b4c8c]--><p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Note, if you are on Mac OSX 64-bit we recommend you start it with -d32 to enable 32-bit to allow you to get the Visual Page editor and use a lot less memory.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<!--[CodeBlockStart:cdc9ddde-990c-467d-af7f-f6c4ec0dca05]--><pre class="jive-pre"><code class="jive-code">java -d32 -jar jbdevstudio-&lt;installername&gt;.jar
+</code></pre>
+<!--[CodeBlockEnd:cdc9ddde-990c-467d-af7f-f6c4ec0dca05]--><p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Similar if you are on Windows 64-bit then use a 32-bit JDK to get 32-bit version running.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><em>JBoss Tools</em> requires a bit more:</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>This release requires at least Eclipse 3.7.1 but we recommend using the <a class="jive-link-external-small" href="http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/indigosr2">Eclipse 3.7.2 JEE Bundle</a> since then you get most of the dependencies preinstalled.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Once you have installed Eclipse, you either find us on<a class="jive-link-external-small" href="http://marketplace.eclipse.org/content/jboss-tools-indigo"> Eclipse Marketplace under "JBoss Tools (Indigo)"</a> or use our update site directly.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>The update site URL to use from Help &gt; Install New Software... is:</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<pre class="jive-pre"><p><a class="jive-link-external-small" href="http://download.jboss.org/jbosstools/updates/development/indigo/">http://download.jboss.org/jbosstools/updates/development/indigo/</a></p></pre>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Note: SOA tooling such as Drools, jbpm, ESB, Teeid etc. are not included in this release - they will be available separately.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Below is my favorite features this time around from our long list of fixes and feature improvements for this Beta. </p>
+<h2>Control JBoss Hot-redeployment</h2>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>JBoss server adapter normally lets the JBoss Server or Eclipse JDT figure out when it is time to load newly deployed content or update class files via the debugger, but in some cases it is nice being able to say you would like a restart of your application when certain file changes.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>We do it automatically for updates to jar files, but you might want it to be more agressive and even do it on individual class file changes or when you update .jsp's or similar files.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4854-18191/JBIDE-10464.png"><img alt="JBIDE-10464.png" class="jive-image" height="171" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4854-18191/310-171/JBIDE-10464.png" width="310"></a></p>
+<p>If you enable the "Customize application reload behavior on changes to project resources" you now can enter a regular expression to match which resources it should trigger a reload of the module on.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Here are some examples:</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<table border="1" cellpadding="3" cellspacing="0" class="jiveBorder" style="width: 100%; border: 1px solid #000000;"><tbody>
+<tr>
+<th align="center" style="border:1px solid black;border: 1px solid #000000;background-color: #6690bc;" valign="middle"><span style="color: #ffffff;"><strong>Expression</strong></span></th>
+<th align="center" style="border:1px solid black;border: 1px solid #000000;background-color: #6690bc;" valign="middle"><span style="color: #ffffff;"><strong>When it will reload<br></strong></span></th>
+</tr>
+<tr>
+<td style="border:1px solid black;border: 1px solid #000000;">\.jar$|\.jsp$</td>
+<td style="border:1px solid black;border: 1px solid #000000;">on a jar or jsp file change</td>
+</tr>
+<tr>
+<td style="border:1px solid black;border: 1px solid #000000;">.*</td>
+<td style="border:1px solid black;border: 1px solid #000000;">on any resource changes (unnecessary! <img height="16px" src="https://community.jboss.org/4.5.6/images/emoticons/happy.gif" width="16px">
+</td>
+</tr>
+<tr>
+<td style="border:1px solid black;border: 1px solid #000000;">\.jar$|\.class$</td>
+<td style="border:1px solid black;border: 1px solid #000000;">on a jar or class file change</td>
+</tr>
+<tr>
+<td style="border:1px solid black;border: 1px solid #000000;">.jar$|.*\.model\..*.class$</td>
+<td style="border:1px solid black;border: 1px solid #000000;">on a jar change or on when a .class file inside a package containing ".model." in its name (useful for only reloading on JPA annotation changes)</td>
+</tr>
+</tbody></table>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Cheatsheet for regular expression syntax used above: \. matches a . (dot), $ means end of line, | means 'or' allowing to group content.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>This of course means more often redeploys but that can very often be just the thing you need for your specific workflow.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h2>Skinned and Intelligent BrowserSim</h2>
+<p>The mobile browser simulator now looks like a mobile browser and will now try intelligently to detect which URL to open with based on what is the current selection/editor in Eclipse.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="http://docs.jboss.org/tools/whatsnew/vpe/images/3.3.0.Beta1/10553-browsersim-default-page.png"><img alt="http://docs.jboss.org/tools/whatsnew/vpe/images/3.3.0.Beta1/10553-browsersim-default-page.png" class="jive-image" src="http://docs.jboss.org/tools/whatsnew/vpe/images/3.3.0.Beta1/10553-browsersim-default-page.png"></a></p>
+<h2>Redesigned OpenShift UI</h2>
+<p>To handle more complex scenarios such as supporting deploying openshift applications already associated with another git repo and to make OpenShift easier to get started with we have redesigned the OpenShift wizards and views.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="http://docs.jboss.org/tools/whatsnew/openshift/images/wizard-new-application.png"><img alt="http://docs.jboss.org/tools/whatsnew/openshift/images/wizard-new-application.png" class="jive-image" src="http://docs.jboss.org/tools/whatsnew/openshift/images/wizard-new-application.png"></a></p>
+<h2>OpenShift Express Console</h2>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>We've added view called OpenShift Express Console which gives you a nice overview of your OpenShift account(s), your applications/cartridges and provides easy access to common operations.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="http://docs.jboss.org/tools/whatsnew/images/importapp_via_console.png"><img alt="http://docs.jboss.org/tools/whatsnew/images/importapp_via_console.png" class="jive-image" src="http://docs.jboss.org/tools/whatsnew/images/importapp_via_console.png"></a></p>
+<h2>OpenShift Source and binary deployment</h2>
+<p>It is now possible to drag existing deployable resources such as WTP projects and resources marked as deployable to the OpenShift server and if the resource is part of the related github project it will just be associated with the server, but if the resource is not part of the OpenShift project then it will be placed inside the /deployments folder of the project as a binary.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Once you publish to OpenShift the binary deployments will be deployed together with your source project which will be built by OpenShift.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h3>Updated JBoss Central content</h3>
+<p>JBoss Central now refreshed all the main wizards for JavaEE, Richfaces, html5.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Richfaces shows up recent <a class="jive-link-external-small" href="http://blog.bleathem.ca/2012/02/richfaces-420final-release-announcement.html">Richfaces 4 release</a> and HTML 5 is showing of the work done in the <a class="jive-link-external-small" href="http://www.jboss.org/aerogear">Aerogear</a> project regarding mobile application development.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>We are also now featuring GWT Web project which has <a class="jive-link-external-small" href="http://www.jboss.org/errai">Errai</a> in it showing of their event bus to communicate between multiple browsers. </p>
+<p><a href="http://docs.jboss.org/tools/whatsnew/images/jboss-central-create-projects2.png"><img alt="http://docs.jboss.org/tools/whatsnew/images/jboss-central-create-projects2.png" class="jive-image" src="http://docs.jboss.org/tools/whatsnew/images/jboss-central-create-projects2.png"></a></p>
+<p>Note, that Google Eclipse plugins are not installed by default - it will be offered when you click the GWT web project.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h2>EAP 6 Enterprise Maven Repository</h2>
+<p>All of the examples above works with the upcoming <a class="jive-link-external-small" href="https://engage.redhat.com/forms/20120314JEAP6">EAP 6 release</a> which includes a Enterprise Maven repository.</p>
+<p>To enable this target an EAP 6 server adapter or set the "enterprise" flag in the wizard to true.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>From this the project will generate projects that uses the proper enterprise supported binaries over the community binaries.</p>
+<h2>Faster Import</h2>
+<p>We found and fixed a memory and CPU issue that caused import of bigger projects to be slow and in some cases even stall.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>With this issue fixed projects import much faster even for our small test projects it wins 4 seconds and for larger projects it should be even bigger gains.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>As always let us know if you see slowness that seems unwarranted and we will love to help trace it down and fix the problems.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h2>Seam 2.3</h2>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Seam tooling now accepts and work with Seam 2.3. Seam 2.3 is still in development but it will eventually allow deploying Seam 2 applications on JBoss 7 and Enterprise Application Platform 6.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h2>Forge</h2>
+<p>The Forge tooling now bundles Forge 1.0.0.Final and adds a good set of usability features.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Link with editor makes any file opened in the current editor be picked up by Forge - meaning you don't have to manually type the resource location into Forge. Forge will already be there.</p>
+<p><a href="http://docs.jboss.org/tools/whatsnew/forge/images/3.3.0.Beta1/link_with_editor.png"><img alt="http://docs.jboss.org/tools/whatsnew/forge/images/3.3.0.Beta1/link_with_editor.png" class="jive-image" src="http://docs.jboss.org/tools/whatsnew/forge/images/3.3.0.Beta1/link_with_editor.png"></a></p>
+<p>"cd" and "pick-up" support, is kind of the opposite, here things you do in Forge gets Eclipse to open/select the used resources.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="http://docs.jboss.org/tools/whatsnew/forge/images/3.3.0.Beta1/cd.png"><img alt="http://docs.jboss.org/tools/whatsnew/forge/images/3.3.0.Beta1/cd.png" class="jive-image" src="http://docs.jboss.org/tools/whatsnew/forge/images/3.3.0.Beta1/cd.png"></a></p>
+<h2>Maven + JPA</h2>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Maven now detects if your project is using JPA and enables JPA/Dali/Hibernate tooling support on your project.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h2>JAX-RS + Webservice Tester</h2>
+<p>The JAX-RS REST Web Services node in Project Explorer now supports "Run As..."-style launching of the Webservice tester.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Meaning you can right click on a URL path under JAX-RS and run as on your server and it will if, necessary deploy the application, start the server and then open the web services tester</p>
+<p>with the selected URL and give you easy acces to test and explore the returned output.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4854-18192/JAX-RS-WS-Tester_Run_As.jpg"><img alt="JAX-RS-WS-Tester_Run_As.jpg" class="jive-image-thumbnail jive-image" height="128" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4854-18192/450-128/JAX-RS-WS-Tester_Run_As.jpg" width="450"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h2>..and more</h2>
+<p>The above are just a fraction of the 750+ issues we have fixed this time around - you can see more highlights and screenshots <a class="jive-link-external-small" href="http://docs.jboss.org/tools/whatsnew/">here</a>, but I encourage you to try out this Beta of JBoss Tools or Developer Studio instead of just taking my word for it&#160; - and let us know in the comments or forum what you think about it!</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Have fun,</p>
+<p>Max</p>
+</div>
+<!-- [DocumentBodyEnd:1cc6d0d8-b7d8-4ff9-b15a-d652b5da700c] -->
+</body>

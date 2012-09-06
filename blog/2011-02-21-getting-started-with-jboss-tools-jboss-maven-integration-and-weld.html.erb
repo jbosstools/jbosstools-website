@@ -1,0 +1,80 @@
+---
+title: 'Getting started with JBoss Tools, JBoss Maven Integration and Weld'
+author: 'Max Rydahl Andersen'
+layout: blog-post
+tags: [ jbosstools, eclipse, maven, jbossas, weld, projectexamples, m2eclipse ]
+orignallink: ''
+---
+<body>
+<div class="jive-rendered-content">
+<p>JBoss Tools includes the JBoss Maven Integration and Weld feature that enable you to quickly and easily start developing Weld applications. </p>
+<h4>Installing JBoss Tools 3.2.0</h4>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>The best way to install JBoss Tools including the JBoss Maven integration is to start with <a class="jive-link-external-small" href="http://eclipse.org/downloads/">Eclipse Java EE IDE for Web Developers</a>. <br>What you then need to do is download appropriate archive for your OS, unpack it and start Eclipse. <br>Call <strong>Help&gt;Install New Software...</strong>, click the <strong>Add</strong> button and enter the following update site: </p>
+<p><a class="jive-link-external-small" href="http://download.jboss.org/jbosstools/updates/development/">http://download.jboss.org/jbosstools/updates/development/</a></p>
+<p>Choose <strong>All JBoss Tools 3.2.0</strong> and <strong>Maven Support</strong></p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-3567-11285/JBossToolsInstall.png"><img alt="JBossToolsInstall.png" class="jive-image-thumbnail jive-image" height="369" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-3567-11285/450-369/JBossToolsInstall.png" width="450"></a></p>
+<p>Click the <strong>Next</strong> button, accept the license terms and click the <strong>Finish</strong> button. </p>
+<p>Click the <strong>OK</strong> button on the <strong>Security Warning</strong> dialog. </p>
+<p> <a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-3567-11286/JBossToolsSecurityWarning.png"><img alt="JBossToolsSecurityWarning.png" class="jive-image" height="99" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-3567-11286/310-99/JBossToolsSecurityWarning.png" width="310"></a></p>
+<p>and the <strong>Restart Now</strong> button on the <strong>Software Updates</strong> dialog. </p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-3567-11287/JBossToolsRestart.png"><img alt="JBossToolsRestart.png" class="jive-image" height="95" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-3567-11287/310-95/JBossToolsRestart.png" width="310"></a></p>
+<p>You have installed JBoss Tools, the JBoss Maven Integration and all required dependencies.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h4>Installing JBoss AS 6.0 Server</h4>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>You can perform the following steps to install the JBoss AS 6.0 Server: </p>
+<p>Download <a class="jive-link-external-small" href="http://www.jboss.org/jbossas/downloads">JBoss AS 6.0.0.Final</a> and unpack the archive to some directory. </p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Call <strong>Window&gt;Preferences&gt;JBoss Tools&gt;JBoss Tools Runtime Detection</strong></p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-3567-11288/JBRuntimeDetection.png"><img alt="JBRuntimeDetection.png" class="jive-image-thumbnail jive-image" height="454" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-3567-11288/450-454/JBRuntimeDetection.png" width="450"></a></p>
+<p>Click the <strong>Add</strong> button and point to the directory where you unpacked the JBoss AS 6.0.0.Final. </p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-3567-11289/JBRTSearchDialog.png"><img alt="JBRTSearchDialog.png" class="jive-image-thumbnail jive-image" height="277" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-3567-11289/450-277/JBRTSearchDialog.png" width="450"></a></p>
+<p>Click the <strong>OK</strong> button. </p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>The JBoss AS 6.0 Server is created.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h4>Creating weld-jsf-login example</h4>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>In order to install this example you need to call <strong>Help&gt;Project Examples</strong></p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-3567-11290/JBTProjectExamples.png"><img alt="JBTProjectExamples.png" class="jive-image" height="325" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-3567-11290/310-325/JBTProjectExamples.png" width="310"></a></p>
+<p>Select <strong>Weld JSF login example</strong> and click the <strong>Finish</strong> button. </p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>You will then get the weld-jsf-login application in your workspace. </p>
+<p>If you are interested in more info on this example, see <a class="jive-link-external-small" href="http://docs.jboss.org/weld/reference/1.1.0.Final/en-US/html/example.html">Weld 1.1.0 Reference - Chapter 3. JSF web application example</a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h4>Deploying and starting weld-jsf-login application</h4>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p> The following procedure demonstrates how to deploy and start this application: </p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<ul>
+<li>Open the Servers view (<strong>Window&gt;Show View&gt;Other...&gt;Server&gt;Servers</strong>)</li>
+<li>Right click the <strong>jboss-6.0.0.Final</strong> server and select <strong>Add and Remove...</strong>
+</li>
+<li>Select the <strong>weld-jsf-login</strong> application and click the <strong>Add</strong> button</li>
+<li>Click the <strong>Finish</strong> button </li>
+<li>Right click the <strong>weld-jsf-login</strong> project in the <strong>Package Explorer</strong> view and select <strong>Run As&gt;Run On Server</strong>
+</li>
+<li>Select the <strong>jboss-6.0.0.Final</strong> server and click the <strong>Finish</strong> button</li>
+</ul>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>As a result, the <strong>weld-jsf-login</strong> application will be deployed and executed on the JBoss AS 6.0 server. </p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-3567-11291/weldjsflogin.png"><img alt="weldjsflogin.png" class="jive-image-thumbnail jive-image" height="325" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-3567-11291/450-325/weldjsflogin.png" width="450"></a></p>
+<p>The application includes the JBoss CDI and WTP JSF feature. </p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-3567-11292/facets.png"><img alt="facets.png" class="jive-image-thumbnail jive-image" height="305" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-3567-11292/450-305/facets.png" width="450"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>The following examples can be created in a similar way:</p>
+<ul>
+<li>numberguess</li>
+<li>permalink</li>
+<li>pastecode</li>
+<li>translator</li>
+</ul>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h5>References</h5>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a class="jive-link-external-small" href="http://docs.jboss.org/weld/reference/1.1.0.Final/en-US/html/">Weld - JSR-299 Reference Implementation</a><br><a class="jive-link-external-small" href="http://download.jboss.org/jbosstools/nightly-docs/">JBoss Tools Guides - Latest Version</a><br><a class="jive-link-external-small" href="http://m2eclipse.sonatype.org/">m2eclipse - Maven integration for Eclipse</a></p>
+</div>
+<!-- [DocumentBodyEnd:79509f31-c99e-4b0c-9255-ba3003ab6a4d] -->
+</body>

@@ -1,0 +1,62 @@
+---
+title: 'Testing Web Services...'
+author: 'Max Rydahl Andersen'
+layout: blog-post
+tags: [ jboss, jbosstools, jbds, eclipse, tools, rest, web, wsdl, jax-rs, services, uddi, jbt, tooling, jax-ws, wtp, restful, monitor, tcp/ip ]
+orignallink: ''
+---
+<body>
+<div class="jive-rendered-content">
+<p>Hey there...</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>In the Eclipse world as I've learned more about web services, I've found it interesting to see the areas that have needed some work. For example, though you have a TCP/IP monitor in Eclipse WTP and a Web Services Explorer that allow you to test deployed web services in a UDDI v2 registry and keep track of the HTML headers as well as your request and response SOAP calls.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>But it doesn't handle UDDI v3 registries and didn't seem to handle RESTful web services, so I started tinkering...</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>The first result of that tinkering is a new Web Service Tester (WST) that works with JAX-WS and JAX-RS web services and integrates with the TCP/IP monitor for more detailed call information. It's not the prettiest thing in the world, but it works. <img height="16px" src="https://community.jboss.org/4.5.6/images/emoticons/happy.gif" width="16px"></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Here's an example of how it works...</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Let's say there's a public web service out "there" in the vast expanses of the web that you want to call. In this case, it's to do a search for relevant lines from Shakespeare's plays. And it's a JAX-WS service.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>To invoke the service using the WST, you need to know three things at this point (and hopefully this will improve over time).</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<ol>
+<li>
+<span>The Endpoint URI. In this case it's: </span><a class="jive-link-external-small" href="http://www.xmlme.com/WSShakespeare.asmx" target="_blank">http://www.xmlme.com/WSShakespeare.asmx</a>
+</li>
+<li>
+<span>The Action URI. In this case it's: </span><a class="jive-link-external-small" href="http://xmlme.com/WebServices/GetSpeech" target="_blank">http://xmlme.com/WebServices/GetSpeech</a>
+</li>
+<li>And the form the SOAP should take... </li>
+</ol>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Sample SOAP in this case looks like:</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<pre><span style="font-family: courier new,courier;">&lt;?xml version="1.0" encoding="utf-8"?&gt;<br clear="none"><span>&lt;soap:Envelope xmlns:xsi="</span><a class="jive-link-external-small" href="http://www.w3.org/2001/XMLSchema-instance" target="_blank">http://www.w3.org/2001/XMLSchema-instance</a><span>" xmlns:xsd="</span><a class="jive-link-external-small" href="http://www.w3.org/2001/XMLSchema" target="_blank">http://www.w3.org/2001/XMLSchema</a><span>" xmlns:soap="</span><a class="jive-link-external-small" href="http://schemas.xmlsoap.org/soap/envelope/" target="_blank">http://schemas.xmlsoap.org/soap/envelope/</a><span>"&gt;</span><br clear="none">&#160; &lt;soap:Body&gt;<br clear="none"><span>&#160;&#160;&#160; &lt;GetSpeech xmlns="</span><a class="jive-link-external-small" href="http://xmlme.com/WebServices" target="_blank">http://xmlme.com/WebServices</a><span>"&gt;</span><br clear="none">&#160;&#160;&#160;&#160;&#160; &lt;Request&gt;slings and arrows</span><span style="font-family: courier new,courier;">&lt;/Request&gt;<br clear="none">&#160;&#160;&#160; &lt;/GetSpeech&gt;<br clear="none">&#160; &lt;/soap:Body&gt;<br clear="none">&lt;/soap:Envelope&gt;</span></pre>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>So we copy these bits into the WST...</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-1787-3052/wst_shakespeare_1.jpg"><img alt="wst_shakespeare_1.jpg" class="jive-image-thumbnail jive-image" height="206" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-1787-3052/450-206/wst_shakespeare_1.jpg" width="450"></a></p>
+<p>Hit the Invoke button and in the "Response Body" tab you can see the response that comes back from Shakespeare's <em>Hamlet</em>....</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-1787-3053/wst_shakespeare_2.jpg"><img alt="wst_shakespeare_2.jpg" class="jive-image-thumbnail jive-image" height="209" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-1787-3053/450-209/wst_shakespeare_2.jpg" width="450"></a></p>
+<p>You can open the entire response in the XML Editor from the popup menu. And if the response is a traditional SOAP envelope, you can open just the text from the operation "Result" in the XML Editor, which simplifies things and gets rid of the extraneous SOAP bits.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-1787-3055/wst_shakespeare_4.jpg"><img alt="wst_shakespeare_4.jpg" class="jive-image-thumbnail jive-image" height="201" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-1787-3055/450-201/wst_shakespeare_4.jpg" width="450"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>And in the "Response Header" tab you can see the HTTP header information that came back from the WS invocation...</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-1787-3054/wst_shakespeare_3.jpg"><img alt="wst_shakespeare_3.jpg" class="jive-image-thumbnail jive-image" height="209" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-1787-3054/450-209/wst_shakespeare_3.jpg" width="450"></a></p>
+<p>Same rules apply for RESTful (JAX-RS) service invocation... In this case, we're invoking a public JAX-RS service to retrieve a list of postal data...</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-1787-3056/wst_rest_1.jpg"><img alt="wst_rest_1.jpg" class="jive-image-thumbnail jive-image" height="420" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-1787-3056/450-420/wst_rest_1.jpg" width="450"></a></p>
+<p>In addition, if you want more fine-grained TCP/IP monitoring, you can hook into the WTP TCP/IP Monitor view as well.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>In this example, I've configured a monitor for the RESTful service we just invoked. That basically creates a proxy that the TCP/IP monitor listens to and captures the data from. Though you get the header info and can see the results in the tester itself, it's nice to see the time the invocation takes and hook into a more traditional monitoring tool.</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-1787-3057/wst_monitor_1.jpg"><img alt="wst_monitor_1.jpg" class="jive-image-thumbnail jive-image" height="431" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-1787-3057/450-431/wst_monitor_1.jpg" width="450"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>The next thing to do is hook up the tester so it can infer details from a WSDL file and possibly even browse a UDDI repository for details.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Let me know what you think! I'd be curious what features you'd like to see in this thing. The idea isn't that the tester competes with more fully featured tools like soapUI, but provides a quick tester inside JBoss Tools or JBDS to help out web service developers.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>--Fitz</p>
+</div>
+<!-- [DocumentBodyEnd:84192ed4-9024-4ddd-991c-439ac1f1d27f] -->
+</body>
