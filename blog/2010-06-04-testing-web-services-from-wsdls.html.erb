@@ -1,0 +1,58 @@
+---
+title: 'Testing Web Services From WSDLs'
+author: 'Max Rydahl Andersen'
+layout: blog-post
+tags: [ service, jbosstools, jbds, eclipse, ws, tools, java, web, testing, wsdl, uddi, jbt, tooling, jax-ws, tester ]
+orignallink: ''
+---
+<body>
+<div class="jive-rendered-content">
+<p>Hi again...</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>I've been working on the JBoss Tools Web Service Tester and have just recently added the ability to select a WSDL file to populate the endpoint/action URLs and generate a Sample SOAP message when testing JAX-WS services. I'm still working on figuring out how to connect to a UDDI v3 registry to browse and select an operation from a published service in that context, but in the meantime you have a way to test your WSDL-based web services a bit easier...</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Before I provide an example, I want to bring up a great resource for publicly-accessible web services from around the world - <a class="jive-link-external-small" href="http://www.xmethods.net/ve2/index.po">XMethods.net</a>. If you haven't checked it out, it provides some great services that you can use to test tools like the WS Tester. A few that I found that are very useful for testing are:</p>
+<ul>
+<li><a class="jive-link-external-small" href="http://www.xmethods.net/ve2/ViewListing.po?key=uuid:7EB41E38-599C-30A8-9A69-03C8E4640281">Temperature Conversions</a></li>
+<li><a class="jive-link-external-small" href="http://www.xmethods.net/ve2/ViewListing.po?key=425811">CDYNE Weather</a></li>
+<li><a class="jive-link-external-small" href="http://www.xmethods.net/ve2/ViewListing.po?key=427560">Driving Directions</a></li>
+<li><a class="jive-link-external-small" href="http://www.xmethods.net/ve2/ViewListing.po?key=427594">Google Search Results as RSS</a></li>
+</ul>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>So let's start with the Google Search Results one, which has a WSDL at <a class="jive-link-external-small" href="http://www.ecubicle.net/gsearch_rss.asmx?WSDL">http://www.ecubicle.net/gsearch_rss.asmx?WSDL</a>.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>If we look at the WS Tester, it has a new button - "Get from WSDL..."...</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-1808-3111/ws_tester_get_from_wsdl_060410.jpg"><img alt="ws_tester_get_from_wsdl_060410.jpg" class="jive-image-thumbnail jive-image" height="254" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-1808-3111/450-254/ws_tester_get_from_wsdl_060410.jpg" width="450"></a></p>
+<p>So I click on the "Get from WSDL..." button and see the "Select WSDL" dialog:</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-1808-3112/ws_tester_select_wsdl_dialog_060410.jpg"><img alt="ws_tester_select_wsdl_dialog_060410.jpg" class="jive-image-thumbnail jive-image" height="217" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-1808-3112/450-217/ws_tester_select_wsdl_dialog_060410.jpg" width="450"></a></p>
+<p>In the "WSDL URI:" field, I paste my WSDL URL in and it populates the three fields - Service, Port, and Operation. If there is more than one SOAP port available (such as SOAP and SOAP12), you can select it in the list and the operation list will change accordingly. In this case, there's just one operation available, but you have a vertical scroll bar on the right of the list to pick and choose.</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-1808-3113/ws_tester_select_wsdl_dialog_google_search_060410.jpg"><img alt="ws_tester_select_wsdl_dialog_google_search_060410.jpg" class="jive-image-thumbnail jive-image" height="217" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-1808-3113/450-217/ws_tester_select_wsdl_dialog_google_search_060410.jpg" width="450"></a></p>
+<p>When I hit OK, it does a number of things with the WSDL. It searches through the WSDL for the endpoint and action URLs, but more importantly it will try and generate a valid sample of the SOAP Request message. Even if the WSDL has multiple imports and/or imports schemas, it should (knock on wood) generate even complex messages fairly well. (If it doesn't, please let me know by putting in a JIRA.)</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>So in this case, it comes back populating the WS Tester with these values:</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-1808-3114/ws_tester_select_wsdl_dialog_google_search2_060410.jpg"><img alt="ws_tester_select_wsdl_dialog_google_search2_060410.jpg" class="jive-image-thumbnail jive-image" height="252" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-1808-3114/450-252/ws_tester_select_wsdl_dialog_google_search2_060410.jpg" width="450"></a></p>
+<p>If I change the values a bit...</p>
+<ul>
+<li>searchPage becomes an empty value (delete the "?")</li>
+<li>gQuery becomes "JBoss Web Services"</li>
+<li>numOfResults becomes an empty value (delete the "?")</li>
+</ul>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>And hit Invoke...</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-1808-3115/ws_tester_select_wsdl_dialog_google_search3_060410.jpg"><img alt="ws_tester_select_wsdl_dialog_google_search3_060410.jpg" class="jive-image-thumbnail jive-image" height="255" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-1808-3115/450-255/ws_tester_select_wsdl_dialog_google_search3_060410.jpg" width="450"></a></p>
+<p>If I copy the response into an XML file and clean it up a bit, it looks pretty good:</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-1808-3116/ws_tester_select_wsdl_dialog_google_search4_060410.jpg"><img alt="ws_tester_select_wsdl_dialog_google_search4_060410.jpg" class="jive-image-thumbnail jive-image" height="331" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-1808-3116/450-331/ws_tester_select_wsdl_dialog_google_search4_060410.jpg" width="450"></a></p>
+<p>So if you look at a web service with multiple operations like the CDYNE Weather service (WSDL at <a class="jive-link-external-small" href="http://ws.cdyne.com/WeatherWS/Weather.asmx?wsdl">http://ws.cdyne.com/WeatherWS/Weather.asmx?wsdl</a>), you have more options in the operation list:</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-1808-3117/ws_tester_select_wsdl_dialog_weather_060410.jpg"><img alt="ws_tester_select_wsdl_dialog_weather_060410.jpg" class="jive-image-thumbnail jive-image" height="251" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-1808-3117/450-251/ws_tester_select_wsdl_dialog_weather_060410.jpg" width="450"></a></p>
+<p>And I was able to get the forecast for my city:</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-1808-3118/ws_tester_select_wsdl_dialog_weather2_060410.jpg"><img alt="ws_tester_select_wsdl_dialog_weather2_060410.jpg" class="jive-image-thumbnail jive-image" height="238" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-1808-3118/450-238/ws_tester_select_wsdl_dialog_weather2_060410.jpg" width="450"></a></p>
+<p>So if you have a WSDL file or a URL to a WSDL file, you should be able to use the WS Tester to test it now.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Next step is to get some sort of facility into the mix so you can browse a UDDI repository for the service.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>This is checked into the JBoss Tools trunk now, so you should be able to play with it. Let me know what you think!</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>--Fitz</p>
+</div>
+<!-- [DocumentBodyEnd:b072b79b-24d5-4b8f-8ba2-a556c8377767] -->
+</body>

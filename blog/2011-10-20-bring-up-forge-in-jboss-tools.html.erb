@@ -1,0 +1,49 @@
+---
+title: 'Bring Up Forge in JBoss Tools'
+author: 'Max Rydahl Andersen'
+layout: blog-post
+tags: [  ]
+orignallink: ''
+---
+<body>
+<div class="jive-rendered-content">
+<p>A couple of days ago somebody asked me how to use Forge after having installed the JBoss Tools nighty build. This is a valid question and indeed not so obvious at the moment. We don't want to overload the top level Eclipse menubar and toolbar so it is somewhat hidden until we find a good spot for the shortcuts. Suggestions are of course always welcome.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h1>The Long and Winding Road</h1>
+<p>The normal way to start Forge is to start it by pressing the start toolbar button or choosing the start menu entry of the Forge Console View. </p>
+<div align="center">
+<a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4236-17197/start_button.png"><img alt="start_button.png" class="jive-image" height="68" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4236-17197/122-68/start_button.png" width="122"></a><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4236-17198/start_menu.png"><img alt="start_menu.png" class="jive-image" height="98" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4236-17198/200-98/start_menu.png" width="200"></a>
+</div>
+<p>Now the question of course is how you can open this Forge Console View. This can be done by selecting the 'Forge-&gt;Forge Console' entry in the Eclipse 'Show View' dialog. </p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4236-17199/Show_View.png"><img alt="Show_View.png" class="jive-image" height="415" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4236-17199/308-415/Show_View.png" style="display: block; margin-left: auto; margin-right: auto;" width="308"></a></p>
+<p>Now the question of course is how you can open this fancy 'Show View' dialog. The long and winding road to do this would be to use the Eclipse menu bar and select 'Window-&gt;Show View-&gt;Other...'. Luckily there is a quicker alternative to do this last step only using your keyboard: </p>
+<ul>
+<li>Windows and Linux: press Alt+Shift+Q and then another Q</li>
+<li>Mac: press Option+Cmd+Q and then another Q</li>
+</ul>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h1>The Fast Lane</h1>
+<p>Even with this last keyboard trick this is a very long process and it would be good if there was a faster way to do it. The good news is that there actually is a shortcut. <a class="" href="https://community.jboss.org/community/tools/blog/2011/08/05/forge-commands-on-the-menu">Earlier</a>, we posted how to bring up a popup containing all the Forge commands applicable in the current context</p>
+<ul>
+<li>Windows and Linux: Ctrl+4</li>
+<li>Mac: press Cmd+4</li>
+</ul>
+<p>Now if only we extended the functionality of this combination to startup Forge if it is not running? That is exactly what we did. Pressing the above key combination brings up a dialog if Forge is not running yet and asks you if you want to start it.</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4236-17201/forge_not_running.png"><img alt="forge_not_running.png" class="jive-image" height="79" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4236-17201/310-79/forge_not_running.png" style="display: block; margin-left: auto; margin-right: auto;" width="310"></a>Pressing 'Yes' on this menu will start Forge, open the Forge Console View and bring this last view into focus. If the above combination does not work on your machine (because of a different keyboard layout) or if you would like to hook up this functionality to a different keystroke combo, you can do so by bringing up the Eclipse Preferences dialog:</p>
+<ul>
+<li>Windows and Linux: choose 'Window-&gt;Preferences'</li>
+<li>Mac: choose 'Eclipse-&gt;Preferences...' or press Cmd+, (that is Cmd and the comma).</li>
+</ul>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4236-17202/preferences.png"><img alt="preferences.png" class="jive-image-thumbnail jive-image" height="296" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4236-17202/450-296/preferences.png" style="display: block; margin-left: auto; margin-right: auto;" width="450"></a> As you can see in the above screenshot, you can change the binding by selecting the 'General-&gt;Keys' entry and then look for the 'Forge Command List' command. Go into the 'Binding' field and choose your favourite keyboard combination.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h1>The Result</h1>
+<p>Whether you take the long and winding road or the fast lane, the result should in both cases that you are seeing the Forge welcome banner and a prompt inviting you to enter your command of choice.</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4236-17208/console_view.png"><img alt="console_view.png" class="jive-image-thumbnail jive-image" height="103" onclick="" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4236-17208/450-103/console_view.png" style="display: block; margin-left: auto; margin-right: auto;" width="450"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>This is a work in progress. If you have any suggestions to make a better binding, or ideas about a proper perspective or menu that could be a home for this functionality, be my guest!</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Cheers,</p>
+<p>Koen</p>
+</div>
+<!-- [DocumentBodyEnd:2a532bdf-eb2d-4e6e-916c-965801e2cffa] -->
+</body>

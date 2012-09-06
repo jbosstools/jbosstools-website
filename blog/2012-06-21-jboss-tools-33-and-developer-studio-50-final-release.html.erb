@@ -1,0 +1,160 @@
+---
+title: 'JBoss Tools 3.3 and Developer Studio 5.0 Final Release!'
+author: 'Max Rydahl Andersen'
+layout: blog-post
+tags: [ eclipse, tools, devstudio, maven, indigo, jbosscentral, juno ]
+orignallink: ''
+---
+<body>
+<div class="jive-rendered-content">
+<p>I'm extremely proud to be able to announce that both JBoss Tools 3.3 and Developer Studio 5.0 final releases are now available.</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4854-18193/jbosstolsdevstudio.png"><img alt="jbosstolsdevstudio.png" class="jive-image-thumbnail jive-image" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4854-18193/jbosstolsdevstudio.png" style="margin: 12px auto; display: block;" width="620"></a></p>
+<h4 style="color: #333333; font-weight: bold; padding-top: 10px; padding-right: 0pt; padding-bottom: 4px; padding-left: 0pt; font-size: 13pt; text-align: center; margin: 0pt;">Final GA</h4>
+<p style="text-align: center; padding: 0pt; margin: 0pt;">Developer Studio: [<a class="jive-link-external-small" href="http://devstudio.jboss.com/earlyaccess">Download</a>] | Tools: [<a class="jive-link-external-small" href="http://www.jboss.org/tools/download/stable/3_3_Final">Download</a>] [<a class="jive-link-external-small" href="http://download.jboss.org/jbosstools/updates/stable/indigo/">Update Site</a>] | [<a class="jive-link-external-small" href="http://docs.jboss.org/tools/whatsnew" target="_top">What's New</a>] [<a class="jive-link-external-small" href="http://www.jboss.com/index.html?module=bb&amp;op=viewforum&amp;f=201" target="_top">Forums</a>] [<a class="jive-link-external-small" href="http://jira.jboss.com/jira/browse/JBIDE" target="_top">JIRA</a>] [<a class="jive-link-external-small" href="http://twitter.com/jbosstools" target="_top">Twitter</a>]</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>JBoss Tools is a set of plugins for Eclipse that complements, enhances and goes beyond the support that exists for JBoss and related technologies in the default Eclipse distribution.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>JBoss Developer Studio is a fully bundled Eclipse distribution which not only includes the majority of JBoss Tools but also all its needed dependencies and 3rd party plugins allowing for an easy one-click and no-fuss installation.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>If you are into doing your own bleeding edge eclipse plugin assembly, JBoss Tools is for you; if you are more into having something that "Just Works" then JBoss Developer Studio is the way to go.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h2>Installation</h2>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><em>JBoss Developer Studio</em> comes with everything pre-bundled in its installer. Simply <a class="jive-link-external-small" href="http://devstudio.jboss.com">download it</a> and run it like this:</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<!--[CodeBlockStart:d4cfd8fe-e3b2-4256-b6e4-3f90d46143de]--><pre class="jive-pre"><code class="jive-code">java -jar jbdevstudio-&lt;installername&gt;.jar
+</code></pre>
+<!--[CodeBlockEnd:d4cfd8fe-e3b2-4256-b6e4-3f90d46143de]--><p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><strong>Note:</strong> if you are on Windows or Mac OSX 64-bit we recommend you ensure to select the 32-bit option in the multi-platform installer to get Visual Page editor working and use much less memory.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><em>JBoss Tools</em> requires a bit more:</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>This release requires at least Eclipse 3.7.2 but we recommend using the <a class="jive-link-external-small" href="http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/indigosr2">Eclipse 3.7.2 JEE Bundle</a> since then you get most of the dependencies preinstalled.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Once you have installed Eclipse, you either find us on<a class="jive-link-external-small" href="http://marketplace.eclipse.org/content/jboss-tools-indigo"> Eclipse Marketplace under "JBoss Tools (Indigo)"</a> or use our update site directly.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>The update site URL to use from Help &gt; Install New Software... is:</p>
+<pre class="jive-pre"><p><a class="jive-link-external-small" href="http://download.jboss.org/jbosstools/updates/stable/indigo/" target="_blank">http://download.jboss.org/jbosstools/updates/stable/indigo/</a></p></pre>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Please note that the URL above is for the stable releases, if you use the development update site (<span style="font-family: 'Lucida Grande', Arial, Helvetica, sans-serif; background-color: #ffffff;"><a class="jive-link-external-small" href="http://download.jboss.org/jbosstools/updates/development/indigo/" target="_blank">http://download.jboss.org/jbosstools/updates/development/indigo/</a></span>) that will work too. Only difference is that the development site will contain beta/CR releases too.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Note: SOA tooling for BPEL, Drools, Guvnor, jBPM, ESB, Modeshape, pi4soa, Savara, SwitchYard &amp; Teiid are no longer included in the JBoss Tools release. They will become available separately later.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h1>A Year of Features</h1>
+<p>The amount of features and new improvements in this final is awesome - here is a little overview:</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h2>Slim &amp; Fast Universal Installer</h2>
+<p>The installer for JBoss Developer Studio is now a multiplatform installer. Allows you to just download one installer no matter what OS you are running. And the installer is smaller and faster to download and run than previous versions. </p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h2>JBoss Central</h2>
+<p>We wanted to make it easy for new users to get started with JBoss technology and for existing users have a place to get more information and keep uptodate on what is happening in the JBoss Community. That place is called JBoss Central.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://dl.dropbox.com/u/558690/devstudio5releaseimages/jbosscentral.png"><img alt="https://dl.dropbox.com/u/558690/devstudio5releaseimages/jbosscentral.png" class="jive-image" src="https://dl.dropbox.com/u/558690/devstudio5releaseimages/jbosscentral.png" style="display: block; margin-left: auto; margin-right: auto;"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Central shows up at startup (you can disable it if you want) but is also available with a quick click in the toolbar. Besides having blogs, news and documentation links it also serves as a way to start one of the six project wizards</p>
+<p>which help you get started with JBoss technology such as CDI, Richfaces, Errai/GWT, Spring on AS etc.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Central also has a second tab called "Software/Update" where you can easily install tested and verified plugins to work with JBoss Tools and within Developer Studio.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://dl.dropbox.com/u/558690/devstudio5releaseimages/softwareupdate.png"><img alt="https://dl.dropbox.com/u/558690/devstudio5releaseimages/softwareupdate.png" class="jive-image" src="https://dl.dropbox.com/u/558690/devstudio5releaseimages/softwareupdate.png" style="display: block; margin-left: auto; margin-right: auto;"></a></p>
+<h2>New Server Adapters</h2>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>We've extended our support for JBoss servers to include JBoss Enterprise Platform 6, JBoss AS 7.</p>
+<p>We continue to also work with the previous versions of application servers making it possible to develop, run and debug both new and older applications.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://dl.dropbox.com/u/558690/devstudio5releaseimages/serveradapters.png"><img alt="https://dl.dropbox.com/u/558690/devstudio5releaseimages/serveradapters.png" class="jive-image" src="https://dl.dropbox.com/u/558690/devstudio5releaseimages/serveradapters.png" style="display: block; margin-left: auto; margin-right: auto;"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>There is also an OpenShift server adapter to integrate with Red Hat OpenShift PaaS, more on that later.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>We also continue to have the Deploy Only server which allows you to use our incremental and flexible server adapter features together with any server that supports hot deployment.</p>
+<p>Furthermore all of these server adapters support remote deployment via any filesystem protocols supported by Eclipse Remote System deployment such as SSH or FTP.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>One of the new features in this area is that servers now no longer need to be started by the tools, if a server is already detected as running or you have enable "Server is externally managed" then</p>
+<p>JBoss Tools server adapters will just connect to it and do its deployments as configured - allowing you to work with the tools in&#160; many different environments.</p>
+<h2></h2>
+<h2>Maven</h2>
+<p>One of the big new additions is the full support and integration of m2e for users of Maven projects. We did not just include m2e, we went ahead and improved on it and added better support for the frameworks and features of Maven we found to be useful.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>We have a lot of Maven improvements.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<ul>
+<li>Maven Profile Selection - dialog to quickly enable/disable profiles on your Maven projects ( especially useful to switch between Arquillian server profiles ) </li>
+<li>Endorsed Libraries Classpath Container - if your Maven project uses endorsed libraries we setup a matching classpath that gets priority over the JDK classpath.</li>
+<li>Tons of framework configurators - we enable the matching tooling in eclipse if your Maven project uses one of the following frameworks:<ul>
+<li>Hibernate/JPA</li>
+<li>JSF</li>
+<li>CDI</li>
+<li>JAX-RS</li>
+<li>Seam</li>
+<li>Portlets. </li>
+</ul>
+</li>
+<li>Configure repositories in settings.xml - "Configure Maven Repositories" allows you to easily add and remove repositories from your Maven settings.xml; available as a quickfix on missing dependencies error markers.</li>
+<li>Materialize Library - Allows you to copy all the jars found in a Maven classpath container into a directory. Great if you have a Maven example but would rather use it with pure Eclipse or some other build system. </li>
+<li>Automatic Source Lookup for Server runtimes based on Maven metadata - point Source lookup to your server directory with jars and it will locate the matching source based on maven metadata; can be enable to be automatically done for JBoss runtimes.</li>
+</ul>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>And then of course m2e-wtp, the feature that configures Eclipse Web Tools based of your pom.xml had a lot of features improved and added. The m2e-wtp also is <a class="jive-link-external-small" href="http://www.eclipse.org/m2e-wtp/">moving to eclipse.org</a> to be part of future Eclipse release trains. </p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Furthermore we've released m2e configurators to m2e marketplace to improve configuration of Annotation Processing, wro4j - javascript optimization and finally supporting projects that configure eclipse JDT as their compiler. </p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>All in all, if you want to use Maven with Eclipse, JBoss Tools makes your life easier!</p>
+<h2>OpenShift</h2>
+<p>OpenShift also came around during the last year. OpenShift is a PaaS with a free offering that includes support for running applications written in Java, Ruby, Node.js, Python, PHP, Perl and more.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>The great thing about OpenShift is that you can easily get up and running with just a webbrowser, git and SSH while using command line tools - very simple and powerful.</p>
+<p>We wanted to bring this simplicity and power to the users of Eclipse and that is what our OpenShift Tooling does.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>When you have an account at OpenShift you can easily browse, create and manipulate your OpenShift applications and cartridges. OpenShift supports PHP, Perl, Python, Node.js, Java and if that is not enough you can use the Do-It-Yourself cartridge. You can easily open a webbrowser showing your application, monitor remote log files, inspect environment setup and start Port Forwarding allowing for remote debugging and remote browsing of databases and Jenkins instances. </p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://dl.dropbox.com/u/558690/devstudio5releaseimages/openshift.png"><img alt="https://dl.dropbox.com/u/558690/devstudio5releaseimages/openshift.png" class="jive-image" src="https://dl.dropbox.com/u/558690/devstudio5releaseimages/openshift.png" style="display: block; margin-left: auto; margin-right: auto;"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>The OpenShift tools is all compatible with the command line tooling but also completely independent of it allowing you to start with the tools that fit your needs first and then mix and match as you see fit.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="text-align: left;">For the release we've create a <a class="jive-link-external-small" href="https://vimeo.com/groups/jbosstools/videos/44246666">"Getting started with OpenShift"</a> video:</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="text-align: center;"><iframe frameborder="0" height="350" src="https://player.vimeo.com/video/44246666" width="425">
+<br><br></iframe></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h2>Forge</h2>
+<p>If you like Forge you will like JBoss Tools for its Forge Console which let you to use Forge in context of Eclipse and have them coexist and interact. The console will open and show the files/projects you edit/create in Forge and the console can also let Forge track the selection you have in Eclipse.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4970-18797/forgeconsole.png"><img alt="forgeconsole.png" class="jive-image" height="102" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4970-18797/310-102/forgeconsole.png" style="display: block; margin-left: auto; margin-right: auto;" width="310"></a></p>
+<h2>Browser Simulator</h2>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>BrowserSim can be started with one-click from the IDE, showing instantly the selected file or URL in a mobile browser simulator. The simulator has skins and layout dimensions for a range of pouplar mobile and tablet devices. You can rotate the device to see how your application looks and how it is reacting to such size and layout changes. </p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://dl.dropbox.com/u/558690/devstudio5releaseimages/browsersim.png"><img alt="https://dl.dropbox.com/u/558690/devstudio5releaseimages/browsersim.png" class="jive-image" src="https://dl.dropbox.com/u/558690/devstudio5releaseimages/browsersim.png" style="display: block; margin-left: auto; margin-right: auto;"></a></p>
+<h2>Hibernate</h2>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Hibernate Tools now supports multiple versions of Hibernate - you can now use it together with Hibernate 3.3-3.5, 3.6 and 4.0/4.1.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="text-align: center;"><a href="https://dl.dropbox.com/u/558690/devstudio5releaseimages/hibernatemultiy.png"><img alt="https://dl.dropbox.com/u/558690/devstudio5releaseimages/hibernatemultiy.png" class="jive-image" src="https://dl.dropbox.com/u/558690/devstudio5releaseimages/hibernatemultiy.png"></a></p>
+<h2>JAX-RS</h2>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>If your application uses JAX-RS annotations there is now a node in the project explorer that allows you to easily navigate to your various Rest endpoints. The JAX-RS tooling will also validate your annotations (mismatched names etc.) and provides code completion.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="http://docs.jboss.org/tools/whatsnew/ws/images/JAX-RS-WS-Tester_Run_As.jpg"><img alt="http://docs.jboss.org/tools/whatsnew/ws/images/JAX-RS-WS-Tester_Run_As.jpg" class="jive-image" height="382" src="http://docs.jboss.org/tools/whatsnew/ws/images/JAX-RS-WS-Tester_Run_As.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 1025px; height: 382.73657289002557px;" width="1025"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>The JAX-RS integration allow to easily "run" your endpoints by making sure the server is running and then opening the URL in the Webservice Tester for further investigation/testing.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h2>And More...</h2>
+<p>Seam 2.3.x support, CDI tooling have great improvements, incl. support for DeltaSpike, the visual page editor is faster than ever, bugfixes, overall awesomeness and the list goes on. </p>
+<p>You can see the full list of new and noteworthy on the <a class="jive-link-external-small" href="http://docs.jboss.org/tools/whatsnew/">New and Noteworthy</a> page</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h1>Does it Juno ?</h1>
+<p>Since the first version of Eclipse Juno is arriving soon it is worth mentioning that JBoss Tools from its updatesite can be installed on top of Juno.</p>
+<p>It is though not guaranteed everything works, we know that especially Hibernate Dali/JPT integration have issues since here the API has changed greatly.</p>
+<p>But if you are a Juno early-adopter then do please try run JBoss Tools on it and if you find issues let us know in the forum or on <a class="jive-link-external-small" href="https://issues.jboss.org/browse/JBIDE-11549">JIRA</a>.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Then we will use the input for the next revision of JBoss Tools which will start shortly.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Hope you like it, and remember:</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Have fun,</p>
+<p>Max</p>
+</div>
+<!-- [DocumentBodyEnd:1fd0f848-9b65-4da0-9526-fb005a950310] -->
+</body>

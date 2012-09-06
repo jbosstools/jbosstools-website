@@ -1,0 +1,120 @@
+---
+title: 'Observations from two year of ping-backs from JBoss Tools users'
+author: 'Max Rydahl Andersen'
+layout: blog-post
+tags: [ jbosstools, devstudio, statistics, usage, jbosscentral ]
+orignallink: ''
+---
+<body>
+<div class="jive-rendered-content">
+<p>Almost two years ago we started including an opt-in ping-back functionallity to JBoss Tools and Developer Studio installations. The ping-back has in that time given us a lot of good and sometimes surprising information about our users.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>In this blogpost I want to give you the highlights of these observations.</p>
+<h1>Disclaimer</h1>
+<p>Before I start I must underline that we do not track any individuals data and it is all opt-in, i.e. users need to explicitly say &#8220;Yes - please send pings&#8221; for us to pick up data.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>The data below is not for <em>all</em> users of our tools, it is only for those who have said yes to participate - but with the amount of pings we do get (currently 28K/day, 6+ million/year) I believe it is a signficant high part of our user base to at least give an idea about the trends and divisions of our user base.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>I&#8217;ve tried my best to validate and ensure I report correct findings - please leave a comment if you believe I&#8217;ve made an error or there is some other metric you would like to know about.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>And finally - the content, observations and conclusions in this blog are my personal views based on my intepretation of the analytics data I have access to. </p>
+<h1>Methodology</h1>
+<p>The way our ping-back works from a highlevel is that on startup of an Eclipse instance a HTTP GET is made to Google Analytics and here the data is collected as if it was a web page hit (i.e. Google Analytics gathers information from the network connection, HTTP headers and URL parameters).</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>We only make maximum one ping every 24-hour per Eclipse Instance and it is only on startups. Thus if you have your eclipse instance running for six days, you only make one ping in those six days.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>I&#8217;ve used Google Analytics web UI and data extraction features as a basis for the findings below.</p>
+<h1>Operating Systems</h1>
+<p>If you should be in doubt, Microsoft Windows is by far the most dominant desktop OS out there when it comes to desktop OS, and this is no different for users of JBoss Tools.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Here is Operating Systems for June-July 2012:</p>
+<p> <a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-5000-19110/osjunejuly2012.png"><img alt="osjunejuly2012.png" class="jive-image" height="235" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-5000-19110/307-235/osjunejuly2012.png" width="307"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Even if you separate out Windows XP on its own then Windows XP users outnumber Linux + OSX users combined.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Operating Systems for June-July 2012 with XP separated out.</p>
+<p> <a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-5000-19111/osjulywxp.png"><img alt="osjulywxp.png" class="jive-image" height="216" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-5000-19111/310-216/osjulywxp.png" width="310"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>I saw these same splits in our usage tracking (Windows: ~80%, Linux: ~15% OSX: ~5%) and I was worried we were having some bug in our ping-back code.</p>
+<p>I therefore got access to Google Analytics for several of our jboss.org project sites including all of community.jboss.org and here the splits are more or less the same no matter how you slice and dice it. Thus either this split is true or Google Analytics is wrong everywhere.</p>
+<p>What surprises me though is that Windows is even growing over time, both on site visits and JBoss Tools ping back:</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-5000-19112/osgrowth2years.png"><img alt="osgrowth2years.png" class="jive-image-thumbnail jive-image" height="140" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-5000-19112/450-140/osgrowth2years.png" width="450"></a></p>
+<p>I&#8217;m sure the growth of Windows here does not resemble the growth of operating systems world wide, I believe it is more a function of more and more &#8220;real world&#8221; industrial users picking up and using JBoss technology.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>I know it surprises alot of people both inside and outside of my current employer (Red Hat) who would like to think Linux is not just primarily a server side OS anymore; and I know of a lot of conference attendees who claims OSX is &#8220;everywhere&#8221;. It might be everywhere at conferences, but not out there in the &#8220;real world&#8221;.</p>
+<h1>Linux Distributions</h1>
+<p>Once you get pass the fact Windows is by far the biggest desktop platform then it is interesting to look at how the various Linux distributions spread out.</p>
+<p>The following charts shows a summary of Linux distributions as detected by our ping-back code to <a class="jive-link-external-small" href="https://source.jboss.org/browse/JBossTools/trunk/usage/plugins/org.jboss.tools.usage/src/org/jboss/tools/usage/googleanalytics/eclipse/LinuxSystem.java?hb=true">detect Linux distributions</a>. </p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Our ping-back report back the distribution name and version as found in various distribution specific files and I&#8217;ve taken these reports and stripped out the versions and just looked at the distribution name. </p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>I unfortunately do not have any way of confirming the validity of these numbers because Google Analytics does not report this level of detail for specific websites and looking at <a class="jive-link-external-small" href="http://distrowatch.com/dwres.php?resource=popularity">distrowatch.com</a> the numbers are very different. Probably the difference should be explained in difference of Desktop vs. Server, Linux users vs. JBoss/Middleware users.</p>
+<p>In any case please do take these uncertainties into account when considering these numbers.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>The graphs below is for the period June-July 2012:</p>
+<p> <a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-5000-19113/linuxdistro-table.png"><img alt="linuxdistro-table.png" class="jive-image" height="195" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-5000-19113/269-195/linuxdistro-table.png" width="269"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-5000-19114/linuxdistro-chart.png"><img alt="linuxdistro-chart.png" class="jive-image" height="235" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-5000-19114/310-235/linuxdistro-chart.png" width="310"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h1>Countries</h1>
+<p>One of my favorite images from Google Analytics is the map showing city activity across the world.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>City Activity 2011-2012 ( a full year )</p>
+<p> <a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-5000-19115/cities2011-12.png"><img alt="cities2011-12.png" class="jive-image-thumbnail jive-image" height="260" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-5000-19115/450-260/cities2011-12.png" width="450"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>That is showing JBoss Tools being used across 6 continents, 177 countries in 9644 cities; and as you can see it is not United states nor Europe that is lighting up the most.</p>
+<p>Most active cities are in areas such as Brazil, China and India, which also is revealed in the Top 10 countries list for 2011-2012.</p>
+<p> <a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-5000-19116/top10countries.png"><img alt="top10countries.png" class="jive-image" height="183" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-5000-19116/310-183/top10countries.png" width="310"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>I apparently need to learn to write blogs in Portuguese and Mandrin!</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>I was asked how the Operating System varies across countries and that was a bit trickier to extract because Google Analytics starts sampling when the dataset gets too big - but here is a table showing OS per Top 10 countries based on 80% of data collected in June 2012.</p>
+<p> <a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-5000-19117/country_x_os_80pct_2011_12.png"><img alt="country_x_os_80pct_2011_12.png" class="jive-image" height="169" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-5000-19117/310-169/country_x_os_80pct_2011_12.png" width="310"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>It&#8217;s interesting to see United States OS X usage be almost twice as high as any other country and countries like China and South Korea having ~98% usage of Windows.</p>
+<p>Where as countries like Brazil has a much higher percentage using Linux.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Users from Spain and Italy have same Linux usage but Italy has twice as many Mac users.</p>
+<h1>Screen resolution</h1>
+<p>In the last year, we&#8217;ve seen no less than 7995 different screen resolutions. </p>
+<p>The number was much higher than I expected, and I believe this is caused by differences in how Java/SWT differs across various OS releases on how the desktop resolution is reported; thus the Top 10 screen resolutions is a rough estimation.</p>
+<p> <a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-5000-19118/top10screensizes.png"><img alt="top10screensizes.png" class="jive-image-thumbnail jive-image" height="309" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-5000-19118/450-309/top10screensizes.png" width="450"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>What is interesting though is that the number of observed 1366x768 screen resolutions have grown much more than other screen resolutions.</p>
+<p> <a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-5000-19119/screenresolutionovertime.png"><img alt="screenresolutionovertime.png" class="jive-image-thumbnail jive-image" height="125" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-5000-19119/450-125/screenresolutionovertime.png" width="450"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>It&#8217;s as if everyone started to get more and more HD laptops/displays the last couple of months.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>One thing I did notice was that there is a few (or just one?) user that has some very large multi-screen setups. Tried to visualize this by showing smallest (640x480), most common (1366x768) and largest observed screen resolution (11520x2400) relatively to each other in this diagram:</p>
+<p> <a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-5000-19120/screensizes-scale5pct.png"><img alt="screensizes-scale5pct.png" class="jive-image" height="65" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-5000-19120/310-65/screensizes-scale5pct.png" width="310"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>The large resolutions are probably multiple monitors, not just one single monitor. My guess is the largest reported is a couple of <a class="jive-link-external-small" href="http://en.wikipedia.org/wiki/WQUXGA">WQUXGA</a> screens. think I got screen envy!</p>
+<h1>Java version</h1>
+<p>Java 7 was released &#8220;recently&#8221; and I got more than a few request asking why we still support Java 6 when it is EOL and Java 7 is the new kid in town.</p>
+<p>The answer is in the following graph. It shows the uptake of the most popular Java versions over the last year. </p>
+<p> <a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-5000-19121/javaversionovertime.png"><img alt="javaversionovertime.png" class="jive-image-thumbnail jive-image" height="113" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-5000-19121/450-113/javaversionovertime.png" width="450"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>You can see Java 1.6.0_26 overtake 1.6.0_24 in July 2011 and similar 1.6.0_29 takeover in November 2011 and finally 1.6.0_31 is the current big winner.</p>
+<p>Java 1.7 had only little uptake, and its only recently Java 7 is above 20% usage.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>The current %&#8217;s shows a clear 76% usage of 1.6, following with Java 1.7 with 22% and then a few (2%) is still using Java 1.5 - we, even had a few Java 1.8 users but they are still below 0.01% thus not visible on any of the graphs.</p>
+<p> <a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-5000-19122/javaversionsjunejuly2012.png"><img alt="javaversionsjunejuly2012.png" class="jive-image" height="261" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-5000-19122/306-261/javaversionsjunejuly2012.png" width="306"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>I expect over the next year Java 1.7 will have a bigger uptake, but I would not bet on it overtaking Java 1.6 anytime soon.</p>
+<h1>Conclusions</h1>
+<p>One nice thing to conclude from our usage tracking is that we can see that JBoss Tools keeps growing and has more and more uptake and I&#8217;m personally very happy to see that.</p>
+<p>Beyond that my primary lesson from the gathering of analytics is that Windows XP is bigger than Linux and OS X combined. Windows overall is where the majority of real-world users are.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>There are probably also lot of interesting political and world-economic comments that can be made about the Top 10 countries usage of Operating Systems. But this is just JBoss Tools users, thus not sure how this maps to the world-arena but one thing I do think we can conclude is - each country has very different composition of users/demographics; but they all primarily uses Windows.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Therefore if you are doing any work on tools, frameworks or applications that relate to JBoss user/developer, <em>please</em> remember to test it on Windows, including Windows XP no matter how much you hate this OS your users are using your applicaiton/frameworks to make their own life easier.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Before anyone put words in my mouth any say this means Linux and OS X users should be ignored because they are such a small percentage - that is not true since the uptake of Windows over time shows that Linux/OSX is where a good portion of the &#8220;early adopters&#8221; are. </p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>That is it for this time, let me know what you think - does this match your expectations ? Could we improve the dataset/statistics somehow ?</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Have fun, </p>
+<p>Max</p>
+</div>
+<!-- [DocumentBodyEnd:c8fdde6f-8af2-46a0-87b5-6a946bb32050] -->
+</body>

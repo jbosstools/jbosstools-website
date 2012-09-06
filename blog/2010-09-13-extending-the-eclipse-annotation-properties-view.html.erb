@@ -1,0 +1,53 @@
+---
+title: 'Extending the Eclipse Annotation Properties view'
+author: 'Max Rydahl Andersen'
+layout: blog-post
+tags: [ jbosstools, eclipse, tools, jbossesb, java, esb, annotations, jaxb, jax-ws, wtp ]
+orignallink: ''
+---
+<body>
+<div class="jive-rendered-content">
+<p>While looking into some options on how to make the use of annotations simpler for users, I ran across the Annotation Properties view, which is in Helios in the JAX-WS-&gt;Annotation Properties view category when you're trying to open a view (Window-&gt;Show View-&gt;Other).</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>If you haven't seen this view before (and I know I hadn't), it offers a way to register annotation classes in a common place to allow you to add/remove/edit annotations in a class. By default in the Helios JEE package, it comes with JAXB and JAX-WS annotations already set up. It's a little clunky in spots, but I think it offers some interesting options as far as functionality goes.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>For example, to create a new JAX-WS annotated class, you can start with your favorite POJO and annotate it pretty quickly:</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-1946-7286/Annotation_Properties_View_For_Blog.jpg"><img alt="Annotation_Properties_View_For_Blog.jpg" class="jive-image-thumbnail jive-image" height="297" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-1946-7286/450-297/Annotation_Properties_View_For_Blog.jpg" width="450"></a></p>
+<p>The view also offers the ability to filter the available annotations so you're not simply overwhelmed. To get to the Filters dialog, use the View menu and select Filters...</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-1946-7287/annotation_properties_view_filters_dialog.jpg"><img alt="annotation_properties_view_filters_dialog.jpg" class="jive-image" height="406" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-1946-7287/310-406/annotation_properties_view_filters_dialog.jpg" width="310"></a></p>
+<p>This is a little clunky as far as an interface goes. You can only open one instance of the view at a time and can't easily switch between annotation types. But it's a start anyway.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>So with this in mind, I asked in the WTP newsgroup about how to go about extending it. Shane Clarke was nice enough to provide some tips...</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>The two extension points associated with the Annotation Properties view are located in the org.eclipse.jst.ws.annotations.core plug-in. The main two are the the org.eclipse.jst.ws.annotations.core.annotationCategory and org.eclipse.jst.ws.annotations.core.annotationDefinition extension points. Basically you just define a category (which shows up in the Filters dialog) and then define one or more associated annotation classes.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>The only trick is making sure that the annotations are on the plug-in classpath and then adding the line "Eclipse-RegisterBuddy: org.eclipse.jst.ws.annotations.core" to your MANIFEST.MF.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>So as an example, we'll just create a new category:</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>&#160;&#160; &lt;extension<br>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; point="org.eclipse.jst.ws.annotations.core.annotationCategory"&gt;<br>&#160;&#160;&#160;&#160;&#160; &lt;category<br>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; id="org.my.annotation.category"<br>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; name="My Category Name"&gt;<br>&#160;&#160;&#160;&#160;&#160; &lt;/category&gt;<br>&#160;&#160; &lt;/extension&gt;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>And then we'll define a new annotation for it:</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>&#160;&#160; &lt;extension<br>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; point="org.eclipse.jst.ws.annotations.core.annotationDefinition"&gt;<br>&#160;&#160;&#160;&#160;&#160; &lt;annotation<br>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; category="org.my.annotation.category"<br>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; class="some.annotation.class.MyAnnotation"<br>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; name="MyAnnotation"&gt;<br>&#160;&#160;&#160;&#160;&#160; &lt;/annotation&gt;<br>&#160;&#160; &lt;/extension&gt;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>For examples of how they implemented the JAX-WS and JAXB annotations, check out org.eclipse.jst.ws.jaxws.core and org.eclipse.jst.ws.jaxb.core.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Pretty easy. I was able to define annotations for some new functionality in our JBoss ESB product that allows you to annotate a class instead of extending a particular interface or extending an existing class.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-1946-7288/annotation_properties_view_esb_blog.jpg"><img alt="annotation_properties_view_esb_blog.jpg" class="jive-image-thumbnail jive-image" height="297" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-1946-7288/450-297/annotation_properties_view_esb_blog.jpg" width="450"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>I obviously think that the Annotation Properties view could be used for more than just Web Service class annotations.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>But it needs a bit of work... For example, it would be nice if you could create a saved setting like a working set and made more visible - perhaps in the toolbar area at the top of the view. And it would be great if you could create multiple instances and associate a particular view instance with an editor, similar to how the Project Explorer can be linked to the editors and show which file is being worked on.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>And I'm not quite sure how to use all of the functionality - like those other two extension points - or some of the settings on the annotationDefinition extension.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>That said, I think it's a great start and it would be awesome to have a consistent way to annotate Java classes. I'm not sure that this is really a WTP-specific view and think it would make more sense in the more general Java tools category, but that's just me.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Big thanks to Shane for the pointers and I'm looking forward to seeing how this functionality improves in future releases!</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>--Fitz</p>
+</div>
+<!-- [DocumentBodyEnd:158cb912-df98-4951-905e-25dee65bc588] -->
+</body>

@@ -1,0 +1,128 @@
+---
+title: 'Debugging and Browsing OpenShift Applications in Eclipse'
+author: 'Max Rydahl Andersen'
+layout: blog-post
+tags: [ jbosstools, eclipse, openshift, jbosscentral ]
+orignallink: ''
+---
+<body>
+<div class="jive-rendered-content">
+<p>Latest OpenShift enabled port-forwarding for your OpenShift applications.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>This enables you to use a debugger for your JBoss application and it allows you to connect to the database directly and use tools like Eclipse Database Browser instead of only using phpsqlmyadmin. </p>
+<p>Of course once you have these things setup in your Eclipse you can use things like reverse engineering and even run your local app against the remote database.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>It all works by setting up an ssh tunnel that exposes the internal remote ports running on OpenShift servers on your local machine - this does require some manual steps which i'm outlining in this blog</p>
+<p>together with how to configure the database setup in Eclipse and how to remote debug JBoss running on OpenShift.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>In future releases of JBoss Tools we'll be looking at simplifying these steps, but for now here are the fully manual steps.</p>
+<h1 id="settingupportforward">Setting up port forward</h1>
+<p>The simplest way to do this is to use the rhc command line tools.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Make sure you got the latest version - how to install/update these for various platforms is documented <a class="jive-link-external-small" href="https://openshift.redhat.com/app/express#quickstart">here</a>.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Once you have those run <code>rhc-port-forward -a &lt;appname&gt;</code>.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>I have an app called &#8216;fonk&#8217; of type &#8216;jboss-as7&#8217; and with &#8216;mysql&#8217; cartridge enabled. For such a setup you should see something like this:</p>
+<pre><code>rhc-port-forward -a fonk 
+Password: 
+Checking available ports...
+<br><br>
+Binding httpd -&gt; 127.1.255.130:8080...
+Binding java -&gt; 127.1.255.129:8080...
+Binding mysqld -&gt; 127.1.255.129:3306...
+<br><br>
+Use ctl + c to stop</code></pre>
+<h1 id="osxgotcha">OSX gotcha</h1>
+<p>In case you get an error print out similar to this:</p>
+<pre><code>bind: Can't assign requested address
+channel_setup_fwd_listener: cannot listen to port: 3306
+bind: Can't assign requested address
+channel_setup_fwd_listener: cannot listen to port: 8080
+bind: Can't assign requested address
+channel_setup_fwd_listener: cannot listen to port: 8080
+Could not request local forwarding.</code></pre>
+<p>You are most likely running OS X which unfortunately(?) does not automatically allow you to have all 127.x.x.x IP&#8217;s setup with a so called loopback alias.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>To fix this you need to add such alias manually for each IP you want to connect to. </p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>In my case that is <code>127.1.255.130</code> and <code>127.1.255.129</code> as seen in the first attempt of using rhc-port-forward. These IP&#8217;s will be different for each of your app, thus for `fonk&#8217; app I enable loopback aliases by running the following:</p>
+<pre><code>sudo ifconfig lo0 alias 127.1.255.130
+sudo ifconfig lo0 alias 127.1.255.129</code></pre>
+<p>Now when you run <code>rhc-port-forward</code> you should not be seeing any <code>bind: Can't assign requested address</code>. error messages.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Note: these alias&#8217;es does not survive reboots - if anyone know how to setup global loopback alias or make these persistent between reboots then I would love to hear about that in the comments <img height="16px" src="https://community.jboss.org/4.5.6/images/emoticons/happy.gif" width="16px"></p>
+<h1 id="useopenshiftdatabaselocally">Use OpenShift database locally</h1>
+<p>When port forwarding is enabled you can start using these, for example to setup and connect to MySql database via Eclipse DTP Tools.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>To do this open the Data Source Explorer:</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4525-17933/datasourceexplorer.png"><img alt="datasourceexplorer.png" class="jive-image" height="176" id="datasourceexplorer.png" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4525-17933/260-176/datasourceexplorer.png" width="260"></a></p>
+<p>Click on the &#8220;New Connection Profile&#8221; and choose MySql and give it a name.</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4525-17934/newconnectionprofile.png"><img alt="newconnectionprofile.png" class="jive-image" height="282" id="newconnectionprofile.png" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4525-17934/310-282/newconnectionprofile.png" width="310"></a></p>
+<p>Click Next and if you do not have an existing driver for MySQL configured you will see an empty list:</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4525-17935/emptydriver.png"><img alt="emptydriver.png" class="jive-image" height="310" id="emptydriver.png" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4525-17935/310-310/emptydriver.png" width="310"></a></p>
+<p>To add a driver click the + icon and setup a driver:</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4525-17936/mysqldrivermissingjar.png"><img alt="mysqldrivermissingjar.png" class="jive-image" height="258" id="mysqldrivermissingjar.png" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4525-17936/310-258/mysqldrivermissingjar.png" width="310"></a></p>
+<p>For OpenShift MySQL the 5.1 option is best, and it just needs to be told where the driver is under the &#8220;Jar List&#8221; tab. Here you click the &#8220;Edit JAR/Zip&#8221; and point it to your downloaded mysql-connectoer-java-5.1.jar.</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4525-17937/editedjarlist.png"><img alt="editedjarlist.png" class="jive-image" height="258" id="editedjarlist.png" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4525-17937/310-258/editedjarlist.png" width="310"></a></p>
+<p>Once that is done you just need to fill in the right connection details:</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4525-17938/connectiondetails.png"><img alt="connectiondetails.png" class="jive-image" height="310" id="connectiondetails.png" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4525-17938/310-310/connectiondetails.png" width="310"></a></p>
+<p>The important part for the connection details is that you set URL to match the pattern:</p>
+<pre><code>jdbc:mysql://&lt;forwarded-ip&gt;:3306/&lt;appname&gt;</code></pre>
+<p>For my <code>fonk</code> application that would be:</p>
+<pre><code>jdbc:mysql://127.1.255.129.3306/fonk</code></pre>
+<p>And then set &#8220;User Name&#8221; to <code>admin</code> and type in your MySql password.</p>
+<p>You can use the &#8220;Test Connection&#8221; button to verify you can connect.</p>
+<p>When you press Finish you should be able to browse your remote mysql database hosted on OpenShift:</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4525-17940/datasourceexplorerconnected.png"><img alt="datasourceexplorerconnected.png" class="jive-image" height="239" id="datasourceexplorerconnected.png" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4525-17940/259-239/datasourceexplorerconnected.png" width="259"></a></p>
+<p>From here on out you can now use this Eclipse dataconnection with any plugin that supports such connections. i.e. Hibernate Tools reverse engineering features.</p>
+<h1 id="debugjbossas">Debug JBoss AS</h1>
+<p>To enable debug with JBoss we need to add a <code>enable_jpda</code> marker file to <code>.openshift/markers</code>.</p>
+<p>This is done by simply executing the following:</p>
+<pre><code>cd git/fonk
+touch .openshift/markers/enable_jpda
+git add .openshit/markers/enable_jpda
+git commit -a -m "enable jpda"
+[master 6f7197c] enable jpda
+0 files changed, 0 insertions(+), 0 deletions(-)
+create mode 100644 .openshift/markers/enable_jpda
+git push
+&lt;openshift remote build output&gt;</code></pre>
+<p>Note: you can of course also do this all from within Eclipse via EGit integration if you prefer that.</p>
+<p>When this have been enabled you need to start/restart port-forwarding to get it to pick up the java jpda port.</p>
+<pre><code>rhc-port-forward -a fonk 
+Password: 
+Checking available ports...
+<br><br>
+Binding httpd -&gt; 127.1.255.130:8080...
+Binding java -&gt; 127.1.255.129:8080...
+Binding java -&gt; 127.1.255.129:8787...
+Binding mysqld -&gt; 127.1.255.129:3306...
+<br><br>
+Use ctl + c to stop</code></pre>
+<p>Notice the <code>Binding java -&gt; 127.1.255.129:8787....</code> line, that is the jpda ip and port you are going to use.</p>
+<p>Now to set this up in Eclipse JDT debugger you need to create a &#8216;Remote Java Application&#8217; under &#8220;Debug Configurations&#8221;</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4525-17941/debugconfigurations.png"><img alt="debugconfigurations.png" class="jive-image" height="121" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4525-17941/208-121/debugconfigurations.png" width="208"></a></p>
+<p>And here you select &#8216;Remote Java Application&#8217; and fill in the connection details:</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4525-17944/setupremotedebug.png"><img alt="setupremotedebug.png" class="jive-image-thumbnail jive-image" height="303" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4525-17944/450-303/setupremotedebug.png" width="450"></a></p>
+<p>The important pieces here are to set Host: to the ip number (in my case <code>127.1.255.129</code>) and the port wich for JBoss AS on OpenShift is <code>8787</code> by default.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>The Project part is optional, but its useful to point it to the matching Eclipse project which will allow it to find the proper source and let you place breakpoints.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Once you press &#8220;Debug&#8221; it should go and connect to the running server. It might take a while, it is after all going into the Cloud <img height="16px" src="https://community.jboss.org/4.5.6/images/emoticons/happy.gif" width="16px"></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>And if you now set breakpoints and use a browser to trigger them you get something like this:</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4525-17943/debugjsp.png"><img alt="debugjsp.png" class="jive-image-thumbnail jive-image" height="473" id="debugjsp.png" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4525-17943/450-473/debugjsp.png" width="450"></a></p>
+<p>This showing the remote debugger hitting the breapoint in a jsp page named <code>snoop.jsp</code>.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h1 id="conclusion">Conclusion</h1>
+<p>I hope I showed you how powerful OpenShift&#8217;s latest release with port-forwarding is and how (fairly) easy it is to setup once you get the port-forwarding working.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Being able to connect directly to the remote database and debug you JBoss server makes for a whole new world of possibilities and productivity boost with OpenShift.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Hope you like it and continues to have fun exploring OpenShift and JBoss Tools.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>/max </p>
+</div>
+<!-- [DocumentBodyEnd:97091b90-8ea3-4c13-91ec-46e7ad690fe1] -->
+</body>
