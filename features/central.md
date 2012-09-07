@@ -10,8 +10,7 @@ summary: JBoss Central is a new startup page in JBoss Tools and JBoss Developer 
  favorite framework. It also provides an easy way to install extra plugins.
 ---
 
-***
-#### News ![News](../../images/features/features-central_346px.png) 
+#### News and Blogs Feeds ![News](../../images/features/features-central_346px.png) 
 Central provides you with the latest community news, announcements and blog articles, so that you always know what's happening at JBoss.org !
 
 ***

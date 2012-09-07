@@ -12,7 +12,7 @@ summary: JBoss Tools for OpenShift offers a feature complete environment to work
   your remote application container, deploy your application, stream remote logs into your local console 
   and access your data and remotely debug the running application thanks to ssh port-forwarding.
 ---
-* * *
+
 #### Application creation and import wizard ![Wizard](../../images/features/features-openshift_283px.png)
 Todo...
 

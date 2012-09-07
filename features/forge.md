@@ -7,7 +7,6 @@ image_url: ../images/features/features-forge_237px.png
 
 summary: Forge integration allows developers to use the familiar terminal or command line interface within an Integrated Development Environment (IDE) using the new dedicated Forge Console. While Forge executes the user commands, the project explorer refreshes for immediate visual feedback. The Forge integration brings you the best of the two worlds in a single place. 
 ---
-* * *
 
 #### Forge Console ![Forge Console](../../images/features/features-forge_237px.png)
 
