@@ -7,7 +7,6 @@ summary: In the context of application development, Maven allows you to extend y
 feature_order: 3
 ---
 
-* * *
 #### Dynamic Web Projects / m2e integration ![Integration](../../images/features/features-maven_346px.png)
 Todo...
 

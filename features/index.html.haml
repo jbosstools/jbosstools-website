@@ -8,7 +8,6 @@ tab: features
     - features = features.sort{|l,r| l.order <=> r.order}
     .features 
       - for feature in features
-        %hr
         %h4 
           %a{:href=>feature.url} 
             #{feature.title}
@@ -18,6 +17,7 @@ tab: features
           #{feature.summary}
           %br
           %a{:href=>feature.url} Read more... 
+        %hr
    
   
   

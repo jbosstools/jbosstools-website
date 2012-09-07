@@ -28,23 +28,17 @@ tab: blog
             = "text blank!" << "..."
         &rarr;
   
-%hr
 .blogpost
-  %h2
+  %h2.blog-title
     = page.title
   .blogtagbar
     -# #{page.date.strftime( '%Y-%m-%d' )}
-    &nbsp;|&nbsp;
-    = page.flattr_compact_counter(:url=>"http://blog.xam.dk" + page.url, 
-                                  :title=>page.title, 
-                                  :tags=>page.tags.join(',')) 
-    &nbsp;|&nbsp;
-    - page.tags.each do |tag|
-      -# %a.label{:href=>tag.primary_page.url}
-        = tag
-      &nbsp;
+    - if page.tags? 
+      %span< Tags: 
+      - page.tags.each do |tag|
+        -# %a.label{:href=>tag.primary_page.url}
+        %span< #{tag}
   %p
     ~ content
   .disqus-long
     = page.disqus_comments
-  %hr

@@ -9,7 +9,6 @@ summary: Context and Dependency Injection (CDI) tooling allows you to easily add
  for your web-based applications. JBoss Tools and JBoss Developer Studio help you add CDI support to existing projects and 
  create new projects with the CDI wizard. The tooling also provides you with validation, code completion and hyperlink navigation.
 ---
-* * *
 #### CDI Nature ![CDI](../../images/features/features-cdi_308px.png)
 Todo...
 

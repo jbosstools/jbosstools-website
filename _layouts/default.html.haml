@@ -4,30 +4,28 @@ layout: base
 #top_subnav_branding 
   .community-banner
     %a{ :border=>"0", :href => "#{site.base_url}/index.html"}
-      %img{ :alt=>"JBoss Tools", :src => "#{site.base_url}/images/tools-banner-1180px.jpg"}
+      %img{ :alt=>"JBoss Tools", :src => "#{site.base_url}/images/nav/tools-banner-1180px.jpg"}
 #wrapper-2
   #wrap-content 
     #wrapper-3b  
       #container-reduced
-        - if (page.display_carousel == true) 
-          = partial( 'carousel.html.haml' )
-          
-        #menu.row-fluid 
-          .span12
-            %a.span2.offset1{:href => "/installation"} 
-              %h4#installation Installation 
-            %a.span2{:href => "/features"} 
-              %h4#features Features
-            %a.span2{:href => "/videos"} 
-              %h4#videos Videos
-            %a.span2{:href => "/community"} 
-              %h4#community Community
-            %a.span2{:href => "/blog"} 
-              %h4#community Blog
-            
-        - if (page.tab != null) 
-          %script{:type => "text/javascript"}
-            $("##{page.tab}").addClass("selected");     
+        #menu
+          %ul
+            %li 
+              %a#installation{:href => "/installation"}< Installation
+            %li
+              %a#features{:href => "/features"}< Features
+            %li
+              %a#videos{:href => "/videos"}< Videos
+            %li
+              %a#community{:href => "/community"}< Community 
+            %li
+              %a#blog{:href => "/blog"}< Blog
+          #install-shortcut 
+            %img{:src => "/images/nav/installbutton.png"}
+          - if (page.tab != null) 
+            %script{:type => "text/javascript"}
+              $("##{page.tab}").addClass("selected");     
 
         ~content
 
