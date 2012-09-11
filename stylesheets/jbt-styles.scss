@@ -75,7 +75,8 @@ $title-font-size: 20px;
 // Project banner and navigation menu
 // ***************************************
 #project-banner-wrapper-bg {
-  background: #F3F3F3;
+  background: #F5F5F5;
+  //background-image: url("/images/nav/dust.jpg");
   margin-bottom: 00px;
 }
   
@@ -91,7 +92,7 @@ $title-font-size: 20px;
 }
 
 $left-offset: 0px;
-$top-offset: 20px;
+$top-offset: 30px;
 
 #project-banner {
   height: (2 * $top-offset) + 110px;
@@ -117,16 +118,37 @@ $top-offset: 20px;
   padding-top: 0px; // overriding default settings
 }
 
+$menu-top-color: #F3F3F3;
+$menu-bottom-color: #E0E0E0;
+$box-shadow: #ABABAB;
 #menu-wrapper-bg {
-  background: #E0E0E0;
+  //background-image: url("/images/nav/dust5.jpg");
+  background: #EAEAEA;
+  -moz-box-shadow: 0px 3px 3px 0px $box-shadow;
+  -webkit-box-shadow: 0px 3px 3px 0px $box-shadow;
+  -o-box-shadow: 0px 3px 3px 0px $box-shadow;
+  box-shadow: 0px 3px 3px 0px $box-shadow;
+  filter:progid:DXImageTransform.Microsoft.Shadow(color=$box-shadow, Direction=180, Strength=3);  
+  //background-image: linear-gradient(top, #E0E0E0, #F3F3F3);
+  //background-image: linear-gradient(bottom, $menu-bottom-color, $menu-top-color);
+  //background-image: -o-linear-gradient(bottom, $menu-bottom-color, $menu-top-color);
+  //background-image: -moz-linear-gradient(bottom, $menu-bottom-color, $menu-top-color);
+  //background-image: -webkit-linear-gradient(bottom, $menu-bottom-color, $menu-top-color);
+  //background-image: -ms-linear-gradient(bottom, $menu-bottom-color, $menu-top-color);
+  
+  //background-image: -webkit-gradient(
+  //  linear,
+  //  left bottom,
+  //  left top,
+  //  color-stop($menu-bottom-color),
+  //  color-stop($menu-top-color)
+  //);
   margin-bottom: 20px;
 }
 
 #menu-wrapper {
   margin-left: auto;
   margin-right: auto;
-  padding-top: 5px;
-  padding-bottom: 5px;
 }
 
 #menu {
@@ -139,6 +161,8 @@ $top-offset: 20px;
   display: block;
   text-decoration: none;
   margin: 0px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 #menu li {
@@ -149,8 +173,8 @@ $top-offset: 20px;
   font-weight: bold;
   padding-right: 15px;
   padding-left: 15px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 #menu li a {
