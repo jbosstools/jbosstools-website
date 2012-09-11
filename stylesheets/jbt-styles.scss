@@ -4,11 +4,191 @@
 // @import "bootstrap-responsive";
 
 body {
-  background-color: #F3F3F3;
+  background-color: #FFFFFF;
   /*font-family: "DejaVu Sans", Verdana, sans-serif;
   font-size: 14px;
   line-height: 24px;
   color: #333333;*/
+}
+
+$title-font-size: 20px;
+
+@mixin fontsize() {
+  font-size: $title-font-size;
+}
+
+// ****************************************
+// JBoss Community Header (Branding) 
+// ****************************************
+
+#nav-wrapper {
+  width:100%;
+  background-image: url("http://static.jboss.org/theme/images/bgs/branding-stkv2.png");
+  background-clip: border-box;
+}
+
+
+#branding {
+  background-image: none;
+  margin: 0px;
+  max-width: none;
+  height: auto;
+}
+
+#logo {
+  background-image: none;
+  height: 48px;
+}
+
+#logo a {
+  padding-top: 0;
+  width: auto;
+  height: 48px;
+  background-image: url("http://static.jboss.org/theme/images/bgs/primarynav-lines.png");
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-clip: border-box;
+}
+
+#logo a img {
+  display: inline;
+}
+
+#primarynav {
+  left: 300px;
+}
+
+#primarynav ul li {
+  height: 48px;
+}
+
+#primarynav ul li a {
+  background-image: none;
+  padding-top: 15px;
+}
+
+#tab {
+  cursor: pointer;
+}
+
+// ***************************************
+// Project banner and navigation menu
+// ***************************************
+#project-banner-wrapper-bg {
+  background: #F3F3F3;
+  margin-bottom: 00px;
+}
+  
+#project-banner-wrapper {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
+  padding-bottom: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+$left-offset: 0px;
+$top-offset: 20px;
+
+#project-banner {
+  height: (2 * $top-offset) + 110px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 770px;
+}
+
+#project-logo {
+  position:absolute;
+  top: $top-offset;
+  left: $left-offset
+}
+
+#project-installer {
+  position:absolute;
+  top: $top-offset + 61px;
+  left: $left-offset + 460px;
+}
+
+#wrapper {
+  padding-top: 0px; // overriding default settings
+}
+
+#menu-wrapper-bg {
+  background: #E0E0E0;
+  margin-bottom: 20px;
+}
+
+#menu-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#menu {
+  text-align:center;
+  padding-top: 0px;
+}
+
+#menu ul {
+  width: 100%;
+  display: block;
+  text-decoration: none;
+  margin: 0px;
+}
+
+#menu li {
+  display: inline;
+  text-decoration: none;
+  font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#menu li a {
+  color: #4a5d75;
+}
+
+#menu li a:visited {
+  color: #4a5d75;
+}
+
+#menu span {
+  height: 100%;
+  vertical-align: middle;
+  
+}
+#menu h5 {
+  display: inline;
+}
+
+
+// ****************************************
+// Footer
+// ****************************************
+#site-info {
+  background: #F3F3F3;
+}
+// ****************************************
+// Main content
+// ****************************************
+
+#content-wrapper-bg {
+  background-color: #FFF;
+}
+
+#content-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
 }
 
 $font-red-color: #88201B;
@@ -29,55 +209,7 @@ $font-red-color: #88201B;
   padding-bottom:20px;
 } 
 
-// ****************************************
-// Menu items
-// ****************************************
-$title-font-size: 20px;
 
-@mixin fontsize() {
-  font-size: $title-font-size;
-}
-
-#menu {
-  background-image: url("http://static.jboss.org/theme/images/bgs/wrapper2.png");
-  padding-top: 10px;
-  padding-bottom: 10px;
-  margin-bottom: 50px;
-  padding-left: auto;
-  padding-right: auto;
-}
-
-
-#menu ul {
-  width: 100%;
-  display: inline;
-  text-decoration: none;
-  margin: 0px;
-}
-
-#menu li {
-  display: inline;
-  text-decoration: none;
-  color: #D1DFEE;
-  font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
-  font-size: 16px;
-  padding-right: 15px;
-  padding-left: 15px;
-  text-shadow: #818181 1px 1px 1px;
-}
-
-#install-shortcut {
-  float:right;
-  margin-right: 15px;
-}
-#menu span {
-  height: 100%;
-  vertical-align: middle;
-  
-}
-#menu h5 {
-  display: inline;
-}
 
 @mixin bg-image($url) {
   background-image:url($url);
