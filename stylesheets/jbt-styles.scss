@@ -124,25 +124,25 @@ $box-shadow: #ABABAB;
 #menu-wrapper-bg {
   //background-image: url("/images/nav/dust5.jpg");
   background: #EAEAEA;
-  -moz-box-shadow: 0px 3px 3px 0px $box-shadow;
+  /*-moz-box-shadow: 0px 3px 3px 0px $box-shadow;
   -webkit-box-shadow: 0px 3px 3px 0px $box-shadow;
   -o-box-shadow: 0px 3px 3px 0px $box-shadow;
   box-shadow: 0px 3px 3px 0px $box-shadow;
-  filter:progid:DXImageTransform.Microsoft.Shadow(color=$box-shadow, Direction=180, Strength=3);  
-  //background-image: linear-gradient(top, #E0E0E0, #F3F3F3);
-  //background-image: linear-gradient(bottom, $menu-bottom-color, $menu-top-color);
-  //background-image: -o-linear-gradient(bottom, $menu-bottom-color, $menu-top-color);
-  //background-image: -moz-linear-gradient(bottom, $menu-bottom-color, $menu-top-color);
-  //background-image: -webkit-linear-gradient(bottom, $menu-bottom-color, $menu-top-color);
-  //background-image: -ms-linear-gradient(bottom, $menu-bottom-color, $menu-top-color);
-  
-  //background-image: -webkit-gradient(
-  //  linear,
-  //  left bottom,
-  //  left top,
-  //  color-stop($menu-bottom-color),
-  //  color-stop($menu-top-color)
-  //);
+  filter:progid:DXImageTransform.Microsoft.Shadow(color=$box-shadow, Direction=180, Strength=3);*/
+   
+  /*background-image: linear-gradient(top, #E0E0E0, #F3F3F3);
+  background-image: linear-gradient(bottom, $menu-bottom-color, $menu-top-color);
+  background-image: -o-linear-gradient(bottom, $menu-bottom-color, $menu-top-color);
+  background-image: -moz-linear-gradient(bottom, $menu-bottom-color, $menu-top-color);
+  background-image: -webkit-linear-gradient(bottom, $menu-bottom-color, $menu-top-color);
+  background-image: -ms-linear-gradient(bottom, $menu-bottom-color, $menu-top-color);
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop($menu-bottom-color),
+    color-stop($menu-top-color)
+  );*/
   margin-bottom: 20px;
 }
 
@@ -163,14 +163,15 @@ $box-shadow: #ABABAB;
   margin: 0px;
   padding-top: 15px;
   padding-bottom: 15px;
-}
+} 
 
 #menu li {
   display: inline;
   text-decoration: none;
-  font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: bold;
+  letter-spacing: -.06em;
   padding-right: 15px;
   padding-left: 15px;
   padding-top: 15px;
