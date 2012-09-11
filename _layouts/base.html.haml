@@ -10,9 +10,8 @@
     %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"http://static.jboss.org/theme/css/magnolia/jquery-ui.css", :media=>"screen, projection"}
     %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"http://static.jboss.org/theme/css/magnolia/project.css", :media=>"screen, projection"}
     %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"http://static.jboss.org/theme/css/magnolia/clearspace_common.css", :media=>"screen, projection"}
-    %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"http://static.jboss.org/theme/css/magnolia/wide.css", :media=>"only screen and (min-width: 1200px)"}
-    %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"http://static.jboss.org/theme/css/magnolia/small.css", :media=>"only screen and (max-width: 980px)"}
     %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"http://static.jboss.org/theme/css/magnolia/print.css", :media=>"print"}
+    %link{ :rel=>"icon", :type=>"image/png", :href=>"#{site.base_url}/images/nav/jbosstools_icon16.png"}
 
     %script{ :type=>'text/javascript', :src=>"http://static.jboss.org/theme/js/magnolia/allinone.js" }
     %script{ :type=>'text/javascript', :src=>"http://jboss.org/resources/templating-kit/js/jbossorg.2011-07-27-15-42-03-383.cache.js" }
@@ -22,18 +21,19 @@
     /[if lt IE 9]
     %script{ :type=>'text/javascript', :src=>'//html5shim.googlecode.com/svn/trunk/html5.js' } 
 
-    -# custom page javascript
     %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"http://design.jboss.org/css/bootstrap.css", :media=>"screen, projection"}
     %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"http://static.jboss.org/theme/css/common/org_common.css", :media=>"screen, projection"}
-    %link{ :rel=>'stylesheet', :type=>'text/css', :href=>"#{page.base_url}/stylesheets/styles.css" }
+    
+    -# custom page css
+    %link{ :rel=>'stylesheet', :type=>'text/css', :href=>"#{page.base_url}/stylesheets/jbt-styles.css" }
+    %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"#{site.base_url}/stylesheets/jbt-styles-wide.css", :media=>"only screen and (min-width: 1200px)"}
+    %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"#{site.base_url}/stylesheets/jbt-styles-small.css", :media=>"only screen and (max-width: 980px)"}
    
-  %body.col-float3.nocol-layout
-    #wrapper 
-      #maincontent-wrapper
-        = partial( 'header.html.haml' )
-        ~ content
-      #site-info  
-        = partial( 'footer.html.haml' ) 
+  %body.col-float3.nocol-layout 
+    = partial( 'header.html.haml' )
+    ~ content
+    #site-info  
+      = partial( 'footer.html.haml' ) 
   -#%footer
   -#  %p &copy; Organization #{Date.today.year}
     -# Uncomment script tags (remove leading -#) when you're ready to use behaviors

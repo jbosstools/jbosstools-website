@@ -1,33 +1,35 @@
 ---
 layout: base
 --- 
-#top_subnav_branding 
-  .community-banner
-    %a{ :border=>"0", :href => "#{site.base_url}/index.html"}
-      %img{ :alt=>"JBoss Tools", :src => "#{site.base_url}/images/nav/tools-banner-1180px.jpg"}
-#wrapper-2
-  #wrap-content 
-    #wrapper-3b  
-      #container-reduced
-        #menu
-          %ul
-            %li 
-              %a#installation{:href => "/installation"}< Installation
-            %li
-              %a#features{:href => "/features"}< Features
-            %li
-              %a#videos{:href => "/videos"}< Videos
-            %li
-              %a#community{:href => "/community"}< Community 
-            %li
-              %a#blog{:href => "/blog"}< Blog
-          #install-shortcut 
-            %img{:src => "/images/nav/installbutton.png"}
-          - if (page.tab != null) 
-            %script{:type => "text/javascript"}
-              $("##{page.tab}").addClass("selected");     
+#project-banner-wrapper-bg
+  #project-banner-wrapper
+    #project-banner
+      %a#project-logo{ :border=>"0", :href => "#{site.base_url}/index.html"}< 
+        %img{ :alt=>"JBoss Tools", :src => "#{site.base_url}/images/nav/jbosstools_horiz_770.png"}<
+      %a#project-installer
+        %img{:src => "/images/nav/installbutton.png"}
+    
+#menu-wrapper-bg
+  #menu-wrapper
+    #menu
+      %ul
+        %li 
+          %a#installation{:href => "/installation"}< Installation
+        %li
+          %a#features{:href => "/features"}< Features
+        %li
+          %a#videos{:href => "/videos"}< Videos
+        %li
+          %a#community{:href => "/community"}< Community 
+        %li
+          %a#blog{:href => "/blog"}< Blog
+      - if (page.tab != null) 
+        %script{:type => "text/javascript"}
+          $("##{page.tab}").addClass("selected");     
 
-        ~content
+#content-wrapper-bg
+  #content-wrapper
+    ~content
 
   -# help the wrapper-2 container include the content and display a proper border around it.
   %div{:style => "clear:both; height:100%;"} 
