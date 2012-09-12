@@ -95,11 +95,11 @@ $left-offset: 0px;
 $top-offset: 15px;
 
 #project-banner {
-  height: (2 * $top-offset) + 110px;
+  height: (2 * $top-offset) + 73px;
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  width: 770px;
+  width: 585px;
 }
 
 #project-logo {
@@ -110,8 +110,8 @@ $top-offset: 15px;
 
 #project-installer {
   position:absolute;
-  top: $top-offset + 61px;
-  left: $left-offset + 460px;
+  top: $top-offset + 45px;
+  left: $left-offset + 306px;
 }
 
 #wrapper {
