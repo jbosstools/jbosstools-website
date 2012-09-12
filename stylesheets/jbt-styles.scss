@@ -85,14 +85,14 @@ $title-font-size: 20px;
   margin-bottom: 0px;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 20px;
+  padding-top: 0px;
   padding-bottom: 0px;
   padding-left: 10px;
   padding-right: 10px;
 }
 
 $left-offset: 0px;
-$top-offset: 30px;
+$top-offset: 15px;
 
 #project-banner {
   height: (2 * $top-offset) + 110px;
