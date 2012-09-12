@@ -156,13 +156,14 @@ $box-shadow: #ABABAB;
   padding-top: 0px;
 }
 
+$menu-items-padding: 10px;
 #menu ul {
   width: 100%;
   display: block;
   text-decoration: none;
   margin: 0px;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding-top: $menu-items-padding;
+  padding-bottom: $menu-items-padding;
 } 
 
 #menu li {
@@ -174,8 +175,8 @@ $box-shadow: #ABABAB;
   letter-spacing: -.06em;
   padding-right: 15px;
   padding-left: 15px;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding-top: $menu-items-padding;
+  padding-bottom: $menu-items-padding;
 }
 
 #menu li a {
