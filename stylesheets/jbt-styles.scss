@@ -138,6 +138,7 @@ $box-shadow: #ABABAB;
 #menu-wrapper-bg {
   //background-image: url("/images/nav/dust5.jpg");
   background: #EAEAEA;
+  background-image: url("http://static.jboss.org/theme/images/bgs/branding-stkv2.png");
   /*-moz-box-shadow: 0px 3px 3px 0px $box-shadow;
   -webkit-box-shadow: 0px 3px 3px 0px $box-shadow;
   -o-box-shadow: 0px 3px 3px 0px $box-shadow;
@@ -161,9 +162,10 @@ $box-shadow: #ABABAB;
 }
 
 #menu-wrapper {
-  background-image: url(http://static.jboss.org/theme/images/bgs/branding-stkv2.png);
   width: 100%;
   text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #menu {
