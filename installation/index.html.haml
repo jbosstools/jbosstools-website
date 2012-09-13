@@ -2,73 +2,75 @@
 layout: default
 tab: installation
 versions:
-  - title: "Core Stable version 3.3.1"
+  - title: "Core version 3.3.1"
+    state: "Stable"
     requires: "Eclipse 3.7.2"
     marketplace: "http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=121986"
     updatesite: "http://download.jboss.org/jbosstools/updates/stable/indigo/"
     download: "http://www.jboss.org/tools/download/stable/3_3_Final.html"
-  - title: "Core Development version 4.0 alpha1"
+  - title: "Core version 4.0.0.Alpha1"
+    state: "Development"
     requires: "Eclipse 3.7.2"
     updatesite: "http://download.jboss.org/jbosstools/updates/stable/indigo/"
     download: "http://www.jboss.org/tools/download/stable/3_3_Final.html"
-  - title: "SOA Development version 3.3.0.CR1"
+  - title: "SOA version 3.3.0.CR1"
+    state: "Development"
     requires: "Eclipse 3.7.2"
     updatesite: "http://download.jboss.org/jbosstools/updates/development/indigo/soa-tooling"
     download: "http://www.jboss.org/tools/download/dev/3_3_SOA.html"
 ---
-#container-reduced.left
-  .row-fluid
-    .span12
-      :markdown
-        ##### JBoss Developer Studio
-        **JBoss Developer Studio** is the product that bundles all the Eclipse Plugins that you can find in the **JBoss Tools Project** here
-         (see the [features](../features) page for more information about the Plugins).
-        
-        The easiest path to using Eclipse Plugins for JBoss Technology is downloading and installing 
-        the free [JBoss Developer Studio](http://devstudio.jboss.com/download/). It is a bundled version of Eclipse IDE with all the JBoss Tools plugins and 
-        an universal installer that works on Windows, MacOSX and Linux, both in 32bits and 64bits. 
-        [Give it a try](http://devstudio.jboss.com/download/) ! (a Red Hat Portal account is required, but don't worry, it is free). 
+.row-fluid
+  .span12
+    :markdown
+      ##### JBoss Developer Studio
+      **JBoss Developer Studio** is the product that bundles all the Eclipse Plugins that you can find in the **JBoss Tools Project** here
+       (see the [features](../features) page for more information about the plugins).
       
-        You can also opt for the subscription-based [JBoss Developer Studio Portfolio Edition](http://devstudio.jboss.com/download/) 
-        which comes bundled with [JBoss Enterprise Application Platform (EAP)](http://www.jboss.com/products/platforms/application/)
-        if you plan to develop on this platform and you need support for it.
-        
-        ##### JBoss Tools
-        We understand that you may however prefer installing the plugins on your existing Eclipse runtime, 
-        and we provide you with the following installation mode:
-        
-        -  the workbench built-in access to the **Eclipse Marketplace** (only the latest stable version of JBoss Tools is available there, though), 
-        -  the **Update Site** (go to "Help>Install New Software...", click on "Add..." and input the Update Site URL into the "location" field)
-        -  the **Downloaded zip file** (then go to "Help>Install New Software...", click on "Add..." and use "Local..." or "Archive..." to select the downloaded bundle).
+      The easiest way to getting started with the Eclipse Plugins for JBoss Technology is by downloading and installing 
+      the free [JBoss Developer Studio](http://devstudio.jboss.com/download/). It is a bundled version of Eclipse IDE along with all the JBoss Tools Plugins and 
+      an universal installer that works on Windows, MacOSX and Linux, both in 32bits and 64bits. 
+      [Give it a try](http://devstudio.jboss.com/download/) ! (a Red Hat Portal account is required, but don't worry, it is free). 
     
-        JBoss Tools is now splitted into two separate packages:
-        
-        - the **Core** version, which contains plugins for CDI, Hibernate, Web Services, OpenShift, AS, Central, etc.
-        - the **SOA** version, which provides more specific plugins for BRMS (JBPM, Drools, etc.)
-       
-        The table below provides you with the links to the version of JBoss Tools you want to install:
-
-  .row-fluid
-    .span12.center#install
-      %table
-        - for version in page.versions
-          %tr
-            %td 
-              %strong 
-                #{version.title} 
-                (requires #{version.requires})
-            %td 
-              - if (version.marketplace != null)
-                %a{:href => "#{version.marketplace}"} marketplace
-            %td 
-              %a{:href => "#{version.updatesite}"} update-site
-            %td 
-              %a{:href => "#{version.download}"} download
+      You can also select the subscription-based [JBoss Developer Studio Portfolio Edition](http://devstudio.jboss.com/download/) 
+      which comes bundled with [JBoss Enterprise Application Platform (EAP)](http://www.jboss.com/products/platforms/application/)
+      if you plan to develop on this platform and you need support for it.
+      
+      ##### JBoss Tools
+      We understand that you may however prefer installing the plugins on your existing Eclipse runtime, 
+      and we provide you with the following installation mode:
+      
+      -  the workbench built-in access to the **Eclipse Marketplace** (only the latest stable version of JBoss Tools is available there, though), 
+      -  the **Update Site** (go to "Help>Install New Software...", click on "Add..." and input the Update Site URL into the "location" field)
+      -  the **Downloaded zip file** (then go to "Help>Install New Software...", click on "Add..." and use "Local..." or "Archive..." to select the downloaded bundle).
   
-  .row-fluid
-    .span12
-      :markdown
-        Are you looking for an older version ? Look at the [archives](./archives).
+      JBoss Tools is now splitted into two separate packages:
+      
+      - the **Core** version, which contains plugins for CDI, Hibernate, Web Services, OpenShift, AS, Central, etc.
+      - the **SOA** version, which provides more specific plugins for BRMS (JBPM, Drools, etc.)
+     
+      The table below provides you with the links to the version of JBoss Tools you want to install:
+
+.row-fluid
+  .span12#install
+    %table.center
+      - for version in page.versions
+        %tr
+          %td 
+            %strong 
+              #{version.title} 
+              (#{version.state}, requires #{version.requires})
+          %td 
+            - if (version.marketplace != null)
+              %a{:href => "#{version.marketplace}"} marketplace
+          %td 
+            %a{:href => "#{version.updatesite}"} update-site
+          %td 
+            %a{:href => "#{version.download}"} download
+
+.row-fluid
+  .span12
+    :markdown
+      Are you looking for an older version ? Look at the [archives](./archives).
 
 
-                     
+                   

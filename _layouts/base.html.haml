@@ -29,10 +29,12 @@
     %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"#{site.base_url}/stylesheets/jbt-styles-wide.css", :media=>"only screen and (min-width: 1200px)"}
     %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"#{site.base_url}/stylesheets/jbt-styles-small.css", :media=>"only screen and (max-width: 980px)"}
    
-  %body.col-float3.nocol-layout 
-    = partial( 'header.html.haml' )
-    ~ content
-    #site-info  
+  %body.col-float3.nocol-layout
+    .pushed-wrapper
+      = partial( 'header.html.haml' )
+      ~ content
+      .push
+    #site-info.push
       = partial( 'footer.html.haml' ) 
   -#%footer
   -#  %p &copy; Organization #{Date.today.year}
