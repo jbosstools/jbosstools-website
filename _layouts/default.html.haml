@@ -12,25 +12,23 @@ layout: base
 #menu-wrapper-bg
   #menu-wrapper
     #menu
-      %ul
-        %li 
-          %a#installation{:href => "/installation"}< Installation
-        %li
-          %a#features{:href => "/features"}< Features
-        %li
-          %a#videos{:href => "/videos"}< Videos
-        %li
-          %a#community{:href => "/community"}< Community 
-        %li
-          %a#blog{:href => "/blog"}< Blog
+      %ul.center
+        %li#installation
+          %a{:href => "/installation"}< Installation
+        %li#features
+          %a{:href => "/features"}< Features
+        %li#videos
+          %a{:href => "/videos"}< Videos
+        %li#community
+          %a{:href => "/community"}< Community 
+        %li#blog
+          %a{:href => "/blog"}< Blog
       - if (page.tab != null) 
         %script{:type => "text/javascript"}
           $("##{page.tab}").addClass("selected");     
 
 #content-wrapper-bg
   #content-wrapper
-    ~content
-
-  -# help the wrapper-2 container include the content and display a proper border around it.
-  %div{:style => "clear:both; height:100%;"} 
+    #container-reduced.left
+      ~content
 

@@ -3,12 +3,17 @@
 // Include responsive Bootstrap styles
 // @import "bootstrap-responsive";
 
+html {
+  height: 100%;
+}
+
 body {
   background-color: #FFFFFF;
   /*font-family: "DejaVu Sans", Verdana, sans-serif;
   font-size: 14px;
   line-height: 24px;
   color: #333333;*/
+ height: 100%;
 }
 
 .left {
@@ -20,6 +25,11 @@ $title-font-size: 20px;
 @mixin fontsize() {
   font-size: $title-font-size;
 }
+
+// ****************************************
+// Footer Pusher
+// ****************************************
+$push: 5em;
 
 // ****************************************
 // JBoss Community Header (Branding) 
@@ -151,44 +161,60 @@ $box-shadow: #ABABAB;
 }
 
 #menu-wrapper {
-  margin-left: auto;
-  margin-right: auto;
+  background-image: url(http://static.jboss.org/theme/images/bgs/branding-stkv2.png);
+  width: 100%;
+  text-align: center;
 }
 
 #menu {
   text-align:center;
   padding-top: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  display: inline-block;
+  background: url("http://static.jboss.org/theme/images/bgs/primarynav-lines.png") no-repeat top left ;
 }
 
 $menu-items-padding: 10px;
 #menu ul {
-  width: 100%;
   display: block;
   text-decoration: none;
-  margin: 0px;
   padding-top: $menu-items-padding;
   padding-bottom: $menu-items-padding;
+  margin-bottom: 0px;
 } 
 
 #menu li {
+  min-height: 100%;
+  height: auto;
   display: inline;
   text-decoration: none;
-  font-family: "Lucida Sans", "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  font-weight: bold;
-  letter-spacing: -.06em;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  text-shadow: 0 1px 1px black;
+  font-size: 12px;
+  text-transform: uppercase;
   padding-right: 15px;
   padding-left: 15px;
   padding-top: $menu-items-padding;
   padding-bottom: $menu-items-padding;
+  color:#C9D4E4;/* lightest blue */
+  background: url("http://static.jboss.org/theme/images/bgs/primarynav-lines.png") no-repeat top right ;
 }
 
-#menu li a {
-  color: #4a5d75;
+#menu ul li a {
+  color:#C9D4E4;/* lightest blue */
+  text-decoration: none;
+}
+#menu ul li a:visited {
+  color:#C9D4E4;/* lightest blue */
 }
 
-#menu li a:visited {
-  color: #4a5d75;
+#menu ul li a:hover {
+  color:#FEFEFE;/* light white  */
+}
+
+#menu ul li.selected a{
+  color:#FEFEFE;/* light white  */
 }
 
 #menu span {
@@ -201,18 +227,31 @@ $menu-items-padding: 10px;
 }
 
 
+
 // ****************************************
 // Footer
 // ****************************************
+.push {
+  height: $push;
+}
+
 #site-info {
   background: #F3F3F3;
+  height: $push;
 }
 // ****************************************
 // Main content
 // ****************************************
+.pushed-wrapper{
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+}
 
 #content-wrapper-bg {
   background-color: #FFF;
+  margin-bottom: -$push;
+  
 }
 
 #content-wrapper {
@@ -276,6 +315,7 @@ $font-red-color: #88201B;
 }
 */
 
+
 // ****************************************
 // Carousel on welcome page
 // ****************************************
@@ -332,6 +372,7 @@ p  {
   margin-left: auto;
   margin-right: auto;
 }
+
 #install  tr {
   border: 1px solid;
 }
