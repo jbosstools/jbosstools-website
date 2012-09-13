@@ -11,6 +11,10 @@ body {
   color: #333333;*/
 }
 
+.left {
+  text-align: left;
+}
+
 $title-font-size: 20px;
 
 @mixin fontsize() {
@@ -293,7 +297,6 @@ p  {
 
 #container-reduced .row-fluid {
   width: 80%; 
-  text-align: center;
   margin-left: auto;
   margin-right: auto;
 }
@@ -321,11 +324,37 @@ p  {
   margin-right: 10px;
 }
 
+// ****************************************
+// Installation
+// ****************************************
+#install {
+  padding-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#install  tr {
+  border: 1px solid;
+}
+#install  td {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+}
+
+#install table td:first-child {
+  background: #F3F3F3;
+  text-align: left;
+}
+h5 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 // ******************************************
 // Features
 // ******************************************
-
-
 .feature-headers {
   margin-bottom: 50px;
 }
