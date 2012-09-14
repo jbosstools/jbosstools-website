@@ -1,0 +1,115 @@
+---
+title: 'JBoss Tools and Developer Studio Beta 3 - Use the Source!'
+author: 'Max Rydahl Andersen'
+layout: blog-post
+tags: [ jboss, jbosstools, eclipse, gwt, maven, openshift, jbosscentral, apt ]
+orignallink: ''
+---
+<body>
+<div class="jive-rendered-content">
+<p>Beta3 of JBoss Tools and Developer Studio is now available with a good set of bugfixes but also a good set of new improvements and features in the area of OpenShift, Maven, BrowerSim, GWT, Annotation Processing and it even now come with easy installable source features for easy debugging and hacking.&#160; </p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4854-18193/jbosstolsdevstudio.png"><img alt="jbosstolsdevstudio.png" class="jive-image-thumbnail jive-image" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4854-18193/jbosstolsdevstudio.png" style="margin: 12px auto; display: block;" width="620"></a></p>
+<h4 style="color: #333333; font-weight: bold; padding-top: 10px; padding-right: 0pt; padding-bottom: 4px; padding-left: 0pt; font-size: 13pt; text-align: center; margin: 0pt;">Beta3</h4>
+<p style="text-align: center; padding: 0pt; margin: 0pt;">Developer Studio: [<a class="jive-link-external-small" href="http://devstudio.jboss.com/earlyaccess">Download</a>] | Tools: [<a class="jive-link-external-small" href="http://www.jboss.org/tools/download/dev" target="_top">Download</a>] [<a class="jive-link-external-small" href="http://download.jboss.org/jbosstools/updates/development/indigo/">Update Site</a>] | [<a class="jive-link-external-small" href="http://docs.jboss.org/tools/whatsnew" target="_top">What's New</a>] [<a class="jive-link-external-small" href="http://www.jboss.com/index.html?module=bb&amp;op=viewforum&amp;f=201" target="_top">Forums</a>] [<a class="jive-link-external-small" href="http://jira.jboss.com/jira/browse/JBIDE" target="_top">JIRA</a>] [<a class="jive-link-external-small" href="http://twitter.com/jbosstools" target="_top">Twitter</a>]</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>JBoss Tools is a set of plugins for Eclipse that complements, enhances and goes beyond the support that exist for JBoss and related technologies in the default Eclipse distribution.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>JBoss Developer Studio is a fully bundled Eclipse distribution which not only includes majority of JBoss Tools but also all its needed dependencies and 3rd party plugins allowing for an easy one-click and no-fuzz installation.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>If you are into doing your own bleeding edge eclipse plugin assembly, JBoss tools is for you, if you are more into having something that "Just Works" then JBoss Developer Studio is the way to go.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h2>Installation</h2>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><em>JBoss Developer Studio</em> comes with everything pre-bundled in its installer. Simply <a class="jive-link-external-small" href="http://devstudio.jboss.com/earlyaccess">download it</a> and run it like this:</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<!--[CodeBlockStart:392314fb-48fe-492c-83e4-247f52e593f1]--><pre class="jive-pre"><code class="jive-code">java -jar jbdevstudio-&lt;installername&gt;.jar
+</code></pre>
+<!--[CodeBlockEnd:392314fb-48fe-492c-83e4-247f52e593f1]--><p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Note, if you are on Mac OSX 64-bit we recommend you ensure to select the 32-bit option in the multi-platform installer to get Visual Page editor working and use much less memory.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Similar if you are on Windows 64-bit then use a 32-bit JDK to get 32-bit version running.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><em>JBoss Tools</em> requires a bit more:</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>This release requires at least Eclipse 3.7.1 but we recommend using the <a class="jive-link-external-small" href="http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/indigosr2">Eclipse 3.7.2 JEE Bundle</a> since then you get most of the dependencies preinstalled.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Once you have installed Eclipse, you either find us on<a class="jive-link-external-small" href="http://marketplace.eclipse.org/content/jboss-tools-indigo"> Eclipse Marketplace under "JBoss Tools (Indigo)"</a> or use our update site directly.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>The update site URL to use from Help &gt; Install New Software... is:</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<pre class="jive-pre"><p><a class="jive-link-external-small" href="http://download.jboss.org/jbosstools/updates/development/indigo/">http://download.jboss.org/jbosstools/updates/development/indigo/</a></p></pre>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Note: SOA tooling such as Drools, jbpm, ESB, Teeid etc. are not included in the JBoss Tools core releases at this time - they will be available separately.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h2>OpenShift</h2>
+<p>The OpenShift platform is moving and improving all the time and this also shows in the OpenShift tooling included in JBoss Tools.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>The most prominent and waited for feature in this release is we now support starting port forwarding from the IDE instead of using the command line.</p>
+<p>And we've done it so it is even better and more powerful than the command line in a couple of situations:</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<ul>
+<li>it works on all platforms out of the box</li>
+<li>it allows you to choose between using 127.0.0.1 or the remote addresses (especially good for Mac and Windows which needs configuration using 127.0.0.x)</li>
+<li>it will find free ports if necessary avoiding you to have to stop your local running servers to connect to OpenShift</li>
+</ul>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="http://docs.jboss.org/tools/whatsnew/openshift/images/port-forwarding.png"><img alt="http://docs.jboss.org/tools/whatsnew/openshift/images/port-forwarding.png" class="jive-image" src="http://docs.jboss.org/tools/whatsnew/openshift/images/port-forwarding.png"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>To start/stop this you use the context menu of your OpenShift application in OpenShift Explorer (previously named OpenShift Console).</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>OpenShift Tools further more now allows you to put any existing application onto OpenShift where it previously only allowed Eclipse WTP projects. These projects can now even be multi-module Maven projects if you want to. This feature should be used with care since it overwrites your OpenShift application and your project content might not be working out of the box on OpenShift - thus use with care and if it fails</p>
+<p>remember that OpenShift uses Git for it storage so you can roll it back in case of a failure.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>And finally OpenShift tools also allows you to create scalable applications in the UI now.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="http://docs.jboss.org/tools/whatsnew/openshift/images/create-scalable-applications.png"><img alt="http://docs.jboss.org/tools/whatsnew/openshift/images/create-scalable-applications.png" class="jive-image" src="http://docs.jboss.org/tools/whatsnew/openshift/images/create-scalable-applications.png"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h2>Annotation Processing w/Maven</h2>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Java EE 6 really started pushing more and more annotation processors and Eclipse APT provides a nice incremental integreation with this in Eclipse that makes it fast and non-invasive.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Unfortunately in context of Maven this have not always been easy to get configured since there exists multiple ways to invoke the Annotation Processor and in some cases Eclipse APT single-folder-output gives problems</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>With this release of JBoss Tools we are also releasing a configurator for m2e which combines all the best plugins concerning Annotation Processing and made something better and more integrated.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Fred Bricon have written a full blog about the feature set and how it works - if you use Annotation processing and maven I recommend you <a class="jive-link-blog-small" href="https://community.jboss.org/community/tools/blog/2012/05/20/annotation-processing-support-in-m2e-or-m2e-apt-100-is-out">read it</a>.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h2>Google Web Toolkit (GWT) w/Maven</h2>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>In our previous releases we have struggled with getting GWT examples to load into Eclipse without users having to tweak and manually run certain actions in specific sequence. The reason for this all came down to that there did not exist a m2e Configurator which takes the maven compiler plugin settings and apply them to Google's Eclipse plugin properly. With JBoss Tools Beta 3 that now exists and it just works.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Without this loaded you would have to manually add the GWT module xml to Eclipse and then perform a build based on that which would generate to possibly different output directories than your Maven project is configured to. With JBoss Tools for Maven loaded this a problem of the past.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h2>Mobile Browser Simulator Skins</h2>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>BrowserSim now has support for View Source, roatation of the screen by clicking in the corners and two new skins:</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="http://docs.jboss.org/tools/whatsnew/vpe/images/3.3.0.Beta3/browsersim-iphone4.png"><img alt="http://docs.jboss.org/tools/whatsnew/vpe/images/3.3.0.Beta3/browsersim-iphone4.png" class="jive-image" src="http://docs.jboss.org/tools/whatsnew/vpe/images/3.3.0.Beta3/browsersim-iphone4.png"></a><a href="http://docs.jboss.org/tools/whatsnew/vpe/images/3.3.0.Beta3/browsersim-android.png"><img alt="http://docs.jboss.org/tools/whatsnew/vpe/images/3.3.0.Beta3/browsersim-android.png" class="jive-image" src="http://docs.jboss.org/tools/whatsnew/vpe/images/3.3.0.Beta3/browsersim-android.png"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>...and finally as a team enjoying the wonders of Open Source we've added two things that could not exist without the source(s) being open:</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h2>JBoss Source Lookup</h2>
+<p>We've included the JBoss Source Lookup container which Snjezana have been working on that will scan a directory of jar's and use their Maven metadata and if necessary their MD5 checksum to locate the source code for any Launch configuration not just your Maven projects and Maven classpath provider.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>This is useful when you have a server like JBoss, Tomcat, Glassfish or any other server or framework which jar's are mostly available in Maven repositories together with their source artifacts.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>This allow you to fully debug your runtimes without having to pollute your classpath or Eclipse project configuration with runtime details, machine specific locations and manual download of the sources.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="http://docs.jboss.org/tools/whatsnew/images/sourcelookuppreferences.png"><img alt="http://docs.jboss.org/tools/whatsnew/images/sourcelookuppreferences.png" class="jive-image" src="http://docs.jboss.org/tools/whatsnew/images/sourcelookuppreferences.png"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>The feature must be explicitly enabled, thus be sure to read <a class="" href="https://community.jboss.org/community/tools/blog/2012/01/24/jboss-source-lookup">Snjezana's wiki article</a> outlining how to use this.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h2>Eclipse Source Features</h2>
+<p>If you are into Eclipse plugin development and want to tinker with the source of JBoss Tools our updatesite now include a matching source feature for majority of our plugins under the Source category on the updatesite. This allows debugging and editing of JBoss Tools plugin without having to checkout our full SVN source tree. Contributions very welcome <img height="16px" src="https://community.jboss.org/4.5.6/images/emoticons/happy.gif" width="16px"></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h2>...and more</h2>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>As usual screenshots and more explanation of what is new is available from the <a class="jive-link-external-small" href="http://docs.jboss.org/tools/whatsnew" target="_top">What's New</a> site!</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Let us know what you think - and do know that we are codefreezing for CR1/GA any day now, so do let us know if you find big issues or simply just love it - both things is what keeps us going <img height="16px" src="https://community.jboss.org/4.5.6/images/emoticons/happy.gif" width="16px"></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Have fun,</p>
+<p>Max</p>
+</div>
+<!-- [DocumentBodyEnd:7a5334ee-569c-4af8-b2e3-016ae87247b0] -->
+</body>

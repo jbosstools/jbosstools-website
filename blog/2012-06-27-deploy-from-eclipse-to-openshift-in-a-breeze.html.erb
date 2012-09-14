@@ -1,0 +1,341 @@
+---
+title: 'Deploy from Eclipse to OpenShift in a breeze'
+author: 'Max Rydahl Andersen'
+layout: blog-post
+tags: [ jbosstools, jbds, eclipse, jboss_tools, openshift, jbosscentral ]
+orignallink: ''
+---
+<body>
+<div class="jive-rendered-content">
+<p></p>
+<div class="toc" style="border: 1px dashed black; padding: 10px;"><ul>
+<li>
+<a class="jive-link-anchor-small" href="#Dont_get_your_fingers_dirty_use_the_JBoss_Tools_for_OpenShift">Dont get your fingers dirty, use the JBoss Tools for OpenShift</a>
+</li>
+<ul>
+<li>
+<a class="jive-link-anchor-small" href="#Get_the_tools_get_started">Get the tools, get started</a>
+</li>
+</ul>
+<li>
+<a class="jive-link-anchor-small" href="#A_very_basic_workflow">A very basic workflow</a>
+</li>
+<ul>
+<li>
+<a class="jive-link-anchor-small" href="#Create_your_application_runtime">Create your application runtime</a>
+</li>
+<li>
+<a class="jive-link-anchor-small" href="#Push_to_build_and_deploy">Push to build and deploy</a>
+</li>
+<li>
+<a class="jive-link-anchor-small" href="#Server_Adapter_to_the_rescue">Server Adapter to the rescue</a>
+</li>
+</ul>
+<li>
+<a class="jive-link-anchor-small" href="#Deploy_my_very_own_project">Deploy my very own project!</a>
+</li>
+<ul>
+<li>
+<a class="jive-link-anchor-small" href="#Have_your_project_ready">Have your project ready</a>
+</li>
+<li>
+<a class="jive-link-anchor-small" href="#JBoss_Tools_configure_my_project">JBoss Tools, configure my project</a>
+</li>
+<li>
+<a class="jive-link-anchor-small" href="#Oh_my_project_how_you_changed">Oh my project, how you changed!</a>
+</li>
+<li>
+<a class="jive-link-anchor-small" href="#Push_me_up_Scotty">Push me up, Scotty</a>
+</li>
+<li>
+<a class="jive-link-anchor-small" href="#Multimodule_maven_projects">Multi-module maven projects</a>
+</li>
+</ul>
+<li>
+<a class="jive-link-anchor-small" href="#My_maven_project_is_not_in_the_git_repo_root">My maven project is not in the git repo root</a>
+</li>
+<ul>
+<li>
+<a class="jive-link-anchor-small" href="#Have_your_project_ready_120908">Have your project ready</a>
+</li>
+<li>
+<a class="jive-link-anchor-small" href="#Create_your_OpenShift_application">Create your OpenShift application</a>
+</li>
+<li>
+<a class="jive-link-anchor-small" href="#OpenShift_here_I_come">OpenShift, here I come</a>
+</li>
+</ul>
+<li>
+<a class="jive-link-anchor-small" href="#But_hey_my_project_does_not_work">But hey, my project does not work!</a>
+</li>
+<ul>
+<li>
+<a class="jive-link-anchor-small" href="#Commit_log">Commit log</a>
+</li>
+<li>
+<a class="jive-link-anchor-small" href="#Inspect_your_server_logs">Inspect your server logs</a>
+</li>
+<li>
+<a class="jive-link-anchor-small" href="#Look_into_the_jboss_as7_management_console">Look into the jboss as7 management console</a>
+</li>
+</ul>
+<li>
+<a class="jive-link-anchor-small" href="#Debug_your_application_with_the_Eclipse_Debugger">Debug your application with the Eclipse Debugger</a>
+</li>
+</ul></div>
+<h1 id="Dont_get_your_fingers_dirty_use_the_JBoss_Tools_for_OpenShift">Dont get your fingers dirty, use the JBoss Tools for OpenShift</h1>
+<p><a class="jive-link-external-small" href="https://openshift.redhat.com/app/">OpenShift</a> is the PaaS offering from <a class="jive-link-external-small" href="http://www.redhat.com">Red Hat</a>. It gives you your personal application platform on demand. With OpenShift, there's no need to look for hosting and application stack. OpenShift provides you those within minutes, whenever you need them. </p>
+<p><a class="jive-link-external-small" href="http://www.jboss.org/tools">JBoss Tools</a> for OpenShift offers a feature complete environment to work with OpenShift. From developing to deploying, JBoss Tools provides you a fully fledged environment for your project and aligns with the standard workflows within Eclipse. It allows Eclipse users to stick to their favorite IDE and deal with OpenShift within their developement environment. Especially the OpenShift server adapter mimics an <a class="jive-link-external-small" href="http://www.eclipse.org/webtools/">Eclipse WTP</a> compliant way of deploying to OpenShift and hides the complexity, that you'd otherwise had to handle when publishing bare metal (which is by using Git).</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h2 id="Get_the_tools_get_started">Get the tools, get started</h2>
+<p>The <a class="jive-link-blog-small" href="https://community.jboss.org/community/tools/blog/2012/06/21/jboss-tools-33-and-developer-studio-50-final-release">release blog</a> shows you extensively how to get JBoss Tools from our update site, from the Eclipse marketplace or even how to install the <a class="jive-link-external-small" href="https://devstudio.jboss.com/download/">JBoss Developer Studio</a>. If installing JBoss Tools, you'll have to make sure you choose at least the OpenShift bundles on our update site:</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><span style="font-family: 'Lucida Grande', Arial, Helvetica, sans-serif;"><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4972-18803/update-site.png"><img alt="update-site.png" class="jive-image" height="207" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4972-18803/450-207/update-site.png" style="font-family: 'Lucida Grande', Arial, Helvetica, sans-serif; background-color: #ffffff; width: 576px; height: 265.3377049180328px;" width="450"></a></span></p>
+<p><span style="font-family: 'Lucida Grande', Arial, Helvetica, sans-serif;"><br></span></p>
+<p><span style="font-size: 11px; font-family: 'Lucida Grande', Arial, Helvetica, sans-serif;"><br></span></p>
+<p>Once you have JBoss Tools installed, you'll spot our wizards either in JBoss Central or in the Eclipse Wizards:</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4972-18806/central.png"><img alt="central.png" class="jive-image" height="185" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4972-18806/315-185/central.png" style="width: 315px; height: 185.1315789473684px;" width="315"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>All you need to get started quickly is offered within this wizard. It'll create your application platform, import a starter project and create a server adapter that you may use to publish to the PaaS.</p>
+<p>OpenShift of course requires you to have an account. If you have none yet, the wizard will drop you to the signup form by hitting the link that is displayed on the first wizard page.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4972-18807/signup.png"><img alt="signup.png" class="jive-image" height="225" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4972-18807/445-225/signup.png" style="width: 445px; height: 225.09727626459144px;" width="445"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Once you have your account, you'll be ready to go, ready to get amazed by JBoss Tools and OpenShift.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h1 id="A_very_basic_workflow">A very basic workflow</h1>
+<p><iframe frameborder="0" height="350" src="https://player.vimeo.com/video/44246666" width="425">
+<br><br></iframe></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>OpenShift is a <a class="jive-link-external-small" href="http://en.wikipedia.org/wiki/Platform_as_a_service">PaaS</a>, a Platform as a Service. As such it offers you your personal application stack and it does this on demand. A range of standards runtimes are offered to you whenever you need them. Working with the PaaS is as simple as importing a stub (the starter application) to your workspace, changing and publishing it again:</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4972-18892/openshift-workflow.png"><img alt="openshift-workflow.png" class="jive-image-thumbnail jive-image" height="412" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4972-18892/414-412/openshift-workflow.png" style="width: 414px; height: 412.0379146919431px;" width="414"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h2 id="Create_your_application_runtime">Create your application runtime</h2>
+<p>It all starts by creating your own application runtime. In the OpenShift Application wizard, set a name and choose the application (runtime) you need:</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4972-18809/application.png"><img alt="application.png" class="jive-image" height="103" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4972-18809/447-103/application.png" style="width: 447px; height: 103.07974137931035px;" width="447"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>OpenShift offers a wide range of standard runtimes. You may to choose among php, ruby, phython, nodejs etc. Java developers will be most amazed to see that OpenShift offers a fully Java EE 6 compliant application server: the blazing fast <a class="jive-link-external-small" href="http://www.jboss.org/as7">JBoss AS 7.1</a>.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4972-18810/application-types.png"><img alt="application-types.png" class="jive-image" height="146" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4972-18810/367-146/application-types.png" style="width: 367px; height: 146.1908713692946px;" width="367"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>You may also add different extensions to your platform ranging from SQL- (like MySQL or Postgres) or NoSQL-databases (like MongoDB) up to your very own CI server (jenkins).</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4972-18811/application-cartridges.png"><img alt="application-cartridges.png" class="jive-image" height="232" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4972-18811/374-232/application-cartridges.png" style="width: 374px; height: 231.8315334773218px;" width="374"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Once you made up your choices and finish the wizard, it'll create your OpenShift application, wait for it to become reachable and import it's initial content - a starter application - to your Eclipse workspace. Looking into your Project Explorer or Navigator, you'll spot the new project that the wizard imported. It has the very same name as the OpenShift application. In case of a JBoss AS7 runtime, the starter app is a maven artifact and the project we import to your workspace will have the name that's configured for the maven artifact.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4972-18852/imported-project.png"><img alt="imported-project.png" class="jive-image" height="86" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4972-18852/241-86/imported-project.png" style="width: 241px; height: 85.48986486486487px;" width="241"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h2 id="Push_to_build_and_deploy">Push to build and deploy</h2>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>The new project in your Eclipse workspace is where you apply your changes. It is shared with a git repository on your local machine. This repository is a clone of the git repository within your OpenShift application. </p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4972-18853/application-git-repository.png"><img alt="application-git-repository.png" class="jive-image" height="200" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4972-18853/242-200/application-git-repository.png" style="width: 242px; height: 200.01261829652998px;" width="242"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Deploying this project to the PaaS is as simple as pushing the local repository to it's origin, the OpenShift git repository. OpenShift will then build and deploy your application to the application runtime. </p>
+<p>In case of a Java application, OpenShift relies on a maven based build, that is triggered with each git push:</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4972-18817/application-build.png"><img alt="application-build.png" class="jive-image-thumbnail jive-image" height="263" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4972-18817/450-263/application-build.png" style="width: 498px; height: 291.81447963800906px;" width="450"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h2 id="Server_Adapter_to_the_rescue">Server Adapter to the rescue</h2>
+<p>When dealing with git, you have to deal with a brilliant but rather complex code versioning system. Even if you're familiar with git, there's still room to reduce the number of manipulations when publishing. </p>
+<p><a class="jive-link-external-small" href="http://www.eclipse.org/webtools/">Eclipse WTP</a> server adapters historically allow you to interact with your server. This would typically be some local or remote server you'd have file- or SSH-based access to. We adapted this handy concept and implemented a variant that would work with OpenShift. This server adapter hides the complexity of dealing with git and allows 1-click publishing to the cloud.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>The OpenShift Application wizard sets the adapter up when you create your application and import the starter project to your workspace.&#160; Our Server adapter is bound to the OpenShift project in your workspace and it'll do the git operations for you.&#160; </p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4972-18818/server-adapter.png"><img alt="server-adapter.png" class="jive-image" height="373" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4972-18818/448-373/server-adapter.png" style="width: 448px; height: 373.2086811352254px;" width="448"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>When publishing it will deploy the changes in your OpenShift project to the PaaS. It'll hide all the complexity that is inherent to git. It will commit your changes to your local clone and push them to the git repository of your OpenShift application (the origin).</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4972-18819/server-adapter-publish.png"><img alt="server-adapter-publish.png" class="jive-image-thumbnail jive-image" height="164" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4972-18819/449-164/server-adapter-publish.png" style="width: 495px; height: 180.9080717488789px;" width="449"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h1 id="Deploy_my_very_own_project">Deploy my very own project!</h1>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Importing the starter application to your workspace is the most simple usecase we provide. I bet most users already have a project that they'd want to deploy though. We of course also provide this ability in our OpenShift Application wizard.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><iframe frameborder="0" height="350" src="https://player.vimeo.com/video/44393250" width="425">
+<br><br></iframe></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Our little screencast shows you the steps when starting with your very own project. It uses the kitchensink example to demonstrate how this would occourr. You may get it on github:</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<blockquote class="jive-quote">
+<p><strong>Kitchensink example project:</strong></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a class="jive-link-external-small" href="https://github.com/adietish/kitchensink.git" target="_blank">https://github.com/adietish/kitchensink.git</a><span> </span></p>
+</blockquote>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h2 id="Have_your_project_ready">Have your project ready</h2>
+<p>You first have to get your project to Eclipse. We only support <strong>git-shared or non-shared project</strong> though. A typical usecase would be to have your project on <a class="jive-link-external-small" href="https://github.com/">github</a> or in any other git repository.You then simply clone it's repository to your local machine (using <a class="jive-link-external-small" href="http://www.eclipse.org/egit/">EGit</a> or the command line) and import the project within it to your Eclipse workspace. </p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h2 id="JBoss_Tools_configure_my_project">JBoss Tools, configure my project</h2>
+<p>You then create your OpenShift application in our wizard, provide the name, type and eventually additional cartridges. You then switch to the second wizard page and tell the wizard that you dont want to create a new project in your workspace. You tell it to use your project instead.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4972-18854/use-existing.png"><img alt="use-existing.png" class="jive-image" height="152" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4972-18854/448-152/use-existing.png" style="width: 448px; height: 152.28070175438597px;" width="448"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>The wizard will warn you about upcoming changes to your project and ask you to confirm:</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4972-18886/merged-cannotundo.png"><img alt="merged-cannotundo.png" class="jive-image" height="180" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4972-18886/450-180/merged-cannotundo.png" style="width: 455px; height: 181.8515497553018px;" width="450"></a></p>
+<h2 id="Oh_my_project_how_you_changed">Oh my project, how you changed!</h2>
+<p>We then add OpenShift specific configurations to your project. These changes unfortunately cannot be undone. You'd have to provide your own means (ex. a separate branch) if you dont want these additions in your developement code The changes we apply are the following:</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<blockquote class="jive-quote">
+<p><strong>All changes:</strong></p>
+<p><strong><br></strong></p>
+<ul>
+<li>eventually create a git repository and commit your project to it</li>
+<li>add a <strong>.op</strong><strong>enshift</strong> folder with openshift specific hooks</li>
+<li>add a <strong>deployments</strong> folder</li>
+<li>add the Eclipse specific files (.project, .classpath etc.) to the <strong>.gitignore</strong>
+</li>
+<li>add <strong>openshift-profile</strong> to the pom</li>
+<li>add OpenShift <strong>git repo as remote</strong> to your local git repo </li>
+</ul>
+</blockquote>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4972-18855/merged-configuration.png"><img alt="merged-configuration.png" class="jive-image" height="286" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4972-18855/220-286/merged-configuration.png" style="background-color: #ffffff; height: 286px; width: 219.31606217616581px;" width="220"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Since publishing to OpenShift is git pushing to it, we'll make sure your project is shared to a <strong>git repo</strong>. We therefore eventually create a git repository for your project if there's none yet and add your project to it.</p>
+<p>We add the <strong>.openshift</strong> folder which may contain OpenShift specific configurations and tweaks (like custom build-scripts, markers, cron entries etc.). We also create a <strong>deployments</strong> folder which OpenShift will use to build to. You may also add additional artifacts to it. </p>
+<p>We then tweak <strong>.gitignore</strong> and add the Eclipse specific files so that they dont make it to the git repo by default.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4972-18857/merged-configuration-gitignore.png"><img alt="merged-configuration-gitignore.png" class="jive-image" height="110" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4972-18857/173-110/merged-configuration-gitignore.png" style="width: 173px; height: 110.24509803921569px;" width="173"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>For maven-based java projects we tweak the <strong>pom</strong> and add an openshift profile to it.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4972-18858/openshift-profile.png"><img alt="openshift-profile.png" class="jive-image" height="247" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4972-18858/439-247/openshift-profile.png" style="width: 439px; height: 246.9375px;" width="439"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>The openshift profile is what the PaaS is using when building your project on the PaaS. The profile we add is telling maven to create the war in the deployments folder. The deployments folder is where JBoss AS7 is expecting and picking new deployables from. Adding the profile makes sure that your project is deployed when it is built.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>We'll also then add the OpenShift application git repo as <strong>remote</strong> to the git repo of your local project. This will allow you to push your project to OpenShift without knowing about the exact url you'll have to push to. All you have to know is what name the OpenShift repo is stored at.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4972-18871/merged-configuration-remotes.png"><img alt="merged-configuration-remotes.png" class="jive-image" height="200" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4972-18871/222-200/merged-configuration-remotes.png" style="width: 222px; height: 199.58990536277602px;" width="222"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>We're storing the OpenShift application git url as "openshift" in the remotes known to your local repo. You may of course tell the wizard to use any name you like:</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4972-18872/merged-configuration-remotes-configure.png"><img alt="merged-configuration-remotes-configure.png" class="jive-image" height="60" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4972-18872/447-60/merged-configuration-remotes-configure.png" style="width: 447px; height: 60.71307300509338px;" width="447"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h2 id="Push_me_up_Scotty">Push me up, Scotty</h2>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Once we configured your project, we commit the changes to your local git repo (either your project was already shared with a git repo or we created one for you). To now deploy your project to OpenShift, you'd have to go to the Servers view, choose the OpenShift server adapter (that we created for you) and tell it to <strong>publish</strong>. The server adapter will then detect that the local project is ahead of the remote one and that publishing would only be possible when overriding the remote starter application. It'll ask you to confirm this step:</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4972-18887/merged-pushforce.png"><img alt="merged-pushforce.png" class="jive-image" height="205" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4972-18887/450-205/merged-pushforce.png" style="width: 453px; height: 206.82628062360803px;" width="450"></a></p>
+<p>Once the publishing is done, you'll have your project running on OpenShift!</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h2 id="Multimodule_maven_projects">Multi-module maven projects</h2>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Our OpenShift Application wizard also supports multi-module maven projects. You'd simply have to make sure all modules are nested within a parent project and choose the parent project as existing project (multi vs. multi-web, multi-ejb, multi-ejb in my screenshot) in the wizard:</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4972-18889/multi-ear.png"><img alt="multi-ear.png" class="jive-image" height="218" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4972-18889/228-218/multi-ear.png" style="width: 228px; height: 217.98648648648648px;" width="228"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4972-18890/multi-ear-wizard.png"><img alt="multi-ear-wizard.png" class="jive-image" height="60" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4972-18890/450-60/multi-ear-wizard.png" style="width: 469px; height: 63.27150084317032px;" width="450"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<blockquote class="jive-quote">
+<p><strong>Note: </strong></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>in case your multi-module maven project is an ear, there are still slight limitations in our tooling for the moment. You may easily work around them though. You'd have to alter the maven profile in the pom of your parent-projec and replace the maven-war-plugin by the maven-ear-plugin:</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4972-18870/maven-ear-plugin.png"><img alt="maven-ear-plugin.png" class="jive-image" height="239" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4972-18870/435-239/maven-ear-plugin.png" style="width: 435px; height: 238.97666068222622px;" width="435"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>You may read about it in all details and track our progress on it in <a class="jive-link-external-small" href="https://issues.jboss.org/browse/JBIDE-12252">JBIDE-12252</a></p>
+</blockquote>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h1 id="My_maven_project_is_not_in_the_git_repo_root">My maven project is not in the git repo root</h1>
+<p>When deploying an existing project to OpenShift, you'd have to tell the wizard in JBoss Tools about your project. Your project would have to comply to a basic layout though. We expect the pom in the root of your git repository. If this is not the case, then you'd have to take an alternative approach when publishing. Publishing then gets as easy as drag and dropping your project to the adapter.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><iframe frameborder="0" height="350" src="https://player.vimeo.com/video/44446447" width="425">
+<br><br></iframe></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>In our screencast, we show you how to proceed. We use the the ticket-monster example project which is available at github:</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<blockquote class="jive-quote">
+<p><strong>Ticket-monster example project:</strong></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a class="jive-link-external-small" href="https://github.com/jboss-jdf/ticket-monster">https://github.com/jboss-jdf/ticket-monster</a></p>
+</blockquote>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h2 id="Have_your_project_ready_120908">Have your project ready</h2>
+<p>The first thing to do is to import your application to your Eclipse workspace. The only requirement we have is that your project shall be <a class="jive-link-external-small" href="http://www.eclipse.org/webtools/">Eclipse WTP</a> compliant. It may be a Dynamic Web or a Maven project. Maven projects are turned into Eclipse WTP projects if you have <a class="jive-link-external-small" href="https://www.eclipse.org/m2e-wtp/">m2e-wtp</a> installed when importing them (m2e-wtp bridges the gap between Eclipse WTP and maven, it turns any maven project into a WTP compliant project). </p>
+<p>In the ticket-monster example, the maven project is nested into the demo folder:</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4972-18881/draganddrop-nested.png"><img alt="draganddrop-nested.png" class="jive-image" height="364" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4972-18881/221-364/draganddrop-nested.png" style="width: 221px; height: 363.9179810725552px;" width="221"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>We import with the Eclipse Maven import wizard pointing it to the demo-folder:</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4972-18893/draganddrop-import-maven.png"><img alt="draganddrop-import-maven.png" class="jive-image-thumbnail jive-image" height="221" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4972-18893/420-221/draganddrop-import-maven.png" style="width: 420px; height: 221.51612903225805px;" width="420"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>and get the demo-folder imported to our workspace:</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4972-18894/draganddrop-imported.png"><img alt="draganddrop-imported.png" class="jive-image" height="75" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4972-18894/230-75/draganddrop-imported.png" style="width: 230px; height: 75.37162162162161px;" width="230"></a></p>
+<h2></h2>
+<h2 id="Create_your_OpenShift_application">Create your OpenShift application</h2>
+<p>Once you have your project ready you'll go and create the OpenShift application that will host your application. Launch the OpenShit Application wizard in JBoss Tools, tell it to create a <strong>jbossas-7</strong> application and let it import the starter app, as shown in the first paragraphs of this blog.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h2 id="OpenShift_here_I_come">OpenShift, here I come</h2>
+<p>The OpenShift Application wizard imports the starter application to your workspace and creates a server adapter for it:</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4972-18891/draganddrop-starter.png"><img alt="draganddrop-starter.png" class="jive-image" height="99" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4972-18891/238-99/draganddrop-starter.png" style="width: 238px; height: 98.89864864864865px;" width="238"></a></p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4972-18878/draganddrop-adapter.png"><img alt="draganddrop-adapter.png" class="jive-image" height="115" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4972-18878/277-115/draganddrop-adapter.png" style="width: 277px; height: 115.41666666666666px;" width="277"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>You are then ready to publish your project. Simply drag and drop it to the OpenShift <strong>server adapter</strong> in the Servers view. Your project will then get published to OpenShift.</p>
+<p> Once&#160; the publishing is done, you'll notice that the server adapter now has 2 modules: the starter application and your project:</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4972-18882/draganddrop-new-module.png"><img alt="draganddrop-new-module.png" class="jive-image" height="123" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4972-18882/307-123/draganddrop-new-module.png" style="width: 307px; height: 123.45551601423487px;" width="307"></a></p>
+<p>The server adapter actually compressed your project to a war and dropped it to the deployments folder within the starter application:</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4972-18883/draganddrop-war.png"><img alt="draganddrop-war.png" class="jive-image" height="298" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4972-18883/217-298/draganddrop-war.png" style="width: 217px; height: 298.0257510729614px;" width="217"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>It then committed this addition and pushed the starter application to OpenShift. The JBoss AS7 then noticed the new war and deployed it. Simple as that.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h1 id="But_hey_my_project_does_not_work">But hey, my project does not work!</h1>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h2 id="Commit_log">Commit log</h2>
+<p>If your deployment fails JBoss Tools offers some goodies that allow you deeper insights into what's happening on the PaaS. </p>
+<p>Pushing to the PaaS triggers a build and the deployment of your project. Both operations are logged and make it to the commit log. When the OpenShift server adapter finished publishing (git pushing), it'll show you the console with the commit log. This will show you in a first step if the push, the build and the deployment worked fine:</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4972-18896/application-build.png"><img alt="application-build.png" class="jive-image-thumbnail jive-image" height="264" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4972-18896/450-264/application-build.png" style="width: 477px; height: 279.2758064516129px;" width="450"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h2 id="Inspect_your_server_logs">Inspect your server logs</h2>
+<p>We also offer you simple access to your server logs. You'll find an appropriate entry in the context menu of your OpenShift server adapter. Simply pick "<strong>OpenShift-&gt;Tail files</strong>" </p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4972-18900/tail-files.png"><img alt="tail-files.png" class="jive-image-thumbnail jive-image" height="292" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4972-18900/434-292/tail-files.png" style="width: 434px; height: 292.6px;" width="434"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>It allows you to inspect the logs of your server within the Eclipse console:</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4972-18901/tail-files-console.png"><img alt="tail-files-console.png" class="jive-image-thumbnail jive-image" height="89" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4972-18901/450-89/tail-files-console.png" style="width: 625px; height: 123.99193548387096px;" width="450"></a></p>
+<h2 id="Look_into_the_jboss_as7_management_console">Look into the jboss as7 management console</h2>
+<p>JBoss AS7 has a management console that's may be reached on port 9990. OpenShift only allows access to a limited set of ports from the outer world. Nevertheless OpenShift allows you to forward ports to your local machine. Using port-forwarding allows you to access the management console that's running on the JBoss A7 that is running on OpenShift.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Go to the OpenShift server adapter and pick "<strong>OpenShift-&gt;Port Forwaring</strong>". </p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4972-18897/port-forwarding.png"><img alt="port-forwarding.png" class="jive-image" height="351" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4972-18897/450-351/port-forwarding.png" style="width: 454px; height: 354.9035532994924px;" width="450"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>The upcoming dialog will list you all ports that may be forwarded to your local machine. Simpley hit "<strong>Start All</strong>" and they'll get available at localhost on your machine.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4972-18898/port-forwarding-dialog.png"><img alt="port-forwarding-dialog.png" class="jive-image-thumbnail jive-image" height="325" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4972-18898/450-325/port-forwarding-dialog.png" style="width: 609px; height: 441.03387096774196px;" width="450"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>You may then access the management console of your JBoss AS7 in a browser on your local machine.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4972-18899/management-console.png"><img alt="management-console.png" class="jive-image-thumbnail jive-image" height="183" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4972-18899/450-183/management-console.png" width="450"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h1 id="Debug_your_application_with_the_Eclipse_Debugger">Debug your application with the Eclipse Debugger</h1>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><iframe frameborder="0" height="350" src="https://player.vimeo.com/video/44548968" width="425">
+<br><br></iframe></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>JBoss Tools even allows you to debug your OpenShift Application in the Eclipse debugger. You'll first have to enable debugging on your OpenShift application. You'll do this by adding a marker in the <strong>.openshift</strong> folder of your project. Create an empty file <strong>enable_pda in</strong> .openshift/markers. Commit it and tell the server adapter to publish your project.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4972-18903/enable-jpda.png"><img alt="enable-jpda.png" class="jive-image-thumbnail jive-image" height="302" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4972-18903/450-302/enable-jpda.png" style="width: 603px; height: 405.56612903225806px;" width="450"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Now that debugging is enabled, the debugging port of the remote JVM will get available and visible in your forwarded ports. Pick "<strong>OpenShift -&gt; Port Forwarding</strong>" in the context menu of your server adapter and double check that the port <strong>8787</strong> is available. You'd eventually have to refresh the list of available port in case you already had it running before. Now <strong>Start All</strong> to get all ports (and the debugging port) forwarded to your local machine.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4972-18904/enable-debugging-port.png"><img alt="enable-debugging-port.png" class="jive-image-thumbnail jive-image" height="166" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4972-18904/450-166/enable-debugging-port.png" style="width: 480px; height: 177.29032258064515px;" width="450"></a></p>
+<p>You're almost there. The last step is to tell Eclipse to connect it's debugger to your forwarded port. Go to the <strong>Debug Configurations</strong> in Eclipse and create a new configuration for a Remote Java Application. As soon as you hit Debug, the execution of your application on OpenShift will halt at the breakpoints you set in your Eclipse.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4972-18905/enable-debugging-debugconfig.png"><img alt="enable-debugging-debugconfig.png" class="jive-image-thumbnail jive-image" height="291" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4972-18905/450-291/enable-debugging-debugconfig.png" style="width: 639px; height: 414.14729950900164px;" width="450"></a></p>
+</div>
+<!-- [DocumentBodyEnd:7e51a8db-b4a1-4326-9497-0b2e315ae9cb] -->
+</body>

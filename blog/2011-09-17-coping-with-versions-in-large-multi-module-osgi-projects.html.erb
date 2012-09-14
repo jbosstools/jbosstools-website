@@ -1,0 +1,152 @@
+---
+title: 'Coping with versions in large multi-module osgi projects'
+author: 'Max Rydahl Andersen'
+layout: blog-post
+tags: [ jbosstools, eclipse, maven, osgi, plugin, version, tycho ]
+orignallink: ''
+---
+<body>
+<div class="jive-rendered-content">
+<h1 id="versionsforlargemulti-moduleosgiprojects">Versions for large multi-module osgi projects</h1>
+<p>Recently I went through JBoss Tools main source code base and fixed a few long standing issues that had made it cumbersome to manage versions over the years. This blog tries to explain what we changed, why and how Tycho helped.</p>
+<h1 id="tychoversionplugin">Tycho Version Plugin</h1>
+<p>Maven has it&#8217;s own <code>versions</code> plugin but it only takes care of version references in <code>pom.xml</code>, it does not consider osgi/p2 related references. Tycho therefore has it&#8217;s own versions plugin.</p>
+<p>Unfortunately there aren&#8217;t alot of documentation for this plugin, but by poking to Sonatype, follow the <a class="jive-link-external-small" href="https://dev.eclipse.org/mailman/listinfo/tycho-user">tycho mailing list</a> and looking at a <a class="jive-link-external-small" href="https://docs.sonatype.org/display/M2ECLIPSE/Staging+and+releasing+new+M2Eclipse+release">few hints</a> out there I managed to get the it working. Here is my attempt to make the world more aware of the Tycho Version plugin.</p>
+<h1 id="usage">Usage</h1>
+<p>The core command for Tycho Versions plugin are executed in your Maven module that represents your plugin/features. The Tycho Version plugin command looks like this:</p>
+<pre><code>mvn org.eclipse.tycho:tycho-versions-plugin:set-version -DnewVersion=&lt;version&gt;</code></pre>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Here <code>&lt;version&gt;</code> is the version number you want for your plugins, i.e. 1.2.3.GA. If you use 1.2.3-SNAPSHOT the plugin will use 1.2.3.qualifier in the places necessary (i.e. in <code>manifest.mf</code> and <code>feature.xml</code>).</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>The beauty of this plugin is that with a single command you can update your plugin, features, product and updatesite references. </p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>No manual tweaking required, except that to use it effectively your <code>pom.xml</code>&#8217;s should follow a few maven conventions.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>That last part is what kept us in JBoss Tools to use this command until recently.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Why you ask ? Well, read on&#8230;</p>
+<h1 id="mavenparentchildrelationships">Maven Parent/Child relationships</h1>
+<p>The reason we couldn&#8217;t use the tycho version plugin previously was that we had the following layout for each of our modules:&#160; </p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4019-16990/modules_before_reorg.png"><img alt="modules_before_reorg.png" class="jive-image-thumbnail jive-image" height="168" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4019-16990/450-168/modules_before_reorg.png" width="450"></a></p>
+<p>Each top level module has a set of submodules: plugins, tests, features and site (there are also a doc module but that is for another blog).</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Each of these submodules can have children, for plugins that are all the individual plugins the main feature will include, tests are the plugin tests and so forth.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>That parent represents the parent pom where the shared build configuration for JBoss Tools is stored - we use that to avoid repeating the build instructions in all 350+ buildable units. </p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>But there is a big problem with this structure.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>First of each artifact have a manual maintained version section, but do you notice all those thick red outlined lines going to the Parent from each leaf plugin, feature, etc. ?</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Those red lines illustrates that each child leaf point directly to the main parent pom which makes it possible to have the build configuration in one central place but it also means that everytime we update the parent pom version we have to change it in each and every node (for us that is 605 locations).</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>It also have the consequence that even though we have this nice modular division of each <em>module</em> into <em>tests</em> and <em>plugins</em> there is not a place to store module or submodule specific settings for our builds - that all have to take place in each leaf plugin instead of being just stated in one place.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Thus to make this sharing easier and to make it more explicit what structure is actually being versioned with the Tycho module Denis Golovin and I did a few pom refactorings.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4019-16991/modules_after_reorg.png"><img alt="modules_after_reorg.png" class="jive-image-thumbnail jive-image" height="230" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4019-16991/450-230/modules_after_reorg.png" width="450"></a></p>
+<p>Notice the difference ?</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Each &#8220;sub-node&#8221; now uses their actual structural relative parent as the pom parent (red lines) and only the top level module actually points back to the main JBoss Tools parent module (blue line).</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>This has the following positive features:</p>
+<ul>
+<li>you can stand in the root of a module and run <code>mvn clean install</code> and it will build the whole module</li>
+<li>you can override/customize a build locally for a module or submodule</li>
+<li>maven tycho version plugin will be able to easily version this module on its own</li>
+</ul>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>The last optimization I did lately was that now that we have this <em>natural</em> structure between parent and child setup we can remove the child modules redundant version info from the pom.xml&#8217;s. We unfortunately still have to list the full version info for the parent but with the Tycho versions plugin this becomes trivial to maintain.</p>
+<h1 id="thedirtydetails">The Dirty Details</h1>
+<p>The essentials parts of the structure is as follows (using hibernatetools as reference):</p>
+<p>Module pom:</p>
+<pre><code>&lt;project ...&gt;
+&#160;&#160;&#160; ...
+&#160;&#160;&#160; &lt;parent&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; &lt;!-- the <strong>only reference</strong> to root build parent from a module --&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; &lt;groupId&gt;org.jboss.tools&lt;/groupId&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; &lt;artifactId&gt;org.jboss.tools.parent.pom&lt;/artifactId&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; &lt;version&gt;0.0.2-SNAPSHOT&lt;/version&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; &lt;relativePath&gt;../build/parent/pom.xml&lt;/relativePath&gt;
+&#160;&#160;&#160; &lt;/parent&gt;
+&#160;&#160;&#160; &lt;groupId&gt;org.jboss.tools&lt;/groupId&gt;
+&#160;&#160;&#160; &lt;artifactId&gt;hibernatetools&lt;/artifactId&gt;
+&#160;&#160;&#160; &lt;name&gt;hibernatetools.all&lt;/name&gt;
+&#160;&#160;&#160; &lt;!-- the only place the <strong>module version number</strong> needs to be in a pom.xml for a module --&gt;
+&#160;&#160;&#160; &lt;version&gt;3.4.0-SNAPSHOT&lt;/version&gt;
+&#160;&#160;&#160; &lt;packaging&gt;pom&lt;/packaging&gt;
+&#160;&#160;&#160; &lt;modules&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; &lt;module&gt;features&lt;/module&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; &lt;module&gt;plugins&lt;/module&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; &lt;module&gt;tests&lt;/module&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; &lt;module&gt;site&lt;/module&gt;
+&#160;&#160; &lt;/modules&gt;
+&lt;/project&gt;</code></pre>
+<p>Sub-Module pom:</p>
+<pre><code>&lt;project ...&gt;
+&#160;&#160;&#160; ...
+&#160;&#160;&#160; &lt;parent&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; &lt;!-- this section is <strong>maintained by the versions plugin</strong> --!&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; &lt;groupId&gt;org.jboss.tools&lt;/groupId&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; &lt;artifactId&gt;hibernatetools&lt;/artifactId&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; &lt;version&gt;3.4.0-SNAPSHOT&lt;/version&gt;
+&#160;&#160;&#160; &lt;/parent&gt;
+&#160;&#160;&#160; &lt;groupId&gt;org.jboss.tools.hibernatetools&lt;/groupId&gt;
+&#160;&#160;&#160; &lt;artifactId&gt;plugins&lt;/artifactId&gt;
+&#160;&#160;&#160; &lt;name&gt;hibernatetools.plugins&lt;/name&gt;
+&#160;&#160;&#160; &lt;packaging&gt;pom&lt;/packaging&gt;
+&#160;&#160;&#160; &lt;modules&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; &lt;module&gt;org.hibernate.eclipse&lt;/module&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; &lt;module&gt;org.hibernate.eclipse.console&lt;/module&gt;
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; ...
+&lt;/modules&gt;</code></pre>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p> &#8230;and finally the actual plugin/feature pom&#8217;s:</p>
+<pre><code>&lt;project ... &gt;
+&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt; 
+&lt;parent&gt;
+&#160;&#160;&#160; &lt;groupId&gt;org.jboss.tools.hibernatetools&lt;/groupId&gt;
+&#160;&#160;&#160; &lt;artifactId&gt;plugins&lt;/artifactId&gt;
+&#160;&#160;&#160; &lt;version&gt;3.4.0-SNAPSHOT&lt;/version&gt;
+&lt;/parent&gt;
+&lt;groupId&gt;org.jboss.tools.hibernatetools.plugins&lt;/groupId&gt;
+&lt;artifactId&gt;org.hibernate.eclipse&lt;/artifactId&gt; 
+&lt;packaging&gt;eclipse-plugin&lt;/packaging&gt;</code></pre>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Notice how this setup makes the configuration at the plugin level very concise (or at least as concise as Maven allows them to be). Only if your plugin has custom build logic do they need to be different.</p>
+<h1 id="conclusion">Conclusion</h1>
+<p>With this setup we can now easily customize our builds at a module level and easily bump our versions number across all the osgi/p2 artifacts within the module.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Meaning if I use the Tycho versions plugin to bump a module to 3.5.0, by default <em>everything</em> in that module gets bumped to 3.5.0, no matter if they have changed or not.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Purists of osgi might claim that is a bad practice and you should only bump the versions of the plugins that actually received changes and in principle I agree with them, but&#8230;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>&#8230;JBoss Tools consists of about 202 plugins and 100 features each with their own feature.xml, MANIFEST.MF and when we included Tycho or rather Maven in the mix they also each have a pom.xml.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Add in the various updatesites, and other artifacts and just in the main source code tree of JBoss Tools it all adds up to us having at the current time of writing <strong>628</strong> versionable artifacts.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>That is alot of versions to keep track of and ensure is uptodate.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Until now we have been maintaining the versions of these artifacts manually by hand and just as a precaution we (as many others in osgi/p2 land) do our builds with a .qualifier as the last part of the version number. This ensure the version number is always higher than the previous build. If we don&#8217;t, then p2 won&#8217;t install the newest build. </p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>This actually means that if you don&#8217;t realize it then you can easily stay on version 1.0.0 for your plugins forever and ever - no users will complain since they can always get the the newest updated version.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>The problem of being blind to versions of course show up when you start having multiple branches and even more so when you try to build up API plugins and want to ensure you are using the right compatible version - and here relying on the &#8220;random&#8221; qualifier string becomes unmanagable.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>With a handful of plugins it&#8217;s &#8220;easy&#8221;, but with 628 artifacts it can become rather chaotic.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Thus I&#8217;ll argue its better to do it on the module level which reduces the versionable artifacts to 42 in our case - a much more managable number and much simpler to handle and understand for both developer and user IMO.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Notice, that if you are in a situation where you need to manually version specific plugins then you simply set the version explicitly for those plugins/features and Tycho versions plugin will not change them if they are not the same as the module pom.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>That is another thing I like about this setup </p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>- it allows you to do the most manageble thing easily, and if you need the full control you can do that for just the parts you wishes it for.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>What do you think ? </p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Have you solved this problem differently/better/worse ?</p>
+</div>
+<!-- [DocumentBodyEnd:58f1dcfd-7771-4735-bff7-9f95d0cab246] -->
+</body>

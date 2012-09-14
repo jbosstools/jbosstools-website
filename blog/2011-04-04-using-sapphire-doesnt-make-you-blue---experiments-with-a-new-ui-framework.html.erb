@@ -1,0 +1,72 @@
+---
+title: 'Using Sapphire Doesn''t Make You Blue! - Experiments with a new UI framework'
+author: 'Max Rydahl Andersen'
+layout: blog-post
+tags: [ eclipse, configuration, tools, xml, tooling, editor, framework, switchyard, sapphire ]
+orignallink: ''
+---
+<body>
+<div class="jive-rendered-content">
+<p>While at EclipseCon a few weeks ago, I heard about a new framework at Eclipse for quickly developing Eclipse editors for XML files, especially XML configuration files. As Konstantin Komissarchik, one of the lead developers on Sapphire, pointed out in the summary for his EclipseCon talk - "[Sapphire] is a UI building framework that allows developers to specify UI in terms of higher level constructs like property editors instead of widgets and layouts. This paradigm results in several orders of magnitude improvement in developer productivity while simultaneously delivering better quality UI that is easier to maintain."</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Though I missed his talk, I had a chance to sit down with Konstantin afterwards and he showed off what his framework can do. To say the least, I was excited. One of the things we do a lot of in JBoss tools is editing XML configuration files. We have them everywhere. And we don't really have a consistent look and feel to any of them. The other thing I was excited to see was the potential integration with Graphiti, a framework for graphical editors. Perhaps they've hit upon the "Holy Grail" of UI development?</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Here's an example from one of the samples that comes with the Sapphire framework:</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-3736-16090/sapphire-screenshot-1.png"><img alt="sapphire-screenshot-1.png" class="jive-image-thumbnail jive-image" height="363" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-3736-16090/450-363/sapphire-screenshot-1.png" width="450"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>I wanted to find out. So when I got back from my trip, I started playing with Sapphire locally. You have to keep in mind that this is very early in the process for Sapphire. The version I'm working with is 0.3 and they're providing bug fixes nearly every day, which means things may break or change between updates. Honestly that's fine - Konstantin said they're using the framework at Oracle and have commercial editors out in the wild based on this technology, so it has to be pretty good, right? </p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>We have a runtime project at JBoss that's rolling along at a pretty good clip now. It's the next generation of our ESB called SwitchYard. You can check out the <a class="jive-link-external-small" href="http://www.jboss.org/switchyard">SwitchYard Community Page</a> for more details. But they've been working on the format of an XML configuration file that we'll need to develop an editor for. It seemed like the perfect opportunity to put Sapphire to the test</p>
+<p>.</p>
+<p>Over the course of the last 5 or 6 business days, I've probably put in 20-30 hours on this editor. I've run into a few issues here and there, most because I didn't grok the framework fully at the start. But I've ended up with a good first cut that is able to edit the initial sample of the configuration file. And that's amazing to have something that even sort of works in that short a timeframe.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Ultimately developing an editor in Sapphire boils down to two main things:</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<ul>
+<li>A set of Java interface files that map to different parts of your XML configuration.</li>
+<li>And a Sapphire Definition (sdef) file, which defines how different parts of the UI are rendered. </li>
+</ul>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Think of the Java interface files as a quick and easy Java bean representation of your XML. So various element structures and properties are reduced to getters and setters in the interfaces. All you do from there is take the Switchyard annotations and indicate how to tie those properties back to the XML you're editing. The Sapphire framework then takes those annotations to define a model (<span style="text-decoration: line-through;">using EMF of course </span>see the correction below) on the fly representing your XML. This is the "Model" part of your typical Model-Viewer-Controller approach.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>[Correction: Konstantin pointed out that "Sapphire does not use EMF for any part of modeling or data binding. The developer specifies semantics in interfaces and annotations. The annotation processor generates implementation classes. The XML binding code directly reads and writes on the live DOM API exposed by the XML editor."]</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Then the SDEF file describes how to present that generated model to the user in UI form. Want to generate a view? Cool. Wizard or dialog? Cool. Editor? Cool. And you can define reusable components of the UI so you don't have to redefine everything if you decide to go, for example, from a dialog to an editor later on. It's nice because there's instant integration between the Outline view and the Editor for example, so you don't have to worry about the niggly little bits that can sometimes consume days at a time to get right.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>What's awesome is that the Sapphire UI Definition Editor is itself written in Sapphire. Talk about eating your own dog food. <img height="16px" src="https://community.jboss.org/4.5.6/images/emoticons/happy.gif" width="16px"></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Here's a screen shot of what I have working so far:</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-3736-16091/switchyard_0_1.jpg"><img alt="switchyard_0_1.jpg" class="jive-image-thumbnail jive-image" height="321" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-3736-16091/450-321/switchyard_0_1.jpg" width="450"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>There are some gotchas:</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<ul>
+<li>Annotation processing is not turned on by default for projects. To do that, go to Project Properties -&gt; Java Compiler -&gt; Annotation Processing -&gt; Enable annotation processing.</li>
+<li>To see the classes generated by the Sapphire framework for your interfaces, you have to turn off the filter that hides files &amp; folders starting with "." Those generated classes appear in the ".apt_generated" folder.</li>
+<li>It's taken me several days to grok how to get XML namespace declarations just right with the XmlNamespace and XmlNamespaces and XmlRootBinding annotations. But it boils down to declaring them when you use them. Easier said than done, but it makes sense once you've played with it a bit.</li>
+<li>You have to make sure that you name things consistently. This is one of the areas I have run into again and again. The name of the property field, property name, getter and setter must be consistent or the framework complains loudly at runtime. So if you have a property named "SOAPBindings", you need to make sure the property is PROP_SOAPBINDINGS, the property name is "SOAPBindings" and the getter is "getSoapbindings()". <br><br>Why? Seems to be something with how the processor is looking at the capitalization of various bits in the model and if one is out of whack, they're all out of whack. You can make it a bit more consistent by adding underscores to the PROP_ declaration - such as PROP_SOAP_BINDINGS would need the property name "SoapBindings" and the getter would be "getSoapBindings()" - the underscore hints that there's a uppercase letter coming up. </li>
+</ul>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>That's about it at this point. Now that I have the structure working and can define/modify/delete things via the editor, I want to go in and add some polish. Things like boolean options - true/false, combo boxes, validation, etc.&#160; After that's done, I'll start playing some with the Graphiti integration - but I'm not quite ready to tackle that yet. </p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Interested in playing with Sapphire yourself? Here are a few links to get you started:</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<ul>
+<li>
+<span>Main Sapphire page: </span><a class="jive-link-external-small" href="http://www.eclipse.org/sapphire/" target="_blank">http://www.eclipse.org/sapphire/</a>
+</li>
+<li>Konstantin's Sapphire-related blog articles: <a class="jive-link-external-small" href="http://lt-rider.blogspot.com/search/label/eclipse-sapphire">http://lt-rider.blogspot.com/search/label/eclipse-sapphire</a>
+</li>
+<li>
+<span>Until Indigo is released, Sapphire requires the latest milestones of Graphiti to work correctly. You can find that update site here: </span><a class="jive-link-external-small" href="http://download.eclipse.org/graphiti/updates/milestones/" target="_blank">http://download.eclipse.org/graphiti/updates/milestones/</a>
+</li>
+<li>
+<span>But you can also download latest built packages from Eclipse Hudson server: </span><a class="jive-link-external-small" href="https://hudson.eclipse.org/hudson/job/sapphire-0.3.x/" target="_blank">https://hudson.eclipse.org/hudson/job/sapphire-0.3.x/</a>
+</li>
+</ul>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>A big thanks to Konstantin for helping me out on the Sapphire mailing list and forum. He's been very patient dealing with me over the last week!</p>
+</div>
+<!-- [DocumentBodyEnd:e5a80aaf-523a-4ee7-87c0-e05650d32827] -->
+</body>
