@@ -1,0 +1,66 @@
+---
+title: 'JBoss AS 7.1 Beta1 with JBoss Tools - use web port poller!'
+author: 'Max Rydahl Andersen'
+layout: blog-post
+tags: [ jboss, as, tools, workaround, incompatibility, jbosscentral ]
+orignallink: ''
+---
+<body>
+<div class="jive-rendered-content">
+<p>Yesterday JBoss AS team <a class="jive-link-external-small" href="http://www.jboss.org/jbossas/downloads/">released JBoss AS 7.1 Beta1</a> - the best release ever with some great stuff and an out-of-the-box secured server.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<blockquote class="jive-quote">
+<p><strong>Note: </strong></p>
+<p>Since this blog post was written a new version of AS 7.1 and JBoss Tools have been released which works out-of-the-box.</p>
+<p>See details at<a class="jive-link-external-small" href="http://http://community.jboss.org/community/tools/blog/2011/12/23/jboss-tools-m5-is-coming-to-town"> http://community.jboss.org/community/tools/blog/2011/12/23/jboss-tools-m5-is-coming-to-town </a></p>
+</blockquote>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>We knew that the out-of-the-box secured server would require changes to JBoss Tools to handle it, but it also turns out there is an <a class="jive-link-external-small" href="https://issues.jboss.org/browse/AS7-2772">unforseen incompatibility</a> between the AS 7.1 Beta1 and AS 7.0 Final client jars that we use to talk to the AS server.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Thus if you use JBoss AS 7.1 Beta1 with JBoss Tools and start it up without changing anything you will see errors similar to this in the console output of the server:</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<!--[CodeBlockStart:ea933715-5e29-4ec6-b096-5decb95bb3e0]--><pre class="jive-pre"><code class="jive-code">19:40:43,780 ERROR [org.jboss.remoting.remote] (Remoting "greybeard:MANAGEMENT" read-1) JBREM000200: Remote connection failed: java.io.IOException: JBREM000201: Received invalid message on Remoting connection 64726693 to /127.0.0.1:62248
+19:40:43,895 ERROR [org.jboss.remoting.remote] (Remoting "greybeard:MANAGEMENT" read-1) JBREM000200: Remote connection failed: java.io.IOException: JBREM000201: Received invalid message on Remoting connection 69123787 to /127.0.0.1:62249
+19:40:44,006 ERROR [org.jboss.remoting.remote] (Remoting "greybeard:MANAGEMENT" read-1) JBREM000200: Remote connection failed: java.io.IOException: JBREM000201: Received invalid message on Remoting connection 190a621a to /127.0.0.1:62250
+</code></pre>
+<!--[CodeBlockEnd:ea933715-5e29-4ec6-b096-5decb95bb3e0]--><p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>These are caused from the server seeing our "ping" to the server trying to get an answer to if the server is ready and launched but because of the incompatiblity bug it is resulting in these errors instead.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Eventually JBoss Tools will give up and report an error about the server startup not being detected.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>To avoid seeing these errors and to be able to work with the server even though you secure it, there is a workaround for JBoss Tools.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>You simply need to change the "Startup Poller" from "JBoss 7 Manager Service" to use "Web Port" instead and disable the Automatic detection of the management port. The details on that is described below.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h2>How to workaround AS 7.1 not being recognized</h2>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>In the "Servers" view double click on the server and it should open up the server editor:</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Note that since JBoss Tools only know about "JBoss 7.0" that is what the default server will be called if you haven't typed in something else.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4319-17355/jbossas7_1oob.png"><img alt="jbossas7_1oob.png" class="jive-image-thumbnail jive-image" height="328" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4319-17355/450-328/jbossas7_1oob.png" width="450"></a></p>
+<p>In here are the settings that need to be changed. </p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<ol>
+<li style="text-align: start;">Change "Startup Poller" to "Web Port"</li>
+<li style="text-align: start;">Remove the checkmark from "Automatically detect" under "Server Ports/Management"</li>
+<li style="text-align: start;">Type in '9999' into the Management field.</li>
+<li style="text-align: start;">Save (Ctrl+S) the configuration</li>
+</ol>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="text-align: start;">Once you have done that it should look something like this:</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="text-align: start;"><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-4319-17356/as7_1_fixed.png"><img alt="as7_1_fixed.png" class="jive-image-thumbnail jive-image" height="320" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-4319-17356/450-320/as7_1_fixed.png" width="450"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="text-align: start;">Now when you start this server we will no longer use the management API to check if the server is running but instead</p>
+<p style="text-align: start;"><span>just check if </span><a class="jive-link-external-small" href="http://localhost:8080" target="_blank">http://localhost:8080</a><span> is available.</span></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="text-align: start;">I'm sorry for the trouble and we are working hard on getting it fixed and supported in next milestone of JBoss Tools.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="text-align: start;">You can monitor <a class="jive-link-external-small" href="https://issues.jboss.org/browse/JBIDE-10224">JBIDE-10224</a> to see the progress on the JBoss Tools side.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="text-align: start;">But do try to still Have Fun,</p>
+<p style="text-align: start;">Max</p>
+</div>
+<!-- [DocumentBodyEnd:39bd1354-d144-42d9-99fe-03890f19f79f] -->
+</body>

@@ -1,0 +1,66 @@
+---
+layout: default
+---
+= partial( 'carousel.html.haml' )
+        
+#sections.row-fluid
+  .span4
+    %h3#feature-highlight Feature Highlight
+    - features = site.features 
+    - features = features.find_all{|item| item.highlighted_feature == true}
+    - for feature in features
+      .item
+        %h5
+          &= feature.title
+        .details
+          #{feature.summary}
+          - if feature.url?
+            %a{:href=>feature.url} Read more...
+
+  .span4  
+    %h3#latest-news Latest news
+    - news = site.news.values
+    - today = Time.now 
+    - news = news.find_all{|item| item.effective_date.to_s <= today.strftime("%Y%m%d")}
+    - news = news.sort{|l,r| l.effective_date <=> r.effective_date}
+    - for article in news
+      .item
+        %h5
+          #{article.title}
+        %strong  
+          #{article.author}
+        .details
+          #{article.content}
+          - if article.url?
+            %a{:href=>article.url}
+              Read more...
+
+  .span4  
+    %h3#upcoming-events Upcoming Events
+    - events = site.events.values
+    - now = Time.now 
+    - a_few_days_ago = now - 4 * 24 * 60 * 60
+    - events = events.find_all{|item| item.effective_date.to_s >= a_few_days_ago.strftime("%Y%m%d")}
+    - events = events.sort{|l,r| l.effective_date <=> r.effective_date}
+    - for event in events
+      .item
+        %a{:href=>event.url}
+          %h5
+            #{event.title}
+        %strong  
+          &= event.event_date 
+          in
+          &= event.location
+        .details
+          #{event.content}
+          - if event.url?
+            %a{:href=>event.url}
+              Read more...
+
+
+
+
+
+
+
+

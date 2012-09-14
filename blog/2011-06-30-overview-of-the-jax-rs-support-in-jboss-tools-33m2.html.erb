@@ -1,0 +1,66 @@
+---
+title: 'Overview of the JAX-RS support in JBoss Tools 3.3M2'
+author: 'Max Rydahl Andersen'
+layout: blog-post
+tags: [ jbosstools, eclipse, jax-rs, jboss_tools ]
+orignallink: ''
+---
+<body>
+<div class="jive-rendered-content">
+<p>Following the release of JBoss Tools 3.3M2 that was <a class="" href="https://community.jboss.org/community/tools/blog/2011/06/28/fast-faster-jboss-tools-33-m2">announced</a> yesterday, this article highlights the main features provided by the new JAX-RS tooling which is part of this new milestone.</p>
+
+<h3>Installing the plugin</h3>
+<p>As explained in the announcement, the fastest and easiest way to get started with JBoss Tools is to download &amp; install the <a class="jive-link-external-small" href="http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/indigor" style="font-size: 12px; color: #355491;"><span class="jive-link-external-small" style="font-size: 12px;">Eclipse 3.7 (Indigo) JEE bundle</span></a>. Once you have installed Eclipse, you use our update site directly.</p>
+
+<p>The updatesite URL to use from Help &gt; Install New Software... is:</p>
+
+<pre style="background-color: #ffffff; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 2px; font-size: 12px; margin-top: 10px; margin-right: 20px; margin-bottom: 10px; margin-left: 20px; border-top-color: #eeeeee; border-right-color: #eeeeee; border-bottom-color: #eeeeee; border-left-color: #cccccc; background-position: repeat repeat; border-style: solid; padding: 10px;"><p><a class="jive-link-external-small" href="http://download.jboss.org/jbosstools/updates/development/indigo/" style="font-size: 12px; color: #355491;">http://download.jboss.org/jbosstools/updates/development/indigo/</a></p></pre>
+<p>Then, go to the "All JBoss Tools 3.3" section and select "JBoss JAX-RS Tools"</p>
+<p>﻿<a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-3884-16612/Capture+d%E2%80%99%C3%A9cran+2011-06-30+%C3%A0+22.05.46.png"><img alt="Capture d’écran 2011-06-30 à 22.05.46.png" class="jive-image-thumbnail jive-image" height="359" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-3884-16612/450-359/Capture+d%E2%80%99%C3%A9cran+2011-06-30+%C3%A0+22.05.46.png" width="450"></a></p>
+<p><span style="font-size: 19px; font-weight: bold;">Using a sample project</span></p>
+<p>A quick way to get started with the tooling is to download the <strong>JBoss AS7 Quickstarts</strong> from their <a class="jive-link-external-small" href="http://download.jboss.org/jbossas/7.0/jboss-7.0.0.CR1/jboss-as-quickstarts-7.0.0.CR1-dist.zip">download page</a>. Once you've unzipped the archive, import the "<strong>KitchenSink"</strong> project into your workspace using the Import &gt; Existing Maven Project menu.</p>
+
+<p><img height="16px" src="https://community.jboss.org/4.5.6/images/emoticons/info.gif" width="16px"> You'll need to install the m2eclipse plugin to import the project.</p>
+
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-3884-16620/Capture+d%E2%80%99%C3%A9cran+2011-06-30+%C3%A0+22.52.57.png"><img alt="Capture d’écran 2011-06-30 à 22.52.57.png" class="jive-image-thumbnail jive-image" height="442" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-3884-16620/450-442/Capture+d%E2%80%99%C3%A9cran+2011-06-30+%C3%A0+22.52.57.png" width="450"></a></p>
+
+<p><h6>Activating the support for JAX-RS</h6></p>
+<p>One way to activate support for JAX-RS in your project is to click on "Configure &gt; Add JAX-RS 1.1 support..." in the project's contextual menu, which in turn will add the "JAX-RS Nature" to it.</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-3880-16549/jaxrs_install.png"><img alt="jaxrs_install.png" class="jive-image" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-3880-16549/jaxrs_install.png" style="margin: 12px;"></a></p>
+
+
+<p>If the project you're working on is a "Dynamic Web Project", you can also install the standard Eclipse "JAX-RS (REST Web Services)" Facet, which will in turn will add the "JAX-RS Nature" as described in the previous case.</p>
+
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-3880-16550/jaxrs_facet.png"><img alt="jaxrs_facet.png" class="jive-image-thumbnail jive-image" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-3880-16550/jaxrs_facet.png" style="margin: 12px;" width="620"></a></p>
+<p>In both cases, a "JAX-RS Builder" will be added to your project.</p>
+
+<h3>Current features</h3>
+<p>In this milestone, the JAX-RS Builder offers the features described below.</p>
+<h5>Mapping of JAX-RS elements to the source</h5>
+<p>The JAX-RS Builder computes and keeps in sync' an im-memory metamodel of the JAX-RS elements of your project. The metamodel is reinitialized during a clean/full build of your project, and all kinds of changes to compilation units are applied to the metamodel.      </p>
+
+<h5>RESTful Web Services explorer</h5>
+<p>The <strong>RESTful Web Services</strong> outline in the the <strong>Project Explorer</strong> view is certainly the most attractive feature of this plugin, as it displays the resolved URI Path Templates based on the metamodel described above.</p>
+
+<p>The URI Path Templates resolution works with both Methods and Submethods of Root Resources and Subresources. In addition, each node in the outline indicates the consumed and produced media-types and the Java method that would be called when a request matching the combo {HTTP Method + URI Path Template + Content Negociation}. Double-clicking on the elements of the outline opens the Java Editor to the associated location in the source code.</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-3884-16627/Capture+d%E2%80%99%C3%A9cran+2011-06-30+%C3%A0+23.14.50.png"><img alt="Capture d’écran 2011-06-30 à 23.14.50.png" class="jive-image" height="186" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-3884-16627/310-186/Capture+d%E2%80%99%C3%A9cran+2011-06-30+%C3%A0+23.14.50.png" width="310"></a></p>
+
+<p>Event tough the classes annotated with the <span style="font-family: 'courier new', courier;">@javax.ws.rs.ext.Provider</span> are not shown on the Project Explorer's view yet, they are already taken into account by the JAX-RS Builder, so you can expect further features around those elements in the next releases.</p>
+
+<h5>Code completion for JAX-RS annotation values</h5>
+<p>Code completion for <span style="font-family: 'courier new', courier;">@javax.ws.rs.PathParam</span> annotation value is available. The completion processor analyses the source of the Java Type to return proposals based on the <span style="font-family: 'courier new', courier;">@javax.ws.rs.PathParam</span> annotations values both at the method and at the type levels. The additional information of each proposal highlights the part of the code from which the proposal was computed.</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-3884-16628/Capture+d%E2%80%99%C3%A9cran+2011-06-30+%C3%A0+22.57.51.png"><img alt="Capture d’écran 2011-06-30 à 22.57.51.png" class="jive-image-thumbnail jive-image" height="137" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-3884-16628/450-137/Capture+d%E2%80%99%C3%A9cran+2011-06-30+%C3%A0+22.57.51.png" width="450"></a></p>
+<p>Those completion proposals support the regular expressions, too.</p>
+
+<h5>Validation of JAX-RS constructs</h5>
+<p>The plugin currently validates that a method parameter annotated with <span style="font-family: 'courier new', courier;">@javax.ws.rs.PathParam</span> annotation matches with the <span style="font-family: 'courier new', courier;">@javax.ws.rs.Path</span> annotation value on the same method.</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-3884-16626/Capture+d%E2%80%99%C3%A9cran+2011-06-30+%C3%A0+23.00.26.png"><img alt="Capture d’écran 2011-06-30 à 23.00.26.png" class="jive-image-thumbnail jive-image" height="163" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-3884-16626/450-163/Capture+d%E2%80%99%C3%A9cran+2011-06-30+%C3%A0+23.00.26.png" width="450"></a></p>
+
+
+<p>That's it for now. Remember that the tooling is not yet complete but is very functional and we are looking forward to get feedback on its current functionality and what you would like to see in the future !</p>
+
+<p>Have fun !</p>
+
+</div>
+<!-- [DocumentBodyEnd:93715da2-ec99-4c25-8d9f-bfcd2aef6567] -->
+</body>

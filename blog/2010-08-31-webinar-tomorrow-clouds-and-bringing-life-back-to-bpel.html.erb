@@ -1,0 +1,50 @@
+---
+title: 'Webinar tomorrow, Clouds and bringing life back to BPEL'
+author: 'Max Rydahl Andersen'
+layout: blog-post
+tags: [ jbds, eclipse, jboss_tools, cloud, bpel ]
+orignallink: ''
+---
+<body>
+<div class="jive-rendered-content">
+<p>I'm returning from a way too busy 3-week vacation thus I thought I would give a little update on some of the events occuring while I was out.</p>
+<h2>Webinar</h2>
+<p>First of, a reminder that tomorrow I'll be doing a webinar for JBoss Tools and Developer Studio in the <a class="jive-link-external-small" href="http://jboss.org/webinars.html">JBoss Developer Webinar Series</a>.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>The webinar will show off some of the JBoss Tools specific features in Eclipse but many of the tips and tricks I will be showing applies just as well to a plain Eclipse so there should be something for every taste <img height="16px" src="https://community.jboss.org/4.5.6/images/emoticons/wink.gif" width="16px"></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>You need to register to be able to join the webinar; the time and registration links are as follows:</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><strong>Date:</strong> Sept 1, 2010 <strong> </strong></p>
+<p><strong>Time: </strong>16:00 UTC, 12:00 Noon Boston, 9:00 San Francisco, 12:00 Midnight Singapore<strong> </strong></p>
+<p><strong>Registration:</strong> <a class="jive-link-external-small" href="https://inquiries.redhat.com/go/redhat/20100901MadMaxTools">Register Now</a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h2>Clouds</h2>
+<p>Last week, Red Hat revealed its strategy for <a class="jive-link-external-small" href="http://www.jboss.com/solutions/PaaS/">Red Hat Platform-as-a-Service (PaaS)</a> and JBoss Tools/Developer Studio is a major part of these efforts.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>The functionallity we are adding is three levels of remote deployment and management of JBoss Application servers.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>First level is to perform this via SSH and SCP (secure shell/secure copy) allowing it to work with all existings systems on your local or remote networks/clouds that you have SSH access to (that should cover most cases today <img height="16px" src="https://community.jboss.org/4.5.6/images/emoticons/wink.gif" width="16px">. In current versions we only had a SSH only server which did not integrate start/stop/debugging of JBoss AS easily; with this it will.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Second level is to provide Eclipse tooling for the current DeltaCloud which enables us to do portable start/stop of virtual machines at any cloud provider DeltaCloud has a driver for (i.e. RHEV-M, EC2, Rackspace, etc.). This integration will make it super easy to start and stop these instances and together with the SSH/SCP we are already well on our way to have a fully "cloud" enabled IDE with some manual work required.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Third level is to integrate with the CoolingTower functionallity which adds some more abstraction on and around the DeltaCloud API's allowing things like deployment and provisioning to be done just as portable as DeltaCloud is for start/stop of virtual machines. Within the IDE you will not notice this much, beyond the registration to the CoolingTower service and then you can develop/deploy/debug your locally developed applications in any cloud (public or private) that allows execution of Java EE based applications.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>We've already been working on it for a while and you will soon see some of this functionallity in the milestone releases.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h2>BPEL at Eclipse</h2>
+<p>Now something completely different. We or rather Bob and Grid, have been working hard on providing a BPEL runtime (<a class="jive-link-external-small" href="http://jboss.org/riftsaw">Riftsaw</a>) and related BPEL Tooling (JBoss BPEL Tools). Initially we tried to do this as extensions on top of fine <a class="jive-link-external-small" href="http://www.eclipse.org/bpel">Eclipse.org BPEL</a> functionallity but for some reason there were noone around the Eclipse BPEL project to react for any requests, patches or even doing releases for a long time.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Thus we got tired of waiting and forked of our own BPEL Tooling so we could fix bugs, do releases and move forward.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>We did all this and still tried to bring life back into Eclipse.org BPEL project and eventually we got commit access and recently Bob Brodt took over leadership of the BPEL project. Thus we can now merge back our fork into Eclipse.org BPEL and start bringing some life into it again!</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Bob outlines the planned work in his blog announcing the move <a class="jive-link-external-small" href="http://dev.eclipse.org/blogs/bpel/2010/08/20/the-eclipse-bpel-designer-project-whats-the-deal-here/">here</a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h2>Questions/Comments ?</h2>
+<p>If you got questions about the Cloud and BPEL at Eclipse <a class="jive-link-external-small" href="https://inquiries.redhat.com/go/redhat/20100901MadMaxTools">join the webinar</a> tomorrow for the Q&amp;A or leave a comment here or on our forums.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Have fun!</p>
+</div>
+<!-- [DocumentBodyEnd:f76a5378-94f9-42ca-8817-3eaec495dada] -->
+</body>

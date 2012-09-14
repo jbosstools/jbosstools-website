@@ -1,0 +1,43 @@
+!!!5
+%html 
+  %head
+    %meta{ :charset=>'utf-8' } 
+    %title #{site.title}
+    %meta{ :name=>'viewport', :content=>'width=device-width, initial-scale=1.0' }
+    %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"http://static.jboss.org/theme/css/magnolia/stkdefault-styles.css", :media=>"screen, projection"}
+    %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"http://static.jboss.org/theme/css/common/org_common.css", :media=>"screen, projection"}
+    %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"http://static.jboss.org/theme/css/common/styles.css", :media=>"screen, projection"}
+    %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"http://static.jboss.org/theme/css/magnolia/jquery-ui.css", :media=>"screen, projection"}
+    %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"http://static.jboss.org/theme/css/magnolia/project.css", :media=>"screen, projection"}
+    %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"http://static.jboss.org/theme/css/magnolia/clearspace_common.css", :media=>"screen, projection"}
+    %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"http://static.jboss.org/theme/css/magnolia/print.css", :media=>"print"}
+    %link{ :rel=>"icon", :type=>"image/png", :href=>"#{site.base_url}/images/nav/jbosstools_icon16.png"}
+
+    %script{ :type=>'text/javascript', :src=>"http://static.jboss.org/theme/js/magnolia/allinone.js" }
+    %script{ :type=>'text/javascript', :src=>"http://jboss.org/resources/templating-kit/js/jbossorg.2011-07-27-15-42-03-383.cache.js" }
+    %script{ :type=>'text/javascript', :src=>"#{site.base_url}/javascripts/buttons.js" }
+    %script{ :type=>'text/javascript', :src=>"http://jboss.org/resources/templating-kit/js/all.2011-01-19-09-23-54-917.cache.js" }
+    %script{ :type=>'text/javascript', :src=>"http://static.jboss.org/theme/js/tabzilla.js" }
+    /[if lt IE 9]
+    %script{ :type=>'text/javascript', :src=>'//html5shim.googlecode.com/svn/trunk/html5.js' } 
+
+    %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"http://design.jboss.org/css/bootstrap.css", :media=>"screen, projection"}
+    %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"http://static.jboss.org/theme/css/common/org_common.css", :media=>"screen, projection"}
+    
+    -# custom page css
+    %link{ :rel=>'stylesheet', :type=>'text/css', :href=>"#{page.base_url}/stylesheets/jbt-styles.css" }
+    %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"#{site.base_url}/stylesheets/jbt-styles-wide.css", :media=>"only screen and (min-width: 1200px)"}
+    %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"#{site.base_url}/stylesheets/jbt-styles-small.css", :media=>"only screen and (max-width: 980px)"}
+   
+  %body.col-float3.nocol-layout
+    .pushed-wrapper
+      = partial( 'header.html.haml' )
+      ~ content
+      .push
+    #site-info.push
+      = partial( 'footer.html.haml' ) 
+  -#%footer
+  -#  %p &copy; Organization #{Date.today.year}
+    -# Uncomment script tags (remove leading -#) when you're ready to use behaviors
+    -# %script{ :type=>'text/javascript', :src=>'//cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js' }
+    -# %script{ :type=>'text/javascript', :src=>"#{site.base_url}/javascripts/bootstrap-collapse.js" }

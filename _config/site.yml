@@ -1,0 +1,8 @@
+title: JBoss Tools
+profiles:
+  development:
+    base_url: http://localhost:4242/
+  preview:
+    base_url: http://preview-jbosstools.rhcloud.com/
+  production:
+    base_url: http://torquebox.org/

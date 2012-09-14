@@ -1,0 +1,99 @@
+---
+title: 'Chasing a White Rabbit with JBoss Tools 3.3 M2'
+author: 'Max Rydahl Andersen'
+layout: blog-post
+tags: [  ]
+orignallink: ''
+---
+<body>
+<div class="jive-rendered-content">
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-3929-16603/jbosstools_as7_logo.png"><img alt="jbosstools_as7_logo.png" class="jive-image" height="88" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-3929-16603/310-88/jbosstools_as7_logo.png" style="display: block; margin-left: auto; margin-right: auto;" width="310"></a></p>
+<h4 style="color: #333333; font-weight: bold; padding-top: 10px; padding-right: 0pt; padding-bottom: 4px; padding-left: 0pt; font-size: 13pt; text-align: center; margin: 0pt;">3.3 M2 (Rabbit Chaser)</h4>
+<p style="text-align: center; padding: 0pt; margin: 0pt;">[<a class="jive-link-external-small" href="http://www.jboss.org/tools/download/dev" target="_top">Download</a>] [<a class="jive-link-external-small" href="http://download.jboss.org/jbosstools/updates/development/indigo/">Update Site</a>] [<a class="jive-link-external-small" href="http://docs.jboss.org/tools/whatsnew" target="_top">What's New</a>] [<a class="jive-link-external-small" href="http://www.jboss.com/index.html?module=bb&amp;op=viewforum&amp;f=201" target="_top">Forums</a>] [<a class="jive-link-external-small" href="http://jira.jboss.com/jira/browse/JBIDE" target="_top">JIRA</a>] [<a class="jive-link-external-small" href="http://twitter.com/jbosstools" target="_top">Twitter</a>]</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>We've worked around the speed bumps I talked about last time, and can now announce the release of JBoss Tools 3.3 M2, the first milestone that will work with Eclipse 3.7 "Indigo" and the just released JBoss "White Rabbit" AS 7 CR 1.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<pre class="jive_text_macro jive_macro_quote"><p>Note: Since this blog was written, <a class="jive-link-external-small" href="http://www.jboss.org/jbossas/downloads/">AS 7 Final</a> was released and is now available and works with JBoss Tools 3.3 M2 and higher!</p></pre>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>JBoss Tools is a set of plugins for Eclipse that complements, enhances and goes beyond the support that exist for JBoss and related technologies in the default Eclipse distribution, in this release we are especially moving the AS 7 and CDI/Solder integration forward. </p>
+<h2>Installation</h2>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>First off, go download &amp; Install <a class="jive-link-external-small" href="http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/indigor"><span class="jive-link-external-small">Eclipse 3.7 (Indigo) JEE bundle</span></a> - you can use some of the other bundles too, but with the JEE bundle you save bandwidth and you'll have less problems getting the right dependencies. </p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Once you have installed Eclipse, you use our update site directly.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>The updatesite URL to use from Help &gt; Install New Software... is:</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<pre><p><a class="jive-link-external-small" href="http://download.jboss.org/jbosstools/updates/development/indigo/">http://download.jboss.org/jbosstools/updates/development/indigo/</a></p></pre>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<blockquote class="jive-quote">
+<p><strong>Important: </strong>If you are running on recent released Linux distributions or 64-bit distributions you might be bumping into an <a class="jive-link-external-small" href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=349837">Eclipse 3.7 regression bug</a> that prevents the visual page editor to load and result in a hard crash of the visual VM. To avoid this problem you can run eclipse with a property to disable the visual page editor.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><code>eclipse -vmargs -Dorg.jboss.tools.vpe.loadxulrunner=false</code></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Alternatively you can try using </p>
+<!--[CodeBlockStart:228633a6-a339-461d-901a-f429b279724a]--><pre class="jive-pre"><code class="jive-code"><a class="jive-link-external-small" href="http://anonsvn.jboss.org/repos/jbosstools/workspace/snjeza/swt.xulrunner.patch" target="_blank">http://anonsvn.jboss.org/repos/jbosstools/workspace/snjeza/swt.xulrunner.patch</a><span>
+</span></code></pre>
+<!--[CodeBlockEnd:228633a6-a339-461d-901a-f429b279724a]-->
+<p>as updatesite to install temporary SWT patch that works similar to the planned Eclipse 3.7.1 patch.</p>
+</blockquote>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h4>Where are my SOA Tools ?</h4>
+<p>We are working on splitting out the SOA functionality (Teiid, Modeshape, Drools and jbpm) from the core distribution since the SOA tooling historically are not following the same release cycle of the core and thus at times it is beneficial that they can release their final version a bit delayed from the core. That means that for this milestone the main updatesite does not contain SOA tools but will for now be on a separate updatesite. </p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>JBoss Tools - SOA Tooling updatesite: </p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<pre><p><a class="jive-link-external-small" href="http://download.jboss.org/jbosstools/updates/development/indigo/soa-tooling/">http://download.jboss.org/jbosstools/updates/development/indigo/soa-tooling/</a></p></pre>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>The final layout and distribution mechanisms might change as we collect feedback, but for now SOA is separate from the core.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h3>JBoss Application Server 7</h3>
+<p>This morning JBoss AS 7 CR1 was released and JBoss Tools are ready to support it. The best way I can imagine showing what this means is by giving you this very short screencast showing how easy and fast AS 7 is and how easy it is to use when using from JBoss Tools.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="padding-left: 120px;"><iframe frameborder="0" height="350" src="https://player.vimeo.com/video/25768303" width="425">
+<br><br></iframe></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Another additional new feature for this release is the option named "Do not exectue startup or shutdown commands".</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-3929-16606/dont-execute-start-command.png"><img alt="dont-execute-start-command.png" class="jive-image" height="59" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-3929-16606/310-59/dont-execute-start-command.png" width="310"></a></p>
+<p>This option allows you to start and stop your server outside of Eclipse but still be able to use the deployment, debugger and Run As.. features.</p>
+<p>Ideal for when you want to run your own custom startup scripts and maybe even more interesting for remote servers where the server might be started/stopped by service scripts instad.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h2>JAX-RS</h2>
+<p><a class="jive-link-profile-small" href="https://community.jboss.org/people/xcoulon">Xavier Coulon</a> contributed JAX-RS standard tooling to JBoss Tools shortly after M1 and I'm now very proud to include it in this milestone.</p>
+<p>Xavier will be blogging about this shortly but in short it provides a explorer to navigate your JAX-RS resources and it comes with basic validation and code completion related to JAX-RS.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-3929-16608/jaxrs_explorer.png"><img alt="jaxrs_explorer.png" class="jive-image-thumbnail jive-image" height="172" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-3929-16608/450-172/jaxrs_explorer.png" width="450"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>The tooling will evolve more over the upcoming milestones/betas; if you have input/questions we are very interested in hearing about it.</p>
+<h2>Context &amp; Dependency Injection (CDI)</h2>
+<p>For this release the Seam Solder support is more complete by adding support for @Generic beans which is used by most Seam 3 and many CDI extensions out there to customize their framework CDI integration. This allows JBoss Tools to be more precise in its validation but also to provide better and improved content assist and navigation for CDI components.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Other extensions like Seam Config also got improvements and we now provide better validation of the Java backed schemas in the XML file format for CDI.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-3929-16607/seam_config_validation.png"><img alt="seam_config_validation.png" class="jive-image" height="247" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-3929-16607/310-247/seam_config_validation.png" width="310"></a></p>
+<h2>Maven &amp; AS 7 Quick Starts</h2>
+<p>With the release of <a class="jive-link-external-small" href="http://download.jboss.org/jbosstools/updates/requirements/m2eclipse/20110623-1035/">Maven Integration For WTP</a> (org.maven.ide.eclipse.wtp) 0.13 a few days ago Maven works even better now together with Eclipse WTP projects - in particular, there are fixes concerning having manifest and other descriptors generated by Maven according to pom.xml and&#160; much better handling of classpath which make this a huge improvement over previous versions.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>On top of these enhancements we've added further automatic configuration of your projects based on your pom.xml and its dependencies making it super easy to import existing Maven projects using technologies like JSF, CDI and Hibernate.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>This all is coming together with the AS 7 CR 1 release which comes with a set of <a class="jive-link-external-small" href="http://in.relation.to/Bloggers/WantToLearnAboutJBossAS7">Quickstarts and archetypes</a>.</p>
+<p>Both the quickstarts and archetypes will automatically get configured when you import them to have all the JBoss Tools enhancements ready for you to use.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Give them a try.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h2>And more...</h2>
+<p>There are a bunch of other improvements in this release and you can see descriptions and screenshots in <a class="jive-link-external-small" href="http://docs.jboss.org/tools/whatsnew" target="_top">What's New</a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Over the next few days/weeks we will be blogging more about the new features and usecases this release of JBoss Tools and AS 7 enables.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h2>Feedback</h2>
+<p>As always we crave for any feedback you can give, especially if you have a project that causes performance issues or wrong validations. We've done a lot of work testing but we are sure we haven't covered all possible combinations - if you find something we missed let us know!</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Thanks, and now go chase that <a class="jive-link-external-small" href="http://www.jboss.org/jbossas/downloads.html">White Rabbit!</a> with JBoss Tools!</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Have fun!</p>
+</div>
+<!-- [DocumentBodyEnd:3889c023-3604-447f-94ca-0176b5ea3443] -->
+</body>
