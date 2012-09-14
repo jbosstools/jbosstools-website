@@ -1,0 +1,90 @@
+---
+title: 'How to use JBoss AS 7 Beta 2 with JBoss Tools &amp; Developer Studio'
+author: 'Max Rydahl Andersen'
+layout: blog-post
+tags: [  ]
+orignallink: ''
+---
+<body>
+<div class="jive-rendered-content">
+<p>JBoss AS 7 is still being developed on but lately file based deployment is now in place and I thought it would be a good thing to tell you how you can use JBoss AS 7 from our tools even before there is an optimized and fully supported server adapter for it.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>It's not optimal, but at least it lets you get started. </p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>For this blog I used <a class="jive-link-external-small" href="http://www.jboss.org/jbossas/downloads.html">JBoss AS 7 Beta 2</a> and <a class="jive-link-external-small" href="http://devstudio.jboss.com/download/">JBoss Developer Studio 4</a>; you can use a newer version of AS 7 (beta 3 is coming out soon) or if you have JBoss Tools 3.2.0 installed all this works fine too from there.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Read more below.</p>
+<h2>Start/Stop of AS 7</h2>
+<p>For now the best way to start/stop AS 7 when working from Eclipse is to simply start and stop it from a command line.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><strong>Start:</strong></p>
+<!--[CodeBlockStart:7e9219bd-558c-4a29-b134-b255f6e4a953]--><pre class="jive-pre"><code class="jive-code">$JBOSS_HOME/bin/standalone</code></pre>
+<!--[CodeBlockEnd:7e9219bd-558c-4a29-b134-b255f6e4a953]--><p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><strong>Stop:</strong></p>
+<p>Press Ctrl+C in your terminal/command prompt</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>You can start AS 7 via Eclipse External Tools support but Stopping won't work since it will only stop the shell script not the actual running AS 7 instance. Thus for now - use the command line.</p>
+<h2>Deployment to AS 7</h2>
+<p>If you have a standard Eclipse Web Tools Project style project then the simplest is to use the Deploy Only server, if you have a free-form project you can also use Deploy Only server but maybe Project Archives gives you a better workflow. I'll outline the "Web Tools" and Project Archives approach below:</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h3>Create a Deploy Only Server</h3>
+<p>The "Deploy Only" server is available in JBoss Tools &amp; Developer Studio and provides a server adapter that has no special knowledge about the server it is deploying to beyond a directory location. Thus this is perfect for using with servers that does not yet have direct support from within Eclipse.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>To create one you simply hit Ctrl+N or use File &gt; New &gt; Other from the menu and find the Server wizard.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-3761-16162/define_new_server.png"><img alt="define_new_server.png" class="jive-image" height="129" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-3761-16162/310-129/define_new_server.png" width="310"></a></p>
+<p>Within the Server wizard you need to find and select the "Deploy Only" server:</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-3761-16163/newserver_deployonly.png"><img alt="newserver_deployonly.png" class="jive-image" height="317" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-3761-16163/310-317/newserver_deployonly.png" width="310"></a></p>
+<p>Press "Next", and then give your server a name and specify the directory location for deployments.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-3761-16164/deployonly_deploydirectory.png"><img alt="deployonly_deploydirectory.png" class="jive-image" height="88" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-3761-16164/310-88/deployonly_deploydirectory.png" width="310"></a></p>
+<p>For AS 7 standalone deployments goes to $JBOSS_HOME/standalone/deployments.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Press "Finish" and you should now have your "AS 7" server available in the servers view:</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-3761-16165/as7_serverview.png"><img alt="as7_serverview.png" class="jive-image" height="85" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-3761-16165/256-85/as7_serverview.png" width="256"></a></p>
+<p>Now you have a "Server" which you can deploy standard Web tools projects to; you simply drag'n'drop deployable resources to the server or use the "Add and Remove" available in the context menu.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h2>Enable Compressed Archives</h2>
+<p>There is one "gotcha" with this setup and that is that with AS 7 for exploded deployments it now requires a .dodeploy marker to explicitly trigger a (re)deployment of an exploded directory.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>The simplest way to avoid having to set this up is to enable "Compressed Archives" from within the tools since AS 7 will automatically deploy such archives once they are complete.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>To enable this, double click the Server and it's server editor should show up.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-3761-16167/enable_compressed_archives.png"><img alt="enable_compressed_archives.png" class="jive-image" height="427" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-3761-16167/310-427/enable_compressed_archives.png" width="310"></a></p>
+<p>In this editor, switch to the Deployment tab and make sure there is a checkmark for "Deploy projects as compressed archives".</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>With this done you can now easily add any war/jar/ear project to the server and deploy it.</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-3761-16166/as7_helloworld.png"><img alt="as7_helloworld.png" class="jive-image" height="103" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-3761-16166/256-103/as7_helloworld.png" width="256"></a></p>
+<p>Above I've added a project called "helloworld".</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>To deploy or redeploy this simply right click the server and choose "Publish" (you can also use the keyboard shortcut shown in the menu for easier access).</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-3761-16171/publish.png"><img alt="publish.png" class="jive-image" height="90" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-3761-16171/243-90/publish.png" width="243"></a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h4>Exploded and Explicit Deployments</h4>
+<p>If you really want to use exploded deployments then there is a trick you can do to simulate the .dodeploy marker with JBoss Tools.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Simply create a text file in your project called "foo.war.dodeploy" where foo.war should the name of your deployment. In my case that is "helloworld.war.dodeploy".</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-3761-16168/dodeploy_file.png"><img alt="dodeploy_file.png" class="jive-image" height="178" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-3761-16168/275-178/dodeploy_file.png" width="275"></a></p>
+<p>Then right click this file and choose "Mark as Deployable"</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-3761-16169/markasdeployable.png"><img alt="markasdeployable.png" class="jive-image" height="140" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-3761-16169/289-140/markasdeployable.png" width="289"></a></p>
+<p>This should then automatically get deployed to your sever (if you have multiple there will be a dialog asking you which server to deploy to)</p>
+<h3><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-3761-16170/dodeploy_in_serverview.png"><img alt="dodeploy_in_serverview.png" class="jive-image" height="111" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-3761-16170/310-111/dodeploy_in_serverview.png" width="310"></a></h3>
+<p>If you don't know what a "dodeploy marker" is look in the README.txt in $JBOSS_HOME/standalone/deployments for an explanation.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Please note that Deploy Only server currently does not support automatic publishing thus you have explicit invoke Publish when you are ready.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>This will be fixed in upcoming release of JBoss Tools 3.2.</p>
+<h3>Deploy using Project Archives</h3>
+<p>Project Archives is mostly relevant for those not using Web Tools style projects, but is also usable for deploying to AS 7 - the feature is already documented and even with <a class="jive-link-external-small" href="http://docs.jboss.org/tools/movies/demos/archiving/archiving.htm">a screencast</a> in a <a class="jive-link-external-small" href="http://relation.to/Bloggers/FastAndIncrementalPackagingInJBossTools">previous blog </a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h2>Please, Make this easier!</h2>
+<p>We are working on it and the first steps of an AS 7 adapter is already in JBoss Tools trunk which will be JBoss Tools 3.3 and target Eclipse 3.7.</p>
+<p>If you are interested in that work ask on the forums where we will keep you updated with the progress, i.e. when there will be an updatesite to install and use from <img height="16px" src="https://community.jboss.org/4.5.6/images/emoticons/happy.gif" width="16px"></p>
+</div>
+<!-- [DocumentBodyEnd:054ebcd1-a73a-4923-93d6-abe505286c7c] -->
+</body>

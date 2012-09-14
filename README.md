@@ -1,4 +1,4 @@
 jbosstools-website
 ==================
 
-Exeperiment for jboss.org/tools website base on Awestruct.
+Experiment for jboss.org/tools website base on Awestruct.

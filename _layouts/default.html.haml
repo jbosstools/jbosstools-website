@@ -1,0 +1,34 @@
+---
+layout: base
+--- 
+#project-banner-wrapper-bg
+  #project-banner-wrapper
+    #project-banner
+      %a#project-logo{ :border=>"0", :href => "#{site.base_url}/index.html"}< 
+        %img{ :alt=>"JBoss Tools", :src => "#{site.base_url}/images/nav/jbosstools_horiz_585.png"}< 
+      %a#project-installer
+        %img{:src => "/images/nav/installbutton.png"}
+    
+#menu-wrapper-bg
+  #menu-wrapper
+    #menu
+      %ul.center
+        %li#installation
+          %a{:href => "/installation"}< Installation
+        %li#features
+          %a{:href => "/features"}< Features
+        %li#videos
+          %a{:href => "/videos"}< Videos
+        %li#community
+          %a{:href => "/community"}< Community 
+        %li#blog
+          %a{:href => "/blog"}< Blog
+      - if (page.tab != null) 
+        %script{:type => "text/javascript"}
+          $("##{page.tab}").addClass("selected");     
+
+#content-wrapper-bg
+  #content-wrapper
+    #container-reduced.left
+      ~content
+

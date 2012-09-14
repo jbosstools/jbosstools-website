@@ -1,0 +1,109 @@
+---
+title: 'JBoss Tools Milestone for Eclipse 3.7 M6 (Indigo)'
+author: 'Max Rydahl Andersen'
+layout: blog-post
+tags: [ jbosstools, seam, eclipse, maven, tooling, cdi, forge ]
+orignallink: ''
+---
+<body>
+<div class="jive-rendered-content">
+<p>Eclipse 3.7 is coming out soon and we are happy to deliver the first milestone of JBoss Tools targeting the upcoming Eclipse Indigo release.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="text-align: center;"><a href="http://in.relation.to/service/File/10824"><img alt="http://in.relation.to/service/File/10824" class="jive-image" src="http://in.relation.to/service/File/10824"></a></p>
+<h4 style="text-align: center;">3.3.0.M1 (Forge On!)</h4>
+<p style="text-align: center;">[<a class="jive-link-external-small" href="http://www.jboss.org/tools/download" target="_top">Download</a>] [<a class="jive-link-external-small" href="http://download.jboss.org/jbosstools/updates/development/indigo/">Update Site</a>]&#160; [<a class="jive-link-external-small" href="http://docs.jboss.org/tools/whatsnew/index.html">What's New</a>] [<a class="jive-link-external-small" href="http://docs.jboss.org/tools/movies/" target="_top">Movies</a>] [<a class="jive-link-external-small" href="http://docs.jboss.org/tools/3.1.0.GA/" target="_top">Documentation (not updated yet)</a>]&#160; [<a class="jive-link-external-small" href="http://www.jboss.com/index.html?module=bb&amp;op=viewforum&amp;f=201" target="_top">Forums</a>]&#160; [<a class="jive-link-external-small" href="http://jira.jboss.com/jira/browse/JBIDE" target="_top">JIRA</a>] [<a class="jive-link-external-small" href="http://twitter.com/jbosstools" target="_top">Twitter</a>]</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>This is a development release in its true form which requires Eclipse 3.7 M6 to run. </p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>If you use Eclipse 3.7 M7 things will install, but there have been API changes between M6 and M7 so please follow the installation instructions below very carefully to avoid problems. </p>
+<h2>Installation </h2>
+<p>Read this very carefully - if you don't follow this you *will* have problems running this milestone since Eclipse 3.7 M7 is not compatible with Eclipse 3.7 M6.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<ol>
+<li>Download &amp; Install <a class="jive-link-external-small" href="http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/indigom6a">Eclipse 3.7 M6a (Indigo) JEE bundle</a>. </li>
+<li>Run and add this URL to Eclipse's list of available update sites:<!--[CodeBlockStart:638dbe3c-3c4c-4d1c-9798-4ef3732b30a4]--><pre class="jive-pre"><code class="jive-code"><a class="jive-link-external-small" href="http://download.jboss.org/jbosstools/updates/development/indigo" target="_blank">http://download.jboss.org/jbosstools/updates/development/indigo</a></code></pre>
+<!--[CodeBlockEnd:638dbe3c-3c4c-4d1c-9798-4ef3732b30a4]-->
+</li>
+<li>Disable all other URL's except that URL and this<br><!--[CodeBlockStart:862b09a1-61e6-421c-b977-6c370c251117]--><pre class="jive-pre"><code class="jive-code"><a class="jive-link-external-small" href="http://download.jboss.org/jbosstools/updates/indigo/M6/" target="_blank">http://download.jboss.org/jbosstools/updates/indigo/M6/</a></code></pre>
+<!--[CodeBlockEnd:862b09a1-61e6-421c-b977-6c370c251117]-->
+</li>
+<li>Now go and install the JBoss Tools components you want from the JBoss Tools updatesite</li>
+</ol>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Step #3 is the important one - this prevents P2 from overriding your M6 installation with M7 updates. </p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a class="jive-link-external-small" href="https://issues.jboss.org/browse/JBIDE-8907">This Jira</a> explains the details for this with screenshots if the above text is causing problems.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h2>New &amp; Noteworthy</h2>
+<p>The biggest change is for this release is definitely the Eclipse 3.7 compatiblity but besides that and a bunch of bugfixes and minor improvements we have more than a few exciting new features in this release.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h3>JBoss AS 7</h3>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>This release introduces a server adapter which allows you to start/stop/debug and deploy applications to JBoss AS 7 via the file system.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>If you haven't tried out JBoss AS 7 now is the time - it starts a in approximate 3 seconds; it's like night and day compared to previous AS versions.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h3>CDI/Seam Solder</h3>
+<p>The CDI tools have added additional features and bugfixes, but most importantly we now support components based of Seam Solder allowing us to pickup and identify CDI and Seam 3 components that uses the Seam Solder extensions. i.e. we will now honor the Seam Solder annotation @Veto to ignore otherwise valid CDI components.&#160; The full list of supported annotations from Seam Solder so far is:</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<ul><li>
+<!--[CodeBlockStart:e4be35be-4d04-4803-a044-e1bba165fdaa]--><pre class="jive-pre"><code class="jive-code">@Veto
+@Requires
+@Exact
+@MessageLogger
+@MessageBundle
+@DefaultBean
+@Unwraps
+@ServiceHandlerType
+@FullyQualified
+@Resource
+</code></pre>
+<!--[CodeBlockEnd:e4be35be-4d04-4803-a044-e1bba165fdaa]-->
+</li></ul>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>In addition to support Seam Solder annotations we also support components defined in Seam Config providng an Seam Config aware XML editor and pickup components defined and configured via XML in additon to annotations.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h3>Forge Tools</h3>
+<p>Our Forge Tools which are integrating <a class="jive-link-external-small" href="http://seamframework.org/Documentation/SeamForge">Seam Forge</a> into the Eclipse IDE is now bundled in JBoss Tools and allows you to use Seam Forge out of the box from inside Eclipse.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Seam Forge is core framework for rapid-application development in a standards-based environment; it provides a command line style shell for rapid scaffolding style development. The special thing about Seam Forge is that the motivation behind it is to support standards such as Java EE, CDI and JPA in addition to common defacto technologies such as git and maven.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>In its current release it allows you to easily create CDI based applications based on scaffolding principles as known</p>
+<p>from tools like seam-gen, ruby-on-rails, grails etc. </p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>This first release of Forge Tools are focusing on bringing the command shell experience directly available in Eclipse as a console so you can</p>
+<p>interact directly with Forge meaning you can execute and run Forge commands directly from IDE and as an extra nice bonus it imports and open projects you have created via the shell. It allows you to use the power of command line shell's together with the visual and integrated developer environment.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Koen made a very nice video of all this in play which I've embedded here below. You can see the details of what is shown in the</p>
+<p style="text-align: center;"><a class="jive-link-blog-small" href="https://community.jboss.org/community/tools/blog/2011/05/11/have-your-cake-and-eat-it-too-forge-tools">demo on his blog</a>.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><iframe frameborder="0" height="350" src="https://player.vimeo.com/video/23585936" width="425">
+<br><br></iframe></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h3>Maven</h3>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>What you might not notice in this demo is that it is using m2e/wtp and the JBoss Tools specific m2e configurators behind the scenes to</p>
+<p>automatically have the related plugins for the project automatically configured based on the Maven metadata instead of you having to manually configure and setup the tools.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>In upcoming releases of JBoss Tools you will see even tighter integration with Seam Forge and with Maven to make you even more productive in working with JEE 6 based technologies. </p>
+<h3>...and more</h3>
+<p>The <a class="jive-link-external-small" href="http://">new and noteworthy</a> provides a short overview with screenshots of the various improvements made in JBoss Tools extensive plugin set.</p>
+<h2>Next Steps</h2>
+<p>This release is mostly to get feedback on any issues found in Eclipse 3.7, and to introduce some of work that we are doing to provide a faster and more developer friendly developer environment than ever before - this includes Forge Tools and AS 7 for now but we will also focus on making tools such as Maven easier and faster to use. </p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>We've already contributed several patches to m2e which makes it up to 5 times faster in importing and updating project configuration - these improvements will be available soon from our nightly build site if you can't wait <img height="16px" src="https://community.jboss.org/4.5.6/images/emoticons/happy.gif" width="16px"></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>JBoss Tools 3.3 will also continue to make it easier to configure and install JBoss and other runtimes and frameworks to allow you as developer to focus on the code instead of the configuration - at least upfront.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>We also have a few other ideas, but we'll save that for some future blogs <img height="16px" src="https://community.jboss.org/4.5.6/images/emoticons/happy.gif" width="16px"></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Do remember though that we really appreciate feedback on wether the functionallity is helping you, if it is going in the right direction and if you have ideas for improvements or even patches.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>We are listing and reacting in both forums, jira, twitter and irc.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Enjoy this milestone - remember to read the installation instructions careful! and...</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Have Fun!</p>
+</div>
+<!-- [DocumentBodyEnd:e4d26087-20a5-4e75-9732-67cc0bc631ec] -->
+</body>

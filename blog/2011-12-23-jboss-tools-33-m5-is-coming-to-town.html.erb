@@ -1,0 +1,91 @@
+---
+title: 'JBoss Tools 3.3 M5 is coming to town'
+author: 'Max Rydahl Andersen'
+layout: blog-post
+tags: [ hibernate, eclipse, tools, openshift, jbosscentral ]
+orignallink: ''
+---
+<body>
+<div class="jive-rendered-content">
+<p>Just in time for the <a class="jive-link-message-small" href="https://community.jboss.org/message/642890#642890">holidays</a> I'm happy to let you know JBoss Tools 3.3 M5 is available for download. </p>
+<p><a href="http://in.relation.to/service/File/10824"><img alt="http://in.relation.to/service/File/10824" class="jive-image" src="http://in.relation.to/service/File/10824" style="margin: 12px auto; display: block;"></a></p>
+<h4 style="color: #333333; font-weight: bold; padding-top: 10px; padding-right: 0pt; padding-bottom: 4px; padding-left: 0pt; font-size: 13pt; text-align: center; margin: 0pt;">3.3 M5</h4>
+<p style="text-align: center; padding: 0pt; margin: 0pt;">[<a class="jive-link-external-small" href="http://www.jboss.org/tools/download/dev" target="_top">Download</a>] [<a class="jive-link-external-small" href="http://download.jboss.org/jbosstools/updates/development/indigo/">Update Site</a>] [<a class="jive-link-external-small" href="http://docs.jboss.org/tools/whatsnew" target="_top">What's New</a>] [<a class="jive-link-external-small" href="http://www.jboss.com/index.html?module=bb&amp;op=viewforum&amp;f=201" target="_top">Forums</a>] [<a class="jive-link-external-small" href="http://jira.jboss.com/jira/browse/JBIDE" target="_top">JIRA</a>] [<a class="jive-link-external-small" href="http://twitter.com/jbosstools" target="_top">Twitter</a>]</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>JBoss Tools is a set of plugins for Eclipse that complements, enhances and goes beyond the support that exist for JBoss and related technologies in the default Eclipse distribution.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>We were planning on this being named Beta, but for this release we got many new features which we thought deserved a (hopefully) final milestone. The new features are JBoss AS 7.1.x support, OpenShift Cartridges, Mobile Browser Simulator, Experimental Hibernate multi-version support, an updated JBoss Central with easy installation of 3rd party plugins and more!</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h2>Installation</h2>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>As always, get and install <a class="jive-link-external-small" href="http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/indigosr1"><span class="jive-link-external-small">Eclipse 3.7.1 (Indigo) JEE bundle</span></a> - with the 3.7.1 JEE bundle you get majority of the dependencies preinstalled.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Once you have installed Eclipse, you either find us on<a class="jive-link-external-small" href="http://marketplace.eclipse.org/content/jboss-tools-indigo"> Eclipse Marketplace under "JBoss Tools (Indigo)"</a> or use our update site directly.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>The update site URL to use from Help &gt; Install New Software... is:</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<pre class="jive-pre"><p><a class="jive-link-external-small" href="http://download.jboss.org/jbosstools/updates/development/indigo/">http://download.jboss.org/jbosstools/updates/development/indigo/</a></p></pre>
+<p><span style="font-family: arial, helvetica, sans-serif;"><br></span></p>
+<h3>JBoss AS 7.1.x Support</h3>
+<p>Now both AS 7.0 and AS 7.1 is now supported. We include the AS 7.1.b1 client libraries and the AS team <a class="jive-link-external-small" href="https://issues.jboss.org/browse/AS7-2880">just verified</a> their just released AS 7.1.CR1 is compatible and working with this release.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>I'm especially proud of the AS team's ingenious approach to having AS7 out-of-the-box being secured and locked-down for remote access but still allowing easy developer use of an local AS7. This allows tools like JBoss Tools, Maven, Arquillian etc. running locally under the same user as AS 7 to work seamless without additional security credentials setup - it just works <img height="16px" src="https://community.jboss.org/4.5.6/images/emoticons/happy.gif" width="16px">.&#160; </p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h3>OpenShift</h3>
+<p>You can now use existing WTP projects when setting up an OpenShift Express Application - making it easier to go from local development and then later into the OpenShift PaaS. How this works is demo'ed in the following screencast:</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><iframe frameborder="0" height="350" src="https://player.vimeo.com/video/33988381" width="425">
+<br><br></iframe></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>We also added support for managing OpenShift cartridges which allows you to easily add things like mysql, mysqladmin, mongo and Jenkins support to your application.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="http://docs.jboss.org/tools/whatsnew/openshift/images/embed-cartridge.png"><img alt="http://docs.jboss.org/tools/whatsnew/openshift/images/embed-cartridge.png" class="jive-image" src="http://docs.jboss.org/tools/whatsnew/openshift/images/embed-cartridge.png"></a></p>
+<p>You can now also get easy access to log files via the new "Show In &gt; Remote Console" available in the context menu of the server adapter. </p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Finally we adjusted the OpenShift server adapter to be independent of an AS7 runtime, meaning you can use the server adapter without even installing AS7 locally. </p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><strong>Note:</strong> This change does make it necessary to remove M4 server adapters and add a new one since it required an incompatible change in the server adapter metadata.&#160; </p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h3>JBoss Central </h3>
+<p>In M4 we introduced JBoss Central, a "hub" for getting easy access to tutorials, 3rd party plugins and news related to JBoss technology.</p>
+<h4>Project Wizards</h4>
+<p>In M5 we are adding a set of Project Wizards to JBoss Central which makes it easy to get started with Java EE, HTML5, Richfaces and Spring MVC all tested and working on AS 7 based servers. Furthermore all the projects are following best practices with respect to using JBoss maven dependencies.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a href="http://docs.jboss.org/tools/whatsnew/images/jboss-central-create-projects.png"><img alt="http://docs.jboss.org/tools/whatsnew/images/jboss-central-create-projects.png" class="jive-image" src="http://docs.jboss.org/tools/whatsnew/images/jboss-central-create-projects.png"></a></p>
+<p>Note, all of these projects are deployable to OpenShift Express as AS 7 applications out-of-the-box.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h4>3rd Party Plugin Installation</h4>
+<p>We've added a set of often used and now tested and verified 3rd party plugins to JBoss Central for easy installation into an Eclipse running JBoss Tools. The current list of plugins for easy installation are:</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<ul>
+<li>Subclipse (without the notorious issue of having to install additional svn connector plugin)</li>
+<li>JRebel (currently tested to work with AS 7.0)</li>
+<li>Google GWT Plugin (<a class="jive-link-blog-small" href="https://community.jboss.org/community/tools/blog/2011/11/16/thoughts-on-google-eclipse-plugins-going-open-source">their license now allows open redistribution</a>)</li>
+<li>FindBugs</li>
+<li>PMD</li>
+<li>SpringIDE</li>
+<li>TestNG</li>
+</ul>
+<h3>Mobile Browser Simulator</h3>
+<p>We've added a browser simulator to allow for easy and basic testing of your application layout when running in a mobile browser.</p>
+<p><a href="http://docs.jboss.org/tools/whatsnew/vpe/images/3.3.0.M5/9539.png"><img alt="http://docs.jboss.org/tools/whatsnew/vpe/images/3.3.0.M5/9539.png" class="jive-image" src="http://docs.jboss.org/tools/whatsnew/vpe/images/3.3.0.M5/9539.png"></a></p>
+<h3>Hibernate Multi-Version</h3>
+<p>Hibernate Tools now support both Hibernate 3.5 and Hibernate 4.0.</p>
+<p><a href="http://docs.jboss.org/tools/whatsnew/hibernate/images/console_configuration_hibernate_version.png"><img alt="http://docs.jboss.org/tools/whatsnew/hibernate/images/console_configuration_hibernate_version.png" class="jive-image" src="http://docs.jboss.org/tools/whatsnew/hibernate/images/console_configuration_hibernate_version.png"></a> </p>
+<p>Please be aware that this feature is still experimental and not all parts of Hibernate Tools works</p>
+<p>smoothly with Hibernate 4. Code generation and query execution should though work</p>
+<p>for basic cases. We will be working on this heavily through January thus you should see fast improvements on this area in the nightly builds</p>
+<p>getting closer to beta. </p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>If you do bump into bugs please let us know in forum or jira making sure we know about your specific Hibernate configuration that is causing problems and can help expaned the list of supported Hibernate 4 setups.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h3>And more...</h3>
+<p>When we return in January I and others will be going into more details about the various many new and awesome features JBoss Tools 3.3.0 has to offer, until then there are additional screenshot and features to browse over at <a class="jive-link-external-small" href="http://docs.jboss.org/tools/whatsnew/">What's New &amp; Noteworthy</a></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Leave a comment to let us know what you think!</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Happy holidays and as always,</p>
+<p>Have fun!</p>
+</div>
+<!-- [DocumentBodyEnd:6e59c2eb-094a-4614-9dc4-5cf11e64401c] -->
+</body>

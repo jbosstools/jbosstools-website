@@ -1,0 +1,49 @@
+---
+title: 'JBoss Tools 3.2 CR1 - Killer Of Bugs!'
+author: 'Max Rydahl Andersen'
+layout: blog-post
+tags: [ jbosstools, eclipse ]
+orignallink: ''
+---
+<body>
+<div class="jive-rendered-content">
+<p style="text-align: center; padding: 0pt; margin: 0pt;"><br><a href="http://in.relation.to/service/File/10824"><img alt="http://in.relation.to/service/File/10824" class="jive-image" src="http://in.relation.to/service/File/10824" style="margin: 12px; border: 0px initial initial;"></a></p>
+<h4 style="color: #333333; font-weight: bold; padding-top: 10px; padding-right: 0pt; padding-bottom: 4px; padding-left: 0pt; font-size: 13pt; text-align: center; margin: 0pt;">3.2.0.CR1</h4>
+<p style="text-align: center; padding: 0pt; margin: 0pt;">[<a class="jive-link-external-small" href="http://www.jboss.org/tools/download" target="_top">Download</a>] [<a class="jive-link-external-small" href="http://download.jboss.org/jbosstools/updates/development" target="_top">Update Site</a>] [<a class="jive-link-external-small" href="http://marketplace.eclipse.org/content/jboss-tools-1">Market Place</a>] [<a class="jive-link-external-small" href="http://docs.jboss.org/tools/whatsnew" target="_top">What's New</a>] [<a class="jive-link-external-small" href="http://docs.jboss.org/tools/3.2.0.Beta1/" target="_top">Documentation</a>] [<a class="jive-link-external-small" href="http://www.jboss.com/index.html?module=bb&amp;op=viewforum&amp;f=201" target="_top">Forums</a>] [<a class="jive-link-external-small" href="http://jira.jboss.com/jira/browse/JBIDE" target="_top">JIRA</a>] [<a class="jive-link-external-small" href="http://twitter.com/jbosstools" target="_top">Twitter</a>]</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<blockquote class="jive-quote"><p><strong>Note: </strong> Downloads are now being served from download.jboss.org while we wait for Sourceforge getting their <a class="jive-link-external-small" href="http://sourceforge.net/apps/wordpress/sourceforge/2011/01/27/service-downtime/">issue</a> fixed.</p></blockquote>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>This release is squashing <a class="jive-link-external-small" href="https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=10020&amp;version=12315459">400+ issues</a> thus if you use JBoss Tools milestones it is time to upgrade and if you find remaining issues <a class="jive-link-thread-small" href="https://community.jboss.org/thread/159819">report them</a> as soon as possible. </p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><a class="jive-link-external-small" href="http://docs.jboss.org/tools/whatsnew" target="_top">What's New</a> covers the usability fixes there have been added, and a few new additions/improvements.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h2>Top 6 on Eclipse Marketplace</h2>
+<p>Even though we haven't been on Eclipse Marketplace for long we are already the 6th most downloaded Eclipse plugin within 30 days on Eclipse Marketplace; and in 9th place of all time. </p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Thank you for the interest and usage - if you don't know Eclipse Marketplace, you can see how to use it <a class="" href="https://community.jboss.org/community/tools/blog/2010/10/21/jboss-tools-on-eclipse-marketplace">here</a>.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>For those already using it, I encourage you to go and give us your star or even a review at our <a class="jive-link-external-small" href="http://marketplace.eclipse.org/content/jboss-tools-1">Eclipse Market Place page</a> </p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h2>Automatic Runtime Detection</h2>
+<p>First of all this release finally enables one of my favorite new features "Automatic Runtime Detection". It's been possible for a while now to use the "Search" button under JBoss Tools to find JBoss runtimes and have them configured and setup in the IDE for direct usage without having to set up all the individual parts.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>In this release we have gone a bit further and allowed you to configure a set (one or many) of directories that JBoss Tools will scan on new workspaces or if you enable it at every startup; if anything new is found it will show the new items and you can then say if you want the runtimes to be installed or not.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>This means when you install a new version of JBoss AS, Seam, Drools, EAP, SOA-P, etc. you can simply put in this "watched" directory and JBoss Tools will configure them for you in the IDE. In the future we will add more types of runtime distribution detection such as Java JDK's.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>This feature is available under Eclipse Preferences in<strong> JBoss Tools &gt; JBoss Tools Runtime Detection</strong></p>
+<h2>CDI Improvements</h2>
+<p>For Context Dependency Injection (CDI) we've added a few quick fixes against some of the more common issues our validator finds.</p>
+<p>This allows you to use Ctrl+1 on warnings and fix issues. For example fixing @Produces annotations on non-static methods in a Session Bean by making the method static.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>We've also added support for the Maven integration to enable CDI automatically if/when your pom.xml file referenes the CDI api jars. Making it simple to import a Maven based CDI project and have all features enabled.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h2>Feedback</h2>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>There is more shown in <a class="jive-link-external-small" href="http://docs.jboss.org/tools/whatsnew" target="_top">What's New</a>, take a look, try the release and let us know how it goes! If nothing major is found we'll be releasing the final version within the next couple of weeks.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Have fun!</p>
+</div>
+<!-- [DocumentBodyEnd:11dc5bce-1610-44b0-a55d-dc9029304bff] -->
+</body>

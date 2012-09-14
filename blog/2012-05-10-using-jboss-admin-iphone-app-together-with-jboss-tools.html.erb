@@ -1,0 +1,32 @@
+---
+title: 'Using JBoss Admin iPhone app together with JBoss Tools'
+author: 'Max Rydahl Andersen'
+layout: blog-post
+tags: [ jbosstools, jbosscentral ]
+orignallink: ''
+---
+<body>
+<div class="jive-rendered-content">
+<p>This morning I woke up to an email stating that Christos Vasilakis had created an <a class="jive-link-external-small" href="http://itunes.apple.com/us/app/jboss-admin/id523516060?ls=1&amp;mt=8">iPhone app</a> to manage JBoss AS 7 servers from your phone, he even posted a <a class="jive-link-external-small" href="http://vimeo.com/40247548">video</a> about it.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>I tried it out immediatly and wanted to see how to use it against servers started by JBoss Tools. Since <a class="jive-link-blog-small" href="https://community.jboss.org/community/tools/blog/2012/02/29/excited-about-jboss-as-71-part-ii-developer-friendly-security">JBoss AS 7 is secured by default</a> you have to do a few steps to make this work:</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<ol>
+<li>Add a user to your JBoss Server with $JBOSS_HOME/bin/add-user.sh</li>
+<li>Set "Host name" to your local ip instead of localhost</li>
+<li>Add -Djboss.bind.address.management=&lt;local ip&gt; to the server launch configuration.</li>
+</ol>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Note: These steps are not unique for the iPhone app, it's the exact same you would need to do for any remote management of your JBoss Tools started server.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>To show how it all works together I recorded a screencast which shows the setup in tools and how to use the iPhone app.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p><iframe frameborder="0" height="350" src="https://player.vimeo.com/video/41905659" width="425">
+<br><br></iframe></p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>If the video is not showing up for you then you can watch it <a class="jive-link-external-small" href="http://vimeo.com/groups/jbosstools/videos/41905659">directly on JBoss Tools vimeo group</a>.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Thanks to Christos for making the app and hope you all enjoy managing your JBoss Tools started AS 7 server from your couch <img height="16px" src="https://community.jboss.org/4.5.6/images/emoticons/happy.gif" width="16px"></p>
+</div>
+<!-- [DocumentBodyEnd:4b76320f-197e-46a4-83b6-528867a00a23] -->
+</body>

@@ -1,0 +1,34 @@
+---
+title: 'Updates to the WS Tester for the next milestone...'
+author: 'Max Rydahl Andersen'
+layout: blog-post
+tags: [ jboss, service, jbosstools, jbds, eclipse, ws, tools, rest, web, wsdl, jax-rs, services, tooling, jax-ws, tester, restful ]
+orignallink: ''
+---
+<body>
+<div class="jive-rendered-content">
+<p>Yes, I'm back again... And this time, it's a bit of a beautification process we've put the Web Service Tester through...</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>We did some spring (well, summer now) cleaning to wipe away the ugly gray backgrounds and dreary boxes. In their place, we have the gleaming white controls and clean lines available using the Eclipse Forms Toolkit.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Here's an example after invoking a JAX-WS service.</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-1872-4264/ws_tester_forms_toolkit_JAX-WS_071310.jpg"><img alt="ws_tester_forms_toolkit_JAX-WS_071310.jpg" class="jive-image-thumbnail jive-image" height="338" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-1872-4264/450-338/ws_tester_forms_toolkit_JAX-WS_071310.jpg" width="450"></a></p>
+<p>You'll notice we've pared down a few things.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<ol>
+<li>We got rid of the Action URL, since usually you won't need that if you're testing from a WSDL (which is one of our two primary use cases). </li>
+<li>We combined the two combo boxes into one - so if you're doing a JAX-WS invocation, you select "JAX-WS" in the list and if you're doing a JAX-RS call, you specify the operation - GET, POST, PUT, and DELETE. </li>
+<li>Instead of big textual buttons, we went with smaller toolbar-style buttons with icons and tooltips. The two in the top right are for selecting a WSDL and invoking the service. The four in the Response Body section are: Save to File, Open in Editor (XML or Text), Show Raw Text, and Show in Web Browser. The last is handy if your web service (specifically some RESTful services) return formatted HTML. </li>
+<li>And instead of tabs, we went with collapsible sections.</li>
+<li>Like before, we have a resizable sash between the Request and Response sections of the view. However, I'm debating adding another sash on the right side between the Request Headers and Request Body areas to aid in resizing that a bit more. </li>
+<li>We got rid of the connection to the TCP/IP Monitor simply because it was redundant. If you have a call for that functionality, we can look at adding it back in, but we thought it was a bit of overkill. at this point.</li>
+</ol>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Here's an example after executing a JAX-RS service's GET call with the response body opened in an editor above it:</p>
+<p><a href="https://community.jboss.org/servlet/JiveServlet/showImage/38-1872-4265/ws_tester_forms_toolkit_JAX-RS_071310.jpg"><img alt="ws_tester_forms_toolkit_JAX-RS_071310.jpg" class="jive-image-thumbnail jive-image" height="425" src="https://community.jboss.org/servlet/JiveServlet/downloadImage/38-1872-4265/450-425/ws_tester_forms_toolkit_JAX-RS_071310.jpg" width="450"></a></p>
+<p>So all in all, I'm quite pleased with the results of this "facelift". It should start appearing in builds for the JBoss Tools 3.2 M2 milestone soon, so let me know what you think when you play with it.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Thanks!</p>
+</div>
+<!-- [DocumentBodyEnd:78141071-903c-42cb-b600-2219aa02ea46] -->
+</body>

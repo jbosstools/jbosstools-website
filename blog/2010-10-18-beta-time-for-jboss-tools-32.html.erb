@@ -1,0 +1,47 @@
+---
+title: 'Beta Time for JBoss Tools 3.2'
+author: 'Max Rydahl Andersen'
+layout: blog-post
+tags: [ jbosstools, eclipse, beta ]
+orignallink: ''
+---
+<body>
+<div class="jive-rendered-content">
+<p>It's Beta time for JBoss Tools, the Eclipse plugin suite for JBoss and related technologies.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p style="text-align: center;"><a href="http://in.relation.to/service/File/10824"><img alt="http://in.relation.to/service/File/10824" class="jive-image" src="http://in.relation.to/service/File/10824"></a></p>
+<h4 style="text-align: center;">3.2.0.Beta1</h4>
+<p style="text-align: center;">[<a class="jive-link-external-small" href="http://www.jboss.org/tools/download" target="_top">Download</a>] [<a class="jive-link-external-small" href="http://download.jboss.org/jbosstools/updates/development" target="_top">Update Site</a>] [<a class="jive-link-external-small" href="http://docs.jboss.org/tools/whatsnew" target="_top">What's New</a>]&#160; [<a class="jive-link-external-small" href="http://docs.jboss.org/tools/movies/" target="_top">Movies</a>]&#160; [<a class="jive-link-external-small" href="http://docs.jboss.org/tools/3.2.0.Beta1/" target="_top">Documentation</a>] [<a class="jive-link-external-small" href="http://www.jboss.com/index.html?module=bb&amp;op=viewforum&amp;f=201" target="_top">Forums</a>] [<a class="jive-link-external-small" href="http://jira.jboss.com/jira/browse/JBIDE" target="_top">JIRA</a>] [<a class="jive-link-external-small" href="http://twitter.com/jbosstools" target="_top">Twitter</a>]</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h3>Beta Time!</h3>
+<p>It's beta time, meaning we've locked down new feature additions to most of JBoss Tools and we get to give you the first beta release of JBoss Tools 3.2 - the version of JBoss Tools you should use if you are using Eclipse 3.6 (Helios).</p>
+<h3>New Features/Improvements</h3>
+<p>Since it is beta time the focus have been and will be on bugfixing, optimization and stabilization but we do got a few nice new features I would like to highlight - as all ways there is more to see on the <a class="jive-link-external-small" href="http://docs.jboss.org/tools/whatsnew" target="_top">What's New</a> page(s).</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<h3>Faster validation for JSF/XHTML</h3>
+<p>We've fixed reported issues concerning&#160; performance problems&#160; with validation of XHTML in larger projects. Our&#160; own test project&#160; (100.000's of Expression languages and thousands of&#160; pages) which before&#160; took 15 minutes to validate are now done in much less time when doing a full validation. Making the validation much faster as what is seen in the M2 release. If you continue to have&#160; performance&#160; problems with Beta1 please let us know, since we are still doing improvmements for this area to beta2!</p>
+<h4>CDI/Seam Validation and Quickfixes</h4>
+<p>CDI and Seam have all received some more additional validation (i.e. we now valdiate classnames referenced in CDI descriptors) and a good set of quickfixes allowing you to quickly fix common problems.</p>
+<h4>MyFaces 2 metadata</h4>
+<p>MyFaces 2 does not ship TLD's within&#160; their project. This make them "invisible" to our default handler for JSF&#160; compoenents since we moved to use classpath based lookups to have more&#160; correct code completion and validation per project. MyFaces does though&#160; ship their own -metadata.xml file that describes their components and&#160; we've added support to parse and recognize these now. This should make&#160; any new components or changes to existing ones in MyFaces show up in the&#160; editor without having to get JBoss Tools updated.</p>
+<h4>Remote Deployment</h4>
+<p>JBoss Tools AS Server adapter is now telling the remote server to not scan for changes when remote deployment are done via file copying; preventing "accidental" deployments, making things much more robust.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>The remote deployment now also includes optiorns for controlling the start and startup commands used over SSH - allowing you use your own external launch scripts to control how JBoss AS is started/stopped.</p>
+<h4>Hibernate Comments</h4>
+<p>HQL (Hibernate Query Language) does not support comments natively, but we have had many requests for allowing it in the Query Editor since it is very useful for quick experiments to be able to comment out parts of your query. Therefore you can now use "--" the beginning of a line to comment it out in the editor. Not a big feature in itself but worth mentioning it since many have asked for it over the years.</p>
+<h4>Annotation Properties View</h4>
+<p>We are <a class="jive-link-blog-small" href="https://community.jboss.org/community/tools/blog/2010/09/13/extending-the-eclipse-annotation-properties-view">experiementing</a> with using the new Annotation Properties View which are available via Eclipse WTP JAX-WS support in Helios.</p>
+<p>This release therefore are including support for JBoss ESB and JAX-RS (RestEasy) annotations, giving you a more graphical approach to read and write annotations on your service classes.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>...and <a class="jive-link-external-small" href="http://docs.jboss.org/tools/whatsnew">more</a></p>
+<h4></h4>
+<h4>Feedback</h4>
+<p>In M2 we enabled our Usage Tracking and it was a <a class="jive-link-blog-small" href="https://community.jboss.org/community/tools/blog/2010/09/24/friday-statistics-with-special-thanks-brazil">raving success</a> and continues to give us more and more information about where and how JBoss Tools are being used without having users to do anything beyound using our plugins.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>We still very much appreciate to hear directly from our users thus don't forget to leave a comment on this blog, post on the forum or report or leave patches to issues on our jira - we love it all.</p>
+<p style="min-height: 8pt; height: 8pt; padding: 0px;">&#160;</p>
+<p>Have Fun!</p>
+</div>
+<!-- [DocumentBodyEnd:90672c1b-b85a-402e-9456-fbad42de5ab2] -->
+</body>
