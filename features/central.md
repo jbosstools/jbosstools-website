@@ -19,9 +19,9 @@ JBoss Central also helps you start a new project by providing you multiple proje
 
 ***
 #### Extras ![Extras](../../images/features/features-central_346px.png)
-JBoss Central also features an easy way to install extra software that is mirrored at JBoss.org, 
+JBoss Central also features an easy way to install extra plugins, 
 so you don't have to manually lookup and configure update sites for the other plugins you want to use. 
-Amongst all the mirrored plugins, you'll find:
+Amongst all the plugins, you'll find:
 
 * JBoss SOA and Business Rules Tooling
 * JBoss Maven GWT Configurator
