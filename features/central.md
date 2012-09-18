@@ -11,7 +11,7 @@ summary: JBoss Central is a new startup page in JBoss Tools and JBoss Developer 
 ---
 
 #### News and Blogs Feeds ![News](../../images/features/features-central_346px.png) 
-JBoss Central provides you with the latest community news, announcements and blog articles, so that you always know what's happening at JBoss.org !
+JBoss Central provides you with the latest news, announcements and blog articles, so that you always know what's happening at JBoss.org !
 
 ***
 #### Getting Started ![Getting Started](../../images/features/features-central_346px.png)
