@@ -4,13 +4,21 @@ tab: features
 ---
 .row-fluid 
   .span12
-    #other-features
-      %h4< Other Features
+    %h1< Feature tour
+    %hr
+.row-fluid 
+  .span3
+    #all-features
       %ul
         - for feature in site.features.sort{|l,r| l.order <=> r.order}.each do
-          - if(feature.title != page.feature.title) 
+          - if(feature.title == page.feature.title) 
             %li
-              %a{:href => "#{feature.url}"}< #{feature.title}
+              %h4< #{feature.title}
+          - else 
+            %li
+              %h4
+                %a{:href => "#{feature.url}"}< #{feature.title}
+  .span9
     - feature = page.feature
     .features
       #{feature.content}

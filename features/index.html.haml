@@ -3,6 +3,9 @@ layout: default
 tab: features
 ---
 .row-fluid 
+  .span12#main-features
+    %h4<Feature Tour
+    %hr
   .span12
     - features = site.features 
     - features = features.sort{|l,r| l.order <=> r.order}
@@ -16,7 +19,7 @@ tab: features
         %p 
           #{feature.summary}
           %br
-          %a{:href=>feature.url} Read more... 
+          %a.readmore{:href=>feature.url} Read more » 
         %hr
    
   
