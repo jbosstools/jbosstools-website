@@ -8,7 +8,7 @@ tab: features
       %ul
         %li.unselected
           %h4
-            %a{:href=>"index.html"}< Overview
+            %a{:href=>"../index.html"}< Overview
         - for feature in site.features.sort{|l,r| l.order <=> r.order}.each do
           - if(feature.title == page.feature.title) 
             %li.selected
