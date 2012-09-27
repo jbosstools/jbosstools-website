@@ -3,10 +3,16 @@ layout: default
 tab: features
 ---
 .row-fluid 
-  .span12#main-features
-    %h4<Feature Tour
-    %hr
-  .span12
+  .span3
+    #menu-level2
+      %ul
+        %li.selected
+          %h4< Overview
+        - for feature in site.features.sort{|l,r| l.order <=> r.order}.each do
+          %li.unselected
+            %h4
+              %a{:href => "#{feature.url}"}< #{feature.title}
+  .span9
     - features = site.features 
     - features = features.sort{|l,r| l.order <=> r.order}
     .features 
