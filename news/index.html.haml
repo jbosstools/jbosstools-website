@@ -22,8 +22,9 @@ tab: news
           %strong
             #{post.date.strftime( '%b %d, %Y' )}.
           - if( !post.tags.empty?) 
-            %i.icon-tags
-            #{post.tags.join(", ")}
+            Tags: 
+            %strong
+              #{post.tags.join(", ")}
       .body
         ~ post.content
       .tail
