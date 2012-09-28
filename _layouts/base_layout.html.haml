@@ -21,11 +21,11 @@
     /[if lt IE 9]
     %script{ :type=>'text/javascript', :src=>'//html5shim.googlecode.com/svn/trunk/html5.js' } 
 
-    %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"http://design.jboss.org/css/bootstrap.css", :media=>"screen, projection"}
+    %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"#{site.base_url}/stylesheets/bootstrap.css", :media=>"screen, projection"}
     %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"http://static.jboss.org/theme/css/common/org_common.css", :media=>"screen, projection"}
     
     -# custom page css
-    %link{ :rel=>'stylesheet', :type=>'text/css', :href=>"#{page.base_url}/stylesheets/jbt-styles.css" }
+    %link{ :rel=>'stylesheet', :type=>'text/css', :href=>"#{site.base_url}/stylesheets/jbt-styles.css" }
     %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"#{site.base_url}/stylesheets/jbt-styles-wide.css", :media=>"only screen and (min-width: 1200px)"}
     %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"#{site.base_url}/stylesheets/jbt-styles-small.css", :media=>"only screen and (max-width: 980px)"}
    

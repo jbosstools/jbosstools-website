@@ -10,6 +10,7 @@ tab: news
     - post = site.posts.first
     .post
       .title
+        %img.img-polaroid{:src => "#{site.team[post.author].photo_64px}"}
         %h1
           %a{:href=>post.url}= post.title
         .author
