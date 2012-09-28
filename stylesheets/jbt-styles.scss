@@ -3,6 +3,18 @@
 // Include responsive Bootstrap styles
 // @import "bootstrap-responsive";
 
+
+// *************************
+// relocate the glyphicons-halfing 
+// *************************
+[class^="icon-"],
+[class*=" icon-"] {
+  background-image: url("../images/glyphicons-halflings.png");
+}
+
+// *************************
+// 
+// *************************
 html {
   height: 100%;
 }
@@ -550,18 +562,55 @@ a h4.selected {
 }
 
 // *************************************
-// Blog posts
+// News / Blog posts
 // *************************************
-.blogpost {
-  padding: 40px;
+.post {
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: left;
 }
 
-.blogpost h1 {
-  font-size: 23px;
+.post .title .author {
+  color: #777;
 }
 
-.blogpost .blog-title {
-  font-size: 25px;
-  text-align: center;
+.post .title .icon-tags {
+  display: inline;
 }
+
+@mixin header($font-size) {
+  font-size: $font-size;
+  text-decoration: none;
+  text-align: left;
+  color: #4A5D75;
+}
+
+.post .body {
+  margin-top: 20px;
+}
+
+.post .body h1 {
+  @include header(20px);
+}
+.post .body h2 {
+  @include header(18px);
+}
+.post .body h3 {
+  @include header(16px);
+}
+
+
+.post .title H1 {
+  text-decoration: underline;
+}
+
+.post pre {
+  max-height: none;
+  margin: 10px;
+  width: auto;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-image: none;
+}
+
 
