@@ -19,21 +19,21 @@ layout: default_layout
 
   .span4  
     %h3#latest-news Latest news
-    - news = site.news.values
-    - today = Time.now 
-    - news = news.find_all{|item| item.effective_date.to_s <= today.strftime("%Y%m%d")}
-    - news = news.sort{|l,r| l.effective_date <=> r.effective_date}
-    - for article in news
-      .item
-        %h5
-          #{article.title}
-        %strong  
-          #{article.author}
-        .details
-          #{article.content}
-          - if article.url?
-            %a{:href=>article.url}
-              Read more...
+    /- news = site.news.values
+    /- today = Time.now 
+    /- news = news.find_all{|item| item.effective_date.to_s <= today.strftime("%Y%m%d")}
+    /- news = news.sort{|l,r| l.effective_date <=> r.effective_date}
+    /- for article in news
+    /  .item
+    /    %h5
+    /      #{article.title}
+    /    %strong  
+    /      #{article.author}
+    /    .details
+    /      #{article.content}
+    /      - if article.url?
+    /        %a{:href=>article.url}
+    /          Read more...
 
   .span4  
     %h3#upcoming-events Upcoming Events
