@@ -612,10 +612,11 @@ a h4.selected {
 
 .post pre {
   max-height: none;
-  margin: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   width: auto;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 0px;
+  margin-right: 0px;
   background-image: none;
 }
 
