@@ -17,6 +17,7 @@ Central helps you start a new project by providing you multiple project creation
 #### News and Blogs Feeds ![News](../../images/features/features-central_346px.png) 
 Central provides you with the latest news, announcements and blog articles, so that you always know what's happening at JBoss.org !
 
+***
 #### Extras ![Extras](../../images/features/features-central_346px.png)
 JBoss Central also features an easy way to install extra plugins, 
 so you don't have to manually lookup and configure update sites for the other plugins you want to use. 
