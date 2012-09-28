@@ -570,6 +570,11 @@ a h4.selected {
   text-align: left;
 }
 
+.post .title img {
+  float:left;
+  margin-right: 10px;
+}
+
 .post .title .author {
   color: #777;
 }
@@ -587,6 +592,7 @@ a h4.selected {
 
 .post .body {
   margin-top: 20px;
+  clear: both;
 }
 
 .post .body h1 {
