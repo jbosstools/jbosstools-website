@@ -1,6 +1,6 @@
 ---
 layout: features_layout
-title: JavaEE / CDI
+title: Java EE / CDI
 image_url: ../images/features/features-cdi_308px.png
 authors: xcoulon
 feature_order: 2 

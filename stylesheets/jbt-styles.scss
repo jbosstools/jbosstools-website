@@ -3,6 +3,18 @@
 // Include responsive Bootstrap styles
 // @import "bootstrap-responsive";
 
+
+// *************************
+// relocate the glyphicons-halfing 
+// *************************
+[class^="icon-"],
+[class*=" icon-"] {
+  background-image: url("../images/glyphicons-halflings.png");
+}
+
+// *************************
+// 
+// *************************
 html {
   height: 100%;
 }
@@ -22,8 +34,43 @@ body {
 
 $title-font-size: 20px;
 
+// ***************************************
+// Resuable mixins
+// ***************************************
 @mixin fontsize() {
   font-size: $title-font-size;
+}
+
+@mixin grey-button-border() {
+  cursor: pointer;
+  border: 1px solid #cccccc;
+  border-color: #e6e6e6 #e6e6e6;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) fadein(rgba(0, 0, 0, 0.1), 15%);
+  *border: 0;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  *margin-left: .3em;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+@mixin grey-button() {
+  cursor: pointer;
+  @include grey-button-border();
+  background-color: whitesmoke;
+  background-image: -moz-linear-gradient(top, white, #e6e6e6);
+  background-image: -ms-linear-gradient(top, white, #e6e6e6);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(white), to(#e6e6e6));
+  background-image: -webkit-linear-gradient(top, white, #e6e6e6);
+  background-image: -o-linear-gradient(top, white, #e6e6e6);
+  background-image: linear-gradient(top, #ffffff, #e6e6e6);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFE6E6E6', GradientType=0);
+  *background-color: #e6e6e6;
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  border-bottom-color: #b3b3b3;
 }
 
 // ****************************************
@@ -132,10 +179,10 @@ $top-offset: 15px;
   padding-top: 0px; // overriding default settings
 }
 
-$menu-top-color: #F3F3F3;
-$menu-bottom-color: #E0E0E0;
+$menu-level1-top-color: #F3F3F3;
+$menu-level1-bottom-color: #E0E0E0;
 $box-shadow: #ABABAB;
-#menu-wrapper-bg {
+#menu-level1-wrapper-bg {
   //background-image: url("/images/nav/dust5.jpg");
   background: #EAEAEA;
   background-image: url("http://static.jboss.org/theme/images/bgs/branding-stkv2.png");
@@ -144,7 +191,6 @@ $box-shadow: #ABABAB;
   -o-box-shadow: 0px 3px 3px 0px $box-shadow;
   box-shadow: 0px 3px 3px 0px $box-shadow;
   filter:progid:DXImageTransform.Microsoft.Shadow(color=$box-shadow, Direction=180, Strength=3);*/
-   
   /*background-image: linear-gradient(top, #E0E0E0, #F3F3F3);
   background-image: linear-gradient(bottom, $menu-bottom-color, $menu-top-color);
   background-image: -o-linear-gradient(bottom, $menu-bottom-color, $menu-top-color);
@@ -159,16 +205,16 @@ $box-shadow: #ABABAB;
     color-stop($menu-top-color)
   );*/
   margin-bottom: 20px;
-}
+} 
 
-#menu-wrapper {
+#menu-level1-wrapper {
   width: 100%;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
 }
 
-#menu {
+#menu-level1 {
   text-align:center;
   padding-top: 0px;
   margin-left: auto;
@@ -177,16 +223,17 @@ $box-shadow: #ABABAB;
   background: url("http://static.jboss.org/theme/images/bgs/primarynav-lines.png") no-repeat top left ;
 }
 
-$menu-items-padding: 10px;
-#menu ul {
+$menu-level1-items-padding: 10px;
+
+#menu-level1 ul {
   display: block;
   text-decoration: none;
-  padding-top: $menu-items-padding;
-  padding-bottom: $menu-items-padding;
+  padding-top: $menu-level1-items-padding;
+  padding-bottom: $menu-level1-items-padding;
   margin-bottom: 0px;
 } 
 
-#menu li {
+#menu-level1 li {
   min-height: 100%;
   height: auto;
   display: inline;
@@ -197,38 +244,93 @@ $menu-items-padding: 10px;
   text-transform: uppercase;
   padding-right: 15px;
   padding-left: 15px;
-  padding-top: $menu-items-padding;
-  padding-bottom: $menu-items-padding;
+  padding-top: $menu-level1-items-padding;
+  padding-bottom: $menu-level1-items-padding;
   color:#C9D4E4;/* lightest blue */
   background: url("http://static.jboss.org/theme/images/bgs/primarynav-lines.png") no-repeat top right ;
 }
 
-#menu ul li a {
+#menu-level1 ul li a {
   color:#C9D4E4;/* lightest blue */
   text-decoration: none;
 }
-#menu ul li a:visited {
+#menu-level1 ul li a:visited {
   color:#C9D4E4;/* lightest blue */
 }
 
-#menu ul li a:hover {
+#menu-level1 ul li a:hover {
   color:#FEFEFE;/* light white  */
 }
 
-#menu ul li.selected a{
+#menu-level1 ul li.selected a{
   color:#FEFEFE;/* light white  */
 }
 
-#menu span {
+#menu-level1 span {
   height: 100%;
   vertical-align: middle;
   
 }
-#menu h5 {
+#menu-level1 h5 {
   display: inline;
 }
 
+#menu-level2 {
+  margin-right: 50px;
+  text-align: left;
+}
 
+#menu-level2 ul {
+  margin-left: 0px;
+}
+
+#menu-level2 li {
+  text-align: center;
+  color: #C9D4E4;
+  
+  //border-bottom: 1px dotted #555;
+  text-decoration: none;
+  list-style: none;
+  padding: 10px;
+  margin-bottom: 10px;
+  // 
+  //text-shadow: #818181 1px 1px 1px;
+  
+}
+
+#menu-level2 .selected {
+  color: #C9D4E4;
+  @include grey-button();
+}
+
+#menu-level2 .unselected {
+  @include grey-button-border();
+}
+
+#menu-level2 .unselected:hover {
+  @include grey-button();
+}
+
+// ****************************************
+// Read more >> links with button-style
+// ****************************************
+a.readmore {
+  display: inline-block;
+  *display: inline;
+  /* IE7 inline-block hack */
+  *zoom: 1;
+  padding: 4px 10px 4px;
+  margin-top: 10px;
+  margin-bottom: 0;
+  font-size: 14px;
+  line-height: 24px;
+  *line-height: 20px;
+  color: #333333;
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+  vertical-align: middle;
+  @include grey-button();
+}
 
 // ****************************************
 // Footer
@@ -390,6 +492,11 @@ p  {
   background: #F3F3F3;
   text-align: left;
 }
+
+h1 {
+  color: #494949;
+}
+
 h5 {
   margin-top: 10px;
   margin-bottom: 10px;
@@ -421,17 +528,18 @@ h5 {
 .features hr {
   clear:both;
   margin-bottom: 30px;
+  border-color: transparent;
 }
 
 .features h4:nth-child(even) img {
-  float: right;
-  padding-left: 20px;
+  float: left;
+  padding-right: 40px;
   margin-bottom: 20px;
 }
 
 .features h4:nth-child(odd) img {
-  float: left;
-  padding-right: 20px;
+  float: right;
+  padding-left: 40px;
   margin-bottom: 20px;
 }
 
@@ -448,61 +556,61 @@ a h4.selected {
   color: $font-red-color;
 }
 
-
-#other-features {
-  float : right;
-  background: #F0F0F0;
-  border: 1px dotted #555;
-  border-radius: 4px;
-  padding: 0px;
-  margin-left: 50px;
-  margin-bottom: 50px;
-}
-
-#other-features h4 {
-  padding: 10px;
-  border-bottom: 1px dotted #555;
-}
-
-#other-features ul {
-  margin: 0px;
-}
-#other-features li {
-  text-align: left;
-  border-bottom: 1px dotted #555;
-  text-decoration: none;
-  list-style: none;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 10px;
-  padding-left: 10px;
-  // 
-  text-decoration: none;
-  color: #D1DFEE;
-  font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
-  font-size: 14px;
-  padding-right: 15px;
-  padding-left: 15px;
-  //text-shadow: #818181 1px 1px 1px;
-  
-}
-
-#other-features li:last-child {
-  border-bottom: 0px;
-}
-// *************************************
-// Blog posts
-// *************************************
-.blogpost {
-  padding: 40px;
-}
-
-.blogpost h1 {
-  font-size: 23px;
-}
-
-.blogpost .blog-title {
-  font-size: 25px;
+#main-features {
   text-align: center;
+  font-size: x-large;
 }
+
+// *************************************
+// News / Blog posts
+// *************************************
+.post {
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: left;
+}
+
+.post .title .author {
+  color: #777;
+}
+
+.post .title .icon-tags {
+  display: inline;
+}
+
+@mixin header($font-size) {
+  font-size: $font-size;
+  text-decoration: none;
+  text-align: left;
+  color: #4A5D75;
+}
+
+.post .body {
+  margin-top: 20px;
+}
+
+.post .body h1 {
+  @include header(20px);
+}
+.post .body h2 {
+  @include header(18px);
+}
+.post .body h3 {
+  @include header(16px);
+}
+
+
+.post .title H1 {
+  text-decoration: underline;
+}
+
+.post pre {
+  max-height: none;
+  margin: 10px;
+  width: auto;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-image: none;
+}
+
 

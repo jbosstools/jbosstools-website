@@ -1,16 +1,24 @@
 ---
-layout: default
+layout: default_layout
 tab: features
 ---
-.row-fluid 
-  .span12
-    #other-features
-      %h4< Other Features
+.row-fluid
+  .span3
+    #menu-level2
       %ul
+        %li.unselected
+          %h4
+            %a{:href=>"../index.html"}< Overview
         - for feature in site.features.sort{|l,r| l.order <=> r.order}.each do
-          - if(feature.title != page.feature.title) 
-            %li
-              %a{:href => "#{feature.url}"}< #{feature.title}
+          - if(feature.title == page.feature.title) 
+            %li.selected
+              %h4< #{feature.title}
+          - else
+            %li.unselected
+              %h4
+                %a{:href => "#{feature.url}"}< #{feature.title}
+  
+  .span9
     - feature = page.feature
     .features
       #{feature.content}
