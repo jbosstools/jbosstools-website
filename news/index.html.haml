@@ -1,0 +1,31 @@
+---
+layout: default_layout
+title: News and Team Blog
+tab: news
+---
+.row-fluid
+  .span12#core-page
+    %h1< #{page.title}
+    %hr
+    - post = site.posts.first
+    .post
+      .title
+        %h1
+          %a{:href=>post.url}= post.title
+        .author
+          /there is only one author per post but the author splitter adds an array here
+          posted by 
+          %strong
+            #{site.team[post.author].name}
+          on 
+          %strong
+            #{post.date.strftime( '%b %d, %Y' )}.
+          - if( !post.tags.empty?) 
+            %i.icon-tags
+            #{post.tags.join(", ")}
+      .body
+        ~ post.content
+      .tail
+        ///= post.disqus_comments_link
+  //= page.posts.links   
+   
