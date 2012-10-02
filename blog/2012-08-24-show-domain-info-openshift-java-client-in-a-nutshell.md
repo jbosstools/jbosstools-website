@@ -1,7 +1,7 @@
 ---
 title: 'show-domain-info: openshift-java-client in a nutshell'
 author: 'adietish'
-layout: news-layout
+layout: blog_layout
 tags: [OpenShift, Java]
 ---
 

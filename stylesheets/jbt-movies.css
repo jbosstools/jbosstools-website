@@ -1,7 +1,7 @@
 h5,h6 {
   color: #4a5d75;
 }
-.container-reduced {
+#container-reduced {
   width:75%; 
   margin-left: auto;
   margin-right: auto;

@@ -565,8 +565,8 @@ a h4.selected {
 // News / Blog posts
 // *************************************
 .post {
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 0px;
+  padding-right: 0px;
   text-align: left;
 }
 
@@ -618,6 +618,10 @@ a h4.selected {
   margin-left: 0px;
   margin-right: 0px;
   background-image: none;
+}
+
+.vimeo {
+  margin: auto;
 }
 
 
