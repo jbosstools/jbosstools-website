@@ -1,0 +1,65 @@
+---
+layout: blog_layout
+author: maxandersen
+title: JBoss Tools 4
+tags: [jboss, tools, jbosscentral, mw2-wtp]
+---
+
+Summer is over and it's time to start getting the JBoss Tools release train moving again.
+ 
+h1. JBoss Tools 4.0.0 Alpha 1
+ 
+h2. A new version? 
+ 
+This year we are starting on JBoss Tools 4 (as opposed to the past seveal years of JBoss Tools 3). Why the new version? There are several reasons why it was time. Our Eclipse.org project-based target platform also changed from 3.x to 4.x. The projects is growing bigger and bigger so it's time to clean up some of the APIs and move from our big SVN semi-modularized monolithic layout to smaller, more independent (but still aligned) Git projects. The groundworks for this does require splitting with things in the past, at least on a technical level - but we do plan on making this transition as transparent as possible on the user level.
+ 
+We are also starting to use Alpha (A) instead of Milestone (M) in our versioning - same meaning at the user level insofar as early development milestones are the (semi-)bleeding edge - but at the technical level it allow us to follow and use OSGi/p2-friendly version schemes that prevents and detects incompatible changes between branches better than in the past.
+ 
+But enough about a single character - on to the user visible changes/improvements!
+ 
+h2. Installation
+ 
+Recommended path to install is to have a clean Eclipse Juno install and use our updatesite to install from.
+This release you need Eclipse 4.2 but we recommend using the "Eclipse 4.2 JEE Bundle":http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/indigosr2 since then you get most of the dependencies preinstalled.
+Once you have installed Eclipse use our update site directly, or you can drag this icon into your running Eclipse to install from the Eclipse Marketplace: !http://marketplace.eclipse.org/misc/installbutton.png!:http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=420896
+
+The update site URL to use from "Help > Install New Software..." is: 
+
+bq. "http://download.jboss.org/jbosstools/updates/development/juno/":http://download.jboss.org/jbosstools/updates/development/juno/
+ 
+*Note:* SOA Tooling, including BPEL, Drools, ESB, jBPM3, jBPM5, Savara, SwitchYard, pi4soa, ModeShape & Teiid Designer are not included in the JBoss Tools Core release at this time - they will be available separately.
+ 
+*Note m2e-wtp users:* In case you already have m2e-wtp installed, then add the updatesite first and then run "Help > Find Updates" before trying to run Help > Install new. This way you will automatically update from the old org.maven.ide.eclipse.wtp.feature 0.15 to the new namespace & version, org.eclipse.m2e.wtp.feature 0.16.
+Eclipse Juno & m2e-wtp
+JBoss Tools 3.x could and can run on Juno but it did have its problems, especially in context of Eclipse Dali/Hibernate integration since the Dali API changed radically from Indigo to Juno. In JBoss Tools 4 Alpha1 all of this should now be a thing of the past. Let us know if you find any discrepencencies in this area.
+ 
+Since m2eclipse-wtp is moving to Eclipse.org as m2e-wtp. As such the existing dependency on m2eclipse-wtp has been changed to m2e-wtp 0.16.0. Since the two plugins overlap and can not coexist you have to either uninstall the old m2e-wtp before installing the new or perform a "Help > Check for updates..." which will be able to do the uninstall old/install new automatically. We wish it could be easier but a bug in p2 install UI prevents this.
+
+h2. Bugfixes
+
+278 issues were fixed in this Alpha1, mainly targeted on issues reported and found when working on Juno and of course a good bunch of bugfixes based on the feedback from previous releases - please keep the feedback coming, its immensly useful.
+
+h2. Migrate jar-classpath to maven-classpath
+
+The biggest in Maven tools are that we now use the eclipse.org m2e-wtp but there are also work on making it easy to convert an eclipse project into a Maven project by helping identifiying the proper Maven Group-Artifact-Version id's of the various jars on your classpath. Maven Tools What's New has more about this. 
+
+!http://docs.jboss.org/tools/whatsnew/images/dependency_conversion.png!
+ 
+h2. "As-you-type" validation
+
+Our CDI and JSF/xhtml validation previously only ran when you saved your file(s) and triggered an incremental build to validate the changes across the project. In JBoss Tools 4
+we validate the file being edited as you type allowing you to get feedback faster.
+ 
+Alexey Kazakov recorded a video highlighting how it works:
+
+vimeo. 47965113 425x350
+
+h2. Next steps...
+ 
+JBoss Tools 4 is planned to have a very short release cycle compared to previous years - we want to GA in 2012, running on a well-performing Eclipse 4/Juno release inside JBoss Developer Studio 6.
+ 
+Our Jira contains the roadmap with tentative dates and in the upcoming weeks we'll blog more about planned/upcoming features for JBoss Tools 4 and onward.
+ 
+For now, take Alpha1 a spin and let us know what you think!
+ 
+Have fun,
