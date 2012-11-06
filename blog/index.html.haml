@@ -6,7 +6,7 @@ tab: blog
 .row-fluid
   .span10#core-page
     %h1< 
-      %a{:href=>page.url} #{page.title}
+      %a{:href=> "/blog"} #{page.title}
     %hr
     - for post in page.posts
       .post
@@ -27,18 +27,9 @@ tab: blog
               %strong
                 #{post.tags.join(", ")}
         .body
-          - index = post.content.index(' ', 1000)
-          - if index != nil
-            ~ post.content[0..index]
-            %a{:href=>page.url} [Read more...]
-          - else 
-            ~ post.content
+          ~ post.content
         %hr
+    = page.posts.links
   .span2
     %ul Recent articles
-
-.row-fluid
-  .span12
-    %hr
-    = page.posts.links   
    
