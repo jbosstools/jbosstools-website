@@ -6,7 +6,7 @@ Awestruct::Extensions::Pipeline.new do
   extension Awestruct::Extensions::DataDir.new
 
   extension Awestruct::Extensions::Posts.new( '/blog', :posts )
-  extension Awestruct::Extensions::Paginator.new(:posts, '/blog/index', :per_page => 5 )
+  extension Awestruct::Extensions::Paginator.new(:posts, '/blog/index', :per_page => 2 )
   
   # The Indexifier simply scans all pages in the site for HTML pages ending not with index.html. 
   # When it finds matching pages, it replaces it's output path with one that uses a directory of the same name, 

@@ -1,7 +1,7 @@
 ---
 layout: blog_layout
 author: maxandersen
-title: JBoss Tools 4
+title: The Return of JBoss Tools
 tags: [jboss, tools, jbosscentral, mw2-wtp]
 ---
 

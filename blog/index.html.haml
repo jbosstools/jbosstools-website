@@ -4,11 +4,11 @@ title: News and Team Blog
 tab: blog
 ---
 .row-fluid
-  .span12#core-page
-    %h1< #{page.title}
+  .span10#core-page
+    %h1< 
+      %a{:href=>page.url} #{page.title}
     %hr
-    - post = site.posts.first
-    - if(post != null) 
+    - for post in page.posts
       .post
         .title
           %img.img-polaroid{:src => "#{site.team[post.author].photo_64px}"}
@@ -27,8 +27,18 @@ tab: blog
               %strong
                 #{post.tags.join(", ")}
         .body
-          ~ post.content
-        .tail
-          ///= post.disqus_comments_link
-  //= page.posts.links   
+          - index = post.content.index(' ', 1000)
+          - if index != nil
+            ~ post.content[0..index]
+            %a{:href=>page.url} [Read more...]
+          - else 
+            ~ post.content
+        %hr
+  .span2
+    %ul Recent articles
+
+.row-fluid
+  .span12
+    %hr
+    = page.posts.links   
    
