@@ -2,3 +2,28 @@
 layout: default_layout
 tab: blog
 ---
+.row-fluid
+  .span10#core-page
+    .post
+      .title
+        %img.img-polaroid{:src => "#{site.team[page.author].photo_64px}"}
+          %h1
+            %a{:href=>page.url}= page.title
+          .author
+            /there is only one author per post but the author splitter adds an array here
+            posted by 
+            %strong #{site.team[page.author].name}
+            on 
+            %strong #{page.date.strftime( '%b %d, %Y' )}.
+          .tags
+            - if(page.tags != null && !page.tags.empty?) 
+              Tags: 
+              %strong #{page.tags.join(", ")}
+        .body
+          ~ page.content
+        .tail
+          ///= post.disqus_comments_link
+  .span2
+    %ul
+      %li Recent articles
+      %li Back to the front page
