@@ -4,12 +4,14 @@ title: News and Team Blog
 tab: blog
 ---
 .row-fluid
-  .span10#core-page
-    %h1< 
+  .span12
+    %h1.center< 
       %a{:href=> "/blog"} #{page.title}
-    %hr
+.row-fluid
+  .span9#core-page
     - for post in page.posts
       .post
+        %hr
         .title
           %img.img-polaroid{:src => "#{site.team[post.author].photo_64px}"}
           %h1
@@ -17,19 +19,26 @@ tab: blog
           .author
             /there is only one author per post but the author splitter adds an array here
             posted by 
-            %strong
-              #{site.team[post.author].name}
+            %strong< #{site.team[post.author].name}
             on 
-            %strong
-              #{post.date.strftime( '%b %d, %Y' )}.
-            - if(post.tags != null && !post.tags.empty?) 
-              Tags: 
-              %strong
-                #{post.tags.join(", ")}
+            %strong< #{post.date.strftime( '%b %d, %Y' )}.
+          
+          - if(post.tags != null && !post.tags.empty?) 
+            .tags
+              %i.icon-tag
+              %strong #{post.tags.join(", ")}
         .body
           ~ post.content
-        %hr
+  .span3
+    .menu-level3
+      %h4 Recent Posts
+      %ul 
+        - for post in site.posts
+          %li 
+            %a{:href=>post.url} #{post.title}
+.row-fluid
+  .span12
+    %hr
     = page.posts.links
-  .span2
-    %ul Recent articles
+
    
