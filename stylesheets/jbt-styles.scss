@@ -4,13 +4,13 @@
 // @import "bootstrap-responsive";
 
 
-// *************************
-// relocate the glyphicons-halfing 
-// *************************
-[class^="icon-"],
-[class*=" icon-"] {
-  background-image: url("../images/glyphicons-halflings.png");
+//************************************
+// Vimeo videos
+//************************************
+.vimeo {
+  margin: auto;
 }
+
 
 // *************************
 // 
@@ -32,7 +32,13 @@ body {
   text-align: left;
 }
 
+h1 a {
+  text-decoration:none;
+}
+
 $title-font-size: 20px;
+
+
 
 // ***************************************
 // Resuable mixins
@@ -432,6 +438,7 @@ $font-red-color: #88201B;
 .center {
   margin-left:auto;
   margin-right:auto;
+  text-align: center;
 }
 
 p  {
@@ -615,7 +622,7 @@ a h4.selected {
 
 
 .post .title H1 {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .post pre {
@@ -628,8 +635,44 @@ a h4.selected {
   background-image: none;
 }
 
-.vimeo {
-  margin: auto;
+@mixin menu-level3-border-color {
+  border: 1px solid #CCC;
 }
+
+$menu-level3-space: 10px;
+
+.menu-level3 h4 {
+  text-align: center;
+  border-radius: $menu-level3-space $menu-level3-space 0px 0px;
+  padding: $menu-level3-space;
+  @include menu-level3-border-color;
+  margin: 0px;
+  color: #424242;
+  background-color: #F0F0F0;
+}
+
+.menu-level3 ul {
+  margin: 0px;
+  padding: $menu-level3-space/2 0px $menu-level3-space/2 0px;
+  @include menu-level3-border-color;
+  border-top: 0px; // override previous value
+  border-radius: 0px 0px $menu-level3-space $menu-level3-space;
+}
+
+.menu-level3 li {
+  text-align: left;
+  text-decoration: none;
+  list-style: none;
+  padding: $menu-level3-space/2 $menu-level3-space $menu-level3-space/2 $menu-level3-space;
+  margin: 0px;
+}
+
+
+
+#menu-level2 li:hover {
+
+}
+
+
 
 

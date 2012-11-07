@@ -3,7 +3,7 @@ layout: default_layout
 tab: blog
 ---
 .row-fluid
-  .span10#core-page
+  .span12#core-page
     .post
       .title
         %img.img-polaroid{:src => "#{site.team[page.author].photo_64px}"}
@@ -23,7 +23,3 @@ tab: blog
           ~ page.content
         .tail
           ///= post.disqus_comments_link
-  .span2
-    %ul
-      %li Recent articles
-      %li Back to the front page
