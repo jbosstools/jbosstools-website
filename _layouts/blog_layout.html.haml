@@ -17,7 +17,7 @@ tab: blog
             %strong #{page.date.strftime( '%b %d, %Y' )}.
           .tags
             - if(page.tags != null && !page.tags.empty?) 
-              Tags: 
+              %i.icon-tag
               %strong #{page.tags.join(", ")}
         .body
           ~ page.content
