@@ -1,0 +1,35 @@
+---
+layout: default_layout
+tab: guides
+title: New and Noteworthy
+---
+.row-fluid
+  .span12
+    %h1.center< JBoss Tools News and Noteworthy
+
+.row-fluid
+  .span12
+    :markdown
+      If you are new to JBoss tools and JBoss frameworks, then [jboss.org/developer](jboss.org/developer) is a recommended starting point.
+      
+      This page is a "log" of the new and noteworthy changes/features in JBoss Tools and JBoss Developer Studio. Latest JBoss Tools can be downloaded from [jboss.org/tools](jboss.org/tools) and JBoss Developer Studio from [devstudio.jboss.com/earlyaccess](devstudio.jboss.com/earlyaccess).
+      
+      Be aware that the list of actual included features in the GA can differ from what is in the older new and noteworthy if the feature has changed or been removed or postponed.
+
+.row-fluid
+  .span12
+    %h5.left JBoss Tools 4.0 individual new and noteworthy
+  .span12
+    - new_and_noteworthies_keys=[]
+    - for key in site.new_and_noteworthies.each_key
+      - new_and_noteworthies_keys << key
+    - new_and_noteworthies_keys.sort! {|x,y| y <=> x }
+    %ul
+      - for key in new_and_noteworthies_keys
+        %li.whatsnew.version
+          #{key}
+          %ul
+            - for item in site.new_and_noteworthies[key].sort!{|x,y| x.title <=> y.title}.each do
+              %li.whatsnew.module 
+                %a{:href => item.url} #{item.title}
+        

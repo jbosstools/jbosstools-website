@@ -1,9 +1,13 @@
 require 'textile-vimeo-extension'
 require File.join File.dirname(__FILE__), 'tweakruby'
 require_relative 'feature'
+require_relative 'whatsnew'
 
 Awestruct::Extensions::Pipeline.new do
+  
   extension Awestruct::Extensions::DataDir.new
+
+  extension Awestruct::Extensions::DataDir.new('/whatsnew')
 
   extension Awestruct::Extensions::Posts.new( '/blog', :posts )
   extension Awestruct::Extensions::Paginator.new(:posts, '/blog/index', :per_page => 2 )
@@ -15,6 +19,8 @@ Awestruct::Extensions::Pipeline.new do
   
   # Needs to be after Indexifier to get the linking correct; second argument caps changelog per guide
   extension Awestruct::Extensions::Feature::Index.new('/features', 15)
+  # Needs to be after Indexifier to get the linking correct; second argument caps changelog per guide
+  extension Awestruct::Extensions::Whatsnew::Index.new('/whatsnew')
 
   
   helper Awestruct::Extensions::Partial
