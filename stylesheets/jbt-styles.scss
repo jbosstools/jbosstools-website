@@ -673,6 +673,22 @@ $menu-level3-space: 10px;
 
 }
 
+// *************************************
+// What's New
+// *************************************
 
+.whatsnew {
+  
+}
 
+.whatsnew.version {
+  list-style: none;
+  font-weight: bold;
+}
+
+.whatsnew .module {
+  list-style: none;
+  font-weight: normal;
+  text-indent: 5em;
+}
 

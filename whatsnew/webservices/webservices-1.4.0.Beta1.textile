@@ -1,0 +1,17 @@
+---
+module_name: Web Services Tools
+module_version: 1.4.0.Beta1
+jbt_version: 4.0.0.Beta1
+layout: whatsnew_layout
+---
+h1. JAX-RS Performance Improvements	
+
+In continuation of the work done in previous version of the Web Services component, the JAX-RS plugin is now also faster at analysing a project structure when this one is imported in the workspace.
+
+Related Jiras: "JBIDE-12887":https://jira.jboss.org/browse/JBIDE-12887 "JBIDE-12224":https://jira.jboss.org/browse/JBIDE-12224
+
+h1. JAX-RS Validation improvements	
+
+Support for JAX-RS validation has been improved with a lot of bug fixes and a few improvements, such as providing a Quick Fixes for annotation values on custom HTTP Methods.
+
+Related Jira Related Jira
