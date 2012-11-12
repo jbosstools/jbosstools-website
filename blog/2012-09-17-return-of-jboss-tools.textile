@@ -43,7 +43,7 @@ h2. Migrate jar-classpath to maven-classpath
 
 The biggest in Maven tools are that we now use the eclipse.org m2e-wtp but there are also work on making it easy to convert an eclipse project into a Maven project by helping identifiying the proper Maven Group-Artifact-Version id's of the various jars on your classpath. Maven Tools What's New has more about this. 
 
-!http://docs.jboss.org/tools/whatsnew/images/dependency_conversion.png!
+!./images/dependency_conversion.png!
  
 h2. "As-you-type" validation
 

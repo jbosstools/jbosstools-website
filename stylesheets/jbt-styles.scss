@@ -681,6 +681,11 @@ $menu-level3-space: 10px;
   
 }
 
+.whatsnew * h1 {
+  border-bottom: 1px solid #494949;
+}
+
+
 .whatsnew.version {
   list-style: none;
   font-weight: bold;
@@ -692,3 +697,33 @@ $menu-level3-space: 10px;
   text-indent: 5em;
 }
 
+
+.related_jiras {
+  display: inline-block;
+}
+
+.related_jiras ul {
+  display: block;
+  margin-left: 0px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: small;
+}
+
+.related_jiras li {
+  display: inline;
+  font-weight: normal;
+}
+
+.related_jira {
+  margin-left: 0px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: small;
+}
+
+.related_jira a {
+  font-weight: normal;
+}

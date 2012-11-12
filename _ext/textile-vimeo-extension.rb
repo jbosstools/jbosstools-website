@@ -10,6 +10,8 @@ module RedCloth::Formatters::HTML
     end
     dim_attrs = " width=\"#{w}\" height=\"#{h}\""
     "<div class=\"left\" id=\"container-reduced\"><link href=\"/stylesheets/jbt-movies.css\" media=\"screen, projection\" rel=\"stylesheet\" type=\"text/css\"><div class=\"playerbox\"><div id=\"player\"><iframe#{pba(opts)}#{dim_attrs} class=\"vimeo\" src=\"http://player.vimeo.com/video/#{clip_id}?title=0&amp;byline=0&amp;portrait=0\" frameborder=\"0\" webkitallowfullscreen=\"webkitallowfullscreen\" mozallowfullscreen=\"mozallowfullscreen\" allowfullscreen=\"allowfullscreen\"></iframe></div></div></div>"
+
   end
+
 end
 

@@ -21,8 +21,6 @@ module Awestruct
             if ( page.relative_source_path =~ /^#{@path_prefix}\/.*\/*.md/ \
                  || page.relative_source_path =~ /^#{@path_prefix}\/.*\/*.textile/ )
 
-              puts "   Processing feature " + page.title
-            
               feature = OpenStruct.new
               page.feature = feature
               site.engine.set_urls([page])
