@@ -18,8 +18,6 @@ module Awestruct
             if ( page.relative_source_path =~ /^#{@path_prefix}\/.*\.md/ \
                  || page.relative_source_path =~ /^#{@path_prefix}\/.*\.textile/)
               
-              puts "   Processing N&N " + page.module_name
-
               item = OpenStruct.new
               site.engine.set_urls([page])
               item.url = page.url

@@ -23,5 +23,6 @@ It's also possible to register an existing class as a service provider in META-I
 
 !./images/registerService.png!
 
+jiras. jbide-9443, jbide-12793
 
-Related Jiras : "JBIDE-9443":https://issues.jboss.org/browse/JBIDE-9443, "JBIDE-12793":https://issues.jboss.org/browse/JBIDE-12793
+
