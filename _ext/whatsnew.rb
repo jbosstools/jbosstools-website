@@ -15,7 +15,8 @@ module Awestruct
           new_and_noteworthies = Hash.new
           
           site.pages.each do |page|
-            if ( page.relative_source_path =~ /^#{@path_prefix}\/.*\.textile/)
+            if ( page.relative_source_path =~ /^#{@path_prefix}\/.*\.md/ \
+                 || page.relative_source_path =~ /^#{@path_prefix}\/.*\.textile/)
               
               puts "   Processing N&N " + page.module_name
 
