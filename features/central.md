@@ -2,7 +2,7 @@
 layout: features_layout
 title: JBoss Central
 authors: [xcoulon]
-image_url: ../images/features/features-central_346px.png
+image_url: ./images/features-central_346px.png
 feature_order: 1
 
 summary: JBoss Central is a new startup page in JBoss Tools and JBoss Developer Studio. 
@@ -10,15 +10,15 @@ summary: JBoss Central is a new startup page in JBoss Tools and JBoss Developer 
  favorite framework. It also provides an easy way to install extra plugins.
 ---
 
-#### Getting Started ![Getting Started](../../images/features/features-central_346px.png)
+#### Getting Started ![Getting Started](./images/features-central_346px.png)
 Central helps you start a new project by providing you multiple project creation wizards and quickstarts  
 
 ***
-#### News and Blogs Feeds ![News](../../images/features/features-central_346px.png) 
+#### News and Blogs Feeds ![News](./images/features-central_346px.png) 
 Central provides you with the latest news, announcements and blog articles, so that you always know what's happening at JBoss.org !
 
 ***
-#### Extras ![Extras](../../images/features/features-central_346px.png)
+#### Extras ![Extras](./images/features-central_346px.png)
 JBoss Central also features an easy way to install extra plugins, 
 so you don't have to manually lookup and configure update sites for the other plugins you want to use. 
 Amongst all the plugins, you'll find:
