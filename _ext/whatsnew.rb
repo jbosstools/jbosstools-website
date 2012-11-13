@@ -55,7 +55,6 @@ module Awestruct
             # matches any <dl> element inside a <div> with class attribute containing 'whatsnew' (amongst other values)
             doc.search("//div.whatsnew//dl").each do |dl|
               dl.attributes['class'] = 'dl-horizontal'
-              end
             end
             return doc
           end
