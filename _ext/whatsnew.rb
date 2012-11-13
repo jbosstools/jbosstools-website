@@ -3,12 +3,19 @@ module Awestruct
     module Whatsnew
       class Index
         
+        @@transformers_registered = false
+        
         def initialize(path_prefix)
           @path_prefix = path_prefix
         end
 
+        # transform gets called twice in the process of loading the pipeline, so
+        # we use a class variable to detect this scenario and shortcircuit
         def transform(transformers)
-          #transformers << WrapHeaderAndAssignHeadingIds.new
+          if not @@transformers_registered
+              transformers << AddHorizonalClassToDefinitionLists.new
+              @@transformers_registered = true
+          end
         end
 
         def execute(site)
@@ -18,19 +25,20 @@ module Awestruct
             if ( page.relative_source_path =~ /^#{@path_prefix}\/.*\.md/ \
                  || page.relative_source_path =~ /^#{@path_prefix}\/.*\.textile/)
               
-              item = OpenStruct.new
+              puts "   Processing N&N " + page.module_name + page.module_version 
+              news_item = OpenStruct.new
               site.engine.set_urls([page])
-              item.url = page.url
-              item.title = page.module_name
-              item.module_version = page.module_version
-              item.jbt_version = page.jbt_version
-              items = new_and_noteworthies[item.jbt_version]
-              
-              if(items == nil) 
-                items = []
-                new_and_noteworthies[item.jbt_version] = items
+              news_item.url = page.url
+              news_item.title = page.module_name
+              news_item.module_version = page.module_version
+              news_item.jbt_version = page.jbt_version
+              news_items = new_and_noteworthies[news_item.jbt_version]
+              if(news_items == nil) 
+                news_items = []
+                new_and_noteworthies[news_item.jbt_version] = news_items
               end
-              items << item
+              news_items << news_item
+              page.news_item = news_item
             end
             site.new_and_noteworthies = new_and_noteworthies
           end
@@ -38,65 +46,21 @@ module Awestruct
         end
       end
 
-      class WrapHeaderAndAssignHeadingIds
+      class AddHorizonalClassToDefinitionLists
       
         def transform(site, page, rendered)
           if page.news_item
-            page_content = Hpricot(rendered)
-
-            news_item_root = page_content.at('div[@id=news_item]')
-
-            # Wrap <div class="header"> around the h2 section
-            # If you can do this more efficiently, feel free to improve it
-            news_item_content = news_item_root.search('h2').first.parent
-            indent = get_indent(get_depth(news_item_content) + 2)
-            in_header = true
-            header_children = []
-            news_item_content.each_child do |child|
-              if in_header
-                if child.name == 'h3' or (child.name == 'div' and child.attributes['class'] == 'section')
-                  in_header = false
-                else
-                  if child.pathname == 'text()' and child.to_s.strip.length == 0
-                    header_children << Hpricot::Text.new("\n" + indent)
-                  else
-                    header_children << child
-                  end
-                end
+            puts "... Transforming page " + page.url
+            doc = Hpricot(rendered)
+            # matches any <dl> element inside a <div> with class attribute containing 'whatsnew' (amongst other values)
+            doc.search("//div.whatsnew//dl").each do |dl|
+              dl.attributes['class'] = 'dl-horizontal'
               end
             end
-
-            news_item_header = Hpricot::Elem.new('div', {:class=>'header'})
-            news_item_content.children[0, header_children.length] = [news_item_header]
-            news_item_header.children = header_children
-            news_item_content.insert_before(Hpricot::Text.new("\n" + indent), news_item_header)
-            news_item_content.insert_after(Hpricot::Text.new("\n" + indent), news_item_header)
-
-            news_item_root.search('h3').each do |header_html|
-              page.news_item.sections.each do |section|
-                if header_html.inner_html.eql? section.text
-                  header_html.attributes['id'] = section.link_id
-                  break
-                end
-              end
-            end
-            return page_content.to_html.gsub(/^<!DOCTYPE [^>]*>/, '<!DOCTYPE html>')
+            return doc
           end
           return rendered
-        end
-        
-        def get_depth(node)
-          depth = 0
-          p = node
-          while p.name != 'html'
-            depth += 1
-            p = p.parent
-          end
-          depth
-        end
-
-        def get_indent(depth, ts = ' ')
-          "#{ts * depth}"
+          
         end
         
       end

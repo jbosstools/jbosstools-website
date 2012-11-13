@@ -6,3 +6,5 @@ profiles:
     base_url: http://preview-jbosstools.rhcloud.com/
   production:
     base_url: http://torquebox.org/
+    
+textile: 'no_span_caps'
