@@ -681,7 +681,7 @@ $menu-level3-space: 10px;
   
 }
 
-.whatsnew * h1 {
+.whatsnew h1 {
   border-bottom: 1px solid #494949;
 }
 
@@ -691,10 +691,10 @@ $menu-level3-space: 10px;
   font-weight: bold;
 }
 
-.whatsnew .module {
+.whatsnew.module {
   list-style: none;
   font-weight: normal;
-  text-indent: 5em;
+  
 }
 
 

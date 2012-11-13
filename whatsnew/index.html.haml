@@ -24,14 +24,15 @@ title: New and Noteworthy
     - for key in site.new_and_noteworthies.each_key
       - new_and_noteworthies_keys << key
     - new_and_noteworthies_keys.sort! {|x,y| y <=> x }
-    %ul
+    %dl.dl-horizontal
       - for key in new_and_noteworthies_keys
-        %li.whatsnew.version
+        %dt.whatsnew.version
           #{key}
-          %ul
-            - for item in site.new_and_noteworthies[key].sort!{|x,y| x.title <=> y.title}.each do
-              %li.whatsnew.module 
-                %a{:href => item.url} #{item.title}
+          %dd
+            %ul.whatsnew.module
+              - for item in site.new_and_noteworthies[key].sort!{|x,y| x.title <=> y.title}.each do
+                %li 
+                  %a{:href => item.url} #{item.title}
 .row-fluid 
   .span12
     Looking for 
