@@ -1,5 +1,4 @@
-require 'textile-vimeo-extension'
-require 'textile-jira-extension'
+require 'textile_plus'
 require File.join File.dirname(__FILE__), 'tweakruby'
 require_relative 'feature'
 require_relative 'whatsnew'

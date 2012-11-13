@@ -685,6 +685,17 @@ $menu-level3-space: 10px;
   border-bottom: 1px solid #494949;
 }
 
+.whatsnew img {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  /*margin-left : auto;
+  margin-right : auto;*/
+}
+
+.whatsnew dt {
+  white-space: normal; // allow multiline instead of overflow with ellipsis (...)
+}
 
 .whatsnew.version {
   list-style: none;
@@ -705,8 +716,8 @@ $menu-level3-space: 10px;
 .related_jiras ul {
   display: block;
   margin-left: 0px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 15px;
   font-weight: bold;
   font-size: small;
 }
