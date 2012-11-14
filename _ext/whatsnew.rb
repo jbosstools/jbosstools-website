@@ -29,7 +29,7 @@ module Awestruct
               news_item = OpenStruct.new
               site.engine.set_urls([page])
               news_item.url = page.url
-              news_item.title = page.module_name
+              news_item.module_name = page.module_name
               news_item.module_version = page.module_version
               news_item.jbt_version = page.jbt_version
               news_items = new_and_noteworthies[news_item.jbt_version]

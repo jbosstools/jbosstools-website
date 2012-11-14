@@ -5,8 +5,6 @@ jbt_version: 4.0.0.Beta1
 layout: whatsnew_layout
 ---
 
-h1. General
-
 - New Service Provider Class Wizard := 
 
 There is a new a new service provider class wizard in JBoss Tools 4.0.0.Beta1. This wizard creates a new java class with specific service type and create a service file in the 'META-INF/services' directory. If the service file already exists, the class is added to it on a new line. 
