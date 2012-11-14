@@ -3,8 +3,21 @@ layout: default_layout
 tab: guides
 ---
 .row-fluid
-  .span12
-    %h1 #{page.module_name} #{page.module_version} What's New
-.row-fluid
-  .span12.whatsnew
-    ~content
+  .span3
+    #menu-level2
+      %ul
+        %li.unselected
+          %a{:href=>"../index.html"} Overview
+        - for item in site.new_and_noteworthies[page.jbt_version].sort!{|x,y| x.module_name <=> y.module_name}.each do
+          - if item.module_name == page.module_name
+            %li.selected
+              %a{:href => item.url} #{item.module_name}
+          - else 
+            %li.unselected
+              %a{:href => item.url} #{item.module_name}
+
+  .span9
+    %h1 What's New in #{page.module_name} #{page.module_version}
+    %hr
+    .whatsnew
+      ~content

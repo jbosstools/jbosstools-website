@@ -30,9 +30,9 @@ title: New and Noteworthy
           #{key}
           %dd
             %ul.whatsnew.module
-              - for item in site.new_and_noteworthies[key].sort!{|x,y| x.title <=> y.title}.each do
+              - for item in site.new_and_noteworthies[key].sort!{|x,y| x.module_name <=> y.module_name}.each do
                 %li 
-                  %a{:href => item.url} #{item.title}
+                  %a{:href => item.url} #{item.module_name}
 .row-fluid 
   .span12
     Looking for 
