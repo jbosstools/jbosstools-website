@@ -1,34 +1,6 @@
 ---
 layout: base_layout
 --- 
-#project-banner-wrapper-bg
-  #project-banner-wrapper
-    #project-banner
-      %a#project-logo{ :border=>"0", :href => "#{site.base_url}/index.html"}< 
-        %img{ :alt=>"JBoss Tools", :src => "#{site.base_url}/images/nav/jbosstools_horiz_585.png"}< 
-      %a#project-installer
-        %img{:src => "/images/nav/installbutton.png"}
-    
-#menu-level1-wrapper-bg
-  #menu-level1-wrapper
-    #menu-level1
-      %ul.center
-        %li#installation
-          %a{:href => "/installation"}< Installation
-        %li#features
-          %a{:href => "/features"}< Features
-        %li#guides
-          %a{:href => "/guides"}< Guides
-        %li#community
-          %a{:href => "/community"}< Community 
-        %li#blog
-          %a{:href => "/blog"}< Blog
-      - if (page.tab != null) 
-        %script{:type => "text/javascript"}
-          $("##{page.tab}").addClass("selected");     
-
-#content-wrapper-bg
-  #content-wrapper
-    #container-reduced.left
-      ~content
-
+.row-fluid
+  .span12
+    ~content
