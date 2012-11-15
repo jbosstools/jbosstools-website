@@ -1,0 +1,22 @@
+---
+module_name: JST/JSF
+module_version: 4.0.0.Beta1
+jbt_version: 4.0.0.Beta1
+layout: whatsnew_layout
+---
+
+- New JSF 2.1 Project Wizard :=
+
+It's now possible to create JSF 2.1 project via New JSF Project Wizard.
+!./images/scrn.png!
+
+jiras. JBIDE-12781
+=:
+
+- Quick Fix for missing required attributes :=
+
+There is a new Quick Fix for missing required attributes in JSPs:
+!./images/AddAttributeQuickFix.png!
+
+jiras. JBIDE-12390
+=:

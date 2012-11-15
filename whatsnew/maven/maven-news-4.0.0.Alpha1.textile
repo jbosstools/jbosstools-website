@@ -1,0 +1,54 @@
+---
+module_name: Maven Tools
+module_version: 4.0.0.Alpha1
+jbt_version: 4.0.0.Alpha1
+layout: whatsnew_layout
+---
+
+h1. JBoss Maven Integration
+
+- New m2e-wtp 0.16.0 (eclipse.org) requirement :=
+
+m2eclipse-wtp is moving to Eclipse.org as m2e-wtp. As such the existing dependency on m2eclipse-wtp as been changed to m2e-wtp 0.16.0. Since the two plugins overlap and can not coexist, upgrading JBoss Tools is gonna be a bit trickier this time around :
+
+* If you added the JBoss Tools 4.0 update site to your list of Available Update Sites, doing "Help > Find Updates" should (after a looong time) find m2e-wtp as a suitable replacement for m2eclipse-wtp, and everything should update properly
+* If you try to update your JBoss Tools installation via "Help > Install New Software...", m2e-wtp won't install because of the conflict with m2eclipse-wtp (this is a bug in p2) 
+* The safest path is to uninstall all previous Maven plugins/features or start from a fresh Eclipse installation
+
+On a somewhat related note, we made sure our JBoss Tools Maven features are fully compatible with the new m2e 1.2 (Juno SR1).
+
+jiras. JBIDE-12293
+=:
+
+- Conversion of classpath entries to Maven dependencies :=
+
+Converting a java project to Maven is not always an easy task. m2e 1.1 introduced a new API that could help improve that conversion process. For instance, m2e and m2e-wtp can help you convert your Java (EE) eclipse project settings to their maven plugin configuration counterparts, but so far converting Java dependencies has been a tedious manual chore.
+
+In JBoss Tools 4.0, we've been toying with a new Classpath Dependency conversion mechanism, hooked to the maven conversion process aforementioned. Select a legacy Eclipse Java project, right-click then "Configure > Convert to Maven ...". After selecting the project's maven coordinate, a new Wizard will pop up, trying to identify all the project's classpath entries as their equivalent Maven dependencies :
+
+!./images/dependency_conversion.png!
+
+Here is how it works currently:
+* Upon display, the wizard spawns a bunch of identification requests in parallel
+* Identified dependencies are then resolved by Maven against the current settings.xml known repositories. If they don't resolve, a warning will be displayed
+* Unidentified dependencies appear with a red icon
+* Double-clicking on any Maven dependency will open a dialog page to edit the dependency's details (groupId, artifactId, version, scope ...).
+
+The identification mechanism itself is based on a refactored version of our previous ["Source Lookup feature":http://docs.jboss.org/tools/whatsnew/maven/maven-news-3.3.0.Beta3.html] and tries several identification methods :
+* Checks if the jar contains maven descriptors under META-INF/maven.
+* Checks if the SHA1 checksum of the jar can be found in m2e's nexus indexes.
+* Checks if the SHA1 checksum of the jar can be identified from one of the remote Nexus repository instances defined in Window > Preferences > JBoss Tools > Remote Repositories.
+
+Once you click Finish, any selected dependencies will be added to the generated pom.xml. If you checked "Delete classpath entries from project", all the project classpath entries will be removed from the eclipse classpath, as we expect the Maven Dependencies Library to provide all these dependencies.
+
+*Be aware this is a very alpha quality work-in-progress*. For instance, UI freezes should be expected in this first iteration, caused by the Maven resolution part; "In-progress" Identification status is not correclty reported.
+
+You can contribute to improve that feature by testing and reporting bug / enhancement requests to JIRA, using the maven_conversion label.
+
+As a final note, this conversion tool is made to help you kickstart your project migration to Maven, but won't solve all your problems :
+
+the identification mechanism will not identify everything (for instance, jar that are "classifier" versions of an artifact can not be identified).
+after all the dependencies have been added to your pom.xml, it's your responsibility to prune them from any unwanted transitive dependencies.
+
+jiras. JBIDE-8973
+=:
