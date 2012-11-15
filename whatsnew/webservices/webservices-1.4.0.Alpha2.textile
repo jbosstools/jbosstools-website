@@ -7,7 +7,7 @@ layout: whatsnew_layout
 
 - JAX-RS Application Refactored :=
 
-Support for JAX-RS Application has been improved in order to support the use-cases described in the specification and summarized on the JBoss AS 7.1 JAX-RS Reference Guide
+Support for JAX-RS Application has been improved in order to support the use-cases described in the specification and summarized on the ["JBoss AS 7.1 JAX-RS Reference Guide":https://docs.jboss.org/author/display/AS71/JAX-RS+Reference+Guide]
 
 With this work done, the following use-cases are now supported:
 * Defining a subclass of *javax.ws.rs.core.Application* annotated with *@javax.ws.rs.ApplicationPath*

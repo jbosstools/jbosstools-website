@@ -1,0 +1,15 @@
+---
+module_name: Usage Reporting
+module_version: 4.0.0.Alpha2
+jbt_version: 4.0.0.Alpha2
+layout: whatsnew_layout
+---
+
+h1. Reporting
+
+- JBoss Tools components := 
+Usage is looking at the JBoss Tools components installed to your Eclipse instance. With Alpha2 it will now track and report OpenShift, Forge and JBoss Central.
+
+jiras. JBIDE-12639, JBIDE-12640 , JBIDE-12642
+
+=:

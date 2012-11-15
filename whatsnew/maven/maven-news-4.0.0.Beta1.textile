@@ -1,0 +1,26 @@
+---
+module_name: Maven Tools
+module_version: 4.0.0.Beta1
+jbt_version: 4.0.0.Beta1
+layout: whatsnew_layout
+---
+
+h1. JBoss Maven Integration
+
+- Conversion of jar dependencies to Maven dependencies :=
+
+Since we introduced this feature in JBT 4.0.0.Alpha1, we've made a *lot* of improvements to help you convert your Eclipse project dependencies to Maven.
+
+So, in no particular order :
+* "JBIDE-12527":https://issues.jboss.org/browse/JBIDE-12527 : Now converts EAR dependencies found in the lib folder or referenced in the Deployment Assembly page
+* "JBIDE-12550":https://issues.jboss.org/browse/JBIDE-12550 : No more UI freezes during long running identifications
+* "JBIDE-12702":https://issues.jboss.org/browse/JBIDE-12702 : As a last resort, http://search.maven.org is queried when all other identification methods fail
+* "JBIDE-12530":https://issues.jboss.org/browse/JBIDE-12530 : When some identified dependencies can not be resolved by Maven, you can access the Maven Repository wizard via a link, in order to update your settings.xml
+* "JBIDE-12551":https://issues.jboss.org/browse/JBIDE-12551 : You can manually relaunch / stop the identification process
+* You can configure the remote (Nexus) repositories queried during identification
+* "JBIDE-12529":https://issues.jboss.org/browse/JBIDE-12529 : You can now decide to delete all existing jars from your project with the "Delete original references from project" checkbox
+
+... and plenty of small usability bugs were squashed
+
+!./images/jar_conversion_updates.png!
+=:

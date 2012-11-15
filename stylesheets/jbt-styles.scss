@@ -36,6 +36,11 @@ h1 a {
   text-decoration:none;
 }
 
+hr {
+  border-top: 1px solid #E6E6E6;
+  border-bottom: 1px solid #ffffff;
+}
+
 $title-font-size: 20px;
 
 
@@ -48,7 +53,7 @@ $title-font-size: 20px;
 }
 
 @mixin grey-button-border() {
-  cursor: pointer;
+  //cursor: pointer;
   border: 1px solid #cccccc;
   border-color: #e6e6e6 #e6e6e6;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) fadein(rgba(0, 0, 0, 0.1), 15%);
@@ -63,7 +68,7 @@ $title-font-size: 20px;
 }
 
 @mixin grey-button() {
-  cursor: pointer;
+  //cursor: pointer;
   @include grey-button-border();
   background-color: whitesmoke;
   background-image: -moz-linear-gradient(top, white, #e6e6e6);
@@ -683,6 +688,7 @@ $menu-level3-space: 10px;
 
 .whatsnew h1 {
   border-bottom: 1px solid #E6E6E6;
+  font-size: 20px
 }
 
 .whatsnew img {
@@ -695,6 +701,11 @@ $menu-level3-space: 10px;
 
 .whatsnew dt {
   white-space: normal; // allow multiline instead of overflow with ellipsis (...)
+  width: 100px; // making it narrower as specified by bootstrap to give more room to images and videos.
+}
+
+.whatsnew dd {
+  margin-left: 120px; // giving more room to images and videos
 }
 
 .whatsnew.version {
@@ -716,8 +727,8 @@ $menu-level3-space: 10px;
 .related_jiras ul {
   display: block;
   margin-left: 0px;
-  margin-top: 10px;
-  margin-bottom: 15px;
+  margin-top: 5px;
+  margin-bottom: 10px;
   font-weight: bold;
   font-size: small;
 }

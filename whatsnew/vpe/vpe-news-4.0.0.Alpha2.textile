@@ -1,0 +1,18 @@
+---
+module_name: Visual Page Editor/BrowserSim
+module_version: 4.0.0.Alpha2
+jbt_version: 4.0.0.Alpha2
+layout: whatsnew_layout
+---
+
+h1. Editor
+
+- Attribute names and text nodes in selection bar :=
+
+VPE selection bar displays attribute names (Screenshot 1) and text nodes (Screenshot 2) for selected node
+!./images/listAttrs.gif!
+
+!./images/listText.gif!
+
+jiras. JBIDE-7692
+=:

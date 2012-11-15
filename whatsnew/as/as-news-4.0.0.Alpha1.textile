@@ -1,0 +1,16 @@
+---
+module_name: JBoss AS Tools
+module_version: 4.0.0.Alpha1
+jbt_version: 4.0.0.Alpha1
+layout: whatsnew_layout
+---
+
+h1. Data Source xml file wizard
+
+- persistence .xml registration :=
+
+Now when you generate a new -ds.xml file using New JBoss Datasource wizard you can generate/update the corresponding persistence.xml file.
+!./images/ds.png!
+
+jiras. JBIDE-11394
+=:

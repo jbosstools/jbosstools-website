@@ -1,0 +1,25 @@
+---
+module_name: CDI
+module_version: 4.0.0.Alpha1
+jbt_version: 4.0.0.Alpha1
+layout: whatsnew_layout
+---
+
+h1. Validation
+
+- Unproxyable bean type :=
+
+CDI tools now reports problems with bean types of normal scoped beans that cannot be proxied by the container (JSR-299 5.4.1)
+
+jiras. JBIDE-12199
+
+=:
+
+- As-you-type validation :=
+
+You don't have to save the file to run CDI validator anymore. The file is being validated as you are typing.
+
+vimeo. 47965113 500x369
+
+jiras. JBIDE-10611
+=:
