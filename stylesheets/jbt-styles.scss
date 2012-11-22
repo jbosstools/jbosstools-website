@@ -25,7 +25,9 @@ body {
   font-size: 14px;
   line-height: 24px;
   color: #333333;*/
- height: 100%;
+  height: 100%;
+  width: 100%;
+   
 }
 
 .left {
@@ -104,12 +106,13 @@ $push: 5em;
   background-image: none;
   margin: 0px;
   max-width: none;
-  height: auto;
+  height: 48px;
 }
 
 #logo {
   background-image: none;
   height: 48px;
+  display: inline;
 }
 
 #logo a {
@@ -127,6 +130,10 @@ $push: 5em;
 }
 
 #primarynav {
+  left: 0px;
+}
+
+#primarynav ul {
   left: 300px;
 }
 
