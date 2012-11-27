@@ -1,61 +1,70 @@
 ---
 layout: base_layout
+tab: home
 ---
-= partial( 'carousel.html.haml' )
-        
+.hero-unit.hidden-phone
+  %img{:alt => "JBoss Tools", :src => "./images/nav/jbt-carousel-jaxrs.png"}
+  .hero-content
+    %h1
+      JBoss Tools
+    %h2
+      Eclipse Plugins for 
+      JBoss Technology    
+      %br
+      %a
+        %img{:src => "/images/nav/installbutton.png"}
+
+%hr
+            
 #sections.row-fluid
-  .span4
-    %h3#feature-highlight Feature Highlight
+  %section.span4
     - features = site.features 
-    - features = features.find_all{|item| item.highlighted_feature == true}
-    - for feature in features
-      .item
-        %h5
-          &= feature.title
-        .details
-          #{feature.summary}
-          - if feature.url?
-            %a{:href=>feature.url} Read more...
+    - feature = features.find_all{|item| item.highlighted_feature == true}.first
+    #features-highlight
+    .item
+      %a{:href=>feature.url} 
+        %img{:src=>feature.image_url}
+      #{feature.highlight}  
+  
+  %section.span4  
+    %header
+      %h3
+        %i.icon-group
+        %a{:href => "/blog"}
+          Latest news
+    - news = site.posts
+    - today = Time.now 
+    - news = news.find_all{|item| item.date.strftime("%Y%m%d") <= today.strftime("%Y%m%d")}
+    - article = news.sort{|l,r| l.date <=> r.date}.first
+    .item
+      %h4
+        %a{:href=>article.url} #{article.title}
+      posted by 
+      %strong< #{site.team[article.author].name}
+      on #{article.date.strftime( '%b %d, %Y' )}.  
+      %a{:href=>article.url}
+        Read more...
 
-  .span4  
-    %h3#latest-news Latest news
-    /- news = site.news.values
-    /- today = Time.now 
-    /- news = news.find_all{|item| item.effective_date.to_s <= today.strftime("%Y%m%d")}
-    /- news = news.sort{|l,r| l.effective_date <=> r.effective_date}
-    /- for article in news
-    /  .item
-    /    %h5
-    /      #{article.title}
-    /    %strong  
-    /      #{article.author}
-    /    .details
-    /      #{article.content}
-    /      - if article.url?
-    /        %a{:href=>article.url}
-    /          Read more...
-
-  .span4  
-    %h3#upcoming-events Upcoming Events
+  %section.span4
+    %header
+      %a{:href => "/blog"}
+        %h3
+          %i.icon-globe
+          Upcoming Events
     - events = site.events.values
     - now = Time.now 
     - a_few_days_ago = now - 4 * 24 * 60 * 60
     - events = events.find_all{|item| item.effective_date.to_s >= a_few_days_ago.strftime("%Y%m%d")}
-    - events = events.sort{|l,r| l.effective_date <=> r.effective_date}
-    - for event in events
-      .item
-        %a{:href=>event.url}
-          %h5
-            #{event.title}
-        %strong  
-          &= event.event_date 
-          in
-          &= event.location
-        .details
-          #{event.content}
-          - if event.url?
-            %a{:href=>event.url}
-              Read more...
+    - event = events.sort{|l,r| l.effective_date <=> r.effective_date}.first
+    .item
+      %h4
+        #{event.title}
+      %strong  
+        &= event.event_date 
+        in
+        &= event.location
+      .details
+        #{event.content}
 
 
 

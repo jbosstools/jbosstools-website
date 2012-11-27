@@ -1,55 +1,7 @@
-// I gather this file is a starting point for the project.
-
-// Include responsive Bootstrap styles
-// @import "bootstrap-responsive";
-
-
-//************************************
-// Vimeo videos
-//************************************
-.vimeo {
-  margin: auto;
-}
-
-
-// *************************
-// 
-// *************************
-html {
-  height: 100%;
-}
-
-body {
-  background-color: #FFFFFF;
-  /*font-family: "DejaVu Sans", Verdana, sans-serif;
-  font-size: 14px;
-  line-height: 24px;
-  color: #333333;*/
-  height: 100%;
-  width: 100%;
-   
-}
-
-.left {
-  text-align: left;
-}
-
-h1 a {
-  text-decoration:none;
-}
-
-hr {
-  border-top: 1px solid #E6E6E6;
-  border-bottom: 1px solid #ffffff;
-}
-
+// ***********************************************
+// Reusable mixins (must be declared before usage)
+// ***********************************************
 $title-font-size: 20px;
-
-
-
-// ***************************************
-// Resuable mixins
-// ***************************************
 @mixin fontsize() {
   font-size: $title-font-size;
 }
@@ -86,6 +38,164 @@ $title-font-size: 20px;
   border-bottom-color: #b3b3b3;
 }
 
+//************************************
+// Links color
+//************************************
+a, a:visited, a:hover {
+  color: #333;
+}
+
+//************************************
+// Nav bar (should be replaced)
+//************************************
+
+.navbar-inner {
+  background: transparent;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.navbar .container{
+  display: block;
+  background: #AAA;
+}
+
+.navbar .nav > li > a {
+  color: whiteSmoke;
+  text-shadow: 0 1px 0 darkgrey;
+}
+ 
+ 
+// ***************************************
+// Project banner and navigation menu
+// ***************************************
+#project-banner-wrapper-bg {
+  background: #FFFFFF;
+  //background-image: url("/images/nav/dust.jpg");
+  margin-bottom: 00px;
+}
+  
+#project-banner-wrapper {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  //margin-left: auto;
+  //margin-right: auto;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+$left-offset: 0px;
+$top-offset: 15px;
+
+#project-banner {
+  height: 101px; //(2 * $top-offset) + 73px;
+  position: relative;
+  //margin-left: auto;
+  //margin-right: auto;
+  //width: 585px;
+}
+
+#project-logo {
+  position:absolute;
+  //top: $top-offset;
+  //left: $left-offset
+}
+
+#project-installer {
+  position:absolute;
+  top: $top-offset + 45px;
+  left: $left-offset + 306px;
+}
+
+#wrapper {
+  padding-top: 0px; // overriding default settings
+}
+
+.active {
+ color: white;
+ font-weight: bold;
+}
+
+section header {
+  margin-bottom: 10px;
+  
+}
+
+section .item {
+  text-align: justify;
+  margin-bottom: 10px;
+}
+
+section .item h3 {
+  text-align: left;
+}
+
+section footer {
+  text-align: right;
+}
+
+#menu-level2 {
+  margin-right: 50px;
+  text-align: left;
+  border: 1px solid #555;
+  border-radius: 10px;
+  
+}
+
+#menu-level2 ul {
+  margin-left: 0px;
+}
+
+#menu-level2 li {
+  text-align: center;
+  color: #C9D4E4;
+  
+  //border-bottom: 1px dotted #555;
+  text-decoration: none;
+  list-style: none;
+  padding: 5px;
+  margin-bottom: 0px;
+  // 
+  //text-shadow: #818181 1px 1px 1px;
+  
+}
+
+
+.grey-button {
+  @include grey-button();
+  padding : 5px;
+}
+
+
+section#title.span12 h1 {
+  margin-top: 30px;
+}
+
+h1 a {
+  text-decoration:none;
+}
+
+hr {
+  border-top: 1px solid #E6E6E6;
+  border-bottom: 1px solid #ffffff;
+}
+
+
+//************************************
+// Vimeo videos
+//************************************
+.vimeo {
+  margin: auto;
+}
+
+
+
 // ****************************************
 // Footer Pusher
 // ****************************************
@@ -94,20 +204,6 @@ $push: 5em;
 // ****************************************
 // JBoss Community Header (Branding) 
 // ****************************************
-
-#nav-wrapper {
-  width:100%;
-  background-image: url("http://static.jboss.org/theme/images/bgs/branding-stkv2.png");
-  background-clip: border-box;
-}
-
-
-#branding {
-  background-image: none;
-  margin: 0px;
-  max-width: none;
-  height: 48px;
-}
 
 #logo {
   background-image: none;
@@ -129,205 +225,13 @@ $push: 5em;
   display: inline;
 }
 
-#primarynav {
-  left: 0px;
-}
 
-#primarynav ul {
-  left: 300px;
-}
-
-#primarynav ul li {
-  height: 48px;
-}
-
-#primarynav ul li a {
-  background-image: none;
-  padding-top: 15px;
-}
 
 #tab {
   cursor: pointer;
 }
 
-// ***************************************
-// Project banner and navigation menu
-// ***************************************
-#project-banner-wrapper-bg {
-  background: #F5F5F5;
-  //background-image: url("/images/nav/dust.jpg");
-  margin-bottom: 00px;
-}
-  
-#project-banner-wrapper {
-  margin-top: 0px;
-  margin-bottom: 0px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  padding-left: 10px;
-  padding-right: 10px;
-}
 
-$left-offset: 0px;
-$top-offset: 15px;
-
-#project-banner {
-  height: (2 * $top-offset) + 73px;
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  width: 585px;
-}
-
-#project-logo {
-  position:absolute;
-  top: $top-offset;
-  left: $left-offset
-}
-
-#project-installer {
-  position:absolute;
-  top: $top-offset + 45px;
-  left: $left-offset + 306px;
-}
-
-#wrapper {
-  padding-top: 0px; // overriding default settings
-}
-
-$menu-level1-top-color: #F3F3F3;
-$menu-level1-bottom-color: #E0E0E0;
-$box-shadow: #ABABAB;
-#menu-level1-wrapper-bg {
-  //background-image: url("/images/nav/dust5.jpg");
-  background: #EAEAEA;
-  background-image: url("http://static.jboss.org/theme/images/bgs/branding-stkv2.png");
-  /*-moz-box-shadow: 0px 3px 3px 0px $box-shadow;
-  -webkit-box-shadow: 0px 3px 3px 0px $box-shadow;
-  -o-box-shadow: 0px 3px 3px 0px $box-shadow;
-  box-shadow: 0px 3px 3px 0px $box-shadow;
-  filter:progid:DXImageTransform.Microsoft.Shadow(color=$box-shadow, Direction=180, Strength=3);*/
-  /*background-image: linear-gradient(top, #E0E0E0, #F3F3F3);
-  background-image: linear-gradient(bottom, $menu-bottom-color, $menu-top-color);
-  background-image: -o-linear-gradient(bottom, $menu-bottom-color, $menu-top-color);
-  background-image: -moz-linear-gradient(bottom, $menu-bottom-color, $menu-top-color);
-  background-image: -webkit-linear-gradient(bottom, $menu-bottom-color, $menu-top-color);
-  background-image: -ms-linear-gradient(bottom, $menu-bottom-color, $menu-top-color);
-  background-image: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-    color-stop($menu-bottom-color),
-    color-stop($menu-top-color)
-  );*/
-  margin-bottom: 20px;
-} 
-
-#menu-level1-wrapper {
-  width: 100%;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#menu-level1 {
-  text-align:center;
-  padding-top: 0px;
-  margin-left: auto;
-  margin-right: auto;
-  display: inline-block;
-  background: url("http://static.jboss.org/theme/images/bgs/primarynav-lines.png") no-repeat top left ;
-}
-
-$menu-level1-items-padding: 10px;
-
-#menu-level1 ul {
-  display: block;
-  text-decoration: none;
-  padding-top: $menu-level1-items-padding;
-  padding-bottom: $menu-level1-items-padding;
-  margin-bottom: 0px;
-} 
-
-#menu-level1 li {
-  min-height: 100%;
-  height: auto;
-  display: inline;
-  text-decoration: none;
-  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-  text-shadow: 0 1px 1px black;
-  font-size: 12px;
-  text-transform: uppercase;
-  padding-right: 15px;
-  padding-left: 15px;
-  padding-top: $menu-level1-items-padding;
-  padding-bottom: $menu-level1-items-padding;
-  color:#C9D4E4;/* lightest blue */
-  background: url("http://static.jboss.org/theme/images/bgs/primarynav-lines.png") no-repeat top right ;
-}
-
-#menu-level1 ul li a {
-  color:#C9D4E4;/* lightest blue */
-  text-decoration: none;
-}
-#menu-level1 ul li a:visited {
-  color:#C9D4E4;/* lightest blue */
-}
-
-#menu-level1 ul li a:hover {
-  color:#FEFEFE;/* light white  */
-}
-
-#menu-level1 ul li.selected a{
-  color:#FEFEFE;/* light white  */
-}
-
-#menu-level1 span {
-  height: 100%;
-  vertical-align: middle;
-  
-}
-#menu-level1 h5 {
-  display: inline;
-}
-
-#menu-level2 {
-  margin-right: 50px;
-  text-align: left;
-}
-
-#menu-level2 ul {
-  margin-left: 0px;
-}
-
-#menu-level2 li {
-  text-align: center;
-  color: #C9D4E4;
-  
-  //border-bottom: 1px dotted #555;
-  text-decoration: none;
-  list-style: none;
-  padding: 10px;
-  margin-bottom: 10px;
-  // 
-  //text-shadow: #818181 1px 1px 1px;
-  
-}
-
-#menu-level2 .selected {
-  color: #C9D4E4;
-  @include grey-button();
-}
-
-#menu-level2 .unselected {
-  @include grey-button-border();
-}
-
-#menu-level2 .unselected:hover {
-  @include grey-button();
-}
 
 // ****************************************
 // Read more >> links with button-style
@@ -343,7 +247,6 @@ a.readmore {
   font-size: 14px;
   line-height: 24px;
   *line-height: 20px;
-  color: #333333;
   text-align: center;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
   vertical-align: middle;
@@ -382,6 +285,12 @@ a.readmore {
   padding: 10px;
 }
 
+h2 {
+  [class^="icon-"], [class*=" icon-"] {
+    vertical-align: baseline;
+    margin-right: 5px;
+  }
+}
 $font-red-color: #88201B;
 
 
@@ -442,9 +351,39 @@ $font-red-color: #88201B;
 // Carousel on welcome page
 // ****************************************
 
+.hero-unit {
+  background: white;
+  padding-top: 30px;
+  padding-bottom: 0px;
+  margin-top: 30px;
+}
+
+.hero-unit > img {
+  float: right;
+}
+
+.hero-content {
+  padding-top: 20px; // because the image has some shadowed margin
+  height: 327px;
+}
+
+.hero-content h1, h2 {
+  text-align: right;
+}
+.hero-content h2 img {
+  vertical-align: text-bottom;
+}
+
 #headingCarousel {
-  margin-top:20px;
-  margin-bottom:40px;
+  margin-top:0px;
+  margin-bottom:0px;
+}
+
+#carousel-inner .item {
+  padding: 20px;
+}
+#carousel-inner .item img {
+  //float: right;
 }
 
 .center {
@@ -470,7 +409,7 @@ p  {
 }
 
 .row-fluid h3 {
-	text-align:center;  
+	//text-align:center;  
 }
 
 .details {
@@ -480,12 +419,6 @@ p  {
   margin: 0px;
 }
 
-.item {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-left: 10px;
-  margin-right: 10px;
-}
 
 // ****************************************
 // Installation

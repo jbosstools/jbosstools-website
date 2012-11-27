@@ -5,4 +5,4 @@ effective_date: 20121023
 location: Ludwigsburg, Germany
 url: http://www.eclipsecon.org/europe2012/
 ---
-Some team members will get to EclipseCon to talk about m2e-wtp, OpenShift, Forge, Tycho. 
+Fred, Koen and Mickaël will go to EclipseCon to talk about m2e-wtp, Forge and Tycho. 

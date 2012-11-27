@@ -1,14 +1,12 @@
 ---
 layout: features_layout
-title: JBoss Central
+title: Web Services
 authors: [xcoulon]
 image_url: ./images/features-central_346px.png
-feature_order: 1
+feature_order: 6
 
-headline: JBoss Central. Start faster.
-summary: JBoss Central is a new startup page in JBoss Tools and JBoss Developer Studio. 
- It helps you with projects wizards to instantly start working with your 
- favorite framework. It also provides you with community news and an easy way to install extra plugins.
+headline: Web Services. Supporting REST and SOAP.
+summary: Web Services. Supporting REST and SOAP.
 ---
 
 #### Get started instantly. ![Getting Started](./images/features-central_334px.png)
