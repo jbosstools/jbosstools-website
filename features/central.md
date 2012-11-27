@@ -35,3 +35,12 @@ Amongst all the plugins, you'll find:
 
 and more...
 
+***
+
+#### Supporting Technologies
+
+![JBoss AS 7](./images/jbossas7_logo_256x.png)
+![RestEasy](./images/resteasy_logo_256x.png)
+![OpenShift](./images/openshift_logo_256x.png)
+![Forge](./images/jbossforge_logo_256x.png) 
+![Weld](./images/weld_logo_245x.png)
