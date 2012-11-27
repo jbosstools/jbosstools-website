@@ -8,6 +8,7 @@ Awestruct::Extensions::Pipeline.new do
   extension Awestruct::Extensions::DataDir.new
 
   extension Awestruct::Extensions::DataDir.new('/whatsnew')
+  extension Awestruct::Extensions::DataDir.new('/features')
 
   extension Awestruct::Extensions::Posts.new( '/blog', :posts )
   extension Awestruct::Extensions::Paginator.new(:posts, '/blog/index', :per_page => 2 )

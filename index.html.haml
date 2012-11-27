@@ -21,10 +21,11 @@ tab: home
     - features = site.features 
     - feature = features.find_all{|item| item.highlighted_feature == true}.first
     #features-highlight
-    .item
-      %a{:href=>feature.url} 
-        %img{:src=>feature.image_url}
-      #{feature.highlight}  
+    - if feature != nil
+      .item
+        %a{:href=>feature.url} 
+          %img{:src=>feature.image_url}
+        #{feature.highlight}  
   
   %section.span4  
     %header
@@ -47,9 +48,9 @@ tab: home
 
   %section.span4
     %header
-      %a{:href => "/blog"}
-        %h3
-          %i.icon-globe
+      %h3
+        %i.icon-globe
+        %a{:href => "/blog"}
           Upcoming Events
     - events = site.events.values
     - now = Time.now 
