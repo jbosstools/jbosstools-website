@@ -43,7 +43,4 @@ and more...
 ![RestEasy](./images/resteasy_logo_256x.png)
 ![OpenShift](./images/openshift_logo_256x.png)
 ![Forge](./images/jbossforge_logo_256x.png) 
-<<<<<<< HEAD
 ![Weld](./images/weld_logo_245x.png)
-=======
->>>>>>> forge
