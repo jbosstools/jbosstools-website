@@ -11,7 +11,7 @@ summary: JBoss Central is a new startup page in JBoss Tools and JBoss Developer 
  favorite framework. It also provides you with community news and an easy way to install extra plugins.
 ---
 
-#### Get started instantly. ![Getting Started](./images/features-central_334px.png)
+#### Get started instantly ![Getting Started](./images/features-central_334px.png)
 Central helps you bootstrap a new project by providing you with a large set of wizards and templates, 
 including the JBoss Developer Frawework and the GateIn Quickstarts.   
 Central also provides you with the latest community news, announcements and blog articles, 
