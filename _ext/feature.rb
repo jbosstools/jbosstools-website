@@ -34,7 +34,7 @@ module Awestruct
               end
 
               feature.summary = page.summary
-              feature.content = Hpricot(page.content).to_s
+              #feature.content = Hpricot(page.content).to_s
               features << feature
             end
             site.features = features
