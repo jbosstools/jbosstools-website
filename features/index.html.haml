@@ -1,18 +1,22 @@
 ---
 layout: default_layout
 tab: features
+title: Features Overview
 ---
 .row-fluid 
-  .span3
-    #menu-level2
-      %ul
-        %li.selected
-          %h4< Overview
-        - for feature in site.features.sort{|l,r| l.order <=> r.order}.each do
-          %li.unselected
-            %h4
-              %a{:href => "#{feature.url}"}< #{feature.title}
-  .span9
+  -#.span3
+  -#  #menu-level2
+  -#    %ul
+  -#      %li.selected
+  -#        %h4< Overview
+  -#      - for feature in site.features.sort{|l,r| l.order <=> r.order}.each do
+  -#        %li.unselected
+  -#          %h4
+  -#            %a{:href => "#{feature.url}"}< #{feature.title}
+  -#.span9
+  
+  
+  .span12
     - features = site.features 
     - features = features.sort{|l,r| l.order <=> r.order}
     .features 
@@ -21,11 +25,11 @@ tab: features
           %a{:href=>feature.url} 
             #{feature.title}
           %a{:href=>feature.url} 
-            %img{:src=>"#{feature.image_url}", :alt=>"#{feature.title}"}
+            %img{:src=>"#{site.base_url}/#{feature.image_url}", :alt=>"#{feature.title}"}
         %p 
           #{feature.summary}
           %br
-          %a.readmore{:href=>feature.url} Read more » 
+          %a.readmore{:href=>feature.url} Read more&hellip;
         %hr
    
   

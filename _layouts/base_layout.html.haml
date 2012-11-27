@@ -4,96 +4,47 @@
     %meta{ :charset=>'utf-8' } 
     %title #{site.title}
     %meta{ :name=>'viewport', :content=>'width=device-width, initial-scale=1.0' }
-    %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"http://static.jboss.org/theme/css/magnolia/stkdefault-styles.css", :media=>"screen, projection"}
-    %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"http://static.jboss.org/theme/css/common/org_common.css", :media=>"screen, projection"}
-    %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"http://static.jboss.org/theme/css/common/styles.css", :media=>"screen, projection"}
-    %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"http://static.jboss.org/theme/css/magnolia/jquery-ui.css", :media=>"screen, projection"}
-    %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"http://static.jboss.org/theme/css/magnolia/project.css", :media=>"screen, projection"}
-    %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"http://static.jboss.org/theme/css/magnolia/clearspace_common.css", :media=>"screen, projection"}
-    %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"http://static.jboss.org/theme/css/magnolia/print.css", :media=>"print"}
+    
     %link{ :rel=>"icon", :type=>"image/png", :href=>"#{site.base_url}/images/nav/jbosstools_icon16.png"}
 
-    %script{ :type=>'text/javascript', :src=>"http://static.jboss.org/theme/js/magnolia/allinone.js" }
-    %script{ :type=>'text/javascript', :src=>"http://jboss.org/resources/templating-kit/js/jbossorg.2011-07-27-15-42-03-383.cache.js" }
-    %script{ :type=>'text/javascript', :src=>"#{site.base_url}/javascripts/buttons.js" }
-    %script{ :type=>'text/javascript', :src=>"http://jboss.org/resources/templating-kit/js/all.2011-01-19-09-23-54-917.cache.js" }
-    %script{ :type=>'text/javascript', :src=>"http://static.jboss.org/theme/js/tabzilla.js" }
     /[if lt IE 9]
-    %script{ :type=>'text/javascript', :src=>'//html5shim.googlecode.com/svn/trunk/html5.js' } 
+      %script{ :type=>'text/javascript', :src=>'//html5shim.googlecode.com/svn/trunk/html5.js' } 
 
     %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"#{site.base_url}/stylesheets/bootstrap.css", :media=>"screen, projection"}
-    %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"http://static.jboss.org/theme/css/common/org_common.css", :media=>"screen, projection"}
+    %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"#{site.base_url}/stylesheets/bootstrap-responsive.css", :media=>"screen, projection"}
+    %script{ :type=>'text/javascript', :src=>"#{site.base_url}/javascripts/buttons.js" }
     
     -# custom page css
     %link{ :rel=>'stylesheet', :type=>'text/css', :href=>"#{site.base_url}/stylesheets/jbt-styles.css" }
     %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"#{site.base_url}/stylesheets/jbt-styles-wide.css", :media=>"only screen and (min-width: 1200px)"}
     %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"#{site.base_url}/stylesheets/jbt-styles-small.css", :media=>"only screen and (max-width: 980px)"}
     %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"#{site.base_url}/stylesheets/font-awesome.css", :media=>"screen, projection"}
+    %script{ :type=>'text/javascript', :src=>'//cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js' }
    
-  %body.col-float3.nocol-layout
-    .pushed-wrapper
-      <!--#if expr='1<0' -->
-      #nav-wrapper
-        #branding
-          #primarynav
-            #logo 
-              %a{:href => "http://www.jboss.org", :title=>"Homepage" }
-                %img{:src => "#{site.base_url}/images/nav/jboss-community_logo.png", :alt=>"JBoss Community"}  
-            %ul.sf-menu
-              %li#primary-nav-home 
-                %a.menu-title.sf-with-ul{:href => "http://www.jboss.org/developer"} Get Started
-              %li#primary-nav-getinvolved
-                %a.menu-title{:href => "http://www.jboss.org/contribute"} Get Involved
-              %li#primary-nav-projects
-                %a.menu-title.sf-with-ul{:href => "http://www.jboss.org/projects" } Projects
-              %li.enterprise
-                %a.menu-title{:href => "http://www.redhat.com/products/jbossenterprisemiddleware" } Products
-          -# END of primarynav 
-       
-          -# Utility controls
-          #nav-meta
-            %ul
-              %li#jbssologininfo1
-              %li#jbssologininfo2
-          -# end nav-meta 
-          %a#tab.tabnav-opened { :href => "http://www.jboss.org/" } Search
-      
-        #project-banner-wrapper-bg
-          #project-banner-wrapper
-            #project-banner
-              %a#project-logo{ :border=>"0", :href => "#{site.base_url}/index.html"}< 
-                %img{ :alt=>"JBoss Tools", :src => "#{site.base_url}/images/nav/jbosstools_horiz_585.png"}< 
-              %a#project-installer
-                %img{:src => "/images/nav/installbutton.png"}
-    
-      #menu-level1-wrapper-bg
-        #menu-level1-wrapper
-          #menu-level1
-            %ul.center
-              %li#installation
-                %a{:href => "/installation"}< Installation
-              %li#features
-                %a{:href => "/features"}< Features
-              %li#guides
-                %a{:href => "/guides"}< Guides
-              %li#community
-                %a{:href => "/community"}< Community 
-              %li#blog
-                %a{:href => "/blog"}< Blog
-            - if (page.tab != null) 
-              %script{:type => "text/javascript"}
-                $("##{page.tab}").addClass("selected");     
+  %body
+    <!--#if expr='1<0' -->
+    .navbar.navbar-static-top
+      .container
+        #logo
+          %img{:src=>"#{site.base_url}/images/nav/tools-banner-1180px.jpg"}
+        %a.btn.btn-navbar{:"data-toggle"=>"collapse",:"data-target"=>".nav-collapse"}
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        .nav-collapse.collapse
+          %ul.nav
+            %li
+              %a{:href=>"#{site.base_url}"}< Home
+            %li.active
+              %a{:href=>"##{site.base_url}/features"}< Features
+            %li
+              %a{:href=>"##{site.base_url}/guides"}< Guides
+        
+  
+    .container
+      ~content
+      %br
+      %hr
+      %footer
+        Sponsored by Red Hat
 
-      #content-wrapper-bg
-        #content-wrapper
-          #container-reduced.left
-            ~content
-
-      .push
-    #site-info.push
-      = partial( 'footer.html.haml' ) 
-  -#%footer
-  -#  %p &copy; Organization #{Date.today.year}
-    -# Uncomment script tags (remove leading -#) when you're ready to use behaviors
-    -# %script{ :type=>'text/javascript', :src=>'//cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js' }
-    -# %script{ :type=>'text/javascript', :src=>"#{site.base_url}/javascripts/bootstrap-collapse.js" }

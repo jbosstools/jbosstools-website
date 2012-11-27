@@ -1,22 +1,23 @@
 #carousel.row-fluid
   .span12
-    #headingCarousel.carousel.slide
+    #headingCarousel.carousel.slide.hero-unit
       %script{:type=>"text/javascript", :src=>"javascripts/bootstrap-carousel.js" }
       %script{:type=>"text/javascript"} 
         $('.carousel').carousel();
       -# carousel items
       #carousel-inner
-        .item.active
-          %img.center{:alt => "Slideshow Image", :src => "http://jboss.org/dms/tools/images/jbtcarousel-009-central/jbtcarousel.009-central.png"}
-        .item
-          %img.center(alt="Slideshow Image" src="http://jboss.org/dms/tools/images/jbtcarousel-010-browsersim/jbtcarousel.010-browsersim.png")
-        .item
-          %img.center(alt="Slideshow Image" src="http://jboss.org/dms/tools/images/jbtcarousel-005/jbtcarousel.005.png") 
-        .item
-          %img.center(alt="Slideshow Image" src="http://jboss.org/dms/tools/images/jbtcarousel-001/jbtcarousel.001.png") 
-        .item
-          %img.center(alt="Slideshow Image" src="http://jboss.org/dms/tools/images/jbtcarousel-002/jbtcarousel.002.png")
+        .item.hero-content.active
+          %img{:alt => "JAX-RS Tooling", :src => "./images/nav/jbt-carousel-jaxrs.png"}
+          %h1< JAX-RS 1.1
+        .item.hero-content
+          %img{:alt=>"OpenShift Tooling", :src=>"./images/nav/jbt-carousel-openshift.png"}
+          %h1
+            OpenShift Tooling
+          %h2
+            Develop in Eclipse. 
+            %br
+            Deploy from Eclipse. 
+        
       -# carousel nav controls
       %a(class="carousel-control left" href="#headingCarousel" data-slide="prev")& &lsaquo;
       %a(class="carousel-control right" href="#headingCarousel" data-slide="next")& &rsaquo;
-    %hr
