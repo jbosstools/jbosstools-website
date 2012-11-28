@@ -2,16 +2,16 @@
 layout: features_layout
 title: JBoss Central
 authors: [xcoulon]
-image_url: ./images/features-central_346px.png
+image_url: /features/images/features-central_550px.png
 feature_order: 1
 
-headline: JBoss Central. Start faster.
+tagline: Start your project faster.
 summary: JBoss Central is a new startup page in JBoss Tools and JBoss Developer Studio. 
  It helps you with projects wizards to instantly start working with your 
  favorite framework. It also provides you with community news and an easy way to install extra plugins.
 ---
 
-#### Get started instantly ![Getting Started](./images/features-central_334px.png)
+#### Get started instantly. ![Getting Started](./images/features-central_334px.png)
 Central helps you bootstrap a new project by providing you with a large set of wizards and templates, 
 including the JBoss Developer Frawework and the GateIn Quickstarts.   
 Central also provides you with the latest community news, announcements and blog articles, 
@@ -37,10 +37,3 @@ and more...
 
 ***
 
-#### Supporting Technologies
-
-![JBoss AS 7](./images/jbossas7_logo_256x.png)
-![RestEasy](./images/resteasy_logo_256x.png)
-![OpenShift](./images/openshift_logo_256x.png)
-![Forge](./images/jbossforge_logo_256x.png) 
-![Weld](./images/weld_logo_245x.png)

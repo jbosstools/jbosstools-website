@@ -1,9 +1,9 @@
 ---
 layout: features_layout
-title: JBoss Central
+title: JBoss AS
 authors: [xcoulon]
-image_url: ./images/features-central_346px.png
-feature_order: 1
+image_url: /features/images/jbossas7_icon_256px.png
+feature_order: 2
 
 headline: JBoss Central. Start faster.
 summary: JBoss Central is a new startup page in JBoss Tools and JBoss Developer Studio. 

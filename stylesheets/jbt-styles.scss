@@ -41,13 +41,20 @@ $title-font-size: 20px;
 //************************************
 // Links color
 //************************************
-a, a:visited, a:hover {
+h1 > a, h1 > a:visited, h1 > a:hover,
+h2 > a, h2 > a:visited, h2 > a:hover,
+h3 > a, h3 > a:visited, h3 > a:hover,
+h4 > a, h4 > a:visited, h4 > a:hover {
   color: #333;
 }
 
 //************************************
 // Nav bar (should be replaced)
 //************************************
+header > h3 {
+  text-align: center;
+}
+
 
 .navbar-inner {
   background: transparent;
@@ -186,6 +193,16 @@ hr {
   border-bottom: 1px solid #ffffff;
 }
 
+
+
+
+//************************************
+// Tag line
+//************************************
+.tagline {
+  display: block;
+  font-weight: bold;
+}
 
 //************************************
 // Vimeo videos
@@ -359,15 +376,15 @@ $font-red-color: #88201B;
 }
 
 .hero-unit > img {
+  padding-left: 20px; 
   float: right;
 }
 
 .hero-content {
-  padding-top: 20px; // because the image has some shadowed margin
-  height: 327px;
+  //height: 327px;
 }
 
-.hero-content h1, h2 {
+.hero-content h1, .hero-content h2 {
   text-align: right;
 }
 .hero-content h2 img {

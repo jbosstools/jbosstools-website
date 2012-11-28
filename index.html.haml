@@ -19,18 +19,23 @@ tab: home
 #sections.row-fluid
   %section.span4
     - features = site.features 
-    - feature = features.find_all{|item| item.highlighted_feature == true}.first
+    - feature = features.find_all{|feature| feature.highlighted == true}.first
     #features-highlight
     - if feature != nil
-      .item
-        %a{:href=>feature.url} 
+      %header
+        %h3
+          %i.icon-magic
+          %a{:href => "/features"}
+            Feature Highlight
+      .item.center
+        %span.tagline #{feature.tagline} 
+        %a.block{:href=>feature.url}
           %img{:src=>feature.image_url}
-        #{feature.highlight}  
   
   %section.span4  
     %header
       %h3
-        %i.icon-group
+        %i.icon-pencil
         %a{:href => "/blog"}
           Latest news
     - news = site.posts
@@ -50,7 +55,7 @@ tab: home
     %header
       %h3
         %i.icon-globe
-        %a{:href => "/blog"}
+        %a{:href => "/events"}
           Upcoming Events
     - events = site.events.values
     - now = Time.now 

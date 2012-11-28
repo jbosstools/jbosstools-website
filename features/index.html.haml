@@ -3,22 +3,26 @@ layout: default_layout
 tab: features
 title: Features Overview
 ---
+
+- features = site.features.sort{|l,r| l.order <=> r.order}
+- highlighted_feature = features.shift
+
+-# show first feature with a highlight
 .row-fluid 
-  -#.span3
-  -#  #menu-level2
-  -#    %ul
-  -#      %li.selected
-  -#        %h4< Overview
-  -#      - for feature in site.features.sort{|l,r| l.order <=> r.order}.each do
-  -#        %li.unselected
-  -#          %h4
-  -#            %a{:href => "#{feature.url}"}< #{feature.title}
-  -#.span9
-  
-  
+  .span12.hero-unit
+    %img{:src=>"#{site.base_url}/#{highlighted_feature.image_url}", :alt=>"#{highlighted_feature.title}"}
+    .hero-content
+      %h1< #{highlighted_feature.title}
+      %h2< #{highlighted_feature.tagline}
+      #{highlighted_feature.summary}
+    
+.row-fluid 
   .span12
-    - features = site.features 
-    - features = features.sort{|l,r| l.order <=> r.order}
+    %hr
+      
+-# show all other features
+.row-fluid 
+  .span12
     .features 
       - for feature in features
         %h4 

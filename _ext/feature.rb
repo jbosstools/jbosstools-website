@@ -25,15 +25,16 @@ module Awestruct
               page.feature = feature
               site.engine.set_urls([page])
               feature.url = page.url
-              feature.highlighted_feature = page.highlighted_feature != nil ? page.highlighted_feature : false
+              feature.highlighted = page.highlighted != nil ? page.highlighted : false
               feature.title = page.title
-              feature.order = page.feature_order
+              feature.order = page.feature_order != nil ? page.feature_order : 100
               feature.image_url = page.image_url
               if page.description.nil?
                 page.description = page.feature_summary
               end
 
               feature.summary = page.summary
+              feature.tagline = page.tagline
               #feature.content = Hpricot(page.content).to_s
               features << feature
             end
