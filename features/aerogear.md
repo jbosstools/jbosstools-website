@@ -2,10 +2,10 @@
 layout: features_layout
 title: Aerogear
 authors: [xcoulon]
-image_url: /features/images/aerogear_icon_256x.png
+image_url: ./features/images/aerogear_icon_256px.png
 feature_order: 8
 
-headline: Aerogear.
+tagline: Mobile development tooling.
 summary: Aerogear
 ---
 

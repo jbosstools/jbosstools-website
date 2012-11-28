@@ -20,21 +20,25 @@ title: Features Overview
   .span12
     %hr
       
+- puts "Generating #{features.size} other features"
 -# show all other features
-.row-fluid 
-  .span12
-    .features 
-      - for feature in features
-        %h4 
-          %a{:href=>feature.url} 
-            #{feature.title}
-          %a{:href=>feature.url} 
-            %img{:src=>"#{site.base_url}/#{feature.image_url}", :alt=>"#{feature.title}"}
-        %p 
-          #{feature.summary}
-          %br
-          %a.readmore{:href=>feature.url} Read more&hellip;
-        %hr
+- while features.size > 0 do
+  - puts "  Remaining #{features.size} other features"
+  .row-fluid 
+    - i = 0
+    - limit = [features.size, 4].min
+    - puts " Treating #{limit} features..."
+    - while i < limit do 
+      - i +=1
+      - feature = features.shift
+      .span3
+        .features 
+          .feature-content
+            %h3< #{feature.title}
+            %h5< #{feature.tagline}
+            %a{:href=>feature.url} 
+              %img{:src=>"#{site.base_url}/#{feature.image_url}", :alt=>"#{feature.title}", :width=>"128px"}
+            
    
   
   
