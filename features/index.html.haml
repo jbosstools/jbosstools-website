@@ -34,6 +34,7 @@ title: Features Overview
         .features 
           .feature-content
             %a{:href=>feature.url} 
+              %h4.center< #{feature.title}
               %h6.center< #{feature.tagline}
               %img{:src=>"#{site.base_url}/#{feature.image_url}", :alt=>"#{feature.title}", :width=>"128px"}
 .row-fluid.features
