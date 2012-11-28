@@ -2,7 +2,7 @@
 layout: features_layout
 title: JBoss Central
 authors: [xcoulon]
-image_url: /features/images/features-central_550px.png
+image_url: ./features/images/features-central_550px.png
 feature_order: 1
 
 tagline: Start your project faster.

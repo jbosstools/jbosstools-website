@@ -1,9 +1,12 @@
 ---
 layout: features_layout
-title: Maven
-image_url: /features/images/features-maven_346px.png
+title: m2e-wtp Integration
+image_url: ./features/images/features-maven_346px.png
 authors: [xcoulon]
-summary: In the context of application development, Maven allows you to extend your applications by referencing and utilizing dependencies from local and remote repositories. JBoss Tools / JBoss Developer Studio also closes the gap between the maven world and the Eclipse/WebTools world with the help of the m2e-wtp integration, which finally lets you transparently use m2e on web projects.
+tagline: Closing the gap between Maven and WTP.
+summary: JBoss Tools / JBoss Developer Studio closes the 
+  gap between the maven world and the Eclipse/WebTools world with the help of the m2e-wtp integration, 
+  which finally lets you transparently use m2e on web projects.
 feature_order: 4
 ---
 

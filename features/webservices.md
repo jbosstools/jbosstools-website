@@ -2,11 +2,11 @@
 layout: features_layout
 title: Web Services
 authors: [xcoulon]
-image_url: /features/images/resteasy_icon_256px.png
+image_url: ./features/images/resteasy_icon_256px.png
 feature_order: 9
 
-headline: Web Services. Supporting REST and SOAP.
-summary: Web Services. Supporting REST and SOAP.
+tagline: Supporting REST and SOAP.
+summary: Web Services. .
 ---
 
 #### Get started instantly. ![Getting Started](./images/features-central_334px.png)

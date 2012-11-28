@@ -3,10 +3,10 @@ layout: features_layout
 title: OpenShift
 authors: [xcoulon]
 highlighted: true
-image_url: /features/images/openshift_icon_256px.png
+image_url: ./features/images/openshift_icon_256px.png
 feature_order: 3
 
-tagline: Develop from Eclipse. Deploy from Eclipse.
+tagline: Integrated deployment to the cloud.
 
 summary: From developing to deploying on OpenShift, JBoss Tools provides you with a fully fledged 
   environment for your project and aligns with the standard workflows within Eclipse. 
@@ -20,7 +20,6 @@ Create a new application or import an existing one. Using the power of git for b
 
 * * *
 #### Server Adapter ![wizard](./images/features-openshift_283px.png)
-!./images/features-openshift_283px.png(Wizard)!
 Drive your remote application like a local one. Including streaming logs into the Eclipse console. Feels like a local server.
 
 * * *

@@ -489,10 +489,7 @@ h5 {
 }
 
 
-.features h4 {
-  text-align : left;
-  padding-bottom: 10px;
-}
+
 
 .features hr {
   clear:both;
@@ -504,6 +501,12 @@ h5 {
   float: left;
   padding-right: 40px;
   margin-bottom: 20px;
+}
+
+.feature-content {
+  //float: right;
+  width: 100%;
+  text-align: center;
 }
 
 .features h4:nth-child(odd) img {

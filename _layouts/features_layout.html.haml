@@ -2,25 +2,10 @@
 layout: base_layout
 tab: features
 ---
-.row-fluid
-  -#%aside.span3
-  -#  #menu-level2
-  -#    %ul
-  -#      %li.unselected
-  -#      -#  %h4
-  -#      -#    %a{:href=>"./index.html"}< Back to Overview
-  -#      - for feature in site.features.sort{|l,r| l.order <=> r.order}.each do
-  -#        - if(feature.title == page.feature.title) 
-  -#          %li.selected
-  -#            %h4< #{feature.title}
-  -#        - else
-  -#          %li.unselected
-  -#            %h4
-  -#              %a{:href => "#{feature.url}"}< #{feature.title}
-  -#
-  -#.span9
-  .span12
-    - feature = page.feature
-    - if feature != nil
-      .features
-        ~content
+.container-fluid
+  .row-fluid
+    .span12
+      - feature = page.feature
+      - if feature != nil
+        .features
+          ~content
