@@ -1,9 +1,9 @@
 ---
 layout: features_layout
 title: Java EE / CDI
-image_url: ./images/features-cdi_308px.png
+image_url: /features/images/weld_icon_256px.png
 authors: xcoulon
-feature_order: 2 
+feature_order: 5
 
 summary: Context and Dependency Injection (CDI) tooling allows you to easily add and work with the CDI programming model 
  for your web-based applications. JBoss Tools and JBoss Developer Studio help you add CDI support to existing projects and 

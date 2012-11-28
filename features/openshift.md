@@ -2,26 +2,31 @@
 layout: features_layout
 title: OpenShift
 authors: [xcoulon]
-highlighted_feature: true
-image_url: /features/images/openshift-logo-white.png
-feature_order: 4
+highlighted: true
+image_url: /features/images/openshift_icon_256px.png
+feature_order: 3
 
-highlight: Develop from Eclipse. Deploy from Eclipse.
+tagline: Develop from Eclipse. Deploy from Eclipse.
+
 summary: From developing to deploying on OpenShift, JBoss Tools provides you with a fully fledged 
   environment for your project and aligns with the standard workflows within Eclipse. 
   Using the tooling, you can create and configure your remote container, deploy your application, 
   stream remote logs into your local console, access your data and remotely debug the running application.
 ---
 
-div. Application creation and import wizard 
-!./images/features-openshift_283px.png(Wizard)!
+#### Application creation and import wizard ![wizard](./images/features-openshift_283px.png) 
+
 Create a new application or import an existing one. Using the power of git for blazing fast push and pull operations.
 
-div. Server Adapter
+* * *
+#### Server Adapter ![wizard](./images/features-openshift_283px.png)
 !./images/features-openshift_283px.png(Wizard)!
 Drive your remote application like a local one. Including streaming logs into the Eclipse console. Feels like a local server.
 
-div. Port-forwarding 
+* * *
+#### Port-forwarding ![wizard](./images/features-openshift_283px.png)
 !./images/features-openshift_283px.png(Wizard)!
 Embedded port-forwarding lets you access the remote ports of your application server and your database. 
 You can debug your application and access your data.
+
+* * *

@@ -2,8 +2,8 @@
 layout: features_layout
 title: Hibernate
 authors: [xcoulon]
-image_url: ./images/features-central_346px.png
-feature_order: 2
+image_url: /features/images/hibernate_icon_256px.png
+feature_order: 4
 
 headline: Hibernate
 summary: Hibernate
