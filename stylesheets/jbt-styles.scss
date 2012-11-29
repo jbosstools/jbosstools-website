@@ -51,7 +51,7 @@ $title-font-size: 20px;
 //************************************
 // Links color
 //************************************
-a *, a:visited *, a:hover * {
+a, a:visited, a:hover {
   color: #333;
 }
 
@@ -371,9 +371,6 @@ $font-red-color: #88201B;
 */
 
 
-// ****************************************
-// Carousel on welcome page
-// ****************************************
 
 .hero-unit {
   background: white;
@@ -481,64 +478,101 @@ h5 {
 // ******************************************
 // Features
 // ******************************************
-.feature-headers {
-  margin-bottom: 50px;
+
+$dark: #f4f6f6;
+$light: #ffffff;
+@mixin gradientLeftToRight {
+  background-color: $light;
+  background: -webkit-gradient(linear, left top, right top, from($dark), to($light));
+  background: -webkit-linear-gradient(left, $dark, $light);
+  background: -moz-linear-gradient(left, $dark, $light);
+  background: -o-linear-gradient(left, $dark, $light);
+  background: linear-gradient(left, $dark, $light);
+}
+@mixin gradientRightToLeft {
+  background-color: $light;
+  background: -webkit-gradient(linear, left top, right top, from($light), to($dark));
+  background: -webkit-linear-gradient(left, $light, $dark);
+  background: -moz-linear-gradient(left, $light, $dark);
+  background: -o-linear-gradient(left, $light, $dark);
+  background: linear-gradient(left, $light, $dark);
 }
 
-.feature-header {
-  display: inline;
+.features {
+  padding-top: 40px;
+  padding-bottom: 40px;
   padding-left: 10px;
   padding-right: 10px;
+  background: #f3f3f3;
 }
 
-.feature-header.selected {
-  color: $font-red-color;
+.features:nth-child(odd) {
+  @include gradientRightToLeft;
 }
-
-
-
-
-.features hr {
-  clear:both;
-  margin-top: 40px;
-  margin-bottom: 40px;
-}
-
-.features h4:nth-child(even) img {
-  float: left;
-  padding-right: 40px;
-  margin-bottom: 20px;
-}
-
-.feature-content {
-  //float: right;
-  width: 100%;
-  text-align: center;
-}
-
-.features h4:nth-child(odd) img {
-  float: right;
-  padding-left: 40px;
-  margin-bottom: 20px;
-}
-
-.features ul {
-  text-align: left;
-  padding-left: 30px;
-  overflow: auto;
+.features:nth-child(even) {
+  @include gradientLeftToRight;
 }
 
 .features a {
-  text-align:left;
+  width: 100%;
+  text-align: center;
 }
-a h4.selected {
-  color: $font-red-color;
+.features img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-#main-features {
-  text-align: center;
-  font-size: x-large;
+.headfeature img {
+  display: block;
+  margin: 20px;
+  float: right;
 }
+.feature img {
+  display: block;
+  margin: 20px;
+}
+.feature:nth-child(odd) img {
+  float: left;
+}
+.feature:nth-child(even) img {
+  float: right;
+}
+.feature .content, .headfeature .content {
+  padding: 50px;
+}
+
+.feature:nth-child(odd) {
+  @include gradientRightToLeft;
+}
+.feature:nth-child(even) {
+  @include gradientLeftToRight;
+}
+
+.features-separator hr {
+  clear:both;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.feature-menu {
+  height: 100%;
+}
+
+.feature-menu li {
+  display: inline;
+  padding-right: 30px;
+}
+
+.feature-menu li h4 {
+  display: inline;
+}
+
+.feature-menu {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
 
 // *************************************
 // News / Blog posts
