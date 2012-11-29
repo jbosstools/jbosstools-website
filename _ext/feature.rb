@@ -28,14 +28,8 @@ module Awestruct
               feature.highlighted = page.highlighted != nil ? page.highlighted : false
               feature.title = page.title
               feature.order = page.feature_order != nil ? page.feature_order : 100
-              feature.image_url = page.image_url
-              if page.description.nil?
-                page.description = page.feature_summary
-              end
-
-              feature.summary = page.summary
               feature.tagline = page.tagline
-              #feature.content = Hpricot(page.content).to_s
+              feature.image_url = page.image_url
               features << feature
             end
             site.features = features
