@@ -29,6 +29,7 @@ module Awestruct
               feature.title = page.title
               feature.order = page.feature_order != nil ? page.feature_order : 100
               feature.tagline = page.tagline
+              feature.summary = page.summary
               feature.image_url = page.image_url
               features << feature
             end

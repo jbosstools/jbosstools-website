@@ -13,8 +13,8 @@ tab: features
   - features = page.features != nil ? page.features : Array.[]
   - if features.size > 0
     - feature = features[0] 
-    .row-fluid.headfeature
-      .span12
+    .row-fluid
+      .span12.hero-unit
         %img{:src => "#{site.base_url}/" + "#{feature.image_url}"}
         .content
           %h1< #{feature.title}

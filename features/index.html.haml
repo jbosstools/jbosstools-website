@@ -11,15 +11,14 @@ title: Features Overview
 .row-fluid 
   .span12.hero-unit
     %img{:src=>"#{site.base_url}/#{highlighted_feature.image_url}", :alt=>"#{highlighted_feature.title}"}
-    .hero-content
+    .content
       %h1< #{highlighted_feature.title}
       %h2< #{highlighted_feature.tagline}
-      #{highlighted_feature.summary}
+      %p #{highlighted_feature.summary}
     
 - puts "Generating #{features.size} other features"
 -# show all other features
 - while features.size > 0 do
-  - puts "  Remaining #{features.size} other features"
   .row-fluid.features
     - i = 0
     - limit = [features.size, 4].min

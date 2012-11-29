@@ -542,6 +542,10 @@ $light: #ffffff;
   padding: 50px;
 }
 
+.content p {
+  text-align: justify;
+}
+
 .feature:nth-child(odd) {
   @include gradientRightToLeft;
 }
