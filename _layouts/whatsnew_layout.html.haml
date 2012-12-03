@@ -8,7 +8,7 @@ tab: guides
       %ul
         %li.unselected
           %a{:href=>"../index.html"} Overview
-        - for item in site.new_and_noteworthies[page.jbt_version].sort!{|x,y| x.module_name <=> y.module_name}.each do
+        - for item in site.new_and_noteworthies_per_version[page.jbt_version].sort!{|x,y| x.module_name <=> y.module_name}.each do
           - if item.module_name == page.module_name
             %li.selected
               %a{:href => item.url} #{item.module_name}

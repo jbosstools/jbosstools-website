@@ -1,5 +1,6 @@
 ---
 layout: features_layout
+module_id: m2e-wtp
 title: m2e-wtp Integration
 image_url: ./features/images/features-maven_346px.png
 authors: [xcoulon]

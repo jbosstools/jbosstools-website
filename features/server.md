@@ -1,5 +1,6 @@
 ---
 layout: features_layout
+module_id: jbossas
 title: JBoss AS
 authors: [xcoulon]
 image_url: ./features/images/jbossas7_icon_256px.png

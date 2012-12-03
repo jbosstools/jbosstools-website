@@ -2,31 +2,56 @@
 layout: base_layout
 tab: features
 ---
+
 .container-fluid
-  .row-fluid.menu-level2
-    .span4.offset8.feature-menu
-      %ul
-        %li<
-          %h4< Overview
-        %li<
-          %h4< What's New
-  - features = page.features != nil ? page.features : Array.[]
-  - if features.size > 0
-    - feature = features[0] 
-    .row-fluid
-      .span12.hero-unit
-        %img{:src => "#{site.base_url}/" + "#{feature.image_url}"}
-        .content
-          %h1< #{feature.title}
-          %h3< #{feature.subtitle}
-          %p< #{feature.description}      
-  - features.each_with_index do |feature, index|
-    - if index > 0
-      .row-fluid.feature
-        .span12
-          %img{:src => "#{site.base_url}/" + "#{feature.image_url}"}
-          .content
-            %h2< #{feature.title}
-            %h4< #{feature.subtitle}
-            %p< #{feature.description}      
-                
+  .row-fluid.feature-menu
+    .span12
+      %h1< #{page.title}
+      
+      %ul#featureTab.nav.nav-tabs
+        %li.active
+          %a{:href=>"#overview", :"data-toggle"=>"tab"} Overview
+        %li.dropdown
+          %a.dropdown-toggle{:href=>"#", :"data-toggle"=>"dropdown"} 
+            What's New 
+            %b.caret
+          %ul.dropdown-menu
+            - if site.new_and_noteworthies_per_module_id[page.module_id] != nil
+              - for version in site.new_and_noteworthies_per_module_id[page.module_id]
+                %li
+                  - whatnewshref = "#whatsnew-" + version.module_version.gsub("\.", "_")
+                  %a{:href=>whatnewshref, :"data-toggle"=>"tab"}  #{version.module_version}
+  #featureTabContent.tab-content
+    #overview.tab-pane.fade.in.active
+      - features = page.features != nil ? page.features : Array.[]
+      - if features.size > 0
+        - feature = features[0] 
+        .row-fluid.feature
+          .span12.hero-unit
+            %img{:src => "#{site.base_url}/" + "#{feature.image_url}"}
+            .content
+              %h1< #{feature.title}
+              %h3< #{feature.subtitle}
+              %p< #{feature.description}      
+      - features.each_with_index do |feature, index|
+        - if index > 0
+          .row-fluid.feature
+            .span12
+              %hr
+              %img{:src => "#{site.base_url}/" + "#{feature.image_url}"}
+              .content
+                %h2< #{feature.title}
+                %h4< #{feature.subtitle}
+                %p< #{feature.description}
+    - if site.new_and_noteworthies_per_module_id[page.module_id] != nil
+      - for version in site.new_and_noteworthies_per_module_id[page.module_id]
+        - whatnewshref = "whatsnew-" + version.module_version.gsub("\.", "_")
+        %div.tab-pane.fade{:id=>whatnewshref}
+          #{version.content.to_s}
+          
+-# Placed at the end of the document so the pages load faster
+:javascript
+  $('#featureTab a').click(function (e) {
+    e.preventDefault();
+    $(this).tab('show');
+  })

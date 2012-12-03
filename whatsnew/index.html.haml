@@ -21,7 +21,7 @@ title: New and Noteworthy
     %h5.left JBoss Tools individual new and noteworthy
   .span12
     - new_and_noteworthies_keys=[]
-    - for key in site.new_and_noteworthies.each_key
+    - for key in site.new_and_noteworthies_per_version.each_key
       - new_and_noteworthies_keys << key
     - new_and_noteworthies_keys.sort! {|x,y| y <=> x }
     %dl.dl-horizontal
@@ -30,7 +30,7 @@ title: New and Noteworthy
           #{key}
           %dd
             %ul.whatsnew.module
-              - for item in site.new_and_noteworthies[key].sort!{|x,y| x.module_name <=> y.module_name}.each do
+              - for item in site.new_and_noteworthies_per_version[key].sort!{|x,y| x.module_name <=> y.module_name}.each do
                 %li 
                   %a{:href => item.url} #{item.module_name}
 .row-fluid 

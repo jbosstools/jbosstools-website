@@ -1,5 +1,6 @@
 ---
 layout: features_layout
+module_id: central
 title: JBoss Central
 authors: [xcoulon]
 image_url: ./features/images/features-central_550px.png
