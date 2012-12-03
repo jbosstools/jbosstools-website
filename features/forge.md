@@ -1,5 +1,6 @@
 ---
 layout: features_layout
+module_id: forge
 title: JBoss Forge
 authors: xcoulon
 feature_order: 6

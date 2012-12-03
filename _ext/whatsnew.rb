@@ -19,7 +19,8 @@ module Awestruct
         end
 
         def execute(site)
-          new_and_noteworthies = Hash.new
+          new_and_noteworthies_per_version = Hash.new
+          new_and_noteworthies_per_module_id = Hash.new
           
           site.pages.each do |page|
             if ( page.relative_source_path =~ /^#{@path_prefix}\/.*\.md/ \
@@ -29,18 +30,28 @@ module Awestruct
               news_item = OpenStruct.new
               site.engine.set_urls([page])
               news_item.url = page.url
+              news_item.module_id = page.module_id
               news_item.module_name = page.module_name
               news_item.module_version = page.module_version
               news_item.jbt_version = page.jbt_version
-              news_items = new_and_noteworthies[news_item.jbt_version]
-              if(news_items == nil) 
-                news_items = []
-                new_and_noteworthies[news_item.jbt_version] = news_items
+              news_item.content = page.content
+              
+              # puts "What's new content:\n" + news_item.content + "\n"
+              
+              if(new_and_noteworthies_per_version[news_item.jbt_version] == nil) 
+                new_and_noteworthies_per_version[news_item.jbt_version] = []
               end
-              news_items << news_item
-              page.news_item = news_item
+              new_and_noteworthies_per_version[news_item.jbt_version] << news_item
+              
+              if(new_and_noteworthies_per_module_id[news_item.module_id] == nil) 
+                new_and_noteworthies_per_module_id[news_item.module_id] = []
+              end
+              new_and_noteworthies_per_module_id[news_item.module_id] << news_item
+              
+              page.news_item_per_version = news_item
             end
-            site.new_and_noteworthies = new_and_noteworthies
+            site.new_and_noteworthies_per_version = new_and_noteworthies_per_version
+            site.new_and_noteworthies_per_module_id = new_and_noteworthies_per_module_id
           end
           
         end

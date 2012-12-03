@@ -1,5 +1,6 @@
 ---
 layout: features_layout
+module_id: webservices
 title: Web Services
 authors: [xcoulon]
 image_url: ./features/images/resteasy_icon_256px.png

@@ -1,4 +1,5 @@
 ---
+module_id: openshift
 layout: features_layout
 title: OpenShift
 authors: [xcoulon]
@@ -17,7 +18,6 @@ features:
       stream remote logs into your local console, access your data and remotely debug the running application.
       Creating a new OpenShift Application along into a new or an existing Eclipse Project, 
       or importing an existing OpenShift Application into a new or an existing project, the Application Wizard supports all the combinations. 
-       
   - title: OpenShift Explorer View
     subtitle: The embedded Web Console.
     image_url: ./features/images/features-openshift-explorerview-reduced.png

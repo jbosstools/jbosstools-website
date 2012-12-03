@@ -1,5 +1,6 @@
 ---
 layout: features_layout
+module_id: aerogear
 title: Aerogear
 authors: [xcoulon]
 image_url: ./features/images/aerogear_icon_256px.png

@@ -16,9 +16,11 @@ title: Features Overview
       %h2< #{highlighted_feature.tagline}
       %p #{highlighted_feature.summary}
     
-- puts "Generating #{features.size} other features"
 -# show all other features
 - while features.size > 0 do
+  .row-fluid.features
+    .span12
+      %hr
   .row-fluid.features
     - i = 0
     - limit = [features.size, 4].min
