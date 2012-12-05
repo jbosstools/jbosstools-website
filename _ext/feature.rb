@@ -5,13 +5,20 @@ module Awestruct
       class Index
         include Feature
         
+        @@transformers_registered = false
+        
         def initialize(path_prefix, num_changes = nil)
           @path_prefix = path_prefix
           @num_changes = num_changes
         end
 
+        # transform gets called twice in the process of loading the pipeline, so
+        # we use a class variable to detect this scenario and shortcircuit
         def transform(transformers)
-          #transformers << WrapHeaderAndAssignHeadingIds.new
+          if not @@transformers_registered
+              transformers << WrapWithSections.new
+              @@transformers_registered = true
+          end
         end
 
         def execute(site)
@@ -38,69 +45,81 @@ module Awestruct
           
         end
       end
+      
+      
 
-      class WrapHeaderAndAssignHeadingIds
+      class WrapWithSections
       
         def transform(site, page, rendered)
-          if page.feature
-            page_content = Hpricot(rendered)
-
-            feature_root = page_content.at('div[@id=feature]')
-
-            # Wrap <div class="header"> around the h2 section
-            # If you can do this more efficiently, feel free to improve it
-            feature_content = feature_root.search('h2').first.parent
-            indent = get_indent(get_depth(feature_content) + 2)
-            in_header = true
-            header_children = []
-            feature_content.each_child do |child|
-              if in_header
-                if child.name == 'h3' or (child.name == 'div' and child.attributes['class'] == 'section')
-                  in_header = false
-                else
-                  if child.pathname == 'text()' and child.to_s.strip.length == 0
-                    header_children << Hpricot::Text.new("\n" + indent)
-                  else
-                    header_children << child
-                  end
-                end
-              end
+          if page.feature != nil
+            @doc = Nokogiri::HTML(rendered)
+            
+            # wrap mandatory H1 element into DIVs
+            @doc.css("//div#content/h1").wrap("<div class='row-fluid feature'></div>").wrap("<div class='span12'></div>").wrap("<div class='featureContent'></div>")
+            
+            # then, wrap all following H2 and P elements (both description and image) into the same DIVs
+            @doc.css("//div#content/*").select{|node| accept(node)}.each do |node|
+              move_into_feature_content_element(node)
             end
-
-            feature_header = Hpricot::Elem.new('div', {:class=>'header'})
-            feature_content.children[0, header_children.length] = [feature_header]
-            feature_header.children = header_children
-            feature_content.insert_before(Hpricot::Text.new("\n" + indent), feature_header)
-            feature_content.insert_after(Hpricot::Text.new("\n" + indent), feature_header)
-
-            feature_root.search('h3').each do |header_html|
-              page.feature.sections.each do |section|
-                if header_html.inner_html.eql? section.text
-                  header_html.attributes['id'] = section.link_id
-                  break
-                end
-              end
+            
+            # then, extract the IMG from the div[class='featureContent']/p and add a heading <HR>
+            @doc.css("//div.featureContent/p/img").each do |img|
+              move_image_before_content(img)
             end
-            return page_content.to_html.gsub(/^<!DOCTYPE [^>]*>/, '<!DOCTYPE html>')
+            
+            # add the 'hero-unit' class to the first section and remove the <HR> there only
+            add_hero_unit_class(@doc.css("//div.feature/div.span12").first) 
+            
+            return @doc.to_html
           end
           return rendered
         end
         
-        def get_depth(node)
-          depth = 0
-          p = node
-          while p.name != 'html'
-            depth += 1
-            p = p.parent
-          end
-          depth
-        end
-
-        def get_indent(depth, ts = ' ')
-          "#{ts * depth}"
+        # Filter nodes, ensure only H2 and P are accepted
+        def accept(node) 
+          return (node.name == "h2" || node.name == "p")
         end
         
+        # looks for the previous sibling that is an element of class 'feature-content' and add the given node into it
+        # note: some sibling maybe 'text' element, though.        
+        def move_into_feature_content_element(node)
+          sibling = findPreviousSibling(node, "div")
+          if(sibling != nil) 
+            node.parent = sibling.css("div[class='featureContent']").first
+          end
+        end
+        
+        # find previous sibling with given name for the given node 
+        def findPreviousSibling(node, name) 
+          return nil unless node != nil
+          return (node.name == name) ? node : findPreviousSibling(node.previous_sibling, name) 
+        end
+        
+        # move the image out of the 'feature-content' div, putting it before that node in the DOM
+        def move_image_before_content(img)
+          parent = findParentWithClass(img, "span12")
+          if parent != nil
+            parent.children.before(img)
+            parent.children.before(Nokogiri::XML::Element.new("hr", @doc))
+          end
+        end
+        
+        def findParentWithClass(node, clazz)
+          return nil unless !node.html?
+          parent = node.parent
+          return (parent.has_attribute?("class") && parent.get_attribute("class") == clazz) ? parent : findParentWithClass(parent, clazz) 
+        end
+        
+        def add_hero_unit_class(node)
+          return nil unless node != nil
+          puts "Changing into Hero Unit: " + node.to_s
+          node.children.select{|c| c.name == 'hr'}.each do |c|
+            c.remove
+          end
+          node.set_attribute("class", node.get_attribute("class") << " hero-unit")
+        end
       end
+
 
     end
   end

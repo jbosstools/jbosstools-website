@@ -9,7 +9,7 @@ module RedCloth::Formatters::HTML
   def jiras(opts)
     if opts != nil then
       jiras = opts[:text].split(',').map! {|s| s.strip}
-      puts "   Processing Related JIRA(s) " + jiras.to_s
+      # puts "   Processing Related JIRA(s) " + jiras.to_s
       if jiras.length > 1
         result = "<div class=\"related_jiras\"><ul>"
         result << "Related JIRAs: "
