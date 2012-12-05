@@ -556,11 +556,11 @@ height: 1px;
 .feature:nth-child(odd) img {
   float: right;
 }
-.feature .content, .headfeature .content, .feature .hero-unit {
+.feature .featureContent, .feature .hero-unit {
   padding: 30px;
 }
 
-.content p {
+.featureContent p {
   text-align: justify;
 }
 
