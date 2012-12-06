@@ -7,19 +7,23 @@ html_minifier: enabled
   
 textile: ['no_span_caps']
 
-css_url: http://localhost:4242/stylesheets
-img_url: http://localhost:4242/images
-js_url: http://localhost:4242/javascripts
-fonts_url: http://localhost:4242/fonts
 
 profiles:
   development:
     base_url: http://localhost:4242/
+    css_url: http://localhost:4242/stylesheets
+    img_url: http://localhost:4242/images
+    js_url: http://localhost:4242/javascripts
+    fonts_url: http://localhost:4242/fonts
     css_minifier: disabled
     js_minifier: disabled
     html_minifier: disabled
   preview:
     base_url: http://preview-jbosstools.rhcloud.com/
+    css_url: http://preview-jbosstools.rhcloud.com/stylesheets
+    img_url: http://preview-jbosstools.rhcloud.com/images
+    js_url: http://preview-jbosstools.rhcloud.com/javascripts
+    fonts_url: http://preview-jbosstools.rhcloud.com/fonts
   production:
     base_url: http://design.jbossorg/boostrap/themes
     css_url: http://static.jboss.org/theme/css
