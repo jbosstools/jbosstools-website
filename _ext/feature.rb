@@ -55,7 +55,10 @@ module Awestruct
             @doc = Nokogiri::HTML(rendered)
             
             # wrap mandatory H1 element into DIVs
-            @doc.css("//div#content/h1").wrap("<div class='row-fluid feature'></div>").wrap("<div class='span12'></div>").wrap("<div class='featureContent'></div>")
+            @doc.css("//div#content/h1").
+              wrap("<div class='row-fluid feature'></div>").
+              wrap("<div class='span12'></div>").
+              wrap("<div class='featureContent'></div>")
             
             # then, wrap all following H2 and P elements (both description and image) into the same DIVs
             @doc.css("//div#content/*").select{|node| accept(node)}.each do |node|
@@ -80,7 +83,8 @@ module Awestruct
           return (node.name == "h2" || node.name == "p")
         end
         
-        # looks for the previous sibling that is an element of class 'feature-content' and add the given node into it
+        # looks for the previous sibling that is an element of class 'feature-content' 
+        # and add the given node into it
         # note: some sibling maybe 'text' element, though.        
         def move_into_feature_content_element(node)
           sibling = findPreviousSibling(node, "div")
@@ -112,7 +116,6 @@ module Awestruct
         
         def add_hero_unit_class(node)
           return nil unless node != nil
-          puts "Changing into Hero Unit: " + node.to_s
           node.children.select{|c| c.name == 'hr'}.each do |c|
             c.remove
           end

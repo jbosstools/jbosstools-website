@@ -49,13 +49,6 @@ $title-font-size: 20px;
 
 
 //************************************
-// Links color
-//************************************
-a, a:visited, a:hover {
-  color: #333;
-}
-
-//************************************
 // Nav bar (should be replaced)
 //************************************
 header > h3 {
@@ -63,69 +56,6 @@ header > h3 {
 }
 
 
-.navbar-inner {
-  background: transparent;
-  -webkit-border-radius: 0px;
-  -moz-border-radius: 0px;
-  border-radius: 0px;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-}
-
-.navbar .container{
-  display: block;
-  background: #AAA;
-}
-
-.navbar .nav > li > a {
-  color: whiteSmoke;
-  text-shadow: 0 1px 0 darkgrey;
-}
- 
- 
-// ***************************************
-// Project banner and navigation menu
-// ***************************************
-#project-banner-wrapper-bg {
-  background: #FFFFFF;
-  //background-image: url("/images/nav/dust.jpg");
-  margin-bottom: 00px;
-}
-  
-#project-banner-wrapper {
-  margin-top: 0px;
-  margin-bottom: 0px;
-  //margin-left: auto;
-  //margin-right: auto;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  padding-left: 0px;
-  padding-right: 0px;
-}
-
-$left-offset: 0px;
-$top-offset: 15px;
-
-#project-banner {
-  height: 101px; //(2 * $top-offset) + 73px;
-  position: relative;
-  //margin-left: auto;
-  //margin-right: auto;
-  //width: 585px;
-}
-
-#project-logo {
-  position:absolute;
-  //top: $top-offset;
-  //left: $left-offset
-}
-
-#project-installer {
-  position:absolute;
-  top: $top-offset + 45px;
-  left: $left-offset + 306px;
-}
 
 #wrapper {
   padding-top: 0px; // overriding default settings
@@ -138,7 +68,6 @@ section header {
 }
 
 section .item {
-  text-align: justify;
   margin-bottom: 10px;
 }
 
@@ -290,28 +219,11 @@ a.readmore {
 .container-fluid {
   margin-top: 10px;
 }
-.pushed-wrapper{
-  min-height: 100%;
-  height: auto !important;
-  height: 100%;
-}
-
-#content-wrapper-bg {
-  background-color: #FFF;
-  margin-bottom: -$push;
-  
-}
-
-#content-wrapper {
-  margin-left: auto;
-  margin-right: auto;
-  padding: 10px;
-}
-
-h2 {
+h2, h3 {
   [class^="icon-"], [class*=" icon-"] {
     vertical-align: baseline;
     margin-right: 5px;
+    margin-top: 5px;
   }
 }
 $font-red-color: #88201B;
@@ -341,35 +253,6 @@ $font-red-color: #88201B;
   text-align: left;
   vertical-align:baseline;
 }
-
-/*
-#installation {
-  @include bg-image("/images/nav/glyphicons_044_keys.png");
-  padding-left: 32px;
-}
-
-#blog {
-  @include bg-image("/images/nav/glyphicons_235_pen.png");
-  padding-left: 32px;
-}
-
-#features {
-  @include bg-image("/images/nav/glyphicons_023_cogwheels.png");
-  padding-left: 32px;
-}
-
-#videos {
-  @include bg-image("/images/nav/glyphicons_086_display.png");
-  padding-left: 32px;
-}
-
-#community {
-  @include bg-image("/images/nav/glyphicons_043_group.png");
-  padding-left: 32px;
-}
-*/
-
-
 
 .hero-unit {
   background: white;

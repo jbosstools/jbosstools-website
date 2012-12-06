@@ -1,10 +1,10 @@
 ---
-layout: base_layout
+layout: project-nav
 tab: home
 ---
 .row-fluid
   .hero-unit.hidden-phone
-    %img{:alt => "JBoss Tools", :src => "./images/nav/jbt-carousel-jaxrs.png"}
+    %img{:alt => "JBoss Tools", :src => "#{site.img_url}/tools/jbt-carousel-jaxrs.png"}
     .hero-content
       %h1
         JBoss Tools
@@ -13,7 +13,7 @@ tab: home
         JBoss Technology    
         %br
         %a
-          %img{:src => "/images/nav/installbutton.png"}
+          %img{:src => "#{site.img_url}/tools/installbutton.png"}
 
 .row-fluid
   %hr
@@ -44,7 +44,7 @@ tab: home
     - today = Time.now 
     - news = news.find_all{|item| item.date.strftime("%Y%m%d") <= today.strftime("%Y%m%d")}
     - article = news.sort{|l,r| l.date <=> r.date}.first
-    .item
+    .item.justify
       %h4
         %a{:href=>article.url} #{article.title}
       posted by 
@@ -64,7 +64,7 @@ tab: home
     - a_few_days_ago = now - 4 * 24 * 60 * 60
     - events = events.find_all{|item| item.effective_date.to_s >= a_few_days_ago.strftime("%Y%m%d")}
     - event = events.sort{|l,r| l.effective_date <=> r.effective_date}.first
-    .item
+    .item.justify
       %h4
         #{event.title}
       %strong  
