@@ -29,8 +29,3 @@
 
 }(window.jQuery)
 
-
-$(document).ready(function(){
-	if tab != undefined
-	  $(tab).addClass('active')
-})
