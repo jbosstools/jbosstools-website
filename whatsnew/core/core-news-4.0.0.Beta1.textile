@@ -2,7 +2,7 @@
 module_name: Core/General
 module_version: 4.0.0.Beta1
 jbt_version: 4.0.0.Beta1
-layout: whatsnew_layout
+layout: whatsnew
 ---
 
 - New Service Provider Class Wizard := 

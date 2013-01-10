@@ -2,7 +2,7 @@
 module_name: Web Services
 module_version: 1.4.0.Alpha2
 jbt_version: 4.0.0.Alpha2
-layout: whatsnew_layout
+layout: whatsnew
 ---
 
 - JAX-RS Application Refactored :=

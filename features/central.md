@@ -1,5 +1,5 @@
 ---
-layout: features_layout
+layout: features
 module_id: central
 title: JBoss Central
 authors: [xcoulon]

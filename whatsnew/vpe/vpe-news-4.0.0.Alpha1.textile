@@ -2,7 +2,7 @@
 module_name: Visual Page Editor/BrowserSim
 module_version: 4.0.0.Alpha1
 jbt_version: 4.0.0.Alpha1
-layout: whatsnew_layout
+layout: whatsnew
 ---
 
 h1. Editor

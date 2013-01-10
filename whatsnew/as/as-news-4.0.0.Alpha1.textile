@@ -2,7 +2,7 @@
 module_name: JBoss AS Tools
 module_version: 4.0.0.Alpha1
 jbt_version: 4.0.0.Alpha1
-layout: whatsnew_layout
+layout: whatsnew
 ---
 
 h1. Data Source xml file wizard

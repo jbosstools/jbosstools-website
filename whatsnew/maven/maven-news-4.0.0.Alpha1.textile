@@ -2,7 +2,7 @@
 module_name: Maven Tools
 module_version: 4.0.0.Alpha1
 jbt_version: 4.0.0.Alpha1
-layout: whatsnew_layout
+layout: whatsnew
 ---
 
 h1. JBoss Maven Integration
