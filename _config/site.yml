@@ -8,12 +8,13 @@ js_minifier: disabled
 html_minifier: disabled
 
 theme_css_url: /theme/css/bootstrap/2.1.0.0.0
-theme_js_url: /javascripts
+theme_js_url: /theme/javascripts/bootstrap/2.1.0.0.0
 theme_fonts_url: /theme/fonts
 theme_images_url: /theme/images
 
 css_url: /stylesheets
 fonts_url: /fonts
+js_url: /javascripts
 
 features_url: /documentation/features
 images_url: /images/tools

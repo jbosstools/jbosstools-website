@@ -63,12 +63,12 @@ style: community
               %li<
                 %a(href="#")<
                   %img(src="#{site.theme_images_url}/common/socialmedia_icon40_linkedin.png")
-          %li<
+          %li#blog<
             %a(href="#{site.url}/blog/") Blog
           / activate the tab by adding the 'active' class 
-          / - if page.tab != nil
-          /  :javascript
-          /    tab = page.tab
+          - if page.tab != nil
+            :javascript
+              document.tab = #{page.tab};
           %li.divider
 
         %ul.nav.pull-right
