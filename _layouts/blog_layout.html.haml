@@ -17,10 +17,18 @@ tab: blog
             on 
             %strong #{page.date.strftime( '%b %d, %Y' )}.
             - if(page.tags != null && !page.tags.empty?) 
-              %i.icon-tag
-              %strong #{page.tags.join(", ")}
+              - page.tags.each do |tag|
+                %a.label.label-info{:href=>"#{site.base_url}#{tag.primary_page.url}"} #{tag}
+            %p.comments
+              %i.icon-comments
+              =page.disqus_comments_link 
+              #{page.disqus_comments_count} 
+         
       .body
         ~ page.content
+      .comments
+        #{page.disqus_comments}
+  
       .navigation
         %hr
         .row-fluid
