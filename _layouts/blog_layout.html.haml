@@ -1,12 +1,13 @@
 ---
-layout: base_layout
+layout: project-nav
 tab: blog
 ---
 .row-fluid
   .span12#core-page
     .post
-      .title
+      .title-wrapper
         %img.img-polaroid{:src => "#{site.team[page.author].photo_64px}"}
+        .title.border
           %h3
             %a{:href=>page.url}= page.title
           .author
@@ -15,11 +16,21 @@ tab: blog
             %strong #{site.team[page.author].name}
             on 
             %strong #{page.date.strftime( '%b %d, %Y' )}.
-          .tags
             - if(page.tags != null && !page.tags.empty?) 
               %i.icon-tag
               %strong #{page.tags.join(", ")}
-        .body
-          ~ page.content
-        .tail
-          ///= post.disqus_comments_link
+      .body
+        ~ page.content
+      .navigation
+        %hr
+        .row-fluid
+          .span4.previous
+            - if page.previous_post
+              %a.btn.btn-primary.btn-small{:href=>"#{site.base_url}#{page.previous_post.url}"} &laquo; #{page.previous_post.title}
+          .span4.center
+            %a.btn.btn-primary.btn-small{:href=>"#{site.base_url}/blog"} See all articles
+          .span4.next
+            - if page.next_post
+              %a.btn.btn-primary.btn-small{:href=>"#{site.base_url}#{page.next_post.url}"} #{page.next_post.title} &raquo;
+      .comments
+        #{page.disqus_comments}

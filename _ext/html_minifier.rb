@@ -44,7 +44,7 @@ module Awestruct
         if !ext.empty?
           ext_txt = ext[1..-1]
           if ext_txt == "html"
-            print "minifying html #{page.output_path} \n"
+            print "Minifying html #{page.output_path} \n"
             input = HtmlPress.compress(input)
           end
         end

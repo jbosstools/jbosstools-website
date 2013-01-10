@@ -1,100 +1,78 @@
 defaults:
   title: JBoss Tools
 
-css_minifier: enabled
-js_minifier: enabled
-html_minifier: enabled
-  
 textile: ['no_span_caps']
 
+css_minifier: disabled
+js_minifier: disabled
+html_minifier: disabled
 
-profiles:
-  development:
-    base_url: http://localhost:4242/
-    css_url: http://localhost:4242/stylesheets
-    img_url: http://localhost:4242/images
-    js_url: http://localhost:4242/javascripts
-    fonts_url: http://localhost:4242/fonts
-    css_minifier: disabled
-    js_minifier: disabled
-    html_minifier: disabled
-  preview:
-    base_url: http://preview-jbosstools.rhcloud.com/
-    css_url: http://preview-jbosstools.rhcloud.com/stylesheets
-    img_url: http://preview-jbosstools.rhcloud.com/images
-    js_url: http://preview-jbosstools.rhcloud.com/javascripts
-    fonts_url: http://preview-jbosstools.rhcloud.com/fonts
-  production:
-    base_url: http://design.jbossorg/boostrap/themes
-    css_url: http://static.jboss.org/theme/css
-    img_url: http://static.jboss.org/theme/images
-    js_url: http://static.jboss.org/theme/js
-    fonts_url: http://static.jboss.org/theme/fonts
+theme_css_url: /theme/css/bootstrap/2.1.0.0.0
+theme_js_url: /javascripts
+theme_fonts_url: /theme/fonts
+theme_images_url: /theme/images
+
+css_url: /stylesheets
+fonts_url: /fonts
+
+features_url: /documentation/features
+images_url: /images/tools
+
+minified: .min
 
 fileMerger:
   enabled: true
   outputFilePath: /javascripts/bootstrap-community.js
   paths:
-    - /javascripts/_bootstrap-affix.js
+    - /javascripts/_bootstrap-transition.js
     - /javascripts/_bootstrap-alert.js
     - /javascripts/_bootstrap-button.js
     - /javascripts/_bootstrap-carousel.js
     - /javascripts/_bootstrap-collapse.js
     - /javascripts/_bootstrap-dropdown.js
     - /javascripts/_bootstrap-modal.js
+    - /javascripts/_bootstrap-tooltip.js
     - /javascripts/_bootstrap-popover.js
     - /javascripts/_bootstrap-scrollspy.js
     - /javascripts/_bootstrap-tab.js
-    - /javascripts/_bootstrap-tooltip.js
-    - /javascripts/_bootstrap-transition.js
     - /javascripts/_bootstrap-typeahead.js
+    - /javascripts/_bootstrap-affix.js
+    - /javascripts/_jbossorg-navbarfix.js
+    - /javascripts/_jbossorg-misc.js
 
-links:
-  home: http://www.jboss.org
-  blogs: http://planet.jboss.org
-  tweets: http://twitter.com/#!/jbossdeveloper 
-  facebook: http://www.facebook.com/jboss
-  twitter: http://jboss.org/twitter
-  linkedIn: http://www.linkedin.com/company/jboss
-  vimeo: http://vimeo.com/jbossdeveloper
-  asylum: http://asylum.libsyn.com/
-  contact: http://www.jboss.org/contact
-  events: http://www.jboss.org/events
-  getStarted: http://www.jboss.org/developer
-  getToolKit: http://devstudio.jboss.com/download/
-  downloads: http://downloads.jboss.org/
-  documentation: http://docs.jboss.org/
-  forums: http://community.jboss.org/
-  webinars: http://www.jboss.org/webinars
-  articles: http://java.dzone.com/category/tags/jboss
-  books: http://www.jboss.org/books
-  getInvolved: http://www.jboss.org/contribute
-  wiki: http://community.jboss.org/
-  discussions: http://community.jboss.org/
-  issueTracker: http://issues.jboss.org/
-  sourceRepos: http://source.jboss.org/
-  userGroups: http://www.jboss.org/usergroups
-  sigs: http://jboss.org/interests
-  reportSecurityIssue: http://www.jboss.org/security
-  projects: http://www.jboss.org/projects
-  appServer: http://www.jboss.org/jbossas
-  webServer: http://www.jboss.org/jbossweb
-  gateIn: http://www.jboss.org/gatein
-  esb: http://www.jboss.org/jbossesb
-  drools: http://www.jboss.org/drools
-  hibernate: http://www.hibernate.org/
-  richfaces: http://www.jboss.org/richfaces
-  tools: http://www.jboss.org/tools
-  rhq: http://www.jboss.org/rhq
-  products: http://www.redhat.com/products/jbossenterprisemiddleware
-  appPlatform: http://www.redhat.com/products/jbossenterprisemiddleware/application-platform
-  webPlatform: http://www.redhat.com/products/jbossenterprisemiddleware/web-platform
-  portalPlatform: http://www.redhat.com/products/jbossenterprisemiddleware/portal
-  soaPlatform: http://www.redhat.com/products/jbossenterprisemiddleware/soa
-  brms: http://www.redhat.com/products/jbossenterprisemiddleware/business-rules
-  dataServicesPlatform: http://www.redhat.com/products/jbossenterprisemiddleware/data-services
-  wfk: http://www.redhat.com/products/jbossenterprisemiddleware/web-framework-kit
-  devStudio: http://www.redhat.com/products/jbossenterprisemiddleware/developer-studio
-  operationsNetwork: http://www.redhat.com/products/jbossenterprisemiddleware/operations-network
-  
 
+wget:
+  enabled: false
+  createGitIgnoreFiles: true
+  options:
+    - -q
+    - -r
+    - --no-host-directories
+    - --no-parent
+    - -N
+    - --reject 'index.html*'
+    - -e robots=off
+  urls:
+    - http://static-stg.jboss.org/theme/css/bootstrap/2.1.0.0.0/bootstrap-community.css
+    - http://static-stg.jboss.org/theme/js/libs/bootstrap/2.1.0.0.0/bootstrap-community.js
+    - http://static-stg.jboss.org/theme/fonts/titilliumtext/
+    - http://static-stg.jboss.org/theme/images/common/
+    - http://static-stg.jboss.org/theme/images/community/
+    - http://static-stg.jboss.org/theme/images/tools/
+
+profiles:
+  development:
+    minified:
+    base_url: http://localhost:4242
+  staging:
+    base_url: http://preview-jbosstools.rhcloud.com/
+    theme_css_url: http://static-stg.jboss.org/theme/css/bootstrap/2.1.0.0.0
+    theme_js_url: http://static-stg.jboss.org/theme/js/libs/bootstrap/2.1.0.0.0
+    theme_fonts_url: http://static-stg.jboss.org/theme/fonts
+    theme_images_url: http://static-stg.jboss.org/theme/images
+  production:
+    base_url: http://jboss.org/tools
+    theme_css_url: http://static.jboss.org/theme/css/bootstrap/2.1.0.0.0
+    theme_js_url: http://static.jboss.org/theme/js/libs/bootstrap/2.1.0.0.0
+    theme_fonts_url: http://static.jboss.org/theme/fonts
+    theme_images_url: http://static.jboss.org/theme/images

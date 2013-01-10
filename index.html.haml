@@ -4,7 +4,7 @@ tab: home
 ---
 .row-fluid
   .hero-unit.hidden-phone
-    %img{:alt => "JBoss Tools", :src => "#{site.img_url}/tools/jbt-carousel-jaxrs.png"}
+    %img{:alt => "JBoss Tools", :src => "#{site.images_url}/jbt-carousel-jaxrs.png"}
     .hero-content
       %h1
         JBoss Tools
@@ -13,7 +13,7 @@ tab: home
         JBoss Technology    
         %br
         %a
-          %img{:src => "#{site.img_url}/tools/installbutton.png"}
+          %img{:src => "#{site.images_url}/installbutton.png"}
 
 .row-fluid
   %hr
@@ -39,40 +39,49 @@ tab: home
       %h3
         %i.icon-pencil
         %a{:href => "/blog"}
-          Latest news
-    - news = site.posts
+          Latest posts
+    - posts = site.posts
     - today = Time.now 
-    - news = news.find_all{|item| item.date.strftime("%Y%m%d") <= today.strftime("%Y%m%d")}
-    - article = news.sort{|l,r| l.date <=> r.date}.first
-    .item.justify
-      %h4
-        %a{:href=>article.url} #{article.title}
-      posted by 
-      %strong< #{site.team[article.author].name}
-      on #{article.date.strftime( '%b %d, %Y' )}.  
-      %a.block{:href=>article.url}
-        Read more...
+    - posts = posts.find_all{|item| item.date.strftime("%Y%m%d") <= today.strftime("%Y%m%d")}
+    - posts = posts.sort{|l,r| r.date <=> l.date}.first(2)
+    - for post in posts
+      .post
+        .title-wrapper
+          %img.img-polaroid{:src => "#{site.team[post.author].photo_32px}"}
+          .title
+            %h4
+              %a{:href=>post.url}= post.title
+            .author
+              /there is only one author per post but the author splitter adds an array here
+              posted by 
+              %strong< #{site.team[post.author].name}
+              on 
+              %strong< #{post.date.strftime( '%b %d, %Y' )}.
+        .footer.right
+          .btn.btn-small
+            %a.block{:href=>post.url}
+              Read more &raquo;
+        %hr 
+              
 
   %section.span4
     %header
       %h3
         %i.icon-globe
-        %a{:href => "/events"}
-          Upcoming Events
+        Upcoming Events
     - events = site.events.values
     - now = Time.now 
     - a_few_days_ago = now - 4 * 24 * 60 * 60
     - events = events.find_all{|item| item.effective_date.to_s >= a_few_days_ago.strftime("%Y%m%d")}
-    - event = events.sort{|l,r| l.effective_date <=> r.effective_date}.first
-    .item.justify
-      %h4
-        #{event.title}
-      %strong  
-        &= event.event_date 
-        in
-        &= event.location
-      .details
-        #{event.content}
+    - events = events.sort{|l,r| l.effective_date <=> r.effective_date}.first(3)
+    - for event in events
+      .item.justify
+        %h4
+          %a{:href=>event.location} #{event.title}
+        %strong  
+          #{event.event_date} 
+          in
+          #{event.location}
 
 
 

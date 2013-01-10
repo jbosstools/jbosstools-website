@@ -125,6 +125,16 @@ hr {
   border-bottom: 1px solid #ffffff;
 }
 
+.footer {
+  margin: 10px 0px 20px 0px;
+}
+
+.right {
+  width: 100%;
+  text-align: right;
+}
+
+
 
 
 
@@ -492,33 +502,6 @@ height: 1px;
 // *************************************
 // News / Blog posts
 // *************************************
-.post {
-  padding-left: 0px;
-  padding-right: 0px;
-  text-align: left;
-}
-
-.post .title img {
-  float:left;
-  margin-right: 10px;
-}
-
-.post .title .author {
-  color: #777;
-}
-
-.post .title .tags {
-  color: #777;
-}
-
-.pagination-links {
-  text-align: center;
-}
-
-.post .title .icon-tags {
-  display: inline;
-}
-
 @mixin header($font-size) {
   font-size: $font-size;
   text-decoration: none;
@@ -526,35 +509,94 @@ height: 1px;
   color: #4A5D75;
 }
 
-.post .body {
-  margin-top: 20px;
-  clear: both;
+
+.post {
+  padding-left: 0px;
+  padding-right: 0px;
+  text-align: left;
+
+  &:last-child hr {
+    display:none;
+  }
+  
+  .title-wrapper {
+    img {
+      float:left;
+      margin-right: 10px;
+    }
+    .title {
+      padding-bottom: 5px;
+      &.border {
+        border-bottom: 1px solid #CCC;
+      }
+      h3 {
+        text-decoration: none;
+        margin-bottom: 0px;
+      }
+      
+      h4 {
+        text-decoration: none;
+        margin-bottom: 0px;
+      }
+      
+      .author {
+        color: #777;
+      }
+      .tags {
+        color: #777;
+      }
+      .icon-tags {
+        display: inline;
+      }
+    }
+  }
+  pre {
+    max-height: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: auto;
+    margin-left: 0px;
+    margin-right: 0px;
+    background-image: none;
+  }
+  
+  .body {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    clear: both;
+    
+    h1 {
+      @include header(20px);
+    }
+    h2 {
+      @include header(18px);
+    }
+    h3 {
+      @include header(16px);
+    }
+  }
+  
+  .navigation {
+    hr {
+      display: block;
+    }
+    .previous {
+      text-align: left;
+    }
+    .next {
+      text-align: right;
+    }
+  }
+  
 }
 
-.post .body h1 {
-  @include header(20px);
-}
-.post .body h2 {
-  @include header(18px);
-}
-.post .body h3 {
-  @include header(16px);
+
+.pagination-links {
+  text-align: center;
 }
 
 
-.post .title H1 {
-  text-decoration: none;
-}
 
-.post pre {
-  max-height: none;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  width: auto;
-  margin-left: 0px;
-  margin-right: 0px;
-  background-image: none;
-}
 
 @mixin menu-level3-border-color {
   border: 1px solid #CCC;

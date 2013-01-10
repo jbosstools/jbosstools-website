@@ -24,8 +24,8 @@ module Awestruct
     class FontPath
 
       def execute(site)
-        if !site.fonts_url.nil?
-          Compass.configuration.http_fonts_path = site.fonts_url
+        if !site.theme_fonts_url.nil?
+          Compass.configuration.http_fonts_path = site.theme_fonts_url
         end
       end
 			

@@ -5,9 +5,7 @@ layout: blog_layout
 tags: [OpenShift, Java]
 ---
 
-At JBoss Tools we created a java client that allows you to talk to the [OpenShift](https://openshift.redhat.com/app/) PaaS: [openshift-java-client](https://github.com/openshift/openshift-java-client). The library is already used in the [OpenShift tooling](https://community.jboss.org/en/tools/blog/tags/openshift) in [JBoss Tools](http://www.jboss.org/tools/), the [Forge plugin](https://github.com/forge/plugin-openshift-express/) and [Appcelerator Titanium Studio](http://www.appcelerator.com/platform/titanium-studio)'s tooling for OpenShift.
-
-This blog post will show you how to use okthis API in your very own java programs. We'll develop a command line tool that displays informations equivalent to what you get when running **rhc domain show** with the [OpenShift command line tools](href="https://openshift.redhat.com/community/developers/install-the-client-tools): it displays basic informations about your user.
+At JBoss Tools we created a java client that allows you to talk to the [OpenShift](https://openshift.redhat.com/app/) PaaS: [openshift-java-client](https://github.com/openshift/openshift-java-client). The library is already used in the [OpenShift tooling](https://community.jboss.org/en/tools/blog/tags/openshift) in [JBoss Tools](http://www.jboss.org/tools/), the [Forge plugin](https://github.com/forge/plugin-openshift-express/) and [Appcelerator Titanium Studio](http://www.appcelerator.com/platform/titanium-studio)'s tooling for OpenShift. This blog post will show you how to use okthis API in your very own java programs. We'll develop a command line tool that displays informations equivalent to what you get when running **rhc domain show** with the [OpenShift command line tools](href="https://openshift.redhat.com/community/developers/install-the-client-tools): it displays basic informations about your user.
 
 
 	================
