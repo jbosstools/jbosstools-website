@@ -27,11 +27,15 @@ Awestruct::Extensions::Pipeline.new do
   extension Awestruct::Extensions::DataDir.new('/features')
   extension Awestruct::Extensions::Posts.new( '/blog', :posts )
   extension Awestruct::Extensions::MyPaginator.new(:posts, '/blog/index', :per_page => 2 )
+  extension Awestruct::Extensions::MyTagger.new( :posts, '/blog/index', '/blog/tags', :per_page=>10, :sanitize=>true )
+  
   # extension Awestruct::Extensions::Indexifier.new
   # Needs to be after Indexifier to get the linking correct; 
   extension Awestruct::Extensions::Feature::Index.new('/features', 15)
   # Needs to be after Indexifier to get the linking correct; 
   extension Awestruct::Extensions::Whatsnew::Index.new('/whatsnew')
+  
+  extension Awestruct::Extensions::Disqus.new()
   
 end
 

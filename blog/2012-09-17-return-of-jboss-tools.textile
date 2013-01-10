@@ -2,7 +2,7 @@
 layout: blog_layout
 author: maxandersen
 title: The Return of JBoss Tools
-tags: [jboss, tools, jbosscentral, mw2-wtp]
+tags: [jbosstools, jbosscentral, m2e-wtp]
 ---
 
 Summer is over and it's time to start getting the JBoss Tools release train moving again.

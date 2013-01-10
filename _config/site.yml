@@ -20,26 +20,24 @@ images_url: /images/tools
 
 minified: .min
 
-fileMerger:
-  enabled: true
-  outputFilePath: /javascripts/bootstrap-community.js
-  paths:
-    - /javascripts/_bootstrap-transition.js
-    - /javascripts/_bootstrap-alert.js
-    - /javascripts/_bootstrap-button.js
-    - /javascripts/_bootstrap-carousel.js
-    - /javascripts/_bootstrap-collapse.js
-    - /javascripts/_bootstrap-dropdown.js
-    - /javascripts/_bootstrap-modal.js
-    - /javascripts/_bootstrap-tooltip.js
-    - /javascripts/_bootstrap-popover.js
-    - /javascripts/_bootstrap-scrollspy.js
-    - /javascripts/_bootstrap-tab.js
-    - /javascripts/_bootstrap-typeahead.js
-    - /javascripts/_bootstrap-affix.js
-    - /javascripts/_jbossorg-navbarfix.js
-    - /javascripts/_jbossorg-misc.js
-
+profiles:
+  development:
+    minified:
+    base_url: http://localhost:4242
+    disqus: jbosstools-dev
+  staging:
+    base_url: http://preview-jbosstools.rhcloud.com/
+    theme_css_url: http://static-stg.jboss.org/theme/css/bootstrap/2.1.0.0.0
+    theme_js_url: http://static-stg.jboss.org/theme/js/libs/bootstrap/2.1.0.0.0
+    theme_fonts_url: http://static-stg.jboss.org/theme/fonts
+    theme_images_url: http://static-stg.jboss.org/theme/images
+    disqus: jbosstools-preview
+  production:
+    base_url: http://jboss.org/tools
+    theme_css_url: http://static.jboss.org/theme/css/bootstrap/2.1.0.0.0
+    theme_js_url: http://static.jboss.org/theme/js/libs/bootstrap/2.1.0.0.0
+    theme_fonts_url: http://static.jboss.org/theme/fonts
+    theme_images_url: http://static.jboss.org/theme/images
 
 wget:
   enabled: false
@@ -59,20 +57,4 @@ wget:
     - http://static-stg.jboss.org/theme/images/common/
     - http://static-stg.jboss.org/theme/images/community/
     - http://static-stg.jboss.org/theme/images/tools/
-
-profiles:
-  development:
-    minified:
-    base_url: http://localhost:4242
-  staging:
-    base_url: http://preview-jbosstools.rhcloud.com/
-    theme_css_url: http://static-stg.jboss.org/theme/css/bootstrap/2.1.0.0.0
-    theme_js_url: http://static-stg.jboss.org/theme/js/libs/bootstrap/2.1.0.0.0
-    theme_fonts_url: http://static-stg.jboss.org/theme/fonts
-    theme_images_url: http://static-stg.jboss.org/theme/images
-  production:
-    base_url: http://jboss.org/tools
-    theme_css_url: http://static.jboss.org/theme/css/bootstrap/2.1.0.0.0
-    theme_js_url: http://static.jboss.org/theme/js/libs/bootstrap/2.1.0.0.0
-    theme_fonts_url: http://static.jboss.org/theme/fonts
-    theme_images_url: http://static.jboss.org/theme/images
+    

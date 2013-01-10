@@ -1,8 +1,17 @@
 ---
 layout: project-nav
-title: News and Team Blog
+title: Blog
 tab: blog
 ---
+.posts-header
+  - if page.selected_tag
+    %h1< Articles tagged with "#{page.selected_tag}"
+  - else 
+    %h1< 
+      Latest Articles
+      %a{:href => "#{site.base_url}/blog/blog.atom"}
+        %i.icon-rss 
+  
 .row-fluid
   .span12#core-page.posts
     - for post in page.posts
@@ -19,15 +28,17 @@ tab: blog
               on 
               %strong< #{post.date.strftime( '%b %d, %Y' )}.
               - if(post.tags != null && !post.tags.empty?) 
-                %i.icon-tag
-                %strong #{post.tags.join(", ")}
+                - post.tags.each do |tag|
+                  %a.label.label-info{:href=>"#{site.base_url}#{tag.primary_page.url}"}#{tag}
         .body
           - content = post.content.split('</p>').first
           #{content}
+          %br
           &hellip;
-          %a{:href=>"#{site.base_url}#{post.url}"} 
-            Read more
-            %i.icon-double-angle-right<
+          .footer
+            .btn.btn-small
+              %a.block{:href=>"#{site.base_url}#{post.url}"}
+                Read more &raquo;
         %hr
   /
     .span3
