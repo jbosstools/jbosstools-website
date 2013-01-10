@@ -1,44 +1,72 @@
 ---
-layout: default_layout
+layout: project-nav
 title: News and Team Blog
 tab: blog
 ---
 .row-fluid
-  .span12
-    %h1.center< 
-      %a{:href=> "/blog"} #{page.title}
-.row-fluid
-  .span9#core-page
+  .span12#core-page.posts
     - for post in page.posts
       .post
-        %hr
-        .title
+        .title-wrapper
           %img.img-polaroid{:src => "#{site.team[post.author].photo_64px}"}
-          %h1
-            %a{:href=>post.url}= post.title
-          .author
-            /there is only one author per post but the author splitter adds an array here
-            posted by 
-            %strong< #{site.team[post.author].name}
-            on 
-            %strong< #{post.date.strftime( '%b %d, %Y' )}.
-          
-          - if(post.tags != null && !post.tags.empty?) 
-            .tags
-              %i.icon-tag
-              %strong #{post.tags.join(", ")}
+          .title
+            %h3
+              %a{:href=>post.url}= post.title
+            .author
+              /there is only one author per post but the author splitter adds an array here
+              posted by 
+              %strong< #{site.team[post.author].name}
+              on 
+              %strong< #{post.date.strftime( '%b %d, %Y' )}.
+              - if(post.tags != null && !post.tags.empty?) 
+                %i.icon-tag
+                %strong #{post.tags.join(", ")}
         .body
-          ~ post.content
-  .span3
-    .menu-level3
-      %h4 Recent Posts
-      %ul 
-        - for post in site.posts
-          %li 
-            %a{:href=>post.url} #{post.title}
+          - content = post.content.split('</p>').first
+          #{content}
+          &hellip;
+          %a{:href=>"#{site.base_url}#{post.url}"} 
+            Read more
+            %i.icon-double-angle-right<
+        %hr
+  /
+    .span3
+      .menu-level3
+        %h4 Recent Posts
+        %ul 
+          - for post in site.posts
+            %li 
+              %a{:href=>post.url} #{post.title}
 .row-fluid
-  .span12
+  .span12.center
     %hr
-    = page.posts.links
+    .pagination
+      - next_page = page.posts.next_page
+      - previous_page = page.posts.previous_page
+      - current_page = page.posts.current_page
+      - current_page_index = page.posts.current_page_index
+        
+      %ul
+        - if previous_page
+          %li
+            %a{:href=>previous_page.url} &laquo;
+        - else            
+          %li.disabled
+            %a{:href=>"#"} &laquo;
+        - page.posts.pages.each_with_index do |page, i|
+          - if i == current_page_index 
+            %li.active
+              %a{:href=>"#"} #{i+1}
+          - else
+            %li
+              %a{:href=>page.url} #{i+1}
+          
 
-   
+
+        - if next_page
+          %li
+            %a{:href=>next_page.url} &raquo;
+        - else            
+          %li.disabled
+            %a{:href=>"#"} &raquo;
+      

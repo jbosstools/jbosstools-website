@@ -6,28 +6,39 @@ style: community
 / =========================Masthead=========================
 .navbar.navbar-inverse#navbar-fix
   .navbar-inner
-    .container(style="width: auto;")
+    .container
       %a.btn.btn-navbar(data-toggle="collapse" data-target=".nav-collapse")
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      .nav-collapse
+      .nav-collapse.collapse
         %ul.nav
           %li#home<
             %a(href="#{site.url}/") Home
           %li#downloads<
             %a(href="#{site.url}/downloads/") Downloads
-          %li#features<
-            %a(href="#{site.url}/features/") Features
-          %li#guides<
-            %a(href="#{site.url}/guides/") Guides
-          %li#blog<
-            %a(href="#{site.url}/blog/") Blog
+          %li#documentation.dropdown<
+            %a.dropdown-toggle(href="#" data-toggle="dropdown")<
+              =precede 'Documentation ' do
+                %b.caret>
+            %ul.dropdown-menu
+              %li<
+                %a(href="#{site.url}/whatsnew") What's new
+              %li<
+                %a(href="#{site.url}/features") Features
+              %li<
+                %a(href="#{site.url}/guides") Guides
           %li#community.dropdown
             %a.dropdown-toggle(href="#" data-toggle="dropdown")<
               =precede 'Community ' do
                 %b.caret>
             %ul.dropdown-menu
+              %li#issuetracker<
+                %a(href="#") Issue Tracker
+              %li#sourcecode<
+                %a(href="#") Source Code
+              %li#build<
+                %a(href="#") Build
               %li<
                 %a(href="#") Wiki
               %li<
@@ -36,38 +47,34 @@ style: community
                 %a(href="#") Mailing Lists
               %li<
                 %a(href="#") Chat
+              %li.divider
               %li<
-                %a(href="#") Blog
-          %li#issuetracker<
-            %a(href="issues.html") Issue Tracker
-          %li#sourcecode<
-            %a(href="source.html") Source Code
-          %li#build<
-            %a(href="build.html") Build
-          %li#social.dropdown
-            %a.dropdown-toggle(href="#" data-toggle="dropdown")<
-              =precede 'Follow Us ' do
-                %b.caret>
-            %ul.dropdown-menu{ :style => "min-width: 40px;" }
+                %a(href="#")<
+                  %img(src="#{site.theme_images_url}/common/socialmedia_icon40_twitter.png")
               %li<
-                %a(href="#"){ :style => "padding: 3px 10px;" }<
-                  %img(src="#{site.img_url}/common/socialicons_twitter.png")
+                %a(href="#")<
+                  %img(src="#{site.theme_images_url}/common/socialmedia_icon40_googleplus.png")
               %li<
-                %a(href="#"){ :style => "padding: 3px 10px;" }<
-                  %img(src="#{site.img_url}/common/socialicons_googleplus.png")
+                %a(href="#")<
+                  %img(src="#{site.theme_images_url}/common/socialmedia_icon40_facebook.png")
               %li<
-                %a(href="#"){ :style => "padding: 3px 10px;" }<
-                  %img(src="#{site.img_url}/common/socialicons_facebook.png")
-          %li.divider
+                %a(href="#")<
+                  %img(src="#{site.theme_images_url}/common/socialmedia_icon40_youtube.png")
+              %li<
+                %a(href="#")<
+                  %img(src="#{site.theme_images_url}/common/socialmedia_icon40_linkedin.png")
+          %li<
+            %a(href="#{site.url}/blog/") Blog
           / activate the tab by adding the 'active' class 
           / - if page.tab != nil
           /  :javascript
           /    tab = page.tab
-          
+          %li.divider
 
         %ul.nav.pull-right
           %li
             %form.navbar-search
-              %input.search-query(type="text" placeholder="Search" style="width: 45px;")
+              %input.search-query#projectsearch(type="text" placeholder="Search")
 
-~ content
+.container-fluid#content
+  ~content

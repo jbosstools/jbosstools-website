@@ -1,5 +1,5 @@
 ---
-layout: base_layout
+layout: project-nav
 tab: guides
 ---
 .row-fluid
@@ -17,7 +17,7 @@ tab: guides
               %a{:href => item.url} #{item.module_name}
 
   .span9
-    %h1 What's New in #{page.module_name} #{page.module_version}
+    %h2 What's New in #{page.module_name} #{page.module_version}
     %hr
     .whatsnew
       ~content

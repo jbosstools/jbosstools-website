@@ -1,14 +1,14 @@
 !!! 5
 %html(lang="en")
   %head
-    %title #{page.title} || #{site.defaults.title}
+    %title #{page.title} | #{site.defaults.title}
     %meta(charset="utf-8")
     %meta(name="viewport" content="width=device-width, initial-scale=1.0")
     %meta(name="description" content="")
     %meta(name="author" content="")
     
-    %link(href="#{site.css_url}/bootstrap-#{page.style}.css" rel="stylesheet")
-    
+    %link(href="#{site.theme_css_url}/bootstrap-#{page.style}.css" rel="stylesheet")
+
     %link{ :rel=>'stylesheet', :type=>"text/css", :href=>"#{site.css_url}/jbt-styles.css" }
     %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"#{site.fonts_url}/font-awesome/font-awesome.css", :media=>"screen, projection"}
     
@@ -17,33 +17,31 @@
       %script(src="http://html5shim.googlecode.com/svn/trunk/html5.js")
     
     / Fav and touch icons
-    %link(rel="shortcut icon" href="#{site.img_url}/tools/jbosstools_icon_16x.png")
-    %link(rel="apple-touch-icon-precomposed" sizes="144x144" href="#{site.img_url}/apple-touch-icon-144-precomposed.png")
-    %link(rel="apple-touch-icon-precomposed" sizes="114x114" href="#{site.img_url}/apple-touch-icon-114-precomposed.png")
-    %link(rel="apple-touch-icon-precomposed" sizes="72x72" href="#{site.img_url}/apple-touch-icon-72-precomposed.png")
-    %link(rel="apple-touch-icon-precomposed" href="#{site.img_url}/apple-touch-icon-57-precomposed.png")
+    %link(rel="shortcut icon" href="#{site.theme_images_url}/tools/favicon.ico")
+    %link(rel="apple-touch-icon-precomposed" sizes="144x144" href="#{site.theme_images_url}/tools/tools-touch-icon-144-precomposed.png")
+    %link(rel="apple-touch-icon-precomposed" sizes="114x114" href="#{site.theme_images_url}/tools/tools-touch-icon-114-precomposed.png")
+    %link(rel="apple-touch-icon-precomposed" sizes="72x72" href="#{site.theme_images_url}/tools/tools-touch-icon-72-precomposed.png")
+    %link(rel="apple-touch-icon-precomposed" href="#{site.theme_images_url}/tools/tools-touch-icon-57-precomposed.png")
 
     
 
-  %body.preview(data-spy="scroll" data-target=".subnav" data-offset="80")
+  %body.preview
     .container
       .banner
-        %a(href="http://www.jboss.org/tools")<
-          %img(src="#{site.img_url}/tools/tools-banner-1180px.png")
+        %a(href="#{site.base_url}")<
+          %img(src="#{site.theme_images_url}/tools/tools-banner-1180px.png")
         .taglinelight.visible-desktop Eclipse plugins for JBoss technology
         .tab
           %a(href="http://www.jboss.org")<
-            %img(src="#{site.img_url}/common/jbosscommunity_tab.png")
-						
-        ~ content
+            %img(src="#{site.theme_images_url}/common/jbosscommunity_tab.png")
+            
+      ~ content
 
     .company
       %a(href="http://www.redhat.com/products/jbossenterprisemiddleware/")<
-        %img(src="#{site.img_url}/common/redhat_logo.png")
-			
+        %img(src="#{site.theme_images_url}/common/redhat_logo.png")
+      
     / =========================JavaScript=========================
     / Placed at the end of the document so the pages load faster
-    %script(src="#{site.js_url}/jquery.js")
-    %script(src="#{site.js_url}/bootstrap-community.js")
-    %script(src="#{site.js_url}/application.js")
-    %script(src="#{site.js_url}/jbossorg-navbarfix.js")		
+    %script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery#{site.minified}.js")
+    %script(src="#{site.theme_js_url}/bootstrap-community.js")
