@@ -1,5 +1,5 @@
 ---
-layout: blog_layout
+layout: blog
 author: maxandersen
 title: The Return of JBoss Tools
 tags: [jbosstools, jbosscentral, m2e-wtp]

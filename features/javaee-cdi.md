@@ -1,5 +1,5 @@
 ---
-layout: features_layout
+layout: features
 module_id: cdi
 title: Java EE / CDI
 image_url: ./features/images/weld_icon_256px.png

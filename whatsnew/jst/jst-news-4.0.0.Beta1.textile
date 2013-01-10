@@ -2,7 +2,7 @@
 module_name: JST/JSF
 module_version: 4.0.0.Beta1
 jbt_version: 4.0.0.Beta1
-layout: whatsnew_layout
+layout: whatsnew
 ---
 
 - New JSF 2.1 Project Wizard :=
