@@ -12,7 +12,7 @@ export GEM_HOME=${OPENSHIFT_DATA_DIR}gems
 export GEM_PATH=${OPENSHIFT_DATA_DIR}gems
 
 #forcing gem install
-rm -rf $GEM_HOME/*
+# rm -rf $GEM_HOME/*
  
 echo "* Setting up environment"
 
@@ -28,8 +28,8 @@ else
   
   echo "  * Installing awestruct"
 
-  gem install -V json -v 1.6.7 --no-ri --no-rdoc
-  gem install -V awestruct execjs therubyracer uglifier cssminify html_press --no-ri --no-rdoc
+  gem install json -v 1.6.7 --no-ri --no-rdoc
+  gem install awestruct execjs therubyracer uglifier cssminify html_press --no-ri --no-rdoc
 
 fi
 
