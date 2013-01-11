@@ -9,7 +9,7 @@ tab: blog
         %img.img-polaroid{:src => "#{site.team[page.author].photo_64px}"}
         .title.border
           %h3
-            %a{:href=>page.url}= page.title
+            %a{:href=>"#{site.base_url}#{page.url}"}= page.title
           .author
             /there is only one author per post but the author splitter adds an array here
             posted by 
