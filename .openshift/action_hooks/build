@@ -4,7 +4,7 @@
 # before the deploy step.  This script gets executed directly, so it
 # could be python, php, ruby, etc.
 
-cd ${OPENSHIFT_REPO_DIR}libs
+#cd ${OPENSHIFT_REPO_DIR}libs
 
 mkdir -p ${OPENSHIFT_DATA_DIR}gems
  
@@ -25,7 +25,7 @@ else
   
   echo "  * Installing awestruct"
 
-  gem install awestruct execjs therubyracer uglifier cssminify html_press json --no-ri --no-rdoc
+  gem install awestruct execjs therubyracer uglifier cssminify html_press --no-ri --no-rdoc
 
 fi
 
