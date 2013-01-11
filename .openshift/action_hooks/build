@@ -10,6 +10,9 @@ mkdir -p ${OPENSHIFT_DATA_DIR}gems
  
 export GEM_HOME=${OPENSHIFT_DATA_DIR}gems 
 export GEM_PATH=${OPENSHIFT_DATA_DIR}gems
+
+#forcing gem install
+rm -rf $GEM_HOME/*
  
 echo "* Setting up environment"
 
