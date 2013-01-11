@@ -25,7 +25,7 @@ else
   
   echo "  * Installing awestruct"
 
-  gem install awestruct execjs therubyracer uglifier cssminify html_press --no-ri --no-rdoc
+  gem install awestruct execjs therubyracer uglifier cssminify html_press json --no-ri --no-rdoc
 
 fi
 
