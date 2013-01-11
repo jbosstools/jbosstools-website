@@ -20,7 +20,7 @@ tab: blog
           %img.img-polaroid{:src => "#{site.team[post.author].photo_64px}"}
           .title
             %h3
-              %a{:href=>post.url}= post.title
+              %a{:href=>"#{site.base_url}#{post.url}"}= post.title
             .author
               /there is only one author per post but the author splitter adds an array here
               posted by 
@@ -47,7 +47,7 @@ tab: blog
         %ul 
           - for post in site.posts
             %li 
-              %a{:href=>post.url} #{post.title}
+              %a{:href=>"#{site.base_url}#{post.url}"} #{post.title}
 .row-fluid
   .span12.center
     %hr
@@ -60,7 +60,7 @@ tab: blog
       %ul
         - if previous_page
           %li
-            %a{:href=>previous_page.url} &laquo;
+            %a{:href=>"#{site.base_url}#{previous_page.url}"} &laquo;
         - else            
           %li.disabled
             %a{:href=>"#"} &laquo;
@@ -70,13 +70,13 @@ tab: blog
               %a{:href=>"#"} #{i+1}
           - else
             %li
-              %a{:href=>page.url} #{i+1}
+              %a{:href=>"#{site.base_url}#{page.url}"} #{i+1}
           
 
 
         - if next_page
           %li
-            %a{:href=>next_page.url} &raquo;
+            %a{:href=>"#{site.base_url}#{next_page.url}"} &raquo;
         - else            
           %li.disabled
             %a{:href=>"#"} &raquo;

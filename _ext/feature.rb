@@ -45,23 +45,22 @@ module Awestruct
           
         end
       end
-      
-      
 
       class WrapWithSections
       
+        # sadly, this part of the extension is strongly coupled with the features layout
         def transform(site, page, rendered)
           if page.feature != nil
             @doc = Nokogiri::HTML(rendered)
             
             # wrap mandatory H1 element into DIVs
-            @doc.css("//div#content/h1").
+            @doc.css("//div#overview/h1").
               wrap("<div class='row-fluid feature'></div>").
               wrap("<div class='span12'></div>").
               wrap("<div class='featureContent'></div>")
             
             # then, wrap all following H2 and P elements (both description and image) into the same DIVs
-            @doc.css("//div#content/*").select{|node| accept(node)}.each do |node|
+            @doc.css("//div#overview/*").select{|node| accept(node)}.each do |node|
               move_into_feature_content_element(node)
             end
             

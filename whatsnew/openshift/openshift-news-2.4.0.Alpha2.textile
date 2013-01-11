@@ -56,6 +56,7 @@ A link in the bottom of the domain wizard allows you to get to the keys manageme
 !/whatsnew/openshift/images/create-domain.png!
 
 jiras. JBIDE-11912
+=:
 
 h1. OpenShift application wizard
 

@@ -1,6 +1,6 @@
 ---
 module_id: openshift
-layout: default_layout
+layout: features
 title: OpenShift
 authors: [xcoulon]
 highlighted: true
