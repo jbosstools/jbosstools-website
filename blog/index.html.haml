@@ -31,14 +31,7 @@ tab: blog
                 - post.tags.each do |tag|
                   %a.label.label-info{:href=>"#{site.base_url}#{tag.primary_page.url}"}#{tag}
         .body
-          - content = post.content.split('</p>').first
-          #{content}
-          %br
-          &hellip;
-          .footer
-            .btn.btn-small
-              %a.block{:href=>"#{site.base_url}#{post.url}"}
-                Read more &raquo;
+          #{post.content}
         %hr
   /
     .span3
