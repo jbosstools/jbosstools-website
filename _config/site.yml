@@ -21,10 +21,14 @@ profiles:
   development:
     minified:
     base_url: http://localhost:4242
-    theme_css_url: /theme/css/bootstrap/2.1.0.0.0
-    theme_js_url: /theme/js/libs/bootstrap/2.1.0.0.0
-    theme_fonts_url: /theme/fonts
-    theme_images_url: /theme/images
+    #theme_css_url: /theme/css/bootstrap/2.1.0.0.0
+    #theme_js_url: /theme/js/libs/bootstrap/2.1.0.0.0
+    #theme_fonts_url: /theme/fonts
+    #theme_images_url: /theme/images
+    theme_css_url: http://download.jboss.org/jbosstools/extras/temp-static/theme/css/bootstrap/2.1.0.0.0
+    theme_js_url: http://download.jboss.org/jbosstools/extras/temp-static/theme/js/libs/bootstrap/2.1.0.0.0
+    theme_fonts_url: http://download.jboss.org/jbosstools/extras/temp-static/theme/fonts
+    theme_images_url: http://download.jboss.org/jbosstools/extras/temp-static/theme/images
     disqus: jbosstools-dev
   staging:
     base_url: http://preview-jbosstools.rhcloud.com/
