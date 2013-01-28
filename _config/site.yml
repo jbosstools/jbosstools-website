@@ -32,10 +32,14 @@ profiles:
     disqus: jbosstools-dev
   staging:
     base_url: http://preview-jbosstools.rhcloud.com/
-    theme_css_url: https://static-stg.jboss.org/theme/css/bootstrap/2.1.0.0.0
-    theme_js_url: https://static-stg.jboss.org/theme/js/libs/bootstrap/2.1.0.0.0
-    theme_fonts_url: https://static-stg.jboss.org/theme/fonts
-    theme_images_url: https://static-stg.jboss.org/theme/images
+    #theme_css_url: https://static-stg.jboss.org/theme/css/bootstrap/2.1.0.0.0
+    #theme_js_url: https://static-stg.jboss.org/theme/js/libs/bootstrap/2.1.0.0.0
+    #theme_fonts_url: https://static-stg.jboss.org/theme/fonts
+    #theme_images_url: https://static-stg.jboss.org/theme/images
+    theme_css_url: http://download.jboss.org/jbosstools/extras/temp-static/theme/css/bootstrap/2.1.0.0.0
+    theme_js_url: http://download.jboss.org/jbosstools/extras/temp-static/theme/js/libs/bootstrap/2.1.0.0.0
+    theme_fonts_url: http://download.jboss.org/jbosstools/extras/temp-static/theme/fonts
+    theme_images_url: http://download.jboss.org/jbosstools/extras/temp-static/theme/images
     disqus: jbosstools-preview
   production:
     base_url: http://jboss.org/tools
