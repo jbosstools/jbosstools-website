@@ -1,3 +1,5 @@
+require 'redcloth'
+
 module RedCloth::Formatters::HTML
   def topic(opts)
     if opts != nil then
