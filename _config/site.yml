@@ -1,7 +1,8 @@
 defaults:
   title: JBoss Tools
 
-textile: ['no_span_caps']
+textile:
+  :no_span_caps: true
 
 css_minifier: disabled
 js_minifier: disabled
