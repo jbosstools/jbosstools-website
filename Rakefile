@@ -111,7 +111,7 @@ task :deploy => [:push, :check] do
 end
 
 desc 'Generate the site and deploy to staging'
-task :deploy-staging => [:push, :check] do
+task :deploy_staging => [:push, :check] do
   run_awestruct '-P staging -g --force'
   run_awestruct '-P staging --deploy'
 end
