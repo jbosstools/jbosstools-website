@@ -14,7 +14,7 @@ bundle install
 echo "* Generating site"
 
 
-bundle exec awestruct -P staging -g
+bundle exec awestruct -P staging
 
 echo "* Publishing site"
 mkdir -p ${OPENSHIFT_REPO_DIR}php

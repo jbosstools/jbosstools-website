@@ -133,10 +133,10 @@ task :travis do
   # CREDENTIALS assigned by a Travis CI Secure Environment Variable
   # see http://about.travis-ci.org/docs/user/build-configuration/#Secure-environment-variables for details
   File.open('.git/credentials', 'w') {|f| f.write("https://#{ENV['GH_TOKEN']}:@github.com") }
-  set_pub_dates 'develop'
+  # set_pub_dates 'develop'
   system 'git branch master origin/master'
   run_awestruct '-P production -g --force'
-  gen_rdoc
+  # gen_rdoc
   run_awestruct '-P production --deploy'
   File.delete '.git/credentials'
 end

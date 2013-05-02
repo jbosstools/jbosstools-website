@@ -74,6 +74,7 @@ GEM
       libv8 (~> 3.11.8.12)
       ref
     tilt (1.3.7)
+    tzinfo (0.3.37)
     uglifier (1.3.0)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
@@ -99,4 +100,5 @@ DEPENDENCIES
   rdiscount (~> 2.0.7)
   therubyracer (~> 0.11.4)
   therubyrhino (~> 2.0.2)
+  tzinfo (~> 0.3.35)
   uglifier (~> 1.3.0)
