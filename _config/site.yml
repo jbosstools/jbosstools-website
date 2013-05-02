@@ -42,6 +42,9 @@ profiles:
     theme_fonts_url: http://download.jboss.org/jbosstools/extras/temp-static/theme/fonts
     theme_images_url: http://download.jboss.org/jbosstools/extras/temp-static/theme/images
     disqus: jbosstools-preview
+    deploy:
+      host: github_pages
+      branch: master
   production:
     base_url: http://jboss.org/tools
     theme_css_url: https://static.jboss.org/theme/css/bootstrap/2.1.0.0.0

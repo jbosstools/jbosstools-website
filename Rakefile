@@ -110,6 +110,12 @@ task :deploy => [:push, :check] do
   run_awestruct '-P production --deploy'
 end
 
+desc 'Generate the site and deploy to staging'
+task :deploy-staging => [:push, :check] do
+  run_awestruct '-P staging -g --force'
+  run_awestruct '-P staging --deploy'
+end
+
 desc 'Generate site from Travis CI and, if not a pull request, publish site to production (GitHub Pages)'
 task :travis do
   # if this is a pull request, do a simple build of the site and stop
@@ -137,7 +143,7 @@ task :travis do
   system 'git branch master origin/master'
   run_awestruct '-P production -g --force'
   # gen_rdoc
-  run_awestruct '-P production --deploy'
+  run_awestruct '-P staging --deploy'
   File.delete '.git/credentials'
 end
 
