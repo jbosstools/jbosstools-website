@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>OpenShift | JBoss Tools</title>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="" name="description">
+<meta content="" name="author">
+<link href="https://static.jboss.org/theme/css/bootstrap/2.1.0.0.0/bootstrap-community.css" rel="stylesheet">
+<link href="/stylesheets/jbt-styles.css" rel="stylesheet" type="text/css">
+<link href="/fonts/font-awesome/font-awesome.css" media="screen, projection" rel="stylesheet" type="text/css">
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements --><!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--><!-- Fav and touch icons --><link href="https://static.jboss.org/theme/images/tools/favicon.ico" rel="shortcut icon">
+<link href="https://static.jboss.org/theme/images/tools/tools-touch-icon-144-precomposed.png" rel="apple-touch-icon-precomposed" sizes="144x144">
+<link href="https://static.jboss.org/theme/images/tools/tools-touch-icon-114-precomposed.png" rel="apple-touch-icon-precomposed" sizes="114x114">
+<link href="https://static.jboss.org/theme/images/tools/tools-touch-icon-72-precomposed.png" rel="apple-touch-icon-precomposed" sizes="72x72">
+<link href="https://static.jboss.org/theme/images/tools/tools-touch-icon-57-precomposed.png" rel="apple-touch-icon-precomposed">
+</head>
+<body class="preview">
+    <div class="container">
+      <div class="banner">
+        <a href="http://jboss.org/tools"><img src="https://static.jboss.org/theme/images/tools/tools-banner-1180px.png"></a>
+        <div class="taglinelight visible-desktop">Eclipse plugins for JBoss technology</div>
+        <div class="tab">
+          <a href="http://www.jboss.org"><img src="https://static.jboss.org/theme/images/common/jbosscommunity_tab.png"></a>
+        </div>
+      </div>
+      <!-- =========================Masthead========================= -->
+      <div class="navbar navbar-inverse" id="navbar-fix">
+        <div class="navbar-inner">
+          <div class="container">
+            <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </a>
+            <div class="nav-collapse collapse">
+              <ul class="nav">
+<li id="home"><a href="/">Home</a></li>
+                <li id="downloads"><a href="/downloads/">Downloads</a></li>
+                <li id="features"><a href="/features/">Features</a></li>
+                <li class="dropdown" id="documentation">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#">Documentation <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+<li><a href="/whatsnew">What's new</a></li>
+                  <li><a href="/guides">Guides</a></li>
+                </ul>
+</li>
+                <li class="dropdown" id="community">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Community <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+<li id="issuetracker"><a href="#">Issue Tracker</a></li>
+                    <li id="sourcecode"><a href="#">Source Code</a></li>
+                    <li id="build"><a href="#">Build</a></li>
+                    <li><a href="#">Wiki</a></li>
+                    <li><a href="#">User Forum</a></li>
+                    <li><a href="#">Mailing Lists</a></li>
+                    <li><a href="#">Chat</a></li>
+                    <li class="divider">
+                    <li><a href="#"><img src="https://static.jboss.org/theme/images/common/socialmedia_icon40_twitter.png"></a></li>
+                    <li><a href="#"><img src="https://static.jboss.org/theme/images/common/socialmedia_icon40_googleplus.png"></a></li>
+                    <li><a href="#"><img src="https://static.jboss.org/theme/images/common/socialmedia_icon40_facebook.png"></a></li>
+                    <li><a href="#"><img src="https://static.jboss.org/theme/images/common/socialmedia_icon40_youtube.png"></a></li>
+                    <li><a href="#"><img src="https://static.jboss.org/theme/images/common/socialmedia_icon40_linkedin.png"></a></li>
+                  </ul>
+</li>
+                <li id="blog"><a href="/blog/">Blog</a></li>
+                <!-- activate the tab by adding the 'active' class -->
+                <script>
+                  document.tab = features;
+                </script><li class="divider">
+              </ul>
+<ul class="nav pull-right">
+<li>
+                  <form class="navbar-search">
+                    <input class="search-query" id="projectsearch" placeholder="Search" type="text">
+</form>
+                </li>
+              </ul>
+</div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid" id="content">
+        <div class="container-fluid">
+          <div class="row-fluid feature-menu">
+            <div class="span12">
+              <ul class="nav nav-tabs" id="featureTab">
+<li class="active">
+                  <a data-toggle="tab" href="#overview">Overview</a>
+                </li>
+                <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    What's New
+                    <b class="caret"></b>
+                  </a>
+                  <ul class="dropdown-menu">
+<li>
+                      <a data-toggle="tab" href="#whatsnew-2_4_0_Alpha2">2.4.0.Alpha2</a>
+                    </li>
+                    <li>
+                      <a data-toggle="tab" href="#whatsnew-2_4_0_Beta1">2.4.0.Beta1</a>
+                    </li>
+                  </ul>
+</li>
+              </ul>
+</div>
+          </div>
+          <div class="tab-content" id="featureTabContent">
+            <!-- / overview tab -->
+            <div class="tab-pane fade in active" id="overview">
+              <div class="row-fluid feature"><div class="span12 hero-unit">
+<img src="http://jboss.org/tools/features/images/features-openshift-applicationwizard-reduced.png" alt=""><div class="featureContent">
+<h1>OpenShift Tooling</h1>
+<h2>Integrated deployment to the cloud.</h2>
+<p></p>
+<p>From developing to deploying on OpenShift, JBoss Tools provides you with a fully fledged
+              environment for your project and aligns with the standard workflows within Eclipse.
+              Using the tooling, you can create and configure your remote container, deploy your application,
+              stream remote logs into your local console, access your data and remotely debug the running application.
+              Creating a new OpenShift Application along into a new or an existing Eclipse Project,
+              or importing an existing OpenShift Application into a new or an existing project, the Application Wizard supports all the combinations.</p>
+</div>
+</div></div>
+              
+              
+              
+              
+              
+              
+              
+              <div class="row-fluid feature"><div class="span12">
+<hr>
+<img src="http://jboss.org/tools/features/images/features-openshift-explorerview-reduced.png" alt=""><div class="featureContent">
+<h1>OpenShift Explorer View</h1>
+<h2>The embedded Web Console.</h2>
+<p></p>
+<p>The OpenShift Explorer View lets you connect, get access to domain and application creation,
+              set embedded cartridges and execute action such as Port-Forwarding and Tail Files</p>
+</div>
+</div></div>
+              
+              
+              
+              
+              
+              
+              
+              <div class="row-fluid feature"><div class="span12">
+<hr>
+<img src="http://jboss.org/tools/features/images/features-openshift-serversview-reduced.png" alt=""><div class="featureContent">
+<h1>Server Adapter</h1>
+<h2>Almost like a local server</h2>
+<p>
+              The new OpenShift Server Adapter lets you publish your code changes in a single click.
+              It relies on JGit to perform the git commit and push operation in background.
+              It also gives you access to actions such as 'Tail Files' and 'Port Forwarding'.</p>
+</div>
+</div></div>
+              
+              
+              
+              
+              
+              <div class="row-fluid feature"><div class="span12">
+<hr>
+<img src="http://jboss.org/tools/features/images/features-openshift-portforwarding-reduced.png" alt=""><div class="featureContent">
+<h1>Port-forwarding</h1>
+<h2>Feels like home.</h2>
+<p></p>
+<p>SSH Port-forwarding lets you bind local ports to remote ports on OpenShift using SSH tunneling.
+              You can then connect to local port for data access or application debugging.</p>
+</div>
+</div></div>
+              
+              
+              
+              
+              
+              
+              
+              <div class="row-fluid feature"><div class="span12">
+<hr>
+<img src="http://jboss.org/tools/features/images/features-openshift-tailfiles-reduced.png" alt=""><div class="featureContent">
+<h1>Tail Files</h1>
+<h2>Streaming the logs.</h2>
+<p></p>
+<p>SSH also allows the OpenShift tooling to execute remote commands such a 'tail' on log files,
+              which are streamed live into the Eclipse Console.</p>
+</div>
+</div></div>
+              
+              
+              
+              
+              
+              
+            </div>
+            <!-- / what's new tabs -->
+            <div class="tab-pane fade" id="whatsnew-2_4_0_Alpha2">
+              <h1 class="center">What's new in OpenShift Tools 2.4.0.Alpha2</h1>
+              <h1>General</h1>
+              <dl>
+<dt>“Commit and Push” contributed to EGit</dt>
+              	<dd>
+<p>Prior versions of JBoss Tools for OpenShift added a “Commit and Push” action to the git context menu. We now removed this and contributed this functionality to the commit dialog in Eclipse EGit. You can read about it in the [“EGit 2.1 New and Noteworthy”: http://wiki.eclipse.org/EGit/New_and_Noteworthy/2.1#One-click_Commit_and_Push].</p>
+              <div class="related_jira">Related JIRA: <a href="https://issues.jboss.org/browse/JBIDE-12543">JBIDE-12543</a>.</div>
+<p>Relate Eclise Bugzillas: [“EGit commit dialog”: https://bugs.eclipse.org/bugs/show_bug.cgi?id=330048], <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=388913">EGit staging view</a></p>
+</dd>
+              </dl>
+<dl>
+<dt>EGit repo corruption fixed</dt>
+              	<dd>
+<p>We discovered a problem where EGit was corrupting a git repository. The corruption occurred if you deleted a git-shared project and created a new project and git repository with the very same name. We contributed the fix to EGit and it’ll be available in EGit 2.1.</p>
+              <div class="related_jira">Related JIRA: <a href="https://issues.jboss.org/browse/JBIDE-12150">JBIDE-12150</a>.</div>
+<p>See also on Eclipse bugzilla: <a href="https://issues.jboss.org/browse/JBIDE-12150">repo corruption if reusing project-name</a></p>
+</dd>
+              </dl>
+<h1>SSH Keys Management wizard</h1>
+              <dl>
+<dt>New SSH Keys management wizard</dt>
+              	<dd>
+<p>In Alpha2 we now added a whole new wizard that allows you to manage your ssh keys on OpenShift. You’ll get there from the context-menu in the OpenShift Explorer. We also provide links to it when you create a domain or application.<br><img src="/whatsnew/openshift/images/manage-ssh-keys.png" alt=""></p>
+              <p>Once you are in the wizard you’ll spot the public keys you already added to OpenShift.<br><img src="/whatsnew/openshift/images/keys-management-wizard.png" alt=""></p>
+              <p>Buttons allow you to get to dialogs to create a whole new keypair or add your existing key:<br><img src="/whatsnew/openshift/images/add-new-key.png" alt=""></p>
+              <p><img src="/whatsnew/openshift/images/add-existing-key.png" alt=""></p>
+              <p>The wizard of course also allows you to remove keys from OpenShift.</p>
+              <div class="related_jira">Related JIRA: <a href="https://issues.jboss.org/browse/JBIDE-11912">JBIDE-11912</a>.</div>
+</dd>
+              </dl>
+<h1>OpenShift Domain wizard</h1>
+              <dl>
+<dt>Separated keys from domain creation</dt>
+              	<dd>
+<p>So far you had to provide your SSH when you created your domain. This was far from ideal since there was no way to add keys once you had your domain. We now provide a whole new wizard that is dedicated to managing your OpenShift keys. If you now create a domain you will only have to choose a name for it. There’s no choosing a key any more.</p>
+              <p>A link in the bottom of the domain wizard allows you to get to the keys management wizard.<br><img src="/whatsnew/openshift/images/create-domain.png" alt=""></p>
+              <div class="related_jira">Related JIRA: <a href="https://issues.jboss.org/browse/JBIDE-11912">JBIDE-11912</a>.</div>
+</dd>
+              </dl>
+<h1>OpenShift application wizard</h1>
+              <dl>
+<dt>Can’t create if no public keys</dt>
+              	<dd>
+<p>We’ll check if you have any public SSH keys on OpenShift once you’re up to create a new OpenShift application. We’ll display an error if you haven’t. A link allows you to get to the SSH management wizard where you can create and add the required key(s).<br><img src="/whatsnew/openshift/images/no-keys.png" alt=""></p>
+              <div class="related_jira">Related JIRA: <a href="https://issues.jboss.org/browse/JBIDE-11912">JBIDE-11912</a>.</div>
+</dd>
+              </dl>
+</div>
+            <div class="tab-pane fade" id="whatsnew-2_4_0_Beta1">
+              <h1 class="center">What's new in OpenShift Tools 2.4.0.Beta1</h1>
+              <h1>Support multiple servers</h1>
+              <dl>
+<dt>Custom server when connecting</dt>
+              	<dd>
+<p>Before Beta1 there was no way to define a server for the Eclipse tooling only. You had to set the server in the rhc configurations:</p>
+              <pre>~/.openshift/express.con and /etc/openshift/express.conf </pre>
+              <p>OpenShift for JBoss Tools was always referring to the server in those configuration files. <br>
+              In Beta1 we now allow you to define a server independetly of any express.conf. When you create a new connection you can provide the server you want to deal with: openshift.redhat.com, a local liveCD, an instance within its LAN etc. But you may of course leave the server alone and stick to the default that’s defined in the express.conf:<br><img src="/whatsnew/openshift/images/connection-dialog.png" alt=""></p>
+              <p>The server in a connection gets displayed in the OpenShift explorer:<br><img src="/whatsnew/openshift/images/server-decoration-explorer.png" alt=""></p>
+              <p>The server is also shown in the connection setting of the server adapter:<br><img src="/whatsnew/openshift/images/connection-server-adapter.png" alt=""></p>
+              <div class="related_jira">Related JIRA: <a href="https://issues.jboss.org/browse/JBIDE-12168">JBIDE-12168</a>.</div>
+</dd>
+              </dl>
+<dl>
+<dt>Use existing connection</dt>
+              	<dd>
+<p>In Beta1 the connection dialog allows you to create a new connection but it’ll offer you to choose existing ones. Simply select among the available within the combo that lists the existing connections.<br><img src="/whatsnew/openshift/images/existing-connection-dialog.png" alt=""></p>
+              <div class="related_jira">Related JIRA: <a href="https://issues.jboss.org/browse/JBIDE-12798">JBIDE-12798</a>.</div>
+</dd>
+              </dl>
+<h1>Server logs</h1>
+              <dl>
+<dt>Tail files now for php applications</dt>
+              	<dd>
+<p>Before Beta1 you could only look at the server logs for a JBoss AS running on OpenShift. For all other OpenShift applications, the console with the log showed up, but did not display any valuable information. We fixed this in Beta1 and we now also support php applications<br><img src="/whatsnew/openshift/images/tail-files-php.png" alt=""></p>
+              <div class="related_jiras"><ul>Related JIRAs: <li><a href="https://issues.jboss.org/browse/JBIDE-11269">JBIDE-11269</a></li>, <li><a href="https://issues.jboss.org/browse/JBIDE-12893">JBIDE-12893</a></li>.</ul></div>
+</dd>
+              </dl>
+</div>
+          </div>
+        </div>
+        <script>
+          $('#featureTab a').click(function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+          })
+        </script>
+</div>
+    </div>
+    <div class="company">
+      <a href="http://www.redhat.com/products/jbossenterprisemiddleware/"><img src="https://static.jboss.org/theme/images/common/redhat_logo.png"></a>
+    </div>
+    <!-- =========================JavaScript========================= -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script><script src="https://static.jboss.org/theme/js/libs/bootstrap/2.1.0.0.0/bootstrap-community.js"></script><script src="/javascripts/application.js"></script>
+</body>
+</html>
