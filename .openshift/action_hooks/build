@@ -4,14 +4,17 @@
 # before the deploy step.  This script gets executed directly, so it
 # could be python, php, ruby, etc.
 
+cd $OPENSHIFT_REPO_DIR
+
 echo "* Setting up environment"
 echo "  * Installing awestruct"
 gem install bundle 
+bundle install
 
 echo "* Generating site"
 
-cd $OPENSHIFT_REPO_DIR
-bundle awestruct -P staging -g
+
+bundle exec awestruct -P staging -g
 
 echo "* Publishing site"
 mkdir -p ${OPENSHIFT_REPO_DIR}php
