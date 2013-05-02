@@ -8,7 +8,7 @@ cd $OPENSHIFT_REPO_DIR
 
 echo "* Setting up environment"
 echo "  * Installing awestruct"
-gem install bundle 
+gem install bundler
 bundle install
 
 echo "* Generating site"
