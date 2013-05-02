@@ -41,6 +41,9 @@ ehthumbs.db
 Thumbs.db
 target
 .settings/*
-!.settings/.jsdtscope
+# !.settings/.jsdtscope
 .classpath
 Gemfile.lock
+.bundle
+_tmp
+.project
