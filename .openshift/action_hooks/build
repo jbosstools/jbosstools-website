@@ -4,32 +4,18 @@
 # before the deploy step.  This script gets executed directly, so it
 # could be python, php, ruby, etc.
 
-#cd ${OPENSHIFT_REPO_DIR}libs
-
-mkdir -p ${OPENSHIFT_DATA_DIR}gems
- 
-export GEM_HOME=${OPENSHIFT_DATA_DIR}gems 
-export GEM_PATH=${OPENSHIFT_DATA_DIR}gems
-
-#forcing gem install
-# rm -rf $GEM_HOME/*
- 
 echo "* Setting up environment"
-
 echo "  * Installing awestruct"
-
 gem install bundle 
-
-
-export PATH=$GEM_PATH/bin:$PATH
 
 echo "* Generating site"
 
-mkdir -p ${OPENSHIFT_REPO_DIR}php
-rm -rf ${OPENSHIFT_REPO_DIR}php/*
-
 cd $OPENSHIFT_REPO_DIR
 bundle awestruct -P staging -g
+
+echo "* Publishing site"
+mkdir -p ${OPENSHIFT_REPO_DIR}php
+rm -rf ${OPENSHIFT_REPO_DIR}php/*
 mv _site/* ${OPENSHIFT_REPO_DIR}php
 
 echo "* Done"
