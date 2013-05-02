@@ -43,3 +43,4 @@ target
 .settings/*
 !.settings/.jsdtscope
 .classpath
+Gemfile.lock

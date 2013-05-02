@@ -14,6 +14,7 @@ gem 'asciidoctor', '~> 0.1.1'
 gem 'RedCloth', '~> 4.2.9'
 gem 'html_press', '~> 0.8.1'
 gem 'execjs', '~> 1.4.0'
+gem 'rake', '~> 10.0.3', :group => :test
 
 
 
