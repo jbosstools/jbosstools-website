@@ -1,48 +1,42 @@
 !!! 5
 %html(lang="en")
   %head
-    %title #{page.title} | #{site.defaults.title}
     %meta(charset="utf-8")
     %meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    %meta(name="description" content="")
-    %meta(name="author" content="")
-    
-    %link(href="#{site.theme_css_url}/bootstrap-#{page.style}.css" rel="stylesheet")
+    %meta(name="description" content="#{page.description}")
+    %meta(name="author" content="#{page.author}")
+    %title #{page.title} · #{site.title}
+
+    - pageStyle = page.style ;
+    %link(href="#{pageStyle ? site[pageStyle].bootstrap_css_url : site.bootstrap_css_url}#{site.minified}.css" rel="stylesheet" media="screen")
+    / IE 6-8 support of HTML 5 elements
+    /[if lt IE 9]
+      %script(src="#{site.jborg_js_url}/libs/html5/pre3.6/html5.min.js")
+
+    %link(rel="shortcut icon" href="#{site.jborg_images_url}/tools/favicon.ico")
+    %link(rel="apple-touch-icon-precomposed" sizes="144x144" href="#{site.jborg_images_url}/tools/tools-touch-icon-144-precomposed.png")
+    %link(rel="apple-touch-icon-precomposed" sizes="114x114" href="#{site.jborg_images_url}/tools/tools-touch-icon-114-precomposed.png")
+    %link(rel="apple-touch-icon-precomposed" sizes="72x72" href="#{site.jborg_images_url}/tools/tools-touch-icon-72-precomposed.png")
+    %link(rel="apple-touch-icon-precomposed" href="#{site.jborg_images_url}/tools/tools-touch-icon-57-precomposed.png")
 
     %link{ :rel=>'stylesheet', :type=>"text/css", :href=>"#{site.css_url}/jbt-styles.css" }
     %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"#{site.fonts_url}/font-awesome/font-awesome.css", :media=>"screen, projection"}
-    
-    / HTML5 shim, for IE6-8 support of HTML5 elements
-    /[if lt IE 9]
-      %script(src="http://html5shim.googlecode.com/svn/trunk/html5.js")
-    
-    / Fav and touch icons
-    %link(rel="shortcut icon" href="#{site.theme_images_url}/tools/favicon.ico")
-    %link(rel="apple-touch-icon-precomposed" sizes="144x144" href="#{site.theme_images_url}/tools/tools-touch-icon-144-precomposed.png")
-    %link(rel="apple-touch-icon-precomposed" sizes="114x114" href="#{site.theme_images_url}/tools/tools-touch-icon-114-precomposed.png")
-    %link(rel="apple-touch-icon-precomposed" sizes="72x72" href="#{site.theme_images_url}/tools/tools-touch-icon-72-precomposed.png")
-    %link(rel="apple-touch-icon-precomposed" href="#{site.theme_images_url}/tools/tools-touch-icon-57-precomposed.png")
 
-    
-
-  %body.preview
-    .container
+  %body
+    .container#content
       .banner
-        %a(href="#{site.base_url}")<
-          %img(src="#{site.theme_images_url}/tools/tools-banner-1180px.png")
+        %a(href="http://www.jboss.org/tools")<
+          %img(src="#{site.jborg_images_url}/tools/tools-banner-1180px.png")
         .taglinelight.visible-desktop Eclipse plugins for JBoss technology
-        .tab
-          %a(href="http://www.jboss.org")<
-            %img(src="#{site.theme_images_url}/common/jbosscommunity_tab.png")
             
       ~ content
 
-    .company
-      %a(href="http://www.redhat.com/products/jbossenterprisemiddleware/")<
-        %img(src="#{site.theme_images_url}/common/redhat_logo.png")
+      #companyfooter-placeholder
+    .container#companyfooter
+      .redhatlogo
+        #logospacer
+        %a(href="http://www.redhat.com/")<
+          %img(src="#{site.jborg_images_url}/common/redhat_logo.png")
       
-    / =========================JavaScript=========================
-    / Placed at the end of the document so the pages load faster
-    %script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery#{site.minified}.js")
-    %script(src="#{site.theme_js_url}/bootstrap-community.js")
-    %script(src="#{site.js_url}/application.js")
+    %script(src="#{site.jborg_js_url}/libs/jquery/1.9.1/jquery#{site.minified}.js")
+    %script(src="#{pageStyle ? site[pageStyle].bootstrap_js_url : site.bootstrap_js_url}#{site.minified}.js")

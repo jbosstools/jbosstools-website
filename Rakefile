@@ -45,9 +45,13 @@ $install_gems = ['awestruct -v "~> 0.5.0"', 'rb-inotify -v "~> 0.9.0"']
 $awestruct_cmd = nil
 task :default => :preview
 
+task :my_task, :arg1, :arg2 do |t, args|
+  puts "Args were: #{args}"
+end
+
 desc 'retrieve local git repo information'
-task :info do
-  puts "Local repository information"
+task :info, :profile do |t, args|
+  puts "Local repository information for profile #{args}" 
   puts "Local branch=" + retrieve_local_branch_name()
   exit 0
 end
@@ -105,8 +109,8 @@ task :preview => :check do
 end
 
 desc 'Generate the site using the specified profile (default: development)'
-task :gen, [:profile] => :check do |task, args|
-  profile = args[:profile] || 'development'
+task :gen => :check do |task, args|
+  profile = args[0] || 'development'
   profile = 'production' if profile == 'prod'
   run_awestruct "-P #{profile} -g --force"
 end
@@ -117,15 +121,9 @@ task :push do
 end
 
 desc 'Generate the site and deploy to production'
-task :deploy => [:push, :check] do
-  run_awestruct '-P production -g --force'
-  run_awestruct '-P production --deploy'
-end
-
-desc 'Generate the site and deploy to staging'
-task :deploy_staging => [:push, :check] do
-  run_awestruct '-P staging -g --force'
-  run_awestruct '-P staging --deploy'
+task :deploy => [:push, :check] do |task, args|
+  run_awestruct '-P #{profile} -g --force'
+  run_awestruct '-P #{profile} --deploy'
 end
 
 desc 'Generate site from Travis CI and, if not a pull request, publish site to production (GitHub Pages)'
@@ -152,10 +150,10 @@ task :travis do
   # see http://about.travis-ci.org/docs/user/build-configuration/#Secure-environment-variables for details
   File.open('.git/credentials', 'w') {|f| f.write("https://#{ENV['GH_TOKEN']}:@github.com") }
   # set_pub_dates 'develop'
-  system 'git branch master origin/master'
-  run_awestruct '-P production -g --force'
+  #system 'git branch master origin/master'
+  #run_awestruct '-P production -g --force'
   # gen_rdoc
-  run_awestruct '-P staging --deploy'
+  #run_awestruct '-P staging --deploy'
   File.delete '.git/credentials'
 end
 
@@ -186,7 +184,7 @@ task :init do
 end
 
 desc 'Check to ensure the environment is properly configured'
-task :check => :init do
+task :check => :init do |task, args|
   if !File.exist? 'Gemfile'
     if which('awestruct').nil?
       msg 'Could not find awestruct.', :warn
