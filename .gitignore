@@ -4,6 +4,7 @@ _site
 site
 .awestruct
 .sass-cache
+.bundle
 
 # Compiled source #
 ###################
