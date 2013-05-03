@@ -47,3 +47,4 @@ Gemfile.lock
 .bundle
 _tmp
 .project
+cache

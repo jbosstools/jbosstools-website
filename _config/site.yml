@@ -1,13 +1,7 @@
-defaults:
-  title: JBoss Tools
+title: JBoss Tools
 
 textile:
   :no_span_caps: true
-
-css_minifier: enabled
-js_minifier: enabled
-html_minifier: enabled
-
 
 css_url: /stylesheets
 fonts_url: /fonts
@@ -16,20 +10,69 @@ js_url: /javascripts
 features_url: /documentation/features
 images_url: /images/tools
 
-minified: .min
+css_minifier: disabled
+js_minifier: disabled
+html_minifier: disabled
 
-theme_css_url: http://download.jboss.org/jbosstools/extras/temp-static/theme/css/bootstrap/2.1.0.0.0
-theme_js_url: http://download.jboss.org/jbosstools/extras/temp-static/theme/js/libs/bootstrap/2.1.0.0.0
-theme_fonts_url: http://download.jboss.org/jbosstools/extras/temp-static/theme/fonts
-theme_images_url: http://download.jboss.org/jbosstools/extras/temp-static/theme/images
+fileMerger:
+  enabled: true
+  outputFilePath: /javascripts/bootstrap-community.js
+  paths:
+    - /javascripts/_bootstrap-transition.js
+    - /javascripts/_bootstrap-alert.js
+    - /javascripts/_bootstrap-button.js
+    - /javascripts/_bootstrap-carousel.js
+    - /javascripts/_bootstrap-collapse.js
+    - /javascripts/_bootstrap-dropdown.js
+    - /javascripts/_bootstrap-modal.js
+    - /javascripts/_bootstrap-tooltip.js
+    - /javascripts/_bootstrap-popover.js
+    - /javascripts/_bootstrap-scrollspy.js
+    - /javascripts/_bootstrap-tab.js
+    - /javascripts/_bootstrap-typeahead.js
+    - /javascripts/_bootstrap-affix.js
+    - /javascripts/_jbossorg-navbarfix.js
+    - /javascripts/_jbossorg-misc.js
+
+wget:
+  enabled: false
+  createGitIgnoreFiles: true
+  options:
+    - --no-remove-listing
+    - -v
+    - -r
+    - --no-parent
+    - -N
+    - --reject 'index.html*'
+    - -e robots=off
+    - --directory-prefix=cache
+  urls:
+    - http://static-stg.jboss.org/theme/js/libs/jquery-1.9.1.js
+    - http://static-stg.jboss.org/theme/js/libs/jquery-1.9.1.min.js
+    - http://static-stg.jboss.org/theme/js/libs/html5/pre3.6/html5.min.js
+    - http://static-stg.jboss.org/theme/js/libs/prettify/188.0.0/prettify.min.js
+    - http://static-stg.jboss.org/theme/js/libs/holder/1.9/holder.js
+    - http://static-stg.jboss.org/theme/fonts/titilliumtext/
+    - http://static-stg.jboss.org/theme/images/common/
+    - http://static-stg.jboss.org/theme/images/community/
+    - http://static-stg.jboss.org/theme/images/tools/
 
 profiles:
   development:
     base_url: http://localhost:4242
-    css_minifier: disabled
-    js_minifier: disabled
-    html_minifier: disabled
+    jborg_fonts_url: /cache/static-stg.jboss.org/theme/fonts
+    jborg_images_url: /cache/static-stg.jboss.org/theme/images
+    jborg_js_url: /cache/static-stg.jboss.org/theme/js
+    bootstrap_css_url: /stylesheets/bootstrap-community
+    bootstrap_js_url: /javascripts/bootstrap-community
     disqus: jbosstools-dev
+  staging:
+    base_url: http://stg-tools.jboss.org
+    jborg_fonts_url: http://static-stg.jboss.org/theme/fonts
+    jborg_images_url: http://static-stg.jboss.org/theme/images
+    jborg_js_url: http://static-stg.jboss.org/theme/js
+    bootstrap_css_url: http://static-stg.jboss.org/theme/css/community/bootstrap-2.3.1.0
+    bootstrap_js_url: http://static-stg.jboss.org/theme/js/community/bootstrap-2.3.1.0
   xcoulon:
     base_url: http://xcoulon.github.com/jbosstools-website
     disqus: jbosstools-preview
@@ -37,7 +80,14 @@ profiles:
       host: github_pages
       repository: xcoulon
       branch: gh_pages
-  
+  production:
+    base_url: http://tools.jboss.org
+    minified: .min
+    jborg_fonts_url: http://static.jboss.org/theme/fonts
+    jborg_images_url: http://static.jboss.org/theme/images
+    jborg_js_url: http://static.jboss.org/theme/js
+    bootstrap_css_url: http://static.jboss.org/theme/css/community/bootstrap-2.3.1.0
+    bootstrap_js_url: http://static.jboss.org/theme/js/community/bootstrap-2.3.1.0
       
   
 
