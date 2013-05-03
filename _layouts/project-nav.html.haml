@@ -13,20 +13,20 @@ title: Project Navigation
       .nav-collapse.collapse
         %ul.nav
           %li#home<
-            %a(href="#{site.url}/") Home
+            %a(href="#{site.base_url}/") Home
           %li#downloads<
-            %a(href="#{site.url}/downloads/") Downloads
+            %a(href="#{site.base_url}/downloads/") Downloads
           %li#features<
-            %a(href="#{site.url}/features/") Features
+            %a(href="#{site.base_url}/features/") Features
           %li#documentation.dropdown<
             %a.dropdown-toggle(href="#" data-toggle="dropdown")<
               =precede 'Documentation ' do
                 %b.caret>
             %ul.dropdown-menu
               %li<
-                %a(href="#{site.url}/whatsnew") What's new
+                %a(href="#{site.base_url}/whatsnew") What's new
               %li<
-                %a(href="#{site.url}/guides") Guides
+                %a(href="#{site.base_url}/guides") Guides
           %li#community.dropdown
             %a.dropdown-toggle(href="#" data-toggle="dropdown")<
               =precede 'Community ' do
@@ -46,7 +46,6 @@ title: Project Navigation
                 %a(href="#") Mailing Lists
               %li<
                 %a(href="#") Chat
-              %li.divider
               %li<
                 %a(href="#")<
                   %img(src="#{site.theme_images_url}/common/socialmedia_icon40_twitter.png")
@@ -63,11 +62,31 @@ title: Project Navigation
                 %a(href="#")<
                   %img(src="#{site.theme_images_url}/common/socialmedia_icon40_linkedin.png")
           %li#blog<
-            %a(href="#{site.url}/blog/") Blog
+            %a(href="#{site.base_url}/blog/") Blog
           / activate the tab by adding the 'active' class 
           - if page.tab != nil
             :javascript
               document.tab = #{page.tab};
+          %li.dropdown
+            %a.dropdown-toggle(href="#" data-toggle="dropdown")<
+              = precede 'Follow Us ' do
+                %b.caret>
+            %ul.dropdown-menu.projectsocialmedia
+              %li<
+                %a(href="#")<
+                  %img(src="#{site.jborg_images_url}/common/socialmedia_icon40_twitter.png")
+              %li<
+                %a(href="#")<
+                  %img(src="#{site.jborg_images_url}/common/socialmedia_icon40_googleplus.png")
+              %li<
+                %a(href="#")<
+                  %img(src="#{site.jborg_images_url}/common/socialmedia_icon40_facebook.png")
+              %li<
+                %a(href="#")<
+                  %img(src="#{site.jborg_images_url}/common/socialmedia_icon40_youtube.png")
+              %li<
+                %a(href="#")<
+                  %img(src="#{site.jborg_images_url}/common/socialmedia_icon40_linkedin.png")
           %li.divider
 
         %ul.nav.pull-right
