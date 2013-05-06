@@ -27,7 +27,7 @@ tab: home
       %header
         %h3
           %i.icon-magic
-          %a{:href => "/features"}
+          %a{:href => "#{site.base_url}/features"}
             Feature Highlight
       .item.center
         %span.tagline #{feature.tagline} 
@@ -38,7 +38,7 @@ tab: home
     %header
       %h3
         %i.icon-pencil
-        %a{:href => "/blog"}
+        %a{:href => "#{site.base_url}/blog"}
           Latest posts
     - posts = site.posts
     - today = Time.now 
