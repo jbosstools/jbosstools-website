@@ -1,3 +1,12 @@
+// ******************************************************
+// Fixes to bootstrap-community theme while PR is pending
+// see https://github.com/jbossorg/bootstrap-community/pull/3
+// ******************************************************
+#companyfooter-placeholder {
+  margin-top: 70px;
+}
+
+
 // ***********************************************
 // Reusable mixins (must be declared before usage)
 // ***********************************************
