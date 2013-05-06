@@ -22,7 +22,7 @@ title: Project Navigation
             %a.dropdown-toggle(href="#" data-toggle="dropdown")<
               =precede 'Documentation ' do
                 %b.caret>
-            %ul.dropdown-menu
+            %ul.dropdown-menu 
               %li<
                 %a(href="#{site.base_url}/whatsnew") What's new
               %li<
@@ -46,27 +46,6 @@ title: Project Navigation
                 %a(href="#") Mailing Lists
               %li<
                 %a(href="#") Chat
-              %li<
-                %a(href="#")<
-                  %img(src="#{site.theme_images_url}/common/socialmedia_icon40_twitter.png")
-              %li<
-                %a(href="#")<
-                  %img(src="#{site.theme_images_url}/common/socialmedia_icon40_googleplus.png")
-              %li<
-                %a(href="#")<
-                  %img(src="#{site.theme_images_url}/common/socialmedia_icon40_facebook.png")
-              %li<
-                %a(href="#")<
-                  %img(src="#{site.theme_images_url}/common/socialmedia_icon40_youtube.png")
-              %li<
-                %a(href="#")<
-                  %img(src="#{site.theme_images_url}/common/socialmedia_icon40_linkedin.png")
-          %li#blog<
-            %a(href="#{site.base_url}/blog/") Blog
-          / activate the tab by adding the 'active' class 
-          - if page.tab != nil
-            :javascript
-              document.tab = #{page.tab};
           %li.dropdown
             %a.dropdown-toggle(href="#" data-toggle="dropdown")<
               = precede 'Follow Us ' do
@@ -87,6 +66,12 @@ title: Project Navigation
               %li<
                 %a(href="#")<
                   %img(src="#{site.jborg_images_url}/common/socialmedia_icon40_linkedin.png")
+          %li#blog<
+            %a(href="#{site.base_url}/blog/") Blog
+          / activate the tab by adding the 'active' class 
+          - if page.tab != nil
+            :javascript
+              document.getElementById("#{page.tab}").className += " active";
           %li.divider
 
         %ul.nav.pull-right
