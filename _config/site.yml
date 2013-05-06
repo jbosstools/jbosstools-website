@@ -72,6 +72,8 @@ profiles:
     jborg_fonts_url: http://static-stg.jboss.org/theme/fonts
     jborg_images_url: http://static-stg.jboss.org/theme/images
     jborg_js_url: http://static-stg.jboss.org/theme/js
+    bootstrap_css_url: http://static-stg.jboss.org/theme/css/community/bootstrap-2.3.1.0
+    bootstrap_js_url: http://static-stg.jboss.org/theme/js/community/bootstrap-2.3.1.0
     disqus: jbosstools-preview
     deploy:
       host: github_pages
