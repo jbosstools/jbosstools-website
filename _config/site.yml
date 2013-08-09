@@ -91,7 +91,7 @@ profiles:
     deploy:
       host: github_pages
       repository: xcoulon
-      branch: gh_pages
+      branch: gh-pages
   production:
     base_url: http://tools.jboss.org
     minified: .min
