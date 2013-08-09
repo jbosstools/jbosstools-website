@@ -73,6 +73,7 @@ profiles:
     disqus: jbosstools-dev
   staging:
     base_url: http://design-stg.jboss.org/boostrap/themes
+    minified: .min
     jborg_fonts_url: http://static.jboss.org/theme/fonts
     jborg_images_url: http://static.jboss.org/theme/images
     jborg_js_url: http://static.jboss.org/theme/js
@@ -81,6 +82,7 @@ profiles:
     bootstrap_js_url: http://static.jboss.org/theme/js/libs/bootstrap-community/2.3.1.0/bootstrap-community
   xcoulon:
     base_url: http://xcoulon.github.com/jbosstools-website
+    minified: .min
     jborg_fonts_url: http://static.jboss.org/theme/fonts
     jborg_images_url: http://static.jboss.org/theme/images
     jborg_js_url: http://static.jboss.org/theme/js
