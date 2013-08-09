@@ -1,8 +1,3 @@
----
-layout: project
-title: Project Navigation
----
-/ =========================Masthead=========================
 .navbar.navbar-inverse#navbar-fix
   .navbar-inner
     .container
@@ -38,6 +33,8 @@ title: Project Navigation
                 %b.caret>
             %ul.dropdown-menu
               %li<
+                %a(href="#{site.base_url}/contribute.html") Contribute
+              %li<
                 %a(href="http://www.jboss.org/community/docs/DOC-10794") Wiki
               %li<
                 %a(href="http://community.jboss.org/community/tools?view=discussions") User Forum
@@ -63,31 +60,11 @@ title: Project Navigation
                 %b.caret>
             %ul.dropdown-menu.projectsocialmedia
               %li<
-                %a(href="#")<
+                %a(href="http://twitter.com/jbosstools")<
                   %img(src="#{site.jborg_images_url}/common/socialmedia_icon40_twitter.png")
               %li<
-                %a(href="#")<
+                %a(href="https://plus.google.com/109915195368578219327")<
                   %img(src="#{site.jborg_images_url}/common/socialmedia_icon40_googleplus.png")
-              %li<
-                %a(href="#")<
-                  %img(src="#{site.jborg_images_url}/common/socialmedia_icon40_facebook.png")
-              %li<
-                %a(href="#")<
-                  %img(src="#{site.jborg_images_url}/common/socialmedia_icon40_youtube.png")
-              %li<
-                %a(href="#")<
-                  %img(src="#{site.jborg_images_url}/common/socialmedia_icon40_linkedin.png")
+              
+
           
-          / activate the tab by adding the 'active' class 
-          - if page.tab != nil
-            :javascript
-              document.getElementById("#{page.tab}").className += " active";
-          %li.divider
-
-        -# %ul.nav.pull-right
-        -#   %li
-        -#     %form.navbar-search
-        -#       %input.search-query#projectsearch(type="text" placeholder="Search")
-
-.container-fluid#content
-  ~content

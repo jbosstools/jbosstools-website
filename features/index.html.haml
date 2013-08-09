@@ -1,6 +1,6 @@
 ---
 layout: default
-tab: features
+tab: docs
 title: Features Overview
 ---
 
@@ -27,7 +27,7 @@ title: Features Overview
     - while i < limit do 
       - i +=1
       - feature = features.shift
-      .span3
+      %section.span3
         %a{:href=>feature.url} 
           %h4.center< #{feature.title}
           %h6.center< #{feature.tagline}

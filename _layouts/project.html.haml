@@ -1,42 +1,38 @@
 !!! 5
 %html(lang="en")
   %head
-    %meta(charset="utf-8")
-    %meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    %meta(name="description" content="#{page.description}")
-    %meta(name="author" content="#{page.author}")
-    %title #{page.title} · #{site.title}
-
-    - pageStyle = page.style ;
-    %link(href="#{pageStyle ? site[pageStyle].bootstrap_css_url : site.bootstrap_css_url}#{site.minified}.css" rel="stylesheet" media="screen")
-    / IE 6-8 support of HTML 5 elements
-    /[if lt IE 9]
-      %script(src="#{site.jborg_js_url}/libs/html5/pre3.6/html5.min.js")
-
-    %link(rel="shortcut icon" href="#{site.jborg_images_url}/tools/favicon.ico")
-    %link(rel="apple-touch-icon-precomposed" sizes="144x144" href="#{site.jborg_images_url}/tools/tools-touch-icon-144-precomposed.png")
-    %link(rel="apple-touch-icon-precomposed" sizes="114x114" href="#{site.jborg_images_url}/tools/tools-touch-icon-114-precomposed.png")
-    %link(rel="apple-touch-icon-precomposed" sizes="72x72" href="#{site.jborg_images_url}/tools/tools-touch-icon-72-precomposed.png")
-    %link(rel="apple-touch-icon-precomposed" href="#{site.jborg_images_url}/tools/tools-touch-icon-57-precomposed.png")
-
-    %link{ :rel=>'stylesheet', :type=>"text/css", :href=>"#{site.base_url}/stylesheets/jbt-styles.css" }
-    %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"#{site.base_url}/fonts/font-awesome/font-awesome.css", :media=>"screen, projection"}
-
+    = partial( page.head_partial.nil? ? 'head.html.haml' : page.head_partial , { "real_page" => page } )
   %body
+    / begin accesibility skip to top
+    %ul#top.visuallyhidden
+      %li
+        %a{:accesskey => "n", :href => "#nav", :title => "Skip to navigation"} Skip to navigation
+      %li
+        %a{:accesskey => "c", :href => "#page", :title => "Skip to content"} Skip to content
     .container#content
-      .banner
-        %a(href="http://www.jboss.org/tools")<
-          %img(src="#{site.jborg_images_url}/tools/tools-banner-1180px.png")
-        .taglinelight.visible-desktop Eclipse plugins for JBoss technology
-            
-      ~ content
 
-      #companyfooter-placeholder
-    .container#companyfooter
-      .redhatlogo
-        #logospacer
-        %a(href="http://www.redhat.com/")<
-          %img(src="#{site.jborg_images_url}/common/redhat_logo.png")
-      
-    %script(src="#{site.jborg_js_url}/libs/jquery-1.9.1#{site.minified}.js")
+      .dropup
+        %a#tab.tabnav-closed{:href => "https://www.jboss.org"} Red Hat
+
+      = partial( page.banner_partial.nil? ? 'banner.html.haml' : page.banner_partial , { "real_page" => page } )
+
+      = partial( page.nav_partial.nil? ? 'nav.html.haml' : page.nav_partial , { "real_page" => page } )
+      / activate the tab by adding the 'active' class 
+      - unless page.nav_partial.nil? && page.tab.nil?
+        :javascript
+          document.getElementById("#{page.tab}").className += " active";
+      #content-wrapper
+        ~ content
+
+    = partial( page.projectfooter_partial.nil? ? 'projectfooter.html.haml' : page.projectfooter_partial , { "real_page" => page } )
+
+    = partial( page.companyfooter_partial.nil? ? 'companyfooter.html.haml' : page.companyfooter_partial , { "real_page" => page } )
+
+    %span.backToTop
+      %a{:href => "#top"} back to top
+
     %script(src="#{pageStyle ? site[pageStyle].bootstrap_js_url : site.bootstrap_js_url}#{site.minified}.js")
+    - if page.bottom_javascripts
+      - page.bottom_javascripts.each do |javascript|
+        %script{:src=>javascript, :type=>'text/javascript'}
+    

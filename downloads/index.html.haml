@@ -1,77 +1,322 @@
 ---
 layout: default
-title: Downloads
+name: Downloads
 tab: downloads
-versions:
-  - title: "Core version 3.3.1"
-    state: "Stable"
-    requires: "Eclipse 3.7.2"
-    marketplace: "http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=121986"
-    updatesite: "http://download.jboss.org/jbosstools/updates/stable/indigo/"
-    download: "http://www.jboss.org/tools/download/stable/3_3_Final.html"
-  - title: "Core version 4.0.0.Alpha1"
-    state: "Development"
-    requires: "Eclipse 3.7.2"
-    updatesite: "http://download.jboss.org/jbosstools/updates/stable/indigo/"
-    download: "http://www.jboss.org/tools/download/stable/3_3_Final.html"
-  - title: "SOA version 3.3.0.CR1"
-    state: "Development"
-    requires: "Eclipse 3.7.2"
-    updatesite: "http://download.jboss.org/jbosstools/updates/development/indigo/soa-tooling"
-    download: "http://www.jboss.org/tools/download/dev/3_3_SOA.html"
+eclipse_versions:
+  - id: kepler
+    name: Eclipse Kepler 4.3
+    download_url: http://www.eclipse.org/downloads/
+  - id: juno
+    name: Eclipse Juno 4.2.2
+    download_url: http://www.eclipse.org/downloads/packages/release/juno/sr2
+  - id: indigo
+    name: Eclipse Indigo 3.7.2
+    download_url: http://www.eclipse.org/downloads/packages/release/indigo/sr2
+products:
+  - id: jbds_7
+    name: JBoss Developer Studio 7
+    eclipse_requirement: kepler
+  - id: jbt_core_41
+    name: JBoss Tools Core 4.1
+    eclipse_requirement: kepler
+  - id: jbt_is_41
+    name: JBoss Tools Integration Stack 4.1
+    eclipse_requirement: kepler
+  - id: jbds_6
+    name: JBoss Developer Studio 6
+    eclipse_requirement: juno
+  - id: jbt_core_40
+    name: JBoss Tools Core 4.0
+    eclipse_requirement: juno
+  - id: jbt_core_33
+    name: JBoss Tools Core 3.3
+    eclipse_requirement: indigo
+  - id: jbt_soa_33
+    name: JBoss Tools SOA 3.3 
+    eclipse_requirement: indigo
+installations:
+  marketplace:
+    - product_id: jbds_7
+      marketplace_url: http://marketplace.eclipse.org/node/827807
+      install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=827807
+    - product_id: jbt_core_41
+      marketplace_url: http://marketplace.eclipse.org/node/876523
+      install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=876523
+    - product_id: jbds_6
+      marketplace_url: http://marketplace.eclipse.org/node/503834
+      install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=503834
+    - product_id: jbt_core_40
+      marketplace_url: http://marketplace.eclipse.org/node/420896
+      install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=420896
+    - product_id: jbt_core_33
+      marketplace_url: http://marketplace.eclipse.org/node/121986
+      install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=121986
+  updatesites:
+    - id: updatesites_stable_releases
+      name: Stable Releases
+      versions:
+        - product_id: jbt_core_41
+          url: http://download.jboss.org/jbosstools/updates/stable/kepler/
+        - product_id: jbt_core_40
+          url: http://download.jboss.org/jbosstools/updates/stable/juno/
+        - product_id: jbt_core_33
+          url: http://download.jboss.org/jbosstools/updates/stable/indigo/
+        - product_id: jbt_soa_33
+          url: http://download.jboss.org/jbosstools/updates/stable/indigo/soa-tooling/
+    - id: updatesites_nightly_builds
+      name: Nightly Builds
+      versions:
+        - product_id: jbt_core_41
+          url: http://download.jboss.org/jbosstools/updates/nightly/core/trunk/
+        - product_id: jbt_is_41
+          url: http://download.jboss.org/jbosstools/updates/integration/kepler/integration-stack/aggregate/4.1.0
+        - product_id: jbt_core_40
+          url: http://download.jboss.org/jbosstools/updates/integration/juno/integration-stack/aggregate/4.0.1
+        - product_id: jbt_soa_33
+          url: http://download.jboss.org/jbosstools/updates/nightly/soa-tooling/3.3.x/
+  downloads:
+    - id: downloads_stable_releases
+      name: Stable Releases
+      products:
+        - product_id: jbt_core_41
+          version: 4.1.0.Final
+          release_date: 2013-07-22
+          archives:
+            - name: Update site (including sources) bundle of all JBoss Tools Core
+              download_size: 409MB
+              url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.x/jbosstools-Update-4.1.0.Final_2013-07-19_19-47-52-B380.zip
+              md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.x/jbosstools-Update-4.1.0.Final_2013-07-19_19-47-52-B380.zip.MD5
+            - name: Sources zip of all JBoss Tools Core
+              download_size: 135MB
+              url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.x/jbosstools-Sources-4.1.0.Final_2013-07-19_19-47-52-B380.zip
+              md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.x/jbosstools-Sources-4.1.0.Final_2013-07-19_19-47-52-B380.zip.MD5
+            - name: Update site (including sources) bundle of all Hibernate Tools
+              download_size: 78MB
+              url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.x/hibernatetools-Update-4.1.0.Final_2013-07-19_19-47-52-B380.zip
+              md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.x/hibernatetools-Update-4.1.0.Final_2013-07-19_19-47-52-B380.zip.MD5
+            - name: Release Notes
+              url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.x/zz_Release_Notes_4.1.0.Final.readme.html
+        - product_id: jbt_core_40
+          version: 4.0.1.Final
+          release_date: 2013-04-03
+          archives:
+            - name: Update site (including sources) bundle of all JBoss Tools Core
+              download_size: 194MB
+              url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.0.x/jbosstools-4.0.1.Final.aggregate-Update-2013-03-27_16-17-05-B340.zip
+              md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.0.x/jbosstools-4.0.1.Final.aggregate-Update-2013-03-27_16-17-05-B340.zip.MD5
+            - name: Sources zip of all JBoss Tools Core
+              download_size: 100MB
+              url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.0.x/jbosstools-4.0.1.Final.aggregate-Sources-2013-03-27_16-17-05-B340.zip
+              md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.0.x/jbosstools-4.0.1.Final.aggregate-Sources-2013-03-27_16-17-05-B340.zip.MD5
+            - name: Update site (including sources) bundle of all Hibernate Tools
+              download_size: 43MB
+              url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.0.x/jbosstools-4.0.1.Final.component--hibernatetools-Update-2013-03-27_16-17-05-B340.zip
+              md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.0.x/jbosstools-4.0.1.Final.component--hibernatetools-Update-2013-03-27_16-17-05-B340.zip
+            - name: Release Notes
+              url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.0.x/zz_Release_Notes_4.0.1.Final.readme.html
+        - product_id: jbt_soa_33
+          version: 3.3.3.Final
+          release_date: 2013-02-19
+          archives:
+            - name: Update site (including sources) bundle of all JBoss Tools SOA
+              download_size: 87MB
+              url: http://sourceforge.net/projects/jboss/files/JBossTools/SOATools3.3.x/soatools-3.3.3.Final.aggregate-Update-2013-01-28_17-58-40-H2.zip
+              md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/SOATools3.3.x/soatools-3.3.3.Final.aggregate-Update-2013-01-28_17-58-40-H2.zip.MD5
+            - name: Sources zip of all JBoss Tools SOA
+              download_size: 854KB
+              url: http://sourceforge.net/projects/jboss/files/JBossTools/SOATools3.3.x/soatools-3.3.3.Final.aggregate-Sources-2013-01-28_17-58-40-H2.zip
+              md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/SOATools3.3.x/soatools-3.3.3.Final.aggregate-Sources-2013-01-28_17-58-40-H2.zip.MD5
+            - name: Release Notes
+              url: http://sourceforge.net/projects/jboss/files/JBossTools/SOATools3.3.x/zz_Release_Notes_SOA_3.3.3.Final.readme.html
+        - product_id: jbt_core_33
+          version: 3.3.2.Final
+          release_date: 2013-01-25
+          archives:
+            - name: Update site (including sources) bundle of all JBoss Tools Core
+              download_size: 237MB
+              url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools3.3.x/jbosstools-3.3.2.Final.aggregate-Update-2013-01-18_18-03-25-H229.zip
+              md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools3.3.x/jbosstools-3.3.2.Final.aggregate-Update-2013-01-18_18-03-25-H229.zip.MD5
+            - name: Sources zip of all JBoss Tools Core
+              download_size: 107MB
+              url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools3.3.x/jbosstools-3.3.2.Final.aggregate-Sources-2013-01-18_18-03-25-H229.zip
+              md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools3.3.x/jbosstools-3.3.2.Final.aggregate-Sources-2013-01-18_18-03-25-H229.zip.MD5
+            - name: Update site (including sources) bundle of all Hibernate Tools
+              download_size: 70MB
+              url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools3.3.x/jbosstools-3.3.2.Final.component--hibernatetools-Update-2013-01-18_18-03-25-H229.zip
+              md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools3.3.x/jbosstools-3.3.2.Final.component--hibernatetools-Update-2013-01-18_18-03-25-H229.zip.MD5
+            - name: Release Notes
+              url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools3.3.x/zz_Release_Notes_3.3.2.Final.readme.html
+
+    
+
 ---
 .row-fluid
   .span12
     :markdown
-      ## JBoss Developer Studio
-      **JBoss Developer Studio** is the product that bundles all the Eclipse Plugins that you can find in the **JBoss Tools Project** here
-       (see the [features](../features) page for more information about the plugins).
-      
-      The easiest way to getting started with the Eclipse Plugins for JBoss Technology is by downloading and installing 
-      the free [JBoss Developer Studio](http://devstudio.jboss.com/download/). It is a bundled version of Eclipse IDE along with all the JBoss Tools Plugins and 
-      an universal installer that works on Windows, MacOSX and Linux, both in 32bits and 64bits. 
-      [Give it a try](http://devstudio.jboss.com/download/) ! (a Red Hat Portal account is required, but don't worry, it is free). 
-    
-      You can also select the subscription-based [JBoss Developer Studio Portfolio Edition](http://devstudio.jboss.com/download/) 
-      which comes bundled with [JBoss Enterprise Application Platform (EAP)](http://www.jboss.com/products/platforms/application/)
-      if you plan to develop on this platform and you need support for it.
-      
-      ## JBoss Tools
-      We understand that you may however prefer installing the plugins on your existing Eclipse runtime, 
-      and we provide you with the following installation mode:
-      
-      -  the workbench built-in access to the **Eclipse Marketplace** (only the latest stable version of JBoss Tools is available there, though), 
-      -  the **Update Site** (go to "Help>Install New Software...", click on "Add..." and input the Update Site URL into the "location" field)
-      -  the **Downloaded zip file** (then go to "Help>Install New Software...", click on "Add..." and use "Local..." or "Archive..." to select the downloaded bundle).
+      ### JBoss Tools and Red Hat JBoss Developer Studio downloads
+      **JBoss Tools** 4.1, 4.0, 3.3 and 3.2 are available in both the **FREE** and **Portfolio** Editions of **Red Hat JBoss Developer Studio** 7.x, 6.x, 5.x and 4.x, respectively. **Red Hat JBoss Developer Studio, Portfolio Edition** comes bundled with [Red Hat JBoss Enterprise Application Platform (JBoss EAP)](http://www.jboss.com/products/platforms/application/). If you want an easy to install and fully configured development environment, [try it out](http://devstudio.jboss.com/download/). Future development milestones will be available FREE as part of the [JBoss Developer Studio Early Access Program](http://devstudio.jboss.com/earlyaccess/).
   
       JBoss Tools is now splitted into two separate packages:
-      
-      - the **Core** version, which contains plugins for CDI, Hibernate, Web Services, OpenShift, AS, Central, etc.
-      - the **SOA** version, which provides more specific plugins for BRMS (JBPM, Drools, etc.)
-     
-      The table below provides you with the links to the version of JBoss Tools you want to install:
-
+  
+      - the **Core** version, which contains plugins for CDI, Hibernate, Web Services, OpenShift, AS, Central, Mobile, LiveReload, etc.
+      - the **Integration Stack** (formerly **SOA**) version, which provides more specific plugins for BRMS (JBPM, Drools, etc.)
+    
 .row-fluid
-  .span12#install
-    %table.center
-      - for version in page.versions
-        %tr
-          %td 
-            %strong 
-              #{version.title} 
-              (#{version.state}, requires #{version.requires})
-          %td 
-            - if (version.marketplace != null)
-              %a{:href => "#{version.marketplace}"} marketplace
-          %td 
-            %a{:href => "#{version.updatesite}"} update-site
-          %td 
-            %a{:href => "#{version.download}"} download
+  .span12.tabbable
+    %ul#install.nav.nav-tabs
+      %li.active
+        %a{:href=>"#marketplace", :"data-toggle" => "tab"} 
+          Eclipse Marketplace
+      %li.dropdown
+        %a.dropdown-toggle{:"data-toggle" => "dropdown"} 
+          Update Sites
+          %b.caret<
+        %ul.dropdown-menu
+          - page.installations.updatesites.each do |updatesite|
+            %li 
+              %a{:"data-toggle" => "tab", :href=>"##{updatesite.id}"}< 
+                #{updatesite.name}
+      %li.dropdown
+        %a.dropdown-toggle{:"data-toggle" => "dropdown", :href=>"\#"} 
+          Downloads
+          %b.caret<
+        %ul.dropdown-menu
+          - page.installations.downloads.each do |download|
+            %li 
+              %a{:"data-toggle" => "tab", :href=>"##{download.id}"}< 
+                #{download.name}
+          
+    -# Tab content
+    #installation.tab-content
+      #marketplace.tab-pane.fade.in.active
+        :markdown
+          The Eclipse Marketplace provides a way to install **stable releases** of JBoss Tools and Red Hat JBoss Developer Studio from within Eclipse. 
+          You can either drag the install button into your Eclipse workspace or click on it to be brought to the Eclipse Marketplace.
+            
+        %table.center
+          - page.installations.marketplace.each do |entry| 
+            - product_name = nil
+            - eclipse_name = nil
+            - eclipse_download_url = nil
+            - page.products.each do |product|
+              - if product.id == entry.product_id
+                - product_name = product.name
+                - page.eclipse_versions.each do |eclipse_version|
+                  - if eclipse_version.id == product.eclipse_requirement
+                    - eclipse_name = eclipse_version.name
+                    - eclipse_download_url = eclipse_version.download_url
+            %tr
+              %td< 
+                %span.bold> #{product_name} (
+                %a{:href=>eclipse_download_url} #{eclipse_name}
+                %span>)
+              %td< 
+                %a{:href => entry.install_url, :title=>"Drag and drop this button into a running #{eclipse_name} workspace to install #{product_name}, or click to learn more"}
+                  %img{:src => "#{site.base_url}/images/tools/installbutton.png"}
+      - page.installations.updatesites.each do |updatesite|
+        %div{:id=>updatesite.id, :class=>"tab-pane fade in"}
+          :markdown
+            To install **#{updatesite.name} of JBoss Tools**, start up Eclipse, then do:
+
+            > Help > Install New Software... > 
+
+            Depending on the version of Eclipse you have or the version of JBoss Tools you want to install, copy the URL from the table below into Eclipse, and hit Enter.
+          
+          %table.center
+            %tr
+            - updatesite.versions.each do |entry|
+              - product_name = nil
+              - eclipse_name = nil
+              - eclipse_download_url = nil
+              - page.products.each do |product|
+                - if product.id == entry.product_id
+                  - product_name = product.name
+                  - page.eclipse_versions.each do |eclipse_version|
+                    - if eclipse_version.id == product.eclipse_requirement
+                      - eclipse_name = eclipse_version.name
+                      - eclipse_download_url = eclipse_version.download_url
+              %tr
+                %td<
+                  %span.bold> #{product_name} (
+                  %a{:href=>eclipse_download_url} #{eclipse_name}
+                  %span>)
+                %td< 
+                  %a{:href=>entry.url} #{entry.url}
+          
+          :markdown
+            When the site loads, select the features to install, or click the Select All button.
+            To properly resolve all dependencies, check
+
+            > [x] Contact all update sites during install to find required software
+
+            Click Next, agree to the license terms, and install.
+        
+      - page.installations.downloads.each do |download|
+        %div{:id=>download.id, :class=>"tab-pane fade in"}
+          :markdown
+            You can download Update Zips (Archived p2 Repos) for offline installation of **#{download.name}**, but **DO NOT UNPACK THEM** into your Eclipse root or dropins folder! 
+            Next, install into Eclipse using
+
+            > Help > Install New Software... > Add... > Archive...
+            
+            and point to the archive you downloaded from the tables below, depending on the version of JBoss Tools you want to use.
+
+          - download.products.each do |product|
+            - product_name = nil
+            - eclipse_name = nil
+            - eclipse_download_url = nil
+            - page.products.each do |p|
+              - if p.id == product.product_id
+                - product_name = p.name
+                - page.eclipse_versions.each do |eclipse_version|
+                  - if eclipse_version.id == p.eclipse_requirement
+                    - eclipse_name = eclipse_version.name
+                    - eclipse_download_url = eclipse_version.download_url
+            %table.center
+              %tr.product
+                %td{:colspan=>5}< 
+                  %span.bold> #{product_name} (
+                  %a{:href=>eclipse_download_url} #{eclipse_name}
+                  %span>)
+              - product.archives.each do |archive|
+                %tr
+                  %td #{archive.name}
+                  %td #{product.version}
+                  %td #{product.release_date}
+                  %td #{archive.download_size}
+                  %td 
+                    - if archive.url.end_with? "zip"
+                      %a{:href=>archive.url} zip
+                    - if archive.url.end_with? "html"
+                      %a{:href=>archive.url} html                    
+                    - if archive.md5_url?
+                      %a{:href=>archive.url} (md5)
+      
+      
 
 .row-fluid
   .span12
     :markdown
-      Are you looking for an older version ? Look at the [archives](./archives).
+      #### Installation Types
 
+      Depending on how close to the bleeding edge you like to be, there are several types of releases available:
+      
+      - **Stable releases** are - as indicated by their name - stable.
+      - **Development builds**, released once per milestone and only a few times a year, are fairly stable, but there may be some things which do not yet work. If you would like to try one of these milestones, we'd greatly appreciate the assistance in testing and reporting of issues in our issue tracker. Please note that **Update Sites** and **Downloads** for **Development Milestones** will be available later this year.  
+      - **Nightly builds** contain the latest and greatest new features, but nothing is stable or guaranteed - yet. If you're using a Milestone and need a fix, you can update to the latest Nightly, or wait for the next Milestone.
 
+      
+.row-fluid
+  %hr
+.row-fluid
+  .span12
+    :markdown
+      Are you looking for an older version ? Look at the [archives](http://www.jboss.org/tools/download/archive).
+
+-# Placed at the end of the document so the pages load faster
+:javascript
+  $('#install a').click(function (e) {
+    e.preventDefault();
+    $(this).tab('show');
+  })
                    

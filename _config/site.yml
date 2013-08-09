@@ -1,13 +1,18 @@
 title: JBoss Tools
 
+# Project id name
+project: tools
+
 textile:
   :no_span_caps: true
 
 
+# Default minify settings
 css_minifier: disabled
 js_minifier: disabled
 html_minifier: disabled
 
+# Merge multiple JavaScript files to improve performance
 fileMerger:
   enabled: true
   outputFilePath: /javascripts/bootstrap-community.js
@@ -27,13 +32,17 @@ fileMerger:
     - /javascripts/_bootstrap-affix.js
     - /javascripts/_jbossorg-navbarfix.js
     - /javascripts/_jbossorg-misc.js
+    - /javascripts/_jquery-easytabs.js
+    - /javascripts/_crisp-scripts.js
 
+# Cache hosted fonts, images and javascript
 wget:
   enabled: false
-  createGitIgnoreFiles: true
+  rerunEach: 86400 # seconds
+  timestampFilename: _wget-timestamp
   options:
     - --no-remove-listing
-    - -v
+    - -q
     - -r
     - --no-parent
     - -N
@@ -41,39 +50,43 @@ wget:
     - -e robots=off
     - --directory-prefix=cache
   urls:
-    - http://static-stg.jboss.org/theme/js/libs/jquery-1.9.1.js
-    - http://static-stg.jboss.org/theme/js/libs/jquery-1.9.1.min.js
-    - http://static-stg.jboss.org/theme/js/libs/html5/pre3.6/html5.min.js
-    - http://static-stg.jboss.org/theme/js/libs/prettify/188.0.0/prettify.min.js
-    - http://static-stg.jboss.org/theme/js/libs/holder/1.9/holder.js
-    - http://static-stg.jboss.org/theme/fonts/titilliumtext/
-    - http://static-stg.jboss.org/theme/images/common/
-    - http://static-stg.jboss.org/theme/images/community/
-    - http://static-stg.jboss.org/theme/images/tools/
+    - http://static.jboss.org/theme/js/libs/jquery/jquery-1.9.1.js
+    - http://static.jboss.org/theme/js/libs/jquery/jquery-1.9.1.min.js
+    - http://static.jboss.org/theme/js/libs/html5/pre3.6/html5.min.js
+    - http://static.jboss.org/theme/js/libs/prettify/188.0.0/prettify.min.js
+    - http://static.jboss.org/theme/js/libs/holder/1.9/holder.js
+    - http://static.jboss.org/theme/fonts/titilliumtext/
+    - http://static.jboss.org/theme/fonts/font-awesome/
+    - http://static.jboss.org/theme/images/common/
+    - http://static.jboss.org/images/example/
 
+  
 profiles:
   development:
     base_url: http://localhost:4242
-    jborg_fonts_url: /cache/static-stg.jboss.org/theme/fonts
-    jborg_images_url: /cache/static-stg.jboss.org/theme/images
-    jborg_js_url: /cache/static-stg.jboss.org/theme/js
+    jborg_fonts_url: /cache/static.jboss.org/theme/fonts
+    jborg_images_url: /cache/static.jboss.org/theme/images
+    jborg_js_url: /cache/static.jboss.org/theme/js
+    project_images_url: http://static.jboss.org/images/tools
     bootstrap_css_url: /stylesheets/bootstrap-community
     bootstrap_js_url: /javascripts/bootstrap-community
     disqus: jbosstools-dev
   staging:
-    base_url: http://stg-tools.jboss.org
-    jborg_fonts_url: http://static-stg.jboss.org/theme/fonts
-    jborg_images_url: http://static-stg.jboss.org/theme/images
-    jborg_js_url: http://static-stg.jboss.org/theme/js
-    bootstrap_css_url: http://static-stg.jboss.org/theme/css/community/bootstrap-2.3.1.0
-    bootstrap_js_url: http://static-stg.jboss.org/theme/js/community/bootstrap-2.3.1.0
+    base_url: http://design-stg.jboss.org/boostrap/themes
+    jborg_fonts_url: http://static.jboss.org/theme/fonts
+    jborg_images_url: http://static.jboss.org/theme/images
+    jborg_js_url: http://static.jboss.org/theme/js
+    project_images_url: http://static.jboss.org/images/tools
+    bootstrap_css_url: http://static.jboss.org/theme/css/bootstrap-community/2.3.1.0/bootstrap-community
+    bootstrap_js_url: http://static.jboss.org/theme/js/libs/bootstrap-community/2.3.1.0/bootstrap-community
   xcoulon:
     base_url: http://xcoulon.github.com/jbosstools-website
-    jborg_fonts_url: http://static-stg.jboss.org/theme/fonts
-    jborg_images_url: http://static-stg.jboss.org/theme/images
-    jborg_js_url: http://static-stg.jboss.org/theme/js
-    bootstrap_css_url: http://static-stg.jboss.org/theme/css/community/bootstrap-2.3.1.0
-    bootstrap_js_url: http://static-stg.jboss.org/theme/js/community/bootstrap-2.3.1.0
+    jborg_fonts_url: http://static.jboss.org/theme/fonts
+    jborg_images_url: http://static.jboss.org/theme/images
+    jborg_js_url: http://static.jboss.org/theme/js
+    project_images_url: http://static.jboss.org/images/tools
+    bootstrap_css_url: http://static.jboss.org/theme/css/bootstrap-community/2.3.1.0/bootstrap-community
+    bootstrap_js_url: http://static.jboss.org/theme/js/libs/bootstrap-community/2.3.1.0/bootstrap-community
     disqus: jbosstools-preview
     deploy:
       host: github_pages
@@ -85,8 +98,9 @@ profiles:
     jborg_fonts_url: http://static.jboss.org/theme/fonts
     jborg_images_url: http://static.jboss.org/theme/images
     jborg_js_url: http://static.jboss.org/theme/js
-    bootstrap_css_url: http://static.jboss.org/theme/css/community/bootstrap-2.3.1.0
-    bootstrap_js_url: http://static.jboss.org/theme/js/community/bootstrap-2.3.1.0
+    project_images_url: http://static.jboss.org/images/tools
+    bootstrap_css_url: http://static.jboss.org/theme/css/bootstrap-community/2.3.1.0/bootstrap-community
+    bootstrap_js_url: http://static.jboss.org/theme/js/libs/bootstrap-community/2.3.1.0/bootstrap-community
       
   
 

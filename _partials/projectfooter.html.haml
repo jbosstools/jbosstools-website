@@ -1,0 +1,41 @@
+%footer.container
+  .row-fluid
+    .span2.offset1
+      %h4 Navigate
+      %ul
+        %li
+          %a{:href => "#{site.base_url}", :title => "Overview"} Overview
+        %li
+          %a{:href => "#{site.base_url}/download", :title => "Download"} Download
+        %li
+          %a{:href => "#{site.base_url}/usage", :title => "Usage"} Usage
+        
+        
+    .span2
+      %h4 Follow Us
+      %ul
+        %li
+          %a{:href => "#{site.base_url}/blog", :title => "Blog"} Blog
+        %li
+          %a{:href => "http://twitter.com/jbosstools", :title => "Twitter"} Twitter
+        %li
+          %a{:href => "https://plus.google.com/109915195368578219327", :title => "Google+"} Google+
+    .span2
+      %h4 Contribute
+      %ul
+        %li
+          %a{:href => "https://issues.jboss.org/browse/JBIDE", :title => "Submit a bug"} Submit a bug
+        %li
+          %a{:href => "https://github.com/jbosstools", :title => "Write code"} Write Code
+        %li
+          %a{:href => "#", :title => "Ask questions on the forum"} Ask questions on the forum
+        %li
+          %a{:href => "#", :title => "Talk on IRC"} Talk with us on IRC
+    .span3.offset1
+      %h4 Licenses
+      %p All plugins are available under the Eclipse Public License (EPL). 
+      %p They may also contain some libraries licensed under certain open source licenses such as EPL, LGPL, and/or certain other open source licenses.
+      %p
+      .jbossbadge
+        %a{:href => "http://www.jboss.org/"}
+          %img{:src => "/cache/static.jboss.org/theme/images/common/jbossbadge.png"}/
