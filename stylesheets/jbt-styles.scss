@@ -6,143 +6,13 @@
   margin-top: 70px;
 }
 
-
-// ***********************************************
-// Reusable mixins (must be declared before usage)
-// ***********************************************
-$title-font-size: 20px;
-@mixin fontsize() {
-  font-size: $title-font-size;
-}
-
-@mixin grey-button-border() {
-  //cursor: pointer;
-  border: 1px solid #cccccc;
-  border-color: #e6e6e6 #e6e6e6;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) fadein(rgba(0, 0, 0, 0.1), 15%);
-  *border: 0;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  *margin-left: .3em;
-  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-}
-
-@mixin grey-button() {
-  //cursor: pointer;
-  @include grey-button-border();
-  background-color: whitesmoke;
-  background-image: -moz-linear-gradient(top, white, #e6e6e6);
-  background-image: -ms-linear-gradient(top, white, #e6e6e6);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(white), to(#e6e6e6));
-  background-image: -webkit-linear-gradient(top, white, #e6e6e6);
-  background-image: -o-linear-gradient(top, white, #e6e6e6);
-  background-image: linear-gradient(top, #ffffff, #e6e6e6);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFE6E6E6', GradientType=0);
-  *background-color: #e6e6e6;
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-  border-bottom-color: #b3b3b3;
-}
-
-
-//************************************
-// content container-fluid 
-//************************************
-#content.container-fluid {
-  padding-bottom: 30px;
-}
-
-//************************************
-// Block style
-//************************************
-.block {
-  display: block;
-}
-
-
-
-//************************************
-// Nav bar (should be replaced)
-//************************************
-header > h3 {
+// *************************************
+// Common styles
+// *************************************
+.center {
+  margin-left:auto;
+  margin-right:auto;
   text-align: center;
-}
-
-
-
-#wrapper {
-  padding-top: 0px; // overriding default settings
-}
-
-
-section header {
-  margin-bottom: 10px;
-  
-}
-
-section .item {
-  margin-bottom: 10px;
-}
-
-section .item h3 {
-  text-align: left;
-}
-
-section footer {
-  text-align: right;
-}
-
-#menu-level2 {
-  margin-right: 50px;
-  text-align: left;
-  border: 1px solid #555;
-  border-radius: 10px;
-  
-}
-
-#menu-level2 ul {
-  margin-left: 0px;
-}
-
-#menu-level2 li {
-  text-align: center;
-  color: #C9D4E4;
-  
-  //border-bottom: 1px dotted #555;
-  text-decoration: none;
-  list-style: none;
-  padding: 5px;
-  margin-bottom: 0px;
-  // 
-  //text-shadow: #818181 1px 1px 1px;
-  
-}
-
-
-.grey-button {
-  @include grey-button();
-  padding : 5px;
-}
-
-
-section#title.span12 h1 {
-  margin-top: 30px;
-}
-
-h1 a {
-  text-decoration:none;
-}
-
-hr {
-  border-top: 1px solid #E6E6E6;
-  border-bottom: 1px solid #ffffff;
-}
-
-.footer {
-  margin: 10px 0px 20px 0px;
 }
 
 .right {
@@ -150,136 +20,115 @@ hr {
   text-align: right;
 }
 
-
-
-
-
-//************************************
-// Tag line
-//************************************
-.tagline {
-  display: block;
+.bold {
   font-weight: bold;
 }
 
-//************************************
-// Vimeo videos
-//************************************
-.vimeo {
-  margin: auto;
-}
-
-
-
-// ****************************************
-// Footer Pusher
-// ****************************************
-$push: 5em;
-
-// ****************************************
-// JBoss Community Header (Branding) 
-// ****************************************
-
-#logo {
-  background-image: none;
-  height: 48px;
-  display: inline;
-}
-
-#logo a {
-  padding-top: 0;
-  width: auto;
-  height: 48px;
-  background-image: url("http://static.jboss.org/theme/images/bgs/primarynav-lines.png");
-  background-repeat: no-repeat;
-  background-position: top right;
-  background-clip: border-box;
-}
-
-#logo a img {
-  display: inline;
-}
-
-
-
-#tab {
-  cursor: pointer;
-}
-
-
-
-// ****************************************
-// Read more >> links with button-style
-// ****************************************
-a.readmore {
-  display: inline-block;
-  *display: inline;
-  /* IE7 inline-block hack */
-  *zoom: 1;
-  padding: 4px 10px 4px;
-  margin-top: 10px;
-  margin-bottom: 0;
-  font-size: 14px;
-  line-height: 24px;
-  *line-height: 20px;
-  text-align: center;
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
-  vertical-align: middle;
-  @include grey-button();
-}
-
-// ****************************************
-// Footer
-// ****************************************
-.push {
-  height: $push;
-}
-
-#site-info {
-  background: #F3F3F3;
-  height: $push;
-}
-// ****************************************
-// Main content
-// ****************************************
-.container-fluid {
-  margin-top: 10px;
-}
-h2, h3 {
-  [class^="icon-"], [class*=" icon-"] {
-    vertical-align: baseline;
-    margin-right: 5px;
-    margin-top: 5px;
+p { 
+  text-align: justify;
+  margin-bottom: 20px;
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
-$font-red-color: #88201B;
 
-
-#wrap-content {
-  height: 100%;
-}
-#wrapper-3b {
-  display: inline; /* IE 6 */
-  margin: 0px;
-  width: 100%; 
-  overflow:hidden;
-  -webkit-border-radius:0px 0px 4px 4px; 
-  -moz-border-radius:0px 0px 4px 4px; 
-  border-radius:0px 0px 4px 4px; 
-  background-color:#FFF;
-  padding-bottom:20px;
-} 
-
-
-
-@mixin bg-image($url) {
-  background-image:url($url);
-  background-repeat: no-repeat;
-  background-position: left center;
-  text-align: left;
-  vertical-align:baseline;
+p + ul {
+  margin-top: -20px;
 }
 
+p + blockquote {
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+
+hr {
+  height: 1px;
+  margin: 1.5em 0;
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(50%, rgba(0, 0, 0, 0.1)), color-stop(100%, rgba(0, 0, 0, 0)));
+  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+  background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+  background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+  background-image: linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+  border: 0;  
+}
+
+section {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  
+  header {
+    margin-bottom: 10px;
+    h3 {
+      text-align: center;
+    }
+  }
+
+  h2, h3 {
+    [class^="icon-"], [class*=" icon-"] {
+      vertical-align: baseline;
+      margin-right: 5px;
+      margin-top: 5px;
+    }
+  }
+
+  .item {
+    margin-bottom: 10px;
+  }
+}
+
+#content-wrapper {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  
+  @media screen and (min-width: 1200px) {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;  
+  }
+  
+  @media screen and (width: 940px) {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;  
+  }
+  
+
+}
+
+.nav {
+  margin-bottom: 0px;
+}
+
+.tab-content {
+  background: rgb(243, 243, 243);
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+
+blockquote > p {
+  font-size: 14px;
+}
+
+
+// ******************************************************
+// Customizing the NavBar
+// ******************************************************
+.navbar-inner {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  .btn {
+    border-width: 0px;    
+  }
+}
+
+// ******************************************************
+// Hero Unit
+// ******************************************************
 .hero-unit {
   background: white;
   padding-top: 30px;
@@ -296,113 +145,55 @@ $font-red-color: #88201B;
 .hero-content h1, .hero-content h2 {
   text-align: right;
 }
+.hero-content h1 {
+  margin-top: 20px;
+}
 .hero-content h2 img {
   vertical-align: text-bottom;
 }
 
-#headingCarousel {
-  margin-top:0px;
-  margin-bottom:0px;
-}
-
-#carousel-inner .item {
-  padding: 20px;
-}
-#carousel-inner .item img {
-  //float: right;
-}
-
-.center {
-  margin-left:auto;
-  margin-right:auto;
-  text-align: center;
-}
-
-p  {
-  text-align: justify;
-}
-
-
-#container-reduced .row-fluid {
-  width: 80%; 
-  margin-left: auto;
-  margin-right: auto;
-}
-
-
-#sections.row-fluid {
-	text-align:left;  
-}
-
-.row-fluid h3 {
-	//text-align:center;  
-}
-
-.details {
-    clear:both;
-}
-.details p {
-  margin: 0px;
-}
-
-
 // ****************************************
 // Installation
 // ****************************************
-#install {
-  padding-bottom: 20px;
+#installation {
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 20px;
+  border-left: 1px solid rgb(221, 221, 221);
+  border-right: 1px solid rgb(221, 221, 221);
+  border-bottom: 1px solid rgb(221, 221, 221);
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  
+  table {
+    margin-bottom: 20px;
+  
+    tr {
+      text-align: left;
+      &:nth-child(2n) {
+        background: rgb(251, 251, 251)
+      }
+      &:nth-child(2n+1) {
+        background: rgb(247, 247, 247);  
+      }
+      td {
+        border: 1px solid rgb(221, 221, 221);
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+       
+      }
+      
+    }
+  }
+  
 }
 
-#install  tr {
-  border: 1px solid;
-}
-#install  td {
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
-  text-align: center;
-}
 
-#install table td:first-child {
-  background: #F3F3F3;
-  text-align: left;
-}
-
-h1 {
-  color: #494949;
-}
-
-h5 {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-// ******************************************
+// *************************************
 // Features
-// ******************************************
-
-$dark: #f4f6f6;
-$light: #ffffff;
-@mixin gradientLeftToRight {
-  background-color: $light;
-  background: -webkit-gradient(linear, left top, right top, from($dark), to($light));
-  background: -webkit-linear-gradient(left, $dark, $light);
-  background: -moz-linear-gradient(left, $dark, $light);
-  background: -o-linear-gradient(left, $dark, $light);
-  background: linear-gradient(left, $dark, $light);
-}
-@mixin gradientRightToLeft {
-  background-color: $light;
-  background: -webkit-gradient(linear, left top, right top, from($light), to($dark));
-  background: -webkit-linear-gradient(left, $light, $dark);
-  background: -moz-linear-gradient(left, $light, $dark);
-  background: -o-linear-gradient(left, $light, $dark);
-  background: linear-gradient(left, $light, $dark);
-}
-
+// *************************************
 .features {
   padding-top: 0px;
   padding-bottom: 0px;
@@ -420,22 +211,6 @@ $light: #ffffff;
     margin-right: auto;
   }
 }
-
-.features hr, .feature hr {
-  height: 1px;
-  margin: 2.5em 0;
-  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(50%, rgba(0, 0, 0, 0.1)), color-stop(100%, rgba(0, 0, 0, 0)));
-  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
-  background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
-  background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
-  background-image: linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
-  border: 0;  
-}
-
-.feature hr {
-  margin: 0px;
-}
-
 
 .feature {
   img {
@@ -576,122 +351,4 @@ $light: #ffffff;
     }
   }
   
-}
-
-
-.pagination-links {
-  text-align: center;
-}
-
-
-
-
-@mixin menu-level3-border-color {
-  border: 1px solid #CCC;
-}
-
-$menu-level3-space: 10px;
-
-.menu-level3 h4 {
-  text-align: center;
-  border-radius: $menu-level3-space $menu-level3-space 0px 0px;
-  padding: $menu-level3-space;
-  @include menu-level3-border-color;
-  margin: 0px;
-  color: #424242;
-  background-color: #F0F0F0;
-}
-
-.menu-level3 ul {
-  margin: 0px;
-  padding: $menu-level3-space/2 0px $menu-level3-space/2 0px;
-  @include menu-level3-border-color;
-  border-top: 0px; // override previous value
-  border-radius: 0px 0px $menu-level3-space $menu-level3-space;
-}
-
-.menu-level3 li {
-  text-align: left;
-  text-decoration: none;
-  list-style: none;
-  padding: $menu-level3-space/2 $menu-level3-space $menu-level3-space/2 $menu-level3-space;
-  margin: 0px;
-}
-
-
-
-#menu-level2 li:hover {
-
-}
-
-// *************************************
-// What's New
-// *************************************
-
-.whatsnew {
-  
-}
-
-.whatsnew h1 {
-  border-bottom: 1px solid #E6E6E6;
-  font-size: 20px
-}
-
-.whatsnew img {
-  display: block;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  /*margin-left : auto;
-  margin-right : auto;*/
-}
-
-.whatsnew dt {
-  white-space: normal; // allow multiline instead of overflow with ellipsis (...)
-  width: 100px; // making it narrower as specified by bootstrap to give more room to images and videos.
-}
-
-.whatsnew dd {
-  margin-left: 120px; // giving more room to images and videos
-}
-
-.whatsnew.version {
-  list-style: none;
-  font-weight: bold;
-}
-
-.whatsnew.module {
-  list-style: none;
-  font-weight: normal;
-  
-}
-
-
-.related_jiras {
-  display: inline-block;
-}
-
-.related_jiras ul {
-  display: block;
-  margin-left: 0px;
-  margin-top: 5px;
-  margin-bottom: 10px;
-  font-weight: bold;
-  font-size: small;
-}
-
-.related_jiras li {
-  display: inline;
-  font-weight: normal;
-}
-
-.related_jira {
-  margin-left: 0px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  font-weight: bold;
-  font-size: small;
-}
-
-.related_jira a {
-  font-weight: normal;
 }

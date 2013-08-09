@@ -12,7 +12,7 @@ tab: home
         Eclipse Plugins for 
         JBoss Technology    
         %br
-        %a
+        %a{:href => "http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=876523"}
           %img{:src => "#{site.base_url}/images/tools/installbutton.png"}
 
 .row-fluid
@@ -22,7 +22,6 @@ tab: home
   %section.span4
     - features = site.features 
     - feature = features.find_all{|feature| feature.highlighted == true}.first
-    #features-highlight
     - if feature != nil
       %header
         %h3
