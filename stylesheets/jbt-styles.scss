@@ -114,6 +114,10 @@ blockquote > p {
   font-size: 14px;
 }
 
+.container-fluid {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
 
 // ******************************************************
 // Customizing the NavBar
@@ -155,6 +159,55 @@ blockquote > p {
 // ****************************************
 // Installation
 // ****************************************
+#jbds {
+  .download-unit {
+    background: rgb(189, 255, 180);
+  }
+}
+
+#jbt {
+  .download-unit {
+    background: rgb(203, 234, 253);
+  }
+}
+
+.download-unit {
+  position: relative;
+  margin-bottom: 1em;
+  padding: 1em;
+  border-radius: 0.5em;
+  min-height: 25em;
+  height: auto;  
+  
+  ul {
+    list-style-type: square;
+    li {
+      line-height: 2em;
+    }
+  }
+  .download-btn {
+    margin-left: -1em;
+    position: absolute; 
+    bottom: 1em;
+    width: 100%;
+    text-align: center;
+  }
+  
+}
+
+.links {
+  a {
+    margin-right: 0.0em;
+  }
+  span {
+    padding-top: 4px;
+    line-height: 20px;
+  }
+  position: relative;
+  float: right;
+}
+
+
 #installation {
   margin-left: auto;
   margin-right: auto;

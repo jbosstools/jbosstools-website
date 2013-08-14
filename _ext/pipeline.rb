@@ -13,12 +13,14 @@ require 'mytagger'
 require 'mypaginator'
 require 'feature'
 require 'whatsnew'
+require 'downloads'
+
 
 Awestruct::Extensions::Pipeline.new do
   
   helper Awestruct::Extensions::Partial
   
-  # # JBoss.org extensions
+  # JBoss.org extensions
   extension Awestruct::Extensions::WgetWrapper.new
   transformer Awestruct::Extensions::JsMinifier.new
   transformer Awestruct::Extensions::CssMinifier.new
@@ -32,7 +34,10 @@ Awestruct::Extensions::Pipeline.new do
   extension Awestruct::Extensions::DataDir.new('/features')
   extension Awestruct::Extensions::Posts.new( '/blog', :posts )
   extension Awestruct::Extensions::MyPaginator.new(:posts, '/blog/index', :per_page => 2 )
-  extension Awestruct::Extensions::MyTagger.new( :posts, '/blog/index', '/blog/tags', :per_page=>10, :sanitize=>true )
+  extension Awestruct::Extensions::MyTagger.new( :posts, '/blog/index', '/blog/tags', :per_page=>10,
+   :sanitize=>true )
+  extension Awestruct::Extensions::Downloads.new('/downloads/index.html', '/downloads/download', '/downloads/download')
+   
   
   # extension Awestruct::Extensions::Indexifier.new
   # Needs to be after Indexifier to get the linking correct; 
