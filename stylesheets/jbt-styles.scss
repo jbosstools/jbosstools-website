@@ -15,8 +15,12 @@
   text-align: center;
 }
 
-.right {
+div.right {
   width: 100%;
+  text-align: right;
+}
+
+td.right {
   text-align: right;
 }
 
@@ -27,11 +31,11 @@
 p { 
   text-align: justify;
   margin-bottom: 20px;
-  img {
+  /*img {
     display: block;
     margin-left: auto;
     margin-right: auto;
-  }
+  }*/
 }
 
 p + ul {
@@ -207,8 +211,11 @@ blockquote > p {
   float: right;
 }
 
+#release_info + #installation {
+  margin-top: 2em;
+}
 
-#installation {
+#installation-tabs {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px;
@@ -229,7 +236,7 @@ blockquote > p {
       &:nth-child(2n+1) {
         background: rgb(247, 247, 247);  
       }
-      td {
+      th, td {
         border: 1px solid rgb(221, 221, 221);
         padding-top: 5px;
         padding-bottom: 5px;
