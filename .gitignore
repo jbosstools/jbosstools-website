@@ -2,7 +2,6 @@
 _tmp
 _site
 site
-cache
 .awestruct
 .sass-cache
 
