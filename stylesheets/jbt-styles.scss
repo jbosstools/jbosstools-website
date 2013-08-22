@@ -30,23 +30,18 @@ td.right {
 
 p { 
   text-align: justify;
-  margin-bottom: 20px;
-  /*img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }*/
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
 
 p + ul {
   margin-top: -20px;
 }
 
-p + blockquote {
-  margin-top: -10px;
-  margin-bottom: 10px;
+table {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
-
 
 hr {
   height: 1px;
@@ -98,8 +93,6 @@ section {
     margin-left: auto;
     margin-right: auto;  
   }
-  
-
 }
 
 .nav {
@@ -122,6 +115,22 @@ blockquote > p {
   margin-top: 2em;
   margin-bottom: 2em;
 }
+
+// ******************************************************
+// Breadcrumb
+// ******************************************************
+
+.breadcrumb > .active {
+  color: rgb(153, 153, 153);
+}
+
+a.dropdown-toggle {
+  text-decoration: none;
+  b.caret {
+    color: rgb(51, 102, 153);
+  }
+}
+
 
 // ******************************************************
 // Customizing the NavBar
@@ -149,8 +158,7 @@ blockquote > p {
   float: right;
 }
 
-
-.hero-content h1, .hero-content h2 {
+.hero-content h1, .hero-content h2, .hero-content p {
   text-align: right;
 }
 .hero-content h1 {
@@ -165,13 +173,25 @@ blockquote > p {
 // ****************************************
 #jbds {
   .download-unit {
-    background: rgb(189, 255, 180);
+    background: rgba(180, 180, 180, 0.2);
+    transition: background .25s ease-in-out;
+    -moz-transition: background .25s ease-in-out;
+    -webkit-transition: background .25s ease-in-out;
+    &:hover {
+      background: rgba(203, 234, 253, 1.0);
+    }
   }
 }
 
 #jbt {
   .download-unit {
-    background: rgb(203, 234, 253);
+    background: rgba(180, 180, 180, 0.2);
+    transition: background .25s ease-in-out;
+    -moz-transition: background .25s ease-in-out;
+    -webkit-transition: background .25s ease-in-out;
+    &:hover {
+      background: rgba(203, 234, 253, 1.0);
+    }
   }
 }
 
@@ -226,8 +246,7 @@ blockquote > p {
   border-bottom-right-radius: 4px;
   
   table {
-    margin-bottom: 20px;
-  
+    
     tr {
       text-align: left;
       &:nth-child(2n) {
@@ -408,6 +427,16 @@ blockquote > p {
     }
     .next {
       text-align: right;
+    }
+  }
+  
+  .admonitionblock {
+    table {
+      td {
+        border : 1px solid rgb(101, 101, 101);
+        padding: 1em;
+      }
+      
     }
   }
   

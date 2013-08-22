@@ -1,9 +1,12 @@
 ---
 layout: blog
+author: fbricon
+title: JBoss Tools 4.1 and Red Hat JBoss Developer Studio 7 go GA
+tags: [jbosstools, jbds, mobile]
 ---
 
 = JBoss Tools 4.1 and Red Hat JBoss Developer Studio 7 go GA
-fbricon
+
 
 On behalf of the JBoss Tools and Developer Studio team, I'm extremely proud to announce the general availability of the JBoss Tools 4.1.0.Final and Red Hat JBoss Developer Studio 7.0.0.GA releases.
 
@@ -37,6 +40,8 @@ We worked really hard to fix more than https://issues.jboss.org/issues/?jql=(pro
 We have so much good stuff this time around, it's hard to cram everything into a (readable) blog post, so I'll just present the major features we have here, introduced since JBoss Tools 4.0 and JBDS 6.0. But make sure to read the complete http://docs.jboss.org/tools/whatsnew/[New and Noteworthy] for a more detailed and complete overview.
 
 TL;DR: The recurring theme of this release is "HTML5 and mobile development". Burr Sutter made a screencast highlighting several of the new features available in this release :
+
+video::http://player.vimeo.com/video/67480300[height=300, widht=400]
 
 == LiveReload
 
@@ -111,7 +116,7 @@ https://community.jboss.org/people/carsten.pfeiffer[Carsten Pfeiffer] did an awe
 Hopefully you should see the following, before and after installing the proper XulRunner version :
 
 image::blog/missing-xulrunner.png[]
-image::blog/vpe-win64.png[]
+image::blog/win64.png[]
 
 We would love to hear if this works for you on Windows 64-bit or if you still see problems. You can give your feedback on https://issues.jboss.org/browse/JBIDE-2720[this bug].
 

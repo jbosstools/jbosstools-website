@@ -36,7 +36,7 @@ Awestruct::Extensions::Pipeline.new do
   extension Awestruct::Extensions::MyPaginator.new(:posts, '/blog/index', :per_page => 2 )
   extension Awestruct::Extensions::MyTagger.new( :posts, '/blog/index', '/blog/tags', :per_page=>10,
    :sanitize=>true )
-  extension Awestruct::Extensions::Downloads.new('/downloads/index.html', '/downloads/download', '/downloads/download')
+  extension Awestruct::Extensions::Downloads.new('/downloads/index.html', 'download.html.haml', '/downloads/download')
    
   
   # extension Awestruct::Extensions::Indexifier.new
