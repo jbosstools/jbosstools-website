@@ -1,4 +1,5 @@
 .project
+_bin
 _tmp
 _site
 site
