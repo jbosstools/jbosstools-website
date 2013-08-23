@@ -1,9 +1,11 @@
 .project
+_bin
 _tmp
 _site
 site
 .awestruct
 .sass-cache
+.bundle
 
 # Compiled source #
 ###################
@@ -43,8 +45,5 @@ target
 .settings/*
 # !.settings/.jsdtscope
 .classpath
-Gemfile.lock
-.bundle
 _tmp
 .project
-cache
