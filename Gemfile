@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'awestruct', '~> 0.5.0'
+gem 'coffee-script', '~> 2.1.1' 
 gem 'htmlcompressor', '~> 0.0.5'
 gem 'uglifier', '~> 1.3.0'
 gem 'therubyracer', '~> 0.11.4', :platforms => [:ruby]
