@@ -28,7 +28,7 @@ title: Features Overview
       - i +=1
       - feature = features.shift
       %section.span3
-        %a{:href=>feature.url} 
+        %a{:href=>"#{site.base_url}/#{feature.url}" }
           %h4.center< #{feature.title}
           %h6.center< #{feature.tagline}
           %img{:src=>"#{site.base_url}/#{feature.image_url}", :alt=>"#{feature.title}", :width=>"128px"}
