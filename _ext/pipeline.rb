@@ -17,7 +17,7 @@ require 'mypaginator'
 require 'feature'
 require 'whatsnew'
 require 'downloads'
-
+require 'myposts'
 
 Awestruct::Extensions::Pipeline.new do
   
@@ -37,7 +37,7 @@ Awestruct::Extensions::Pipeline.new do
   extension Awestruct::Extensions::DataDir.new
   extension Awestruct::Extensions::DataDir.new('/whatsnew')
   extension Awestruct::Extensions::DataDir.new('/features')
-  extension Awestruct::Extensions::Posts.new( '/blog', :posts )
+  extension Awestruct::Extensions::MyPosts.new('/blog', :posts, nil, nil, :imagesdir => '/blog/images')
   extension Awestruct::Extensions::MyPaginator.new(:posts, '/blog/index', :per_page => 2 )
   extension Awestruct::Extensions::MyTagger.new( :posts, '/blog/index', '/blog/tags', :per_page=>10,
    :sanitize=>true )
