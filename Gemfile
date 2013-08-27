@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby '1.9.3' # older ruby versions have problems! Lets be specific. use 'rvm use 1.9.3@sites --create' to use specific ruby version
 gem 'awestruct', '~> 0.5.0'
 gem 'coffee-script', '~> 2.1.1' 
 gem 'htmlcompressor', '~> 0.0.5'
