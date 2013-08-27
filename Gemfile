@@ -11,7 +11,7 @@ gem 'rb-fsevent', '~> 0.9'
 gem 'haml', '~> 4.0.0'
 gem 'rdiscount', '~> 2.0.7', :platforms => [:ruby]
 gem 'kramdown', '~> 1.0.1', :platforms => [:jruby]
-gem 'asciidoctor', '~> 0.1.1'
+gem 'asciidoctor', '~> 0.1.4.rc.1'
 gem 'RedCloth', '~> 4.2.9'
 gem 'html_press', '~> 0.8.1'
 gem 'execjs', '~> 1.4.0'
@@ -19,5 +19,5 @@ gem 'rb-inotify', '~> 0.9'
 gem 'rake', '~> 10.0.3', :group => :test
 gem 'tzinfo', '~> 0.3.35', :group => :test
 gem 'coffee-script', '~> 2.1.1'
-gem 'less'
+#gem 'less'
 

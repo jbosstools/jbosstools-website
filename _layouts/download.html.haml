@@ -5,21 +5,7 @@ tab: downloads
 .container-fluid
   .row-fluid
     .span12
-      %ul.breadcrumb
-        %li
-          %a{:href=>"#{site.base_url}"} Home
-          %span.divider /
-        %li
-          %a{:href=>"#{site.base_url}/downloads"} Downloads
-          %span.divider /
-        %li.active.dropdown
-          #{page.product.name}
-          %span.divider /
-        %li.active 
-          #{page.product.status}          
-  .row-fluid
-    .span12
-      %h3.center< Installing #{page.product.name} #{page.product.version}
+      %h3.center< Downloading #{page.product.name} #{page.product.version}
   .row-fluid
     .span8
       %a{:href=>"#requirements-modal", :"data-toggle"=>"modal"} Requirements

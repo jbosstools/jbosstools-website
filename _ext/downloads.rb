@@ -39,6 +39,7 @@ module Awestruct
         build = family.stable_releases.first
         page = find_layout_page( @input_path )
         page.output_path = File.join( @output_path_prefix + "_" + build.id + ".html" )
+        page.title = family.name + " " + build.version.to_s
         product = Product.new()
         product.name = family.name
         product.version = build.version
@@ -51,8 +52,9 @@ module Awestruct
         product.update_site_url = family.update_site_url
         product.zips= build.zips
         page.product = product 
+
         @site.pages << page
-        puts "Generated " + page.output_path
+        puts "Generated " + page.output_path + " with title '" + page.title + "'"
         # puts " page product=" + page.product.to_s
         page
       end

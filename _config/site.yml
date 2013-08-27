@@ -58,7 +58,7 @@ wget:
     - http://static.jboss.org/theme/fonts/titilliumtext/
     - http://static.jboss.org/theme/fonts/font-awesome/
     - http://static.jboss.org/theme/images/common/
-    - http://static.jboss.org/images/example/
+    # - http://static.jboss.org/images/example/
 
   
 profiles:
@@ -71,6 +71,7 @@ profiles:
     bootstrap_css_url: /stylesheets/bootstrap-community
     bootstrap_js_url: /javascripts/bootstrap-community
     disqus: jbosstools-dev
+    
   staging:
     base_url: http://design-stg.jboss.org/boostrap/themes
     minified: .min
