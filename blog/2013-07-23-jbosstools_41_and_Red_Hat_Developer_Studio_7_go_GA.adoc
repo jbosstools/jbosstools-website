@@ -1,9 +1,12 @@
 ---
 layout: blog
-author: fbricon
-title: JBoss Tools 4.1 and Red Hat JBoss Developer Studio 7 go GA
 tags: [jbosstools, jbds, mobile]
 ---
+= JBoss Tools 4.1 and Red Hat JBoss Developer Studio 7 go GA
+fbricon
+:imagesdir: blog/images
+
+
 
 = JBoss Tools 4.1 and Red Hat JBoss Developer Studio 7 go GA
 
@@ -56,7 +59,7 @@ LiveReload supports local (i.e. file:// based urls) or content served out from a
 
 You can right-click on files in the Project Explorer view or on modules deployed to a server, to load your Browser with a LiveReload enabled page. This action will setup the LiveReload server for you if it does not already exist :
 
-image::blog/open-with-livereload.png[]
+image::open-with-livereload.png[]
 
 Our server implements the http://feedback.livereload.com/knowledgebase/articles/86174-livereload-protocol[existing defacto protocol] used by the original LiveReload and related plug-ins, meaning any browser, script and tool that works with live reload today should work with our Eclipse implementation of it.
 
