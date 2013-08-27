@@ -1,13 +1,10 @@
 ---
 layout: blog
+title: JBoss Tools 4.1 and Red Hat JBoss Developer Studio 7 go GA
+author: fbricon
 tags: [jbosstools, jbds, mobile]
+imagesdir: ../../../images
 ---
-= JBoss Tools 4.1 and Red Hat JBoss Developer Studio 7 go GA
-fbricon
-:imagesdir: blog/images
-
-
-
 = JBoss Tools 4.1 and Red Hat JBoss Developer Studio 7 go GA
 
 
@@ -69,7 +66,7 @@ It's really nice to have instant feedback for HTML5/JS based applications. But w
 
 If your browser does not have the LiveReload plugin, like Safari or you're using a mobile device, you would normally manually add a livereload.js loading snippet in every web page. That can be tedious and requires changes to files you might not want to commit to your source repository. It's alright. Please meet our "LiveReload Proxying" :
 
-image::blog/LiveReload_open_in_web_browser_via_qrcode-dialog.png[]
+image::LiveReload_open_in_web_browser_via_qrcode-dialog.png[]
 
 It is enabled by checking "Inject the livereload.js script in HTML pages" in the LiveReload Server configuration. This allows you to proxy your file:// urls and have them served out on localhost:35729/<projectname>/<filepath> (or any other port if you choose so in the LiveReload Server configuration) .
 
@@ -86,8 +83,8 @@ To further improve your HTML5 / mobile development experience, we've added a new
 
 The JQuery Mobile palette features a dialog preview when you click or drag one of the buttons for a component, it lets you see and customize what will be inserted :
 
-image::blog/lf.png[]
-image::blog/set.png[]
+image::lf.png[]
+image::set.png[]
 
 Alexey Kazakov http://www.screenr.com/embed/7M57[recorded a video] to show it in action.
 
@@ -102,7 +99,7 @@ Now guess what? your mobile application development experience just scored 11. I
 - debugging facilities : use Firebug Lite for easy local debugging, or debug remotely using any Weinre compatible server to debug/inspect the application running in BrowserSim.
 - new skins galore
 
-image::blog/browsersim-firebug.png[]
+image::browsersim-firebug.png[]
 
 [NOTE]
 ====
@@ -117,8 +114,8 @@ https://community.jboss.org/people/carsten.pfeiffer[Carsten Pfeiffer] did an awe
 
 Hopefully you should see the following, before and after installing the proper XulRunner version :
 
-image::blog/missing-xulrunner.png[]
-image::blog/vpe-win64.png[]
+image::missing-xulrunner.png[]
+image::vpe-win64.png[]
 
 We would love to hear if this works for you on Windows 64-bit or if you still see problems. You can give your feedback on https://issues.jboss.org/browse/JBIDE-2720[this bug].
 
@@ -129,7 +126,7 @@ If real, cross-platform Mobile application development is your thing, we now hav
 
 You can create an "Hybrid Mobile" project and test and develop it using the Android SDK and XCode for iOS testing.
 
-image::blog/runConfigs.png[]
+image::runConfigs.png[]
 
 [NOTE]
 ====
@@ -140,7 +137,7 @@ This is only available as Experimental in JBoss Tools, not part of Developer Stu
 
 To help testing hybrid mobile development we've extended our BrowerSim to use Ripple to provide a way to do portable testing (meaning you do not necessarily need Android or XCode installed to do development)
 
-image::blog/CordovaSim-demo.png[]
+image::CordovaSim-demo.png[]
 
 [NOTE]
 ====
@@ -159,7 +156,7 @@ We listened to you and added new wizards, to give an Eclipse front-end to the fo
 
 You will find these wizards - which are Technology Preview as of this release - under "File > New > JBoss Tools":
 
-image::blog/new-forge-based-wizards.png[]
+image::new-forge-based-wizards.png[]
 
 Make sure you read a detailed description of these wizard in http://docs.jboss.org/tools/whatsnew/forge/forge-news-4.1.0.Beta2.html[Forge What's New]. Oh and to make it all work, we now embed the Forge 1.3.3.Final runtime.
 
@@ -178,8 +175,8 @@ A new "Arquillian JUnit Test Case" wizard, based on the JUnit Test Case wizard, 
 - @RunWith(Arquillian.class) annotation
 - the deployment method
 
-image::blog/arquillian-junit-1.png[]
-image::blog/arquillian-test-3.png[]
+image::arquillian-junit-1.png[]
+image::arquillian-test-3.png[]
 
 Enabling Arquillian support also brings you validation, navigation across arquillian resources, launch configuration... You'll most certainly want to read a more complete overview of the Arquillian support http://docs.jboss.org/tools/whatsnew/arquillian/arquillian-news-4.1.0.Beta1.html[here].
 
@@ -196,7 +193,7 @@ OpenShift Tools received a good deal of improvements, usability wise. Improved U
 
 Ever since we added OpenShift support to Eclipse we've had the problem that EGit did not allow streaming of console output when performing a push.
 
-image::blog/publishing-to-openshift.png[]
+image::publishing-to-openshift.png[]
 
 This mean that when doing a long running push Eclipse would just have a blank console and show "Push in progress".
 
@@ -206,19 +203,19 @@ In Kepler, EGit now includes our contribution of allowing this meaning Git users
 
 We've added "Restart" to the UI, allowing you to trigger a node restart for your application in case something bad has happened or you changed a configuration that requires a full node restart.
 
-image::blog/restart-application.png[]
+image::restart-application.png[]
 
 === Create application from a remote repository
 
 Opening the advanced section of the New OpenShift Appliction wizard, you can now create an application directly seeded from a remote git repository (github for instance) instead of forcing you to use git recursive merges locally.
 
-image::blog/advanced-source-code.png[]
+image::advanced-source-code.png[]
 
 === Configure OpenShift markers
 
 OpenShift is using markers to enable or disable features. These markers are hidden files added to the <project>/.openshift/markers directory. You can now add/remove/edit these markers by invoking a wizard from the OpenShift > Configure Markers... menu in th Project- or Package-Explorer.
 
-image::blog/configure-markers-wizard.png[]
+image::configure-markers-wizard.png[]
 
 === Application creation logs
 
@@ -228,7 +225,7 @@ When creating applications you want to know about the credentials that OpenShift
 
 JBoss Central, the welcome screen of JBDS / JBoss Tools has a new design. We've tried to make it easier for you to get started building new applications, providing more samples, displaying descriptions of what each wizard gives you.
 
-image::blog/jboss_central.png[]
+image::jboss_central.png[]
 
 You can also access wizards for features you haven't installed yet, such as the OpenShift Application. You'll be prompted to install the required OpenShift Tools feature if you haven't installed it already.
 
@@ -241,7 +238,7 @@ In the software/update tab, you'll find we have added VJet, a promising new Java
 - JBoss EAP 6.1, freely available to developers (you can get it from the JBoss AS download page), now has its own server adapter.
 - WildFly now also has its own dedicated server adapter. Please note it's still considered experimental as WildFly itself is not stabilized to this day. We recommend using the latest Alpha-3 release, which fixes some file locking issue on windows and now support JSP development mode.
 
-image::blog/new-server-adapters.png[]
+image::new-server-adapters.png[]
 
 === Better server identification
 
@@ -272,7 +269,7 @@ The automatic Source Lookup feature is based on Maven/m2e. As such, downloaded s
 
 Since JDT doesn't support variables in source attachments (such as M2_REPO), source attachments use absolute (non-portable) paths. It's ok when the jar is part of a Classpath Library, since the path is stored in your own workspace. But it can become a problem if your jar dependency is listed in your project's .classpath descriptor, potentially shared with other developers. For this reason, by default, you'll be warned when a compatible source has been found :
 
-image::blog/automatic-source-lookup.png[]
+image::automatic-source-lookup.png[]
 
 The good news is the source lookup mechanism is capable of fixing bad source attachements, even for Maven enabled projects. If the attached source doesn't exist (ex. you wiped out your maven local repository or shared hard-coded source attachments in your scm) or doesn't contain the right source files, it will try to download the proper source.
 
@@ -280,7 +277,7 @@ The good news is the source lookup mechanism is capable of fixing bad source att
 
 Maven Repositories defined in profiles in your settings.xml (Window > Preferences > JBoss Tools > Maven Integration > Configure Maven Repositories...) can now be edited with the "Edit Repository..." button :
 
-image::blog/edit-maven-repositories.png[]
+image::edit-maven-repositories.png[]
 
 === And much more...
 
