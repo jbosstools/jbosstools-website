@@ -42,6 +42,8 @@ module Awestruct
             puts 'Add ' + page.output_path + ' to index'
             site.pages_by_output_path[page.output_path] = page
           end
+        else
+          return site.pages_by_output_path[path]
         end
         return site.pages_by_output_path[path]
       end
