@@ -3,7 +3,6 @@ layout: blog
 title: JBoss Tools 4.1 and Red Hat JBoss Developer Studio 7 go GA
 author: fbricon
 tags: [jbosstools, jbds, mobile]
-imagesdir: ../../../images
 ---
 = JBoss Tools 4.1 and Red Hat JBoss Developer Studio 7 go GA
 
