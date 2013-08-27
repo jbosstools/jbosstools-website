@@ -46,7 +46,10 @@ module Awestruct
         product.status = "stable_build"
         product.release_date = build.release_date
         product.eclipse_version = eclipse_versions.select{|v| v.id == family.eclipse_requirement}.first
-        product.blog_announcement_url = build.blog_announcement
+        blog_page = find_blog_announcement_page(build.blog_announcement)
+        unless blog_page.nil?
+          product.blog_announcement_url = blog_page.output_path
+        end
         product.marketplace_install_url = family.marketplace_install_url
         product.marketplace_url = family.marketplace_url
         product.update_site_url = family.update_site_url
@@ -57,6 +60,20 @@ module Awestruct
         puts "Generated " + page.output_path + " with title '" + page.title + "'"
         # puts " page product=" + page.product.to_s
         page
+      end
+      
+      def find_blog_announcement_page(page_name)
+        unless page_name.nil?
+          puts "Looking for post page matching '" + page_name + "'"
+          @site.posts.each do |post|
+            puts " " + post.simple_name
+            if post.simple_name.eql? page_name
+              return post
+            end
+          end
+          puts "Enable to find page for blog " + page_name
+        end
+        return nil
       end
       
       def generate_development_build_download_page(build, family, eclipse_versions)
