@@ -39,11 +39,9 @@ module Awestruct
           site.pages_by_output_path = Hash.new
           puts 'Creating index of pages by output path'
           for page in site.pages
-            puts 'Add ' + page.output_path + ' to index'
             site.pages_by_output_path[page.output_path] = page
           end
-        else
-          return site.pages_by_output_path[path]
+          puts "Index completed: #{site.pages_by_output_path.size}"
         end
         return site.pages_by_output_path[path]
       end
