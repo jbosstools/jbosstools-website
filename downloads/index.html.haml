@@ -157,45 +157,44 @@ jbt_families:
 
   
 ---
-.container-fluid
-  .row-fluid
-    .span6
-      #jbds
-        .download-unit
-          %h3.center
-            - jbds_family = page.jbds_families.select{|f| f.stable_releases?}.first
-            #{jbds_family.name} #{jbds_family.version}
-          %ul.items
-            %li Released on #{page.jbds_families.first.stable_releases.first.release_date}
-            %li Based on JBoss Tools 4.1 supported plugins
-            %li One click install - works on Windows, Mac and Linux
-            %li Full IDE installer or install from existing Eclipse
-            %li JBoss Central to install extra features
-            %li Supported by Red Hat
-          .download-btn
-            %a.btn.btn-primary{:href=>"#{site.base_url}#{page.stable_jbds}"} 
-              %i.icon-download
-              Download Stable Version
-        .links
-          %span< or
-          %a{:href=>"https://devstudio.jboss.com/earlyaccess/7.0/"}< try the Early Access version 
-        
-    .span6
-      #jbt
-        .download-unit
-          %h3.center
-            - jbt_family = page.jbt_families.select{|f| f.stable_releases?}.first
-            #{jbt_family.name} #{jbt_family.version}
-          %ul.items
-            %li Released on #{page.jbt_families.first.stable_releases.first.release_date}
-            %li Individual plugins for Eclipse, including experimental plugins
-            %li Install from existing Eclipse only
-            %li JBoss Central to install extra features
-            %li Community supported
-          .download-btn
-            %a.btn.btn-primary{:href=>"#{site.base_url}#{page.stable_jbt}"} 
-              %i.icon-download
-              Download Stable Version
-        .links
-          %span< or
-          %a{:href=>"#"}< try the Latest Development Builds 
+.row-fluid
+  .span6
+    #jbds
+      .download-unit
+        %h3.center
+          - jbds_family = page.jbds_families.select{|f| f.stable_releases?}.first
+          #{jbds_family.name} #{jbds_family.version}
+        %ul.items
+          %li Released on #{page.jbds_families.first.stable_releases.first.release_date}
+          %li Based on JBoss Tools 4.1 supported plugins
+          %li One click install - works on Windows, Mac and Linux
+          %li Full IDE installer or install from existing Eclipse
+          %li JBoss Central to install extra features
+          %li Supported by Red Hat
+        .download-btn
+          %a.btn.btn-primary{:href=>"#{site.base_url}#{page.stable_jbds}"} 
+            %i.icon-download
+            Download Stable Version
+      .links
+        %span< or
+        %a{:href=>"https://devstudio.jboss.com/earlyaccess/7.0/"}< try the Early Access version 
+      
+  .span6
+    #jbt
+      .download-unit
+        %h3.center
+          - jbt_family = page.jbt_families.select{|f| f.stable_releases?}.first
+          #{jbt_family.name} #{jbt_family.version}
+        %ul.items
+          %li Released on #{page.jbt_families.first.stable_releases.first.release_date}
+          %li Individual plugins for Eclipse, including experimental plugins
+          %li Install from existing Eclipse only
+          %li JBoss Central to install extra features
+          %li Community supported
+        .download-btn
+          %a.btn.btn-primary{:href=>"#{site.base_url}#{page.stable_jbt}"} 
+            %i.icon-download
+            Download Stable Version
+      .links
+        %span< or
+        %a{:href=>"#"}< try the Latest Development Builds 

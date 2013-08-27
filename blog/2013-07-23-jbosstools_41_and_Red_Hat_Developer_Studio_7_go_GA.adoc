@@ -41,17 +41,16 @@ We have so much good stuff this time around, it's hard to cram everything into a
 
 TL;DR: The recurring theme of this release is "HTML5 and mobile development". Burr Sutter made a screencast highlighting several of the new features available in this release :
 
-video::http://player.vimeo.com/video/67480300[height=300, widht=400]
+video::67480300[vimeo, 425, 350]
 
 == LiveReload
 
 Probably the coolest new features we have, the new LiveReload server allows you to have your browser automatically refresh when you save your html, javascript and css files.You can just focus on content and functionality and instantly see and use the changes in your browser. If it is hard to imagine how it works, https://twitter.com/xcoulon[Xavier Coulon] made a video showing how to activate and use it (on the right).
 
- 
+video::NGaHu4z_BLc[youtube, 425, 350]
 
- 
 
-You should install a LiveReload plugin/extension into your browser as documented in our http://docs.jboss.org/tools/whatsnew/livereload/livereload-news-1.0.0.Alpha2.html[What’s New and Noteworthy]. If you can't, don't worry, keep reading.
+You should install a LiveReload plugin/extension into your browser as documented in our http://docs.jboss.org/tools/whatsnew/livereload/livereload-news-1.0.0.Alpha2.html[What's New and Noteworthy]. If you can't, don't worry, keep reading.
 
 LiveReload supports local (i.e. file:// based urls) or content served out from an application server. In the latter case, the browser will reload once the files are published on the application server, especially useful when editing JSF content like xhtml.
 
@@ -80,7 +79,7 @@ Now, typing a complex, long url on a mobile device can be tedious, so in order t
 
 == HTML5/JQuery Mobile Palette
 
-To further improve your HTML5 / mobile development experience, we’ve added a new HTML5 palette with initial support for JQuery Mobile widgets. This palette will show up when you edit HTML5 files (files with +<!DOCTYPE HTML>+ doc type). If it does not show up, it is probably using HTML4 or XHTML content types.
+To further improve your HTML5 / mobile development experience, we've added a new HTML5 palette with initial support for JQuery Mobile widgets. This palette will show up when you edit HTML5 files (files with +<!DOCTYPE HTML>+ doc type). If it does not show up, it is probably using HTML4 or XHTML content types.
 
 The JQuery Mobile palette features a dialog preview when you click or drag one of the buttons for a component, it lets you see and customize what will be inserted :
 
@@ -116,7 +115,7 @@ https://community.jboss.org/people/carsten.pfeiffer[Carsten Pfeiffer] did an awe
 Hopefully you should see the following, before and after installing the proper XulRunner version :
 
 image::blog/missing-xulrunner.png[]
-image::blog/win64.png[]
+image::blog/vpe-win64.png[]
 
 We would love to hear if this works for you on Windows 64-bit or if you still see problems. You can give your feedback on https://issues.jboss.org/browse/JBIDE-2720[this bug].
 
