@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 # older ruby versions have problems! Lets be specific. use 'rvm use 1.9.3@sites --create' to use specific ruby version
 ruby '1.9.3' 
-gem 'awestruct', '~> 0.5.0'
+gem 'awestruct', '~> 0.5.3'
 gem 'htmlcompressor', '~> 0.0.5'
 gem 'uglifier', '~> 1.3.0'
 gem 'therubyracer', '~> 0.11.4', :platforms => [:ruby]
