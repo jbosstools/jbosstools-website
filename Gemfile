@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-ruby '1.9.3' # older ruby versions have problems! Lets be specific. use 'rvm use 1.9.3@sites --create' to use specific ruby version
+# older ruby versions have problems! Lets be specific. use 'rvm use 1.9.3@sites --create' to use specific ruby version
+ruby '1.9.3' 
 gem 'awestruct', '~> 0.5.0'
-gem 'coffee-script', '~> 2.1.1' 
 gem 'htmlcompressor', '~> 0.0.5'
 gem 'uglifier', '~> 1.3.0'
 gem 'therubyracer', '~> 0.11.4', :platforms => [:ruby]
@@ -19,6 +19,5 @@ gem 'execjs', '~> 1.4.0'
 gem 'rb-inotify', '~> 0.9'
 gem 'rake', '~> 10.0.3', :group => :test
 gem 'tzinfo', '~> 0.3.35', :group => :test
-gem 'coffee-script', '~> 2.1.1'
 #gem 'less'
 
