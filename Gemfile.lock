@@ -94,7 +94,7 @@ PLATFORMS
 DEPENDENCIES
   RedCloth (~> 4.2.9)
   asciidoctor (~> 0.1.4.rc.1)
-  awestruct (~> 0.5.0)
+  awestruct (~> 0.5.3)
   cssminify (~> 1.0.2)
   execjs (~> 1.4.0)
   haml (~> 4.0.0)
