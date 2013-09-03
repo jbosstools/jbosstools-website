@@ -8,10 +8,10 @@
       .nav-collapse.collapse
         %ul.nav
           %li#home<
-            %a(href="#{site.base_url}/") Home
+            %a(href="#{relative('/')}") Home
           
           %li#downloads<
-            %a(href="#{site.base_url}/downloads/") Downloads
+            %a(href="#{relative('/downloads/')}") Downloads
           
           %li#docs.dropdown<
             %a.dropdown-toggle(href="#" data-toggle="dropdown")<
@@ -19,11 +19,11 @@
                 %b.caret>
             %ul.dropdown-menu 
               %li<
-                %a(href="#{site.base_url}/features") Features
+                %a(href="#{relative('/features')}") Features
               %li<
-                %a(href="#{site.base_url}/whatsnew") What's New
+                %a(href="#{relative('/whatsnew')}") What's New
               %li<
-                %a(href="#{site.base_url}/guides/videos.html") Video Tutorials
+                %a(href="#{relative('/guides/videos.html')}") Video Tutorials
               %li<
                 %a(href="http://docs.jboss.org/tools/4.1.0.Final/") Reference Guides
           
@@ -33,7 +33,7 @@
                 %b.caret>
             %ul.dropdown-menu
               %li<
-                %a(href="#{site.base_url}/contribute.html") Contribute
+                %a(href="#{relative('/contribute.html')}") Contribute
               %li<
                 %a(href="http://www.jboss.org/community/docs/DOC-10794") Wiki
               %li<
@@ -43,7 +43,7 @@
               %li<
                 %a(href="irc://irc.freenode.org/jbosstools") Chat
               %li#blog<
-                %a(href="#{site.base_url}/blog/") Blog
+                %a(href="#{relative('/blog/')}") Blog
           
           %li#issuetracker<
             %a(href="https://issues.jboss.org/browse/JBIDE") Issues
