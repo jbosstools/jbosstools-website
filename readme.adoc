@@ -1,0 +1,144 @@
+= How to build tools.jboss.org
+:awestruct-layout: title-nocol
+:toc:
+
+A bit of Git, a bit of Ruby and you will get your local tools.jboss.org served.
+
+== Prerequisites
+
+* Get http://git-scm.com/[Git]
+* Get http://www.ruby-lang.org/en/[Ruby 1.9.3] (part of the RVM install if you follow that path - see below)
+* Get http://rubygems.org/[RubyGems 1.3.6] or above
+* Get http://www.gnu.org/software/wget/[GNU Wget 1.14]
+* If on Mac OS, get XCode (needed for native gems)
+
+== Installation
+
+=== Git
+Install Git to your system. http://help.github.com/[GitHub's help page] is a good starting
+point. If you are looking for some tips and tricks, checkout http://in.relation.to/Bloggers/HibernateMovesToGitGitTipsAndTricks[Emmanuel's blog].
+
+=== Ruby (via RVM)
+Ruby like many other platforms has its dependency hell. We do recommend you use RVM to
+isolate your ruby runtimes as well as dependencies (gems). The RVM steps are optional though.
+If you are not going to use RVM have a look at the different installations http://www.ruby-lang.org/en/downloads/[options] you have. 
+
+* Install https://rvm.io[RVM].
+* Set up the isolated environment for the site
+
+[source]
+----
+rvm install 1.9.3
+rvm use 1.9.3
+rvm gemset create jbosstools
+----
+
+Note: the project has a `.rvmrc` file which will be used by rvm when you
+enter the `jbosstools-website` directory. This file will assume you have
+the above installed.
+
+=== Get the source
+Next, let's retrieve the website.
+
+[source]
+----
+git clone https://github.com/jbosstools/jbosstools-website
+cd jbosstools-website
+----
+
+If you see a message like this:
+
+`Gemset 'jbosstools' does not exist, 'rvm gemset create jbosstools' first, or
+append '--create'.`
+
+Then it is because you have rvm installed and forgot to run the rvm setup
+above.
+
+=== Install Ruby dependencies
+
+This next step might take some time - it is installing all the required
+dependencies.
+
+[source]
+----
+gem install bundler
+bundle install
+----
+
+Note that if someone updates Awestruct or any dependent gem via the `Gemfile` dependency
+management, you need to rerun `bundle install`.
+
+== Serve the site locally
+
+* Run  `rake preview`
+* Open your browser to http://localhost:4242
+
+Any change will be automatically picked up except for changes to `_partials` files.
+
+[NOTE]
+====
+You might see warnings at startup like
+
+[source]
+----
+WARNING: Missing required dependency to activate optional built-in extension coffeescripttransform.rb
+  cannot load such file -- coffee-script
+Using profile: development
+Generating site: http://localhost:4242
+Skipping files cache update.
+CodeRay::Scanners could not load plugin :bash; falling back to :text
+CodeRay::Scanners could not load plugin :bash; falling back to :text
+CodeRay::Scanners could not load plugin :bash; falling back to :text
+CodeRay::Scanners could not load plugin :bash; falling back to :text
+CodeRay::Scanners could not load plugin :bash; falling back to :text
+CodeRay::Scanners could not load plugin :bash; falling back to :text
+[Listen warning]:
+The blocking parameter of Listen::Listener#start is deprecated.
+Please use Listen::Adapter#start for a non-blocking listener and Listen::Listener#start! for a blocking one.
+----
+
+That's ok, it's not your fault ;) It's related to some Awestruct limitations.
+====
+
+== Next steps
+
+Using you local site, you can have a look at our link:/survival-guide/[survival guide to editing this website] to get you started.
+
+== Tips & Tricks
+
+=== If your changes are not visible...
+
+completely regenerate the site via:
+
+[source]
+----
+rake clean[all] preview
+----
+=== If serving the site is slow...
+
+On Linux, serving the file may be atrociously slow 
+(something to do with WEBRick).
+
+Use the following alternative:
+
+* Go in your `~/hibernate.org` directory.  
+* Run  `awestruct --auto -P development`
+* In parallel, go to the `~/hibernate.org/_site` directory
+* Run `python -m SimpleHTTPServer 4242`
+
+You should be back to millisecond serving :)
+
+== License
+
+The content of this repository is released under TBD.
+Sample code available on this website is released under TBD.
+
+By submitting a "pull request" or otherwise contributing to this repository, you
+agree to license your contribution under the respective licenses mentioned above.
+
+== Acknowledgements
+
+This website uses https://github.com/jbossorg/bootstrap-community[JBoss Community Bootstrap].
+This README.adoc was based on
+https://github.com/hibernate/hibernate.org/blob/hibernate-rebase-of-jbossorg/README.adoc[hibernate.org
+README.adoc]
