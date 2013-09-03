@@ -9,7 +9,7 @@ tab: community
         %img.img-polaroid{:src => "#{site.team[page.author].photo_64px}"}
         .title.border
           %h3
-            %a{:href=>"#{site.base_url}#{page.url}"}= page.title
+            %a{:href=>relative("#{page.url}")}= page.title
           .author
             /there is only one author per post but the author splitter adds an array here
             posted by 
@@ -18,7 +18,7 @@ tab: community
             %strong #{page.date.strftime( '%b %d, %Y' )}.
             - if(page.tags != null && !page.tags.empty?) 
               - page.tags.each do |tag|
-                %a.label.label-info{:href=>"#{site.base_url}#{tag.primary_page.url}"} #{tag}
+                %a.label.label-info{:href=>relative("#{tag.primary_page.url}")} #{tag}
             %p.comments
               %i.icon-comments
               =page.disqus_comments_link 
@@ -32,12 +32,12 @@ tab: community
         .row-fluid
           .span4.previous
             - if page.previous_post
-              %a.btn.btn-primary.btn-small{:href=>"#{site.base_url}#{page.previous_post.url}"} &laquo; #{page.previous_post.title}
+              %a.btn.btn-primary.btn-small{:href=>relative("#{page.previous_post.url}")} &laquo; #{page.previous_post.title}
           .span4.center
-            %a.btn.btn-primary.btn-small{:href=>"#{site.base_url}/blog"} See all articles
+            %a.btn.btn-primary.btn-small{:href=>relative("/blog")} See all articles
           .span4.next
             - if page.next_post
-              %a.btn.btn-primary.btn-small{:href=>"#{site.base_url}#{page.next_post.url}"} #{page.next_post.title} &raquo;
+              %a.btn.btn-primary.btn-small{:href=>relative("#{page.next_post.url}")} #{page.next_post.title} &raquo;
               
       .comments
         #{page.disqus_comments}

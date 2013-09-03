@@ -3,7 +3,7 @@ layout: features
 module_id: central
 title: JBoss Central
 authors: [xcoulon]
-image_url: ./features/images/features-central_550px.png
+image_url: images/features-central_550px.png
 feature_order: 1
 
 tagline: Start your project faster.
@@ -40,10 +40,10 @@ and more...
 
 #### Supporting Technologies
 
-![JBoss AS 7](./images/jbossas7_icon_256x.png)
-![RestEasy](./images/resteasy_icon_256x.png)
-![OpenShift](./images/openshift_icon_256x.png)
-![Forge](./images/jbossforge_icon_256x.png) 
-![Weld](./images/weld_icon_256x.png)
-![Hibernate](./images/hibernate_icon_256x.png)
-![Richfaces](./images/richfaces_icon_256x.png)
+![JBoss AS 7](images/jbossas7_icon_256x.png)
+![RestEasy](images/resteasy_icon_256x.png)
+![OpenShift](images/openshift_icon_256x.png)
+![Forge](images/jbossforge_icon_256x.png) 
+![Weld](images/weld_icon_256x.png)
+![Hibernate](images/hibernate_icon_256x.png)
+![Richfaces](images/richfaces_icon_256x.png)

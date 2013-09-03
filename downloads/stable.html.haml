@@ -33,7 +33,7 @@ product:
     .span8
       %a{:href=>"#requirements-modal", :"data-toggle"=>"modal"} Requirements
       %span &#124; 
-      %a{:href=>"#{site.base_url}/whatsnew/"} What's New
+      %a{:href=>relative("/whatsnew/")} What's New
       %span &#124; 
       %a{:href=>"#"} Release Note
     .span4.right
@@ -81,7 +81,7 @@ product:
           %p
             Drag and drop the 
             %a{:href=>page.product.marketplace_install_url, :title=>"Install"}
-              %img{:src=>"#{site.base_url}/images/tools/installbutton.png", :alt=>"Drag and drop this button into a running #{eclipse_name} workspace to install #{page.product.name}", :height=>"25", :width=>"63"}
+              %img{:src=>relative("/images/tools/installbutton.png"), :alt=>"Drag and drop this button into a running #{eclipse_name} workspace to install #{page.product.name}", :height=>"25", :width=>"63"}
             icon on your active
             %strong< Eclipse #{page.product.eclipse_version} 
             workspace, or alternatively, search for &quot;
