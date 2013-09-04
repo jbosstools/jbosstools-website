@@ -17,184 +17,191 @@ eclipse_versions:
     full_name: Eclipse Indigo 3.7.2
     download_url: http://www.eclipse.org/downloads/packages/release/indigo/sr2
 
-jbds_families:
-  - id: jbds_7
-    name: JBoss Developer Studio
-    version: 7.0
-    eclipse_requirement: kepler
-    marketplace_url: http://marketplace.eclipse.org/node/827807
-    marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=827807
-    stable_releases:
-      - id: jbds_700
-        version: 7.0
-        release_date: 2013-07-22
 
-  - id: jbds_6
-    name: JBoss Developer Studio
-    version: 6.0
-    eclipse_requirement: juno
-    marketplace_url: http://marketplace.eclipse.org/node/503834
-    marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=503834
-    stable_releases:
-      - id: jbds_601
-        version: 6.0.1
-        release_date: 2012-11-01
-  
-jbt_families:
-  - id: jbt_core_41x
-    name: JBoss Tools Core
-    version: 4.1
+families:
+  - id: jbds_7x
     eclipse_requirement: kepler
-    marketplace_url: http://marketplace.eclipse.org/node/876523
-    marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=876523
-    update_site_url: http://download.jboss.org/jbosstools/updates/stable/kepler/
-    stable_releases:
-      - id: jbt_core_410
-        version: 4.1.0
-        release_date: 2013-07-22
-        blog_announcement: 2013-07-23-jbosstools_41_and_Red_Hat_Developer_Studio_7_go_GA
-        zips:
-          - name: Update site (including sources) bundle of all JBoss Tools Core
-            download_size: 409MB
-            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.x/jbosstools-Update-4.1.0.Final_2013-07-19_19-47-52-B380.zip
-            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.x/jbosstools-Update-4.1.0.Final_2013-07-19_19-47-52-B380.zip.MD5
-          - name: Sources zip of all JBoss Tools Core
-            download_size: 135MB
-            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.x/jbosstools-Sources-4.1.0.Final_2013-07-19_19-47-52-B380.zip
-            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.x/jbosstools-Sources-4.1.0.Final_2013-07-19_19-47-52-B380.zip.MD5
-          - name: Update site (including sources) bundle of all Hibernate Tools
-            download_size: 78MB
-            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.x/hibernatetools-Update-4.1.0.Final_2013-07-19_19-47-52-B380.zip
-            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.x/hibernatetools-Update-4.1.0.Final_2013-07-19_19-47-52-B380.zip.MD5
-    development_builds:
-      update_site_url: http://download.jboss.org/jbosstools/updates/nightly/core/trunk/
-    nightly_builds:
-      update_site_url: http://download.jboss.org/jbosstools/builds/nightly/trunk/latest/
-       
-  - id: jbt_is_41x
-    name: JBoss Tools Integration Stack
-    version: 4.1
-    eclipse_requirement: kepler
-    development_builds:   
-      update_site_url: http://download.jboss.org/jbosstools/updates/integration/kepler/integration-stack/aggregate/4.1.0
-    
-  - id: jbt_core_40x
-    name: JBoss Tools Core
-    version: 4.0
+    streams:
+      jbds:
+        name: JBoss Developer Studio
+        releases: 
+          - id: jbds_700
+            version: 7.0
+            release_date: 2013-07-22
+            blog_announcement: 2013-07-23-jbosstools_41_and_Red_Hat_Developer_Studio_7_go_GA
+            marketplace_url: http://marketplace.eclipse.org/node/827807
+            marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=827807
+            jboss_com_url: https://devstudio.jboss.com/download/7.x.html
+      jbt_core:
+        name: JBoss Tools Core
+        releases:
+          - id: jbt_core_410
+            version: 4.1.0
+            release_date: 2013-07-22
+            blog_announcement: 2013-07-23-jbosstools_41_and_Red_Hat_Developer_Studio_7_go_GA
+            marketplace_url: http://marketplace.eclipse.org/node/876523
+            marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=876523
+            update_site_url: http://download.jboss.org/jbosstools/updates/stable/kepler/
+            zips:
+              - name: Update site (including sources) bundle of all JBoss Tools Core
+                download_size: 409MB
+                url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.x/jbosstools-Update-4.1.0.Final_2013-07-19_19-47-52-B380.zip
+                md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.x/jbosstools-Update-4.1.0.Final_2013-07-19_19-47-52-B380.zip.MD5
+              - name: Sources zip of all JBoss Tools Core
+                download_size: 135MB
+                url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.x/jbosstools-Sources-4.1.0.Final_2013-07-19_19-47-52-B380.zip
+                md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.x/jbosstools-Sources-4.1.0.Final_2013-07-19_19-47-52-B380.zip.MD5
+              - name: Update site (including sources) bundle of all Hibernate Tools
+                download_size: 78MB
+                url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.x/hibernatetools-Update-4.1.0.Final_2013-07-19_19-47-52-B380.zip
+                md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.x/hibernatetools-Update-4.1.0.Final_2013-07-19_19-47-52-B380.zip.MD5
+        nightly_builds:   
+          id: jbt_core_42x_nightly
+          version: 4.2 (nightly)
+          update_site_url: http://download.jboss.org/jbosstools/builds/nightly/core/trunk/latestBuild.html
+      jbt_is:
+        name: JBoss Tools Integration Stack
+        releases:
+        development_builds:   
+          - id: jbt_is_41x_dev
+            update_site_url: http://download.jboss.org/jbosstools/updates/integration/kepler/integration-stack/aggregate/4.1.0
+        nightly_builds:   
+          - id: jbt_is_41x_nightly
+            update_site_url: http://download.jboss.org/jbosstools/updates/integration/kepler/integration-stack/aggregate/4.1.0
+        
+  - id: jbds_6x
     eclipse_requirement: juno
-    marketplace_url: http://marketplace.eclipse.org/node/420896
-    marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=420896
-    update_site_url: http://download.jboss.org/jbosstools/updates/stable/juno/
-    stable_releases:
-      - id: jbt_core_401
-        version: 4.0.1.Final
-        release_date: 2013-04-03
-        zips:
-          - name: Update site (including sources) bundle of all JBoss Tools Core
-            download_size: 194MB
-            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.0.x/jbosstools-4.0.1.Final.aggregate-Update-2013-03-27_16-17-05-B340.zip
-            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.0.x/jbosstools-4.0.1.Final.aggregate-Update-2013-03-27_16-17-05-B340.zip.MD5
-          - name: Sources zip of all JBoss Tools Core
-            download_size: 100MB
-            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.0.x/jbosstools-4.0.1.Final.aggregate-Sources-2013-03-27_16-17-05-B340.zip
-            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.0.x/jbosstools-4.0.1.Final.aggregate-Sources-2013-03-27_16-17-05-B340.zip.MD5
-          - name: Update site (including sources) bundle of all Hibernate Tools
-            download_size: 43MB
-            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.0.x/jbosstools-4.0.1.Final.component--hibernatetools-Update-2013-03-27_16-17-05-B340.zip
-            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.0.x/jbosstools-4.0.1.Final.component--hibernatetools-Update-2013-03-27_16-17-05-B340.zip
-          - name: Release Notes
-            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.0.x/zz_Release_Notes_4.0.1.Final.readme.html
-    
-  - id: jbt_core_33x
-    name: JBoss Tools Core
-    version: 3.3
+    streams:
+      jbds:
+        name: JBoss Developer Studio
+        releases:
+          - id: jbds_601
+            version: 6.0.1
+            release_date: 2012-11-01
+            marketplace_url: http://marketplace.eclipse.org/node/503834
+            marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=503834
+            jboss_com_url: https://devstudio.jboss.com/download/7.x.html
+      jbt_core:
+        name: JBoss Tools Core
+        releases:
+          - id: jbt_core_401
+            version: 4.0.1.Final
+            release_date: 2013-04-03
+            marketplace_url: http://marketplace.eclipse.org/node/420896
+            marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=420896
+            update_site_url: http://download.jboss.org/jbosstools/updates/stable/juno/
+            zips:
+              - name: Update site (including sources) bundle of all JBoss Tools Core
+                download_size: 194MB
+                url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.0.x/jbosstools-4.0.1.Final.aggregate-Update-2013-03-27_16-17-05-B340.zip
+                md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.0.x/jbosstools-4.0.1.Final.aggregate-Update-2013-03-27_16-17-05-B340.zip.MD5
+              - name: Sources zip of all JBoss Tools Core
+                download_size: 100MB
+                url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.0.x/jbosstools-4.0.1.Final.aggregate-Sources-2013-03-27_16-17-05-B340.zip
+                md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.0.x/jbosstools-4.0.1.Final.aggregate-Sources-2013-03-27_16-17-05-B340.zip.MD5
+              - name: Update site (including sources) bundle of all Hibernate Tools
+                download_size: 43MB
+                url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.0.x/jbosstools-4.0.1.Final.component--hibernatetools-Update-2013-03-27_16-17-05-B340.zip
+                md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.0.x/jbosstools-4.0.1.Final.component--hibernatetools-Update-2013-03-27_16-17-05-B340.zip
+              - name: Release Notes
+                url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.0.x/zz_Release_Notes_4.0.1.Final.readme.html
+      jbt_is:
+        name: JBoss Tools Integration Stack
+        releases:
+        nightly_builds:
+          - id: jbt_is_40x_nightly
+            update_site_url: http://download.jboss.org/jbosstools/updates/integration/juno/integration-stack/aggregate/4.0.1
+        
+  - id: jbds_5x
     eclipse_requirement: indigo
-    marketplace_url: http://marketplace.eclipse.org/node/121986
-    marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=121986
-    update_site_url: http://download.jboss.org/jbosstools/updates/stable/indigo/
-    stable_releases:
-      - id: jbt_core_332
-        version: 3.3.2
-        release_date: 2013-01-25
-        zips:
-          - name: Update site (including sources) bundle of all JBoss Tools Core
-            download_size: 237MB
-            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools3.3.x/jbosstools-3.3.2.Final.aggregate-Update-2013-01-18_18-03-25-H229.zip
-            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools3.3.x/jbosstools-3.3.2.Final.aggregate-Update-2013-01-18_18-03-25-H229.zip.MD5
-          - name: Sources zip of all JBoss Tools Core
-            download_size: 107MB
-            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools3.3.x/jbosstools-3.3.2.Final.aggregate-Sources-2013-01-18_18-03-25-H229.zip
-            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools3.3.x/jbosstools-3.3.2.Final.aggregate-Sources-2013-01-18_18-03-25-H229.zip.MD5
-          - name: Update site (including sources) bundle of all Hibernate Tools
-            download_size: 70MB
-            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools3.3.x/jbosstools-3.3.2.Final.component--hibernatetools-Update-2013-01-18_18-03-25-H229.zip
-            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools3.3.x/jbosstools-3.3.2.Final.component--hibernatetools-Update-2013-01-18_18-03-25-H229.zip.MD5
-          - name: Release Notes
-            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools3.3.x/zz_Release_Notes_3.3.2.Final.readme.html
-
-  - id: jbt_soa_33
-    name: JBoss Tools SOA 3.3 
-    version: 3.3
-    eclipse_requirement: indigo
-    update_site_url: http://download.jboss.org/jbosstools/updates/stable/indigo/soa-tooling/
-    stable_releases:
-      - id: jbt_soa_333
-        version: 3.3.3.Final
-        release_date: 2013-02-19
-        zips:
-          - name: Update site (including sources) bundle of all JBoss Tools SOA
-            download_size: 87MB
-            url: http://sourceforge.net/projects/jboss/files/JBossTools/SOATools3.3.x/soatools-3.3.3.Final.aggregate-Update-2013-01-28_17-58-40-H2.zip
-            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/SOATools3.3.x/soatools-3.3.3.Final.aggregate-Update-2013-01-28_17-58-40-H2.zip.MD5
-          - name: Sources zip of all JBoss Tools SOA
-            download_size: 854KB
-            url: http://sourceforge.net/projects/jboss/files/JBossTools/SOATools3.3.x/soatools-3.3.3.Final.aggregate-Sources-2013-01-28_17-58-40-H2.zip
-            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/SOATools3.3.x/soatools-3.3.3.Final.aggregate-Sources-2013-01-28_17-58-40-H2.zip.MD5
-          - name: Release Notes
-            url: http://sourceforge.net/projects/jboss/files/JBossTools/SOATools3.3.x/zz_Release_Notes_SOA_3.3.3.Final.readme.html
-    development_builds:
-      update_site_url: http://download.jboss.org/jbosstools/updates/nightly/soa-tooling/3.3.x/
+    streams:
+      jbds:
+        name: JBoss Developer Studio
+        releases:
+          - id: jbds_500
+            version: 5.0.0
+            release_date: 2012-06-21
+      jbt_core:
+        name: JBoss Tools Core
+        releases:
+          - id: jbt_core_332
+            version: 3.3.2
+            release_date: 2013-01-25
+            marketplace_url: http://marketplace.eclipse.org/node/121986
+            marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=121986
+            update_site_url: http://download.jboss.org/jbosstools/updates/stable/indigo/
+            zips:
+              - name: Update site (including sources) bundle of all JBoss Tools Core
+                download_size: 237MB
+                url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools3.3.x/jbosstools-3.3.2.Final.aggregate-Update-2013-01-18_18-03-25-H229.zip
+                md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools3.3.x/jbosstools-3.3.2.Final.aggregate-Update-2013-01-18_18-03-25-H229.zip.MD5
+              - name: Sources zip of all JBoss Tools Core
+                download_size: 107MB
+                url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools3.3.x/jbosstools-3.3.2.Final.aggregate-Sources-2013-01-18_18-03-25-H229.zip
+                md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools3.3.x/jbosstools-3.3.2.Final.aggregate-Sources-2013-01-18_18-03-25-H229.zip.MD5
+              - name: Update site (including sources) bundle of all Hibernate Tools
+                download_size: 70MB
+                url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools3.3.x/jbosstools-3.3.2.Final.component--hibernatetools-Update-2013-01-18_18-03-25-H229.zip
+                md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools3.3.x/jbosstools-3.3.2.Final.component--hibernatetools-Update-2013-01-18_18-03-25-H229.zip.MD5
+              - name: Release Notes
+                url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools3.3.x/zz_Release_Notes_3.3.2.Final.readme.html
+      jbt_is:
+        name: JBoss Tools SOA
+        eclipse_requirement: indigo
+        releases:
+          - id: jbt_soa_333
+            version: 3.3.3.Final
+            release_date: 2013-02-19
+            update_site_url: http://download.jboss.org/jbosstools/updates/stable/indigo/soa-tooling/
+            zips:
+              - name: Update site (including sources) bundle of all JBoss Tools SOA
+                download_size: 87MB
+                url: http://sourceforge.net/projects/jboss/files/JBossTools/SOATools3.3.x/soatools-3.3.3.Final.aggregate-Update-2013-01-28_17-58-40-H2.zip
+                md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/SOATools3.3.x/soatools-3.3.3.Final.aggregate-Update-2013-01-28_17-58-40-H2.zip.MD5
+              - name: Sources zip of all JBoss Tools SOA
+                download_size: 854KB
+                url: http://sourceforge.net/projects/jboss/files/JBossTools/SOATools3.3.x/soatools-3.3.3.Final.aggregate-Sources-2013-01-28_17-58-40-H2.zip
+                md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/SOATools3.3.x/soatools-3.3.3.Final.aggregate-Sources-2013-01-28_17-58-40-H2.zip.MD5
+              - name: Release Notes
+                url: http://sourceforge.net/projects/jboss/files/JBossTools/SOATools3.3.x/zz_Release_Notes_SOA_3.3.3.Final.readme.html
+        development_builds:
+          - id: jbt_soa_333_dev
+            update_site_url: http://download.jboss.org/jbosstools/updates/nightly/soa-tooling/3.3.x/
 
   
 ---
-.row-fluid
-  .span6
-    #jbds
-      .download-unit
-        %h3.center
-          - jbds_family = page.jbds_families.select{|f| f.stable_releases?}.first
-          #{jbds_family.name} #{jbds_family.version}
-        %ul.items
-          %li Released on #{page.jbds_families.first.stable_releases.first.release_date}
-          %li Based on JBoss Tools 4.1 supported plugins
-          %li One click install - works on Windows, Mac and Linux
-          %li Full IDE installer or install from existing Eclipse
-          %li JBoss Central to install extra features
-          %li Supported by Red Hat
-        .download-btn
-          %a.btn.btn-primary{:href=>"#{site.base_url}#{page.stable_jbds}"} 
-            %i.icon-download
-            Download Stable Version
-      .links
-        %span< or
-        %a{:href=>"https://devstudio.jboss.com/earlyaccess/7.0/"}< try the Early Access version 
-      
-  .span6
-    #jbt
-      .download-unit
-        %h3.center
-          - jbt_family = page.jbt_families.select{|f| f.stable_releases?}.first
-          #{jbt_family.name} #{jbt_family.version}
-        %ul.items
-          %li Released on #{page.jbt_families.first.stable_releases.first.release_date}
-          %li Individual plugins for Eclipse, including experimental plugins
-          %li Install from existing Eclipse only
-          %li JBoss Central to install extra features
-          %li Community supported
-        .download-btn
-          %a.btn.btn-primary{:href=>"#{site.base_url}#{page.stable_jbt}"} 
-            %i.icon-download
-            Download Stable Version
-      .links
-        %span< or
-        %a{:href=>"#"}< try the Latest Development Builds 
+.container-fluid
+  .row-fluid
+    .span6
+      #jbds
+        .download-unit
+          %h3.center
+            #{site.downloads[:jbds][:releases].first.name} #{site.downloads[:jbds][:releases].first.version}
+          %ul.items
+            %li 
+              %strong Supported by Red Hat
+            %li Based on JBoss Tools 4.1 supported plugins
+            %li One click install - works on Windows, Mac and Linux
+            %li Full IDE installer or install from existing Eclipse
+            %li JBoss Central to install extra features
+            %li Released on #{site.downloads[:jbds][:releases].first.release_date}
+          .download-btn
+            %a.btn.btn-primary{:href=>"#{site.downloads[:jbds][:releases].first.url}"} 
+              %i.icon-download
+              Download
+    .span6
+      #jbt
+        .download-unit
+          %h3.center
+            #{site.downloads[:jbt_core][:releases].first.name} #{site.downloads[:jbt_core][:releases].first.version}
+          %ul.items
+            %li
+              %strong Community supported
+            %li Individual plugins for Eclipse, including experimental plugins
+            %li Install from existing Eclipse only
+            %li JBoss Central to install extra features
+            %li Released on #{site.downloads[:jbt_core][:releases].first.release_date}
+          .download-btn
+            %a.btn.btn-primary{:href=>"#{site.downloads[:jbt_core][:releases].first.url}"} 
+              %i.icon-download
+              Download
