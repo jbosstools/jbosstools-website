@@ -3,57 +3,57 @@ layout: default
 tab: downloads
 ---
 .container-fluid
+  
   .row-fluid
-    .span12
-      %h3.center< Downloading #{page.product.name} #{page.product.version}
-  .row-fluid
-    .span8
-      %a{:href=>"#requirements-modal", :"data-toggle"=>"modal"} Requirements
-      %span &#124; 
-      %a{:href=>"#{site.base_url}/whatsnew/"} What's New
-      %span &#124; 
-      %a{:href=>"https://issues.jboss.org/browse/JBIDE/fixforversion/12321256", :target=>"blank"} Release Note
-    .span4.right
-      - if page.dev_pages? && !page.dev_pages.empty?
-        %a{:href=>"#"} Try latest developments
+    .span3.well
+      %ul.nav.nav-list
+        %li.nav-header< Latest Stable Releases
+        %li.divider
+        %li.nav-header< Development Releases
+        %li.divider    
+        %li.nav-header< Older Releases
+    .span9
+      %h3.center< #{page.product.name} #{page.product.version}
+      .center
+        %a{:href=>"#requirements-modal", :"data-toggle"=>"modal"} Requirements
         %span &#124; 
-      %a{:href=>"#"} Archived versions
-  .row-fluid#release_info
-    .span12
-      - if page.product.status == 'stable_build'
-        %p
-          #{page.product.name} #{page.product.version} was released on #{page.product.release_date}. 
-          - if page.product.blog_announcement_url?
-            Read the
-            %a{:href=>page.product.blog_announcement_url} announcement on our blog
-            to know more about it.
+        %a{:href=>"#{site.base_url}/whatsnew/"} What's New
+        %span &#124; 
+        %a{:href=>"https://issues.jboss.org/browse/JBIDE/fixforversion/12321256", :target=>"blank"} Release Note
+      #release_info
+        - if page.product.status == 'stable_build'
+          %p
+            #{page.product.name} #{page.product.version} was released on #{page.product.release_date}. 
+            - if page.product.blog_announcement_url?
+              Read the
+              %a{:href=>page.product.blog_announcement_url} announcement on our blog
+              to know more about it.
       
-      - if page.product.status == 'development_build'
-        .span12
-          .alert
-            %strong Development builds
-            are have received basic testing, but are not considered fully stable yet.
-      - if page.product.status == 'nightly_build'
-        .span12
-          .alert
-            %strong Warning! 
-            Installing 
-            %strong nightly builds
-            might result in black holes being created !
+        - if page.product.status == 'development_build'
+          .span12
+            .alert
+              %strong Development builds
+              are have received basic testing, but are not considered fully stable yet.
+        - if page.product.status == 'nightly_build'
+          .span12
+            .alert
+              %strong Warning! 
+              Installing 
+              %strong nightly builds
+              might result in black holes being created !
           
           
-  .row-fluid#installation
-    .span12.tabbable
-      %ul.nav.nav-tabs
-        %li.active
-          %a{:href=>"#product-marketplace", :"data-toggle" => "tab"}
-            Eclipse Marketplace
-        %li
-          %a{:href=>"#product-updatesite", :"data-toggle" => "tab"}
-            Update Site
-        %li
-          %a{:href=>"#product-downloads", :"data-toggle" => "tab"}
-            Downloads
+      #installation.tabbable
+        %ul.nav.nav-tabs
+          %li.active
+            %a{:href=>"#product-marketplace", :"data-toggle" => "tab"}
+              Eclipse Marketplace
+          %li
+            %a{:href=>"#product-updatesite", :"data-toggle" => "tab"}
+              Update Site
+          %li
+            %a{:href=>"#product-downloads", :"data-toggle" => "tab"}
+              Zipped Update Site
           
       -# Tab content
       #installation-tabs.tab-content

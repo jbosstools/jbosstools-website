@@ -82,8 +82,9 @@ To further improve your HTML5 / mobile development experience, we've added a new
 
 The JQuery Mobile palette features a dialog preview when you click or drag one of the buttons for a component, it lets you see and customize what will be inserted :
 
-image::lf.png[]
+image::lf.png[] 
 image::set.png[]
+
 
 Alexey Kazakov http://www.screenr.com/embed/7M57[recorded a video] to show it in action.
 
