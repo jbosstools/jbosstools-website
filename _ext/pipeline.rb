@@ -7,7 +7,7 @@ require 'file_merger'
 #require 'less_config'
 require 'breadcrumb'
 #require 'symlinker'
-
+require 'relative'
 
 # JBoss Tools custom 
 require 'font_path'
@@ -22,7 +22,9 @@ require 'myposts'
 Awestruct::Extensions::Pipeline.new do
   
   helper Awestruct::Extensions::Partial
-  
+
+  helper Awestruct::Extensions::Relative
+
   # JBoss.org extensions
   helper Awestruct::Extensions::Breadcrumb
   extension Awestruct::Extensions::WgetWrapper.new

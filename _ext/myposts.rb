@@ -11,9 +11,14 @@ module Awestruct
       def execute(site)
         super(site)
         site.posts.each do |page|
+          #todo why is this not just the pageurl so relative urls just works ?
           page.imagesdir = site.base_url + @imagesdir
         end
       end
     end
   end
+<<<<<<< HEAD
 end
+=======
+end
+>>>>>>> 80ef7d3181afb4a866c349cbc9ddbf381be883c0

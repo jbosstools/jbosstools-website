@@ -100,6 +100,7 @@ Please use Listen::Adapter#start for a non-blocking listener and Listen::Listene
 That's ok, it's not your fault ;) It's related to some Awestruct limitations.
 ====
 
+<<<<<<< HEAD
 == guard and livereload
 
 You can install guard and its livereload extension to get instant refresh in your browser when pages are regenerated
@@ -125,6 +126,8 @@ Chrome users can install the v.2.0.9 extension from the https://chrome.google.co
 
 Firefox users should use v. 2.0.9 or newer of the LiveReload extension available from https://github.com/downloads/siasia/livereload-extensions/LiveReload-2.0.9.xpi[here]. If you hit an issue where the browser disconnects just after it has connected, which means the server cannot push refresh commands to it, you are using an old plugin and should update it. 
 
+=======
+>>>>>>> 80ef7d3181afb4a866c349cbc9ddbf381be883c0
 == Next steps
 
 Using you local site, you can have a look at our link:/survival-guide/[survival guide to editing this website] to get you started.
