@@ -5,7 +5,7 @@ title: Home
 ---
 .row-fluid
   .hero-unit.hidden-phone
-    %img{:alt => "JBoss Tools", :src => "#{site.base_url}/images/tools/jbt-carousel-jaxrs.png"}
+    %img{:alt => "JBoss Tools", :src => relative("/images/tools/jbt-carousel-jaxrs.png")}
     .hero-content
       %h1
         JBoss Tools
@@ -13,7 +13,7 @@ title: Home
         Eclipse Plugins for 
         JBoss Technology    
       %p
-        %a.btn.btn-primary.btn-large{:href => "#{site.base_url}/downloads"} 
+        %a.btn.btn-primary.btn-large{:href => relative("/downloads")} 
           %i.icon-download
           Download
           
@@ -29,18 +29,18 @@ title: Home
       %header
         %h3
           %i.icon-magic
-          %a{:href => "#{site.base_url}/features"}
+          %a{:href => relative("/features")}
             Feature Highlight
       .item.center
         %span.tagline #{feature.tagline} 
-        %a.block{:href=>feature.url}
-          %img{:src=>feature.image_url}
+        %a.block{:href=>relative(feature.url)}
+          %img{:src=>relative(relative("#{feature.image_url}", "/features"))}
   
   %section.span4  
     %header
       %h3
         %i.icon-pencil
-        %a{:href => "#{site.base_url}/blog"}
+        %a{:href => relative("/blog")}
           Latest posts
     - posts = site.posts
     - today = Time.now 
@@ -52,7 +52,7 @@ title: Home
           %img.img-polaroid{:src => "#{site.team[post.author].photo_32px}"}
           .title
             %h4
-              %a{:href=>"#{site.base_url}#{post.url}"}= post.title
+              %a{:href=> relative(post.url)}= post.title
             .author
               /there is only one author per post but the author splitter adds an array here
               posted by 

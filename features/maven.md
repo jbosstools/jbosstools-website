@@ -2,7 +2,7 @@
 layout: features
 module_id: m2e-wtp
 title: m2e-wtp Integration
-image_url: ./features/images/features-maven_346px.png
+image_url: images/features-maven_346px.png
 authors: [xcoulon]
 tagline: Closing the gap between Maven and WTP.
 summary: JBoss Tools / JBoss Developer Studio closes the 
@@ -11,13 +11,13 @@ summary: JBoss Tools / JBoss Developer Studio closes the
 feature_order: 4
 ---
 
-#### Dynamic Web Projects / m2e integration ![Integration](./images/features-maven_346px.png)
+#### Dynamic Web Projects / m2e integration ![Integration](images/features-maven_346px.png)
 Todo...
 
 * * *
-#### Profile Selection ![Profile selection](./images/features-maven_346px.png)
+#### Profile Selection ![Profile selection](images/features-maven_346px.png)
 Todo...
 
 * * *
-#### JAX-RS, CDI et al. integration ![Integration](./images/features-maven_346px.png)
+#### JAX-RS, CDI et al. integration ![Integration](images/features-maven_346px.png)
 Todo...

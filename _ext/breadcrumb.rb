@@ -51,8 +51,9 @@ module Awestruct
           page = page.real_page if page.real_page != nil
           path = page.output_path == nil ? page.url : page.output_path
           return "" if path==nil
-          "<a class='breadcrumb_anchor' href='#{site.base_url}#{page.output_path}'
-          >#{page.title ? page.title : page.simple_name.capitalize }</a> / "
+          "<a class='breadcrumb_anchor' href='" + 
+            relative("#{page.output_path}") + 
+            "'>#{page.title ? page.title : page.simple_name.capitalize }</a> / "
         end
       end
 

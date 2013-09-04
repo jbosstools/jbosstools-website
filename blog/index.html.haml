@@ -9,7 +9,7 @@ tab: community
   - else 
     %h1< 
       Latest Articles
-      %a{:href => "#{site.base_url}/blog/blog.atom"}
+      %a{:href => relative("/blog/blog.atom")}
         %i.icon-rss 
   = breadcrumb(page.output_path)
   
@@ -21,7 +21,7 @@ tab: community
           %img.img-polaroid{:src => "#{site.team[post.author].photo_64px}"}
           .title
             %h3
-              %a{:href=>"#{site.base_url}#{post.url}"}= post.title
+              %a{:href=>relative("#{post.url}")}= post.title
             .author
               /there is only one author per post but the author splitter adds an array here
               posted by 
@@ -30,7 +30,7 @@ tab: community
               %strong< #{post.date.strftime( '%b %d, %Y' )}.
               - if(post.tags != null && !post.tags.empty?) 
                 - post.tags.each do |tag|
-                  %a.label.label-info{:href=>"#{site.base_url}#{tag.primary_page.url}"}#{tag}
+                  %a.label.label-info{:href=>relative("#{tag.primary_page.url}")}#{tag}
         .body
           #{post.content}
         %hr
@@ -41,7 +41,7 @@ tab: community
         %ul 
           - for post in site.posts
             %li 
-              %a{:href=>"#{site.base_url}#{post.url}"} #{post.title}
+              %a{:href=>relative("#{post.url}")} #{post.title}
 .row-fluid
   .span12.center
     %hr
@@ -54,7 +54,7 @@ tab: community
       %ul
         - if previous_page
           %li
-            %a{:href=>"#{site.base_url}#{previous_page.url}"} &laquo;
+            %a{:href=>relative("#{previous_page.url}")} &laquo;
         - else            
           %li.disabled
             %a{:href=>"#"} &laquo;
@@ -64,13 +64,13 @@ tab: community
               %a{:href=>"#"} #{i+1}
           - else
             %li
-              %a{:href=>"#{site.base_url}#{page.url}"} #{i+1}
+              %a{:href=>relative("#{page.url}")} #{i+1}
           
 
 
         - if next_page
           %li
-            %a{:href=>"#{site.base_url}#{next_page.url}"} &raquo;
+            %a{:href=>relative("#{next_page.url}")} &raquo;
         - else            
           %li.disabled
             %a{:href=>"#"} &raquo;

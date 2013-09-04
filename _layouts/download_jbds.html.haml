@@ -5,6 +5,7 @@ tab: downloads
 .container-fluid
   
   .row-fluid
+<<<<<<< HEAD:_layouts/download_jbds.html.haml
     .span3.well
       %ul.nav.nav-list
         %li.nav-header< Latest Stable Releases
@@ -18,6 +19,20 @@ tab: downloads
         %a{:href=>"#requirements-modal", :"data-toggle"=>"modal"} Requirements
         %span &#124; 
         %a{:href=>"#{site.base_url}/whatsnew/"} What's New
+=======
+    .span12
+      %h3.center< Downloading #{page.product.name} #{page.product.version}
+  .row-fluid
+    .span8
+      %a{:href=>"#requirements-modal", :"data-toggle"=>"modal"} Requirements
+      %span &#124; 
+      %a{:href=>relative("/whatsnew/")} What's New
+      %span &#124; 
+      %a{:href=>"https://issues.jboss.org/browse/JBIDE/fixforversion/12321256", :target=>"blank"} Release Note
+    .span4.right
+      - if page.dev_pages? && !page.dev_pages.empty?
+        %a{:href=>"#"} Try latest developments
+>>>>>>> 80ef7d3181afb4a866c349cbc9ddbf381be883c0:_layouts/download.html.haml
         %span &#124; 
         %a{:href=>"https://issues.jboss.org/browse/JBIDE/fixforversion/12321256", :target=>"blank"} Release Note
       #release_info
@@ -63,7 +78,7 @@ tab: downloads
             %p
               Drag and drop the 
               %a{:href=>page.product.marketplace_install_url, :title=>"Install"}
-                %img{:src=>"#{site.base_url}/images/tools/installbutton.png", :alt=>"Drag and drop this button into a running #{eclipse_name} workspace to install #{page.product.name}", :height=>"25", :width=>"63"}
+                %img{:src=>relative("/images/tools/installbutton.png"), :alt=>"Drag and drop this button into a running #{eclipse_name} workspace to install #{page.product.name}", :height=>"25", :width=>"63"}
               icon on your active
               %strong< #{page.product.eclipse_version.full_name} 
               workspace, or alternatively, search for &quot;

@@ -85,7 +85,6 @@ The JQuery Mobile palette features a dialog preview when you click or drag one o
 image::lf.png[] 
 image::set.png[]
 
-
 Alexey Kazakov http://www.screenr.com/embed/7M57[recorded a video] to show it in action.
 
 == BrowserSim goodies

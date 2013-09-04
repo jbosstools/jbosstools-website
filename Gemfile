@@ -19,4 +19,3 @@ gem 'execjs', '~> 1.4.0'
 gem 'rb-inotify', '~> 0.9'
 gem 'rake', '~> 10.0.3', :group => :test
 gem 'tzinfo', '~> 0.3.35', :group => :test
-
