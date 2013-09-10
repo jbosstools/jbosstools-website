@@ -17,8 +17,4 @@ module Awestruct
       end
     end
   end
-<<<<<<< HEAD
 end
-=======
-end
->>>>>>> 80ef7d3181afb4a866c349cbc9ddbf381be883c0

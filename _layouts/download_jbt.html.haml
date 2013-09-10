@@ -2,138 +2,146 @@
 layout: default
 tab: downloads
 ---
-.container-fluid
-  .row-fluid
-    .span3
-      %ul.nav.nav-list
-        %li.nav-header< Lastest Stable Release
-        %li.active #{site.downloads[:jbt_core][:releases].first.name} #{site.downloads[:jbt_core][:releases].first.version}
-        %li.divider
-        - unless site.downloads[:jbt_core][:development_builds].empty?
-          %li.nav-header< Development Milestones
-          - site.downloads[:jbt_core][:development_builds].each do |build|
-            %li #{build.name} #{build.version}
-          %li.divider    
-        - unless site.downloads[:jbt_core][:nightly_builds].empty?
-          %li.nav-header< Nightly Builds
-          - site.downloads[:jbt_core][:nightly_builds].each do |build|
-            %li #{build.name} #{build.version}
-          %li.divider    
-        - unless site.downloads[:jbt_core][:releases].empty? || site.downloads[:jbt_core][:releases].length == 1
-          %li.nav-header< Older Releases
-          - site.downloads[:jbt_core][:releases].drop(1).each do |build|
-            %li #{build.name} #{build.version}
-    .span9
-      %h3.center< #{page.product.name} #{page.product.version}
-      .center
-        %a{:href=>"#requirements-modal", :"data-toggle"=>"modal"} Requirements
-        %span &#124; 
-        %a{:href=>"#{site.base_url}/whatsnew/"} What's New
-        %span &#124; 
-        %a{:href=>"https://issues.jboss.org/browse/JBIDE/fixforversion/12321256", :target=>"blank"} Release Note
-      #release_info
-        - if page.product.status == 'stable_build'
-          %p
-            #{page.product.name} #{page.product.version} was released on #{page.product.release_date}. 
-            - if page.product.blog_announcement_url?
-              Read the
-              %a{:href=>page.product.blog_announcement_url} announcement on our blog
-              to know more about it.
-      
-        - if page.product.status == 'development_build'
-          .span12
-            .alert
-              %strong Development builds
-              are have received basic testing, but are not considered fully stable yet.
-        - if page.product.status == 'nightly_build'
-          .span12
-            .alert
-              %strong Warning! 
-              Installing 
-              %strong nightly builds
-              might result in black holes being created !
-          
-          
-      #installation.tabbable
-        %ul.nav.nav-tabs
-          %li.active
-            %a{:href=>"#product-marketplace", :"data-toggle" => "tab"}
-              Eclipse Marketplace
-          %li
-            %a{:href=>"#product-updatesite", :"data-toggle" => "tab"}
-              Update Site
-          %li
-            %a{:href=>"#product-downloads", :"data-toggle" => "tab"}
-              Zipped Update Site
-          
-      -# Tab content
-      #installation-tabs.tab-content
-        #product-marketplace.tab-pane.fade.in.active
-          - if page.product.marketplace_install_url?
-            -# use markdown or asciidoc instead 
-            %p
-              Drag and drop the 
-              %a{:href=>page.product.marketplace_install_url, :title=>"Install"}
-                %img{:src=>"#{site.base_url}/images/tools/installbutton.png", :alt=>"Drag and drop this button into a running #{eclipse_name} workspace to install #{page.product.name}", :height=>"25", :width=>"63"}
-              icon on your active
-              %strong< #{page.product.eclipse_version.full_name} 
-              workspace, or alternatively, search for &quot;
-              %strong> #{page.product.name} (#{page.product.eclipse_version.short_name})
-              &quot; in Eclipse via:
-              %blockquote 
-                Help > Eclipse Marketplace...
-            %p
-              You can also view the installation page on the&nbsp
-              %a{:href=>page.product.marketplace_url, :title=>"Eclipse Marketplace"}> Eclipse Marketplace
-              \.
-          - else
-            :markdown
-              Sorry, there is no Eclipse Marketplace for #{page.product.name} #{page.product.version} yet.
-              
-        #product-updatesite.tab-pane.fade.in
-          - if page.product.update_site_url?
-            :markdown
-              Add the following URL to your **#{page.product.eclipse_version.full_name}** workspace: [#{page.product.update_site_url}](#{page.product.update_site_url})
-              via 
+.row-fluid
+  .span3
+    #downloads-accordion.accordion
+      - labels = {:releases=>"Lastest Stable Release", :development_builds=>"Development Milestones", :nightly_builds=>"Nightly Builds", :archives=>"Archives"}
+      %ul.nav.nav-list 
+        - labels.each_key do |key|
+          %li.nav-header< #{labels[key]}
+          - site.downloads[:jbt_core][key].each do |build|
+            %li
+              .accordion-group
+                .accordion-heading
+                  %a.collapsed.accordion-toggle{:href=>"##{build.build_id}_collapse", :"data-toggle"=>"collapse", :"data-parent"=>"downloads-accordion"}
+                    #{build.name} #{build.version}
+                %div{:id=>"#{build.build_id}_collapse", :class=>"accordion_body collapse"}
+                  .accordion-inner
+                    %ul
+                      - unless build.marketplace_install_url.nil?
+                        %li
+                          %i.icon-chevron-right
+                          %a{:href=>"##{build.build_id}_marketplace"}
+                            Eclipse Marketplace
+                      - unless build.update_site_url.nil?
+                        %li
+                          %i.icon-chevron-right
+                          %a{:href=>"##{build.build_id}_update_site"}
+                            Update Site
+                      - unless build.zips.nil? || build.zips.empty?
+                        %li
+                          %i.icon-chevron-right
+                          %a{:href=>"##{build.build_id}_update_site_zips"}
+                            Zipped Update Site
 
-              > Help > Install New Software...
-            
-              then select the individual features that you want to install.
-          - else
-            :markdown
-              Sorry, there is no Update Site for #{page.product.name} #{page.product.version} yet.
-        #product-downloads.tab-pane.fade.in
-          - if page.product.zips? && !page.product.zips.empty? 
-            :markdown
-              You can download Update Zips (Archived p2 Repos) for offline installation of **#{page.product.name}**, but **DO NOT UNPACK THEM** into your Eclipse root or dropins folder!
-              Next, install into Eclipse using
-
-              > Help > Install New Software... > Add... > Archive...
-          
-              and point to the archive you downloaded from the tables below, depending on the features of JBoss Tools you want to use.
+  
+  
+    
+    
+  .span9
+    #release_info
+      - if page.product.status == 'stable_build'
+        %p
+          #{page.product.name} #{page.product.version} was released on #{page.product.release_date}. 
+          - if page.product.blog_announcement_url?
+            Read the
+            %a{:href=>page.product.blog_announcement_url} announcement on our blog
+            to know more about it.
+    
+      - if page.product.status == 'development_build'
+        .span12
+          .alert
+            %strong Development builds
+            are have received basic testing, but are not considered fully stable yet.
+      - if page.product.status == 'nightly_build'
+        .span12
+          .alert
+            %strong Warning! 
+            Installing 
+            %strong nightly builds
+            might result in black holes being created !
         
-            %table.center
+        
+    #installation.tabbable
+      %ul.nav.nav-tabs
+        %li.active
+          %a{:href=>"#product-marketplace", :"data-toggle" => "tab"}
+            Eclipse Marketplace
+        %li
+          %a{:href=>"#product-updatesite", :"data-toggle" => "tab"}
+            Update Site
+        %li
+          %a{:href=>"#product-downloads", :"data-toggle" => "tab"}
+            Zipped Update Site
+        
+    -# Tab content
+    #installation-tabs.tab-content
+      #product-marketplace.tab-pane.fade.in.active
+        - if page.product.marketplace_install_url?
+          -# use markdown or asciidoc instead 
+          %p
+            Drag and drop the 
+            %a{:href=>page.product.marketplace_install_url, :title=>"Install"}
+              %img{:src=>"#{site.base_url}/images/tools/installbutton.png", :alt=>"Drag and drop this button into a running #{eclipse_name} workspace to install #{page.product.name}", :height=>"25", :width=>"63"}
+            icon on your active
+            %strong< #{page.product.eclipse_version.full_name} 
+            workspace, or alternatively, search for &quot;
+            %strong> #{page.product.name} (#{page.product.eclipse_version.short_name})
+            &quot; in Eclipse via:
+            %blockquote 
+              Help > Eclipse Marketplace...
+          %p
+            You can also view the installation page on the&nbsp
+            %a{:href=>page.product.marketplace_url, :title=>"Eclipse Marketplace"}> Eclipse Marketplace
+            \.
+        - else
+          :markdown
+            Sorry, there is no Eclipse Marketplace for #{page.product.name} #{page.product.version} yet.
+            
+      #product-updatesite.tab-pane.fade.in
+        - if page.product.update_site_url?
+          :markdown
+            Add the following URL to your **#{page.product.eclipse_version.full_name}** workspace: [#{page.product.update_site_url}](#{page.product.update_site_url})
+            via 
+
+            > Help > Install New Software...
+          
+            then select the individual features that you want to install.
+        - else
+          :markdown
+            Sorry, there is no Update Site for #{page.product.name} #{page.product.version} yet.
+      #product-downloads.tab-pane.fade.in
+        - if page.product.zips? && !page.product.zips.empty? 
+          :markdown
+            You can download Update Zips (Archived p2 Repos) for offline installation of **#{page.product.name}**, but **DO NOT UNPACK THEM** into your Eclipse root or dropins folder!
+            Next, install into Eclipse using
+
+            > Help > Install New Software... > Add... > Archive...
+        
+            and point to the archive you downloaded from the tables below, depending on the features of JBoss Tools you want to use.
+      
+          %table.center
+            %tr
+              %th<Name
+              %th<Size
+              %th<Links
+            - page.product.zips.each do |zip|
               %tr
-                %th<Name
-                %th<Size
-                %th<Links
-              - page.product.zips.each do |zip|
-                %tr
-                  %td #{zip.name}  
-                  %td.right #{zip.download_size}              
-                  %td 
-                    - if zip.url.end_with? "zip"
-                      %a{:href=>zip.url} zip
-                    - if zip.url.end_with? "html"
-                      %a{:href=>zip.url} html
-                    - if zip.md5_url?
-                      (
-                      %a{:href=>zip.md5_url}> md5
-                      )
-          - else
-            :markdown
-              Sorry, there is no downloadabe Update Site for offline installation for #{page.product.name} #{page.product.version} yet. 
-                    
+                %td #{zip.name}  
+                %td.right #{zip.download_size}              
+                %td 
+                  - if zip.url.end_with? "zip"
+                    %a{:href=>zip.url} zip
+                  - if zip.url.end_with? "html"
+                    %a{:href=>zip.url} html
+                  - if zip.md5_url?
+                    (
+                    %a{:href=>zip.md5_url}> md5
+                    )
+        - else
+          :markdown
+            Sorry, there is no downloadabe Update Site for offline installation for #{page.product.name} #{page.product.version} yet. 
+                  
 -# modal dialog to display requirements
 #requirements-modal.modal.hide.fade{:tabindex=>"-1", :role=>"dialog", :"aria-labelledby"=>"myModalLabel", :"aria-hidden"=>"true"}
   .modal-header

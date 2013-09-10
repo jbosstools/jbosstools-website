@@ -24,7 +24,7 @@
 #        - /javascripts/prettify.js
 #        - /javascripts/bootstrap-transition.js
 #        - /javascripts/bootstrap-alert.js
-#
+#        
 ##
 
 module Awestruct
