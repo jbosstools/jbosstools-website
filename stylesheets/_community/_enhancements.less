@@ -98,8 +98,16 @@ a:hover, a:active, a, object, embed, *:focus {
 .well, .breadcrumb, .pagination a:hover, .pagination .active a, .pagination .active span {
   background-color: #f1f3f4;
 }
+.breadcrumb > .active {
+    color: @gray;
+}
 
 .table thead {
+  th {
+    background-color: @grayDarker;
+    color: @grayLighter;
+  }
+  /*
   background-image: -moz-linear-gradient(top, @grayDark, @black);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@grayDark), to(@black));
   background-image: -webkit-linear-gradient(top, @grayDark, @black);
@@ -108,14 +116,33 @@ a:hover, a:active, a, object, embed, *:focus {
   background-repeat: repeat-x;
   filter: ~"progid:DXImageTransform.Microsoft.gradient(startColorstr='#61616111', endColorstr='#01010111', GradientType=0)";
   color: @white;
+  */
+}
+
+/* Hero Unit
+-------------------------------------------------- */
+.hero-unit {
+  .well {
+    p {
+      font-size: 13px;
+      line-height: 23px;
+    }
+  }
 }
 
 /* Jumbotrons
 -------------------------------------------------- */
 .jumbotron {
   position: relative;
+  background:@blueDark url(http://static.jboss.org/example/images/example_heropattern1.png) repeat center center;
+  padding: 40px;
+  margin: 0 0 20px 0;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
 
   h1 {
+    color: #FFF;
     margin-bottom: 9px;
     font-size: 54px;
     font-weight: bold;
@@ -126,7 +153,9 @@ a:hover, a:active, a, object, embed, *:focus {
 
   p {
     margin-bottom: 18px;
+    font-size: 17px;
     font-weight: 300;
+    color: @grayLightest;
   }
 
   .btn-large {
@@ -213,3 +242,126 @@ sub {
 }
 ul.square li {list-style-type:square}
 ul.circle li {list-style-type:disc}
+
+/* Breadcrumbs
+-------------------------------------------------- */
+.breadcrumb > .active {
+  color: @gray;
+}
+.breadcrumb {
+  margin: -10px 0 10px;
+  padding: 4px 15px;
+}
+
+/* Alerts
+-------------------------------------------------- */
+.alert.alert-block {
+  .userinfo {
+    color: @gray;
+    font-size: 12px;
+  }
+  a {
+    text-decoration: none;
+  }
+  a:hover h4 {
+    color: #a57e3b;
+  }
+}
+
+/* Definition Table
+-------------------------------------------------- */
+.deftable {
+  width: 100%;
+  text-align: left;
+  line-height: 150%;
+  margin-bottom:20px;
+  padding: 0px;
+}
+
+.deftable th{
+  color:#FFFFFF;
+  border-bottom:1px dotted #999999;
+  font-size:12px;
+  padding:0 10px 0 5px;
+}
+.deftable .header {
+  color:#FFFFFF;
+  font-weight:bold;
+  height:31px;
+  text-align:left;
+}
+
+.deftable .term {
+  border-bottom: 1px solid #DCDEDF;
+  border-left: 1px solid #DCDEDF;
+  border-right: 1px solid #DCDEDF;
+  vertical-align: top;
+  padding: 20px 10px;
+  background-color:#F4F3F3;
+  color:#565656;
+  font-family:Helvetica,sans-serif;
+  font-size:13px;
+  font-weight: bold;
+  text-shadow:1px 1px #FFF;
+}
+
+.deftable .termFirst {
+  border: 1px solid #DCDEDF;
+  vertical-align: top;
+  padding: 20px 10px;
+  background-color:#F4F3F3;
+  color:#565656;
+  font-family:Helvetica,sans-serif;
+  font-size:13px;
+  font-weight: bold;
+  text-shadow:1px 1px #FFF;
+}
+
+.deftable .termLast {
+  border-top: 1px solid #DCDEDF;
+  padding: 20px;
+  background-color:#F4F3F3;
+  color:#565656;
+  font-family:Helvetica,sans-serif;
+  font-size:13px;
+  font-weight: bold;
+  text-shadow:1px 1px #FFF;
+}
+.deftable .def {
+  border-bottom: 1px solid #F2F2F2;
+  border-right: 1px solid #F2F2F2;
+  vertical-align: top;
+  padding: 20px;
+  color: #565656;
+}
+
+.deftable .defFirst {
+  border-top: 1px solid #F2F2F2;
+  border-right: 1px solid #F2F2F2;
+  border-bottom: 1px solid #F2F2F2;
+  vertical-align: top;
+  padding: 20px;
+  color: #565656;
+}
+
+.deftable .defLast {
+  border-top: 1px solid #F2F2F2;
+  border-bottom: 1px dotted #F2F2F2;
+  vertical-align: top;
+  padding: 20px;
+  color: #565656;
+
+}
+.deftable .def ul,
+.deftable .defFirst ul {
+  margin-left: 1em;
+  padding-left: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.deftable .def ol,
+.deftable .defFirst ol {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+

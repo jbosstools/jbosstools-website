@@ -35,6 +35,14 @@ module Awestruct
             end
           end
         end
+        for stream_type in [:jbds, :jbt_core, :jbt_is]
+          # move all but first release in :archives
+          downloads[stream_type][:archives] = downloads[stream_type][:releases].drop(1)
+          downloads[stream_type][:releases] = Array.[](downloads[stream_type][:releases].first)
+          puts stream_type.to_s 
+          puts " release: " + downloads[stream_type][:releases].to_s
+          puts " archives: " + downloads[stream_type][:archives].to_s
+        end
         puts "Downloads: " + downloads.to_s
         site.downloads = downloads
       end
@@ -50,6 +58,7 @@ module Awestruct
             page.output_path = File.join( @output_path_prefix + build.id + ".html" )
             page.title = stream.name + " " + build.version.to_s
             product = Product.new()
+            product.build_id = build.id
             product.name = stream.name
             product.version = build.version
             product.release_date = build.release_date
