@@ -21,44 +21,54 @@ module Awestruct
       end
 
       def build_download_pages(site, page)
-        downloads = Hash.new
-        page.families.each do |f|
-          eclipse_version = page.eclipse_versions.select{|v| v.id == f.eclipse_requirement}.first
+        downloadable_builds = Hash.new
+        # scan all families and generate arrays of 'downloadable products' for each stream
+        site.product_families.each do |f|
+          eclipse_version = site.eclipse_versions.select{|v| v.id == f.eclipse_requirement}.first
           for stream_type in [:jbds, :jbt_core, :jbt_is]
             stream = f.streams[stream_type]
             for build_type in [:releases, :development_builds, :nightly_builds]
-              downloads[stream_type] = Hash.new if downloads[stream_type].nil?
-              downloads[stream_type][build_type] = Array.new if downloads[stream_type][build_type].nil?
-              build = generate_download_page(site, @layout_paths[stream_type], stream, 
-                          stream[build_type], eclipse_version)
-              downloads[stream_type][build_type] << build unless build.nil?
+              downloadable_builds[stream_type] = Hash.new if downloadable_builds[stream_type].nil?
+              downloadable_builds[stream_type][build_type] = Array.new if downloadable_builds[stream_type][build_type].nil?
+              downloadable_build = generate_downloadable_build(site, stream, stream[build_type], eclipse_version)
+              downloadable_builds[stream_type][build_type] << downloadable_build unless downloadable_build.nil?
             end
           end
         end
+        # split current vs archived stable versions for each type of product
+        # then, generate 1 download page per product
+        # (each page will provide all downloadable versions at once).
+        site.downloads_pages = Hash.new
         for stream_type in [:jbds, :jbt_core, :jbt_is]
-          # move all but first release in :archives
-          downloads[stream_type][:archives] = downloads[stream_type][:releases].drop(1)
-          downloads[stream_type][:releases] = Array.[](downloads[stream_type][:releases].first)
-          puts stream_type.to_s 
-          puts " release: " + downloads[stream_type][:releases].to_s
-          puts " archives: " + downloads[stream_type][:archives].to_s
+          downloadable_builds[stream_type][:archives] = downloadable_builds[stream_type][:releases].drop(1)
+          downloadable_builds[stream_type][:releases] = Array.[](downloadable_builds[stream_type][:releases].first)
+          download_page = generate_download_page(site, stream_type)
+          site.pages << download_page unless download_page.nil?
+          site.downloads_pages[stream_type] = download_page unless download_page.nil?
         end
-        puts "Downloads: " + downloads.to_s
-        site.downloads = downloads
+        site.downloadable_builds = downloadable_builds
+      end
+
+      def generate_download_page(site, stream_type)
+        product_name = site.products[stream_type].name
+        layout_path = @layout_paths[stream_type]
+        puts "Generating download page for " + product_name
+        page = find_layout_page(site, layout_path)
+        page.output_path = File.join( @output_path_prefix + stream_type.to_s + ".html" )
+        page.title = product_name
+        puts "Generated download page " + page.title + " at " + page.output_path
+        return page
       end
       
-      def generate_download_page(site, layout_path, stream, build, eclipse_version)
+      def generate_downloadable_build(site, stream, build, eclipse_version)
         unless build.nil?
           if build.is_a? Array
             build.each do |b|
-              return generate_download_page(site, layout_path, stream, b, eclipse_version)
+              return generate_downloadable_build(site, stream, b, eclipse_version)
             end
           else
-            page = find_layout_page(site, layout_path)
-            page.output_path = File.join( @output_path_prefix + build.id + ".html" )
-            page.title = stream.name + " " + build.version.to_s
             product = Product.new()
-            product.build_id = build.id
+            product.id = build.id
             product.name = stream.name
             product.version = build.version
             product.release_date = build.release_date
@@ -71,12 +81,6 @@ module Awestruct
             product.marketplace_url = build.marketplace_url
             product.update_site_url = build.update_site_url
             product.zips= build.zips
-            product.url = site.base_url + page.output_path
-            page.product = product 
-
-            site.pages << page
-            puts "Generated " + page.output_path + " with title '" + page.title + "'"
-            # puts " page product=" + page.product.to_s
             return product
           end
         end 
@@ -85,15 +89,15 @@ module Awestruct
       end
       
       def find_blog_announcement_page(site, blog_announcement_page_name)
-        unless blog_announcement_page_name.nil?
-          puts "Looking for post page matching '" + blog_announcement_page_name + "'"
+        unless blog_announcement_page_name.nil? || blog_announcement_page_name.empty?
+          puts "Looking for post page matching '" + blog_announcement_page_name.to_s + "'"
           site.posts.each do |post|
             puts " " + post.simple_name
             if post.simple_name.eql? blog_announcement_page_name
               return post
             end
           end
-          puts "Enable to find page for blog " + blog_announcement_page_name
+          puts "Enable to find page for blog " + blog_announcement_page_name.to_s
         end
         return nil
       end
