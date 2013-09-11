@@ -267,61 +267,55 @@ a.dropdown-toggle {
   }
 }
 
-#downloads-accordion {
+#downloads-menu {
   border: 1px solid rgb(229, 229, 229);
-  background-color: rgb(243, 243, 243);
-  border-radius: 0 0 6px 6px;
+  //background-color: rgb(243, 243, 243);
+  border-radius: 4px;
   ul.nav-list {
-    padding: 0;
-    margin: 0 0 1em 0;
-  }
-  li.nav-header {
-    background-color: #E5E5E5;
-    color: rgb(141, 143, 145);
-    padding: 0.5em 1em;
-  }
-  li {
-    margin: 0;
-    background-color: #FFFFFF;
-    & > .accordion-group {
-      border: none;
-      margin-bottom: 0px;
-      
-      & a.accordion-toggle.collapsed {
-        background-color: rgb(243, 243, 243);
+    li {
+      &.nav-header {
+        background-color: #E5E5E5;
+        color: rgb(141, 143, 145);
+        padding: 0.5em 1em;
+        //text-transform: none;
+        //font-size: 14px;
       }
-      & a.accordion-toggle:not(.collapsed) {
-        background-color: rgb(243, 243, 243);        
-      }
-      & .accordion-inner {
-        padding: 0;
-        border: none;
-        ul {
-          margin: 0;
-          list-style-type: none;
-          li {
-            padding: 0.5em 1em;
-            &:hover {
-              background-color: rgb(250, 250, 250);        
-            }
-            & > .icon-chevron-right {
-              float: right;
-              margin-top: 2px;
-              margin-right: -6px;
-              opacity: 0.25;
-            }
-            &.active {
-              background-color: rgb(51, 102, 153);
-              a, .icon-chevron-right {
-                color: rgb(255, 255, 255);
-              }
-            }
-          }
+      & > a {
+        padding-top: 9px;
+        padding-bottom: 9px;
+        text-shadow: none;
+        border-bottom: 1px solid rgb(229, 229, 229);
+        & > i {
+          margin-top: 4px;
+          float: right;
         }
+        &:hover {
+          background-color: rgb(230, 231, 232);
+
+        }
+        &:focus {
+          color: #FFFFFF;
+          background-color: rgb(51, 102, 153);
+        }
+      } 
+    
+      & + .nav-header {
+        margin-top: 0px;
+      }  
+      
+      &:nth-last-child(1) > a {
+        border-bottom: none;
       }
     }
   }
-  
+}
+
+span.label.label-releases {
+  background-color: rgb(70, 165, 70);
+}
+
+span.label.label-development_builds, span.label.label-nightly_builds {
+  background-color: rgb(248, 148, 6);
 }
 
 .sidenav  li:first-child  a {
