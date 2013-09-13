@@ -21,7 +21,7 @@ tab: downloads
             %li JBoss Central to install extra features
             %li Released on #{current_jbds_release.release_date}
           .download-btn
-            %a.btn.btn-primary{:href=>"#{site.downloads_pages[:jbds].output_path}"} 
+            %a.btn.btn-primary{:href=>relative(site.downloads_pages[:jbds].output_path)} 
               %i.icon-download
               Download
     .span6
@@ -37,6 +37,6 @@ tab: downloads
             %li JBoss Central to install extra features
             %li Released on #{current_jbt_release.release_date}
           .download-btn
-            %a.btn.btn-primary{:href=>"#{site.downloads_pages[:jbt_core].output_path}"} 
+            %a.btn.btn-primary{:href=>relative(site.downloads_pages[:jbt_core].output_path)} 
               %i.icon-download
               Download
