@@ -20,6 +20,10 @@ div.right {
   text-align: right;
 }
 
+div.float-right {
+  float:right;
+}
+
 td.right {
   text-align: right;
 }
@@ -273,6 +277,9 @@ a.dropdown-toggle {
       
     }
   }
+}
+#download_version > h3 {
+//  margin-bottom: 0;
 }
 
 #downloads-menu {

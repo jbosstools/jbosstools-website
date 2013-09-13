@@ -11,7 +11,7 @@
             %a(href="#{relative('/')}") Home
           
           %li#downloads<
-            %a(href="#{relative('/downloads/')}") Downloads
+            %a(href="#{site.base_url}/downloads/") Downloads
           
           %li#docs.dropdown<
             %a.dropdown-toggle(href="#" data-toggle="dropdown")<
@@ -19,11 +19,11 @@
                 %b.caret>
             %ul.dropdown-menu 
               %li<
-                %a(href="#{relative('/features')}") Features
+                %a(href="#{site.base_url}/features}") Features
               %li<
-                %a(href="#{relative('/whatsnew')}") What's New
+                %a(href="#{site.base_url}/whatsnew}") What's New
               %li<
-                %a(href="#{relative('/guides/videos.html')}") Video Tutorials
+                %a(href="#{site.base_url}/guides/videos.html") Video Tutorials
               %li<
                 %a(href="http://docs.jboss.org/tools/4.1.0.Final/") Reference Guides
           
@@ -33,7 +33,7 @@
                 %b.caret>
             %ul.dropdown-menu
               %li<
-                %a(href="#{relative('/contribute.html')}") Contribute
+                %a(href="#{site.base_url}/contribute.html") Contribute
               %li<
                 %a(href="http://www.jboss.org/community/docs/DOC-10794") Wiki
               %li<
