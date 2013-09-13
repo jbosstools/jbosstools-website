@@ -38,5 +38,3 @@
   - page.javascripts.each do |javascript|
     %script{:src=>javascript, :type=>'text/javascript'}
 
-- if !(site.profile.eql?("staging") or site.profile.eql?("production"))
-  %script(src="/javascripts/less-1.4.1.min.js")
