@@ -3,13 +3,15 @@ layout: default
 title: Downloads
 tab: downloads
 ---
+- current_jbds_release = site.downloadable_builds[:jbds][:stable_releases].first
+- current_jbt_release = site.downloadable_builds[:jbt_core][:stable_releases].first
 .container-fluid
   .row-fluid
     .span6
       #jbds
         .download-unit
           %h3.center
-            #{site.products[:jbds]} #{site.downloadable_builds[:jbds][:releases].first.version}
+            #{current_jbds_release.name} #{current_jbds_release.version}
           %ul.items
             %li 
               %strong Supported by Red Hat
@@ -17,7 +19,7 @@ tab: downloads
             %li One click install - works on Windows, Mac and Linux
             %li Full IDE installer or install from existing Eclipse
             %li JBoss Central to install extra features
-            %li Released on #{site.downloadable_builds[:jbds][:releases].first.release_date}
+            %li Released on #{current_jbds_release.release_date}
           .download-btn
             %a.btn.btn-primary{:href=>"#{site.downloads_pages[:jbds].output_path}"} 
               %i.icon-download
@@ -26,14 +28,14 @@ tab: downloads
       #jbt
         .download-unit
           %h3.center
-            #{site.products[:jbt_core]} #{site.downloadable_builds[:jbt_core][:releases].first.version}
+            #{current_jbt_release.name} #{current_jbt_release.version}
           %ul.items
             %li
               %strong Community supported
             %li Individual plugins for Eclipse, including experimental plugins
             %li Install from existing Eclipse only
             %li JBoss Central to install extra features
-            %li Released on #{site.downloadable_builds[:jbt_core][:releases].first.release_date}
+            %li Released on #{current_jbt_release.release_date}
           .download-btn
             %a.btn.btn-primary{:href=>"#{site.downloads_pages[:jbt_core].output_path}"} 
               %i.icon-download

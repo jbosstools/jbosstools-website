@@ -2,7 +2,7 @@
   jbds: 
     name: JBoss Developer Studio
   jbt_core: 
-    name: JBoss Tools (Core)
+    name: JBoss Tools
   jbt_is: 
     name: JBoss Tools Integration Stack
  
