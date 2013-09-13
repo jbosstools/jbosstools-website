@@ -4,7 +4,7 @@ module Awestruct
 
       def init_download_tab_states(stream_type)
         labels = {:stable_releases=>"Lastest Stable Release", :development_builds=>"Development Milestones", :nightly_builds=>"Nightly Builds", :archives=>"Archives"}
-        output = "$('#downloadable_versions_tabs a:first').tab('show');\n"
+        output = "$('#downloadable_versions_menu_items a:first').tab('show');\n"
         labels.each_key do |key|
           unless site.downloadable_builds[stream_type][key].empty?
             site.downloadable_builds[stream_type][key].each do |build|
