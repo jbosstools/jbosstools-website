@@ -4,7 +4,7 @@
   eclipse_requirement: kepler
   streams:
     jbds:
-      releases: 
+      stable_releases: 
         - id: jbds_700
           version: 7.0
           release_date: 2013-07-22
@@ -13,7 +13,7 @@
           marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=827807
           jboss_com_url: https://devstudio.jboss.com/download/7.x.html
     jbt_core:
-      releases:
+      stable_releases:
         - id: jbt_core_410
           version: 4.1.0
           release_date: 2013-07-22
@@ -35,11 +35,11 @@
               url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.x/hibernatetools-Update-4.1.0.Final_2013-07-19_19-47-52-B380.zip
               md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.x/hibernatetools-Update-4.1.0.Final_2013-07-19_19-47-52-B380.zip.MD5
       nightly_builds:   
-        id: jbt_core_42x_nightly
-        version: 4.2
-        update_site_url: http://download.jboss.org/jbosstools/builds/nightly/core/trunk/latestBuild.html
+        - id: jbt_core_42x_nightly
+          version: 4.2
+          update_site_url: http://download.jboss.org/jbosstools/builds/nightly/core/trunk/latestBuild.html
     jbt_is:
-      releases:
+      stable_releases:
       development_builds:   
         - id: jbt_is_41x_dev
           update_site_url: http://download.jboss.org/jbosstools/updates/integration/kepler/integration-stack/aggregate/4.1.0
@@ -51,7 +51,7 @@
   eclipse_requirement: juno
   streams:
     jbds:
-      releases:
+      stable_releases:
         - id: jbds_601
           version: 6.0.1
           release_date: 2012-11-01
@@ -59,7 +59,7 @@
           marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=503834
           jboss_com_url: https://devstudio.jboss.com/download/7.x.html
     jbt_core:
-      releases:
+      stable_releases:
         - id: jbt_core_401
           version: 4.0.1.Final
           release_date: 2013-04-03
@@ -82,7 +82,7 @@
             - name: Release Notes
               url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.0.x/zz_Release_Notes_4.0.1.Final.readme.html
     jbt_is:
-      releases:
+      stable_releases:
       nightly_builds:
         - id: jbt_is_40x_nightly
           update_site_url: http://download.jboss.org/jbosstools/updates/integration/juno/integration-stack/aggregate/4.0.1
@@ -91,12 +91,12 @@
   eclipse_requirement: indigo
   streams:
     jbds:
-      releases:
+      stable_releases:
         - id: jbds_500
           version: 5.0.0
           release_date: 2012-06-21
     jbt_core:
-      releases:
+      stable_releases:
         - id: jbt_core_332
           version: 3.3.2
           release_date: 2013-01-25
@@ -120,7 +120,7 @@
               url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools3.3.x/zz_Release_Notes_3.3.2.Final.readme.html
     jbt_is:
       eclipse_requirement: indigo
-      releases:
+      stable_releases:
         - id: jbt_soa_333
           version: 3.3.3.Final
           release_date: 2013-02-19

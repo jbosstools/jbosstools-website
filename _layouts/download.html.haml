@@ -8,13 +8,13 @@ tab: downloads
 
 .row-fluid
   .span12.center
-    %h2 Download #{site.products[:jbds].name}
+    %h2 Download #{site.products[page.stream_type].name}
 .row-fluid.tabbable
   .span3#downloads-menu
     %ul.nav.nav-list{:id=>"downloadable_versions_tabs"}
       - labels.each_key do |key|
-        - unless site.downloadable_builds[:jbds][key].empty?
-          - site.downloadable_builds[:jbds][key].each do |build|
+        - unless site.downloadable_builds[page.stream_type][key].empty?
+          - site.downloadable_builds[page.stream_type][key].each do |build|
             %li{:id=>"#{build.id}_installation_tab"}
               %a{:href=>"##{build.id}_installation", :"data-toggle" => "tab"}
                 %span
@@ -25,12 +25,12 @@ tab: downloads
     
   .span9.tab-content.download-instructions
     - labels.each_key do |key|
-      - unless site.downloadable_builds[:jbds][key].empty?
-        - site.downloadable_builds[:jbds][key].each do |build|
+      - unless site.downloadable_builds[page.stream_type][key].empty?
+        - site.downloadable_builds[page.stream_type][key].each do |build|
           .tab-pane{:id=>"#{build.id}_installation"}
             - if key == :stable_releases
               %p
-                #{site.products[:jbds].name} #{build.version} was released on #{build.release_date}. 
+                #{site.products[page.stream_type].name} #{build.version} was released on #{build.release_date}. 
                 - if build.blog_announcement_url
                   Read the
                   %a{:href=>build.blog_announcement_url} announcement on our blog
@@ -52,8 +52,8 @@ tab: downloads
                 %li{:id=>"#{build.id}_marketplace_tab"}
                   %a{:href=>"##{build.id}_marketplace", :"data-toggle"=>"tab"}
                     Eclipse Marketplace
-                %li{:id=>"#{build.id}_updatesite_tab"}
-                  %a{:href=>"##{build.id}_updatesite", :"data-toggle"=>"tab"}
+                %li{:id=>"#{build.id}_update_site_tab"}
+                  %a{:href=>"##{build.id}_update_site", :"data-toggle"=>"tab"}
                     Update Site
                 %li{:id=>"#{build.id}_zips_tab"}
                   %a{:href=>"##{build.id}_zips", :"data-toggle"=>"tab"}
@@ -80,7 +80,7 @@ tab: downloads
               
               -# Update site
               - unless build.update_site_url.nil?
-                .tab-pane{:id=>"#{build.id}_updatesite"}
+                .tab-pane{:id=>"#{build.id}_update_site"}
                   :markdown
                     Add the following URL to your **#{build.eclipse_version.full_name}** workspace: [#{build.update_site_url}](#{build.update_site_url})
                     via 
@@ -136,7 +136,7 @@ tab: downloads
 -# Placed at the end of the document so the pages load faster
 :javascript
   $(document).ready(function () {
-    #{init_download_tab_states(:jbds)}
+    #{init_download_tab_states(page.stream_type)}
     $('a[data-toggle=tab]').click(function (e) {
       e.preventDefault();
       $(this).tab('show');
