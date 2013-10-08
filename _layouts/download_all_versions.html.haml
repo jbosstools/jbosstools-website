@@ -4,44 +4,35 @@ tab: downloads
 ---
 = breadcrumb(page.output_path)
 
-- labels = {:latest_release=>"Latest Stable", :stable_releases=>"Stable", 
--           :development_builds=>"Development", :nightly_builds=>"Nightly", :archives=>"Archive"}
+- labels = {:development_builds=>"Development", :stable_releases=>"Stable"}
 
-.row-fluid
-  .span10.offset1
-    .dropdown.float-right
-      %a.btn.dropdown-toggle{:id=>"download_version", :"data-toggle"=>"dropdown", :href=>"#"}
-        Download another version
-        %span.caret
-      %ul.dropdown-menu{:id=>"downloadable_versions_menu_items", :role=>"menu"}
-        - labels.each_key do |key|
-          - unless site.downloadable_builds[page.stream_type][key].empty?
-            - site.downloadable_builds[page.stream_type][key].each do |build|
-              %li{:id=>"#{build.id}_installation_menu_item"}
-                %a{:href=>"##{build.id}_installation", :"data-toggle" => "tab", :role=>"version_selection"}
-                  %span
-                    version #{build.version}
-                  %span{:class=>"label label-#{key}"}
-                    #{labels[key]}
 .row-fluid
   .span10.offset1.center 
     %h2
-      Download #{site.products[page.stream_type].name}
-      %span#displayed-version
-.row-fluid
-  .span10.offset1.center
-    %a Requirements
-    &#124;
-    %a What's New
-    &#124;
-    %a Release Note
+      All Downloads of #{site.products[page.stream_type].name}
     
-.row-fluid.tabbable
-  .span10.offset1.tab-content.download-instructions
-    - labels.each_key do |key|
-      - unless site.downloadable_builds[page.stream_type][key].empty?
-        - site.downloadable_builds[page.stream_type][key].each do |build|
-          .tab-pane{:id=>"#{build.id}_installation"}
+.row-fluid
+  .span10.offset1.center 
+    (Still needs a bit of work, though..)
+    
+- labels.each_key do |key|
+  - unless site.downloadable_builds[page.stream_type][key].empty?
+    - site.downloadable_builds[page.stream_type][key].each do |build|
+      .row-fluid
+        .span10.offset1
+          %h3.left
+            #{site.products[page.stream_type].name} #{build.version}
+            %span#displayed-version
+      .row-fluid
+        .span10.offset1.center
+          %a Requirements
+          &#124;
+          %a What's New
+          &#124;
+          %a Release Note
+      .row-fluid
+        .span10.offset1.download-instructions
+          %div{:id=>"#{build.id}_installation"}
             - if key == :stable_releases
               %p
                 #{site.products[page.stream_type].name} #{build.version} was released on #{build.release_date}. 
@@ -150,7 +141,8 @@ tab: downloads
 -# Placed at the end of the document so the pages load faster
 :javascript
   $(document).ready(function () {
-    #{init_download_tab_states(page.stream_type)}
+    #{init_all_download_tabs_states(site.downloadable_builds[page.stream_type])}
+    
     $('a[data-toggle=tab]').click(function (e) {
       e.preventDefault();
       $(this).tab('show');
@@ -162,7 +154,4 @@ tab: downloads
     });
     $('#displayed-version').html($('#downloadable_versions_menu_items > li.active:first >a').html());
   });
-  
-  
-
-  
+ 
