@@ -16,7 +16,7 @@ tab: downloads
         - site.download_pages[page.stream_type].each do |download_page|
           - unless download_page.current_build.nil? || download_page.current_build == page.current_build 
             %li
-              %a{:href=>download_page.output_path}
+              %a{:href=>"#{site.base_url}#{download_page.output_path}"}
                 %span
                   Version #{download_page.current_build.version}
                 %span{:class=>"label label_#{download_page.current_build.type}"}
