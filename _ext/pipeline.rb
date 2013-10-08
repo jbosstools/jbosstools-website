@@ -44,7 +44,7 @@ Awestruct::Extensions::Pipeline.new do
   extension Awestruct::Extensions::MyPaginator.new(:posts, '/blog/index', :per_page => 2 )
   extension Awestruct::Extensions::MyTagger.new( :posts, '/blog/index', '/blog/tags', :per_page=>10,
    :sanitize=>true )
-  extension Awestruct::Extensions::Downloads.new('/downloads/index.html', '/downloads/', :jbds => 'download_stream.html.haml', :jbt_core => 'download_jbt.html.haml', :jbt_is => 'download_stream.html.haml')
+  extension Awestruct::Extensions::Downloads.new
   helper Awestruct::Extensions::DownloadsHelper
   
   # extension Awestruct::Extensions::Indexifier.new

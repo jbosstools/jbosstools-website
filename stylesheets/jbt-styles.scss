@@ -233,6 +233,9 @@ a.dropdown-toggle {
   margin-bottom: 2em;
 }
 
+#displayed-version > .label {
+  vertical-align: top;
+}
 
 #installation-tabs {
   margin-top: 2em;
@@ -337,13 +340,22 @@ a.dropdown-toggle {
   }
 }
 
-span.label.label-stable_releases {
-  background-color: rgb(70, 165, 70);
+span.label {
+  font-weight: normal;
+  &#displayed-version {
+    vertical-align:top;
+  }
+  
+  label_stable_releases, &.label_latest_release {
+    background-color: rgb(70, 165, 70);
+  }
+
+  label_development_builds, &.label.label_nightly_builds {
+    background-color: rgb(248, 148, 6);
+  }
+  
 }
 
-span.label.label-development_builds, span.label.label-nightly_builds {
-  background-color: rgb(248, 148, 6);
-}
 
 .sidenav  li:first-child  a {
     border-radius: 6px 6px 0 0;
