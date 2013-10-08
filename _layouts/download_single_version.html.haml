@@ -23,7 +23,7 @@ tab: downloads
                   #{labels[download_page.current_build.type]}
         %li.divider          
         %li
-          %a{:href=>site.download_pages[page.stream_type].last.output_path}
+          %a{:href=>"#{site.base_url}#{site.download_pages[page.stream_type].last.output_path}"}
             %span
               #{site.download_pages[page.stream_type].last.title}
 .row-fluid
