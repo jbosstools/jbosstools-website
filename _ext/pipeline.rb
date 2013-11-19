@@ -49,7 +49,7 @@ Awestruct::Extensions::Pipeline.new do
   
   # extension Awestruct::Extensions::Indexifier.new
   # Needs to be after Indexifier to get the linking correct; 
-  extension Awestruct::Extensions::Feature::Index.new('/features', 15)
+  extension Awestruct::Extensions::Feature::Index.new('/features', :imagesdir => '/features/images')
   # Needs to be after Indexifier to get the linking correct; 
   extension Awestruct::Extensions::Whatsnew::Index.new('/whatsnew')
   

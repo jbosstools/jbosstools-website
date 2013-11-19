@@ -2,38 +2,13 @@
 layout: default
 tab: features
 ---
+= breadcrumb(page.output_path)
 
 .container-fluid
-  .row-fluid.feature-menu
-    .span12
-      %ul#featureTab.nav.nav-tabs
-        %li.active
-          %a{:href=>"#overview", :"data-toggle"=>"tab"} Overview
-        %li.dropdown
-          %a.dropdown-toggle{:href=>"#", :"data-toggle"=>"dropdown"} 
-            What's New 
-            %b.caret
-          %ul.dropdown-menu
-            - if site.new_and_noteworthies_per_module_id[page.module_id] != nil
-              - for version in site.new_and_noteworthies_per_module_id[page.module_id]
-                %li
-                  - whatnewshref = "#whatsnew-" + version.module_version.gsub("\.", "_")
-                  %a{:href=>whatnewshref, :"data-toggle"=>"tab"}  #{version.module_version}
-  #featureTabContent.tab-content
-    // overview tab
-    #overview.tab-pane.fade.in.active
+  .row-fluid
+    .span2.well
+      Overview
+      
+    .span10#features
       ~content
-    // what's new tabs  
-    - if site.new_and_noteworthies_per_module_id[page.module_id] != nil
-      - for version in site.new_and_noteworthies_per_module_id[page.module_id]
-        - whatnewshref = "whatsnew-" + version.module_version.gsub("\.", "_")
-        %div.tab-pane.fade{:id=>whatnewshref}
-          %h1.center What's new in #{version.module_name} #{version.module_version} 
-          #{version.content.to_s}
-          
--# Placed at the end of the document so the pages load faster
-:javascript
-  $('#featureTab a').click(function (e) {
-    e.preventDefault();
-    $(this).tab('show');
-  })
+
