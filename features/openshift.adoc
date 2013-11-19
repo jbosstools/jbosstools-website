@@ -6,7 +6,7 @@
 
 == OpenShift Tooling
 === Integrated deployment to the cloud.
-image::features-openshift-applicationwizard-reduced.png[]
+image::images/features-openshift-applicationwizard-reduced.png[]
 
 From developing to deploying on OpenShift, JBoss Tools provides you with a fully fledged 
 environment for your project and aligns with the standard workflows within Eclipse. 
@@ -17,28 +17,28 @@ or importing an existing OpenShift Application into a new or an existing project
 
 === OpenShift Explorer View
 ==== The embedded Web Console.
-image::features-openshift-explorerview-reduced.png[]
+image::images/features-openshift-explorerview-reduced.png[]
 
 The OpenShift Explorer View lets you connect, get access to domain and application creation, 
 set embedded cartridges and execute action such as Port-Forwarding and Tail Files   
 
 === Server Adapter
 ==== Almost like a local server
-image::features-openshift-serversview-reduced.png[]
+image::images/features-openshift-serversview-reduced.png[]
 The new OpenShift Server Adapter lets you publish your code changes in a single click. 
 It relies on JGit to perform the git commit and push operation in background. 
 It also gives you access to actions such as 'Tail Files' and 'Port Forwarding'.    
 
 === Port-forwarding
 ==== Feels like home.
-image::features-openshift-portforwarding-reduced.png[]
+image::images/features-openshift-portforwarding-reduced.png[]
 
 SSH Port-forwarding lets you bind local ports to remote ports on OpenShift using SSH tunneling. 
 You can then connect to local port for data access or application debugging.  
 
 === Tail Files
 ==== Streaming the logs.
-image::features-openshift-tailfiles-reduced.png[]
+image::images/features-openshift-tailfiles-reduced.png[]
 
 SSH also allows the OpenShift tooling to execute remote commands such a 'tail' on log files, 
 which are streamed live into the Eclipse Console.
