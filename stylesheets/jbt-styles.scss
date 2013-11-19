@@ -168,26 +168,17 @@ a.dropdown-toggle {
 // ****************************************
 // Installation
 // ****************************************
-#jbds {
-  .download-unit {
-    background: rgba(180, 180, 180, 0.2);
-    transition: background .25s ease-in-out;
-    -moz-transition: background .25s ease-in-out;
-    -webkit-transition: background .25s ease-in-out;
-    &:hover {
-      background: rgba(203, 234, 253, 1.0);
-    }
-  }
-}
-
-#jbt {
-  .download-unit {
-    background: rgba(180, 180, 180, 0.2);
-    transition: background .25s ease-in-out;
-    -moz-transition: background .25s ease-in-out;
-    -webkit-transition: background .25s ease-in-out;
-    &:hover {
-      background: rgba(203, 234, 253, 1.0);
+@media screen and (min-width: 680px) {
+  #downloads {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    & .download-unit:first-child::after {
+      background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(50%, rgba(0, 0, 0, 0.1)), color-stop(100%, rgba(0, 0, 0, 0)));
+      background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+      background-image: -moz-linear-gradient(bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+      background-image: -o-linear-gradient(bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+      background-image: linear-gradient(bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
     }
   }
 }
@@ -196,8 +187,7 @@ a.dropdown-toggle {
   position: relative;
   margin-bottom: 1em;
   padding: 1em;
-  border-radius: 0.5em;
-  min-height: 25em;
+  #min-height: 25em;
   height: auto;  
   
   ul {
@@ -205,11 +195,13 @@ a.dropdown-toggle {
     li {
       line-height: 2em;
     }
+    margin-bottom: 2em;
+    
   }
   .download-btn {
     margin-left: -1em;
     position: absolute; 
-    bottom: 1em;
+    bottom: 0em;
     width: 100%;
     text-align: center;
   }
@@ -437,12 +429,13 @@ span.label {
 }
 
 
-#featureTab {
-  line-height: 40px;
-  margin-top: 20px;
-  
-  ul {
-    margin-bottom: 0px;
+
+#features {
+  sect2:nth-child(even) > imageblock {
+    float: left;
+  }
+  sect2:nth-child(odd) > imageblock {
+    float: right;
   }
 }
 

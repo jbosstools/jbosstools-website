@@ -7,16 +7,17 @@ module Awestruct
         
         @@transformers_registered = false
         
-        def initialize(path_prefix, num_changes = nil)
+        def initialize(path_prefix, opts={})
           @path_prefix = path_prefix
-          @num_changes = num_changes
+          @imagesdir = opts[:imagesdir] || '/images'
+          puts "Initialized Feature extension with imagesdir=" + @imagesdir
         end
 
         # transform gets called twice in the process of loading the pipeline, so
         # we use a class variable to detect this scenario and shortcircuit
         def transform(transformers)
           if not @@transformers_registered
-              transformers << WrapWithSections.new
+              #transformers << WrapWithSections.new
               @@transformers_registered = true
           end
         end
@@ -26,8 +27,10 @@ module Awestruct
           
           site.pages.each do |page|
             if ( page.relative_source_path =~ /^#{@path_prefix}\/.*\/*.md/ \
-                 || page.relative_source_path =~ /^#{@path_prefix}\/.*\/*.textile/ )
-
+                 || page.relative_source_path =~ /^#{@path_prefix}\/.*\/*.textile/ \
+                 || page.relative_source_path =~ /^#{@path_prefix}\/.*\/*.adoc/ )
+              # all images locations should be relative to the optional value configured in the pipeline.rb
+              page.imagesdir = site.base_url + @imagesdir
               feature = OpenStruct.new
               page.feature = feature
               site.engine.set_urls([page])
