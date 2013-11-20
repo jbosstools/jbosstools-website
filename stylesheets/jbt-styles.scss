@@ -430,12 +430,53 @@ span.label {
 
 
 
-#features {
-  sect2:nth-child(even) > imageblock {
-    float: left;
-  }
-  sect2:nth-child(odd) > imageblock {
-    float: right;
+@media screen and (min-width: 940px) {
+  #feature {
+    .sect1 {
+      &:after {
+        display:block;
+        clear:both;
+        margin-bottom: 4em;
+        content: ""; // mandatory content, even empty
+      }
+      p {
+        font-size: 1.1em;
+        font-weight: 200;
+        line-height: 30px;
+      }
+    }
+  
+    .sect2 {
+      padding-top: 20px;
+    }
+  
+    .sect1:nth-child(odd) {
+      h2, h3, .paragraph {
+        float: left;
+        clear: left;
+        width: 50%;
+        margin:0px;
+      }
+      .imageblock {
+        float: right;
+        margin-top: -4em;
+        width: 50%;
+      }
+    } 
+  
+    .sect1:nth-child(even) { 
+      h2, h3, .paragraph {
+        float: right;
+        clear: right;
+        width: 50%;
+        margin:0px;
+      }
+      .imageblock {
+        float: left;
+        margin-top: -4em;
+        width: 50%;
+      }
+    }  
   }
 }
 
