@@ -1,8 +1,8 @@
 = OpenShift Tooling
 :awestruct-layout: features
 :awestruct-module_id: openshift
-:awestruct-image_url: images/aerogear_icon_256px.png
-:awestruct-feature_order: 8
+:awestruct-image_url: images/openshift_icon_256px.png
+:awestruct-feature_order: 2 
 
 == OpenShift Tooling
 === Integrated deployment to the cloud.
