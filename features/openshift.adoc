@@ -1,10 +1,11 @@
-= OpenShift Tooling
+= OpenShift
 :awestruct-layout: features
 :awestruct-module_id: openshift
 :awestruct-image_url: images/openshift_icon_256px.png
 :awestruct-feature_order: 2 
+:awestruct-tagline: Cloud on steroids
 
-== OpenShift Tooling
+== OpenShift
 === Integrated deployment to the cloud.
 image::images/features-openshift-applicationwizard-reduced.png[OpenShift Application Wizard]
 

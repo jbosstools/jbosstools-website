@@ -1,0 +1,13 @@
+= Aerogear 
+:awestruct-layout: features
+:awestruct-module_id: aerogear
+:awestruct-title: Aerogear
+:awestruct-image_url: images/aerogear_icon_256px.png
+:awestruct-feature_order: 8
+:awestruct-tagline: Mobile development tooling.
+:awestruct-summary: Aerogear
+
+== Get started instantly
+image::images/features-central_334px.png
+
+todo..
