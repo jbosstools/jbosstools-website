@@ -1,0 +1,27 @@
+= Maven
+:awestruct-layout: features
+:awestruct-module_id: maven
+:awestruct-image_url: images/features-maven_346px.png
+:awestruct-tagline: Closing the gap between Maven and WTP.
+:awestruct-feature_order: 4
+
+== Maven
+=== Beyond and above m2e and m2e-wtp
+image::images/features-maven_346px.png
+
+The Maven integration builds on top of Eclipse http://www.eclipse.org/m2e[m2e] and http://www.eclipse.org/m2e-wtp[m2e-wtp] to further closing the gap between the maven world and the Eclipse/WebTools world.
+
+== Profile Selection
+=== Easy switching
+image::images/features-maven_346px.png
+
+If your project heavily use maven profiles you can now smoothly toggle the various profiles on and off for 
+individual as well as multiple projects.   
+
+== Maven Configurators
+=== No need for manual setup 
+image::images/features-maven_346px.png
+
+With configurators for CDI, Hibernate, Seam and others you only have to have these configured 
+in your pom.xml and Maven integration will enable the Eclipse tooling for these. Allows
+easier and more consisten eclipse project setup between developers.

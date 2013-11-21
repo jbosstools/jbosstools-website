@@ -1,0 +1,38 @@
+= Java EE CDI
+:awestruct-layout: features
+:awestruct-module_id: cdi
+:awestruct-image_url: images/weld_icon_256px.png
+:awestruct-feature_order: 5
+:awestruct-tagline: Bringing CDI to Eclipse
+ 
+== Context Dependency Injection
+=== Utilize the power of CD
+
+Context and Dependency Injection (CDI) tooling allows you to easily add and work with the CDI programming model for your web-based applications. Helps you adding CDI support to existing projects and create new projects with the CDI wizard. The tooling also provides you with validation, code completion and hyperlink navigation.
+
+
+== CDI Nature 
+image::images/features-cdi_308px.png
+
+Todo...
+
+== Content Assist 
+image::images/features-cdi_308px.png
+
+Todo...
+
+== Hyperlink Navigation 
+image::images/features-cdi_308px.png
+
+Todo...
+
+== EL support 
+image::images/features-cdi_308px.png
+
+Todo...
+
+== Validation 
+image::images/features-cdi_308px.png
+
+Todo...
+

@@ -8,6 +8,11 @@ module Awestruct
 
       def relative(href, root = nil, p = page)
         begin
+          # avoid mysterious failure if passed in href is empty
+          if href.nil? 
+            return href 
+          end
+            
           result = href
           root = root.nil? ? p.output_path : root
 

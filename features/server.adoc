@@ -1,0 +1,60 @@
+= Server Tooling
+:awestruct-layout: features
+:awestruct-module_id: server
+:awestruct-image_url: images/jbossas7_icon_256px.png
+:awestruct-feature_order: 2 
+:awestruct-tagline: All your server are belong to us
+
+== Server Tooling
+== All your server are belong to us
+image::images/features-server-server-overview.png
+
+Wether you are using JBoss Enterprise Application Platform, JBoss AS and the upcoming Wildfly releases
+you can use the server tools to deploy, run, debug and introspect your favorite application server.
+The server tools provide incremental deployment, easy start and stop and both local and remote deployment.
+All within the Eclipse IDE.
+
+== Server View
+=== The command central of all your servers
+image::images/features-server-serverview.png[Screenshot showing a list of various servers with deployments in the server view]
+
+All your configured servers are listed in the server view. It shows the state of the server, what is deployed and provide
+easy access to start/stop and deploy to your application server.
+
+==  Full range of JBoss servers
+=== Supporting both the old, current and new
+image::images/features-server-fullrange.png[Screenshot showing the various server types supported]
+
+The full range of servers are supported, allowing you to maintain the old, develop on current and explore new ways of improving your application.
+
+|===
+| Name | Versions 
+
+| JBoss Enterprise Application Server | 4,5,6 
+
+| JBoss SOA Platform | 5
+
+| JBoss Portal Platform | 4,5,6
+
+|===
+
+
+|===
+| Name | Versions 
+
+| JBoss AS | 3,4,5,6
+
+| WildFly | 8
+
+|===
+
+== Context Menu
+=== Easy access for common operations
+
+The context menu on the server gives you easy access to show the deployed module in a browser and also provides a one click access to the web console.
+
+== Deployment only server
+=== When you just need the basics
+
+The deployment only server allows you to deploy eclipse projects to any directory, independent of specific server type.
+Allows you to benefit from the incremental deployment for any server that supports picking up updates from the file system.

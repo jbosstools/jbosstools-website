@@ -1,0 +1,23 @@
+= Forge
+:awestruct-layout: features
+:awestruct-module_id: forge
+:awestruct-title: JBoss Forge
+:awestruct-authors: xcoulon
+:awestruct-feature_order: 6
+:awestruct-image_url: images/jbossforge_icon_256px.png
+:awestruct-tagline: Forging a bond between Command Line and IDE
+
+== Forge
+=== Forging a bond between Command line and IDE
+
+Forge integration allows developers to use the familiar terminal or command line interface within an Integrated Development Environment (IDE) using the new dedicated Forge Console. While Forge executes the user commands, the project explorer refreshes for immediate visual feedback. The Forge integration brings you the best of the two worlds in a single place. 
+
+== Forge Console 
+image::images/features-forge_237px.png
+
+Todo...
+
+== Workspace synchronization
+image::images/features-forge_237px.png)
+
+Todo...

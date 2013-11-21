@@ -1,0 +1,11 @@
+= Hibernate
+:awestruct-layout: features
+:awestruct-module_id: hibernate
+:awestruct-title: Hibernate
+:awestruct-image_url: images/hibernate_icon_256px.png
+:awestruct-feature_order: 4
+:awestruct-tagline: Tooling for JPA and HQL. 
+
+== Hibernate
+With Hibernate you ...
+
