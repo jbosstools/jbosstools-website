@@ -9,11 +9,13 @@ module Awestruct
       end
       
       def execute(site)
+        puts "Executing posts extension.."
         super(site)
         site.posts.each do |page|
           #todo why is this not just the pageurl so relative urls just works ?
           page.imagesdir = site.base_url + @imagesdir
         end
+        puts "Done executing posts extension.."
       end
     end
   end

@@ -2,8 +2,10 @@
 :awestruct-layout: features
 :awestruct-module_id: openshift
 :awestruct-image_url: images/openshift_icon_256px.png
+:awestruct-highlighted: true
 :awestruct-feature_order: 2 
 :awestruct-tagline: Cloud on steroids
+:awestruct-imagesdir:/features
 
 == OpenShift
 === Integrated deployment to the cloud.

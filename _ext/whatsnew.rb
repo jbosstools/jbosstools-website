@@ -19,6 +19,7 @@ module Awestruct
         end
 
         def execute(site)
+          puts "Executing whatsnew extension.."
           new_and_noteworthies_per_version = Hash.new
           new_and_noteworthies_per_module_id = Hash.new
           
@@ -53,6 +54,7 @@ module Awestruct
             site.new_and_noteworthies_per_version = new_and_noteworthies_per_version
             site.new_and_noteworthies_per_module_id = new_and_noteworthies_per_module_id
           end
+          puts "Done executing whatsnew extension.."
           
         end
       end

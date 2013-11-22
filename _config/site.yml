@@ -6,7 +6,12 @@ project: tools
 textile:
   :no_span_caps: true
 
-
+asciidoctor:
+  :safe: safe
+  :attributes:
+    imagesdir: /images@
+    icons: font
+    
 # Default minify settings
 css_minifier: disabled
 js_minifier: disabled
@@ -14,7 +19,7 @@ html_minifier: disabled
 
 # Merge multiple JavaScript files to improve performance
 fileMerger:
-  enabled: true
+  enabled: false
   outputFilePath: /javascripts/bootstrap-community.js
   paths:
     - /javascripts/_bootstrap-transition.js
