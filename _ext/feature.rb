@@ -23,6 +23,7 @@ module Awestruct
         end
 
         def execute(site)
+          puts "Executing features extension.."
           features = []
           
           site.pages.each do |page|
@@ -45,6 +46,7 @@ module Awestruct
             end
             site.features = features
           end
+          puts "Done executing features extension.."
           
         end
       end
