@@ -1,0 +1,33 @@
+---
+layout: blog
+title: Web Resource Optimization with m2e-wro4j
+author: fbricon
+tags: [jbosstools, jbds, mobile]
+---
+= Yeah
+
+Blah
+
+== Installation
+
+Blah blah
+
+[NOTE]
+====
+Ssshhh
+
+http://download.jboss.org/jbosstools/updates/integration/kepler/integration-stack/aggregate/4.1.0/
+====
+
+== Performance sucks
+
+I know
+
+image::open-with-livereload.png[]
+
+
+
+Have fun!
+
+Fred Bricon +
+https://twitter.com/fbricon

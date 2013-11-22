@@ -28,10 +28,10 @@ Awestruct::Extensions::Pipeline.new do
 
   # JBoss.org extensions
   helper Awestruct::Extensions::Breadcrumb
-  extension Awestruct::Extensions::WgetWrapper.new
-  transformer Awestruct::Extensions::JsMinifier.new
-  transformer Awestruct::Extensions::CssMinifier.new
-  transformer Awestruct::Extensions::HtmlMinifier.new
+  #extension Awestruct::Extensions::WgetWrapper.new
+  #transformer Awestruct::Extensions::JsMinifier.new
+  #transformer Awestruct::Extensions::CssMinifier.new
+  #transformer Awestruct::Extensions::HtmlMinifier.new
   extension Awestruct::Extensions::FileMerger.new
   #extension Awestruct::Extensions::LessConfig.new
   #extension Awestruct::Extensions::Symlinker.new

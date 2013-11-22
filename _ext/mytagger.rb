@@ -34,7 +34,7 @@ module Awestruct
       end
 
       def execute(site)
-        puts "Executing tags extension.."
+        $LOG.debug "*** Executing Tags extension...." if $LOG.debug?
         @tags ||= {}
         all = site.send( @tagged_items_property )
         return if ( all.nil? || all.empty? ) 
@@ -92,8 +92,7 @@ module Awestruct
           primary_page = paginator.execute( site )
           tag.primary_page = primary_page
         end
-        puts "Done executing tags extension.."
-
+        $LOG.debug "*** Done executing tags extension...." if $LOG.debug?
         site.send( "#{@tagged_items_property}_tags=", ordered_tags )
       end
 

@@ -17,7 +17,7 @@ module Awestruct
 
       # generates synthetic pages for all downloadable versions of JBDS and JBT (stable, dev, nightly and older)
       def execute(site)
-        puts "Executing downloads extension.."
+        $LOG.debug "*** Executing downloads extension..." if $LOG.debug?
         @site = site
         # look for the input page (relative_source_path should match something like '/downloads' as configured in pipeline.rb)
         site.pages.each do |page|
@@ -26,7 +26,7 @@ module Awestruct
             build_download_pages(page)
           end
         end
-        puts "Done executing downloads extension.."
+        $LOG.debug "*** Done executing downloads extension." if $LOG.debug?
       end
 
       def build_download_pages(page)
@@ -80,7 +80,6 @@ module Awestruct
       def generate_single_version_download_pages(stream_type, build_type)
         download_pages=[]
         @site.downloadable_builds[stream_type][build_type].each do |build|
-          puts "Generating download page for " + build.to_s + " (" + build.type.to_s + ")"
           unless @@download_page_metadata[build.type].nil?
             page_path_fragment = @@download_page_metadata[build.type][:page_path_fragment] 
             page_subtitle = @@download_page_metadata[build.type][:page_title]
