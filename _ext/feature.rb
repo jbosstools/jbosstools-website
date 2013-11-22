@@ -10,7 +10,7 @@ module Awestruct
         def initialize(path_prefix, opts={})
           @path_prefix = path_prefix
           @imagesdir = opts[:imagesdir] || '/images'
-          puts "Initialized Feature extension with imagesdir=" + @imagesdir
+          $LOG.debug "*** Initialized Feature extension with imagesdir=" + @imagesdir if $LOG.debug?
         end
 
         # transform gets called twice in the process of loading the pipeline, so
@@ -23,7 +23,7 @@ module Awestruct
         end
 
         def execute(site)
-          puts "Executing features extension.."
+          $LOG.debug "*** Executing features extension..." if $LOG.debug?
           features = []
           
           site.pages.each do |page|
@@ -46,7 +46,7 @@ module Awestruct
             end
             site.features = features
           end
-          puts "Done executing features extension.."
+          $LOG.debug "*** Done executing features extension..." if $LOG.debug?
           
         end
       end

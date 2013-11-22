@@ -58,7 +58,7 @@ module Awestruct
       end
 
       def execute(site)
-        puts "Executing pagination extension.."
+        $LOG.debug "*** Executing pagination extension...." if $LOG.debug?
         removal_path = nil
         all = @collection || site.send( @prop_name )
         i = 1
@@ -102,7 +102,7 @@ module Awestruct
 
           prev_page = page
         end
-        puts "Done executing pagination extension.."
+        $LOG.debug "*** Done executing pagination extension...." if $LOG.debug?
 
         paginated_pages.first
       end

@@ -24,11 +24,9 @@ module Awestruct
       
       def init_all_download_tabs_states(downloadable_builds)
         output = ""
-        puts "Generating JS script for all download tabs states in " + downloadable_builds.to_s
         downloadable_builds.each do |type,builds|  
-          puts "Generating JS script for all download tabs states of " + type.to_s
           builds.each do |build|
-            puts "Generating JS script for download tabs states of " + build.to_s
+            $LOG.debug "*** Generating JS script for download tabs states of " + build.to_s if $LOG.debug?
             output << init_download_tab_states(build)
           end
         end

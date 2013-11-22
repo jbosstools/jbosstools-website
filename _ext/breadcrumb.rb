@@ -27,7 +27,7 @@ module Awestruct
       def breadcrumb(path)
 
         return nil if !path or path.eql?("/") or path.eql?("/index.html")
-
+        
         output = ""
         index = -1
         while index=path.index("/",index+1)
@@ -57,16 +57,14 @@ module Awestruct
 
       def findInPages(path)
 
-        for page in site.pages
-          if page.output_path.eql?(path)
-            return page
-          end
+        if site.page_map.nil?
+          site.send("page_map=", Hash[site.pages.map { |p| [p.output_path, p]}.flatten.each_slice(2).to_a])
         end
-        nil
+        
+        site.page_map[path]
       end
 
       def generateAnchorHtml( page , isLast )
-
         path = (page.output_path.nil? ? page.url : page.output_path)
 
         return "" if path==nil
