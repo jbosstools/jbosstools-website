@@ -5,7 +5,7 @@
 :awestruct-highlighted: true
 :awestruct-feature_order: 2 
 :awestruct-tagline: Cloud on steroids
-:awestruct-imagesdir:/features
+:imagesdir: /features
 
 == OpenShift
 === Integrated deployment to the cloud.
