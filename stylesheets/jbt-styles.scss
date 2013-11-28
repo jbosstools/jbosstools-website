@@ -15,12 +15,12 @@
   text-align: center;
 }
 
-div.right {
+div.right, span.right {
   width: 100%;
   text-align: right;
 }
 
-div.float-right {
+div.float-right, span.float-right {
   float:right;
 }
 
@@ -112,6 +112,12 @@ blockquote > p {
   margin-bottom: 2em;
 }
 
+div.alert {
+  margin: 20px 0px;
+}
+div.noalert {
+  margin: 20px 0px;
+}
 
 // ******************************************************
 // Breadcrumb
@@ -132,6 +138,7 @@ a.dropdown-toggle {
 // ******************************************************
 // Customizing the NavBar
 // ******************************************************
+.nav-bar
 .navbar-inner {
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
@@ -229,7 +236,7 @@ a.dropdown-toggle {
   vertical-align: top;
 }
 
-#installation-tabs {
+#installation_tabs {
   margin-top: 2em;
   .nav-tabs > .active > a {
   }
@@ -277,41 +284,6 @@ a.dropdown-toggle {
 //  margin-bottom: 0;
 }
 
-#downloads-menu {
-  border: 1px solid rgb(229, 229, 229);
-  border-radius: 4px;
-  ul.nav-list {
-    li {
-      & > a {
-        padding-top: 9px;
-        padding-bottom: 9px;
-        text-shadow: none;
-        border-bottom: 1px solid rgb(229, 229, 229);
-        & > i {
-          margin-top: 4px;
-          float: right;
-        }
-        &:hover {
-          //background-color: rgb(230, 231, 232);
-
-        }
-        &:focus {
-          //color: rgb(140, 143, 145);
-          //background-color: rgb(243, 243, 243);
-        }
-      } 
-    
-      & + .nav-header {
-        margin-top: 0px;
-      }  
-      
-      &:nth-last-child(1) > a {
-        border-bottom: none;
-      }
-    }
-  }
-}
-
 .download-instructions {
   h3 {
     margin-top: 0;
@@ -334,18 +306,20 @@ a.dropdown-toggle {
 
 span.label {
   font-weight: normal;
+  text-shadow: none;
   &#displayed-version {
     vertical-align:top;
   }
   
-  label_stable_releases, &.label_latest_release {
-    background-color: rgb(70, 165, 70);
+  &.label_stable, &.label_latest_release {
+    background-color: rgb(70, 136, 71);
   }
-
-  label_development_builds, &.label.label_nightly_builds {
+  &.label_development {
+    background-color: rgb(58, 135, 173);
+  }
+  &.label.label_nightly {
     background-color: rgb(248, 148, 6);
   }
-  
 }
 
 
