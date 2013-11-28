@@ -31,7 +31,7 @@ module Awestruct
                  || page.relative_source_path =~ /^#{@path_prefix}\/.*\/*.textile/ \
                  || page.relative_source_path =~ /^#{@path_prefix}\/.*\/*.adoc/ )
               # all images locations should be relative to the optional value configured in the pipeline.rb
-              page.imagesdir = site.base_url + @imagesdir
+              #page.imagesdir = site.base_url + @imagesdir
               feature = OpenStruct.new
               page.feature = feature
               site.engine.set_urls([page])

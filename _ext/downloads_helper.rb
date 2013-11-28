@@ -6,18 +6,18 @@ module Awestruct
         output = ""
         unless build.nil?
           if build.marketplace_install_url.nil?
-            output << "$('#" + build.id + "_marketplace_tab').addClass('disabled');\n"
-            output << "$('#" + build.id + "_marketplace_tab>a').removeAttr('data-toggle');\n"
+            output << "$('#marketplace_tab').addClass('disabled');\n"
+            output << "$('#marketplace_tab>a').removeAttr('data-toggle');\n"
           end
           if build.update_site_url.nil?
-            output << "$('#" + build.id + "_update_site_tab').addClass('disabled');\n"
-            output << "$('#" + build.id + "_update_site_tab>a').removeAttr('data-toggle');\n"
+            output << "$('#update_site_tab').addClass('disabled');\n"
+            output << "$('#update_site_tab>a').removeAttr('data-toggle');\n"
           end
           if build.zips.nil?
-            output << "$('#" + build.id + "_zips_tab').addClass('disabled');\n"
-            output << "$('#" + build.id + "_zips_tab>a').removeAttr('data-toggle');\n"
+            output << "$('#zips_tab').addClass('disabled');\n"
+            output << "$('#zips_tab>a').removeAttr('data-toggle');\n"
           end
-          output << "$('#" + build.id + "_tabs li:not(.disabled):first>a').tab('show');\n"
+          output << "$('#installation_tabs li:not(.disabled):first>a').tab('show');\n"
         end
         return output
       end

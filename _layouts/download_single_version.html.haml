@@ -4,98 +4,98 @@ tab: downloads
 ---
 = breadcrumb(page.output_path)
 
-- labels = {:latest_release=>"Latest Stable", :development_builds=>"Development", :nightly_builds=>"Nightly"}
-
+- labels = {:stable=>"Latest Stable", :development=>"Development", :nightly=>"Nightly"}
+-puts "Generating page for " + page.build_info.to_s
 .row-fluid
-  .span12
-    .dropdown.float-right
-      %a.btn.dropdown-toggle{:id=>"download_version", :"data-toggle"=>"dropdown", :href=>"#"}
-        See another version
-        %span.caret
-      %ul.dropdown-menu{:id=>"downloadable_versions_menu_items", :role=>"menu"}
-        - site.download_pages[page.stream_type].each do |download_page|
-          - unless download_page.current_build.nil? || download_page.current_build == page.current_build 
-            %li
-              %a{:href=>"#{site.base_url}#{download_page.output_path}"}
-                %span
-                  Version #{download_page.current_build.version}
-                %span{:class=>"label label_#{download_page.current_build.type}"}
-                  #{labels[download_page.current_build.type]}
+  .span3
+    .well
+      %ul.nav.nav-list
+        %li.nav-header Lastest Versions
+        - site.active_download_pages[page.product].select{|p| p.build_info.build_type == :stable unless p.build_info.nil?}.each do |download_page|
+          %li{:class=>("active" if download_page.build_info == page.build_info)}
+            %a{:href=>"#{site.base_url}#{download_page.output_path}"}
+              %span
+                #{download_page.build_info.version}
+              %span{:class=>"label label_#{download_page.build_info.build_type} float-right"}
+                #{labels[download_page.build_info.build_type]}
+        - site.active_download_pages[page.product].select{|p| p.build_info.build_type != :stable unless p.build_info.nil?}.each do |download_page|
+          %li{:class=>("active" if download_page.build_info == page.build_info)}
+            %a{:href=>"#{site.base_url}#{download_page.output_path}"}
+              %span
+                #{download_page.build_info.version}
+              %span{:class=>"label label_#{download_page.build_info.build_type} float-right"}
+                #{labels[download_page.build_info.build_type]}
         %li.divider          
         %li
-          %a{:href=>"#{site.base_url}#{site.download_pages[page.stream_type].last.output_path}"}
+          %a{:href=>"#{site.base_url}#{site.active_download_pages[page.product].last.output_path}"}
             %span
-              #{site.download_pages[page.stream_type].last.title}
-.row-fluid
-  .span10.offset1.center 
-    %h2
-      Download #{page.current_build.name} #{page.current_build.version}
-      %span#displayed-version{:class=>"label label_#{page.current_build.type}"}
-        #{labels[page.current_build.type]}
-.row-fluid
-  .span10.offset1.center
-    %a Requirements
-    &#124;
-    %a What's New
-    &#124;
-    %a Release Note
+              #{site.active_download_pages[page.product].last.title}
+  .span9
+    %h2.center
+      Download #{page.build_info.name} #{page.build_info.version}
+      %span#displayed-version{:class=>"label label_#{page.build_info.build_type}"}
+        #{labels[page.build_info.build_type]}
+    .center
+      %a Requirements
+      &#124;
+      %a What's New
+      &#124;
+      %a Release Note
     
-.row-fluid
-  .span10.offset1
-    - if page.current_build.type == :stable_releases
-      %p
-        #{site.products[page.stream_type].name} #{page.current_build.version} was released on #{page.current_build.release_date}. 
-        - if page.current_build.blog_announcement_url
+    - if page.build_info.build_type == :stable
+      .alert.alert-success
+        #{page.build_info.name} #{page.build_info.version} was released on #{page.build_info.release_date}. 
+        - if page.build_info.blog_announcement_url
           Read the
-          %a{:href=>page.current_build.blog_announcement_url} announcement on our blog
+          %a{:href=>page.build_info.blog_announcement_url} announcement on our blog
           to know more about it.
-    - if page.current_build.type == "development_builds"
-      .alert
+    - elsif page.build_info.build_type == :development
+      .alert.alert-info
         %strong Development builds
         are have received basic testing, but are not considered fully stable yet.
-    - if page.current_build.type == "nightly_builds"
-      .alert
+    - elsif page.build_info.build_type == :nightly
+      .alert.alert-warning
         %strong Warning! 
         Installing 
         %strong nightly builds
         might result in black holes being created !
 
-    #installation-tabs.tabbable
-      %ul.nav.nav-tabs{:id=>"#{page.current_build.id}_tabs"}
-        %li{:id=>"#{page.current_build.id}_marketplace_tab"}
-          %a{:href=>"##{page.current_build.id}_marketplace", :"data-toggle"=>"tab"}
+    #installation_tabs.tabbable
+      %ul.nav.nav-tabs
+        %li{:id=>"marketplace_tab"}
+          %a{:href=>"#marketplace", :"data-toggle"=>"tab"}
             Eclipse Marketplace
-        %li{:id=>"#{page.current_build.id}_update_site_tab"}
-          %a{:href=>"##{page.current_build.id}_update_site", :"data-toggle"=>"tab"}
+        %li{:id=>"update_site_tab"}
+          %a{:href=>"#update_site", :"data-toggle"=>"tab"}
             Update Site
-        %li{:id=>"#{page.current_build.id}_zips_tab"}
-          %a{:href=>"##{page.current_build.id}_zips", :"data-toggle"=>"tab"}
+        %li{:id=>"zips_tab"}
+          %a{:href=>"#zips", :"data-toggle"=>"tab"}
             Downloadable zips of the Update site
     #installation-tabs-content.tab-content     
-      - unless page.current_build.marketplace_install_url.nil? 
+      - unless page.build_info.marketplace_url.nil? 
         -# use markdown or asciidoc instead 
-        .tab-pane{:id=>"#{page.current_build.id}_marketplace"}
+        .tab-pane{:id=>"marketplace"}
           %p
             Drag and drop the 
-            %a{:href=>page.current_build.marketplace_install_url, :title=>"Install"}
-              %img{:src=>"#{site.base_url}/images/tools/installbutton.png", :alt=>"Drag and drop this button into a running #{eclipse_name} workspace to install #{page.current_build.name}", :height=>"25", :width=>"63"}
+            %a{:href=>page.build_info.marketplace_install_url, :title=>"Install"}
+              %img{:src=>"#{site.base_url}/images/tools/installbutton.png", :alt=>"Drag and drop this button into a running #{eclipse_name} workspace to install #{page.build_info.name}", :height=>"25", :width=>"63"}
             icon on your active
-            %strong< #{page.current_build.eclipse_version.full_name} 
+            %strong< #{page.build_info.eclipse_version.full_name} 
             workspace, or alternatively, search for &quot;
-            %strong> #{page.current_build.name} (#{page.current_build.eclipse_version.short_name})
+            %strong> #{page.build_info.name} (#{page.build_info.eclipse_version.short_name})
             &quot; in Eclipse via:
             %blockquote 
               Help > Eclipse Marketplace...
           %p
             You can also view the installation page on the&nbsp
-            %a{:href=>page.current_build.marketplace_url, :title=>"Eclipse Marketplace"}> Eclipse Marketplace
+            %a{:href=>page.build_info.marketplace_url, :title=>"Eclipse Marketplace"}> Eclipse Marketplace
             \.
     
       -# Update site
-      - unless page.current_build.update_site_url.nil?
-        .tab-pane{:id=>"#{page.current_build.id}_update_site"}
+      - unless page.build_info.update_site_url.nil?
+        .tab-pane{:id=>"update_site"}
           :markdown
-            Add the following URL to your **#{page.current_build.eclipse_version.full_name}** workspace: [#{page.current_build.update_site_url}](#{page.current_build.update_site_url})
+            Add the following URL to your **#{page.build_info.eclipse_version.full_name}** workspace: [#{page.build_info.update_site_url}](#{page.build_info.update_site_url})
             via 
 
             > Help > Install New Software...
@@ -103,10 +103,10 @@ tab: downloads
             then select the individual features that you want to install.
     
       -# downloadable zips
-      - unless page.current_build.zips.nil?
-        .tab-pane{:id=>"#{page.current_build.id}_zips"}
+      - unless page.build_info.zips.nil?
+        .tab-pane{:id=>"zips"}
           :markdown
-            You can download Update Zips (Archived p2 Repos) for offline installation of **#{page.current_build.name}**, but **DO NOT UNPACK THEM** into your Eclipse root or dropins folder!
+            You can download Update Zips (Archived p2 Repos) for offline installation of **#{page.build_info.name}**, but **DO NOT UNPACK THEM** into your Eclipse root or dropins folder!
             Next, install into Eclipse using
 
             > Help > Install New Software... > Add... > Archive...
@@ -118,7 +118,7 @@ tab: downloads
               %th<Name
               %th<Size
               %th<Links
-            - page.current_build.zips.each do |zip|
+            - page.build_info.zips.each do |zip|
               %tr
                 %td #{zip.name}  
                 %td.right #{zip.download_size}              
@@ -137,19 +137,19 @@ tab: downloads
   #requirements-modal.modal.hide.fade{:tabindex=>"-1", :role=>"dialog", :"aria-labelledby"=>"myModalLabel", :"aria-hidden"=>"true"}
     .modal-header
       %button.close{:type=>"button", :"data-dismiss"=>"modal", :"aria-hidden"=>"true"} x
-      %h3#myModalLabel #{page.current_build.name} #{page.current_build.version} Requirements
+      %h3#myModalLabel #{page.build_info.name} #{page.build_info.version} Requirements
     .modal-body
       %p 
-        #{page.current_build.name} #{page.current_build.version} runs on Windows, MacOSX and Linux and requires 
-        %a{:href=>page.current_build.eclipse_download}
-          #{page.current_build.eclipse_version.full_name}.
+        #{page.build_info.name} #{page.build_info.version} runs on Windows, MacOSX and Linux and requires 
+        %a{:href=>page.build_info.eclipse_download}
+          #{page.build_info.eclipse_version.full_name}.
     .modal-footer
       %button.btn{:"data-dismiss"=>"modal", :"aria-hidden"=>"true"} Close
     
 -# Placed at the end of the document so the pages load faster
 :javascript
   $(document).ready(function () {
-    #{init_download_tab_states(page.current_build)}
+    #{init_download_tab_states(page.build_info)}
     
   });
   
