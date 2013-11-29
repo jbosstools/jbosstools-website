@@ -4,10 +4,10 @@ title: Downloads
 tab: downloads
 ---
 
-- devstudio_current_stable_release = site.active_download_pages[:devstudio].select{|p| p.build_info.build_type == :stable unless p.build_info.nil?}.first
-- jbtcore_current_stable_release = site.active_download_pages[:jbt_core].select{|p| p.build_info.build_type == :stable unless p.build_info.nil?}.first
-- puts "devstudio release=" + devstudio_current_stable_release.to_s
-- puts "jbosstools release=" + jbtcore_current_stable_release.to_s
+- devstudio_current_stable_release = site.latest_stable_builds_download_pages[:devstudio]
+- jbtcore_current_stable_release = site.latest_stable_builds_download_pages[:jbt_core]
+- puts "devstudio release=" + devstudio_current_stable_release.build_info.to_s
+- puts "jbosstools release=" + jbtcore_current_stable_release.build_info.to_s
 
 .container-fluid
   .row-fluid#downloads
