@@ -1,123 +1,125 @@
 eclipse:
   luna:
+    url_path_fragment: luna
     short_name: Luna
     full_name: Eclipse Luna 4.4 M3
     download_url: http://www.eclipse.org/downloads/index-developer.php
+    active: true
   kepler:
+    url_path_fragment: kepler
     short_name: Kepler
     full_name: Eclipse Kepler 4.3
     download_url: http://www.eclipse.org/downloads/
+    active: true
   juno:
+    url_path_fragment: juno
     short_name: Juno
     full_name: Eclipse Juno 4.2.2
     download_url: http://www.eclipse.org/downloads/packages/release/juno/sr2
+    active: false
   indigo:
+    url_path_fragment: indigo
     short_name: Indigo
     full_name: Eclipse Indigo 3.7
+    active: false
   ganymede:
+    url_path_fragment: ganymede
     short_name: Ganymede
     full_name: Eclipse Ganymede 3.6
-  
+    active: false
+      
 # Product types
 devstudio: 
   name: JBoss Developer Studio
-  url_path: devstudio
+  url_path_fragment: devstudio
   streams:
     luna:
-      development:
-        8.0.0.Alpha1:
-          release_date: 2014-01-01
+      8.0.0.Alpha1:
+        release_date: 2014-01-01
     kepler:
-      stable:
-        7.0.0.GA:
-          release_date: 2013-07-22
-          blog_announcement: 2013-07-23-jbosstools_41_and_Red_Hat_Developer_Studio_7_go_GA
-          marketplace_url: http://marketplace.eclipse.org/node/827807
-          marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=827807
-          download_url: https://devstudio.jboss.com/download/7.x.html
-      development:
-        7.1.0.Beta1:
-          release_date: 2013-10-22
-          blog_announcement: 2013-07-23-jbosstools_41_and_Red_Hat_Developer_Studio_7_go_GA
+      7.0.0.GA:
+        release_date: 2013-07-22
+        blog_announcement: 2013-07-23-jbosstools_41_and_Red_Hat_Developer_Studio_7_go_GA
+        marketplace_url: http://marketplace.eclipse.org/node/827807
+        marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=827807
+        download_url: https://devstudio.jboss.com/download/7.x.html
+      7.1.0.Beta1:
+        release_date: 2013-10-22
+        blog_announcement: 2013-07-23-jbosstools_41_and_Red_Hat_Developer_Studio_7_go_GA
     juno:
-      stable:
-        6.0.1:
-          release_date: 2012-11-01
-          marketplace_url: http://marketplace.eclipse.org/node/503834
-          marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=503834
-          download_url: https://devstudio.jboss.com/download/6.x.html
+      6.0.1.Final:
+        release_date: 2012-11-01
+        marketplace_url: http://marketplace.eclipse.org/node/503834
+        marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=503834
+        download_url: https://devstudio.jboss.com/download/6.x.html
     indigo:
-      stable_versions:
-        5.0.0:
-          release_date: 2012-06-21
-          marketplace_url: http://marketplace.eclipse.org/node/121986
-          marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=121986
+      5.0.0.Final:
+        release_date: 2012-06-21
+        marketplace_url: http://marketplace.eclipse.org/node/121986
+        marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=121986
   
 jbt_core: 
   name: JBoss Tools
-  url_path: jbosstools
+  url_path_fragment: jbosstools
   streams:
     luna:
-      development:
-        4.2.0.Alpha1:
-          release_date: 2014-01-01
+      4.2.0.Alpha1:
+        release_date: 2014-01-01
       nightly:   
-        4.2.0.Nightly:
-          update_site_url: http://download.jboss.org/jbosstools/builds/nightly/core/trunk/latestBuild.html
+        update_site_url: http://download.jboss.org/jbosstools/builds/nightly/core/trunk/latestBuild.html
+        download_url: http://download.jboss.org/jbosstools/builds/nightly/core/trunk/latestBuild.html
     kepler:
-      stable:
-        4.1.0.Final:
-          release_date: 2013-07-22
-          blog_announcement: 2013-07-23-jbosstools_41_and_Red_Hat_Developer_Studio_7_go_GA
-          marketplace_url: http://marketplace.eclipse.org/node/876523
-          marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=876523
-          update_site_url: http://download.jboss.org/jbosstools/updates/stable/kepler/
-          zips:
-            - name: Update site (including sources) bundle of all JBoss Tools Core
-              download_size: 409MB
-              url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.x/jbosstools-Update-4.1.0.Final_2013-07-19_19-47-52-B380.zip
-              md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.x/jbosstools-Update-4.1.0.Final_2013-07-19_19-47-52-B380.zip.MD5
-            - name: Sources zip of all JBoss Tools Core
-              download_size: 135MB
-              url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.x/jbosstools-Sources-4.1.0.Final_2013-07-19_19-47-52-B380.zip
-              md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.x/jbosstools-Sources-4.1.0.Final_2013-07-19_19-47-52-B380.zip.MD5
-            - name: Update site (including sources) bundle of all Hibernate Tools
-              download_size: 78MB
-              url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.x/hibernatetools-Update-4.1.0.Final_2013-07-19_19-47-52-B380.zip
-              md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.x/hibernatetools-Update-4.1.0.Final_2013-07-19_19-47-52-B380.zip.MD5
-      development:
-        4.1.1.Beta1:
-          release_date: 2013-10-22
-        
+      nightly:   
+        update_site_url: http://download.jboss.org/jbosstools/builds/nightly/core/trunk/latestBuild.html
+      4.1.1.Beta1:
+        release_date: 2013-10-22
+      4.1.0.Final:
+        release_date: 2013-07-22
+        blog_announcement: 2013-07-23-jbosstools_41_and_Red_Hat_Developer_Studio_7_go_GA
+        marketplace_url: http://marketplace.eclipse.org/node/876523
+        marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=876523
+        update_site_url: http://download.jboss.org/jbosstools/updates/stable/kepler/
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Tools Core
+            download_size: 409MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.x/jbosstools-Update-4.1.0.Final_2013-07-19_19-47-52-B380.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.x/jbosstools-Update-4.1.0.Final_2013-07-19_19-47-52-B380.zip.MD5
+          - name: Sources zip of all JBoss Tools Core
+            download_size: 135MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.x/jbosstools-Sources-4.1.0.Final_2013-07-19_19-47-52-B380.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.x/jbosstools-Sources-4.1.0.Final_2013-07-19_19-47-52-B380.zip.MD5
+          - name: Update site (including sources) bundle of all Hibernate Tools
+            download_size: 78MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.x/hibernatetools-Update-4.1.0.Final_2013-07-19_19-47-52-B380.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.x/hibernatetools-Update-4.1.0.Final_2013-07-19_19-47-52-B380.zip.MD5
+      
     juno:
-      stable:
-        4.0.1.Final:
-          release_date: 2013-04-03
-          marketplace_url: http://marketplace.eclipse.org/node/420896
-          marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=420896
-          update_site_url: http://download.jboss.org/jbosstools/updates/stable/juno/
+      4.0.1.Final:
+        release_date: 2013-04-03
+        marketplace_url: http://marketplace.eclipse.org/node/420896
+        marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=420896
+        update_site_url: http://download.jboss.org/jbosstools/updates/stable/juno/
     
     indigo:
-      stable:
-        3.3.2:
-          release_date: 2013-01-25
-          marketplace_url: http://marketplace.eclipse.org/node/121986
-          marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=121986
-          update_site_url: http://download.jboss.org/jbosstools/updates/stable/indigo/
-          zips:
-            - name: Update site (including sources) bundle of all JBoss Tools Core
-              download_size: 237MB
-              url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools3.3.x/jbosstools-3.3.2.Final.aggregate-Update-2013-01-18_18-03-25-H229.zip
-              md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools3.3.x/jbosstools-3.3.2.Final.aggregate-Update-2013-01-18_18-03-25-H229.zip.MD5
-            - name: Sources zip of all JBoss Tools Core
-              download_size: 107MB
-              url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools3.3.x/jbosstools-3.3.2.Final.aggregate-Sources-2013-01-18_18-03-25-H229.zip
-              md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools3.3.x/jbosstools-3.3.2.Final.aggregate-Sources-2013-01-18_18-03-25-H229.zip.MD5
-            - name: Update site (including sources) bundle of all Hibernate Tools
-              download_size: 70MB
-              url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools3.3.x/jbosstools-3.3.2.Final.component--hibernatetools-Update-2013-01-18_18-03-25-H229.zip
-              md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools3.3.x/jbosstools-3.3.2.Final.component--hibernatetools-Update-2013-01-18_18-03-25-H229.zip.MD5
-            - name: Release Notes
-              url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools3.3.x/zz_Release_Notes_3.3.2.Final.readme.html
+      3.3.2.Final:
+        release_date: 2013-01-25
+        marketplace_url: http://marketplace.eclipse.org/node/121986
+        marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=121986
+        update_site_url: http://download.jboss.org/jbosstools/updates/stable/indigo/
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Tools Core
+            download_size: 237MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools3.3.x/jbosstools-3.3.2.Final.aggregate-Update-2013-01-18_18-03-25-H229.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools3.3.x/jbosstools-3.3.2.Final.aggregate-Update-2013-01-18_18-03-25-H229.zip.MD5
+          - name: Sources zip of all JBoss Tools Core
+            download_size: 107MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools3.3.x/jbosstools-3.3.2.Final.aggregate-Sources-2013-01-18_18-03-25-H229.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools3.3.x/jbosstools-3.3.2.Final.aggregate-Sources-2013-01-18_18-03-25-H229.zip.MD5
+          - name: Update site (including sources) bundle of all Hibernate Tools
+            download_size: 70MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools3.3.x/jbosstools-3.3.2.Final.component--hibernatetools-Update-2013-01-18_18-03-25-H229.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools3.3.x/jbosstools-3.3.2.Final.component--hibernatetools-Update-2013-01-18_18-03-25-H229.zip.MD5
+          - name: Release Notes
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools3.3.x/zz_Release_Notes_3.3.2.Final.readme.html
     
     

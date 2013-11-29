@@ -4,32 +4,30 @@ tab: downloads
 ---
 = breadcrumb(page.output_path)
 
-- labels = {:stable=>"Latest Stable", :development=>"Development", :nightly=>"Nightly"}
--puts "Generating page for " + page.build_info.to_s
+- labels = {:stable=>"Stable Release", :development=>"Development", :nightly=>"Nightly"}
 .row-fluid
   .span3
     .well
       %ul.nav.nav-list
-        %li.nav-header Lastest Versions
-        - site.active_download_pages[page.product].select{|p| p.build_info.build_type == :stable unless p.build_info.nil?}.each do |download_page|
-          %li{:class=>("active" if download_page.build_info == page.build_info)}
-            %a{:href=>"#{site.base_url}#{download_page.output_path}"}
-              %span
-                #{download_page.build_info.version}
-              %span{:class=>"label label_#{download_page.build_info.build_type} float-right"}
-                #{labels[download_page.build_info.build_type]}
-        - site.active_download_pages[page.product].select{|p| p.build_info.build_type != :stable unless p.build_info.nil?}.each do |download_page|
-          %li{:class=>("active" if download_page.build_info == page.build_info)}
-            %a{:href=>"#{site.base_url}#{download_page.output_path}"}
-              %span
-                #{download_page.build_info.version}
-              %span{:class=>"label label_#{download_page.build_info.build_type} float-right"}
-                #{labels[download_page.build_info.build_type]}
+        -# puts site.download_perma_links[page.product].to_s
+        - site.download_perma_links[page.product].each do |eclipse_builds| 
+          %li.nav-header 
+            -# puts " " + eclipse_id[0].to_s + ": " + eclipse_id[1].to_s
+            -# eclipse_id is an array: ["luna", AStruct<{...}>]
+            #{site.products[:eclipse][eclipse_builds[0]].full_name}
+          - eclipse_builds[1].each do |build_type, download_page|
+            %li{:class=>("active" if download_page.build_info == page.build_info)}
+              %a{:href=>"#{site.base_url}#{download_page.output_path}"}
+                %span
+                  #{download_page.build_info.version}
+                %span{:class=>"label label_#{build_type} float-right"}
+                  #{labels[build_type]}
         %li.divider          
+        %li.nav-header The Full Monty
         %li
-          %a{:href=>"#{site.base_url}#{site.active_download_pages[page.product].last.output_path}"}
+          %a{:href=>"#{site.base_url}#{site.all_versions_download_pages[page.product].output_path}"}
             %span
-              #{site.active_download_pages[page.product].last.title}
+              All Versions
   .span9
     %h2.center
       Download #{page.build_info.name} #{page.build_info.version}
@@ -151,8 +149,4 @@ tab: downloads
   $(document).ready(function () {
     #{init_download_tab_states(page.build_info)}
     
-  });
-  
-  
-
-  
+  });  
