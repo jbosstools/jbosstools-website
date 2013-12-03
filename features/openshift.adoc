@@ -1,10 +1,10 @@
 = OpenShift
-:awestruct-layout: features
-:awestruct-module_id: openshift
-:awestruct-image_url: images/openshift_icon_256px.png
-:awestruct-highlighted: true
-:awestruct-feature_order: 2 
-:awestruct-tagline: Cloud on steroids
+:page-layout: features
+:page-module_id: openshift
+:page-image_url: images/openshift_icon_256px.png
+:page-highlighted: true
+:page-feature_order: 2 
+:page-tagline: Cloud on steroids
 
 == OpenShift
 === Integrated deployment to the cloud.
