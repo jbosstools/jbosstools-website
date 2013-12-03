@@ -6,7 +6,7 @@
 :awestruct-tagline: All your server are belong to us
 
 == Server Tooling
-== All your server are belong to us
+=== All your server are belong to us
 image::images/features-server-server-overview.png
 
 Wether you are using JBoss Enterprise Application Platform, JBoss AS and the upcoming Wildfly releases
@@ -27,25 +27,20 @@ image::images/features-server-fullrange.png[Screenshot showing the various serve
 
 The full range of servers are supported, allowing you to maintain the old, develop on current and explore new ways of improving your application.
 
+[cols="3,1" options="header", width="50%"]
 |===
-| Name | Versions 
-
-| JBoss Enterprise Application Server | 4,5,6 
-
+| Name | Versions
+| JBoss Enterprise Application Server | 4,5,6
 | JBoss SOA Platform | 5
-
 | JBoss Portal Platform | 4,5,6
-
 |===
 
 
+[cols="3,1" options="header", width="50%"]
 |===
-| Name | Versions 
-
+| Name | Versions
 | JBoss AS | 3,4,5,6
-
 | WildFly | 8
-
 |===
 
 == Context Menu

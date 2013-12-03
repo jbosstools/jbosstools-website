@@ -430,13 +430,13 @@ span.label {
     }
   
     .sect1:nth-child(odd) {
-      h2, h3, .paragraph {
+      H2, .sect2 > :not(.imageblock) {
         float: left;
         clear: left;
         width: 50%;
-        margin:0px;
+        //margin:0px;
       }
-      .imageblock {
+      .sect2 > .imageblock {
         float: right;
         margin-top: -4em;
         width: 50%;
@@ -444,13 +444,13 @@ span.label {
     } 
   
     .sect1:nth-child(even) { 
-      h2, h3, .paragraph {
+      H2, .sect2 > :not(.imageblock) {
         float: right;
         clear: right;
         width: 50%;
-        margin:0px;
+        //margin:0px;
       }
-      .imageblock {
+      .sect2 > .imageblock {
         float: left;
         margin-top: -4em;
         width: 50%;
@@ -459,6 +459,13 @@ span.label {
   }
 }
 
+.tableblock {
+  margin-bottom: 1em;
+  th, td {
+    border: 1px solid rgb(101, 101, 101);
+    padding: 4px;
+  }
+}
 
 // *************************************
 // News / Blog posts
