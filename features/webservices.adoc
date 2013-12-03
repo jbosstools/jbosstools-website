@@ -6,7 +6,7 @@
 :awestruct-feature_order: 9
 :awestruct-tagline: Supporting REST and SOAP
 
-= Get started instantly
+== Get started instantly
 ![Getting Started](./images/features-central_334px.png)
 
 Central helps you bootstrap a new project by providing you with a large set of wizards and templates, 
@@ -14,8 +14,8 @@ including the JBoss Developer Frawework and the GateIn Quickstarts.
 Central also provides you with the latest community news, announcements and blog articles, 
 so that you always know what's happening at JBoss.org.
 
-= Extras
-== Extras plugins. Easy install. 
+== Extras
+=== Extras plugins. Easy install. 
 image::images/features-central-extras_334px.png
 
 JBoss Central also features an easy way to install extra plugins, 
