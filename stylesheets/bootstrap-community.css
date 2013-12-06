@@ -2544,7 +2544,7 @@ table th[class*="span"],
   *margin-right: .3em;
   line-height: 14px;
   vertical-align: text-top;
-  background-image: url("/cache/static.jboss.org/theme/images/common/glyphicons-halflings.png");
+  background-image: url("http://static.jboss.org/theme/images/common/glyphicons-halflings.png");
   background-position: 14px 14px;
   background-repeat: no-repeat;
   margin-top: 1px;
@@ -2567,7 +2567,7 @@ table th[class*="span"],
 .dropdown-submenu:focus > a > [class^="icon-"],
 .dropdown-submenu:hover > a > [class*=" icon-"],
 .dropdown-submenu:focus > a > [class*=" icon-"] {
-  background-image: url("/cache/static.jboss.org/theme/images/common/glyphicons-halflings-white.png");
+  background-image: url("http://static.jboss.org/theme/images/common/glyphicons-halflings-white.png");
 }
 .icon-glass {
   background-position: 0      0;
@@ -8001,22 +8001,45 @@ embed,
 .pagination .active span {
   background-color: #f1f3f4;
 }
+.breadcrumb > .active {
+  color: #8c8f91;
+}
 .table thead {
-  background-image: -moz-linear-gradient(top, #656565, #000000);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#656565), to(#000000));
-  background-image: -webkit-linear-gradient(top, #656565, #000000);
-  background-image: -o-linear-gradient(top, #656565, #000000);
-  background-image: linear-gradient(to bottom, #656565, #000000);
+  /*
+  background-image: -moz-linear-gradient(top, @grayDark, @black);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@grayDark), to(@black));
+  background-image: -webkit-linear-gradient(top, @grayDark, @black);
+  background-image: -o-linear-gradient(top, @grayDark, @black);
+  background-image: linear-gradient(to bottom, @grayDark, @black);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#61616111', endColorstr='#01010111', GradientType=0);
-  color: #ffffff;
+  filter: ~"progid:DXImageTransform.Microsoft.gradient(startColorstr='#61616111', endColorstr='#01010111', GradientType=0)";
+  color: @white;
+  */
+
+}
+.table thead th {
+  background-color: #424242;
+  color: #e6e7e8;
+}
+/* Hero Unit
+-------------------------------------------------- */
+.hero-unit .well p {
+  font-size: 13px;
+  line-height: 23px;
 }
 /* Jumbotrons
 -------------------------------------------------- */
 .jumbotron {
   position: relative;
+  background: #243446 url(http://static.jboss.org/example/images/example_heropattern1.png) repeat center center;
+  padding: 40px;
+  margin: 0 0 20px 0;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
 }
 .jumbotron h1 {
+  color: #FFF;
   margin-bottom: 9px;
   font-size: 54px;
   font-weight: bold;
@@ -8026,7 +8049,9 @@ embed,
 }
 .jumbotron p {
   margin-bottom: 18px;
+  font-size: 17px;
   font-weight: 300;
+  color: #f5f6f6;
 }
 .jumbotron .btn-large {
   font-size: 20px;
@@ -8128,6 +8153,116 @@ ul.square li {
 ul.circle li {
   list-style-type: disc;
 }
+/* Breadcrumbs
+-------------------------------------------------- */
+.breadcrumb > .active {
+  color: #8c8f91;
+}
+.breadcrumb {
+  margin: -10px 0 10px;
+  padding: 4px 15px;
+}
+/* Alerts
+-------------------------------------------------- */
+.alert.alert-block .userinfo {
+  color: #8c8f91;
+  font-size: 12px;
+}
+.alert.alert-block a {
+  text-decoration: none;
+}
+.alert.alert-block a:hover h4 {
+  color: #a57e3b;
+}
+/* Definition Table
+-------------------------------------------------- */
+.deftable {
+  width: 100%;
+  text-align: left;
+  line-height: 150%;
+  margin-bottom: 20px;
+  padding: 0px;
+}
+.deftable th {
+  color: #FFFFFF;
+  border-bottom: 1px dotted #999999;
+  font-size: 12px;
+  padding: 0 10px 0 5px;
+}
+.deftable .header {
+  color: #FFFFFF;
+  font-weight: bold;
+  height: 31px;
+  text-align: left;
+}
+.deftable .term {
+  border-bottom: 1px solid #DCDEDF;
+  border-left: 1px solid #DCDEDF;
+  border-right: 1px solid #DCDEDF;
+  vertical-align: top;
+  padding: 20px 10px;
+  background-color: #F4F3F3;
+  color: #565656;
+  font-family: Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  text-shadow: 1px 1px #FFF;
+}
+.deftable .termFirst {
+  border: 1px solid #DCDEDF;
+  vertical-align: top;
+  padding: 20px 10px;
+  background-color: #F4F3F3;
+  color: #565656;
+  font-family: Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  text-shadow: 1px 1px #FFF;
+}
+.deftable .termLast {
+  border-top: 1px solid #DCDEDF;
+  padding: 20px;
+  background-color: #F4F3F3;
+  color: #565656;
+  font-family: Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  text-shadow: 1px 1px #FFF;
+}
+.deftable .def {
+  border-bottom: 1px solid #F2F2F2;
+  border-right: 1px solid #F2F2F2;
+  vertical-align: top;
+  padding: 20px;
+  color: #565656;
+}
+.deftable .defFirst {
+  border-top: 1px solid #F2F2F2;
+  border-right: 1px solid #F2F2F2;
+  border-bottom: 1px solid #F2F2F2;
+  vertical-align: top;
+  padding: 20px;
+  color: #565656;
+}
+.deftable .defLast {
+  border-top: 1px solid #F2F2F2;
+  border-bottom: 1px dotted #F2F2F2;
+  vertical-align: top;
+  padding: 20px;
+  color: #565656;
+}
+.deftable .def ul,
+.deftable .defFirst ul {
+  margin-left: 1em;
+  padding-left: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.deftable .def ol,
+.deftable .defFirst ol {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
 /* These are new selectors and styles created for unique uses on the site not covered by Bootstrap defaults. */
 /* ------------------ Basic styles for Layout ------------------------- */
 .pull-center {
@@ -8166,30 +8301,268 @@ ul.circle li {
 .projectsocialmedia li > a {
   padding: 3px 10px;
 }
-/* ------------------ Tabzilla Global tab-nav ------------------------- */
+/* ------------------ Tabzilla Global tabnav ------------------------- */
 .dropup {
-  height: 38px;
-  background-image: url("/cache/static.jboss.org/images/example/tabzilla-redhat-logo-sprite.png");
-  background-position: top;
+  /* display: none;  HIDE IT UNTIL WORKING */
+
+  height: 37px;
+  background-image: url("http://static.jboss.org/common/images/tabzilla/tabzilla-redhat-logo-sprite.png");
+  background-position: left top;
   width: 112px;
   background-color: transparent;
   position: absolute;
-  right: 80px;
+  right: 40px;
   margin-bottom: -40px;
   z-index: 999;
   text-align: center;
 }
-.dropup #tab {
-  display: none;
+#subproject .dropup {
+  /* display: none;  HIDE IT UNTIL WORKING */
+
+  background-position: right top;
+  background-repeat: no-repeat;
+  width: 100%;
+  background-color: transparent;
+  position: relative;
+  margin-bottom: 0px;
+  padding-right: 30px;
 }
 #tabnav-panel {
-  background-color: #FFF;
+  background-color: transparent;
 }
 #tabnav-panel li {
   list-style: none;
 }
-#tabnav-panel.tabnav-closed {
-  display: none;
+#tabnav-panel .middlewarelogo {
+  border-right: 1px solid #d5d5d5;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0 35px 20px 0;
+}
+#tabnav {
+  background-color: #FFF;
+  padding: 0 25px;
+  margin: 0px auto;
+  display: block;
+  font-family: "Lucida Sans", "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+  font-size: 13.5px;
+  height: 100%;
+  max-width: 1180px;
+  text-align: left;
+}
+#tabnav .tabcontent {
+  padding-top: 30px;
+  background: linear-gradient(to bottom, #e1eef4 0%, #ffffff 60%) no-repeat scroll 0 0 transparent;
+  height: 100%;
+  clear: both;
+  margin: 0px 5px;
+  padding: 20px 25px;
+  border: 1px solid #E1EEF4;
+}
+#tabnav .tabcontent .overview {
+  padding-bottom: 30px;
+  font-size: 15px;
+}
+#tabnav .span6 {
+  padding: 20px 10px 0 10px;
+}
+#tabnav ul li {
+  color: #656565;
+  line-height: 23px;
+  list-style: none;
+  padding: 0px;
+}
+#tabnav ul li a {
+  text-decoration: none;
+  text-shadow: 0 1px 1px #e4eaf1;
+}
+#tabnav ul li a:hover {
+  text-shadow: 1px 1px 1px #e4eaf1;
+  text-decoration: none;
+}
+/* (I renamed all tabzilla to tabnav here...) */
+#tabnav-panel.tabnav-opened {
+  height: 240px;
+}
+#tabnav-panel {
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: normal;
+  height: 0;
+  line-height: 1.3;
+  overflow: hidden;
+  position: relative;
+}
+#tabnav-contents {
+  bottom: 0;
+  left: 50%;
+  right: 0;
+  text-align: left;
+}
+* html #tabnav-contents {
+  zoom: 1;
+}
+/* IE6 */
+*:first-child + html #tabnav-contents {
+  zoom: 1;
+}
+/* IE7 */
+#tabnav-contents:after {
+  clear: both;
+  content: " ";
+  display: block;
+  font-size: 0;
+  height: 0;
+  visibility: hidden;
+}
+#tabnav-promo .snippet h4,
+#tabnav-panel #tabnav-nav,
+#tabnav-panel #tabnav-nav h2 {
+  color: #484848;
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+}
+#tabnav-panel #tabnav-nav ul {
+  margin: 0;
+  padding: 0;
+}
+#tabnav-panel #tabnav-nav h2 {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0 20px 0.4em;
+  white-space: nowrap;
+}
+#tabnav-panel #tabnav-nav ul li ul li {
+  border-right: 0 none;
+  float: none;
+  height: auto;
+  margin: 0;
+}
+#tabnav-panel #tabnav-nav a {
+  color: #484848;
+  display: block;
+  outline: 0 none;
+  padding: 0.1em 8px 0.2em 20px;
+}
+#tabnav ul li#tabnav-search {
+  border-right: 0 none;
+}
+#tabnav #tabnav-search ul li {
+  background: none repeat scroll 0 0 transparent;
+  border-right: 1px dotted #D6D6D6;
+  display: inline;
+  float: left;
+  height: 95px;
+  line-height: 1.1;
+  list-style-type: none;
+  margin: 20px 0 0;
+  padding: 0;
+  width: 16.5%;
+}
+#tabnav ul li#tabnav-search a {
+  padding-top: 0;
+}
+#tabnav ul li#tabnav-search form {
+  margin: 0.4em 10px;
+}
+#tabnav ul li#tabnav-search input:-moz-placeholder {
+  color: #173444;
+}
+/* =Dropup Tab */
+#tab.tabnav-opened:after {
+  -moz-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+#tab:after {
+  -moz-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  order-radius: 8px;
+  background: url("http://static.jboss.org/common/images/arrow-tabnav-down.png") repeat scroll 0 0 transparent;
+  content: "x";
+  height: 15px;
+  position: absolute;
+  right: 12px;
+  top: 9px;
+  width: 13px;
+}
+#tab.tabnav-opened,
+.darkbg #tab.tabnav-opened {
+  background-position: 0 -47px;
+}
+#tab {
+  /*background: url(../../images/common/tabnav-search.png) repeat scroll 0 0 transparent;  */
+
+  display: block;
+  float: right;
+  height: 40px;
+  overflow: hidden;
+  position: absolute;
+  text-indent: -2000px;
+  width: 100px;
+  z-index: 999;
+  top: 0px;
+  right: 4px;
+}
+@media (min-width: 1200px) {
+  #tabnav-panel {
+    width: 1230px;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 980px) and (max-width: 1199px) {
+  #tabnav-panel {
+    width: 1000px;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 768px) and (max-width: 979px) {
+  #tabnav-panel {
+    width: 784px;
+    margin: 0 auto;
+  }
+  .banner {
+    border-top: 1px solid #E1EEF4;
+  }
+}
+@media (max-width: 767px) {
+  #tabnav-panel {
+    max-width: 767px;
+    margin: 0 auto;
+  }
+  #tabnav-panel .middlewarelogo {
+    border-right: 0px;
+    border-bottom: 1px solid #d5d5d5;
+    margin-bottom: 15px;
+  }
+  #tabnav-panel.tabnav-opened {
+    height: 370px;
+  }
+  .dropup {
+    height: 37px;
+    background-image: url("http://static.jboss.org/common/images/tabzilla/tabzilla-redhat-logo-sprite.png");
+    background-position: left bottom;
+    width: 74px;
+    right: 30px;
+  }
+  .banner {
+    border-top: 1px solid #E1EEF4;
+  }
 }
 /* ------------------ Project banner, tagline and tab ------------------------- */
 .banner {
@@ -8215,16 +8588,14 @@ ul.circle li {
 .taglinedark {
   color: #656565;
 }
-/* --  WHAT IS THIS FOR? - IT'S MESSING UP OTHER TABS ---
-.tab {
-  position: absolute;
-  top: 0;
-  right: 70px;
-  z-index: 1000;
-}*/
 /* ------------------ Rightcol Layout ------------------------- */
 #rightcol {
-  background-color: #f5f6f6;
+  background-color: #EFEFEF;
+  /* this matches the background of the Coolstuff graphics */
+
+}
+#rightcol .well {
+  background-color: #FFF;
 }
 /* ------------------ Leftcol Layout ------------------------- */
 #leftcol {
@@ -8248,6 +8619,15 @@ footer.container {
   background-color: #656565;
   padding-top: 30px;
   padding-bottom: 30px;
+  -moz-border-radius: 0 0 4px 4px;
+  /* firefox */
+
+  -webkit-border-radius: 0 0 4px 4px;
+  /* safari/chrome */
+
+  border-radius: 0 0 4px 4px;
+  /* CSS3, works in IE9 */
+
 }
 footer.container .container {
   background-color: transparent;
@@ -8270,43 +8650,43 @@ footer.container ol {
 /* ------------------ Fonts ------------------------- */
 @font-face {
   font-family: 'TitilliumText22LThin';
-  src: url('/cache/static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L001-webfont.eot');
-  src: url('/cache/static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L001-webfont.eot?#iefix') format('embedded-opentype'), url('/cache/static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L001-webfont.woff') format('woff'), url('/cache/static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L001-webfont.ttf') format('truetype'), url('/cache/static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L001-webfont.svg#TitilliumText22LThin') format('svg');
+  src: url('http://static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L001-webfont.eot');
+  src: url('http://static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L001-webfont.eot?#iefix') format('embedded-opentype'), url('http://static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L001-webfont.woff') format('woff'), url('http://static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L001-webfont.ttf') format('truetype'), url('http://static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L001-webfont.svg#TitilliumText22LThin') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'TitilliumText22LLight';
-  src: url('/cache/static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L002-webfont.eot');
-  src: url('/cache/static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L002-webfont.eot?#iefix') format('embedded-opentype'), url('/cache/static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L002-webfont.woff') format('woff'), url('/cache/static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L002-webfont.ttf') format('truetype'), url('/cache/static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L002-webfont.svg#TitilliumText22LLight') format('svg');
+  src: url('http://static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L002-webfont.eot');
+  src: url('http://static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L002-webfont.eot?#iefix') format('embedded-opentype'), url('http://static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L002-webfont.woff') format('woff'), url('http://static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L002-webfont.ttf') format('truetype'), url('http://static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L002-webfont.svg#TitilliumText22LLight') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'TitilliumText22LRegular';
-  src: url('/cache/static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L003-webfont.eot');
-  src: url('/cache/static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L003-webfont.eot?#iefix') format('embedded-opentype'), url('/cache/static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L003-webfont.woff') format('woff'), url('/cache/static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L003-webfont.ttf') format('truetype'), url('/cache/static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L003-webfont.svg#TitilliumText22LRegular') format('svg');
+  src: url('http://static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L003-webfont.eot');
+  src: url('http://static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L003-webfont.eot?#iefix') format('embedded-opentype'), url('http://static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L003-webfont.woff') format('woff'), url('http://static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L003-webfont.ttf') format('truetype'), url('http://static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L003-webfont.svg#TitilliumText22LRegular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'TitilliumText22LMedium';
-  src: url('/cache/static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L004-webfont.eot');
-  src: url('/cache/static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L004-webfont.eot?#iefix') format('embedded-opentype'), url('/cache/static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L004-webfont.woff') format('woff'), url('/cache/static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L004-webfont.ttf') format('truetype'), url('/cache/static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L004-webfont.svg#TitilliumText22LMedium') format('svg');
+  src: url('http://static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L004-webfont.eot');
+  src: url('http://static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L004-webfont.eot?#iefix') format('embedded-opentype'), url('http://static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L004-webfont.woff') format('woff'), url('http://static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L004-webfont.ttf') format('truetype'), url('http://static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L004-webfont.svg#TitilliumText22LMedium') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'TitilliumText22LBold';
-  src: url('/cache/static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L005-webfont.eot');
-  src: url('/cache/static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L005-webfont.eot?#iefix') format('embedded-opentype'), url('/cache/static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L005-webfont.woff') format('woff'), url('/cache/static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L005-webfont.ttf') format('truetype'), url('/cache/static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L005-webfont.svg#TitilliumText22LBold') format('svg');
+  src: url('http://static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L005-webfont.eot');
+  src: url('http://static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L005-webfont.eot?#iefix') format('embedded-opentype'), url('http://static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L005-webfont.woff') format('woff'), url('http://static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L005-webfont.ttf') format('truetype'), url('http://static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L005-webfont.svg#TitilliumText22LBold') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'TitilliumText22LXBold';
-  src: url('/cache/static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L006-webfont.eot');
-  src: url('/cache/static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L006-webfont.eot?#iefix') format('embedded-opentype'), url('/cache/static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L006-webfont.woff') format('woff'), url('/cache/static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L006-webfont.ttf') format('truetype'), url('/cache/static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L006-webfont.svg#TitilliumText22LXBold') format('svg');
+  src: url('http://static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L006-webfont.eot');
+  src: url('http://static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L006-webfont.eot?#iefix') format('embedded-opentype'), url('http://static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L006-webfont.woff') format('woff'), url('http://static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L006-webfont.ttf') format('truetype'), url('http://static.jboss.org/theme/fonts/titilliumtext/TitilliumText22L006-webfont.svg#TitilliumText22LXBold') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -8394,7 +8774,7 @@ hr.soften {
 }
 .bs-docs-sidenav .active .icon-chevron-right,
 .bs-docs-sidenav .active a:hover .icon-chevron-right {
-  background-image: url("/cache/static.jboss.org/theme/images/common/glyphicons-halflings.png");
+  background-image: url("http://static.jboss.org/theme/images/common/glyphicons-halflings.png");
   opacity: 1;
 }
 .bs-docs-sidenav.affix {
@@ -8530,6 +8910,9 @@ hr.soften {
 .quickstarts {
   font-size: 16px;
 }
+.quickstarts b {
+  margin-right: 20px;
+}
 /* --------------- Big Icons ---------------------  */
 .enormous-icon {
   font-size: 5em;
@@ -8561,7 +8944,7 @@ hr.soften {
   text-indent: -9999px;
   display: block;
   margin: 0;
-  background: #243446 url(/cache/static.jboss.org/images/example/top.png) no-repeat center center;
+  background: #243446 url(http://static.jboss.org/common/images/top.png) no-repeat center center;
 }
 .backToTop a:hover {
   background-color: #4a5d75;
@@ -8647,7 +9030,6 @@ hr.soften {
 .equalHero .span4,
 .equalHero .span3,
 .equalHero .span6 {
-  background: url(_community/../images/5p.png);
   background-color: #e6e7e8;
   margin-bottom: 3%;
   margin-top: 10px;
@@ -8712,6 +9094,11 @@ hr.soften {
   padding-top: 5px;
 }
 .equalHero .btn {
+  -webkit-border-radius: 4px 4px 4px 4px!important;
+  -moz-border-radius: 4px 4px 4px 4px!important;
+  border-radius: 4px 4px 4px 4px!important;
+}
+.equalHero .btn.pull-right {
   -webkit-border-radius: 4px 0 0 4px!important;
   -moz-border-radius: 4px 0 0 4px!important;
   border-radius: 4px 0 0 4px!important;
@@ -8842,7 +9229,6 @@ hr.soften {
     padding: 1%;
     position: relative;
     float: left;
-    background: url(_community/../images/5p.png);
   }
   .thumb-gallery a {
     text-decoration: none;
@@ -8911,42 +9297,6 @@ hr.soften {
   }
 }
 /* end max width 767 */
-/* --------------- Search (Crisp) -------------------- */
-.search-wrapper {
-  float: right;
-  padding: 5px 0 0 0;
-}
-.search #search-trigger {
-  font-size: 0.75em;
-  font-weight: bold;
-  color: #333;
-  text-indent: -9999em;
-  display: block;
-  float: left;
-  padding: 0;
-  margin: 0;
-  width: 30px;
-  height: 30px;
-  position: relative;
-  top: 3px;
-  background: url(_community/../images/search.png) 0px 50% no-repeat;
-  cursor: pointer;
-}
-.search #search-trigger.active {
-  background: url(_community/../images/search.png) -30px 50% no-repeat;
-}
-.search input {
-  background-color: #fff;
-  width: 200px;
-  margin-left: 5px;
-  top: 3px;
-  position: relative;
-  font-size: 16px;
-  -webkit-appearance: textfield;
-}
-.js .search input {
-  display: none;
-}
 /* --------------- Tab Toggles (Crisp) ---------------------  */
 /*  No JS styles
 ========================================================== */
@@ -9355,7 +9705,11 @@ div.s-content {
 .colorcomplete {
   color: #6bb565;
 }
-/* --------------- Footer Blog Posts (Crisp) ---------------------  */
+/* --------------- Blog Posts (Crisp) ---------------------  */
+.posts .seemore {
+  margin-top: -35px;
+  float: right;
+}
 .listPosts {
   margin: 0;
   padding: 0;
@@ -9364,7 +9718,7 @@ div.s-content {
 .listPosts .avatar {
   height: 15px;
   width: 15px;
-  background-color: #ccc;
+  color: #999;
   float: left;
   margin-right: 5px;
 }
@@ -9378,8 +9732,9 @@ div.s-content {
 }
 .listPosts .name {
   display: block;
-  font-size: 12px;
+  font-size: 14px;
   color: #999;
+  width: 82%;
 }
 .listPosts li {
   padding: 5px 0;
@@ -9393,7 +9748,7 @@ div.s-content {
 }
 /* --------------- Project Icons ---------------------  */
 .project-icon-med {
-  background: url("https://static.jboss.org/theme/images/icons/sprite-project-icons-all.png") no-repeat scroll left top transparent;
+  background: url("http://static.jboss.org/common/images/sprite-project-icons-all.png") no-repeat scroll left top transparent;
   display: block;
   float: left;
   height: 16px;
@@ -9726,13 +10081,6 @@ div.s-content {
   height: 16px;
   width: 16px;
 }
-.jira-icon {
-  background: url("_community/../../images/common/jira-icons-sprite.png") no-repeat scroll left top transparent;
-  display: inline-block;
-  float: left;
-  height: 16px;
-  width: 16px;
-}
 /* --------------- Comments ---------------------  */
 .commentcontainer {
   background-color: #f3f3f3;
@@ -9757,6 +10105,388 @@ div.s-content {
 .commenttime {
   font-size: 12px;
   color: #999999;
+}
+/* --------------- Supported In ---------------------  */
+ul.supportedin {
+  margin-left: 0px;
+}
+ul.supportedin li {
+  list-style: none;
+}
+ul.supportedin li i {
+  color: #9d261d;
+}
+ul.supportedin li a {
+  text-decoration: none;
+}
+/* --------------- Sponsored ---------------------  */
+.sponsors ul {
+  margin-left: 0px;
+}
+.sponsors ul li {
+  list-style: none;
+  text-align: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #e6e7e8;
+}
+.sponsors ul li p {
+  padding-top: 10px;
+}
+/* --------------- Badges & Licenses ---------------------  */
+#badges {
+  width: 100%;
+  clear: both;
+  min-height: 90px;
+}
+#badges ul {
+  margin: 0 0 0 0;
+  padding: 0px;
+}
+#badges .tools,
+#badges .jopr,
+#badges .arquillian,
+#badges .jsr,
+#badges .license-lgpl,
+#badges .license-asl,
+#badges .license-gpl {
+  list-style: none;
+}
+#badges .license-lgpl,
+#badges .license-asl,
+#badges .license-gpl,
+#badges .license-lgpl a,
+#badges .license-asl a,
+#badges .license-gpl a,
+#badges .license-lgpl a:hover,
+#badges .license-asl a:hover,
+#badges .license-gpl a:hover,
+#badges .jsr,
+#badges .jsr a,
+#badges .jsr a:hover {
+  width: 90px;
+  height: 90px;
+  float: left;
+}
+#badges .license-asl a {
+  background: url(http://static.jboss.org/common/images/licenses/license_asl-sprite.gif) no-repeat top center;
+}
+#badges .license-asl a:hover {
+  background-position: bottom center;
+}
+#badges .license-lgpl a {
+  background: url(http://static.jboss.org/common/images/licenses/license_lgpl-sprite.gif) no-repeat top center;
+}
+#badges .license-lgpl a:hover {
+  background-position: bottom center;
+}
+#badges .license-gpl a {
+  background: url(http://static.jboss.org/common/images/licenses/license_gpl-sprite.gif) no-repeat top center;
+}
+#badges .license-gpl a:hover {
+  background-position: bottom center;
+}
+#badges a em {
+  left: -9999em;
+  position: absolute;
+}
+#badges .jsr a {
+  background: url(http://static.jboss.org/common/images/licenses/license_jsr-sprite.gif) no-repeat top center;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333333;
+}
+#badges .license-gpl a {
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  text-decoration: none;
+  color: #FFF;
+}
+#badges .jsr a .implements {
+  font-size: 19px;
+  clear: both;
+  display: block;
+  padding: 13px 0 0 25px;
+  height: 17px;
+  text-shadow: 2px 2px 2px #E7E6E6;
+}
+#badges .jsr a .version,
+#badges .license-gpl a .version {
+  font-size: 17px;
+  clear: both;
+  display: block;
+  text-align: center;
+  margin-left: -4px;
+  padding: 0px 0 0;
+  text-shadow: 2px 2px 2px #E7E6E6;
+  _margin-top: -10px;
+  /* hack for IE6 */
+
+}
+#badges .license-gpl a .version {
+  padding: 28px 0 0 0;
+  text-shadow: 2px 2px 2px #000;
+}
+#badges .jsr a:hover {
+  background-position: bottom center;
+  text-decoration: none;
+}
+#badges .tools,
+#badges .jopr,
+#badges .arquillian {
+  clear: both;
+  font-family: Helvetica, "Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, sans-serif;
+  font-size: 14px;
+  margin-top: 3px;
+}
+#badges .tools a,
+#badges .jopr a,
+#badges .arquillian a {
+  color: #666666;
+  display: block;
+  padding: 4px 0px;
+  margin-left: 10px;
+  padding-left: 30px;
+  text-decoration: none;
+  text-shadow: 2px 2px 2px #fff;
+}
+#badges .tools a:hover,
+#badges .jopr a:hover,
+#badges .arquillian a:hover {
+  color: #828282;
+}
+#badges .tools a {
+  background: url(http://static.jboss.org/common/images/licenses/badges-sprite.gif) no-repeat 0 -150px;
+}
+#badges .jopr a {
+  background: url(http://static.jboss.org/common/images/licenses/badges-sprite.gif) no-repeat 0 -75px;
+}
+#badges .arquillian a {
+  background: url(http://static.jboss.org/common/images/licenses/badges-sprite.gif) no-repeat 0 0;
+}
+/* ---------------- Coolstuff ------------------------------ */
+#coolstuff {
+  padding: 30px 0;
+}
+/* ---------------- White Box ------------------------------------ */
+.whitebox {
+  font-size: 11px;
+  line-height: 16px;
+  display: block;
+  font-size: 12px;
+  background-color: #f5f6f6;
+  -moz-border-radius-topleft: 4px;
+  -webkit-border-top-left-radius: 4px;
+  -moz-border-radius-topright: 4px;
+  -webkit-border-top-right-radius: 4px;
+  -moz-border-radius-bottomleft: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  -moz-border-radius-bottomright: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  padding: 0px;
+  margin: 0px 0 0px 0;
+  border: #e7e7e7 solid 1px;
+  text-align: left;
+  /*dd {
+    _margin-left: -80;   hack for IE 6
+  }*/
+
+  /*dt {
+    _margin-left: -80px;   hack for IE 6
+  }*/
+
+}
+.whitebox h3 {
+  background-color: #e6e7e8;
+  color: #3F3F3F;
+  padding: 9px 0 9px 9px;
+  margin: 0px;
+  display: block;
+  font-weight: normal;
+  border-bottom: 1px #CCC solid;
+  text-shadow: 0 1px 1px #FFF;
+}
+.whitebox p {
+  padding: 0 10px;
+}
+.whitebox dd {
+  margin-left: 0px;
+  padding: 0 10px 0px 0px;
+}
+.whitebox dd a {
+  overflow: hidden;
+  white-space: inherit;
+}
+.whitebox dd a:hover {
+  color: #545454;
+}
+.whitebox ul li dd {
+  *margin-left: -40px;
+  /* hack for IE 7 */
+
+}
+.whitebox dt {
+  margin-left: 0px;
+  font-size: 16px;
+  letter-spacing: -0.05em;
+  display: block;
+  font-weight: normal;
+}
+.whitebox ul li dt {
+  *margin-left: -40px;
+  /* hack for IE 7 */
+
+}
+.whitebox ul {
+  padding-left: 10px;
+}
+.whitebox ul li {
+  list-style: none;
+  /*text-indent:none;*/
+
+  margin-left: 0px ;
+  margin-top: 10px;
+  /* target IE7 and below */
+
+}
+.whitebox ul li span.location,
+.whitebox ul li span.more {
+  display: block;
+  font-size: 10px;
+  margin-bottom: -10px;
+}
+.whitebox ul li span.location {
+  color: #999999;
+}
+.whitebox ul li li span.location,
+.whitebox ul li li span.more {
+  *margin-left: -40px;
+}
+.whitebox ul li dt a {
+  display: block;
+  font-weight: normal;
+}
+.whitebox dl {
+  margin: 10px;
+  _margin-left: 10px;
+  /* hack for IE 6 */
+
+}
+.whitebox ul li dl {
+  margin-left: 0px;
+}
+/* ---------------- JIRA Issues ------------------------------------ */
+.issue-mod {
+  display: block;
+  font-size: 13px;
+  margin: 8px 0px 15px 0px;
+  padding: 0px;
+  border-bottom: 1px solid #F1F1F1;
+}
+.issue-mod .issue {
+  padding: 15px 10px;
+}
+.issue-mod .jira-icon {
+  margin-left: -2px;
+}
+.issue-mod ul {
+  padding: 0px;
+  margin: 0 0 0 22px;
+  font-weight: normal;
+}
+.issue-mod li {
+  margin: 0px;
+  /*display:inline;*/
+
+  line-height: 11px;
+  padding-right: 10px;
+  color: #888;
+}
+.issue-mod li .jira-icon {
+  margin-top: -4px;
+  margin-left: -3px;
+}
+.issue-mod a {
+  font-weight: bold;
+  margin-left: 5px;
+}
+.issue-mod .oddRow {
+  border-bottom: 1px dotted #CCC;
+  border-top: 1px dotted #CCC;
+}
+/* JIRA Icons Sprite */
+/* Generated by http://spritegen.website-performance.org/ with these settings:
+     Horizontal Offset: 5
+     Vertical Offset: 5
+     Class Prefix (optional): jira-
+     Display width and height (optional): unchecked
+*/
+.jira-icon {
+  background: url(http://static.jboss.org/common/images/jira-icons-sprite.png) no-repeat top left;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  float: left;
+}
+.jira-issuetype-1 {
+  background-position: 0 0;
+}
+.jira-issuetype-10 {
+  background-position: 0 -21px;
+}
+.jira-issuetype-11 {
+  background-position: 0 -42px;
+}
+.jira-issuetype-12 {
+  background-position: 0 -71px;
+}
+.jira-issuetype-13 {
+  background-position: 0 -100px;
+}
+.jira-issuetype-14 {
+  background-position: 0 -121px;
+}
+.jira-issuetype-15 {
+  background-position: 0 -142px;
+}
+.jira-issuetype-2 {
+  background-position: 0 -163px;
+}
+.jira-issuetype-3 {
+  background-position: 0 -184px;
+}
+.jira-issuetype-4 {
+  background-position: 0 -205px;
+}
+.jira-issuetype-5 {
+  background-position: 0 -226px;
+}
+.jira-issuetype-7 {
+  background-position: 0 -247px;
+}
+.jira-issuetype-8 {
+  background-position: 0 -268px;
+}
+.jira-issuetype-9 {
+  background-position: 0 -289px;
+}
+.jira-status-1 {
+  background-position: 0 -310px;
+}
+.jira-status-3 {
+  background-position: 0 -331px;
+}
+.jira-status-4 {
+  background-position: 0 -352px;
+}
+.jira-status-5 {
+  background-position: 0 -373px;
+}
+.jira-status-6 {
+  background-position: 0 -394px;
+}
+.jira-status-10011 {
+  background-position: 0 -416px;
 }
 .pln {
   color: #48484c;
@@ -9858,8 +10588,8 @@ ol.linenums li {
  * -------------------------- */
 @font-face {
   font-family: 'FontAwesome';
-  src: url('/cache/static.jboss.org/theme/fonts/font-awesome/fontawesome-webfont.eot?v=3.1.0');
-  src: url('/cache/static.jboss.org/theme/fonts/font-awesome/fontawesome-webfont.eot?#iefix&v=3.1.0') format('embedded-opentype'), url('/cache/static.jboss.org/theme/fonts/font-awesome/fontawesome-webfont.woff?v=3.1.0') format('woff'), url('/cache/static.jboss.org/theme/fonts/font-awesome/fontawesome-webfont.ttf?v=3.1.0') format('truetype'), url('/cache/static.jboss.org/theme/fonts/font-awesome/fontawesome-webfont.svg#fontawesomeregular?v=3.1.0') format('svg');
+  src: url('http://static.jboss.org/theme/fonts/font-awesome/fontawesome-webfont.eot?v=3.1.0');
+  src: url('http://static.jboss.org/theme/fonts/font-awesome/fontawesome-webfont.eot?#iefix&v=3.1.0') format('embedded-opentype'), url('http://static.jboss.org/theme/fonts/font-awesome/fontawesome-webfont.woff?v=3.1.0') format('woff'), url('http://static.jboss.org/theme/fonts/font-awesome/fontawesome-webfont.ttf?v=3.1.0') format('truetype'), url('http://static.jboss.org/theme/fonts/font-awesome/fontawesome-webfont.svg#fontawesomeregular?v=3.1.0') format('svg');
   font-weight: normal;
   font-style: normal;
 }
