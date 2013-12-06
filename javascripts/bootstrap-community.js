@@ -2457,6 +2457,242 @@ function processScroll() {
   })
 }(window.jQuery);
 
+/* FeedEk jQuery RSS/ATOM Feed Plugin v1.1.2
+*  http://jquery-plugins.net/FeedEk/FeedEk.html
+*  Author : Engin KIZIL http://www.enginkizil.com
+*  http://opensource.org/licenses/mit-license.php
+*/
+(function (e) {
+    e.fn.FeedEk = function (t) {
+        var n = {
+        FeedUrl: "http://rss.cnn.com/rss/edition.rss", MaxCount: 6, ShowDesc: false, ShowPubDate: true, CharacterLimit: 0, TitleLinkTarget: "_blank" };
+        if (t) {
+            e.extend(n, t)
+        }
+        var r = e(this).attr("id");
+        var i;
+        e("#" + r).empty().append('<div style="padding:3px;"><img src="http://static.jboss.org/theme/images/common/loading.gif" /></div>');
+        e.ajax({
+            url: "http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=" + n.MaxCount + "&output=json&q=" + encodeURIComponent(n.FeedUrl) + "&hl=en&callback=?",
+            dataType: "json",
+            success: function (t) {
+                e("#" + r).empty();
+                var s = "";
+                e.each(t.responseData.feed.entries,
+                    function (e, t) {
+                        s += '<li><div class="avatar"><i class="icon-comment" /></div>';
+                        if (t.author) {
+                          s+= '<span class="name">' + t.author + '</span>';
+                        }
+                        if (n.ShowPubDate) {
+                            i = new Date(t.publishedDate);
+                            s += '<span class="meta">' + i.toLocaleDateString() + "</span>"
+                        }
+                        s += '<a href="' + t.link + '" target="' + n.TitleLinkTarget + '" >' + t.title + '</a>';
+                        if (n.ShowDesc) {
+                            if (n.CharacterLimit > 0 && t.content.length > n.CharacterLimit) {
+                                s += '<div class="itemContent">' + t.content.substr(0, n.CharacterLimit) + "...</div>"
+                            } else {
+                                s += '<div class="itemContent">' + t.content + "</div>"
+                            }
+                        }
+                        s += '</li>';
+                    });
+                e("#" + r).append('<ul class="listPosts">' + s + "</ul>");
+            }
+        })
+    }
+})(jQuery);
+/*
+
+Jira widget is a small display of several JIRA issues found by a given query
+in a specified place on the website. Data is downloaded using AJAX from JIRA REST
+services and cached in SessionStorage of the webrowser, so that it's not downloaded
+on each refresh.
+
+Widget code requires jQuery to be available.
+
+An example of how to use the widget.
+
+<!--
+  You have to define somewhere on the page where you want the content to be rendered.
+  It's important to define 'id' attribute becuase it's later used as an initialization
+  parameter
+-->
+<div id="jiraDiv"> </div>
+
+<!--
+  It's also required to initialize the widget by executing following JavaScript function.
+-->
+<script type="text/javascript">
+	$(document).ready(function () {
+      processJiraWidget(  {
+        jqlQuery : 'project = ORG AND (status = Open OR status = Reopened)',
+        maxResults : 5,
+        startAt : 0,
+        divId : 'jiraDiv',
+        title : 'Jira Issues'
+      })
+    });
+</script>
+
+*/
+
+function renderJiraWidget(params) {
+	$(document).ready( processJiraWidget( params ));
+}
+
+// Function checks sessionStorage if there is cached content, validates its age
+// and optionally downloads a new from REST service and caches it.
+function processJiraWidget(params) {
+
+	// Renders content html into div with the given id
+	function renderHtml(data) {
+
+		// Searching for the div where content should be injected.
+		var div = document.getElementById(params.divId);
+		if (div == null) {
+			console.log('Could not find div with '+params.divId+' id to render jira widget.');
+			return;
+		}
+
+		var dataArray = data.issues;
+
+		var rawTableBodyHtml = '';
+		var rowType = 'oddRow';
+
+		// Iteration through results displaying each issue found by the query.
+		for (var i=0; i<dataArray.length ; i++) {
+
+			var rowData = dataArray[i];
+
+			rawTableBodyHtml += '<div class="issue '+rowType+'"><span class="jira-icon jira-issuetype-'+rowData.fields.issuetype.id+'">&nbsp;</span>';
+			rawTableBodyHtml += '<a href="http://jira.jboss.org/browse/'+rowData.key+'">'+rowData.key+':</a>&nbsp;';
+			rawTableBodyHtml += $('<div />').html(rowData.fields.summary).text();
+			rawTableBodyHtml += '<ul>';
+
+			rawTableBodyHtml += '<li id="status"><b>Status:</b>&nbsp;<span class="jira-icon jira-status-'+rowData.fields.status.id;
+			rawTableBodyHtml += '">&nbsp;</span>'+rowData.fields.status.name+'</li>';
+
+			rawTableBodyHtml += '<li id="reporter"><b>Reporter:</b>&nbsp;'+rowData.fields.reporter.displayName+'</li>';
+
+			var assignee = rowData.fields.assignee==null ? 'Unassigned' : rowData.fields.assignee.displayName;
+			rawTableBodyHtml += '<li id="assignee"><b>Assignee:</b>&nbsp;'+assignee+'</li>';
+
+			var createDate = new Date(safarifyDateString(rowData.fields.created));
+			var createDateStr = createDate.toLocaleDateString()+'&nbsp;'+createDate.toLocaleTimeString();
+			rawTableBodyHtml += '<li id="created"><b>Created:</b>&nbsp;'+createDateStr+'</li>';
+
+			var updateDate = new Date(safarifyDateString(rowData.fields.updated));
+			var updateDateStr = updateDate.toLocaleDateString()+'&nbsp;'+updateDate.toLocaleTimeString();
+			rawTableBodyHtml += '<li id="lastUpdated"><b>Last updated:</b>&nbsp;'+updateDateStr+'</li>';
+
+			rawTableBodyHtml += '</ul></div>';
+
+			// Switching style class selector for zebra table, if used.
+			rowType = rowType=='oddRow' ? 'evenRow' : 'oddRow';
+
+		}
+
+		var rawTableHtml = '<div class="whitebox issue-mod" >';
+		rawTableHtml += '<h3>'+params.title+'</h3>';
+		rawTableHtml += '<div>';
+		rawTableHtml += rawTableBodyHtml;
+		rawTableHtml += '</div>';
+		rawTableHtml += '</div>';
+
+		div.innerHTML = rawTableHtml;
+	}
+
+	// Function modifies a bit string representation of a date so that it's consumable on Safari browser.
+	function safarifyDateString(dateStr) {
+		dateStr = dateStr.replace(/\.\d\d\d/, "");
+		return dateStr.substring(0,dateStr.length-2)+':'+dateStr.substring(dateStr.length-2,dateStr.length);
+	}
+
+	// This function searches for the queried data in SessionStorage of the web browser.
+	function getDataFromCache(settings) {
+
+		var valueFromCache = null;
+
+		// Checking whether the browser supports Local Storage and if there is cached item available.
+		if (window.sessionStorage
+				&& window.sessionStorage.getItem("jiraWidgetCache"+settings.divId)) {
+
+			var temp = JSON.parse(window.sessionStorage
+					.getItem("jiraWidgetCache"+settings.divId));
+
+			// Checking if the item in cache is not older than 1 hour
+			// and if the data inside was created with the same settings.
+			if (new Date() - new Date(Date.parse(temp.cachedDate)) < (1000 * 60 * 60)
+					&& JSON.stringify(temp.settings)==JSON.stringify(settings)) {
+				valueFromCache = temp;
+			}
+
+		}
+
+		return valueFromCache;
+	}
+
+	// Here starts main function body.
+
+	var settings = {};
+
+	// User needs to provide at least JQL query and div id parameters otherwise we cancel the rendering.
+	if (params && params.jqlQuery && params.divId) {
+
+		settings.startAt = params.startAt || 0;
+		settings.maxResults = params.maxResults || 15;
+		settings.jqlQuery = params.jqlQuery;
+		settings.divId = params.divId;
+
+	} else {
+
+		console.log('JiraWidget requires providing at least jqlQuery and divId parameters.');
+		return;
+
+	}
+
+	// Trying to get data from web browser's sessionStorage
+	var fromCache = getDataFromCache(settings);
+
+	if (fromCache) {
+
+		renderHtml( fromCache );
+
+	} else {
+
+		// Trying to query the data.
+
+		// Callback function definition for JSONP call.
+		window['jiraJsonpResponseHandler'+settings.divId] = function(result) {
+
+			if (window.sessionStorage) {
+				result.cachedDate = new Date();
+				result.settings = settings;
+				window.sessionStorage.setItem("jiraWidgetCache"+settings.divId,JSON.stringify(result));
+			}
+
+			renderHtml( result );
+		}
+
+		// Since there was no data in cache we schedule an AJAX call to get the data.
+		var query = {};
+		query.jql = settings.jqlQuery;
+		query.startAt = settings.startAt;
+		query.maxResults = settings.maxResults;
+		query['jsonp-callback'] = "jiraJsonpResponseHandler"+settings.divId;
+
+		$.ajax({
+		  type : "POST",
+			url : "http://issues.jboss.org/rest/api/2/search",
+			dataType : 'jsonp',
+			data: query
+		});
+
+	}
+
+}
 /*
  * jQuery EasyTabs plugin 3.2.0
  *
@@ -3611,7 +3847,7 @@ Tabzilla.preventDefault = function(ev)
 Tabzilla.content =
 '<div class="tabnavclearfix" id="tabnav">'
 +'<div class="tabcontent">'
-+'  <p class="overview"> Like PROJECT NAME? It’s part of the community of Red Hat projects. Learn more about Red Hat and our open source communities:</p>'
++'  <p class="overview"> Like the project? It’s part of the community of Red Hat projects. Learn more about Red Hat and our open source communities:</p>'
 +'  <div class="row-fluid">'
 +'    <span class="span4 middlewarelogo">'
 +'      <img src="http://static.jboss.org/common/images/tabzilla/RHJB_Middleware_Logotype.png" alt="Red Hat JBoss MIDDLEWARE" />'
@@ -3812,4 +4048,105 @@ var initializeSearchBar = function() {
 
 // Tabzilla initialization
 Tabzilla();
+
+// =======================================
+// Content dynamic rendering for tabzilla.
+// =======================================
+
+// Function checks LocalStorage if there is cached content, validates its age
+// and optionally downloads again from the REST service and then caches it.
+function renderTabzilla( projectName , projectId ) {
+
+  if ( ( typeof projectName=='undefined' ) || ( typeof projectId=='undefined' ) ) {
+    console.error("Variables 'project' and 'project_name' have to be provided in your site.yml configuration file.");
+    return;
+  }
+
+  var valueFromCache = null;
+  if (window.localStorage && window.localStorage.getItem(projectId+"TabzillaCache") ) {
+
+    var temp = JSON.parse(window.localStorage.getItem(projectId+"TabzillaCache"));
+
+    // Checking if the item in cache is not older than a week
+    if ( new Date() - new Date(Date.parse(temp.cachedDate)) < (1000*60*60*24*7) ) {
+      valueFromCache = temp;
+    }
+
+  }
+
+  // If nothing was found in cache then we gather all the data from scratch.
+  if (valueFromCache==null) {
+
+    /* THIS PART OF CODE IS TEMPORARILY DISABLED TILL THE SERVICE WILL BE IN PRODUCTION.  
+    // Getting information in what products the project is supported in.
+    var data = $.ajax({url:"http://rysiek.apiary.io/v1/rest/products/supported/Example",
+      dataType:'json'
+    });
+    */
+
+    // Getting HTML tab content from remote source.
+    var wrapper = $.ajax({url:"http://static.jboss.org/partials/tabcontent.html",
+      dataType:'html'
+    });
+
+    /* THIS PART OF CODE IS TEMPORARILY DISABLED TILL THE SERVICE WILL BE IN PRODUCTION.
+    // When both results are available we continue with actual rendering of the data.
+    $.when( data , wrapper ).then( function( dataResult , wrapperResult ) {
+
+      var data = dataResult[0];
+      var content = wrapperResult[0];
+      */
+
+      // REPLACEMENT CODE
+    $.when( wrapper ).then( function(wrapperResult ) {
+      var data = undefined;
+      var content = wrapperResult;
+      // END OF REPLACEMENT CODE
+      
+      var htmlContent;
+
+      // Depending on whether the project is supported in any product or not,
+      // we render different html entry.
+      if (typeof data!='undefined' && data.total>0) {
+
+        htmlContent = $(content).find('#supported');
+        htmlContent.find("#project_name").html(projectName);
+        var firstUl = htmlContent.find("#products-first-column");
+        var secondUl = htmlContent.find("#products-second-column");
+
+        var firstColumnSize = Math.ceil(data.total/2);
+        $.each(data.hits , function(index, value) {
+          if (index<firstColumnSize) {
+            firstUl.html(firstUl.html()+'<li class="leaf"><a href="'+value.url+'">'+value.name+'</a></li>');
+          } else {
+            secondUl.html(secondUl.html()+'<li class="leaf"><a href="'+value.url+'">'+value.name+'</a></li>');
+          }
+        });
+
+        $(".tabcontent").html(htmlContent);
+
+      } else {
+
+        htmlContent = $(content).find("#nonsupported");
+        htmlContent.find("#project_name").html(projectName);
+        $(".tabcontent").html(htmlContent);
+
+      }
+
+      // Putting the whole generated HTML into LocalStorage.
+      if (window.localStorage && htmlContent) {
+        var entry = new Object();
+        entry.cachedDate = new Date();
+        entry.htmlContent = htmlContent.html();
+        window.localStorage.setItem(projectId+"TabzillaCache",JSON.stringify(entry));
+      }
+
+    });
+
+  } else {
+
+    $(".tabcontent").html(valueFromCache.htmlContent);
+
+  }
+}
 
