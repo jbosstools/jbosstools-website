@@ -6,7 +6,18 @@ tab: features
 
 .row-fluid
   .span2.well
-    Overview
+    %ul.nav.nav-list
+      %li
+        %a{:href => "#{site.base_url}/features"} Overview
+      - feature = site.features.each do |feature|
+        - if feature.url == page.url
+          -# puts "Feature page: " + feature.to_s + " / current page: " + page.to_s
+          %li.active
+            %a{:href => feature.url} #{feature.title}
+        - else
+          %li
+            %a{:href => feature.url} #{feature.title}
+    
     
   .span10#feature
     ~content

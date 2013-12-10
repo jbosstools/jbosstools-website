@@ -1,7 +1,6 @@
 = Forge
 :awestruct-layout: features
 :awestruct-module_id: forge
-:awestruct-title: JBoss Forge
 :awestruct-authors: xcoulon
 :awestruct-feature_order: 6
 :awestruct-image_url: images/jbossforge_icon_256px.png

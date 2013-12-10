@@ -1,7 +1,6 @@
 = JBoss Central
 :awestruct-layout: features
 :awestruct-module_id: central
-:awestruct-title: JBoss Central
 :awestruct-image_url: images/features-central_550px.png
 :awestruct-feature_order: 1
 :awestruct-tagline: Start your project faster
