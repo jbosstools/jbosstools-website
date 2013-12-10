@@ -1,5 +1,11 @@
 require 'URIHelper'
 
+
+############################
+#
+# Deprecated extension. 
+#
+
 module Awestruct
   module Extensions
     class MyPosts < Posts
