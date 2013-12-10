@@ -28,10 +28,10 @@ title: Features Overview
       - i +=1
       - feature = features.shift
       %section.span3
-        %a{:href=> relative(feature.url) }
+        %a{:href=> feature.url }
           %h4.center< #{feature.title}
           %h6.center< #{feature.tagline}
-          %img{:src=> relative(feature.image_url), :alt=>"#{feature.title}", :width=>"128px"}
+          %img{:src=> feature.image_url, :alt=>"#{feature.title}", :width=>"128px"}
             
    
   

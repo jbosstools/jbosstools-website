@@ -7,7 +7,7 @@ require 'file_merger'
 #require 'less_config'
 require 'breadcrumb'
 #require 'symlinker'
-require 'relative'
+#require 'relative'
 
 # JBoss Tools custom 
 require 'font_path'
@@ -49,7 +49,7 @@ Awestruct::Extensions::Pipeline.new do
   
   # extension Awestruct::Extensions::Indexifier.new
   # Needs to be after Indexifier to get the linking correct; 
-  extension Awestruct::Extensions::Feature::Index.new('/features', :imagesdir => '/features')
+  extension Awestruct::Extensions::Feature::Index.new('/features')
   # Needs to be after Indexifier to get the linking correct; 
   extension Awestruct::Extensions::Whatsnew::Index.new('/whatsnew')
   

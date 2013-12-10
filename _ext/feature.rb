@@ -8,9 +8,9 @@ module Awestruct
         @@transformers_registered = false
         
         def initialize(path_prefix, opts={})
-          @path_prefix = path_prefix
-          @imagesdir = opts[:imagesdir] || '/images'
-          $LOG.debug "*** Initialized Feature extension with imagesdir=" + @imagesdir if $LOG.debug?
+          @path_prefix = path_prefix.end_with?('/') ? path_prefix.chop : path_prefix
+          #@imagesdir = opts[:imagesdir] || '/images'
+          $LOG.debug "*** Initialized Feature extension with path_prefix=" + @path_prefix if $LOG.debug?
         end
 
         # transform gets called twice in the process of loading the pipeline, so
@@ -41,7 +41,8 @@ module Awestruct
               feature.order = page.feature_order != nil ? page.feature_order : 100
               feature.tagline = page.tagline
               feature.summary = page.summary
-              feature.image_url = page.image_url
+              feature.image_url = URI.join(site.base_url, @path_prefix + "/", page.image_url).to_s
+              puts "Feature " + feature.title + ": image location= " + feature.image_url +  " (prefix=" + @path_prefix + ")"
               features << feature
             end
             site.features = features
