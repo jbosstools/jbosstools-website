@@ -1,7 +1,6 @@
-= Webservices
+= Web Services
 :awestruct-layout: features
 :awestruct-module_id: webservices
-:awestruct-title: Web Services
 :awestruct-image_url: images/resteasy_icon_256px.png
 :awestruct-feature_order: 9
 :awestruct-tagline: Supporting REST and SOAP
