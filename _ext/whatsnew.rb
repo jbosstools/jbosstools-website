@@ -1,3 +1,5 @@
+require 'URIHelper'
+
 module Awestruct
   module Extensions
     module Whatsnew
@@ -30,7 +32,7 @@ module Awestruct
               # puts "   Processing N&N " + page.module_name + page.module_version 
               news_item = OpenStruct.new
               site.engine.set_urls([page])
-              news_item.url = page.url
+              news_item.url = URIHelper.concat(site.base_url, @path_prefix , page.url)
               news_item.module_id = page.module_id
               news_item.module_name = page.module_name
               news_item.module_version = page.module_version

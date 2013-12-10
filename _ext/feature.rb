@@ -1,3 +1,5 @@
+require 'URIHelper'
+
 module Awestruct
   module Extensions
     module Feature
@@ -35,13 +37,13 @@ module Awestruct
               feature = OpenStruct.new
               page.feature = feature
               site.engine.set_urls([page])
-              feature.url = page.url
+              feature.url = URIHelper.concat(site.base_url, page.url)
               feature.highlighted = page.highlighted != nil ? page.highlighted : false
               feature.title = page.title
               feature.order = page.feature_order != nil ? page.feature_order : 100
               feature.tagline = page.tagline
               feature.summary = page.summary
-              feature.image_url = URI.join(site.base_url, @path_prefix + "/", page.image_url).to_s
+              feature.image_url = URIHelper.concat(site.base_url, @path_prefix, page.image_url)
               puts "Feature " + feature.title + ": image location= " + feature.image_url +  " (prefix=" + @path_prefix + ")"
               features << feature
             end

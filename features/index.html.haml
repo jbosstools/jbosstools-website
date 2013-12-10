@@ -10,7 +10,7 @@ title: Features Overview
 -# show first feature with a highlight
 .row-fluid 
   .span12.hero-unit
-    %img{:src=>relative("/#{highlighted_feature.image_url}"), :alt=>"#{highlighted_feature.title}"}
+    %img{:src=>highlighted_feature.image_url, :alt=>"#{highlighted_feature.title}"}
     .content
       %h1< #{highlighted_feature.title}
       %h2< #{highlighted_feature.tagline}
@@ -29,8 +29,8 @@ title: Features Overview
       - feature = features.shift
       %section.span3
         %a{:href=> feature.url }
-          %h4.center< #{feature.title}
-          %h6.center< #{feature.tagline}
+          %h3.center< #{feature.title}
+          %h4.center< #{feature.tagline}
           %img{:src=> feature.image_url, :alt=>"#{feature.title}", :width=>"128px"}
             
    
