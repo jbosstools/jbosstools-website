@@ -38,6 +38,7 @@ GEM
     execjs (2.0.2)
     ffi (1.9.3)
     fssm (0.2.10)
+    git (1.2.6)
     haml (4.0.4)
       tilt
     html_press (0.8.2)
@@ -89,6 +90,7 @@ DEPENDENCIES
   awestruct (= 0.5.4.rc3)
   coderay
   cssminify (~> 1.0.2)
+  git
   html_press (~> 0.8.1)
   htmlcompressor (~> 0.0.3)
   kramdown (~> 1.0.1)

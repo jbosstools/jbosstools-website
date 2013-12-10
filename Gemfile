@@ -14,6 +14,7 @@ gem 'asciidoctor', '0.1.4'
 gem 'tilt', '~> 1.4.0'
 gem 'coderay'
 gem 'html_press', '~> 0.8.1'
+gem 'git' # required to run the '-deploy' option
 
 # To enable guard and livereload (is C native thus not available on windows. Commented out for now)
 #gem 'guard'
