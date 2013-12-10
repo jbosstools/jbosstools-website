@@ -3,7 +3,7 @@
   %head
     = partial( page.head_partial.nil? ? 'head.html.haml' : page.head_partial , { "real_page" => page } )
   %body
-    / begin accesibility skip to top
+    / begin accessibility skip to top
     %ul#top.visuallyhidden
       %li
         %a{:accesskey => "n", :href => "#nav", :title => "Skip to navigation"} Skip to navigation
