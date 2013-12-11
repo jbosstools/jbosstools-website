@@ -12,7 +12,7 @@ tab: downloads
         -# puts site.download_perma_links[page.product].to_s
         - site.download_perma_links[page.product].each do |eclipse_builds| 
           %li.nav-header 
-            -# puts " " + eclipse_id[0].to_s + ": " + eclipse_id[1].to_s
+            - puts " " + eclipse_builds[0].to_s + ": " + eclipse_builds[1].to_s
             -# eclipse_id is an array: ["luna", AStruct<{...}>]
             #{site.products[:eclipse][eclipse_builds[0]].full_name}
           - eclipse_builds[1].each do |build_type, download_page|
