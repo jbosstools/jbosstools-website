@@ -9,8 +9,9 @@ tab: features
     %ul.nav.nav-list
       %li
         %a{:href => "#{site.base_url}/features"} Overview
+      %li.divider
       - feature = site.features.each do |feature|
-        - if feature.url == page.url
+        - if feature.url == join(site.base_url, page.url)
           -# puts "Feature page: " + feature.to_s + " / current page: " + page.to_s
           %li.active
             %a{:href => feature.url} #{feature.title}
