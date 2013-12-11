@@ -1,4 +1,4 @@
-require 'URIHelper'
+require 'uri_helper'
 
 module Awestruct
   module Extensions
