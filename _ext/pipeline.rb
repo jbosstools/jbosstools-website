@@ -19,7 +19,8 @@ require 'whatsnew'
 require 'downloads'
 require 'downloads_helper'
 #require 'myposts'
-require 'URIHelper'
+require 'uri_helper'
+require 'build_info'
 
 Awestruct::Extensions::Pipeline.new do
   
@@ -38,6 +39,7 @@ Awestruct::Extensions::Pipeline.new do
   #extension Awestruct::Extensions::Symlinker.new
   
   # JBoss Tools custom 
+  extension Awestruct::Extensions::BuildInfo.new
   extension Awestruct::Extensions::DataDir.new
   extension Awestruct::Extensions::DataDir.new('/whatsnew')
   extension Awestruct::Extensions::DataDir.new('/features')
