@@ -7,3 +7,4 @@ rvm:
 #  - rbx-18mode
 #  - rbx-19mode
 script: rake travis
+#after_success: rake rawler

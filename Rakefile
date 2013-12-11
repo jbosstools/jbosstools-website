@@ -40,9 +40,13 @@
 #
 # Now you're Awestruct with rake!
 
-$use_bundle_exec = true
-$install_gems = ['awestruct -v "~> 0.5.3"', 'rb-inotify -v "~> 0.9.0"']
-$awestruct_cmd = nil
+
+require 'rubygems'
+
+
+#$use_bundle_exec = true
+#$install_gems = ['awestruct -v "~> 0.5.3"', 'rb-inotify -v "~> 0.9.0"']
+#$awestruct_cmd = nil
 task :default => :preview
 
 task :my_task, :arg1, :arg2 do |t, args|
@@ -124,37 +128,6 @@ desc 'Generate the site and deploy to production'
 task :deploy => [:push, :check] do |task, args|
   run_awestruct '-P #{profile} -g --force'
   run_awestruct '-P #{profile} --deploy'
-end
-
-desc 'Generate site from Travis CI and, if not a pull request, publish site to production (GitHub Pages)'
-task :travis do
-  # if this is a pull request, do a simple build of the site and stop
-  if ENV['TRAVIS_PULL_REQUEST'].to_s.to_i > 0
-    msg 'Pull request detected. Executing build only.'
-    run_awestruct '-P production -g --force'
-    next
-  end
-
-  require 'yaml'
-  require 'fileutils'
-
-  # TODO use the Git library for these commands rather than system
-  repo = %x(git config remote.origin.url).gsub(/^git:/, 'https:')
-  system "git remote set-url --push origin #{repo}"
-  system 'git remote set-branches --add origin master'
-  system 'git fetch -q'
-  system "git config user.name '#{ENV['GIT_NAME']}'"
-  system "git config user.email '#{ENV['GIT_EMAIL']}'"
-  system 'git config credential.helper "store --file=.git/credentials"'
-  # CREDENTIALS assigned by a Travis CI Secure Environment Variable
-  # see http://about.travis-ci.org/docs/user/build-configuration/#Secure-environment-variables for details
-  File.open('.git/credentials', 'w') {|f| f.write("https://#{ENV['GH_TOKEN']}:@github.com") }
-  # set_pub_dates 'develop'
-  #system 'git branch master origin/master'
-  #run_awestruct '-P production -g --force'
-  # gen_rdoc
-  #run_awestruct '-P staging --deploy'
-  File.delete '.git/credentials'
 end
 
 desc "Assign publish dates to news entries"
@@ -293,4 +266,38 @@ def set_pub_dates(branch)
       repo.push('origin', branch)
     end
   end
+end
+
+
+############################################################################
+#
+# Build web site on Travis-CI
+#
+############################################################################
+desc 'Generate site from Travis CI and publish site to GitHub Pages'
+task :travis do
+  # if this is a pull request, do a simple build of the site and stop
+  if ENV['TRAVIS_PULL_REQUEST'].to_s.to_i > 0
+    puts 'Pull request detected. Executing build only.'
+    system "bundle exec awestruct -P #{ENV['GIT_NAME']} -g"
+    next
+  end
+
+  repo = %x(git config remote.origin.url).gsub(/^git:/, 'https:')
+  deploy_branch = 'gh-pages'
+  if repo.match(/github\.com\.git$/)
+    deploy_branch = 'master'
+  end
+  system "git remote set-url --push origin #{repo}"
+  system "git remote set-branches --add origin #{deploy_branch}"
+  system 'git fetch -q'
+  system "git config user.name '#{ENV['GIT_NAME']}'"
+  system "git config user.email '#{ENV['GIT_EMAIL']}'"
+  system 'git config credential.helper "store --file=.git/credentials"'
+  File.open('.git/credentials', 'w') do |f|
+    f.write("https://#{ENV['GH_TOKEN']}:@github.com")
+  end
+  system "git branch #{deploy_branch} origin/#{deploy_branch}"
+  system "bundle exec awestruct -P #{ENV['GIT_NAME']} -g --deploy"
+  File.delete '.git/credentials'
 end
