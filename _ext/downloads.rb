@@ -72,7 +72,7 @@ module Awestruct
       end
 
       def generate_single_version_download_page(product, eclipse_version, page_path_fragment, build_info, build_version)
-        page_title ||= @site.products[product].name + " version " + build_version.to_s
+        page_title ||= @site.products[product].name + " " + build_version.to_s
         product_path_fragment = @site.products[product].url_path_fragment
         path = @@output_path_prefix + product_path_fragment + "/" + eclipse_version.url_path_fragment + "/" + page_path_fragment + ".html"
         page = generate_download_page(:single_version, path)
