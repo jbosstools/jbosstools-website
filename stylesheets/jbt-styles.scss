@@ -416,10 +416,29 @@ span.label {
 @media screen and (min-width: 940px) {
   #feature {
     .sect1 {
-      &:after {
+      position: relative;
+      margin-top: 2em;
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        height: 1px;
+        background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(50%, rgba(0, 0, 0, 0.1)), color-stop(100%, rgba(0, 0, 0, 0)));
+        background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+        background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+        background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+        background-image: linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+      }
+      &:last-child::before {
+        content: "";
+        background-image: none;
+      }
+      &::after {
         display:block;
         clear:both;
-        margin-bottom: 4em;
+        margin-bottom: 2em;
         content: ""; // mandatory content, even empty
       }
       p {
