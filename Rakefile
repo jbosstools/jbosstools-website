@@ -297,8 +297,8 @@ task :travis do
   File.open('.git/credentials', 'w') do |f|
     f.write("https://#{ENV['GH_TOKEN']}:@github.com")
   end
-  puts "Building and deploying site with profile #{ENV['GIT_NAME']}: bundle exec awestruct -P #{ENV['GIT_NAME']} -g --deploy" 
+  puts "Building and deploying site with command: bundle exec awestruct -P staging -g --deploy" 
   system "git branch #{deploy_branch} origin/#{deploy_branch}"
-  system "bundle exec awestruct -P #{ENV['GIT_NAME']} -g --deploy"
+  system "bundle exec awestruct -P staging -g --deploy"
   File.delete '.git/credentials'
 end
