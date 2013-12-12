@@ -268,7 +268,6 @@ def set_pub_dates(branch)
   end
 end
 
-
 ############################################################################
 #
 # Build web site on Travis-CI
