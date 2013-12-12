@@ -290,6 +290,7 @@ task :travis do
     deploy_branch = 'master'
   end
   system "git remote set-url --push origin #{repo}"
+  puts "git remote set-url --push origin #{repo}"
   system "git remote set-branches --add origin #{deploy_branch}"
   system 'git fetch -q'
   system "git config user.name '#{ENV['GIT_NAME']}'"
