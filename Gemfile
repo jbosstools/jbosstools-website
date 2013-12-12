@@ -11,13 +11,14 @@ gem 'htmlcompressor', '~> 0.0.3' # Adds in HTML minification, helps remove the w
 gem 'RedCloth'
 gem 'listen', '~> 1.0'
 gem 'asciidoctor', '0.1.4'
+gem 'slim'
 gem 'tilt', '~> 1.4.0'
 gem 'coderay'
 gem 'html_press', '~> 0.8.1'
 gem 'git' # required to run the '-deploy' option
 
 # required to build some community resources...
-#gem 'slim'
+#
 #gem 'less'
 #gem 'therubyracer'
 
