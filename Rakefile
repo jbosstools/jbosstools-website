@@ -279,8 +279,8 @@ task :travis do
   # if this is a pull request, do a simple build of the site and stop
   if ENV['TRAVIS_PULL_REQUEST'].to_s.to_i > 0
     puts 'Pull request detected. Executing build only.'
-    system "bundle exec awestruct -P #{ENV['GIT_NAME']} -g"
-    next
+    status = system "bundle exec awestruct -P #{ENV['GIT_NAME']} -g"
+    return status
   end
 
   repo = %x(git config remote.origin.url).gsub(/^git:/, 'https:')
@@ -299,6 +299,7 @@ task :travis do
   end
   puts "Building and deploying site with command: bundle exec awestruct -P staging -g --deploy" 
   system "git branch #{deploy_branch} origin/#{deploy_branch}"
-  system "bundle exec awestruct -P staging -g --deploy"
+  status = system "bundle exec awestruct -P staging -g --deploy"
   File.delete '.git/credentials'
+  return status
 end
