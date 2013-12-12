@@ -81,7 +81,7 @@ profiles:
     bootstrap_js_url: /javascripts/bootstrap-community
     disqus: jbosstools-dev
     
-  staging:
+  travis:
     base_url: http://jbosstools.github.com/jbosstools-website
     minified: .min
     jborg_fonts_url: http://static.jboss.org/theme/fonts
@@ -93,7 +93,7 @@ profiles:
     disqus: jbosstools-preview
     deploy:
       host: github_pages
-      repository: jbosstools-website
+      repository: origin
       branch: gh-pages
     
   xcoulon:

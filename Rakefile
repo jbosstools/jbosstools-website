@@ -293,14 +293,16 @@ task :travis do
   system "git remote set-branches --add origin #{deploy_branch}"
   system 'git fetch -q'
   system "git config user.name '#{ENV['GIT_NAME']}'"
+  puts "git config user.name '#{ENV['GIT_NAME']}'"
   system "git config user.email '#{ENV['GIT_EMAIL']}'"
+  puts "git config user.email '#{ENV['GIT_EMAIL']}'"
   system 'git config credential.helper "store --file=.git/credentials"'
   File.open('.git/credentials', 'w') do |f|
     f.write("https://#{ENV['GH_TOKEN']}:@github.com")
   end
-  puts "Building and deploying site with command: bundle exec awestruct -P staging -g --deploy" 
+  puts "Building and deploying site with command: bundle exec awestruct -P staging -g --deploy"
   system "git branch #{deploy_branch} origin/#{deploy_branch}"
-  success = system "bundle exec awestruct -P staging -g --deploy"
+  success = system "bundle exec awestruct -P travis -g --deploy"
   File.delete '.git/credentials'
   fail unless success
 end
