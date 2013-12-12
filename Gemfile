@@ -12,15 +12,12 @@ gem 'RedCloth'
 gem 'listen', '~> 1.0'
 gem 'asciidoctor', '0.1.4'
 gem 'slim'
+gem 'less'
+gem 'therubyracer'
 gem 'tilt', '~> 1.4.0'
 gem 'coderay'
 gem 'html_press', '~> 0.8.1'
 gem 'git' # required to run the '-deploy' option
-
-# required to build some community resources...
-#
-#gem 'less'
-#gem 'therubyracer'
 
 # To enable guard and livereload (is C native thus not available on windows. Commented out for now)
 #gem 'guard'
