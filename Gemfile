@@ -19,6 +19,7 @@ gem 'git' # required to run the '-deploy' option
 # required to build some community resources...
 gem 'slim'
 gem 'less'
+gem 'therubyracer'
 
 # To enable guard and livereload (is C native thus not available on windows. Commented out for now)
 #gem 'guard'
