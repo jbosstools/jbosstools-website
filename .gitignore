@@ -7,6 +7,9 @@ site
 .sass-cache
 .bundle
 
+# Used by Travis-CI 
+vendor
+
 # Compiled source #
 ###################
 *.com
