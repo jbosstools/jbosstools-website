@@ -1,22 +1,13 @@
 language: ruby
 bundler_args: --without development --path .bundle
-
 rvm:
-  - 1.9.3
-#  - 1.8.7
-#  - jruby-18mode # JRuby in 1.8 mode
-#  - jruby-19mode # JRuby in 1.9 mode
-#  - rbx-18mode
-#  - rbx-19mode
-
-# Only build for commit and PR on the "develop" branch.
+- 1.9.3
 branches:
   only:
   - develop
-
 env:
   global:
-  - secure: fnIpPv97FR+I6QQhRJtMN0sotQhMQImEdDFZ+X7D7Mc6SMoFiAtrOhAP4uX/zau19FYPAlmT21H5ey6/mHUCCOur3QBdpFrvc2/u2ld1nebTSyIMoRZDPKX77WxqcO/jgJhM87yKZHHcUux/l3au29u4k5Fu8dEXpAFgCEIblzo=
-
+  - secure: WDLFyxn62s8Oh5UiVt5PFvw4MznhPcbHhfV/FCqjDbRAjR+Ar7rZRdr0FRymt0g0uQyTuzggO+zTY2R4IUoPyPspD40Ll3N9vTkmAbWD3o5WyuMbVEyLvasstLI0bVbw6LAkFikyOCxQStVXT7+w9HMb6/4nNkb9l/gUfL89xxA=
+  - secure: XA4N8V4lkHZxKOuHQMPts57ESDXcnseZ4O2ZtFdMls/lYIOcQ6gpMwDtrrQZBE+6BV/4QTrs5/WYn3lyyTt39pGH6vN1UUpcpOyoTw6CatFw4gLCLtxFB/3jA4Busrw3bIoiH0V5rQIWria8cBzOUBVZ/026+vb+7hptNahu7fw=
+  - secure: LjPIApSURqDmm7f9sGtuO3GB5pucYW4zER4WGwL+96+d6O2kwQSuDAYkxup796EprCNb4+iiodQejcM8WH0T24rEExtnxeGqXH4IFG37OXMFnUlEKnx5O9GbxihiE3X3oTqJqlSbnxyPm+K/W9Y98p4SVsf4gO9YFZXClooSx4A=
 script: rake travis
-#after_success: rake rawler
