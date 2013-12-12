@@ -46,7 +46,7 @@ fileMerger:
     
 # Cache hosted fonts, images and javascript
 wget:
-  enabled: true
+  enabled: false
   rerunEach: 86400 # seconds
   timestampFilename: _wget-timestamp
   options:
