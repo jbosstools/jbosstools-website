@@ -72,6 +72,10 @@ GEM
       mime-types (>= 1.16)
     ruby-s3cmd (0.1.5)
     sass (3.2.12)
+    slim (2.0.2)
+      temple (~> 0.6.6)
+      tilt (>= 1.3.3, < 2.1)
+    temple (0.6.7)
     tilt (1.4.1)
     uglifier (2.0.1)
       execjs (>= 0.3.0)
@@ -96,5 +100,6 @@ DEPENDENCIES
   kramdown (~> 1.0.1)
   listen (~> 1.0)
   rb-fsevent (~> 0.9.3)
+  slim
   tilt (~> 1.4.0)
   uglifier (~> 2.0.1)
