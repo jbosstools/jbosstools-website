@@ -11,8 +11,10 @@ rvm:
 branches:
   only:
   - develop
+
 env:
   global:
   - secure: fnIpPv97FR+I6QQhRJtMN0sotQhMQImEdDFZ+X7D7Mc6SMoFiAtrOhAP4uX/zau19FYPAlmT21H5ey6/mHUCCOur3QBdpFrvc2/u2ld1nebTSyIMoRZDPKX77WxqcO/jgJhM87yKZHHcUux/l3au29u4k5Fu8dEXpAFgCEIblzo=
+
 script: rake travis
 #after_success: rake rawler
