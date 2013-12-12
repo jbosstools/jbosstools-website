@@ -298,7 +298,7 @@ task :travis do
   puts "git config user.email '#{ENV['GIT_EMAIL']}'"
   system 'git config credential.helper "store --file=.git/credentials"'
   File.open('.git/credentials', 'w') do |f|
-    f.write("https://#{ENV['GH_TOKEN']}:@github.com")
+    f.write("https://#{ENV['GH_TOKEN']}:x-oauth-basic@github.com")
   end
   puts "Building and deploying site with command: bundle exec awestruct -P staging -g --deploy"
   system "git branch #{deploy_branch} origin/#{deploy_branch}"
