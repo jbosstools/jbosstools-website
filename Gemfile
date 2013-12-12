@@ -12,6 +12,7 @@ gem 'RedCloth'
 gem 'listen', '~> 1.0'
 gem 'asciidoctor', '0.1.4'
 gem 'tilt', '~> 1.4.0'
+gem 'slim'
 gem 'coderay'
 gem 'html_press', '~> 0.8.1'
 gem 'git' # required to run the '-deploy' option
