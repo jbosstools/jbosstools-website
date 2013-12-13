@@ -28,7 +28,8 @@
         :javascript
           document.getElementById("#{page.tab}").className += " active";
       #content-wrapper
-        -# = breadcrumb(page.output_path)
+        - unless page.output_path == '/'
+          = breadcrumb(page.output_path)
         ~ content
 
     = partial( page.projectfooter_partial.nil? ? 'projectfooter.html.haml' : page.projectfooter_partial , { "real_page" => page } )

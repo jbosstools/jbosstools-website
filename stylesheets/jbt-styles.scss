@@ -186,37 +186,48 @@ a.dropdown-toggle {
     display: flex;
     justify-content: space-between;
     align-items: stretch;
-    & .download-unit:first-child::after {
-      background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(50%, rgba(0, 0, 0, 0.1)), color-stop(100%, rgba(0, 0, 0, 0)));
-      background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
-      background-image: -moz-linear-gradient(bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
-      background-image: -o-linear-gradient(bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
-      background-image: linear-gradient(bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
-    }
-  }
-}
-
-.download-unit {
-  position: relative;
-  margin-bottom: 1em;
-  padding: 1em;
-  #min-height: 25em;
-  height: auto;  
+    .download-unit {
+      position: relative;
+      margin-bottom: 1em;
+      padding: 1em;
+      #min-height: 25em;
+      height: auto;  
   
-  ul {
-    list-style-type: square;
-    li {
-      line-height: 2em;
-    }
-    margin-bottom: 2em;
+      h3 {
+        text-align: center;
+      }
+      ul {
+        text-align: center;
+        list-style-type: square;
+        margin-bottom: 2em;
+        li {
+          margin-left: 1em;
+          line-height: 2em;
+          text-align: left;
+        }
+      }
+      .download-btn {
+        margin-left: -1em; 
+        position: absolute; 
+        bottom: 0em;
+        width: 100%;
+        text-align: center;
+      }
     
-  }
-  .download-btn {
-    margin-left: -1em;
-    position: absolute; 
-    bottom: 0em;
-    width: 100%;
-    text-align: center;
+    }
+    
+    .download-unit:first-child::after {
+      content: "";
+      position: absolute;
+      right: 0px;
+      top: 0px;
+      bottom: 0px;
+      width: 1px;
+      background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+      background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+      background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+      background-image: linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+    }
   }
 }
 
