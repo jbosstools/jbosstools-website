@@ -26,7 +26,7 @@ module Awestruct
 
         def execute(site)
           $LOG.debug "*** Executing features extension..." if $LOG.debug?
-          features = []
+          features = Hash.new
           
           site.pages.each do |page|
             if ( page.relative_source_path =~ /^#{@path_prefix}\/.*\/*.md/ \
@@ -38,14 +38,15 @@ module Awestruct
               page.feature = feature
               site.engine.set_urls([page])
               feature.url = URIHelper.concat(site.base_url, page.url)
+              feature.module_id = page.module_id
               feature.highlighted = page.highlighted != nil ? page.highlighted : false
               feature.title = page.title
               feature.order = page.feature_order != nil ? page.feature_order : 100
               feature.tagline = page.tagline
               feature.summary = page.summary
               feature.image_url = URIHelper.concat(site.base_url, @path_prefix, page.image_url)
-              puts "Feature " + feature.title + ": image location= " + feature.image_url +  " (prefix=" + @path_prefix + ")"
-              features << feature
+              #puts "Feature " + feature.title + ": image location= " + feature.image_url +  " (prefix=" + @path_prefix + ")"
+              features[feature.module_id] = feature
             end
             site.features = features
           end

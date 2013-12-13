@@ -1,23 +1,31 @@
 ---
 layout: project
 tab: features
----
+--- 
 
 .row-fluid
   .span2.well
     %ul.nav.nav-list
+      - feature = site.features.values.select{|feature| feature.url == join(site.base_url, page.url)}.first
+      %li.nav-header
+        #{feature.title}
+      %li.active 
+        %a Overview
       %li
-        %a{:href => "#{site.base_url}/features"} Overview
+        %a Documentation
+      %li
+        %a Issue Tracker
+      - unless site.news_per_module[page.module_id].nil?
+        %li 
+          %a{:href=>site.news_per_module[page.module_id].last.url } What's New 
+      
       %li.divider
-      - feature = site.features.each do |feature|
-        - if feature.url == join(site.base_url, page.url)
-          -# puts "Feature page: " + feature.to_s + " / current page: " + page.to_s
-          %li.active
-            %a{:href => feature.url} #{feature.title}
-        - else
+      %li.nav-header 
+        Other features
+      - feature = site.features.each do |feature_id, feature|
+        - if feature.url != join(site.base_url, page.url)
           %li
             %a{:href => feature.url} #{feature.title}
-    
     
   .span10#feature
     ~content

@@ -7,23 +7,6 @@ title: New and Noteworthy
   .span12
     %h3< JBoss Tools News and Noteworthy
 
-.row-fluid
-  .span12
-    %h5.left JBoss Tools individual new and noteworthy
-  .span12
-    - new_and_noteworthies_keys=[]
-    - for key in site.new_and_noteworthies_per_version.each_key
-      - new_and_noteworthies_keys << key
-    - new_and_noteworthies_keys.sort! {|x,y| y <=> x }
-    %dl.dl-horizontal
-      - for key in new_and_noteworthies_keys
-        %dt.whatsnew.version
-          #{key}
-          %dd
-            %ul.whatsnew.module
-              - for item in site.new_and_noteworthies_per_version[key].sort!{|x,y| x.module_name <=> y.module_name}.each do
-                %li 
-                  %a{:href => item.url} #{item.module_name}
 .row-fluid 
   .span12
     Looking for 
