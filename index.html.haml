@@ -23,8 +23,7 @@ title: Home
             
 #sections.row-fluid
   %section.span4
-    - features = site.features 
-    - feature = features.find_all{|feature| feature.highlighted == true}.first
+    - feature = site.features.values.find_all{|feature| feature.highlighted == true}.first
     - if feature != nil
       %header
         %h3

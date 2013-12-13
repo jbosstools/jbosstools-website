@@ -3,21 +3,33 @@ layout: project
 tab: docs
 ---
 .row-fluid
-  .span3
-    #menu-level2
-      %ul
-        %li.unselected
-          %a{:href=>"../index.html"} Overview
-        - for item in site.new_and_noteworthies_per_version[page.jbt_version].sort!{|x,y| x.module_name <=> y.module_name}.each do
-          - if item.module_name == page.module_name
-            %li.selected
-              %a{:href => item.url} #{item.module_name}
-          - else 
-            %li.unselected
-              %a{:href => item.url} #{item.module_name}
-
-  .span9
-    %h2 What's New in #{page.module_name} #{page.module_version}
-    %hr
+  .span2.well
+    %ul.nav.nav-list
+      %li.nav-header #{page.module_name}
+      %li
+        - puts "Features " + site.features[page.module_id].to_s
+        %a{:href=>site.features[page.module_id].url} Feature Overview
+      %li
+        %a Documentation
+      %li
+        %a Issue Tracker
+      - unless site.news_per_module[page.module_id].nil?
+        %li 
+          %a What's New
+          %ul.nav.nav-list
+            - puts "Module " + page.module_id.to_s + " news: " + site.news_per_module[page.module_id].to_s 
+            - site.news_per_module[page.module_id].each do |version|
+              - if version.url == join(site.base_url , page.url)
+                %li.active
+                  %a{:href=> version.url} #{version.module_version}
+              - else
+                %li 
+                  %a{:href=> version.url} #{version.module_version}
+              
+      
+      %li.divider
+      %li.nav-header Other New and Noteworthies
+        
+  .span10
     .whatsnew
       ~content

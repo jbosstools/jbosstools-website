@@ -4,7 +4,7 @@ tab: docs
 title: Features
 ---
 
-- features = site.features.sort{|l,r| l.order <=> r.order}
+- features = site.features.values.sort{|l,r| l.order <=> r.order}
 - highlighted_feature = features.shift
 
 -# show first feature with a highlight
@@ -12,8 +12,10 @@ title: Features
   .span12.hero-unit
     %img{:src=>highlighted_feature.image_url, :alt=>"#{highlighted_feature.title}"}
     .content
-      %h1< #{highlighted_feature.title}
-      %h2< #{highlighted_feature.tagline}
+      %h1< 
+        %a{:href=> highlighted_feature.url } #{highlighted_feature.title}
+      %h2< 
+        %a{:href=> highlighted_feature.url } #{highlighted_feature.tagline}
       %p #{highlighted_feature.summary}
     
 -# show all other features

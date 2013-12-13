@@ -101,6 +101,7 @@ section {
 
 .nav {
   margin-bottom: 0px;
+  //white-space: nowrap;
 }
 
 blockquote > p {
@@ -125,14 +126,33 @@ div.alert {
   font-size: large;
 }
 
+@mixin horizontal-ruler($height) {
+  height: $height;
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(50%, rgba(0, 0, 0, 0.1)), color-stop(100%, rgba(0, 0, 0, 0)));
+  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+  background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+  background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+  background-image: linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+}
+
+@mixin vertical-ruler($width) {
+  width: $width;
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+  background-image: linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+}
+
 // ******************************************************
 // Breadcrumb
 // ******************************************************
 
-.breadcrumb > .active {
-  color: rgb(153, 153, 153);
+.breadcrumb {
+  margin-bottom: 2em;
+  & > .active {
+    color: rgb(153, 153, 153);
+  }
 }
-
 a.dropdown-toggle {
   text-decoration: none;
   b.caret {
@@ -182,7 +202,7 @@ a.dropdown-toggle {
 // Installation
 // ****************************************
 @media screen and (min-width: 680px) {
-  #downloads {
+  #items {
     display: flex;
     justify-content: space-between;
     align-items: stretch;
@@ -213,7 +233,6 @@ a.dropdown-toggle {
         width: 100%;
         text-align: center;
       }
-    
     }
     
     .download-unit:first-child::after {
@@ -222,11 +241,7 @@ a.dropdown-toggle {
       right: 0px;
       top: 0px;
       bottom: 0px;
-      width: 1px;
-      background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
-      background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
-      background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
-      background-image: linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+      @include vertical-ruler(1px);
     }
   }
 }
@@ -257,7 +272,6 @@ a.dropdown-toggle {
   margin-top: 2em;
   .nav-tabs > .active > a {
   }
-  
 }
 
 #installation-tabs-content {
@@ -291,9 +305,7 @@ a.dropdown-toggle {
         padding-bottom: 5px;
         padding-left: 10px;
         padding-right: 10px;
-       
       }
-      
     }
   }
 }
@@ -341,7 +353,6 @@ span.label {
     font-size: smaller;
   }
 }
-
 
 .sidenav  li:first-child  a {
     border-radius: 6px 6px 0 0;
@@ -403,7 +414,6 @@ span.label {
   text-align: justify;
 }
 
-
 .features-separator hr {
   clear:both;
   margin-top: 0px;
@@ -422,13 +432,11 @@ span.label {
   }
 }
 
-
-
 @media screen and (min-width: 940px) {
   #feature {
     .sect1 {
       position: relative;
-      margin-top: 2em;
+      margin-bottom: 2em;
       &::before {
         content: "";
         position: absolute;
@@ -436,11 +444,7 @@ span.label {
         right: 0px;
         bottom: 0px;
         height: 1px;
-        background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(50%, rgba(0, 0, 0, 0.1)), color-stop(100%, rgba(0, 0, 0, 0)));
-        background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
-        background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
-        background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
-        background-image: linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+        @include horizontal-ruler(1px);
       }
       &:last-child::before {
         content: "";
@@ -599,4 +603,34 @@ span.label {
     }
   }
   
+}
+
+// *************************************
+// What's New
+// *************************************
+.whatsnew {
+  .sect1 {
+    margin-bottom: 2em;
+    h2 {
+      &::before {
+        content: "";
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        bottom: 0px;
+        @include horizontal-ruler(1px);
+      }
+    }
+  }
+  
+}
+
+@media screen and (min-width: 940px) {
+  .whatsnew {
+    .sectionbody {
+      .paragraph {
+        margin-left:4em;
+      }
+    }
+  }
 }

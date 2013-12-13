@@ -32,16 +32,15 @@ module Awestruct
             next
           end
           # each product (DevStudio, etc.) is splitted on many Eclipse versions (Luna, etc)
-          site.products[product][:streams].each do |eclipse_stream|
-            eclipse_id = eclipse_stream[0]
+          site.products[product][:streams].each do |eclipse_id, eclipse_stream|
             eclipse_version = site.products[:eclipse][eclipse_id]
             #permalinks per active eclipse stream.
             @site.download_perma_links[product][eclipse_id] = Hash.new if eclipse_version.active
             @site.download_pages[product][eclipse_id] = Array.new
             #permalinks for "stable.html", "development.html", etc. 
-            puts "Processing " + eclipse_version.full_name + " stream (active: " + eclipse_version.active.to_s + ")..."
+            #puts "Processing " + eclipse_version.full_name + " stream (active: " + eclipse_version.active.to_s + ")..."
             # for each Eclipse versions can have many product builds, each one with build info
-            eclipse_stream[1].each do |build_version, build_info|
+            eclipse_stream.each do |build_version, build_info|
               build_type = guess_build_type(build_version) 
               build_info.name = site.products[product].name
               build_info.version = build_version
@@ -80,7 +79,7 @@ module Awestruct
         page.build_info = build_info
         page.product = product
         page.eclipse_version = eclipse_version
-        puts "  generated download page at '" + page.output_path + "' with title '" + page.title + "'"
+        #puts "  generated download page at '" + page.output_path + "' with title '" + page.title + "'"
         page
       end
 
@@ -90,7 +89,7 @@ module Awestruct
         download_page = generate_download_page(:all_versions, path)
         download_page.title = @site.products[product].name + " - " + @@download_page_metadata[:all_releases][:page_title]
         download_page.product = product
-        puts " generated download page at '" + download_page.output_path + "' with title '" + download_page.title + "'"
+        #puts " generated download page at '" + download_page.output_path + "' with title '" + download_page.title + "'"
         download_page
       end
     
