@@ -1,0 +1,17 @@
+= LiveReload What's New in 1.1.0.Alpha1
+:page-feature_id: livereload
+:page-feature_version: 1.1.0.Alpha1
+:page-feature_jbt_core_version: 4.1.1.Alpha1
+:page-feature_devstudio_version: 7.1.0.Alpha1
+
+== LiveReload What's New in 1.1.0.Alpha1
+
+=== Bug fixes 	
+
+This release of JBoss Tools LiveReload fixes 2 issues reported and fixed with the help of a community member, Pei-Tang Huang:
+
+* When using LiveReload embedded proxy to preview local files with non UTF-8 characters (such as CJK characters), the returned content would contain '?' characters instead of the expected ones. From now, the embedded LiveReload proxy relies on the Eclipse settings applied on the file (or at the project or workspace level) to read the content.
+    
+* As a side effect, when accessing workspace files with special characters, the value of the "Content-Length" header in the HTTP response was not correctly calculated and Chrome would simply not process the response body, eventually leaving the user with a blank page. 
+
+Related JIRA: JBIDE-15317 and JBIDE-15430

@@ -126,16 +126,11 @@ module Awestruct
       end
       
       def find_layout_page(simple_path)
-        #puts "Looking for layout page:" + simple_path + " in " + @site.config.layouts_dir.to_s
         path_glob = File.join( @site.config.layouts_dir, simple_path)
         candidates = Dir[ path_glob ]
         return nil if candidates.empty?
         throw Exception.new( "too many choices for #{simple_path}" ) if candidates.size != 1
-        #dir_pathname = Pathname.new( @site.config.dir )
-        #path_name = Pathname.new( candidates[0] )
-        #relative_path = path_name.relative_path_from( dir_pathname ).to_s
         @site.engine.load_page( candidates[0] )
-        #puts " Found " + page.output_path.to_s
       end
     end
 

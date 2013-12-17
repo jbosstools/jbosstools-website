@@ -3,30 +3,29 @@ layout: project
 tab: downloads
 ---
 
-- labels = {:stable=>"Stable Release", :development=>"Development", :nightly=>"Nightly"}
+- labels = {:stable=>"Stable", :development=>"Development", :nightly=>"Nightly"}
 .row-fluid
   .span3
-    .well
-      %ul.nav.nav-list
-        - site.download_perma_links[page.product].each do |eclipse_builds| 
-          %li.nav-header 
-            #{site.products[:eclipse][eclipse_builds[0]].full_name}
-          - eclipse_builds[1].each do |build_type, download_page|
-            %li{:class=>("active" if download_page.build_info == page.build_info)}
-              %a{:href=>"#{site.base_url}#{download_page.output_path}"}
-                %span
-                  #{download_page.build_info.version}
-                %span{:class=>"label label_#{build_type} float-right"}
-                  #{labels[build_type]}
-        %li.divider          
-        %li.nav-header The Full Monty
-        %li
-          %a{:href=>"#{site.base_url}#{site.all_versions_download_pages[page.product].output_path}"}
-            %span
-              All Versions
+    %ul.nav.nav-list
+      - site.download_perma_links[page.product].each do |eclipse_builds| 
+        %li.nav-header 
+          #{site.products[:eclipse][eclipse_builds[0]].full_name}
+        - eclipse_builds[1].each do |build_type, download_page|
+          %li{:class=>("active" if download_page.build_info == page.build_info)}
+            %a{:href=>"#{site.base_url}#{download_page.output_path}"}
+              %span
+                #{download_page.build_info.version}
+              %span{:class=>"label label_#{build_type}"}
+                #{labels[build_type]}
+      %li.divider          
+      %li.nav-header The Full Monty
+      %li
+        %a{:href=>"#{site.base_url}#{site.all_versions_download_pages[page.product].output_path}"}
+          %span
+            All Versions
   .span9
     %h2.center
-      Download #{page.build_info.name} #{page.build_info.version}
+      #{page.build_info.name} #{page.build_info.version}
       %span#displayed-version{:class=>"label label_#{page.build_info.build_type}"}
         #{labels[page.build_info.build_type]}
     .center

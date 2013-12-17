@@ -1,0 +1,12 @@
+= Arquillian 
+:page-layout: features
+:page-feature_id: arquillian
+:page-feature_order: 8
+:page-feature_tagline: Arquillian Tooling.
+:page-feature_image_url: images/arquillian_icon_256px.png
+:page-issues_url: https://issues.jboss.org/browse/JBIDE/component/
+
+== Get started instantly
+image::images/features-central_334px.png
+
+todo..

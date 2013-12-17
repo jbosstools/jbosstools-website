@@ -1,0 +1,27 @@
+= JST/JSF/HTML What's New in 4.1.1.Alpha1
+:page-feature_id: jst
+:page-feature_version: 4.1.1.Alpha1
+:page-feature_jbt_core_version: 4.1.1.Alpha1
+:page-feature_devstudio_version: 7.1.0.Alpha1
+
+== JST/JSF/HTML What's New in 4.1.1.Alpha1
+=== HTML Editor
+==== Content assist for filenames in HTML
+
+Content assist (Ctrl+Space) now works for file names in the following HTML tags:
+
+* <script src="*.js">
+* <link rel="stylesheet" href="*.css">
+* <img src="image files">
+* <video src="video files">
+* <audio src="audio files">
+* <source src="video or audio depending on the parent element">
+* <a href="HTML files">
+
+Related Jira
+
+==== Properties view for HTML elements
+
+Properties view for HTML now supports multiple categories of properties. For example HTML image now has two categories: Often used and Advanced HTML. jQuery Mobile elements have three categories: Often used, Advanced jQuery and Advanced HTML:
+
+Related Jira

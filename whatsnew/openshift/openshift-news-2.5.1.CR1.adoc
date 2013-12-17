@@ -1,12 +1,11 @@
-= What's New in OpenShift 2.5.1.CR1
+= What's New in 2.5.1.CR1
 :page-layout: whatsnew
-:page-module_id: openshift
-:page-module_name: Openshift
-:page-module_version: 2.5.1.CR1
-:page-module_jbt_version: 4.1.1.CR1
+:page-feature_id: openshift
+:page-feature_version: 2.5.1.CR1
 
-== Preferences
-=== Remote request Timeout 	
+== What's New in 2.5.1.CR1
+=== Preferences
+==== Remote request Timeout 	
 
 There is now a preference available to set the timeout used when waiting for OpenShift requests to complete. We're using a default of 120 seconds (2 minutes) if no preference value (0) is provided. You can try raise this value if you are getting time out errors when using OpenShift.
 

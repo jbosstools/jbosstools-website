@@ -1,0 +1,30 @@
+= Aerogear What's New in 1.0.100.Beta1
+:page-feature_id: aerogear
+:page-feature_version: 1.0.100.Beta1
+:page-feature_jbt_core_version: 4.1.1.Beta1
+:page-feature_devstudio_version: 7.1.0.Beta1
+
+== Aerogear What's New in 4.1.1.Beta1
+=== Hybrid Mobile (Cordova) Tools
+==== Export Native Platform Project Wizard 	
+
+Exports Hybrid Mobile projects as XCode or Android projects.
+
+Related Jira
+
+==== Export Mobile Application Wizard 	
+
+Sister wizard to the Export Native Platform Project Wizard. Export Mobile Application Wizard creates compiled binary for running on the targeted platform(s).
+
+Related Jira
+
+==== Cordova Plug-in Discovery Wizard 	
+
+Discover and install Cordova Plug-ins from a registry to your Hybrid Mobile projects. Wizard also enables installation of plug-ins via a Git repository or from a directory.
+
+Related Jira
+
+==== Project Explorer extensions for Cordova Plug-ins 	
+
+Extends the Project Explorer so that installed Cordova Plug-ins are visible, enables easy installation and removal of Cordova Plugins. Also enables the properties view for installed Cordova Plug-ins.
+

@@ -1,9 +1,10 @@
-= Hibernate
-:awestruct-layout: features
-:awestruct-module_id: hibernate
-:awestruct-image_url: images/hibernate_icon_256px.png
-:awestruct-feature_order: 4
-:awestruct-tagline: Tooling for JPA and HQL. 
+= Hibernate Tools
+:page-layout: features
+:page-feature_id: hibernate
+:page-feature_image_url: images/hibernate_icon_256px.png
+:page-feature_order: 4
+:page-feature_tagline: Tooling for JPA and HQL. 
+:page-issues_url: https://issues.jboss.org/browse/JBIDE/component/12310342
 
 == Hibernate
 With Hibernate you ...

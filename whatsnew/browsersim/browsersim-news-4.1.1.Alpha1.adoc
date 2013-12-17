@@ -1,0 +1,15 @@
+= BrowserSim/CordovaSim What's New in 4.1.1.Alpha1
+:page-feature_id: browsersim
+:page-feature_version: 4.1.1.Alpha1
+:page-feature_jbt_core_version: 4.1.1.Alpha1
+:page-feature_devstudio_version: 7.1.0.Alpha1
+
+== BrowserSim/CordovaSim What's New in 4.1.1.Alpha1
+=== BrowserSim / CordovaSim
+==== Error Logging
+
+BrowserSim and CordovaSim now log their runtime errors to the Error Log. This should help if something goes wrong.
+
+Error Logging
+
+Related JIRAs: JBIDE-15293, JBIDE-15165. 
