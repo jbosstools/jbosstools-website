@@ -1,9 +1,10 @@
 = Server Tooling
-:awestruct-layout: features
-:awestruct-module_id: server
-:awestruct-image_url: images/jbossas7_icon_256px.png
-:awestruct-feature_order: 2 
-:awestruct-tagline: All your server are belong to us
+:page-layout: features
+:page-feature_id: server
+:page-feature_image_url: images/jbossas7_icon_256px.png
+:page-feature_order: 2 
+:page-feature_tagline: All your server are belong to us
+:page-issues_url: https://issues.jboss.org/browse/JBIDE/component/12310642
 
 == Server Tooling
 === All your server are belong to us

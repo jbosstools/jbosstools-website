@@ -1,0 +1,10 @@
+= LiveReload 
+:page-layout: features
+:page-feature_id: usage
+:page-feature_image_url: images/weld_icon_256px.png
+:page-feature_order: 5
+:page-feature_tagline: Collecting anonymous stats
+:page-issues_url: https://issues.jboss.org/browse/JBIDE/component/12311164
+
+== LiveReload
+todo...

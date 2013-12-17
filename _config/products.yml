@@ -37,15 +37,24 @@ devstudio:
       8.0.0.Alpha1:
         release_date: 2014-01-01
     kepler:
+      7.1.0.Final:
+        release_date: 2013-10-22
+        blog_announcement: 2013-07-23-jbosstools_41_and_Red_Hat_Developer_Studio_7_go_GA
+      7.1.0.CR1:
+        release_date: 2013-10-22
+        blog_announcement: 2013-07-23-jbosstools_41_and_Red_Hat_Developer_Studio_7_go_GA
+      7.1.0.Beta1:
+        release_date: 2013-10-22
+      7.1.0.Alpha2:
+        release_date: 2013-10-22
+      7.1.0.Alpha1:
+        release_date: 2013-10-22
       7.0.0.GA:
         release_date: 2013-07-22
         blog_announcement: 2013-07-23-jbosstools_41_and_Red_Hat_Developer_Studio_7_go_GA
         marketplace_url: http://marketplace.eclipse.org/node/827807
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=827807
         download_url: https://devstudio.jboss.com/download/7.x.html
-      7.1.0.Beta1:
-        release_date: 2013-10-22
-        blog_announcement: 2013-07-23-jbosstools_41_and_Red_Hat_Developer_Studio_7_go_GA
     juno:
       6.0.1.Final:
         release_date: 2012-11-01
@@ -69,9 +78,15 @@ jbt_core:
         update_site_url: http://download.jboss.org/jbosstools/builds/nightly/core/trunk/latestBuild.html
         download_url: http://download.jboss.org/jbosstools/builds/nightly/core/trunk/latestBuild.html
     kepler:
-      nightly:   
-        update_site_url: http://download.jboss.org/jbosstools/builds/nightly/core/trunk/latestBuild.html
+      4.1.1.Final:
+        release_date: 2013-10-22
+      4.1.1.CR1:
+        release_date: 2013-10-22
       4.1.1.Beta1:
+        release_date: 2013-10-22
+      4.1.1.Alpha2:
+        release_date: 2013-10-22
+      4.1.1.Alpha1:
         release_date: 2013-10-22
       4.1.0.Final:
         release_date: 2013-07-22
@@ -92,6 +107,8 @@ jbt_core:
             download_size: 78MB
             url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.x/hibernatetools-Update-4.1.0.Final_2013-07-19_19-47-52-B380.zip
             md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.x/hibernatetools-Update-4.1.0.Final_2013-07-19_19-47-52-B380.zip.MD5
+      nightly:   
+        update_site_url: http://download.jboss.org/jbosstools/builds/nightly/core/trunk/latestBuild.html
       
     juno:
       4.0.1.Final:

@@ -1,3 +1,9 @@
+#
+#
+# Deprecated content. See products.yml
+#
+#
+
 # "Families"" of products: JBDS, JBT (core) and JBT_IS products that run on a given version of Eclipse are part of the 
 # same group named "family" 
 - id: jbds_7x

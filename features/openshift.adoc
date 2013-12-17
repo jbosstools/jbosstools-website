@@ -1,10 +1,10 @@
 = OpenShift
 :page-layout: features
-:page-module_id: openshift
-:page-image_url: images/openshift_icon_256px.png
-:page-highlighted: true
+:page-feature_id: openshift
+:page-feature_image_url: images/openshift_icon_256px.png
+:page-feature_highlighted: true
 :page-feature_order: 2 
-:page-tagline: Cloud on steroids
+:page-feature_tagline: Cloud on steroids
 
 == OpenShift
 === Integrated deployment to the cloud.

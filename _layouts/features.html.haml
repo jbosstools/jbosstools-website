@@ -4,20 +4,21 @@ tab: features
 --- 
 
 .row-fluid
-  .span2.well
+  .span3.sidebar
     %ul.nav.nav-list
       - feature = site.features.values.select{|feature| feature.url == join(site.base_url, page.url)}.first
       %li.nav-header
-        #{feature.title}
+        #{feature.name}
       %li.active 
         %a Overview
       %li
-        %a Documentation
-      %li
         %a Issue Tracker
-      - unless site.news_per_module[page.module_id].nil?
+      - unless site.whatsnews[page.feature_id].nil?
         %li 
-          %a{:href=>site.news_per_module[page.module_id].last.url } What's New 
+          - latest_version = site.whatsnews[page.feature_id][:merged].keys.sort.last
+          - latest_whatsnew_page = site.whatsnews[page.feature_id][:merged][latest_version]
+          -# puts "Latest version: " + latest_whatsnew_page.to_s
+          %a{:href=>latest_whatsnew_page.url } What's New 
       
       %li.divider
       %li.nav-header 
@@ -25,8 +26,8 @@ tab: features
       - feature = site.features.each do |feature_id, feature|
         - if feature.url != join(site.base_url, page.url)
           %li
-            %a{:href => feature.url} #{feature.title}
+            %a{:href => feature.url} #{feature.name}
     
-  .span10#feature
+  .span9#feature
     ~content
 

@@ -1,10 +1,10 @@
-= Forge
-:awestruct-layout: features
-:awestruct-module_id: forge
-:awestruct-authors: xcoulon
-:awestruct-feature_order: 6
-:awestruct-image_url: images/jbossforge_icon_256px.png
-:awestruct-tagline: Forging a bond between Command Line and IDE
+= Forge Tool
+:page-layout: features
+:page-feature_id: forge
+:page-feature_order: 6
+:page-feature_image_url: images/jbossforge_icon_256px.png
+:page-feature_tagline: Forging a bond between Command Line and IDE
+:page-issues_url: https://issues.jboss.org/browse/JBIDE/component/12313831
 
 == Forge
 === Forging a bond between Command line and IDE

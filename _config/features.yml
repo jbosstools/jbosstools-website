@@ -1,3 +1,69 @@
+##
+#
+# unused
+#
+##
+
+arquillian:
+  name: Arquillian
+  
+aerogear:
+  name: Aerogear
+ 
+browsersim:
+  name: BrowserSim/CordovaSim 
+  
+cdi:
+  name: CDI Tools
+  
+central:
+  name: JBoss Central
+  
+core:
+  name: Core Tools
+  
+examples:
+  name: Project Examples
+  
+forge:
+  name: Forge Tools
+  
+hibernate:
+  name: Hibernate Tools
+  
+jst:
+  name: JST/JSF/HTML
+  
+livereload:
+  name: LiveReload
+  
+maven:
+  name: Maven
+
 openshift:
+  name: OpenShift
   issues: https://issues.jboss.org/browse/JBIDE/component/12314746
+  highlighted: true
+  order: 2 
+  tagline: Cloud on steroids
+  versions:
+    2.5.1: 
+      jbt_core: 4.1.1
+      devstudio: 7.1.0
+    2.5.0: 
+      jbt_core: 4.1.0
+      devstudio: 7.0.0
+
+server:
+  name: Server Tools
+
+usage:
+  name: Usage
+  
+vpe: 
+  name: Visual Editor
+
+webservices:
+  name: Web Services Tools
+    
   

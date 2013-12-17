@@ -1,12 +1,10 @@
-= OpenShift What's New in 2.5.1.Beta1
-:page-layout: whatsnew
-:page-module_id: openshift
-:page-module_name: Openshift
-:page-module_version: 2.5.1.Beta1
-:page-module_jbt_version: 4.1.1.Beta1
+= What's New in 2.5.1.Beta1
+:page-feature_id: openshift
+:page-feature_version: 2.5.1.Beta1
 
-== Application Wizard
-=== Multiple Domains 	
+== What's New in 2.5.1.Beta1
+=== Application Wizard
+==== Multiple Domains 	
 
 OpenShift now allows you to have several domains. You may own multiple domains if you are on Silver Plan. But it's also possible to get access to other peoples domains. JBoss Tools now supports these setups and lets you choose the domain you're creating an application for.
 
@@ -22,7 +20,7 @@ image:images/domain-wizard.png[]
 
 https://issues.jboss.org/browse/JBIDE-12574[Related Jira]
 
-=== Environment Variables 	
+==== Environment Variables 	
 
 Environment varibales in OpenShift allow you to easily customize your application at runtime. JBoss Tools allows you to provide environment variables when creating an application.
 
@@ -36,8 +34,8 @@ image:images/edit-environment-variables.png[]
 
 https://issues.jboss.org/browse/JBIDE-15597[Related Jira]
 
-== Tail Files
-=== Tail files for scaled applications 	
+=== Tail Files
+==== Tail files for scaled applications 	
 
 In Beta1 we now allow you to inspect the log files on all gears of a scalable application. When executing "Tail Files..." we'll show you the number of gears that an application is running on.
 
@@ -49,8 +47,8 @@ image:images/multiple-consoles.png[]
 
 https://issues.jboss.org/browse/JBIDE-15484[Related Jira]
 
-== Embedding Cartridges
-=== Warn on incompatible cartridges 	
+=== Embedding Cartridges
+==== Warn on incompatible cartridges 	
 
 In Beta1 we start to warn you when you try to embed an incompatible cartridge. We'll prmpt you with a warning that the non-scalable phpmyadmin cartridge cannot get added to a scalable application.
 

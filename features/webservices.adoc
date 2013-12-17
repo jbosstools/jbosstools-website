@@ -1,9 +1,10 @@
 = Web Services
-:awestruct-layout: features
-:awestruct-module_id: webservices
-:awestruct-image_url: images/resteasy_icon_256px.png
-:awestruct-feature_order: 9
-:awestruct-tagline: Supporting REST and SOAP
+:page-layout: features
+:page-feature_id: webservices
+:page-feature_image_url: images/resteasy_icon_256px.png
+:page-feature_order: 9
+:page-feature_tagline: Supporting REST and SOAP
+:page-issues_url: https://issues.jboss.org/browse/JBIDE/component/12310233
 
 == Get started instantly
 ![Getting Started](./images/features-central_334px.png)

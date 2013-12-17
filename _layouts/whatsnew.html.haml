@@ -2,34 +2,36 @@
 layout: project
 tab: docs
 ---
+- puts " Rendering What's New page for " + page.feature_id.to_s + " version " + page.feature_version.to_s + ": " + page.output_path
 .row-fluid
-  .span2.well
+  .span2.sidebar
     %ul.nav.nav-list
-      %li.nav-header #{page.module_name}
-      %li
-        - puts "Features " + site.features[page.module_id].to_s
-        %a{:href=>site.features[page.module_id].url} Feature Overview
-      %li
-        %a Documentation
+      - feature = site.features[page.feature_id]
+      %li.nav-header #{feature.name}
+      %li 
+        -# puts "Features " + site.features[page.feature_id].to_s
+        %a{:href=>site.features[page.feature_id].url} Overview
       %li
         %a Issue Tracker
-      - unless site.news_per_module[page.module_id].nil?
-        %li 
-          %a What's New
-          %ul.nav.nav-list
-            - puts "Module " + page.module_id.to_s + " news: " + site.news_per_module[page.module_id].to_s 
-            - site.news_per_module[page.module_id].each do |version|
-              - if version.url == join(site.base_url , page.url)
-                %li.active
-                  %a{:href=> version.url} #{version.module_version}
-              - else
-                %li 
-                  %a{:href=> version.url} #{version.module_version}
-              
-      
+      %li 
+        %a What's New
+        %ul.nav.nav-list
+          - puts " Feature " + page.feature_id.to_s + " news: " + site.whatsnews[page.feature_id][:merged].to_s 
+          - site.whatsnews[page.feature_id][:merged].sort_by{|k, v| k}.reverse!.each do |version, whatsnew_page|
+            - if whatsnew_page.output_path == page.output_path
+              %li.active
+                %a{:href=> whatsnew_page.url} #{whatsnew_page.feature_version}
+            - else
+              %li 
+                %a{:href=> whatsnew_page.url} #{whatsnew_page.feature_version}
       %li.divider
-      %li.nav-header Other New and Noteworthies
+      %li.nav-header 
+        Other features
+      - site.features.values.select{|feature| feature.id != page.feature_id}.each do |feature|
+        %li
+          %a{:href => feature.url} #{feature.name}
         
   .span10
     .whatsnew
-      ~content
+      - page.items.each do |item|
+        #{item.to_s}
