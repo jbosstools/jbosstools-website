@@ -38,7 +38,7 @@ module Awestruct
                 main_version = get_main_version(whatsnew.feature_version)
                 if whatsnews[whatsnew.feature_id][:merged][main_version].nil? then
                   #puts " Adding " + page.feature_id + " version " + main_version
-                  whatsnew_page = create_page(page.feature_id + "-" + main_version + ".html")
+                  whatsnew_page = create_page(page.feature_id, main_version + ".html")
                   whatsnew_page.feature_version = main_version
                   whatsnew_page.feature_id = page.feature_id
                   whatsnew_page.title = site.features[whatsnew_page.feature_id].name + " " + main_version
