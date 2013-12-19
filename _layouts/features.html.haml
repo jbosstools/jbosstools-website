@@ -4,7 +4,7 @@ tab: features
 --- 
 
 .row-fluid
-  .span3.sidebar
+  .span2.sidebar
     %ul.nav.nav-list
       - feature = site.features.values.select{|feature| feature.url == join(site.base_url, page.url)}.first
       %li.nav-header
@@ -28,6 +28,6 @@ tab: features
           %li
             %a{:href => join(site.base_url, feature.url)} #{feature.name}
     
-  .span9#feature
+  .span10#feature
     ~content
 

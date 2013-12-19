@@ -1,4 +1,4 @@
-rvm ruby-1.9.3@jbosstools
+rvm ruby-1.9.3@jbosstools-website
 
 # this speeds up awestruct
 # saves about 3-4 seocnds.
