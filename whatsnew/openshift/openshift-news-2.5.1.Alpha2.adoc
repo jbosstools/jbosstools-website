@@ -2,7 +2,7 @@
 :page-feature_id: openshift
 :page-feature_version: 2.5.1.Alpha2
 
-== What's New in 2.5.1.Alpha2
+== 2.5.1.Alpha2
 === Tail Log Files
 ==== OpenShift Java Client
 

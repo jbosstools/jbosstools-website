@@ -1,8 +1,9 @@
 = What's New in 2.5.0.CR1
 :page-feature_id: openshift
 :page-feature_version: 2.5.0.CR1
+:page-feature_jbt_only: true
 
-== What's New in 2.5.0.CR1
+== 2.5.0.CR1
 === Application Wizard
 
 Creation log for all applications 	When creating applications you want to know about the credentials that OpenShift initially set for you. This is especially helpful and required when you create a jenkins where you get it's url and username/password presented.
