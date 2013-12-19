@@ -22,7 +22,7 @@ tab: features
           %ul#whatsnews.nav.nav-list
             - site.whatsnews[page.feature_id][:merged].sort_by{|k, v| k}.reverse!.each do |version, whatsnew_page|
               %li 
-                %a{:href=> whatsnew_page.url} #{whatsnew_page.feature_version}
+                %a{:href=> join(site.base_url, whatsnew_page.url)} #{whatsnew_page.feature_version}
         
       
       %li.divider
