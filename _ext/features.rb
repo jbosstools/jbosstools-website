@@ -2,10 +2,10 @@ require 'uri_helper'
 
 module Awestruct
   module Extensions
-    module Feature
+    module Features
       Change = Struct.new(:sha, :author, :date, :message)
       class Index
-        include Feature
+        include Features
         
         @@transformers_registered = false
         
