@@ -40,12 +40,12 @@ module Awestruct
               site.engine.set_urls([page])
               feature.url = URIHelper.concat(site.base_url, page.url)
               feature.id = page.feature_id
-              feature.highlighted = page.highlighted != nil ? page.highlighted : false
+              feature.highlighted = page.feature_highlighted || false
               feature.name = page.title
               #feature.order = page.feature_order != nil ? page.feature_order : 100
               feature.tagline = page.feature_tagline
               feature.image_url = URIHelper.concat(site.base_url, @path_prefix, page.feature_image_url)
-              #puts "Feature " + feature.title + ": image location= " + feature.image_url +  " (prefix=" + @path_prefix + ")"
+              #puts "Feature " + feature.id + ": highlighted= " + feature.highlighted.to_s 
               features[feature.id] = feature
             end
             site.features = features

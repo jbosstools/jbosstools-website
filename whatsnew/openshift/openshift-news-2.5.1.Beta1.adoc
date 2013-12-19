@@ -2,7 +2,7 @@
 :page-feature_id: openshift
 :page-feature_version: 2.5.1.Beta1
 
-== What's New in 2.5.1.Beta1
+== 2.5.1.Beta1
 === Application Wizard
 ==== Multiple Domains 	
 

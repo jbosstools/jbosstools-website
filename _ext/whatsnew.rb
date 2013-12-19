@@ -20,7 +20,7 @@ module Awestruct
             if page.relative_source_path =~ /^#{@path_prefix}\/.*\.adoc/ then
               unless site.features[page.feature_id].nil?
                 $LOG.debug " Processing N&N " + page.feature_id.to_s +  " " + page.feature_version.to_s if $LOG.debug?
-                puts " Processing N&N for " + page.feature_id.to_s + " " + page.feature_version + " (" + page.to_s + ")"
+                puts " Processing N&N for " + page.feature_id.to_s + " " + page.feature_version
                 whatsnew = OpenStruct.new
                 site.engine.set_urls([page])
                 whatsnew.url = URIHelper.concat(site.base_url, page.url)
@@ -48,7 +48,7 @@ module Awestruct
                   #puts page.content
                   whatsnews[whatsnew.feature_id][:merged][main_version].items = Array.new
                 end
-                puts " Page content: #{page.content[0..10]}..."
+                #puts " Page content: #{page.content[0..10]}..."
                 whatsnews[whatsnew.feature_id][:merged][main_version].items << page.content
               end
             end

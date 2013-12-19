@@ -2,7 +2,7 @@
 layout: project
 tab: docs
 ---
-- puts " Rendering What's New page for " + page.feature_id.to_s + " version " + page.feature_version.to_s + ": " + page.output_path
+-# puts " Rendering What's New page for " + page.feature_id.to_s + " version " + page.feature_version.to_s + ": " + page.output_path
 .row-fluid
   .span2.sidebar
     %ul.nav.nav-list
@@ -16,7 +16,7 @@ tab: docs
       %li 
         %a What's New
         %ul.nav.nav-list
-          - puts " Feature " + page.feature_id.to_s + " news: " + site.whatsnews[page.feature_id][:merged].to_s 
+          -# puts " Feature " + page.feature_id.to_s + " news: " + site.whatsnews[page.feature_id][:merged].to_s 
           - site.whatsnews[page.feature_id][:merged].sort_by{|k, v| k}.reverse!.each do |version, whatsnew_page|
             - if whatsnew_page.output_path == page.output_path
               %li.active
