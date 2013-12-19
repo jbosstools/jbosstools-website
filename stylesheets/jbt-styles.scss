@@ -161,6 +161,10 @@ div.alert {
   @include vertical_right_ruler(1px);
 }
 
+.button {
+  cursor: pointer;
+}
+
 
 // ******************************************************
 // Breadcrumb
