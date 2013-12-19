@@ -14,7 +14,7 @@ require 'font_path'
 require 'textile_plus'
 require 'mytagger'
 require 'mypaginator'
-require 'feature'
+require 'features'
 require 'whatsnew'
 require 'downloads'
 require 'downloads_helper'
@@ -53,7 +53,7 @@ Awestruct::Extensions::Pipeline.new do
   
   #extension Awestruct::Extensions::Indexifier.new
   # Needs to be after Indexifier to get the linking correct; 
-  extension Awestruct::Extensions::Feature::Index.new('/features')
+  extension Awestruct::Extensions::Features::Index.new('/features')
   # Needs to be after Indexifier to get the linking correct; 
   extension Awestruct::Extensions::Whatsnew::Index.new('/whatsnew')
   
