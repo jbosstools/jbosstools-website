@@ -51,7 +51,7 @@ Awestruct::Extensions::Pipeline.new do
   helper Awestruct::Extensions::DownloadsHelper
   helper Awestruct::Extensions::URIHelper
   
-  extension Awestruct::Extensions::Indexifier.new
+  #extension Awestruct::Extensions::Indexifier.new
   # Needs to be after Indexifier to get the linking correct; 
   extension Awestruct::Extensions::Feature::Index.new('/features')
   # Needs to be after Indexifier to get the linking correct; 
