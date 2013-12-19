@@ -18,7 +18,12 @@ tab: features
           - latest_version = site.whatsnews[page.feature_id][:merged].keys.sort.last
           - latest_whatsnew_page = site.whatsnews[page.feature_id][:merged][latest_version]
           -# puts "Latest version: " + latest_whatsnew_page.to_s
-          %a{:href=>join(site.base_url, latest_whatsnew_page.url) } What's New 
+          %a#whatsnewButton.button What's New 
+          %ul#whatsnews.nav.nav-list
+            - site.whatsnews[page.feature_id][:merged].sort_by{|k, v| k}.reverse!.each do |version, whatsnew_page|
+              %li 
+                %a{:href=> whatsnew_page.url} #{whatsnew_page.feature_version}
+        
       
       %li.divider
       %li.nav-header 
@@ -31,3 +36,10 @@ tab: features
   .span10#feature
     ~content
 
+:javascript
+  $( document ).ready(function() {
+    $('#whatsnews').hide();
+    $('#whatsnewButton').click(function() {$('#whatsnews').toggle()});
+  });
+
+  
