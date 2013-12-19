@@ -18,7 +18,7 @@ tab: features
           - latest_version = site.whatsnews[page.feature_id][:merged].keys.sort.last
           - latest_whatsnew_page = site.whatsnews[page.feature_id][:merged][latest_version]
           -# puts "Latest version: " + latest_whatsnew_page.to_s
-          %a{:href=>latest_whatsnew_page.url } What's New 
+          %a{:href=>join(site.base_url, latest_whatsnew_page.url) } What's New 
       
       %li.divider
       %li.nav-header 
@@ -26,7 +26,7 @@ tab: features
       - feature = site.features.each do |feature_id, feature|
         - if feature.url != join(site.base_url, page.url)
           %li
-            %a{:href => feature.url} #{feature.name}
+            %a{:href => join(site.base_url, feature.url)} #{feature.name}
     
   .span9#feature
     ~content

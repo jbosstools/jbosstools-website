@@ -38,10 +38,10 @@ module Awestruct
                 main_version = get_main_version(whatsnew.feature_version)
                 if whatsnews[whatsnew.feature_id][:merged][main_version].nil? then
                   #puts " Adding " + page.feature_id + " version " + main_version
-                  whatsnew_page = create_page(page.feature_id, main_version + ".html")
+                  whatsnew_page = create_page("/features", page.feature_id, @path_prefix, main_version + ".html")
                   whatsnew_page.feature_version = main_version
                   whatsnew_page.feature_id = page.feature_id
-                  whatsnew_page.title = site.features[page.feature_id].name + " What's New in version " + main_version
+                  whatsnew_page.title = " What's New in " + main_version
                   whatsnews[whatsnew.feature_id][:merged][main_version] = whatsnew_page
                   # TODO: how to append page.content into whatsnew_page.content at the right location ?
                   #generate front-matter + content in raw_content ?
@@ -74,7 +74,7 @@ module Awestruct
           return nil if candidates.empty?
           throw Exception.new( "too many choices for #{simple_path}" ) if candidates.size != 1
           whatsnew_page = @site.engine.load_page( candidates[0] )
-          whatsnew_page.output_path = File.join(@path_prefix, paths)
+          whatsnew_page.output_path = File.join(paths)
           #whatsnew_page.create_context("foo!")
           #whatsnew_page.rendered_content
           #puts " Added page " + whatsnew_page.output_path

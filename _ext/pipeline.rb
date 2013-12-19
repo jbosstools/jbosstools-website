@@ -41,7 +41,7 @@ Awestruct::Extensions::Pipeline.new do
   # JBoss Tools custom 
   extension Awestruct::Extensions::BuildInfo.new
   extension Awestruct::Extensions::DataDir.new
-  extension Awestruct::Extensions::DataDir.new('/whatsnew')
+  extension Awestruct::Extensions::DataDir.new('whatsnew') # no '/', "What's New" pages will be under other categories. 
   extension Awestruct::Extensions::DataDir.new('/features')
   extension Awestruct::Extensions::Posts.new('/blog', :posts, nil, nil, :imagesdir => '/blog/images')
   extension Awestruct::Extensions::MyPaginator.new(:posts, '/blog/index', :per_page => 2 )
@@ -51,7 +51,7 @@ Awestruct::Extensions::Pipeline.new do
   helper Awestruct::Extensions::DownloadsHelper
   helper Awestruct::Extensions::URIHelper
   
-  # extension Awestruct::Extensions::Indexifier.new
+  extension Awestruct::Extensions::Indexifier.new
   # Needs to be after Indexifier to get the linking correct; 
   extension Awestruct::Extensions::Feature::Index.new('/features')
   # Needs to be after Indexifier to get the linking correct; 
