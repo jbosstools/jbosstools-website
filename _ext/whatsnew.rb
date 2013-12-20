@@ -31,8 +31,7 @@ module Awestruct
                 whatsnew.feature_name = page.feature_name
                 whatsnew.feature_version = page.feature_version
                 whatsnew.output_path = page.output_path
-                #whatsnew.jbt_version = page.jbt_version
-                #whatsnew.content = page.content
+                whatsnew.content = page.content
                 if module_whatsnews[whatsnew.feature_id].nil? then 
                   module_whatsnews[whatsnew.feature_id] = Hash.new
                 end

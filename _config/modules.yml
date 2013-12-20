@@ -5,7 +5,7 @@ aerogear:
   name: Aerogear
  
 browsersim:
-  name: BrowserSim/CordovaSim 
+  name: BrowserSim
   
 cdi:
   name: CDI Tools
