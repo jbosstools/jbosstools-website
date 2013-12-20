@@ -152,15 +152,6 @@ div.alert {
   background-image: linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
 }
 
-.sidebar::after {
-  content: "";
-  position: absolute;
-  right: 0px;
-  top: 0px;
-  bottom: 0px;
-  @include vertical_right_ruler(1px);
-}
-
 .button {
   cursor: pointer;
 }
@@ -222,11 +213,14 @@ a.dropdown-toggle {
 }
 
 // ****************************************
-// Accordion
+// Side bar
 // ****************************************
-.accordion {
+.sidebar {
+  
   border: 1px solid rgb(229, 229, 229);
   border-radius: 4px;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
   
   .accordion-group {
     border: none;
@@ -237,6 +231,15 @@ a.dropdown-toggle {
     }
   }
 
+  .sidebar::after {
+    content: "";
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    @include vertical_right_ruler(1px);
+  }
+  
   
 }
 
