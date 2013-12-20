@@ -219,9 +219,12 @@ a.dropdown-toggle {
   
   border: 1px solid rgb(229, 229, 229);
   border-radius: 4px;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
   
+  .accordion {
+    margin-bottom: 0;
+  }
   .accordion-group {
     border: none;
     border-bottom: 1px solid rgb(229, 229, 229);

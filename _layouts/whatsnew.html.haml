@@ -23,10 +23,10 @@ tab: docs
                 - whatsnew_pages.each do |whatsnew_page|
                   - if whatsnew_page.output_path == page.output_path
                     %li.active
-                      %a{:href=>whatsnew_page.output_path} #{site.modules[whatsnew_page.feature_id].name}
+                      %a{:href=>join(site.base_url, whatsnew_page.output_path)} #{site.modules[whatsnew_page.feature_id].name}
                   - else
                     %li 
-                      %a{:href=>whatsnew_page.output_path} #{site.modules[whatsnew_page.feature_id].name}
+                      %a{:href=>join(site.base_url, whatsnew_page.output_path)} #{site.modules[whatsnew_page.feature_id].name}
           
       
          
