@@ -5,10 +5,40 @@ title: What's New
 ---
 .row-fluid
   .span12
-    %h3< JBoss Tools News and Noteworthy
+    %h1.center< JBoss Tools News and Noteworthy
+.row-fluid
+  .span2.sidebar
+    %ul.nav.nav-list
+      - feature = site.features.values.select{|feature| feature.url == join(site.base_url, page.url)}.first
+      %li.nav-header
+        #{feature.name}
+      %li.active 
+        %a Overview
+      %li
+        %a Issue Tracker
+      - unless site.whatsnews[page.feature_id].nil?
+        %li 
+          - latest_version = site.whatsnews[page.feature_id][:merged].keys.sort.last
+          - latest_whatsnew_page = site.whatsnews[page.feature_id][:merged][latest_version]
+          -# puts "Latest version: " + latest_whatsnew_page.to_s
+          %a#whatsnewButton.button What's New 
+          %ul#whatsnews.nav.nav-list
+            - site.whatsnews[page.feature_id][:merged].sort_by{|k, v| k}.reverse!.each do |version, whatsnew_page|
+              %li 
+                %a{:href=> join(site.base_url, whatsnew_page.url)} #{whatsnew_page.feature_version}
+        
+      
+      %li.divider
+      %li.nav-header 
+        Other features
+      - feature = site.features.each do |feature_id, feature|
+        - if feature.url != join(site.base_url, page.url)
+          %li
+            %a{:href => join(site.base_url, feature.url)} #{feature.name}
+  .span10
 
 .row-fluid 
-  .span12
+  .span12.center
     Looking for 
     %strong previous versions of individual new and noteworthy 
     ? Find them in our

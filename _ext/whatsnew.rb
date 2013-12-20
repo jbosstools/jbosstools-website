@@ -5,7 +5,7 @@ module Awestruct
     module Whatsnew
       class Index
         
-        @@layout_path = "whatsnew_per_feature.html.haml"
+        @@whatsnew_merged_layout_path = "whatsnew_merged.html.haml"
         
         def initialize(path_prefix)
           @path_prefix = path_prefix
@@ -69,7 +69,7 @@ module Awestruct
         end
         
         def create_page(*paths)
-          path_glob = File.join( @site.config.layouts_dir, @@layout_path)
+          path_glob = File.join( @site.config.layouts_dir, @@whatsnew_merged_layout_path)
           candidates = Dir[ path_glob ]
           return nil if candidates.empty?
           throw Exception.new( "too many choices for #{simple_path}" ) if candidates.size != 1
