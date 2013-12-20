@@ -8,7 +8,20 @@ tab: docs
     = partial('whatsnew_sidebar.html.haml', {:location=>page.output_path, :jbt_core_version=>page.jbt_core_version})       
   .span9
     ~content
-      
+
+.row-fluid
+  .span12.center.whatsnew-nav
+    - site.product_whatsnews.sort_by{|k,v| k}.reverse.each do |product_version, whatsnew_pages|
+      - if page.jbt_core_version == product_version
+        - whatsnew_pages.each_index do |i|
+          - if whatsnew_pages[i].output_path == page.output_path
+            - if i > 0 then
+              - previous_module = whatsnew_pages[i - 1]
+              %a.btn.btn-small{:href=>join(site.base_url, previous_module.output_path)} &laquo; #{site.modules[previous_module.feature_id].name}
+            - if i + 1< whatsnew_pages.size
+              - next_module = whatsnew_pages[i + 1]
+              %a.btn.btn-small{:href=>join(site.base_url, next_module.output_path)} #{site.modules[next_module.feature_id].name} &raquo;
+            
 .row-fluid
   .span12.center.page-note
     :markdown

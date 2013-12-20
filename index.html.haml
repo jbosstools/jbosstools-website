@@ -61,9 +61,8 @@ title: Home
               on 
               %strong< #{post.date.strftime( '%b %d, %Y' )}.
         .footer.right
-          .btn.btn-small
-            %a.block{:href=>join(site.base_url, post.url)}
-              Read more &raquo;
+          %a.btn.btn-small{:href=>join(site.base_url, post.url)}
+            Read more &raquo;
         %hr 
               
 

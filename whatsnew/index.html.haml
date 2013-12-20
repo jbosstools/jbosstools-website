@@ -13,6 +13,12 @@ title: What's New
   .span9
     #{first_module.content}
 .row-fluid
+  .span12.center.whatsnew-nav
+    - firstWhatsnews = site.product_whatsnews.sort_by{|k,v| k}.reverse.first
+    - next_module = firstWhatsnews[1][1]
+    %a.btn.btn-small{:href=>join(site.base_url, next_module.output_path)} 
+      #{site.modules[next_module.feature_id].name} &raquo;
+.row-fluid
   .span12.center.page-note
     :markdown
       Visit our [archived news](http://docs.jboss.org/tools/whatsnew/index.html) for **previous versions** of individual new and noteworthy.
