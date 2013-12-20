@@ -1,9 +1,3 @@
-##
-#
-# unused
-#
-##
-
 arquillian:
   name: Arquillian
   
@@ -42,17 +36,6 @@ maven:
 
 openshift:
   name: OpenShift
-  issues: https://issues.jboss.org/browse/JBIDE/component/12314746
-  highlighted: true
-  order: 2 
-  tagline: Cloud on steroids
-  versions:
-    2.5.1: 
-      jbt_core: 4.1.1
-      devstudio: 7.1.0
-    2.5.0: 
-      jbt_core: 4.1.0
-      devstudio: 7.0.0
 
 server:
   name: Server Tools

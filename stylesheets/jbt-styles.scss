@@ -222,6 +222,25 @@ a.dropdown-toggle {
 }
 
 // ****************************************
+// Accordion
+// ****************************************
+.accordion {
+  border: 1px solid rgb(229, 229, 229);
+  border-radius: 4px;
+  
+  .accordion-group {
+    border: none;
+    border-bottom: 1px solid rgb(229, 229, 229);
+    border-radius: 0px;
+    &:last-child   {
+      border-bottom: none;
+    }
+  }
+
+  
+}
+
+// ****************************************
 // Installation
 // ****************************************
 @media screen and (min-width: 680px) {

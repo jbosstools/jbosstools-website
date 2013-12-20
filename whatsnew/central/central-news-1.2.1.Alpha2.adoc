@@ -1,8 +1,8 @@
 = JBoss Central What's New in 1.2.1.Alpha2
+:page-layout: whatsnew
 :page-feature_id: central
 :page-feature_version: 1.2.1.Alpha2
-:page-feature_jbt_core_version: 4.1.1.Alpha2
-:page-feature_devstudio_version: 7.1.0.Alpha2
+:page-jbt_core_version: 4.1.1.Alpha2
 
 ==  JBoss Central What's New in 1.2.1.Alpha2
 === JDK 7u40 compatibility 	

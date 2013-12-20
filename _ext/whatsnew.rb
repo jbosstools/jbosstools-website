@@ -14,8 +14,10 @@ module Awestruct
         def execute(site)
           @site = site
           $LOG.debug "*** Executing whatsnew extension...." if $LOG.debug?
-          whatsnews = Hash.new
-          site.whatsnews = whatsnews
+          module_whatsnews = Hash.new
+          site.module_whatsnews = module_whatsnews
+          product_whatsnews = Hash.new
+          site.product_whatsnews = product_whatsnews
           site.pages.each do |page|
             if page.relative_source_path =~ /^#{@path_prefix}\/.*\.adoc/ then
               unless site.features[page.feature_id].nil?
@@ -25,36 +27,40 @@ module Awestruct
                 site.engine.set_urls([page])
                 whatsnew.url = URIHelper.concat(site.base_url, page.url)
                 whatsnew.feature_id = page.feature_id
+                whatsnew.product_version = page.jbt_core_version
                 whatsnew.feature_name = page.feature_name
                 whatsnew.feature_version = page.feature_version
+                whatsnew.output_path = page.output_path
                 #whatsnew.jbt_version = page.jbt_version
                 #whatsnew.content = page.content
-                if whatsnews[whatsnew.feature_id].nil? then 
-                  whatsnews[whatsnew.feature_id] = Hash.new
-                  whatsnews[whatsnew.feature_id][:details] = Array.new
-                  whatsnews[whatsnew.feature_id][:merged] = Hash.new
+                if module_whatsnews[whatsnew.feature_id].nil? then 
+                  module_whatsnews[whatsnew.feature_id] = Hash.new
                 end
-                whatsnews[whatsnew.feature_id][:details] << whatsnew
+                if product_whatsnews[whatsnew.product_version].nil? then
+                  product_whatsnews[whatsnew.product_version] = Array.new
+                end
+                product_whatsnews[whatsnew.product_version] << whatsnew
+                
                 main_version = get_main_version(whatsnew.feature_version)
-                if whatsnews[whatsnew.feature_id][:merged][main_version].nil? then
+                if module_whatsnews[whatsnew.feature_id][main_version].nil? then
                   #puts " Adding " + page.feature_id + " version " + main_version
                   whatsnew_page = create_page(page.feature_id, main_version + ".html")
                   whatsnew_page.feature_version = main_version
                   whatsnew_page.feature_id = page.feature_id
                   whatsnew_page.title = site.features[whatsnew_page.feature_id].name + " " + main_version
-                  whatsnews[whatsnew.feature_id][:merged][main_version] = whatsnew_page
+                  module_whatsnews[whatsnew.feature_id][main_version] = whatsnew_page
                   # TODO: how to append page.content into whatsnew_page.content at the right location ?
                   #generate front-matter + content in raw_content ?
                   #puts page.content
-                  whatsnews[whatsnew.feature_id][:merged][main_version].items = Array.new
+                  module_whatsnews[whatsnew.feature_id][main_version].items = Array.new
                 end
                 #puts " Page content: #{page.content[0..10]}..."
-                whatsnews[whatsnew.feature_id][:merged][main_version].items << page.content
+                module_whatsnews[whatsnew.feature_id][main_version].items << page.content
               end
             end
             # sort the hashes by their key in reversed order (more recent versions come first)
-            whatsnews.each do |feature_id, feature_whatsnew|
-              feature_whatsnew[:merged].each do |version, whatsnew_page|
+            module_whatsnews.each do |feature_id, module_whatsnew|
+              module_whatsnew.each do |version, whatsnew_page|
                 whatsnew_page.items.sort!.reverse!
               end
             end

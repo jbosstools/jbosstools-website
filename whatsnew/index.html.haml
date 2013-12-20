@@ -4,44 +4,40 @@ tab: docs
 title: What's New
 ---
 .row-fluid
-  .span12
-    %h1.center< JBoss Tools News and Noteworthy
-.row-fluid
-  .span2.sidebar
-    %ul.nav.nav-list
-      - feature = site.features.values.select{|feature| feature.url == join(site.base_url, page.url)}.first
-      %li.nav-header
-        #{feature.name}
-      %li.active 
-        %a Overview
-      %li
-        %a Issue Tracker
-      - unless site.whatsnews[page.feature_id].nil?
-        %li 
-          - latest_version = site.whatsnews[page.feature_id][:merged].keys.sort.last
-          - latest_whatsnew_page = site.whatsnews[page.feature_id][:merged][latest_version]
-          -# puts "Latest version: " + latest_whatsnew_page.to_s
-          %a#whatsnewButton.button What's New 
-          %ul#whatsnews.nav.nav-list
-            - site.whatsnews[page.feature_id][:merged].sort_by{|k, v| k}.reverse!.each do |version, whatsnew_page|
-              %li 
-                %a{:href=> join(site.base_url, whatsnew_page.url)} #{whatsnew_page.feature_version}
-        
+  .span3.sidebar
+    .accordion#whatsnew
+      - i = 0
+      - site.product_whatsnews.sort_by{|k,v| k}.reverse.each do |product_version, whatsnew_pages|
+        - i++
+        %div.accordion-group
+          .accordion-heading
+            %a.accordion-toggle{:"data-toggle"=>"collapse", :"data-parent"=>"#whatsnew", 
+              :href=>"#collapse#{i}"}
+              #{site.products[:jbt_core].name} #{product_version}
+          %div.accordion-body.collapse{:id=>"collapse#{i}"}
+            .accordion-inner
+              %ul.nav.nav-list
+                - whatsnew_pages.each do |whatsnew_page|
+                  %li 
+                    %a{:href=>whatsnew_page.output_path} #{site.modules[whatsnew_page.feature_id].name}
+            
       
-      %li.divider
-      %li.nav-header 
-        Other features
-      - feature = site.features.each do |feature_id, feature|
-        - if feature.url != join(site.base_url, page.url)
-          %li
-            %a{:href => join(site.base_url, feature.url)} #{feature.name}
-  .span10
+      
+  .span9
+    :markdown
+    
+      ## JBoss Tools News and Noteworthy
+      
+      If you are new to JBoss Tools and JBoss frameworks [jboss.org/developer](http://jboss.org/developer) is a recommended starting point.
+      
+      This page is a log of the new and noteworthy changes/features in JBoss Tools and JBoss Developer Studio. 
+      
+      Latest JBoss Tools and DevStudio can be downloaded from our [download page](../downloads).
+      
+      Be aware that the list of actual included features in the GA can differ from what is in the older new and 
+      noteworthy if the feature has changed or been removed or postponed.
 
-.row-fluid 
-  .span12.center
-    Looking for 
-    %strong previous versions of individual new and noteworthy 
-    ? Find them in our
-    %a{:href => "http://docs.jboss.org/tools/whatsnew/index.html"} archived news.
+      If you're looking for **previous versions** of individual new and noteworthy, please go to our 
+      [archived news](http://docs.jboss.org/tools/whatsnew/index.html).
     
   
