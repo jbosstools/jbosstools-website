@@ -4,33 +4,32 @@ tab: docs
 ---
 -# puts " Rendering What's New page for " + page.feature_id.to_s + " version " + page.feature_version.to_s + ": " + page.output_path
 .row-fluid
-  .span2.sidebar
-    %ul.nav.nav-list
-      - feature = site.features[page.feature_id]
-      %li.nav-header #{feature.name}
-      %li 
-        -# puts "Features " + site.features[page.feature_id].to_s
-        %a{:href=>site.features[page.feature_id].url} Overview
-      %li
-        %a Issue Tracker
-      %li 
-        %a What's New
-        %ul.nav.nav-list
-          - site.whatsnews[page.feature_id][:merged].sort_by{|k, v| k}.reverse!.each do |version, whatsnew_page|
-            - if whatsnew_page.output_path == page.output_path
-              %li.active
-                %a{:href=> whatsnew_page.url} #{whatsnew_page.feature_version}
-            - else
-              %li 
-                %a{:href=> whatsnew_page.url} #{whatsnew_page.feature_version}
-      %li.divider
-      %li.nav-header 
-        Other features
-      - site.features.values.select{|feature| feature.id != page.feature_id}.each do |feature|
-        %li
-          %a{:href => feature.url} #{feature.name}
-        
-  .span10
+  .span3.sidebar
+    .accordion#whatsnew
+      - i = 0
+      - site.product_whatsnews.sort_by{|k,v| k}.reverse.each do |product_version, whatsnew_pages|
+        - i = i + 1
+        .accordion-group
+          .accordion-heading
+            %a.accordion-toggle{:"data-toggle"=>"collapse", :"data-parent"=>"#whatsnew", 
+              :href=>"#collapse#{i}"}
+              #{site.products[:jbt_core].name} #{product_version}
+          .accordion-body.collapse{:id=>"collapse#{i}"}
+            - if page.jbt_core_version == product_version
+              :javascript
+                $('#collapse#{i}').addClass('in');
+            %ul.nav.nav-list
+              %ul.nav.nav-list
+                - whatsnew_pages.each do |whatsnew_page|
+                  - if whatsnew_page.output_path == page.output_path
+                    %li.active
+                      %a{:href=>whatsnew_page.output_path} #{site.modules[whatsnew_page.feature_id].name}
+                  - else
+                    %li 
+                      %a{:href=>whatsnew_page.output_path} #{site.modules[whatsnew_page.feature_id].name}
+          
+      
+         
+  .span9
     .whatsnew
-      - page.items.each do |item|
-        #{item.to_s}
+      ~content

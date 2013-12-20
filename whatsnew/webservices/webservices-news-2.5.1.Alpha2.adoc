@@ -1,8 +1,8 @@
 = WebServices Tools 1.5.1.Alpha2 What's New
+:page-layout: whatsnew
 :page-feature_id: webservices
 :page-feature_version: 1.5.1.Alpha2
-:page-feature_jbt_core_version: 4.1.1.Alpha2
-:page-feature_devstudio_version: 7.1.0.Alpha2
+:page-jbt_core_version: 4.1.1.Alpha2
 
 == WebServices Tools 1.5.1.Alpha2 What's New
 === Bug fixes 	

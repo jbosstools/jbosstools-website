@@ -1,10 +1,10 @@
-= BrowserSim/CordovaSim What's New in 4.1.1.Beta1
+= BrowserSim and CordovaSim What's New in 4.1.1.Beta1
+:page-layout: whatsnew
 :page-feature_id: browsersim
 :page-feature_version: 4.1.1.Beta1
-:page-feature_jbt_core_version: 4.1.1.Beta1
-:page-feature_devstudio_version: 7.1.0.Beta1
+:page-jbt_core_version: 4.1.1.Beta1
 
-== BrowserSim/CordovaSim What's New in 4.1.1.Beta1
+== What's New in 4.1.1.Beta1
 === BrowserSim / CordovaSim
 ==== Cordova 3 support in CordovaSim
 
