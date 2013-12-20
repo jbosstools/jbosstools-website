@@ -8,27 +8,20 @@ tab: docs
     .accordion#whatsnew
       - i = 0
       - site.product_whatsnews.sort_by{|k,v| k}.reverse.each do |product_version, whatsnew_pages|
-        - i = i + 1
-        .accordion-group
+        - i++
+        %div.accordion-group
           .accordion-heading
             %a.accordion-toggle{:"data-toggle"=>"collapse", :"data-parent"=>"#whatsnew", 
               :href=>"#collapse#{i}"}
               #{site.products[:jbt_core].name} #{product_version}
-          .accordion-body.collapse{:id=>"collapse#{i}"}
-            - if page.jbt_core_version == product_version
-              :javascript
-                $('#collapse#{i}').addClass('in');
-            %ul.nav.nav-list
+          %div.accordion-body.collapse{:id=>"collapse#{i}"}
+            .accordion-inner
               %ul.nav.nav-list
                 - whatsnew_pages.each do |whatsnew_page|
-                  - if whatsnew_page.output_path == page.output_path
-                    %li.active
-                      %a{:href=>whatsnew_page.output_path} #{site.modules[whatsnew_page.feature_id].name}
-                  - else
-                    %li 
-                      %a{:href=>whatsnew_page.output_path} #{site.modules[whatsnew_page.feature_id].name}
-          
-      
+                  %li 
+                    %a{:href=>join(site.base_url, whatsnew_page.output_path)} #{site.modules[whatsnew_page.feature_id].name}
+            
+    
          
   .span9
     .whatsnew
