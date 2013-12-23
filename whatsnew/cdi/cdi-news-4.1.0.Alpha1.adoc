@@ -1,0 +1,14 @@
+= CDI Tools What's New in 4.1.0.Alpha1
+:page-layout: whatsnew
+:page-feature_id: cdi
+:page-feature_version: 4.1.0.Alpha1
+:page-jbt_core_version: 4.1.0.Alpha1
+
+==  CDI Tools What's New in 4.1.0.Alpha1
+=== Apache Deltaspike
+
+==== Deltaspike 0.3
+
+Apache Deltaspike 0.3 refactored some code which affected CDI Tools features. These changes now supported by JBoss Tools 4.1.0.Alpha1
+
+Related Jira 

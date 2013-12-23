@@ -1,0 +1,20 @@
+= JBoss Central What's New in 1.2.0.Alpha2
+:page-layout: whatsnew
+:page-feature_id: central
+:page-feature_version: 1.2.0.Alpha2
+:page-jbt_core_version: 4.1.0.Alpha2
+
+== General
+=== A new design 	
+
+The JBoss Central UI has been reworked to, hopefully, provide a better user experience. So, in no particular order, you'll see :
+
+* A description of each wizard is available when hovering on each project icon
+* Blogs, news and twitter feeds have been aggregated into one section now known as JBoss Buzz
+* The "show on startup" preference is now directly accessible from the top of the page
+* A new link to the Ticket Monster tutorial has been added
+* Quickstarts are now more visible
+
+image:images/new-jboss-central.png[]
+Related Jira
+

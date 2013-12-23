@@ -2,7 +2,7 @@
 :page-layout: whatsnew
 :page-feature_id: central
 :page-feature_version: 1.2.0.Beta1
-:page-jbt_core_version: 4.1.1.Beta1
+:page-jbt_core_version: 4.1.0.Beta1
 
 == General
 === Design improvements 	

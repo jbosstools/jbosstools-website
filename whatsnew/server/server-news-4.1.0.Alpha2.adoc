@@ -1,0 +1,20 @@
+= What's New in 4.1.0.Alpha2
+:page-layout: whatsnew
+:page-feature_id: server
+:page-feature_version: 4.1.0.Alpha2
+:page-feature_jbt_only: true
+:page-jbt_core_version: 4.1.0.Alpha2
+
+== 4.1.0.Alpha2
+=== Deployment
+==== Increased support for product server runtimes
+
+Support has been increased for AS 7.1+ and it's derived products and it now supports the notion of a product slot instead of an hard coded EAP slot.
+
+This should mean EAP, SOA-P etc. should be identified and started correctly as long as they do not require custom handling outside of what AS 7 need.
+
+If the server cannot be fully identified the tools will try what it can to fallback to ensure the server can be used.
+
+Also, support for previous and current versions of GateIn have been added. This ensures that GateIn receives the same level of support that you've come to expect from our other server adapters. Specifically, support for GateIn servers versions 3.3.0 , 3.4.0, and 3.5.0 has been added and tested.
+
+Unreleased Products Related Jira GateIn Related Jira 

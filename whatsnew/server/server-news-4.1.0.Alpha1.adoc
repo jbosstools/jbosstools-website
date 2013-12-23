@@ -1,0 +1,15 @@
+= What's New in 4.1.0.Alpha1
+:page-layout: whatsnew
+:page-feature_id: server
+:page-feature_version: 4.1.0.Alpha1
+:page-feature_jbt_only: true
+:page-jbt_core_version: 4.1.0.Alpha1
+
+== 4.1.0.Alpha1
+=== Deployment
+
+==== Sar project inside Ear project deploys .java files
+
+A bug concerning the output archive of a sar project nested inside an ear project had the result of causing no .class files to be published, but rather .java files. This has been fixed.
+
+Related Jira 
