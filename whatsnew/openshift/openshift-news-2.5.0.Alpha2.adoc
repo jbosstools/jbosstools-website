@@ -1,0 +1,30 @@
+= What's New in 2.5.0.Alpha2
+:page-layout: whatsnew
+:page-feature_id: openshift
+:page-feature_version: 2.5.0.Alpha2
+:page-feature_jbt_only: true
+:page-jbt_core_version: 4.1.0.Alpha2
+
+== OpenShift Explorer
+=== Restart Application
+
+If your application has issues you may want to restart it. You can now achieve that within JBoss Tools. Pick "Restart" from the context menu of your application in the OpenShift Explorer:
+
+image:images/restart-application.png[]
+
+Restarting your application will fully restart your node, it will not just restart your deployed project. It is equivalent to restarting your server.
+
+Related Jira
+
+== Server adapter
+=== Console not shown 	
+The server adapter for OpenShift allows you to publish your local changes to OpenShift. It pops up the console after publishing so that you can have a detailed look at what happened when pushing. In Alpha1 the console was not shown any more. We fixed this for Alpha2.
+
+image:images/console.png[]
+Related Jira
+
+== OpenShift Java Client
+=== new version 2.1.0
+In the last few months we put a lot of effort into the https://github.com/openshift/openshift-java-client[openshift-java-client]. The new version 2.1.0 offers major improvements in terms of compatibility and stability. It'll be available from maven central very soon.
+
+Related Jiras 

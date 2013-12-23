@@ -1,0 +1,11 @@
+= Forge Tools 4.1.0.Alpha1 What's New
+:page-layout: whatsnew
+:page-feature_id: forge
+:page-feature_version: 4.1.0.Alpha1
+:page-jbt_core_version: 4.1.0.Alpha1
+
+== General
+=== New Embedded Forge Runtime 	
+
+The embedded runtime is now Forge 1.2.0.Final!
+image:images/4.1.0.Alpha1/about.png[]

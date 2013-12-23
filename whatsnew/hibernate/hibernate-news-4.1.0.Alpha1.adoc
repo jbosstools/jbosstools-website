@@ -1,0 +1,12 @@
+= Hibernate Tools 4.1.0.Alpha1 What's New
+:page-layout: whatsnew
+:page-feature_id: hibernate
+:page-feature_version: 4.1.0.Alpha1
+:page-jbt_core_version: 4.1.0.Alpha1
+
+== General
+=== Kepler/Juno Incompatibilities 	
+
+For Kepler, the Dali project has changed some of the APIs that are used by Hibernate Tools. Adapting Hibernate Tools to these new APIs resulted in incompatibilities with Juno to the extent that it is not anymore possible to support the installation of the Hibernate Tools plugins in Juno.
+
+Related jira

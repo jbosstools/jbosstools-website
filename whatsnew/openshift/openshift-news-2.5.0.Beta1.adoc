@@ -1,89 +1,78 @@
-= What's New in 2.5.0.Beta2
+= What's New in 2.5.0.Beta1
 :page-layout: whatsnew
 :page-feature_id: openshift
-:page-feature_version: 2.5.0.Beta2
+:page-feature_version: 2.5.0.Beta1
 :page-feature_jbt_only: true
-:page-jbt_core_version: 4.1.0.Beta2
+:page-jbt_core_version: 4.1.0.Beta1
 
 == Application Wizard
-=== Use your own Source Template 	
+=== Verbose Cartridge Labels 
+In Beta1 we gave labels in the OpenShift application wizard some love. We show you better descriptions of what application you're about to create and what cartridge you're about to embed:
 
-OpenShift online now allow you to start an application with your very own git repository for the intial applicaiton. OpenShift tools now allow you to specify a github url in the wizard under "Advanced" and OpenShift will clone it to your application git repository and use it instead of the default template.
-
-image:images/advanced-source-code.png[]
-
-Related Jira
-
-=== Disable automatic Maven Build
-
-When pushing a maven project to OpenShift, OpenShift will build the source in the git repository that you pushed. This is very useful when you push source code but it's not when you push an application that you have already built as an jar,war or ear. If you rather would publish this artifact directly you no longer need the automatic builds but just need the artifact put into the deployments folder. We therefore allow you to tell the application wizard not to trigger the maven build on OpenShift when pushing. If you check this option the wizard will create a marker that gets pushed along with your war and code and tells OpenShift not to launch the maven build.
-
-image:images/disable-automatic-maven-build.png[]
-
-You can enable the Maven builds again by manually changing the marker files or use the Configure > Configure Marker... menu.
+image:images/cartridge-labels.png[]
 
 Related Jira
 
-=== Cartridge Command Line Names
+=== Publish Right Away
+To create or import an OpenShift application in JBoss Tools you launch the application wizard that does all the heavy lifting for you. This wizard creates the application and imports it to a new project or merges it into an existing one. To then publish these changes to OpenShift, you get over to the server adapter and tell it to publish your Eclipse project.
+In Alpha2 you had to think about publishing and manually trigger the adapter once you had run through the wizard. Beta1 now prompts you right away and asks you if you want to push once the import/merge is done.
 
-We added the cartridge id in parenthesis nex to the human understandable cartridge names so that you also have the identifier that you would use on the rhc command line.
-
-image:images/cartridge-labels-2.png[]
-
-Related Jira
-
-=== Jenkins URL and Credentials
-
-When you create an application there are cases where OpenShift will give you additional information about your new cartridge. For example when you create a jenkins instance on OpenShift. The log that will now be shown upon successful creation and will show you the url and the credentials that you need to operate it. Prior verions only showed this for embedded cartridges. Beta2 will also show these when you create applications.
-
-image:images/creation-log.png[]
+image:images/pushing-if-no-changes.png[push to OpenShift]
 
 Related Jira
 
-== Marker Wizard
-=== Edit your Markers
+== Server adapter
+=== See it pushing while it's happening
+JBoss Tools offers you a server adapter to publish your local changes to OpenShift. This adapter does all git pushing for you. In case of maven projects publishing will usually trigger a maven build on OpenShift. This may therefore take quite some time. In Alpha2 you had to wait for this to complete in order to see the results. A limitation in Eclipse EGit prevented us from showing you the output while it was occurring.
+We improved EGit/JGit and contributed this enhancement to Eclipse. We are therefore now able to give you immediate feedback while we push to OpenShift.
 
-OpenShift is using markers to enable or disable features. The switch to disable the maven build that we discussed above is one of these markers. The markers are files that you add to the <project>/.openshift/markers directory. In Beta2 we allow you to add and remove these markers by invoking a wizard from the Project- or Package-Explorer.
-
-image:images/openshift-configure-markers.png[]
-
-We show you all markers that already exist in the markers directory and all the ones that you may eventually want to add. The markers that we currently know about are:
-
-[cols="1,2"]
-|===
-|File | Effect
-
-|disable_auto_scaling
-|Will prevent scalable applications from scaling up or down according to application load.
-
-|enable_jpda
-| Will enable the JPDA socket based transport on the java virtual machine running the JBoss AS 7 application server. This enables you to remotely debug code running inside the JBoss AS 7 application server.
-
-|force_clean_build
-|Will start the build process by removing all non essential Maven dependencies. Any current dependencies specified in your pom.xml file will then be re-downloaded.
-
-|hot_deploy
-| Will prevent a JBoss container restart during build/deployment. Newly build archives will be re-deployed automatically by the JBoss HDScanner component.
-
-|java7 
-|Will run JBoss AS7 with Java7 if present. If no marker is present then the baseline Java version will be used (currently Java6).
-|===
-
-image:images/configre-markers-wizard.png[]
+image:images/publishing-to-openshift.png[publishing to OpenShift]
 
 Related Jira
 
-===Verbose Cartridge Names
-The OpenShift Explorer lists your applications and cartridges. Along with the application and cartridge it shows you the type. So far we were showing shorthand names and changed this for Beta2: the Explorer is now using verbose labels for cartridges and decorate them with the shorthand (rhc command line identifier) name.
+=== Restart Application 	
+In Alpha2 we allowed you to restart an application from the context menu in the OpenShift Explorer. Beta2 now adds this option to the context menu of the server adapter.
 
-image:images/better-labels-in-explorer.png[]
+image:images/server-adapter-restart.png[restart application]
 
 Related Jira
 
-== Application Logs
-=== Tail Files pattern fixed
-In order to inspect your application logs you pick "Tail Files" in the context menu of your application in the OpenShift Explorer or in the Servers view. JBoss Tools will then prompt you to provide the file pattern and options for the tail command. So far there was an issue that prevented you from limiting the output. The console was always showing the same number of lines. Fixed with Beta2.
+=== Binary Deploy to JBoss EWS (Tomcat 6/7)
+If you want to deploy some binary artifact (ex. your application war) in JBoss Tools you simply drag and drop your Eclipse project to the OpenShift server adapter. The adapter will then war and push it to OpenShift. While this worked fine with JBoss AS and EAP, things didn't work out of the box for tomcat 6 and 7. We now fixed this for Beta1.
 
-image:images/better-labels-in-explorer.png[]
+Related Jira
 
-Related Jira 
+== Various Improvements
+=== Removing Cartridges
+Removing cartridges may cause loss of data. This is especially true when you remove databases like mysql, postgres or mongo db. Thus we now remind you of this potential risk and ask you to confirm this irreversible removal.
+
+image:images/remove-cartridge.png[confirm cartridge removal]
+
+Related Jira
+
+=== Upload SSH Keys
+Various operations like cloning and inspecting your application logs require you to upload your SSH keys to OpenShift. In order to have an even smoother workflow the application wizard will prompt you if you have no keys on OpenShift yet. It will ask you right away to create a new or upload your existing key(s).
+
+image:images/add-ssh-keys.png[add ssh keys]
+
+Related Jira
+
+=== Port Forwarding for Scalable Apps
+In Alpha2 port forwarding failed for scalable applications. In Beta1 we now made sure that you can forward the ports of any OpenShift application be it scalable or not.
+
+Related Jira
+
+=== Missing credentials when Creating Jenkins
+Before Beta1 it could happen that you created a jenkins application but didn't get the credentials for it. The dialog that reported these was empty.
+In order to fix this we increased the timeouts that made you miss these informations.
+To make your experience even smoother in case it still fails we now offer you a link to the environments variables in the creation dialog. This link allows you to easily look the credentials via a single click.
+
+image:images/timouted-see-in-envvars.png[link to environment variables]
+
+Related Jira
+
+== OpenShift Java Client
+=== New Version 2.2.0
+The latest openshift-java-client 2.2.0 moved to exclusively support protocol 1.2. With this upgrade JBoss Tools and all other user application will benefit from far more informative descriptions for cartridges. Further additional enhancement will make it to the library with the upcoming releases.
+
+Related Jiras
