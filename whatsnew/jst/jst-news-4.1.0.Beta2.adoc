@@ -1,0 +1,52 @@
+= JST/JSF/HTML What's New in 4.1.0.Beta2
+:page-layout: whatsnew
+:page-feature_id: jst
+:page-feature_version: 4.1.0.Beta2
+:page-jbt_core_version: 4.1.0.Beta2
+
+== jQuery Mobile
+=== jQuery Mobile Palette
+
+A few new HTML5 widget wizards are now available in jQuery Mobile Palette for HTML5 files:
+
+image:images/4.1.0.Beta2/palette.png[]
+
+1. Form:
+
+image:images/4.1.0.Beta2/form.png[]
+
+Related Jira
+
+2. Image:
+
+image:images/4.1.0.Beta2/img.png[]
+
+Related Jira
+
+3. Video:
+
+image:images/4.1.0.Beta2/video.png[]
+
+Related Jira
+
+4. Audio:
+
+image:images/4.1.0.Beta2/audio.png[]
+
+Related Jira
+
+5. Label:
+
+image:images/4.1.0.Beta2/label.png[]
+
+Related Jira
+
+== JSF 2.2
+
+=== JSF 2.2 face-config.xml editor
+
+JBoss Tools XML editor now supports Faces Config 2.2:
+
+image:images/4.1.0.Beta2/jsf22.png[]
+
+Related Jira

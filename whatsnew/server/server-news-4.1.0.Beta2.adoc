@@ -1,0 +1,18 @@
+= What's New in 4.1.0.Beta2
+:page-layout: whatsnew
+:page-feature_id: server
+:page-feature_version: 4.1.0.Beta2
+:page-feature_jbt_only: true
+:page-jbt_core_version: 4.1.0.Beta2
+
+== 4.1.0.Beta2
+=== Servers
+==== WildFly 8 support
+	
+wildfly.org have been announced, with builds available of WildFly 8.
+
+New Server Type is introduced to add WildFly support for Server creation, deployment and runtime detection.
+
+image:images/wildfly.png[WildFly Server adapter]
+
+Related Jira 
