@@ -10,6 +10,6 @@
 
 BrowserSim and CordovaSim now log their runtime errors to the Error Log. This should help if something goes wrong.
 
-Error Logging
+image:images/4.1.1.Alpha1/error-logging.png[Error Logging]
 
 Related JIRAs: JBIDE-15293, JBIDE-15165. 

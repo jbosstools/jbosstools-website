@@ -10,7 +10,7 @@
 
 CordovaSim is moved to the simulation of Cordova 3 projects. Now it is able to simulate the environment of Cordova 3.1, multiple version support is in our plans for JBoss Tools 4.2.0.
 
-CordovaSim running Cordova 3 Application
+image:images/4.1.1.Beta1/cordovasim-cordova-3.png[CordovaSim running Cordova 3 Application]
 
 Related JIRA: JBIDE-15302.
 
@@ -18,10 +18,12 @@ Related JIRA: JBIDE-15302.
 
 BrowserSim and CordovaSim got touch events simulation. It gives the ability to simulate touchstart, touchend and touchmove events as if the device is touched with a finger.
 
+image:images/4.1.1.Beta1/touch-example.png[Touch Events Simulation]
+
 ==== Touch Events Simulation
 
 The simulation is disabled by default. You should use the context menu to enable it:
 
-Enable Touch Events
+image:images/4.1.1.Beta1/touch-menu.png[Enable Touch Events]
 
 Related JIRA: JBIDE-12192. 
