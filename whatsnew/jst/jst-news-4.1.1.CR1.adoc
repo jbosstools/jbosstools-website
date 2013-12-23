@@ -10,8 +10,12 @@
 	
 When hyperlink is detected for references to missing resources new Hyperlink Detector offers to create new file. There are two options either just create empty file or start specific New Wizard found by file extension.
 
+image:images/4.1.1.Alpha1/CreateMissingFile1.png[]
+
 New Hyperlink Detector supports files with extensions: ".js", ".css", ".jsp", ".htm", ".html" and ".xhtml".
 
 If 'Use New Wizard' is selected corresponding wizard started with file name matching the missing file name and you can continue to select template for default content in new file.
+
+image:images/4.1.1.Alpha1/CreateMissingFile2.png[]
 
 Related Jira

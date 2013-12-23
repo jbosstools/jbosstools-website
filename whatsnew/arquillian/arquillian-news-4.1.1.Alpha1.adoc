@@ -10,6 +10,8 @@
 
 Now, the Arquillian Generate Deployment method can create archives of the type 'rar'.
 
+image:images/deploymentmethodquickfix.png[]
+
 Related jira: JBIDE-14779
 
 === Missing Deployment method quick fix 	
@@ -21,5 +23,7 @@ Related jira: JBIDE-14527
 === Generate Deployment method on abstract classes 	
 
 The Generate Deployment method can be created within an abstract class.
+
+image:images/abstracttest.png[]
 
 Related jira: JBIDE-14527

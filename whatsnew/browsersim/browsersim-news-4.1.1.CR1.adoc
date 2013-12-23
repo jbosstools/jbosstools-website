@@ -10,7 +10,7 @@
 
 Now CordovaSim is able to simulate the inAppBrowser API. The InAppBrowser is a web browser view that displays when calling window.open(). The InAppBrowser window behaves like a standard web browser, and cannot access Cordova APIs.
 
-CordovaSim running InAppBrowser example from PhoneGap API Documentation
+image:images/4.1.1.CR1/in-app-browser.png[CordovaSim running InAppBrowser example from PhoneGap API Documentation]
 
 Related JIRA: JBIDE-15512.
 
@@ -18,6 +18,6 @@ Related JIRA: JBIDE-15512.
 
 Now CordovaSim has ChildBrowser plugin support. ChildBrowser plugin is considered to be deprecated (InAppBrowser is an up-to-date substitution), nevertheless it's one of the most popular plugins overall.
 
-CordovaSim running Twitter OAuth example using ChildBrowser API
+image:images/4.1.1.CR1/child-browser.png[CordovaSim running Twitter OAuth example using ChildBrowser API]
 
 Related JIRA: JBIDE-13743. 
