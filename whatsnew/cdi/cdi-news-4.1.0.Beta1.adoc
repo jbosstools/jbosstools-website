@@ -1,0 +1,20 @@
+= CDI Tools What's New in 4.1.0.Beta1
+:page-layout: whatsnew
+:page-feature_id: cdi
+:page-feature_version: 4.1.0.Beta1
+:page-jbt_core_version: 4.1.0.Beta1
+
+==  CDI Tools What's New in 4.1.0.Beta1
+=== Missing beans.xml validation
+
+CDI Tools validator reports a warning if beans.xml is missing in CDI 1.0 project.
+image:images/4.1.0.Beta1/beansXmlValidation.png[]
+
+This problem can be fixed via QuickFix menu (Ctrl+1):
+
+image:images/4.1.0.Beta1/beansXmlQF1.png[]
+image:images/4.1.0.Beta1/beansXmlQF2.png[]
+
+Related Jira 1
+Related Jira 2
+
