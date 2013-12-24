@@ -10,7 +10,7 @@
 
 Exports Hybrid Mobile projects as XCode or Android projects.
 
-image:./images/ExportWizard.png[]
+image:./images/1.0.100.Beta1/ExportWizard.png[]
 
 Related Jira
 
@@ -24,7 +24,7 @@ Related Jira
 
 Discover and install Cordova Plug-ins from a registry to your Hybrid Mobile projects. Wizard also enables installation of plug-ins via a Git repository or from a directory.
 
-image:./images/CordovaPluginDiscovery.png[]
+image:./images/1.0.100.Beta1/CordovaPluginDiscovery.png[]
 
 Related Jira
 
@@ -32,5 +32,5 @@ Related Jira
 
 Extends the Project Explorer so that installed Cordova Plug-ins are visible, enables easy installation and removal of Cordova Plugins. Also enables the properties view for installed Cordova Plug-ins.
 
-image:./images/ProjectExplCordovaPluginExtensions.png[]
+image:./images/1.0.100.Beta1/ProjectExplCordovaPluginExtensions.png[]
 
