@@ -1,0 +1,8 @@
+= EclipseCon (USA)
+:page-layout: project
+:page-event_date: March 17-20, 2014
+:page-effective_date: 20140317
+:page-location: San Francisco, California
+:page-event_url: http://www.eclipsecon.org/2014/
+
+Fred will talk about https://www.eclipsecon.org/na2014/session/building-maven-based-java-ee-applications-eclipse[building maven-based JavaEE applications in Eclipse].

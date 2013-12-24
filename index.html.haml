@@ -28,8 +28,7 @@ title: Home
       %header
         %h3
           %i.icon-magic
-          %a{:href => feature.url}
-            Feature Highlight
+          %a{:href => feature.url} Feature Highlight
       .item.center
         %span.tagline
           %a{:href => feature.url}
@@ -41,8 +40,7 @@ title: Home
     %header
       %h3
         %i.icon-pencil
-        %a{:href => relative("/blog")}
-          Latest posts
+        %a{:href => relative("/blog")} Latest posts
     - posts = site.posts
     - today = Time.now 
     - posts = posts.find_all{|item| item.date.strftime("%Y%m%d") <= today.strftime("%Y%m%d")}
@@ -70,8 +68,8 @@ title: Home
     %header
       %h3
         %i.icon-globe
-        Upcoming Events
-    - events = site.events.values
+        %a{:href => relative("/events")} Upcoming Events
+    - events = site.events
     - now = Time.now 
     - a_few_days_ago = now - 4 * 24 * 60 * 60
     - events = events.find_all{|item| item.effective_date.to_s >= a_few_days_ago.strftime("%Y%m%d")}
@@ -79,12 +77,15 @@ title: Home
     - for event in events
       .item.justify
         %h4
-          %a{:href=>event.location} #{event.title}
+          %a{:href=>join(site.base_url, event.output_path)} #{event.title}
         %strong  
           #{event.event_date} 
           in
           #{event.location}
-
+      .footer.right
+        %a.btn.btn-small{:href=>join(site.base_url, event.output_path)}
+          Read more &raquo;
+      
 
 
 

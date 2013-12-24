@@ -1,0 +1,8 @@
+= EclipseCon Europe
+:page-layout: project
+:page-event_date: October 23-25, 2012
+:page-effective_date: 20121023
+:page-location: Ludwigsburg, Germany
+:page-event_url: http://www.eclipsecon.org/europe2012/
+
+Fred, Koen and Mickael will go to EclipseCon to talk about m2e-wtp, Forge and Tycho. 

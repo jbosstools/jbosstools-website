@@ -14,6 +14,7 @@ require 'font_path'
 require 'textile_plus'
 require 'mytagger'
 require 'mypaginator'
+require 'events'
 require 'features'
 require 'whatsnew'
 require 'downloads'
@@ -41,7 +42,7 @@ Awestruct::Extensions::Pipeline.new do
   # JBoss Tools custom 
   extension Awestruct::Extensions::BuildInfo.new
   extension Awestruct::Extensions::DataDir.new
-  extension Awestruct::Extensions::DataDir.new('whatsnew') # no '/', "What's New" pages will be under other categories. 
+  extension Awestruct::Extensions::DataDir.new('/whatsnew') # no '/', "What's New" pages will be under other categories. 
   extension Awestruct::Extensions::DataDir.new('/features')
   extension Awestruct::Extensions::Posts.new('/blog', :posts, nil, nil, :imagesdir => '/blog/images')
   extension Awestruct::Extensions::MyPaginator.new(:posts, '/blog/index', :per_page => 2 )
@@ -56,6 +57,8 @@ Awestruct::Extensions::Pipeline.new do
   extension Awestruct::Extensions::Features::Index.new('/features')
   # Needs to be after Indexifier to get the linking correct; 
   extension Awestruct::Extensions::Whatsnew::Index.new('/whatsnew')
+
+  extension Awestruct::Extensions::Events::Index.new('/events')
   
   extension Awestruct::Extensions::Disqus.new()
   

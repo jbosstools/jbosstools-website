@@ -1,0 +1,8 @@
+= EclipseCon (USA)
+:page-layout: project
+:page-event_date: March 25-28, 2013
+:page-effective_date: 20130325
+:page-location: Boston, MA
+:page-event_url: http://www.eclipsecon.org/2013/
+
+Max, Andre and Koen submitted talks about our recent code repo migration from SVN to Git, JBoss Forge, OpenShift and our Usage Reporting plugin. 
