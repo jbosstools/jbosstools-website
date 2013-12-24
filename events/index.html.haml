@@ -1,0 +1,19 @@
+---
+layout: project
+title: Events
+---
+.row-fluid
+  .span12
+    %h3.center All Events
+.row-fluid
+  .span8.offset2
+    - events = site.events.sort{|l,r| l.effective_date <=> r.effective_date}
+    - for event in events
+      .justify
+        %h4
+          %a{:href=>join(site.base_url, event.output_path)} #{event.title}
+        %strong  
+          #{event.event_date} 
+          in
+          #{event.location}
+        #{event.content}

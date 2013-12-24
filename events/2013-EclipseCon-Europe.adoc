@@ -1,0 +1,8 @@
+= EclipseCon Europe
+:page-layout: project
+:page-event_date: October 29-31, 2013
+:page-effective_date: 20131023
+:page-location: Ludwigsburg, Germany
+:page-event_url: http://www.eclipsecon.org/europe2013/
+
+Fred and Max where there.
