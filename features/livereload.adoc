@@ -1,6 +1,6 @@
 = LiveReload 
 :page-layout: features
-:page-feature_id: usage
+:page-feature_id: livereload
 :page-feature_image_url: images/weld_icon_256px.png
 :page-feature_order: 5
 :page-feature_tagline: It's refreshing !
