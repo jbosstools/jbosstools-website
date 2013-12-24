@@ -9,19 +9,19 @@
 
 There are a few new jQuery Mobile widget wizards available in http://www.screenr.com/7M57[jQuery Mobile Palette] for HTML5 files:
 
-1. Panel:
-
+* Panel: 
+  
 image:images/4.1.0.Beta1/panel.png[]
 
 Related Jira
 
-2. Grouped Buttons:
+* Grouped Buttons:
 
 image:images/4.1.0.Beta1/buttons.png[]
 
 Related Jira
 
-3. Collapsible Set:
+* Collapsible Set:
 
 image:images/4.1.0.Beta1/set.png[]
 
