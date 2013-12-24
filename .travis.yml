@@ -7,8 +7,9 @@ branches:
   - master
 env:
   global:
-  - secure: WDLFyxn62s8Oh5UiVt5PFvw4MznhPcbHhfV/FCqjDbRAjR+Ar7rZRdr0FRymt0g0uQyTuzggO+zTY2R4IUoPyPspD40Ll3N9vTkmAbWD3o5WyuMbVEyLvasstLI0bVbw6LAkFikyOCxQStVXT7+w9HMb6/4nNkb9l/gUfL89xxA=
-  - secure: XA4N8V4lkHZxKOuHQMPts57ESDXcnseZ4O2ZtFdMls/lYIOcQ6gpMwDtrrQZBE+6BV/4QTrs5/WYn3lyyTt39pGH6vN1UUpcpOyoTw6CatFw4gLCLtxFB/3jA4Busrw3bIoiH0V5rQIWria8cBzOUBVZ/026+vb+7hptNahu7fw=
-  - secure: LjPIApSURqDmm7f9sGtuO3GB5pucYW4zER4WGwL+96+d6O2kwQSuDAYkxup796EprCNb4+iiodQejcM8WH0T24rEExtnxeGqXH4IFG37OXMFnUlEKnx5O9GbxihiE3X3oTqJqlSbnxyPm+K/W9Y98p4SVsf4gO9YFZXClooSx4A=
-  - AWESTRUCT_PROFILE: staging
+    - secure: WDLFyxn62s8Oh5UiVt5PFvw4MznhPcbHhfV/FCqjDbRAjR+Ar7rZRdr0FRymt0g0uQyTuzggO+zTY2R4IUoPyPspD40Ll3N9vTkmAbWD3o5WyuMbVEyLvasstLI0bVbw6LAkFikyOCxQStVXT7+w9HMb6/4nNkb9l/gUfL89xxA=
+    - secure: XA4N8V4lkHZxKOuHQMPts57ESDXcnseZ4O2ZtFdMls/lYIOcQ6gpMwDtrrQZBE+6BV/4QTrs5/WYn3lyyTt39pGH6vN1UUpcpOyoTw6CatFw4gLCLtxFB/3jA4Busrw3bIoiH0V5rQIWria8cBzOUBVZ/026+vb+7hptNahu7fw=
+    - secure: LjPIApSURqDmm7f9sGtuO3GB5pucYW4zER4WGwL+96+d6O2kwQSuDAYkxup796EprCNb4+iiodQejcM8WH0T24rEExtnxeGqXH4IFG37OXMFnUlEKnx5O9GbxihiE3X3oTqJqlSbnxyPm+K/W9Y98p4SVsf4gO9YFZXClooSx4A=
+    - AWESTRUCT_PROFILE=staging
+  
 script: rake travis
