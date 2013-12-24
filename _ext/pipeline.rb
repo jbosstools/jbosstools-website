@@ -62,5 +62,7 @@ Awestruct::Extensions::Pipeline.new do
   
   extension Awestruct::Extensions::Disqus.new()
   
+  helper Awestruct::Extensions::GoogleAnalytics
+  
 end
 
