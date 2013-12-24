@@ -6,7 +6,7 @@ tab: docs
 .row-fluid
   .span3.sidebar
     = partial('whatsnew_sidebar.html.haml', {:location=>page.output_path, :jbt_core_version=>page.jbt_core_version})       
-  .span9
+  .span9.whatsnew
     ~content
     .whatnew-nav.center
       - site.product_whatsnews.sort_by{|k,v| k}.reverse.each do |product_version, whatsnew_pages|

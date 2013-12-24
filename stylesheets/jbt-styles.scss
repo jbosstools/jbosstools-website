@@ -179,12 +179,12 @@ div.alert {
 // page note
 // ******************************************************
 .page-note {
-  margin-top: 1em;
-  position : relative;
+  margin-top: 2em;
+  /*position : relative;
   &::before {
     @include horizontal-top-ruler(1px);
   }
-  
+  */
   p {
     margin-top: 1em;
   }
@@ -695,7 +695,7 @@ span.label {
 }
 
 .whatsnew-nav {
-  margin-top: 2em;
+  margin-top: 4em;
 }
 
 @media screen and (min-width: 940px) {
