@@ -95,6 +95,7 @@ profiles:
       host: github_pages
       repository: origin
       branch: gh-pages
+    google_analytics: UA-46704212-1
     
   xcoulon:
     base_url: http://xcoulon.github.com/jbosstools-website

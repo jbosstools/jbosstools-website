@@ -274,11 +274,11 @@ end
 #
 ############################################################################
 desc 'Generate site from Travis CI and publish site to GitHub Pages'
-task :travis do
+task :/ do
   # if this is a pull request, do a simple build of the site and stop
   if ENV['TRAVIS_PULL_REQUEST'].to_s.to_i > 0
     puts 'Pull request detected. Executing build only.'
-    success = system "bundle exec awestruct -P #{ENV['GIT_NAME']} -g"
+    success = system "bundle exec awestruct -P #{ENV['AWESTRUCT_PROFILE']} -g"
     fail unless success
     next
   end
