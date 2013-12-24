@@ -40,7 +40,7 @@ module Awestruct
               product_whatsnews[whatsnew.product_version] << whatsnew
               
               main_version = get_main_version(whatsnew.feature_version)
-              if module_whatsnews[whatsnew.feature_id][main_version].nil? then
+              if module_whatsnews[whatsnew.feature_id][main_version].nil? && !site.features[whatsnew.feature_id].nil? then
                 #puts " Adding " + page.feature_id + " version " + main_version
                 whatsnew_page = create_page(page.feature_id, main_version + ".html")
                 whatsnew_page.feature_version = main_version
@@ -52,8 +52,10 @@ module Awestruct
                 #puts page.content
                 module_whatsnews[whatsnew.feature_id][main_version].items = Array.new
               end
-              #puts " Page content: #{page.content[0..10]}..."
-              module_whatsnews[whatsnew.feature_id][main_version].items << page.content
+              unless site.features[whatsnew.feature_id].nil? then
+                #puts " Page content: #{page.content[0..10]}..."
+                module_whatsnews[whatsnew.feature_id][main_version].items << page.content
+              end
             end
             # sort the hashes by their key in reversed order (more recent versions come first)
             module_whatsnews.each do |feature_id, module_whatsnew|
