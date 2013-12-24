@@ -278,7 +278,7 @@ task :/ do
   # if this is a pull request, do a simple build of the site and stop
   if ENV['TRAVIS_PULL_REQUEST'].to_s.to_i > 0
     puts 'Pull request detected. Executing build only.'
-    success = system "bundle exec awestruct -P #{ENV['AWESTRUCT_PROFILE']} -g"
+    success = system "bundle exec awestruct -P staging -g"
     fail unless success
     next
   end
@@ -302,7 +302,7 @@ task :/ do
   end
   puts "Building and deploying site with command: bundle exec awestruct -P staging -g --deploy"
   system "git branch #{deploy_branch} origin/#{deploy_branch}"
-  success = system "bundle exec awestruct -P travis -g --deploy"
+  success = system "bundle exec awestruct -P staging -g --deploy"
   File.delete '.git/credentials'
   fail unless success
 end
