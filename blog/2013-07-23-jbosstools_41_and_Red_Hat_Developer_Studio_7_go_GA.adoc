@@ -1,10 +1,7 @@
----
-layout: blog
-title: JBoss Tools 4.1 and Red Hat JBoss Developer Studio 7 go GA
-author: fbricon
-tags: [jbosstools, jbds, mobile]
----
 = JBoss Tools 4.1 and Red Hat JBoss Developer Studio 7 go GA
+:page-layout: blog
+:page-author: fbricon
+:page-tags: [jbosstools, jbds, mobile]
 
 
 On behalf of the JBoss Tools and Developer Studio team, I'm extremely proud to announce the general availability of the JBoss Tools 4.1.0.Final and Red Hat JBoss Developer Studio 7.0.0.GA releases.
