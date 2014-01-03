@@ -2,4 +2,4 @@
 %html(lang="en")
   %head
     %meta{:charset=>"UTF-8"}
-    %meta{:"http-equiv"=>"Refresh", :content=>"0; url=#{page.target}"}
+    %meta{:"http-equiv"=>"Refresh", :content=>"0; url=#{join(site.base_url, page.target)}"}
