@@ -50,3 +50,4 @@ target
 .classpath
 _tmp
 .project
+link-checker-crawled-pages.pstore
