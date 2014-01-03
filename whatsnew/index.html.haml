@@ -1,26 +1,7 @@
 ---
-layout: project
-tab: docs
-title: What's New
+layout: redirect
 ---
 - firstWhatsnews = site.product_whatsnews.sort_by{|k,v| k}.reverse.first
 - jbt_core_version = firstWhatsnews[0]
 - first_module = firstWhatsnews[1][0]
-- puts "#{jbt_core_version} -> #{first_module.feature_id}"
-.row-fluid
-  .span3.sidebar
-    = partial('whatsnew_sidebar.html.haml', {:location=>first_module.output_path, :jbt_core_version=>jbt_core_version})       
-  .span9
-    #{first_module.content}
-.row-fluid
-  .span12.center.whatsnew-nav
-    - firstWhatsnews = site.product_whatsnews.sort_by{|k,v| k}.reverse.first
-    - next_module = firstWhatsnews[1][1]
-    %a.btn.btn-small{:href=>join(site.base_url, next_module.output_path)} 
-      #{site.modules[next_module.feature_id].name} &raquo;
-.row-fluid
-  .span12.center.page-note
-    :markdown
-      Visit our [archived news](http://docs.jboss.org/tools/whatsnew/index.html) for **previous versions** of individual new and noteworthy.
-    
-  
+- page.target = first_module.output_path

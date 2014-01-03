@@ -15,6 +15,6 @@ The JBoss Central UI has been reworked to, hopefully, provide a better user expe
 * A new link to the Ticket Monster tutorial has been added
 * Quickstarts are now more visible
 
-image:images/new-jboss-central.png[]
+image::images/new-jboss-central.png[]
 Related Jira
 

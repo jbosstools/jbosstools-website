@@ -29,7 +29,7 @@ The wizard is based on the JUnit Test Case wizard, but adds the following to a c
 * @RunWith(Arquillian.class) annotation
 * the deployment method
 
-image:images/arquillianjunitwizard1.png[]
+image::images/arquillianjunitwizard1.png[]
 
 The user can define the name of the deployment method, the name and order of the deployment, the type and name of the archive, add an empty beans.xml, available classes and resources to the deployment archive.
 
@@ -55,7 +55,7 @@ See http://screencast.com/t/y8bt7See[screencast].
 
 === Run As Arquillian launch configuration 	
 
-image:images/arquilliantab.png[]
+image::images/arquilliantab.png[]
 
 The Run As Arquillian launch configuration includes the following features:
 
@@ -87,7 +87,7 @@ See http://screencast.com/t/53XkyHltg[screencast].
 
 The Arquillian view (Arquillia Cruiser) shows Arquillian deployment archives.
 
-image:images/arquilliacruiser.png[]
+image::images/arquilliacruiser.png[]
 
 Related jira: JBIDE-6662
 

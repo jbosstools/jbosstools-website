@@ -13,7 +13,7 @@ When starting a JBoss server, the server adapter automatically adds deployment s
 
 Some users prefer to manage their deployment scanners on their own, and wish the server adapter did not automatically take control of this aspect of their development environment. For these users, two new settings have been added to the server editor which will allow control for this behavior.
 
-image:images/JBIDE-9830.png[Deployment Scanner Options in Server Editor]
+image::images/JBIDE-9830.png[Deployment Scanner Options in Server Editor]
 
 Related Jira
 
@@ -28,8 +28,8 @@ These operations are implemented with JBoss Management API instad of file copyin
 * Restart no longer does a full redeploy/publish. Use "Full publish" for this.
 * Status of the module in server view and administration console should now be in sync
 
-image:images/JBIDE-9830.png[Module Management in The Administrative Console]
+image::images/JBIDE-9830.png[Module Management in The Administrative Console]
 
-image:images/JBIDE-2625jbt.png[Module Start / Stop / Restart Actions]
+image::images/JBIDE-2625jbt.png[Module Start / Stop / Restart Actions]
 
 Related Jira 

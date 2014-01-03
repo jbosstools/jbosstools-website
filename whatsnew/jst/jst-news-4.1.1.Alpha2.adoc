@@ -10,9 +10,9 @@
 	
 Content assist (Ctrl+Space) is now available for AngularJS ng-* and data-ng-* attributes in HTML:
 
-image:images/4.1.1.Alpha2/ng-ca.png
+image::images/4.1.1.Alpha2/ng-ca.png
 
-image:images/4.1.1.Alpha2/ng-class-ca.png[]
+image::images/4.1.1.Alpha2/ng-class-ca.png[]
 
 
 

@@ -9,7 +9,7 @@
 === Verbose Cartridge Labels 
 In Beta1 we gave labels in the OpenShift application wizard some love. We show you better descriptions of what application you're about to create and what cartridge you're about to embed:
 
-image:images/cartridge-labels.png[]
+image::images/cartridge-labels.png[]
 
 Related Jira
 
@@ -17,7 +17,7 @@ Related Jira
 To create or import an OpenShift application in JBoss Tools you launch the application wizard that does all the heavy lifting for you. This wizard creates the application and imports it to a new project or merges it into an existing one. To then publish these changes to OpenShift, you get over to the server adapter and tell it to publish your Eclipse project.
 In Alpha2 you had to think about publishing and manually trigger the adapter once you had run through the wizard. Beta1 now prompts you right away and asks you if you want to push once the import/merge is done.
 
-image:images/pushing-if-no-changes.png[push to OpenShift]
+image::images/pushing-if-no-changes.png[push to OpenShift]
 
 Related Jira
 
@@ -26,14 +26,14 @@ Related Jira
 JBoss Tools offers you a server adapter to publish your local changes to OpenShift. This adapter does all git pushing for you. In case of maven projects publishing will usually trigger a maven build on OpenShift. This may therefore take quite some time. In Alpha2 you had to wait for this to complete in order to see the results. A limitation in Eclipse EGit prevented us from showing you the output while it was occurring.
 We improved EGit/JGit and contributed this enhancement to Eclipse. We are therefore now able to give you immediate feedback while we push to OpenShift.
 
-image:images/publishing-to-openshift.png[publishing to OpenShift]
+image::images/publishing-to-openshift.png[publishing to OpenShift]
 
 Related Jira
 
 === Restart Application 	
 In Alpha2 we allowed you to restart an application from the context menu in the OpenShift Explorer. Beta2 now adds this option to the context menu of the server adapter.
 
-image:images/server-adapter-restart.png[restart application]
+image::images/server-adapter-restart.png[restart application]
 
 Related Jira
 
@@ -46,14 +46,14 @@ Related Jira
 === Removing Cartridges
 Removing cartridges may cause loss of data. This is especially true when you remove databases like mysql, postgres or mongo db. Thus we now remind you of this potential risk and ask you to confirm this irreversible removal.
 
-image:images/remove-cartridge.png[confirm cartridge removal]
+image::images/remove-cartridge.png[confirm cartridge removal]
 
 Related Jira
 
 === Upload SSH Keys
 Various operations like cloning and inspecting your application logs require you to upload your SSH keys to OpenShift. In order to have an even smoother workflow the application wizard will prompt you if you have no keys on OpenShift yet. It will ask you right away to create a new or upload your existing key(s).
 
-image:images/add-ssh-keys.png[add ssh keys]
+image::images/add-ssh-keys.png[add ssh keys]
 
 Related Jira
 
@@ -67,7 +67,7 @@ Before Beta1 it could happen that you created a jenkins application but didn't g
 In order to fix this we increased the timeouts that made you miss these informations.
 To make your experience even smoother in case it still fails we now offer you a link to the environments variables in the creation dialog. This link allows you to easily look the credentials via a single click.
 
-image:images/timouted-see-in-envvars.png[link to environment variables]
+image::images/timouted-see-in-envvars.png[link to environment variables]
 
 Related Jira
 

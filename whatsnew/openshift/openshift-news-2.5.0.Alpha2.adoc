@@ -10,7 +10,7 @@
 
 If your application has issues you may want to restart it. You can now achieve that within JBoss Tools. Pick "Restart" from the context menu of your application in the OpenShift Explorer:
 
-image:images/restart-application.png[]
+image::images/restart-application.png[]
 
 Restarting your application will fully restart your node, it will not just restart your deployed project. It is equivalent to restarting your server.
 
@@ -20,7 +20,7 @@ Related Jira
 === Console not shown 	
 The server adapter for OpenShift allows you to publish your local changes to OpenShift. It pops up the console after publishing so that you can have a detailed look at what happened when pushing. In Alpha1 the console was not shown any more. We fixed this for Alpha2.
 
-image:images/console.png[]
+image::images/console.png[]
 Related Jira
 
 == OpenShift Java Client

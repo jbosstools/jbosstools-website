@@ -13,6 +13,6 @@ wildfly.org have been announced, with builds available of WildFly 8.
 
 New Server Type is introduced to add WildFly support for Server creation, deployment and runtime detection.
 
-image:images/wildfly.png[WildFly Server adapter]
+image::images/wildfly.png[WildFly Server adapter]
 
 Related Jira 

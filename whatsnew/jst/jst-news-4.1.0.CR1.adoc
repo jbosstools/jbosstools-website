@@ -11,7 +11,7 @@
 
 HTML text formatting for code snippets inserted via the Palette view was improved. The Palette view now creates a formatted HTML code based on Eclipse preferences for text editors.
 
-image:images/4.1.0.CR1/formatting.png[]
+image::images/4.1.0.CR1/formatting.png[]
 
 Related Jira
 
@@ -21,6 +21,6 @@ Related Jira
 
 New JSF Project wizard now supports JSF 2.2:
 
-image:images/4.1.0.CR1/jsf22wizard.png[]
+image::images/4.1.0.CR1/jsf22wizard.png[]
 
 Related Jira

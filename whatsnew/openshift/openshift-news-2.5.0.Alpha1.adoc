@@ -31,6 +31,6 @@ This meant the dialog could be misleading/unprecise to the user.
 
 Now OpenShift Tools will check against the proper remote (in case it is not 'origin') and do a fetch do be able to do a proper check if there really are changes locally compared to what is on the remote OpenShift.
 
-image:images/committed-not-published.png[ahead of remote repository]
+image::images/committed-not-published.png[ahead of remote repository]
 
 Related Jira 

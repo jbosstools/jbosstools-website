@@ -11,15 +11,15 @@
 
 CordovaSim is a simulator of http://cordova.apache.org/[Apache Cordova] (aka PhoneGap) environment based on BrowserSim and http://ripple.incubator.apache.org/[Ripple]. It emulates main APIs of Apache Cordova such as Accelerometer, Geolocation, Camera,https://github.com/phonegap/phonegap-plugins/tree/master/iOS/BarcodeScanner[Barcode Scanner], etc.
 
-image:images/4.1.0.Beta1/CordovaSim-demo.png[CordovaSim in action]
+image::images/4.1.0.Beta1/CordovaSim-demo.png[CordovaSim in action]
 
 There is CordovaSim Launch configuration which can run http://../aerogear/aerogear-news-1.0.0.Beta1.html[Hybrid Mobile projects] and Cordova enabled Android projects.
 
-image:images/4.1.0.Beta1/CordovaSim-launch-configuration-dialog.png[CordovaSim Launch Configuration]
+image::images/4.1.0.Beta1/CordovaSim-launch-configuration-dialog.png[CordovaSim Launch Configuration]
 
 The Launch Configuration is also available from the Run As context menu.
 
-image:images/4.1.0.Beta1/CordovaSim-run-as.png[Run As CordovaSim]
+image::images/4.1.0.Beta1/CordovaSim-run-as.png[Run As CordovaSim]
 
 Related JIRAs: JBIDE-13552, JBIDE-14362, JBIDE-14300, JBIDE-14383.
 
@@ -29,7 +29,7 @@ Related JIRAs: JBIDE-13552, JBIDE-14362, JBIDE-14300, JBIDE-14383.
 
 If you enable LiveReload BrowserSim will inject livereload.js into html pages it load. Making it automatically load if the url is managed by a livereload server such as JBoss Tools new LiveReload plugin.
 
-image:images/4.1.0.Beta1/BrowserSim-livereload.png[Enable Livereload]
+image::images/4.1.0.Beta1/BrowserSim-livereload.png[Enable Livereload]
 
 Related JIRA: JBIDE-14360.
 
@@ -37,10 +37,10 @@ Related JIRA: JBIDE-14360.
 
 Now you can open more than one BrowserSim windows which work synchronously. It provides ability to see multiple devices rendering the same page, repeat your navigation steps and when reload it reloads all of them. Synchronized window can be opened via Menu > Open Synchronized Window > skin_to_open
 
-image:images/4.1.0.Beta1/BrowserSim-open-synchronized.png[Open Synchronized Window]
+image::images/4.1.0.Beta1/BrowserSim-open-synchronized.png[Open Synchronized Window]
 
 As a result of this action two devices working synchronously will appear.
 
-image:images/4.1.0.Beta1/BrowserSim-opened-synchronized.png[Synchronized Windows]
+image::images/4.1.0.Beta1/BrowserSim-opened-synchronized.png[Synchronized Windows]
 
 Related JIRA:JBIDE-13525. 

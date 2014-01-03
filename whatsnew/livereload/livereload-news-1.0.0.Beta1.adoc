@@ -20,11 +20,11 @@ The LiveReload server now features an optional embedded proxy mode which enhance
 
 In the Project Explorer and Package Explorer, the contextual menu has been filled with a new "Open With>Web Browser via LiveReload Proxy" action. This latter one opens the selected file in the Web Browser, but instead of using the file:// protocol, it uses the http:// protocol and connects to the LiveReload embedded proxy.
 
-image:images/LiveReload_open_in_web_browser_via_proxy.png[]
+image::images/LiveReload_open_in_web_browser_via_proxy.png[]
 
 For security reasons, the proxy is disabled by default. Once enabled, it may optionally accept remote connections if you want to enable LiveReload from remote devices or remote computers. For users wanting to use the BrowserSim with LiveReload, there is no need to allow for remote connections.
 
-image:images/LiveReload_open_in_web_browser_via_proxy.png[]
+image::images/LiveReload_open_in_web_browser_via_proxy.png[]
 
 In any case, only workspace projects files are exposed by this Proxy.
 
