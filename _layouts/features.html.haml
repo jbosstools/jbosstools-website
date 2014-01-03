@@ -31,7 +31,7 @@ tab: features
       - feature = site.features.each do |feature_id, feature|
         - if feature.url != join(site.base_url, page.url)
           %li
-            %a{:href => join(site.base_url, feature.url)} #{feature.name}
+            %a{:href => feature.url} #{feature.name}
     
   .span10#feature
     ~content
