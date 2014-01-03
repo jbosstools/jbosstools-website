@@ -1,0 +1,28 @@
+categories:
+  Installation:
+    EclipseMarketPlace:
+      name: Eclipse Marketplace
+      vimeo_id: 39743315
+    JBDS5Installation:
+      name: JBDS 5 Installation, HTML5, Mobile and OpenShift
+      vimeo_id: 39606090
+  Technology Introduction:
+    JavaEE6Arquillian:
+      name: Java EE 6 + Arquillian
+      vimeo_id: 39607154
+    RichFaces4:
+      name: Richfaces 4 Desktop & Mobile
+      vimeo_id: 39607711
+    ForgeInJBDS5:
+      name: Forge in JBoss Developer Studio 5
+      vimeo_id: 39608223
+    GWT:
+      name: Google Web Toolkit
+      vimeo_id: 39743919
+  Reverse Engineering / CRUD Generation:
+    HibernateToolsRevEng:
+      name: Hibernate Tools Reverse Engineering
+      vimeo_id: 39608294
+    ForgeRevEng:
+      name: Forge Reverse Engineering
+      vimeo_id: 39608326

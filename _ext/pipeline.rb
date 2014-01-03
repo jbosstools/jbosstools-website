@@ -20,6 +20,7 @@ require 'whatsnew'
 require 'downloads'
 require 'downloads_helper'
 require 'myposts'
+require 'videos'
 require 'uri_helper'
 require 'build_info'
 
@@ -54,11 +55,13 @@ Awestruct::Extensions::Pipeline.new do
   
   #extension Awestruct::Extensions::Indexifier.new
   # Needs to be after Indexifier to get the linking correct; 
-  extension Awestruct::Extensions::Features::Index.new('/features')
+  extension Awestruct::Extensions::Features.new('/features')
   # Needs to be after Indexifier to get the linking correct; 
-  extension Awestruct::Extensions::Whatsnew::Index.new('/whatsnew')
+  extension Awestruct::Extensions::Whatsnew.new('/whatsnew')
 
-  extension Awestruct::Extensions::Events::Index.new('/events')
+  extension Awestruct::Extensions::Videos.new('/videos')
+
+  extension Awestruct::Extensions::Events.new('/events')
   
   extension Awestruct::Extensions::Disqus.new()
   
