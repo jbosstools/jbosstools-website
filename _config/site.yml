@@ -12,7 +12,7 @@ textile:
 asciidoctor:
   :safe: safe
   :attributes:
-    imagesdir: .
+    imagesdir: ./@
     icons: font
     
 # Default minify settings

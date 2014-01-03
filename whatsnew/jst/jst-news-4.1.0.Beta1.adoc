@@ -11,19 +11,19 @@ There are a few new jQuery Mobile widget wizards available in http://www.screenr
 
 * Panel: 
   
-image:images/4.1.0.Beta1/panel.png[]
+image::images/4.1.0.Beta1/panel.png[]
 
 Related Jira
 
 * Grouped Buttons:
 
-image:images/4.1.0.Beta1/buttons.png[]
+image::images/4.1.0.Beta1/buttons.png[]
 
 Related Jira
 
 * Collapsible Set:
 
-image:images/4.1.0.Beta1/set.png[]
+image::images/4.1.0.Beta1/set.png[]
 
 Related Jira
 
@@ -36,7 +36,7 @@ There are also some minor enhancements of wizards introduced in 4.1.0.Alpha:
 
 New content assist is now available for URL properties in New JQM Widget wizards. Just use Ctrl+Space to see all the available pages, dialogs, popups and panels declared in the file you are editing:
 
-image:images/4.1.0.Beta1/ca.png[]
+image::images/4.1.0.Beta1/ca.png[]
 
 Related Jira
 
@@ -52,6 +52,6 @@ Related Jira
 
 New HTML5 jQuery Mobile page template was updated to the new JQM 1.3.1:
 
-image:images/4.1.0.Beta1/ca.png[]
+image::images/4.1.0.Beta1/ca.png[]
 
 Related Jira

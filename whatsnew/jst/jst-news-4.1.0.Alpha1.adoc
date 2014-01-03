@@ -18,7 +18,7 @@ Related Jira 2
 
 New Check Box Wizard is now opened when you DnD the check box widget from jQueryMobile Palette. This is the first wizard for jQuery mobile palette we introduced in JBoss Tools 4.1.0.Alpha1. More wizards are coming.
 
-image:images/4.1.0.Alpha1/checkBox.png[]
+image::images/4.1.0.Alpha1/checkBox.png[]
 
 Related Jira
 

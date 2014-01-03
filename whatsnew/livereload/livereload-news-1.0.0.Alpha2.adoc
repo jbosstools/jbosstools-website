@@ -11,15 +11,15 @@ JBoss Tools LiveReload is a server-side implementation of the  http://feedback.l
 
 As a user, you first need to create a "LiveReload" server in the Servers View and start it.
 
-image:images/livereload_serversview.png[]
+image::images/livereload_serversview.png[]
 
 By default, the LiveReload server and the browser extension communicate with Web Sockets over the 35729 port, but this can be configured.
 
-image:images/livereload_server_configuration.png[]
+image::images/livereload_server_configuration.png[]
 
 Then, you just have to select a file in your workspace and in the contextual menu, use the "Open With > Web Browser" command.
 
-image:images/livereload_openwithbrowser.png[]
+image::images/livereload_openwithbrowser.png[]
 
 The file will open in your default Web Browser. From there, you activate the LiveReload extension (see below for instructions on how to install it on Chrome and Firefox). Then, each time you save the file, it is automatically refreshed in the browser.
 

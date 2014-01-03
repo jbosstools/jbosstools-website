@@ -15,13 +15,13 @@ The automatic Source Lookup feature is based on Maven. As such, downloaded sourc
 
 Since JDT doesn't support variables in source attachments (such as M2_REPO), source attachments use absolute (non-portable) paths. It's ok when the jar is part of a Classpath Library, since the path is stored in your own workspace. But it can become a problem if your jar dependency is listed in your project's .classpath descriptor, potentially shared with other developers. For this reason, by default, you'll be warned when a compatible source has been found :
 
-image:images/automatic_source_lookup_prompt.png[]
+image::images/automatic_source_lookup_prompt.png[]
 
 See it in action in this http://goo.gl/rzzXr[screencast].
 
 If you click on "Remember my decision", your choice will be applied for subsequent source lookups. Your choice can be modified under Window > Preferences > JBoss Tools > Source Lookup :
 
-image:images/automatic_source_lookup_prefs.png[]
+image::images/automatic_source_lookup_prefs.png[]
 
 One advantage of the Source Lookup feature is it'll check if source attachments are valid. for instance, if the source attachment points to a missing / invalid file, the proper source will be mapped instead. This mitigates the non-portable issue mentioned previously.
 

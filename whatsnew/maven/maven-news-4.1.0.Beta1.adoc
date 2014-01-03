@@ -10,7 +10,7 @@
 
 Maven Repositories defined in profiles in your settings.xml (Window > Preferences > JBoss Tools > Maven Integration > Configure Maven Repositories...) can now be edited with the "Edit Repository..." button :
 
-image:images/edit-maven-repositories.png
+image::images/edit-maven-repositories.png
 Inactive repositories now stand out with an (Inactive) suffix. Click on the "Edit Repository..." button to (re)activate them.
 See JBIDE-13831 for more details.
 

@@ -13,7 +13,7 @@ A groovy command with proper arguments is generated under Preferences > JBoss To
 
 Click on the copy to clipboard button and then paste the clipboard in a terminal. An offline/ directory will be created in the directory the script is run under.
 
-image:images/examples-offline-support.png[]
+image::images/examples-offline-support.png[]
 
 All Example archives will be downloaded under offline/.jbosstools/cache. They will then be built -if based on Maven- and the Maven dependencies will populate a clean offline/.m2/repository. The whole process takes typically around 30 minutes on a 20MB broadband connection.
 

@@ -9,7 +9,7 @@
 
  The jQuery Mobile Palette introduced in jst-news-4.1.0.Alpha1.html[Alpha1] has been improved in Alpha2. It's now available for any HTML5 file opened with JBoss Tools HTML Editor (https://issues.jboss.org/browse/JBIDE-13679[Related Jira]) and has a new look and feel:
 
-image:images/4.1.0.Alpha2/lf.png[]
+image::images/4.1.0.Alpha2/lf.png[]
 
 Here is a list of new jQuery Mobile widget wizards available for Alpha2:
 
@@ -35,7 +35,7 @@ Here is a list of new jQuery Mobile widget wizards available for Alpha2:
 
 You can find some particular widget using the filter field (https://issues.jboss.org/browse/JBIDE-13493[Related Jira]):
 
-image:images/4.1.0.Alpha2/filter.png[]
+image::images/4.1.0.Alpha2/filter.png[]
 
 The wizards will add jQuery & jQuery Mobile JS/CSS references automatically if they are missing on the page. However this insertion can be disabled in the wizard (https://issues.jboss.org/browse/JBIDE-13775[Related Jira]):
 
@@ -48,11 +48,11 @@ Related Jira
 
 HTML code completion (Ctrl+Space) is now available for data-* attributes for HTML5 pages with jQuery Mobile JS referenced in <head> tag:
 
-image:images/4.1.0.Alpha2/data-icon.png[]
+image::images/4.1.0.Alpha2/data-icon.png[]
 
 Code completion also works for element IDs if you type # and press Ctrl+Space:
 
-image:images/4.1.0.Alpha2/ahref.png[]
+image::images/4.1.0.Alpha2/ahref.png[]
 
 Related Jira 1
 Related Jira 2

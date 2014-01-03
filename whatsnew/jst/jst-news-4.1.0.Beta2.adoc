@@ -9,35 +9,35 @@
 
 A few new HTML5 widget wizards are now available in jQuery Mobile Palette for HTML5 files:
 
-image:images/4.1.0.Beta2/palette.png[]
+image::images/4.1.0.Beta2/palette.png[]
 
 * Form:
 
-image:images/4.1.0.Beta2/form.png[]
+image::images/4.1.0.Beta2/form.png[]
 
 Related Jira
 
 * Image:
 
-image:images/4.1.0.Beta2/img.png[]
+image::images/4.1.0.Beta2/img.png[]
 
 Related Jira
 
 * Video:
 
-image:images/4.1.0.Beta2/video.png[]
+image::images/4.1.0.Beta2/video.png[]
 
 Related Jira
 
 * Audio:
 
-image:images/4.1.0.Beta2/audio.png[]
+image::images/4.1.0.Beta2/audio.png[]
 
 Related Jira
 
 * Label:
 
-image:images/4.1.0.Beta2/label.png[]
+image::images/4.1.0.Beta2/label.png[]
 
 Related Jira
 
@@ -47,6 +47,6 @@ Related Jira
 
 JBoss Tools XML editor now supports Faces Config 2.2:
 
-image:images/4.1.0.Beta2/jsf22.png[]
+image::images/4.1.0.Beta2/jsf22.png[]
 
 Related Jira

@@ -11,7 +11,7 @@ Project examples plugin can now open a .cheatsheet.xml or cheatsheet.xml when a 
 
 For now this feature must be enabled manually using the *Window>Preferences>JBoss Tools>Project Examples* preferences page.
 
-image:images/OpenAction.png[]
+image::images/OpenAction.png[]
 
 Related JIRA : JBIDE-14332
 

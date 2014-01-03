@@ -10,7 +10,7 @@
 
 The JBoss Tools JPA, JSF and JAX-RS configurators were contributed to the https://www.eclipse.org/m2e-wtp/[m2e-wtp] project, at the Eclipse Foundation. The can be enabled/disabled in the workspace preferences : Window > Preferences > Maven > Java EE Integration :
 
-image:images/m2e-wtp-optional-configurator-preferences.png[]
+image::images/m2e-wtp-optional-configurator-preferences.png[]
 
 They're available as optional features from m2e-wtp's update sites.
 

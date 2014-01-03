@@ -10,7 +10,7 @@
 
 BrowserSim got iPad and iPad Mini skins.
 
-image:images/4.1.0.Alpha2/ipad-skins.png[New iPad Skins]
+image::images/4.1.0.Alpha2/ipad-skins.png[New iPad Skins]
 
 Related JIRAs: JBIDE-13685, JBIDE-13684, JBIDE-13416.
 
@@ -18,7 +18,7 @@ Related JIRAs: JBIDE-13685, JBIDE-13684, JBIDE-13416.
 
 We added the ability to easily take screenshots of BrowserSim. By default, they are stored in the user's home directory, but this can be changed via Menu > Preferences > Screenshots Location.
 
-image:images/4.1.0.Alpha2/screenshot.png[Screenshot Menu Items]
+image::images/4.1.0.Alpha2/screenshot.png[Screenshot Menu Items]
 
 Related Jira
 
@@ -28,6 +28,6 @@ Now you can inspect your page's source with Weinre. It is available via *Menu > 
 
 http://people.apache.org/~pmuellr/weinre/docs/latest/Home.html[Weinre] is a debugger for web pages. It is similar to WebKit Web Inspector, but can run on devices with limited debug functionallity such as BrowserSim. To do this it requires a Weinre server to work. The default server for BrowserSim is http://debug.phonegap.com/[debug.phonegap.com]. You may change this setting in *Menu > Preferences > Weinre*.
 
-image:images/4.1.0.Alpha2/weinre.png[Weinre with BrowserSim]
+image::images/4.1.0.Alpha2/weinre.png[Weinre with BrowserSim]
 
 Related Jira 

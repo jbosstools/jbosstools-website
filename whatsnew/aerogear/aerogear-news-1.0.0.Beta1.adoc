@@ -8,7 +8,7 @@
 === Hybrid Mobile (Cordova) Tools
 New Hybrid Mobile Project wizard 	Creates a project structure that is compatible with the cordova-cli projects
 
-image:images/1.0.0.Beta1/wizard.png[]
+image::images/1.0.0.Beta1/wizard.png[]
 
 Wizard will pre-populate your config.xml.
 
@@ -18,7 +18,7 @@ Related Jira
 
 Provides easier editing for Cordova's flavour of w3c widget specification XML configuration
 
-image:images/1.0.0.Beta1/configEditor.png[]
+image::images/1.0.0.Beta1/configEditor.png[]
 
 Related Jira
 
@@ -26,7 +26,7 @@ Related Jira
 
 Creates, compiles and runs the native application on the native platform emulators and devices.
 
-image:images/1.0.0.Beta1/runConfigs.png[]
+image::images/1.0.0.Beta1/runConfigs.png[]
 
 * Run on iOS emulator. Creates and compiles a XCode project and runs the resulting artifacts on the iOS simulator.
 * Run on Android emulator Creates and compiles an Android project and runs it on the Android emulator.

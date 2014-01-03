@@ -8,4 +8,4 @@
 === New Embedded Forge Runtime 	
 
 The embedded runtime is now Forge 1.2.0.Final!
-image:images/4.1.0.Alpha1/about.png[]
+image::images/4.1.0.Alpha1/about.png[]
