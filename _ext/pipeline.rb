@@ -65,6 +65,8 @@ Awestruct::Extensions::Pipeline.new do
   
   extension Awestruct::Extensions::Disqus.new()
   
+  extension Awestruct::Extensions::Atomizer.new(:posts, '/blog/news.atom')
+  
   helper Awestruct::Extensions::GoogleAnalytics
   
 end
