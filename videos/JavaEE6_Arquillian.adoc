@@ -1,0 +1,6 @@
+= Java EE 6 + Arquillian
+:page-layout: videos
+:page-category: introduction
+
+video::39607154[vimeo, width=640, height=400]
+   

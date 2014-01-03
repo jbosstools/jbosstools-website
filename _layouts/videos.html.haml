@@ -1,0 +1,21 @@
+---
+layout: project
+tab: guides
+---
+- category_labels = {"installation"=>"Installation", "introduction"=>"Technical Introduction", "reveng"=>"Reverse Engineering"}
+.row-fluid
+  .span4.sidebar
+    %ul.nav.nav-list
+      - site.videos.each do |category, videos|
+        %li.nav-header
+          #{category_labels[category]}
+        - videos.each do |video|
+          - if page.output_path == video.output_path
+            %li.active 
+              %a{:href=>join(site.base_url, video.output_path)} #{video.title}
+          - else
+            %li
+              %a{:href=>join(site.base_url, video.output_path)} #{video.title}
+                      
+  .span8
+    ~content

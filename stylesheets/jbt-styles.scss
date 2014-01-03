@@ -707,3 +707,111 @@ span.label {
     }
   }
 }
+
+// *****************************************
+// Videos
+// *****************************************
+
+#video {
+  h5,h6 {
+    color: #4a5d75;
+  }
+
+  /*#container-reduced {
+    width:75%; 
+    margin-left: auto;
+    margin-right: auto;
+  }*/
+
+  #player iframe {
+    width: 100%;
+    height: 100%;
+    border: 0px;
+    position: relative;
+    z-index: 920;
+  }
+
+  .videocontrol {
+    text-decoration: none;
+    display: block;
+  }
+
+  .playerbox {
+    z-index: 900;
+    /* prevent shadows falling behind containers with backgrounds */
+    overflow: hidden;
+    list-style: none;
+    margin: 0;
+    position: relative;
+  }
+
+  .playerbox #player {
+    z-index: 910;
+    width: 100%;
+    height: 400px;
+    background: black;
+    border: 1px solid black;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    padding: 0;
+    /*border: 1px solid #efefef;*/
+    margin-bottom: 30px;
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 40px
+      rgba(0, 0, 0, 0.06) inset;
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 40px
+      rgba(0, 0, 0, 0.06) inset;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.06)
+      inset;
+  }
+
+  .playerbox #player:before, .playerbox #player:after {
+    content: '';
+    z-index: 905;
+    position: absolute;
+    background: black;
+    left: 10px;
+    bottom: 10px;
+    width: 50%;
+    max-width: 300px;
+    /* avoid rotation causing ugly appearance at large container widths */
+    max-height: 100px;
+    height: 55%;
+    -webkit-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+    -moz-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+    -webkit-transform: rotate(-3deg);
+    -moz-transform: rotate(-3deg);
+    -ms-transform: rotate(-3deg);
+    -o-transform: rotate(-3deg);
+    transform: rotate(-3deg);
+  }
+
+  .playerbox #player:after {
+    left: auto;
+    right: 10px;
+    -webkit-transform: rotate(3deg);
+    -moz-transform: rotate(3deg);
+    -ms-transform: rotate(3deg);
+    -o-transform: rotate(3deg);
+    transform: rotate(3deg);
+  }
+
+  .span4 {
+    width:33%;
+    margin-left: 0px;
+    padding-left: 0px;
+    margin-right: 0px;
+    padding-right: 0px;
+  
+  }
+
+  ul.items li {
+    display: inline;
+    list-style-type: none;
+    text-align:left;
+  }
+
+
+
+}
