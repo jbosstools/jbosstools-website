@@ -20,7 +20,7 @@ div.right, span.right {
   text-align: right;
 }
 
-div.float-right, span.float-right {
+.float-right {
   float:right;
 }
 
@@ -173,6 +173,10 @@ div.alert {
 
 .button {
   cursor: pointer;
+}
+
+#rss-icon {
+  vertical-align:top;
 }
 
 // ******************************************************
@@ -596,7 +600,7 @@ span.label {
   }
   
   .title-wrapper {
-    img {
+    img.img-polaroid {
       float:left;
       margin-right: 10px;
     }
