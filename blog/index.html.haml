@@ -27,9 +27,10 @@ tab: community
               %strong< #{site.team[post.author].name}
               on 
               %strong< #{post.date.strftime( '%b %d, %Y' )}.
-              - if(post.tags != null && !post.tags.empty?) 
-                - post.tags.each do |tag|
-                  %a.label.label-info{:href=>relative("#{tag.primary_page.url}")}#{tag}
+              %p
+                - if(post.tags != null && !post.tags.empty?) 
+                  - post.tags.each do |tag|
+                    %a.label.label-info{:href=>relative("#{tag.primary_page.url}")} #{tag}
         .body
           #{post.content}
         %hr
