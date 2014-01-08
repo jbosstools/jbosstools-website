@@ -66,7 +66,7 @@ Given the following configuration :
 </plugin>
 ----
 
-When m2e-wtp is present, m2e-wro4j automatically translates ${project.build.directory}/${project.build.finalName}/* output directories (the default values used by wro4j-maven-plugin) to ${project.build.directory}/m2e-wtp/web-resources/. This gives you on-the-fly redeployment of optimized resources on WTP controlled servers.
+When m2e-wtp is present, m2e-wro4j automatically translates ${project.build.directory}/${project.build.finalName}/* output directories (the default values used by wro4j-maven-plugin) to _${project.build.directory}/m2e-wtp/web-resources/_. This gives you on-the-fly redeployment of optimized resources on WTP controlled servers.
 
 
 [NOTE] 
@@ -81,10 +81,10 @@ image::images/html5-project-jboss-central.png[]
 
 I used *kitchensink* as a project name.
 
-This project already has some wro4j-maven-plugin configuration we can use. All we need is to make the switch between regular and minify versions of the build more user friendly.
+This project already has some _wro4j-maven-plugin_ configuration we can use. All we need is to make the switch between regular and minified versions of the build more user friendly.
 
 == Enable minification
-First, we need to remove one xml snippet from the pom.xml which prevents wro4j-maven-plugin from running during Eclipse builds, thus cancelling m2e-wro4j's efforts. Go to the _minify_ profile and delete :
+First, we need to remove one xml snippet from the pom.xml which prevents _wro4j-maven-plugin_ from running during Eclipse builds, thus cancelling m2e-wro4j's efforts. Go to the _minify_ profile and delete :
 [source,xml]
 ----
 <pluginManagement>
@@ -228,18 +228,18 @@ image::images/minified-resources.png[]
 
 image::images/deployed-application1.png[]
  
-If you're on a desktop, modify the color of the h1 class in _src/main/webapp/css/d.screen.css_ and save. This will trigger *wro4j-maven-plugin:run* which will regenerate the minified version under target/m2e-wtp/web-resources/css/d.screen.min.css, which in turn will be deployed on Wildfly by the server adapter. 
+If you're on a desktop, modify the color of the *h1* class in _src/main/webapp/css/d.screen.css_ and save. This will trigger *wro4j-maven-plugin:run* which will regenerate the minified version under _target/m2e-wtp/web-resources/css/d.screen.min.css_, which in turn will be deployed on Wildfly by the server adapter. 
 
-Reloading the page will show the changes directly :
+Reloading the page (after the build is complete) will show the changes directly :
 
 image::images/deployed-application2.png[]
 
-Now you can switch back to using the regular, non-minified version by hitting Ctrl+Alt+P in the workbench, unselect the _minify_ profile and wait for the build to complete.
-After you rreload your browser page, you'll notice, if you look at the source page, the minified versions are not referenced anymore.
+Now you can switch back to using the regular, non-minified version by hitting *Ctrl+Alt+P* in the workbench, unselect the _minify_ profile and wait for the build to complete.
+After you reload your browser page, you'll notice, if you look at the source page, the minified versions are not referenced anymore.
 
 [NOTE]
 ====
-The minified files still exist under _target/m2e-wtp/web-resources/_ and are deployed as such. They're unused, so they're harmless, but you'd need to perform a clean build to remove them if necessary.
+The minified files still exist under _target/m2e-wtp/web-resources/_ and are deployed as such. They're unused, so they're harmless, but you'd need to perform a clean build to remove them, if necessary.
 ====
 
 
@@ -256,5 +256,5 @@ As always, for all your WRO4J or wro4j-maven-plugin specific issues, I strongly 
  
 Have fun!
 
-Fred Bricon +
+Fred Bricon
 https://twitter.com/fbricon
