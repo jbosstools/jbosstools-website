@@ -242,12 +242,12 @@ After you reload your browser page, you'll notice, if you look at the source pag
 The minified files still exist under _target/m2e-wtp/web-resources/_ and are deployed as such. They're unused, so they're harmless, but you'd need to perform a clean build to remove them, if necessary.
 ====
 
+== Conclusion
+Dealing with optimized resources in Eclipse is made really easy with a combination of the right tools. Just focus on code, save your work, see the changes instantly. *WRO4J* and *wro4j-maven-plugin* can give you much more than what we just saw here (resource aggregation, obfuscation, less processing ...). Hopefully you'll want to give it a try after reading this article, and if you do, don't forget to give us your feedback.   
 
-== Your feedback is important
- 
 Issues with m2e-wro4j can be opened at https://github.com/jbosstools/m2e-wro4j/issues. 
 
-Issues wwith the Maven Profile Manager can be opened at https://issues.jboss.org/browse/JBIDE/component/12312576
+Issues with the Maven Profile Manager can be opened at https://issues.jboss.org/browse/JBIDE/component/12312576
  
 As always, for all your WRO4J or wro4j-maven-plugin specific issues, I strongly encourage you to :
 
