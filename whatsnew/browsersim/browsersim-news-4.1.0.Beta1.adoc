@@ -9,11 +9,11 @@
 
 ==== New CordovaSim Application
 
-CordovaSim is a simulator of http://cordova.apache.org/[Apache Cordova] (aka PhoneGap) environment based on BrowserSim and http://ripple.incubator.apache.org/[Ripple]. It emulates main APIs of Apache Cordova such as Accelerometer, Geolocation, Camera,https://github.com/phonegap/phonegap-plugins/tree/master/iOS/BarcodeScanner[Barcode Scanner], etc.
+CordovaSim is a simulator of http://cordova.apache.org/[Apache Cordova] (aka PhoneGap) environment based on BrowserSim and http://ripple.incubator.apache.org/[Ripple]. It emulates main APIs of Apache Cordova such as Accelerometer, Geolocation, Camera, https://github.com/phonegap/phonegap-plugins/tree/master/iOS/BarcodeScanner[Barcode Scanner], etc.
 
 image::images/4.1.0.Beta1/CordovaSim-demo.png[CordovaSim in action]
 
-There is CordovaSim Launch configuration which can run http://../aerogear/aerogear-news-1.0.0.Beta1.html[Hybrid Mobile projects] and Cordova enabled Android projects.
+There is CordovaSim Launch configuration which can run Hybrid Mobile projects and Cordova enabled Android projects.
 
 image::images/4.1.0.Beta1/CordovaSim-launch-configuration-dialog.png[CordovaSim Launch Configuration]
 

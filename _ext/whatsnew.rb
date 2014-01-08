@@ -20,7 +20,7 @@ module Awestruct
         site.pages.each do |page|
           if page.relative_source_path =~ /^#{@path_prefix}\/.*\.adoc/ then
             $LOG.debug " Processing N&N " + page.feature_id.to_s +  " " + page.feature_version.to_s if $LOG.debug?
-            puts " Processing N&N for " + page.feature_id.to_s + " " + page.feature_version
+            #puts " Processing N&N for " + page.feature_id.to_s + " " + page.feature_version
             whatsnew = OpenStruct.new
             site.engine.set_urls([page])
             whatsnew.url = page.url
@@ -79,7 +79,7 @@ module Awestruct
         throw Exception.new( "too many choices for #{simple_path}" ) if candidates.size != 1
         whatsnew_page = @site.engine.load_page( candidates[0] )
         whatsnew_page.output_path = File.join(paths)
-        puts " Added page " + whatsnew_page.output_path
+        #puts " Added page " + whatsnew_page.output_path
         @site.pages << whatsnew_page
         return whatsnew_page
       end

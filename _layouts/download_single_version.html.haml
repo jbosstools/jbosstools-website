@@ -39,8 +39,9 @@ tab: downloads
       .alert.alert-success
         #{page.build_info.name} #{page.build_info.version} was released on #{page.build_info.release_date}. 
         - if page.build_info.blog_announcement_url
+          -puts "page.build_info.blog_announcement_url=" + page.build_info.blog_announcement_url.to_s
           Read the
-          %a{:href=>page.build_info.blog_announcement_url} announcement on our blog
+          %a{:href=>relative(page.build_info.blog_announcement_url)} announcement on our blog
           to know more about it.
     - elsif page.build_info.build_type == :development
       .alert.alert-info
