@@ -11,7 +11,7 @@ title: Events
     - for event in events
       .justify
         %h4
-          %a{:href=>join(site.base_url, event.output_path)} #{event.title}
+          %a{:href=>relative(event.output_path)} #{event.title}
         %strong  
           #{event.event_date} 
           in
