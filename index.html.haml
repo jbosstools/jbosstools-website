@@ -28,13 +28,13 @@ title: Home
       %header
         %h3
           %i.icon-magic
-          %a{:href => feature.url} Feature Highlight
+          %a{:href=>relative(feature.url)} Feature Highlight
       .item.center
         %span.tagline
-          %a{:href => feature.url}
+          %a{:href=>relative(feature.url)}
             #{feature.tagline} 
-        %a.block{:href=>feature.url}
-          %img{:src=>feature.image_url}
+        %a.block{:href=>relative(feature.url)}
+          %img{:src=>relative(feature.image_url)}
   
   %section.span4  
     %header
