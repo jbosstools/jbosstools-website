@@ -9,7 +9,7 @@ tab: community
   - else 
     %h1< 
       Latest Articles
-      %a{:href => relative("/blog/news.atom")}
+      %a{:href=>relative("/blog/news.atom")}
         %img#rss-icon{:src=>relative("/images/feed-icon-28x28.png")}
   
 .row-fluid
@@ -17,7 +17,7 @@ tab: community
     - for post in page.posts
       .post
         .title-wrapper
-          %img.img-polaroid{:src => "#{site.team[post.author].photo_64px}"}
+          %img.img-polaroid{:src=>"#{site.team[post.author].photo_64px}"}
           .title
             %h3
               %a{:href=>relative("#{post.url}")}= post.title
