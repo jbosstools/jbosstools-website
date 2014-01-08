@@ -12,7 +12,7 @@ tab: downloads
           #{site.products[:eclipse][eclipse_builds[0]].full_name}
         - eclipse_builds[1].each do |build_type, download_page|
           %li{:class=>("active" if download_page.build_info == page.build_info)}
-            %a{:href=>"#{site.base_url}#{download_page.output_path}"}
+            %a{:href=>relative(download_page.output_path)}
               %span
                 #{download_page.build_info.version}
               %span{:class=>"label label_#{build_type}"}
@@ -20,7 +20,7 @@ tab: downloads
       %li.divider          
       %li.nav-header The Full Monty
       %li
-        %a{:href=>"#{site.base_url}#{site.all_versions_download_pages[page.product].output_path}"}
+        %a{:href=>relative(site.all_versions_download_pages[page.product].output_path)}
           %span
             All Versions
   .span9
@@ -71,7 +71,7 @@ tab: downloads
           %p
             Drag and drop the 
             %a{:href=>page.build_info.marketplace_install_url, :title=>"Install"}
-              %img{:src=>"#{site.base_url}/images/tools/installbutton.png", :alt=>"Drag and drop this button into a running #{eclipse_name} workspace to install #{page.build_info.name}", :height=>"25", :width=>"63"}
+              %img{:src=>relative("/images/tools/installbutton.png"), :alt=>"Drag and drop this button into a running #{eclipse_name} workspace to install #{page.build_info.name}", :height=>"25", :width=>"63"}
             icon on your active
             %strong< #{page.build_info.eclipse_version.full_name} 
             workspace, or alternatively, search for &quot;

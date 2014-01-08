@@ -1,7 +1,51 @@
 !!! 5
 %html(lang="en")
   %head
-    = partial( page.head_partial.nil? ? 'head.html.haml' : page.head_partial , { "real_page" => page } )
+    %title #{site.title} #{page.title ? (" - " + page.title): ""}
+    %meta(charset="utf-8")
+    %meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    %meta(name="description" content="#{page.description}")
+    %meta(name="author" content="#{page.author}")
+    %meta(http-equiv="Last-Modified" content="#{site.buildTime}")
+
+    - pageStyle = page.style ;
+    %link(href="#{pageStyle ? site[pageStyle].bootstrap_css_url : site.bootstrap_css_url}#{site.minified}.css" rel="stylesheet" media="screen")
+    / IE 6-8 support of HTML 5 elements
+    /[if lt IE 9]
+      %script(src="#{site.jborg_js_url}/libs/html5/pre3.6/html5.min.js")
+
+    / Defines the project favicon. Change these URLs to your specific project folder on static.jboss.org.
+
+    %link(rel="shortcut icon" href="#{site.project_images_url}/favicon.ico")
+    %link(rel="apple-touch-icon-precomposed" sizes="144x144" href="#{site.project_images_url}/apple-touch-icon-144x144-precomposed.png")
+    %link(rel="apple-touch-icon-precomposed" sizes="114x114" href="#{site.project_images_url}/apple-touch-icon-114x114-precomposed.png")
+    %link(rel="apple-touch-icon-precomposed" sizes="72x72" href="#{site.project_images_url}/apple-touch-icon-72x72-precomposed.png")
+    %link(rel="apple-touch-icon-precomposed" href="#{site.project_images_url}/apple-touch-icon-precomposed.png")
+
+    %link{ :rel=>'stylesheet', :type=>"text/css", :href=>relative("/stylesheets/jbt-styles.css") }
+    %link{ :rel=>"stylesheet", :type=>"text/css", :href=>relative("/fonts/font-awesome/font-awesome.css"), :media=>"screen, projection"}
+
+    / Defines the project banner. Change these URLs to your specific project folder on static.jboss.org
+    /
+      :css
+        @media (min-width: 980px) {
+          .banner { background-image: url(#{site.project_images_url}/#{site.project}-banner-1180px.png); height: 110px;  }
+        }
+        @media (max-width: 979px) {
+          .banner { background-image: url(#{site.project_images_url}/#{site.project}-logo.png); background-repeat:no-repeat; height: 60px; }
+        }
+        @media (max-width: 650px) {
+          .banner { width: 200px; margin: 0px auto; }
+        }
+    :css
+      .banner { background-image: url(#{site.project_images_url}/#{site.project}-banner-1180px.png); height: 110px;  }
+  
+    %script(src="#{site.jborg_js_url}/libs/jquery/jquery-1.9.1#{site.minified}.js")
+    - if page.javascripts
+      - page.javascripts.each do |javascript|
+        %script{:src=>javascript, :type=>'text/javascript'}
+
+    
   %body
     / begin accessibility skip to top
     %ul#top.visuallyhidden
@@ -21,7 +65,77 @@
 
       = partial( page.banner_partial.nil? ? 'banner.html.haml' : page.banner_partial , { "real_page" => page } )
 
-      = partial( page.nav_partial.nil? ? 'nav.html.haml' : page.nav_partial , { "real_page" => page } )
+      .navbar.navbar-inverse#navbar-fix
+        .navbar-inner
+          .container
+            %a.btn.btn-navbar{:"data-toggle"=>"collapse", :"data-target"=>".nav-collapse"}
+              %span.icon-bar
+              %span.icon-bar
+              %span.icon-bar
+            .nav-collapse.collapse
+              %ul.nav
+                %li#home<
+                  %a{:href=>relative("/")} Home
+          
+                %li#downloads<
+                  %a{:href=>relative("/downloads/")} Downloads
+          
+                %li#docs.dropdown<
+                  %a.dropdown-toggle(href="#" data-toggle="dropdown")<
+                    =precede 'Docs ' do
+                      %b.caret>
+                  %ul.dropdown-menu 
+                    %li<
+                      %a{:href=>relative("/features")} Features
+                    %li<
+                      %a{:href=>relative("/whatsnew")} What's New
+                    %li<
+                      %a{:href=>relative("/videos")} Video Tutorials
+                    %li<
+                      %a{:href=>"http://docs.jboss.org/tools/4.1.0.Final/"} Reference Guides
+          
+                %li#community.dropdown
+                  %a.dropdown-toggle{:href=>"#", :"data-toggle"=>"dropdown"}<
+                    =precede 'Community ' do
+                      %b.caret>
+                  %ul.dropdown-menu
+                    %li<
+                      %a{:href=>relative("/contribute.html")} Contribute
+                    %li<
+                      %a{:href=>"http://www.jboss.org/community/docs/DOC-10794"} Wiki
+                    %li<
+                      %a{:href=>"http://community.jboss.org/community/tools?view=discussions"} User Forum
+                    %li<
+                      %a{:href=>"https://lists.jboss.org/mailman/listinfo/jbosstools-dev"} Mailing Lists
+                    %li<
+                      %a{:href=>"irc://irc.freenode.org/jbosstools"} Chat
+                    %li#blog<
+                      %a{:href=>relative("/blog")} Blog
+          
+                %li#issuetracker<
+                  %a{:href=>"https://issues.jboss.org/browse/JBIDE"} Issues
+          
+                %li#sourcecode<
+                  %a{:href=>"https://github.com/jbosstools"} Source Code
+          
+                %li#build<
+                  %a{:href=>"http://hudson.jboss.org/hudson/view/JBossTools/view/JBossTools_Trunk/"} Build
+          
+                %li.dropdown
+                  %a.dropdown-toggle{:href=>"#", "data-toggle"=>"dropdown"}<
+                    = precede 'Follow Us ' do
+                      %b.caret>
+                  %ul.dropdown-menu.projectsocialmedia
+                    %li<
+                      %a{:href=>"http://twitter.com/jbosstools"}<
+                        %img(src="#{site.jborg_images_url}/common/socialmedia_icon40_twitter.png")
+                    %li<
+                      %a{:href=>"https://plus.google.com/109915195368578219327"}<
+                        %img(src="#{site.jborg_images_url}/common/socialmedia_icon40_googleplus.png")
+
+
+
+      
 
       / activate the tab by adding the 'active' class 
       - unless page.nav_partial.nil? && page.tab.nil?

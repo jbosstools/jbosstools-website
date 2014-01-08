@@ -32,19 +32,17 @@ module Awestruct
                || page.relative_source_path =~ /^#{@path_prefix}\/.*\/*.textile/ \
                || page.relative_source_path =~ /^#{@path_prefix}\/.*\/*.adoc/ )
             # all images locations should be relative to the optional value configured in the pipeline.rb
-            #page.imagesdir = site.base_url + @imagesdir
             $LOG.debug "  Processing " + page.title.to_s if $LOG.debug?
             feature = OpenStruct.new
             page.feature = feature
             site.engine.set_urls([page])
-            feature.url = URIHelper.concat(site.base_url, page.url)
+            feature.url = page.url
             feature.id = page.feature_id
             feature.highlighted = page.feature_highlighted || false
             feature.name = page.title
-            #feature.order = page.feature_order != nil ? page.feature_order : 100
+            feature.order = page.feature_order != nil ? page.feature_order : 100
             feature.tagline = page.feature_tagline
-            feature.image_url = URIHelper.concat(site.base_url, @path_prefix, page.feature_image_url)
-            #puts "Feature " + feature.id + ": highlighted= " + feature.highlighted.to_s 
+            feature.image_url = URIHelper.concat(@path_prefix, page.feature_image_url)
             features[feature.id] = feature
           end
           site.features = features

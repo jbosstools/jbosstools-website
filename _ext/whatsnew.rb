@@ -23,7 +23,7 @@ module Awestruct
             puts " Processing N&N for " + page.feature_id.to_s + " " + page.feature_version
             whatsnew = OpenStruct.new
             site.engine.set_urls([page])
-            whatsnew.url = URIHelper.concat(site.base_url, page.url)
+            whatsnew.url = page.url
             whatsnew.feature_id = page.feature_id
             whatsnew.product_version = page.jbt_core_version
             whatsnew.feature_name = page.feature_name
@@ -41,7 +41,7 @@ module Awestruct
             main_version = get_main_version(whatsnew.feature_version)
             if module_whatsnews[whatsnew.feature_id][main_version].nil? && !site.features[whatsnew.feature_id].nil? then
               #puts " Adding " + page.feature_id + " version " + main_version
-              whatsnew_page = create_page(page.feature_id, main_version + ".html")
+              whatsnew_page = create_page("/", page.feature_id, main_version + ".html")
               whatsnew_page.feature_version = main_version
               whatsnew_page.feature_id = page.feature_id
               whatsnew_page.title = site.modules[whatsnew_page.feature_id].name + " " + main_version
@@ -78,7 +78,7 @@ module Awestruct
         return nil if candidates.empty?
         throw Exception.new( "too many choices for #{simple_path}" ) if candidates.size != 1
         whatsnew_page = @site.engine.load_page( candidates[0] )
-        whatsnew_page.output_path = File.join(@path_prefix, paths)
+        whatsnew_page.output_path = File.join(paths)
         puts " Added page " + whatsnew_page.output_path
         @site.pages << whatsnew_page
         return whatsnew_page

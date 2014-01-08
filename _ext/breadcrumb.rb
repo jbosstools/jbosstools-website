@@ -69,8 +69,7 @@ module Awestruct
 
         return "" if path==nil
 
-        "<a class='breadcrumb_anchor #{isLast ? "active" : ""}' href='#{site.base_url}#{path}'
-        >#{page.title ? page.title : page.simple_name.capitalize }</a> / "
+        "<a class='breadcrumb_anchor #{isLast ? "active" : ""}' href='" + relative(path) + "'>#{page.title ? page.title : page.simple_name.capitalize }</a> / "
 
       end
 
