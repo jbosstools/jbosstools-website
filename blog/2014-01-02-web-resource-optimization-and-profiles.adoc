@@ -66,7 +66,7 @@ Given the following configuration :
 </plugin>
 ----
 
-When m2e-wtp is present, m2e-wro4j automatically translates ${project.build.directory}/${project.build.finalName}/* output directories (the default values used by wro4j-maven-plugin) to _${project.build.directory}/m2e-wtp/web-resources/_. This gives you on-the-fly redeployment of optimized resources on WTP controlled servers.
+When _m2e-wtp_ is present, _m2e-wro4j_ automatically translates _${project.build.directory}/${project.build.finalName}/*_ output directories (the default values used by _wro4j-maven-plugin_) to _${project.build.directory}/m2e-wtp/web-resources/_. This gives you on-the-fly redeployment of optimized resources on WTP controlled servers.
 
 
 [NOTE] 
