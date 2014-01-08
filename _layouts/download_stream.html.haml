@@ -63,7 +63,7 @@ tab: downloads
                 .tab-pane{:id=>"#{build.id}_marketplace"}
                   %p
                     Drag and drop the 
-                    %a{:href=>build.marketplace_install_url, :title=>"Install"}
+                    %a{:href=>relative(build.marketplace_install_url), :title=>"Install"}
                       %img{:src=>relative("/images/tools/installbutton.png"), :alt=>"Drag and drop this button into a running #{eclipse_name} workspace to install #{build.name}", :height=>"25", :width=>"63"}
                     icon on your active
                     %strong< #{build.eclipse_version.full_name} 
@@ -74,7 +74,7 @@ tab: downloads
                       Help > Eclipse Marketplace...
                   %p
                     You can also view the installation page on the&nbsp
-                    %a{:href=>build.marketplace_url, :title=>"Eclipse Marketplace"}> Eclipse Marketplace
+                    %a{:href=>relative(build.marketplace_url), :title=>"Eclipse Marketplace"}> Eclipse Marketplace
                     \.
               
               -# Update site
