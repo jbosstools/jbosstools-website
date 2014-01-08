@@ -26,7 +26,7 @@ At JBoss Tools we created a java client that allows you to talk to the [OpenShif
      
 
 
-You'll find the sourcecode for this example at github: [https://github.com/openshift/show-domain-info](https://github.com/openshift/show-domain-info). All the code that is shown in this blog is contained within the [Main](https://github.com/openshift/show-domain-info/blob/master/src/main/java/com/redhat/openshift/examples/domaininfo/Main.java) class.
+You'll find the sourcecode for this example at github: [https://github.com/openshift/show-domain-info](https://github.com/openshift/show-domain-info). All the code that is shown in this blog is contained within the [Main](https://github.com/adietish/show-domain-info/blob/master/src/main/java/com/redhat/openshift/examples/domaininfo/Main.java) class.
 
 If you want to dig futher, you'll get a more complete example that includes jenkins in [this wiki article](https://community.jboss.org/docs/DOC-19828).
 
