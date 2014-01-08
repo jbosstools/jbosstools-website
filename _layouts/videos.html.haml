@@ -12,10 +12,10 @@ tab: guides
         - videos.each do |video|
           - if page.output_path == video.output_path
             %li.active 
-              %a{:href=>join(site.base_url, video.output_path)} #{video.title}
+              %a{:href=>relative(video.output_path)} #{video.title}
           - else
             %li
-              %a{:href=>join(site.base_url, video.output_path)} #{video.title}
+              %a{:href=>relative(video.output_path)} #{video.title}
                       
   .span8
     ~content

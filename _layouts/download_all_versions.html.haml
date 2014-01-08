@@ -13,7 +13,7 @@ tab: downloads
             #{site.products[:eclipse][eclipse_builds[0]].full_name}
           - eclipse_builds[1].each do |download_page|
             %li{:class=>("active" if download_page.build_info == page.build_info)}
-              %a{:href=>"#{site.base_url}#{download_page.output_path}"}
+              %a{:href=>relative(download_page.output_path)}
                 %span
                   #{download_page.build_info.version}
                 %span{:class=>"label label_#{build_type} float-right"}

@@ -4,18 +4,18 @@
       %h4 Navigate
       %ul
         %li
-          %a{:href => site.base_url, :title => "Overview"} Overview
+          %a{:href => relative("/"), :title => "Overview"} Overview
         %li
-          %a{:href => join(site.base_url, "/downloads"), :title => "Downloads"} Downloads
+          %a{:href => relative("/downloads"), :title => "Downloads"} Downloads
         %li
-          %a{:href => join(site.base_url, "/usage"), :title => "Usage"} Usage
+          %a{:href => relative("/usage"), :title => "Usage"} Usage
         
         
     .span2
       %h4 Follow Us
       %ul
         %li
-          %a{:href => join(site.base_url, "/blog"), :title => "Blog"} Blog
+          %a{:href => relative("/blog"), :title => "Blog"} Blog
         %li
           %a{:href => "http://twitter.com/jbosstools", :title => "Twitter"} Twitter
         %li

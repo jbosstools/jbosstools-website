@@ -64,7 +64,7 @@ tab: downloads
                   %p
                     Drag and drop the 
                     %a{:href=>build.marketplace_install_url, :title=>"Install"}
-                      %img{:src=>"#{site.base_url}/images/tools/installbutton.png", :alt=>"Drag and drop this button into a running #{eclipse_name} workspace to install #{build.name}", :height=>"25", :width=>"63"}
+                      %img{:src=>relative("/images/tools/installbutton.png"), :alt=>"Drag and drop this button into a running #{eclipse_name} workspace to install #{build.name}", :height=>"25", :width=>"63"}
                     icon on your active
                     %strong< #{build.eclipse_version.full_name} 
                     workspace, or alternatively, search for &quot;

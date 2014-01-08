@@ -10,7 +10,7 @@ tab: docs
       %li.nav-header #{feature.name}
       %li 
         -# puts "Features " + site.features[page.feature_id].to_s
-        %a{:href=>site.features[page.feature_id].url} Overview
+        %a{:href=>relative(site.features[page.feature_id].url)} Overview
       %li
         %a Issue Tracker
       %li 
@@ -19,16 +19,16 @@ tab: docs
           - site.module_whatsnews[page.feature_id].sort_by{|k, v| k}.reverse!.each do |version, whatsnew_page|
             - if whatsnew_page.output_path == page.output_path
               %li.active
-                %a{:href=> whatsnew_page.url} #{whatsnew_page.feature_version}
+                %a{:href=> relative(whatsnew_page.url)} #{whatsnew_page.feature_version}
             - else
               %li 
-                %a{:href=> whatsnew_page.url} #{whatsnew_page.feature_version}
+                %a{:href=> relative(whatsnew_page.url)} #{whatsnew_page.feature_version}
       %li.divider
       %li.nav-header 
         Other features
       - site.features.values.select{|feature| feature.id != page.feature_id}.each do |feature|
         %li
-          %a{:href => feature.url} #{feature.name}
+          %a{:href => relative(feature.url)} #{feature.name}
         
   .span10
     .whatsnew

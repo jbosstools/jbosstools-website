@@ -51,7 +51,7 @@ title: Home
           %img.img-polaroid{:src => "#{site.team[post.author].photo_32px}"}
           .title
             %h4
-              %a{:href=> join(site.base_url, post.url)}= post.title
+              %a{:href=>relative(post.url)}= post.title
             .author
               /there is only one author per post but the author splitter adds an array here
               posted by 
@@ -59,7 +59,7 @@ title: Home
               on 
               %strong< #{post.date.strftime( '%b %d, %Y' )}.
         .footer.right
-          %a.btn.btn-small{:href=>join(site.base_url, post.url)}
+          %a.btn.btn-small{:href=>relative(post.url)}
             Read more &raquo;
         %hr 
               
@@ -77,13 +77,13 @@ title: Home
     - for event in events
       .item.justify
         %h4
-          %a{:href=>join(site.base_url, event.output_path)} #{event.title}
+          %a{:href=>relative(event.output_path)} #{event.title}
         %strong  
           #{event.event_date} 
           in
           #{event.location}
       .footer.right
-        %a.btn.btn-small{:href=>join(site.base_url, event.output_path)}
+        %a.btn.btn-small{:href=>relative(event.output_path)}
           Read more &raquo;
       
 
