@@ -20,7 +20,7 @@ module Awestruct
         site.pages.each do |page|
           if page.relative_source_path =~ /^#{@path_prefix}\/.*\.adoc/ then
             $LOG.debug " Processing N&N " + page.feature_id.to_s +  " " + page.feature_version.to_s if $LOG.debug?
-            puts " Processing N&N for " + page.feature_id.to_s + " " + page.feature_version
+            #puts " Processing N&N for " + page.feature_id.to_s + " " + page.feature_version
             ## What's new page structure per module and version
             whatsnew = OpenStruct.new
             site.engine.set_urls([page])
