@@ -6,6 +6,7 @@ tab: community
 .posts-header
   - if page.selected_tag
     %h1< Articles tagged with "#{page.selected_tag}"
+    - page.title = "Articles tagged with \"" + page.selected_tag + "\""
   - else 
     %h1< 
       Latest Articles
