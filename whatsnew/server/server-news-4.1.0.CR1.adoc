@@ -5,12 +5,10 @@
 :page-feature_jbt_only: true
 :page-jbt_core_version: 4.1.0.CR1
 
-== 4.1.0.CR1
-=== Application Wizard
+== Servers
 
-Creation log for all applications 	When creating applications you want to know about the credentials that OpenShift initially set for you. This is especially helpful and required when you create a jenkins where you get it's url and username/password presented.
-With CR1 we now present you what OpenShift did for you if there's anything to be noticed for any type of application and/or cartridge.
+=== Tomcat Servers found with Runtime Detection
 
-image::images/credentials2.png[]
+Tomcat servers are now able to be found and created via JBossTools Runtime Detection. This means even if you restart in a new workspace, you'll be able to use the runtime detection's automatic scanning of filesystem paths to create your Tomcat server (or any slimmed-down Tomcat-based JBoss server) as soon as you fire up your new workspace.
 
 Related Jira 

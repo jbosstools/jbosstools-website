@@ -8,7 +8,8 @@
 
 == Server Tooling
 === All your server are belong to us
-image::images/features-server-server-overview.png
+
+// image::images/features-server-server-overview.png
 
 Wether you are using JBoss Enterprise Application Platform, JBoss AS and the upcoming Wildfly releases
 you can use the server tools to deploy, run, debug and introspect your favorite application server.
@@ -17,14 +18,16 @@ All within the Eclipse IDE.
 
 == Server View
 === The command central of all your servers
-image::images/features-server-serverview.png[Screenshot showing a list of various servers with deployments in the server view]
+
+// image::images/features-server-serverview.png[Screenshot showing a list of various servers with deployments in the server view]
 
 All your configured servers are listed in the server view. It shows the state of the server, what is deployed and provide
 easy access to start/stop and deploy to your application server.
 
 ==  Full range of JBoss servers
 === Supporting both the old, current and new
-image::images/features-server-fullrange.png[Screenshot showing the various server types supported]
+
+// image::images/features-server-fullrange.png[Screenshot showing the various server types supported]
 
 The full range of servers are supported, allowing you to maintain the old, develop on current and explore new ways of improving your application.
 
