@@ -87,9 +87,10 @@ tab: downloads
     
       -# Update site
       - unless page.build_info.update_site_url.nil?
+        - puts "page.build_info.update_site_url=" + page.build_info.update_site_url.to_s
         .tab-pane{:id=>"update_site"}
           :markdown
-            Add the following URL to your **#{page.build_info.eclipse_version.full_name}** workspace: [#{page.build_info.update_site_url}](#{page.build_info.update_site_url})
+            Add the following URL to your **#{page.build_info.eclipse_version.full_name}** workspace: [ #{page.build_info.update_site_url.to_s} ]( #{page.build_info.update_site_url.to_s} )
             via 
 
             > Help > Install New Software...
