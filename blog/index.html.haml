@@ -32,7 +32,11 @@ tab: community
                   - post.tags.each do |tag|
                     %a.label.label-info{:href=>relative("#{tag.primary_page.url}")} #{tag}
         .body
+          - puts "Rendering content again for " + post.output_path + " -> " + Pathname.new(post.output_path).parent.to_s
+          - default_imagesdir = site.asciidoctor.attributes['imagesdir']
+          - site.asciidoctor.attributes['imagesdir'] = relative(Pathname.new(post.output_path).parent.to_s)
           #{post.content}
+          - site.asciidoctor.attributes['imagesdir'] = default_imagesdir
         %hr
   /
     .span3
