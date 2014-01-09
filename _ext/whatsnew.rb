@@ -20,7 +20,8 @@ module Awestruct
         site.pages.each do |page|
           if page.relative_source_path =~ /^#{@path_prefix}\/.*\.adoc/ then
             $LOG.debug " Processing N&N " + page.feature_id.to_s +  " " + page.feature_version.to_s if $LOG.debug?
-            #puts " Processing N&N for " + page.feature_id.to_s + " " + page.feature_version
+            puts " Processing N&N for " + page.feature_id.to_s + " " + page.feature_version
+            ## What's new page structure per module and version
             whatsnew = OpenStruct.new
             site.engine.set_urls([page])
             whatsnew.url = page.url
@@ -38,10 +39,11 @@ module Awestruct
             end
             product_whatsnews[whatsnew.product_version] << whatsnew
             
+            ## aggregated What's new page structure per module for a set of versions
             main_version = get_main_version(whatsnew.feature_version)
             if module_whatsnews[whatsnew.feature_id][main_version].nil? && !site.features[whatsnew.feature_id].nil? then
               #puts " Adding " + page.feature_id + " version " + main_version
-              whatsnew_page = create_page("/", page.feature_id, main_version + ".html")
+              whatsnew_page = create_page(@path_prefix, page.feature_id, main_version + ".html")
               whatsnew_page.feature_version = main_version
               whatsnew_page.feature_id = page.feature_id
               whatsnew_page.title = site.modules[whatsnew_page.feature_id].name + " " + main_version
