@@ -28,8 +28,6 @@ tab: downloads
       %span#displayed-version{:class=>"label label_#{page.build_info.build_type}"}
         #{labels[page.build_info.build_type]}
     .center
-      %a Requirements
-      &#124;
       %a What's New
       &#124;
       %a Release Notes
@@ -52,7 +50,11 @@ tab: downloads
         Installing 
         %strong nightly builds
         might result in black holes being created !
-
+    - unless.page.build_info.requirements.nil?
+      .alert
+        Requirements: #{page.build_info.requirements}
+        
+    
     #installation_tabs.tabbable
       %ul.nav.nav-tabs
         %li{:id=>"marketplace_tab"}
