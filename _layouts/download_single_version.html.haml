@@ -65,7 +65,7 @@ tab: downloads
             Update Site
         %li{:id=>"zips_tab"}
           %a{:href=>"#zips", :"data-toggle"=>"tab"}
-            Update Site Zip 
+            Update Site Zip
     #installation-tabs-content.tab-content     
       - unless page.build_info.marketplace_install_url.nil? 
         -# use markdown or asciidoc instead 
@@ -98,7 +98,7 @@ tab: downloads
 
             then select the individual features that you want to install.
     
-      -# downloadable zips
+      -# Update Site Zips
       - unless page.build_info.zips.nil?
         .tab-pane{:id=>"zips"}
           :markdown
