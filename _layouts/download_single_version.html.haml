@@ -18,7 +18,7 @@ tab: downloads
               %span{:class=>"label label_#{build_type}"}
                 #{labels[build_type]}
       %li.divider          
-      %li.nav-header The Full Monty
+      %li.nav-header All Versions
       %li
         %a{:href=>relative(site.all_versions_download_pages[page.product].output_path)}
           %span
@@ -64,7 +64,7 @@ tab: downloads
             Update Site
         %li{:id=>"zips_tab"}
           %a{:href=>"#zips", :"data-toggle"=>"tab"}
-            Downloadable zips of the Update site
+            Update Site Zip
     #installation-tabs-content.tab-content     
       - unless page.build_info.marketplace_url.nil? 
         -# use markdown or asciidoc instead 
@@ -97,7 +97,7 @@ tab: downloads
 
             then select the individual features that you want to install.
     
-      -# downloadable zips
+      -# Update Site Zips
       - unless page.build_info.zips.nil?
         .tab-pane{:id=>"zips"}
           :markdown
