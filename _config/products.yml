@@ -78,9 +78,13 @@ jbt_core:
     kepler:
       4.1.1.Final:
         release_date: 2013-12-16
+        blog_announcement: http://bit.ly/jbt-411
         marketplace_url: http://marketplace.eclipse.org/node/876523
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=876523
         update_site_url: http://download.jboss.org/jbosstools/updates/stable/kepler/
+      4.1.0.Final:
+        release_date: 2013-07-23
+        blog_announcement: 2013-07-23-jbosstools_41_and_Red_Hat_Developer_Studio_7_go_GA
         zips:
           - name: Update site (including sources) bundle of all JBoss Tools Core
             download_size: 409MB
