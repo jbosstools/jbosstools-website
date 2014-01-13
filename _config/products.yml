@@ -27,7 +27,7 @@ eclipse:
     short_name: Ganymede
     full_name: Eclipse Ganymede 3.6
     active: false
-      
+
 # Product types
 devstudio: 
   name: JBoss Developer Studio
@@ -35,67 +35,73 @@ devstudio:
   streams:
     luna:
       8.0.0.Alpha1:
-        release_date: 2014-01-01
+        release_date: 
+        marketplace_install_url: 
     kepler:
-      7.1.0.Final:
+      7.1.0.GA:
         release_date: 2013-12-16
-        blog_announcement: 2013-07-23-jbosstools_41_and_Red_Hat_Developer_Studio_7_go_GA
-      7.1.0.CR1:
-        release_date: 2013-10-22
-        blog_announcement: 2013-07-23-jbosstools_41_and_Red_Hat_Developer_Studio_7_go_GA
-      7.1.0.Beta1:
-        release_date: 2013-10-22
-      7.1.0.Alpha2:
-        release_date: 2013-10-22
-      7.1.0.Alpha1:
-        release_date: 2013-10-22
-      7.0.0.GA:
-        release_date: 2013-07-22
-        blog_announcement: 2013-07-23-jbosstools_41_and_Red_Hat_Developer_Studio_7_go_GA
+        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/7.1/html-single/Release_Notes_7.1.0/index.html
+        blog_announcement_url: http://bit.ly/jbt-411
         marketplace_url: http://marketplace.eclipse.org/node/827807
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=827807
-        download_url: https://devstudio.jboss.com/download/7.x.html
+        download_url: https://www.jboss.org/products/devstudio
+        # TODO: add zips
+      7.0.0.GA:
+        release_date: 2013-07-23
+        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/7.0/html-single/Release_Notes_7.0.1/index.html
+        blog_announcement_url: https://community.jboss.org/community/tools/blog/2013/07/23/jboss-tools-41-and-developer-studio-7-go-ga
+        download_url: https://devstudio.jboss.com/download/7.0.html
+        # TODO: add zips
     juno:
-      6.0.1.Final:
+      6.0.1.GA:
         release_date: 2012-11-01
+        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/6.0/html-single/6.0.1_Release_Notes/index.html
         marketplace_url: http://marketplace.eclipse.org/node/503834
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=503834
         download_url: https://devstudio.jboss.com/download/6.x.html
+        # TODO: add zips
     indigo:
-      5.0.0.Final:
+      5.0.2.GA:
         release_date: 2012-06-21
+        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/5.0/html-single/5.0.2_Release_Notes/index.html
         marketplace_url: http://marketplace.eclipse.org/node/121986
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=121986
-  
+        download_url: https://devstudio.jboss.com/download/5.x.html
+        # TODO: add zips
+
 jbt_core: 
   name: JBoss Tools
   url_path_fragment: jbosstools
   streams:
     luna:
       4.2.0.Alpha1:
-        release_date: 2014-01-01
+        release_date: 2013-12-19
+        documentation_url: http://docs.jboss.org/tools/
+        update_site_url: http://download.jboss.org/jbosstools/updates/development/luna/
+        download_url: http://www.jboss.org/tools/download/dev/4_2_x
+        # TODO: add zips
       nightly:   
-        update_site_url: http://download.jboss.org/jbosstools/builds/nightly/core/trunk/latestBuild.html
-        download_url: http://download.jboss.org/jbosstools/builds/nightly/core/trunk/latestBuild.html
+        update_site_url: http://download.jboss.org/jbosstools/updates/nightly/core/master/
+        download_url: http://download.jboss.org/jbosstools/builds/nightly/core/master/latestBuild.html
     kepler:
       4.1.1.Final:
-        release_date: 2013-10-22
-        marketplace_url: http://marketplace.eclipse.org/node/876523
-        marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=876523
-      4.1.1.CR1:
-        release_date: 2013-10-22
-      4.1.1.Beta1:
-        release_date: 2013-10-22
-      4.1.1.Alpha2:
-        release_date: 2013-10-22
-      4.1.1.Alpha1:
-        release_date: 2013-10-22
-      4.1.0.Final:
-        release_date: 2013-07-22
-        blog_announcement: 2013-07-23-jbosstools_41_and_Red_Hat_Developer_Studio_7_go_GA
+        release_date: 2013-12-16
+        documentation_url: http://docs.jboss.org/tools/4.1.x.Final/
+        whatsnew_url: http://docs.jboss.org/tools/whatsnew/
+        blog_announcement_url: http://bit.ly/jbt-411
         marketplace_url: http://marketplace.eclipse.org/node/876523
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=876523
         update_site_url: http://download.jboss.org/jbosstools/updates/stable/kepler/
+        # TODO: add zips
+      4.1.0.Final:
+        release_date: 2013-07-23
+        documentation_url: http://docs.jboss.org/tools/4.1.0.Final/
+        whatsnew_url: http://docs.jboss.org/tools/whatsnew/
+        blog_announcement_url: https://community.jboss.org/community/tools/blog/2013/07/23/jboss-tools-41-and-developer-studio-7-go-ga
         zips:
           - name: Update site (including sources) bundle of all JBoss Tools Core
             download_size: 409MB
@@ -110,15 +116,18 @@ jbt_core:
             url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.x/hibernatetools-Update-4.1.0.Final_2013-07-19_19-47-52-B380.zip
             md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.x/hibernatetools-Update-4.1.0.Final_2013-07-19_19-47-52-B380.zip.MD5
       nightly:   
-        update_site_url: http://download.jboss.org/jbosstools/builds/nightly/core/trunk/latestBuild.html
-      
+        documentation_url: http://docs.jboss.org/tools/
+        update_site_url: http://download.jboss.org/jbosstools/updates/nightly/core/4.1.kepler/
+        download_url: http://download.jboss.org/jbosstools/builds/nightly/core/4.1.kepler/
+
     juno:
       4.0.1.Final:
         release_date: 2013-04-03
         marketplace_url: http://marketplace.eclipse.org/node/420896
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=420896
         update_site_url: http://download.jboss.org/jbosstools/updates/stable/juno/
-    
+        # TODO: add zips
+
     indigo:
       3.3.2.Final:
         release_date: 2013-01-25
@@ -140,5 +149,3 @@ jbt_core:
             md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools3.3.x/jbosstools-3.3.2.Final.component--hibernatetools-Update-2013-01-18_18-03-25-H229.zip.MD5
           - name: Release Notes
             url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools3.3.x/zz_Release_Notes_3.3.2.Final.readme.html
-    
-    
