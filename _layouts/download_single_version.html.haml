@@ -18,7 +18,6 @@ tab: downloads
               %span{:class=>"label label_#{build_type}"}
                 #{labels[build_type]}
       %li.divider          
-      %li.nav-header The Full Monty
       %li
         %a{:href=>relative(site.all_versions_download_pages[page.product].output_path)}
           %span
@@ -33,7 +32,7 @@ tab: downloads
       &#124;
       %a What's New
       &#124;
-      %a Release Note
+      %a Release Notes
     
     - if page.build_info.build_type == :stable
       .alert.alert-success
@@ -64,14 +63,14 @@ tab: downloads
             Update Site
         %li{:id=>"zips_tab"}
           %a{:href=>"#zips", :"data-toggle"=>"tab"}
-            Downloadable zips of the Update site
+            Update Site Zip 
     #installation-tabs-content.tab-content     
-      - unless page.build_info.marketplace_url.nil? 
+      - unless page.build_info.marketplace_install_url.nil? 
         -# use markdown or asciidoc instead 
         .tab-pane{:id=>"marketplace"}
           %p
             Drag and drop the 
-            %a{:href=>page.build_info.marketplace_install_url, :title=>"Install"}
+            %a{:href=>page.build_info.marketplace_install_url, :title=>"Install"}<
               %img{:src=>relative("/images/tools/installbutton.png"), :alt=>"Drag and drop this button into a running #{eclipse_name} workspace to install #{page.build_info.name}", :height=>"25", :width=>"63"}
             icon on your active
             %strong< #{page.build_info.eclipse_version.full_name} 
@@ -106,13 +105,14 @@ tab: downloads
 
             > Help > Install New Software... > Add... > Archive...
 
-            and point to the archive you downloaded from the tables below, depending on the features of JBoss Tools you want to use.
+            and point to the archive you downloaded from the tables below, depending on the features of #{page.build_info.name} you want to use.
 
           %table.center
             %tr
               %th<Name
               %th<Size
-              %th<Links
+              %th<MD5
+              %th<Link
             - page.build_info.zips.each do |zip|
               %tr
                 %td #{zip.name}  
