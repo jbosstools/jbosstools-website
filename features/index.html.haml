@@ -4,7 +4,7 @@ tab: docs
 title: Features
 ---
 
-- features = site.features.values.sort{|l,r| l.name <=> r.name}
+- features = site.features.values.sort{|l,r| l.order <=> r.order}
 - #features = site.features.values
 - highlighted_feature = features.shift
 
