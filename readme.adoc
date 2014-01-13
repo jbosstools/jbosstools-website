@@ -72,8 +72,7 @@ dependencies.
 [source]
 ----
 # run these as root
-gem install bundler
-gem install execjs
+gem install bundler execjs
 bundle install
 ----
 
@@ -123,6 +122,8 @@ The dependencies should already be installed by the Gemfile thus you just need t
 
 [source]
 ----
+# run these as root
+gem install guard guard-livereload 
 guard start
 ----
 
