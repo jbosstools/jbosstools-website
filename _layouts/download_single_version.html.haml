@@ -28,17 +28,22 @@ tab: downloads
       %span#displayed-version{:class=>"label label_#{page.build_info.build_type}"}
         #{labels[page.build_info.build_type]}
     .center
-      %a What's New
-      &#124;
-      %a Release Notes
+      %a{:href=>page.build_info.documentation_url} Documentation
+      -# JBoss Tools has a What's New
+      - if page.build_info.whatsnew_url 
+        &#124;
+        %a{:href=>page.build_info.whatsnew_url} What's New
+      -# JBDS has Release Notes
+      - if page.build_info.release_notes_url 
+        &#124;
+        %a{:href=>page.build_info.release_notes_url} Release Notes
     
     - if page.build_info.build_type == :stable
       .alert.alert-success
         #{page.build_info.name} #{page.build_info.version} was released on #{page.build_info.release_date}. 
-        - if page.build_info.blog_announcement_url
-          Read the
-          %a{:href=>relative(page.build_info.blog_announcement_url)} announcement on our blog
-          to know more about it.
+        - if page.build_info.blog_announcement_url 
+          %a{:href=>page.build_info.blog_announcement_url} Read the announcement.
+
     - elsif page.build_info.build_type == :development
       .alert.alert-info
         %strong Development builds
@@ -96,23 +101,23 @@ tab: downloads
       - unless page.build_info.update_site_url.nil?
         .tab-pane{:id=>"update_site"}
           :markdown
-            Add this URL to your **#{page.build_info.eclipse_version.full_name}** workspace: [ #{page.build_info.update_site_url.to_s} ]( #{page.build_info.update_site_url.to_s} )
-            via 
+            Add the following URL to your **#{page.build_info.eclipse_version.full_name}** installation, via:<br/> 
 
-            > Help > Install New Software...
+            > Help > Install New Software... > Work with:
 
-            then select the individual features that you want to install.
+            [ #{page.build_info.update_site_url.to_s} ]( #{page.build_info.update_site_url.to_s} )
+
+            Then select the individual features that you want to install.
     
       -# Update Site Zips
       - unless page.build_info.zips.nil?
         .tab-pane{:id=>"zips"}
           :markdown
-            You can download Update Zips (Archived p2 Repos) for offline installation of **#{page.build_info.name}**, but **DO NOT UNPACK THEM** into your Eclipse root or dropins folder!
-            Next, install into Eclipse using
+            Below, you can download Update Site Zips (Archived p2 Repos) for offline installation. You **do not need to unpack the zips** to use them. Install into Eclipse via:<br/>
 
             > Help > Install New Software... > Add... > Archive...
 
-            and point to the archive you downloaded from the tables below, depending on the features of #{page.build_info.name} you want to use.
+            Then select the downloaded zip, and the feature(s) you'd like to install.
 
           %table.center
             %tr

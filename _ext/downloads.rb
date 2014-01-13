@@ -47,10 +47,12 @@ module Awestruct
               build_info.version = build_version
               build_info.eclipse_version = eclipse_version
               build_info.build_type = build_type
-              build_info.blog_announcement_url = (defined? build_version.blog_announcement) ? find_blog_announcement_path(build_version.blog_announcement) : nil
-              build_info.update_site_url = (defined? build_info.update_site_url) ? build_info.update_site_url : nil
-              build_info.marketplace_install_url = (defined? build_info.marketplace_install_url) ? build_info.marketplace_install_url : nil
-              build_info.zips = (defined? build_info.zips) ? build_info.zips : nil
+              build_info.blog_announcement_url = (defined? build_version.blog_announcement_url) ? build_version.blog_announcement_url : nil
+              build_info.release_notes_url = (defined? build_version.release_notes_url) ? build_version.release_notes_url : nil
+              build_info.whatsnew_url = (defined? build_version.whatsnew_url) ? build_version.whatsnew_url : nil
+              build_info.update_site_url = (defined? build_version.update_site_url) ? build_version.update_site_url : nil              
+              build_info.marketplace_install_url = (defined? build_version.marketplace_install_url) ? build_version.marketplace_install_url : nil
+              puts "  update site:" + build_info.update_site_url.to_s + " marketplace_install_url=" + build_info.marketplace_install_url.to_s
               if eclipse_version.active && @site.download_perma_links[product][eclipse_id][build_type].nil? then
                 permalink_page = generate_single_version_download_page(product, eclipse_version, 
                       build_type.to_s, build_info, build_version)
