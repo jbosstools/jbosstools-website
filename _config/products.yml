@@ -38,7 +38,7 @@ devstudio:
         release_date: 2014-01-01
     kepler:
       7.1.0.Final:
-        release_date: 2013-10-22
+        release_date: 2013-12-16
         blog_announcement: 2013-07-23-jbosstools_41_and_Red_Hat_Developer_Studio_7_go_GA
       7.1.0.CR1:
         release_date: 2013-10-22
