@@ -80,6 +80,8 @@ jbt_core:
     kepler:
       4.1.1.Final:
         release_date: 2013-10-22
+        marketplace_url: http://marketplace.eclipse.org/node/876523
+        marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=876523
       4.1.1.CR1:
         release_date: 2013-10-22
       4.1.1.Beta1:
