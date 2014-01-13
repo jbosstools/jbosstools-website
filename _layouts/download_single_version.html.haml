@@ -36,7 +36,6 @@ tab: downloads
       .alert.alert-success
         #{page.build_info.name} #{page.build_info.version} was released on #{page.build_info.release_date}. 
         - if page.build_info.blog_announcement_url
-          -puts "page.build_info.blog_announcement_url=" + page.build_info.blog_announcement_url.to_s
           Read the
           %a{:href=>relative(page.build_info.blog_announcement_url)} announcement on our blog
           to know more about it.
@@ -50,9 +49,9 @@ tab: downloads
         Installing 
         %strong nightly builds
         might result in black holes being created !
-    - unless.page.build_info.requirements.nil?
-      .alert
-        Requirements: #{page.build_info.requirements}
+    - unless page.build_info.eclipse_version.requirements.nil?
+      .alert.alert-info
+        Requirements: #{page.build_info.eclipse_version.requirements}
         
     
     #installation_tabs.tabbable
@@ -88,7 +87,6 @@ tab: downloads
     
       -# Update site
       - unless page.build_info.update_site_url.nil?
-        - puts "page.build_info.update_site_url=" + page.build_info.update_site_url.to_s
         .tab-pane{:id=>"update_site"}
           :markdown
             Add the following URL to your **#{page.build_info.eclipse_version.full_name}** workspace: [ #{page.build_info.update_site_url.to_s} ]( #{page.build_info.update_site_url.to_s} )
@@ -113,8 +111,8 @@ tab: downloads
             %tr
               %th<Name
               %th<Size
-              %th<MD5
               %th<Link
+              %th<MD5
             - page.build_info.zips.each do |zip|
               %tr
                 %td #{zip.name}  
@@ -124,6 +122,7 @@ tab: downloads
                     %a{:href=>zip.url} zip
                   - if zip.url.end_with? "html"
                     %a{:href=>zip.url} html
+                %td
                   - if zip.md5_url?
                     (
                     %a{:href=>zip.md5_url}> md5
