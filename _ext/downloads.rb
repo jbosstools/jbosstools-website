@@ -60,7 +60,13 @@ module Awestruct
                   @site.latest_stable_builds_download_pages[product] = permalink_page
                 end
               end
-              # build regular download page
+              # link to download page: selecting the first module's N&N for the closest version if none match (ex: .CR1 for .Final)
+              build_info.whatsnew_output_path = nil?
+              if build_type == :stable || build_type == :development
+                whatsnew_page = get_whatsnew_page(build_info.product, build_info.version)
+                build_info.whatsnew_output_path = whatsnew_page.output_path unless whatsnew_page.nil?
+              end
+              # finally, build regular download page
               download_page = generate_single_version_download_page(product, eclipse_version, 
                     build_version.to_s, build_info, build_version)
               @site.pages << download_page 
@@ -73,6 +79,17 @@ module Awestruct
           #puts "*** Download permalinks for " + product.to_s + ": " + @site.download_perma_links[product].to_s
         end
         $LOG.debug "*** Done with downloads extension." if $LOG.debug?
+      end
+      
+      def get_whatsnew_page(product_name, product_version)
+        puts " looking for N&N for #{product_name} version #{product_version}..."
+        whatsnews = @site.product_whatsnews[product_version]
+        unless whatsnews.nil?
+          puts " whatsnew for #{product_name} #{product_version} will link to #{whatsnews.first.output_path}"
+          whatsnews.first
+        end
+        puts "  no whatsnew for #{product_name} #{product_version}"
+        nil
       end
 
       def generate_single_version_download_page(product, eclipse_version, page_path_fragment, build_info, build_version)

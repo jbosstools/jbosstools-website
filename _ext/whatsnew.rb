@@ -64,7 +64,10 @@ module Awestruct
               whatsnew_page.items.sort!.reverse!
             end
           end
-          
+        end
+        # showing all whatsnew per product
+        product_whatsnews.each do |product_version, whatsnews|
+          puts " " + product_version.to_s
         end
         $LOG.debug "*** Done executing whatsnew extension...." if $LOG.debug?
       end

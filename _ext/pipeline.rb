@@ -49,16 +49,18 @@ Awestruct::Extensions::Pipeline.new do
   extension Awestruct::Extensions::MyPaginator.new(:posts, '/blog/index', :per_page => 2 )
   extension Awestruct::Extensions::MyTagger.new( :posts, '/blog/index', '/blog/tags', :per_page=>10,
    :sanitize=>true )
-  extension Awestruct::Extensions::Downloads.new
-  helper Awestruct::Extensions::DownloadsHelper
-  helper Awestruct::Extensions::URIHelper
-  
-  #extension Awestruct::Extensions::Indexifier.new
+   #extension Awestruct::Extensions::Indexifier.new
   # Needs to be after Indexifier to get the linking correct; 
   extension Awestruct::Extensions::Features.new('/features')
   # Needs to be after Indexifier to get the linking correct; 
   extension Awestruct::Extensions::Whatsnew.new('/whatsnew')
 
+  # Download needs to be after whatsnew, to link from download to whatsnew
+  extension Awestruct::Extensions::Downloads.new
+  helper Awestruct::Extensions::DownloadsHelper
+  helper Awestruct::Extensions::URIHelper
+  
+  
   extension Awestruct::Extensions::Videos.new('/videos')
 
   extension Awestruct::Extensions::Events.new('/events')
