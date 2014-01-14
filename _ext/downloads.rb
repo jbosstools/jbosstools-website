@@ -9,7 +9,7 @@ module Awestruct
       @@layout_paths = {:single_version => "download_single_version.html.haml", :all_versions => "download_all_versions.html.haml"}
       @@download_page_metadata = {:latest_release=>{:page_path_fragment=>"latest", :page_title=>"Latest Stable"} ,
           :all_releases=>{:page_path_fragment=>"allversions", :page_title=>"All Versions"}}
-      @@build_types = {:stable => [".GA", ".Final"], :development=>[".Alpha", ".Beta", ".CR"], :nightly=>["nightly"]}
+      @@build_types = {:stable => [".GA", ".Final"], :development=>[".Alpha", ".Beta", ".CR"], :nightly=>["nightly", "Nightly"]}
 
       def initialize()
       end
@@ -39,20 +39,16 @@ module Awestruct
             @site.download_pages[product][eclipse_id] = Array.new
             #permalinks for "stable.html", "development.html", etc. 
             puts "Processing " + eclipse_id.to_s + " stream (" + eclipse_version.full_name + " - active: " + eclipse_version.active.to_s + ")..."
-            puts " " + eclipse_id.to_s + " stream requirements:" + eclipse_version.requirements.to_s
             # for each Eclipse versions can have many product builds, each one with build info
             eclipse_stream.each do |build_version, build_info|
-              puts " Processing version " + build_version.to_s
               build_type = guess_build_type(build_version) 
               build_info.name = site.products[product].name
               build_info.version = build_version
               build_info.eclipse_version = eclipse_version
-              puts "  Requirements: " + build_info.eclipse_version.requirements.to_s
               build_info.build_type = build_type
               build_info.blog_announcement_url = (defined? build_version.blog_announcement) ? find_blog_announcement_path(build_version.blog_announcement) : nil
               build_info.update_site_url = (defined? build_info.update_site_url) ? build_info.update_site_url : nil
               build_info.marketplace_install_url = (defined? build_info.marketplace_install_url) ? build_info.marketplace_install_url : nil
-              puts "  Update Site=" + build_info.update_site_url.to_s + " / Marketplace=" + build_info.marketplace_install_url.to_s
               build_info.zips = (defined? build_info.zips) ? build_info.zips : nil
               if eclipse_version.active && @site.download_perma_links[product][eclipse_id][build_type].nil? then
                 permalink_page = generate_single_version_download_page(product, eclipse_version, 

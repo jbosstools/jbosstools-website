@@ -2,16 +2,16 @@ eclipse:
   luna:
     url_path_fragment: luna
     short_name: Luna
-    full_name: Eclipse Luna 4.4 M4
+    full_name: Eclipse Luna 4.4
     download_url: http://www.eclipse.org/downloads/index-developer.php
-    requirements: Java 6 or Java 7 (required to run JBoss EAP 6.1).
+    requirements: Java 7.
     active: true
   kepler:
     url_path_fragment: kepler
     short_name: Kepler
     full_name: Eclipse Kepler 4.3
     download_url: http://www.eclipse.org/downloads/
-    requirements: Java 6 or 7.
+    requirements: Java 6 or Java 7.
     active: true
   juno:
     url_path_fragment: juno
@@ -73,7 +73,16 @@ jbt_core:
         release_date: 2013-12-19
         update_site_url: http://download.jboss.org/jbosstools/updates/development/luna/
         download_url: http://www.jboss.org/tools/download/dev/4_2_x
-      nightly:   
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Tools Core
+            download_size: 418MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/jbosstools-Update-4.2.0.Alpha1_2013-11-24_01-06-56-B575.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/jbosstools-Update-4.2.0.Alpha1_2013-11-24_01-06-56-B575.zip.MD5
+          - name: Sources zip of all JBoss Tools Core
+            download_size: 93MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/jbosstools-Sources-4.2.0.Alpha1_2013-11-24_01-06-56-B575.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/jbosstools-Sources-4.2.0.Alpha1_2013-11-24_01-06-56-B575.zip.MD5
+      4.2.0.Nightly:   
         update_site_url: http://download.jboss.org/jbosstools/builds/nightly/core/trunk/latestBuild.html
         download_url: http://download.jboss.org/jbosstools/builds/nightly/core/trunk/latestBuild.html
     kepler:
@@ -85,22 +94,22 @@ jbt_core:
         update_site_url: http://download.jboss.org/jbosstools/updates/stable/kepler/
         zips:
           - name: Update site (including sources) bundle of all JBoss Tools Core
-            download_size: 409MB
+            download_size: 418MB
             url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.x/jbosstools-Update-4.1.1.Final_2013-12-08_01-06-33-B605.zip
             md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.x/jbosstools-Update-4.1.1.Final_2013-12-08_01-06-33-B605.zip.MD5
           - name: Sources zip of all JBoss Tools Core
-            download_size: 135MB
+            download_size: 93MB
             url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.x/jbosstools-Sources-4.1.1.Final_2013-12-08_01-06-33-B605.zip
             md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.x/jbosstools-Sources-4.1.1.Final_2013-12-08_01-06-33-B605.zip.MD5
           - name: Update site (including sources) bundle of all Hibernate Tools
             download_size: 78MB
             url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.x/hibernatetools-Update-4.1.1.Final_2013-12-08_01-06-33-B605.zip
             md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.x/hibernatetools-Update-4.1.1.Final_2013-12-08_01-06-33-B605.zip.MD5
+      4.1.1.Nightly:   
+        update_site_url: http://download.jboss.org/jbosstools/builds/nightly/core/trunk/latestBuild.html
       4.1.0.Final:
         release_date: 2013-07-23
         blog_announcement: 2013-07-23-jbosstools_41_and_Red_Hat_Developer_Studio_7_go_GA
-      nightly:   
-        update_site_url: http://download.jboss.org/jbosstools/builds/nightly/core/trunk/latestBuild.html
 
     juno:
       4.0.1.Final:

@@ -153,7 +153,7 @@ We have 3 things to do :
 2. enable web resource filtering in the maven-war-plugin configuration
 3. modify index.html so it uses the aforementioned maven property 
 
-==== Setup the maven property
+=== Setup the maven property
 In the main _<properties>_ block, at the top of your pom.xml, add the following property :
 [source,xml]
 ----
@@ -171,7 +171,7 @@ Now add a _<properties>_ block to the _minify_ profile :
 ----
 
 
-==== Enable web resource filtering
+=== Enable web resource filtering
 Modify the default maven-war-plugin configuration to enable filtering on html files :
 
 [source,xml]
@@ -193,7 +193,7 @@ Modify the default maven-war-plugin configuration to enable filtering on html fi
 </plugin>
 ----
 
-==== Use the maven property
+=== Use the maven property
 In *index.html*, replace at least the following occurrences :
 
 [width="30%",options="header"]
@@ -220,7 +220,7 @@ Once the _minify_ profile is active, you'll see that :
  
 image::images/minified-resources.png[]
 
-==== Deploy the application on WildFly
+=== Deploy the application on WildFly
 
 * Right click on your project and select *Run As > Run on Server ...*
 * Create a new Wildfly Server if necessary, pointing at your locally installed server
