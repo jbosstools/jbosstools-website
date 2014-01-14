@@ -42,29 +42,32 @@ tab: downloads
     - elsif page.build_info.build_type == :development
       .alert.alert-info
         %strong Development builds
-        are have received basic testing, but are not considered fully stable yet.
+        have received basic testing, but are not considered fully stable yet.
     - elsif page.build_info.build_type == :nightly
       .alert.alert-warning
         %strong Warning! 
-        Installing 
-        %strong nightly builds
-        might result in black holes being created !
+        The
+        %strong nightly build
+        contains the latest and greatest new features, but nothing is stable or guaranteed - yet.
     - unless page.build_info.eclipse_version.requirements.nil?
-      .alert.alert-info
+      .alert.alert-requirements
         Requirements: #{page.build_info.eclipse_version.requirements}
         
     
     #installation_tabs.tabbable
       %ul.nav.nav-tabs
-        %li{:id=>"marketplace_tab"}
-          %a{:href=>"#marketplace", :"data-toggle"=>"tab"}
-            Eclipse Marketplace
-        %li{:id=>"update_site_tab"}
-          %a{:href=>"#update_site", :"data-toggle"=>"tab"}
-            Update Site
-        %li{:id=>"zips_tab"}
-          %a{:href=>"#zips", :"data-toggle"=>"tab"}
-            Update Site Zip
+        - unless page.build_info.marketplace_install_url.nil? 
+          %li{:id=>"marketplace_tab"}
+            %a{:href=>"#marketplace", :"data-toggle"=>"tab"}
+              Eclipse Marketplace
+        - unless page.build_info.update_site_url.nil?
+          %li{:id=>"update_site_tab"}
+            %a{:href=>"#update_site", :"data-toggle"=>"tab"}
+              Update Site
+        - unless page.build_info.zips.nil?
+          %li{:id=>"zips_tab"}
+            %a{:href=>"#zips", :"data-toggle"=>"tab"}
+              Update Site Zip
     #installation-tabs-content.tab-content     
       - unless page.build_info.marketplace_install_url.nil? 
         -# use markdown or asciidoc instead 
@@ -89,7 +92,7 @@ tab: downloads
       - unless page.build_info.update_site_url.nil?
         .tab-pane{:id=>"update_site"}
           :markdown
-            Add the following URL to your **#{page.build_info.eclipse_version.full_name}** workspace: [ #{page.build_info.update_site_url.to_s} ]( #{page.build_info.update_site_url.to_s} )
+            Add this URL to your **#{page.build_info.eclipse_version.full_name}** workspace: [ #{page.build_info.update_site_url.to_s} ]( #{page.build_info.update_site_url.to_s} )
             via 
 
             > Help > Install New Software...

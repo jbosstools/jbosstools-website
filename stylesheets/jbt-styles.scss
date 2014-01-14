@@ -112,8 +112,16 @@ blockquote > p {
   margin-bottom: 2em;
 }
 
-div.alert {
+.alert {
   margin: 20px 0px;
+}
+.alert-requirements {
+  border-color: transparent;
+  color: rgb(101, 101, 101);
+  background-color: rgb(243, 243, 243);
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(221, 221, 221) rgb(221, 221, 221) 
 }
 
 .nav {
@@ -177,6 +185,14 @@ div.alert {
 
 #rss-icon {
   vertical-align:top;
+}
+
+// ******************************************************
+// nav tabs
+// ******************************************************
+
+.nav-tabs > .active > a, .nav-tabs > .active > a:hover, .nav-tabs > .active > a:focus {
+  color: rgb(101, 101, 101);
 }
 
 // ******************************************************
@@ -376,11 +392,11 @@ a.dropdown-toggle {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 2em;
-  border-left: 1px solid rgb(221, 221, 221);
+  /*border-left: 1px solid rgb(221, 221, 221);
   border-right: 1px solid rgb(221, 221, 221);
   border-bottom: 1px solid rgb(221, 221, 221);
   border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
+  border-bottom-right-radius: 4px;*/
   //background: rgb(243, 243, 243);
   padding-top: 20px;
   padding-left: 20px;
