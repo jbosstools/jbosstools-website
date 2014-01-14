@@ -3,7 +3,7 @@
 :page-feature_id: hibernate
 :page-feature_image_url: images/hibernate_icon_256px.png
 :page-feature_order: 4
-:page-feature_tagline: Tooling for JPA and HQL. 
+:page-feature_tagline: Tooling for JPA and HQL
 :page-issues_url: https://issues.jboss.org/browse/JBIDE/component/12310342
 
 == Hibernate

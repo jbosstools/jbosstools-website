@@ -51,3 +51,5 @@ target
 _tmp
 .project
 link-checker-crawled-pages.pstore
+.#*
+

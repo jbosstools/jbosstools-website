@@ -2,7 +2,7 @@
 :page-layout: features
 :page-feature_id: aerogear
 :page-feature_order: 8
-:page-feature_tagline: Mobile development tooling.
+:page-feature_tagline: Mobile development tooling
 :page-feature_image_url: images/aerogear_icon_256px.png
 :page-issues_url: https://issues.jboss.org/browse/JBIDE/component/12317246
 
