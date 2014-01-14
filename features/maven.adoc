@@ -14,14 +14,14 @@ The Maven integration builds on top of Eclipse http://www.eclipse.org/m2e[m2e] a
 
 == Profile Selection
 === Easy switching
-image::images/features-maven_346px.png
+image::images/features-maven_346px.png[]
 
 If your project heavily use maven profiles you can now smoothly toggle the various profiles on and off for 
 individual as well as multiple projects.   
 
 == Maven Configurators
 === No need for manual setup 
-image::images/features-maven_346px.png
+image::images/features-maven_346px.png[]
 
 With configurators for CDI, Hibernate, Seam and others you only have to have these configured 
 in your pom.xml and Maven integration will enable the Eclipse tooling for these. Allows

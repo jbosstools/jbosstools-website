@@ -9,7 +9,7 @@
 == Server Tooling
 === All your server are belong to us
 
-// image::images/features-server-server-overview.png
+// image::images/features-server-server-overview.png[]
 
 Wether you are using JBoss Enterprise Application Platform, JBoss AS and the upcoming Wildfly releases
 you can use the server tools to deploy, run, debug and introspect your favorite application server.
