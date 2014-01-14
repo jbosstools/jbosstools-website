@@ -43,6 +43,7 @@ module Awestruct
             eclipse_stream.each do |build_version, build_info|
               build_type = guess_build_type(build_version) 
               build_info.name = site.products[product].name
+              build_info.product = product
               build_info.version = build_version
               build_info.eclipse_version = eclipse_version
               build_info.build_type = build_type

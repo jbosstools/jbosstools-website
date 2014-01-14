@@ -4,14 +4,14 @@ eclipse:
     short_name: Luna
     full_name: Eclipse Luna 4.4
     download_url: http://www.eclipse.org/downloads/index-developer.php
-    requirements: Java 7.
+    requirements: Java 7
     active: true
   kepler:
     url_path_fragment: kepler
     short_name: Kepler
     full_name: Eclipse Kepler 4.3
     download_url: http://www.eclipse.org/downloads/
-    requirements: Java 6 or Java 7.
+    requirements: Java 6 or Java 7
     active: true
   juno:
     url_path_fragment: juno
@@ -40,7 +40,7 @@ devstudio:
         release_date: 
         marketplace_install_url: 
     kepler:
-      7.1.0.Final:
+      7.1.0.GA:
         release_date: 2013-12-16
         blog_announcement: http://bit.ly/jbt-411
         marketplace_url: http://marketplace.eclipse.org/node/827807
@@ -53,13 +53,13 @@ devstudio:
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=827807
         download_url: https://devstudio.jboss.com/download/7.0.html
     juno:
-      6.0.1.Final:
+      6.0.1.GA:
         release_date: 2012-11-01
         marketplace_url: http://marketplace.eclipse.org/node/503834
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=503834
         download_url: https://devstudio.jboss.com/download/6.x.html
     indigo:
-      5.0.0.Final:
+      5.0.0.GA:
         release_date: 2012-06-21
         marketplace_url: http://marketplace.eclipse.org/node/121986
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=121986
