@@ -51,7 +51,11 @@ tab: downloads
         contains the latest and greatest new features, but nothing is stable or guaranteed - yet.
     - unless page.build_info.eclipse_version.requirements.nil?
       .alert.alert-requirements
-        Requirements: #{page.build_info.eclipse_version.requirements}
+        - if ["jbt_core", "jbt_is"].include? page.build_info.product.to_s
+          Requirements: #{page.build_info.eclipse_version.requirements} and #{page.build_info.eclipse_version.full_name}
+        - if ["devstudio", "devstudio_is"].include? page.build_info.product.to_s
+          Requirements: #{page.build_info.eclipse_version.requirements} only.
+          
         
     
     #installation_tabs.tabbable
