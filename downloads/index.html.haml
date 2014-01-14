@@ -13,12 +13,12 @@ tab: downloads
       %h3
         #{devstudio_current_stable_release.build_info.name} #{devstudio_current_stable_release.build_info.version}
       %ul.items
+        %li One click install - for Windows, Linux and Mac        
+        %li Based on JBoss Tools 4.1 supported plugins
+        %li Full IDE installer or install to existing Eclipse
+        %li JBoss Central to install extra features
         %li 
           %strong Supported by Red Hat
-        %li Based on JBoss Tools 4.1 supported plugins
-        %li One click install - works on Windows, Mac and Linux
-        %li Full IDE installer or install from existing Eclipse
-        %li JBoss Central to install extra features
         %li Released on #{devstudio_current_stable_release.build_info.release_date}
       .download-btn
         %a.btn.btn-primary{:href=>relative(devstudio_current_stable_release.output_path)} 
@@ -28,11 +28,12 @@ tab: downloads
       %h3
         #{jbtcore_current_stable_release.build_info.name} #{jbtcore_current_stable_release.build_info.version}
       %ul.items
-        %li
-          %strong Community supported
         %li Individual plugins for Eclipse, including experimental plugins
-        %li Install from existing Eclipse only
+        %li Install into existing Eclipse only
+        %li Some assembly required
         %li JBoss Central to install extra features
+        %li
+          %strong Community only support
         %li Released on #{jbtcore_current_stable_release.build_info.release_date}
       .download-btn
         %a.btn.btn-primary{:href=>relative(jbtcore_current_stable_release.output_path)} 
