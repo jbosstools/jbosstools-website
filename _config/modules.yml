@@ -22,6 +22,9 @@ examples:
 forge:
   name: Forge Tools
   
+general:
+  name: General
+  
 hibernate:
   name: Hibernate Tools
   
