@@ -7,6 +7,6 @@
 :page-issues_url: https://issues.jboss.org/browse/JBIDE/component/12317246
 
 == Get started instantly
-image::images/features-central_334px.png
+image::images/features-central_334px.png[]
 
 todo..

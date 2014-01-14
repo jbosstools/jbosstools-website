@@ -14,15 +14,17 @@ instantly start working with your favorite framework. It also provides you with 
 install extra plugins.  
 
 == Get started instantly 
-image::images/features-central_334px.png
+
+image::images/features-central_334px.png[]
 
 Central helps you bootstrap a new project by providing you with a large set of wizards and templates, 
 including the JBoss Developer Frawework and the GateIn Quickstarts.   
 Central also provides you with the latest community news, announcements and blog articles, 
 so that you always know what's happening at JBoss.org.
 
-== Extras plugins. Easy install. 
-image::images/features-central-extras_334px.png
+== Extras plugins. Easy install.
+
+image::images/features-central-extras_334px.png[]
 
 JBoss Central also features an easy way to install extra plugins, 
 so you don't have to manually lookup and configure update sites for the other plugins you want to use. 

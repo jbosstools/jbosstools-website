@@ -13,27 +13,27 @@ Context and Dependency Injection (CDI) tooling allows you to easily add and work
 
 
 == CDI Nature 
-image::images/features-cdi_308px.png
+image::images/features-cdi_308px.png[]
 
 Todo...
 
 == Content Assist 
-image::images/features-cdi_308px.png
+image::images/features-cdi_308px.png[]
 
 Todo...
 
 == Hyperlink Navigation 
-image::images/features-cdi_308px.png
+image::images/features-cdi_308px.png[]
 
 Todo...
 
 == EL support 
-image::images/features-cdi_308px.png
+image::images/features-cdi_308px.png[]
 
 Todo...
 
 == Validation 
-image::images/features-cdi_308px.png
+image::images/features-cdi_308px.png[]
 
 Todo...
 
