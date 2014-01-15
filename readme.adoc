@@ -12,7 +12,8 @@ A bit of Git, a bit of Ruby and you will get your local tools.jboss.org served.
 * Get http://www.ruby-lang.org/en/[Ruby 1.9.3] (part of the RVM install if you follow that path - see below)
 * Get http://rubygems.org/[RubyGems 1.3.6] or above
 * Get http://www.gnu.org/software/wget/[GNU Wget 1.14]
-* Get node.js (eg., `sudo yum install nodejs`)
+* If on Linux, you might need to install stuff for nokogiri (`sudo yum install libxml libxml-devel libxslt libxslt-devel`)
+* If on Linux, you need to install node.js for execjs ('sudo yum install nodejs')
 * If on Mac OS, get XCode (needed for native gems)
 
 == Installation
@@ -26,18 +27,20 @@ Ruby like many other platforms has its dependency hell. We do recommend you use 
 isolate your ruby runtimes as well as dependencies (gems). The RVM steps are optional though.
 If you are not going to use RVM have a look at the different installations http://www.ruby-lang.org/en/downloads/[options] you have. 
 
-* Install https://rvm.io[RVM] as root, eg:
+* Install https://rvm.io[RVM] 
 
-[source]
-----
-curl -sSL https://get.rvm.io | bash -s stable --ruby=1.9.3
-----
+Note: This installation varies per OS, see details on rvm.io.
+
+For Linux/Fedora: `\curl -sSL https://get.rvm.io | bash` is the simplest and no root allowed) 
+Note that for 'rvm' to be activated you need to run as a login shell. When running `rvm` it should tell you if 
+you are running in a proper terminal/login.
 
 * Set up the isolated environment for the site
 
 [source]
 ----
-# run these as root
+# Do *not* run these as root. 
+# The purpose of using rvm is to have non-root, user isolated and reproducible gem/ruby environment
 rvm install 1.9.3
 rvm use 1.9.3
 rvm gemset create jbosstools-website
@@ -58,7 +61,7 @@ cd jbosstools-website
 
 If you see a message like this:
 
-`Gemset 'jbosstools' does not exist, 'rvm gemset create jbosstools' first, or
+`Gemset 'jbosstools-website' does not exist, 'rvm gemset create jbosstools-website' first, or
 append '--create'.`
 
 Then it is because you have rvm installed and forgot to run the rvm setup
@@ -71,8 +74,8 @@ dependencies.
 
 [source]
 ----
-# run these as root
-gem install bundler execjs
+# do *not* run these as root
+gem install bundler
 bundle install
 ----
 
