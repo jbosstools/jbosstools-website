@@ -4,7 +4,8 @@ module Awestruct
   module Extensions
     class Whatsnew
       
-      @@whatsnew_merged_layout_path = "whatsnew_single_version.html.haml"
+      @@whatsnew_minor_version_layout_path = "whatsnew_minor_version.html.haml"
+      @@whatsnew_major_version_layout_path = "whatsnew_major_version.html.haml"
       
       def initialize(path_prefix)
         @path_prefix = path_prefix
@@ -29,29 +30,54 @@ module Awestruct
           end
         end
         # showing all component whatsnew per product version on a single page
-        site.whatsnew_aggregated_pages = Hash.new
+        site.whatsnew_minor_pages = Hash.new
+        site.whatsnew_major_pages = Hash.new
         whatsnew_pages.each do |jbt_core_version, pages|
-          puts " " + jbt_core_version.to_s
-          whatsnew_aggregated_page = create_page(@path_prefix, jbt_core_version.to_s + ".html")
-          #whatsnew_aggregated_page.title = jbt_core_version.to_s
-          whatsnew_aggregated_page.jbt_core_version = jbt_core_version
-          whatsnew_aggregated_page.individual_pages = Array.new
+          puts " Building N&N page for #{jbt_core_version.to_s}"
+          # minor version page
+          minor_version_whatsnew_page = get_minor_version_whatsnew_page(site, @path_prefix, jbt_core_version.to_s)
+          # major version page
+          major_version_whatsnew_page = get_major_version_whatsnew_page(site, @path_prefix, get_major_version(jbt_core_version))
+          # fill the major/minor version pages with individual components whatnew pages without touching their content!
           pages.sort{|x,y| x.feature_name <=> y.feature_name}.each do |page|
-            whatsnew_aggregated_page.individual_pages << page
+            minor_version_whatsnew_page.individual_pages << page
+            major_version_whatsnew_page.components[page.feature_id] = Array.new if major_version_whatsnew_page.components[page.feature_id].nil?
+            major_version_whatsnew_page.components[page.feature_id] << page
           end
-          site.whatsnew_aggregated_pages[jbt_core_version] = whatsnew_aggregated_page
         end
-        
+        # rename the page for the latest major version's N&N to /latest.html 
+        latest_major_version = site.whatsnew_minor_pages.keys.sort{|x, y| y <=> x}.first
+        puts " Latest major version is #{latest_major_version}"
+        site.whatsnew_minor_pages[latest_major_version].output_path = File.join(@path_prefix, "latest.html")
         $LOG.debug "*** Done executing whatsnew extension...." if $LOG.debug?
       end
       
-      def get_main_version(version)
+      def get_major_version_whatsnew_page(site, path_prefix, major_version)
+        page = site.whatsnew_major_pages[major_version]
+        if page.nil?
+          page = create_page(@@whatsnew_major_version_layout_path, path_prefix, major_version.to_s + ".html")
+          page.version = major_version
+          page.components = Hash.new
+          site.whatsnew_major_pages[major_version] = page
+        end
+        page
+      end
+
+      def get_minor_version_whatsnew_page(site, path_prefix, minor_version)
+          page = create_page(@@whatsnew_minor_version_layout_path, path_prefix, minor_version.to_s + ".html")
+          page.version = minor_version
+          page.individual_pages = Array.new
+          site.whatsnew_minor_pages[minor_version] = page
+          page
+      end
+      
+      def get_major_version(version)
         numbers = version.split(".")
         numbers[0..2].join('.')
       end
       
-      def create_page(*paths)
-        path_glob = File.join( @site.config.layouts_dir, @@whatsnew_merged_layout_path)
+      def create_page(layout_path, *paths)
+        path_glob = File.join( @site.config.layouts_dir, layout_path)
         candidates = Dir[ path_glob ]
         return nil if candidates.empty?
         throw Exception.new( "too many choices for #{simple_path}" ) if candidates.size != 1

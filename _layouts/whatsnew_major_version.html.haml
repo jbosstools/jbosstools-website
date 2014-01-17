@@ -1,0 +1,38 @@
+---
+layout: project
+tab: docs
+---
+- page.title = "What's New in JBoss Tools #{page.version}"
+.row-fluid
+  .span3.bs-docs-sidebar
+    %ul.nav.nav-list.bs-docs-sidenav
+      -# sorting versions in reverse order
+      - versions = site.whatsnew_major_pages.keys.sort{|x,y| y <=> x}
+      - versions.each do |version|
+        %li.version{:class=>("expanded" if version == page.version)}
+          %a{:href=>site.whatsnew_major_pages[version].output_path} JBoss Tools #{version}
+          - if version == page.version
+            %ul.nav.nav-list.nested.components
+              - page.components.each do |component_id, whatsnew_pages|
+                %li.noborder
+                  %a{:href=>"##{component_id}"} #{site.modules[component_id].name}
+      
+  .span9#affixedcontent
+    - default_imagesdir = site.asciidoctor.attributes['imagesdir']
+    - page.components.each do |component_id, pages|
+      - pages.each do |individual_page|
+        - site.asciidoctor.attributes['imagesdir'] = relative(Pathname.new(individual_page.output_path).parent.to_s)
+        %div{:id=>individual_page.feature_id}
+          %h1 #{individual_page.feature_name}
+          #{individual_page.content}
+      %hr
+    - site.asciidoctor.attributes['imagesdir'] = default_imagesdir
+    
+:javascript
+  $(function(){
+    // sidebar Scrollspy
+    $('body').scrollspy();
+    }
+  ); 
+
+  
