@@ -4,8 +4,7 @@
 :page-feature_version: 4.1.0.Alpha2
 :page-jbt_core_version: 4.1.0.Alpha2
 
-== General
-=== New Embedded Forge Runtime 	
+== New Embedded Forge Runtime 	
 
 The embedded runtime is now Forge 1.2.2.Final!
 image::images/4.1.0.Alpha2/about.png[]

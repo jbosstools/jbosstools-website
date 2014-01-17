@@ -4,8 +4,7 @@
 :page-feature_version: 2.5.0.Beta2
 :page-jbt_core_version: 4.1.0.Beta2
 
-== WebServices Tools 2.5.0.Beta2 What's New
-=== WS Tester Default Test Type Change 	
+== WS Tester Default Test Type Change 	
 
 The WS Tester used to have JAX-WS as the default test type in the drop-down. As much of our effort has been towards RESTful services, we have changed the default test type to a RESTful GET operation.
 

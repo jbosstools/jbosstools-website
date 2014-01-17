@@ -1,13 +1,12 @@
-= What's New in 4.1.0.Alpha2
+= Server What's New in 4.1.0.Alpha2
 :page-layout: whatsnew
 :page-feature_id: server
 :page-feature_version: 4.1.0.Alpha2
 :page-feature_jbt_only: true
 :page-jbt_core_version: 4.1.0.Alpha2
 
-== 4.1.0.Alpha2
-=== Deployment
-==== Increased support for product server runtimes
+== Deployment
+=== Increased support for product server runtimes
 
 Support has been increased for AS 7.1+ and it's derived products and it now supports the notion of a product slot instead of an hard coded EAP slot.
 

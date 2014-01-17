@@ -4,9 +4,8 @@
 :page-feature_version: 4.1.0.Alpha2
 :page-jbt_core_version: 4.1.0.Alpha2
 
-== What's New in 4.1.0.Alpha2
-=== JBoss Maven Integration
-==== Source lookup for the masses
+== JBoss Maven Integration
+=== Source lookup for the masses
 
 Maven projects always had an this awesome feature where, clicking on any jar dependency, source would be downloaded automatically for you if needed.
 We now give you the same level of awesomeness for *any* kind of (non-maven) project.

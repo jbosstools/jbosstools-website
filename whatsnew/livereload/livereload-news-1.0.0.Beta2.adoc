@@ -4,10 +4,7 @@
 :page-feature_version: 1.0.0.Beta2
 :page-jbt_core_version: 4.1.0.Beta2
 
-== LiveReload What's New in 1.0.0.Beta2
-
-== General
-=== LiveReload support for JBoss AS and Tomcat Servers 	
+== LiveReload support for JBoss AS and Tomcat Servers 	
 
 Coming in JBoss Tools 4.1.0.Beta2, LiveReload now also supports 'Server Mode', which brings the same level of features to deployed resources than what was introduced in JBoss Tools 4.1.0.Beta1 for the 'Directory Mode' for workspace resources:
 
@@ -20,7 +17,7 @@ image:./images/LiveReload_open_in_web_browser_via_browser-menu.png[]
 
 Related JIRA: JBIDE-14502, JBIDE-13984, JBIDE-14914
 
-=== QR Code for easy access from external devices 	
+== QR Code for easy access from external devices 	
 
 Having the proxy with both 'livereload.js script injection' and 'allow remote connections' options enabled makes a perfect combination to test applications on smartphones and tablets, especially when the LiveReload Browser Extension cannot be installed on such devices.
 
@@ -32,7 +29,7 @@ image:./images/LiveReload_open_in_web_browser_via_qrcode-dialog.png[]
 
 Related JIRA: JBIDE-13984
 
-=== Simplified Configuration and Usage 	
+== Simplified Configuration and Usage 	
 
 Coming in JBoss Tools 4.1.0.Beta2, the proxy option now becomes a permanent feature of the LiveReload server, which means that even workspace resources will be opened with the HTTP protocol instead of the File protocol.
 

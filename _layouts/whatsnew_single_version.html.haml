@@ -1,16 +1,21 @@
 ---
 layout: project
+tab: docs
 ---
--# What's New for a given *major* version of all components (eg all N&N for 4.1.1, including all Alpha/Beta/CR releases). 
+-# What's New for a given minor version of all components (eg all N&N for 4.1.1.CR1). 
 -# Includes left side navigation.
 
+- page.title = "What's New in JBoss Tools #{page.jbt_core_version}"
 .row-fluid.whatsnew
   .span3.bs-docs-sidebar
     %ul.nav.nav-list.bs-docs-sidenav
       - page.individual_pages.each do |individual_page|
         %li 
           %a{:href=>"##{individual_page.feature_id}"} #{individual_page.feature_name}
-  .span9
+    :javascript
+      $('.bs-docs-sidenav>li:first').addClass('active');
+      
+  .span9#whatsnew
     - default_imagesdir = site.asciidoctor.attributes['imagesdir']
     - page.individual_pages.each do |individual_page|
       - site.asciidoctor.attributes['imagesdir'] = relative(Pathname.new(individual_page.output_path).parent.to_s)
@@ -19,4 +24,12 @@ layout: project
         #{individual_page.content}
       %hr
     - site.asciidoctor.attributes['imagesdir'] = default_imagesdir
-   
+    
+:javascript
+  $(function(){
+    // sidebar Scrollspy
+    $('body').scrollspy();
+    }
+  ); 
+
+  

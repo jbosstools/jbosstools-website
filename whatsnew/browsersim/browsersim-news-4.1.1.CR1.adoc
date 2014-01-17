@@ -4,9 +4,7 @@
 :page-feature_version: 4.1.1.CR1
 :page-jbt_core_version: 4.1.1.CR1
 
-== What's New in 4.1.1.CR1
-=== BrowserSim / CordovaSim
-==== InAppBrowser plugin support in CordovaSim
+== InAppBrowser plugin support in CordovaSim
 
 Now CordovaSim is able to simulate the inAppBrowser API. The InAppBrowser is a web browser view that displays when calling window.open(). The InAppBrowser window behaves like a standard web browser, and cannot access Cordova APIs.
 
@@ -14,7 +12,7 @@ image::images/4.1.1.CR1/in-app-browser.png[CordovaSim running InAppBrowser examp
 
 Related JIRA: JBIDE-15512.
 
-==== ChildBrowser plugin support in CordovaSim
+== ChildBrowser plugin support in CordovaSim
 
 Now CordovaSim has ChildBrowser plugin support. ChildBrowser plugin is considered to be deprecated (InAppBrowser is an up-to-date substitution), nevertheless it's one of the most popular plugins overall.
 

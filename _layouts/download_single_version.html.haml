@@ -5,24 +5,22 @@ tab: downloads
 
 - labels = {:stable=>"Stable", :development=>"Development", :nightly=>"Nightly"}
 .row-fluid
-  .span3.sidebar
-    %ul.nav.nav-list
+  .span3.bs-docs-sidebar
+    %ul.nav.nav-list.bs-docs-sidenav
       - site.download_perma_links[page.product].each do |eclipse_builds| 
-        %li.nav-header 
-          #{site.products[:eclipse][eclipse_builds[0]].full_name}
         - eclipse_builds[1].each do |build_type, download_page|
-          %li{:class=>("active" if download_page.build_info == page.build_info)}
+          - puts " Download page: #{download_page.build_info.version} vs #{page.build_info.version}: #{download_page.build_info.version == page.build_info.version}"
+          %li{:class=>("active" if download_page.build_info.version == page.build_info.version)}
             %a{:href=>relative(download_page.output_path)}
               %span
                 #{download_page.build_info.version}
               %span{:class=>"label label_#{build_type}"}
                 #{labels[build_type]}
-      %li.divider          
       %li
         %a{:href=>relative(site.all_versions_download_pages[page.product].output_path)}
           %span
             All Versions
-  .span9
+  .span9#download
     %h2.center
       #{page.build_info.name} #{page.build_info.version}
       %span#displayed-version{:class=>"label label_#{page.build_info.build_type}"}
@@ -140,20 +138,6 @@ tab: downloads
                     %a{:href=>zip.md5_url}> md5
                     )
             
--# modal dialog to display requirements
--#
-  #requirements-modal.modal.hide.fade{:tabindex=>"-1", :role=>"dialog", :"aria-labelledby"=>"myModalLabel", :"aria-hidden"=>"true"}
-    .modal-header
-      %button.close{:type=>"button", :"data-dismiss"=>"modal", :"aria-hidden"=>"true"} x
-      %h3#myModalLabel #{page.build_info.name} #{page.build_info.version} Requirements
-    .modal-body
-      %p 
-        #{page.build_info.name} #{page.build_info.version} runs on Windows, MacOSX and Linux and requires 
-        %a{:href=>page.build_info.eclipse_download}
-          #{page.build_info.eclipse_version.full_name}.
-    .modal-footer
-      %button.btn{:"data-dismiss"=>"modal", :"aria-hidden"=>"true"} Close
-    
 -# Placed at the end of the document so the pages load faster
 :javascript
   $(document).ready(function () {

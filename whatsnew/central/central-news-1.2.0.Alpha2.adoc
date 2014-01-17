@@ -4,8 +4,7 @@
 :page-feature_version: 1.2.0.Alpha2
 :page-jbt_core_version: 4.1.0.Alpha2
 
-== General
-=== A new design 	
+== A new design 	
 
 The JBoss Central UI has been reworked to, hopefully, provide a better user experience. So, in no particular order, you'll see :
 

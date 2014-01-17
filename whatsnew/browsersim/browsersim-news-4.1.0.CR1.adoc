@@ -4,9 +4,7 @@
 :page-feature_version: 4.1.0.CR1
 :page-jbt_core_version: 4.1.0.CR1
 
-== What's New in 4.1.0.CR1
-=== BrowserSim / CordovaSim
-==== Configurable Live Reload port
+== Configurable Live Reload port
 
 Now you can specify the port for the Live Reload server. To specify the port go to Menu > Preferences > Settings and enter the desired value into the "LiveReload Port" input field.
 
@@ -14,7 +12,7 @@ image::images/4.1.0.CR1/BrowserSim-livereloadPort.png[Configurable Live Reload p
 
 Related JIRA: JBIDE-14361.
 
-==== Weinre UI enhancements
+== Weinre UI enhancements
 
 Now Weinre is more informative and user-friendly. There are several UI enhancements, such as progress monitor and address bar. Weinre can be opened via Menu > Debug > Weinre
 

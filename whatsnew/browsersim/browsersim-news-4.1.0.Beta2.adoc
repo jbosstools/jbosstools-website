@@ -4,9 +4,7 @@
 :page-feature_version: 4.1.0.Beta2
 :page-jbt_core_version: 4.1.0.Beta2
 
-== What's New in 4.1.0.Beta2
-=== BrowserSim/CordovaSim
-==== JVM selection and 64-bit Eclipse support on Windows
+== JVM selection and 64-bit Eclipse support on Windows
 
 Now you can specify which JVM is used to launch BrowserSim/CordovaSim. This allows to run BrowserSim/CordovaSim from 64-bit Eclipse on Windows. To specify JVM go to Window > Preferences > BrowserSim/CordovaSim and choose a suitable JVM (32-bit JRE/JDK 6 or JDK 7 (but not JRE 7) on Windows):
 

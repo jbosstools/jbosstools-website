@@ -1,13 +1,12 @@
-= What's New in 4.1.0.Beta1
+= Server What's New in 4.1.0.Beta1
 :page-layout: whatsnew
 :page-feature_id: server
 :page-feature_version: 4.1.0.Beta1
 :page-feature_jbt_only: true
 :page-jbt_core_version: 4.1.0.Beta1
 
-== 4.1.0.Beta1
-=== Deployment Scanners
-==== Deployment Scanner cleanup
+== Deployment Scanners
+=== Deployment Scanner cleanup
 
 When starting a JBoss server, the server adapter automatically adds deployment scanners to your server to pick up deployments to locations outside the server. Depending on your server version, these scanners may be persisted across future restarts, or may not be. On servers where they are persisted, we also typically remove these scanners, to prevent multiple workspaces using the same server from having collisions or conflicting deployment locations.
 
@@ -17,8 +16,8 @@ image::images/JBIDE-9830.png[Deployment Scanner Options in Server Editor]
 
 Related Jira
 
-=== Starting and Stopping Deployed Modules
-==== Module start, stop and restart
+== Starting and Stopping Deployed Modules
+=== Module start, stop and restart
 
 Start, stop and restart on modules in the server adapter now perform an actual start, stop and restart of the module on AS7 and above.
 

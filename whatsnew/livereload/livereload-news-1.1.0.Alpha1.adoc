@@ -4,9 +4,7 @@
 :page-feature_version: 1.1.0.Alpha1
 :page-jbt_core_version: 4.1.1.Alpha1
 
-== LiveReload What's New in 1.1.0.Alpha1
-
-=== Bug fixes 	
+== Bug fixes 	
 
 This release of JBoss Tools LiveReload fixes 2 issues reported and fixed with the help of a community member, Pei-Tang Huang:
 

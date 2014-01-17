@@ -4,9 +4,7 @@
 :page-feature_version: 4.1.1.Alpha1
 :page-jbt_core_version: 4.1.1.Alpha1
 
-== Arquillian What's New in 4.1.1.Alpha1
-
-=== Archive of 'rar' type 	
+== Archive of 'rar' type 	
 
 Now, the Arquillian Generate Deployment method can create archives of the type 'rar'.
 
@@ -14,13 +12,13 @@ image::images/deploymentmethodquickfix.png[]
 
 Related jira: JBIDE-14779
 
-=== Missing Deployment method quick fix 	
+== Missing Deployment method quick fix 	
 
 There is a quick fix for the "Missing Deployment method" issue.
 
 Related jira: JBIDE-14527
 
-=== Generate Deployment method on abstract classes 	
+== Generate Deployment method on abstract classes 	
 
 The Generate Deployment method can be created within an abstract class.
 

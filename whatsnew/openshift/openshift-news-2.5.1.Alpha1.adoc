@@ -1,12 +1,11 @@
-= What's New in 2.5.1.Alpha1
+= OpenShift What's New in 2.5.1.Alpha1
 :page-layout: whatsnew
 :page-feature_id: openshift
 :page-feature_version: 2.5.1.Alpha1
 :page-jbt_core_version: 4.1.1.Alpha1
 
-== 2.5.1.Alpha1
-=== Application Wizard
-==== Create applications with your own source 	
+== Application Wizard
+=== Create applications with your own source 	
 
 You can create a new application with your very own source code since JBoss Tools 4.0.
 
@@ -16,14 +15,14 @@ There are openshift quickstarts that require long timeouts because the size of t
 
 Related Jira
 
-=== OpenShift java client
-==== Embeddables cartridges at application creation time 	
+== OpenShift java client
+=== Embeddables cartridges at application creation time 	
 
 The openshift-java-client now allows you to provide embeddable cartridges when you create an application. Previously these could only get added once the application was ready. This might be required when you use your own application template source.
 
 Related Jira
 
-==== Specific timeouts 	
+=== Specific timeouts 	
 
 The openshift-java-client now allows you to use a specific timeout in your operation. This is useful if you know that it takes much longer to create your application with your custom source than it takes for the default. Previously you had to increase the global timeout.
 

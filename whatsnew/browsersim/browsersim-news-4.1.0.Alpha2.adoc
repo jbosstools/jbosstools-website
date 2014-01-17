@@ -4,9 +4,8 @@
 :page-feature_version: 4.1.0.Alpha2
 :page-jbt_core_version: 4.1.0.Alpha2
 
-== What's New in 4.1.0.Alpha2
-=== BrowserSim
-==== New Skins
+== BrowserSim
+=== New Skins
 
 BrowserSim got iPad and iPad Mini skins.
 
@@ -14,7 +13,7 @@ image::images/4.1.0.Alpha2/ipad-skins.png[New iPad Skins]
 
 Related JIRAs: JBIDE-13685, JBIDE-13684, JBIDE-13416.
 
-==== Screenshots
+=== Screenshots
 
 We added the ability to easily take screenshots of BrowserSim. By default, they are stored in the user's home directory, but this can be changed via Menu > Preferences > Screenshots Location.
 
@@ -22,7 +21,7 @@ image::images/4.1.0.Alpha2/screenshot.png[Screenshot Menu Items]
 
 Related Jira
 
-=== Weinre
+== Weinre
 
 Now you can inspect your page's source with Weinre. It is available via *Menu > Tools > Weinre*.
 

@@ -4,8 +4,7 @@
 :page-feature_version: 1.0.0.Beta1
 :page-jbt_core_version: 4.1.0.Beta1
 
-== Aerogear What's New in 1.0.0.Beta1
-=== Hybrid Mobile (Cordova) Tools
+== Hybrid Mobile (Cordova) Tools
 New Hybrid Mobile Project wizard 	Creates a project structure that is compatible with the cordova-cli projects
 
 image::images/1.0.0.Beta1/wizard.png[]
@@ -14,7 +13,7 @@ Wizard will pre-populate your config.xml.
 
 Related Jira
 
-=== Cordova Configuration Editor
+== Cordova Configuration Editor
 
 Provides easier editing for Cordova's flavour of w3c widget specification XML configuration
 
@@ -22,7 +21,7 @@ image::images/1.0.0.Beta1/configEditor.png[]
 
 Related Jira
 
-=== Run support for Android and iOS
+== Run support for Android and iOS
 
 Creates, compiles and runs the native application on the native platform emulators and devices.
 

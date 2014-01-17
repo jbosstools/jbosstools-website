@@ -4,8 +4,7 @@
 :page-feature_version: 2.5.1.Alpha2
 :page-jbt_core_version: 4.1.1.Alpha2
 
-== WebServices Tools 2.5.1.Alpha2 What's New
-=== Bug fixes 	
+== Bug fixes 	
 
 A few bugs were fixed in the JAX-RS Tooling for this version of the Web Services component. In particular:
 

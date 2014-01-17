@@ -87,8 +87,8 @@ section {
 }
 
 #content-wrapper {
-  margin-top: 10px;
-  margin-bottom: 20px;
+  margin-top: 0px;
+  margin-bottom: 0px;
   /*
   @media screen and (min-width: 1200px) {
     max-width: 900px;
@@ -188,6 +188,13 @@ blockquote > p {
 }
 
 // ******************************************************
+// content
+// ******************************************************
+.content {
+  margin-top: 30px;
+}
+
+// ******************************************************
 // nav tabs
 // ******************************************************
 
@@ -211,6 +218,15 @@ blockquote > p {
 
 }
 
+// ******************************************************
+// Banner
+// ******************************************************
+.banner {
+    position: relative;
+    margin-bottom: 0;
+    z-index: 0;
+    border-radius: 0;
+}
 
 // ******************************************************
 // page note
@@ -233,7 +249,7 @@ blockquote > p {
 // ******************************************************
 
 .breadcrumb {
-  margin-bottom: 2em;
+  margin-bottom: 0px;
   & > .active {
     color: rgb(153, 153, 153);
   }
@@ -249,7 +265,6 @@ a.dropdown-toggle {
 // ******************************************************
 // Customizing the NavBar
 // ******************************************************
-.nav-bar
 .navbar-inner {
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
@@ -257,7 +272,6 @@ a.dropdown-toggle {
     border-width: 0px;    
   }
 }
-
 // ******************************************************
 // Hero Unit
 // ******************************************************
@@ -286,6 +300,32 @@ a.dropdown-toggle {
 // ****************************************
 // Side bar
 // ****************************************
+body {
+  position: relative;
+}  
+
+.bs-docs-sidenav {
+}
+
+.bs-docs-sidenav.affix-top {
+  
+}
+.bs-docs-sidenav.affix {
+  position: fixed;
+  top: 40px; // matches height of navbar
+}
+.bs-docs-sidenav.affix-bottom {
+  position: absolute;
+  top: auto;
+  bottom: 20px;
+}
+
+.bs-docs-sidenav > .active > a {
+  z-index: 0; // reset, to avoid it passes *over* the navbar when scrolling :-/
+}
+.sidebar {
+  margin: 0px;
+}
 .sidebar {
   
   border: 1px solid rgb(229, 229, 229);
@@ -423,8 +463,8 @@ a.dropdown-toggle {
     }
   }
 }
-#download_version > h3 {
-//  margin-bottom: 0;
+#download {
+  margin-top: 30px;
 }
 
 .download-instructions {
@@ -548,6 +588,7 @@ span.label {
 
 @media screen and (min-width: 940px) {
   #feature {
+    margin-top: 30px;
     .sect1 {
       position: relative;
       margin-bottom: 2em;
@@ -711,6 +752,17 @@ span.label {
   
 }
 
+// **********************************************
+// Scrollspy: fixing element position with navbar
+// **********************************************
+#whatsnew {
+  margin-top: -20px;
+  & > div {
+    padding-top: 50px;
+  }
+}
+
+
 // *************************************
 // What's New
 // *************************************
@@ -719,9 +771,9 @@ span.label {
     position: relative;
     padding-bottom: 2em;
     margin-bottom: 2em;
-    &::after {
+    /*&::after {
       @include horizontal-bottom-ruler(1px);
-    }
+    }*/
     img {
       margin-top: 1em;
       margin-bottom: 1em;
