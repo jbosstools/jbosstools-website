@@ -2227,6 +2227,11 @@
       'bottom' : offsetTop != null && scrollTop <= offsetTop ?
       'top'    : false
 
+      console.log("position.top:" + position.top + " / scrollTop: " + scrollTop + " / offsetTop: " + offsetTop + " / offsetBottom: " + offsetBottom + " / position.top: " + position.top + "\n" +
+                  " elementHeight:" + this.$element.height() + " / scrollHeight: " + scrollHeight + "\n" + 
+                  "position.top + elementHeight=" + (position.top + this.$element.height()) + "\n" +
+                  "scrollHeight - offsetBottom=" + (scrollHeight - offsetBottom) +" => " + affix);
+
     if (this.affixed === affix) return
 
     this.affixed = affix
@@ -2338,12 +2343,12 @@ function processScroll() {
     $('section [href^=#]').click(function (e) { e.preventDefault() })
 
     // side bar
-    $('.bs-docs-sidenav').affix({
+    /*$('.bs-docs-sidenav').affix({
       offset: {
         top: function () { return $window.width() <= 980 ? 290 : 210 },
         bottom: 270
       }
-    })
+    })*/
 
     // make code pretty
     window.prettyPrint && prettyPrint()
@@ -3511,7 +3516,7 @@ if (agentID)   {
  * Event handling portions adapted from the YUI Event component used under
  * the following license:
  *
- *   Copyright © 2012 Yahoo! Inc. All rights reserved.
+ *   Copyright Â© 2012 Yahoo! Inc. All rights reserved.
  *
  *   Redistribution and use of this software in source and binary forms,
  *   with or without modification, are permitted provided that the following conditions
@@ -3847,7 +3852,7 @@ Tabzilla.preventDefault = function(ev)
 Tabzilla.content =
 '<div class="tabnavclearfix" id="tabnav">'
 +'<div class="tabcontent">'
-+'  <p class="overview"> Like the project? It’s part of the community of Red Hat projects. Learn more about Red Hat and our open source communities:</p>'
++'  <p class="overview"> Like the project? Itâ€™s part of the community of Red Hat projects. Learn more about Red Hat and our open source communities:</p>'
 +'  <div class="row-fluid">'
 +'    <span class="span4 middlewarelogo">'
 +'      <img src="http://static.jboss.org/common/images/tabzilla/RHJB_Middleware_Logotype.png" alt="Red Hat JBoss MIDDLEWARE" />'

@@ -190,7 +190,7 @@ blockquote > p {
 // ******************************************************
 // content
 // ******************************************************
-.content {
+#affixedcontent {
   margin-top: 30px;
 }
 
@@ -304,7 +304,41 @@ body {
   position: relative;
 }  
 
-.bs-docs-sidenav {
+
+
+.bs-docs-sidenav li.expanded {
+  & > a {
+    border-bottom: none;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    color: rgb(255, 255, 255);
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.2);
+    background-color: rgb(51, 102, 153);
+  }
+  & > ul.nested {
+    border-left: 1px solid rgb(229, 229, 229);
+    border-right: 1px solid rgb(229, 229, 229);
+    
+    a {
+      padding-left: 30px;
+    } 
+    li.active > a {
+      background: none;
+      color: rgb(51, 102, 153);
+      text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.5);
+      font-weight: bold;
+    }
+    & > li:last-child > a{
+      padding-bottom: 8px;
+    }
+  }
+  
+  &:last-child > ul {
+    border-bottom: 1px solid rgb(229, 229, 229);
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+  }
+  
 }
 
 .bs-docs-sidenav.affix-top {
@@ -317,7 +351,7 @@ body {
 .bs-docs-sidenav.affix-bottom {
   position: absolute;
   top: auto;
-  bottom: 20px;
+  bottom: 40px;
 }
 
 .bs-docs-sidenav > .active > a {
@@ -767,6 +801,7 @@ span.label {
 // What's New
 // *************************************
 .whatsnew {
+  position: relative; // affix
   .sect1 {
     position: relative;
     padding-bottom: 2em;

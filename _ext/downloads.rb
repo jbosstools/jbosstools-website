@@ -38,7 +38,6 @@ module Awestruct
             @site.download_perma_links[product][eclipse_id] = Hash.new if eclipse_version.active
             @site.download_pages[product][eclipse_id] = Array.new
             #permalinks for "stable.html", "development.html", etc. 
-            puts "Processing " + eclipse_id.to_s + " stream (" + eclipse_version.full_name + " - active: " + eclipse_version.active.to_s + ")..."
             # for each Eclipse versions can have many product builds, each one with build info
             eclipse_stream.each do |build_version, build_info|
               build_type = guess_build_type(build_version) 
@@ -84,13 +83,13 @@ module Awestruct
       end
       
       def get_whatsnew_page(product_name, product_version)
-        puts " looking for N&N for #{product_name} version #{product_version}..."
-        whatsnew_aggregated_page = @site.whatsnew_aggregated_pages[product_version]
+        #puts " looking for N&N for #{product_name} version #{product_version}..."
+        whatsnew_aggregated_page = @site.whatsnew_minor_pages[product_version]
         unless whatsnew_aggregated_page.nil?
-          puts " whatsnew for #{product_name} #{product_version} will link to #{whatsnew_aggregated_page.output_path}"
+          #puts " whatsnew for #{product_name} #{product_version} will link to #{whatsnew_aggregated_page.output_path}"
           whatsnew_aggregated_page
         end
-        puts "  no whatsnew for #{product_name} #{product_version}"
+        #puts "  no whatsnew for #{product_name} #{product_version}"
         nil
       end
 
