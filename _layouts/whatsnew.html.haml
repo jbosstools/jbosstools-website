@@ -2,56 +2,8 @@
 layout: project
 tab: docs
 ---
+-# What's New for a given version of single component. No left side navigation.
 .row-fluid
-  .span3.sidebar
-    .accordion#whatsnew
-      - i = 0
-      - site.product_whatsnews.sort_by{|k,v| k}.reverse.each do |product_version, whatsnew_pages|
-        - i = i + 1
-        .accordion-group
-          .accordion-heading
-            %a.accordion-toggle{:"data-toggle"=>"collapse", :"data-parent"=>"#whatsnew", :href=>"#collapse#{i}"}
-              #{product_version}
-          .accordion-body.collapse{:id=>"collapse#{i}"}
-            - if page.jbt_core_version == product_version
-              :javascript
-                $('#collapse#{i}').addClass('in');
-            %ul.nav.nav-list
-              %ul.nav.nav-list
-                - whatsnew_pages.each do |whatsnew_page|
-                  - if whatsnew_page.output_path == page.output_path
-                    %li.active
-                      %a{:href=>relative(whatsnew_page.output_path)} #{site.modules[whatsnew_page.feature_id].name}
-                  - else
-                    %li 
-                      %a{:href=>relative(whatsnew_page.output_path)} #{site.modules[whatsnew_page.feature_id].name}
-      .accordion-group
-        .accordion-heading
-          %a.accordion-toggle{:href=>"http://docs.jboss.org/tools/whatsnew/index.html"} Archived News
-  .span9.whatsnew
-    .whatnew-nav.center
-      - puts "page.jbt_core_version=#{page.jbt_core_version}"
-      - site.product_whatsnews.sort_by{|k,v| k}.reverse.each do |product_version, whatsnew_pages|
-        - if page.jbt_core_version == product_version
-          - whatsnew_pages.each_index do |i|
-            - if whatsnew_pages[i].output_path == page.output_path
-              - if i > 0 then
-                - previous_module = whatsnew_pages[i - 1]
-                %a.btn.btn-small{:href=>relative(previous_module.output_path)} &laquo; #{site.modules[previous_module.feature_id].name}
-              - if i + 1< whatsnew_pages.size
-                - next_module = whatsnew_pages[i + 1]
-                %a.btn.btn-small{:href=>relative(next_module.output_path)} #{site.modules[next_module.feature_id].name} &raquo;
+  .span12.whatsnew
     ~content
-    .whatnew-nav.center
-      - puts "page.jbt_core_version=#{page.jbt_core_version}"
-      - site.product_whatsnews.sort_by{|k,v| k}.reverse.each do |product_version, whatsnew_pages|
-        - if page.jbt_core_version == product_version
-          - whatsnew_pages.each_index do |i|
-            - if whatsnew_pages[i].output_path == page.output_path
-              - if i > 0 then
-                - previous_module = whatsnew_pages[i - 1]
-                %a.btn.btn-small{:href=>relative(previous_module.output_path)} &laquo; #{site.modules[previous_module.feature_id].name}
-              - if i + 1< whatsnew_pages.size
-                - next_module = whatsnew_pages[i + 1]
-                %a.btn.btn-small{:href=>relative(next_module.output_path)} #{site.modules[next_module.feature_id].name} &raquo;
     

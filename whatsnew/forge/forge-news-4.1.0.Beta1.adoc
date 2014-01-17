@@ -4,14 +4,13 @@
 :page-feature_version: 4.1.0.Beta1
 :page-jbt_core_version: 4.1.0.Beta1
 
-== General
-=== New Embedded Forge 1 Runtime 	
+== New Embedded Forge 1 Runtime 	
 
 The embedded runtime is now Forge 1.3.0.Final!
 
 image::images/4.1.0.Beta1/about.png[]
 
-=== Forge 1 Eclipse-style Wizards 	
+== Forge 1 Eclipse-style Wizards 	
 
 There was a demand from our users to support the functionality offered by Forge not only in the command-line style but to also provide Eclipse-style wizards that expose this funtionality. The initial implementation of some of these wizards is now available. Note that changes to these wizards will happen according to the feedback we receive from our users.
 
@@ -25,7 +24,7 @@ The second wizard enables you to scaffold a JSF user interface from JPA entities
 
 image::images/4.1.0.Beta1/scaffold.png[]
 
-=== Initial Forge 2 Support 	
+== Initial Forge 2 Support 	
 
 We have included Forge 2 support. The included runtime is 2.0.0.Alpha4 and as the alpha status indicates, this support is experimental. You can bring up a popup containing the available Forge 2 commands by issuing 'Ctrl+5'.
 

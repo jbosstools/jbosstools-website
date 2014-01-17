@@ -4,9 +4,8 @@
 :page-feature_version: 4.1.0.Alpha1
 :page-jbt_core_version: 4.1.0.Alpha1
 
-== What's New in 4.1.0.Alpha1
-=== JBoss Maven Integration
-==== JPA/JSF/JAX-RS configurators moved to m2e-wtp 	
+== JBoss Maven Integration
+=== JPA/JSF/JAX-RS configurators moved to m2e-wtp 	
 
 The JBoss Tools JPA, JSF and JAX-RS configurators were contributed to the https://www.eclipse.org/m2e-wtp/[m2e-wtp] project, at the Eclipse Foundation. The can be enabled/disabled in the workspace preferences : Window > Preferences > Maven > Java EE Integration :
 
@@ -27,7 +26,7 @@ On a somewhat related note, we ensured all JBoss Tools Maven features are fully 
 
 See JBIDE-13048 for more details.
 
-=== Kepler/Juno Incompatibilities 	
+== Kepler/Juno Incompatibilities 	
 
 For Kepler, the Dali project has changed some of the APIs that are used by the Hibernate configurator. Adapting the Hibernate configurator to these new APIs resulted in incompatibilities with Juno to the extent that it is not anymore possible to support the installation of the Hibernate configurator plugin in Juno.
 See JBIDE-13365 for more details.

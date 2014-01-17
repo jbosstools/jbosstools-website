@@ -4,8 +4,7 @@
 :page-feature_version: 4.1.0.Beta1
 :page-jbt_core_version: 4.1.0.Beta1
 
-== General
-=== Opening cheatsheet on import project 	
+== Opening cheatsheet on import project 	
 
 Project examples plugin can now open a .cheatsheet.xml or cheatsheet.xml when a project is imported.
 
@@ -15,7 +14,7 @@ image::images/OpenAction.png[]
 
 Related JIRA : JBIDE-14332
 
-=== Show in Cheat Sheets view. 	
+== Show in Cheat Sheets view. 	
 
 There is now a new action in the "Show in" context menu: the Show in Cheat Sheets action.
 
@@ -29,7 +28,7 @@ See http://screencast.com/t/gK5JggVU[a screencast] of this in action.
 
 Related JIRA : JBIDE-14334
 
-=== New cheatsheet commands 	
+== New cheatsheet commands 	
 
 We have added new context sensitive parameterized commands for open file, show type etc. The commands can be used when creating cheatsheets.
 

@@ -4,9 +4,7 @@
 :page-feature_version: 1.1.0.Alpha2
 :page-jbt_core_version: 4.1.1.Alpha2
 
-== LiveReload What's New in 1.1.0.Alpha2
-
-=== Asciidoc support 	
+== Asciidoc support 	
 
 This release of JBoss Tools LiveReload brings support for Asciidoc files (.adoc and .asciidoc). Using a basic Text Editor in combination with the LiveReload tooling and the Asciidoctor.js Chrome extension and FireFox add-on, users will now have instant reload of their documentation in their browser !
 

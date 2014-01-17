@@ -85,10 +85,10 @@ module Awestruct
       
       def get_whatsnew_page(product_name, product_version)
         puts " looking for N&N for #{product_name} version #{product_version}..."
-        whatsnews = @site.product_whatsnews[product_version]
-        unless whatsnews.nil?
-          puts " whatsnew for #{product_name} #{product_version} will link to #{whatsnews.first.output_path}"
-          whatsnews.first
+        whatsnew_aggregated_page = @site.whatsnew_aggregated_pages[product_version]
+        unless whatsnew_aggregated_page.nil?
+          puts " whatsnew for #{product_name} #{product_version} will link to #{whatsnew_aggregated_page.output_path}"
+          whatsnew_aggregated_page
         end
         puts "  no whatsnew for #{product_name} #{product_version}"
         nil

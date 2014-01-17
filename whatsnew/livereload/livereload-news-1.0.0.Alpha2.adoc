@@ -4,8 +4,7 @@
 :page-feature_version: 1.0.0.Alpha2
 :page-jbt_core_version: 4.1.0.Alpha2
 
-== LiveReload What's New in 1.0.0.Alpha2
-=== Directory Mode Support 	
+== Directory Mode Support 	
 
 JBoss Tools LiveReload is a server-side implementation of the  http://feedback.livereload.com/knowledgebase/articles/86174-livereload-protocol[LiveReload protocol].
 
@@ -27,13 +26,13 @@ The LiveReload server will send "reload" commands to the connected Web Browser(s
 
 And yes, you can have multiple browsers connected at the same time and refreshed at the same time ;-)
 
-==== See the plugin in action
+=== See the plugin in action
 
 The following little screencast demoes the new LiveReload feature. It shows how to create a new LiveReload server and then, shows how the 2 browsers (FireFox and Chrome) are instantly refreshed when a .html or .css file is changed, without having to click on the 'refresh' button of each browser.
 
 video:http://www.youtube.com/embed/CUwZixfRYyg[youtube]
 
-==== Installing the Browser Extension
+=== Installing the Browser Extension
 
 Chrome users can install the https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei/details[v.2.0.9 extension from the Chrome Marketplace]. Be aware that, in order to use Chrome LiveReload with file URLs, you have to explicitly enable that for the Live Reload extension under "Extensions" in Chrome preferences.
 

@@ -29,7 +29,7 @@ hibernate:
   name: Hibernate Tools
   
 jst:
-  name: JST/JSF/HTML
+  name: JST / JSF / HTML Editor
   
 livereload:
   name: LiveReload

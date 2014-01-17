@@ -4,9 +4,8 @@
 :page-feature_version: 4.1.0.Beta1
 :page-jbt_core_version: 4.1.0.Beta1
 
-== What's New in 4.1.0.Beta1
-=== JBoss Maven Integration
-==== Edit Maven Repositories 	
+== JBoss Maven Integration
+=== Edit Maven Repositories 	
 
 Maven Repositories defined in profiles in your settings.xml (Window > Preferences > JBoss Tools > Maven Integration > Configure Maven Repositories...) can now be edited with the "Edit Repository..." button :
 

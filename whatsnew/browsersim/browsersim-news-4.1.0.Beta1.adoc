@@ -4,10 +4,8 @@
 :page-feature_version: 4.1.0.Beta1
 :page-jbt_core_version: 4.1.0.Beta1
 
-== What's New in 4.1.0.Beta1
-=== CordovaSim
-
-==== New CordovaSim Application
+== CordovaSim
+=== New CordovaSim Application
 
 CordovaSim is a simulator of http://cordova.apache.org/[Apache Cordova] (aka PhoneGap) environment based on BrowserSim and http://ripple.incubator.apache.org/[Ripple]. It emulates main APIs of Apache Cordova such as Accelerometer, Geolocation, Camera, https://github.com/phonegap/phonegap-plugins/tree/master/iOS/BarcodeScanner[Barcode Scanner], etc.
 
@@ -23,9 +21,8 @@ image::images/4.1.0.Beta1/CordovaSim-run-as.png[Run As CordovaSim]
 
 Related JIRAs: JBIDE-13552, JBIDE-14362, JBIDE-14300, JBIDE-14383.
 
-=== BrowserSim
-
-==== LiveReload support
+== BrowserSim
+=== LiveReload support
 
 If you enable LiveReload BrowserSim will inject livereload.js into html pages it load. Making it automatically load if the url is managed by a livereload server such as JBoss Tools new LiveReload plugin.
 
@@ -33,7 +30,7 @@ image::images/4.1.0.Beta1/BrowserSim-livereload.png[Enable Livereload]
 
 Related JIRA: JBIDE-14360.
 
-==== Synchonized Windows
+=== Synchonized Windows
 
 Now you can open more than one BrowserSim windows which work synchronously. It provides ability to see multiple devices rendering the same page, repeat your navigation steps and when reload it reloads all of them. Synchronized window can be opened via Menu > Open Synchronized Window > skin_to_open
 

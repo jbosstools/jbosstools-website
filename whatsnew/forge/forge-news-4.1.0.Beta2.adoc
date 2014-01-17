@@ -4,8 +4,7 @@
 :page-feature_version: 4.1.0.Beta2
 :page-jbt_core_version: 4.1.0.Beta2
 
-== General
-=== Forge 1 Eclipse-style Wizards 	
+== Forge 1 Eclipse-style Wizards 	
 
 The usability of these wizards has been improved a lot.
 
@@ -31,7 +30,7 @@ image::images/4.1.0.Beta2/rest.png[]
 
 Additionally, as you might have noticed in all of the above screenshots, these wizards now have nice progress bars that indicate what is happening under the covers.
 
-=== Experimental Forge 2 Support 	
+== Experimental Forge 2 Support 	
 
 The included runtime is now 2.0.0.Alpha5. The popup that results from issuing 'Ctrl+5' now looks a lot better. It also contains a few more Forge 2 commands.
 

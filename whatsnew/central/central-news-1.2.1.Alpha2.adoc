@@ -4,8 +4,7 @@
 :page-feature_version: 1.2.1.Alpha2
 :page-jbt_core_version: 4.1.1.Alpha2
 
-==  JBoss Central What's New in 1.2.1.Alpha2
-=== JDK 7u40 compatibility 	
+== JDK 7u40 compatibility 	
 
 Both Oracle JDK and OpenJDK 1.7 update 40 have a known issue when creating temporary files (see http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=8025128[] and https://bugs.openjdk.java.net/browse/JDK-8025128[]), preventing JBoss Central from fetching informations and remote project examples.
 

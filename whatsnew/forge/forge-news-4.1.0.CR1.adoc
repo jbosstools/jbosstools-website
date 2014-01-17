@@ -4,19 +4,18 @@
 :page-feature_version: 4.1.0.CR1
 :page-jbt_core_version: 4.1.0.CR1
 
-== General
-=== New Embedded Forge 1 Runtime 	
+== New Embedded Forge 1 Runtime 	
 
 The embedded runtime is now Forge 1.3.2.Final!
 
 image::images/4.1.0.CR1/forge1.png[]
 
-=== Forge 1 Eclipse-style Wizards 	
+== Forge 1 Eclipse-style Wizards 	
 
 The 'Scaffold Entities' wizard now include options to overwrite existing files and force scaffold setup.
 
 image::images/4.1.0.CR1/scaffold.png[]
 
-=== Experimental Forge 2 Support 	
+== Experimental Forge 2 Support 	
 
 The included runtime is now 2.0.0.Alpha6.

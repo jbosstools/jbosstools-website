@@ -1,12 +1,11 @@
-= What's New in 4.1.0.Beta1
+= Visual Editor What's New in 4.1.0.Beta1
 :page-layout: whatsnew
 :page-feature_id: vpe
 :page-feature_version: 4.1.0.Beta1
 :page-feature_jbt_only: true
 :page-jbt_core_version: 4.1.0.Beta1
 
-== 4.1.0.Beta1
-=== Windows 64-bit Support
+== Windows 64-bit Support
 
 Thanks to a https://issues.jboss.org/browse/JBIDE-2720?focusedCommentId=12770999&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-12770999[contribution of Carsten Pfeiffer], Visual Page Editor got experimental support for Windows 64-bit. So if you see this screen:
 

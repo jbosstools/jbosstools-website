@@ -4,8 +4,7 @@
 :page-feature_version: 4.1.0.Beta2
 :page-jbt_core_version: 4.1.0.Beta2
 
-== General
-=== Experimental Go offline script 	
+== Experimental Go offline script 	
 
 We now provide a groovy script that pre-caches all JBoss Tools examples and their dependencies for anyone wanting to be able to work offline (after an initial online session). For instance, an instructor can download all the required dependencies and then provide a zipped .m2/repository to his students via flash drive, all students can then work offline.
 

@@ -4,11 +4,11 @@ tab: guides
 ---
 - category_labels = {"installation"=>"Installation", "introduction"=>"Technical Introduction", "reveng"=>"Reverse Engineering"}
 .row-fluid
-  .span4.sidebar
-    %ul.nav.nav-list
+  .span3.bs-docs-sidebar
+    %ul.nav.nav-list.bs-docs-sidenav
       - site.videos.each do |category, videos|
-        %li.nav-header
-          #{category_labels[category]}
+        -#%li.nav-header
+        -#  #{category_labels[category]}
         - videos.each do |video|
           - if page.output_path == video.output_path
             %li.active 
@@ -17,5 +17,5 @@ tab: guides
             %li
               %a{:href=>relative(video.output_path)} #{video.title}
                       
-  .span8
+  .span9#video
     ~content

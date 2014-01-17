@@ -1,0 +1,26 @@
+---
+layout: project
+tab: docs
+---
+.row-fluid.whatsnew
+  .span3.bs-docs-sidebar
+    %ul.nav.nav-list.bs-docs-sidenav
+      - site.whatsnew_pages.sort_by{|k,v| k}.reverse.each do |jbt_core_version, whatsnew_page|
+        %li 
+          %a{:href=>relative(whatsnew_page.output_path)} #{jbt_core_version}
+          - if jbt_core_version == page.jbt_core_version
+            %ul.nav.nav-list
+              - whatsnew_page.items.each do |item|
+                %li 
+                  %a{:href=>"##{item.feature_id}"} #{item.feature_name}
+      %li
+        %a{:href=>"http://docs.jboss.org/tools/whatsnew/index.html"} Archived News
+  
+  .span9.content
+    - page.items.each do |item|
+      %div{:id=>item.feature_id}
+        #{item.content}
+ 
+  
+
+  

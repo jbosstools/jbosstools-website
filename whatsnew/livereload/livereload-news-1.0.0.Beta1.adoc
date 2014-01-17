@@ -4,9 +4,7 @@
 :page-feature_version: 1.0.0.Beta1
 :page-jbt_core_version: 4.1.0.Beta1
 
-== LiveReload What's New in 1.0.0.Beta1
-
-=== Server Mode Support
+== Server Mode Support
 
 In Addition with the Directory Mode support introduced in 1.0.0.Alpha, the new Server Mode brings LiveReload support to resources deployed on a JBoss AS Server (other types of servers will follow). In this mode, the LiveReload commands are sent to the connected browsers once resources have been redeployed on the Application Server. This means that notified browsers will wait until the latest version of the resources have been deployed before loading them.
 
@@ -14,7 +12,7 @@ As before, users only need to create and start the LiveReload server, connect th
 
 Related JIRA: JBIDE-13950
 
-=== Directory Mode Support via Proxy 	
+== Directory Mode Support via Proxy 	
 
 The LiveReload server now features an optional embedded proxy mode which enhances the Directory Mode experience. Using this proxy, users can not only access their local files from remote devices, but also have the <script> tag to load the livereload.js script automatically inserted at the bottom of the <body> element of the returned HTML pages. This means that LiveReload support is now available for tablets and smartphones that do not allow for browser extension installation !
 
