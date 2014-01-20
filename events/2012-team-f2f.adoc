@@ -1,5 +1,5 @@
 = Face-to-Face Team Meeting
-:page-layout: project
+:page-layout: event
 :page-event_date: December 2012, 10th to 14th
 :page-effective_date: 20121210
 :page-location: Brno, Czech Republic

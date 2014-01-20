@@ -4,10 +4,10 @@ title: Events
 ---
 .row-fluid
   .span12
-    %h3.center All Events
+    %h3.center All Events 
 .row-fluid
   .span8.offset2
-    - events = site.events.sort{|l,r| l.effective_date <=> r.effective_date}
+    - events = site.events.sort{|l,r| r.effective_date <=> l.effective_date}
     - for event in events
       .justify
         %h4

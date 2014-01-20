@@ -188,16 +188,20 @@ blockquote > p {
 }
 
 // ******************************************************
-// content
+// Affix
 // ******************************************************
-#affixedcontent {
+.affixedContent {
+  position: relative; // affix
+  margin-top: 30px;
+}
+
+.scrolledContent {
   margin-top: 30px;
 }
 
 // ******************************************************
 // nav tabs
 // ******************************************************
-
 .nav-tabs > .active > a, .nav-tabs > .active > a:hover, .nav-tabs > .active > a:focus {
   color: rgb(101, 101, 101);
 }
@@ -301,7 +305,7 @@ a.dropdown-toggle {
 // Side bar
 // ****************************************
 body {
-  position: relative;
+  //position: relative;
 }  
 
 
@@ -323,10 +327,9 @@ body {
       padding-left: 30px;
     } 
     li.active > a {
-      background: none;
-      color: rgb(51, 102, 153);
-      text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.5);
-      font-weight: bold;
+      color: rgb(255, 255, 255);
+      text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.2);
+      background-color: rgb(51, 102, 153);
     }
     & > li:last-child > a{
       padding-bottom: 8px;
@@ -389,6 +392,27 @@ body {
   }
   
   
+}
+
+// ****************************************
+// Events
+// ****************************************
+.event {
+  .title {
+    .info {
+      color: rgb(119, 119, 119);
+      font-weight: bold;
+    }
+    
+    h3 {
+      margin-top: 2em;
+      margin-bottom: 0;
+    }
+  }
+  .content {
+    margin-top: 2em;
+    margin-bottom: 4em;
+  }
 }
 
 // ****************************************
@@ -581,7 +605,7 @@ span.label {
   }
 }
 
-.feature {
+/*.feature {
   img {
     display: block;
     margin-left: 20px;
@@ -618,11 +642,10 @@ span.label {
       display: inline;
     }
   }
-}
+}*/
 
 @media screen and (min-width: 940px) {
-  #feature {
-    margin-top: 30px;
+  .feature {
     .sect1 {
       position: relative;
       margin-bottom: 2em;
@@ -650,17 +673,18 @@ span.label {
       padding-top: 20px;
     }
   
+    $space: 48%;
     .sect1:nth-child(odd) {
       H2, .sect2 > :not(.imageblock) {
         float: left;
         clear: left;
-        width: 50%;
+        width: $space;
         //margin:0px;
       }
       .sect2 > .imageblock {
         float: right;
         margin-top: -4em;
-        width: 50%;
+        width: $space;
       }
     } 
   
@@ -668,13 +692,13 @@ span.label {
       H2, .sect2 > :not(.imageblock) {
         float: right;
         clear: right;
-        width: 50%;
+        width: $space;
         //margin:0px;
       }
       .sect2 > .imageblock {
         float: left;
         margin-top: -4em;
-        width: 50%;
+        width: $space;
       }
     }  
   }
@@ -786,22 +810,10 @@ span.label {
   
 }
 
-// **********************************************
-// Scrollspy: fixing element position with navbar
-// **********************************************
-#whatsnew {
-  margin-top: -20px;
-  & > div {
-    padding-top: 50px;
-  }
-}
-
-
 // *************************************
 // What's New
 // *************************************
 .whatsnew {
-  position: relative; // affix
   .sect1 {
     position: relative;
     padding-bottom: 2em;

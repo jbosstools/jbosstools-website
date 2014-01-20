@@ -6,7 +6,7 @@ tab: docs
 -# Includes left side navigation.
 
 - page.title = "What's New in JBoss Tools #{page.version}"
-.row-fluid.whatsnew
+.row-fluid.affixedContent
   .span3.bs-docs-sidebar
     %ul.nav.nav-list.bs-docs-sidenav
       -# sorting versions in reverse order
@@ -23,7 +23,7 @@ tab: docs
     :javascript
       $('%ul.components > li:first').addClass('active');
       
-  .span9#whatsnew
+  .span9#whatsnew.scrolledContent
     - default_imagesdir = site.asciidoctor.attributes['imagesdir']
     - page.individual_pages.each do |individual_page|
       - site.asciidoctor.attributes['imagesdir'] = relative(Pathname.new(individual_page.output_path).parent.to_s)
@@ -34,7 +34,7 @@ tab: docs
     - site.asciidoctor.attributes['imagesdir'] = default_imagesdir
     
 :javascript
-  $(function(){
+  $(window).load(function() {
     // sidebar Scrollspy
     $('body').scrollspy();
     }

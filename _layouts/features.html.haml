@@ -1,30 +1,40 @@
+
 ---
 layout: project
 tab: docs
 --- 
 
-.row-fluid
+.row-fluid.affixedContent
   .span3.bs-docs-sidebar
     %ul.nav.nav-list.bs-docs-sidenav
       - features = site.features.values.sort{|l,r| l.order <=> r.order}
       - features.each do |feature|
-        - if feature.url == page.url
-          %li.active
-            %a{:href => relative(feature.url)} #{feature.name}
-        - else
-          %li
-            %a{:href => relative(feature.url)} #{feature.name}
+        %li.version{:class=>("expanded" if feature.url == page.url)}
+          %a{:href => relative(feature.url)} #{feature.name}
+          -if feature.url == page.url
+            %ul.nav.nav-list.nested.components
+              
     
-  .span9#feature
+  .span9.scrolledContent.feature
     ~content
 
 :javascript
-  $( document ).ready(function() {
+  $(window).load(function() {
+    // sidebar Scrollspy
+    $('body').scrollspy();
+  }); 
+  /*$( document ).ready(function() {
     $('#module_whatsnews').hide();
     $('#whatsnewButton').click(function() {$('#module_whatsnews').toggle()});
     
     var sidebarHeight = $('.bs-docs-sidenav').outerHeight(true) + 30;
     $('#feature').css('min-height', sidebarHeight);
+  });*/
+  
+  var items = $('.feature .sectionbody h3').toArray();
+  items.forEach(function(item) {
+    console.log(item.innerHTML)
   });
+  
 
   

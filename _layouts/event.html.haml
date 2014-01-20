@@ -1,0 +1,14 @@
+---
+layout: project
+tab: community
+---
+.row-fluid.event
+  .span8.offset2
+    .title
+      %h3 
+        %a{:href=>page.event_url} #{page.title}
+      %p.info
+        #{page.event_date}, #{page.location}
+    .content
+      ~content
+    

@@ -8,7 +8,7 @@
 
 == JBoss Central
 === Start your project faster
-
+image::images/features-central_550px.png[]
 JBoss Central is the startup page for JBoss Tools and JBoss Developer Studio. It helps you with projects wizards to
 instantly start working with your favorite framework. It also provides you with community news and an easy way to
 install extra plugins.  

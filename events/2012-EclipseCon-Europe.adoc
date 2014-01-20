@@ -1,5 +1,5 @@
 = EclipseCon Europe
-:page-layout: project
+:page-layout: event
 :page-event_date: October 23-25, 2012
 :page-effective_date: 20121023
 :page-location: Ludwigsburg, Germany

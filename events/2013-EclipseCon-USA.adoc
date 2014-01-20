@@ -1,5 +1,5 @@
 = EclipseCon (USA)
-:page-layout: project
+:page-layout: event
 :page-event_date: March 25-28, 2013
 :page-effective_date: 20130325
 :page-location: Boston, MA
