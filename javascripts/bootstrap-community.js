@@ -2222,15 +2222,20 @@
     if (typeof offsetTop == 'function') offsetTop = offset.top()
     if (typeof offsetBottom == 'function') offsetBottom = offset.bottom()
 
-    affix = this.unpin != null && (scrollTop + this.unpin <= position.top) ?
+    /*affix = this.unpin != null && (scrollTop + this.unpin <= position.top) ?
       false    : offsetBottom != null && (position.top + this.$element.height() >= scrollHeight - offsetBottom) ?
       'bottom' : offsetTop != null && scrollTop <= offsetTop ?
-      'top'    : false
+      'top'    : false*/
+    
+    affix = this.unpin != null && (scrollTop + this.unpin <= position.top) ?
+          false    : offsetBottom != null && (position.top + this.$element.height() >= scrollHeight - offsetBottom - (this.affixed === 'bottom' ? offsetTop : 0)) ?
+          'bottom' : offsetTop != null && scrollTop <= offsetTop ?
+          'top'    : false
 
-      console.log("position.top:" + position.top + " / scrollTop: " + scrollTop + " / offsetTop: " + offsetTop + " / offsetBottom: " + offsetBottom + " / position.top: " + position.top + "\n" +
+      /*console.log("position.top:" + position.top + " / scrollTop: " + scrollTop + " / offsetTop: " + offsetTop + " / offsetBottom: " + offsetBottom + " / position.top: " + position.top + "\n" +
                   " elementHeight:" + this.$element.height() + " / scrollHeight: " + scrollHeight + "\n" + 
                   "position.top + elementHeight=" + (position.top + this.$element.height()) + "\n" +
-                  "scrollHeight - offsetBottom=" + (scrollHeight - offsetBottom) +" => " + affix);
+                  "scrollHeight - offsetBottom=" + (scrollHeight - offsetBottom) +" => " + affix);*/
 
     if (this.affixed === affix) return
 

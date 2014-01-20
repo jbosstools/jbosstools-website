@@ -1,5 +1,5 @@
 = EclipseCon (USA)
-:page-layout: project
+:page-layout: event
 :page-event_date: March 17-20, 2014
 :page-effective_date: 20140317
 :page-location: San Francisco, California
