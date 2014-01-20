@@ -17,6 +17,13 @@ stream remote logs into your local console, access your data and remotely debug 
 Creating a new OpenShift Application along into a new or an existing Eclipse Project, 
 or importing an existing OpenShift Application into a new or an existing project, the Application Wizard supports all the combinations. 
 
+== OpenShift Enterprise Ready!
+=== Ready to go with OpenShift Enterprise
+image::images/features-openshift-connectiondialog-reduced.png[]
+
+If you use OpenShift Enterprise on-site or in the cloud JBoss Tools can connect to it to, too. 
+JBoss Tools is your IDE whether you want to work with OpenShift Enterprise, Origin or Online.
+
 == OpenShift Explorer View
 === The embedded Web Console.
 image::images/features-openshift-explorerview-reduced.png[]
