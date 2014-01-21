@@ -194,8 +194,8 @@
       %a{:href=>"#top"} back to top
 
 
-    %script{:src=>relative("/javascripts/application.js")}
     %script{:src=>"#{pageStyle ? site[pageStyle].bootstrap_js_url : site.bootstrap_js_url}#{site.minified}.js"}
+    %script{:src=>relative("/javascripts/application.js")}
     - if page.bottom_javascripts
       - page.bottom_javascripts.each do |javascript|
         %script{:src=>javascript, :type=>'text/javascript'}
