@@ -21,7 +21,7 @@ or importing an existing OpenShift Application into a new or an existing project
 === Ready to go with OpenShift Enterprise
 image::images/features-openshift-connectiondialog-reduced.png[]
 
-If you use OpenShift Enterprise on-site or in the cloud JBoss Tools can connect to it to, too. 
+If you use OpenShift Enterprise on-site or in the cloud JBoss Tools can connect to it, too. 
 JBoss Tools is your IDE whether you want to work with OpenShift Enterprise, Origin or Online.
 
 == OpenShift Explorer View
