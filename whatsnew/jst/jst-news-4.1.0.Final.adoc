@@ -1,8 +1,8 @@
-= JST/JSF/HTML What's New in 4.1.0.CR1
+= JST/JSF/HTML What's New in 4.1.0.Final
 :page-layout: whatsnew
 :page-feature_id: jst
-:page-feature_version: 4.1.0.CR1
-:page-jbt_core_version: 4.1.0.CR1
+:page-feature_version: 4.1.0.Final
+:page-jbt_core_version: 4.1.0.Final
 
 == jQuery Mobile
 
@@ -11,7 +11,7 @@
 
 HTML text formatting for code snippets inserted via the Palette view was improved. The Palette view now creates a formatted HTML code based on Eclipse preferences for text editors.
 
-image::images/4.1.0.CR1/formatting.png[]
+image::images/4.1.0.Final/formatting.png[]
 
 Related Jira
 
@@ -21,6 +21,6 @@ Related Jira
 
 New JSF Project wizard now supports JSF 2.2:
 
-image::images/4.1.0.CR1/jsf22wizard.png[]
+image::images/4.1.0.Final/jsf22wizard.png[]
 
 Related Jira

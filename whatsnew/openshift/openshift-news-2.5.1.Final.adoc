@@ -1,10 +1,10 @@
-= What's New in 2.5.1.CR1
+= What's New in 2.5.1.Final
 :page-layout: whatsnew
 :page-feature_id: openshift
-:page-feature_version: 2.5.1.CR1
-:page-jbt_core_version: 4.1.1.CR1
+:page-feature_version: 2.5.1.Final
+:page-jbt_core_version: 4.1.1.Final
 
-== 2.5.1.CR1
+== 2.5.1.Final
 === Preferences
 ==== Remote request Timeout 	
 

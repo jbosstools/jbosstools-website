@@ -1,21 +1,21 @@
-= Forge Tools 4.1.1.CR1 What's New
+= Forge Tools 4.1.1.Final What's New
 :page-layout: whatsnew
 :page-feature_id: forge
-:page-feature_version: 4.1.1.CR1
-:page-jbt_core_version: 4.1.1.CR1
+:page-feature_version: 4.1.1.Final
+:page-jbt_core_version: 4.1.1.Final
 
-== Forge Tools 4.1.1.CR1 What's New
+== Forge Tools 4.1.1.Final What's New
 
 === New Embedded Forge 1 Runtime 	
 
 The embedded runtime is now Forge 1.4.3.Final!
 
-image::images/4.1.1.CR1/forge1.png[]
+image::images/4.1.1.Final/forge1.png[]
 
 === Experimental Forge 2 Support 	
 
 Good news related to the Forge2 support. The included runtime is now Forge 2.0.0.Beta3. 
 Bring up the pop up with possible commands using the Cmd+5 key combination.
 
-image::images/4.1.1.CR1/forge2.png[]
+image::images/4.1.1.Final/forge2.png[]
 
