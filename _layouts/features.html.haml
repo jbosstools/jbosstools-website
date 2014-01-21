@@ -1,4 +1,3 @@
-
 ---
 layout: project
 tab: docs
@@ -9,32 +8,16 @@ tab: docs
     %ul.nav.nav-list.bs-docs-sidenav
       - features = site.features.values.sort{|l,r| l.order <=> r.order}
       - features.each do |feature|
-        %li.version{:class=>("expanded" if feature.url == page.url)}
+        %li{:class=>("expanded" if feature.url == page.url)}
           %a{:href => relative(feature.url)} #{feature.name}
           -if feature.url == page.url
             %ul.nav.nav-list.nested.components
+              - doc = Nokogiri::HTML.parse(page.content)
+              - doc.css('.sect1 h2').each do |title|
+                %li
+                  %a{:href=>"##{title.attribute("id")}"} #{title.content}
               
     
   .span9.scrolledContent.feature
     ~content
 
-:javascript
-  $(window).load(function() {
-    // sidebar Scrollspy
-    $('body').scrollspy();
-  }); 
-  /*$( document ).ready(function() {
-    $('#module_whatsnews').hide();
-    $('#whatsnewButton').click(function() {$('#module_whatsnews').toggle()});
-    
-    var sidebarHeight = $('.bs-docs-sidenav').outerHeight(true) + 30;
-    $('#feature').css('min-height', sidebarHeight);
-  });*/
-  
-  var items = $('.feature .sectionbody h3').toArray();
-  items.forEach(function(item) {
-    console.log(item.innerHTML)
-  });
-  
-
-  

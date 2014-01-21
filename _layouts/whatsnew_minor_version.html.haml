@@ -10,20 +10,17 @@ tab: docs
   .span3.bs-docs-sidebar
     %ul.nav.nav-list.bs-docs-sidenav
       -# sorting versions in reverse order
-      - versions = site.whatsnew_minor_pages.keys.sort{|x,y| y <=> x}
+      - versions = site.whatsnew_pages.keys.sort{|x,y| y <=> x}
       - versions.each do |version|
-        %li.version{:class=>("expanded" if version == page.version)}
-          %a{:href=>site.whatsnew_minor_pages[version].output_path} #{version}
+        %li{:class=>("expanded" if version == page.version)}
+          %a{:href=>site.whatsnew_pages[version].output_path} #{version}
           - if version == page.version
             %ul.nav.nav-list.nested.components
               - page.individual_pages.each do |individual_page|
                 %li.component
                   %a{:href=>"##{individual_page.feature_id}"} #{individual_page.feature_name}
 
-    :javascript
-      $('%ul.components > li:first').addClass('active');
-      
-  .span9#whatsnew.scrolledContent
+  .span9.scrolledContent
     - default_imagesdir = site.asciidoctor.attributes['imagesdir']
     - page.individual_pages.each do |individual_page|
       - site.asciidoctor.attributes['imagesdir'] = relative(Pathname.new(individual_page.output_path).parent.to_s)
@@ -32,12 +29,3 @@ tab: docs
         #{individual_page.content}
       %hr
     - site.asciidoctor.attributes['imagesdir'] = default_imagesdir
-    
-:javascript
-  $(window).load(function() {
-    // sidebar Scrollspy
-    $('body').scrollspy();
-    }
-  ); 
-
-  

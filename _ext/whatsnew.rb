@@ -30,8 +30,7 @@ module Awestruct
           end
         end
         # showing all component whatsnew per product version on a single page
-        site.whatsnew_minor_pages = Hash.new
-        site.whatsnew_major_pages = Hash.new
+        site.whatsnew_pages = Hash.new
         whatsnew_pages.each do |jbt_core_version, pages|
           puts " Building N&N page for #{jbt_core_version.to_s}"
           # minor version page
@@ -46,19 +45,19 @@ module Awestruct
           end
         end
         # rename the page for the latest major version's N&N to /latest.html 
-        latest_major_version = site.whatsnew_minor_pages.keys.sort{|x, y| y <=> x}.first
-        puts " Latest major version is #{latest_major_version}"
-        site.whatsnew_minor_pages[latest_major_version].output_path = File.join(@path_prefix, "latest.html")
+        latest_version = site.whatsnew_pages.keys.sort{|x, y| y <=> x}.first
+        puts " Latest version is #{latest_version}"
+        site.whatsnew_pages[latest_version].output_path = File.join(@path_prefix, "latest.html")
         $LOG.debug "*** Done executing whatsnew extension...." if $LOG.debug?
       end
       
       def get_major_version_whatsnew_page(site, path_prefix, major_version)
-        page = site.whatsnew_major_pages[major_version]
+        page = site.whatsnew_pages[major_version]
         if page.nil?
           page = create_page(@@whatsnew_major_version_layout_path, path_prefix, major_version.to_s + ".html")
           page.version = major_version
           page.components = Hash.new
-          site.whatsnew_major_pages[major_version] = page
+          site.whatsnew_pages[major_version] = page
         end
         page
       end
@@ -67,13 +66,13 @@ module Awestruct
           page = create_page(@@whatsnew_minor_version_layout_path, path_prefix, minor_version.to_s + ".html")
           page.version = minor_version
           page.individual_pages = Array.new
-          site.whatsnew_minor_pages[minor_version] = page
+          site.whatsnew_pages[minor_version] = page
           page
       end
       
       def get_major_version(version)
         numbers = version.split(".")
-        numbers[0..2].join('.')
+        numbers[0..2].join('.') + ".Final"
       end
       
       def create_page(layout_path, *paths)
