@@ -586,7 +586,7 @@ span.label {
 // *************************************
 // Features
 // *************************************
-features {
+.features {
   padding-top: 0px;
   padding-bottom: 0px;
   padding-left: 10px;
@@ -603,45 +603,6 @@ features {
     margin-right: auto;
   }
 }
-
-/*.feature {
-  img {
-    display: block;
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-  &:nth-child(even) img {
-    float: left;
-  }
-  &:nth-child(odd) img {
-    float: right;
-  }
-  & .featureContent, & .hero-unit {
-    padding: 30px;
-  }
-}
-
-.featureContent p {
-  text-align: justify;
-}
-
-.features-separator hr {
-  clear:both;
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
-
-.feature-menu {
-  padding-top: 20px;
-  li {
-    display: inline;
-    padding-right: 30px;
-    
-    h4 {
-      display: inline;
-    }
-  }
-}*/
 
 @media screen and (min-width: 940px) {
   .feature {
