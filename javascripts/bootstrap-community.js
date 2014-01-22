@@ -1640,6 +1640,7 @@
         if (active.parent('.dropdown-menu').length)  {
           active = active.closest('li.dropdown').addClass('active')
         }
+
         active.trigger('activate')
       }
 
@@ -2221,20 +2222,10 @@
     if (typeof offsetTop == 'function') offsetTop = offset.top()
     if (typeof offsetBottom == 'function') offsetBottom = offset.bottom()
 
-    /*affix = this.unpin != null && (scrollTop + this.unpin <= position.top) ?
+    affix = this.unpin != null && (scrollTop + this.unpin <= position.top) ?
       false    : offsetBottom != null && (position.top + this.$element.height() >= scrollHeight - offsetBottom) ?
       'bottom' : offsetTop != null && scrollTop <= offsetTop ?
-      'top'    : false*/
-    
-    affix = this.unpin != null && (scrollTop + this.unpin <= position.top) ?
-          false    : offsetBottom != null && (position.top + this.$element.height() >= scrollHeight - offsetBottom - (this.affixed === 'bottom' ? offsetTop : 0)) ?
-          'bottom' : offsetTop != null && scrollTop <= offsetTop ?
-          'top'    : false
-
-      /*console.log("position.top:" + position.top + " / scrollTop: " + scrollTop + " / offsetTop: " + offsetTop + " / offsetBottom: " + offsetBottom + " / position.top: " + position.top + "\n" +
-                  " elementHeight:" + this.$element.height() + " / scrollHeight: " + scrollHeight + "\n" + 
-                  "position.top + elementHeight=" + (position.top + this.$element.height()) + "\n" +
-                  "scrollHeight - offsetBottom=" + (scrollHeight - offsetBottom) +" => " + affix);*/
+      'top'    : false
 
     if (this.affixed === affix) return
 
@@ -2335,6 +2326,136 @@ function processScroll() {
   }
 }
 
+// NOTICE!! DO NOT USE ANY OF THIS JAVASCRIPT
+// IT'S ALL JUST JUNK FOR OUR DOCS!
+// ++++++++++++++++++++++++++++++++++++++++++
+
+!function ($) {
+  $(function(){
+    var $window = $(window)
+
+    // Disable certain links in docs
+    $('section [href^=#]').click(function (e) { e.preventDefault() })
+
+    // side bar
+    $('.bs-docs-sidenav').affix({
+      offset: {
+        top: function () { return $window.width() <= 980 ? 290 : 210 },
+        bottom: 270
+      }
+    })
+
+    // make code pretty
+    window.prettyPrint && prettyPrint()
+
+    // add-ons
+    $('.add-on :checkbox').on('click', function () {
+      var $this = $(this),
+          method = $this.attr('checked') ? 'addClass' : 'removeClass'
+      $(this).parents('.add-on')[method]('active')
+    })
+
+    // add tipsies to grid for scaffolding
+    if ($('#gridSystem').length) {
+      $('#gridSystem').tooltip({
+        selector: '.show-grid > div',
+        title: function () { return $(this).width() + 'px' }
+      })
+    }
+
+    // tooltip demo
+    $('.tooltip-demo').tooltip({
+      selector: "a[rel=tooltip]"
+    })
+
+    $('.tooltip-test').tooltip()
+    $('.popover-test').popover()
+
+    // popover demo
+    $("a[rel=popover]").popover().click(function(e) {
+      e.preventDefault()
+    })
+
+    // button state demo
+    $('#fat-btn').click(function () {
+      var btn = $(this)
+      btn.button('loading')
+      setTimeout(function () { btn.button('reset') }, 3000)
+    })
+
+    // carousel demo
+    $('#myCarousel').carousel()
+
+    // javascript build logic
+    var inputsComponent = $("#components.download input"),
+        inputsPlugin = $("#plugins.download input"),
+        inputsVariables = $("#variables.download input")
+
+    // toggle all plugin checkboxes
+    $('#components.download .toggle-all').on('click', function (e) {
+      e.preventDefault()
+      inputsComponent.attr('checked', !inputsComponent.is(':checked'))
+    })
+
+    $('#plugins.download .toggle-all').on('click', function (e) {
+      e.preventDefault()
+      inputsPlugin.attr('checked', !inputsPlugin.is(':checked'))
+    })
+
+    $('#variables.download .toggle-all').on('click', function (e) {
+      e.preventDefault()
+      inputsVariables.val('')
+    })
+
+    // request built javascript
+    $('.download-btn .btn').on('click', function () {
+      var css = $("#components.download input:checked").map(function () { return this.value }).toArray(),
+          js = $("#plugins.download input:checked").map(function () { return this.value }).toArray(),
+          vars = {},
+          img = ['glyphicons-halflings.png', 'glyphicons-halflings-white.png']
+
+      $("#variables.download input").each(function () {
+        $(this).val() && (vars[ $(this).prev().text() ] = $(this).val())
+      })
+
+      $.ajax({
+        type: 'POST',
+        url: /\?dev/.test(window.location) ? 'http://localhost:3000' : 'http://bootstrap.herokuapp.com',
+        dataType: 'jsonpi',
+        params: {
+          js: js,
+          css: css,
+          vars: vars,
+          img: img
+        }
+      })
+    })
+  })
+
+  // Modified from the original jsonpi https://github.com/benvinegar/jquery-jsonpi
+  $.ajaxTransport('jsonpi', function(opts, originalOptions, jqXHR) {
+    var url = opts.url;
+
+    return {
+      send: function(_, completeCallback) {
+        var name = 'jQuery_iframe_' + jQuery.now(),
+            iframe,
+            form
+
+        iframe = $('<iframe>').attr('name', name).appendTo('head')
+
+        // GET or POST
+        form = $('<form>').attr('method', opts.type).attr('action', url).attr('target', name)
+
+        $.each(opts.params, function(k, v) {
+          $('<input>').attr('type', 'hidden').attr('name', k).attr('value', typeof v == 'string' ? v : JSON.stringify(v)).appendTo(form)
+        })
+
+        form.appendTo('body').submit()
+      }
+    }
+  })
+}(window.jQuery);
 
 /* FeedEk jQuery RSS/ATOM Feed Plugin v1.1.2
 *  http://jquery-plugins.net/FeedEk/FeedEk.html
@@ -3390,7 +3511,7 @@ if (agentID)   {
  * Event handling portions adapted from the YUI Event component used under
  * the following license:
  *
- *   Copyright Â© 2012 Yahoo! Inc. All rights reserved.
+ *   Copyright © 2012 Yahoo! Inc. All rights reserved.
  *
  *   Redistribution and use of this software in source and binary forms,
  *   with or without modification, are permitted provided that the following conditions
@@ -3726,7 +3847,7 @@ Tabzilla.preventDefault = function(ev)
 Tabzilla.content =
 '<div class="tabnavclearfix" id="tabnav">'
 +'<div class="tabcontent">'
-+'  <p class="overview"> Like the project? Itâ€™s part of the community of Red Hat projects. Learn more about Red Hat and our open source communities:</p>'
++'  <p class="overview"> Like the project? It’s part of the community of Red Hat projects. Learn more about Red Hat and our open source communities:</p>'
 +'  <div class="row-fluid">'
 +'    <span class="span4 middlewarelogo">'
 +'      <img src="http://static.jboss.org/common/images/tabzilla/RHJB_Middleware_Logotype.png" alt="Red Hat JBoss MIDDLEWARE" />'
