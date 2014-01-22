@@ -13,7 +13,7 @@ tab: docs
       - versions = site.whatsnew_pages.keys.sort{|x,y| y <=> x}
       - versions.each do |version|
         %li{:class=>("expanded" if version == page.version)}
-          %a{:href=>site.whatsnew_pages[version].output_path} #{version}
+          %a{:href=>relative(site.whatsnew_pages[version].output_path)} #{version}
           - if version == page.version
             %ul.nav.nav-list.nested.components
               - page.individual_pages.each do |individual_page|
