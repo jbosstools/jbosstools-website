@@ -1,8 +1,9 @@
 = LiveReload What's New in 1.1.0.Alpha2
 :page-layout: whatsnew
-:page-feature_id: livereload
-:page-feature_version: 1.1.0.Alpha2
-:page-jbt_core_version: 4.1.1.Alpha2
+:page-component_id: livereload
+:page-component_version: 1.1.0.Alpha2
+:page-product_id: jbt_core 
+:page-product_version: 4.1.1.Alpha2
 
 == Asciidoc support 	
 

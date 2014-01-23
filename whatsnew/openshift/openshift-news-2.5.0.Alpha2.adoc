@@ -1,9 +1,10 @@
 = OpenShift What's New in 2.5.0.Alpha2
 :page-layout: whatsnew
-:page-feature_id: openshift
-:page-feature_version: 2.5.0.Alpha2
+:page-component_id: openshift
+:page-component_version: 2.5.0.Alpha2
 :page-feature_jbt_only: true
-:page-jbt_core_version: 4.1.0.Alpha2
+:page-product_id: jbt_core 
+:page-product_version: 4.1.0.Alpha2
 
 == OpenShift Explorer
 === Restart Application

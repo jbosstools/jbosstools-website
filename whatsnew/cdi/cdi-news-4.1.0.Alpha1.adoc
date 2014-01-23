@@ -1,8 +1,9 @@
 = CDI Tools What's New in 4.1.0.Alpha1
 :page-layout: whatsnew
-:page-feature_id: cdi
-:page-feature_version: 4.1.0.Alpha1
-:page-jbt_core_version: 4.1.0.Alpha1
+:page-component_id: cdi
+:page-component_version: 4.1.0.Alpha1
+:page-product_id: jbt_core 
+:page-product_version: 4.1.0.Alpha1
 
 == Apache Deltaspike 0.3
 

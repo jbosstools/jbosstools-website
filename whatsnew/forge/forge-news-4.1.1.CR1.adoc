@@ -1,8 +1,9 @@
 = Forge Tools 4.1.1.CR1 What's New
 :page-layout: whatsnew
-:page-feature_id: forge
-:page-feature_version: 4.1.1.CR1
-:page-jbt_core_version: 4.1.1.CR1
+:page-component_id: forge
+:page-component_version: 4.1.1.CR1
+:page-product_id: jbt_core 
+:page-product_version: 4.1.1.CR1
 
 == New Embedded Forge 1 Runtime 	
 

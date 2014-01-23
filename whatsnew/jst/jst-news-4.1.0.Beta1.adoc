@@ -1,8 +1,9 @@
 = JST / JSF / HTML Editor What's New in 4.1.0.Beta1
 :page-layout: whatsnew
-:page-feature_id: jst
-:page-feature_version: 4.1.0.Beta1
-:page-jbt_core_version: 4.1.0.Beta1
+:page-component_id: jst
+:page-component_version: 4.1.0.Beta1
+:page-product_id: jbt_core 
+:page-product_version: 4.1.0.Beta1
 
 == jQuery Mobile
 === jQuery Mobile Palette

@@ -1,8 +1,9 @@
 = Hibernate Tools 4.1.0.Alpha1 What's New
 :page-layout: whatsnew
-:page-feature_id: hibernate
-:page-feature_version: 4.1.0.Alpha1
-:page-jbt_core_version: 4.1.0.Alpha1
+:page-component_id: hibernate
+:page-component_version: 4.1.0.Alpha1
+:page-product_id: jbt_core 
+:page-product_version: 4.1.0.Alpha1
 
 == Kepler/Juno Incompatibilities 	
 

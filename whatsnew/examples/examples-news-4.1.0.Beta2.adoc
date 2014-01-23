@@ -1,8 +1,9 @@
 = Project Examples 4.1.0.Beta2 What's New
 :page-layout: whatsnew
-:page-feature_id: examples
-:page-feature_version: 4.1.0.Beta2
-:page-jbt_core_version: 4.1.0.Beta2
+:page-component_id: examples
+:page-component_version: 4.1.0.Beta2
+:page-product_id: jbt_core 
+:page-product_version: 4.1.0.Beta2
 
 == Experimental Go offline script 	
 

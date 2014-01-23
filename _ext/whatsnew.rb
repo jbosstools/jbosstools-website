@@ -17,57 +17,54 @@ module Awestruct
         whatsnew_pages = Hash.new
         #site.whatsnew_pages = whatsnew_pages
         site.pages.each do |page|
-          if page.relative_source_path =~ /^#{@path_prefix}\/.*\.adoc/ then
-            $LOG.debug " Processing N&N " + page.feature_id.to_s +  " " + page.feature_version.to_s if $LOG.debug?
-            #puts " Processing N&N for " + page.feature_id.to_s + " " + page.feature_version
-            ## What's new page structure per module and version
+          if page.relative_source_path =~ /^#{@path_prefix}\/.*\.adoc/ && !page.product_id.nil? && !page.product_version.nil? then
+            $LOG.debug " Processing N&N " + page.component_id.to_s +  " " + page.component_version.to_s if $LOG.debug?
             site.engine.set_urls([page])
-            page.feature_name = site.modules[page.feature_id].name
-            if whatsnew_pages[page.jbt_core_version].nil? then
-              whatsnew_pages[page.jbt_core_version] = Array.new
+            page.component_name = site.components[page.component_id].name
+            if whatsnew_pages[page.product_id].nil? then
+              whatsnew_pages[page.product_id] = Hash.new
             end
-            whatsnew_pages[page.jbt_core_version] << page
+            if whatsnew_pages[page.product_id][page.product_version].nil? then
+              whatsnew_pages[page.product_id][page.product_version] = Array.new
+            end
+            whatsnew_pages[page.product_id][page.product_version] << page
           end
         end
         # showing all component whatsnew per product version on a single page
         site.whatsnew_pages = Hash.new
-        whatsnew_pages.each do |jbt_core_version, pages|
-          puts " Building N&N page for #{jbt_core_version.to_s}"
-          # minor version page
-          minor_version_whatsnew_page = get_minor_version_whatsnew_page(site, @path_prefix, jbt_core_version.to_s)
-          # major version page
-          major_version_whatsnew_page = get_major_version_whatsnew_page(site, @path_prefix, get_major_version(jbt_core_version))
-          # fill the major/minor version pages with individual components whatnew pages without touching their content!
-          pages.sort{|x,y| x.feature_name <=> y.feature_name}.each do |page|
-            minor_version_whatsnew_page.individual_pages << page
-            major_version_whatsnew_page.components[page.feature_id] = Array.new if major_version_whatsnew_page.components[page.feature_id].nil?
-            major_version_whatsnew_page.components[page.feature_id] << page
+        whatsnew_pages.each do |product_id, pages_per_version|
+          product_url_path_fragment = site.products[product_id].url_path_fragment
+          # minor version pages
+          pages_per_version.each do |product_version, pages|
+            product_name = site.products[product_id].name
+            if site.whatsnew_pages[product_id].nil? then
+              site.whatsnew_pages[product_id] = Hash.new
+            end
+            # use the minor version page layout
+            product_major_version = get_major_version(product_version)
+            if product_defined(product_id, product_version) then
+              whatsnew_page = get_minor_version_whatsnew_page(product_id, product_version, product_url_path_fragment)
+            elsif product_defined(product_id, product_major_version) then
+              # use the major version page layout
+              whatsnew_page = get_major_version_whatsnew_page(product_id, product_version, product_major_version, product_url_path_fragment)
+            else 
+              puts "Sorry, #{product_id} version #{product_version} or #{product_major_version} is not defined in products.yml"
+            end
+            # fill the major/minor version pages with individual components whatnew pages without touching their content!
+            pages.sort{|x,y| x.feature_name <=> y.feature_name}.each do |page|
+              whatsnew_page.component_pages << page unless whatsnew_page.nil?
+            end
+          end
+          
+          
+          # rename the page for the latest major version's N&N to /latest.html 
+          unless site.whatsnew_pages[product_id].nil?
+            latest_version = site.whatsnew_pages[product_id].keys.sort{|x, y| y <=> x}.first
+            site.whatsnew_pages[product_id][latest_version].output_path = File.join(@path_prefix, product_url_path_fragment, "latest.html")
+            puts " Latest version is #{latest_version} at #{site.whatsnew_pages[product_id][latest_version].output_path}"
           end
         end
-        # rename the page for the latest major version's N&N to /latest.html 
-        latest_version = site.whatsnew_pages.keys.sort{|x, y| y <=> x}.first
-        puts " Latest version is #{latest_version}"
-        site.whatsnew_pages[latest_version].output_path = File.join(@path_prefix, "latest.html")
         $LOG.debug "*** Done executing whatsnew extension...." if $LOG.debug?
-      end
-      
-      def get_major_version_whatsnew_page(site, path_prefix, major_version)
-        page = site.whatsnew_pages[major_version]
-        if page.nil?
-          page = create_page(@@whatsnew_major_version_layout_path, path_prefix, major_version.to_s + ".html")
-          page.version = major_version
-          page.components = Hash.new
-          site.whatsnew_pages[major_version] = page
-        end
-        page
-      end
-
-      def get_minor_version_whatsnew_page(site, path_prefix, minor_version)
-          page = create_page(@@whatsnew_minor_version_layout_path, path_prefix, minor_version.to_s + ".html")
-          page.version = minor_version
-          page.individual_pages = Array.new
-          site.whatsnew_pages[minor_version] = page
-          page
       end
       
       def get_major_version(version)
@@ -75,16 +72,50 @@ module Awestruct
         numbers[0..2].join('.') + ".Final"
       end
       
+      def product_defined(product_id, product_version)
+        unless @site.products[product_id].nil? then
+          @site.products[product_id].streams.each do |stream_id, stream_versions|
+            unless stream_versions[product_version].nil? then
+              return true
+            end
+          end
+        end
+        puts "#{product_id} #{product_version} is not defined in products.yml - skipping the N&N content."
+        return false
+      end
+      
+      def get_major_version_whatsnew_page(product_id, product_minor_version, product_major_version, product_url_path_fragment)
+        puts " Building N&N page for #{product_id} #{product_major_version} / #{product_minor_version}"
+        page = create_page(@@whatsnew_major_version_layout_path, @path_prefix, product_url_path_fragment, product_id, product_minor_version)
+        page.product_id = product_id
+        page.product_minor_version = product_minor_version
+        page.product_version = product_major_version
+        page.component_pages = Array.new
+        @site.whatsnew_pages[product_id][product_major_version] = Hash.new if @site.whatsnew_pages[product_id][product_major_version].nil?
+        @site.whatsnew_pages[product_id][product_major_version][product_minor_version] = page
+        page
+      end
+
+      def get_minor_version_whatsnew_page(product_id, product_version, product_url_path_fragment)
+        puts " Building N&N page for #{product_id} #{product_version}"
+        page = create_page(@@whatsnew_minor_version_layout_path, @path_prefix, product_url_path_fragment, product_id, product_version)
+        page.product_id = product_id
+        page.product_version = product_version
+        page.component_pages = Array.new
+        @site.whatsnew_pages[product_id][product_version] = page
+        page
+      end
+      
       def create_page(layout_path, *paths)
         path_glob = File.join( @site.config.layouts_dir, layout_path)
         candidates = Dir[ path_glob ]
         return nil if candidates.empty?
         throw Exception.new( "too many choices for #{simple_path}" ) if candidates.size != 1
-        whatsnew_page = @site.engine.load_page( candidates[0] )
-        whatsnew_page.output_path = File.join(paths)
-        puts " Added page " + whatsnew_page.output_path
-        @site.pages << whatsnew_page
-        return whatsnew_page
+        page = @site.engine.load_page( candidates[0] )
+        page.output_path = File.join(paths) + ".html"
+        puts " Added page " + page.output_path
+        @site.pages << page
+        return page
       end
     end
   end

@@ -5,27 +5,33 @@ tab: docs
 -# What's New for a given minor version of all components (eg all N&N for 4.1.1.CR1). 
 -# Includes left side navigation.
 
-- page.title = "What's New in JBoss Tools #{page.version}"
+- page.title = "What's New in JBoss Tools #{page.product_version}"
 .row-fluid.affixedContent
   .span3.bs-docs-sidebar
     %ul.nav.nav-list.bs-docs-sidenav
       -# sorting versions in reverse order
-      - versions = site.whatsnew_pages.keys.sort{|x,y| y <=> x}
-      - versions.each do |version|
-        %li{:class=>("expanded" if version == page.version)}
-          %a{:href=>relative(site.whatsnew_pages[version].output_path)} #{version}
-          - if version == page.version
-            %ul.nav.nav-list.nested.components
-              - page.individual_pages.each do |individual_page|
-                %li.component
-                  %a{:href=>"##{individual_page.feature_id}"} #{individual_page.feature_name}
+      - product_versions = site.whatsnew_pages[page.product_id].keys.sort{|x,y| y <=> x}
+      - puts "Product versions: #{product_versions}"
+      - product_versions.each do |product_version|
+        %li{:class=>("expanded" if product_version == page.product_version)}
+          - if product_version.end_with?(".Final")
+            - latest_minor_version = site.whatsnew_pages[page.product_id][product_version].keys.sort{|x,y| y <=> x}.first
+            - latest_minor_version_whatsnew_page = site.whatsnew_pages[page.product_id][product_version][latest_minor_version]
+            %a{:href=>relative(latest_minor_version_whatsnew_page.output_path)} #{product_version}
+          - else
+            %a{:href=>relative(site.whatsnew_pages[page.product_id][product_version].output_path)} #{product_version}
+            - if product_version == page.product_version
+              %ul.nav.nav-list.nested.components
+                - page.component_pages.each do |component_page|
+                  %li.component
+                    %a{:href=>"##{component_page.component_id}"} #{component_page.component_name}
 
   .span9.scrolledContent
     - default_imagesdir = site.asciidoctor.attributes['imagesdir']
-    - page.individual_pages.each do |individual_page|
-      - site.asciidoctor.attributes['imagesdir'] = relative(Pathname.new(individual_page.output_path).parent.to_s)
-      %div{:id=>individual_page.feature_id}
-        %h1 #{individual_page.feature_name}
-        #{individual_page.content}
+    - page.component_pages.each do |component_page|
+      - site.asciidoctor.attributes['imagesdir'] = relative(Pathname.new(component_page.output_path).parent.to_s)
+      %div{:id=>component_page.component_id}
+        %h1 #{component_page.component_name}
+        #{component_page.content}
       %hr
     - site.asciidoctor.attributes['imagesdir'] = default_imagesdir
