@@ -1,8 +1,9 @@
 = JST / JSF / HTML Editor What's New in 4.1.1.Alpha1
 :page-layout: whatsnew
-:page-feature_id: jst
-:page-feature_version: 4.1.1.Alpha1
-:page-jbt_core_version: 4.1.1.Alpha1
+:page-component_id: jst
+:page-component_version: 4.1.1.Alpha1
+:page-product_id: jbt_core 
+:page-product_version: 4.1.1.Alpha1
 
 == HTML Editor
 === Content assist for filenames in HTML

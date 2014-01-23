@@ -801,6 +801,21 @@ span.label {
     }
   }
 }
+.component-wrapper {
+  margin-top: -40px;
+  padding-top: 60px;
+  margin-bottom: 40px;
+  &:first {
+    margin-top: 0;
+  }
+  .component-header {
+    text-align: center;
+  }
+
+.component-header {
+}
+
+}
 
 // *****************************************
 // Videos

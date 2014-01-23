@@ -1,8 +1,9 @@
 = Aerogear What's New in 1.0.0.Beta1
 :page-layout: whatsnew
-:page-feature_id: aerogear
-:page-feature_version: 1.0.0.Beta1
-:page-jbt_core_version: 4.1.0.Beta1
+:page-component_id: aerogear
+:page-component_version: 1.0.0.Beta1
+:page-product_id: jbt_core
+:page-product_version: 4.1.0.Beta1
 
 == Hybrid Mobile (Cordova) Tools
 New Hybrid Mobile Project wizard 	Creates a project structure that is compatible with the cordova-cli projects

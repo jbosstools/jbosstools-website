@@ -1,8 +1,9 @@
 = WebServices Tools 2.5.0.Beta1 What's New
 :page-layout: whatsnew
-:page-feature_id: webservices
-:page-feature_version: 2.5.0.Beta1
-:page-jbt_core_version: 4.1.0.Beta1
+:page-component_id: webservices
+:page-component_version: 2.5.0.Beta1
+:page-product_id: jbt_core 
+:page-product_version: 4.1.0.Beta1
 
 == WS Tester Performance Improvements 	
 

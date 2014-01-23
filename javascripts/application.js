@@ -132,7 +132,15 @@
 /* ==========================================================
  * Initializing Bootstrap Affix and ScrollSpy JS components
  * ========================================================== */
+$(document).ready(function() {
+  // ensure scrolled content has a minimal height before configuring affix
+  var minheight = ($('.bs-docs-sidenav').height() + 100) + "px";
+  console.log("Setting min-height for content to " + minheight);
+  $('.affixedContent').css('min-height', minheight);
+});
+
 $(window).load(function() {
+  
   // sidebar Affix
   var topPosition     =   120+parseInt($('.bs-docs-sidenav').css('margin-top'));
   var bottomPosition  =   40 + $('footer').outerHeight(true) + $('#companyfooter').outerHeight(true);
@@ -141,9 +149,7 @@ $(window).load(function() {
   $('.bs-docs-sidenav').affix({offset: {top: topPosition, bottom: bottomPosition}});
   //$('.span9').css('min-height', ($('.bs-docs-sidenav').outerHeight(true) + 100) + 'px');
   console.log("Affix loaded");
-});
 
-$(window).load(function() {
   // sidebar scrollfix
   $('body').scrollspy({'target': '.bs-docs-sidebar .expanded', 'offset':10});
   console.log("scrollspy loaded");

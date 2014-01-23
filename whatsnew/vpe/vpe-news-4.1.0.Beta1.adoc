@@ -1,9 +1,10 @@
 = Visual Editor What's New in 4.1.0.Beta1
 :page-layout: whatsnew
-:page-feature_id: vpe
-:page-feature_version: 4.1.0.Beta1
+:page-component_id: vpe
+:page-component_version: 4.1.0.Beta1
 :page-feature_jbt_only: true
-:page-jbt_core_version: 4.1.0.Beta1
+:page-product_id: jbt_core 
+:page-product_version: 4.1.0.Beta1
 
 == Windows 64-bit Support
 
