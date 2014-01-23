@@ -17,6 +17,8 @@ module Awestruct
       # generates synthetic pages for all downloadable versions of JBDS and JBT (stable, dev, nightly and older)
       def execute(site)
         $LOG.debug "*** Executing downloads extension..." if $LOG.debug?
+        # making these labels available in layouts, too.
+        site.labels = {:stable=>"Stable", :development=>"Development", :nightly=>"Nightly"}
         @site = site
         @site.download_pages = Hash.new
         @site.download_perma_links = Hash.new #permalinks per active eclipse stream.

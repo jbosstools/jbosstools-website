@@ -2,8 +2,6 @@
 layout: project
 tab: downloads
 ---
-
-- labels = {:stable=>"Stable", :development=>"Development", :nightly=>"Nightly"}
 .row-fluid
   .span3.bs-docs-sidebar
     %ul.nav.nav-list.bs-docs-sidenav
@@ -14,7 +12,7 @@ tab: downloads
               %span
                 #{download_page.build_info.version}
               %span{:class=>"label label_#{build_type}"}
-                #{labels[build_type]}
+                #{site.labels[build_type]}
       %li
         %a{:href=>relative(site.all_versions_download_pages[page.product].output_path)}
           %span
@@ -23,7 +21,7 @@ tab: downloads
     %h2.center
       #{page.build_info.name} #{page.build_info.version}
       %span#displayed-version{:class=>"label label_#{page.build_info.build_type}"}
-        #{labels[page.build_info.build_type]}
+        #{site.labels[page.build_info.build_type]}
     .center
       %a{:href=>page.build_info.documentation_url} Documentation
       -# JBoss Tools has a What's New
