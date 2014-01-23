@@ -92,6 +92,8 @@ module Awestruct
         page.product_minor_version = product_minor_version
         page.product_version = product_major_version
         page.component_pages = Array.new
+        # see downloads.rb for symbols
+        page.build_type=:stable
         @site.whatsnew_pages[product_id][product_major_version] = Hash.new if @site.whatsnew_pages[product_id][product_major_version].nil?
         @site.whatsnew_pages[product_id][product_major_version][product_minor_version] = page
         page
@@ -103,6 +105,8 @@ module Awestruct
         page.product_id = product_id
         page.product_version = product_version
         page.component_pages = Array.new
+        # see downloads.rb for symbols
+        page.build_type=:development
         @site.whatsnew_pages[product_id][product_version] = page
         page
       end

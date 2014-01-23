@@ -2,7 +2,6 @@
 layout: project
 tab: docs
 ---
-
 - page.title = "What's New in JBoss Tools #{page.product_version} (focus on #{page.product_minor_version})"
 .row-fluid.affixedContent
   .span3.bs-docs-sidebar
@@ -13,7 +12,10 @@ tab: docs
           - if product_version.end_with?(".Final")
             - latest_minor_version = site.whatsnew_pages[page.product_id][product_version].keys.sort{|x,y| y <=> x}.first
             - latest_minor_version_whatsnew_page = site.whatsnew_pages[page.product_id][product_version][latest_minor_version]
-            %a{:href=>relative(latest_minor_version_whatsnew_page.output_path)} #{product_version}
+            %a{:href=>relative(latest_minor_version_whatsnew_page.output_path)} 
+              #{product_version}
+              %span{:class=>"label label_#{page.build_type}"}
+                #{site.labels[page.build_type]} 
             - if page.product_version == product_version
               %ul.nav.nav-list.nested
                 - site.whatsnew_pages[page.product_id][product_version].keys.sort{|x,y| y <=> x}.each do |product_minor_version|
@@ -27,7 +29,12 @@ tab: docs
                             %a{:href=>"##{component_page.component_id}"} #{component_page.component_name}
 
           - else
-            %a{:href=>relative(site.whatsnew_pages[page.product_id][product_version].output_path)} #{product_version}
+            - development_version_whatsnew_page = site.whatsnew_pages[page.product_id][product_version]
+            %a{:href=>relative(development_version_whatsnew_page.output_path)} 
+              #{product_version}
+              %span{:class=>"label label_#{development_version_whatsnew_page.build_type}"}
+                #{site.labels[development_version_whatsnew_page.build_type]} 
+              
             
   .span9.scrolledContent
     - default_imagesdir = site.asciidoctor.attributes['imagesdir']
