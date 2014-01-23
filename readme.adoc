@@ -31,7 +31,7 @@ If you are not going to use RVM have a look at the different installations http:
 
 Note: This installation varies per OS, see details on rvm.io.
 
-For Linux/Fedora: `\curl -sSL https://get.rvm.io | bash` is the simplest and no root allowed) 
+For Linux/Fedora: `\curl -sSL https://get.rvm.io | bash` is the simplest and no root required).
 Note that for 'rvm' to be activated you need to run as a login shell. When running `rvm` it should tell you if 
 you are running in a proper terminal/login.
 
@@ -41,6 +41,8 @@ you are running in a proper terminal/login.
 ----
 # Do *not* run these as root. 
 # The purpose of using rvm is to have non-root, user isolated and reproducible gem/ruby environment
+# During the rvm install it might ask to install system level packages, for these your user need to have sudo permissions
+# or you have to run those installs as root seperately and then run rvm install again as a normal user
 rvm install 1.9.3
 rvm use 1.9.3
 rvm gemset create jbosstools-website
