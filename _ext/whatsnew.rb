@@ -62,6 +62,7 @@ module Awestruct
             latest_version = site.whatsnew_pages[product_id].keys.sort{|x, y| y <=> x}.first
             site.whatsnew_pages[product_id][latest_version].output_path = File.join(@path_prefix, product_url_path_fragment, "latest.html")
             puts " Latest version is #{latest_version} at #{site.whatsnew_pages[product_id][latest_version].output_path}"
+            site.latest_whatsnew_path = site.whatsnew_pages[product_id][latest_version].output_path
           end
         end
         $LOG.debug "*** Done executing whatsnew extension...." if $LOG.debug?
