@@ -821,17 +821,10 @@ span.label {
 // Videos
 // *****************************************
 
-#video {
-  h5,h6 {
-    color: #4a5d75;
-  }
-
-  /*#container-reduced {
-    width:75%; 
-    margin-left: auto;
-    margin-right: auto;
-  }*/
-
+.video {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  
   #player iframe {
     width: 100%;
     height: 100%;
