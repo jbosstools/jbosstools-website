@@ -9,28 +9,38 @@
 == Server Tooling
 === All your server are belong to us
 
-// image::images/features-server-server-overview.png[]
+image::images/server-overview.png[Overview]
 
-Wether you are using JBoss Enterprise Application Platform, JBoss AS and the upcoming Wildfly releases
-you can use the server tools to deploy, run, debug and introspect your favorite application server.
-The server tools provide incremental deployment, easy start and stop and both local and remote deployment.
-All within the Eclipse IDE.
+Whether you're using the JBoss Enterprise Application Platform, JBoss AS, or the upcoming Wildfly releases,
+you can use Server Tools to help deploy, run, debug and introspect your favorite application server.
+Server Tools provides incremental deployment to both local and remote systems, 
+as well as easy access to starting, stopping, restarting, and debugging your server or the deployed modules. 
+All of this is available from within the Eclipse IDE, so you spend less time switching to terminals, and more time writing code.
 
 == Server View
-=== The command central of all your servers
+=== The command center for all of your servers
 
-// image::images/features-server-serverview.png[Screenshot showing a list of various servers with deployments in the server view]
+image::images/servers-view.png[Screenshot showing a list of various servers with deployments in the server view]
 
-All your configured servers are listed in the server view. It shows the state of the server, what is deployed and provide
-easy access to start/stop and deploy to your application server.
+All your configured servers are listed in the server view. You can easily see the running state of your server, 
+what deployments have been added, and which of those deployments may be currently be out-of-sync with the server. 
+ It also provides quick access to the most common actions you'll want to take. Launching your server, shutting it down, or ensuring your latest workspace changes have been deployed, are all just one click away. 
+
+== Context Menu
+=== Easy access for common operations
+
+image::images/servers-menu.png[Screenshot of Servers View Context Menu]
+
+The context menu in the servers view ALSO gives you easy access to show the deployed module in a browser or on the filesystem, and provides one click access to the web console. You'll also find integration with your server's JMX tree in the menu as well!
 
 ==  Full range of JBoss servers
 === Supporting both the old, current and new
 
-// image::images/features-server-fullrange.png[Screenshot showing the various server types supported]
+image::images/server-fullrange.png[Screenshot showing the various server types supported]
 
-The full range of servers are supported, allowing you to maintain the old, develop on current and explore new ways of improving your application.
+The full range of servers are supported, allowing you to maintain old applications, or develop on current or future releases to help you explore new ways of improving your application!
 
+.Enterprise Offerings
 [cols="3,1" options="header", width="50%"]
 |===
 | Name | Versions
@@ -39,7 +49,7 @@ The full range of servers are supported, allowing you to maintain the old, devel
 | JBoss Portal Platform | 4,5,6
 |===
 
-
+.Community Application Servers
 [cols="3,1" options="header", width="50%"]
 |===
 | Name | Versions
@@ -47,13 +57,15 @@ The full range of servers are supported, allowing you to maintain the old, devel
 | WildFly | 8
 |===
 
-== Context Menu
-=== Easy access for common operations
+== Launching
+=== Customize launch arguments for your server
 
-The context menu on the server gives you easy access to show the deployed module in a browser and also provides a one click access to the web console.
+image::images/server-launch.gif[Screenshot showing customizing launch commands for local or remote launch]
+
+Customizing your launch arguments is quick and easy with server tools. Whether you're starting a local server, or testing on a sandbox across the globe, you'll be able to use whatever arguments or commands you need to get your server started how you want it.
 
 == Deployment only server
 === When you just need the basics
 
-The deployment only server allows you to deploy eclipse projects to any directory, independent of specific server type.
-Allows you to benefit from the incremental deployment for any server that supports picking up updates from the file system.
+The deployment only server allows you to deploy eclipse projects to any directory on any system, local or remote. This is , independent of specific server type.
+This allows you to benefit from the incremental deployment for any server that supports picking up updates from the file system.
