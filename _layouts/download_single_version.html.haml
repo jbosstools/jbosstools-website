@@ -9,7 +9,7 @@ tab: downloads
       -# show active versions
       - site.download_pages[page.product].each do |eclipse_build, download_pages| 
         - download_pages.each do |download_page|
-          - if download_page.build_info.active
+          - if download_page.build_info.active == true
             - active_page_found = active_page_found || download_page.build_info.version == page.build_info.version
             %li{:class=>("active" if download_page.build_info.version == page.build_info.version)}
               %a{:href=>relative(download_page.output_path)}
@@ -25,7 +25,7 @@ tab: downloads
         %ul.nav.nav-list.nested{:class=>("hidden" if active_page_found)}
           - site.download_pages[page.product].each do |eclipse_build, download_pages| 
             - download_pages.each do |download_page|
-              - unless download_page.build_info.active
+              - if download_page.build_info.active == false
                 %li{:class=>("active" if download_page.build_info.version == page.build_info.version)}
                   %a{:href=>relative(download_page.output_path)}
                     %span

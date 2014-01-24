@@ -5,30 +5,28 @@ eclipse:
     full_name: Eclipse Luna 4.4
     download_url: http://www.eclipse.org/downloads/index-developer.php
     requirements: Java 7
-    active: true
   kepler:
     url_path_fragment: kepler
     short_name: Kepler
     full_name: Eclipse Kepler 4.3
     download_url: http://www.eclipse.org/downloads/
     requirements: Java 6 or Java 7
-    active: true
   juno:
     url_path_fragment: juno
     short_name: Juno
     full_name: Eclipse Juno 4.2.2
     download_url: http://www.eclipse.org/downloads/packages/release/juno/sr2
-    active: false
+    requirements: Java 6
   indigo:
     url_path_fragment: indigo
     short_name: Indigo
     full_name: Eclipse Indigo 3.7
-    active: false
+    requirements: Java 6
   ganymede:
     url_path_fragment: ganymede
     short_name: Ganymede
     full_name: Eclipse Ganymede 3.6
-    active: false
+    requirements: Java 5
 
 # Product types
 devstudio: 
@@ -37,10 +35,12 @@ devstudio:
   streams:
     luna:
       8.0.0.Alpha1:
+        active: true
         release_date: 
         marketplace_install_url: 
     kepler:
       7.1.0.GA:
+        active: true
         release_date: 2013-12-16
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/7.1/html-single/Release_Notes_7.1.0/index.html
@@ -50,6 +50,7 @@ devstudio:
         download_url: https://www.jboss.org/products/devstudio
         # TODO: add zips
       7.0.0.GA:
+        active: false
         release_date: 2013-07-23
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/7.0/html-single/Release_Notes_7.0.1/index.html
@@ -58,6 +59,7 @@ devstudio:
         # TODO: add zips
     juno:
       6.0.1.GA:
+        active: false
         release_date: 2012-11-01
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/6.0/html-single/6.0.1_Release_Notes/index.html
@@ -67,6 +69,7 @@ devstudio:
         # TODO: add zips
     indigo:
       5.0.2.GA:
+        active: false
         release_date: 2012-06-21
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/5.0/html-single/5.0.2_Release_Notes/index.html
@@ -82,6 +85,7 @@ jbt_core:
     luna:
       4.2.0.Alpha1:
         release_date: 2013-12-19
+        active: true
         documentation_url: http://docs.jboss.org/tools/
         update_site_url: http://download.jboss.org/jbosstools/updates/development/luna/
         download_url: http://www.jboss.org/tools/download/dev/4_2_x
@@ -94,11 +98,13 @@ jbt_core:
             download_size: 93MB
             url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/jbosstools-Sources-4.2.0.Alpha1_2013-11-24_01-06-56-B575.zip
             md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/jbosstools-Sources-4.2.0.Alpha1_2013-11-24_01-06-56-B575.zip.MD5
-      4.2.0.Nightly:   
+      4.2.0.Nightly: 
+        active: true  
         update_site_url: http://download.jboss.org/jbosstools/updates/nightly/core/master/
         download_url: http://download.jboss.org/jbosstools/builds/nightly/core/master/latestBuild.html
     kepler:
       4.1.1.Final:
+        active: true
         release_date: 2013-12-16
         documentation_url: http://docs.jboss.org/tools/4.1.x.Final/
         whatsnew_url: http://docs.jboss.org/tools/whatsnew/
@@ -108,6 +114,7 @@ jbt_core:
         update_site_url: http://download.jboss.org/jbosstools/updates/stable/kepler/
         # TODO: add zips
       4.1.0.Final:
+        active: false
         release_date: 2013-07-23
         documentation_url: http://docs.jboss.org/tools/4.1.0.Final/
         whatsnew_url: http://docs.jboss.org/tools/whatsnew/
@@ -135,6 +142,7 @@ jbt_core:
 
     juno:
       4.0.1.Final:
+        active: false
         release_date: 2013-04-03
         marketplace_url: http://marketplace.eclipse.org/node/420896
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=420896
@@ -143,6 +151,7 @@ jbt_core:
 
     indigo:
       3.3.2.Final:
+        active: false
         release_date: 2013-01-25
         marketplace_url: http://marketplace.eclipse.org/node/121986
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=121986

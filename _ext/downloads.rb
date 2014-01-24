@@ -19,7 +19,6 @@ module Awestruct
         site.labels = {:stable=>"Stable", :development=>"Development", :nightly=>"Nightly"}
         @site = site
         @site.download_pages = Hash.new
-        @site.download_perma_links = Hash.new #permalinks per active eclipse stream.
         @site.all_versions_download_pages = Hash.new
         @site.latest_stable_builds_download_pages = Hash.new
         # generate a page for each dev/nightly/stable build per product until a version with a stable build is found 
@@ -27,41 +26,40 @@ module Awestruct
         # then 1 page for all stable builds (only) per product
         for product in [:devstudio, :devstudio_is, :jbt_core, :jbt_is]
           @site.download_pages[product] = Hash.new
-          @site.download_perma_links[product] = Hash.new #permalinks per active eclipse stream.
           if site.products[product].nil? then
             next
           end
           # each product (DevStudio, etc.) is splitted on many Eclipse versions (Luna, etc)
           site.products[product][:streams].each do |eclipse_id, eclipse_stream|
             eclipse_version = site.products[:eclipse][eclipse_id]
-            #permalinks per active eclipse stream.
-            @site.download_perma_links[product][eclipse_id] = Hash.new if eclipse_version.active
             @site.download_pages[product][eclipse_id] = Array.new
-            #permalinks for "stable.html", "development.html", etc. 
             # for each Eclipse versions can have many product builds, each one with build info
             eclipse_stream.each do |build_version, build_info|
+              info = OpenStruct.new
               build_type = guess_build_type(build_version) 
-              build_info.name = site.products[product].name
-              build_info.product = product
-              build_info.version = build_version
-              build_info.eclipse_version = eclipse_version
-              build_info.build_type = build_type
-              build_info.active = eclipse_version.active
-              build_info.blog_announcement_url = (defined? build_version.blog_announcement_url) ? build_version.blog_announcement_url : nil
-              build_info.release_notes_url = (defined? build_version.release_notes_url) ? build_version.release_notes_url : nil
-              build_info.whatsnew_url = (defined? build_version.whatsnew_url) ? build_version.whatsnew_url : nil
-              build_info.update_site_url = (defined? build_version.update_site_url) ? build_version.update_site_url : nil              
-              build_info.marketplace_install_url = (defined? build_version.marketplace_install_url) ? build_version.marketplace_install_url : nil
+              info.name = site.products[product].name
+              info.product = product
+              info.version = build_version
+              info.eclipse_version = eclipse_version
+              info.build_type = build_type
+              info.blog_announcement_url = build_info["blog_announcement_url"]
+              info.release_notes_url = build_info["release_notes_url"]
+              info.whatsnew_url = build_info["whatsnew_url"]
+              info.update_site_url = build_info["update_site_url"]
+              info.marketplace_install_url = build_info["marketplace_install_url"]
+              info.zips = build_info["zips"]
+              info.active = build_info["active"]
               # link to download page: selecting the first module's N&N for the closest version if none match (ex: .CR1 for .Final)
               build_info.whatsnew_output_path = nil?
               if build_type == :stable || build_type == :development
-                whatsnew_page = get_whatsnew_page(build_info.product, build_info.version)
-                build_info.whatsnew_output_path = whatsnew_page.output_path unless whatsnew_page.nil?
+                whatsnew_page = get_whatsnew_page(info.product, info.version)
+                info.whatsnew_output_path = whatsnew_page.output_path unless whatsnew_page.nil?
               end
+              puts "#{info}"
               # finally, build regular download page
               download_page = generate_single_version_download_page(product, eclipse_version, 
-                    build_version.to_s, build_info, build_version)
-              if eclipse_version.active && @site.latest_stable_builds_download_pages[product].nil? && 
+                    build_version.to_s, info, build_version)
+              if info.active && @site.latest_stable_builds_download_pages[product].nil? && 
                   build_type == :stable then
                 @site.latest_stable_builds_download_pages[product] = download_page
               end
