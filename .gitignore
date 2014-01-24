@@ -7,6 +7,9 @@ site
 .sass-cache
 .bundle
 
+# vi backup files
+*~
+
 # Used by Travis-CI 
 vendor
 

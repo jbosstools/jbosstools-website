@@ -6,9 +6,7 @@ module Awestruct
 
       @@index_path = "/downloads/index.html"
       @@output_path_prefix = "/downloads/"
-      @@layout_paths = {:single_version => "download_single_version.html.haml", :all_versions => "download_all_versions.html.haml"}
-      @@download_page_metadata = {:latest_release=>{:page_path_fragment=>"latest", :page_title=>"Latest Stable"} ,
-          :all_releases=>{:page_path_fragment=>"allversions", :page_title=>"All Versions"}}
+      @@layout_path = "download_single_version.html.haml"
       @@build_types = {:stable => [".GA", ".Final"], :development=>[".Alpha", ".Beta", ".CR"], :nightly=>["nightly", "Nightly"]}
 
       def initialize()
@@ -48,21 +46,12 @@ module Awestruct
               build_info.version = build_version
               build_info.eclipse_version = eclipse_version
               build_info.build_type = build_type
+              build_info.active = eclipse_version.active
               build_info.blog_announcement_url = (defined? build_version.blog_announcement_url) ? build_version.blog_announcement_url : nil
               build_info.release_notes_url = (defined? build_version.release_notes_url) ? build_version.release_notes_url : nil
               build_info.whatsnew_url = (defined? build_version.whatsnew_url) ? build_version.whatsnew_url : nil
               build_info.update_site_url = (defined? build_version.update_site_url) ? build_version.update_site_url : nil              
               build_info.marketplace_install_url = (defined? build_version.marketplace_install_url) ? build_version.marketplace_install_url : nil
-              puts "  update site:" + build_info.update_site_url.to_s + " marketplace_install_url=" + build_info.marketplace_install_url.to_s
-              if eclipse_version.active && @site.download_perma_links[product][eclipse_id][build_type].nil? then
-                permalink_page = generate_single_version_download_page(product, eclipse_version, 
-                      build_type.to_s, build_info, build_version)
-                @site.download_perma_links[product][eclipse_id][build_type] = permalink_page
-                @site.pages << permalink_page 
-                if @site.latest_stable_builds_download_pages[product].nil? && build_type == :stable then
-                  @site.latest_stable_builds_download_pages[product] = permalink_page
-                end
-              end
               # link to download page: selecting the first module's N&N for the closest version if none match (ex: .CR1 for .Final)
               build_info.whatsnew_output_path = nil?
               if build_type == :stable || build_type == :development
@@ -72,13 +61,15 @@ module Awestruct
               # finally, build regular download page
               download_page = generate_single_version_download_page(product, eclipse_version, 
                     build_version.to_s, build_info, build_version)
+              if eclipse_version.active && @site.latest_stable_builds_download_pages[product].nil? && 
+                  build_type == :stable then
+                @site.latest_stable_builds_download_pages[product] = download_page
+              end
+                    
               @site.pages << download_page 
               @site.download_pages[product][eclipse_id] << download_page 
             end
           end
-          all_versions_page = generate_all_versions_downloads_page(product)
-          @site.pages << all_versions_page
-          @site.all_versions_download_pages[product] = all_versions_page
           #puts "*** Download permalinks for " + product.to_s + ": " + @site.download_perma_links[product].to_s
         end
         $LOG.debug "*** Done with downloads extension." if $LOG.debug?
@@ -99,7 +90,7 @@ module Awestruct
         page_title ||= @site.products[product].name + " " + build_version.to_s
         product_path_fragment = @site.products[product].url_path_fragment
         path = @@output_path_prefix + product_path_fragment + "/" + eclipse_version.url_path_fragment + "/" + page_path_fragment + ".html"
-        page = generate_download_page(:single_version, path)
+        page = generate_download_page(path)
         page.title = page_title
         page.build_info = build_info
         page.product = product
@@ -108,19 +99,8 @@ module Awestruct
         page
       end
 
-      def generate_all_versions_downloads_page(product)
-        product_path_fragment = @site.products[product].url_path_fragment
-        path = @@output_path_prefix + product_path_fragment + "/" + @@download_page_metadata[:all_releases][:page_path_fragment] + ".html"
-        download_page = generate_download_page(:all_versions, path)
-        download_page.title = @site.products[product].name + " - " + @@download_page_metadata[:all_releases][:page_title]
-        download_page.product = product
-        #puts " generated download page at '" + download_page.output_path + "' with title '" + download_page.title + "'"
-        download_page
-      end
-    
-      def generate_download_page(layout_type, path)
-        layout_path = @@layout_paths[layout_type]
-        page = find_layout_page(layout_path)
+      def generate_download_page(path)
+        page = find_layout_page(@@layout_path)
         page.output_path = File.join(path)
         @site.pages << page
         return page

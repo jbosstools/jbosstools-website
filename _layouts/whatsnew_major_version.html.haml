@@ -8,7 +8,7 @@ tab: docs
     %ul.nav.nav-list.bs-docs-sidenav
       -# sorting versions in reverse order
       - site.whatsnew_pages[page.product_id].keys.sort{|x,y| y <=> x}.each do |product_version|
-        %li{:class=>("expanded" if product_version == page.product_version)}
+        %li{:class=>("selected expanded" if product_version == page.product_version)}
           - if product_version.end_with?(".Final")
             - latest_minor_version = site.whatsnew_pages[page.product_id][product_version].keys.sort{|x,y| y <=> x}.first
             - latest_minor_version_whatsnew_page = site.whatsnew_pages[page.product_id][product_version][latest_minor_version]
@@ -19,7 +19,7 @@ tab: docs
             - if page.product_version == product_version
               %ul.nav.nav-list.nested
                 - site.whatsnew_pages[page.product_id][product_version].keys.sort{|x,y| y <=> x}.each do |product_minor_version|
-                  %li{:class=>("expanded" if product_minor_version == page.product_minor_version)}
+                  %li{:class=>("selected expanded" if product_minor_version == page.product_minor_version)}
                     - minor_version_whatsnew_page = site.whatsnew_pages[page.product_id][product_version][product_minor_version]
                     %a{:href=>minor_version_whatsnew_page.output_path} #{product_minor_version}
                     - if product_minor_version == page.product_minor_version
