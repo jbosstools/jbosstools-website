@@ -12,7 +12,7 @@ tab: docs
       -# sorting versions in reverse order
       - product_versions = site.whatsnew_pages[page.product_id].keys.sort{|x,y| y <=> x}
       - product_versions.each do |product_version|
-        %li{:class=>("expanded" if product_version == page.product_version)}
+        %li{:class=>("selected expanded" if product_version == page.product_version)}
           - if product_version.end_with?(".Final")
             - latest_minor_version = site.whatsnew_pages[page.product_id][product_version].keys.sort{|x,y| y <=> x}.first
             - latest_minor_version_whatsnew_page = site.whatsnew_pages[page.product_id][product_version][latest_minor_version]

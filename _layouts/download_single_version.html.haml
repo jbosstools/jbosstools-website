@@ -5,18 +5,48 @@ tab: downloads
 .row-fluid
   .span3.bs-docs-sidebar
     %ul.nav.nav-list.bs-docs-sidenav
-      - site.download_perma_links[page.product].each do |eclipse_builds| 
-        - eclipse_builds[1].each do |build_type, download_page|
-          %li{:class=>("active" if download_page.build_info.version == page.build_info.version)}
-            %a{:href=>relative(download_page.output_path)}
-              %span
-                #{download_page.build_info.version}
-              %span{:class=>"label label_#{build_type}"}
-                #{site.labels[build_type]}
-      %li
-        %a{:href=>relative(site.all_versions_download_pages[page.product].output_path)}
+      - active_page_found = false
+      -# show active versions
+      - site.download_pages[page.product].each do |eclipse_build, download_pages| 
+        - download_pages.each do |download_page|
+          - if download_page.build_info.active
+            - active_page_found = active_page_found || download_page.build_info.version == page.build_info.version
+            %li{:class=>("active" if download_page.build_info.version == page.build_info.version)}
+              %a{:href=>relative(download_page.output_path)}
+                %span
+                  #{download_page.build_info.version}
+                %span{:class=>"label label_#{download_page.build_info.build_type}"}
+                  #{site.labels[download_page.build_info.build_type]}
+      -# show inactive/older versions
+      %li#allversions{:class=>("expanded selected" unless active_page_found)}
+        %a{:href=>"#"}
           %span
-            All Versions
+            Previous Versions
+        %ul.nav.nav-list.nested{:class=>("hidden" if active_page_found)}
+          - site.download_pages[page.product].each do |eclipse_build, download_pages| 
+            - download_pages.each do |download_page|
+              - unless download_page.build_info.active
+                %li{:class=>("active" if download_page.build_info.version == page.build_info.version)}
+                  %a{:href=>relative(download_page.output_path)}
+                    %span
+                      #{download_page.build_info.version}
+                    %span{:class=>"label label_#{download_page.build_info.build_type}"}
+                      #{site.labels[download_page.build_info.build_type]}
+    :javascript
+      $(document).ready(function() {
+        $('#allversions').click(function() {
+          $allversions = $('#allversions')
+          console.log("Expanded: " + $allversions.hasClass('expanded'))
+          if($allversions.hasClass('expanded')) {
+            $allversions.removeClass('expanded')
+            $allversions.find('ul').addClass('hidden')
+          } else {
+            $allversions.addClass('expanded')
+            $allversions.find('ul').removeClass('hidden')
+          }
+        });
+      });
+        
   .span9#download
     %h2.center
       #{page.build_info.name} #{page.build_info.version}
