@@ -335,16 +335,17 @@ body {
       text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.2);
       background-color: rgb(51, 102, 153);
     }
-    & > li:last-child > a{
+    & > li > a {
       padding-bottom: 8px;
+      padding-top: 8px;
     }
   }
   
-  &:last-child > ul {
+  /*&:last-child > ul {
     border-bottom: 1px solid rgb(229, 229, 229);
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
-  }
+  }*/
   
 }
 

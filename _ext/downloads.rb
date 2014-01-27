@@ -40,22 +40,16 @@ module Awestruct
               info.name = site.products[product].name
               info.product = product
               info.version = build_version
+              info.release_date = build_info["release_date"]
               info.eclipse_version = eclipse_version
               info.build_type = build_type
               info.blog_announcement_url = build_info["blog_announcement_url"]
               info.release_notes_url = build_info["release_notes_url"]
-              info.whatsnew_url = build_info["whatsnew_url"]
+              info.whatsnew_url = get_whatsnew_page_output_path(product, build_version) #build_info["whatsnew_url"]
               info.update_site_url = build_info["update_site_url"]
               info.marketplace_install_url = build_info["marketplace_install_url"]
               info.zips = build_info["zips"]
               info.active = build_info["active"]
-              # link to download page: selecting the first module's N&N for the closest version if none match (ex: .CR1 for .Final)
-              build_info.whatsnew_output_path = nil?
-              if build_type == :stable || build_type == :development
-                whatsnew_page = get_whatsnew_page(info.product, info.version)
-                info.whatsnew_output_path = whatsnew_page.output_path unless whatsnew_page.nil?
-              end
-              puts "#{info}"
               # finally, build regular download page
               download_page = generate_single_version_download_page(product, eclipse_version, 
                     build_version.to_s, info, build_version)
@@ -73,15 +67,22 @@ module Awestruct
         $LOG.debug "*** Done with downloads extension." if $LOG.debug?
       end
       
-      def get_whatsnew_page(product_name, product_version)
-        #puts " looking for N&N for #{product_name} version #{product_version}..."
-        whatsnew_aggregated_page = @site.whatsnew_pages[product_version]
-        unless whatsnew_aggregated_page.nil?
-          #puts " whatsnew for #{product_name} #{product_version} will link to #{whatsnew_aggregated_page.output_path}"
-          whatsnew_aggregated_page
+      def get_whatsnew_page_output_path(product_id, product_version)
+        puts " looking for N&N for #{product_id} #{product_version}..."
+        whatsnew_aggregated_page_output_path = nil
+        unless @site.whatsnew_pages[product_id].nil?
+          if product_version.end_with?(".Final") && !@site.whatsnew_pages[product_id][product_version].nil? then
+            whatsnew_aggregated_page = @site.whatsnew_pages[product_id][product_version][product_version]
+          else
+            whatsnew_aggregated_page = @site.whatsnew_pages[product_id][product_version]
+          end
+          unless whatsnew_aggregated_page.nil?
+            
+            whatsnew_aggregated_page_output_path = whatsnew_aggregated_page.output_path
+            puts "  -> N&N for #{product_id} #{product_version} = #{whatsnew_aggregated_page_output_path}"
+          end
         end
-        #puts "  no whatsnew for #{product_name} #{product_version}"
-        nil
+        whatsnew_aggregated_page_output_path
       end
 
       def generate_single_version_download_page(product, eclipse_version, page_path_fragment, build_info, build_version)

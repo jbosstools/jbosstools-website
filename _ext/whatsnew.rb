@@ -20,7 +20,6 @@ module Awestruct
           if page.relative_source_path =~ /^#{@path_prefix}\/.*\.adoc/ && !page.product_id.nil? && !page.product_version.nil? then
             $LOG.debug " Processing N&N " + page.component_id.to_s +  " " + page.component_version.to_s if $LOG.debug?
             site.engine.set_urls([page])
-            page.component_name = site.components[page.component_id].name
             if whatsnew_pages[page.product_id].nil? then
               whatsnew_pages[page.product_id] = Hash.new
             end
@@ -40,19 +39,22 @@ module Awestruct
             if site.whatsnew_pages[product_id].nil? then
               site.whatsnew_pages[product_id] = Hash.new
             end
-            # use the minor version page layout
             product_major_version = get_major_version(product_version)
             if product_defined(product_id, product_version) then
+              # use the minor version page layout to build a page for the minor version summary
               whatsnew_page = get_minor_version_whatsnew_page(product_id, product_version, product_url_path_fragment)
+              whatsnew_summary_page = nil
             elsif product_defined(product_id, product_major_version) then
-              # use the major version page layout
+              # use the major version page layout to build a page for the minor version summary
               whatsnew_page = get_major_version_whatsnew_page(product_id, product_version, product_major_version, product_url_path_fragment)
+              whatsnew_summary_page = get_major_version_whatsnew_page(product_id, product_major_version, product_major_version, product_url_path_fragment)
             else 
               puts "Sorry, #{product_id} version #{product_version} or #{product_major_version} is not defined in products.yml"
             end
             # fill the major/minor version pages with individual components whatnew pages without touching their content!
             pages.sort{|x,y| x.feature_name <=> y.feature_name}.each do |page|
-              whatsnew_page.component_pages << page unless whatsnew_page.nil?
+              add_page(whatsnew_page, page)
+              add_page(whatsnew_summary_page, page)
             end
           end
           
@@ -65,7 +67,18 @@ module Awestruct
             site.latest_whatsnew_path = site.whatsnew_pages[product_id][latest_version].output_path
           end
         end
+        
+        
         $LOG.debug "*** Done executing whatsnew extension...." if $LOG.debug?
+      end
+      
+      def add_page(whatsnew_page, component_page)
+        unless whatsnew_page.nil?
+          if whatsnew_page.component_pages[component_page.component_id].nil?
+            whatsnew_page.component_pages[component_page.component_id] = Array.new
+          end
+          whatsnew_page.component_pages[component_page.component_id] << component_page 
+        end
       end
       
       def get_major_version(version)
@@ -85,26 +98,28 @@ module Awestruct
         return false
       end
       
-      def get_major_version_whatsnew_page(product_id, product_minor_version, product_major_version, product_url_path_fragment)
-        puts " Building N&N page for #{product_id} #{product_major_version} / #{product_minor_version}"
-        page = create_page(@@whatsnew_major_version_layout_path, @path_prefix, product_url_path_fragment, product_id, product_minor_version)
-        page.product_id = product_id
-        page.product_minor_version = product_minor_version
-        page.product_version = product_major_version
-        page.component_pages = Array.new
-        # see downloads.rb for symbols
-        page.build_type=:stable
+      def get_major_version_whatsnew_page(product_id, product_version, product_major_version, product_url_path_fragment)
+        puts " Building N&N page for #{product_id} #{product_major_version} / #{product_version}"
         @site.whatsnew_pages[product_id][product_major_version] = Hash.new if @site.whatsnew_pages[product_id][product_major_version].nil?
-        @site.whatsnew_pages[product_id][product_major_version][product_minor_version] = page
-        page
+        if @site.whatsnew_pages[product_id][product_major_version][product_version].nil? then
+          page = create_page(@@whatsnew_major_version_layout_path, @path_prefix, product_url_path_fragment, product_version)
+          page.product_id = product_id
+          page.product_version = product_version
+          page.product_major_version = product_major_version
+          page.component_pages = Hash.new
+          # see downloads.rb for symbols
+          page.build_type=:stable
+          @site.whatsnew_pages[product_id][product_major_version][product_version] = page
+        end
+        @site.whatsnew_pages[product_id][product_major_version][product_version]
       end
 
       def get_minor_version_whatsnew_page(product_id, product_version, product_url_path_fragment)
         puts " Building N&N page for #{product_id} #{product_version}"
-        page = create_page(@@whatsnew_minor_version_layout_path, @path_prefix, product_url_path_fragment, product_id, product_version)
+        page = create_page(@@whatsnew_minor_version_layout_path, @path_prefix, product_url_path_fragment, product_version)
         page.product_id = product_id
         page.product_version = product_version
-        page.component_pages = Array.new
+        page.component_pages = Hash.new
         # see downloads.rb for symbols
         page.build_type=:development
         @site.whatsnew_pages[product_id][product_version] = page
@@ -118,8 +133,9 @@ module Awestruct
         throw Exception.new( "too many choices for #{simple_path}" ) if candidates.size != 1
         page = @site.engine.load_page( candidates[0] )
         page.output_path = File.join(paths) + ".html"
-        puts " Added page " + page.output_path
+        puts " Added page with id #{page.object_id} at #{page.output_path}"
         @site.pages << page
+        @site.engine.set_urls([page])
         return page
       end
     end
