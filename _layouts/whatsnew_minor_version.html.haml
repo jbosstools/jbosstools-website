@@ -6,12 +6,14 @@ tab: docs
 -# Includes left side navigation.
 
 - page.title = "What's New in JBoss Tools #{page.product_version}"
+- component_ids = page.component_pages.keys.sort{|x,y| site.components[x].name <=> site.components[y].name}
+
 .row-fluid.affixedContent
   .span3.bs-docs-sidebar
     %ul.nav.nav-list.bs-docs-sidenav
       -# sorting versions in reverse order
       - product_versions = site.whatsnew_pages[page.product_id].keys.sort{|x,y| y <=> x}
-      - product_versions.each do |product_version|
+      - product_versions.each_with_index do |product_version, index|
         %li{:class=>("selected expanded" if product_version == page.product_version)}
           - if product_version.end_with?(".Final")
             - latest_minor_version = site.whatsnew_pages[page.product_id][product_version].keys.sort{|x,y| y <=> x}.first
@@ -29,18 +31,22 @@ tab: docs
                 #{site.labels[development_version_whatsnew_page.build_type]}
             - if product_version == page.product_version
               %ul.nav.nav-list.nested.components
-                - page.component_pages.each do |component_page|
-                  %li.component
-                    %a{:href=>"##{component_page.component_id}"} 
-                      #{component_page.component_name}
+                - component_ids.each_with_index do |component_id, index|
+                  %li.component{:class=>(index == 0 ? "active" : "")}
+                    %a{:href=>"##{component_id}"} #{site.components[component_id].name}
+                  
+                      
+        - if index < (product_versions.length - 1)
+          %li.separator
                       
 
   .span9.scrolledContent
     - default_imagesdir = site.asciidoctor.attributes['imagesdir']
-    - page.component_pages.each do |component_page|
-      - site.asciidoctor.attributes['imagesdir'] = relative(Pathname.new(component_page.output_path).parent.to_s)
-      %div{:id=>component_page.component_id}
-        %h1 #{component_page.component_name}
-        #{component_page.content}
+    - component_ids.each do |component_id|
+      %div{:id=>component_id}
+        %h1 #{site.components[component_id].name}
+        - page.component_pages[component_id].each do |component_page|
+          - site.asciidoctor.attributes['imagesdir'] = relative(Pathname.new(component_page.output_path).parent.to_s)
+          #{component_page.content}
       %hr
     - site.asciidoctor.attributes['imagesdir'] = default_imagesdir
