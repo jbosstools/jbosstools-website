@@ -93,6 +93,7 @@ section {
 #content-wrapper {
   margin-top: 0px;
   margin-bottom: 0px;
+  
   /*
   @media screen and (min-width: 1200px) {
     max-width: 900px;
@@ -106,6 +107,7 @@ section {
     margin-right: auto;  
   }*/
 }
+
 
 blockquote > p {
   font-size: 14px;
@@ -661,7 +663,6 @@ span.label {
         float: left;
         clear: left;
         width: $space;
-        //margin:0px;
       }
       .sect2 > .imageblock {
         float: right;
@@ -675,7 +676,6 @@ span.label {
         float: right;
         clear: right;
         width: $space;
-        //margin:0px;
       }
       .sect2 > .imageblock {
         float: left;
