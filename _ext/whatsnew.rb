@@ -18,7 +18,7 @@ module Awestruct
         #site.whatsnew_pages = whatsnew_pages
         site.pages.each do |page|
           if page.relative_source_path =~ /^#{@path_prefix}\/.*\.adoc/ && !page.product_id.nil? && !page.product_version.nil? then
-            $LOG.debug " Processing N&N " + page.component_id.to_s +  " " + page.component_version.to_s if $LOG.debug?
+            $LOG.debug "  Processing N&N " + page.component_id.to_s +  " " + page.component_version.to_s if $LOG.debug?
             site.engine.set_urls([page])
             if whatsnew_pages[page.product_id].nil? then
               whatsnew_pages[page.product_id] = Hash.new
@@ -102,14 +102,14 @@ module Awestruct
             end
           end
         end
-        puts "#{product_id} #{product_version} is not defined in products.yml - skipping the N&N content."
+        puts "  #{product_id} #{product_version} is not defined in products.yml - skipping the N&N content."
         return false
       end
       
       def get_major_version_whatsnew_page(product_id, product_version, product_major_version, product_url_path_fragment)
-        puts " Building N&N page for #{product_id} #{product_major_version} / #{product_version}"
         @site.whatsnew_pages[product_id][product_major_version] = Hash.new if @site.whatsnew_pages[product_id][product_major_version].nil?
         if @site.whatsnew_pages[product_id][product_major_version][product_version].nil? then
+          puts "  building N&N page for #{product_id} #{product_major_version} / #{product_version}"
           page = create_page(@@whatsnew_major_version_layout_path, @path_prefix, product_url_path_fragment, product_version)
           page.product_id = product_id
           page.product_version = product_version
@@ -123,7 +123,7 @@ module Awestruct
       end
 
       def get_minor_version_whatsnew_page(product_id, product_version, product_url_path_fragment)
-        puts " Building N&N page for #{product_id} #{product_version}"
+        puts "  building N&N page for #{product_id} #{product_version}"
         page = create_page(@@whatsnew_minor_version_layout_path, @path_prefix, product_url_path_fragment, product_version)
         page.product_id = product_id
         page.product_version = product_version
@@ -141,7 +141,7 @@ module Awestruct
         throw Exception.new( "too many choices for #{simple_path}" ) if candidates.size != 1
         page = @site.engine.load_page( candidates[0] )
         page.output_path = File.join(paths) + ".html"
-        puts " Added page with id #{page.object_id} at #{page.output_path}"
+        puts "    added page at #{page.output_path}"
         @site.pages << page
         @site.engine.set_urls([page])
         return page
