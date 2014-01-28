@@ -6,7 +6,7 @@ module Awestruct
 
       @@index_path = "/downloads/index.html"
       @@output_path_prefix = "/downloads/"
-      @@layout_path = "download_single_version.html.haml"
+      @@layout_path = "download_any_version.html.haml"
       @@build_types = {:stable => [".GA", ".Final"], :development=>[".Alpha", ".Beta", ".CR"], :nightly=>["nightly", "Nightly"]}
 
       def initialize()
@@ -19,50 +19,50 @@ module Awestruct
         site.labels = {:stable=>"Stable", :development=>"Development", :nightly=>"Nightly"}
         @site = site
         @site.download_pages = Hash.new
-        @site.all_versions_download_pages = Hash.new
         @site.latest_stable_builds_download_pages = Hash.new
+
         # generate a page for each dev/nightly/stable build per product until a version with a stable build is found 
         # (thus, skipping older product streams),
         # then 1 page for all stable builds (only) per product
-        for product in [:devstudio, :devstudio_is, :jbt_core, :jbt_is]
-          @site.download_pages[product] = Hash.new
-          if site.products[product].nil? then
+        for product_id in [:devstudio, :devstudio_is, :jbt_core, :jbt_is]
+          @site.download_pages[product_id] = Array.new
+          if site.products[product_id].nil? then
             next
           end
           # each product (DevStudio, etc.) is splitted on many Eclipse versions (Luna, etc)
-          site.products[product][:streams].each do |eclipse_id, eclipse_stream|
+          site.products[product_id][:streams].each do |eclipse_id, eclipse_stream|
             eclipse_version = site.products[:eclipse][eclipse_id]
-            @site.download_pages[product][eclipse_id] = Array.new
             # for each Eclipse versions can have many product builds, each one with build info
             eclipse_stream.each do |build_version, build_info|
               info = OpenStruct.new
               build_type = guess_build_type(build_version) 
-              info.name = site.products[product].name
-              info.product = product
+              info.name = site.products[product_id].name
+              info.product_id = product_id
               info.version = build_version
               info.release_date = build_info["release_date"]
               info.eclipse_version = eclipse_version
               info.build_type = build_type
               info.blog_announcement_url = build_info["blog_announcement_url"]
               info.release_notes_url = build_info["release_notes_url"]
-              info.whatsnew_url = get_whatsnew_page_output_path(product, build_version) #build_info["whatsnew_url"]
+              info.whatsnew_url = get_whatsnew_page_output_path(product_id, build_version) #build_info["whatsnew_url"]
               info.update_site_url = build_info["update_site_url"]
               info.marketplace_install_url = build_info["marketplace_install_url"]
               info.zips = build_info["zips"]
               info.active = build_info["active"]
               # finally, build regular download page
-              download_page = generate_single_version_download_page(product, eclipse_version, 
-                    build_version.to_s, info, build_version)
-              if info.active && @site.latest_stable_builds_download_pages[product].nil? && 
+              download_page = generate_download_page(product_id, eclipse_version, 
+                    build_version.to_s, info)
+              
+              # used to provide links to download .Final versions on /downloads
+              if info.active && @site.latest_stable_builds_download_pages[product_id].nil? && 
                   build_type == :stable then
-                @site.latest_stable_builds_download_pages[product] = download_page
+                @site.latest_stable_builds_download_pages[product_id] = download_page
               end
                     
-              @site.pages << download_page 
-              @site.download_pages[product][eclipse_id] << download_page 
+              
             end
           end
-          #puts "*** Download permalinks for " + product.to_s + ": " + @site.download_perma_links[product].to_s
+          #puts "*** Download permalinks for " + product_id.to_s + ": " + @site.download_perma_links[product_id].to_s
         end
         $LOG.debug "*** Done with downloads extension." if $LOG.debug?
       end
@@ -82,26 +82,22 @@ module Awestruct
         whatsnew_aggregated_page_output_path
       end
 
-      def generate_single_version_download_page(product, eclipse_version, page_path_fragment, build_info, build_version)
-        page_title ||= @site.products[product].name + " " + build_version.to_s
-        product_path_fragment = @site.products[product].url_path_fragment
+      def generate_download_page(product_id, eclipse_version, page_path_fragment, build_info)
+        page_title ||= @site.products[product_id].name + " " + build_info.version.to_s
+        product_path_fragment = @site.products[product_id].url_path_fragment
         path = @@output_path_prefix + product_path_fragment + "/" + eclipse_version.url_path_fragment + "/" + page_path_fragment + ".html"
-        page = generate_download_page(path)
-        page.title = page_title
-        page.build_info = build_info
-        page.product = product
-        page.eclipse_version = eclipse_version
+        download_page = find_layout_page(@@layout_path)
+        download_page.output_path = File.join(path)
+        download_page.title = page_title
+        download_page.build_info = build_info
+        download_page.product_id = product_id
+        download_page.eclipse_version = eclipse_version
+        @site.download_pages[product_id] << download_page 
+        @site.pages << download_page
         #puts "  generated download page at '" + page.output_path + "' with title '" + page.title + "'"
-        page
+        download_page
       end
 
-      def generate_download_page(path)
-        page = find_layout_page(@@layout_path)
-        page.output_path = File.join(path)
-        @site.pages << page
-        return page
-      end
-      
       def guess_build_type(build_version)
         @@build_types.each do |type, suffixes| 
           unless suffixes.select{|suffix| build_version.include? suffix}.first.nil?

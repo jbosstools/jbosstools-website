@@ -7,31 +7,29 @@ tab: downloads
     %ul.nav.nav-list.bs-docs-sidenav
       - active_page_found = false
       -# show active versions
-      - site.download_pages[page.product].each do |eclipse_build, download_pages| 
-        - download_pages.each do |download_page|
-          - if download_page.build_info.active == true
-            - active_page_found = active_page_found || download_page.build_info.version == page.build_info.version
-            %li{:class=>("active" if download_page.build_info.version == page.build_info.version)}
-              %a{:href=>relative(download_page.output_path)}
-                %span
-                  #{download_page.build_info.version}
-                %span{:class=>"label label_#{download_page.build_info.build_type}"}
-                  #{site.labels[download_page.build_info.build_type]}
+      - site.download_pages[page.product_id].each do |download_page| 
+        - if download_page.build_info.active == true
+          - active_page_found = active_page_found || download_page.build_info.version == page.build_info.version
+          %li{:class=>("active" if download_page.build_info.version == page.build_info.version)}
+            %a{:href=>relative(download_page.output_path)}
+              %span
+                #{download_page.build_info.version}
+              %span{:class=>"label label_#{download_page.build_info.build_type}"}
+                #{site.labels[download_page.build_info.build_type]}
       -# show inactive/older versions
       %li#allversions{:class=>("expanded selected" unless active_page_found)}
         %a{:href=>"#"}
           %span
             Previous Versions
         %ul.nav.nav-list.nested{:class=>("hidden" if active_page_found)}
-          - site.download_pages[page.product].each do |eclipse_build, download_pages| 
-            - download_pages.each do |download_page|
-              - if download_page.build_info.active == false
-                %li{:class=>("active" if download_page.build_info.version == page.build_info.version)}
-                  %a{:href=>relative(download_page.output_path)}
-                    %span
-                      #{download_page.build_info.version}
-                    %span{:class=>"label label_#{download_page.build_info.build_type}"}
-                      #{site.labels[download_page.build_info.build_type]}
+          - site.download_pages[page.product_id].each do |download_page| 
+            - if download_page.build_info.active == false
+              %li{:class=>("active" if download_page.build_info.version == page.build_info.version)}
+                %a{:href=>relative(download_page.output_path)}
+                  %span
+                    #{download_page.build_info.version}
+                  %span{:class=>"label label_#{download_page.build_info.build_type}"}
+                    #{site.labels[download_page.build_info.build_type]}
     :javascript
       $(document).ready(function() {
         $('#allversions').click(function() {
@@ -57,11 +55,9 @@ tab: downloads
         %a{:href=>relative(page.build_info.documentation_url)} Documentation
       -# JBoss Tools has a What's New
       - unless page.build_info.whatsnew_url.nil?
-        &#124;
         %a{:href=>relative(page.build_info.whatsnew_url)} What's New
       -# JBDS has Release Notes
       - unless page.build_info.release_notes_url.nil?
-        &#124;
         %a{:href=>relative(page.build_info.release_notes_url)} Release Notes
     
     - if page.build_info.build_type == :stable
@@ -82,9 +78,9 @@ tab: downloads
         contains the latest and greatest new features, but nothing is stable or guaranteed - yet.
     - unless page.build_info.eclipse_version.requirements.nil?
       .alert.alert-requirements
-        - if ["jbt_core", "jbt_is"].include? page.build_info.product.to_s
+        - if ["jbt_core", "jbt_is"].include? page.build_info.product_id.to_s
           Requirements: #{page.build_info.eclipse_version.requirements} and #{page.build_info.eclipse_version.full_name}
-        - if ["devstudio", "devstudio_is"].include? page.build_info.product.to_s
+        - if ["devstudio", "devstudio_is"].include? page.build_info.product_id.to_s
           Requirements: #{page.build_info.eclipse_version.requirements} only.
           
         

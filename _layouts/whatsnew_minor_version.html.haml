@@ -41,6 +41,13 @@ tab: docs
                       
 
   .span9.scrolledContent
+    - download_page = site.download_pages[page.product_id].select{|x| x.build_info.version == page.product_version}.first
+    - unless download_page.nil?
+      %p.direct-download
+        %a.btn.btn-primary{:href => relative(download_page.output_path)} 
+          %i.icon-download
+          Download
+    
     - default_imagesdir = site.asciidoctor.attributes['imagesdir']
     - component_ids.each do |component_id|
       %div{:id=>component_id}

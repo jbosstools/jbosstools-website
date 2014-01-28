@@ -233,6 +233,15 @@ span.image > img {
   margin-right: auto;
 }
 
+div.imageblock img {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 // ******************************************************
 // Banner
 // ******************************************************
@@ -830,9 +839,13 @@ span.label {
     text-align: center;
   }
 
-.component-header {
+  .component-header {
+  }
+
 }
 
+.direct-download {
+  text-align: right;
 }
 
 // *****************************************
