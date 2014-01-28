@@ -8,13 +8,13 @@ tab: docs
     %ul.nav.nav-list.bs-docs-sidenav
       - features = site.features.values.sort{|l,r| l.order <=> r.order}
       - features.each do |feature|
-        %li{:class=>("expanded" if feature.url == page.url)}
+        %li{:class=>("selected expanded" if feature.url == page.url)}
           %a{:href => relative(feature.url)} #{feature.name}
           -if feature.url == page.url
-            %ul.nav.nav-list.nested.components
+            %ul.nav.nav-nested.components
               - doc = Nokogiri::HTML.parse(page.content)
-              - doc.css('.sect1 h2').each do |title|
-                %li
+              - doc.css('.sect1 h2').each_with_index do |title, index|
+                %li{:class=>("active" if index == 0)}
                   %a{:href=>"##{title.attribute("id")}"} #{title.content}
               
     
