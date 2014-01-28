@@ -68,18 +68,15 @@ module Awestruct
       end
       
       def get_whatsnew_page_output_path(product_id, product_version)
-        puts " looking for N&N for #{product_id} #{product_version}..."
         whatsnew_aggregated_page_output_path = nil
         unless @site.whatsnew_pages[product_id].nil?
           if product_version.end_with?(".Final") && !@site.whatsnew_pages[product_id][product_version].nil? then
             whatsnew_aggregated_page = @site.whatsnew_pages[product_id][product_version][product_version]
-          else
+          elsif !product_version.end_with?(".Final")
             whatsnew_aggregated_page = @site.whatsnew_pages[product_id][product_version]
           end
           unless whatsnew_aggregated_page.nil?
-            
             whatsnew_aggregated_page_output_path = whatsnew_aggregated_page.output_path
-            puts "  -> N&N for #{product_id} #{product_version} = #{whatsnew_aggregated_page_output_path}"
           end
         end
         whatsnew_aggregated_page_output_path

@@ -22,7 +22,7 @@ tab: docs
             - if product_major_version == page.product_major_version
               - site.whatsnew_pages[page.product_id][product_major_version].keys.sort{|x,y| y <=> x}.each do |product_minor_version|
                 %ul.nav.nav-list.nested
-                  %li{:class=>("selected expanded" if product_minor_version == page.product_version)}
+                  %li{:class=>("selected expanded level2" if product_minor_version == page.product_version)}
                     - minor_version_whatsnew_page = site.whatsnew_pages[page.product_id][product_major_version][product_minor_version]
                     %a{:href=>minor_version_whatsnew_page.output_path} #{product_minor_version.end_with?(".Final") ? "Overview" : product_minor_version}
                     - if product_minor_version == page.product_version

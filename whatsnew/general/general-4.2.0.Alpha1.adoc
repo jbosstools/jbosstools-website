@@ -1,11 +1,17 @@
 = General 4.2.0.Alpha1 What's New
 :page-layout: whatsnew
 :page-component_id: general
-:page-component_version: 4.2.0.Alpha2
+:page-component_version: 4.2.0.Alpha1
 :page-product_id: jbt_core 
-:page-product_version: 4.2.0.Alpha2
+:page-product_version: 4.2.0.Alpha1
 
 
-== General for JBoss Tools 4.2.0.Alpha2
+== General for JBoss Tools 4.2.0.Alpha1
 
-Nothing announced yet.
+JBoss Tools is now targeting Eclipse Luna. 
+
+In Luna M4 there currently are known issues with Eclipse SWT and
+GTK3 on various Linux distribution like Fedora 20.
+
+You can try run with `EXPORT SWT_GTK3=0` which make SWT used GTK2
+which might will reduce some crashes. 

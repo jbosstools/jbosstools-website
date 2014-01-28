@@ -62,9 +62,17 @@ module Awestruct
           # rename the page for the latest major version's N&N to /latest.html 
           unless site.whatsnew_pages[product_id].nil?
             latest_version = site.whatsnew_pages[product_id].keys.sort{|x, y| y <=> x}.first
-            site.whatsnew_pages[product_id][latest_version].output_path = File.join(@path_prefix, product_url_path_fragment, "latest.html")
-            puts " Latest version is #{latest_version} at #{site.whatsnew_pages[product_id][latest_version].output_path}"
-            site.latest_whatsnew_path = site.whatsnew_pages[product_id][latest_version].output_path
+            # if latest version is final
+            if latest_version.end_with? ".Final" then
+              site.whatsnew_pages[product_id][latest_version][latest_version].output_path = File.join(@path_prefix, product_url_path_fragment, "latest.html")
+              puts " Latest version is #{latest_version} at #{site.whatsnew_pages[product_id][latest_version][latest_version].output_path}"
+              site.latest_whatsnew_path = site.whatsnew_pages[product_id][latest_version][latest_version].output_path
+            else
+              # otherwise..
+              site.whatsnew_pages[product_id][latest_version].output_path = File.join(@path_prefix, product_url_path_fragment, "latest.html")
+              puts " Latest version is #{latest_version} at #{site.whatsnew_pages[product_id][latest_version].output_path}"
+              site.latest_whatsnew_path = site.whatsnew_pages[product_id][latest_version].output_path
+            end
           end
         end
         
