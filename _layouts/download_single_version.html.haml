@@ -53,13 +53,14 @@ tab: downloads
       %span#displayed-version{:class=>"label label_#{page.build_info.build_type}"}
         #{site.labels[page.build_info.build_type]}
     .center
-      %a{:href=>relative(page.build_info.documentation_url)} Documentation
+      - unless page.build_info.documentation_url.nil?
+        %a{:href=>relative(page.build_info.documentation_url)} Documentation
       -# JBoss Tools has a What's New
-      - if page.build_info.whatsnew_url 
+      - unless page.build_info.whatsnew_url.nil?
         &#124;
         %a{:href=>relative(page.build_info.whatsnew_url)} What's New
       -# JBDS has Release Notes
-      - if page.build_info.release_notes_url 
+      - unless page.build_info.release_notes_url.nil?
         &#124;
         %a{:href=>relative(page.build_info.release_notes_url)} Release Notes
     
