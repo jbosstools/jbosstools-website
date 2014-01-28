@@ -21,7 +21,7 @@ tab: downloads
         %a{:href=>"#"}
           %span
             Previous Versions
-        %ul.nav.nav-list.nested{:class=>("hidden" if active_page_found)}
+        %ul.nav.nav-nested{:class=>("hidden" if active_page_found)}
           - site.download_pages[page.product_id].each do |download_page| 
             - if download_page.build_info.active == false
               %li{:class=>("active" if download_page.build_info.version == page.build_info.version)}
