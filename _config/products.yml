@@ -73,7 +73,7 @@ devstudio:
         release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/6.0/html-single/6.0.1_Release_Notes/index.html
         marketplace_url: http://marketplace.eclipse.org/node/503834
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=503834
-        download_url: https://devstudio.jboss.com/download/6.x.html
+        download_url: https://devstudio.jboss.com/earlyaccess/6.0.1.GA.html
         zips:
           - name: Update site (including sources) bundle of JBoss Developer Studio
             download_size: 441MB
@@ -87,7 +87,7 @@ devstudio:
         release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/5.0/html-single/5.0.2_Release_Notes/index.html
         marketplace_url: http://marketplace.eclipse.org/node/121986
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=121986
-        download_url: https://devstudio.jboss.com/download/5.x.html
+        download_url: https://devstudio.jboss.com/earlyaccess/5.0.0.GA.html
         zips:
           - name: Update site (including sources) bundle of JBoss Developer Studio
             download_size: 373MB
