@@ -6,7 +6,7 @@ module Awestruct
 
       @@index_path = "/downloads/index.html"
       @@output_path_prefix = "/downloads/"
-      @@layout_path = "download_any_version.html.haml"
+      @@layout_path = "download.html.haml"
       @@build_types = {:stable => [".GA", ".Final"], :development=>[".Alpha", ".Beta", ".CR"], :nightly=>["nightly", "Nightly"]}
 
       def initialize()
@@ -44,6 +44,9 @@ module Awestruct
               info.build_type = build_type
               info.blog_announcement_url = build_info["blog_announcement_url"]
               info.release_notes_url = build_info["release_notes_url"]
+              info.supported_jbt_is_version = build_info["supported_jbt_is_version"]
+              info.required_jbt_core_version = build_info["required_jbt_core_version"]
+              info.required_devstudio_version = build_info["required_devstudio_version"]
               info.whatsnew_url = get_whatsnew_page_output_path(product_id, build_version) #build_info["whatsnew_url"]
               info.update_site_url = build_info["update_site_url"]
               info.marketplace_install_url = build_info["marketplace_install_url"]
@@ -94,7 +97,7 @@ module Awestruct
         download_page.eclipse_version = eclipse_version
         @site.download_pages[product_id] << download_page 
         @site.pages << download_page
-        #puts "  generated download page at '" + page.output_path + "' with title '" + page.title + "'"
+        puts "  generated download page at '#{download_page.output_path}' with title '#{download_page.title}'"
         download_page
       end
 
@@ -104,7 +107,7 @@ module Awestruct
             return type
           end
         end
-        puts "Unable to determine build type for " + build_version + ", assuming :development, then.."
+        puts "Unable to determine build type for #{build_version}, assuming :development, then.."
         return :development
       end
       

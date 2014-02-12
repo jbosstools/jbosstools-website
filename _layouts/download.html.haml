@@ -16,20 +16,21 @@ tab: downloads
                 #{download_page.build_info.version}
               %span{:class=>"label label_#{download_page.build_info.build_type}"}
                 #{site.labels[download_page.build_info.build_type]}
-      -# show inactive/older versions
-      %li#allversions{:class=>("expanded selected" unless active_page_found)}
-        %a{:href=>"#"}
-          %span
-            Previous Versions
-        %ul.nav.nav-nested{:class=>("hidden" if active_page_found)}
-          - site.download_pages[page.product_id].each do |download_page| 
-            - if download_page.build_info.active == false
-              %li{:class=>("active" if download_page.build_info.version == page.build_info.version)}
-                %a{:href=>relative(download_page.output_path)}
-                  %span
-                    #{download_page.build_info.version}
-                  %span{:class=>"label label_#{download_page.build_info.build_type}"}
-                    #{site.labels[download_page.build_info.build_type]}
+      -# show inactive/older versions if there are any
+      - if site.download_pages[page.product_id].select{|p| p.build_info.active == false}.length > 0
+        %li#allversions{:class=>("expanded selected" unless active_page_found)}
+          %a{:href=>"#"}
+            %span
+              Previous Versions
+          %ul.nav.nav-nested{:class=>("hidden" if active_page_found)}
+            - site.download_pages[page.product_id].each do |download_page| 
+              - if download_page.build_info.active == false
+                %li{:class=>("active" if download_page.build_info.version == page.build_info.version)}
+                  %a{:href=>relative(download_page.output_path)}
+                    %span
+                      #{download_page.build_info.version}
+                    %span{:class=>"label label_#{download_page.build_info.build_type}"}
+                      #{site.labels[download_page.build_info.build_type]}
     :javascript
       $(document).ready(function() {
         $('#allversions').click(function() {
@@ -65,7 +66,8 @@ tab: downloads
         #{page.build_info.name} #{page.build_info.version} was released on #{page.build_info.release_date}. 
         - if page.build_info.blog_announcement_url 
           %a{:href=>relative(page.build_info.blog_announcement_url)} Read the announcement.
-
+          
+        
     - elsif page.build_info.build_type == :development
       .alert.alert-info
         %strong Development builds
@@ -78,8 +80,22 @@ tab: downloads
         contains the latest and greatest new features, but nothing is stable or guaranteed - yet.
     - unless page.build_info.eclipse_version.requirements.nil?
       .alert.alert-requirements
-        - if ["jbt_core", "jbt_is"].include? page.build_info.product_id.to_s
-          Requirements: #{page.build_info.eclipse_version.requirements} and #{page.build_info.eclipse_version.full_name}
+        - if page.build_info.product_id.to_s == "jbt_core"
+          Requirements: #{page.build_info.eclipse_version.requirements} and 
+          %a{:href=>page.build_info.eclipse_version.download_url} #{page.build_info.eclipse_version.full_name}
+        - if page.build_info.product_id.to_s == "jbt_is"
+          - jbt_core_page = site.download_pages[:jbt_core].select{|p| p.build_info.version == page.build_info.required_jbt_core_version}.first
+          - devstudio_page = site.download_pages[:devstudio].select{|p| p.build_info.version == page.build_info.required_devstudio_version}.first
+          Requirements: #{page.build_info.eclipse_version.requirements} plus
+          %a{:href=>relative(devstudio_page.output_path)} #{site.products[:devstudio].name} #{page.build_info.required_devstudio_version}
+          (or
+          %a{:href=>page.build_info.eclipse_version.download_url} #{page.build_info.eclipse_version.full_name}
+          with 
+          %a{:href=>relative(jbt_core_page.output_path)} #{site.products[:jbt_core].name} #{page.build_info.required_jbt_core_version}
+          )
+          
+            
+          
         - if ["devstudio", "devstudio_is"].include? page.build_info.product_id.to_s
           Requirements: #{page.build_info.eclipse_version.requirements} only.
           
@@ -99,6 +115,12 @@ tab: downloads
           %li{:id=>"zips_tab"}
             %a{:href=>"#zips", :"data-toggle"=>"tab"}
               Update Site Zip
+        - unless page.build_info.supported_jbt_is_version.nil?
+          %li{:id=>"central_tab"}
+            %a{:href=>"#central", :"data-toggle"=>"tab"}
+              Central
+        
+        
     #installation-tabs-content.tab-content     
       - unless page.build_info.marketplace_install_url.nil? 
         -# use markdown or asciidoc instead 
@@ -159,6 +181,18 @@ tab: downloads
                     (
                     %a{:href=>zip.md5_url}> md5
                     )
+                    
+      -# Central
+      - unless page.build_info.supported_jbt_is_version.nil?
+        .tab-pane{:id=>"central"}
+          - jbt_is_page = site.download_pages[:jbt_is].select{|p| p.build_info.version == page.build_info.supported_jbt_is_version}.first
+          %br
+          %strong #{site.products[:jbt_is].name} #{page.build_info.supported_jbt_is_version}
+          is available as an extra install 
+          %a{:href=>relative(jbt_is_page.output_path)} here.
+
+           
+        
             
 -# Placed at the end of the document so the pages load faster
 :javascript

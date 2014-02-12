@@ -65,12 +65,12 @@ module Awestruct
             # if latest version is final
             if latest_version.end_with? ".Final" then
               site.whatsnew_pages[product_id][latest_version][latest_version].output_path = File.join(@path_prefix, product_url_path_fragment, "latest.html")
-              puts " Latest version is #{latest_version} at #{site.whatsnew_pages[product_id][latest_version][latest_version].output_path}"
+              #puts " Latest version is #{latest_version} at #{site.whatsnew_pages[product_id][latest_version][latest_version].output_path}"
               site.latest_whatsnew_path = site.whatsnew_pages[product_id][latest_version][latest_version].output_path
             else
               # otherwise..
               site.whatsnew_pages[product_id][latest_version].output_path = File.join(@path_prefix, product_url_path_fragment, "latest.html")
-              puts " Latest version is #{latest_version} at #{site.whatsnew_pages[product_id][latest_version].output_path}"
+              #puts " Latest version is #{latest_version} at #{site.whatsnew_pages[product_id][latest_version].output_path}"
               site.latest_whatsnew_path = site.whatsnew_pages[product_id][latest_version].output_path
             end
           end
@@ -109,7 +109,7 @@ module Awestruct
       def get_major_version_whatsnew_page(product_id, product_version, product_major_version, product_url_path_fragment)
         @site.whatsnew_pages[product_id][product_major_version] = Hash.new if @site.whatsnew_pages[product_id][product_major_version].nil?
         if @site.whatsnew_pages[product_id][product_major_version][product_version].nil? then
-          puts "  building N&N page for #{product_id} #{product_major_version} / #{product_version}"
+          #puts "  building N&N page for #{product_id} #{product_major_version} / #{product_version}"
           page = create_page(@@whatsnew_major_version_layout_path, @path_prefix, product_url_path_fragment, product_version)
           page.product_id = product_id
           page.product_version = product_version
@@ -123,7 +123,7 @@ module Awestruct
       end
 
       def get_minor_version_whatsnew_page(product_id, product_version, product_url_path_fragment)
-        puts "  building N&N page for #{product_id} #{product_version}"
+        #puts "  building N&N page for #{product_id} #{product_version}"
         page = create_page(@@whatsnew_minor_version_layout_path, @path_prefix, product_url_path_fragment, product_version)
         page.product_id = product_id
         page.product_version = product_version
@@ -141,7 +141,7 @@ module Awestruct
         throw Exception.new( "too many choices for #{simple_path}" ) if candidates.size != 1
         page = @site.engine.load_page( candidates[0] )
         page.output_path = File.join(paths) + ".html"
-        puts "    added page at #{page.output_path}"
+        #puts "    added page at #{page.output_path}"
         @site.pages << page
         @site.engine.set_urls([page])
         return page
