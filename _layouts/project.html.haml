@@ -82,6 +82,9 @@
           
                 %li#features<
                   %a{:href=>relative("/features/")} Features
+                  
+                %li#blog<
+                  %a{:href=>relative("/blog/")} Blog
   
                 %li#docs.dropdown<
                   %a.dropdown-toggle(href="#" data-toggle="dropdown")<
@@ -98,7 +101,7 @@
                 %li#features<
                   %a{:href=>relative("/community")} Community
                 
-                %li#features<
+                %li#getinvolved<
                   %a{:href=>relative("/getinvolved")} Get Involved
                 
                 %li.dropdown
@@ -132,23 +135,37 @@
           %h4 Navigate
           %ul
             %li
-              %a{:href=>relative("/"), :title => "Overview"} Overview
+              %a{:href=>relative("/"), :title => "Home"} Home
             %li
               %a{:href=>relative("/downloads"), :title => "Downloads"} Downloads
             %li
+              %a{:href=>relative("/features"), :title => "Features"} Features
+            %li
+              %a{:href=>relative("/blog"), :title => "Features"} Blog
+            %li
+              %a{:href=>relative("/community"), :title => "Community"} Community
+            %li
+              %a{:href=>relative("/getinvolved"), :title => "Get Involved"} Get Involved
+            %li
               %a{:href=>relative("/usage"), :title => "Usage"} Usage
         
-        
+        .span2
+          %h4 Docs
+          %ul
+            %li
+              %a{:href=>relative(site.latest_whatsnew_path)} What's New
+            %li
+              %a{:href=>relative("/videos")} Video Tutorials
+            %li
+              %a{:href=>relative("/guides")} Reference Guides
+          
         .span2
           %h4 Follow Us
           %ul
             %li
-              %a{:href=>relative("/blog"), :title => "Blog"} Blog
-            %li
               %a{:href=>"http://twitter.com/jbosstools", :title => "Twitter"} Twitter
             %li
               %a{:href=>"https://plus.google.com/109915195368578219327", :title => "Google+"} Google+
-        .span2
           %h4 Contribute
           %ul
             %li
@@ -161,8 +178,8 @@
               %a{:href=>"irc://irc.freenode.org/jbosstools", :title => "Talk on IRC"} Talk with us on IRC
         .span3.offset1
           %h4 Licenses
-          %p All plugins are available under the Eclipse Public License (EPL). 
-          %p They may also contain some libraries licensed under certain open source licenses such as EPL, LGPL, and/or certain other open source licenses.
+          %p Most plugins are available under the Eclipse Public License (EPL) others Lesser General Public License (LGPL). 
+          %p They may also contain some libraries licensed under certain open source licenses such as ASL, BSD, and/or certain other open source licenses.
           %p
           .jbossbadge
             %a{:href=>"http://www.jboss.org/"}
