@@ -80,13 +80,14 @@
                 %li#downloads<
                   %a{:href=>relative("/downloads/")} Downloads
           
+                %li#features<
+                  %a{:href=>relative("/features/")} Features
+  
                 %li#docs.dropdown<
                   %a.dropdown-toggle(href="#" data-toggle="dropdown")<
                     =precede 'Docs ' do
                       %b.caret>
                   %ul.dropdown-menu 
-                    %li<
-                      %a{:href=>relative("/features")} Features
                     %li<
                       %a{:href=>relative(site.latest_whatsnew_path)} What's New
                     %li<
@@ -94,33 +95,12 @@
                     %li<
                       %a{:href=>relative("/guides")} Reference Guides
           
-                %li#community.dropdown
-                  %a.dropdown-toggle{:href=>"#", :"data-toggle"=>"dropdown"}<
-                    =precede 'Community ' do
-                      %b.caret>
-                  %ul.dropdown-menu
-                    %li<
-                      %a{:href=>relative("/contribute.html")} Contribute
-                    %li<
-                      %a{:href=>"http://www.jboss.org/community/docs/DOC-10794"} Wiki
-                    %li<
-                      %a{:href=>"http://community.jboss.org/community/tools?view=discussions"} User Forum
-                    %li<
-                      %a{:href=>"https://lists.jboss.org/mailman/listinfo/jbosstools-dev"} Mailing Lists
-                    %li<
-                      %a{:href=>"irc://irc.freenode.org/jbosstools"} Chat
-                    %li#blog<
-                      %a{:href=>relative("/blog")} Blog
-          
-                %li#issuetracker<
-                  %a{:href=>"https://issues.jboss.org/browse/JBIDE"} Issues
-          
-                %li#sourcecode<
-                  %a{:href=>"https://github.com/jbosstools"} Source Code
-          
-                %li#build<
-                  %a{:href=>"http://hudson.jboss.org/hudson/view/JBossTools/view/JBossTools_Master/"} Build
-          
+                %li#features<
+                  %a{:href=>relative("/community")} Community
+                
+                %li#features<
+                  %a{:href=>relative("/getinvolved")} Get Involved
+                
                 %li.dropdown
                   %a.dropdown-toggle{:href=>"#", "data-toggle"=>"dropdown"}<
                     = precede 'Follow Us ' do
