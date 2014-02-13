@@ -287,8 +287,7 @@ task :travis do
   success = system "bundle exec awestruct -P staging -g"
   
   puts '## Deploying website via rsync to staging'
-  sucess = system("rsync -Pr --protocol=28 --delete-after _site/* tools@filemgmt.jboss.org:/stg_htdocs/tools")
+  sucess = system("rsync -Pqr --protocol=28 --delete-after _site/* tools@filemgmt.jboss.org:/stg_htdocs/tools")
 
-  File.delete '.git/credentials'
   fail unless success
 end
