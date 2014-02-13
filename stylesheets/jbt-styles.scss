@@ -297,7 +297,7 @@ div.imageblock img {
 // ******************************************************
 
 .breadcrumb {
-  margin-bottom: 0px;
+  margin-bottom: 30px;
   & > .active {
     color: rgb(153, 153, 153);
   }
@@ -327,7 +327,6 @@ a.dropdown-toggle {
   background: white;
   padding-top: 30px;
   padding-bottom: 0px;
-  margin-top: 30px;
 }
 
 .hero-unit > img {
@@ -372,11 +371,10 @@ body {
     border-left: 1px solid rgb(229, 229, 229);
     border-right: 1px solid rgb(229, 229, 229);
     margin: 0px;
-    a {
-      padding-left: 30px;
-    } 
     li  {
       a {
+        padding-left: 30px;
+        padding-right: 15px;
         padding-top: 4px;
         padding-bottom: 4px;
       }
