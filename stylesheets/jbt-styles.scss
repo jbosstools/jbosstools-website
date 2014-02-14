@@ -43,6 +43,9 @@ div.right, span.right {
 .float-right {
   float:right;
 }
+.float-left {
+  float:left;
+}
 
 td.right {
   text-align: right;
@@ -465,6 +468,8 @@ body {
 // Installation
 // ****************************************
 @media screen and (min-width: 680px) {
+  // DEPRECATED
+  /*
   #downloads {
     display: flex;
     justify-content: space-between;
@@ -502,6 +507,38 @@ body {
       @include vertical-right_ruler(1px);
     }
   }
+  */
+  
+  #downloads .hero-unit {
+    .hero-left {
+      float: left;
+      display: inline;
+      margin-bottom: 2em;    
+
+      width: 45%;
+        text-align: right;
+      h1 {
+      }
+      a {
+        margin-top: 1em;
+      }
+    }
+    .hero-right {
+      float: right;
+      display: inline;
+      width: 45%;
+      margin-bottom: 2em;    
+      ul {
+        list-style-type: none;
+      }
+    }
+  }
+  
+  hr {
+    content: "";
+    clear: both;
+  }
+  
 }
 
 .links {
@@ -547,15 +584,21 @@ body {
   padding-right: 20px;
   padding-bottom: 20px;
   
+}
+#download {
+  margin-top: 30px;
+}
+
+#all-downloads, #installation-tabs-content {
   table {
-    margin-top: 2em;
+    //margin-top: 2em;
     tr {
       text-align: left;
-      &:nth-child(2n) {
-        background: rgb(251, 251, 251)
-      }
       &:nth-child(2n+1) {
-        background: rgb(247, 247, 247);  
+        background: rgb(245, 245, 245)
+      }
+      &:nth-child(2n) {
+        background: rgb(255, 255, 255);  
       }
       th, td {
         border: 1px solid rgb(221, 221, 221);
@@ -567,8 +610,16 @@ body {
     }
   }
 }
-#download {
-  margin-top: 30px;
+
+// align labels on the right in the #all-downloads table
+#all-downloads table {
+  td {
+    width: 25%;
+    vertical-align: top;
+  }
+  & .label {
+   float: right;
+  }
 }
 
 .download-instructions {

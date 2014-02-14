@@ -42,7 +42,7 @@ tab: docs
               
             
   .span9.scrolledContent
-    - download_page = site.download_pages[page.product_id].select{|x| x.build_info.version == page.product_version}.first
+    - download_page = site.download_pages[page.product_id][page.product_version]
     - unless download_page.nil?
       %p.direct-download
         %a.btn.btn-primary{:href => relative(download_page.output_path)} 

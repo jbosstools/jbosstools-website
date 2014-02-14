@@ -25,7 +25,7 @@ module Awestruct
         # (thus, skipping older product streams),
         # then 1 page for all stable builds (only) per product
         for product_id in [:devstudio, :devstudio_is, :jbt_core, :jbt_is]
-          @site.download_pages[product_id] = Array.new
+          @site.download_pages[product_id] = Hash.new
           if site.products[product_id].nil? then
             next
           end
@@ -47,6 +47,7 @@ module Awestruct
               info.supported_jbt_is_version = build_info["supported_jbt_is_version"]
               info.required_jbt_core_version = build_info["required_jbt_core_version"]
               info.required_devstudio_version = build_info["required_devstudio_version"]
+              info.supported_devstudio_is_version = build_info["supported_devstudio_is_version"]
               info.whatsnew_url = get_whatsnew_page_output_path(product_id, build_version) #build_info["whatsnew_url"]
               info.update_site_url = build_info["update_site_url"]
               info.marketplace_install_url = build_info["marketplace_install_url"]
@@ -95,7 +96,7 @@ module Awestruct
         download_page.build_info = build_info
         download_page.product_id = product_id
         download_page.eclipse_version = eclipse_version
-        @site.download_pages[product_id] << download_page 
+        @site.download_pages[product_id][build_info.version] = download_page 
         @site.pages << download_page
         puts "  generated download page at '#{download_page.output_path}' with title '#{download_page.title}'"
         download_page

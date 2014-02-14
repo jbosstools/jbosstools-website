@@ -22,11 +22,12 @@ eclipse:
     short_name: Indigo
     full_name: Eclipse Indigo 3.7
     requirements: Java 6
-  ganymede:
-    url_path_fragment: ganymede
-    short_name: Ganymede
-    full_name: Eclipse Ganymede 3.6
-    requirements: Java 5
+# there is no entry for ganymede
+#  ganymede:
+#    url_path_fragment: ganymede
+#    short_name: Ganymede
+#    full_name: Eclipse Ganymede 3.6
+#    requirements: Java 5
 
 # Product types
 devstudio: 
@@ -42,7 +43,7 @@ devstudio:
       7.1.0.GA:
         active: true
         release_date: 2013-12-16
-        supported_jbt_is_version: 4.1.3.Final
+        supported_devstudio_is_version: 7.0.0.Final
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/7.1/html-single/Release_Notes_7.1.0/index.html
         blog_announcement_url: http://bit.ly/jbt-411
@@ -95,6 +96,18 @@ devstudio:
             url: https://devstudio.jboss.com/updates/5.0.0/jbdevstudio-updatesite-5.0.2.v20130119-0035-H249-GA.zip
             md5_url: https://devstudio.jboss.com/updates/5.0.0/jbdevstudio-updatesite-5.0.2.v20130119-0035-H249-GA.zip.MD5
 
+devstudio_is:
+  name: JBoss Developer Studio Integration Stack
+  url_path_fragment: devstudio_is
+  streams:
+    kepler:
+      7.0.0.Final:
+        blog_announcement_url: https://community.jboss.org/en/tools/blog/2014/01/30/integration-stack-tooling-for-jboss-tools-developer-studio?et=watches.email.blog
+        active: true
+        release_date: 2014-01-30
+        required_devstudio_version: 7.1.0.GA
+        update_site_url: https://devstudio.jboss.com/updates/7.0-development/integration-stack/ 
+        
 jbt_core: 
   name: JBoss Tools
   url_path_fragment: jbosstools
@@ -186,7 +199,7 @@ jbt_core:
           - name: Release Notes 4.1.0
             download_size: 5.7kB
             url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.x/zz_Release_Notes_4.1.0.Final.readme.html
-      4.1.1.Nightly:   
+      4.1.x.Nightly:   
         documentation_url: http://docs.jboss.org/tools/
         update_site_url: http://download.jboss.org/jbosstools/updates/nightly/core/4.1.kepler/
         download_url: http://download.jboss.org/jbosstools/builds/nightly/core/4.1.kepler/
@@ -248,5 +261,4 @@ jbt_is:
         active: true
         release_date: 2014-01-30
         required_jbt_core_version: 4.1.1.Final
-        required_devstudio_version: 7.1.0.GA
         update_site_url: https://devstudio.jboss.com/updates/7.0-development/integration-stack/ 
