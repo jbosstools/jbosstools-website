@@ -105,6 +105,10 @@ tab: downloads
           %li{:id=>"marketplace_tab"}
             %a{:href=>"#marketplace", :"data-toggle"=>"tab"}
               Eclipse Marketplace
+        - unless (page.build_info.product_id.to_s == "devstudio" && page.build_info.supported_devstudio_is_version.nil?) || (page.build_info.product_id.to_s == "jbt_core" && page.build_info.supported_jbt_is_version.nil?) 
+          %li{:id=>"central_tab"}
+            %a{:href=>"#central", :"data-toggle"=>"tab"}
+              Central
         - unless page.build_info.update_site_url.nil?
           %li{:id=>"update_site_tab"}
             %a{:href=>"#update_site", :"data-toggle"=>"tab"}
@@ -113,10 +117,6 @@ tab: downloads
           %li{:id=>"zips_tab"}
             %a{:href=>"#zips", :"data-toggle"=>"tab"}
               Update Site Zip
-        - unless (page.build_info.product_id.to_s == "devstudio" && page.build_info.supported_devstudio_is_version.nil?) || (page.build_info.product_id.to_s == "jbt_core" && page.build_info.supported_jbt_is_version.nil?) 
-          %li{:id=>"central_tab"}
-            %a{:href=>"#central", :"data-toggle"=>"tab"}
-              Central
         
         
     #installation-tabs-content.tab-content     
@@ -139,6 +139,23 @@ tab: downloads
             %a{:href=>page.build_info.marketplace_url, :title=>"Eclipse Marketplace"}> Eclipse Marketplace
             \.
     
+      -# Central
+      - unless page.build_info.supported_jbt_is_version.nil? && page.build_info.supported_devstudio_is_version.nil?
+        .tab-pane{:id=>"central"}
+          - if page.build_info.product_id.to_s == "devstudio"
+            - devstudio_is_page = site.download_pages[:devstudio_is][page.build_info.supported_devstudio_is_version]
+            %br
+            %strong #{site.products[:devstudio_is].name} #{page.build_info.supported_devstudio_is_version}
+            is available as an extra install 
+            %a{:href=>relative(devstudio_is_page.output_path)} here.
+          
+          - elsif page.build_info.product_id.to_s == "jbt_core"
+            - jbt_is_page = site.download_pages[:jbt_is][page.build_info.supported_jbt_is_version]
+            %br
+            %strong #{site.products[:jbt_is].name} #{page.build_info.supported_jbt_is_version}
+            is available as an extra install 
+            %a{:href=>relative(jbt_is_page.output_path)} here.
+
       -# Update site
       - unless page.build_info.update_site_url.nil?
         .tab-pane{:id=>"update_site"}
@@ -179,26 +196,6 @@ tab: downloads
                     (
                     %a{:href=>zip.md5_url}> md5
                     )
-                    
-      -# Central
-      - unless page.build_info.supported_jbt_is_version.nil? && page.build_info.supported_devstudio_is_version.nil?
-        .tab-pane{:id=>"central"}
-          - if page.build_info.product_id.to_s == "devstudio"
-            - devstudio_is_page = site.download_pages[:devstudio_is][page.build_info.supported_devstudio_is_version]
-            %br
-            %strong #{site.products[:devstudio_is].name} #{page.build_info.supported_devstudio_is_version}
-            is available as an extra install 
-            %a{:href=>relative(devstudio_is_page.output_path)} here.
-          
-          - elsif page.build_info.product_id.to_s == "jbt_core"
-            - jbt_is_page = site.download_pages[:jbt_is][page.build_info.supported_jbt_is_version]
-            %br
-            %strong #{site.products[:jbt_is].name} #{page.build_info.supported_jbt_is_version}
-            is available as an extra install 
-            %a{:href=>relative(jbt_is_page.output_path)} here.
-
-           
-        
             
 -# Placed at the end of the document so the pages load faster
 :javascript

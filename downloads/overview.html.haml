@@ -12,11 +12,14 @@ title: All Downloads Overview
     .span12
       %table.center
         %tr
+          %th Version
           - for product_id in [:devstudio, :devstudio_is, :jbt_core, :jbt_is]
             - next if site.download_pages[product_id].nil? || site.download_pages[product_id].empty?
             %th #{site.products[product_id].name}
         - site.products[:eclipse].each do |eclipse_version, eclipse_info|
           %tr
+            %td 
+              %a{:href=>eclipse_info.download_url, :alt=>"Download #{eclipse_info.full_name}"} #{eclipse_info.full_name}
             - for product_id in [:devstudio, :devstudio_is, :jbt_core, :jbt_is]
               - next if site.download_pages[product_id].nil? || site.download_pages[product_id].empty?
               %td
@@ -25,7 +28,7 @@ title: All Downloads Overview
                   - next if download_page.build_info.eclipse_version != eclipse_info
                   .block
                     %a{:href=>relative(download_page.output_path)} #{product_version}
-                    - if labels[download_page.build_info.build_type].nil? then
+                    - if labels[download_page.build_info.build_type].nil? 
                       %span{:class=>"label label_#{download_page.build_info.build_type}"} #{download_page.build_info.build_type}
                       - labels[download_page.build_info.build_type] = true
                   

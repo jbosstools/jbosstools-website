@@ -591,7 +591,8 @@ body {
 
 #all-downloads, #installation-tabs-content {
   table {
-    //margin-top: 2em;
+    margin-top: 2em;
+    margin-bottom: 4em;
     tr {
       text-align: left;
       &:nth-child(2n+1) {
@@ -614,7 +615,7 @@ body {
 // align labels on the right in the #all-downloads table
 #all-downloads table {
   td {
-    width: 25%;
+    width: 20%;
     vertical-align: top;
   }
   & .label {
