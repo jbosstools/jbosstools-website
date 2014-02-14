@@ -7,7 +7,7 @@ tab: downloads
     %ul.nav.nav-list.bs-docs-sidenav
       - active_page_found = false
       -# show active versions
-      - site.download_pages[page.product_id].each do |download_page| 
+      - site.download_pages[page.product_id].each do |product_version, download_page| 
         - if download_page.build_info.active == true
           - active_page_found = active_page_found || download_page.build_info.version == page.build_info.version
           %li{:class=>("active" if download_page.build_info.version == page.build_info.version)}
@@ -17,20 +17,22 @@ tab: downloads
               %span{:class=>"label label_#{download_page.build_info.build_type}"}
                 #{site.labels[download_page.build_info.build_type]}
       -# show inactive/older versions if there are any
-      - if site.download_pages[page.product_id].select{|p| p.build_info.active == false}.length > 0
+      - if site.download_pages[page.product_id].values.select{|p| p.build_info.active == false}.length > 0
         %li#allversions{:class=>("expanded selected" unless active_page_found)}
           %a{:href=>"#"}
             %span
               Previous Versions
           %ul.nav.nav-nested{:class=>("hidden" if active_page_found)}
-            - site.download_pages[page.product_id].each do |download_page| 
+            - site.download_pages[page.product_id].each do |product_version, download_page| 
               - if download_page.build_info.active == false
-                %li{:class=>("active" if download_page.build_info.version == page.build_info.version)}
+                %li{:class=>("active" if product_version == page.build_info.version)}
                   %a{:href=>relative(download_page.output_path)}
                     %span
-                      #{download_page.build_info.version}
+                      #{product_version}
                     %span{:class=>"label label_#{download_page.build_info.build_type}"}
                       #{site.labels[download_page.build_info.build_type]}
+      %li
+        %a{:href=>relative(site.base_url + "/downloads/overview.html")} All downloads
     :javascript
       $(document).ready(function() {
         $('#allversions').click(function() {
@@ -83,22 +85,18 @@ tab: downloads
         - if page.build_info.product_id.to_s == "jbt_core"
           Requirements: #{page.build_info.eclipse_version.requirements} and 
           %a{:href=>page.build_info.eclipse_version.download_url} #{page.build_info.eclipse_version.full_name}
-        - if page.build_info.product_id.to_s == "jbt_is"
-          - jbt_core_page = site.download_pages[:jbt_core].select{|p| p.build_info.version == page.build_info.required_jbt_core_version}.first
-          - devstudio_page = site.download_pages[:devstudio].select{|p| p.build_info.version == page.build_info.required_devstudio_version}.first
+        - elsif page.build_info.product_id.to_s == "devstudio"
+          Requirements: #{page.build_info.eclipse_version.requirements} only.
+        - elsif page.build_info.product_id.to_s == "jbt_is"
+          - jbt_core_page = site.download_pages[:jbt_core][page.build_info.required_jbt_core_version] 
           Requirements: #{page.build_info.eclipse_version.requirements} plus
-          %a{:href=>relative(devstudio_page.output_path)} #{site.products[:devstudio].name} #{page.build_info.required_devstudio_version}
-          (or
           %a{:href=>page.build_info.eclipse_version.download_url} #{page.build_info.eclipse_version.full_name}
           with 
           %a{:href=>relative(jbt_core_page.output_path)} #{site.products[:jbt_core].name} #{page.build_info.required_jbt_core_version}
-          )
-          
-            
-          
-        - if ["devstudio", "devstudio_is"].include? page.build_info.product_id.to_s
-          Requirements: #{page.build_info.eclipse_version.requirements} only.
-          
+        - elsif page.build_info.product_id.to_s == "devstudio_is"
+          - devstudio_page = site.download_pages[:devstudio][page.build_info.required_devstudio_version]
+          Requirements: #{page.build_info.eclipse_version.requirements} plus
+          %a{:href=>relative(devstudio_page.output_path)} #{site.products[:devstudio].name} #{page.build_info.required_devstudio_version}
         
     
     #installation_tabs.tabbable
@@ -115,7 +113,7 @@ tab: downloads
           %li{:id=>"zips_tab"}
             %a{:href=>"#zips", :"data-toggle"=>"tab"}
               Update Site Zip
-        - unless page.build_info.supported_jbt_is_version.nil?
+        - unless (page.build_info.product_id.to_s == "devstudio" && page.build_info.supported_devstudio_is_version.nil?) || (page.build_info.product_id.to_s == "jbt_core" && page.build_info.supported_jbt_is_version.nil?) 
           %li{:id=>"central_tab"}
             %a{:href=>"#central", :"data-toggle"=>"tab"}
               Central
@@ -151,7 +149,7 @@ tab: downloads
 
             [ #{page.build_info.update_site_url.to_s} ]( #{page.build_info.update_site_url.to_s} )
 
-            Then select the individual features that you want to install.
+            Then select the individual features that you want to install:
     
       -# Update Site Zips
       - unless page.build_info.zips.nil?
@@ -183,13 +181,21 @@ tab: downloads
                     )
                     
       -# Central
-      - unless page.build_info.supported_jbt_is_version.nil?
+      - unless page.build_info.supported_jbt_is_version.nil? && page.build_info.supported_devstudio_is_version.nil?
         .tab-pane{:id=>"central"}
-          - jbt_is_page = site.download_pages[:jbt_is].select{|p| p.build_info.version == page.build_info.supported_jbt_is_version}.first
-          %br
-          %strong #{site.products[:jbt_is].name} #{page.build_info.supported_jbt_is_version}
-          is available as an extra install 
-          %a{:href=>relative(jbt_is_page.output_path)} here.
+          - if page.build_info.product_id.to_s == "devstudio"
+            - devstudio_is_page = site.download_pages[:devstudio_is][page.build_info.supported_devstudio_is_version]
+            %br
+            %strong #{site.products[:devstudio_is].name} #{page.build_info.supported_devstudio_is_version}
+            is available as an extra install 
+            %a{:href=>relative(devstudio_is_page.output_path)} here.
+          
+          - elsif page.build_info.product_id.to_s == "jbt_core"
+            - jbt_is_page = site.download_pages[:jbt_is][page.build_info.supported_jbt_is_version]
+            %br
+            %strong #{site.products[:jbt_is].name} #{page.build_info.supported_jbt_is_version}
+            is available as an extra install 
+            %a{:href=>relative(jbt_is_page.output_path)} here.
 
            
         

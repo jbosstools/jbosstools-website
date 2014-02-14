@@ -7,11 +7,15 @@ tab: downloads
 - devstudio_current_stable_release = site.latest_stable_builds_download_pages[:devstudio]
 - jbtcore_current_stable_release = site.latest_stable_builds_download_pages[:jbt_core]
 
-.container-fluid
-  .row-fluid#downloads
-    .span6.download-unit
-      %h3
-        #{devstudio_current_stable_release.build_info.name} #{devstudio_current_stable_release.build_info.version}
+.row-fluid#downloads
+  .hero-unit
+    .hero-left
+      %h1
+        #{devstudio_current_stable_release.build_info.name} 
+      %a.btn.btn-primary.btn-large{:href=>relative(devstudio_current_stable_release.output_path)} 
+        %i.icon-download
+        Download version #{devstudio_current_stable_release.build_info.version}
+    .hero-right
       %ul.items
         %li One click install - for Windows, Linux and Mac        
         %li Based on JBoss Tools 4.1 supported plugins
@@ -20,13 +24,18 @@ tab: downloads
         %li 
           %strong Supported by Red Hat
         %li Released on #{devstudio_current_stable_release.build_info.release_date}
-      .download-btn
-        %a.btn.btn-primary{:href=>relative(devstudio_current_stable_release.output_path)} 
-          %i.icon-download
-          Download
-    .span6.download-unit
-      %h3
-        #{jbtcore_current_stable_release.build_info.name} #{jbtcore_current_stable_release.build_info.version}
+
+  %hr
+
+  .hero-unit
+    .hero-left
+      %h1
+        #{jbtcore_current_stable_release.build_info.name}
+      %a.btn.btn-primary.btn-large{:href=>relative(jbtcore_current_stable_release.output_path)} 
+        %i.icon-download
+        Download version #{jbtcore_current_stable_release.build_info.version}
+      
+    .hero-right
       %ul.items
         %li Individual plugins for Eclipse, including experimental plugins
         %li Install into existing Eclipse only
@@ -35,8 +44,9 @@ tab: downloads
         %li
           %strong Community only support
         %li Released on #{jbtcore_current_stable_release.build_info.release_date}
-      .download-btn
-        %a.btn.btn-primary{:href=>relative(jbtcore_current_stable_release.output_path)} 
-          %i.icon-download
-          Download
     
+
+  %hr
+    .center
+      :markdown
+        Looking for another version ? See the [overview of all downloadable versions](overview.html).
