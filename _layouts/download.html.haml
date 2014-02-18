@@ -32,7 +32,7 @@ tab: downloads
                     %span{:class=>"label label_#{download_page.build_info.build_type}"}
                       #{site.labels[download_page.build_info.build_type]}
       %li
-        %a{:href=>relative(site.base_url + "/downloads/overview.html")} All downloads
+        %a{:href=>relative("/downloads/overview.html")} All downloads
     :javascript
       $(document).ready(function() {
         $('#allversions').click(function() {
