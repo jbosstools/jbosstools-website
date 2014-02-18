@@ -16,6 +16,9 @@ central:
 core:
   name: Core Tools
   
+drools:
+  name: Drools
+  
 examples:
   name: Project Examples
   
@@ -43,6 +46,8 @@ openshift:
 server:
   name: Server Tools
 
+switchyard:
+  name: SwitchYard
 usage:
   name: Usage
   

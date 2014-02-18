@@ -66,8 +66,7 @@ module Awestruct
 
       def generateAnchorHtml( page , isLast )
         path = (page.output_path.nil? ? page.url : page.output_path)
-
-        return "" if path==nil
+        return "" if path==nil || page.title.nil?
 
         "<a class='breadcrumb_anchor #{isLast ? "active" : ""}' href='" + relative(path) + "'>#{page.title ? page.title : page.simple_name.capitalize }</a> / "
 
