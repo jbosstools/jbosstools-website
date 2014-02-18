@@ -509,7 +509,7 @@ body {
   }
   */
   
-  #downloads .hero-unit {
+  .hero-unit {
     .hero-left {
       float: left;
       display: inline;
@@ -865,6 +865,27 @@ span.label {
 // *************************************
 // What's New
 // *************************************
+.whatsnew-index {
+  .hero-unit {
+    .hero-left {
+      width: 40%;
+    }
+    .hero-right {
+      width: 55%;
+      ul {
+        overflow: hidden;
+      }
+    }
+    &.jbt_core li {
+      width: 50%;
+      line-height: 1.5em;
+      float: left;
+      display: inline;
+    }
+  }
+
+}
+
 .whatsnew {
   .sect1 {
     position: relative;
