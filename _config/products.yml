@@ -388,6 +388,17 @@ jbt_is:
       3.3.3.Final:
         active: false
         release_date: 2013-02-19
-        required_devstudio_version: 5.0.2.GA
+        required_jbt_core_version: 3.3.2.Final
         update_site_url: http://download.jboss.org/jbosstools/updates/stable/indigo/soa-tooling/
+        zips:
+          - name: Update site of JBoss Tools Integration Stack
+            download_size: 87MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/SOATools3.3.x/soatools-3.3.3.Final.aggregate-Update-2013-01-28_17-58-40-H2.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/SOATools3.3.x/soatools-3.3.3.Final.aggregate-Update-2013-01-28_17-58-40-H2.zip.MD5
+          - name: Source zip of some of JBoss Tools Integration Stack
+            download_size: 854kb
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/SOATools3.3.x/soatools-3.3.3.Final.aggregate-Sources-2013-01-28_17-58-40-H2.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/SOATools3.3.x/soatools-3.3.3.Final.aggregate-Sources-2013-01-28_17-58-40-H2.zip
+          - name: Release notes
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/SOATools3.3.x/zz_Release_Notes_SOA_3.3.3.Final.readme.html
 
