@@ -203,3 +203,16 @@ tab: downloads
     #{init_download_tab_states(page.build_info)}
     
   });  
+  
+  $(function(){
+    var hash = window.location.hash;
+    hash && $('ul.nav a[href="' + hash + '"]').tab('show');
+
+    $('.nav-tabs a').click(function (e) {
+      $(this).tab('show');
+      var scrollmem = $(e.target).scrollTop();
+      window.location.hash = this.hash;
+      //$(e.target).scrollTop(scrollmem);
+      window.scrollTo(0, 0);
+    });
+  });
