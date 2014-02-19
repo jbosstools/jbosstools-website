@@ -162,12 +162,38 @@ tab: downloads
             %br
             %br
             %a{:href=>relative(jbt_is_page.output_path)} Click here to learn more or install.
-          - elsif page.build_info.product_id.to_s == "devstudio_is" || page.build_info.product_id.to_s == "jbt_is"
+          - elsif page.build_info.product_id.to_s == "devstudio_is"
             The features included in 
             %strong #{page.build_info.name} #{page.build_info.version}
-            can be installed from JBoss Central simply by selecting the appropriate connectors, then clicking
-            %strong Install:
-            %img{:src=>relative("/images/tools/jbtis-central.png"), :height=>"611", :width=>"951"}
+            can be installed from 
+            %a{:href=>relative("/images/tools/jbdsis-central.png"), :title=>"JBoss Central"} JBoss Central
+            by selecting the appropriate connectors, then clicking
+            %strong Install.
+            %br
+            %br
+            Alternatively, you can drag and drop 
+            %strong 
+              %a{:href=>"https://devstudio.jboss.com/central/install?connectors=jboss.integration-stack.bundle.bpr,jboss.integration-stack.bundle.ds,jboss.integration-stack.bundle.soa,com.jboss.jbds.soatooling.bundle.soap,jboss.integration-stack.bundle.bpr", :title=>"JBoss Central Install"} this link
+            into the JBoss Central Software/Update tab of your running 
+            %strong #{page.build_info.eclipse_version.full_name}
+            or
+            %strong JBoss Developer Studio
+            workspace.
+          - elsif page.build_info.product_id.to_s == "jbt_is"
+            The features included in 
+            %strong #{page.build_info.name} #{page.build_info.version}
+            can be installed from 
+            %a{:href=>relative("/images/tools/jbtis-central.png"), :title=>"JBoss Central"} JBoss Central
+            by selecting the appropriate connectors, then clicking
+            %strong Install.
+            %br
+            %br
+            Alternatively, you can drag and drop 
+            %strong 
+              %a{:href=>"http://download.jboss.org/jbosstools/central/install?connectors=jboss.integration-stack.bundle.bpr,jboss.integration-stack.bundle.ds,jboss.integration-stack.bundle.soa,jboss.integration-stack.bundle.fuse,com.jboss.jbds.bpel.feature,org.savara.tools.feature,org.drools.eclipse.feature,org.guvnor.tools.feature,org.jboss.jbpm.eclipse.feature,org.jboss.tools.esb.feature,org.switchyard.tools.feature,org.jboss.tools.modeshape.rest.feature,org.teiid.designer.feature,org.jboss.tools.runtime.drools.detector.feature", :title=>"JBoss Central Install"} this link
+            into the JBoss Central Software/Update tab of your running 
+            %strong #{page.build_info.eclipse_version.full_name}
+            workspace.
 
       -# Update site
       - unless page.build_info.update_site_url.nil?
