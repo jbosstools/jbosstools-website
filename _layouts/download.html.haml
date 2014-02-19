@@ -222,10 +222,9 @@ tab: downloads
     hash && $('ul.nav a[href="' + hash + '"]').tab('show');
 
     $('.nav-tabs a').click(function (e) {
-      $(this).tab('show');
-      var scrollmem = $(e.target).scrollTop();
+      //$(this).tab('show');
+      var scrollmem = $('body').offset().top - $(document).scrollTop();
       window.location.hash = this.hash;
-      //$(e.target).scrollTop(scrollmem);
-      window.scrollTo(0, 0);
+      $('body').offset(scrollmem, 0);
     });
   });
