@@ -199,7 +199,9 @@ tab: downloads
             - page.build_info.zips.each do |zip|
               %tr
                 %td #{zip.name}  
-                %td.right #{zip.download_size}              
+                %td.right 
+                  - if zip.download_size?
+                    #{zip.download_size}              
                 %td 
                   - if zip.url.end_with? "zip"
                     %a{:href=>zip.url} zip
