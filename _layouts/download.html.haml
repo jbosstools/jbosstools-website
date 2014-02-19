@@ -140,21 +140,34 @@ tab: downloads
             \.
     
       -# Central
-      - unless page.build_info.supported_jbt_is_version.nil? && page.build_info.supported_devstudio_is_version.nil?
+      - if page.build_info.supported_jbt_is_version != nil || page.build_info.supported_devstudio_is_version != nil || page.build_info.required_devstudio_version != nil || page.build_info.required_jbt_core_version != nil
         .tab-pane{:id=>"central"}
           - if page.build_info.product_id.to_s == "devstudio"
             - devstudio_is_page = site.download_pages[:devstudio_is][page.build_info.supported_devstudio_is_version]
             %br
             %strong #{site.products[:devstudio_is].name} #{page.build_info.supported_devstudio_is_version}
-            is available as an extra install 
-            %a{:href=>relative(devstudio_is_page.output_path)} here.
-          
+            provides a number of additional features and tools for 
+            %br
+            %strong #{page.build_info.name} #{page.build_info.version}.  
+            %br
+            %br
+            %a{:href=>relative(devstudio_is_page.output_path)} Click here to learn more or install.
           - elsif page.build_info.product_id.to_s == "jbt_core"
             - jbt_is_page = site.download_pages[:jbt_is][page.build_info.supported_jbt_is_version]
             %br
             %strong #{site.products[:jbt_is].name} #{page.build_info.supported_jbt_is_version}
-            is available as an extra install 
-            %a{:href=>relative(jbt_is_page.output_path)} here.
+            provides a number of additional features and tools for
+            %br
+            %strong #{page.build_info.name} #{page.build_info.version}.  
+            %br
+            %br
+            %a{:href=>relative(jbt_is_page.output_path)} Click here to learn more or install.
+          - elsif page.build_info.product_id.to_s == "devstudio_is" || page.build_info.product_id.to_s == "jbt_is"
+            The features included in 
+            %strong #{page.build_info.name} #{page.build_info.version}
+            can be installed from JBoss Central simply by selecting the appropriate connectors, then clicking
+            %strong Install:
+            %img{:src=>relative("/images/tools/jbtis-central.png"), :height=>"611", :width=>"951"}
 
       -# Update site
       - unless page.build_info.update_site_url.nil?
