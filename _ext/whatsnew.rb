@@ -49,6 +49,10 @@ module Awestruct
               # use the minor version page layout to build a page for the minor version summary
               whatsnew_page = get_minor_version_whatsnew_page(product_id, product_version, product_url_path_fragment)
               whatsnew_summary_page = nil
+            elsif product_defined(product_id, product_version) && (product_version.end_with? ".Final") then
+                # use the minor version page layout to build a page for the minor version summary
+                whatsnew_page = get_major_version_whatsnew_page(product_id, product_version, product_major_version, product_url_path_fragment)
+                whatsnew_summary_page = nil
             elsif product_defined(product_id, product_major_version) then
               # use the major version page layout to build a page for the minor version summary
               whatsnew_page = get_major_version_whatsnew_page(product_id, product_version, product_major_version, product_url_path_fragment)
@@ -91,6 +95,7 @@ module Awestruct
           if whatsnew_page.component_pages[component_page.component_id].nil?
             whatsnew_page.component_pages[component_page.component_id] = Array.new
           end
+          puts "  Adding #{component_page.component_id} to #{whatsnew_page.product_id} #{whatsnew_page.product_version}"
           whatsnew_page.component_pages[component_page.component_id] << component_page 
         end
       end

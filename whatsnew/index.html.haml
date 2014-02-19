@@ -12,7 +12,7 @@ title: What's New
           %a{:href=>relative(site.latest_whatsnew_page[product_id].output_path)} 
             See What's New in #{site.latest_whatsnew_page[product_id].product_version} 
         .hero-right
-          #{site.products[product_id].name} has New and Noteworthies for:
+          #{site.products[product_id].name} has New and Noteworthy for:
           %ul
             - site.whatsnew_components[product_id].sort.each do |component_id|
               %li #{site.components[component_id].name}
