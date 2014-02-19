@@ -21,26 +21,31 @@ eclipse:
     url_path_fragment: indigo
     short_name: Indigo
     full_name: Eclipse Indigo 3.7
+    download_url: http://www.eclipse.org/downloads/packages/release/indigo/sr2
     requirements: Java 6
   helios:
     url_path_fragment: helios
     short_name: Helios
     full_name: Eclipse Helios 3.6
+    download_url: http://www.eclipse.org/downloads/packages/release/helios/sr2
     requirements: Java 6
   galileo:
     url_path_fragment: galileo
     short_name: Galileo
     full_name: Eclipse Galileo 3.5
+    download_url: http://www.eclipse.org/downloads/packages/release/galileo/sr2
     requirements: Java 5
   ganymede:
     url_path_fragment: ganymede
     short_name: Ganymede
     full_name: Eclipse Ganymede 3.4
+    download_url: http://www.eclipse.org/downloads/packages/release/ganymede/sr2
     requirements: Java 5
   europa:
     url_path_fragment: europa
     short_name: Europa
     full_name: Eclipse Europa 3.3
+    download_url: http://www.eclipse.org/downloads/packages/release/europa/winter
     requirements: Java 5
 
 # Product types
