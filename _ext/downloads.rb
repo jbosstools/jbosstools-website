@@ -32,6 +32,9 @@ module Awestruct
           # each product (DevStudio, etc.) is splitted on many Eclipse versions (Luna, etc)
           site.products[product_id][:streams].each do |eclipse_id, eclipse_stream|
             eclipse_version = site.products[:eclipse][eclipse_id]
+            if eclipse_version.nil?
+              raise "Eclipse version '#{eclipse_id}' referenced in stream not defined in products.yml"
+            end
             # for each Eclipse versions can have many product builds, each one with build info
             eclipse_stream.each do |build_version, build_info|
               info = OpenStruct.new
