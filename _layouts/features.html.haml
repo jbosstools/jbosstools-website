@@ -6,7 +6,7 @@ tab: docs
 .row-fluid.affixedContent
   .span3.bs-docs-sidebar
     %ul.nav.nav-list.bs-docs-sidenav
-      - features = site.features.values.sort{|l,r| l.order <=> r.order}
+      - features = site.features.values.sort{|l,r| l.feature_id <=> r.feature_id}
       - features.each do |feature|
         %li{:class=>("selected expanded" if feature.url == page.url)}
           %a{:href => relative(feature.url)} #{feature.name}
