@@ -8,6 +8,7 @@ module Awestruct
       @@whatsnew_major_version_layout_path = "whatsnew_major_version.html.haml"
       
       def initialize(path_prefix)
+        puts "Initializing Whatsnew"
         @path_prefix = path_prefix
       end
 
@@ -71,7 +72,7 @@ module Awestruct
           # rename the page for the latest major version's N&N to /latest.html 
           unless site.whatsnew_pages[product_id].nil?
             latest_version = site.whatsnew_pages[product_id].keys.sort{|x, y| y <=> x}.first
-            puts " latest version of #{product_id} is #{latest_version}"
+            #puts " latest version of #{product_id} is #{latest_version}"
             # if latest version is final
             if latest_version.end_with? ".Final" then
               site.whatsnew_pages[product_id][latest_version][latest_version].output_path = File.join(@path_prefix, product_url_path_fragment, "index.html")
@@ -95,7 +96,7 @@ module Awestruct
           if whatsnew_page.component_pages[component_page.component_id].nil?
             whatsnew_page.component_pages[component_page.component_id] = Array.new
           end
-          puts "  Adding #{component_page.component_id} to #{whatsnew_page.product_id} #{whatsnew_page.product_version}"
+          #puts "  Adding #{component_page.component_id} to #{whatsnew_page.product_id} #{whatsnew_page.product_version}"
           whatsnew_page.component_pages[component_page.component_id] << component_page 
         end
       end
@@ -113,14 +114,14 @@ module Awestruct
             end
           end
         end
-        puts "  #{product_id} #{product_version} is not defined in products.yml - skipping the N&N content."
+        #puts "  #{product_id} #{product_version} is not defined in products.yml - skipping the N&N content."
         return false
       end
       
       def get_major_version_whatsnew_page(product_id, product_version, product_major_version, product_url_path_fragment)
         @site.whatsnew_pages[product_id][product_major_version] = Hash.new if @site.whatsnew_pages[product_id][product_major_version].nil?
         if @site.whatsnew_pages[product_id][product_major_version][product_version].nil? then
-          puts "  building major N&N page for version of #{product_id}: #{product_major_version} / #{product_version}"
+          #puts "  building major N&N page for version of #{product_id}: #{product_major_version} / #{product_version}"
           page = create_page(@@whatsnew_major_version_layout_path, @path_prefix, product_url_path_fragment, product_version)
           page.product_id = product_id
           page.product_name = @site.products[product_id].name
@@ -135,7 +136,7 @@ module Awestruct
       end
 
       def get_minor_version_whatsnew_page(product_id, product_version, product_url_path_fragment)
-        puts "  building minor N&N page for version of #{product_id}: #{product_version}"
+        #puts "  building minor N&N page for version of #{product_id}: #{product_version}"
         page = create_page(@@whatsnew_minor_version_layout_path, @path_prefix, product_url_path_fragment, product_version)
         page.product_id = product_id
         page.product_name = @site.products[product_id].name
@@ -154,7 +155,7 @@ module Awestruct
         throw Exception.new( "too many choices for #{simple_path}" ) if candidates.size != 1
         page = @site.engine.load_page( candidates[0] )
         page.output_path = File.join(paths) + ".html"
-        puts "    added page at #{page.output_path}"
+        #puts "    added page at #{page.output_path}"
         @site.pages << page
         @site.engine.set_urls([page])
         return page

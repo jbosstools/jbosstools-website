@@ -9,4 +9,5 @@
 
 This release of JBoss Tools LiveReload brings support for Asciidoc files (.adoc and .asciidoc). Using a basic Text Editor in combination with the LiveReload tooling and the Asciidoctor.js Chrome extension and FireFox add-on, users will now have instant reload of their documentation in their browser !
 
-Related JIRA: JBIDE-15506
+jira::JBIDE-15506[]
+

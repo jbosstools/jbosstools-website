@@ -101,7 +101,7 @@ module Awestruct
         download_page.eclipse_version = eclipse_version
         @site.download_pages[product_id][build_info.version] = download_page 
         @site.pages << download_page
-        puts "  generated download page at '#{download_page.output_path}' with title '#{download_page.title}'"
+        #puts "  generated download page at '#{download_page.output_path}' with title '#{download_page.title}'"
         download_page
       end
 
