@@ -124,10 +124,10 @@ tab: downloads
         -# use markdown or asciidoc instead 
         .tab-pane{:id=>"marketplace"}
           %p
-            Drag and drop the 
+            Drag and drop this
             %a{:href=>page.build_info.marketplace_install_url, :title=>"Install"}<
               %img{:src=>relative("/images/tools/installbutton.png"), :alt=>"Drag and drop this button into a running #{eclipse_name} workspace to install #{page.build_info.name}", :height=>"25", :width=>"63"}
-            icon on your active
+            icon into your active
             %strong< #{page.build_info.eclipse_version.full_name} 
             workspace, or alternatively, search for &quot;
             %strong> #{page.build_info.name} (#{page.build_info.eclipse_version.short_name})
@@ -142,32 +142,49 @@ tab: downloads
       -# Central
       - if page.build_info.supported_jbt_is_version != nil || page.build_info.supported_devstudio_is_version != nil || page.build_info.required_devstudio_version != nil || page.build_info.required_jbt_core_version != nil
         .tab-pane{:id=>"central"}
-          - if page.build_info.product_id.to_s == "devstudio"
-            - devstudio_is_page = site.download_pages[:devstudio_is][page.build_info.supported_devstudio_is_version]
+          - installed_product_name = "#{page.build_info.name} #{page.build_info.version}"
+          - if page.build_info.product_id.to_s == "devstudio" || page.build_info.product_id.to_s == "jbt_core"
+            - if page.build_info.product_id.to_s == "devstudio"
+              - is_product_name = "#{site.products[:devstudio_is].name} #{page.build_info.supported_devstudio_is_version}"
+              - is_page = site.download_pages[:devstudio_is][page.build_info.supported_devstudio_is_version]
+            - elsif page.build_info.product_id.to_s == "jbt_core"
+              - is_product_name = "#{site.products[:jbt_is].name} #{page.build_info.supported_jbt_is_version}"
+              - is_page = site.download_pages[:jbt_is][page.build_info.supported_jbt_is_version]
             %br
-            %strong #{site.products[:devstudio_is].name} #{page.build_info.supported_devstudio_is_version}
+            %strong #{is_product_name}
             provides a number of additional features and tools for 
             %br
-            %strong #{page.build_info.name} #{page.build_info.version}.  
-            %br
-            %br
-            %a{:href=>relative(devstudio_is_page.output_path)} Click here to learn more or install.
-          - elsif page.build_info.product_id.to_s == "jbt_core"
-            - jbt_is_page = site.download_pages[:jbt_is][page.build_info.supported_jbt_is_version]
-            %br
-            %strong #{site.products[:jbt_is].name} #{page.build_info.supported_jbt_is_version}
-            provides a number of additional features and tools for
-            %br
-            %strong #{page.build_info.name} #{page.build_info.version}.  
-            %br
-            %br
-            %a{:href=>relative(jbt_is_page.output_path)} Click here to learn more or install.
+            %strong #{installed_product_name}.  
+            %p
+            %a{:href=>relative(is_page.output_path)} Click here to learn more or install.
           - elsif page.build_info.product_id.to_s == "devstudio_is" || page.build_info.product_id.to_s == "jbt_is"
-            The features included in 
-            %strong #{page.build_info.name} #{page.build_info.version}
-            can be installed from JBoss Central simply by selecting the appropriate connectors, then clicking
-            %strong Install:
-            %img{:src=>relative("/images/tools/jbtis-central.png"), :height=>"611", :width=>"951"}
+            - if page.build_info.product_id.to_s == "jbt_is"
+              - installed_product = "JBoss Tools #{page.build_info.required_jbt_core_version}"
+              - central_install_url = "http://download.jboss.org/jbosstools/central/install?connectors=jboss.integration-stack.bundle.bpr,jboss.integration-stack.bundle.ds,jboss.integration-stack.bundle.soa,jboss.integration-stack.bundle.fuse,com.jboss.jbds.bpel.feature,org.savara.tools.feature,org.drools.eclipse.feature,org.guvnor.tools.feature,org.jboss.jbpm.eclipse.feature,org.jboss.tools.esb.feature,org.switchyard.tools.feature,org.jboss.tools.modeshape.rest.feature,org.teiid.designer.feature,org.jboss.tools.runtime.drools.detector.feature"
+            - else
+              - installed_product = "JBoss Developer Studio #{page.build_info.required_devstudio_version}"
+              - central_install_url = "https://devstudio.jboss.com/central/install?connectors=jboss.integration-stack.bundle.bpr,jboss.integration-stack.bundle.ds,jboss.integration-stack.bundle.soa,com.jboss.jbds.soatooling.bundle.soap,jboss.integration-stack.bundle.bpr"
+            %br
+            Once you have installed and started
+            %strong #{installed_product}
+            you can either:
+            %p
+            1. Drag and drop this
+            %a.btn{:href=>central_install_url, :title=>"JBoss Central Install"} Install
+            button into the 
+            %a{"data-toggle" => "modal", :href => "#myModal", :role => "button"} Software/Update tab of JBoss Central
+            #myModal.modal.hide.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+              .modal-header
+              %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+              %h4#myModalLabel JBoss Central
+              .modal-body
+                %p
+                  %img{:src=>relative("/images/tools/#{page.build_info.product_id.to_s}_central.png"), :alt=>"JBoss Central", :width=>"500"}
+                .modal-footer
+                %button.btn{"aria-hidden" => "true", "data-dismiss" => "modal"} Close
+            to choose which features to install, or
+            %p
+            2. From the Software/Update tab of JBoss Central, select which groups of features to install.
 
       -# Update site
       - unless page.build_info.update_site_url.nil?
