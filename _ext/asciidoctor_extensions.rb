@@ -10,8 +10,10 @@ module Awestruct
       def initialize()
         puts "Registering Asciidoctor extension(s)..."
         Asciidoctor::Extensions.register :jira do
+          inline_macro JIRAInlineMacro
+        end
+        Asciidoctor::Extensions.register :related_jira do
           block_macro RelatedJIRABlockMacro
-          inline_macro RelatedJIRAInlineMacro
         end
       end
       
