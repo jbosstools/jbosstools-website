@@ -5,10 +5,17 @@ include ::Asciidoctor
 module Awestruct
   module Extensions
     
+    #
+    # Renders a block with one or more links to JIRA issues, prefixed with "Related JIRA:" or "Related JIRAs:"
+    #
+    # eg: related_jira::JBIDE-12345[]
+    #
+    # Note the use of a double colon ('::') after the 'related_jira' macro name.
+    #
     class RelatedJIRABlockMacro < Asciidoctor::Extensions::BlockMacroProcessor
       use_dsl
 
-      named :jira
+      named :related_jira
       parse_content_as :text
 
       
@@ -29,7 +36,14 @@ module Awestruct
       end
     end
     
-    class RelatedJIRAInlineMacro < Asciidoctor::Extensions::InlineMacroProcessor
+    #
+    # Renders a link to the JIRA issue 
+    #
+    # eg: jira:JBIDE-12345[]
+    #
+    # Note the use of a single colon (':') after the 'jira' macro name.
+    #
+    class JIRAInlineMacro < Asciidoctor::Extensions::InlineMacroProcessor
       use_dsl
 
       named :jira
