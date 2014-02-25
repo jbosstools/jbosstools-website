@@ -13,7 +13,7 @@ OpenShift online now allow you to start an application with your very own git re
 
 image::images/advanced-source-code.png[]
 
-Related Jira
+related_jira::JBIDE-14588[]
 
 === Disable automatic Maven Build
 
@@ -23,7 +23,7 @@ image::images/disable-automatic-maven-build.png[]
 
 You can enable the Maven builds again by manually changing the marker files or use the Configure > Configure Marker... menu.
 
-Related Jira
+related_jira::JBIDE-13882[]
 
 === Cartridge Command Line Names
 
@@ -31,7 +31,7 @@ We added the cartridge id in parenthesis nex to the human understandable cartrid
 
 image::images/cartridge-labels-2.png[]
 
-Related Jira
+related_jira::JBIDE-14631[]
 
 === Jenkins URL and Credentials
 
@@ -39,7 +39,7 @@ When you create an application there are cases where OpenShift will give you add
 
 image::images/creation-log.png[]
 
-Related Jira
+related_jira::JBIDE-14945[]
 
 == Marker Wizard
 === Edit your Markers
@@ -72,14 +72,14 @@ We show you all markers that already exist in the markers directory and all the 
 
 image::images/configre-markers-wizard.png[]
 
-Related Jira
+related_jira::JBIDE-14845[]
 
 ===Verbose Cartridge Names
 The OpenShift Explorer lists your applications and cartridges. Along with the application and cartridge it shows you the type. So far we were showing shorthand names and changed this for Beta2: the Explorer is now using verbose labels for cartridges and decorate them with the shorthand (rhc command line identifier) name.
 
 image::images/better-labels-in-explorer.png[]
 
-Related Jira
+related_jira::JBIDE-14687[]
 
 == Application Logs
 === Tail Files pattern fixed
@@ -87,4 +87,4 @@ In order to inspect your application logs you pick "Tail Files" in the context m
 
 image::images/better-labels-in-explorer.png[]
 
-Related Jira 
+related_jira::JBIDE-13894[]

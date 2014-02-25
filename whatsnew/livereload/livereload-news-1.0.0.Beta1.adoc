@@ -11,7 +11,7 @@ In Addition with the Directory Mode support introduced in 1.0.0.Alpha, the new S
 
 As before, users only need to create and start the LiveReload server, connect their browser using the installed extension and then start working on resources in their workspace.
 
-Related JIRA: JBIDE-13950
+related_jira::JBIDE-13950[]
 
 == Directory Mode Support via Proxy 	
 
@@ -27,4 +27,4 @@ image::images/LiveReload_open_in_web_browser_via_proxy.png[]
 
 In any case, only workspace projects files are exposed by this Proxy.
 
-Related JIRAs: JBIDE-13970, JBIDE-14498
+related_jira::JBIDE-13970,JBIDE-14498[]

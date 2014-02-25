@@ -15,7 +15,7 @@ Some users prefer to manage their deployment scanners on their own, and wish the
 
 image::images/JBIDE-9830.png[Deployment Scanner Options in Server Editor]
 
-Related Jira
+related_jira::JBIDE-9830[]
 
 == Starting and Stopping Deployed Modules
 === Module start, stop and restart
@@ -32,4 +32,4 @@ image::images/JBIDE-9830.png[Module Management in The Administrative Console]
 
 image::images/JBIDE-2625jbt.png[Module Start / Stop / Restart Actions]
 
-Related Jira 
+related_jira::JBIDE-2625[]

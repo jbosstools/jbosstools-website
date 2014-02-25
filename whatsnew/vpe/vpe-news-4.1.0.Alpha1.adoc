@@ -15,4 +15,4 @@ image::images/4.1.0.Alpha1/Firebug-Lite1.png[]
 
 image::images/4.1.0.Alpha1/Firebug-Lite2.png[]
 
-Related Jira 
+related_jira::JBIDE-13406[]

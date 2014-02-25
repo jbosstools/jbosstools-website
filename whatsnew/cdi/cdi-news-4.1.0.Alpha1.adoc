@@ -9,4 +9,4 @@
 
 Apache Deltaspike 0.3 refactored some code which affected CDI Tools features. These changes now supported by JBoss Tools 4.1.0.Alpha1
 
-Related Jira 
+related_jira::JBIDE-13404[]

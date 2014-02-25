@@ -17,7 +17,7 @@ The Arquillian support can be added/removed by right-clicking the project and se
 
 The project has to be a maven project. The Add Arquillian Support action adds the Arquillian nature to the project as well as the arquillian artifacts (bom, dependencies, required plugins, profiles ...) to the project's pom.xml. The Remove Arquillian Support removes the Arquillian nature, but doesn't change the project's pom.xml.
 
-Related jira: JBIDE-6319
+related_jira::JBIDE-6319[]
 
 See http://screencast.com/t/gUh1IjTBfnE[screencast].
 
@@ -32,7 +32,7 @@ image::images/arquillianjunitwizard1.png[]
 
 The user can define the name of the deployment method, the name and order of the deployment, the type and name of the archive, add an empty beans.xml, available classes and resources to the deployment archive.
 
-Related jira: JBIDE-6318
+related_jira::JBIDE-6318[]
 
 See http://screencast.com/t/mjoeU7gqkym[screencast].
 
@@ -40,7 +40,7 @@ See http://screencast.com/t/mjoeU7gqkym[screencast].
 
 The Generate Arquillian Deployment Method action has been added to the context menu of the Java editor and Eclipse views.
 
-Related jira: JBIDE-8553
+related_jira::JBIDE-8553[]
 
 See http://screencast.com/t/OY701ZWeXWsv[screencast].
 
@@ -48,7 +48,7 @@ See http://screencast.com/t/OY701ZWeXWsv[screencast].
 
 The Arquillian Eclipse has ability to click through to resources specified as part of Shrinkwrap definition.
 
-Related jira: JBIDE-6338
+related_jira::JBIDE-6338[]
 
 See http://screencast.com/t/y8bt7See[screencast].
 
@@ -65,7 +65,7 @@ The Run As Arquillian launch configuration includes the following features:
 
 See http://screencast.com/t/0cOI6AITkupB[screecast].
 
-Related jira: JBIDE-10526
+related_jira::JBIDE-10526[]
 
 == Arquillian Validator 	
 
@@ -78,7 +78,7 @@ The Arquillian Validator finds the following issues:
 Arquillian issues can be ignored, marked as a warning or as an error.
 It is possible to add quick fixes (haven't been implemented yet) for some or all Arquillian issues.
 
-Related jira: JBIDE-6568
+related_jira::JBIDE-6568[]
 
 See http://screencast.com/t/53XkyHltg[screencast].
 
@@ -88,7 +88,7 @@ The Arquillian view (Arquillia Cruiser) shows Arquillian deployment archives.
 
 image::images/arquilliacruiser.png[]
 
-Related jira: JBIDE-6662
+related_jira::JBIDE-6662[]
 
 See http://screencast.com/t/P3mnJy8UV5[screencast].
 
@@ -104,6 +104,6 @@ See http://screencast.com/t/HDAPlRjWsD[screencast].
 
 Arquillian Eclipse enables adding default VM arguments to Arquillian/JUnit/TestNG launch configurations.
 
-Related jira: JBIDE-13289
+related_jira::JBIDE-13289[]
 
 See http://screencast.com/t/Lrh0AA2hD55[screencast].

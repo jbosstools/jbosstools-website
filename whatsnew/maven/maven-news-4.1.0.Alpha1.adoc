@@ -25,9 +25,11 @@ Please be aware m2e-wtp and JBoss Tools JPA, JSF JAX-RS Configurators overlap an
 As always, the safest path to upgrade is to start from a clean Eclipse installation.
 On a somewhat related note, we ensured all JBoss Tools Maven features are fully compatible with the new m2e 1.3 (Juno SR2) and m2e-wtp 0.17.0.
 
-See JBIDE-13048 for more details.
+related_jira::JBIDE-13048[]
 
 == Kepler/Juno Incompatibilities 	
 
 For Kepler, the Dali project has changed some of the APIs that are used by the Hibernate configurator. Adapting the Hibernate configurator to these new APIs resulted in incompatibilities with Juno to the extent that it is not anymore possible to support the installation of the Hibernate configurator plugin in Juno.
-See JBIDE-13365 for more details.
+
+related_jira::JBIDE-13365[]
+

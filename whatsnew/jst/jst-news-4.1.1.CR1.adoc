@@ -17,4 +17,4 @@ If 'Use New Wizard' is selected corresponding wizard started with file name matc
 
 image::images/4.1.1.Alpha1/CreateMissingFile2.png[]
 
-Related Jira
+related_jira::JBIDE-15348[]

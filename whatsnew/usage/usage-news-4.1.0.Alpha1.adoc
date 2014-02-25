@@ -13,4 +13,4 @@ Google Analytics was not reporting Windows 8 installations so far. People using 
 
 image::images/win8-reported.png[windows 8]
 
-Related Jira
+related_jira::JBIDE-13270[]

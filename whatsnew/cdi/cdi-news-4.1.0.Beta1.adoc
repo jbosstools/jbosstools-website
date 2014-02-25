@@ -15,6 +15,5 @@ This problem can be fixed via QuickFix menu (Ctrl+1):
 image::images/4.1.0.Beta1/beansXmlQF1.png[]
 image::images/4.1.0.Beta1/beansXmlQF2.png[]
 
-Related Jira 1
-Related Jira 2
+related_jira::JBIDE-13996,JBIDE-14383[]
 

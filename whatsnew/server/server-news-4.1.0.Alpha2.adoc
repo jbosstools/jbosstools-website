@@ -17,4 +17,7 @@ If the server cannot be fully identified the tools will try what it can to fallb
 
 Also, support for previous and current versions of GateIn have been added. This ensures that GateIn receives the same level of support that you've come to expect from our other server adapters. Specifically, support for GateIn servers versions 3.3.0 , 3.4.0, and 3.5.0 has been added and tested.
 
-Unreleased Products Related Jira GateIn Related Jira 
+Related JIRAs: 
+
+* Unreleased Products: jira:JBIDE-13858[]
+* GateIn: jira:JBIDE-12157[]

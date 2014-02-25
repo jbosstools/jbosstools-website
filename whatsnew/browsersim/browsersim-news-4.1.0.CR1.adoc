@@ -11,7 +11,7 @@ Now you can specify the port for the Live Reload server. To specify the port go 
 
 image::images/4.1.0.CR1/BrowserSim-livereloadPort.png[Configurable Live Reload port]
 
-Related JIRA: JBIDE-14361.
+related_jira::JBIDE-14361[]
 
 == Weinre UI enhancements
 
@@ -19,4 +19,4 @@ Now Weinre is more informative and user-friendly. There are several UI enhanceme
 
 image::images/4.1.0.CR1/weinre-ui-enhancements.png[Weinre UI enhancements]
 
-Related JIRA:JBIDE-14079. 
+related_jira::JBIDE-14079[]

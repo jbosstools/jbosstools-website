@@ -11,4 +11,4 @@ Both Oracle JDK and OpenJDK 1.7 update 40 have a known issue when creating tempo
 
 We fixed JBoss Central to work around this issue but you may still encounter difficulties with other IDE tools (m2e, p2, subclipse...). If this is the case, use an alternative version of Java developer kit 1.7 before or after update 40 (fixed in 1.8 and set to be included in 1.7 update 45).
 
-Related Jira
+related_jira::JBIDE-15494[]

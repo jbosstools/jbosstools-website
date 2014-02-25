@@ -12,7 +12,7 @@ In Beta1 we gave labels in the OpenShift application wizard some love. We show y
 
 image::images/cartridge-labels.png[]
 
-Related Jira
+related_jira::JBIDE-14459[]
 
 === Publish Right Away
 To create or import an OpenShift application in JBoss Tools you launch the application wizard that does all the heavy lifting for you. This wizard creates the application and imports it to a new project or merges it into an existing one. To then publish these changes to OpenShift, you get over to the server adapter and tell it to publish your Eclipse project.
@@ -20,7 +20,7 @@ In Alpha2 you had to think about publishing and manually trigger the adapter onc
 
 image::images/pushing-if-no-changes.png[push to OpenShift]
 
-Related Jira
+related_jira::JBIDE-13075[]
 
 == Server adapter
 === See it pushing while it's happening
@@ -29,19 +29,19 @@ We improved EGit/JGit and contributed this enhancement to Eclipse. We are theref
 
 image::images/publishing-to-openshift.png[publishing to OpenShift]
 
-Related Jira
+related_jira::JBIDE-12137[]
 
 === Restart Application 	
 In Alpha2 we allowed you to restart an application from the context menu in the OpenShift Explorer. Beta2 now adds this option to the context menu of the server adapter.
 
 image::images/server-adapter-restart.png[restart application]
 
-Related Jira
+related_jira::JBIDE-13960[]
 
 === Binary Deploy to JBoss EWS (Tomcat 6/7)
 If you want to deploy some binary artifact (ex. your application war) in JBoss Tools you simply drag and drop your Eclipse project to the OpenShift server adapter. The adapter will then war and push it to OpenShift. While this worked fine with JBoss AS and EAP, things didn't work out of the box for tomcat 6 and 7. We now fixed this for Beta1.
 
-Related Jira
+related_jira::JBIDE-13401[]
 
 == Various Improvements
 === Removing Cartridges
@@ -49,19 +49,19 @@ Removing cartridges may cause loss of data. This is especially true when you rem
 
 image::images/remove-cartridge.png[confirm cartridge removal]
 
-Related Jira
+related_jira::JBIDE-13961[]
 
 === Upload SSH Keys
 Various operations like cloning and inspecting your application logs require you to upload your SSH keys to OpenShift. In order to have an even smoother workflow the application wizard will prompt you if you have no keys on OpenShift yet. It will ask you right away to create a new or upload your existing key(s).
 
 image::images/add-ssh-keys.png[add ssh keys]
 
-Related Jira
+related_jira::JBIDE-13020[]
 
 === Port Forwarding for Scalable Apps
 In Alpha2 port forwarding failed for scalable applications. In Beta1 we now made sure that you can forward the ports of any OpenShift application be it scalable or not.
 
-Related Jira
+related_jira::JBIDE-14404[]
 
 === Missing credentials when Creating Jenkins
 Before Beta1 it could happen that you created a jenkins application but didn't get the credentials for it. The dialog that reported these was empty.
@@ -70,10 +70,10 @@ To make your experience even smoother in case it still fails we now offer you a 
 
 image::images/timouted-see-in-envvars.png[link to environment variables]
 
-Related Jira
+related_jira::JBIDE-14342[]
 
 == OpenShift Java Client
 === New Version 2.2.0
 The latest openshift-java-client 2.2.0 moved to exclusively support protocol 1.2. With this upgrade JBoss Tools and all other user application will benefit from far more informative descriptions for cartridges. Further additional enhancement will make it to the library with the upcoming releases.
 
-Related Jiras
+related_jira::JBIDE-12320[]

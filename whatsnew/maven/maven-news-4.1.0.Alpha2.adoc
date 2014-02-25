@@ -32,5 +32,5 @@ Under the hood, the source lookup mechanism is based on various identification s
 * checks if the SHA1 checksum of the jar can be identified from one of the remote Nexus repository instances defined in Window > Preferences > JBoss Tools > Remote Repositories.
 * checks if the SHA1 checksum of the jar can be identified on http://search.maven.org/[http://search.maven.org]
 
-See JBIDE-14003 for more details.
+related_jira::JBIDE-14003[]
 

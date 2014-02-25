@@ -20,7 +20,7 @@ And we offer you a wizard to create, rename and delete your domains.
 
 image::images/domain-wizard.png[]
 
-https://issues.jboss.org/browse/JBIDE-12574[Related Jira]
+related_jira::JBIDE-12574[]
 
 === Environment Variables 	
 
@@ -34,7 +34,7 @@ Existing applications may also have their environment variables modified.
 
 image::images/edit-environment-variables.png[]
 
-https://issues.jboss.org/browse/JBIDE-15597[Related Jira]
+related_jira::JBIDE-15597[]
 
 == Tail Files
 === Tail files for scaled applications 	
@@ -47,7 +47,7 @@ We'll then open a separate console for each of them and allow you to inspect all
 
 image::images/multiple-consoles.png[]
 
-https://issues.jboss.org/browse/JBIDE-15484[Related Jira]
+related_jira::JBIDE-15484[]
 
 == Embedding Cartridges
 === Warn on incompatible cartridges 	

@@ -14,19 +14,19 @@ There are a few new jQuery Mobile widget wizards available in http://www.screenr
   
 image::images/4.1.0.Beta1/panel.png[]
 
-Related Jira
+related_jira::JBIDE-13620[]
 
 * Grouped Buttons:
 
 image::images/4.1.0.Beta1/buttons.png[]
 
-Related Jira
+related_jira::JBIDE-14104[]
 
 * Collapsible Set:
 
 image::images/4.1.0.Beta1/set.png[]
 
-Related Jira
+related_jira::JBIDE-14398[]
 
 There are also some minor enhancements of wizards introduced in 4.1.0.Alpha:
 
@@ -39,7 +39,7 @@ New content assist is now available for URL properties in New JQM Widget wizards
 
 image::images/4.1.0.Beta1/ca.png[]
 
-Related Jira
+related_jira::JBIDE-14438[]
 
 === OpenOn for
 
@@ -47,7 +47,7 @@ A new hyper link (Ctrl+Click) for multi-page HTML files is now available. Just u
 
 See http://www.screenr.com/embed/B697[screencast].
  
-Related Jira
+related_jira::JBIDE-13890[]
 
 === jQuery Mobile 1.3.1 Page Template
 
@@ -55,4 +55,4 @@ New HTML5 jQuery Mobile page template was updated to the new JQM 1.3.1:
 
 image::images/4.1.0.Beta1/ca.png[]
 
-Related Jira
+related_jira::JBIDE-14290[]

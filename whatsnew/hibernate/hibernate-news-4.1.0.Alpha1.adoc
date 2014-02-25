@@ -9,4 +9,4 @@
 
 For Kepler, the Dali project has changed some of the APIs that are used by Hibernate Tools. Adapting Hibernate Tools to these new APIs resulted in incompatibilities with Juno to the extent that it is not anymore possible to support the installation of the Hibernate Tools plugins in Juno.
 
-Related jira
+related_jira::JBIDE-13385[]

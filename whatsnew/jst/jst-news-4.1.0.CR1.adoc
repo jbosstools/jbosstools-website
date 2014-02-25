@@ -12,7 +12,7 @@ HTML text formatting for code snippets inserted via the Palette view was improve
 
 image::images/4.1.0.CR1/formatting.png[]
 
-Related Jira
+related_jira::JBIDE-14735[]
 
 == JSF 2.2
 === New JSF 2.2 Project Wizard
@@ -21,4 +21,4 @@ New JSF Project wizard now supports JSF 2.2:
 
 image::images/4.1.0.CR1/jsf22wizard.png[]
 
-Related Jira
+related_jira::JBIDE-14865[]

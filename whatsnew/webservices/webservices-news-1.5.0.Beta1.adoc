@@ -1,7 +1,7 @@
-= WebServices Tools 2.5.0.Beta1 What's New
+= WebServices Tools &.5.0.Beta1 What's New
 :page-layout: whatsnew
 :page-component_id: webservices
-:page-component_version: 2.5.0.Beta1
+:page-component_version: 1.5.0.Beta1
 :page-product_id: jbt_core 
 :page-product_version: 4.1.0.Beta1
 
@@ -9,4 +9,4 @@
 
 The WS Tester now uses the http://www.jboss.org/wise/[JBoss Wise] framework to generate sample SOAP messages when testing JAX-WS services. This offers several benefits in stability and maintenance as well as a major improvement in processing complex WSDLs.
 
-Related Jira
+related_jira::JBIDE-13527[]

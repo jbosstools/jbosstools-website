@@ -11,4 +11,4 @@ Now you can specify which JVM is used to launch BrowserSim/CordovaSim. This allo
 
 image::images/4.1.0.Beta2/BrowserSim-preferences.png[Preferences]
 
-Related JIRA: JBIDE-13988. 
+related_jira::JBIDE-13988[]

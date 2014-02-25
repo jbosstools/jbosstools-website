@@ -13,13 +13,13 @@ If you have typed in a bad host name or your ~/.openshift/express.conf settings 
 
 Releated to this was that rhc tools version 1.4.7 generated a different format for host in express.conf which caused the tools to parse the host wrongly and you thus got the "Invalid credentials" error. JBoss Tools have been fixed to handle this new format but newer version of rhc tools have also been fixed to use the previous format making both old and new tools compatible again.
 
-Related Jira
+related_jira::JBIDE-13558[]
 
 == Embedding wizard
 === MySQL and PostgreSQL
 Historically OpenShift did not allow users to users to use a mysql and a Postgres database at the same time. This restriction was lifted some weeks ago and we now upgraded the tooling to allow that, too.
 
-Related Jira
+related_jira::JBIDE-13235[]
 
 == Server adapter
 === Better change detection 	
@@ -34,4 +34,4 @@ Now OpenShift Tools will check against the proper remote (in case it is not 'ori
 
 image::images/committed-not-published.png[ahead of remote repository]
 
-Related Jira 
+related_jira::JBIDE-13175[]

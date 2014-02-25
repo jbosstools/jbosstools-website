@@ -11,7 +11,7 @@ CordovaSim is moved to the simulation of Cordova 3 projects. Now it is able to s
 
 image::images/4.1.1.Beta1/cordovasim-cordova-3.png[CordovaSim running Cordova 3 Application]
 
-Related JIRA: JBIDE-15302.
+related_jira::JBIDE-15302[]
 
 == Simulation of Touch Events
 
@@ -25,4 +25,4 @@ The simulation is disabled by default. You should use the context menu to enable
 
 image::images/4.1.1.Beta1/touch-menu.png[Enable Touch Events]
 
-Related JIRA: JBIDE-12192. 
+related_jira::JBIDE-12192[]

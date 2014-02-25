@@ -9,4 +9,4 @@
 
 The Portal Applications quickstarts have been added to JBoos Tools/JBDS.
 
-Related JIRA : JBIDE-13705
+related_jira::JBIDE-13705[]

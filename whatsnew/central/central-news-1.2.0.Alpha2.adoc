@@ -16,5 +16,6 @@ The JBoss Central UI has been reworked to, hopefully, provide a better user expe
 * Quickstarts are now more visible
 
 image::images/new-jboss-central.png[]
-Related Jira
+
+related_jira::JBIDE-13884[]
 

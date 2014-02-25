@@ -14,17 +14,17 @@ use your own source code
 
 There are openshift quickstarts that require long timeouts because the size of the source code being checked out is very large. Another frequent requirement is that embedded (add-on) cartridges have to be present when the application is created. Adding the cartridges in a 2nd step wont help; the initial application build fails. It was not possible, for example, to create the OpenShift wordpress quickstart at https://github.com/openshift/wordpress-example within JBoss Tools. The update to 4.1.1.Alpha1 fixed this.
 
-Related Jira
+related_jira::JBIDE-15261[]
 
 == OpenShift java client
 === Embeddables cartridges at application creation time 	
 
 The openshift-java-client now allows you to provide embeddable cartridges when you create an application. Previously these could only get added once the application was ready. This might be required when you use your own application template source.
 
-Related Jira
+related_jira::JBIDE-15262[]
 
 === Specific timeouts 	
 
 The openshift-java-client now allows you to use a specific timeout in your operation. This is useful if you know that it takes much longer to create your application with your custom source than it takes for the default. Previously you had to increase the global timeout.
 
-Related Jira
+related_jira::JBIDE-14366[]

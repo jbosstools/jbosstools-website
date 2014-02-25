@@ -13,7 +13,7 @@ For now this feature must be enabled manually using the *Window>Preferences>JBos
 
 image::images/OpenAction.png[]
 
-Related JIRA : JBIDE-14332
+related_jira::JBIDE-14332[]
 
 == Show in Cheat Sheets view. 	
 
@@ -27,7 +27,7 @@ image:./images/show_in_cheatsheets.png[]
 
 See http://screencast.com/t/gK5JggVU[a screencast] of this in action.
 
-Related JIRA : JBIDE-14334
+related_jira::JBIDE-14334[]
 
 == New cheatsheet commands 	
 
@@ -48,4 +48,4 @@ These commands can be used like any other command in a cheatsheet. Example of th
 
 See http://screencast.com/t/gK5JggVU.
 
-Related JIRA : JBIDE-14333
+related_jira::JBIDE-14333[]

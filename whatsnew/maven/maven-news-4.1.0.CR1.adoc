@@ -10,4 +10,4 @@
 
 The automatic source lookup feature is now capable of fixing bad source attachements, even for Maven enabled projects. If the attached source doesn't exist (ex. you wiped out your maven local repository) or doesn't contain the right source files, it will try to download the proper source. This is especially handy when working on PDE plugins, when PDE automatically attaches the binary jar as a source to itself, even when it doesn't contain any sources.
 
-See JBIDE-14990 for more details. 
+related_jira::JBIDE-14990[] 

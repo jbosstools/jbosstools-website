@@ -14,4 +14,4 @@ New Server Type is introduced to add WildFly support for Server creation, deploy
 
 image::images/wildfly.png[WildFly Server adapter]
 
-Related Jira 
+related_jira::JBIDE-14107[]
