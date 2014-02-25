@@ -1,4 +1,5 @@
 # JBoss.org extensions
+require 'asciidoctor_extensions'
 require 'wget_wrapper'
 require 'js_minifier'
 require 'css_minifier'
@@ -41,6 +42,7 @@ Awestruct::Extensions::Pipeline.new do
   #extension Awestruct::Extensions::Symlinker.new
   
   # JBoss Tools custom 
+  extension Awestruct::Extensions::AsciidoctorExtensions.new
   extension Awestruct::Extensions::BuildInfo.new
   extension Awestruct::Extensions::DataDir.new
   extension Awestruct::Extensions::DataDir.new('/whatsnew') # no '/', "What's New" pages will be under other categories. 
@@ -49,7 +51,7 @@ Awestruct::Extensions::Pipeline.new do
   extension Awestruct::Extensions::MyPaginator.new(:posts, '/blog/index', :per_page => 2 )
   extension Awestruct::Extensions::MyTagger.new( :posts, '/blog/index', '/blog/tags', :per_page=>10,
    :sanitize=>true )
-   #extension Awestruct::Extensions::Indexifier.new
+  #extension Awestruct::Extensions::Indexifier.new
   # Needs to be after Indexifier to get the linking correct; 
   extension Awestruct::Extensions::Features.new('/features')
   # Needs to be after Indexifier to get the linking correct; 
@@ -70,6 +72,8 @@ Awestruct::Extensions::Pipeline.new do
   extension Awestruct::Extensions::Atomizer.new(:posts, '/blog/news.atom')
   
   helper Awestruct::Extensions::GoogleAnalytics
+  
+  
   
 end
 
