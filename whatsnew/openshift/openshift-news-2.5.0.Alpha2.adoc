@@ -15,17 +15,18 @@ image::images/restart-application.png[]
 
 Restarting your application will fully restart your node, it will not just restart your deployed project. It is equivalent to restarting your server.
 
-Related Jira
+related_jira::JBIDE-13737[]
 
 == Server adapter
 === Console not shown 	
 The server adapter for OpenShift allows you to publish your local changes to OpenShift. It pops up the console after publishing so that you can have a detailed look at what happened when pushing. In Alpha1 the console was not shown any more. We fixed this for Alpha2.
 
 image::images/console.png[]
-Related Jira
+
+related_jira::JBIDE-13806[]
 
 == OpenShift Java Client
 === new version 2.1.0
 In the last few months we put a lot of effort into the https://github.com/openshift/openshift-java-client[openshift-java-client]. The new version 2.1.0 offers major improvements in terms of compatibility and stability. It'll be available from maven central very soon.
-
-Related Jiras 
+ 
+https://issues.jboss.org/issues/?jql=project%20%3D%20JBIDE%20AND%20fixVersion%20%3D%20%224.1.0.Alpha2%22%20AND%20component%20%3D%20openshift[Related JIRAs]

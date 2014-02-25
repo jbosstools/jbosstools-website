@@ -1,0 +1,22 @@
+= WebServices Tools 1.5.1.Alpha2 What's New
+:page-layout: whatsnew
+:page-component_id: webservices
+:page-component_version: 1.5.1.Alpha2
+:page-product_id: jbt_core 
+:page-product_version: 4.1.1.Alpha2
+
+== Bug fixes 	
+
+A few bugs were fixed in the JAX-RS Tooling for this version of the Web Services component. In particular:
+
+* If a Web application contained 2 JAX-RS Application definition (in Java classes and/or as a declaration in the deployment descriptor), a warning on both elements would be set. But if the user removed one of those elements to fix the problem, the warning on the other element would remain. This is now fixed, the warning on the remaining is also removed. 
+
+related_jira::JBIDE-12860[]
+
+* When refactoring an annotation (such as a custom CDI qualifier), the JAX-RS Tooling would complain if the @Target was incorrect, even though the annotation was not related to JAX-RS. This is now fixed, the JAX-RS tooling checks that an @HttpMethod meta-annotation is set on the user's annotation to validate it. 
+
+related_jira::JBIDE-15508[]
+
+* If a Web application contained 2 JAX-RS Application definition (in Java classes and/or as a declaration in the deployment descriptor), there would be 2 warnings on each of those elements. This is now fixed, and only 1 warning will appear on each element. 
+
+related_jira::JBIDE-15504[]

@@ -12,5 +12,6 @@ Maven Repositories defined in profiles in your settings.xml (Window > Preference
 
 image::images/edit-maven-repositories.png
 Inactive repositories now stand out with an (Inactive) suffix. Click on the "Edit Repository..." button to (re)activate them.
-See JBIDE-13831 for more details.
+
+related_jira::JBIDE-13831[]
 

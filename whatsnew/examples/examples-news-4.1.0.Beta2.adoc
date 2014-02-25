@@ -21,4 +21,4 @@ The generated offline cache should be copied under ${user.home}/.jbosstools/cach
 
 Once the "Enable offline mode for project examples" button is checked (after saving the preferences), Examples will be fetched from the offline directory and no remote connection will be attempted to get the example data. Switching Offline mode will also switch m2e's offline mode, if the maven examples feature is installed.
 
-Related JIRAs : JBDS-2543, JBDS-2552
+related_jira::JBDS-2543,JBDS-2552[]

@@ -11,4 +11,4 @@ BrowserSim and CordovaSim now log their runtime errors to the Error Log. This sh
 
 image::images/4.1.1.Alpha1/error-logging.png[Error Logging]
 
-Related JIRAs: JBIDE-15293, JBIDE-15165. 
+related_jira::JBIDE-15293,JBIDE-15165[]

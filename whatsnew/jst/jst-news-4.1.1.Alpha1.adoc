@@ -18,10 +18,10 @@ Content assist (Ctrl+Space) now works for file names in the following HTML tags:
 * <source src="video or audio depending on the parent element">
 * <a href="HTML files">
 
-Related Jira
+related_jira::JBIDE-15384[]
 
 === Properties view for HTML elements
 
 Properties view for HTML now supports multiple categories of properties. For example HTML image now has two categories: Often used and Advanced HTML. jQuery Mobile elements have three categories: Often used, Advanced jQuery and Advanced HTML:
 
-Related Jira
+related_jira::JBIDE-14591[]

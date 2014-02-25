@@ -31,7 +31,7 @@ And yes, you can have multiple browsers connected at the same time and refreshed
 
 The following little screencast demoes the new LiveReload feature. It shows how to create a new LiveReload server and then, shows how the 2 browsers (FireFox and Chrome) are instantly refreshed when a .html or .css file is changed, without having to click on the 'refresh' button of each browser.
 
-video:http://www.youtube.com/embed/CUwZixfRYyg[youtube]
+video::CUwZixfRYyg[youtube, width=640, height=400]
 
 === Installing the Browser Extension
 

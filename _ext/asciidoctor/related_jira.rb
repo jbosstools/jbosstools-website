@@ -20,7 +20,7 @@ module Awestruct
 
       
       def process parent, target, attrs
-        puts "Processing JIRA extension with target #{target} and attrs #{attrs}..."
+        #puts "Processing JIRA extension with target #{target} and attrs #{attrs}..."
         # split the target if multipe JIRA were provided
         jira_ids = target.split(',')
         html = %(<p>Related JIRA#{(jira_ids.length > 1) ? 's' : ''}: )
@@ -31,7 +31,7 @@ module Awestruct
           jira_links << %(<a href="#{jira_jbide_uri}">#{jira_id.upcase}</a>)
         end
         html << jira_links.join(", ")
-        
+        html << ".</p>"
         create_pass_block parent, html, attrs, subs: nil
       end
     end
@@ -50,7 +50,7 @@ module Awestruct
       parse_content_as :text
 
       def process parent, target, attrs
-        puts "Processing JIRA extension with target #{target} and attrs #{attrs}..."
+        #puts "Processing JIRA extension with target #{target} and attrs #{attrs}..."
         jira_jbide_uri_pattern = 'https://issues.jboss.org/browse/%s'
         jira_jbide_uri = jira_jbide_uri_pattern % target
         (create_anchor parent, %(#{target.upcase}), type: :link, target: jira_jbide_uri).render

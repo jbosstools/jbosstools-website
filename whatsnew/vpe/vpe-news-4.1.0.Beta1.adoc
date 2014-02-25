@@ -16,4 +16,4 @@ then you may install XULRunner from this http://download.jboss.org/jbosstools/bu
 
 image::images/4.1.0.Beta1/vpe-win64.png[]
 
-Related JIRAs: JBIDE-2720, JBIDE-14451, JBIDE-14452. 
+related_jira::JBIDE-2720,JBIDE-14451,JBIDE-14452[]

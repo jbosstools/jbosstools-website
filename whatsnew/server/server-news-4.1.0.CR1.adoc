@@ -10,4 +10,4 @@
 
 Tomcat servers are now able to be found and created via JBossTools Runtime Detection. This means even if you restart in a new workspace, you'll be able to use the runtime detection's automatic scanning of filesystem paths to create your Tomcat server (or any slimmed-down Tomcat-based JBoss server) as soon as you fire up your new workspace.
 
-Related Jira 
+related_jira::JBIDE-15066[]

@@ -16,7 +16,7 @@ Coming in JBoss Tools 4.1.0.Beta2, LiveReload now also supports 'Server Mode', w
 
 image:./images/LiveReload_open_in_web_browser_via_browser-menu.png[]
 
-Related JIRA: JBIDE-14502, JBIDE-13984, JBIDE-14914
+related_jira::JBIDE-14502,JBIDE-13984,JBIDE-14914[]
 
 == QR Code for easy access from external devices 	
 
@@ -28,7 +28,8 @@ image:./images/LiveReload_open_in_web_browser_via_qrcode-menu.png[]
 
 image:./images/LiveReload_open_in_web_browser_via_qrcode-dialog.png[]
 
-Related JIRA: JBIDE-13984
+related_jira::JBIDE-13984[]
+
 
 == Simplified Configuration and Usage 	
 
@@ -44,4 +45,4 @@ image:./images/LiveReload_open_in_web_browser_via_browser-messagedialog.png[]
 
 Note: In case where the user wants to display the QRCode to test with a mobile device, script injection and remote connections should be enabled.
 
-Related JIRA: JBIDE-14897 
+related_jira::JBIDE-14897[]

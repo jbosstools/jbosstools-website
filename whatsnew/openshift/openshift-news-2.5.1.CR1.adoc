@@ -12,4 +12,4 @@ There is now a preference available to set the timeout used when waiting for Ope
 
 image:./images/openshift-client-timeout.png[]
 
-https://issues.jboss.org/browse/JBIDE-15905[Related Jira]
+related_jira::JBIDE-15905[]

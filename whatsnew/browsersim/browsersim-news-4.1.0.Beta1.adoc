@@ -20,7 +20,7 @@ The Launch Configuration is also available from the Run As context menu.
 
 image::images/4.1.0.Beta1/CordovaSim-run-as.png[Run As CordovaSim]
 
-Related JIRAs: JBIDE-13552, JBIDE-14362, JBIDE-14300, JBIDE-14383.
+related_jira::JBIDE-13552,JBIDE-14362,JBIDE-14300,JBIDE-14383[]
 
 == BrowserSim
 === LiveReload support
@@ -29,7 +29,7 @@ If you enable LiveReload BrowserSim will inject livereload.js into html pages it
 
 image::images/4.1.0.Beta1/BrowserSim-livereload.png[Enable Livereload]
 
-Related JIRA: JBIDE-14360.
+related_jira::JBIDE-14360[]
 
 === Synchonized Windows
 
@@ -41,4 +41,4 @@ As a result of this action two devices working synchronously will appear.
 
 image::images/4.1.0.Beta1/BrowserSim-opened-synchronized.png[Synchronized Windows]
 
-Related JIRA:JBIDE-13525. 
+related_jira::JBIDE-13525[]

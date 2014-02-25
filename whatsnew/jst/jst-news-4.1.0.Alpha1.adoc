@@ -11,8 +11,8 @@ New jQuery Mobile Palette is now available for HTML files. The old JSF Palette a
 Also we removed the deprecated JBoss Palette (Window->Show View->Other->JBoss Tools Web->JBoss Palette) which was a clone of the general palette view (Window->Other->General->Palette).
 
 image:images/4.1.0.Alpha1/palette.png[]
-Related Jira 1
-Related Jira 2
+
+related_jira::JBIDE-13454,JBIDE-13453[]
 
 == New jQuery Mobile Check Box Wizard
 
@@ -20,11 +20,11 @@ New Check Box Wizard is now opened when you DnD the check box widget from jQuery
 
 image::images/4.1.0.Alpha1/checkBox.png[]
 
-Related Jira
+related_jira::JBIDE-13466[]
 
 == JSF
 === Code completion for xmlns
 
 Now you can insert a JSF component into your page via code assist feature (Ctrl+Space) even if you didn't define the corresponding xmlns. The proper xmlns will be added automatically. JBoss Tools will look at the pages in the project and provide code assist for all components used in the project. Not only for those which defined in the current page.
 
-Related Jira 
+related_jira::JBIDE-12175[]

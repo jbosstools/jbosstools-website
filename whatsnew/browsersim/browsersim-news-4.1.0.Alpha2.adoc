@@ -12,7 +12,7 @@ BrowserSim got iPad and iPad Mini skins.
 
 image::images/4.1.0.Alpha2/ipad-skins.png[New iPad Skins]
 
-Related JIRAs: JBIDE-13685, JBIDE-13684, JBIDE-13416.
+related_jira::JBIDE-13685,JBIDE-13684,JBIDE-13416[]
 
 === Screenshots
 
@@ -20,7 +20,7 @@ We added the ability to easily take screenshots of BrowserSim. By default, they 
 
 image::images/4.1.0.Alpha2/screenshot.png[Screenshot Menu Items]
 
-Related Jira
+related_jira::JBIDE-14038[]
 
 == Weinre
 
@@ -30,4 +30,4 @@ http://people.apache.org/~pmuellr/weinre/docs/latest/Home.html[Weinre] is a debu
 
 image::images/4.1.0.Alpha2/weinre.png[Weinre with BrowserSim]
 
-Related Jira 
+related_jira::JBIDE-13338[]

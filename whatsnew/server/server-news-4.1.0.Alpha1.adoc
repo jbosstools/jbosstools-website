@@ -11,4 +11,4 @@
 
 A bug concerning the output archive of a sar project nested inside an ear project had the result of causing no .class files to be published, but rather .java files. This has been fixed.
 
-Related Jira 
+related_jira::JBIDE-13212[]

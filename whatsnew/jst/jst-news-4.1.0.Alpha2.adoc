@@ -8,7 +8,7 @@
 == jQuery Mobile
 === jQuery Mobile Palette
 
- The jQuery Mobile Palette introduced in jst-news-4.1.0.Alpha1.html[Alpha1] has been improved in Alpha2. It's now available for any HTML5 file opened with JBoss Tools HTML Editor (https://issues.jboss.org/browse/JBIDE-13679[Related Jira]) and has a new look and feel:
+ The jQuery Mobile Palette introduced in jst-news-4.1.0.Alpha1.html[Alpha1] has been improved in Alpha2. It's now available for any HTML5 file opened with JBoss Tools HTML Editor (jira:JBIDE-13679[]) and has a new look and feel:
 
 image::images/4.1.0.Alpha2/lf.png[]
 
@@ -34,15 +34,15 @@ Here is a list of new jQuery Mobile widget wizards available for Alpha2:
 * https://issues.jboss.org/browse/JBIDE-13621[Slider / Range Slider]
 * https://issues.jboss.org/browse/JBIDE-13676[Text Input]
 
-You can find some particular widget using the filter field (https://issues.jboss.org/browse/JBIDE-13493[Related Jira]):
+You can find some particular widget using the filter field (jira:JBIDE-13493[]):
 
 image::images/4.1.0.Alpha2/filter.png[]
 
-The wizards will add jQuery & jQuery Mobile JS/CSS references automatically if they are missing on the page. However this insertion can be disabled in the wizard (https://issues.jboss.org/browse/JBIDE-13775[Related Jira]):
+The wizards will add jQuery & jQuery Mobile JS/CSS references automatically if they are missing on the page. However this insertion can be disabled in the wizard (jira:JBIDE-13775[]):
 
 Here is a short demo of the jQuery Mobile Palette:
 
-Related Jira
+related_jira::JBIDE-13413[]
 
 === jQuery Mobile Code Completion
 	
@@ -55,8 +55,7 @@ Code completion also works for element IDs if you type # and press Ctrl+Space:
 
 image::images/4.1.0.Alpha2/ahref.png[]
 
-Related Jira 1
-Related Jira 2
+related_jira::JBIDE-13403,JBIDE-13436[]
 
 == JSF
 
@@ -64,4 +63,4 @@ Related Jira 2
 
 This new strict tag library validation of components and attributes used in XHTML pages is disabled by default. But it can be enabled in Preferenes. All unknown tags/attributes then will be marked as an error or warning:
 
-Related Jira 
+related_jira::JBIDE-13148[]

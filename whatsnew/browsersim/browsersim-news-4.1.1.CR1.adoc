@@ -11,7 +11,7 @@ Now CordovaSim is able to simulate the inAppBrowser API. The InAppBrowser is a w
 
 image::images/4.1.1.CR1/in-app-browser.png[CordovaSim running InAppBrowser example from PhoneGap API Documentation]
 
-Related JIRA: JBIDE-15512.
+related_jira::JBIDE-15512[]
 
 == ChildBrowser plugin support in CordovaSim
 
@@ -19,4 +19,4 @@ Now CordovaSim has ChildBrowser plugin support. ChildBrowser plugin is considere
 
 image::images/4.1.1.CR1/child-browser.png[CordovaSim running Twitter OAuth example using ChildBrowser API]
 
-Related JIRA: JBIDE-13743. 
+related_jira::JBIDE-13743[]

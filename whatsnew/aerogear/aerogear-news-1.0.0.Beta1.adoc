@@ -12,7 +12,7 @@ image::images/1.0.0.Beta1/wizard.png[]
 
 Wizard will pre-populate your config.xml.
 
-Related Jira
+related_jira::JBIDE-13650[]
 
 == Cordova Configuration Editor
 
@@ -20,7 +20,7 @@ Provides easier editing for Cordova's flavour of w3c widget specification XML co
 
 image::images/1.0.0.Beta1/configEditor.png[]
 
-Related Jira
+related_jira::JBIDE-13646[]
 
 == Run support for Android and iOS
 
@@ -32,4 +32,4 @@ image::images/1.0.0.Beta1/runConfigs.png[]
 * Run on Android emulator Creates and compiles an Android project and runs it on the Android emulator.
 * Run on Android device Runs the project on an Android device if there is one attached
 
-Related Jira(iOS), Related Jira(Android)
+related_jira::JBIDE-13645,JBIDE-13648[]

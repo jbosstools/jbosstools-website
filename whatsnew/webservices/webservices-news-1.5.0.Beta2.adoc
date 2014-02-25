@@ -1,7 +1,7 @@
-= WebServices Tools 2.5.0.Beta2 What's New
+= WebServices Tools 1.5.0.Beta2 What's New
 :page-layout: whatsnew
 :page-component_id: webservices
-:page-component_version: 2.5.0.Beta2
+:page-component_version: 1.5.0.Beta2
 :page-product_id: jbt_core 
 :page-product_version: 4.1.0.Beta2
 
@@ -11,4 +11,4 @@ The WS Tester used to have JAX-WS as the default test type in the drop-down. As 
 
 image:./images/defaultget_webservice.png[]
 
-Related Jira
+related_jira::JBIDE-14861[]

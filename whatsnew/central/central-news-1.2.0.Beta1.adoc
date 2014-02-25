@@ -11,7 +11,7 @@ The JBoss Central UI has been improved to better scale in small(er) resolutions:
 
 image:./images/smaller-jboss-central.png[]
 
-Related Jira
+related_jira::JBIDE-13884[]
 
 == "Proxy" Wizards 	
 
@@ -23,7 +23,7 @@ Moreover that wizard list can be updated, reordered at any time, remotely from t
 
 As part of this change, the GWT Project wizard has been replaced by the Maven Project wizard.
 
-Related JIRAs : JBIDE-13987, JBIDE-14445
+related_jira::JBIDE-13987-JBIDE-14445[]
 
 == OpenShift in the Software/Update page 	
 
@@ -31,4 +31,4 @@ OpenShift Tools have been added to the JBoss Central Software/Update page, givin
 
 image:./images/openshift-discovery.png[]
 
-Related JIRA
+related_jira::JBIDE-14330[]

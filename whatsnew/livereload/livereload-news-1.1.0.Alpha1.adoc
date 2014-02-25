@@ -13,4 +13,4 @@ This release of JBoss Tools LiveReload fixes 2 issues reported and fixed with th
     
 * As a side effect, when accessing workspace files with special characters, the value of the "Content-Length" header in the HTTP response was not correctly calculated and Chrome would simply not process the response body, eventually leaving the user with a blank page. 
 
-Related JIRA: JBIDE-15317 and JBIDE-15430
+related_jira::JBIDE-15317,JBIDE-15430[]
