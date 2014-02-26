@@ -1,0 +1,77 @@
+= Installation
+:page-layout: project
+
+== Installation Methods
+
+There are four ways to install JBoss Tools, in order of increasing effort.
+
+All downloads can be found at link:../downloads/overview.html[Download overview].
+
+=== Installer
+
+Red Hat JBoss Developer Studio includes the supported plugins from
+JBoss Tools, plus some additional tools, and comes bundled in an
+easy-to-use installer for Windows, Mac, and Linux (32- and 64-bit). It
+can be link:../downloads[downloaded] for free. Perfect for offline
+installs, as these bundles include everything you need to get up and
+running. Learn more
+link:http://www.jboss.com/products/devstudio[here].
+
+=== Eclipse Marketplace
+
+The Eclipse Marketplace provides a way to install JBoss Tools or Red
+Hat JBoss Developer Studio from within an existing Eclipse install.
+Each of our latest releases are available on Marketplace and provides
+the proper market place link for the right version.
+
+This video outlines how to install from market place.
+
+video::39743315[vimeo, width=640, height=400]
+
+=== Online Update site / p2 Repository
+
+Choose to install some, or preferably all, of JBoss Tools from its
+update site, including automatically downloading required
+libraries. Simply add the update site URL to Eclipse's Install Manager
+("p2"), and select the features you wish to install. While you may be
+able to download a zip of the update site for offline use, you must be
+connected to the internet to fetch any missing dependencies not
+included in the zip or already installed in your Eclipse. 
+
+The zip for each release is available from the "zip" tab under each download.
+You can find all our downloads at link:../downloads/overview.html[download page].
+
+=== Offline Update site zips
+
+Since JBoss Tools 3.1.0, you can download an Update zip, which can be
+used for offline installation using Eclipse's Install Manager ("p2").
+This works similar to the Online update sites but if you have download
+the zip and you have all the required basic Eclipse dependencies you
+can install offline from this zip.
+
+== Installation types
+
+Depending on how close to the bleeding edge you like to be, there are
+several types of releases available.
+
+=== Stable Releases
+
+Stable releases are - as indicated by their name - stable.
+
+JBoss Tools attempt to have a release matching the years Eclipse release train and 
+1 or 2 updates after the Final release for bugfixes/enhancements.
+
+=== Development
+
+Development builds, released once per milestone on average each 6-8
+weeks, are fairly stable, but there may be some things which do not
+yet work. If you would like to try one of these milestones, we'd
+greatly appreciate the assistance in testing and reporting of issues
+in link:https://jira.jboss.org/jira/browse/JBIDE[our issue tracker].
+
+=== Nightly Builds
+
+The bleeding edge contains the latest and greatest new features, but
+nothing is stable or guaranteed - yet. If you're using a Milestone and
+need a fix, you can update to the latest Nightly, or wait for the next
+Milestone.
