@@ -1,6 +1,7 @@
 = JBDS 5 Installation, HTML5, Mobile and OpenShift
 :page-layout: videos
 :page-category: installation
+:page-order_in_category: 2
 
 video::39606090[vimeo, width=640, height=400]
    

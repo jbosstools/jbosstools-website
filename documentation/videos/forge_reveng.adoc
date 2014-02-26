@@ -1,6 +1,7 @@
 = Forge Reverse Engineering
 :page-layout: videos
 :page-category: reveng
+:page-order_in_category: 2
 
 video::39608326[vimeo, width=640, height=400]
    

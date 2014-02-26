@@ -1,6 +1,7 @@
 = Google Web Toolkit
 :page-layout: videos
 :page-category: introduction
+:page-order_in_category: 4
 
 video::39743919[vimeo, width=640, height=400]
    

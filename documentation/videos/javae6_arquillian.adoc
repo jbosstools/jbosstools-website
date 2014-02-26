@@ -1,6 +1,7 @@
 = Java EE 6 + Arquillian
 :page-layout: videos
 :page-category: introduction
+:page-order_in_category: 1
 
 video::39607154[vimeo, width=640, height=400]
    

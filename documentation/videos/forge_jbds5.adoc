@@ -1,6 +1,7 @@
 = Forge in JBoss Developer Studio 5
 :page-layout: videos
 :page-category: introduction
+:page-order_in_category: 2
 
 video::39608223[vimeo, width=640, height=400]
    

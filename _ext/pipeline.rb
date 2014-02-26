@@ -63,7 +63,7 @@ Awestruct::Extensions::Pipeline.new do
   helper Awestruct::Extensions::URIHelper
   
   
-  extension Awestruct::Extensions::Videos.new('/videos')
+  extension Awestruct::Extensions::Videos.new('/documentation/videos')
 
   extension Awestruct::Extensions::Events.new('/events')
   
