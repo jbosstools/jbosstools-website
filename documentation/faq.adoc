@@ -1,5 +1,6 @@
 = Frequently Asked Questions
 :page-layout: project
+:page-tab: docs
 
 == Frequently Asked Questions 
 
