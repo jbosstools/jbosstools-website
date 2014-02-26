@@ -86,18 +86,9 @@
                 %li#blog<
                   %a{:href=>relative("/blog/")} Blog
   
-                %li#docs.dropdown<
-                  %a.dropdown-toggle(href="#" data-toggle="dropdown")<
-                    =precede 'Docs ' do
-                      %b.caret>
-                  %ul.dropdown-menu 
-                    %li<
-                      %a{:href=>relative("/whatsnew")} What's New
-                    %li<
-                      %a{:href=>relative("/videos")} Video Tutorials
-                    %li<
-                      %a{:href=>relative("/guides")} Reference Guides
-          
+                %li#docs<
+                  %a{:href=>relative("/documentation/")} Documentation
+                
                 %li#community<
                   %a{:href=>relative("/community")} Community
                 
