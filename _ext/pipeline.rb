@@ -45,7 +45,7 @@ Awestruct::Extensions::Pipeline.new do
   extension Awestruct::Extensions::AsciidoctorExtensions.new
   extension Awestruct::Extensions::BuildInfo.new
   extension Awestruct::Extensions::DataDir.new
-  extension Awestruct::Extensions::DataDir.new('/whatsnew') # no '/', "What's New" pages will be under other categories. 
+  #extension Awestruct::Extensions::DataDir.new('/whatsnew') 
   extension Awestruct::Extensions::DataDir.new('/features')
   extension Awestruct::Extensions::MyPosts.new('/blog', :posts)
   extension Awestruct::Extensions::MyPaginator.new(:posts, '/blog/index', :per_page => 2 )
@@ -55,7 +55,7 @@ Awestruct::Extensions::Pipeline.new do
   # Needs to be after Indexifier to get the linking correct; 
   extension Awestruct::Extensions::Features.new('/features')
   # Needs to be after Indexifier to get the linking correct; 
-  extension Awestruct::Extensions::Whatsnew.new('/whatsnew')
+  extension Awestruct::Extensions::Whatsnew.new('/documentation/whatsnew')
 
   # Download needs to be after whatsnew, to link from download to whatsnew
   extension Awestruct::Extensions::Downloads.new
