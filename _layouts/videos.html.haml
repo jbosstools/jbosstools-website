@@ -9,7 +9,7 @@ tab: docs
       - site.videos.each do |category, videos|
         -#%li.nav-header
         -#  #{category_labels[category]}
-        - videos.each do |video|
+        - videos.sort{|x,y| x.order_in_category <=> y.order_in_category}.each do |video|
           - if page.output_path == video.output_path
             %li.active 
               %a{:href=>relative(video.output_path)} #{video.title}

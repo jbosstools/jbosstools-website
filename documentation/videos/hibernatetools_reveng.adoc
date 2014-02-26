@@ -1,6 +1,7 @@
 = Hibernate Tools Reverse Engineering
 :page-layout: videos
 :page-category: reveng
+:page-order_in_category: 1
 
 video::39608294[vimeo, width=640, height=400]
    

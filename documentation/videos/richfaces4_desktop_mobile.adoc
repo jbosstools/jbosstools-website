@@ -1,6 +1,7 @@
 = Richfaces 4 Desktop & Mobile
 :page-layout: videos
 :page-category: introduction
+:page-order_in_category: 3
 
 video::39607711[vimeo, width=640, height=400]
    
