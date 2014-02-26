@@ -1,0 +1,24 @@
+= Documentation
+:page-layout: project
+:page-tab: docs
+  
+== http://docs.jboss.org/tools/[Reference Guides]
+
+The http://docs.jboss.org/tools/[reference guides] is the main documentation for the main functionality 
+of each major module in JBoss Tools. The index page lists each release and its associated documentation.
+There is also a http://docs.jboss.org/tools/nightly/trunk/[nightly build of the latest reference guides] 
+(from trunk) available. Content subject to change.
+
+== link:/documentation/videos[Video Tutorials]
+
+We also have a great set of link:/documentation/videos[video tutorials]
+to help you getting started with various modules of JBoss Tools and JBoss Developer Studio.
+
+== link:/whatsnew[New and Noteworthy]
+
+The link:/whatsnew[New and Noteworthy] page lists the relevant new features in each release. 
+Don't forget to link:/whatsnew[check it out!]
+
+== link:/faq[FAQ]
+
+We have a list of link:/faq[FAQ], including instructions on how to install JBoss Tools.
