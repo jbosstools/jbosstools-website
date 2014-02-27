@@ -28,7 +28,11 @@ module Awestruct
               whatsnew_pages[page.product_id][page.product_version] = Array.new
             end
             whatsnew_pages[page.product_id][page.product_version] << page
+            # remove that page, we don't need it as-is
+            #puts "Removing #{page.output_path}"
+            #site.pages.delete(page)
           end
+          
         end
         # now, grouping all component N&N on *a single page* per product version
         site.whatsnew_pages = Hash.new
