@@ -7,7 +7,8 @@ module Awestruct
       @@index_path = "/downloads/index.html"
       @@output_path_prefix = "/downloads/"
       @@download_single_version_layout_path = "download_single_version.html.haml"
-      @@download_per_eclipse_stream_layout_path = "download_per_eclipse_stream.html.haml"
+      @@downloads_per_product_layout_path = "downloads_per_product_summary.html.haml"
+      @@downloads_per_eclipse_stream_layout_path = "downloads_per_eclipse_stream_summary.html.haml"
       @@build_types = {:stable => [".GA", ".Final"], :development=>[".Alpha", ".Beta", ".CR"], :nightly=>["nightly", "Nightly"]}
 
       def initialize()
@@ -20,13 +21,14 @@ module Awestruct
         site.labels = {:stable=>"Stable", :development=>"Development", :nightly=>"Nightly"}
         @site = site
         @site.download_pages = Hash.new
-        @site.latest_stable_builds_download_pages = Hash.new
+        @site.latest_builds_download_pages = Hash.new
 
         # generate a page for each dev/nightly/stable build per product until a version with a stable build is found 
         # (thus, skipping older product streams),
         # then 1 page for all stable builds (only) per product
         for product_id in [:devstudio, :devstudio_is, :jbt_core, :jbt_is]
           @site.download_pages[product_id] = Hash.new
+          @site.latest_builds_download_pages[product_id] = Hash.new
           if site.products[product_id].nil? then
             next
           end
@@ -62,38 +64,47 @@ module Awestruct
                     build_version.to_s, info)
               
               # used to provide links to download .Final versions on /downloads
-              if info.active && @site.latest_stable_builds_download_pages[product_id].nil? && 
-                  build_type == :stable then
-                @site.latest_stable_builds_download_pages[product_id] = download_page
+              # and links to latest builds per type on /download/<product_id>
+              if info.active && @site.latest_builds_download_pages[product_id][build_type].nil? then
+                @site.latest_builds_download_pages[product_id][build_type] = download_page
               end
             end
           end
         end
+        
         # building download page per Eclipse streams (eg: /downloads/jbosstools/kepler)
-        download_pages_summaries = Hash.new
+        download_pages_per_product = Hash.new
+        download_pages_per_eclipse_stream = Hash.new
         for product_id in [:devstudio, :devstudio_is, :jbt_core, :jbt_is]
-          download_pages_summaries[product_id] = Hash.new
+          download_pages_per_product[product_id] = Hash.new
+          download_pages_per_eclipse_stream[product_id] = Hash.new
           site.products[product_id].streams.each do |eclipse_stream, product_versions|
             #puts " Checking #{product_id} / #{eclipse_stream}"
-            download_pages_summaries[product_id][eclipse_stream] = Hash.new
+            download_pages_per_eclipse_stream[product_id][eclipse_stream] = Hash.new
             product_versions.each do |product_version, product_info| 
               build_type = guess_build_type(product_version)
-              if download_pages_summaries[product_id][eclipse_stream][build_type].nil? || 
-                  download_pages_summaries[product_id][eclipse_stream][build_type] < product_version then
-                download_pages_summaries[product_id][eclipse_stream][build_type] = product_version
+              if download_pages_per_eclipse_stream[product_id][eclipse_stream][build_type].nil? || 
+                  download_pages_per_eclipse_stream[product_id][eclipse_stream][build_type] < product_version then
+                download_pages_per_eclipse_stream[product_id][eclipse_stream][build_type] = product_version
               end
             end
           end
         end
+        # generate actual summary pages for downloads per product, then per product and version
         for product_id in [:devstudio, :devstudio_is, :jbt_core, :jbt_is]
+          puts " Last releases for #{product_id}: #{@site.latest_builds_download_pages[product_id]}"
+          summary_page = generate_download_per_product_page(product_id)
+          summary_page.build_versions = Hash.new
+          for build_type in [:stable, :development, :nightly]
+            summary_page.build_versions[build_type] = @site.latest_builds_download_pages[product_id][build_type]
+          end
+          
           site.products[product_id].streams.each do |eclipse_stream, product_versions|
-            puts " Last releases for #{product_id} / #{eclipse_stream}: #{download_pages_summaries[product_id][eclipse_stream]}"
-            summary_page = generate_summary_download_page(product_id, @site.products.eclipse[eclipse_stream])
-            summary_page.eclipse_version = eclipse_stream
-            summary_page.product_id = product_id
+            puts " Last releases for #{product_id} / #{eclipse_stream}: #{download_pages_per_eclipse_stream[product_id][eclipse_stream]}"
+            summary_page = generate_download_per_eclipse_stream_page(product_id, eclipse_stream)
             summary_page.build_versions = Hash.new
             for build_type in [:stable, :development, :nightly]
-              summary_page.build_versions[build_type] = download_pages_summaries[product_id][eclipse_stream][build_type] unless download_pages_summaries[product_id][eclipse_stream][build_type].nil?
+              summary_page.build_versions[build_type] = download_pages_per_eclipse_stream[product_id][eclipse_stream][build_type] unless download_pages_per_eclipse_stream[product_id][eclipse_stream][build_type].nil?
             end
           end
         end
@@ -135,15 +146,29 @@ module Awestruct
         download_page
       end
       
-      def generate_summary_download_page(product_id, eclipse_version)
+      def generate_download_per_eclipse_stream_page(product_id, eclipse_stream)
+        eclipse_version = @site.products.eclipse[eclipse_stream]
         page_title ||= @site.products[product_id].name + " on " + eclipse_version.full_name
         product_path_fragment = @site.products[product_id].url_path_fragment
         path = @@output_path_prefix + product_path_fragment + "/" + eclipse_version.url_path_fragment + "/index.html"
-        download_page = find_layout_page(@@download_per_eclipse_stream_layout_path)
+        download_page = find_layout_page(@@downloads_per_eclipse_stream_layout_path)
         download_page.output_path = File.join(path)
         download_page.title = page_title
         download_page.product_id = product_id
         download_page.eclipse_version = eclipse_version
+        @site.pages << download_page
+        puts "  generated download page at '#{download_page.output_path}' with title '#{download_page.title}'"
+        download_page
+      end
+
+      def generate_download_per_product_page(product_id)
+        page_title ||= @site.products[product_id].name
+        product_path_fragment = @site.products[product_id].url_path_fragment
+        path = @@output_path_prefix + product_path_fragment + "/index.html"
+        download_page = find_layout_page(@@downloads_per_product_layout_path)
+        download_page.output_path = File.join(path)
+        download_page.title = page_title
+        download_page.product_id = product_id
         @site.pages << download_page
         puts "  generated download page at '#{download_page.output_path}' with title '#{download_page.title}'"
         download_page

@@ -1,0 +1,57 @@
+---
+layout: project
+tab: downloads
+---
+.row-fluid
+  .hero-unit.hidden-phone
+    %img{:alt => "JBoss Tools", :src => relative("/images/tools/jbt-carousel-jaxrs.png")}
+    .hero-content
+      %h1 Downloads for #{site.products[page.product_id].name}
+
+#sections.row-fluid
+  %section.span4
+    %header
+      %h3 Stable Build
+    .item.center
+      - download_page = page.build_versions[:stable]
+      - if !download_page.nil?
+        %a.btn.btn-primary{:href => relative(download_page.output_path)} 
+          %i.icon-download
+          Download #{download_page.build_info.version}
+        
+      - else
+        :markdown
+          Sorry, but there is no **stable** build of #{site.products[page.product_id].name} at the moment.
+  %section.span4
+    %header
+      %h3 Development Build
+    .item.center
+      - download_page = page.build_versions[:development]
+      - if !download_page.nil?
+        %a.btn.btn-primary{:href => relative(download_page.output_path)} 
+          %i.icon-download
+          Download #{download_page.build_info.version}
+        
+      - else
+        :markdown
+          Sorry, but there is no **development** build of #{site.products[page.product_id].name} at the moment.
+
+  %section.span4
+    %header
+      %h3 Nightly Build
+    .item.center
+      - download_page = page.build_versions[:nightly]
+      - if !download_page.nil?
+        %a.btn.btn-primary{:href => relative(download_page.output_path)} 
+          %i.icon-download
+          Download #{download_page.build_info.version}
+      
+      - else
+        :markdown
+          Sorry, but there is no **nightly** build of #{site.products[page.product_id].name} at the moment.
+.row-fluid
+  .span12    
+    %hr
+      .center
+        Looking for another version ? See the 
+        %a{:href=>relative("/downloads/overview.html")}< overview of all downloadable versions.
