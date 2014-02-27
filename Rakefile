@@ -299,7 +299,7 @@ task :travis => [:buildstaging, :errorcheck] do
   end
   
   puts '## Deploying website via rsync to staging'
-  sucess = system("rsync -Pqr --protocol=28 --delete-after _site/* tools@filemgmt.jboss.org:/stg_htdocs/tools")
+  success = system("rsync -Pqr --protocol=28 --delete-after _site/* tools@filemgmt.jboss.org:/stg_htdocs/tools")
 
   fail unless success
 end
