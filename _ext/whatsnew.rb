@@ -155,7 +155,7 @@ module Awestruct
         throw Exception.new( "too many choices for #{simple_path}" ) if candidates.size != 1
         page = @site.engine.load_page( candidates[0] )
         page.output_path = File.join(paths) + ".html"
-        puts "    added page at #{page.output_path}"
+        #puts "    added page at #{page.output_path}"
         @site.pages << page
         @site.engine.set_urls([page])
         return page
