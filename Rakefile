@@ -268,23 +268,35 @@ def set_pub_dates(branch)
   end
 end
 
+desc 'Run the awestruct build'
+task :buildstaging do
+  success = system "bundle exec awestruct -P staging -g"
+  fail unless success
+end
+
+desc 'Check for errors'
+task :errorcheck do
+  puts 'Looking for awestruct errors in output:'
+  success = system "grep -lr 'awestruct/engine' --exclude=Rakefile _site/"
+  if success
+    puts 'Errors found in output. Check files listed above.'
+    fail
+  end
+  puts 'No errors found!'
+end
+
 ############################################################################
 #
 # Build web site on Travis-CI
 #
 ############################################################################
 desc 'Generate site from Travis CI and publish site to GitHub Pages'
-task :travis do
+task :travis => [:buildstaging, :errorcheck] do
   # if this is a pull request, do a simple build of the site and stop
   if ENV['TRAVIS_PULL_REQUEST'].to_s.to_i > 0
     puts 'Pull request detected. Executing build only.'
-    success = system "bundle exec awestruct -P staging -g"
-    fail unless success
     next
   end
-  
-  puts '## Building with awestruct' 
-  success = system "bundle exec awestruct -P staging -g"
   
   puts '## Deploying website via rsync to staging'
   sucess = system("rsync -Pqr --protocol=28 --delete-after _site/* tools@filemgmt.jboss.org:/stg_htdocs/tools")
