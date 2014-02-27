@@ -1,0 +1,58 @@
+---
+layout: project
+tab: downloads
+---
+.row-fluid
+  .hero-unit.hidden-phone
+    %img{:alt => "JBoss Tools", :src => relative("/images/tools/jbt-carousel-jaxrs.png")}
+    .hero-content
+      %h1 Downloads for #{site.products[page.product_id].name} on #{site.products.eclipse[page.eclipse_version].full_name}
+
+#sections.row-fluid
+  %section.span4
+    %header
+      %h3 Stable Build
+    .item.center
+      - product_version = page.build_versions[:stable]
+      - if !product_version.nil?
+        - download_page = site.download_pages[page.product_id][product_version]
+        %a.btn.btn-primary.btn-large{:href => relative(download_page.output_path)} 
+          %i.icon-download
+          Download #{product_version}
+        
+      - else
+        :markdown
+          Sorry, but there is no *stable* build of #{site.products[page.product_id].name} on 
+          #{site.products.eclipse[page.eclipse_version].full_name} at the moment.
+  %section.span4
+    %header
+      %h3 Development Build
+    .item.center
+      - product_version = page.build_versions[:development]
+      - if !product_version.nil?
+        - download_page = site.download_pages[page.product_id][product_version]
+        %a.btn.btn-primary.btn-large{:href => relative(download_page.output_path)} 
+          %i.icon-download
+          Download #{product_version}
+        
+      - else
+        :markdown
+          Sorry, but there is no *development* build of #{site.products[page.product_id].name} on 
+          #{site.products.eclipse[page.eclipse_version].full_name} at the moment.
+
+  %section.span4
+    %header
+      %h3 Nightly Build
+    .item.center
+      - product_version = page.build_versions[:nightly]
+      - if !product_version.nil?
+        - download_page = site.download_pages[page.product_id][product_version]
+        %a.btn.btn-primary.btn-large{:href => relative(download_page.output_path)} 
+          %i.icon-download
+          Download #{product_version}
+      
+      - else
+        :markdown
+          Sorry, but there is no *nightly* build of #{site.products[page.product_id].name} on 
+          #{site.products.eclipse[page.eclipse_version].full_name} at the moment.
+    
