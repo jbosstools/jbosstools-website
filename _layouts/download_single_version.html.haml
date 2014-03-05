@@ -159,9 +159,11 @@ tab: downloads
             %a{:href=>relative(is_page.output_path)} Click here to learn more or install.
           - elsif page.build_info.product_id.to_s == "devstudio_is" || page.build_info.product_id.to_s == "jbt_is"
             - if page.build_info.product_id.to_s == "jbt_is"
+              - installed_product_short = "jbt"
               - installed_product = "JBoss Tools #{page.build_info.required_jbt_core_version}"
               - central_install_url = "http://download.jboss.org/jbosstools/central/install?connectors=jboss.integration-stack.bundle.bpr,jboss.integration-stack.bundle.ds,jboss.integration-stack.bundle.soa,jboss.integration-stack.bundle.fuse,com.jboss.jbds.bpel.feature,org.savara.tools.feature,org.drools.eclipse.feature,org.guvnor.tools.feature,org.jboss.jbpm.eclipse.feature,org.jboss.tools.esb.feature,org.switchyard.tools.feature,org.jboss.tools.modeshape.rest.feature,org.teiid.designer.feature,org.jboss.tools.runtime.drools.detector.feature"
             - else
+              - installed_product_short = "jbds"
               - installed_product = "JBoss Developer Studio #{page.build_info.required_devstudio_version}"
               - central_install_url = "https://devstudio.jboss.com/central/install?connectors=jboss.integration-stack.bundle.bpr,jboss.integration-stack.bundle.ds,jboss.integration-stack.bundle.soa,com.jboss.jbds.soatooling.bundle.soap,jboss.integration-stack.bundle.bpr"
             %br
@@ -170,7 +172,8 @@ tab: downloads
             you can either:
             %p
             1. Drag and drop this
-            %a.btn{:href=>central_install_url, :title=>"JBoss Central Install"} Install
+            %a{:href=>central_install_url, :title=>"Install"}<
+              %img{:src=>relative("/images/tools/installbutton-#{installed_product_short}.png"), :alt=>"Drag and drop this button into the Software/Update tab of JBoss Central to to choose which #{page.build_info.name} features to install", :height=>"25", :width=>"63"}
             button into the 
             %a{"data-toggle" => "modal", :href => "#myModal", :role => "button"} Software/Update tab of JBoss Central
             #myModal.modal.hide.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
