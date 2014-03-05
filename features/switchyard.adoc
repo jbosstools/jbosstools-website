@@ -1,0 +1,21 @@
+= SwitchYard
+:page-layout: features
+:page-product_id: jbt_is 
+:page-feature_id: switchyard
+:page-feature_image_url: images/switchyard_icon_256px.png
+:page-feature_highlighted: false
+:page-feature_order: 10
+:page-feature_tagline: Your Service Delivery Framework
+
+== SwitchYard
+=== Making SOA fun again
+image::images/features-openshift-applicationwizard-reduced.png[OpenShift Application Wizard]
+
+Blah blah
+
+== Route editor
+=== Edit your services visually
+image::images/features-openshift-connectiondialog-reduced.png[]
+
+Something something
+
