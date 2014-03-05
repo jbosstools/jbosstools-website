@@ -1,0 +1,21 @@
+= Drools
+:page-layout: features
+:page-product_id: jbt_is 
+:page-feature_id: drools
+:page-feature_image_url: images/drools_icon_256px.png
+:page-feature_highlighted: false
+:page-feature_order: 10
+:page-feature_tagline: Business Rules for the masses
+
+== Drools
+=== We eat rules for dinner
+image::images/features-openshift-applicationwizard-reduced.png[OpenShift Application Wizard]
+
+Blah blah
+
+== Rule Editor
+=== Edit Rules right in your IDE
+image::images/features-openshift-connectiondialog-reduced.png[]
+
+Something something
+
