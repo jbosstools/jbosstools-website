@@ -2,8 +2,8 @@
 :page-layout: features
 :page-feature_id: teiiddesigner
 :page-feature_image_url: images/teiid_designer_icon_256px.png
-:page-feature_highlighted: true
-:page-feature_order: 2 
+:page-feature_highlighted: false
+:page-feature_order: 10
 :page-feature_tagline: modeling for data virtualization
 
 == Teiid Designer
