@@ -45,17 +45,16 @@ Awestruct::Extensions::Pipeline.new do
   extension Awestruct::Extensions::AsciidoctorExtensions.new
   extension Awestruct::Extensions::BuildInfo.new
   extension Awestruct::Extensions::DataDir.new
-  #extension Awestruct::Extensions::DataDir.new('/whatsnew') 
-  extension Awestruct::Extensions::DataDir.new('/features')
   extension Awestruct::Extensions::MyPosts.new('/blog', :posts)
   extension Awestruct::Extensions::MyPaginator.new(:posts, '/blog/index', :per_page => 2 )
   extension Awestruct::Extensions::MyTagger.new( :posts, '/blog/index', '/blog/tags', :per_page=>10,
    :sanitize=>true )
   #extension Awestruct::Extensions::Indexifier.new
   # Needs to be after Indexifier to get the linking correct; 
+  #extension Awestruct::Extensions::DataDir.new('/features')
   extension Awestruct::Extensions::Features.new('/features')
   # Needs to be after Indexifier to get the linking correct; 
-  extension Awestruct::Extensions::Whatsnew.new('/documentation/whatsnew')
+  extension Awestruct::Extensions::Whatsnew.new('/documentation/_whatsnew', '/documentation/whatsnew')
 
   # Download needs to be after whatsnew, to link from download to whatsnew
   extension Awestruct::Extensions::Downloads.new
