@@ -11,13 +11,11 @@ What is JBoss Tools?::
   JBoss Tools is a set of plugins for Eclipse that complements, enhances and goes beyond the support that exists for JBoss and related technologies in the default Eclipse distribution.
 
 How do I install JBoss Tools?::
-  You can:
-
-  * Choose an all-in-one install via link:https://www.jboss.org/products/devstudio[Red Hat JBoss Developer Studio], or
-  * Choose individual features from the link:/downloads/[JBoss Tools] updatesite, or
-  * Install from the link:http://marketplace.eclipse.org/[Eclipse Marketplace]. 
-  
-  Go to link:../downloads[Downloads] to select the distribution that fits your needs. 
+  * You can:
+    ** Choose an all-in-one install via link:https://www.jboss.org/products/devstudio[Red Hat JBoss Developer Studio], or
+    ** Choose individual features from the link:/downloads/[JBoss Tools] updatesite, or
+    ** Install from the link:http://marketplace.eclipse.org/[Eclipse Marketplace].
+  * Go to link:../downloads[Downloads] to select the distribution that fits your needs. 
 
 What is JBoss Tools Integration Stack?::
   JBoss Tools integration stack is a set of Eclipse plugins that add support for JBoss SOA and Business rules related frameworks, such as Drools, jbpm, SwitchYard, Fuse, etc.
