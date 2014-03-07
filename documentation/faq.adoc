@@ -7,22 +7,31 @@
 === General
 
 [qanda]
-What is JBoss Tools ?::
+What is JBoss Tools?::
   JBoss Tools is a set of plugins for Eclipse that complements, enhances and goes beyond the support that exists for JBoss and related technologies in the default Eclipse distribution.
-How do I install JBoss Tools ?::
-  There is All-in-one install via JBoss Developer Studio or you can pick and choose from JBoss Tools updatesite or Eclipse Marketplace install. Go to link:../download[Download] and choose the distribution that fits you. 
-What is JBoss Tools Integration Stack::
+
+How do I install JBoss Tools?::
+  * You can:
+    ** Choose an all-in-one install via link:https://www.jboss.org/products/devstudio[Red Hat JBoss Developer Studio], or
+    ** Choose individual features from the link:/downloads/[JBoss Tools] updatesite, or
+    ** Install from the link:http://marketplace.eclipse.org/[Eclipse Marketplace].
+  * Go to link:../downloads[Downloads] to select the distribution that fits your needs. 
+
+What is JBoss Tools Integration Stack?::
   JBoss Tools integration stack is a set of Eclipse plugins that add support for JBoss SOA and Business rules related frameworks, such as Drools, jbpm, SwitchYard, Fuse, etc.
-How do I install JBoss Tools Integration Stack::
-  The recommended approach is you use link:../features/central.html[JBoss Central] which is part of JBoss Tools and provide an Update tab to install that amongst others list JBoss Tools Integration Stack.
-Is JBoss Tools Opensource ?::
-   Yes, and you are welcome to get link:../getinvolved[involved].
+
+How do I install JBoss Tools Integration Stack?::
+  The recommended approach is to use link:../features/central.html[JBoss Central] to select the features from the Integration Stack you would like to use. JBoss Central is included in both JBoss Tools and JBoss Developer Studio for your convenience.
+
+Is JBoss Tools open source?::
+   Yes! Please feel free to link:../getinvolved[get involved]!
 
 ==== JBoss Tools Features
 
 [qanda]
-Why does the visual part in the visual editor not work ?::
+Why does the visual part in the visual editor not work?::
   The Visual Page Editor uses the last XULRunner that have a Java API to do its visual rendering which unfortunately limits which operating systems it can run on and in some cases some pacakges needs to be installed on your OS for it to work. You can see link:https://community.jboss.org/wiki/JBosstoolsVisualEditorFAQ[Visual Page Editor FAQ] for possible solutions/workaround.
-Which operating systems, runtimes and frameworks does JBoss Tools support ?::
-  In general JBoss Tools attempt to ensure you can continue to use both old and new runtimes/frameworks with its releases but we do not go back to old streams and add new features. Thus if you want the latest greatest runtime support use the latest releases. This link:https://community.jboss.org/wiki/MatrixOfSupportedPlatformsRuntimesAndTechnologiesInJBossToolsJBDS[Matrix] gives an overivew of some of the various frameworks/runtimes and platforms supported.
+
+Which operating systems, runtimes and frameworks does JBoss Tools support?::
+  In general JBoss Tools attempts to ensure you can continue to use both old and new runtimes &amp; frameworks with its releases but we do not add new features to old streams. Support for the latest &amp; greatest runtimes will only be available in the latest releases. This link:https://community.jboss.org/wiki/MatrixOfSupportedPlatformsRuntimesAndTechnologiesInJBossToolsJBDS[Matrix] gives an overivew of the various supported frameworks, runtimes, operating systems, platforms, and JDK versions.
 
