@@ -38,5 +38,5 @@ We also generate a random id for the installation so multiple startups from the 
 
 Currently the only tracking we do is when a workspace starts up with the plugin installed. We might add more reporting in the future, if so this page will be updated with details.
 
-If you want to inspect the source code for all of the above it can be found http://anonsvn.jboss.org/repos/jbosstools/trunk/usage/[here]
+If you want to inspect the source code for all of the above it can be found https://github.com/jbosstools/jbosstools-base/tree/master/usage[here]
 
