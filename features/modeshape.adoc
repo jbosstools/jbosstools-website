@@ -12,8 +12,8 @@ image::images/modeshape-server-view.png[]
 
 ModeShape is a distributed, hierarchical, transactional, and consistent data store that is also a JCR 2.0 implementation.
 You can connect to one or more http://modeshape.org[ModeShape] servers. For each server, the repositories, 
-repository workspaces, and the workspace publish areas are displayed. The publish areas are the workspace paths where your 
-publish (uploaded) your files.
+repository workspaces, and the workspace publish areas are displayed. The publish areas are the workspace paths where you 
+publish (upload) your files.
 
 == Publish
 === Upload resources to your ModeShape workspaces
@@ -21,8 +21,8 @@ image::images/modeshape-publish-dialog.png[Publish to ModeShape]
 
 When you publish files from your Eclipse workspace, they will be uploaded to the selected repository 
 workspace publish area. Each published file will have its version incremented (if versioning is enabled). 
-When you unpublish files, those files will be removed from the selected repository workspace (if they exist there).
-Publish areas can be 
+When you unpublish files, they are removed from the selected repository workspace (if they exist there).
+Publish areas can be added and deleted using ModeShape Tools.
 
 == CND Editor
 === A JCR 2.0 Compact Node Type Definition editor
