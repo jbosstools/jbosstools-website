@@ -2,8 +2,8 @@
 :page-layout: features
 :page-feature_id: modeshape
 :page-feature_image_url: images/modeshape-icon-256px.png
-:page-feature_highlighted: true
-:page-feature_order: 2 
+:page-feature_highlighted: false
+:page-feature_order: 10
 :page-feature_tagline: Eclipse Tooling for ModeShape
 
 == ModeShape Tools
