@@ -6,68 +6,43 @@
 :page-product_id: jbt_core 
 :page-product_version: 4.2.0.Beta1
 
-== Deploy-Only server now has optional start and stop script support
-
-The Deploy-Only server has been enhanced to now allow optional start and stop scripts. 
-It's creation workflow in the New Server Wizard has also been enhanced, to allow you 
-to configure it for remote use before completing the wizard. Changes to the underlying 
-implementation will allow Deploy-Only server to become more fully-featured in the future, 
-as well. Maybe one day we'll even have to change it's name!
-
-image::images/JBIDE-7515_1.png[Selecting the profile for your Deploy-Only Server]
-
-The Deploy-Only server currently has 2 profiles. One is for local use, and the other
-is configured for use with a remote server. The first step of the New Server wizard is to 
-select either one or the other of these profiles. 
-
-image::images/JBIDE-7515_2.png[Configuring the Deploy-Only Server for local use]
-
-When configuring the server for local use, only a deploy folder and a temporary deploy
-folder are required. 
-
-image::images/JBIDE-7515_3.png[Configuring the Deploy-Only Server for remote use]
-
-When configuring the server for remote use, you'll be asked to also provide a host
-where the server resides. 
-
-image::images/JBIDE-7515_lc1.png[Toggling whether to take launch or shutdown actions]
-
-In the server editor, you can toggle whether or not you'd like to take
-any action when starting or stopping the server. Depending on this option, 
-you will either be allowed or forbidden from providing details on how to launch
-or shutdown the server. If your server is set to take no action, you'll be required
-to start and stop the server on your own. 
-
-image::images/JBIDE-7515_lc2.png[Viewing the launch configuration for a server that will not launch]
-
-Above, you can see that the launch configuration will not allow changes, since your server
-is not set to take any actions on launch or shutdown. Below, you can see that you may enter 
-any arbitrary command to execute when launching your server or shutting it down. 
-
-image::images/JBIDE-7515_lc3.png[Viewing the launch configuration for a server that will launch]
-
-When attempting to shut down your server, the command you've entered will be executed on 
-the local or remote system. If the shutdown command fails, though, the Deploy-Only server will attempt
-to kill the process that was used to launch the server. Users configuring the Deploy-Only server to run
-the launch or shutdown scripts of a JBoss server should be careful here, though. The JBoss and Wildfly shell
-scripts wrap the actual launches, and terminating these shell scripts may not actually terminate the 
-backing java command. 
-
-related_jira::JBIDE-7515[]
+== JBoss Server Adapters
 
 
+=== Deployment over management
 
-== Server Adapters now with pre-configured profiles!
+AS 7, EAP 6 and WildFly server adapters now support deploying over management as opposed to the file management api.
 
-As shown above, the Deploy-Only server now has pre-configured "profiles", and this feature
-is not exclusive to the Deploy-Only Server. JBoss, Wildfly, and EAP adapters also benefit from
-this enhancement. 
+The advantage of deployment over management is that you can do this with local and remote servers without having direct access to the filesystem (you of course need to have access to the management api).
+
+The disadvantage compared to file based deployment is that you cannot do incremental updates, it has to be full deployments. Thus if you have large deployments or want to update files incrementally the local/file based deployment is to be preffered. 
+
+=== Optional runtimes for remote servers
+
+Servers configured as remote no longer require a runtime locally installed. Allowing you to do deployments/queries remotely. 
+
+image::images/JBIDE-9212c.png[Remote servers allow optional runtime]
+
+Adding a local runtime to your server helps with finding things like default ports, and may be required for proper functioning of some lesser-used functionality like the JMX explorer, but for most operations, a remote 
+server no longer requires a local runtime to be present. 
+
+Whether or not a profile requires a runtime is determined by how that profile functions. 
+Servers configured for local use always (currently) require a local runtime, while remote servers
+don't anymore. 
+
+related_jira::JBIDE-15162[]
+
+
+=== Profiles
+
+All the server adapters for JBoss AS, WildFly and EAP now has a notion of profiles.
 
 A profile is a set of functionality and pre-configured options that help you decide how you want
 to run your server and what types of actions it should take for all the different types of functionality. 
+
 While earlier server adapters still only have two such profiles (local and remote servers), any server
 adapter based on JBoss AS 7 or later will have two additional options, specifically whether or not
-to prefer "Management" tasks over the previously-used filesystem operations. 
+to prefer using "Management" operations instead of filesystem operations. 
 
 A server set in a profile preferring management operations will connect to the server's management service
 to perform actions such as shutdown, deployment, and determining the state of the server. A server not
@@ -76,25 +51,57 @@ the server, or send files over ssh to your remote server's deployment folder.
 
 image::images/JBIDE-9212b.png[Selecting the profile for your server]
 
-Above, you can see how to select the profile you want to use. The UI controls for remote profiles
-have been broken out into a separate page in the workflow, as you can see below. 
+Above, you can see how to select the profile you want to use. 
+When you select a profile you will get another page asking for the details needed for that profile. The image below shows how that looks for a remote server.
 
 image::images/JBIDE-9212d.png[Configuring your remote server's details]
 
 related_jira::JBIDE-9212[]
 
-== Optional runtimes for remote servers!
 
-image::images/JBIDE-9212c.png[Remote servers allow optional runtime]
+== Deploy-Only server
 
-You may have noticed above, but while selecting your server profile, you will see an option
-to create or NOT create a local runtime for your server. Adding a local runtime to your 
-server helps with finding things like default ports, and may be required for proper functioning
-of some lesser-used functionality like the JMX explorer, but for most operations, a remote 
-server no longer requires a local runtime to be present. 
+=== Profiles
 
-Whether or not a profile requires a runtime is determined by how that profile functions. 
-Servers configured for local use always (currently) require a local runtime, while remote servers
-don't anymore. 
+Deploy Only server now supports two profiles: local and remote. Local is similar to how it worked
+before (deploy files locally) and remote is adding support for deploying via Eclipse RSE system (such
+as secure copy over SSH).
 
-ted_jira::JBIDE-15162[]
+The first step of the New Server wizard is to select either one or the other of these profiles. 
+
+image::images/JBIDE-7515_1.png[Selecting the profile for your Deploy-Only Server]
+
+When configuring the server for local use, a deploy folder and a temporary deploy
+folder are required.
+
+image::images/JBIDE-7515_2.png[Configuring the Deploy-Only Server for local use]
+
+When configuring the server for remote use, you'll be asked to also provide a hostname 
+for the server. 
+
+image::images/JBIDE-7515_3.png[Configuring the Deploy-Only Server for remote use]
+
+=== Start and Stop Scripts
+
+The Deploy-Only server now allow optional start and stop scripts which are used when launching and stopping the server.
+
+Previously Deploy-Only just assumed the server was started, now you can tell it to actually do a start and stop command.
+
+image::images/JBIDE-7515_lc1.png[Toggling whether to take launch or shutdown actions]
+
+By default there are no start and stop commands available. 
+
+image::images/JBIDE-7515_lc2.png[Viewing the launch configuration for a server that will not launch]
+
+If you toggle the "Server is externally managed" you will be able to
+specify commands for start and stop.
+
+image::images/JBIDE-7515_lc3.png[Viewing the launch configuration for a server that will launch]
+
+When attempting to shut down your server, the command you've entered will be executed on 
+the local or remote system. If the shutdown command fails, though, the Deploy-Only server will attempt
+to kill the process that was used to launch the server. Users configuring the Deploy-Only server to run
+the launch or shutdown scripts that wrap a java command (such as JBoss AS, EAP and WildFly) terminating these scripts may not actually terminate the backing java command. 
+
+related_jira::JBIDE-7515[]
+
