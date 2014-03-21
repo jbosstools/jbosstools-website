@@ -59,7 +59,7 @@ We also generate a random id for the installation so multiple startups
 from the same eclipse only count as one usage.
 
 Before March 2014 the main tracking was when a workspace starts up with
-the plugin installed. Basically a ping back indicating somone started up
+the plugin installed. Basically a ping back indicating someone started up
 Eclipse with JBoss Tools installed.
 
 Since 20th March 2014 we also started sending events when certain
