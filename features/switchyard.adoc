@@ -12,115 +12,16 @@
 
 image::images/features-switchyard-editor-588px.png[SwitchYard Camel Editor with Project View]
 
-==== SwitchYard Applications
-
 SwitchYard allows you to deploy and run services with limited dependencies. A SwitchYard 
 application consists of the following components which provide service definitions and 
 accessibility.
 
-===== Component
-
-A component is a modular container for application logic.  Services and references allow 
-a component to interact with other components, while the implementation provides the actual 
-logic for providing or consuming services
-
-===== Composite
-
-A composite represents the boundary between what is inside your application and what is 
-outside your application. A SwitchYard application consists of exactly one composite that 
-has a name and a targetNamespace. The targetNamespace allows names defined locally in the 
-application to be qualified and unique within a SwitchYard runtime.
-
-===== Implementation
-
-An implementation acts as the brain of a service component and it is how you implement 
-your application logic. 
-
-===== Component Service
-
-A component service is used to expose the functionality of an implementation as a service. 
-All component services have a contract, which can be a Java interface, WSDL portType definition, 
-or a set of named data types.
-
-===== Composite Service
-
-A composite service is a promoted component service that represents an application service 
-which is visible to other applications.
-
-===== Service Binding
-
-A service binding is used to define an access method for a composite service.  In most cases, 
-a service binding represents a protocol or transport adapter (for example, SOAP, JMS, and REST).
-
-===== Component Reference
-
-A component reference allows a component to consume other services. A component reference can 
-be wired to a service offered by another component in the same application or it can be wired 
-to services outside the application via a composite reference.
-
-===== Composite Reference
-
-A composite reference allows a component reference to be wired to a service outside the application.  
-Similar to composite services, bindings are used with composite references to specify the 
-communication method for invoking the external service.
-
-===== Reference Bindings
-
-A reference binding is used to define an access method for an external service via a composite 
-reference. Unlike service bindings, there can only be one binding for each composite reference. 
-The set of bindings available for references is identical to the set of bindings available for 
-services, although the configuration values for a given binding may be different depending on 
 whether it's used as a service binding or a reference binding.
 
-== SwitchYard Components
-=== _What component service implementations does SwitchYard provide?_
+== Project Wizard
+=== Get started with SwitchYard
 
 image::images/switchyard-1.png[]
 
-==== Bean
-
-The Bean Component is a pluggable container in SwitchYard which allows Java classes (or beans) to 
-provide and consume services. T his means that you can implement a service by simply annotating a 
-Java class. It also means you can consume a service by injecting a reference to that service directly 
-into your Java class.
-
-==== BPM
-
-The BPM Component is a pluggable container in SwitchYard that allows you to expose a business process 
-as a service. Using the BPM component, you can start a process, signal a process event, or abort a 
-process.
-
-==== BPEL
-
-The BPEL Component is a pluggable container in SwitchYard that allows you to expose a WS BPEL business 
-process as a service through an interface defined using WSDL.
-
-==== Camel
-
-Camel services allow you to leverage the core routing engine of Apache Camel to route between services 
-in SwitchYard. Camel endpoints function as protocol adapters, exposing services hosted in SwitchYard 
-to the outside world and allowing external services to be invoked from within SwitchYard. 
-
-==== Rules
-
-The Rules component is a pluggable container in SwitchYard which allows you to expose business rules 
-as a service. You can add a custom interface to your rules and annotate its methods to define which 
-methods should execute the rules. The Rules component supports Drools as the rule engine.
-
-==== Knowledge Services
-
-Knowledge Services are SwitchYard services that leverage Knowledge, Innovation and Enterprise (KIE) 
-and provide knowledge based content as outputs. The Knowledge Services leverage Drools and jBPM.  
-Drools and jBPM are tightly integrated under KIE, and hence both SwitchYard's BPM component and Rules 
-component share most of their runtime configuration.
-
-== SCA Bindings
-=== _What SCA bindings does SwitchYard support?_
-
-The Service Component Architecture (SCA) binding provides a means by which SwitchYard services and 
-SwitchYard aware clients communicate with one another. It facilitates inter application communication 
-within a SwitchYard runtime and provides clustering of SwitchYard services in two or more SwitchYard 
-instances.  The supported SCA bindings are:
-
-SOAP, HTTP, RESTEasy, JCA, JMS, File, FTP/ FTPS/ SFTP, TCP/ UDP, JPA, SQL, Mail, Quartz, Timer, SEDA, Camel URI and SCA.
-
+Using the SwitchYard project wizard you get a Maven based project that can be configured
+to have various components enabled like jbpm, bpel and Camel Routes. 
