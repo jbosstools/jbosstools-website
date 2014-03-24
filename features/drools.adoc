@@ -19,3 +19,19 @@ image::images/features-openshift-connectiondialog-reduced.png[]
 
 Something something
 
+== Guvnor Package Explorer
+=== Browse your repository
+
+image::images/features-guvnor-explorer-599px.png[Drools/guvnor Package Explorer]
+
+Control access via user defined categories (user driven groupings of artifacts, to aid quick navigation, 
+including searching). These can also be used to control visibility of items (and hide features from users 
+that don't need access to them).
+
+== Guided Editor
+=== Simpler rules editing
+
+image::images/features-guvnor-dtable-511px.png[Drools/guvnor Decision Table Editor]
+
+The guided editor provides a wizard like way to create and edit rules through a graphical interface.
+
