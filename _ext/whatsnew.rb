@@ -1,11 +1,12 @@
 require 'uri_helper'
 require 'whatsnew_helper'
+require 'products_helper'
 
 module Awestruct
   module Extensions
     class Whatsnew
       
-      @@whatsnew_layout_path = "whatsnew.html.haml"
+      @@whatsnew_layout_path = "whatsnew_aggregated.html.haml"
       @@whatsnew_overview_layout_path = "whatsnew_overview.html.haml"
       
       def initialize(source_path_prefix, target_path_prefix)
@@ -41,7 +42,7 @@ module Awestruct
             add_component_page(whatsnew_page, component_page)
             # now, deal with *.Final* versions if they exist in site.products
             unless component_page.component_version.include? ".Final"
-              product_final_version = WhatsnewHelper.get_final_version(site, component_page.product_id, component_page.product_version)
+              product_final_version = ProductsHelper.get_final_version(site, component_page.product_id, component_page.product_version)
               unless product_final_version.nil? 
                 whatsnew_final_page = get_whatsnew_page(site, component_page.product_id, product_final_version)
                 add_component_page(whatsnew_final_page, component_page)
@@ -53,8 +54,6 @@ module Awestruct
             add_extra_content(site, component_page.source_path)
           end
         end
-        # also, create an index.html page under @target_path_prefix
-        create_page(site, @@whatsnew_overview_layout_path, @target_path_prefix, "index.html")
         $LOG.debug "*** Done executing whatsnew extension...." if $LOG.debug?
       end
       
@@ -91,8 +90,8 @@ module Awestruct
         site.whatsnew_pages[product_id] = Hash.new if site.whatsnew_pages[product_id].nil?
         if site.whatsnew_pages[product_id][product_version].nil? then
           product_url_path_fragment = site.products[product_id].url_path_fragment
-          product_active = check_product_version_active(site, product_id, product_version)
-          puts "  building  N&N page for #{product_id} #{product_version}"
+          product_active = ProductsHelper.is_product_version_active(site, product_id, product_version)
+          #puts "  building  N&N page for #{product_id} #{product_version}"
           page = create_page(site, @@whatsnew_layout_path, @target_path_prefix, product_url_path_fragment, product_version)
           page.product_id = product_id
           page.product_name = site.products[product_id].name
@@ -100,26 +99,12 @@ module Awestruct
           page.component_news = Hash.new
           page.product_active = product_active
           # see downloads.rb for symbols
-          page.build_type = WhatsnewHelper.is_final_version(product_version) ? "stable" : "development"
+          page.build_type = ProductsHelper.get_build_type(site, product_id, product_version)
           site.whatsnew_pages[product_id][product_version] = page
         end
         site.whatsnew_pages[product_id][product_version]
       end
 
-      def check_product_version_active(site, product_id, product_version)
-        unless site.products[product_id].nil? then
-          site.products[product_id].streams.each do |stream_id, stream_versions|
-            unless stream_versions[product_version].nil? then
-              product_active = stream_versions[product_version][:active]
-              puts " #{product_id}.#{product_version} active: #{product_active}"
-              return product_active
-            end
-          end
-        end
-        #puts "  #{product_id} #{product_version} is not defined in products.yml - N&N content is considered as *archived*"
-        return true
-      end
-      
       def create_page(site, layout_path, *paths)
         path_glob = File.join(site.config.layouts_dir, layout_path)
         candidates = Dir[ path_glob ]

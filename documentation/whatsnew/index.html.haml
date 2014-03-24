@@ -1,0 +1,25 @@
+---
+layout: project
+title: What's New
+tab: docs
+---
+- for product_id in [:jbt_core, :jbt_is] do 
+  - unless site.whatsnew_pages[product_id].nil?
+    - labelled_whatsnew_page = site.whatsnew_pages[product_id].values.select{|whatsnew_page| !whatsnew_page.build_type.nil?}
+    .row-fluid.whatsnew-index
+      .span12
+        %div{:class=>"hero-unit #{product_id}"}
+          .hero-left
+            %h1 
+              #{site.products[product_id].name}
+            - labelled_whatsnew_page.sort{|p1, p2| p2.product_version <=> p1.product_version}.each do |whatsnew_page|
+              %a{:href=>relative(site.whatsnew_pages[product_id][whatsnew_page.product_version].output_path)} 
+                See What's New in #{whatsnew_page.product_version} 
+              %span{:class=>"label label_#{whatsnew_page.build_type}"}
+                #{site.labels[whatsnew_page.build_type]}
+              %br
+          
+        
+        
+      
+      

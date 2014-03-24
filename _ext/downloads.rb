@@ -1,4 +1,5 @@
 require 'awestruct/astruct'
+require 'products_helper'
 
 module Awestruct
   module Extensions
@@ -9,7 +10,7 @@ module Awestruct
       @@download_single_version_layout_path = "download_single_version.html.haml"
       @@downloads_per_product_layout_path = "downloads_per_product_summary.html.haml"
       @@downloads_per_eclipse_stream_layout_path = "downloads_per_eclipse_stream_summary.html.haml"
-      @@build_types = {:stable => [".GA", ".Final"], :development=>[".Alpha", ".Beta", ".CR"], :nightly=>["nightly", "Nightly"]}
+      #@@build_types = {:stable => [".GA", ".Final"], :development=>[".Alpha", ".Beta", ".CR"], :nightly=>["nightly", "Nightly"]}
 
       def initialize()
       end
@@ -41,7 +42,7 @@ module Awestruct
             # for each Eclipse versions can have many product builds, each one with build info
             eclipse_stream.each do |build_version, build_info|
               info = OpenStruct.new
-              build_type = guess_build_type(build_version) 
+              build_type = ProductsHelper.get_build_type(site, product_id, build_version) 
               info.name = site.products[product_id].name
               info.product_id = product_id
               info.version = build_version
@@ -58,14 +59,15 @@ module Awestruct
               info.update_site_url = build_info["update_site_url"]
               info.marketplace_install_url = build_info["marketplace_install_url"]
               info.zips = build_info["zips"]
-              info.active = build_info["active"]
+              info.archived = build_info["archived"] || false
               # finally, build regular download page
               download_page = generate_download_page(product_id, eclipse_version, 
                     build_version.to_s, info)
               
               # used to provide links to download .Final versions on /downloads
               # and links to latest builds per type on /download/<product_id>
-              if info.active && @site.latest_builds_download_pages[product_id][build_type].nil? then
+              
+              if !build_type.nil? then
                 @site.latest_builds_download_pages[product_id][build_type] = download_page
               end
             end
@@ -82,9 +84,9 @@ module Awestruct
             #puts " Checking #{product_id} / #{eclipse_stream}"
             download_pages_per_eclipse_stream[product_id][eclipse_stream] = Hash.new
             product_versions.each do |product_version, product_info| 
-              build_type = guess_build_type(product_version)
-              if download_pages_per_eclipse_stream[product_id][eclipse_stream][build_type].nil? || 
-                  download_pages_per_eclipse_stream[product_id][eclipse_stream][build_type] < product_version then
+              build_type = ProductsHelper.get_build_type(site, product_id, product_version) 
+              if !build_type.nil? && (download_pages_per_eclipse_stream[product_id][eclipse_stream][build_type].nil? || 
+                  download_pages_per_eclipse_stream[product_id][eclipse_stream][build_type] < product_version) then
                 download_pages_per_eclipse_stream[product_id][eclipse_stream][build_type] = product_version
               end
             end
@@ -162,16 +164,6 @@ module Awestruct
         download_page
       end
 
-      def guess_build_type(build_version)
-        @@build_types.each do |type, suffixes| 
-          unless suffixes.select{|suffix| build_version.include? suffix}.first.nil?
-            return type
-          end
-        end
-        puts "Unable to determine build type for #{build_version}, assuming :development, then.."
-        return :development
-      end
-      
       def find_blog_announcement_path(blog_announcement_page_name)
         unless blog_announcement_page_name.nil? || blog_announcement_page_name.empty?
           #puts "Looking for post page matching '" + blog_announcement_page_name.to_s + "'"
