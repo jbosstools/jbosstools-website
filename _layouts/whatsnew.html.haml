@@ -4,9 +4,10 @@ tab: docs
 ---
 - page.title = "#{page.product_name} #{page.product_version}"
 - component_ids = page.component_news.keys.sort{|x,y| site.components[x].name <=> site.components[y].name}
-- main_version = page.product_version.split(".")[0..2].join('.')
-- if page.product_version.end_with? ".Final"
-  - related_whatsnew_pages = site.whatsnew_pages[page.product_id].select{|version, p| (version.start_with? main_version) && (version != page.product_version)}
+
+- if is_final_version(page.product_version)
+  -# Banner for .Final versions (it's an aggregate of non-.Final pages)
+  - related_whatsnew_pages = get_related_whatsnew_pages(site, page.product_id, page.product_version)
   - unless related_whatsnew_pages.empty?
     .row-fluid
       .span12.alert.alert-info><
@@ -18,21 +19,22 @@ tab: docs
           - if index < related_whatsnew_pages.length - 2
             %span><= ",&nbsp;" 
 - else 
-  - final_version = main_version << ".Final"
-  - final_whatsnew_page = site.whatsnew_pages[page.product_id].values.select{|p| p.product_version == final_version}.first
+  -# Banner for non-.Final version pages which are related a an existing .Final version page
+  - final_whatsnew_page = get_final_version_whatsnew_page(site, page.product_id, page.product_version)
   - unless final_whatsnew_page.nil?
     .row-fluid
       .span12.alert.alert-warning><
         %span><= "Heads Up! This is the archived New & Noteworthy page is also part of of #{page.product_name}&nbsp;"
-        %a{:href=>final_whatsnew_page.output_path}><= final_version
+        %a{:href=>final_whatsnew_page.output_path}><= final_whatsnew_page.product_version
 
 
 .row-fluid.affixedContent
   .span3.bs-docs-sidebar
     %ul.nav.nav-list.bs-docs-sidenav
       -# sorting active versions in reverse order
-      - if page.product_active == true
-        - whatsnew_pages = site.whatsnew_pages[page.product_id].values.select{|p| p.product_active == true}
+      - puts " #{page.product_id}.#{page.product_version} active: #{page.product_active} && exists_final_version: #{exists_final_version(site, page.product_id, page.product_version)}"
+      - if (page.product_active == true)
+        - whatsnew_pages = site.whatsnew_pages[page.product_id].values.select{|p| p.product_active == true && (is_final_version(p.product_version) || !exists_final_version(site, page.product_id, page.product_version))}
         - whatsnew_pages.sort{|x,y| y.product_version <=> x.product_version}.each_with_index do |whatsnew_page, index|
           %li{:class=>("selected expanded" if whatsnew_page.product_version == page.product_version)}
             %a{:href=>relative(whatsnew_page.output_path)}

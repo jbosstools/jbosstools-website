@@ -57,18 +57,6 @@ module Awestruct
         $LOG.debug "*** Done executing whatsnew extension...." if $LOG.debug?
       end
       
-      def get_final_version(site, product_id, version) 
-        final_version = version.split(".")
-        final_version = final_version[0..2].join('.') + ".Final"
-        site.products[product_id].streams.each do |stream_id, product_versions|
-          if product_versions.include? final_version
-            return final_version
-          end
-        end
-        #puts "   Final version for #{product_id} (#{version}): #{final_version} does not exist yet."
-        nil
-      end
-      
       def add_component_page(whatsnew_page, component_page)  
         if whatsnew_page.component_news[component_page.component_id].nil?
           whatsnew_page.component_news[component_page.component_id] = Array.new
