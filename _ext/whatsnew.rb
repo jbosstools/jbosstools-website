@@ -1,4 +1,5 @@
 require 'uri_helper'
+require 'whatsnew_helper'
 
 module Awestruct
   module Extensions
@@ -40,7 +41,7 @@ module Awestruct
             add_component_page(whatsnew_page, component_page)
             # now, deal with *.Final* versions if they exist in site.products
             unless component_page.component_version.include? ".Final"
-              product_final_version = get_final_version(site, component_page.product_id, component_page.product_version)
+              product_final_version = WhatsnewHelper.get_final_version(site, component_page.product_id, component_page.product_version)
               unless product_final_version.nil? 
                 whatsnew_final_page = get_whatsnew_page(site, component_page.product_id, product_final_version)
                 add_component_page(whatsnew_final_page, component_page)
@@ -55,18 +56,6 @@ module Awestruct
         # also, create an index.html page under @target_path_prefix
         create_page(site, @@whatsnew_overview_layout_path, @target_path_prefix, "index.html")
         $LOG.debug "*** Done executing whatsnew extension...." if $LOG.debug?
-      end
-      
-      def get_final_version(site, product_id, version) 
-        final_version = version.split(".")
-        final_version = final_version[0..2].join('.') + ".Final"
-        site.products[product_id].streams.each do |stream_id, product_versions|
-          if product_versions.include? final_version
-            return final_version
-          end
-        end
-        #puts "   Final version for #{product_id} (#{version}): #{final_version} does not exist yet."
-        nil
       end
       
       def add_component_page(whatsnew_page, component_page)  
@@ -111,7 +100,7 @@ module Awestruct
           page.component_news = Hash.new
           page.product_active = product_active
           # see downloads.rb for symbols
-          page.build_type=:stable
+          page.build_type = WhatsnewHelper.is_final_version(product_version) ? "stable" : "development"
           site.whatsnew_pages[product_id][product_version] = page
         end
         site.whatsnew_pages[product_id][product_version]
@@ -128,7 +117,7 @@ module Awestruct
           end
         end
         #puts "  #{product_id} #{product_version} is not defined in products.yml - N&N content is considered as *archived*"
-        return false
+        return true
       end
       
       def create_page(site, layout_path, *paths)

@@ -190,6 +190,15 @@ jbt_core:
           - name: Release Notes
             download_size: 7.5kB
             url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.x/zz_Release_Notes_4.1.1.Final.readme.html
+      4.1.1.CR1:
+        active: false
+      4.1.1.Beta1:
+        active: false
+      4.1.1.Alpha2:
+        active: false
+      4.1.1.Alpha1:
+        active: false
+      
       4.1.0.Final:
         active: false
         release_date: 2013-07-23
@@ -227,6 +236,16 @@ jbt_core:
         documentation_url: http://docs.jboss.org/tools/
         update_site_url: http://download.jboss.org/jbosstools/updates/nightly/core/4.1.kepler/
         download_url: http://download.jboss.org/jbosstools/builds/nightly/core/4.1.kepler/
+      4.1.0.CR1:
+        active: false
+      4.1.0.Beta2:
+        active: false
+      4.1.0.Beta1:
+        active: false
+      4.1.0.Alpha2:
+        active: false
+      4.1.0.Alpha1:
+        active: false
 
     juno:
       4.0.1.Final:

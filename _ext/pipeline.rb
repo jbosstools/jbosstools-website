@@ -18,6 +18,7 @@ require 'mypaginator'
 require 'events'
 require 'features'
 require 'whatsnew'
+require 'whatsnew_helper'
 require 'downloads'
 require 'downloads_helper'
 require 'myposts'
@@ -55,7 +56,8 @@ Awestruct::Extensions::Pipeline.new do
   extension Awestruct::Extensions::Features.new('/features')
   # Needs to be after Indexifier to get the linking correct; 
   extension Awestruct::Extensions::Whatsnew.new('/documentation/_whatsnew', '/documentation/whatsnew')
-
+  helper Awestruct::Extensions::WhatsnewHelper
+  
   # Download needs to be after whatsnew, to link from download to whatsnew
   extension Awestruct::Extensions::Downloads.new
   helper Awestruct::Extensions::DownloadsHelper
