@@ -290,16 +290,41 @@ end
 # Build web site on Travis-CI
 #
 ############################################################################
-desc 'Generate site from Travis CI and publish site to GitHub Pages'
-task :travis => [:buildstaging, :errorcheck] do
+desc 'Generate site from Travis CI and publish site'
+task :travis do
   # if this is a pull request, do a simple build of the site and stop
   if ENV['TRAVIS_PULL_REQUEST'].to_s.to_i > 0
     puts 'Pull request detected. Executing build only.'
     next
   end
   
+  if ENV['TRAVIS_BRANCH'].to_s.scan(/^production$/).length > 0
+
+    puts 'Building production branch build.'
+    profile = 'production'
+    deploy_url = tools@filemgmt.jboss.org:/www_htdocs/tools
+
+  elsif ENV['TRAVIS_BRANCH'].to_s.scan(/^master$/).length > 0
+
+    puts 'Building staging(master) branch build.'
+    profile = 'staging'
+    deploy_url = tools@filemgmt.jboss.org:/stg_htdocs/tools
+
+  else
+
+    puts ENV['TRAVIS_BRANCH'].to_s + ' branch is not configured for Travis builds - skipping.'
+    next
+
+  end
+
+  # Build execution
+  system "bundle exec awestruct -P #{profile} -g"
+
+  # Workaround for not having the above separated out properly in subtasks
+  Rake:Task["errorcheck"].invoke
+
   puts '## Deploying website via rsync to staging'
-  success = system("rsync -Pqr --protocol=28 --delete-after _site/* tools@filemgmt.jboss.org:/stg_htdocs/tools")
+  success = system("rsync -Pqr --protocol=28 --delete-after _site/* #{deploy_url}")
 
   fail unless success
 end
