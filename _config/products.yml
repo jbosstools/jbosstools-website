@@ -59,16 +59,32 @@ devstudio:
         release_date: 
         marketplace_install_url: 
     kepler:
-      7.1.0.GA:
+      7.1.1.GA:
         active: true
-        release_date: 2013-12-16
-        supported_devstudio_is_version: 7.0.0.Final
+        release_date: 2014-03-24
+        supported_devstudio_is_version: 7.0.0.GA
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
-        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/7.1/html-single/Release_Notes_7.1.0/index.html
-        blog_announcement_url: http://bit.ly/jbt-411
+        #release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/7.1/html-single/Release_Notes_7.1.1/index.html
+        #blog_announcement_url: http://bit.ly/jbt-412
         marketplace_url: http://marketplace.eclipse.org/node/827807
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=827807
         download_url: https://www.jboss.org/products/devstudio
+        zips:
+          - name: Update site (including sources) bundle of JBoss Developer Studio
+            download_size: 713MB
+            url: https://devstudio.jboss.com/updates/7.0.0/jbdevstudio-updatesite-7.1.1.GA-v20140314-2145-B688.zip
+            md5_url: https://devstudio.jboss.com/updates/7.0.0/jbdevstudio-updatesite-7.1.1.GA-v20140314-2145-B688.zip.MD5
+      7.1.0.GA:
+        active: true
+        release_date: 2013-12-16
+        supported_devstudio_is_version: 7.0.0.GA
+        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/7.1/html-single/Release_Notes_7.1.0/index.html
+        blog_announcement_url: http://bit.ly/jbt-411
+        # comment out marketplace and point download_url at the EA page
+        #marketplace_url: http://marketplace.eclipse.org/node/827807
+        #marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=827807
+        download_url: https://devstudio.jboss.com/earlyaccess/7.1.0.GA.html
         zips:
           - name: Update site (including sources) bundle of JBoss Developer Studio
             download_size: 719MB
@@ -80,7 +96,10 @@ devstudio:
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/7.0/html-single/Release_Notes_7.0.1/index.html
         blog_announcement_url: https://community.jboss.org/community/tools/blog/2013/07/23/jboss-tools-41-and-developer-studio-7-go-ga
-        download_url: https://devstudio.jboss.com/earlyaccess/7.0.0.GA.html
+        # comment out marketplace and point download_url at the EA page
+        #marketplace_url: http://marketplace.eclipse.org/node/827807
+        #marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=827807
+        download_url: https://devstudio.jboss.com/earlyaccess/7.0.1.GA.html
         zips:
           - name: Update site (including sources) bundle of JBoss Developer Studio
             download_size: 696MB
@@ -120,7 +139,7 @@ devstudio_is:
   url_path_fragment: devstudio_is
   streams:
     kepler:
-      7.0.0.Final:
+      7.0.0.GA:
         blog_announcement_url: https://community.jboss.org/en/tools/blog/2014/01/30/integration-stack-tooling-for-jboss-tools-developer-studio?et=watches.email.blog
         active: true
         release_date: 2014-01-30
