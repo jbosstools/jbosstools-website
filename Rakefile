@@ -302,13 +302,13 @@ task :travis do
 
     puts 'Building production branch build.'
     profile = 'production'
-    deploy_url = tools@filemgmt.jboss.org:/www_htdocs/tools
+    deploy_url = "tools@filemgmt.jboss.org:/www_htdocs/tools"
 
   elsif ENV['TRAVIS_BRANCH'].to_s.scan(/^master$/).length > 0
 
     puts 'Building staging(master) branch build.'
     profile = 'staging'
-    deploy_url = tools@filemgmt.jboss.org:/stg_htdocs/tools
+    deploy_url = "tools@filemgmt.jboss.org:/stg_htdocs/tools"
 
   else
 
