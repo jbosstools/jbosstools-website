@@ -47,6 +47,8 @@
 
     
   %body
+    - if site.profile == "staging" 
+      = partial( 'underdevelopment.html.haml', { :parent => page } )
     / begin accessibility skip to top
     %ul#top.visuallyhidden
       %li
