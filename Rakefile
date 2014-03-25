@@ -276,7 +276,11 @@ end
 
 desc 'Check for errors'
 task :errorcheck do
-  puts 'Looking for awestruct errors in output:'
+  errorcheck
+end
+
+def errorcheck
+puts 'Looking for awestruct errors in output:'
   success = system "grep -lr 'awestruct/engine' --exclude=Rakefile _site/"
   if success
     puts 'Errors found in output. Check files listed above.'
@@ -284,7 +288,6 @@ task :errorcheck do
   end
   puts 'No errors found!'
 end
-
 ############################################################################
 #
 # Build web site on Travis-CI
@@ -321,7 +324,7 @@ task :travis do
   system "bundle exec awestruct -P #{profile} -g"
 
   # Workaround for not having the above separated out properly in subtasks
-  Rake:Task["errorcheck"].invoke
+  errorcheck
 
   puts '## Deploying website via rsync to staging'
   success = system("rsync -Pqr --protocol=28 --delete-after _site/* #{deploy_url}")
