@@ -166,6 +166,30 @@ Use the following alternative:
 
 You should be back to millisecond serving :)
 
+== Publishing/Deploying
+
+Publishing of the site is done automatically via https://travis-ci.org/jbosstools[Travis CI] when you publish to the 'master' or 'production' branch.
+
+image:https://travis-ci.org/jbosstools/jbosstools-website.png?branch=develop["Build Status", link="https://travis-ci.org/jbosstools/jbosstools-website"]
+
+If Travis build successfully it will automatically publish the result to the proper site.
+
+* staging (http://tools-stg.jboss.org) uses 'master'  
+* production (http://tools.jboss.org) uses 'production' branch.
+
+=== Profile parameters
+
+In `_config/site.yml` various profiles are configured. The following table documents some of the important parameters.
+
+|===
+|Name | Values | Description
+
+|showwip 
+|boolean 
+|if true a banner will be shown on top indicating it is a work in progress. 
+
+|===
+
 == License
 
 The content of this repository is released under TBD.
