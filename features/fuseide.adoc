@@ -5,18 +5,18 @@
 :page-feature_image_url: images/fuse_icon.png
 :page-feature_highlighted: false
 :page-feature_order: 10
-:page-feature_tagline: Fused Integration and Messaging
+:page-feature_tagline: Fuse Integration and Messaging
 
 == Fuse Tooling
 === Fuse Tooling Applications
 
-image::images/features-fuse-route-ed.png[Camel Route Editor]
+image::images/features-fuse-tooling.png[Fuse Tooling]
 
 JBoss Fuse Tooling provides a set of developer tools that enable you to work with Fuse and Apache versions of 
 ActiveMQ, Camel, CXF, Karaf, and ServiceMix. You can connect and configure Enterprise Integration Patterns to 
-build routes, browse endpoints and routes, drag and drop messages onto running routes, trace message flows, 
-edit running routes, browse and visualize runtime processes via JMX, and deploy your project's code to Red Hat 
-JBoss Fuse and Fuse Fabric containers, to Apache ServiceMix, and to Apache Karaf.
+build routes, browse endpoints and routes, drag and drop messages onto and from running routes, trace message 
+flows, edit running routes, browse and visualize runtime processes via JMX and deploy your project's code to 
+Red Hat JBoss Fuse, Fabric8, Apache ServiceMix and Apache Karaf containers.
 
 
 == Fuse Camel Editor
@@ -26,31 +26,37 @@ image::images/features-fuse-route-ed.png[Camel Route Editor]
  
 Fuse Camel Editor provides the tools for creating a Fuse project, including the route editor, 
 with its palette of supported Enterprise Integration Patterns, and the logic for running camel contexts inside 
-the editor.  If you want only to create, test, and visualize routes, but not to debug them, you need install 
-only the JBoss Fuse Camel Editor feature.
+the editor. If you only want to create, test and visualize routes, but not to debug them, you only need to install 
+the JBoss Fuse Camel Editor feature.
+
 
 == Fuse Runtimes 
-=== Debug Camel Routes
-image::images/features-fuse-route-ed.png[Camel Route Editor]
+=== Monitor and Debug Camel Routes
 
-Allows you to debug and monitor 
-camel routes running in JMX connected containers or as local processes, and to deploy camel routes to JMX connected 
-containers and Fuse Fabric containers. 
+image::images/features-fuse-tracing.png[Debug Routes]
+
+Allows you to debug and monitor camel routes running in JMX connected containers and to deploy camel routes to 
+JMX connected containers. You are enabled to trace messages of running Camel routes and to start / stop Camel
+contexts. With the Fabric8 perspective you are also able to manage a fabric and to deploy to a specific profile
+of that fabric.
+
 
 == Fuse Server Extensions 
-=== Control Karaf
+=== Manage Servers
 
-image::images/features-fuse-route-ed.png[Camel Route Editor]
+image::images/features-fuse-servers.png[Fuse Server Adapters]
 
-Extends the functionality of the JBoss Fuse Camel Editor to 
-allow you to configure, run, and interact with any of the supported servers via a Karaf command shell inside 
-Fuse Tooling. For example, with Fuse installed on your machine, you can start it up and then create 
-a fabric in which to deploy the camel routes you created with the Fuse Camel Editor.
+Extends the functionality of the JBoss Fuse Tooling to allow you to configure, run, and interact with any 
+of the supported servers via a Karaf command shell inside Fuse Tooling. For example, with Fuse installed on 
+your machine, you can start it up and then create a fabric in which to deploy the camel routes you created 
+with the Fuse Camel Editor. Use the shipped server adapters for Apache Karaf, Apache ServiceMix and 
+JBoss Fuse to download and install a server on your local machine.
+
 
 == Feature galore
 === More is more
 
-image::images/fuse-deploy.png[]
+image::images/features-fuse-fabric8.png[]
 
 Fuse Tooling streamlines the process at all stages of application development:
 
