@@ -328,6 +328,15 @@ task :travis do
 
   puts '## Deploying website via rsync to staging'
   success = system("rsync -Pqr --protocol=28 --delete-after _site/* #{deploy_url}")
+  
+  fail unless success
+
+  tag = ENV['TRAVIS_JOB_ID'] + "-published-#{profile}"
+  success = system("git tag #{tag}")
+
+  fail unless success
+
+  success = system("git push -q http://" + ENV['GH_TOKEN'] + "@github.com/jbosstools/jbosstools-website --tags")
 
   fail unless success
 end
