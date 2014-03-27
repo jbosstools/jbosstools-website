@@ -14,7 +14,8 @@ asciidoctor:
   :attributes:
     imagesdir: ./@
     icons: font
-    
+    experimental: true
+  
 # Default minify settings
 css_minifier: disabled
 js_minifier: disabled

@@ -4,18 +4,23 @@
 :page-component_version: 4.2.0.Beta1
 :page-product_id: jbt_core 
 :page-product_version: 4.2.0.Beta1
+:experimental true
 
 == Non-standard HTML attribute validation (e.g. ng-*)
 
-It's now possible to ignore non-standard HTML attributes. JBT team contributed that feature to Eclipse Luna (Milestone 6). This is typically needed when developing Angular JS applications as the HTML validator considers Angular JS ng-* attributes as invalid html (which is actually correct since the proper syntax to be 100% compatible with the html5 spec is to use data-ng-*).
+It's now possible to ignore non-standard HTML attributes. We contributed that feature to Eclipse Luna (Milestone 6). This is typically needed when developing Angular JS applications as the HTML validator considers Angular JS ng-* attributes as invalid html (which is actually correct since the proper syntax to be 100% compatible with the html5 spec is to use data-ng-*).
 
 image::images/4.2.0.Beta1/ng.png[]
+
+With this change we hope to now strike the right balance between those liking strict and those preferring relaxed validation. 
 
 related_jira::JBIDE-16622[]
 
 == Drop without dialog from Palette
 
-When a widget from Palette view is dragged and dropped the corresponding New Widget wizard is open. Since JBoss Tools 4.2.0.Beta1 if you holding *Ctrl* (for Linux and Windows) or *Alt/Option* (for Mac) when the widget is dropped to the HTML Editor then the code snippet is inserted without any dialog.
+When a widget from Palette view is dragged and dropped the corresponding New Widget wizard is opened to let you fine tune the content. This is great for beginners and complex tags but if you just want the default text you can now hold down kbd:[Ctrl] (for Linux and Windows) or kbd:[Alt/Option] (for Mac) and now when the widget is dropped to the HTML Editor the code snippet is inserted without any dialog.
+
+Faster and more efficient.
 
 related_jira::JBIDE-16636[]
 
