@@ -37,16 +37,18 @@ module Awestruct
             page.feature = feature
             site.engine.set_urls([page])
             feature.url = page.url
-            feature.id = page.feature_id
+            feature.feature_id = page.feature_id
+            feature.product_id = page.product_id
             feature.highlighted = page.feature_highlighted || false
             feature.name = page.title
             feature.order = page.feature_order != nil ? page.feature_order : 100
             feature.tagline = page.feature_tagline
             feature.image_url = URIHelper.concat(@path_prefix, page.feature_image_url)
-            features[feature.id] = feature
+            features[feature.product_id] = Array.new unless !features[feature.product_id].nil?
+            features[feature.product_id] << feature
           end
-          site.features = features
         end
+        site.features = features
         $LOG.debug "*** Done executing features extension..." if $LOG.debug?
         
       end

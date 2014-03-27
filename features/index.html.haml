@@ -4,38 +4,28 @@ tab: features
 title: Features
 ---
 
-- features = site.features.values.sort{|l,r| l.order <=> r.order}
-- #features = site.features.values
-- highlighted_feature = features.shift
-
--# show first feature with a highlight
-.row-fluid 
-  .span12.hero-unit
-    %img{:src=>relative(highlighted_feature.image_url), :alt=>"#{highlighted_feature.name}"}
-    .content
-      %h1< 
-        %a{:href=>relative(highlighted_feature.url) } #{highlighted_feature.name}
-      %h2< 
-        %a{:href=>relative(highlighted_feature.url) } #{highlighted_feature.tagline}
-      %p #{highlighted_feature.summary}
-    
--# show all other features
-- while features.size > 0 do
+- site.features.each do |product_id, features|
+  .row-fluid 
+    .span12.hero-unit.center
+      %h1 #{site.products[product_id].name}
+  -# show all other features
+  - f = Array.new() + features
+  - while f.size > 0 do
+    .row-fluid.features
+      - i = 0
+      - limit = [f.size, 4].min
+      - while i < limit do 
+        - i += 1
+        - feature = f.shift
+        %section.span3
+          %a{:href=>relative(feature.url) }
+            %h3.center< #{feature.name}
+            %h4.center< #{feature.tagline}
+            %img{:src=>relative(feature.image_url), :alt=>"#{feature.name}", :width=>"128px"}
   .row-fluid.features
     .span12
       %hr
-  .row-fluid.features
-    - i = 0
-    - limit = [features.size, 4].min
-    - while i < limit do 
-      - i +=1
-      - feature = features.shift
-      %section.span3
-        %a{:href=>relative(feature.url) }
-          %h3.center< #{feature.name}
-          %h4.center< #{feature.tagline}
-          %img{:src=>relative(feature.image_url), :alt=>"#{feature.name}", :width=>"128px"}
-            
+  
    
   
   

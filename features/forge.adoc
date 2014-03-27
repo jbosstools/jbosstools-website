@@ -1,5 +1,6 @@
 = Forge Tool
 :page-layout: features
+:page-product_id: jbt_core
 :page-feature_id: forge
 :page-feature_order: 6
 :page-feature_image_url: images/jbossforge_icon_256px.png
