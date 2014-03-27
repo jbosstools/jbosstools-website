@@ -8,29 +8,31 @@ tab: downloads
       - active_page_found = false
       -# show active versions
       - site.download_pages[page.product_id].each do |product_version, download_page| 
-        - if download_page.build_info.active == true
+        - if !download_page.build_info.archived
           - active_page_found = active_page_found || download_page.build_info.version == page.build_info.version
           %li{:class=>("active" if download_page.build_info.version == page.build_info.version)}
             %a{:href=>relative(download_page.output_path)}
               %span
                 #{download_page.build_info.version}
-              %span{:class=>"label label_#{download_page.build_info.build_type}"}
-                #{site.labels[download_page.build_info.build_type]}
+              - unless download_page.build_info.build_type.nil?
+                %span{:class=>"label label_#{download_page.build_info.build_type}"}
+                  #{site.labels[download_page.build_info.build_type]}
       -# show inactive/older versions if there are any
-      - if site.download_pages[page.product_id].values.select{|p| p.build_info.active == false}.length > 0
+      - if site.download_pages[page.product_id].values.select{|p| p.build_info.archived}.length > 0
         %li#allversions{:class=>("expanded selected" unless active_page_found)}
           %a{:href=>"#"}
             %span
               Previous Versions
           %ul.nav.nav-nested{:class=>("hidden" if active_page_found)}
             - site.download_pages[page.product_id].each do |product_version, download_page| 
-              - if download_page.build_info.active == false
+              - if download_page.build_info.archived
                 %li{:class=>("active" if product_version == page.build_info.version)}
                   %a{:href=>relative(download_page.output_path)}
                     %span
                       #{product_version}
-                    %span{:class=>"label label_#{download_page.build_info.build_type}"}
-                      #{site.labels[download_page.build_info.build_type]}
+                    - unless download_page.build_info.build_type.nil?
+                      %span{:class=>"label label_#{download_page.build_info.build_type}"}
+                        #{site.labels[download_page.build_info.build_type]}
       %li
         %a{:href=>relative("/downloads/overview.html")} All downloads
     :javascript
@@ -51,8 +53,9 @@ tab: downloads
   .span9#download
     %h2.center
       #{page.build_info.name} #{page.build_info.version}
-      %span#displayed-version{:class=>"label label_#{page.build_info.build_type}"}
-        #{site.labels[page.build_info.build_type]}
+      - unless page.build_info.build_type.nil?
+        %span#displayed-version{:class=>"label label_#{page.build_info.build_type}"}
+          #{site.labels[page.build_info.build_type]}
     .center
       - unless page.build_info.documentation_url.nil?
         %a{:href=>relative(page.build_info.documentation_url)} Documentation

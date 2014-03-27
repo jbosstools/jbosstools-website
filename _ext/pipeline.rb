@@ -17,6 +17,7 @@ require 'mytagger'
 require 'mypaginator'
 require 'events'
 require 'features'
+require 'products_helper'
 require 'whatsnew'
 require 'whatsnew_helper'
 require 'downloads'
@@ -51,11 +52,12 @@ Awestruct::Extensions::Pipeline.new do
   extension Awestruct::Extensions::MyTagger.new( :posts, '/blog/index', '/blog/tags', :per_page=>10,
    :sanitize=>true )
   #extension Awestruct::Extensions::Indexifier.new
+  helper Awestruct::Extensions::ProductsHelper
   # Needs to be after Indexifier to get the linking correct; 
   #extension Awestruct::Extensions::DataDir.new('/features')
   extension Awestruct::Extensions::Features.new('/features')
   # Needs to be after Indexifier to get the linking correct; 
-  extension Awestruct::Extensions::Whatsnew.new('/documentation/_whatsnew', '/documentation/whatsnew')
+  extension Awestruct::Extensions::Whatsnew.new('/documentation/whatsnew', '/documentation/whatsnew')
   helper Awestruct::Extensions::WhatsnewHelper
   
   # Download needs to be after whatsnew, to link from download to whatsnew
