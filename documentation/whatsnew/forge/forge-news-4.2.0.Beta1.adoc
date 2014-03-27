@@ -5,11 +5,15 @@
 :page-product_id: jbt_core 
 :page-product_version: 4.2.0.Beta1
 
-== Forge 1 Runtime 	
+== Embedded Forge Console 	
 
-The embedded Forge 1 runtime is now Forge 1.4.4.Final!
+The embedded Forge console can now also be used with the included Forge 2 runtime. 
 
-image::images/4.2.0.Beta1/forge144.png[]
+image::images/4.2.0.Beta1/forge230.png[]
+
+You can switch between both consoles using a drop down menu in the Forge console toolbar.
+
+image::images/4.2.0.Beta1/dropdown.png[]
 
 == Forge 2 Runtime 	
 
@@ -21,13 +25,8 @@ Lots of useful new commands have been implemented in the meantime. Bring up the 
 
 image::images/4.2.0.Beta1/f2commands.png[]
 
-== Embedded Forge Console 	
+== Forge 1 Runtime 	
 
-The embedded Forge console can now also be used with the included Forge 2 runtime. 
+The embedded Forge 1 runtime is now Forge 1.4.4.Final!
 
-image::images/4.2.0.Beta1/forge230.png[]
-
-You can switch between both consoles using a drop down menu in the Forge console toolbar.
-
-image::images/4.2.0.Beta1/dropdown.png[]
-
+image::images/4.2.0.Beta1/forge144.png[]
