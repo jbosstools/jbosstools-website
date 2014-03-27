@@ -1,5 +1,6 @@
 = Teiid Designer
 :page-layout: features
+:page-product_id: jbt_is
 :page-feature_id: teiiddesigner
 :page-feature_image_url: images/teiid_designer_icon_256px.png
 :page-feature_highlighted: false

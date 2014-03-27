@@ -1,5 +1,6 @@
 = OpenShift
 :page-layout: features
+:page-product_id: jbt_core
 :page-feature_id: openshift
 :page-feature_image_url: images/openshift_icon_256px.png
 :page-feature_highlighted: true
