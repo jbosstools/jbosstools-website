@@ -1,0 +1,15 @@
+= Maven Tools What's New in 4.2.0.Beta1
+:page-layout: whatsnew
+:page-component_id: maven
+:page-component_version: 4.2.0.Beta1
+:page-product_id: jbt_core 
+:page-product_version: 4.2.0.Beta1
+
+== JBoss Maven Integration
+=== Maven Profile Management UI 	
+
+We contributed the Maven Profile Management UI to https://bugs.eclipse.org/bugs/show_bug.cgi?id=428094[the m2e project]. You get the same features, the Ctrl+Alt+P shortcut still works but all that is now part of m2e itself (starting from m2e 1.5 Luna M6). 
+
+The Maven Profile Management feature was removed from the JBoss Tools update site and the Red Hat Developer Studio installer.
+
+related_jira::JBIDE-15836[]
