@@ -1,0 +1,12 @@
+= CDI Tools What's New in 4.2.0.Beta1
+:page-layout: whatsnew
+:page-component_id: cdi
+:page-component_version: 4.2.0.Beta1
+:page-product_id: jbt_core 
+:page-product_version: 4.2.0.Beta1
+
+== Apache Deltaspike Partial Beans
+
+CDI tools recognize now Deltaspike partial beans which are taken into account by the related tools features such as validation, code completion, hyperlinks, refactoring, etc.
+
+related_jira::JBIDE-13419[]
