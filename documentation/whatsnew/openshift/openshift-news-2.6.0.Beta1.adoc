@@ -8,24 +8,30 @@
 == Application wizard
 === Downloadable Cartridges and all new UX
 
-Starting with JBoss Tools 4.2.0 Beta1 we overhauled the application wizard that was becoming pretty crowded. +
+We overhauled the application wizard that was becoming pretty crowded. 
 
-We also introduced support for downloadable cartridges. Downloadable cartridges in OpenShift allow you to hand OpenShift your own framework via a git repository url.
-Your cartridge code may run as web- (standalone) or add-on-cartridge (embedded cartridge). JBoss Tools supports both breeds.
+We also introduced support for downloadable cartridges. Downloadable
+cartridges in OpenShift allow you to pass a git repository url which
+contains your custom cartridge.
 
-==== New Application wizard
+Your cartridge code may run as web- (standalone) or add-on-cartridge
+(embedded cartridge). JBoss Tools supports both breeds.
 
-If you now launch the OpenShift application wizard you will first get to chose whether you want to import your existing application or create a new one. +
+=== New Application wizard
+
+When you launch the OpenShift application wizard you will get to chose whether you want to use your existing application or create a new one. 
+
 image:./images/create-new-or-import-existing.png[]
 
-===== Import an Existing Application
+=== Use an Existing Application
 
-Import your existing application is as easy as picking it from the list of all your OpenShift applications. 
+Using your existing application is as easy as picking it from the list of all your OpenShift applications. 
 You may freely type it's name and get content assisted when typing. 
-Alternatively you may hit browse and choose among your applications across all your domains. +
+Alternatively you may hit browse and choose among your applications across all your domains. 
+
 image:./images/select-existing-application.png[]
 
-===== Create a New Application
+=== Code Anything custom cartridge
 
 When creating a new application you will have to choose the application type (cartridge) up-front. 
 You may choose among the predefined cartridges that are shipped with your OpenShift server.
@@ -33,11 +39,14 @@ Alternatively you may also decide to provide your own framework code via the url
 
 image:./images/downloadable-cart-type.png[]
 
-The next wizard page then allows you to configure all application details such as the name, domain, gear and the add-on (embeddable) cartridges.
+=== Adding Cartridges
+
+The page for configuring application details such as the name, domain, gear and the add-on (embeddable) cartridges now only shows
+cartridges you have added. Initially the list will be empty.
 
 image:./images/application-configuration.png[]
 
-At this stage you eventually want to add embeddable cartridges. Here again you may choose among the predefined ones or provide your own cartridge code.
+You now can add embeddable cartridges. Here you can choose among the predefined ones or provide your own cartridge code.
 
 image:./images/downloadable-cart-embedded.png[]
 
