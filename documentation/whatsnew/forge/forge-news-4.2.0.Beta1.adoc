@@ -5,6 +5,22 @@
 :page-product_id: jbt_core 
 :page-product_version: 4.2.0.Beta1
 
+== Connection Profiles
+
+We provided deep integration between the Forge 2 database add-on and the Eclipse DTP project. Connection profiles created with Forge 2 can be used in DTP and the other way around.
+
+Bring up the connection profile wizard as illustrated below.
+
+image::images/4.2.0.Beta1/connection.png[]
+
+Fill out the fields to create the desired connection profile and push ‚Finish’.
+
+image::images/4.2.0.Beta1/wizard.png[]
+
+Et voilà, you can see the newly created profile in the DTP Data Source Explorer. Moreover you can connect to the data source and view the contents of the tables as illustrated below.
+
+image::images/4.2.0.Beta1/explorer.png[]
+
 == Embedded Forge Console 	
 
 The embedded Forge console can now also be used with the included Forge 2 runtime. 
