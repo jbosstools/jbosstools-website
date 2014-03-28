@@ -14,9 +14,9 @@ tab: downloads
             %a{:href=>relative(download_page.output_path)}
               %span
                 #{download_page.build_info.version}
-              - unless download_page.build_info.build_type.nil?
-                %span{:class=>"label label_#{download_page.build_info.build_type}"}
-                  #{site.labels[download_page.build_info.build_type]}
+              - unless download_page.build_info.build_type_label.nil?
+                %span{:class=>"label label_#{download_page.build_info.build_type_label}"}
+                  #{site.labels[download_page.build_info.build_type_label]}
       -# show inactive/older versions if there are any
       - if site.download_pages[page.product_id].values.select{|p| p.build_info.archived}.length > 0
         %li#allversions{:class=>("expanded selected" unless active_page_found)}
@@ -30,9 +30,9 @@ tab: downloads
                   %a{:href=>relative(download_page.output_path)}
                     %span
                       #{product_version}
-                    - unless download_page.build_info.build_type.nil?
-                      %span{:class=>"label label_#{download_page.build_info.build_type}"}
-                        #{site.labels[download_page.build_info.build_type]}
+                    - unless download_page.build_info.build_type_label.nil?
+                      %span{:class=>"label label_#{download_page.build_info.build_type_label}"}
+                        #{site.labels[download_page.build_info.build_type_label]}
       %li
         %a{:href=>relative("/downloads/overview.html")} All downloads
     :javascript
@@ -53,9 +53,9 @@ tab: downloads
   .span9#download
     %h2.center
       #{page.build_info.name} #{page.build_info.version}
-      - unless page.build_info.build_type.nil?
-        %span#displayed-version{:class=>"label label_#{page.build_info.build_type}"}
-          #{site.labels[page.build_info.build_type]}
+      - unless page.build_info.build_type_label.nil?
+        %span#displayed-version{:class=>"label label_#{page.build_info.build_type_label}"}
+          #{site.labels[page.build_info.build_type_label]}
     .center
       - unless page.build_info.documentation_url.nil?
         %a{:href=>relative(page.build_info.documentation_url)} Documentation
@@ -66,18 +66,18 @@ tab: downloads
       - unless page.build_info.release_notes_url.nil?
         %a{:href=>relative(page.build_info.release_notes_url)} Release Notes
     
-    - if page.build_info.build_type == :stable
+    - if page.build_info.build_type_label == :stable
       .alert.alert-success
         #{page.build_info.name} #{page.build_info.version} was released on #{page.build_info.release_date}. 
         - if page.build_info.blog_announcement_url 
           %a{:href=>relative(page.build_info.blog_announcement_url)} Read the announcement.
           
         
-    - elsif page.build_info.build_type == :development
+    - elsif page.build_info.build_type_label == :development
       .alert.alert-info
         %strong Development builds
         have received basic testing, but are not considered fully stable yet.
-    - elsif page.build_info.build_type == :nightly
+    - elsif page.build_info.build_type_label == :nightly
       .alert.alert-warning
         %strong Warning! 
         The

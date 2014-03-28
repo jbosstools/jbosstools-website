@@ -38,9 +38,9 @@ tab: docs
           %li{:class=>("selected expanded" if whatsnew_page.product_version == page.product_version)}
             %a{:href=>relative(whatsnew_page.output_path)}
               #{whatsnew_page.product_version}
-              - unless whatsnew_page.build_type.nil?
-                %span{:class=>"label label_#{whatsnew_page.build_type}"}
-                  #{site.labels[whatsnew_page.build_type]}
+              - unless whatsnew_page.build_type_label.nil?
+                %span{:class=>"label label_#{whatsnew_page.build_type_label}"}
+                  #{site.labels[whatsnew_page.build_type_label]}
             - if whatsnew_page.product_version == page.product_version
               %ul.nav.nav-nested.components
                 - component_ids.each_with_index do |component_id, index|
@@ -52,9 +52,9 @@ tab: docs
         %li{:class=>("selected expanded")}
           %a{:href=>relative(page.output_path)}
             #{page.product_version}
-            - unless page.build_type.nil?
-              %span{:class=>"label label_#{page.build_type}"}
-                #{site.labels[page.build_type]}
+            - unless page.build_type_label.nil?
+              %span{:class=>"label label_#{page.build_type_label}"}
+                #{site.labels[page.build_type_label]}
           %ul.nav.nav-nested.components
             - component_ids.each_with_index do |component_id, index|
               %li.component{:class=>(index == 0 ? "active" : "")}

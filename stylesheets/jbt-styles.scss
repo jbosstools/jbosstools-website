@@ -9,6 +9,10 @@
 // *************************************
 // Fixes in bootstrap-community
 // *************************************
+#content {
+  padding-bottom: 20px;
+}
+
 .jumbotron {
   background: none;
   h1, p {
@@ -130,10 +134,24 @@ section {
 
   .item {
     margin-bottom: 10px;
+    ul {
+      margin-left: auto;
+      margin-right: auto;
+      list-style: none;
+      width: 75%;
+      
+      li {
+        margin-bottom: 10px;
+      }
+    }
   }
   
-  .footer {
+  footer {
     margin-top: 0.5em;
+    text-align: right;
+    a {
+      margin: 5px 0px;
+    }
   }
 }
 
@@ -704,6 +722,10 @@ span.label {
   }
 }
 
+section  h3 > span.label {
+  vertical-align: text-top;
+}
+
 .sidenav  li:first-child  a {
     border-radius: 6px 6px 0 0;
 }
@@ -1071,12 +1093,16 @@ span.label {
   
   }
 
-  ul.items li {
-    display: inline;
-    list-style-type: none;
-    text-align:left;
-  }
 
+  
+  ul.items {
+    margin-bottom: 20px;
+    li {
+      display: inline;
+      list-style-type: none;
+      text-align:left;
+    }
+  }
 
 
 }

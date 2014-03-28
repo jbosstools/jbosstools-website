@@ -99,7 +99,7 @@ module Awestruct
           page.component_news = Hash.new
           page.product_active = product_active
           # see downloads.rb for symbols
-          page.build_type = ProductsHelper.get_build_type(site, product_id, product_version)
+          page.build_type_label= ProductsHelper.get_build_type_label(site, product_id, product_version)
           site.whatsnew_pages[product_id][product_version] = page
         end
         site.whatsnew_pages[product_id][product_version]

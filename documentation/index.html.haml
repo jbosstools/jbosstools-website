@@ -5,47 +5,55 @@ tab: documentation
 ---
 
 .row-fluid
-  .jumbotron
+  .hero-unit.center
     %h1 Documentation
     %p Documentation about the JBoss Tools project
 
 #sections.row-fluid
   %section.span3
-    %h3 
-      %a{:href => relative("/documentation/whatsnew")} What's New ? 
-    %p
-      The 
-      %a{:href => relative("/documentation/whatsnew")} What's New section 
-      describes what is new and noteworthy in each of the milestones and releases for JBoss Tools.
-    %p
+    %header
+      %h3 
+        %a{:href => relative("/documentation/whatsnew")} What's New ? 
+    .item
+      %p
+        The 
+        %a{:href => relative("/documentation/whatsnew")} What's New section 
+        describes what is new and noteworthy in each of the milestones and releases for JBoss Tools.
+    %footer
       %a.btn.btn-small{:href => relative("/documentation/whatsnew"), :role => "button"} See What's New &raquo;
   %section.span3
-    %a{:href => relative("/documentation/faq.html")}
-      %h3 FAQ 
-    %p
-      The 
-      %a{:href => relative("/documentation/faq.html")} FAQ 
-      contains frequently asked questions. If you do not find an answer here try asking in the 
-      %a{:href => relative("/community")} community
-    %p.right
+    %header
+      %h3 
+        %a{:href => relative("/documentation/faq.html")} FAQ
+    .item
+      %p
+        The 
+        %a{:href => relative("/documentation/faq.html")} FAQ 
+        contains frequently asked questions. If you do not find an answer here try asking in the 
+        %a{:href => relative("/community")} community
+    %footer
       %a.btn.btn-small{:href => relative("/documentation/faq.html"), :role => "button"} Read the FAQ &raquo;
   %section.span3
-    %a{:href => relative("/documentation/videos")}
-      %h3 Videos
-    %p
-      There are a set of  
-      %a{:href => relative("/documentation/videos"), } Video Tutorials
-      for learning about how install, setup and how to use some of the features of JBoss Tools.
-    %p
+    %header
+      %h3 
+        %a{:href => relative("/documentation/videos")} Videos
+    .item
+      %p
+        There are a set of  
+        %a{:href => relative("/documentation/videos"), } Video Tutorials
+        for learning about how install, setup and how to use some of the features of JBoss Tools.
+    %footer
       %a.btn.btn-small{:href => relative("/documentation/videos"), :role => "button"} Watch the Video Tutorials &raquo;
   %section.span3
-    %a{:href => "http://docs.jboss.org/tools"}
-      %h3 Reference guides
-    %p
-      The 
-      %a{:href => "http://docs.jboss.org/tools"} Reference Guides 
-      are the main documentation for the main functionality 
-      of each major module in JBoss Tools. The index page lists each release and its associated documentation. 
-    %p
+    %header
+      %h3 
+        %a{:href => "http://docs.jboss.org/tools"} Reference Guides
+    .item
+      %p
+        The 
+        %a{:href => "http://docs.jboss.org/tools"} Reference Guides 
+        are the main documentation for the main functionality 
+        of each major module in JBoss Tools. 
+    %footer
       %a.btn.btn-small{:href => "http://docs.jboss.org/tools", :role => "button"} Read the Reference Guides &raquo;
      
