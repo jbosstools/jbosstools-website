@@ -1,5 +1,6 @@
 = Hibernate Tools
 :page-layout: features
+:page-product_id: jbt_core
 :page-feature_id: hibernate
 :page-feature_image_url: images/hibernate_icon_256px.png
 :page-feature_order: 4

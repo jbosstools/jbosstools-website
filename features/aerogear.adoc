@@ -1,5 +1,6 @@
 = Aerogear 
 :page-layout: features
+:page-product_id: jbt_core
 :page-feature_id: aerogear
 :page-feature_order: 8
 :page-feature_tagline: Mobile development tooling

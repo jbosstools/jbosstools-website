@@ -1,5 +1,6 @@
 = Arquillian 
 :page-layout: features
+:page-product_id: jbt_core
 :page-feature_id: arquillian
 :page-feature_order: 8
 :page-feature_tagline: Arquillian Tooling

@@ -1,5 +1,6 @@
 = Web Services
 :page-layout: features
+:page-product_id: jbt_core
 :page-feature_id: webservices
 :page-feature_image_url: images/resteasy_icon_256px.png
 :page-feature_order: 9

@@ -1,5 +1,6 @@
 = LiveReload 
 :page-layout: features
+:page-product_id: jbt_core
 :page-feature_id: livereload
 :page-feature_image_url: images/cloud-reload-1-256x256.png
 :page-feature_order: 5

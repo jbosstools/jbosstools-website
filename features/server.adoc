@@ -1,5 +1,6 @@
 = Server Tooling
 :page-layout: features
+:page-product_id: jbt_core
 :page-feature_id: server
 :page-feature_image_url: images/wildfly_logo_stacked_200px.png
 :page-feature_order: 2 

@@ -24,7 +24,7 @@ status: green
             
 #sections.row-fluid
   %section.span4
-    - feature = site.features.values.find_all{|feature| feature.highlighted == true}.first
+    - feature = site.features["jbt_core"].find_all{|feature| feature.highlighted == true}.first
     - if feature != nil
       %header
         %h3

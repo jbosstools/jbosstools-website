@@ -6,16 +6,14 @@ tab: features
 .row-fluid.affixedContent
   .span3.bs-docs-sidebar
     %ul.nav.nav-list.bs-docs-sidenav
-      - features = site.features.values.sort{|l,r| l.feature_id <=> r.feature_id}
-      - features.each do |feature|
-        %li{:class=>("selected expanded" if feature.url == page.url)}
-          %a{:href => relative(feature.url)} #{feature.name}
-          -if feature.url == page.url
+      - for product_id in ["jbt_core", "jbt_is"] do 
+        %li{:class=>("selected expanded" if page.product_id == product_id.to_s)}
+          %a{:href=>site.features[product_id.to_s].first.url} #{site.products[product_id].name}
+          - if page.product_id == product_id.to_s
             %ul.nav.nav-nested.components
-              - doc = Nokogiri::HTML.parse(page.content)
-              - doc.css('.sect1 h2').each_with_index do |title, index|
-                %li{:class=>("active" if index == 0)}
-                  %a{:href=>"##{title.attribute("id")}"} #{title.content}
+              - site.features[product_id].each do |feature|
+                %li{:class=>("active" if feature.url == page.url)}
+                  %a{:href => relative(feature.url)} #{feature.name}
               
     
   .span9.scrolledContent.feature
