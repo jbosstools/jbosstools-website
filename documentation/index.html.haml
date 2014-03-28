@@ -5,40 +5,47 @@ tab: documentation
 ---
 
 .row-fluid
-  .hero-unit
+  .jumbotron
     %h1 Documentation
-    %p Documentation for JBoss Tools
+    %p Documentation about the JBoss Tools project
 
-  .row-fluid
-    %ul
-      %li.span6
-        %a{:href => relative("/documentation/whatsnew")}
-          %h2 What's New ? 
-        %p
-          The What's New section describes what is new and noteworthy in each of the milestones and releases for JBoss Tools.
-        %p
-          %a.btn.btn-primary{:href => relative("/documentation/whatsnew"), :role => "button"} Visit What's New
-        %a{:href => relative("/documentation/faq")}
-          %h2 FAQ 
-        %p
-          The FAQ contains frequently asked questions. If you do not find an answer here try asking in the 
-          %a{:href => relative("/community")} community
-        %p
-          %a.btn.btn-primary{:href => relative("/documentation/faq"), :role => "button"} Read the FAQ
-      %li.span6
-        %a{:href => relative("/documentation/videos")}
-          %h2 Videos
-        %p
-          There are a set of  
-          %a{:href => relative("/documentation/videos"), } Video Tutorials
-          for learning about how install, setup and how to use some of the features of JBoss Tools.
-        %p
-          %a.btn.btn-primary{:href => relative("/documentation/videos"), :role => "button"} Watch the Video Tutorials
-        %a{:href => "http://docs.jboss.org/tools"}
-          %h2 Reference guides
-        %p
-          The reference guides are the main documentation for the main functionality 
-          of each major module in JBoss Tools. The index page lists each release and its associated documentation. 
-        %p
-          %a.btn.btn-primary{:href => "http://docs.jboss.org/tools", :role => "button"} Reference Guides
-       
+#sections.row-fluid
+  %section.span3
+    %h3 
+      %a{:href => relative("/documentation/whatsnew")} What's New ? 
+    %p
+      The 
+      %a{:href => relative("/documentation/whatsnew")} What's New section 
+      describes what is new and noteworthy in each of the milestones and releases for JBoss Tools.
+    %p
+      %a.btn.btn-small{:href => relative("/documentation/whatsnew"), :role => "button"} See What's New &raquo;
+  %section.span3
+    %a{:href => relative("/documentation/faq.html")}
+      %h3 FAQ 
+    %p
+      The 
+      %a{:href => relative("/documentation/faq.html")} FAQ 
+      contains frequently asked questions. If you do not find an answer here try asking in the 
+      %a{:href => relative("/community")} community
+    %p.right
+      %a.btn.btn-small{:href => relative("/documentation/faq.html"), :role => "button"} Read the FAQ &raquo;
+  %section.span3
+    %a{:href => relative("/documentation/videos")}
+      %h3 Videos
+    %p
+      There are a set of  
+      %a{:href => relative("/documentation/videos"), } Video Tutorials
+      for learning about how install, setup and how to use some of the features of JBoss Tools.
+    %p
+      %a.btn.btn-small{:href => relative("/documentation/videos"), :role => "button"} Watch the Video Tutorials &raquo;
+  %section.span3
+    %a{:href => "http://docs.jboss.org/tools"}
+      %h3 Reference guides
+    %p
+      The 
+      %a{:href => "http://docs.jboss.org/tools"} Reference Guides 
+      are the main documentation for the main functionality 
+      of each major module in JBoss Tools. The index page lists each release and its associated documentation. 
+    %p
+      %a.btn.btn-small{:href => "http://docs.jboss.org/tools", :role => "button"} Read the Reference Guides &raquo;
+     

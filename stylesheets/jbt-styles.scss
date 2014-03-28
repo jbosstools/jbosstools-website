@@ -9,6 +9,14 @@
 // *************************************
 // Fixes in bootstrap-community
 // *************************************
+.jumbotron {
+  background: none;
+  h1, p {
+    color: #656565; 
+  }
+  
+}
+
 .bs-docs-sidenav > li:first-child > a {
   -webkit-border-top-leftt-radius: 6px;
   -webkit-border-top-right-radius: 6px;
