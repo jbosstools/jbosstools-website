@@ -1,21 +1,21 @@
 ---
 layout: project
-title: All Downloads Overview
+title: All Downloads
 ---
 
 .row-fluid
-  .span12
-    %h3.center All Downloads Overview
+  .hero-unit.center
+    %h1 All Downloads
     
 #all-downloads
   .row-fluid
     .span12
       %table.center
         %tr
-          %th Version
+          %th Eclipse Version
           - for product_id in [:devstudio, :devstudio_is, :jbt_core, :jbt_is]
             - next if site.download_pages[product_id].nil? || site.download_pages[product_id].empty?
-            %th #{site.products[product_id].name}
+            %th.center #{site.products[product_id].name}
         - site.products[:eclipse].each do |eclipse_version, eclipse_info|
           %tr
             %td 
@@ -28,9 +28,9 @@ title: All Downloads Overview
                   - next if download_page.build_info.eclipse_version != eclipse_info
                   .block
                     %a{:href=>relative(download_page.output_path)} #{product_version}
-                    - if labels[download_page.build_info.build_type].nil? 
-                      %span{:class=>"label label_#{download_page.build_info.build_type}"} #{download_page.build_info.build_type}
-                      - labels[download_page.build_info.build_type] = true
+                    - if labels[download_page.build_info.build_type_label].nil? 
+                      %span{:class=>"label label_#{download_page.build_info.build_type_label}"} #{download_page.build_info.build_type_label}
+                      - labels[download_page.build_info.build_type_label] = true
                   
                   
                   
