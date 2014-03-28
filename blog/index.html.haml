@@ -3,16 +3,18 @@ layout: project
 title: Blog
 tab: blog
 ---
-.posts-header
-  - if page.selected_tag
+- if page.selected_tag
+  .posts-header
     %h1< Articles tagged with "#{page.selected_tag}"
     - page.title = "Articles tagged with \"" + page.selected_tag + "\""
-  - else 
-    %h1< 
-      Latest Articles
-      %a{:href=>relative("/blog/news.atom")}
-        %img#rss-icon{:src=>relative("/images/feed-icon-28x28.png")}
-  
+- else 
+  .row-fluid
+    .hero-unit.center
+      %h1< 
+        Latest Articles
+        %a{:href=>relative("/blog/news.atom")}
+          %img#rss-icon{:src=>relative("/images/feed-icon-28x28.png")}
+
 .row-fluid
   .span12#core-page.posts
     - for post in page.posts

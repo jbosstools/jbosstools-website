@@ -1,0 +1,11 @@
+= General 4.1.2.CR1 What's New
+:page-layout: whatsnew
+:page-component_id: general
+:page-component_version: 4.1.2.CR1
+:page-product_id: jbt_core 
+:page-product_version: 4.1.2.CR1
+
+
+== General for JBoss Tools 4.1.2.CR1
+
+Bug fixes.

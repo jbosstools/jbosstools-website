@@ -20,21 +20,39 @@ module Awestruct
       end
       module_function :get_final_version
       
+      # Returns a build type based on the given version 
       def get_build_type(site, product_id, product_version)
+        if is_final_version(product_version)
+          return :stable
+        elsif is_nightly_version(product_version)
+          return :nightly
+        else
+          return :development
+        end
+      end
+      module_function :get_build_type
+      
+      # Returns a build type label if provided in product.yml, nil otherwise
+      def get_build_type_label(site, product_id, product_version)
         stream = site.products[product_id].streams.select{|stream_id, versions| versions[product_version] != nil}.values.first
         unless stream.nil?
-          build_type = stream.select{|build_version, build_info| build_version == product_version}.values.first[:build_type]
+          build_type_label = stream.select{|build_version, build_info| build_version == product_version}.values.first[:build_type]
           #puts "  #{product_id} #{product_version} build type: '#{build_type}'"
-          return build_type
+          return build_type_label
         end
         return nil
       end
-      module_function :get_build_type
+      module_function :get_build_type_label
      
       def is_final_version(product_version)
         product_version.end_with? ".Final"  
       end
       module_function :is_final_version
+      
+      def is_nightly_version(product_version)
+        product_version.end_with? ".Nightly"  
+      end
+      module_function :is_nightly_version
       
       def is_product_version_active(site, product_id, product_version)
         unless site.products[product_id].nil? then

@@ -59,10 +59,10 @@ status: green
               %strong< #{site.team[post.author].name}
               on 
               %strong< #{post.date.strftime( '%b %d, %Y' )}.
-        .footer.right
-          %a.btn.btn-small{:href=>relative(post.url)}
-            Read more &raquo;
-        %hr 
+      %footer
+        %a.btn.btn-small{:href=>relative(post.url)}
+          Read more &raquo;
+      %hr 
               
 
   %section.span4

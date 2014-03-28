@@ -3,11 +3,12 @@ layout: project
 tab: features
 title: Features
 ---
-
+.row-fluid 
+  .span12.hero-unit.center
+    %h1 Features
+    %p Main Features of #{site.products[:jbt_core].name} and #{site.products[:jbt_is].name} 
+    
 - site.features.each do |product_id, features|
-  .row-fluid 
-    .span12.hero-unit.center
-      %h1 #{site.products[product_id].name}
   -# show all other features
   - f = Array.new() + features
   - while f.size > 0 do

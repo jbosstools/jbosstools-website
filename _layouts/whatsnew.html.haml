@@ -16,9 +16,9 @@ tab: docs
       %li{:class=>("selected expanded")}
         %a{:href=>"#"}
           #{page.product_version}
-          - unless page.build_type.nil?
-            %span{:class=>"label label_#{current_whatsnew_page.build_type}"}
-              #{site.labels[current_whatsnew_page.build_type]}
+          - unless page.build_type_label.nil?
+            %span{:class=>"label label_#{current_whatsnew_page.build_type_label}"}
+              #{site.labels[current_whatsnew_page.build_type_label]}
         %ul.nav.nav-nested.components
           %li.component{:class=>"active"}
             %a{:href=>"#"} #{site.components[page.component_id].name}
