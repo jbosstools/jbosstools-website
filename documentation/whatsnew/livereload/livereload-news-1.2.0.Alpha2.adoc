@@ -1,0 +1,23 @@
+= LiveReload What's New in 1.2.0.Alpha2
+:page-layout: whatsnew
+:page-component_id: livereload
+:page-component_version: 1.2.0.Alpha2
+:page-product_id: jbt_core 
+:page-product_version: 4.2.0.Alpha2
+
+== General
+
+=== Optional Reload Delay 	
+
+The LiveReload Server Configuration Editor now provides users with a "Reload Delay" option to set the number of seconds to wait before "reload" messages are sent to the browsers.
+
+This delay gives some time to the application server to take the changes fully into account before the browsers send their request. (It was reported that in some cases the server would return an error because of resources or libraries still being reloaded when the requests arrived.)
+
+image::images/livereload_reloaddelay.png[LiveReload Server Configuration Editor with Reload Delay option]
+
+By default, the reload delay is set to '0'. Once the configuration is saved, there is no need to restart the LiveReload server to take the new value into account.
+
+The delay appears as a job running in the Progress View and it can be cancelled if is the wait period was set too high (in which case the "reload" messages will be sent to the browsers without further waiting).
+
+related_jira::JBIDE-14999[]
+

@@ -1,0 +1,17 @@
+= Server What's New in 4.2.0.Alpha2
+:page-layout: whatsnew
+:page-component_id: server
+:page-component_version: 4.2.0.Alpha2
+:page-feature_jbt_only: true
+:page-product_id: jbt_core 
+:page-product_version: 4.2.0.Alpha2
+
+== Servers
+=== Extensive Rewrite
+
+JBoss AS Server Tools has had an extensive rewrite for the Alpha2 release. The goals of this refactor were to more easily support an expanding set of usecases and options for servers. With these changes, we will be able to add support for several new features, such as launching your server in domain mode, publishing over the JBoss Management API, server adapters not requiring a local runtime installation, as well as a smoother workflow for creating your server adapters.
+
+While we believe all existing features are still functioning normally, there may, as always, be bugs or errors that we didn't catch. Please open a JIRA, or post on our forums, if you catch anything that seems strange, misleading, or incorrect. While the Alpha2 release should look pretty much identical to what you're used to, you'll see at some of these changes in our next milestone.
+
+related_jira::JBIDE-15915[]
+
