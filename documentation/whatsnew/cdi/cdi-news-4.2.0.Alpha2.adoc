@@ -1,0 +1,12 @@
+= CDI Tools What's New in 4.2.0.Alpha2
+:page-layout: whatsnew
+:page-component_id: cdi
+:page-component_version: 4.2.0.Alpha2
+:page-product_id: jbt_core 
+:page-product_version: 4.2.0.Alpha2
+
+== CDI 1.1
+	
+CDI Tools now support CDI 1.1 projects. If your CDI project (with enabled CDI support) has CDI 1.1 jars in its classpath, CDI Tools will recognize it as CDI 1.1 project automatically. There is no need to use any special settings to distinguish CDI 1.0 from CDI 1.1 in CDI Tools. 
+
+related_jira::JBIDE-13228[]
