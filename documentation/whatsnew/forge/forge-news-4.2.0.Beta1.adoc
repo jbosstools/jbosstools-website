@@ -13,11 +13,11 @@ Bring up the connection profile wizard as illustrated below.
 
 image::images/4.2.0.Beta1/connection.png[]
 
-Fill out the fields to create the desired connection profile and push ‚Finish’.
+Fill out the fields to create the desired connection profile and push btn:[Finish].
 
 image::images/4.2.0.Beta1/wizard.png[]
 
-Et voilà, you can see the newly created profile in the DTP Data Source Explorer. Moreover you can connect to the data source and view the contents of the tables as illustrated below.
+Et voila, you can see the newly created profile in the DTP Data Source Explorer. Moreover you can connect to the data source and view the contents of the tables as illustrated below.
 
 image::images/4.2.0.Beta1/explorer.png[]
 
