@@ -7,31 +7,42 @@
 :page-feature_tagline: Supporting REST and SOAP
 :page-issues_url: https://issues.jboss.org/browse/JBIDE/component/12310233
 
-== Get started instantly
-![Getting Started](./images/features-central_334px.png)
+== Web Services
+=== JAX-RS Endpoints in the Project Explorer
+image::images/features-jaxrs-project_explorer.png[JAX-RS Endpoints in the Project Explorer]
 
-Central helps you bootstrap a new project by providing you with a large set of wizards and templates, 
-including the JBoss Developer Frawework and the GateIn Quickstarts.   
-Central also provides you with the latest community news, announcements and blog articles, 
-so that you always know what's happening at JBoss.org.
+In the Project Explorer, the *JAX-RS Web Services* displays information about the JAX-RS endpoint paths based on Application, Resources and Resource Methods as found in your application.
 
-== Extras
-=== Extras plugins. Easy install. 
-image::images/features-central-extras_334px.png[]
+== Content Assist 
+=== Retrieve @Path parameters for @PathParam values
 
-JBoss Central also features an easy way to install extra plugins, 
-so you don't have to manually lookup and configure update sites for the other plugins you want to use. 
-Amongst all the plugins, you'll find:
+image::images/features-jaxrs-contentassist.png[Content Assist]
 
-* JBoss SOA and Business Rules Tooling
-* JBoss Maven GWT Configurator
-* Google Plugin for Eclipe  + Google Web Toolkit
-* Spring IDE
-* Checkstyle
-* Findbugs
-* PMD
-* JRebel
-* Subclipse
+The JAX-RS tooling provides you with Content Assist proposals for +@PathParam+ values.
 
-and more...
+== Validation 
+=== Customize the problem levels
 
+image::images/features-jaxrs-validation.png[Problem Level Customization]
+
+Validation will check your use of JAX-RS annotations to see if it follows the JAX-RS specification. You can customize the problem level and set a given problem type to *Error*, *Warning* or *Ignore*.
+
+== JAX-RS 2.0 Interceptors and Filters
+=== Navigate through Interceptor bindings
+
+image::images/features-jaxrs-namebindingnavigation.png[Name Binding Navigation]
+
+For user-defined name binding annotations you can navigate to the associated Application, Resources and Resource Methods that have the same user-defined annotation.
+
+== Integration with m2e-wtp
+=== Easy setup
+image::images/features-jaxrs-project_facet.png[Project Facets]
+
+When importing a Maven project that uses JAX-RS, the JAX-RS functionality are automatically enabled. No need to manually configure your project.
+
+== Web Service Tester
+=== Invoke JAX-WS and JAX-RS Endpoints
+image::images/features-webservices-wstester.png[Web Services Tester]
+
+The Web Service Tester allows you to test your *JAX-RS* or *JAX-WS* Endpoints from within Eclipse. Select a JAX-RS Endpoint and select *Run As>Run on Server* or *Debug As>Debug on Server* to deploy your application on a server and open the Web Service Tester view. The location will be prefilled with the JAX-RS endpoint template, and when hitting the 'Run' button, a dialog will prompt you with parameter values to use.
+ 
