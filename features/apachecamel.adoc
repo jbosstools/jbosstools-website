@@ -29,10 +29,10 @@ for selected diagram figures helping you to achieve your goals more quickly. All
 For those who prefer the XML notation we provide a source view with code assistance. 
 
 
-== Run and Debug 
+== Run and Trace 
 === Test your new route
 
-image::images/features-fuse-tracing.png[Debug Routes]
+image::images/features-fuse-tracing.png[Trace Routes]
 
 So you finished your first route and you want to make sure it works? 
 We provide an easy mechanism to test drive your new route on your local machine. You can launch it from inside your IDE, connect
