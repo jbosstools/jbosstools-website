@@ -1,0 +1,15 @@
+= Red Hat Summit (USA)
+:page-layout: event
+:page-event_date: April 14-17, 2014
+:page-effective_date: 20140415
+:page-location: San Francisco, California
+:page-event_url: https://www.redhat.com/summit/sessions/index.html#442
+
+Gorkem Ercan and Burr Sutter will discuss the principles of building hybrid mobile applications and demonstrate how JBoss Developer Studio can ease the task. Demos will include:
+
+* A complete development cycle for a hybrid mobile application.
+* Creating a project, editing it, then running it on platform emulators without leaving the integrated development environment (IDE).
+* The Cordova plug-in discovery and management features of the tools.
+* The convenience of using the new Cordova Simulator, which incorporates Ripple and live reload to test and debug mobile hybrid applications.
+* How to create the final package for a mobile application and submit it to an application store.
+
