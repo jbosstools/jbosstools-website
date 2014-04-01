@@ -1,0 +1,43 @@
+= Tools for Apache Camel
+:page-layout: features
+:page-product_id: jbt_is 
+:page-feature_id: fuseintegrationtooling
+:page-feature_image_url: images/fuseintegrationtooling_icon.gif
+:page-feature_highlighted: false
+:page-feature_order: 10
+:page-feature_tagline: Helps get you over the hump
+
+== Tools for Apache Camel
+=== Overview
+
+image::images/features-fuse-tooling.png[Fuse Tooling]
+
+Tools for Apache Camel provide a set of developer tools that enable you to work with http://camel.apache.org[Apache Camel]. You can configure http://camel.apache.org/enterprise-integration-patterns.html[Enterprise Integration Patterns] to 
+build your routes, browse endpoints and routes, drag and drop messages onto and from running routes, trace message 
+flows, edit running routes, browse and visualize runtime contexts via JMX.
+
+
+== Integration Editor
+=== Design your routes
+
+image::images/features-fuse-route-ed.png[Fuse Integration Editor]
+ 
+The Fuse Integration Editor provides tools for creating a Fuse project, including the route editor, 
+with its palette of supported http://camel.apache.org/enterprise-integration-patterns.html[Enterprise Integration Patterns], and the logic for running contexts from inside 
+the editor. The editor can be used in a design mode allowing you to simply create a route by drag & drop palette items to the diagram. We support you with providing a documentation page
+for selected diagram figures helping you to achieve your goals more quickly. All properties can be set in an easy way using the properties view. 
+For those who prefer the XML notation we provide a source view with code assistance. 
+
+
+== Run and Debug 
+=== Test your new route
+
+image::images/features-fuse-tracing.png[Debug Routes]
+
+So you finished your first route and you want to make sure it works? 
+We provide an easy mechanism to test drive your new route on your local machine. You can launch it from inside your IDE, connect
+to the process via JMX and then monitor and trace your route. Simply drop test messages to your route via drag & drop, track 
+your messages through the route and edit the running route to fix problems. Lost your input message while testing your route? If you enabled the
+tracing you can simply recover it by dragging that message from the message list back into your projects file system.
+
+
