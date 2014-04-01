@@ -1,22 +1,30 @@
-= Fuse Runtime Tooling
+= Fabric8 Tooling
 :page-layout: features
 :page-product_id: jbt_is 
 :page-feature_id: fuseruntimetooling
 :page-feature_image_url: images/fuseruntimetooling_icon.png
 :page-feature_highlighted: false
 :page-feature_order: 10
-:page-feature_tagline: Manage & deploy to Fuse supported runtimes
+:page-feature_tagline: Management Tools for Apache Karaf and Fabric8
 
-== Fuse Runtime Tooling
+== Fabric8 Tooling
 === Overview
 
 image::images/features-fuse-tooling.png[Fuse Tooling]
 
-Fuse Runtime Tooling provides a set of developer tools that enable you to work with http://camel.apache.org[Apache Camel], http://activemq.apache.org[Apache ActiveMQ], http://cxf.apache.org[Apache CXF], http://karaf.apache.org[Apache Karaf] and http://servicemix.apache.org[Apache ServiceMix]. 
+Fabric8 Tooling provides a set of developer tools that enable you to work with http://camel.apache.org[Apache Camel], http://activemq.apache.org[Apache ActiveMQ], http://cxf.apache.org[Apache CXF], http://karaf.apache.org[Apache Karaf] and http://servicemix.apache.org[Apache ServiceMix]. 
 It provides a set of server adapters and enables you to manage your runtimes from inside the IDE.
 
 
-== Fuse Server Adapters 
+== Fabric8 
+=== Manage your Fabric
+
+image::images/features-fuse-fabric8.png[Fabric8]
+
+Use the http://fabric8.io[Fabric8] perspective to connect to your Fabric. Manage your containers and create new versions and profiles from inside your IDE. You can also access the shell of the containers in an easy way.   
+
+
+== Server Adapters 
 === Download and installation made easy
 
 image::images/features-fuse-servers.png[Fuse Server Adapters]
@@ -39,11 +47,3 @@ image::images/features-fuse-deployment.png[Fuse Deployment]
 
 If you want to deploy your application you can choose between multiple deployment methods. We support hotfolder deployments, deployment to a connected runtime via JMX and also deploying to a connected Fabric8 profile.
 You can also choose to stop or remove your applications via JMX.
-
-
-== Fabric8 
-=== Manage your Fabric
-
-image::images/features-fuse-fabric8.png[Fabric8]
-
-Use the http://fabric8.io[Fabric8] perspective to connect to your Fabric. Manage your containers and create new versions and profiles from inside your IDE. You can also access the shell of the containers in an easy way.   

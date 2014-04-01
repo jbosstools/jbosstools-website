@@ -1,18 +1,18 @@
-= Fuse Integration Tooling
+= Tools for Apache Camel
 :page-layout: features
 :page-product_id: jbt_is 
 :page-feature_id: fuseintegrationtooling
 :page-feature_image_url: images/fuseintegrationtooling_icon.gif
 :page-feature_highlighted: false
 :page-feature_order: 10
-:page-feature_tagline: Tooling for Apache Camel
+:page-feature_tagline: Helps get you over the hump
 
-== Fuse Integration Tooling
+== Tools for Apache Camel
 === Overview
 
 image::images/features-fuse-tooling.png[Fuse Tooling]
 
-Fuse Integration Tooling provides a set of developer tools that enable you to work with http://camel.apache.org[Apache Camel]. You can configure http://camel.apache.org/enterprise-integration-patterns.html[Enterprise Integration Patterns] to 
+Tools for Apache Camel provide a set of developer tools that enable you to work with http://camel.apache.org[Apache Camel]. You can configure http://camel.apache.org/enterprise-integration-patterns.html[Enterprise Integration Patterns] to 
 build your routes, browse endpoints and routes, drag and drop messages onto and from running routes, trace message 
 flows, edit running routes, browse and visualize runtime contexts via JMX.
 
