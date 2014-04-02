@@ -1,9 +1,11 @@
-- if page.parent.status.nil?
-  - page.parent.status = 'red'
-%div{ class: "status-#{page.parent.status}"}
+- page.parent.status = 'danger' unless !page.parent.status.nil?
+
+%div{:class=>"status status-#{page.parent.status}"}
   %p
-    | This site is currently under development, and may contain inaccurate and misleading information. 
-    %a.button(href="https://issues.jboss.org/secure/CreateIssue!default.jspa" target="_blank") Report an issue 
+    %strong Warning !
+    This site is currently under development, and may contain inaccurate and misleading information. 
+    %a{:href=>"https://issues.jboss.org/secure/CreateIssue!default.jspa", :target=>"_blank"} Report an issue
+  /
     %br
     | Status: #{page.parent.status.capitalize}. Known issues: 
 
