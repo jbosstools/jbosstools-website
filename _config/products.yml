@@ -238,6 +238,23 @@ jbt_core:
             url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.x/zz_Release_Notes_4.1.1.Final.readme.html
       4.1.1.CR1:
         archived: true
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            download_size: 438.1MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/jbosstools-Update-4.1.1.CR1_2013-11-24_01-06-56-B575.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/jbosstools-Update-4.1.1.CR1_2013-11-24_01-06-56-B575.zip.MD5
+          - name: Sources zip of all JBoss Core Tools
+            download_size: 97.8MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/jbosstools-Sources-4.1.1.CR1_2013-11-24_01-06-56-B575.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/jbosstools-Sources-4.1.1.CR1_2013-11-24_01-06-56-B575.zip.MD5
+          - name: Update site (including sources) bundle of all Hibernate Tools
+            download_size: 82.0MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/hibernatetools-Update-4.1.1.CR1_2013-11-24_01-06-56-B575.zip.MD5/download
+            md5_url: 
+          - name: Release Notes
+            download_size: 27.1kB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/zz_Release_Notes_4.1.1.CR1.readme.html
+      
       4.1.1.Beta1:
         archived: true
       4.1.1.Alpha2:
@@ -278,6 +295,7 @@ jbt_core:
             download_size: 5.7kB
             url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.x/zz_Release_Notes_4.1.0.Final.readme.html
       4.1.x.Nightly:   
+        archived: true
         documentation_url: http://docs.jboss.org/tools/
         update_site_url: http://download.jboss.org/jbosstools/updates/nightly/core/4.1.kepler/
         download_url: http://download.jboss.org/jbosstools/builds/nightly/core/4.1.kepler/
