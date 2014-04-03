@@ -77,12 +77,25 @@ tab: downloads
       .alert.alert-info
         %strong Development builds
         have received basic testing, but are not considered fully stable yet.
+        
     - elsif page.build_info.build_type_label == :nightly
       .alert.alert-warning
         %strong Warning! 
         The
         %strong nightly build
         contains the latest and greatest new features, but nothing is stable or guaranteed - yet.
+        
+    - if has_higher_version(site, page.build_info.product_id, page.build_info.version)
+      - higher_version = get_higher_version(site, page.build_info.product_id, page.build_info.version)
+      - higher_version_download_page = site.download_pages[page.build_info.product_id][higher_version]
+      .alert.alert-info
+        %strong Heads up! 
+        %strong 
+          %a{:href=>higher_version_download_page.output_path} #{page.build_info.name} #{higher_version_download_page.build_info.version}
+        is our latest stable release for #{page.build_info.eclipse_version.full_name}
+          
+    
+        
     - unless page.build_info.eclipse_version.requirements.nil?
       .alert.alert-requirements
         - if page.build_info.product_id.to_s == "jbt_core"
