@@ -2,23 +2,41 @@ module Awestruct
   module Extensions
     module ProductsHelper
       
-      def get_main_version(version)
-        version.split(".")[0..2].join('.')
+      def get_main_version(version, include_revision = true)
+        if include_revision
+          identifiers = version.split(".")[0..2]
+        else 
+          identifiers = version.split(".")[0..1]
+        end
+        #puts " main version: #{identifiers}"
+        identifiers.join('.')
       end
       module_function :get_main_version
       
-      def get_final_version(site, product_id, version) 
-        main_version = get_main_version(version)
-        final_version = main_version << ".Final"
+      # checks if there's a .Final version matching the given product_version of the given product_id
+      def has_higher_version(site, product_id, product_version)
+        unless is_nightly_version(product_version)
+          return get_higher_version(site, product_id, product_version) > product_version
+        end
+        false
+      end
+      module_function :has_higher_version
+     
+      def get_higher_version(site, product_id, product_version) 
+        main_version = get_main_version(product_version, false)
         site.products[product_id].streams.each do |stream_id, product_versions|
-          if product_versions.include? final_version
-            return final_version
+          # locate the stream: ie, it contains the given version
+          if product_versions.include? product_version
+            # sort versions by name (except nightly), retain higher one
+            higher_product_version = product_versions.keys.select{|p| get_main_version(p, false) == main_version && !is_nightly_version(p)}.sort{|p1, p2| p1 <=> p2}.last
+            #puts " higher version for #{product_id} #{product_version} is #{higher_product_version}"
+            return higher_product_version
           end
         end
-        #puts "   Final version for #{product_id} (#{version}): #{final_version} does not exist yet."
+        puts "   Final version for #{product_id} (#{version}): #{final_version} does not exist yet."
         nil
       end
-      module_function :get_final_version
+      module_function :get_higher_version
       
       # Returns a build type based on the given version 
       def get_build_type(site, product_id, product_version)
@@ -44,6 +62,18 @@ module Awestruct
       end
       module_function :get_build_type_label
      
+      def get_final_version(site, product_id, product_version)
+        main_version = get_main_version(product_version)
+        final_version = main_version << ".Final"
+        site.products[product_id].streams.each do |stream_id, product_versions|
+          if product_versions.include? final_version
+            return final_version
+          end
+        end
+        nil
+      end
+      module_function :get_final_version
+            
       def is_final_version(product_version)
         product_version.end_with? ".Final"  
       end
