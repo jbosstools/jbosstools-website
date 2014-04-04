@@ -42,10 +42,7 @@ status: green
       %h3
         %i.icon-pencil
         %a{:href => relative("/blog")} Latest posts
-    - posts = site.posts
-    - today = Time.now 
-    - posts = posts.find_all{|item| item.date.strftime("%Y%m%d") <= today.strftime("%Y%m%d")}
-    - posts = posts.sort{|l,r| r.date <=> l.date}.first(2)
+    - posts = site.posts.sort{|l,r| r.date <=> l.date}.first(2)
     - for post in posts
       .post
         .title-wrapper
@@ -53,6 +50,9 @@ status: green
           .title
             %h4
               %a{:href=>relative(post.url)}= post.title
+              - if post.draft_article
+                %span{:class=>"label label-important"}
+                  DRAFT
             .author
               /there is only one author per post but the author splitter adds an array here
               posted by 
