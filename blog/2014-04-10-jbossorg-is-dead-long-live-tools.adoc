@@ -1,0 +1,42 @@
+= jboss.org/tools is dead, long live tools.jboss.org!
+:page-layout: blog
+:page-author: maxandersen
+:page-tags: [jbosstools, website, jbosscentral]
+
+We have been working for a while on doing a refresh of our website and today we are happy to announce http://tools.jboss.org[tools.jboss.org].
+
+We had a few goals for the website:
+
+. Make it simple and clear to download the plugins
+. Explain what features are in the tools
+. Include New and noteworthy 
+. Make it easier to update/fix the content
+
+and I think we reached all of them. 
+
+== Make it simple and clear to download the plugins
+
+Our old download page had grown organically of the last 7 years and despite all good intentions we had ended up with a download
+page with way too many options presented by default. With the new site we went for simplicity first thus the Downloads page
+now simply present you with two options: Download: latest stable JBoss Tools or Developer Studio. 
+
+image::images/newsite_downloads.png[link=/downloads]
+
+If you want other versions, combinations, add-ons etc. you can follow the link:/downloads/overview[Overview] link which will give all the dirty details.
+
+
+
+== Explain what features are in the tools
+
+For this we created the link:/features[Features] page. This page gives an overview over all of the various projects/technologies we
+support and if you click on the images you get more information about each feature. 
+
+image::images/newsite_features.png[]
+
+Try it out - you might be surprised how much we actually do.
+
+ 
+Have fun!
+
+Max Rydahl Andersen +
+http://twitter.com/maxandersen[@maxandersen]
