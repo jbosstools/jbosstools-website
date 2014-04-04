@@ -2,6 +2,15 @@
 layout: project
 tab: blog
 ---
+- if page.draft_article
+  .row-fluid
+    .span12
+      .alert.alert-danger
+        %button.close{:type=>"button", "data-dismiss"=>"alert"} &times;
+        %strong Warning!
+        This article is a draft. It will be published on first build after
+        %strong #{page.date.strftime("%b. %d, %Y")}
+  
 .row-fluid
   .span12#core-page
     .post
@@ -22,15 +31,19 @@ tab: blog
             %p
               - if(page.tags != null && !page.tags.empty?) 
                 - page.tags.each do |tag|
-                  %a.label.label-info{:href=>relative("#{tag.primary_page.url}")} #{tag}
+                  - if tag.kind_of? String 
+                    -# edge case, when the current post is a draft and uses a new tag
+                    %a.label.label-info{} #{tag}
+                  - else
+                    %a.label.label-info{:href=>relative("#{tag.primary_page.url}")} #{tag}
               %span.comments
                 %i.icon-comments
                 =page.disqus_comments_link 
                 #{page.disqus_comments_count} 
          
       .body
-        ~ page.content
-  
+        #{content}
+        
       .navigation
         %hr
         .row-fluid
@@ -45,3 +58,10 @@ tab: blog
               
       .comments
         #{page.disqus_comments}
+        
+.row-fluid
+  .span12    
+    %hr
+      .center
+        Looking for older articles ? See the 
+        %a{:href=>"https://community.jboss.org/en/tools/blog"}< Archived entries.
