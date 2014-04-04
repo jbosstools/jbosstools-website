@@ -12,16 +12,83 @@
 
 image::images/features-switchyard-editor-588px.png[SwitchYard Camel Editor with Project View]
 
-SwitchYard allows you to deploy and run services with limited dependencies. A SwitchYard 
-application consists of the following components which provide service definitions and 
-accessibility.
+SwitchYard is a component-based development framework focused on building
+structured, maintainable services and applications using the concepts and best
+practices of SOA. It works with Apache Camel to provide a fast, simple,
+flexible integration runtime with comprehensive connectivity and transports. A
+uniform application model augments Apache Camel, joining Java EE, BPM, rules,
+orchestration, and routing into a cohesive development model and runtime.
+Common functionality and cross-cutting concerns - validation, transformation and
+policy - are isolated from business logic and handled declaratively. This
+ensures consistency and eliminates duplication, offering developers a clear view
+of the structure and relationships of services in an integration application.
 
-whether it's used as a service binding or a reference binding.
+For full details, checkout the http://www.jboss.org/switchyard[SwitchYard project home page].
+
+If you just want to get cracking, check out our https://docs.jboss.org/author/display/SWITCHYARD/Tutorial[tutorial].
 
 == Project Wizard
 === Get started with SwitchYard
 
-image::images/switchyard-1.png[]
+image::images/features-switchyard-new-project-wizard.jpg[]
 
-Using the SwitchYard project wizard you get a Maven based project that can be configured
-to have various components enabled like jbpm, bpel and Camel Routes. 
+Use the SwitchYard project wizard to create a Maven based project that can be
+configured to use various components like CDI, jBPM, Drools, BPEL and Camel
+routes, as well as a variety of endpoint types including: SOAP, REST, HTTP,
+file, mail, JMS, JCA, S/FTP, JPA, SQL, TCP/UDP and more.
+
+== Unit Testing
+=== Easily create unit tests for services
+
+Easily generate test stubs for all your services using the new service test
+wizard, which is easily accessible on the tool pad for any service or reference
+in the SwitchYard editor.
+
+[source,java]
+-------------------------------------------------------------------------------
+package com.example.switchyard.example;
+ 
+import org.junit.Assert;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.switchyard.component.test.mixins.cdi.CDIMixIn;
+import org.switchyard.test.Invoker;
+import org.switchyard.test.ServiceOperation;
+import org.switchyard.test.SwitchYardRunner;
+import org.switchyard.test.SwitchYardTestCaseConfig;
+import org.switchyard.test.SwitchYardTestKit;
+ 
+@RunWith(SwitchYardRunner.class)
+@SwitchYardTestCaseConfig(config = SwitchYardTestCaseConfig.SWITCHYARD_XML, mixins = { CDIMixIn.class })
+public class ExampleServiceTest {
+ 
+    private SwitchYardTestKit testKit;
+    private CDIMixIn cdiMixIn;
+    @ServiceOperation("ExampleService")
+    private Invoker service;
+ 
+    @Test
+    public void testSayHello() throws Exception {
+        // TODO Auto-generated method stub
+        // initialize your test message
+        String message = "Bob";
+        String result = service.operation("sayHello").sendInOut(message)
+                .getContent(String.class);
+ 
+        // validate the results
+        Assert.assertTrue("Hello, Bob".equals(result));
+    }
+ 
+}
+-------------------------------------------------------------------------------
+
+image::images/features-switchyard-new-test-wizard.jpg[]
+
+== Java <=> WSDL
+=== Easily create WSDL files from Java interfaces or vice versa
+
+SwitchYard tools allow you to easily integrate Java and WSDL based interfaces.
+The handy wizards and built-in support for JAXB make the process easy as pie.
+
+image::images/features-switchyard-java2wsdl-wizard.jpg[]
+
