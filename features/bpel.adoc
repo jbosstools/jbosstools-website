@@ -1,56 +1,55 @@
-= BPEL
+= BPEL Designer
 :page-layout: features
 :page-product_id: jbt_is 
 :page-feature_id: bpel
-:page-feature_image_url: images/bpmn2-logo-3.png
+:page-feature_image_url: images/bpel-logo.png
 :page-feature_highlighted: false
 :page-feature_order: 10
-:page-feature_tagline: Your Business Process Execution Language Editor
+:page-feature_tagline: Orchestrating your business processes
 
 == BPEL Editor
 === The Business Process editor
 
-image::images/bpel-editor.png[]
+image::images/features-bpel-editor-ui.png[]
 
-The BPEL editor supports editing Business Process Execution Language (BPEL), an XML based language that enables task sharing in a distributed
-computing environment. It uses easy to understand commands that perform complex functions. All the processes in 
-BPEL, export and import information by using web service interfaces only. 
+The BPEL editor supports the Business Process Execution Language (BPEL), an XML based language defined by the http://www.oasis-open.org[*OASIS Consortium*].
+BPEL uses Web services standards to describe business process activities as Web services, defining how they can be composed to accomplish specific tasks.
 
-
-JBoss BPEL is based on WS BPEL 2.0, and provides a way to create, edit, validate and deploy BPEL files to JBoss 
-BPEL runtime. It is based on Eclipse BPEL project.
+JBoss BPEL is based on WS-BPEL 2.0, and provides a way to create, edit, validate and deploy BPEL files to
+the JBoss BPEL runtime.
 
 == JBoss BPEL
-=== A Better BPEL
+=== Build a Better BPEL
  
-image::images/bpel-editor.png[]
+image::images/features-bpel-deploy.png[]
 
-JBoss BPEL improves the Eclipse BPEL project in the following ways:
+JBoss BPEL extends the Eclipse BPEL Designer project with the following enhancements:
 
-* Implements close integration with JBoss BPEL runtime, and adds a new project type for the deployment to the JBoss BPEL runtime.
+* Close integration with JBoss, and adds a new project type for deployment to the JBoss BPEL runtime.
 * Supports two deployment methods. The first method is to deploy a BPEL project directly to the JBoss BPEL runtime. The second method is to deploy BPEL files in JBoss ESB project to the JBoss BPEL runtime.
 * Enhances the BPEL validator and improves the quality of the Eclipse BPEL editor. 
 
+== WS-BPEL
+=== Latest 2.0 Specification
 
-== WS BPEL
-=== Latest 2.0 Specifications
+image::images/features-bpel-editor-source.png[]
 
-image::images/bpel-editor.png[]
-
-JBoss BPEL project supports the most recent WS BPEL 2.0 specifications.
+JBoss BPEL supports the most recent WS-BPEL 2.0 specification.
 
 == JBoss BPEL Runtime
 === Close integration
-image::images/bpel-editor.png[]
+
+image::images/features-bpel-jbds-integration.png[]
 
 There are two methods to deploy BPEL files to JBoss BPEL runtime. The user can deploy a BPEL project as a whole 
-and can deploy BPEL files in a JBoss ESB project to the JBoss BPEL runtime.
+or deploy BPEL files in a JBoss ESB project to the JBoss BPEL runtime.
 
 == Validation
 === Pinpoint errors without the complexity
 
-image::images/bpel-editor.png[]
+image::images/features-bpel-validation.png[]
 
-The validator displays a list of BPEL file errors. 
+The Problems view displays incorrect or incomplete process definitions.
+Navigate directly to the offending BPEL element and quickly fix errors by double-clicking on a Problem line item. 
 
 
