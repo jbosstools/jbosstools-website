@@ -1,5 +1,4 @@
 = Web resource optimization and Maven Profiles
-//:imagesdir: /blog/images
 :page-layout: blog
 :page-author: fbricon
 :page-tags: [jbosstools, jbds, maven, optimization, wro4j]
