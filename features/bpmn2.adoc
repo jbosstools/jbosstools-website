@@ -2,31 +2,51 @@
 :page-layout: features
 :page-product_id: jbt_is 
 :page-feature_id: bpmn2
-:page-feature_image_url: images/bpmn2-logo-3.png
+:page-feature_image_url: images/bpmn2-logo.png
 :page-feature_highlighted: false
 :page-feature_order: 10
-:page-feature_tagline: BPMN for you 
+:page-feature_tagline: Modeling your enterprise 
 
 == BPMN2 Modeler
-=== Modelling with a spec
+=== Modeling for your enterprise
 
 image::images/features-bpmn2-modeler-ui-589px.png[BPMN2 Modeler Editor]
 
-The BPMN2 Modeler uses the standard OMG BPMN2 2.0 working group model and is fully compliant with the spec.
+The BPMN2 Modeler is fully compliant with the http://www.omg.org/spec/BPMN/2.0/[*OMG BPMN 2.0 specification*].
+Based on the Eclipse Graphiti framework, BPMN2 Modeler makes working with BPMN 2.0 as easy as drag-n-drop. 
 
-== BPMN2 Modeler Anatomy
-=== Graphiti rocks
+== Design your jBPM Processes?
+=== Yeah, we've got that!
 
 image::images/features-bpmn2-modeler2.png[]
 
-BPMN2 Modeler uses Graphiti to provide a Drawing Canvas in the 
-main area of the editor window, collapsible Tool Palette on the right, tabbed Property sheets, and 
-an Outline Viewer with both tree and thumbnail views.
+BPMN2 Modeler is all about extensibility and customization.
+An extension plug-in customizes the editor for jBPM and makes the generated process files fully compatible with the jBPM execution engine and the jBPM Web Designer.  
 
-== Diagram Wizard
-=== New BPMN2
+== Document your enterprise wide business processes? 
+=== We've got that too!
 
 image::images/features-bpmn2-diagram-wizard.png[BPMN2 Diagram Wizard]
 
-The Eclipse New File wizard is used to create a new BPMN2 file.  BPMN2 provides wizards in support of 
-the following file types: BPMN2 Model, Generic BPMN 2.0 Diagram, JBPM Process Diagram.
+BPMN2 Modeler is much more that just a process designer.
+It can also be used to document all of your internal business processes and how your organization interacts with other business units or business partners.
+What UML is to object modeling, BPMN2 is to enterprise modeling.
+
+The Diagram Wizard helps you decide how to document your process-driven organizational models.
+
+= Get a new Perspective on your Organization
+Different diagram types allow you to visualize your processes from different perspectives and model exactly how your organization works.
+
+*Process Diagrams* describe a sequence or flow of Activities in an organization with the objective of carrying out work.
+A Process contains Activities, Events, Gateways, and Sequence Flows that define its execution semantics.
+
+image:images/features-bpmn2-process.png[]
+
+*Collaboration Diagrams* are a collection of Participants shown as Pools, and their interactions as shown by Message Flows.
+A Collaboration Diagram may also include Processes within the Pools and/or Choreographies between the Pools.
+
+image::images/features-bpmn2-collaboration.png[]
+
+*Choreography Diagrams* formalize the way business Participants coordinate their interactions. The focus is not on orchestrations of the work performed within these Participants, but rather on the exchange of information (Messages) between these Participants.
+
+image::images/features-bpmn2-choreography.png[]
