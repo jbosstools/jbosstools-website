@@ -9,6 +9,7 @@
 
 == SwitchYard
 === Making SOA fun again
+image::images/features-switchyard-editor-588px.png[SwitchYard Camel Editor with Project View]
 
 SwitchYard is a component-based development framework focused on building
 structured, maintainable services and applications using the concepts and best
@@ -27,7 +28,6 @@ If you just want to get cracking, check out our https://docs.jboss.org/author/di
 
 == Project Wizard
 === Get started with SwitchYard
-
 image::images/features-switchyard-new-project-wizard.jpg[]
 
 Use the SwitchYard project wizard to create a Maven based project that can be
@@ -37,6 +37,7 @@ file, mail, JMS, JCA, S/FTP, JPA, SQL, TCP/UDP and more.
 
 == Configure SwitchYard Capabilities
 === Easily add and remove support for specific SwitchYard capabilities
+image::images/features-switchyard-project-properties.jpg[]
 
 It's easy to add SwitchYard support to existing Maven projects, as well as
 updating the capabilities (e.g. CDI, BPM, SOAP, FTP, etc.) used on your project.
@@ -44,10 +45,10 @@ The SwitchYard project validator will let you know if your project is missing a
 capability or if any specified capabilities are superfluous (based on features
 used in your project).
 
-image::images/features-switchyard-project-properties.jpg[]
 
 == The SwitchYard Editor
 === Making it easy to create and configure your SwitchYard application
+image::images/features-switchyard-editor-588px.png[SwitchYard  Editor with Project View]
 
 The SwitchYard editor makes it easy to manage the configuration of your
 application, providing the following features:
@@ -59,10 +60,10 @@ application, providing the following features:
 * Configuration of message transformers, including creation of implementation skeletons for message transformers (e.g. XSL, Java, etc.).
 * Creation of Artifact references.
 
-image::images/features-switchyard-editor-588px.png[SwitchYard  Editor with Project View]
 
 == Unit Testing
 === Easily create unit tests for services
+image::images/features-switchyard-new-test-wizard.jpg[]
 
 Easily generate test stubs for all your services using the new service test
 wizard, which is easily accessible on the tool pad for any service or reference
@@ -106,19 +107,18 @@ public class ExampleServiceTest {
 }
 -------------------------------------------------------------------------------
 
-image::images/features-switchyard-new-test-wizard.jpg[]
 
 == Other Goodies
 === Other features which ease development of SwitchYard projects
+image::images/features-switchyard-java2wsdl-wizard.jpg[]
 
 *Java2WSDL and WSDL2Java*:: Easily integrate Java and WSDL based interfaces using
 the handy wizards and built-in support for JAXB.
 
-image::images/features-switchyard-java2wsdl-wizard.jpg[]
 
-*XML catalog support*:: Providing workspace access to all SwitchYard schema.
+*XML catalog support*:: Providing workspace access to all SwitchYard schemas.
 
-*M2Eclipse integration*:: No need to add exclusions for the SwitchYard configure mojo.
+*Maven integration*:: No need to add exclusions for the SwitchYard configure mojo.
 
 *Workspace deployment*:: Deploy your projects right from the workspace (requires WildFly/EAP server with SwitchYard/Fuse Service Works installed)
 
