@@ -10,8 +10,6 @@
 == SwitchYard
 === Making SOA fun again
 
-image::images/features-switchyard-editor-588px.png[SwitchYard Camel Editor with Project View]
-
 SwitchYard is a component-based development framework focused on building
 structured, maintainable services and applications using the concepts and best
 practices of SOA. It works with Apache Camel to provide a fast, simple,
@@ -36,6 +34,32 @@ Use the SwitchYard project wizard to create a Maven based project that can be
 configured to use various components like CDI, jBPM, Drools, BPEL and Camel
 routes, as well as a variety of endpoint types including: SOAP, REST, HTTP,
 file, mail, JMS, JCA, S/FTP, JPA, SQL, TCP/UDP and more.
+
+== Configure SwitchYard Capabilities
+=== Easily add and remove support for specific SwitchYard capabilities
+
+It's easy to add SwitchYard support to existing Maven projects, as well as
+updating the capabilities (e.g. CDI, BPM, SOAP, FTP, etc.) used on your project.
+The SwitchYard project validator will let you know if your project is missing a
+capability or if any specified capabilities are superfluous (based on features
+used in your project).
+
+image::images/features-switchyard-project-properties.jpg[]
+
+== The SwitchYard Editor
+=== Making it easy to create and configure your SwitchYard application
+
+The SwitchYard editor makes it easy to manage the configuration of your
+application, providing the following features:
+
+* Creation and configuration of components, services and references.
+* Component service/reference promotion and configuration of gateway bindings.
+* Creation of implementation skeletons for new service components (e.g. bean classes, BPMN2 files, DRL files, etc.).
+* Creation of unit test skeletons for services.
+* Configuration of message transformers, including creation of implementation skeletons for message transformers (e.g. XSL, Java, etc.).
+* Creation of Artifact references.
+
+image::images/features-switchyard-editor-588px.png[SwitchYard  Editor with Project View]
 
 == Unit Testing
 === Easily create unit tests for services
@@ -84,11 +108,17 @@ public class ExampleServiceTest {
 
 image::images/features-switchyard-new-test-wizard.jpg[]
 
-== Java <=> WSDL
-=== Easily create WSDL files from Java interfaces or vice versa
+== Other Goodies
+=== Other features which ease development of SwitchYard projects
 
-SwitchYard tools allow you to easily integrate Java and WSDL based interfaces.
-The handy wizards and built-in support for JAXB make the process easy as pie.
+*Java2WSDL and WSDL2Java*:: Easily integrate Java and WSDL based interfaces using
+the handy wizards and built-in support for JAXB.
 
 image::images/features-switchyard-java2wsdl-wizard.jpg[]
+
+*XML catalog support*:: Providing workspace access to all SwitchYard schema.
+
+*M2Eclipse integration*:: No need to add exclusions for the SwitchYard configure mojo.
+
+*Workspace deployment*:: Deploy your projects right from the workspace (requires WildFly/EAP server with SwitchYard/Fuse Service Works installed)
 
