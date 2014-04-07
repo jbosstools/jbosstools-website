@@ -211,6 +211,7 @@ jbt_core:
       4.1.2.CR1:
         archived: true
       4.1.1.Final:
+        archived: true
         release_date: 2013-12-16
         supported_jbt_is_version: 4.1.3.Final
         documentation_url: http://docs.jboss.org/tools/4.1.x.Final/
