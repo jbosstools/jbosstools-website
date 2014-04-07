@@ -17,38 +17,8 @@ tab: downloads
               - unless download_page.build_info.build_type_label.nil?
                 %span{:class=>"label label_#{download_page.build_info.build_type_label}"}
                   #{site.labels[download_page.build_info.build_type_label]}
-      -# show inactive/older versions if there are any
-      - if site.download_pages[page.product_id].values.select{|p| p.build_info.archived}.length > 0
-        %li#allversions{:class=>("expanded selected" unless active_page_found)}
-          %a{:href=>"#"}
-            %span
-              Previous Versions
-          %ul.nav.nav-nested{:class=>("hidden" if active_page_found)}
-            - site.download_pages[page.product_id].each do |product_version, download_page| 
-              - if download_page.build_info.archived
-                %li{:class=>("active" if product_version == page.build_info.version)}
-                  %a{:href=>relative(download_page.output_path)}
-                    %span
-                      #{product_version}
-                    - unless download_page.build_info.build_type_label.nil?
-                      %span{:class=>"label label_#{download_page.build_info.build_type_label}"}
-                        #{site.labels[download_page.build_info.build_type_label]}
       %li
         %a{:href=>relative("/downloads/overview.html")} All downloads
-    :javascript
-      $(document).ready(function() {
-        $('#allversions').click(function() {
-          $allversions = $('#allversions')
-          console.log("Expanded: " + $allversions.hasClass('expanded'))
-          if($allversions.hasClass('expanded')) {
-            $allversions.removeClass('expanded')
-            $allversions.find('ul').addClass('hidden')
-          } else {
-            $allversions.addClass('expanded')
-            $allversions.find('ul').removeClass('hidden')
-          }
-        });
-      });
         
   .span9#download
     %h2.center
