@@ -29,7 +29,7 @@ tab: blog
               .author
                 /there is only one author per post but the author splitter adds an array here
                 posted by 
-                %strong< #{site.team[post.author].name}
+                %strong< #{site.team[post.author].title}
                 on 
                 %strong< #{post.date.strftime( '%b %d, %Y' )}.
                 %p
