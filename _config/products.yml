@@ -155,12 +155,31 @@ jbt_core:
   url_path_fragment: jbosstools
   streams:
     luna:
+      4.2.0.Alpha2:
+        build_type: development
+        release_date: 2013-02-14
+        documentation_url: http://docs.jboss.org/tools/
+        update_site_url: http://download.jboss.org/jbosstools/updates/development/luna/
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            download_size: 462.7MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/jbosstools-Update-4.2.0.Alpha2_2014-02-14_09-54-39-B84.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/jbosstools-Update-4.2.0.Alpha2_2014-02-14_09-54-39-B84.zip.MD5
+          - name: Sources zip of all JBoss Core Tools
+            download_size: 93MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/jbosstools-Update-4.2.0.Alpha2_2014-02-14_09-54-39-B84.zip.MD5
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/jbosstools-Update-4.2.0.Alpha2_2014-02-14_09-54-39-B84.zip.MD5
+          - name: Update site (including sources) bundle of all Hibernate Tools
+            download_size: 68.8MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/hibernatetools-Update-4.2.0.Alpha2_2014-02-10_02-48-32-B13.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/hibernatetools-Update-4.2.0.Alpha2_2014-02-10_02-48-32-B13.zip.MD5
+          - name: Release Notes
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/zz_Release_Notes_4.2.0.Alpha2.readme.html
       4.2.0.Alpha1:
+        archived: true
         build_type: development
         release_date: 2013-12-19
         documentation_url: http://docs.jboss.org/tools/
-        update_site_url: http://download.jboss.org/jbosstools/updates/development/luna/
-        download_url: http://www.jboss.org/tools/download/dev/4_2_x
         zips:
           - name: Update site (including sources) bundle of all JBoss Core Tools
             download_size: 438MB
