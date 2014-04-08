@@ -84,11 +84,14 @@ module Awestruct
       end
       module_function :is_nightly_version
       
+      # returns true if the given product_id/product_version has no "archived: true" attribute or if it is a .Final version (even archived)
       def is_product_version_active(site, product_id, product_version)
         unless site.products[product_id].nil? then
           site.products[product_id].streams.each do |stream_id, stream_versions|
             unless stream_versions[product_version].nil? then
-              product_archived = stream_versions[product_version][:archived] ||= false
+              product_archived = false
+              # final versions are not considered archived
+              product_archived = stream_versions[product_version][:archived] ||= false unless is_final_version(product_version)
               #puts " #{product_id} #{product_version} active: #{!product_archived}"
               return !product_archived
             end
