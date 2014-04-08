@@ -9,6 +9,7 @@ site
 
 # vi backup files
 *~
+\#*
 
 # Used by Travis-CI 
 vendor

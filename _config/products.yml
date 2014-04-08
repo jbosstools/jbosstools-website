@@ -53,11 +53,6 @@ devstudio:
   name: JBoss Developer Studio
   url_path_fragment: devstudio
   streams:
-    luna:
-      8.0.0.Alpha1:
-        build_type: development
-        release_date: 
-        marketplace_install_url: 
     kepler:
       7.1.1.GA:
         build_type: stable
@@ -177,7 +172,6 @@ jbt_core:
             url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/zz_Release_Notes_4.2.0.Alpha2.readme.html
       4.2.0.Alpha1:
         archived: true
-        build_type: development
         release_date: 2013-12-19
         documentation_url: http://docs.jboss.org/tools/
         zips:

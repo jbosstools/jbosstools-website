@@ -1,4 +1,4 @@
-= Fabric8 Tooling
+= Fabric8
 :page-layout: features
 :page-product_id: jbt_is 
 :page-feature_id: fabric8
@@ -7,7 +7,7 @@
 :page-feature_order: 10
 :page-feature_tagline: Management Tools for Apache Karaf and Fabric8
 
-== Fabric8 Tooling
+== Fabric8
 === Overview
 
 image::images/features-fuse-tooling.png[Fuse Tooling]
