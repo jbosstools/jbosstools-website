@@ -16,6 +16,7 @@ status: yellow
         Latest Articles
         %a{:href=>relative("/blog/news.atom")}
           %img#rss-icon{:src=>relative("/images/feed-icon-28x28.png")}
+- if !page.posts.nil?
   .row-fluid
     .span12#core-page.posts
       - for post in page.posts
