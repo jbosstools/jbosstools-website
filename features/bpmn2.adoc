@@ -26,27 +26,34 @@ An extension plug-in customizes the editor for jBPM and makes the generated proc
 == Document your enterprise wide business processes? 
 === We've got that too!
 
-image::images/features-bpmn2-diagram-wizard.png[BPMN2 Diagram Wizard]
+image::images/features-bpmn2-diagram-wizard.png[]
 
 BPMN2 Modeler is much more that just a process designer.
 It can also be used to document all of your internal business processes and how your organization interacts with other business units or business partners.
 What UML is to object modeling, BPMN2 is to enterprise modeling.
 
 The Diagram Wizard helps you decide how to document your process-driven organizational models.
-
-= Get a new Perspective on your Organization
 Different diagram types allow you to visualize your processes from different perspectives and model exactly how your organization works.
 
-*Process Diagrams* describe a sequence or flow of Activities in an organization with the objective of carrying out work.
+== Go with the flow
+=== and use Process Diagrams
+
+image::images/features-bpmn2-process.png[]
+
+Process Diagrams describe a sequence or flow of Activities in an organization with the objective of carrying out work.
 A Process contains Activities, Events, Gateways, and Sequence Flows that define its execution semantics.
 
-image:images/features-bpmn2-process.png[]
-
-*Collaboration Diagrams* are a collection of Participants shown as Pools, and their interactions as shown by Message Flows.
-A Collaboration Diagram may also include Processes within the Pools and/or Choreographies between the Pools.
+== Work with your partners
+=== using Collaboration Diagrams
 
 image::images/features-bpmn2-collaboration.png[]
 
-*Choreography Diagrams* formalize the way business Participants coordinate their interactions. The focus is not on orchestrations of the work performed within these Participants, but rather on the exchange of information (Messages) between these Participants.
+Collaboration Diagrams are a collection of Participants shown as Pools, and their interactions as shown by Message Flows.
+A Collaboration Diagram may also include Processes within the Pools and/or Choreographies between the Pools.
+
+== Arrange the dance
+=== with Choreography Diagrams
 
 image::images/features-bpmn2-choreography.png[]
+
+Choreography Diagrams formalize the way business Participants coordinate their interactions. The focus is not on orchestrations of the work performed within these Participants, but rather on the exchange of information (Messages) between these Participants.
