@@ -23,7 +23,7 @@ For more details, check out the http://www.jboss.org/jbpm[jBPM home page].
 == Wizards
 === Getting started
 
-image::images/features-jbpm-wizards.png[Wizards]
+image::images/features-jbpm-wizard.png[Wizards]
 
 The aim of the new project wizard is to set up an executable sample project 
 to start using processes immediately. This will set up a basic structure, the
