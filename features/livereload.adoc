@@ -6,7 +6,7 @@
 :page-feature_order: 5
 :page-feature_tagline: Refresh without F5
 
-== Overview
+== LiveReload
 === Not pressing F5 is refreshing
 image::images/livereload-server-configuration-with-security.png[]
 
