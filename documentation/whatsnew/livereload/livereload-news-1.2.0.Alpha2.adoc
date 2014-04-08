@@ -13,7 +13,7 @@ The LiveReload Server Configuration Editor now provides users with a "Reload Del
 
 This delay gives some time to the application server to take the changes fully into account before the browsers send their request. (It was reported that in some cases the server would return an error because of resources or libraries still being reloaded when the requests arrived.)
 
-image::images/livereload_reloaddelay.png[LiveReload Server Configuration Editor with Reload Delay option]
+zoom_image::images/livereload_reloaddelay.png[LiveReload Server Configuration Editor with Reload Delay option]
 
 By default, the reload delay is set to '0'. Once the configuration is saved, there is no need to restart the LiveReload server to take the new value into account.
 

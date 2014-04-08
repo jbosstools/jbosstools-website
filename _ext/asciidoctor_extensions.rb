@@ -1,6 +1,7 @@
 require 'asciidoctor'
 require 'asciidoctor/extensions'
 require 'asciidoctor/related_jira'
+require 'asciidoctor/zoom_image'
 include ::Asciidoctor
 
 module Awestruct
@@ -15,6 +16,10 @@ module Awestruct
         Asciidoctor::Extensions.register :related_jira do
           block_macro RelatedJIRABlockMacro
         end
+        Asciidoctor::Extensions.register :lightbox_image do
+          block_macro ZoomImageBlockMacro
+        end
+        
       end
       
       def execute(site)

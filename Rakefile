@@ -290,6 +290,20 @@ puts 'Looking for awestruct errors in output:'
 end
 ############################################################################
 #
+# Replace image:: with zoom_image:: in .adoc files of ./documentation/whatsnew
+# and /features to enable the custom zoom image extension, but only during 
+# the Rake build, not on GitHub where we need to keep the default image: macro
+# to have images in file previews :-) 
+#
+############################################################################
+desc 'Replace image:: with zoom_image::'
+def replace_image_macro
+  basedir = './features'
+  files = Dir.glob('*.adoc')
+
+end
+############################################################################
+#
 # Build web site on Travis-CI
 #
 ############################################################################
