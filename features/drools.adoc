@@ -8,30 +8,36 @@
 :page-feature_tagline: Business Rules for the masses
 
 == Drools
-=== We eat rules for dinner
-image::images/features-openshift-applicationwizard-reduced.png[OpenShift Application Wizard]
+=== Business Rules
+image::images/features-drools-rule.jpg[Business Rule Editor]
 
-Blah blah
+Drools is a powerful hybrid reasoning system.  It allows you to define your business
+logic using business rules in various formats (for example using decision tables etc.).
 
-== Rule Editor
-=== Edit Rules right in your IDE
-image::images/features-openshift-connectiondialog-reduced.png[]
+For more details, check out the http://www.jboss.org/drools[Drools home page].
 
-Something something
+== Wizards
+=== Getting started
+image::images/features-drools-wizard.png[Wizards]
 
-== Guvnor Package Explorer
-=== Browse your repository
+The aim of the new project wizard is to set up an executable sample project 
+to start using rules immediately. This will set up a basic structure, the
+classpath, sample rules and a test case to get you started.  Supports selecting
+a Drools runtime for the Drools core dependencies.
 
-image::images/features-guvnor-explorer-599px.png[Drools/guvnor Package Explorer]
+== Debugging
+=== Debug your processes
 
-Control access via user defined categories (user driven groupings of artifacts, to aid quick navigation, 
-including searching). These can also be used to control visibility of items (and hide features from users 
-that don't need access to them).
+image::images/features-drools-debug.jpeg[Debugging support]
 
-== Guided Editor
-=== Simpler rules editing
+Debugging support to look at the current state of your session, including
+the data inserted in the working memory, the rules activated, etc.  Supports
+breakpoints in the rules.
 
-image::images/features-guvnor-dtable-511px.png[Drools/guvnor Decision Table Editor]
+== Rules Repository
+=== Integration using Git
 
-The guided editor provides a wizard like way to create and edit rules through a graphical interface.
+Integrate with the rules repository (as part of Guvnor, also known as
+the Kie Workbench or business central) using Git tooling.
+
 
