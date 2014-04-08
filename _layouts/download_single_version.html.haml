@@ -161,15 +161,14 @@ tab: downloads
             %a{:href=>central_install_url, :title=>"Install"}<
               %img{:src=>relative("/images/tools/installbutton-#{installed_product_short}.png"), :alt=>"Drag and drop this button into the Software/Update tab of JBoss Central to to choose which #{page.build_info.name} features to install", :height=>"25", :width=>"63"}
             button into the 
-            %a{"data-toggle" => "modal", :href => "#myModal", :role => "button"} Software/Update tab of JBoss Central
-            #myModal.modal.hide.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+            %a{"data-toggle" => "modal", :href => "#jbosscentral", :role => "button"} Software/Update tab of JBoss Central
+            #jbosscentral.modal.hide.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
               .modal-header
-              %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
-              %h4#myModalLabel JBoss Central
-              .modal-body
-                %p
-                  %img{:src=>relative("/images/tools/#{page.build_info.product_id.to_s}_central.png"), :alt=>"JBoss Central", :width=>"500"}
-                .modal-footer
+                %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+                %h4#jbosscentralLabel JBoss Central
+              .modal-body.center
+                %img{:src=>relative("/images/tools/#{page.build_info.product_id.to_s}_central.png"), :alt=>"JBoss Central", :width=>"500"}
+              .modal-footer
                 %button.btn{"aria-hidden" => "true", "data-dismiss" => "modal"} Close
             to choose which features to install, or
             %p
