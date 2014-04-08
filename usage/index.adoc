@@ -1,5 +1,6 @@
 = Usage
 :page-layout: project
+:page-status: green
 
 Since medio August 2010 JBoss Tools 3.2 builds now provides a "Usage"
 plugin which when installed and enabled will help us gather anonymous

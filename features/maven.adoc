@@ -2,8 +2,8 @@
 :page-layout: features
 :page-product_id: jbt_core
 :page-feature_id: maven
-:page-feature_image_url: images/features-maven_346px.png
-:page-feature_tagline: Closing the gap between Maven and WTP.
+:page-feature_image_url: images/m2e-wtp_logo_200px.png
+:page-feature_tagline: Closing the gap between Maven and WTP
 :page-feature_order: 4
 :page-issues_url: https://issues.jboss.org/browse/JBIDE/component/12312576
 
