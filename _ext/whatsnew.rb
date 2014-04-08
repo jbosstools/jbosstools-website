@@ -91,7 +91,7 @@ module Awestruct
         if site.whatsnew_pages[product_id][product_version].nil? then
           product_url_path_fragment = site.products[product_id].url_path_fragment
           product_active = ProductsHelper.is_product_version_active(site, product_id, product_version)
-          puts "  building  N&N page for #{product_id} #{product_version}"
+          #puts "  building  N&N page for #{product_id} #{product_version}"
           page = create_page(site, @@whatsnew_layout_path, @target_path_prefix, product_url_path_fragment, product_version)
           page.product_id = product_id
           page.product_name = site.products[product_id].name

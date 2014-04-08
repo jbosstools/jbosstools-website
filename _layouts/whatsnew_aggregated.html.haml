@@ -31,9 +31,9 @@ tab: docs
 .row-fluid.affixedContent
   .span3.bs-docs-sidebar
     %ul.nav.nav-list.bs-docs-sidenav
-      -# sorting active versions in reverse order
       - if (page.product_active == true)
         - whatsnew_pages = get_active_whatsnew_pages(site, page.product_id, page.product_version)
+        -# sorting active versions in reverse order
         - whatsnew_pages.sort{|x,y| y.product_version <=> x.product_version}.each_with_index do |whatsnew_page, index|
           %li{:class=>("selected expanded" if whatsnew_page.product_version == page.product_version)}
             %a{:href=>relative(whatsnew_page.output_path)}
