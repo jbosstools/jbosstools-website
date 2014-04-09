@@ -5,8 +5,8 @@ title: Home
 status: green
 ---
 .row-fluid
-  .hero-unit.hidden-phone
-    %img{:alt => "JBoss Tools", :src => relative("/images/tools/jbt-jaxrs.png")}
+  .hero-unit
+    %img.hidden-phone{:alt => "JBoss Tools", :src => relative("/images/tools/jbt-jaxrs.png")}
     .hero-content
       %h1
         JBoss Tools
@@ -17,12 +17,13 @@ status: green
         %a.btn.btn-primary.btn-large{:href => relative("/downloads")} 
           %i.icon-download
           Download
-          
+        %br
+        %a.small{:href=>"/documentation/whatsnew"} What's New
 
 .row-fluid
   %hr
             
-#sections.row-fluid
+.row-fluid
   %section.span4
     - feature = site.features["jbt_core"].find_all{|feature| feature.highlighted == true}.first
     - if feature != nil
@@ -56,7 +57,7 @@ status: green
             .author
               /there is only one author per post but the author splitter adds an array here
               posted by 
-              %strong< #{site.team[post.author].name}
+              %strong< #{site.team[post.author].title}
               on 
               %strong< #{post.date.strftime( '%b %d, %Y' )}.
       %footer

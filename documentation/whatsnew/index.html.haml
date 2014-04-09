@@ -27,9 +27,9 @@ issues: [JBIDE-17046]
         %section{:class=>spanValue}
           %header
             %h3 
-              #{site.products[product_id].name} 
+              %a{:href=>whatsnew_page.output_path} #{site.products[product_id].name} 
             %h4
-              #{whatsnew_page.product_version}
+              %a{:href=>whatsnew_page.output_path} #{whatsnew_page.product_version}
               - unless whatsnew_page.build_type_label.nil?
                 %span{:class=>"label label_#{whatsnew_page.build_type_label}"}
                   #{site.labels[whatsnew_page.build_type_label]}
@@ -47,7 +47,5 @@ issues: [JBIDE-17046]
                   components.
             - else
               See what's new in #{site.products[product_id].name} #{whatsnew_page.product_version}.
-          %footer
-            %a.btn.btn-small{:href=>whatsnew_page.output_path} Read more &raquo;
 
       

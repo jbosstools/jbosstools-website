@@ -15,11 +15,11 @@ issues: [JBIDE-17047]
       Downloads 
     %p
       Latest Stable Versions of #{devstudio_current_stable_release.build_info.name} and #{jbtcore_current_stable_release.build_info.name}
-#sections.row-fluid
+.row-fluid#downloads
   %section.span6
     %header
       %h3
-        #{devstudio_current_stable_release.build_info.name} #{devstudio_current_stable_release.build_info.version}
+        %a{:href=>relative(devstudio_current_stable_release.output_path)} #{devstudio_current_stable_release.build_info.name} #{devstudio_current_stable_release.build_info.version}
         - unless devstudio_current_stable_release.build_info.build_type_label.nil?
           %span{:class=>"label label_#{devstudio_current_stable_release.build_info.build_type_label}"}
             #{site.labels[devstudio_current_stable_release.build_info.build_type_label]}
@@ -40,7 +40,7 @@ issues: [JBIDE-17047]
   %section.span6
     %header
       %h3
-        #{jbtcore_current_stable_release.build_info.name} #{jbtcore_current_stable_release.build_info.version}
+        %a{:href=>relative(jbtcore_current_stable_release.output_path)} #{jbtcore_current_stable_release.build_info.name} #{jbtcore_current_stable_release.build_info.version}
         - unless jbtcore_current_stable_release.build_info.build_type_label.nil?
           %span{:class=>"label label_#{jbtcore_current_stable_release.build_info.build_type_label}"}
             #{site.labels[jbtcore_current_stable_release.build_info.build_type_label]}
@@ -56,7 +56,11 @@ issues: [JBIDE-17047]
     %footer.center
       %a.btn.btn-primary.btn-large{:href=>relative(jbtcore_current_stable_release.output_path)} 
         %i.icon-download
-        Download 
+        Download
+      - unless jbtcore_current_stable_release.build_info.whatsnew_url.nil?
+        %br
+          %span
+            %a{:href=>relative(jbtcore_current_stable_release.build_info.whatsnew_url)} What's New
 
 .row-fluid
   .span12
