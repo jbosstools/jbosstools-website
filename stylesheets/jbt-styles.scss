@@ -464,8 +464,17 @@ body {
   
 }
 .bs-docs-sidenav.affix {
-  //position: fixed;
+  position: fixed;
   top: 40px; // matches height of navbar
+}
+
+@media (max-width: 767px) {
+  .bs-docs-sidenav.affix {
+    position: static;
+    width: auto;
+    top: 0;
+  }
+
 }
 .bs-docs-sidenav.affix-bottom {
   position: absolute;
