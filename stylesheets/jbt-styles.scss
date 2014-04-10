@@ -42,9 +42,12 @@
 // Common styles
 // *************************************
 .center, .center > p {
+  text-align: center;
+}
+
+.centered {
   margin-left:auto;
   margin-right:auto;
-  text-align: center;
 }
 
 div.right, span.right {
@@ -103,7 +106,7 @@ p {
 
 
 p + ul {
-  margin-top: -20px;
+  //margin-top: -20px;
 }
 
 table {
@@ -153,12 +156,22 @@ section {
         margin-bottom: 10px;
       }
     }
+    
+    ul.double {
+      overflow:hidden;
+      
+      li {
+        width: 50%;
+        float:left;
+        display:inline;  
+      }
+    }
   }
   
   footer {
     //margin-top: 10px;
     line-height: 30px;
-    text-align: right;
+    //text-align: right;
     a.btn {
       margin: 0px 5px;
     }
@@ -266,6 +279,25 @@ blockquote > p {
 
 #rss-icon {
   vertical-align:top;
+}
+
+// ******************************************************
+// Flex layout
+// ******************************************************
+@media (min-width: 767px) {
+  .flex {
+    display: flex;
+    align-items: strech;
+    flex-direction: row;
+    section {
+      position: relative; 
+      footer {
+        position: absolute; bottom: 0;
+        width: 100%;
+      }
+    }
+    
+  }
 }
 
 // ******************************************************

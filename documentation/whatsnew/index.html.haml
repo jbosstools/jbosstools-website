@@ -20,32 +20,29 @@ issues: [JBIDE-17046]
   
 - spanValue = "span" << (12/count).to_s
 
-.row-fluid.whatsnew-index
+.row-fluid.whatsnew-index.flex
   - for product_id in [:jbt_core, :jbt_is, :devstudio, :devstudio_is] do 
     - unless site.whatsnew_pages[product_id].nil?
       - site.whatsnew_pages[product_id].values.select{|whatsnew_page| !whatsnew_page.build_type_label.nil?}.sort{|p1, p2| p2.product_version <=> p1.product_version}.each do |whatsnew_page|
         %section{:class=>spanValue}
           %header
             %h3 
-              %a{:href=>whatsnew_page.output_path} #{site.products[product_id].name} 
-            %h4
-              %a{:href=>whatsnew_page.output_path} #{whatsnew_page.product_version}
+              %a{:href=>whatsnew_page.output_path} #{site.products[product_id].name} #{whatsnew_page.product_version}
               - unless whatsnew_page.build_type_label.nil?
                 %span{:class=>"label label_#{whatsnew_page.build_type_label}"}
                   #{site.labels[whatsnew_page.build_type_label]}
+          
           .item.center
             - relevant_components = whatsnew_page.component_news.keys.select{|k| k != "general"}
             - if relevant_components.length > 0
-              See what's new in #{site.products[product_id].name} #{whatsnew_page.product_version}, including
-              - relevant_components.each_with_index do |component_id, index|
-                %a{:href=>"#{whatsnew_page.output_path}##{component_id}"} #{site.components[component_id].name}
-                - if (index < (relevant_components.length - 2))
-                  ,
-                - elsif (index == (relevant_components.length - 2))
-                  and
-                - elsif (index == (relevant_components.length - 1))
-                  components.
+              %p
+                See what's new in #{site.products[product_id].name} #{whatsnew_page.product_version}, including:
+              %ul.double
+                - relevant_components.each_with_index do |component_id, index|
+                  %li 
+                    %a{:href=>"#{whatsnew_page.output_path}##{component_id}"} #{site.components[component_id].name}
             - else
-              See what's new in #{site.products[product_id].name} #{whatsnew_page.product_version}.
-
+              %p See what's new in #{site.products[product_id].name} #{whatsnew_page.product_version}.
+          %footer.center
+            %a.btn.btn-small{:href=>whatsnew_page.output_path} Read more &raquo;
       
