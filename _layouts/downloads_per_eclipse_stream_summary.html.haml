@@ -7,7 +7,7 @@ tab: downloads
     %h1 Downloads
     %p Latest versions of #{site.products[page.product_id].name} for #{page.eclipse_version.full_name}
       
-#sections.row-fluid
+.row-fluid
   - for build_type in [:stable, :development, :nightly] do
     %section.span4
       - product_version = page.build_versions[build_type]
