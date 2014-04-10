@@ -13,11 +13,11 @@
 Forge integration allows developers to use the familiar terminal or command line interface within an Integrated Development Environment (IDE) using the new dedicated Forge Console. While Forge executes the user commands, the project explorer refreshes for immediate visual feedback. The Forge integration brings you the best of the two worlds in a single place. 
 
 == Forge Console 
-image::images/features-forge_237px.png[]
+image::images/features-forge-360px.png[]
 
-Todo...
+The Forge console provides access to all Forge commands via an easy-to-use CLI. It provides contextual completion of Forge commands, parameter names of commands, and in certain cases, values for command parameters.
 
 == Workspace synchronization
-image::images/features-forge_237px.png[]
+image::images/features-forge-workspace-sync-500px.png[]
 
-Todo...
+Workspace synchronization ensures that any changes performed by Forge are automatically picked up by the IDE. Newly created projects and files are imported into Forge for further editing by the user. When Forge adds a dependency to a project, the IDE synchronizes the project in the workspace, adding any new libraries to ensure that the project compiles and builds successfully. This features offers a very tight-knit integration between Forge and the IDE.
