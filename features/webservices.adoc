@@ -46,3 +46,30 @@ image::images/features-webservices-wstester.png[Web Services Tester]
 
 The Web Service Tester allows you to test your *JAX-RS* or *JAX-WS* Endpoints from within Eclipse. Select a JAX-RS Endpoint and select *Run As>Run on Server* or *Debug As>Debug on Server* to deploy your application on a server and open the Web Service Tester view. The location will be prefilled with the JAX-RS endpoint template, and when hitting the 'Run' button, a dialog will prompt you with parameter values to use.
  
+== Web Service Project Creation
+==Create a Sample JAX-WS Project
+image::images/features-webservices-sample-jax-ws-service.png[Sample Web Service wizard]
+
+The Generate a Sample Web Service wizard enables you to create a JAX-WS web service template in an existing Dynamic Web Project. Simply specify the project, web service name, package name, and class name. Select *File->New->Other*, expand the *Web Services* folder and click on the *Create a Sample Web Service* option. Then, specify an existing Dynamic Web Project and the other required settings to generate the template.
+
+==Create a Sample JAX-RS Project
+image::images/features-webservices-sample-jax-rs-service.png[Sample RESTful Service wizard]
+
+The Generate a Sample RESTful Web Service wizard enables you to create a JAX-RS web service template in an existing Dynamic Web Project. Simply specify the project, web service name, package name, and application class name. Select *File->New->Other*, expand the *Web Services* folder and click on the *Create a Sample RESTful Web Service* option. Then, specify an existing Dynamic Web Project and the other required settings to generate the template.
+
+=== Create a Simple (JAX-WS or JAX-RS) Web Service
+image::images/features-webservices-simplews.png[Simple Web Service wizard]
+
+The Simple Web Service wizard also enables you to create a web service template project in Eclipse using either JAX-WS or JAX-RS. Select *File->New->Other*, expand the *Web Services* folder and click on the *Simple Web Service* option. Then, specify an existing Dynamic Web Project and the other required settings to generate the template.
+ 
+=== Create a Web Service from a WSDL Document or Java Bean
+image::images/features-webservices-ws-create-from-wsdl.png[Web Service wizard]
+
+The Web Service wizard enables you to create a web service project from an existing WSDL or Java bean class in an existing Dynamic Web Project. Select *File->New->Other*, expand the *Web Services* folder and click on the *Web Service* option. See the JBoss SOAP Web Services User Guide for additional information.
+
+=== Create a Web Service Client from WSDL
+image::images/features-webservices-ws-client.png[Web Service Client wizard]
+
+The Web Service Client wizard enables you to generate a web service client from an existing WSDL. The code for the client and web service are created as well as a code sample calling the client. Select *File->New->Other*, expand the *Web Services* folder and click on the *Web Service Client* option.
+
+ 
