@@ -59,6 +59,9 @@ tab: docs
             - component_ids.each_with_index do |component_id, index|
               %li.component{:class=>(index == 0 ? "active" : "")}
                 %a{:href=>"##{component_id}"} #{site.components[component_id].name}
+      -# link to older N&N
+      %li
+        %a{:href=>"http://docs.jboss.org/tools/whatsnew/"} Previous Versions
       
             
   .span9.scrolledContent
