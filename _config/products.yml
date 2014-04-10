@@ -221,8 +221,7 @@ jbt_core:
           - name: Release Notes
             download_size: 13kB
             url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.x/zz_Release_Notes_4.1.2.Final.readme.html
-      4.1.2.CR1:
-        archived: true
+        
       4.1.1.Final:
         archived: true
         release_date: 2013-12-16
@@ -263,18 +262,69 @@ jbt_core:
             md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/jbosstools-Sources-4.1.1.CR1_2013-11-24_01-06-56-B575.zip.MD5
           - name: Update site (including sources) bundle of all Hibernate Tools
             download_size: 82.0MB
-            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/hibernatetools-Update-4.1.1.CR1_2013-11-24_01-06-56-B575.zip.MD5/download
-            md5_url: 
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/hibernatetools-Update-4.1.1.CR1_2013-11-24_01-06-56-B575.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/hibernatetools-Update-4.1.1.CR1_2013-11-24_01-06-56-B575.zip.MD5
           - name: Release Notes
             download_size: 27.1kB
             url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/zz_Release_Notes_4.1.1.CR1.readme.html
       
       4.1.1.Beta1:
         archived: true
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            download_size: 423.9MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/jbosstools-Update-4.1.1.Beta1_2013-11-02_11-05-10-B511.zip/download
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/jbosstools-Update-4.1.1.Beta1_2013-11-02_11-05-10-B511.zip.MD5/download
+          - name: Sources zip of all JBoss Core Tools
+            download_size: 86.7MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/jbosstools-Sources-4.1.1.Beta1_2013-11-02_11-05-10-B511.zip/download
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/jbosstools-Sources-4.1.1.Beta1_2013-11-02_11-05-10-B511.zip.MD5/download
+          - name: Update site (including sources) bundle of all Hibernate Tools
+            download_size: 82.0MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/hibernatetools-Update-4.1.1.Beta1_2013-11-02_11-05-10-B511.zip/download
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/hibernatetools-Update-4.1.1.Beta1_2013-11-02_11-05-10-B511.zip.MD5/download
+          - name: Release Notes
+            download_size: 22.3kB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/zz_Release_Notes_4.1.1.Beta1.readme.html/download
+        
       4.1.1.Alpha2:
         archived: true
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            download_size: 432.5MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/jbosstools-Update-4.1.1.Alpha2_2013-10-02_14-08-05-B444.zip/download
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/jbosstools-Update-4.1.1.Alpha2_2013-10-02_14-08-05-B444.zip.MD5/download
+          - name: Sources zip of all JBoss Core Tools
+            download_size: 91.2MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/jbosstools-Sources-4.1.1.Alpha2_2013-10-02_14-08-05-B444.zip/download
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/jbosstools-Sources-4.1.1.Alpha2_2013-10-02_14-08-05-B444.zip.MD5/download
+          - name: Update site (including sources) bundle of all Hibernate Tools
+            download_size: 82.0MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/hibernatetools-Update-4.1.1.Alpha2_2013-10-02_14-08-05-B444.zip/download
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/hibernatetools-Update-4.1.1.Alpha2_2013-10-02_14-08-05-B444.zip.MD5/download
+          - name: Release Notes
+            download_size: 11.2kB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/zz_Release_Notes_4.1.1.Alpha2.readme.html/download
+              
       4.1.1.Alpha1:
         archived: true
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            download_size: 432.2MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/jbosstools-Update-4.1.1.Alpha1_2013-09-08_21-08-29-B392.zip/download
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/jbosstools-Update-4.1.1.Alpha1_2013-09-08_21-08-29-B392.zip.MD5/download
+          - name: Sources zip of all JBoss Core Tools
+            download_size: 92.3MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/jbosstools-Sources-4.1.1.Alpha1_2013-09-08_21-08-29-B392.zip/download
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/jbosstools-Sources-4.1.1.Alpha1_2013-09-08_21-08-29-B392.zip.MD5/download
+          - name: Update site (including sources) bundle of all Hibernate Tools
+            download_size: 82.0MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/hibernatetools-Update-4.1.1.Alpha1_2013-09-08_21-08-29-B392.zip/download
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/hibernatetools-Update-4.1.1.Alpha1_2013-09-08_21-08-29-B392.zip.MD5/download
+          - name: Release Notes
+            download_size: 16.5kB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/zz_Release_Notes_4.1.1.Alpha1.readme.html/download
+              
       4.1.0.Final:
         archived: true
         release_date: 2013-07-23
@@ -313,16 +363,82 @@ jbt_core:
         documentation_url: http://docs.jboss.org/tools/
         update_site_url: http://download.jboss.org/jbosstools/updates/nightly/core/4.1.kepler/
         download_url: http://download.jboss.org/jbosstools/builds/nightly/core/4.1.kepler/
-      4.1.0.CR1:
-        archived: true
+               
       4.1.0.Beta2:
         archived: true
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            download_size: 419.4MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.0.x/jbosstools-Update-4.1.0.Beta2_2013-06-25_22-05-55-B368.zip/download
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.0.x/jbosstools-Update-4.1.0.Beta2_2013-06-25_22-05-55-B368.zip.MD5/download
+          - name: Sources zip of all JBoss Core Tools
+            download_size: 139.7MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.0.x/jbosstools-Sources-4.1.0.Beta2_2013-06-25_22-05-55-B368.zip/download
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.0.x/jbosstools-Sources-4.1.0.Beta2_2013-06-25_22-05-55-B368.zip.MD5/download
+          - name: Update site (including sources) bundle of all Hibernate Tools
+            download_size: 82.0MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.0.x/hibernatetools-Update-4.1.0.Beta2_2013-06-25_22-05-55-B368.zip/download
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.0.x/hibernatetools-Update-4.1.0.Beta2_2013-06-25_22-05-55-B368.zip.MD5/download
+          - name: Release Notes
+            download_size: 44.6kB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.0.x/zz_Release_Notes_4.1.0.Beta2.readme.html/download
+              
       4.1.0.Beta1:
         archived: true
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            download_size: 422.5MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.0.x/jbosstools-Update-4.1.0.Beta1_2013-05-29_02-05-21-B272.zip/download
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.0.x/jbosstools-Update-4.1.0.Beta1_2013-05-29_02-05-21-B272.zip.MD5/download
+          - name: Sources zip of all JBoss Core Tools
+            download_size: 139.2MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.0.x/jbosstools-Sources-4.1.0.Beta1_2013-05-29_02-05-21-B272.zip/download
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.0.x/jbosstools-Sources-4.1.0.Beta1_2013-05-29_02-05-21-B272.zip.MD5/download
+          - name: Update site (including sources) bundle of all Hibernate Tools
+            download_size: 82.0MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.0.x/hibernatetools-Update-4.1.0.Beta1_2013-05-29_02-05-21-B272.zip/download
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.0.x/hibernatetools-Update-4.1.0.Beta1_2013-05-29_02-05-21-B272.zip.MD5/download
+          - name: Release Notes
+            download_size: 53.7kB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.0.x/zz_Release_Notes_4.1.0.Beta1.readme.html/download
+              
       4.1.0.Alpha2:
         archived: true
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            download_size: 315.7MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.0.x/jbosstools-Update-4.1.0.Alpha2_2013-04-24_17-20-04-B202.zip/download
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.0.x/jbosstools-Update-4.1.0.Alpha2_2013-04-24_17-20-04-B202.zip.MD5/download
+          - name: Sources zip of all JBoss Core Tools
+            download_size: 103.3MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.0.x/jbosstools-Sources-4.1.0.Alpha2_2013-04-24_17-20-04-B202.zip/download
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.0.x/jbosstools-Sources-4.1.0.Alpha2_2013-04-24_17-20-04-B202.zip.MD5/download
+          - name: Update site (including sources) bundle of all Hibernate Tools
+            download_size: 82.0MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.0.x/hibernatetools-Update-4.1.0.Alpha2_2013-04-24_17-20-04-B202.zip/download
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.0.x/hibernatetools-Update-4.1.0.Alpha2_2013-04-24_17-20-04-B202.zip.MD5/download
+          - name: Release Notes
+            download_size: 43.6kB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.0.x/zz_Release_Notes_4.1.0.Alpha2.readme.html/download
+              
       4.1.0.Alpha1:
         archived: true
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            download_size: 199.8MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.0.x/jbosstools-Update-4.1.0.Alpha1_2013-03-05_18-16-27-B134.zip/download
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.0.x/jbosstools-Update-4.1.0.Alpha1_2013-03-05_18-16-27-B134.zip.MD5/download
+          - name: Sources zip of all JBoss Core Tools
+            download_size: 101.9MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.0.x/jbosstools-Sources-4.1.0.Alpha1_2013-03-05_18-16-27-B134.zip/download
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.0.x/jbosstools-Sources-4.1.0.Alpha1_2013-03-05_18-16-27-B134.zip.MD5/download
+          - name: Update site (including sources) bundle of all Hibernate Tools
+            download_size: 82.0MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.0.x/hibernatetools-Update-4.1.0.Alpha1_2013-03-05_18-16-27-B134.zip/download
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.0.x/hibernatetools-Update-4.1.0.Alpha1_2013-03-05_18-16-27-B134.zip.MD5/download
+          - name: Release Notes
+            download_size: 31.8kB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.0.x/zz_Release_Notes_4.1.0.Alpha1.readme.html/download
 
     juno:
       4.0.1.Final:
