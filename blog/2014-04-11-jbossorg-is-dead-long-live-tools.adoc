@@ -1,0 +1,98 @@
+= jboss.org/tools is dead, long live tools.jboss.org!
+:page-layout: blog
+:page-author: maxandersen
+:page-tags: [jbosstools, website, jbosscentral]
+
+We have been working for a while on doing a refresh of our website and today we are happy to announce http://tools.jboss.org[tools.jboss.org].
+
+== Goals 
+
+We had a few goals for the website:
+
+. Make it simple and clear to download the plugins
+. Explain what features are in the tools
+. Include New and noteworthy 
+. Make it easier to update/fix the content
+
+and I think we reached all of them. 
+
+=== Make it simple and clear to download the plugins
+
+Our old download page had grown organically of the last 7 years and despite all good intentions we had ended up with a download
+page with way too many options presented by default. With the new site we went for simplicity first thus the Downloads page
+now simply present you with two options: Download either latest stable JBoss Tools or Developer Studio. 
+
+image::images/newsite_downloads.png[link=/downloads]
+
+If you want other versions, combinations, add-ons etc. you can follow
+the link:/downloads/overview[Overview] link which will give all the
+dirty details.
+
+=== Explain what features are in the tools
+
+For this we created the link:/features[Features] page. This page gives an overview over all of the various projects/technologies we
+support and if you click on the images you get more information about each feature. 
+
+image::images/newsite_features.png[]
+
+Try it out - you might be surprised how much we actually do.
+
+=== Include New and noteworthy
+
+For *every* release/milestone we get the JBoss Tools team to write up what is New and noteworthy for their components. We use that when doing blogs and to share with the whole community what are the changes coming up. In the past that was a very tedious process of getting multiple people to submit changes to a bunch of html that then needed manually be cleaned up and published. It was a chore and took longer and longer the more and more changes we got.
+
+That is now a story of the past - in the new site component developers just add a single document for their release and the magic of publishing the site does all the right wiring. Removing all the chore *and* makes the actual lines of code needed much less than before. Asciidoc for the win.
+
+You can go look at the new and improved What is new over at link:/documentation/whatsnew[What is new] - it currently gives you a sneak preview of upcoming JBoss Tools 4.2.0 Beta1.
+
+=== Make it easier to update/fix the content
+
+The old website was "hidden" behind a magnolia CMS system. It has served us well and it does what it is supposed to do. In the age of github and pull-requests though it was more a burden than a help. The new system uses a simple https://github.com/jbosstools/jbosstools-website[github repo] which uses Awestruct to render the page automatically via Travis when we push to certain branches.
+
+The content is primarily Asciidoc making it so the content is very compact - no additional boiler plate markup to worry about and best of all, you do not need to even run awestruct locally to get an idea of the rendering. Github's rendering of asciidoc is close enough to make it trivial for anyone with a github account to help do fixes to this site.
+
+If you find some errors (we left some in for you to find) just open a PR on https://github.com/jbosstools/jbosstools-website :)
+
+=== Thanks
+
+The design and launch of this website have been long under way - we started 1+ year ago but we are finally here :)
+
+The primary person to thank for this is Xavier Coulon who helped on the initial design of the site and then fought, battled and sometimes cried over having to implement and play with Ruby and Haml. But he persevered and today we are here with his great help!
+
+But he and I was not alone in this we got help from a bunch of other people to write and update content, give feedback, found bugs and help setup the infrastructure. Here they are in random importance, but ordered alphabetical ordering:
+
+* Alexey Kazakov
+* Aslak Knutsen 
+* Andre Dietisheim 
+* Barry LaFond 
+* Bob Brodt
+* Bob McWirther 
+* Dan Allen
+* Cheyenne Weaver
+* Daniel Florian 
+* Fred Bricon 
+* Gorkem Ercan 
+* Ilya Buziuk 
+* Koen Aers 
+* Lars Heinemann
+* James Cobb 
+* Jason Porter
+* Mark Newton
+* Paul Leacu 
+* Rob Stryker 
+* Rysiek Kozmik 
+* Snjezana Peco 
+* Vineet Reynolds 
+* Xavier Coulon 
+* Brian Fitzpatrick 
+* Kris Verlaenen 
+* Michelle Murray 
+* Nick Boldt 
+* Rob Cernich
+ 
+I hope you like it and please leave a comment below to test the new commenting system too :)
+
+Have fun!
+
+Max Rydahl Andersen +
+http://twitter.com/maxandersen[@maxandersen]
