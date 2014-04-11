@@ -43,6 +43,7 @@ module Awestruct
             # now, deal with *.Final* versions if they exist in site.products
             unless ProductsHelper.is_stable_version(component_page.component_version)
               product_stable_version = ProductsHelper.get_stable_version(site, component_page.product_id, component_page.product_version)
+              #puts " stable version of #{component_page.product_id} #{component_page.product_version}: #{product_stable_version}"
               unless product_stable_version.nil? 
                 whatsnew_final_page = get_whatsnew_page(site, component_page.product_id, product_stable_version)
                 add_component_page(whatsnew_final_page, component_page)
@@ -91,7 +92,7 @@ module Awestruct
         if site.whatsnew_pages[product_id][product_version].nil? then
           product_url_path_fragment = site.products[product_id].url_path_fragment
           product_active = ProductsHelper.is_product_version_active(site, product_id, product_version)
-          #puts "  building  N&N page for #{product_id} #{product_version}"
+          puts "  building  N&N page for #{product_id} #{product_version}"
           page = create_page(site, @@whatsnew_layout_path, @target_path_prefix, product_url_path_fragment, product_version)
           page.product_id = product_id
           page.product_name = site.products[product_id].name

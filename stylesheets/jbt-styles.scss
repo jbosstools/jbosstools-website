@@ -166,6 +166,20 @@ section {
         width: 50%;
         float:left;
         display:inline;  
+        &:nth-child(odd) {
+          text-align: right;
+          a {
+            padding-right: 1em;
+          }
+          
+        }
+        &:nth-child(even) {
+          text-align: left;
+          a {
+            padding-left: 1em;
+          }
+          
+        }
       }
     }
   }
