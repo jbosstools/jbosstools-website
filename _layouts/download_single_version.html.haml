@@ -29,12 +29,15 @@ tab: downloads
     .center
       - unless page.build_info.documentation_url.nil?
         %a{:href=>relative(page.build_info.documentation_url)} Documentation
+        &#124;
       -# JBoss Tools has a What's New
       - unless page.build_info.whatsnew_url.nil?
-        %a{:href=>relative(page.build_info.whatsnew_url)} What's New
+        %a{:href=>relative(page.build_info.whatsnew_url)} What's New 
+        &#124;
       -# JBDS has Release Notes
       - unless page.build_info.release_notes_url.nil?
-        %a{:href=>relative(page.build_info.release_notes_url)} Release Notes
+        %a{:href=>relative(page.build_info.release_notes_url)} Release Notes 
+        &#124;
       %a{:href=>relative("/downloads/installation.html")} Installation
       
     - if page.build_info.build_type_label == :stable
