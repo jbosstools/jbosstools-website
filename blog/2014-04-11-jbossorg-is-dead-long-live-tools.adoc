@@ -68,7 +68,7 @@ But he and I were not alone in this; we got help from a bunch of other people to
 * Aslak Knutsen - for inspiration and help with Awestruct
 * Barry LaFond - for contributing to link:/documentation/features[Features]
 * Bob Brodt - for contributing to link:/documentation/features[Features]
-* Bob McWirther - for reacting at weird hours on #awestruct
+* Bob McWhirter - for reacting at weird hours on #awestruct and for not caring how his name is spelled
 * Brian Fitzpatrick - for contributing to link:/documentation/features[Features]
 * Cheyenne Weaver - for design help
 * Dan Allen - for help with asciidoc and especially for including the video support we made
