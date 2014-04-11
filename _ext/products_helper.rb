@@ -33,14 +33,13 @@ module Awestruct
             return higher_product_version
           end
         end
-        puts "   Final version for #{product_id} (#{version}): #{final_version} does not exist yet."
         nil
       end
       module_function :get_higher_version
       
       # Returns a build type based on the given version 
       def get_build_type(site, product_id, product_version)
-        if is_final_version(product_version)
+        if is_stable_version(product_version)
           return :stable
         elsif is_nightly_version(product_version)
           return :nightly
@@ -62,22 +61,25 @@ module Awestruct
       end
       module_function :get_build_type_label
      
-      def get_final_version(site, product_id, product_version)
+      def get_stable_version(site, product_id, product_version)
         main_version = get_main_version(product_version)
         final_version = main_version << ".Final"
+        ga_version = main_version << ".GA"
         site.products[product_id].streams.each do |stream_id, product_versions|
-          if product_versions.include? final_version
+          if product_versions.include? final_version 
             return final_version
+          elsif product_versions.include? ga_version
+            return ga_version
           end
         end
         nil
       end
-      module_function :get_final_version
+      module_function :get_stable_version
             
-      def is_final_version(product_version)
-        product_version.end_with? ".Final"  
+      def is_stable_version(product_version)
+        (product_version.end_with? ".Final") || (product_version.end_with? ".GA")
       end
-      module_function :is_final_version
+      module_function :is_stable_version
       
       def is_nightly_version(product_version)
         product_version.end_with? ".Nightly"  
@@ -91,7 +93,7 @@ module Awestruct
             unless stream_versions[product_version].nil? then
               product_archived = false
               # final versions are not considered archived
-              product_archived = stream_versions[product_version][:archived] ||= false unless is_final_version(product_version)
+              product_archived = stream_versions[product_version][:archived] ||= false unless is_stable_version(product_version)
               #puts " #{product_id} #{product_version} active: #{!product_archived}"
               return !product_archived
             end

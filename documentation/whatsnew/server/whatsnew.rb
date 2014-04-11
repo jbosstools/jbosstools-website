@@ -40,9 +40,9 @@ module Awestruct
             add_component_page(whatsnew_page, component_page)
             # now, deal with *.Final* versions if they exist in site.products
             unless component_page.component_version.include? ".Final"
-              product_final_version = get_final_version(site, component_page.product_id, component_page.product_version)
-              unless product_final_version.nil? 
-                whatsnew_final_page = get_whatsnew_page(site, component_page.product_id, product_final_version)
+              product_stable_version = get_stable_version(site, component_page.product_id, component_page.product_version)
+              unless product_stable_version.nil? 
+                whatsnew_final_page = get_whatsnew_page(site, component_page.product_id, product_stable_version)
                 add_component_page(whatsnew_final_page, component_page)
               end
             end
