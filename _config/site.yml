@@ -11,10 +11,16 @@ textile:
 
 asciidoctor:
   :safe: safe
+  :compact: true
+  :eruby: erubis
   :attributes:
     imagesdir: ./@
     icons: font
     experimental: true
+    idprefix: ''
+    idseparator: '-'
+    sectanchors: ''
+    linkattrs: ''
   
 # Default minify settings
 css_minifier: disabled
