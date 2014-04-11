@@ -62,9 +62,8 @@ module Awestruct
       module_function :get_build_type_label
      
       def get_stable_version(site, product_id, product_version)
-        main_version = get_main_version(product_version)
-        final_version = main_version << ".Final"
-        ga_version = main_version << ".GA"
+        final_version = get_main_version(product_version) << ".Final"
+        ga_version = get_main_version(product_version) << ".GA"
         site.products[product_id].streams.each do |stream_id, product_versions|
           if product_versions.include? final_version 
             return final_version
