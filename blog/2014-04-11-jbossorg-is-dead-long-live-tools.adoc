@@ -3,24 +3,24 @@
 :page-author: maxandersen
 :page-tags: [jbosstools, website, jbosscentral]
 
-We have been working for a while on doing a refresh of our website and today we are happy to announce http://tools.jboss.org[tools.jboss.org].
+We have been working for a while on doing a refresh of our website, and today we are happy to announce http://tools.jboss.org[tools.jboss.org].
 
 == Goals 
 
 We had a few goals for the website:
 
-. Make it simple and clear to download the plugins
+. Make it simple and clear how to download the plugins
 . Explain what features are in the tools
 . Include New and noteworthy 
 . Make it easier to update/fix the content
 
 and I think we reached all of them. 
 
-=== Make it simple and clear to download the plugins
+=== Make it simple and clear how to download the plugins
 
-Our old download page had grown organically of the last 7 years and despite all good intentions we had ended up with a download
-page with way too many options presented by default. With the new site we went for simplicity first thus the Downloads page
-now simply present you with two options: Download either latest stable JBoss Tools or Developer Studio. 
+Our old download page had grown organically over the last 7 years and, despite all good intentions, we had ended up with a download
+page with way too many options presented by default. With the new site, we went for simplicity first, and so the Downloads page
+now simply presents you with two options: Download either latest stable JBoss Tools or Developer Studio. 
 
 image::images/newsite_downloads.png[link=/downloads]
 
@@ -30,7 +30,7 @@ dirty details.
 
 === Explain what features are in the tools
 
-For this we created the link:/features[Features] page. This page gives an overview over all of the various projects/technologies we
+For this we created the link:/features[Features] page. This page gives an overview over all of the various projects and technologies we
 support and if you click on the images you get more information about each feature. 
 
 image::images/newsite_features.png[]
@@ -39,13 +39,13 @@ Try it out - you might be surprised how much we actually do.
 
 === Include New and noteworthy
 
-For *every* release/milestone we get the JBoss Tools team to write up what is New and noteworthy for their components. We use that when doing blogs and to share with the whole community what are the changes coming up. In the past that was a very tedious process of getting multiple people to submit changes to a bunch of html that then needed manually be cleaned up and published. It was a chore and took longer and longer the more and more changes we got.
+For *every* release/milestone, we get the JBoss Tools team to write up what is New and noteworthy for their components. We use that when doing blogs and sharing with the whole community what changes are coming up. In the past, that was a very tedious process of getting multiple people to submit changes to a bunch of html files that then needed to be manually cleaned up and published. It was a chore, and it took longer and longer as we added or updated more and more features.
 
-That is now a story of the past - in the new site component developers just add a single document for their release and the magic of publishing the site does all the right wiring. Removing all the chore *and* makes the actual lines of code needed much less than before. Asciidoc for the win.
+That is now a story of the past - in the new site, component developers just add a single document for their release and the magic of publishing the site does all the right wiring. Removing all the chore *and* reducing the actual lines of code needed substantially. Asciidoc for the win.
 
 image::images/newsite-whatsnew.png[]
 
-You can go look at the new and improved What is new over at link:/documentation/whatsnew[What is new] - it currently gives you a sneak preview of upcoming JBoss Tools 4.2.0 Beta1.
+You can go look at what is new and improved over at link:/documentation/whatsnew[What is new] - it currently gives you a sneak preview of upcoming JBoss Tools 4.2.0 Beta1.
 
 === Make it easier to update/fix the content
 
@@ -61,7 +61,7 @@ The design and launch of this website have been long under way - we started 1+ y
 
 The primary person to thank for this is Xavier Coulon who helped on the initial design of the site and then fought, battled and sometimes cried over having to implement and play with Ruby and Haml. But he persevered and today we are here with his great help!
 
-But he and I was not alone in this we got help from a bunch of other people to write and update content, give feedback, found bugs and help setup the infrastructure. Here they are in random importance, but ordered alphabetical ordering:
+But he and I were not alone in this; we got help from a bunch of other people to write and update content, give feedback, find bugs and help setup the infrastructure. Here they are in random importance, but ordered alphabetically:
 
 * Alexey Kazakov - for contributing to link:/documentation/features[Features]
 * Andre Dietisheim - for contributing to link:/documentation/features[Features]
