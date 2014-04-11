@@ -93,6 +93,8 @@ But he and I was not alone in this we got help from a bunch of other people to w
 * Vineet Reynolds - for contributing to link:/documentation/features[Features]
 * Vladimir Vasilev - for setting up redirects to ensure we didn't break the internet!
 
+In case I missed someone - let me know or submit a PR on https://github.com/jbosstools/jbosstools-website
+
 I hope you like it and please leave a comment below to test the new commenting system too :)
 
 Have fun!
