@@ -35,7 +35,8 @@ tab: downloads
       -# JBDS has Release Notes
       - unless page.build_info.release_notes_url.nil?
         %a{:href=>relative(page.build_info.release_notes_url)} Release Notes
-    
+      %a{:href=>relative("/downloads/installation.html")} Installation
+      
     - if page.build_info.build_type_label == :stable
       .alert.alert-success
         #{page.build_info.name} #{page.build_info.version} was released on #{page.build_info.release_date}. 
