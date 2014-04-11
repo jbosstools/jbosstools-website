@@ -6,6 +6,8 @@ project: tools
 # Project name
 project_name: JBoss Tools
 
+encoding: UTF-8
+
 textile:
   :no_span_caps: true
 
