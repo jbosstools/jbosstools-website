@@ -5,7 +5,7 @@ tab: docs
 - page.title = "#{page.product_name} #{page.product_version}"
 - component_ids = page.component_news.keys.sort{|x,y| site.components[x].name <=> site.components[y].name}
 
-- if is_final_version(page.product_version)
+- if is_stable_version(page.product_version)
   -# Banner for .Final versions (it's an aggregate of non-.Final pages)
   - related_whatsnew_pages = get_related_whatsnew_pages(site, page.product_id, page.product_version)
   - unless related_whatsnew_pages.empty?
@@ -20,7 +20,7 @@ tab: docs
             %span><= ",&nbsp;" 
 - else 
   -# Banner for non-.Final version pages which are related a an existing .Final version page
-  - final_whatsnew_page = get_final_version_whatsnew_page(site, page.product_id, page.product_version)
+  - final_whatsnew_page = get_stable_version_whatsnew_page(site, page.product_id, page.product_version)
   - unless final_whatsnew_page.nil?
     .row-fluid
       .span12.alert.alert-warning><

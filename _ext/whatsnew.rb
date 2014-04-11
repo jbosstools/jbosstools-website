@@ -41,10 +41,10 @@ module Awestruct
             whatsnew_page = get_whatsnew_page(site, component_page.product_id, component_page.product_version)
             add_component_page(whatsnew_page, component_page)
             # now, deal with *.Final* versions if they exist in site.products
-            unless ProductsHelper.is_final_version(component_page.component_version)
-              product_final_version = ProductsHelper.get_final_version(site, component_page.product_id, component_page.product_version)
-              unless product_final_version.nil? 
-                whatsnew_final_page = get_whatsnew_page(site, component_page.product_id, product_final_version)
+            unless ProductsHelper.is_stable_version(component_page.component_version)
+              product_stable_version = ProductsHelper.get_stable_version(site, component_page.product_id, component_page.product_version)
+              unless product_stable_version.nil? 
+                whatsnew_final_page = get_whatsnew_page(site, component_page.product_id, product_stable_version)
                 add_component_page(whatsnew_final_page, component_page)
               end
             end
