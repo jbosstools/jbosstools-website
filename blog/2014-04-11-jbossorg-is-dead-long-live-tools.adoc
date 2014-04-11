@@ -63,35 +63,36 @@ The primary person to thank for this is Xavier Coulon who helped on the initial 
 
 But he and I was not alone in this we got help from a bunch of other people to write and update content, give feedback, found bugs and help setup the infrastructure. Here they are in random importance, but ordered alphabetical ordering:
 
-* Alexey Kazakov
-* Aslak Knutsen 
-* Andre Dietisheim 
-* Barry LaFond 
-* Bob Brodt
-* Bob McWirther 
-* Dan Allen
-* Cheyenne Weaver
-* Daniel Florian 
-* Fred Bricon 
-* Gorkem Ercan 
-* Ilya Buziuk 
-* Koen Aers 
-* Lars Heinemann
-* James Cobb 
-* Jason Porter
-* Mark Newton
-* Paul Leacu 
-* Rob Stryker 
-* Rysiek Kozmik 
-* Snjezana Peco 
-* Vineet Reynolds 
-* Xavier Coulon 
-* Brian Fitzpatrick 
-* Kris Verlaenen 
-* Michelle Murray 
-* Nick Boldt 
-* Rob Cernich
- 
+* Alexey Kazakov - for contributing to link:/documentation/features[Features]
+* Andre Dietisheim - for contributing to link:/documentation/features[Features]
+* Aslak Knutsen - for inspiration and help with Awestruct
+* Barry LaFond - for contributing to link:/documentation/features[Features]
+* Bob Brodt - for contributing to link:/documentation/features[Features]
+* Bob McWirther - for reacting at weird hours on #awestruct
+* Brian Fitzpatrick - for contributing to link:/documentation/features[Features]
+* Cheyenne Weaver - for design help
+* Dan Allen - for help with asciidoc and especially for including the video support we made
+* Daniel Florian - for contributing to link:/documentation/features[Features]
+* Fred Bricon - for contributing to link:/documentation/features[Features]
+* Gorkem Ercan - for contributing to link:/documentation/features[Features]
+* Ilya Buziuk - for contributing to link:/documentation/features[Features]
+* James Cobb - for design help and bugfixing
+* Jason Porter - for awestruct fixes and especially finding that nasty performance bug we had made
+* Koen Aers - for contributing to link:/documentation/features[Features]
+* Kris Verlaenen - for contributing to link:/documentation/features[Features]
+* Lars Heinemann - for contributing to link:/documentation/features[Features]
+* Mark Newton - for enabling the infrastructure
+* Michelle Murray - for bugfixes!
+* Nick Boldt - for helping setup downloads and bugfixing!
+* Paul Leacu - for contributing to link:/documentation/features[Features]
+* Pete Muir - for review!
+* Rob Cernich - for contributing to link:/documentation/features[Features]
+* Rob Stryker - for contributing to link:/documentation/features[Features]
+* Rysiek Kozmik - for help with jboss.org theme
+* Snjezana Peco - for contributing to link:/documentation/features[Features]
+* Vineet Reynolds - for contributing to link:/documentation/features[Features]
+* Vladimir Vasilev - for setting up redirects to ensure we didn't break the internet!
+
 I hope you like it and please leave a comment below to test the new commenting system too :)
 
 Have fun!
