@@ -109,7 +109,7 @@ profiles:
     google_analytics: UA-46704212-1
     
   production:
-    showwip: true
+    showwip: false
     base_url: http://tools.jboss.org
     minified: .min
     jborg_fonts_url: http://static.jboss.org/theme/fonts
