@@ -43,6 +43,8 @@ For *every* release/milestone we get the JBoss Tools team to write up what is Ne
 
 That is now a story of the past - in the new site component developers just add a single document for their release and the magic of publishing the site does all the right wiring. Removing all the chore *and* makes the actual lines of code needed much less than before. Asciidoc for the win.
 
+image::images/newsite-whatsnew.png[]
+
 You can go look at the new and improved What is new over at link:/documentation/whatsnew[What is new] - it currently gives you a sneak preview of upcoming JBoss Tools 4.2.0 Beta1.
 
 === Make it easier to update/fix the content
