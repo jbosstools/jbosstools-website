@@ -53,7 +53,7 @@ tab: blog
           .span4.center
             %a.btn.btn-primary.btn-small{:href=>relative("/blog")} See all articles
           .span4.next
-            - if page.next_post
+            - if !page.next_post.nil? && (page.next_post.date < Date.today.next_day || site.profile == "development")
               %a.btn.btn-primary.btn-small{:href=>relative("#{page.next_post.url}")} #{page.next_post.title} &raquo;
               
       .comments
