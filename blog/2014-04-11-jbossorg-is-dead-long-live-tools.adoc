@@ -49,7 +49,7 @@ You can go look at what is new and improved over at link:/documentation/whatsnew
 
 === Make it easier to update/fix the content
 
-The old website was "hidden" behind a magnolia CMS system. It has served us well and it does what it is supposed to do. In the age of github and pull-requests though it was more a burden than a help. The new system uses a simple https://github.com/jbosstools/jbosstools-website[github repo] which uses Awestruct to render the page automatically via Travis when we push to certain branches.
+The old website was "hidden" behind a magnolia CMS system. It has served us well and it does what it is supposed to do. In the age of github and pull-requests though it was more a burden than a help. The new system uses a simple https://github.com/jbosstools/jbosstools-website[github repo] which uses http://awestruct.org[Awestruct] to render the page automatically via https://travis-ci.org/jbosstools/jbosstools-website[Travis] when we push to certain branches.
 
 The content is primarily Asciidoc making it so the content is very compact - no additional boiler plate markup to worry about and best of all, you do not need to even run awestruct locally to get an idea of the rendering. Github's rendering of asciidoc is close enough to make it trivial for anyone with a github account to help do fixes to this site.
 
