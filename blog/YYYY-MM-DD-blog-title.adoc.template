@@ -1,0 +1,42 @@
+// This is a template for blog entries. Please remove the comments before actually posting.
+= Blog title
+// page-layout is there to indicate this template is a blog.
+:page-layout: blog
+// page-author: is a field that should match up with a file found at _data/team/<author>.adoc 
+// if that file is missing create one and submit together with the blog.
+:page-author: maxandersen
+// page-tags: used to categorize the blog entry. Try not going overboard here.
+// use components from jira, try keep them short and not require spaces. 
+// Note: jbosscentral is a magic tag that makes it show up on jbosscentral
+// Leave that out if your blog entry has a narrow audience scope.  
+:page-tags: [jsf, cdi, jbosscentral]
+
+Start with an introduction.
+
+== Use 2-level titles
+
+If you don't know asciidoctor syntax you can see more at http://asciidoctor.org/docs/asciidoc-syntax-quick-reference.
+
+=== You can even go with deeper titles
+
+If you got code to show do it like this:
+
+```java
+ import org.jboss.tools.*;
+ 
+ class JBossTools extends Eclipse {
+
+   protected Team spirit;
+   public Issues development;
+   private Satisfaction guaranteed;
+
+ }
+
+
+== End on a positive note
+
+...and enjoy the simplicity
+
+// remember that filename should start with a date and then title (i.e. 2014-04-13-<title>.adoc) 
+// if you commit a file with a date in the future it will but published after the first built after that date.
+// building locally it will just be shown as a Draf.
