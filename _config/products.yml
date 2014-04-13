@@ -61,8 +61,8 @@ devstudio:
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         #release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/7.1/html-single/Release_Notes_7.1.1/index.html
         #blog_announcement_url: http://bit.ly/jbt-412
-        marketplace_url: http://marketplace.eclipse.org/node/1616973
-        marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
+        #marketplace_url: http://marketplace.eclipse.org/content/red-hat-jboss-developer-studio-luna
+        #marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=xxxxxx
         download_url: https://www.jboss.org/products/devstudio#earlyaccess
         zips:
           - name: Installer With EAP 6.2.0
@@ -178,8 +178,6 @@ jbt_core:
         release_date: 2014-04-11
         documentation_url: http://docs.jboss.org/tools/
         update_site_url: http://download.jboss.org/jbosstools/updates/development/luna/
-        marketplace_url: http://marketplace.eclipse.org/node/1617241
-        marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1617241
         zips:
           - name: Update site (including sources) bundle of all JBoss Core Tools
             download_size: 460MB
@@ -196,8 +194,8 @@ jbt_core:
           - name: Release Notes
             url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/zz_Release_Notes_4.2.0.Beta1.readme.html
       4.2.0.Alpha2:
+        build_type: development
         release_date: 2014-02-14
-        archived: true
         documentation_url: http://docs.jboss.org/tools/
         zips:
           - name: Update site (including sources) bundle of all JBoss Core Tools
