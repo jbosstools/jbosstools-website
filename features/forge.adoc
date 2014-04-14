@@ -15,7 +15,7 @@ Forge integration allows developers to use the familiar terminal or command line
 
 == Forge Console 
 === Full CLI power in your IDE
-image::images/features-forge-360px.png[]
+image::images/features-forge.png[]
 
 The Forge console provides access to all Forge commands via an
 easy-to-use CLI. It provides contextual completion of Forge commands,
@@ -24,7 +24,7 @@ parameters.
 
 == Workspace synchronization
 === No refresh needed
-image::images/features-forge-workspace-sync-500px.png[]
+image::images/features-forge-workspace-sync.png[]
 
 Workspace synchronization ensures that any changes performed by Forge
 are automatically picked up by the IDE. Newly created projects and
