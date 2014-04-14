@@ -21,7 +21,7 @@ JBoss Developer Studio comes with everything pre-bundled in its installer. Simpl
  
     java -jar jbdevstudio-<installername>.jar   
 
-JBoss Tools requires a bit more:
+JBoss Tools or Bring-Your-Own-Eclipse (BYOE) JBoss Developer Studio requires a bit more:
 
 This release requires at least Eclipse 4.4 (Luna) M6 but we recommend
 using the
@@ -29,7 +29,9 @@ http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/lunam6[
 4.4 JEE Bundle] since then you get most of the dependencies
 preinstalled.
 
-Once you have installed Eclipse, you either find us on Eclipse Marketplace under "JBoss Tools (Luna)" or use our update site directly.
+Once you have installed Eclipse, you either find us on Eclipse Marketplace under "JBoss Tools (Luna)" or "JBoss Developer Studio (Luna)".
+
+For JBoss Tools you can also use our update site directly if you are up for it.
 
     http://download.jboss.org/jbosstools/updates/development/luna/
  
