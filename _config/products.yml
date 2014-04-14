@@ -54,6 +54,29 @@ devstudio:
   url_path_fragment: devstudio
   streams:
     kepler:
+      8.0.0.Beta1:
+        build_type: development
+        release_date: 2014-04-11
+        #supported_devstudio_is_version: 8.0.0.GA
+        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        #release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/7.1/html-single/Release_Notes_7.1.1/index.html
+        blog_announcement_url: /blog/2014-04-14-beta1-for-luna.html
+        marketplace_url: http://marketplace.eclipse.org/node/1616973
+        marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
+        download_url: https://www.jboss.org/products/devstudio#earlyaccess
+        zips:
+          - name: Installer With EAP 6.2.0
+            download_size: 613MB
+            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=https://www.jboss.org/download-manager/content/origin/files/sha256/5f/5f7a06b642bf212a89c9526b2e477bab33cc9aa6b0bb2bb63e8e23e5586b4266/jbdevstudio-product-eap-universal-8.0.0.Beta1-v20140408-2350-B93.jar
+            #md5_url: n/a
+          - name: Standalone Installer
+            download_size: 487MB
+            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/25/2550fbb912f42b6c0e60d124cc0d5b7c1a26b1767e27a0ecd6f2b9c36f3b3d9a/jbdevstudio-product-universal-8.0.0.Beta1-v20140408-2350-B93.jar
+            #md5_url: n/a
+          - name: Update site (including sources) bundle of JBoss Developer Studio
+            download_size: 725MB
+            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/b9/b9a4d822294c7457522238e81335b8dc5013e9835ce9b1837e4a5be241b6d4c3/jbdevstudio-product-Update-8.0.0.Beta1-v20140408-2350-B93.zip
+            #md5_url: n/a
       7.1.1.GA:
         build_type: stable
         release_date: 2014-03-24
@@ -138,7 +161,7 @@ devstudio_is:
         blog_announcement_url: https://community.jboss.org/en/tools/blog/2014/01/30/integration-stack-tooling-for-jboss-tools-developer-studio?et=watches.email.blog
         release_date: 2014-01-30
         required_devstudio_version: 7.1.0.GA
-        update_site_url: https://devstudio.jboss.com/updates/7.0/integration-stack/ 
+        update_site_url: https://devstudio.jboss.com/updates/7.0/integration-stack/
         zips:
           - name: Update site (including sources) bundle of JBoss Developer Studio Integration Stack
             download_size: 230MB
@@ -150,22 +173,44 @@ jbt_core:
   url_path_fragment: jbosstools
   streams:
     luna:
-      4.2.0.Alpha2:
+      4.2.0.Beta1:
         build_type: development
-        release_date: 2013-02-14
+        release_date: 2014-04-11
+        blog_announcement_url: /blog/2014-04-14-beta1-for-luna.html
         documentation_url: http://docs.jboss.org/tools/
         update_site_url: http://download.jboss.org/jbosstools/updates/development/luna/
+        marketplace_url: http://marketplace.eclipse.org/node/1617241
+        marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1617241
         zips:
           - name: Update site (including sources) bundle of all JBoss Core Tools
-            download_size: 462.7MB
+            download_size: 460MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/jbosstools-Update-4.2.0.Beta1_2014-04-08_19-15-41-B105.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/jbosstools-Update-4.2.0.Beta1_2014-04-08_19-15-41-B105.zip.MD5
+          - name: Sources zip of all JBoss Core Tools
+            download_size: 28KB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/jbosstools-Sources-4.2.0.Beta1_2014-04-08_19-15-41-B105.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/jbosstools-Sources-4.2.0.Beta1_2014-04-08_19-15-41-B105.zip.MD5
+          - name: Update site (including sources) bundle of all Hibernate Tools
+            download_size: 80MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/hibernatetools-Update-4.2.0.Beta1_2014-04-08_19-49-44-B47.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/hibernatetools-Update-4.2.0.Beta1_2014-04-08_19-49-44-B47.zip.MD5
+          - name: Release Notes
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/zz_Release_Notes_4.2.0.Beta1.readme.html
+      4.2.0.Alpha2:
+        release_date: 2014-02-14
+        archived: true
+        documentation_url: http://docs.jboss.org/tools/
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            download_size: 441MB
             url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/jbosstools-Update-4.2.0.Alpha2_2014-02-14_09-54-39-B84.zip
             md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/jbosstools-Update-4.2.0.Alpha2_2014-02-14_09-54-39-B84.zip.MD5
           - name: Sources zip of all JBoss Core Tools
-            download_size: 93MB
-            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/jbosstools-Update-4.2.0.Alpha2_2014-02-14_09-54-39-B84.zip.MD5
-            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/jbosstools-Update-4.2.0.Alpha2_2014-02-14_09-54-39-B84.zip.MD5
+            download_size: 24KB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/jbosstools-Sources-4.2.0.Alpha2_2014-02-14_09-54-39-B84.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/jbosstools-Sources-4.2.0.Alpha2_2014-02-14_09-54-39-B84.zip.MD5
           - name: Update site (including sources) bundle of all Hibernate Tools
-            download_size: 68.8MB
+            download_size: 66MB
             url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/hibernatetools-Update-4.2.0.Alpha2_2014-02-10_02-48-32-B13.zip
             md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/hibernatetools-Update-4.2.0.Alpha2_2014-02-10_02-48-32-B13.zip.MD5
           - name: Release Notes
@@ -176,19 +221,18 @@ jbt_core:
         documentation_url: http://docs.jboss.org/tools/
         zips:
           - name: Update site (including sources) bundle of all JBoss Core Tools
-            download_size: 438MB
-            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/jbosstools-Update-4.2.0.Alpha1_2013-11-24_01-06-56-B575.zip
-            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/jbosstools-Update-4.2.0.Alpha1_2013-11-24_01-06-56-B575.zip.MD5
+            download_size: 417MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/jbosstools-Update-4.2.0.Alpha1_2013-12-11_01-09-15-B32.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/jbosstools-Update-4.2.0.Alpha1_2013-12-11_01-09-15-B32.zip.MD5
           - name: Sources zip of all JBoss Core Tools
-            download_size: 98MB
-            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/jbosstools-Sources-4.2.0.Alpha1_2013-11-24_01-06-56-B575.zip
-            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/jbosstools-Sources-4.2.0.Alpha1_2013-11-24_01-06-56-B575.zip.MD5
+            download_size: 93MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/jbosstools-Sources-4.2.0.Alpha1_2013-12-11_01-09-15-B32.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/jbosstools-Sources-4.2.0.Alpha1_2013-12-11_01-09-15-B32.zip.MD5
           - name: Update site (including sources) bundle of all Hibernate Tools
-            download_size: 81MB
+            download_size: 77MB
             url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/hibernatetools-Update-4.2.0.Alpha1_2013-12-11_01-09-15-B32.zip
             md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/hibernatetools-Update-4.2.0.Alpha1_2013-12-11_01-09-15-B32.zip.MD5
           - name: Release Notes
-            download_size: 59kB
             url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/zz_Release_Notes_4.2.0.Alpha1.readme.html
       4.2.0.Nightly: 
         build_type: nightly
