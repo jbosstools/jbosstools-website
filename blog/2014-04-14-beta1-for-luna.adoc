@@ -9,7 +9,7 @@ image::images/jbosstools-jbdevstudio-blog-header.png[]
 
 This announcement is a bit special since it is on our new website, with a cleaner and more consistent structure.
 
-There is the specific version download available from link:/downloads/jbosstools/luna/4.2.0.Beta1.html[JBoss tools 4.2.0.Beta1].
+There is the specific version download available from link:/downloads/jbosstools/luna/4.2.0.Beta1.html[JBoss Tools 4.2.0.Beta1].
 
 Then there is the Luna download page which shows the latest Stable, Development and nightly download for Eclipse Luna - that is available from link:/downloads/jbosstools/luna[Luna releases].
 
@@ -23,10 +23,10 @@ JBoss Developer Studio comes with everything pre-bundled in its installer. Simpl
 
 JBoss Tools requires a bit more:
 
-This release requires at least Eclipse 4.3 (Luna) M6 but we recommend
+This release requires at least Eclipse 4.4 (Luna) M6 but we recommend
 using the
 http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/lunam6[Eclipse
-4.3 JEE Bundle] since then you get most of the dependencies
+4.4 JEE Bundle] since then you get most of the dependencies
 preinstalled.
 
 Once you have installed Eclipse, you either find us on Eclipse Marketplace under "JBoss Tools (Luna)" or use our update site directly.
@@ -37,34 +37,34 @@ Note: Integration Stack tooling will become available from JBoss Central at an l
 
 == What is new ? 
 
-As always there is more than can be covered in single blog but here are some of my favorites. You can see everything in the link:/documentation/whatsnew/jbosstools/4.2.0.Beta1.html[What's New section for this release].
+As always there is more than can be covered in a single blog but here are some of my favorites. You can see everything in the link:/documentation/whatsnew/jbosstools/4.2.0.Beta1.html[What's New section for this release].
 
-=== Refactored and improved Server tools
+=== Refactored and improved Server Tools
 
 The server adapters for JBoss AS, EAP and WildFly have been refactored to support...
 
 . ...link:/documentation/whatsnew/jbosstools/4.2.0.Beta1.html#optional-runtimes-for-remote-servers[runtime-less servers] (i.e. no need to have a server locally installed)
-. ...link:/documentation/whatsnew/jbosstools/4.2.0.Beta1.html#jboss-server-adapters[deployment over management API] (i.e. no need to have local or ssh based access anymore, just management api)
+. ...link:/documentation/whatsnew/jbosstools/4.2.0.Beta1.html#jboss-server-adapters[deployment over management API] (i.e. no need to have local or SSH based access anymore, just Management Api)
 . ...link:/documentation/whatsnew/jbosstools/4.2.0.Beta1.html#start-and-stop-scripts[start/stop scripts] for deploy only servers 
 . ...link:/documentation/whatsnew/jbosstools/4.2.0.Beta1.html#profiles[Profiles] for easier setup
 
 image:/documentation/whatsnew/server/images/JBIDE-9212c.png[]
 
-These changes required significant changes in the server adapter core API and UI. The meat of the code is still the same - just split out to be more reusable and composable.
+These improvements required significant changes in the server adapter core API and UI. The meat of the code is still the same - just split out to be more reusable and composable.
 
-We would really like to hear from you if the UI is good, bad, better, worse and if the fetatures work for you.
+We would really like to hear from you if the UI is good, bad, better, worse; and in any case how we can make it even better. We're obviously interesting in knowing whether these features do work for you.
 
-You can see more in the link:/documentation/whatsnew/jbosstools/4.2.0.Beta1.html#server[Servers Whats New].
+You can see more in the link:/documentation/whatsnew/jbosstools/4.2.0.Beta1.html#server[Servers What's New].
 
 === OpenShift Downloadable Cartridges
 
-OpenShift have been offering support for custom defined cartridges - now OpenShift tools supports this natively too.
+OpenShift has been offering support for custom defined cartridges - now OpenShift tools supports this natively too.
 
 This means you can create or use an existing cartridge by choosing the "Code Anything" option for either Applications or Cartridges.
 
 image:/documentation/whatsnew/openshift/images/downloadable-cart-type.png[Downloadable Cartridges]
 
-This allow you to for example use a Cartridge like https://cartreflect-claytondev.rhcloud.com/reflect?github=openshift-cartridges/openshift-wildfly-cartridge#WildFly8[WildFly 8] or the recent https://github.com/developercorey/openshift-jrebel-cartridge[OpenShift on JRebel] experiment without leaving the IDE.
+This allows you to, for example use a Cartridge like https://cartreflect-claytondev.rhcloud.com/reflect?github=openshift-cartridges/openshift-wildfly-cartridge#WildFly8[WildFly 8] or the recent https://github.com/developercorey/openshift-jrebel-cartridge[OpenShift on JRebel] experiment without leaving the IDE.
 
 === More support for multiple Cordova versions
 
@@ -76,7 +76,7 @@ There are also various other fixes which can be viewed at link:/documentation/wh
 
 p.s. we are contributing these tools to eclipse.org under https://projects.eclipse.org/proposals/thym[Project Thym].
 
-The Cordova Simulator also now understand the notion of multiple Cordova runtimes allowing you to test against multiple versions.
+The Cordova Simulator also now understands the notion of multiple Cordova runtimes allowing you to test against multiple versions.
 
 image:/documentation/whatsnew/browsersim/images/4.2.0.Beta1/CordovaSim-multiple-version-support.png[]
 
@@ -85,22 +85,49 @@ image:/documentation/whatsnew/browsersim/images/4.2.0.Beta1/CordovaSim-multiple-
 
 The Arquillian tooling (for now only available in JBoss Tools) added a http://www.eclipse.org/sapphire[Sapphire] based editor for the `arquillian.xml` file format.
 
-For now it is a simple structured editor but we plan on use it for experimenting with Sapphire to provide better XML oriented editors.
+For now it is a simple structured editor but we plan on using it for experimenting with Sapphire to provide better XML oriented editors.
 
 image:/documentation/whatsnew/arquillian/images/arquillianxmleditor.png[]
 
+This Arquillian editor was based on ideas and initial contribution from Masao Kunii working for Nippon Telegraph and Telephone Corporation (NTT) - thank you!
+
 === Forge 2 Goodies
 
-Recent version of Forge 1 and 2 is now distributed with tools and especially the later one brings an interesting fetaure.
+Recent version of Forge 1 and 2 are now distributed with tools and especially the later one brings an interesting feature.
 
-Forge 2 Connection Profiles now will consider Eclipse DTP resources meaning you no longer have to configure your database settings in multiple places.
+Forge 2 Connection Profiles now will consider Eclipse Database Tooling Platform (DTP) connections meaning you no longer have to configure your database settings in multiple places.
 
 image:/documentation/whatsnew/forge/images/4.2.0.Beta1/connection.png[Connection Profiles]
 
-This feature is called connection profiles in Forge 2.== End on a positive note
+This feature is called connection profiles in Forge 2.
 
-...and enjoy the simplicity
+=== Usage tracking
 
-// remember that filename should start with a date and then title (i.e. 2014-04-13-<title>.adoc) 
-// if you commit a file with a date in the future it will but published after the first built after that date.
-// building locally it will just be shown as a Draf.
+We have learned a lot from our last 3+ years usage tracking and continue to be amazed with how many nationalities, countries and operating system distributions the tools are used in - it has been and continue to be very informative and helpful in guiding our tooling support.
+
+In Beta1 we have gone a step further into learning not only about how many starts JBoss Tools, but also now which features are being used.
+
+In Beta1 we now collect info about which server types are used and which JBoss Central installs are being done to be able to see how much and how often these features are used.
+
+We will use that in the future to decide new development and maintanence work - thus if you love a feature in JBoss Tools then please say yes to usage tracking and use the feature and we'll notice.
+
+Note: We are only collecting aggregated summaries of i.e. server types and installs - meaning we cannot use any of this info to identify you. It is truly anonymous usage statistics - we are not the NSA!
+
+== Next steps
+
+While we wait for feedback on Beta1, we are already working on what will become Beta2. Some of things that are moving here are:
+
+. Looking at doing radical changes to how the visual page editor works since XULRunner is not maintained anymore and we need HTML5 support
+. Getting better (read: much better) javascript content assist with help from https://github.com/angelozerr/tern.java[tern.java]
+. Improve JavaEE 6 and JavaEE 7 support
+. Full Java8 support
+. ...and more!
+
+Hope you enjoy it and remember...
+
+Have fun!
+
+Max Rydahl Andersen +
+http://twitter.com/maxandersen[@maxandersen]
+
+
