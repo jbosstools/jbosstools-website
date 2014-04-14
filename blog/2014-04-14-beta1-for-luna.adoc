@@ -1,0 +1,106 @@
+= Next Beta for Luna
+:page-layout: blog
+:page-author: maxandersen
+:page-tags: [release, jbosstools, devstudio, jbosscentral]
+
+We are ready with JBoss Tools 4.2 Beta1 and Red Hat JBoss Developer Studio 8 Beta1.
+
+image::images/jbosstools-jbdevstudio-blog-header.png[]
+
+This announcement is a bit special since it is on our new website, with a cleaner and more consistent structure.
+
+There is the specific version download available from link:/downloads/jbosstools/luna/4.2.0.Beta1.html[JBoss tools 4.2.0.Beta1].
+
+Then there is the Luna download page which shows the latest Stable, Development and nightly download for Eclipse Luna - that is available from link:/downloads/jbosstools/luna[Luna releases].
+
+From either of these you can get to the link:/downloads/jbosstools/luna/4.2.0.Beta1#zips[Downloads], link:/downloads/jbosstools/luna/4.2.0.Beta1#update_site[updatesites] and link:/documentation/whatsnew/jbosstools/4.2.0.Beta1.html[What's New]!
+
+== Installation
+
+JBoss Developer Studio comes with everything pre-bundled in its installer. Simply download it from our https://www.jboss.org/products/devstudio.html[JBoss Products page]run it like this:
+ 
+    java -jar jbdevstudio-<installername>.jar   
+
+JBoss Tools requires a bit more:
+
+This release requires at least Eclipse 4.3 (Luna) M6 but we recommend
+using the
+http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/lunam6[Eclipse
+4.3 JEE Bundle] since then you get most of the dependencies
+preinstalled.
+
+Once you have installed Eclipse, you either find us on Eclipse Marketplace under "JBoss Tools (Luna)" or use our update site directly.
+
+    http://download.jboss.org/jbosstools/updates/development/luna/
+ 
+Note: Integration Stack tooling will become available from JBoss Central at an later date.
+
+== What is new ? 
+
+As always there is more than can be covered in single blog but here are some of my favorites. You can see everything in the link:/documentation/whatsnew/jbosstools/4.2.0.Beta1.html[What's New section for this release].
+
+=== Refactored and improved Server tools
+
+The server adapters for JBoss AS, EAP and WildFly have been refactored to support...
+
+. ...link:/documentation/whatsnew/jbosstools/4.2.0.Beta1.html#optional-runtimes-for-remote-servers[runtime-less servers] (i.e. no need to have a server locally installed)
+. ...link:/documentation/whatsnew/jbosstools/4.2.0.Beta1.html#jboss-server-adapters[deployment over management API] (i.e. no need to have local or ssh based access anymore, just management api)
+. ...link:/documentation/whatsnew/jbosstools/4.2.0.Beta1.html#start-and-stop-scripts[start/stop scripts] for deploy only servers 
+. ...link:/documentation/whatsnew/jbosstools/4.2.0.Beta1.html#profiles[Profiles] for easier setup
+
+image:/documentation/whatsnew/server/images/JBIDE-9212c.png[]
+
+These changes required significant changes in the server adapter core API and UI. The meat of the code is still the same - just split out to be more reusable and composable.
+
+We would really like to hear from you if the UI is good, bad, better, worse and if the fetatures work for you.
+
+You can see more in the link:/documentation/whatsnew/jbosstools/4.2.0.Beta1.html#server[Servers Whats New].
+
+=== OpenShift Downloadable Cartridges
+
+OpenShift have been offering support for custom defined cartridges - now OpenShift tools supports this natively too.
+
+This means you can create or use an existing cartridge by choosing the "Code Anything" option for either Applications or Cartridges.
+
+image:/documentation/whatsnew/openshift/images/downloadable-cart-type.png[Downloadable Cartridges]
+
+This allow you to for example use a Cartridge like https://cartreflect-claytondev.rhcloud.com/reflect?github=openshift-cartridges/openshift-wildfly-cartridge#WildFly8[WildFly 8] or the recent https://github.com/developercorey/openshift-jrebel-cartridge[OpenShift on JRebel] experiment without leaving the IDE.
+
+=== More support for multiple Cordova versions
+
+The Cordova runtime support is now extended to also support using locally downloaded runtimes. Making it possible to use custom builds or simply distributions that are not directly available from Cordova repositories.
+
+image:/documentation/whatsnew/aerogear/images/1.1.0.Beta1/EnginePreferences.png[]
+
+There are also various other fixes which can be viewed at link:/documentation/whatsnew/jbosstools/4.2.0.Beta1.html#aerogear[Aerogear What's New].
+
+p.s. we are contributing these tools to eclipse.org under https://projects.eclipse.org/proposals/thym[Project Thym].
+
+The Cordova Simulator also now understand the notion of multiple Cordova runtimes allowing you to test against multiple versions.
+
+image:/documentation/whatsnew/browsersim/images/4.2.0.Beta1/CordovaSim-multiple-version-support.png[]
+
+
+=== Arquillian XML Editor
+
+The Arquillian tooling (for now only available in JBoss Tools) added a http://www.eclipse.org/sapphire[Sapphire] based editor for the `arquillian.xml` file format.
+
+For now it is a simple structured editor but we plan on use it for experimenting with Sapphire to provide better XML oriented editors.
+
+image:/documentation/whatsnew/arquillian/images/arquillianxmleditor.png[]
+
+=== Forge 2 Goodies
+
+Recent version of Forge 1 and 2 is now distributed with tools and especially the later one brings an interesting fetaure.
+
+Forge 2 Connection Profiles now will consider Eclipse DTP resources meaning you no longer have to configure your database settings in multiple places.
+
+image:/documentation/whatsnew/forge/images/4.2.0.Beta1/connection.png[Connection Profiles]
+
+This feature is called connection profiles in Forge 2.== End on a positive note
+
+...and enjoy the simplicity
+
+// remember that filename should start with a date and then title (i.e. 2014-04-13-<title>.adoc) 
+// if you commit a file with a date in the future it will but published after the first built after that date.
+// building locally it will just be shown as a Draf.

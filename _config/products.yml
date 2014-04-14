@@ -60,7 +60,7 @@ devstudio:
         #supported_devstudio_is_version: 8.0.0.GA
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         #release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/7.1/html-single/Release_Notes_7.1.1/index.html
-        #blog_announcement_url: http://bit.ly/jbt-412
+        blog_announcement_url: /blog/2014-04-14-beta1-for-luna.html
         marketplace_url: http://marketplace.eclipse.org/node/1616973
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
         download_url: https://www.jboss.org/products/devstudio#earlyaccess
@@ -176,6 +176,7 @@ jbt_core:
       4.2.0.Beta1:
         build_type: development
         release_date: 2014-04-11
+        blog_announcement_url: /blog/2014-04-14-beta1-for-luna.html
         documentation_url: http://docs.jboss.org/tools/
         update_site_url: http://download.jboss.org/jbosstools/updates/development/luna/
         marketplace_url: http://marketplace.eclipse.org/node/1617241
@@ -196,7 +197,6 @@ jbt_core:
           - name: Release Notes
             url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/zz_Release_Notes_4.2.0.Beta1.readme.html
       4.2.0.Alpha2:
-        build_type: development
         release_date: 2014-02-14
         documentation_url: http://docs.jboss.org/tools/
         zips:
