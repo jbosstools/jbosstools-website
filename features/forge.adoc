@@ -33,3 +33,14 @@ Forge adds a dependency to a project, the IDE synchronizes the project
 in the workspace, adding any new libraries to ensure that the project
 compiles and builds successfully. This features offers a very
 tight-knit integration between Forge and the IDE.
+
+== Forge Wizards
+=== If you have a hard time remembering CLI commands
+image::images/features-forge-wizards.png[]
+
+Sometimes users really don't want to type at the command line. Nevertheless
+they can be very interested in using the functionality that is 
+offered by Forge. For those users we have encapsulated some of the 
+most useful features of Forge in nice Eclipse wizards. At this time wizards
+are available to generate entities from a database, to create REST endpoints
+from entities and to scaffold a user interface from entities.
