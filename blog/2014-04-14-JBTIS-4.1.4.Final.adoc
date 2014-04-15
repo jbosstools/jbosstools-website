@@ -32,16 +32,6 @@ Once Developer Studio is installed, restart Eclipse and select the Software/Upda
 
 image:/blog/images/jbtis-b2.png[]
 
-You may alternatively launch Eclipse or JBoss Developer Studio, and select:
-
-Help > Install New Software > link:https://devstudio.jboss.com/updates/7.0/integration-stack[]
-
-image:/blog/images/jbtis-b3.png[]
-
-image:/blog/images/jbtis-b4.png[]
-
-Either way will give you the final release of the tools.
-
 If you want to try out Savara you will need to use the JBoss Tools Integration Stack URL instead: 
 
 link:http://download.jboss.org/jbosstools/updates/stable/kepler/integration-stack[]
