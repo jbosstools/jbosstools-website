@@ -52,12 +52,13 @@ module Awestruct
       # Returns a build type label if provided in product.yml, nil otherwise
       def get_build_type_label(site, product_id, product_version)
         stream = site.products[product_id].streams.select{|stream_id, versions| versions[product_version] != nil}.values.first
+        build_type_label = nil
         unless stream.nil?
-          build_type_label = stream.select{|build_version, build_info| build_version == product_version}.values.first[:build_type]
-          #puts "  #{product_id} #{product_version} build type: '#{build_type}'"
-          return build_type_label
+          info = stream.select{|build_version, build_info| build_version == product_version}.values.first
+          build_type_label = info[:build_type] unless (info[:archived] == true)
+          #puts "  #{product_id} #{product_version} build type: '#{build_type_label}'"
         end
-        return nil
+        return build_type_label
       end
       module_function :get_build_type_label
      
