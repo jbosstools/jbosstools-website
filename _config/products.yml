@@ -655,17 +655,17 @@ jbt_is:
   url_path_fragment: jbosstools_is
   streams:
     kepler:
-      4.1.3.Final:
+      4.1.4.Final:
         build_type: stable
-        blog_announcement_url: https://community.jboss.org/en/tools/blog/2014/01/30/integration-stack-tooling-for-jboss-tools-developer-studio?et=watches.email.blog
-        release_date: 2014-01-30
-        required_jbt_core_version: 4.1.1.Final
+        blog_announcement_url: /blog/2014-04-14-JBTIS-4.1.4.Final.adoc
+        release_date: 2014-04-14
+        required_jbt_core_version: 4.1.2.Final
         update_site_url: http://download.jboss.org/jbosstools/updates/stable/kepler/integration-stack 
         zips:
           - name: Update site (including sources) bundle of JBoss Tools Integration Stack
-            download_size: 218MB
-            url: http://download.jboss.org/jbosstools/updates/stable/kepler/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.1.3.Final-SNAPSHOT.zip
-            md5_url: http://download.jboss.org/jbosstools/updates/stable/kepler/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.1.3.Final-SNAPSHOT.zip.MD5
+            download_size: 236MB
+            url: http://download.jboss.org/jbosstools/updates/stable/kepler/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.1.4.Final-SNAPSHOT.zip
+            md5_url: http://download.jboss.org/jbosstools/updates/stable/kepler/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.1.4.Final-SNAPSHOT.zip.MD5
     indigo:  
       3.3.3.Final:
         archived: true
