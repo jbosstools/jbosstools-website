@@ -80,7 +80,6 @@ devstudio:
       7.1.1.GA:
         build_type: stable
         release_date: 2014-03-24
-        supported_devstudio_is_version: 7.0.0.GA
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         #release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/7.1/html-single/Release_Notes_7.1.1/index.html
         #blog_announcement_url: http://bit.ly/jbt-412
@@ -242,7 +241,6 @@ jbt_core:
       4.1.2.Final:
         build_type: stable
         release_date: 2014-03-24
-        supported_jbt_is_version: 4.1.3.Final
         documentation_url: http://docs.jboss.org/tools/4.1.x.Final/
         whatsnew_url: http://docs.jboss.org/tools/whatsnew/
         #blog_announcement_url: http://bit.ly/jbt-412

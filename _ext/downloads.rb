@@ -51,10 +51,10 @@ module Awestruct
               info.build_type_label = build_type_label
               info.blog_announcement_url = build_info["blog_announcement_url"]
               info.release_notes_url = build_info["release_notes_url"]
-              info.supported_jbt_is_version = build_info["supported_jbt_is_version"]
+              #info.supported_jbt_is_version = build_info["supported_jbt_is_version"]
               info.required_jbt_core_version = build_info["required_jbt_core_version"]
               info.required_devstudio_version = build_info["required_devstudio_version"]
-              info.supported_devstudio_is_version = build_info["supported_devstudio_is_version"]
+              #info.supported_devstudio_is_version = build_info["supported_devstudio_is_version"]
               info.whatsnew_url = get_whatsnew_page_output_path(product_id, build_version) 
               info.update_site_url = build_info["update_site_url"]
               info.marketplace_install_url = build_info["marketplace_install_url"]
@@ -69,6 +69,37 @@ module Awestruct
               
               if !build_type_label.nil? then
                 @site.latest_builds_download_pages[product_id][build_type_label] = download_page
+              end
+            end
+          end
+        end
+        # link jbt_core to jbt_is using links from jbt_is to jbt_core, using the latest version of jbt_is
+        for product_id in [:jbt_is]
+          site.download_pages[product_id].each do |product_version, download_page|
+            required_jbt_core_version = download_page.build_info.required_jbt_core_version
+            # look-up jbt_core download page
+            unless required_jbt_core_version.nil?
+              jbt_core_download_page = site.download_pages[:jbt_core][required_jbt_core_version]
+              if (!jbt_core_download_page.nil? && (jbt_core_download_page.build_info.supported_jbt_is_version.nil? || 
+                 (jbt_core_download_page.build_info.supported_jbt_is_version <=> product_version) == -1 ))
+                puts "linking jbt_is #{product_version} to jbt_core #{required_jbt_core_version}"
+                jbt_core_download_page.build_info.supported_jbt_is_version = product_version
+              end
+            end
+          end
+        end
+        
+        # link devstudio_core to devstudio_is using links from devstudio_is to devstudio_core, using the latest version of devstudio_is
+        for product_id in [:devstudio_is]
+          site.download_pages[product_id].each do |product_version, download_page|
+            required_devstudio_version = download_page.build_info.required_devstudio_version
+            # look-up devstudio download page
+            unless required_devstudio_version.nil?
+              devstudio_download_page = site.download_pages[:devstudio][required_devstudio_version]
+              if (!devstudio_download_page.nil? && (devstudio_download_page.build_info.supported_devstudio_is_version.nil? || 
+                 (devstudio_download_page.build_info.supported_devstudio_is_version <=> product_version) == -1 ))
+                puts "linking devstudio_is #{product_version} to devstudio #{required_devstudio_version}"
+                devstudio_download_page.build_info.supported_devstudio_is_version = product_version
               end
             end
           end
