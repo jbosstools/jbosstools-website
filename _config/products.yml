@@ -658,7 +658,7 @@ jbt_is:
     kepler:
       4.1.4.Final:
         build_type: stable
-        blog_announcement_url: https://community.jboss.org/en/tools/blog/2014/01/30/integration-stack-tooling-for-jboss-tools-developer-studio?et=watches.email.blog
+        blog_announcement_url: /blog/2014-04-14-JBTIS-4.1.4.Final.adoc
         release_date: 2014-04-14
         required_jbt_core_version: 4.1.2.Final
         update_site_url: http://download.jboss.org/jbosstools/updates/stable/kepler/integration-stack 
