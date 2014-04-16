@@ -635,23 +635,18 @@ jbt_core:
           - name: Update site bundle of all JBoss Core Tools - Windows
             download_size: 65.55MB
             url: http://downloads.sourceforge.net/jboss/JBossTools-2.1.2.GA-ALL-win32.zip
-            md5_url: http://downloads.sourceforge.net/jboss/JBossTools-2.1.2.GA-ALL-win32.zip.MD5
           - name: Update site bundle of all JBoss Core Tools - Linux 32-bit
             download_size: 79.47MB
             url: http://downloads.sourceforge.net/jboss/JBossTools-2.1.2.GA-ALL-linux-gtk.zip
-            md5_url: http://downloads.sourceforge.net/jboss/JBossTools-2.1.2.GA-ALL-linux-gtk.zip.MD5
           - name: Update site bundle of all JBoss Core Tools - Linux 64-bit
             download_size: 70.79MB
             url: http://downloads.sourceforge.net/jboss/JBossTools-2.1.2.GA-ALL-linux-gtk.zip
-            md5_url: http://downloads.sourceforge.net/jboss/JBossTools-2.1.2.GA-ALL-linux-gtk.zip.MD5
           - name: Update site bundle of all JBoss Core Tools - Mac OS X
             download_size: 113.29MB
             url: http://downloads.sourceforge.net/jboss/JBossTools-2.1.2.GA-ALL-macosx-carbon.tar.gz
-            md5_url: http://downloads.sourceforge.net/jboss/JBossTools-2.1.2.GA-ALL-macosx-carbon.tar.gz
           - name: Update site bundle of Hibernate Tools
             download_size: 16MB
             url: http://downloads.sourceforge.net/jboss/HibernateTools-3.2.3.GA.zip
-            md5_url: http://downloads.sourceforge.net/jboss/HibernateTools-3.2.3.GA.zip.MD5
 jbt_is:
   name: JBoss Tools Integration Stack
   url_path_fragment: jbosstools_is

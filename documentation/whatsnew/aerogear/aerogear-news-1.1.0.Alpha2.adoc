@@ -38,7 +38,7 @@ related_jira::JBIDE-16744[]
 
 There is a new "Show Installed" check box to show already installed Cordova plug-ins on a project.
 
-image:./images/1.1.0.Beta1/showInstalled.png[]
+image:./images/1.1.0.Beta1/showinstalled.png[]
 
 
 related_jira::JBIDE-16257[]

@@ -25,7 +25,7 @@ now simply presents you with two options: Download either latest stable JBoss To
 image::images/newsite_downloads.png[link=/downloads]
 
 If you want other versions, combinations, add-ons etc. you can follow
-the link:/downloads/overview[Overview] link which will give all the
+the link:/downloads/overview.html[Overview] link which will give all the
 dirty details.
 
 === Explain what features are in the tools
@@ -99,5 +99,6 @@ I hope you like it and please leave a comment below to test the new commenting s
 
 Have fun!
 
+q
 Max Rydahl Andersen +
 http://twitter.com/maxandersen[@maxandersen]
