@@ -53,7 +53,7 @@ devstudio:
   name: JBoss Developer Studio
   url_path_fragment: devstudio
   streams:
-    kepler:
+    luna:
       8.0.0.Beta1:
         build_type: development
         release_date: 2014-04-11
@@ -77,6 +77,7 @@ devstudio:
             download_size: 725MB
             url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/b9/b9a4d822294c7457522238e81335b8dc5013e9835ce9b1837e4a5be241b6d4c3/jbdevstudio-product-Update-8.0.0.Beta1-v20140408-2350-B93.zip
             #md5_url: n/a
+    kepler:
       7.1.1.GA:
         build_type: stable
         release_date: 2014-03-24
