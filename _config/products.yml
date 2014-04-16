@@ -53,7 +53,7 @@ devstudio:
   name: JBoss Developer Studio
   url_path_fragment: devstudio
   streams:
-    kepler:
+    luna:
       8.0.0.Beta1:
         build_type: development
         release_date: 2014-04-11
