@@ -26,10 +26,10 @@ What is JBoss Tools Integration Stack?::
   JBoss Tools integration stack is a set of Eclipse plugins that add support for JBoss SOA and Business rules related frameworks, such as Drools, jbpm, SwitchYard, Fuse, etc.
 
 How do I install JBoss Tools Integration Stack?::
-  The recommended approach is to use link:../features/central.html[JBoss Central] to select the features from the Integration Stack you would like to use. JBoss Central is included in both JBoss Tools and JBoss Developer Studio for your convenience.
+  The recommended approach is to use link:/features/central.html[JBoss Central] to select the features from the Integration Stack you would like to use. JBoss Central is included in both JBoss Tools and JBoss Developer Studio for your convenience.
 
 Is JBoss Tools open source?::
-   Yes! Please feel free to link:../getinvolved[get involved]!
+   Yes! Please feel free to link:/getinvolved[get involved]!
 
 ==== JBoss Tools Features
 

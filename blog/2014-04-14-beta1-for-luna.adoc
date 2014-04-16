@@ -13,7 +13,7 @@ There is the specific version download available from link:/downloads/jbosstools
 
 Then there is the Luna download page which shows the latest Stable, Development and nightly download for Eclipse Luna - that is available from link:/downloads/jbosstools/luna[Luna releases].
 
-From either of these you can get to the link:/downloads/jbosstools/luna/4.2.0.Beta1#zips[Downloads], link:/downloads/jbosstools/luna/4.2.0.Beta1#update_site[updatesites] and link:/documentation/whatsnew/jbosstools/4.2.0.Beta1.html[What's New]!
+From either of these you can get to the link:/downloads/jbosstools/luna/4.2.0.Beta1.html#zips[Downloads], link:/downloads/jbosstools/luna/4.2.0.Beta1.html#update_site[updatesites] and link:/documentation/whatsnew/jbosstools/4.2.0.Beta1.html[What's New]!
 
 == Installation
 
