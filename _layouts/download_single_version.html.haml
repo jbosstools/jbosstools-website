@@ -214,6 +214,8 @@ tab: downloads
                 %td 
                   - if zip.url.end_with? "zip"
                     %a{:href=>zip.url} zip
+                  - elsif zip.url.end_with? "jar"
+                    %a{:href=>zip.url} jar
                   - elsif zip.url.end_with? "html"
                     %a{:href=>zip.url} html
                   - elsif zip.url.end_with? "tar.gz"
