@@ -330,5 +330,11 @@ task :travis do
   puts '## Deploying website via rsync to staging'
   success = system("rsync -Pqr --protocol=28 --delete-after _site/* #{deploy_url}")
 
+  system("git config --global user.email 'jbosstools-dev@lists.jboss.org'")
+  system("git config --global user.name 'JBoss Tools CI'")
+  system("git remote add travis ${REPO_URL}")
+  system("git tag $GIT_TAG -a -m 'Published to production from TravisCI build $TRAVIS_BUILD_NUMBER'")
+  system("git push travis $GIT_TAG")
+
   fail unless success
 end
