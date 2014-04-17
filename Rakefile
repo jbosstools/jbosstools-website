@@ -302,14 +302,16 @@ task :travis do
     next
   end
   
-  if ENV['TRAVIS_BRANCH'].to_s.scan(/^production$/).length > 0
+  tag = false
 
+  if ENV['TRAVIS_BRANCH'].to_s.scan(/^production$/).length > 0
+    tag = true
     puts 'Building production branch build.'
     profile = 'production'
     deploy_url = "tools@filemgmt.jboss.org:/www_htdocs/tools"
 
   elsif ENV['TRAVIS_BRANCH'].to_s.scan(/^master$/).length > 0
-
+   
     puts 'Building staging(master) branch build.'
     profile = 'staging'
     deploy_url = "tools@filemgmt.jboss.org:/stg_htdocs/tools"
@@ -330,11 +332,13 @@ task :travis do
   puts '## Deploying website via rsync to staging'
   success = system("rsync -Pqr --protocol=28 --delete-after _site/* #{deploy_url}")
 
-  system("git config --global user.email 'jbosstools-dev@lists.jboss.org'")
-  system("git config --global user.name 'JBoss Tools CI'")
-  system("git remote add travis ${REPO_URL}")
-  system("git tag $GIT_TAG -a -m 'Published to production from TravisCI build $TRAVIS_BUILD_NUMBER'")
-  system("git push travis $GIT_TAG")
+  if tag
+    puts '## Tagging repo'
+    system("git config --global user.email 'jbosstools-dev@lists.jboss.org'")
+    system("git config --global user.name 'JBoss Tools CI'")
+    system("git remote add travis ${REPO_URL}")
+    system("git tag $GIT_TAG -a -m 'Published to production from TravisCI build $TRAVIS_BUILD_NUMBER'")
+    system("git push travis $GIT_TAG")
 
   fail unless success
 end
