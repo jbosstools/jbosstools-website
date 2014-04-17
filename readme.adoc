@@ -95,7 +95,7 @@ Any change will be automatically picked up except for changes to `_partials` fil
 
 [NOTE]
 ====
-You might see warnings at startup like
+You might see warnings at startup as follows:
 
 [source]
 ----
