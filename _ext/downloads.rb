@@ -56,6 +56,7 @@ module Awestruct
               info.required_devstudio_version = build_info["required_devstudio_version"]
               #info.supported_devstudio_is_version = build_info["supported_devstudio_is_version"]
               info.whatsnew_url = get_whatsnew_page_output_path(product_id, build_version) 
+              info.installers = build_info["installers"]
               info.update_site_url = build_info["update_site_url"]
               info.marketplace_install_url = build_info["marketplace_install_url"]
               info.zips = build_info["zips"]
@@ -66,9 +67,9 @@ module Awestruct
               
               # used to provide links to download .Final versions on /downloads
               # and links to latest builds per type on /download/<product_id>
-              if (!build_type_label.nil? &&
-                   (@site.latest_builds_download_pages[product_id][build_type_label].nil? ||
-                     (@site.latest_builds_download_pages[product_id][build_type_label].build_info.version <=> download_page.build_info.version) == -1 ))
+              if (!build_type_label.nil? && 
+                  (@site.latest_builds_download_pages[product_id][build_type_label].nil? || 
+                    (@site.latest_builds_download_pages[product_id][build_type_label].build_info.version <=> download_page.build_info.version) == -1 ))
                 @site.latest_builds_download_pages[product_id][build_type_label] = download_page
               end
             end
@@ -83,7 +84,7 @@ module Awestruct
               jbt_core_download_page = site.download_pages[:jbt_core][required_jbt_core_version]
               if (!jbt_core_download_page.nil? && (jbt_core_download_page.build_info.supported_jbt_is_version.nil? || 
                  (jbt_core_download_page.build_info.supported_jbt_is_version <=> product_version) == -1 ))
-                puts "linking jbt_is #{product_version} to jbt_core #{required_jbt_core_version}"
+                #puts "linking jbt_is #{product_version} to jbt_core #{required_jbt_core_version}"
                 jbt_core_download_page.build_info.supported_jbt_is_version = product_version
               end
             end
@@ -99,7 +100,7 @@ module Awestruct
               devstudio_download_page = site.download_pages[:devstudio][required_devstudio_version]
               if (!devstudio_download_page.nil? && (devstudio_download_page.build_info.supported_devstudio_is_version.nil? || 
                  (devstudio_download_page.build_info.supported_devstudio_is_version <=> product_version) == -1 ))
-                puts "linking devstudio_is #{product_version} to devstudio #{required_devstudio_version}"
+                #puts "linking devstudio_is #{product_version} to devstudio #{required_devstudio_version}"
                 devstudio_download_page.build_info.supported_devstudio_is_version = product_version
               end
             end
