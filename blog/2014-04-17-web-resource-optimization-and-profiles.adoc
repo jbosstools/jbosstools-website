@@ -14,11 +14,11 @@ First you'll need to install a couple things into an Eclipse Java EE installatio
 |===
 |Red Hat JBoss Developer Studio | Eclipse Java EE
 
-a| * You can download and install Red Hat JBoss Developer Studio 7.1.0 from https://devstudio.jboss.com/earlyaccess/[here]
+a| * You can download and install Red Hat JBoss Developer Studio 7.1.1 from https://devstudio.jboss.com/earlyaccess/[here]
 * or install it over an existing Eclipse (Kepler) installation from the https://marketplace.eclipse.org/content/red-hat-jboss-developer-studio-kepler[Eclipse Marketplace]
 
-a| * Download and install https://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/keplersr1[Eclipse Java EE Kepler SR1]
-* JBoss Tools 4.1.1 can be installed from 
+a| * Download and install https://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/keplersr2[Eclipse Java EE Kepler SR2]
+* JBoss Tools 4.1.2 can be installed from 
 ** https://marketplace.eclipse.org/content/jboss-tools-kepler[the Eclipse Marketplace] 
 ** or this p2 repository : http://download.jboss.org/jbosstools/updates/stable/kepler/
 
@@ -246,12 +246,15 @@ Dealing with optimized resources in Eclipse is made really easy with a combinati
 
 Issues with m2e-wro4j can be opened at https://github.com/jbosstools/m2e-wro4j/issues. 
 
-Issues with the Maven Profile Manager can be opened at https://issues.jboss.org/browse/JBIDE/component/12312576
+Issues with the Maven Profile Manager can be opened at :
+
+* https://issues.jboss.org/browse/JBIDE/component/12312576 for the JBoss Tools version
  
 As always, for all your WRO4J or wro4j-maven-plugin specific issues, I strongly encourage you to :
 
 * read the WRO4J getting started page and the https://code.google.com/p/wro4j/wiki/MavenPlugin[Maven plugin documentation]
 * ask the http://groups.google.com/group/wro4j[google group] directly
+
  
 Have fun!
 

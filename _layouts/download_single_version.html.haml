@@ -30,6 +30,10 @@ tab: downloads
       - unless page.build_info.documentation_url.nil?
         %a{:href=>relative(page.build_info.documentation_url)} Documentation
         &#124;
+      -# Blog announcement
+      - unless page.build_info.blog_announcement_url.nil?
+        %a{:href=>relative(page.build_info.blog_announcement_url)} Blog Announcement
+        &#124;
       -# JBoss Tools has a What's New
       - unless page.build_info.whatsnew_url.nil?
         %a{:href=>relative(page.build_info.whatsnew_url)} What's New 
@@ -40,19 +44,19 @@ tab: downloads
         &#124;
       %a{:href=>relative("/downloads/installation.html")} Installation
       
-    - if page.build_info.build_type_label == :stable
+    - if page.build_info.build_type_label == "stable"
       .alert.alert-success
         #{page.build_info.name} #{page.build_info.version} was released on #{page.build_info.release_date}. 
         - if page.build_info.blog_announcement_url 
           %a{:href=>relative(page.build_info.blog_announcement_url)} Read the announcement.
           
         
-    - elsif page.build_info.build_type_label == :development
+    - elsif page.build_info.build_type_label == "development"
       .alert.alert-info
         %strong Development builds
         have received basic testing, but are not considered fully stable yet.
         
-    - elsif page.build_info.build_type_label == :nightly
+    - elsif page.build_info.build_type_label == "nightly"
       .alert.alert-warning
         %strong Warning! 
         The
@@ -73,13 +77,16 @@ tab: downloads
     - unless page.build_info.eclipse_version.requirements.nil?
       .alert.alert-requirements
         - if page.build_info.product_id.to_s == "jbt_core"
-          Requirements: #{page.build_info.eclipse_version.requirements} and 
+          %strong Requirements:
+          #{page.build_info.eclipse_version.requirements} and 
           %a{:href=>page.build_info.eclipse_version.download_url} #{page.build_info.eclipse_version.full_name}
         - elsif page.build_info.product_id.to_s == "devstudio"
-          Requirements: #{page.build_info.eclipse_version.requirements} only.
+          %strong Requirements:
+          #{page.build_info.eclipse_version.requirements} only.
         - elsif page.build_info.product_id.to_s == "jbt_is"
           - jbt_core_page = site.download_pages[:jbt_core][page.build_info.required_jbt_core_version] 
-          Requirements: #{page.build_info.eclipse_version.requirements} plus
+          %strong Requirements:
+          #{page.build_info.eclipse_version.requirements} plus
           %a{:href=>page.build_info.eclipse_version.download_url} #{page.build_info.eclipse_version.full_name}
           with 
           %a{:href=>relative(jbt_core_page.output_path)} #{site.products[:jbt_core].name} #{page.build_info.required_jbt_core_version}
@@ -209,8 +216,8 @@ tab: downloads
               %tr
                 %td #{zip.name}  
                 %td.right 
-                  - if zip.download_size?
-                    #{zip.download_size}              
+                  - if zip.file_size?
+                    #{zip.file_size}              
                 %td 
                   - if zip.url.end_with? "zip"
                     %a{:href=>zip.url} zip
@@ -222,6 +229,7 @@ tab: downloads
                     %a{:href=>zip.url} tar.gz
                   - else
                     %a{:href=>zip.url} unknown
+                    - puts "Unknown file type: #{zip.url} (in zips of #{page.build_info.name} #{page.build_info.version})"
                   - if zip.md5_url?
                     (
                     %a{:href=>zip.md5_url}> md5
