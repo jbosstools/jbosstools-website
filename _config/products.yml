@@ -63,7 +63,13 @@ devstudio:
         blog_announcement_url: /blog/2014-04-14-beta1-for-luna.html
         marketplace_url: http://marketplace.eclipse.org/node/1616973
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
-        download_url: https://www.jboss.org/products/devstudio#earlyaccess
+        installers: 
+          - name: Universal Multi-Platform Standalone Installer
+            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/25/2550fbb912f42b6c0e60d124cc0d5b7c1a26b1767e27a0ecd6f2b9c36f3b3d9a/jbdevstudio-product-universal-8.0.0.Beta1-v20140408-2350-B93.jar
+            file_size: 482MB
+          - name: Universal Multi-Platform Standalone Installer bundled with EAP 6.2.0
+            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=https://www.jboss.org/download-manager/content/origin/files/sha256/5f/5f7a06b642bf212a89c9526b2e477bab33cc9aa6b0bb2bb63e8e23e5586b4266/jbdevstudio-product-eap-universal-8.0.0.Beta1-v20140408-2350-B93.jar
+            file_size: 609MB
         zips:
           - name: Installer With EAP 6.2.0
             file_size: 613MB
@@ -87,11 +93,17 @@ devstudio:
         #blog_announcement_url: http://bit.ly/jbt-412
         marketplace_url: http://marketplace.eclipse.org/node/827807
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=827807
-        download_url: https://www.jboss.org/products/devstudio
+        installers: 
+          - name: Universal Multi-Platform Standalone Installer
+            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/93/9377ef0b9a50beebd1ccc26bfa8390a1f3b96a1a9f1c2dc415d107c05b1c50ad/jbdevstudio-product-universal-7.1.1.GA-v20140314-2145-B688.jar
+            file_size: 482MB
+          - name: Universal Multi-Platform Standalone Installer bundled with EAP 6.2.0
+            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/8d/8d6bf16eccb2f4bd9612e18a8dcce5b488296c8725b96107b6f949f8e0481d32/jbdevstudio-product-eap-universal-7.1.1.GA-v20140314-2145-B688.jar
+            file_size: 609MB
         zips:
           - name: Update site (including sources) bundle of JBoss Developer Studio
             file_size: 713MB
-            url: https://devstudio.jboss.com/updates/7.0.0/jbdevstudio-updatesite-7.1.1.GA-v20140314-2145-B688.zip
+            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/e9/e983aba26f1080bed83ce2b705885a079a56df05f20c67d4a63b32bfd265511d/jbdevstudio-product-Update-7.1.1.GA-v20140314-2145-B688.zip
             md5_url: https://devstudio.jboss.com/updates/7.0.0/jbdevstudio-updatesite-7.1.1.GA-v20140314-2145-B688.zip.MD5
       7.1.0.GA:
         release_date: 2013-12-16
@@ -104,7 +116,11 @@ devstudio:
         # comment out marketplace and point download_url at the EA page
         #marketplace_url: http://marketplace.eclipse.org/node/827807
         #marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=827807
-        download_url: https://devstudio.jboss.com/earlyaccess/7.1.0.GA.html
+        old_download_url: https://devstudio.jboss.com/earlyaccess/7.1.0.GA.html
+        installers: 
+          - name: Universal Multi-Platform Standalone Installer
+            url: https://devstudio.jboss.com/earlyaccess/builds/development/7.1.0.GA/jbdevstudio-product-universal-7.1.0.GA-v20131208-0703-B592.jar
+            file_size: 486MB
         zips:
           - name: Update site (including sources) bundle of JBoss Developer Studio
             file_size: 719MB
@@ -120,7 +136,8 @@ devstudio:
         # comment out marketplace and point download_url at the EA page
         #marketplace_url: http://marketplace.eclipse.org/node/827807
         #marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=827807
-        download_url: https://devstudio.jboss.com/earlyaccess/7.0.1.GA.html
+        #broken link: 
+        #download_url: https://devstudio.jboss.com/earlyaccess/7.0.1.GA.html
         zips:
           - name: Update site (including sources) bundle of JBoss Developer Studio
             file_size: 696MB
@@ -135,7 +152,10 @@ devstudio:
         release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/6.0/html-single/6.0.1_Release_Notes/index.html
         marketplace_url: http://marketplace.eclipse.org/node/503834
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=503834
-        download_url: https://devstudio.jboss.com/earlyaccess/6.0.1.GA.html
+        installers: 
+          - name: Universal Multi-Platform Standalone Installer
+            url: https://devstudio.jboss.com/earlyaccess/builds/stable/6.0.1.GA/jbdevstudio-product-universal-6.0.1.GA-v20130327-2052-B361.jar
+            file_size: 385MB
         zips:
           - name: Update site (including sources) bundle of JBoss Developer Studio
             file_size: 441MB
@@ -150,7 +170,10 @@ devstudio:
         release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/5.0/html-single/5.0.2_Release_Notes/index.html
         marketplace_url: http://marketplace.eclipse.org/node/121986
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=121986
-        download_url: https://devstudio.jboss.com/earlyaccess/5.0.0.GA.html
+        installers: 
+          - name: Universal Multi-Platform Standalone Installer
+            url: https://devstudio.jboss.com/earlyaccess/builds/stable/5.0.0.GA/jbdevstudio-product-universal-5.0.0.v20120615-1714-H213-GA.jar
+            file_size: 385MB
         zips:
           - name: Update site (including sources) bundle of JBoss Developer Studio
             file_size: 373MB
