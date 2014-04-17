@@ -66,8 +66,9 @@ module Awestruct
               
               # used to provide links to download .Final versions on /downloads
               # and links to latest builds per type on /download/<product_id>
-              
-              if !build_type_label.nil? then
+              if (!build_type_label.nil? &&
+                   (@site.latest_builds_download_pages[product_id][build_type_label].nil? ||
+                     (@site.latest_builds_download_pages[product_id][build_type_label].build_info.version <=> download_page.build_info.version) == -1 ))
                 @site.latest_builds_download_pages[product_id][build_type_label] = download_page
               end
             end
