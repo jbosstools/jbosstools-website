@@ -339,6 +339,7 @@ task :travis do
     system("git remote add travis ${REPO_URL}")
     system('git tag $GIT_TAG -a -m "Published to production from TravisCI build $TRAVIS_BUILD_NUMBER"')
     system("git push travis $GIT_TAG")
+  end
 
   fail unless success
 end
