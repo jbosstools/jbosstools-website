@@ -201,7 +201,7 @@ jbt_core:
             url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/hibernatetools-Update-4.2.0.Beta1_2014-04-08_19-49-44-B47.zip
             md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/hibernatetools-Update-4.2.0.Beta1_2014-04-08_19-49-44-B47.zip.MD5
           - name: Release Notes
-            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/zz_Release_Notes_4.2.0.Beta1.readme.html
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/zz_Release_Notes_4.2.0.Beta1.readme.htm
       4.2.0.Alpha2:
         release_date: 2014-02-14
         build_type: development
