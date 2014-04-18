@@ -223,7 +223,7 @@ tab: downloads
                     %a{:href=>zip.url} zip
                   - elsif zip.url.end_with? "jar"
                     %a{:href=>zip.url} jar
-                  - elsif zip.url.end_with? "html"
+                  - elsif (zip.url.end_with?("html") || zip.url.end_with?("htm"))
                     %a{:href=>zip.url} html
                   - elsif zip.url.end_with? "tar.gz"
                     %a{:href=>zip.url} tar.gz
