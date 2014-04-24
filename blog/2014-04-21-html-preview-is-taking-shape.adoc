@@ -1,9 +1,11 @@
 = New HTML Preview is taking shape!
 :page-layout: blog
 :page-author: ibuziuk
-:page-tags: [jbosstools, jbds, html, vpe, WYSIWYG, XULRunner]
+:page-tags: [jbosscentral, html, vpe, WYSIWYG, XULRunner]
 
-In this article I'm happy to introduce you a brand new HTML Preview without XULRunner. Basically, HTML Preview could be treated as a possible XULRunner substitution for plain HTML pages (JSF/xhtml still requires XULRunner). The point is that when XULRunner is unavailable, HTML Preview will be used in "Visual/Source" and "Preview" tabs of the https://github.com/jbosstools/jbosstools-vpe[VPE]. It will be also available as a separate view and won't be coupled with a paticular editor.
+In this article I'm happy to introduce you a brand new HTML Preview without XULRunner. 
+
+Basically, HTML Preview could be treated as a possible XULRunner substitution for plain HTML pages (JSF/xhtml still requires XULRunner). The point is that when XULRunner is unavailable, HTML Preview will be used in "Visual/Source" and "Preview" tabs of the https://github.com/jbosstools/jbosstools-vpe[VPE]. It will be also available as a separate view and won't be coupled with a paticular editor.
 
 == Overview
 HTML Preview has several cool features like:
@@ -17,10 +19,16 @@ Here is a short demo video, which covers basic use case :
 video::92255691[vimeo, width=640, height=400]
 
 == How can I try it?
-HTML Preview is not in production yet. It will be a part of JBoss Tools and Developer Studio Beta2 release for Eclipse Luna. However, you can always get access to the "snapshot" build of JBoss Tools http://download.jboss.org/jbosstools/updates/nightly/core/master[here]. When we push changes, it should be maximum a few hours before you will be able to test the actual result.
+
+HTML Preview is not in production yet. It will be a part of JBoss Tools and Developer Studio Beta2 release for Eclipse Luna. However, you can today access to the "nightly" build of JBoss Tools VPE updatesite at:
+
+  http://download.jboss.org/jbosstools/builds/staging/jbosstools-vpe_master/all/
+
+On this updatesite you find "HTML Preview" when unselecting "Show categorized". Once installed and you have restarted Eclipse you should have a "HTML Preview" view available.
 
 == Conclusion
-We are trying our best to make HTML Preview as good as possible. Users' feedback is what we are seeking for now. We are looking forward to hearing your comments / remarks! +
+
+We are trying our best to make HTML Preview as good as possible. Users feedback is what we are seeking for now. We are looking forward to hearing your comments / remarks! +
 Have fun!
 
 Ilya Buziuk +
