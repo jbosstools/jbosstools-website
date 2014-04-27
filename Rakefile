@@ -329,7 +329,7 @@ task :travis do
   # Workaround for not having the above separated out properly in subtasks
   errorcheck
 
-  puts '## Deploying website via rsync to staging'
+  puts '## Deploying website via rsync to #{deploy_url}'
   success = system("rsync -Pqr --protocol=28 --delete-after _site/* #{deploy_url}")
 
   if tag
