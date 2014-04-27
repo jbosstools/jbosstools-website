@@ -1,0 +1,58 @@
+= About "Referenced file contains errors" for ironjacamar datasources
+:page-layout: blog
+:page-author: maxandersen
+// page-tags: used to categorize the blog entry. Try not going overboard here.
+// use components from jira, try keep them short and not require spaces. 
+// Note: jbosscentral is a magic tag that makes it show up on jbosscentral
+// Leave that out if your blog entry has a narrow audience scope.  
+:page-tags: [bug, xml, jbosscentral]
+
+The last few days an error have started popping up during validation of all our existing JBoss archetypes and examples.
+
+The error you will see in Eclipse problems view will be:
+
+    Referenced file contains errors (http://docs.jboss.org/ironjacamar/schema/datasources_1_0.xsd).  
+    For more information, right click on the message in the Problems View and select "Show Details..."
+
+on various *-ds.xml files.
+
+The cause of this error is that the IronJacamar project moved their xsd's and rest of their content to http://ironjacamar.org back in June 2013.
+
+I'm sorry for that inconvenience, but do not despair - the solution is here.
+
+== Solution
+
+For now we have https://issues.jboss.org/browse/ORG-2023[requested that the content will be restored] to make this true but annoying error to go away without you having to do anything.
+
+But until that is fixed you can also fix it locally by using the updated ironjacamar url/namespace in your .xml files:
+
+Change this:
+
+```xml
+<datasources xmlns="http://www.jboss.org/ironjacamar/schema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.jboss.org/ironjacamar/schema http://docs.jboss.org/ironjacamar/schema/datasources_1_0.xsd">
+```
+
+to
+
+```xml
+<datasources xmlns="http://www.ironjacamar.org/doc/schema"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.ironjacamar.org/doc/schema http://www.ironjacamar.org/doc/schema/datasources_1_0.xsd">
+```
+
+Basically replacing `http://www.jboss.org/ironjacamar/schema` with `http://www.ironjacamar.org/doc/schema`. The namespace name changes, but otherwise the content/semantics should stay the same. 
+
+*Why* this validation errors have not shown up before we are still looking into and I'll let you know when we have that answer. 
+
+For now just live with the validation error for a few days or update your xsd files to use the new namespace.
+
+Again, sorry for the inconvenience.
+
+Despite this - do Have fun!
+
+Max Rydahl Andersen +
+http://twitter.com/maxandersen[@maxandersen]
+
+
