@@ -162,7 +162,20 @@ devstudio_is:
   url_path_fragment: devstudio_is
   streams:
     kepler:
+      7.0.1.GA:
+        build_type: stable
+        # this URL doesn't work... not sure where this file is, but the rendered link is http://tools.jboss.org/blog/2014-04-14-JBTIS-4.1.4.Final.adoc which is 404'd
+        #blog_announcement_url: /blog/2014-04-14-JBTIS-4.1.4.Final.adoc
+        release_date: 2014-04-14
+        required_devstudio_version: 7.1.1.GA
+        update_site_url: https://devstudio.jboss.com/updates/7.0/integration-stack/
+        zips:
+          - name: Update site (including sources) bundle of JBoss Developer Studio Integration Stack
+            file_size: 248MB
+            url: https://devstudio.jboss.com/updates/7.0.0/jbdevstudio-integration-stack-updatesite-7.0.1.GA.zip
+            md5_url: https://devstudio.jboss.com/updates/7.0.0/jbdevstudio-integration-stack-updatesite-7.0.1.GA.zip.MD5
       7.0.0.GA:
+        archived: true
         build_type: stable
         blog_announcement_url: https://community.jboss.org/en/tools/blog/2014/01/30/integration-stack-tooling-for-jboss-tools-developer-studio?et=watches.email.blog
         release_date: 2014-01-30
@@ -250,9 +263,10 @@ jbt_core:
       4.1.2.Final:
         build_type: stable
         release_date: 2014-03-24
+        supported_jbt_is_version: 4.1.4.Final
         documentation_url: http://docs.jboss.org/tools/4.1.x.Final/
         whatsnew_url: http://docs.jboss.org/tools/whatsnew/
-        #blog_announcement_url: http://bit.ly/jbt-412
+        blog_announcement_url: https://community.jboss.org/community/tools/blog/2014/03/25/jboss-tools-412final-and-developer-studio-711ga-released
         marketplace_url: http://marketplace.eclipse.org/node/876523
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=876523
         update_site_url: http://download.jboss.org/jbosstools/updates/stable/kepler/
@@ -272,7 +286,6 @@ jbt_core:
           - name: Release Notes
             file_size: 13kB
             url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.x/zz_Release_Notes_4.1.2.Final.readme.html
-        
       4.1.1.Final:
         archived: true
         build_type: stable
@@ -655,7 +668,8 @@ jbt_is:
     kepler:
       4.1.4.Final:
         build_type: stable
-        blog_announcement_url: /blog/2014-04-14-JBTIS-4.1.4.Final.adoc
+        # this URL doesn't work... not sure where this file is, but the rendered link is http://tools.jboss.org/blog/2014-04-14-JBTIS-4.1.4.Final.adoc which is 404'd
+        #blog_announcement_url: /blog/2014-04-14-JBTIS-4.1.4.Final.adoc
         release_date: 2014-04-14
         required_jbt_core_version: 4.1.2.Final
         update_site_url: http://download.jboss.org/jbosstools/updates/stable/kepler/integration-stack 
