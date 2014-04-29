@@ -164,7 +164,7 @@ devstudio_is:
     kepler:
       7.0.1.GA:
         build_type: stable
-        blog_announcement_url: /blog/2014-04-14-JBTIS-4.1.4.Final.html
+        blog_announcement_url: /blog/2014-04-14-JBTIS-4.html
         release_date: 2014-04-14
         required_devstudio_version: 7.1.1.GA
         update_site_url: https://devstudio.jboss.com/updates/7.0/integration-stack/
@@ -666,8 +666,7 @@ jbt_is:
     kepler:
       4.1.4.Final:
         build_type: stable
-        # this URL doesn't work... not sure where this file is, but the rendered link is http://tools.jboss.org/blog/2014-04-14-JBTIS-4.1.4.Final.adoc which is 404'd
-        #blog_announcement_url: /blog/2014-04-14-JBTIS-4.1.4.Final.adoc
+        blog_announcement_url: /blog/2014-04-14-JBTIS-4.html
         release_date: 2014-04-14
         required_jbt_core_version: 4.1.2.Final
         update_site_url: http://download.jboss.org/jbosstools/updates/stable/kepler/integration-stack 
