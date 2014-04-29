@@ -162,12 +162,23 @@ devstudio_is:
   url_path_fragment: devstudio_is
   streams:
     kepler:
+      7.0.1.GA:
+        build_type: stable
+        blog_announcement_url: http://tools.jboss.org/blog/2014-04-14-JBTIS-4.html
+        release_date: 2014-04-14
+        required_devstudio_version: 7.1.1.GA
+        update_site_url: https://devstudio.jboss.com/updates/7.0/integration-stack/
+        zips:
+          - name: Update site (including sources) bundle of JBoss Developer Studio Integration Stack
+            file_size: 247MB
+            url: https://devstudio.jboss.com/updates/7.0.0/jbdevstudio-integration-stack-updatesite-7.0.1.GA.zip
+            md5_url: https://devstudio.jboss.com/updates/7.0.0/jbdevstudio-integration-stack-updatesite-7.0.1.GA.zip.MD5
       7.0.0.GA:
         build_type: stable
         blog_announcement_url: https://community.jboss.org/en/tools/blog/2014/01/30/integration-stack-tooling-for-jboss-tools-developer-studio?et=watches.email.blog
         release_date: 2014-01-30
         required_devstudio_version: 7.1.0.GA
-        update_site_url: https://devstudio.jboss.com/updates/7.0/integration-stack/
+        update_site_url: https://devstudio.jboss.com/updates/7.0.0/7.0.0.GA.jbds-is
         zips:
           - name: Update site (including sources) bundle of JBoss Developer Studio Integration Stack
             file_size: 230MB
