@@ -42,15 +42,22 @@ If you do not want to use JBoss Central you can also use this updatesite directl
 
    http://download.jboss.org/jbosstools/updates/requirements/kepler/java8/
 
+Please note that this site includes plugins for 'm2e' with "Optional" in their name which are only relevant if you are an Eclipse plugin developer.
+You can skip those - just there for completeness.
+
 == Limitations
 
 We know that Java 8 support is not fully working for WildFly 8 server adapter in our Kepler based JBoss Tools version - if you want to use
-that try out our recent builds of link::/downloads/jbosstools/luna[JBoss Tools for Luna] where this is being supported.
+that try out our recent builds of link:/downloads/jbosstools/luna[JBoss Tools for Luna] where this is being supported.
 
 But otherwise you can now build and run Java 8 projects with JBoss Tools for Eclipse Kepler today.
 
+Have fun!
+
 Max Rydahl Andersen +
 https://twitter.com/maxandersen[@maxandersen]
+
+
 
 
 
