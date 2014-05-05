@@ -8275,7 +8275,7 @@ ul.icons-ul {
   margin-left: auto;
   margin-right: auto;
 }
-/* ------------------ Red Hat Tab & "A JBoss project box - Necessary for every JBoss projectregardless of hosting location ------------------------- */
+/* ------------------ Red Hat Tab & "JBoss Project" box - Necessary for every JBoss project regardless of hosting location ------------------------- */
 .dropup {
   /* --- This is the standard RH tab that overlaps what's below it (project banner or navigation bar) --- */
 
@@ -8453,8 +8453,8 @@ ul.icons-ul {
 #tabnav ul li#tabnav-search input:-moz-placeholder {
   color: #173444;
 }
-/* --- The "A JBoss Project box --- */
-#ajbossproject {
+/* --- The "JBoss Project" box --- */
+#jbossproject {
   margin-top: 8px;
   width: 130px;
   height: 20px;
@@ -8554,12 +8554,12 @@ ul.icons-ul {
     width: 74px;
     right: 30px;
   }
-  /* ---- Hides "A JBoss Project" box on mobile devices ---- */
-  #ajbossproject {
+  /* ---- Hides "JBoss Project" box on mobile devices ---- */
+  #jbossproject {
     display: none;
   }
 }
-/* ---- End Red Hat tab and "A JBoss project" box ---- */
+/* ---- End Red Hat tab and "JBoss Project" box ---- */
 /* ------------------ JBoss Community header (not for project pages) ------------------------- */
 .globalbanner .globalbrand {
   margin: 10px 0px;
