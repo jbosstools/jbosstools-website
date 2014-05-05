@@ -8454,7 +8454,7 @@ ul.icons-ul {
   color: #173444;
 }
 /* --- The "JBoss Project" box --- */
-#jbossproject {
+#ajbossproject {
   margin-top: 8px;
   width: 130px;
   height: 20px;
@@ -8555,7 +8555,7 @@ ul.icons-ul {
     right: 30px;
   }
   /* ---- Hides "JBoss Project" box on mobile devices ---- */
-  #jbossproject {
+  #ajbossproject {
     display: none;
   }
 }
