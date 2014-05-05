@@ -32,7 +32,7 @@ tab: downloads
         &#124;
       -# Blog announcement
       - unless page.build_info.blog_announcement_url.nil?
-        %a{:href=>relative(page.build_info.blog_announcement_url)} Blog Announcement
+        %a{:href=>relative(page.build_info.blog_announcement_url)} Blog Announcement 
         &#124;
       -# JBoss Tools has a What's New
       - unless page.build_info.whatsnew_url.nil?
@@ -42,7 +42,7 @@ tab: downloads
       - unless page.build_info.release_notes_url.nil?
         %a{:href=>relative(page.build_info.release_notes_url)} Release Notes 
         &#124;
-      %a{:href=>relative("/downloads/installation.html")} Installation
+      %a{:href=>relative("/downloads/installation.html")} Installation Instructions
       
     - if page.build_info.build_type_label == "stable"
       .alert.alert-success
@@ -71,8 +71,6 @@ tab: downloads
         %strong 
           %a{:href=>higher_version_download_page.output_path} #{page.build_info.name} #{higher_version_download_page.build_info.version}
         is our latest stable release for #{page.build_info.eclipse_version.full_name}
-          
-    
         
     - unless page.build_info.eclipse_version.requirements.nil?
       .alert.alert-requirements
@@ -92,12 +90,16 @@ tab: downloads
           %a{:href=>relative(jbt_core_page.output_path)} #{site.products[:jbt_core].name} #{page.build_info.required_jbt_core_version}
         - elsif page.build_info.product_id.to_s == "devstudio_is"
           - devstudio_page = site.download_pages[:devstudio][page.build_info.required_devstudio_version]
-          Requirements: #{page.build_info.eclipse_version.requirements} plus
+          %strong Requirements:
+          #{page.build_info.eclipse_version.requirements} plus
           %a{:href=>relative(devstudio_page.output_path)} #{site.products[:devstudio].name} #{page.build_info.required_devstudio_version}
-        
     
     #installation_tabs.tabbable
       %ul.nav.nav-tabs
+        - unless page.build_info.installers.nil? 
+          %li{:id=>"direct_download_tab"}
+            %a{:href=>"#direct_download", :"data-toggle"=>"tab"}
+              Installer
         - unless page.build_info.marketplace_install_url.nil? 
           %li{:id=>"marketplace_tab"}
             %a{:href=>"#marketplace", :"data-toggle"=>"tab"}
@@ -115,10 +117,45 @@ tab: downloads
             %a{:href=>"#zips", :"data-toggle"=>"tab"}
               Update Site Zip
         
-        
     #installation-tabs-content.tab-content     
+      - unless page.build_info.installers.nil? 
+        .tab-pane{:id=>"direct_download"}
+          .alert
+            :markdown 
+              **Registration required**
+              Downloads require accepting the 
+              [terms and conditions](http://www.jboss.org/developer-program/termsandconditions) 
+              of the JBoss Developer Program which provides $0 subscriptions for development use only.
+          %p Select the Standalone Installer you want to download
+          %table.center
+            %tr
+              %th<Name
+              %th<Size
+              %th<Links
+            - page.build_info.installers.each do |installer|
+              %tr
+                %td #{installer.name}  
+                %td.right 
+                  - if installer.file_size?
+                    #{installer.file_size}              
+                %td 
+                  - if installer.url.end_with? "zip"
+                    %a{:href=>installer.url} zip
+                  - elsif installer.url.end_with? "jar"
+                    %a{:href=>installer.url} jar
+                  - elsif (installer.url.end_with?("html") || installer.url.end_with?("htm"))
+                    %a{:href=>installer.url} html
+                  - elsif installer.url.end_with? "tar.gz"
+                    %a{:href=>installer.url} tar.gz
+                  - else
+                    %a{:href=>installer.url} unknown
+                    - puts "Unknown file type: #{installer.url} (in installers of #{page.build_info.name} #{page.build_info.version})"
+                  - if installer.md5_url?
+                    (
+                    %a{:href=>installer.md5_url}> md5
+                    )
+      
       - unless page.build_info.marketplace_install_url.nil? 
-        -# use markdown or asciidoc instead 
         .tab-pane{:id=>"marketplace"}
           %p
             Drag and drop this
