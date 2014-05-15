@@ -40,7 +40,7 @@ If you have JBoss Tools installed the recommended way is that you install them a
 
 If you do not want to use JBoss Central you can also use this updatesite directly:
 
-   http://download.jboss.org/jbosstools/updates/requirements/kepler/java8/
+   http://download.jboss.org/jbosstools/updates/stable/kepler/central/java8/
 
 Please note that this site includes plugins for 'm2e' with "Optional" in their name which are only relevant if you are an Eclipse plugin developer.
 You can skip those - just there for completeness.
