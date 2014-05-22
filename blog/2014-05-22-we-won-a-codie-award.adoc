@@ -20,7 +20,7 @@ video::67480300[vimeo, width=640, height=400]
 Take a look at that and know since the nomination back in September 2013 we now got 
 http://tools.jboss.org/downloads/devstudio/luna/8.0.0.Beta1.html[JBoss Developer Studio 8 Beta 1] with even more goodies, including http://tools.jboss.org/documentation/whatsnew/jbosstools/4.2.0.Beta1.html[Mobile tooling improvements].
 
-Worth mentioning http://www.siia.net/codies/2014/winners_detail.asp?nID=157[that OpenShift] won in the http://www.siia.net/codies/2014/finalist_detail.asp?ID=7["Best Cloud Platform as a Service"] category too - Congratulations!.
+Worth mentioning that http://www.siia.net/codies/2014/winners_detail.asp?nID=157[OpenShift] won in the http://www.siia.net/codies/2014/finalist_detail.asp?ID=7["Best Cloud Platform as a Service"] category too - Congratulations!.
 
 Have fun!
 
