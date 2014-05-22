@@ -1,0 +1,39 @@
+= Community Acceptance Testing (CAT)
+:page-layout: project
+:page-status: green
+
+== JBoss Tools Community Acceptance Testing (CAT)
+
+Welcome to JBoss Tools Community Acceptance Testing (JBoss Tools CAT)!
+
+JBoss Tools CAT is an effort to get better and early feedback that the
+features in JBoss Tools are working well and getting confirmation from
+JBoss Tools and Developer Studio community that the quality is ready
+for the final release.
+
+== Organization
+
+The idea is to get as much feedback on our Alpha, Beta and CR builds
+as possible.  We are looking for feedback on usability, quality and
+performance for new features, but especially also for features that
+users will already be using is continuing to work.
+
+
+
+== CAT Member responsibilities
+
+As a member of the JBoss Tools CAT team you are asked to give feedback
+on the two functional areas you chose to focus on. It is fully
+acceptable to only use the Beta and CR builds, but it is highly
+recommended and appreciated if you use and tested the nightly
+development builds too.
+
+You can communicate to the JBoss Tools team and other CAT members via
+the CAT community forum, the mailing list or jira.
+
+We may request additional input via surveys or online IRC meetings when JBoss Tools CAT 
+is active and at the end of a release we will send a survey where you can express your opinion
+on wether the new features are ready for release and the features you depend on have not regressed.
+
+
+ 
