@@ -18,9 +18,9 @@
 .jumbotron {
   background: none;
   h1, p {
-    color: #656565; 
+    color: #656565;
   }
-  
+
 }
 
 .bs-docs-sidenav > li:first-child > a {
@@ -43,6 +43,19 @@
 // *************************************
 // Common styles
 // *************************************
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -.25px;
+}
+h2 {
+  color: #444;
+}
+h3 {
+  font-size: 23px;
+}
+h4, h5, h6 {
+  font-weight: 400;
+}
+
 .center, .center > p {
   text-align: center;
 }
@@ -97,8 +110,8 @@ td.right {
   font-weight: bold;
 }
 
-p { 
-  text-align: justify;
+p {
+  //text-align: justify;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
   //font-size: 1.1em;
@@ -124,17 +137,18 @@ hr {
   background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
   background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
   background-image: linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
-  border: 0;  
+  border: 0;
 }
 
 section {
   padding-top: 20px;
   padding-bottom: 20px;
-  
+
   header {
     margin-bottom: 10px;
     h3, h4 {
-      text-align: center;
+      //text-align: center;
+      border-bottom: 1px solid #EEEEEE;
     }
   }
 
@@ -153,43 +167,51 @@ section {
       margin-right: auto;
       list-style: none;
       width: 75%;
-      
+
       li {
         margin-bottom: 10px;
       }
     }
-    
+
     ul.double {
       overflow:hidden;
-      
+
       li {
         width: 50%;
         float:left;
-        display:inline;  
+        display:inline;
         &:nth-child(odd) {
           text-align: right;
           a {
             padding-right: 1em;
           }
-          
+
         }
         &:nth-child(even) {
           text-align: left;
           a {
             padding-left: 1em;
           }
-          
+
         }
       }
     }
   }
-  
+
   footer {
     //margin-top: 10px;
     line-height: 30px;
     //text-align: right;
     a.btn {
-      margin: 0px 5px;
+      margin: 5px 5px;
+    }
+    a.btn-small {
+      background-color: #DFF3EA;
+      border: 1px solid #86CDAD;
+      background-image: none;
+      &:hover, &:focus {
+        background-color: #cfebdf;
+      }
     }
   }
 }
@@ -197,18 +219,18 @@ section {
 #content-wrapper {
   margin-top: 0px;
   margin-bottom: 0px;
-  
+
   /*
   @media screen and (min-width: 1200px) {
     max-width: 900px;
     margin-left: auto;
-    margin-right: auto;  
+    margin-right: auto;
   }
-  
+
   @media screen and (width: 940px) {
     max-width: 900px;
     margin-left: auto;
-    margin-right: auto;  
+    margin-right: auto;
   }*/
 }
 
@@ -224,6 +246,9 @@ blockquote > p {
 
 .alert {
   margin: 20px 0px;
+  a {
+    text-decoration: underline;
+  }
 }
 .alert-requirements {
   border-color: transparent;
@@ -231,7 +256,7 @@ blockquote > p {
   background-color: rgb(243, 243, 243);
   border-width: 1px;
   border-style: solid;
-  border-color: rgb(221, 221, 221) rgb(221, 221, 221) 
+  border-color: rgb(221, 221, 221) rgb(221, 221, 221)
 }
 
 .nav {
@@ -306,18 +331,18 @@ blockquote > p {
     align-items: strech;
     flex-direction: row;
     section {
-      position: relative; 
+      position: relative;
       footer {
         position: absolute; bottom: 0;
         width: 100%;
       }
     }
-    
+
   }
 }
 
 // ******************************************************
-// Anchors near the titles 
+// Anchors near the titles
 // ******************************************************
 
   h1, h2, h3, h4, h5, h6 {
@@ -334,7 +359,7 @@ blockquote > p {
     &:hover > a.anchor {
       visibility: visible;
     }
-      
+
     & > a.anchor::before {
       content: "*";
       font-size: 0.85em;
@@ -343,6 +368,7 @@ blockquote > p {
       margin-top: 0.085em;
     }
   }
+
 
 // ******************************************************
 // Affix
@@ -384,14 +410,14 @@ blockquote > p {
 span.image > img {
   margin-top: 2em;
   margin-bottom: 2em;
-  
+
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
 div.imageblock img {
-  
+
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -448,19 +474,22 @@ a.dropdown-toggle {
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
   .btn {
-    border-width: 0px;    
+    border-width: 0px;
   }
 }
 // ******************************************************
 // Hero Unit
 // ******************************************************
 .hero-unit {
-  background: white;
+  background-color: #FAFAFA;
+  background-image: none;
   padding: 30px 30px 0px 30px;
 }
-
+#homepage .hero-unit {
+  background: url("http://static.jboss.org/tools/images/bkg_binding_light.png") 0 0 repeat-x #ebf5f1;
+}
 .hero-unit > img {
-  padding-left: 20px; 
+  padding-left: 20px;
   float: right;
 }
 
@@ -469,7 +498,6 @@ a.dropdown-toggle {
 }
 .hero-content h1 {
   margin-top: 40px;
-  white-space: nowrap;
 }
 .hero-content h2 img {
   vertical-align: text-bottom;
@@ -477,13 +505,17 @@ a.dropdown-toggle {
 .hero-content p {
   white-space: nowrap;
 }
+.hero-unit p {
+  margin-bottom: 20px;
+  display: inline-block;
+}
 
 // ****************************************
 // Side bar
 // ****************************************
 body {
   //position: relative;
-}  
+}
 
 
 .bs-docs-sidenav .label {
@@ -491,7 +523,7 @@ body {
 }
 
 .bs-docs-sidenav li.expanded {
-  
+
   &.selected {
     //background-color: rgb(241, 241, 241);
   }
@@ -514,7 +546,7 @@ body {
     border-left: 1px solid rgb(229, 229, 229);
     border-right: 1px solid rgb(229, 229, 229);
     margin: 0px;
-    
+
     li  {
       & > a {
         padding-left: 30px;
@@ -530,8 +562,8 @@ body {
         }
       }
     }
-    
-    
+
+
   }
   &:last-child > ul.nav-nested {
       border-bottom-left-radius: 6px;
@@ -541,7 +573,7 @@ body {
 }
 
 .bs-docs-sidenav.affix-top {
-  
+
 }
 .bs-docs-sidenav.affix {
   position: fixed;
@@ -569,12 +601,12 @@ body {
   margin: 0px;
 }
 .sidebar {
-  
+
   border: 1px solid rgb(229, 229, 229);
   border-radius: 4px;
   padding-top: 0.25em;
   padding-bottom: 0.25em;
-  
+
   .accordion {
     margin-bottom: 0;
   }
@@ -595,8 +627,8 @@ body {
     bottom: 0px;
     @include vertical_right_ruler(1px);
   }
-  
-  
+
+
 }
 
 // ****************************************
@@ -608,7 +640,7 @@ body {
       color: rgb(119, 119, 119);
       font-weight: bold;
     }
-    
+
     h3 {
       margin-top: 2em;
       margin-bottom: 0;
@@ -635,7 +667,7 @@ body {
     .hero-left {
       float: left;
       display: inline;
-      margin-bottom: 2em;    
+      margin-bottom: 2em;
 
       width: 45%;
         text-align: right;
@@ -649,18 +681,18 @@ body {
       float: right;
       display: inline;
       width: 45%;
-      margin-bottom: 2em;    
+      margin-bottom: 2em;
       ul {
         list-style-type: none;
       }
     }
   }
-  
+
   hr {
     content: "";
     clear: both;
   }
-  
+
 }
 
 .links {
@@ -705,7 +737,7 @@ body {
   padding-left: 20px;
   padding-right: 20px;
   padding-bottom: 20px;
-  
+
 }
 #download {
   margin-top: 30px;
@@ -721,7 +753,7 @@ body {
         background: rgb(245, 245, 245)
       }
       &:nth-child(2n) {
-        background: rgb(255, 255, 255);  
+        background: rgb(255, 255, 255);
       }
       th, td {
         border: 1px solid rgb(221, 221, 221);
@@ -771,7 +803,7 @@ span.label {
   &#displayed-version {
     vertical-align:top;
   }
-  
+
   &.label_stable, &.label_latest_release {
     background-color: rgb(70, 136, 71);
   }
@@ -795,7 +827,7 @@ section  h3 > span.label {
 }
 
 .sidenav > li:last-child > a {
-    
+
 }
 
 .sidenav .active  a {
@@ -812,11 +844,10 @@ section  h3 > span.label {
 // Features
 // *************************************
 .features {
-  padding-top: 0px;
-  padding-bottom: 0px;
-  padding-left: 10px;
-  padding-right: 10px;
-  
+  .well {
+    height: 300px;
+    overflow: hidden;
+  }
   a {
     width: 100%;
     text-align: center;
@@ -847,18 +878,18 @@ section  h3 > span.label {
         margin-bottom: 2em;
         content: ""; // mandatory content, even empty
       }
-      
+
       h2 {
         margin-top: -60px;
         padding-top: 60px;
       }
-      
+
     }
-  
+
     .sect2 {
       padding-top: 20px;
     }
-  
+
     $space: 48%;
     .sect1:nth-child(odd) {
       H2, .sect2 > :not(.imageblock) {
@@ -871,9 +902,9 @@ section  h3 > span.label {
         margin-top: -4em;
         width: $space;
       }
-    } 
-  
-    .sect1:nth-child(even) { 
+    }
+
+    .sect1:nth-child(even) {
       H2, .sect2 > :not(.imageblock) {
         float: right;
         clear: right;
@@ -884,7 +915,7 @@ section  h3 > span.label {
         margin-top: -4em;
         width: $space;
       }
-    }  
+    }
   }
 }
 
@@ -914,7 +945,7 @@ section  h3 > span.label {
   &:last-child hr {
     display:none;
   }
-  
+
   .title-wrapper {
     img.img-polaroid {
       float:left;
@@ -922,17 +953,17 @@ section  h3 > span.label {
     }
     .title {
       padding-bottom: 5px;
-      
+
       h3 {
         text-decoration: none;
         margin-bottom: 0px;
       }
-      
+
       h4 {
         text-decoration: none;
         margin-bottom: 0px;
       }
-      
+
       .author {
         color: #777;
       }
@@ -953,12 +984,12 @@ section  h3 > span.label {
     margin-right: 0px;
     background-image: none;
   }
-  
+
   .body {
     margin-bottom: 20px;
     margin-top: 20px;
     clear: both;
-    
+
     h1 {
       @include header(20px);
     }
@@ -969,7 +1000,7 @@ section  h3 > span.label {
       @include header(16px);
     }
   }
-  
+
   .navigation {
     hr {
       display: block;
@@ -981,17 +1012,17 @@ section  h3 > span.label {
       text-align: right;
     }
   }
-  
+
   .admonitionblock {
     table {
       td {
         border : 1px solid rgb(101, 101, 101);
         padding: 1em;
       }
-      
+
     }
   }
-  
+
 }
 
 // *************************************
@@ -1073,7 +1104,7 @@ section  h3 > span.label {
 .video {
   padding-top: 30px;
   padding-bottom: 30px;
-  
+
   #player iframe {
     width: 100%;
     height: 100%;
@@ -1154,11 +1185,11 @@ section  h3 > span.label {
     padding-left: 0px;
     margin-right: 0px;
     padding-right: 0px;
-  
+
   }
 
 
-  
+
   ul.items {
     margin-bottom: 20px;
     li {
