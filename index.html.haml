@@ -4,90 +4,86 @@ tab: home
 title: Home
 status: green
 ---
-.row-fluid
-  .hero-unit
-    %img.hidden-phone{:alt => "JBoss Tools", :src => relative("/images/tools/jbt-jaxrs.png")}
-    .hero-content
-      %h1
-        JBoss Tools
-      %h2
-        Eclipse Plugins for 
-        JBoss Technology    
-      %p
-        %a.btn.btn-primary.btn-large{:href => relative("/downloads")} 
-          %i.icon-download
-          Download
-        %br
-        %a.small{:href=>"/documentation/whatsnew"} What's New
+#homepage
+  .row-fluid
+    .hero-unit
+      %img.hidden-phone{:alt => "JBoss Tools", :src => relative("/images/tools/jbt-jaxrs.png")}
+      .hero-content
+        %h1
+          JBoss Tools
+        %h2
+          Eclipse Plugins for
+          JBoss Technology
+        .text-right
+          %a.btn.btn-primary.btn-large{:href => relative("/downloads")}
+            %i.icon-download
+            Download
+          %br
+          %a.small{:href=>"/documentation/whatsnew"} What's New
+      %hr
 
-.row-fluid
-  %hr
-            
-.row-fluid
-  %section.span4
-    - feature = site.features["jbt_core"].find_all{|feature| feature.highlighted == true}.first
-    - if feature != nil
+
+  .row-fluid
+    %section.span4
+      - feature = site.features["jbt_core"].find_all{|feature| feature.highlighted == true}.first
+      - if feature != nil
+        %header
+          %h3
+            %a{:href=>relative(feature.url)}
+              #{feature.tagline}
+        .item.center
+          %span.tagline
+          %a.block{:href=>relative(feature.url)}
+            %img{:src=>relative(feature.image_url)}
+
+    %section.span4
       %header
         %h3
-          %i.icon-magic
-          %a{:href=>relative(feature.url)} Feature Highlight
-      .item.center
-        %span.tagline
-          %a{:href=>relative(feature.url)}
-            #{feature.tagline} 
-        %a.block{:href=>relative(feature.url)}
-          %img{:src=>relative(feature.image_url)}
-  
-  %section.span4  
-    %header
-      %h3
-        %i.icon-pencil
-        %a{:href => relative("/blog")} Latest posts
-    - posts = site.posts.sort{|l,r| r.date <=> l.date}.first(2)
-    - for post in posts
-      .post
-        .title-wrapper
-          %img.img-polaroid{:src => "#{site.team[post.author].photo_32px}"}
-          .title
-            %h4
-              %a{:href=>relative(post.url)}= post.title
-              - if post.draft_article
-                %span{:class=>"label label-important"}
-                  DRAFT
-            .author
-              /there is only one author per post but the author splitter adds an array here
-              posted by 
-              %strong< #{site.team[post.author].title}
-              on 
-              %strong< #{post.date.strftime( '%b %d, %Y' )}.
-      %footer
-        %a.btn.btn-small{:href=>relative(post.url)}
-          Read more &raquo;
-      %hr 
-              
+          %a{:href => relative("/blog")} Latest posts
+      - posts = site.posts.sort{|l,r| r.date <=> l.date}.first(2)
+      - for post in posts
+        .post
+          .title-wrapper
+            %img.img-polaroid{:src => "#{site.team[post.author].photo_32px}"}
+            .title
+              %h4
+                %a{:href=>relative(post.url)}= post.title
+                - if post.draft_article
+                  %span{:class=>"label label-important"}
+                    DRAFT
+              .author
+                /there is only one author per post but the author splitter adds an array here
+                posted by
+                %strong< #{site.team[post.author].title}
+                on
+                %strong< #{post.date.strftime( '%b %d, %Y' )}.
+        %footer
+          %a.pull-right{:href=>relative(post.url)}
+            Read more &raquo;
+        %hr
 
-  %section.span4
-    %header
-      %h3
-        %i.icon-globe
-        %a{:href => relative("/events")} Upcoming Events
-    - events = site.events
-    - now = Time.now 
-    - a_few_days_ago = now - 4 * 24 * 60 * 60
-    - events = events.find_all{|item| item.effective_date.to_s >= a_few_days_ago.strftime("%Y%m%d")}
-    - events = events.sort{|l,r| l.effective_date <=> r.effective_date}.first(3)
-    - for event in events
-      .item.justify
-        %h4
-          %a{:href=>relative(event.output_path)} #{event.title}
-        %strong  
-          #{event.event_date} 
-          in
-          #{event.location}
-      .footer
-        %a.btn.btn-small{:href=>relative(event.output_path)}
-          Read more &raquo;
-      
+
+    %section.span4
+      %header
+        %h3
+          %a{:href => relative("/events")} Upcoming Events
+      - events = site.events
+      - now = Time.now
+      - a_few_days_ago = now - 4 * 24 * 60 * 60
+      - events = events.find_all{|item| item.effective_date.to_s >= a_few_days_ago.strftime("%Y%m%d")}
+      - events = events.sort{|l,r| l.effective_date <=> r.effective_date}.first(3)
+      - for event in events
+        .item.justify
+          %h4
+            %a{:href=>relative(event.output_path)} #{event.title}
+          %strong
+            #{event.event_date}
+            in
+            #{event.location}
+        .footer
+          %a.pull-right{:href=>relative(event.output_path)}
+            Read more &raquo;
+
 
 
 
