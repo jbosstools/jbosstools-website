@@ -23,7 +23,7 @@ asciidoctor:
     idseparator: '-'
     sectanchors: ''
     linkattrs: ''
-  
+
 # Default minify settings
 css_minifier: disabled
 js_minifier: disabled
@@ -52,7 +52,7 @@ fileMerger:
     - /javascripts/_jquery-easytabs.js
     - /javascripts/_crisp-scripts.js
     - /javascripts/_jbossorg-tabzilla.js
-    
+
 # Cache hosted fonts, images and javascript
 wget:
   enabled: true
@@ -78,7 +78,7 @@ wget:
     - http://static.jboss.org/theme/images/common/
     - http://static.jboss.org/example/
 
-  
+
 profiles:
   development:
     showwip: false
@@ -86,11 +86,11 @@ profiles:
     jborg_fonts_url: /cache/static.jboss.org/theme/fonts
     jborg_images_url: /cache/static.jboss.org/theme/images
     jborg_js_url: /cache/static.jboss.org/theme/js
-    project_images_url: http://static.jboss.org/images/tools
+    project_images_url: http://static.jboss.org/tools/images
     bootstrap_css_url: /stylesheets/bootstrap-community
     bootstrap_js_url: /javascripts/bootstrap-community
     disqus: jbosstools-dev
-    
+
   staging:
     showwip: true
     base_url: http://tools-stg.jboss.org/master
@@ -137,9 +137,9 @@ profiles:
     bootstrap_js_url: http://static.jboss.org/theme/js/libs/bootstrap-community/2.3.1.4/bootstrap-community
     google_analytics: UA-17645367-6
     disqus: jbosstools
-    
-      
-  
 
 
-    
+
+
+
+
