@@ -1,0 +1,23 @@
+= Usage What's New in 4.2.0.Beta2
+:page-layout: whatsnew
+:page-component_id: usage
+:page-component_version: 4.2.0.Beta2
+:page-product_id: jbt_core 
+:page-product_version: 4.2.0.Beta2
+
+== Usage tracking for wizards, Forge Tools, HTML Editor, Cordovasim, Browsersim
+
+A few new usage events have been added to this milestone release:
+ 
+- Number of times JBoss Tools HTML/JSP Editor (Source/Visual tab) and HTML5 Preview are activated
+- Class name of completed IDE wizards 
+- BrowserSim and CordovaSim engine names (JavaFx or Webkit) and number of times started
+- Forge Tools runtime version and number of times started
+
+These will be used to learn more about how our users are using the tooling and improve it going forward. 
+
+All information which is going to be collected is reflected in Preferences > JBoss Tools > Usage Reporting for you to review.
+
+As always JBoss Tools will not send any information before a user have opted in, nor is there any personal information sent.
+
+related_jira::JBIDE-17320,JBIDE-17305,JBIDE-17232,JBIDE-17458[]
