@@ -1,0 +1,18 @@
+= JBoss Central What's New in 1.3.0.Beta2
+:page-layout: whatsnew
+:page-component_id: central
+:page-component_version: 1.3.0.Beta2
+:page-product_id: jbt_core 
+:page-product_version: 4.2.0.Beta2
+
+== New Hybrid Mobile project wizard 	
+
+JBoss Central now features the Hybrid Mobile Project wizard to let you kickstart new Cordova-based mobile applications. 
+
+image:./images/new-hmt-wizard.png[]
+
+If the Hybrid Mobile Toolkit is not installed, you'll be asked to install it, as well as a few useful companion features (CordovaSim, BrowserSim). When using JBoss Tools you'll also be offered to add LiveReload and the Visual Plugin Editor, if these features are not already installed. 
+
+The Spring Project wizard, that was previously featured on JBoss Central, is still available in the File > New > Project... menu.
+
+related_jira::JBIDE-16837[]
