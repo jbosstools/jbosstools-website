@@ -1,0 +1,13 @@
+= Project Examples 4.2.0.Beta2 What's New
+:page-layout: whatsnew
+:page-component_id: examples
+:page-component_version: 4.2.0.Beta2
+:page-product_id: jbt_core 
+:page-product_version: 4.2.0.Beta2
+
+== New Cordova Client + Restful back-end example available
+
+A new mobile application example, *contacts-mobile-basic*, has been added to the _Mobile Applications_ category of project examples.
+This example, featured in the _Start from a sample_ section of JBoss Central, combines an Apache Cordova-based front-end client, communicating with an Apache Maven-built, JAX-RS-based back-end service.
+
+related_jira::JBIDE-16838[]
