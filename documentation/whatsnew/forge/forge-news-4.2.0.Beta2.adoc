@@ -20,7 +20,7 @@ When Forge 2 is started, hitting the Ctrl+4 (or Cmd+4) key combination brings up
 These available wizards depend on the currently selected object. The image below illustrates the available wizards when
 nothing in particular was selected.
 
-image::images/4.2.0.Beta2/noselection.png
+image::images/4.2.0.Beta2/noselection.png[]
 
 As you can see, there are wizards for creating database connection profiles, for managing Forge addons and for creating
 a new project.
@@ -28,7 +28,7 @@ a new project.
 When for instance a newly created project is selected while hitting the magic key combination, the popup contains a lot 
 more possible wizards become available as illustrated on the image below.
 
-image::images/4.2.0.Beta2/projectselection.png
+image::images/4.2.0.Beta2/projectselection.png[]
 
 == Forge 2 Command Line Interface
 
@@ -37,4 +37,4 @@ main Eclipse menu (Window->Show View->Other...->Forge->Forge Console) or by typi
 
 The image below illustrates the available commands in the workspace root.
 
-image::images/4.2.0.Beta2/commandline.png
+image::images/4.2.0.Beta2/commandline.png[]
