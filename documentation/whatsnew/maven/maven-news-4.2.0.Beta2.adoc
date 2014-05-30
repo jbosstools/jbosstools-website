@@ -1,0 +1,17 @@
+= Maven Tools What's New in 4.2.0.Beta2
+:page-layout: whatsnew
+:page-component_id: maven
+:page-component_version: 4.2.0.Beta2
+:page-product_id: jbt_core 
+:page-product_version: 4.2.0.Beta2
+
+== JBoss Maven Integration
+=== m2eclipse-egit integration  	
+
+The _Import > Checkout Maven Projects from SCM_ wizard doesn't have any SCM provider by default, which can be pretty frustrating at times. With Git becoming the new de facto source control system, it only made sense to make https://github.com/tesla/m2eclipse-egit[m2eclipse-egit] the sensible default SCM provider for m2e.
+
+m2eclipse-egit will now be automatically installed when a JBoss Maven integration feature is installed from the JBoss Tools update site. 
+
+It will be installed by default with JBDS 8.0.0 as well.
+
+related_jira::JBIDE-16574[]
