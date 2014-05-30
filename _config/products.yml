@@ -54,15 +54,19 @@ devstudio:
   url_path_fragment: devstudio
   streams:
     luna:
-      8.0.0.Beta1:
+      8.0.0.Beta2:
         build_type: development
+        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        marketplace_url: http://marketplace.eclipse.org/node/1616973
+        marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
+        
+      8.0.0.Beta1:
+        #build_type: development
         release_date: 2014-04-11
         #supported_devstudio_is_version: 8.0.0.GA
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         #release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/7.1/html-single/Release_Notes_7.1.1/index.html
         blog_announcement_url: /blog/2014-04-14-beta1-for-luna.html
-        marketplace_url: http://marketplace.eclipse.org/node/1616973
-        marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
         installers: 
           - name: Universal Multi-Platform Standalone Installer
             url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/25/2550fbb912f42b6c0e60d124cc0d5b7c1a26b1767e27a0ecd6f2b9c36f3b3d9a/jbdevstudio-product-universal-8.0.0.Beta1-v20140408-2350-B93.jar
@@ -213,14 +217,18 @@ jbt_core:
   url_path_fragment: jbosstools
   streams:
     luna:
-      4.2.0.Beta1:
+      4.2.0.Beta2:
         build_type: development
-        release_date: 2014-04-11
-        blog_announcement_url: /blog/2014-04-14-beta1-for-luna.html
         documentation_url: http://docs.jboss.org/tools/
         update_site_url: http://download.jboss.org/jbosstools/updates/development/luna/
         marketplace_url: http://marketplace.eclipse.org/node/1617241
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1617241
+
+      4.2.0.Beta1:
+        #build_type: development
+        release_date: 2014-04-11
+        blog_announcement_url: /blog/2014-04-14-beta1-for-luna.html
+        documentation_url: http://docs.jboss.org/tools/
         zips:
           - name: Update site (including sources) bundle of all JBoss Core Tools
             file_size: 460MB
