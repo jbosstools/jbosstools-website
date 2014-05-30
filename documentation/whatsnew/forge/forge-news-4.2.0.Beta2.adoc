@@ -26,7 +26,7 @@ As you can see, there are wizards for creating database connection profiles, for
 a new project.
 
 When for instance a newly created project is selected while hitting the magic key combination, the popup contains a lot 
-more possible wizards become available as illustrated on the image below.
+more possible wizards that become available as illustrated on the image below.
 
 image::images/4.2.0.Beta2/projectselection.png[]
 
