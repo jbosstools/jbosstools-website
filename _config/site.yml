@@ -93,7 +93,7 @@ profiles:
     
   staging:
     showwip: true
-    base_url: http://tools-stg.jboss.org
+    base_url: http://tools-stg.jboss.org/master
     minified: .min
     jborg_fonts_url: http://static.jboss.org/theme/fonts
     jborg_images_url: http://static.jboss.org/theme/images
@@ -108,6 +108,23 @@ profiles:
       branch: gh-pages
     google_analytics: UA-46704212-1
     
+  new_noteworthy:
+    showwip: true
+    base_url: http://tools-stg.jboss.org/new_noteworthy
+    minified: .min
+    jborg_fonts_url: http://static.jboss.org/theme/fonts
+    jborg_images_url: http://static.jboss.org/theme/images
+    jborg_js_url: http://static.jboss.org/theme/js
+    project_images_url: http://static.jboss.org/images/tools
+    bootstrap_css_url: http://static.jboss.org/theme/css/bootstrap-community/2.3.1.4/bootstrap-community
+    bootstrap_js_url: http://static.jboss.org/theme/js/libs/bootstrap-community/2.3.1.4/bootstrap-community
+    disqus: jbosstools-preview
+    deploy:
+      host: github_pages
+      repository: origin
+      branch: gh-pages
+    google_analytics: UA-46704212-1
+  
   production:
     showwip: false
     base_url: http://tools.jboss.org
