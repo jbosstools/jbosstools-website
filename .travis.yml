@@ -5,6 +5,7 @@ rvm:
 branches:
   only:
   - master
+  - new_noteworthy
   - production
 before_script:
 - export REPO_URL="https://$TAG_GITHUB_TOKEN@github.com/jbosstools/jbosstools-website.git"
