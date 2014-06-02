@@ -93,7 +93,7 @@ profiles:
 
   staging:
     showwip: true
-    base_url: http://tools-stg.jboss.org/master
+    base_url: http://tools-stg.jboss.org/
     minified: .min
     jborg_fonts_url: http://static.jboss.org/theme/fonts
     jborg_images_url: http://static.jboss.org/theme/images
