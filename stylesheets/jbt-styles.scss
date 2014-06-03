@@ -322,6 +322,22 @@ blockquote > p {
   vertical-align:top;
 }
 
+// centered videos
+.videoblock {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  
+  iframe {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+  
+  iframe:not([width]) {
+    width: 640px;
+    height: 480px;
+  }
+}
 // ******************************************************
 // Flex layout
 // ******************************************************
