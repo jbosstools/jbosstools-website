@@ -18,7 +18,7 @@ related_jira::JBIDE-13649[]
 
 === Add Cordova plug-ins when creating Hybrid Mobile Projects
 
-The New project wizard now provides plug-in selection pages. You can now select an initial set of 
+The New Hybrid Mobile(Cordova) project wizard now provides plug-in selection pages. You can now select an initial set of 
 Cordova plug-ins to be installed to a new Hybrid Mobile project. Starting with _org.apache.cordova.console_
 is highly recommended.
 
