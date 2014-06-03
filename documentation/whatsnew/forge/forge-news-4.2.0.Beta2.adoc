@@ -11,29 +11,25 @@ The included Forge 2 runtime is 2.6.0.Final.
 
 image::images/4.2.0.Beta2/f2startup.png[]
 
-Starting the Forge 2 runtime is now done using the Ctrl+4 (or Cmd+4) key combination. 
-This key sequence will always start the default Forge runtime.
+Starting the Forge 2 runtime is now achieved using the Ctrl+4 (or Cmd+4) key combination, the same as for Forge 1 runtimes. When multiple Forge runtimes are installed this key combination starts the default Forge runtime, which is specified and changeable in the Forge preferences.
 
 == Forge 2 Wizards
 
-When Forge 2 is started, hitting the Ctrl+4 (or Cmd+4) key combination brings up a popup with the available Forge wizards. 
-These available wizards depend on the currently selected object. The image below illustrates the available wizards when
-nothing in particular was selected.
+As well as starting the Forge runtime, pressing Ctrl+4 (or Cmd+4) opens a window listing available Forge wizards. 
+The list of wizards is responsive, changing based on the currently selected workspace object. The image below illustrates the available wizards when nothing in particular was selected.
 
 image::images/4.2.0.Beta2/noselection.png
 
 As you can see, there are wizards for creating database connection profiles, for managing Forge addons and for creating
 a new project.
 
-When for instance a newly created project is selected while hitting the magic key combination, the popup contains a lot 
-more possible wizards become available as illustrated on the image below.
+When a project is selected while pressing the magic key combination, more wizards become available as illustrated in the image below.
 
 image::images/4.2.0.Beta2/projectselection.png
 
 == Forge 2 Command Line Interface
 
-The wizards above are also available as commands on the command line. Bring up the Forge Console by navigating the  
-main Eclipse menu (Window->Show View->Other...->Forge->Forge Console) or by typing in the Quick Access textfield.
+The wizards above are also available as commands on the Forge command line. Open the Forge Console by navigating through the Eclipse menu (Window->Show View->Other...->Forge->Forge Console) or by typing in the Quick Access text field.
 
 The image below illustrates the available commands in the workspace root.
 
