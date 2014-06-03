@@ -9,7 +9,7 @@
 
 === Import Cordova projects 
 
-It is now possible to import Cordova projects and start using the as Hybrid Mobile projects with the new import wizard. 
+It is now possible to import Cordova projects and start using them as Hybrid Mobile projects, with the new import wizard. 
 This feature can import projects that are created by Cordova CLI
 
 image::./images/1.1.0.Beta2/importWizard.png[]
