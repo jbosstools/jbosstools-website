@@ -5,9 +5,9 @@
 :page-product_id: jbt_core 
 :page-product_version: 4.2.0.Beta2
 
-== BrowserSim and Cordovasim are now available OOTB for 64 bit Eclipse on Windows, with JavaFx WebEngine
+== JavaFx web engine and debugger support on Microsoft Windows
 
-Now BrowserSim and Cordovasim are available OOTB for 64 bit Eclipse on Windows with JavaFx web engine (SWT WebKit is not supported). User had to manually add 32 bit JDK in order to run BrowserSim / CordovaSim against Eclipse 64 bit on Windows before, which was not user-friendly. Windows 32 bit still supports both JavaFx and SWT WebKit.
+JavaFx web engine for BrowserSim and CordovaSim is now extended to Microsoft Windows operating systems, in addition to OS X and Linux. JavaFx is an alternative to SWT WebKit and enables Windows users to run BrowserSim and CordovaSim without having to install Safari and run these features with a 32-bit Java developer kit. All Windows users can now run BrowserSim and CordovaSim out of the box, while 32-bit Windows users can also continue to opt to install Safari to use SWT WebKit.
 
 related_jira::JBIDE-17258[]
 
@@ -21,13 +21,13 @@ related_jira::JBIDE-16661[]
 
 == Linked folders support for CordovaSim
 
-http://help.eclipse.org/kepler/index.jsp?topic=%2Forg.eclipse.platform.doc.user%2Ftasks%2Ftasks-45.htm[Linked folders] are honored when project is run on CordovaSim for now.
+http://help.eclipse.org/kepler/index.jsp?topic=%2Forg.eclipse.platform.doc.user%2Ftasks%2Ftasks-45.htm[Linked folders] are honored when project is run on CordovaSim.
 
 related_jira::JBIDE-16931[]
 
 == Query parameters support for CordovaSim
 
-Cordovasim now supports query parameters for the start page in *launch configuration* and via *content* tag in the config.xml.
+CordovaSim now supports query parameters for the start page in *launch configuration* and via *content* tag in the config.xml.
 
 image::images/4.2.0.Beta2/query-parameters.png[Query parameters support]
 
