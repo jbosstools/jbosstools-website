@@ -45,16 +45,12 @@ We may request additional input via surveys or online IRC meetings when JBoss To
 is active and at the end of a release we will send a survey where you can express your opinion
 on whether the new features are ready for release and the features you depend on have not regressed.
 
-== What Happens to the Bugs and Feature Requests that you log?
+== What Happens to Bugs and Feature Requests?
 
 The JBoss Tools CAT team managers will review and respond to all new bugs and feature requests.
 
-== How Can JBoss Tools CAT Members get Help with Questions?
+== Resources - How Can JBoss Tools CAT Members get Help with Questions?
 
-By sending email to the JBoss Tools CAT mailing list. 
-
-
-=== Resources
 
 .JBoss Tools CAT Resources
 |===
