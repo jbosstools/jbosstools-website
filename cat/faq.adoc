@@ -18,6 +18,9 @@ Didn't Netbeans have this first?::
    Yes, the Netbeans CAT program is what inspired us to do this. We hope it will
 work equally well here too.
 
+What types of prizes can I earn by participating in the JBoss Tools CAT?::
+   We're working on that - stay tuned!
+
 ==== JBoss Tools Features
 
 [qanda]
