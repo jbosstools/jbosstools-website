@@ -54,7 +54,7 @@ The JBoss Tools CAT team managers will review and respond to all new bugs and fe
 
 .JBoss Tools CAT Resources
 |===
-|Name | Description | Link |
+|Name | Description | Link 
 
 |Mailing list (mailto:jbosstools-cat@lists.jboss.org) 
 | Archived mailing list for JBoss Tools CAT. Synchronized with the community forum 
@@ -62,7 +62,7 @@ The JBoss Tools CAT team managers will review and respond to all new bugs and fe
 
 | Forum
 | Online forum on jboss.org 
-| link
+| link (TBD)
 
 | Chat
 | irc chat room on #freenode
@@ -70,6 +70,6 @@ The JBoss Tools CAT team managers will review and respond to all new bugs and fe
 
 | Dashboard
 | jira dashboard for issues found by JBoss Tools CAT team
-| https://jira...
+| link (TBD)
 |===
 
