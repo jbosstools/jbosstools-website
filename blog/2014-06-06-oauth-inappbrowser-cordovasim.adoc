@@ -1,0 +1,43 @@
+= Google API OAuth with CordovaSim 
+:page-layout: blog
+:page-author: ibuziuk
+:page-tags: [phonegap, oauth, cordova, inappbrowser, cordovasim, aerogear]
+
+In this article I'm happy to introduce you http://oauth.net/[OAuth] authorization via Phonegap's https://github.com/apache/cordova-plugin-inappbrowser[inAppBrowser] plugin with https://github.com/jbosstools/jbosstools-aerogear/tree/master/cordovasim[CordovaSim]. 
+
+I was inspired to write this blog after reading a great article http://phonegap-tips.com/articles/google-api-oauth-with-phonegaps-inappbrowser.html[Google API OAuth with PhoneGap's InAppBrowser] by Michael Dellanoce. I also want to spill the beans about new CordovaSim's features like: *JavaFx web engine*, *hybrid app debugging* and *eclipse console logging*.
+
+== Overview
+http://oauth.net/[OAuth] is an open standard for authorization. It specifies a process for resource owners to authorize third-party access to their server resources without sharing their credentials. Designed specifically to work with Hypertext Transfer Protocol (HTTP), OAuth essentially allows access tokens to be issued to third-party clients by an authorization server, with the approval of the resource owner, or end-user. PhoneGap Developers use https://github.com/apache/cordova-plugin-inappbrowser/blob/master/doc/index.md[inAppBrowser's API] to show the OAuth consent page.
+
+== Demo 
+https://github.com/jbosstools/jbosstools-aerogear/tree/master/cordovasim[CordovaSim] supports inAppBrowser plugin and handles OAuth authorization. Here is a short http://www.screencast.com/t/ln4t5ruoc[video] with OAuth demo and brand-new CordovaSim's features (https://github.com/mdellanoce/google-api-oauth-phonegap/tree/master[source code] is also taken from the Michael Dellanoce's article):
+
+++++
+<object id="scPlayer"  width="640" height="304" type="application/x-shockwave-flash" data="http://content.screencast.com/users/IlyaBuziuk/folders/Jing/media/770e0513-544c-4c77-bbf1-864c46279512/bootstrap.swf" >
+ <param name="movie" value="http://content.screencast.com/users/IlyaBuziuk/folders/Jing/media/770e0513-544c-4c77-bbf1-864c46279512/bootstrap.swf" />
+ <param name="quality" value="high" />
+ <param name="bgcolor" value="#FFFFFF" />
+ <param name="flashVars" value="thumb=http://content.screencast.com/users/IlyaBuziuk/folders/Jing/media/770e0513-544c-4c77-bbf1-864c46279512/FirstFrame.jpg&containerwidth=1915&containerheight=910&content=http://content.screencast.com/users/IlyaBuziuk/folders/Jing/media/770e0513-544c-4c77-bbf1-864c46279512/CordovaSim%20Demo%20OAuth%20via%20InAppBrowse.swf&blurover=false" />
+ <param name="allowFullScreen" value="true" />
+ <param name="scale" value="showall" />
+ <param name="allowScriptAccess" value="always" />
+ <param name="base" value="http://content.screencast.com/users/IlyaBuziuk/folders/Jing/media/770e0513-544c-4c77-bbf1-864c46279512/" />
+ Unable to display content. Adobe Flash is required.
+</object> 
+++++
+
+== How to give it a go?
+ -  Clone the demo https://github.com/mdellanoce/google-api-oauth-phonegap/tree/master[project]
+ -  File -> Import -> Import Cordova Project
+ -  Right click on the project -> Properties -> Hybrid Mobile Engine -> Download -> 3.4.0 (select as default engine)
+ - Create a https://console.developers.google.com/[Google Developers Console] project
+ - Copy and paste *Client ID* and *Client secret* to index.js (lines 80-81) of the hybrid project
+ - Right click on the project -> Run As.. -> Run with CordovaSim
+
+== Conclusion
+We are trying our best to make CordovaSim as good as possible. Users feedback is what we are seeking for now. We are looking forward to hearing your comments / remarks! +
+Have fun!
+
+Ilya Buziuk +
+https://twitter.com/ilyabuziuk[@ilyabuziuk]
