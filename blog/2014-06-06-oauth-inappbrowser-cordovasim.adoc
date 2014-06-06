@@ -3,9 +3,9 @@
 :page-author: ibuziuk
 :page-tags: [phonegap, oauth, cordova, inappbrowser, cordovasim, aerogear]
 
-In this article I'm happy to introduce you http://oauth.net/[OAuth] authorization via Phonegap's https://github.com/apache/cordova-plugin-inappbrowser[inAppBrowser] plugin with https://github.com/jbosstools/jbosstools-aerogear/tree/master/cordovasim[CordovaSim]. 
+In this article I'm happy to introduce you the http://oauth.net/[OAuth] authorization via Phonegap's https://github.com/apache/cordova-plugin-inappbrowser[inAppBrowser] plugin with https://github.com/jbosstools/jbosstools-aerogear/tree/master/cordovasim[CordovaSim]. 
 
-I was inspired to write this blog after reading a great article http://phonegap-tips.com/articles/google-api-oauth-with-phonegaps-inappbrowser.html[Google API OAuth with PhoneGap's InAppBrowser] by Michael Dellanoce. I also want to spill the beans about new CordovaSim's features like: *JavaFx web engine*, *hybrid app debugging* and *eclipse console logging*.
+I was inspired to write this blog after reading a great article about http://phonegap-tips.com/articles/google-api-oauth-with-phonegaps-inappbrowser.html[Google API OAuth with PhoneGap's InAppBrowser] by Michael Dellanoce. I also want to spill the beans about new CordovaSim's features like: *JavaFx web engine*, *hybrid app debugging* and *eclipse console logging*.
 
 == Overview
 http://oauth.net/[OAuth] is an open standard for authorization. It specifies a process for resource owners to authorize third-party access to their server resources without sharing their credentials. Designed specifically to work with Hypertext Transfer Protocol (HTTP), OAuth essentially allows access tokens to be issued to third-party clients by an authorization server, with the approval of the resource owner, or end-user. PhoneGap Developers use https://github.com/apache/cordova-plugin-inappbrowser/blob/master/doc/index.md[inAppBrowser's API] to show the OAuth consent page.
