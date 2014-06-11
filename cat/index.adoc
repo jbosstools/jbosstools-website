@@ -11,8 +11,8 @@ features in JBoss Tools are working well and getting confirmation from
 JBoss Tools and Developer Studio community that the quality is ready
 for the final release.
 
-The goal of the JBoss Tools CAT is get as much feedback on our Alpha, Beta and pre-GA builds
-as possible.  We are looking for feedback on usability, quality and
+The goal of the JBoss Tools CAT is to get as much feedback on our Alpha, Beta and pre-GA 
+builds as possible.  We are looking for feedback on usability, quality and
 performance for new features, and especially also for reports on any 
 regression for existing features that you already are using.
 
@@ -31,15 +31,15 @@ To particpate please follow these steps:
 What types of tests should you perform? 
 
 As a member of the JBoss Tools CAT team you are asked to give feedback
-on the two functional areas you chose to focus on. It is fully
+on the two functional areas you choose to focus on. It is fully
 acceptable to only use the Beta and CR builds, but it is highly
-recommended and appreciated if you use and tested the nightly
+recommended and appreciated if you use and test the nightly
 development builds too. 
 
 So, select the features in JBoss Tools that you are most interested in, and start testing!
 
 You can communicate to the JBoss Tools team and other CAT members via
-the CAT community forum, the mailing list or jira.
+the CAT community forum, irc, the mailing list or jira.
 
 We may request additional input via surveys or online IRC meetings when JBoss Tools CAT 
 is active and at the end of a release we will send a survey where you can express your opinion
