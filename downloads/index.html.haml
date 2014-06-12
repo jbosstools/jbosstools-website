@@ -11,12 +11,12 @@ issues: [JBIDE-17047]
 
 .row-fluid
   .hero-unit.center
-    %h1 
-      Downloads 
+    %h1
+      Downloads
     %p
       Latest Stable Versions of #{devstudio_current_stable_release.build_info.name} and #{jbtcore_current_stable_release.build_info.name}
 .row-fluid#downloads
-  %section.span6
+  %section.span6.well
     %header
       %h3
         %a{:href=>relative(devstudio_current_stable_release.output_path)} #{devstudio_current_stable_release.build_info.name} #{devstudio_current_stable_release.build_info.version}
@@ -25,19 +25,21 @@ issues: [JBIDE-17047]
             #{site.labels[devstudio_current_stable_release.build_info.build_type_label]}
     .item
       :markdown
-        * One click install - for Windows, Linux and Mac        
+        * One click install - for Windows, Linux and Mac
         * Based on JBoss Tools 4.1 supported plugins
         * Full IDE installer or install to existing Eclipse
         * JBoss Central to install extra features
         *  **Supported by Red Hat**
         * Released on #{devstudio_current_stable_release.build_info.release_date}
-        
+
     %footer.center
-      %a.btn.btn-primary.btn-large{:href=>relative(devstudio_current_stable_release.output_path)} 
+      %a.btn.btn-primary.btn-large{:href=>relative(devstudio_current_stable_release.output_path)}
         %i.icon-download
         Download
+      %br
+      %br
 
-  %section.span6
+  %section.span6.well
     %header
       %h3
         %a{:href=>relative(jbtcore_current_stable_release.output_path)} #{jbtcore_current_stable_release.build_info.name} #{jbtcore_current_stable_release.build_info.version}
@@ -52,9 +54,9 @@ issues: [JBIDE-17047]
         * JBoss Central to install extra features
         * **Community only support**
         * Released on #{jbtcore_current_stable_release.build_info.release_date}
-        
+
     %footer.center
-      %a.btn.btn-primary.btn-large{:href=>relative(jbtcore_current_stable_release.output_path)} 
+      %a.btn.btn-primary.btn-large{:href=>relative(jbtcore_current_stable_release.output_path)}
         %i.icon-download
         Download
       - unless jbtcore_current_stable_release.build_info.whatsnew_url.nil?
