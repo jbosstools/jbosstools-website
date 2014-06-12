@@ -246,8 +246,8 @@ jbt_core:
             url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/zz_Release_Notes_4.2.0.Beta1.readme.htm
       4.2.0.Alpha2:
         release_date: 2014-02-14
-        build_type: development
-        archived: true
+        #build_type: development
+        #archived: true
         documentation_url: http://docs.jboss.org/tools/
         zips:
           - name: Update site (including sources) bundle of all JBoss Core Tools
@@ -266,7 +266,7 @@ jbt_core:
             url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/zz_Release_Notes_4.2.0.Alpha2.readme.html
       4.2.0.Alpha1:
         archived: true
-        build_type: development
+        #build_type: development
         release_date: 2013-12-19
         documentation_url: http://docs.jboss.org/tools/
         zips:
