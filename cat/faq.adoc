@@ -16,27 +16,12 @@ for the final release.
 
 Didn't Netbeans have this first?::
    Yes, the Netbeans CAT program is what inspired us to do this. We hope it will
-work equally well here too.
+work equally well here too. Thanks for the inspiration.
 
-What types of prizes can I earn by participating in the JBoss Tools CAT?::
-   We're working on that - stay tuned!
+What is the award for participating in the JBoss Tools CAT?::
+   At the end of a testing/release, we will give the CAT testers that have been active a certificate for participation, a honorable mention on the release blog/website and for the top contributors we will give LinkedIn recommendations.
 
-==== JBoss Tools Features
 
-[qanda]
-Why does the visual part in the visual editor not work?::
-  The Visual Page Editor uses the last XULRunner that have a Java API to do its visual
-  rendering which unfortunately limits which operating systems it can run on and in some
-  cases some packages need to be installed on your OS for it to work. You can see
-  link:https://community.jboss.org/wiki/JBosstoolsVisualEditorFAQ[Visual Page Editor FAQ]
-  for possible solutions/workaround.
 
-Which operating systems, runtimes and frameworks does JBoss Tools support?::
-  In general JBoss Tools attempts to ensure you can continue to use both old and 
-  new runtimes &amp; frameworks with its releases but we do not add new features to 
-  old streams. Support for the latest &amp; greatest runtimes will only be available 
-  in the latest releases. This 
-  link:https://community.jboss.org/wiki/MatrixOfSupportedPlatformsRuntimesAndTechnologiesInJBossToolsJBDS[Matrix] 
-  gives an overivew of the various supported frameworks, runtimes, operating systems, 
-  platforms, and JDK versions.
+
 

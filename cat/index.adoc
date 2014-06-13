@@ -22,7 +22,7 @@ To particpate please follow these steps:
 
 * Register for community membership here: http://bit.ly/jbosstoolscatsignup[registration form]
 * Subscribe to the JBoss Tools CAT mailing list here: https://lists.jboss.org/mailman/listinfo/jbosstools-cat[email subscription form]
-* Download the latest JBoss Tools bits - as of today - you should download: http://tools.jboss.org/downloads/jbosstools/luna/4.2.0.Beta2.html
+* Download the latest JBoss Tools bits - as of today - you should download: link:../downloads/jbosstools/luna/4.2.0.Beta2.html[4.2.0.Beta2]
 * Request a JBoss JIRA account (to be used to log bugs and feature requests): https://issues.jboss.org[JBoss JIRA]
 * And, then start testing!
 
@@ -49,20 +49,19 @@ on whether the new features are ready for release and the features you depend on
 
 The JBoss Tools CAT team managers will review and respond to all new bugs and feature requests.
 
-== Resources - How Can JBoss Tools CAT Members get Help with Questions?
-
+== Resources
 
 .JBoss Tools CAT Resources
 |===
 |Name | Description | Link 
 
-|Mailing list (mailto:jbosstools-cat@lists.jboss.org) 
+|Mailing list
 | Archived mailing list for JBoss Tools CAT. Synchronized with the community forum 
 | https://lists.jboss.org/mailman/listinfo/jbosstools-cat[Signup] http://lists.jboss.org/pipermail/jbosstools-dev/[Archive]
 
 | Forum
 | Online forum on jboss.org 
-| link (TBD)
+| https://community.jboss.org/thread/241985[Link]
 
 | Chat
 | irc chat room on #freenode
@@ -70,6 +69,6 @@ The JBoss Tools CAT team managers will review and respond to all new bugs and fe
 
 | Dashboard
 | jira dashboard for issues found by JBoss Tools CAT team
-| link (TBD)
+| https://issues.jboss.org/secure/Dashboard.jspa?selectPageId=12316999[Link]
 |===
 
