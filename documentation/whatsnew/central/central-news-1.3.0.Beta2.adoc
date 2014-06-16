@@ -16,3 +16,48 @@ If the Hybrid Mobile Toolkit is not installed, you'll be asked to install it, as
 The Spring Project wizard, that was previously featured on JBoss Central, is still available in the File > New > Project... menu.
 
 related_jira::JBIDE-16837[]
+== Early Access
+
+We introduced the concept of 'Early Access' features that can be installed from 'Software/Updates' tab of Central page. These Early Access features
+are usually experimental or still being developed, so they may contains bugs and may not yet behave correctly.
+
+To support these new incubating feature, we've updated the Central view.
+
+=== Related UI changes
+
+On the central view, you can now see a 'Show Early Access' checkbox. When selected, it enables you to install 'Early Access' features. You can
+easily recognize them thanks to their yellow background and to their 'Early Access' label at the right of the description.
+
+This Early Access features can be installed and uninstalled as regular features. Doing so will enable additional software sources from which these incubating features can be installed. Those additional sources may install unexpected feature when updating.
+
+image::images/central-earlyaccess.png[]
+
+related_jira::JBIDE-16375[]
+
+=== New Early Access features added to discovery catalog
+
+The following features were added or moved as 'Early Access' in the catalog:
+
+* Eclipse VJET: includes a JavaScript IDE, Java to Javascript Code Generation + Java Based DOM Kit
+* Arquillian: Create and run tests with Arquillian
+* AngularJS: see next section
+
+related_jira::JBIDE-17318[]
+
+=== AngularJS
+
+AngularJS support for Eclipse includes JavaScript and HTML editors, plus a dedicated view to manage the different parts of its MVC pattern.
+
+TODO: some screenshots?
+
+related_jira::JBIDE-17278[]
+
+
+== Update and uninstall software from Central
+
+From the same 'Software/Updates' page that you used to install additional features, you can now update the features to a newer version
+if one is available in the catalog, or even uninstall some features.
+
+image::images/central-update-remove.png[]
+
+related_jira::JBIDE-16592[]
