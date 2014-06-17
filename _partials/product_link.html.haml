@@ -1,0 +1,4 @@
+%a{:href=>relative(page.product_release.output_path)} #{page.product_release.build_info.name} #{page.product_release.build_info.version}
+- unless page.product_release.build_info.build_type_label.nil?
+  %span{:class=>"label label_#{page.product_release.build_info.build_type_label}"}
+    #{site.labels[page.product_release.build_info.build_type_label]}
