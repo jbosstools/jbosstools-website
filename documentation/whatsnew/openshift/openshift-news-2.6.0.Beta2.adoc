@@ -24,8 +24,7 @@ A quickstart will configure the appication-, add-on cartridge(s) and the applica
 
 image:./images/new-quickstart.png[]
 
-The quickstart creator knows best about sane configurations and that's why you will not be able to freely change these settings. 
-The wizard only offers you to choose among suitable alternative add-on cartridges.
+The quickstarts comes with predefined list of cartridges for setup. If that list allows you to choose between versions you can Edit them.
 
 image:./images/pick-alterntive-addons.png[]
 

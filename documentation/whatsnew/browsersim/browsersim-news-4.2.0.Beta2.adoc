@@ -5,9 +5,13 @@
 :page-product_id: jbt_core 
 :page-product_version: 4.2.0.Beta2
 
-== JavaFx web engine and debugger support on Microsoft Windows
+== Easier usage of JavaFx web engine and debugger support on Microsoft Windows 64-bit
 
-JavaFx web engine for BrowserSim and CordovaSim is now extended to Microsoft Windows operating systems, in addition to OS X and Linux. JavaFx is an alternative to SWT WebKit and enables Windows users to run BrowserSim and CordovaSim without having to install Safari and run these features with a 32-bit Java developer kit. All Windows users can now run BrowserSim and CordovaSim out of the box, while 32-bit Windows users can also continue to opt to install Safari to use SWT WebKit.
+JavaFx is an alternative to SWT WebKit and enables Windows users to run BrowserSim and CordovaSim without having to install Safari and run these features with a 32-bit Java developer kit. 
+
+In past 32-bit was assumed/forced giving problems for users on 64-bit Windows. Now the BrowserSim and CordovaSim will be launched with the appropriate version without the user to start.
+
+If you are on 32-bit Windows you can still install Safari to use SWT WebKit if preferred.
 
 related_jira::JBIDE-17258[]
 

@@ -9,25 +9,25 @@
 == JBoss Server Adapters
 
 
-=== JBoss and Wildfly Runtime classpath containers now support searching by module!
+=== JBoss and Wildfly Runtime classpath containers now honor JBoss Module system
 
 Previously, JBoss and Wildfly runtimes in your eclipse workbench would provide classpath containers
 that consisted of a set of jars found by filesets. If you wanted to update, change, or remove entries,
 you'd need to customize the list of entries in a preference page, where your only options were to 
 add or remove filesets with includes and excludes patterns. 
 
-This "worked", but it really wasn't good enough. It became downright dangerous, though, once
+This "worked", but it really wasn't good enough. It became downright wrong, though, once
 the Wildfly servers gained a patching ability to upgrade servers. Finding the proper jar
 was no longer as simple as using a fileset with an easily located base directory, but
 instead became dependent upon the actual details of your installation. 
 
-Now, that same preference page allows you to add a custom classpath entry for a JBoss module ID. 
+Now, that same preference page allows you to add a custom classpath entry for a JBoss module identifier. 
 The classpath containers will search all appropriate directories based on
 the current state of the installation to locate the correct versions of the jars to be 
 added to your eclipse project's classpath.
 
-Users who already customized their list won't receive the new classpath resolution
-by default. Instead, they'll need to browse to Window -> Preferences -> Server -> Runtime Environment -> Default Classpath Entries
+If you already customized the list and want the new classpath resolution you need to reset the settings.
+You do this at Window -> Preferences -> Server -> Runtime Environment -> Default Classpath Entries
 and select "Restore Defaults".  
 
 image::images/JBIDE-9479.png[JBoss module classpath entries]
@@ -37,8 +37,8 @@ related_jira::JBIDE-9479[]
 === Classpath containers will also support jboss-modules dependencies!
 
 Those same classpath containers mentioned above will also be able to customize the container results
-if your project's manifest.mf includes a "Dependencies" attribute as specified by some of Wildfly's documentation.
-You can read more about how this might work on the Application Server level here: https://docs.jboss.org/author/display/MODULES/Manifest+module+information
+if your project's manifest.mf includes a "Dependencies" attribute as specified by  https://docs.jboss.org/author/display/MODULES/Manifest+module+information
+[Wildfly's documentation].
 
 In general, this feature is most useful if your project is making use of the application server's 
 lower level functionality, or if your deployment is intended as, or has dependencies on, a JBoss Module. 
@@ -59,8 +59,6 @@ image::images/JBIDE-17076b.png[Marking remote server as externally managed]
 
 
 related_jira::JBIDE-17076[]
-
-
 
 == JMX enhanced with JVM Monitor
 
