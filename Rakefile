@@ -314,7 +314,7 @@ task :travis do
    
     puts 'Building staging(master) branch build.'
     profile = 'staging'
-    deploy_url = "tools@filemgmt.jboss.org:/stg_htdocs/tools/master"
+    deploy_url = "tools@filemgmt.jboss.org:/stg_htdocs/tools/"
 
   elsif ENV['TRAVIS_BRANCH'].to_s.scan(/^new_noteworthy$/).length > 0
    
