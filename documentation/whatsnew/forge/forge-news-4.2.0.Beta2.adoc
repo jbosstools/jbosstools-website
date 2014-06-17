@@ -18,14 +18,14 @@ Starting the Forge 2 runtime is now achieved using the Ctrl+4 (or Cmd+4) key com
 As well as starting the Forge runtime, pressing Ctrl+4 (or Cmd+4) opens a window listing available Forge wizards. 
 The list of wizards is responsive, changing based on the currently selected workspace object. The image below illustrates the available wizards when nothing in particular was selected.
 
-image::images/4.2.0.Beta2/noselection.png
+image::images/4.2.0.Beta2/noselection.png[]
 
 As you can see, there are wizards for creating database connection profiles, for managing Forge addons and for creating
 a new project.
 
 When a project is selected while pressing the magic key combination, more wizards become available as illustrated in the image below.
 
-image::images/4.2.0.Beta2/projectselection.png
+image::images/4.2.0.Beta2/projectselection.png[]
 
 == Forge 2 Command Line Interface
 
@@ -33,4 +33,4 @@ The wizards above are also available as commands on the Forge command line. Open
 
 The image below illustrates the available commands in the workspace root.
 
-image::images/4.2.0.Beta2/commandline.png
+image::images/4.2.0.Beta2/commandline.png[]
