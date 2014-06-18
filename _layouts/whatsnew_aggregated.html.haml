@@ -76,7 +76,7 @@ tab: docs
         - unless download_page.nil?
           %a{:href => relative(download_page.output_path)} Download
           &#124;
-        -# JBDS has Release Notes
+        -# devstudio has Release Notes
         - unless download_page.nil? || download_page.build_info.release_notes_url.nil?
           %a{:href=>relative(page.build_info.release_notes_url)} Release Notes 
           &#124;

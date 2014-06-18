@@ -15,7 +15,7 @@ module Awestruct
       def initialize()
       end
 
-      # generates synthetic pages for all downloadable versions of JBDS and JBT (stable, dev, nightly and older)
+      # generates synthetic pages for all downloadable versions of devstudio and JBT (stable, dev, nightly and older)
       def execute(site)
         $LOG.debug "*** Executing downloads extension..." if $LOG.debug?
         # making these labels available in layouts, too.

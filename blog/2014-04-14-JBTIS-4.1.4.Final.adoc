@@ -47,7 +47,7 @@ Note: If you installed into your own Eclipse you should bump up the launch resou
 
 === Fuse Apache Camel Tooling has gone .Final
 
-The previous release of the JBDS Integration Stack had a candidate release of link:/features/apachecamel.html[Fuse Apache Camel Tooling].  The support is now complete and ready to run with the Fuse Active MQ 6.1 release.
+The previous release of the JBoss Developer Studio Integration Stack had a candidate release of link:/features/apachecamel.html[Fuse Apache Camel Tooling].  The support is now complete and ready to run with the Fuse Active MQ 6.1 release.
 
 === Updated Components
 
