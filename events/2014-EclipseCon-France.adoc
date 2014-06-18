@@ -1,0 +1,11 @@
+= EclipseCon France
+:page-layout: event
+:page-event_date: June 18-19, 2014
+:page-effective_date: 20140618
+:page-location: Toulouse, France
+:page-event_url: https://www.eclipsecon.org/france2014/
+
+*Mickael Istria* will give a talk on https://www.eclipsecon.org/france2014/session/integration-tests-rcp-made-easy-swtbot-and-tycho[Integration tests for RCP made easy with SWTBot and Tycho] and https://www.eclipsecon.org/france2014/session/code-matters-eclipse-hackers-git-guide[Eclipse Hacker's Git Guide].
+
+*Sebastien Blanc* from the http://aerogear.org/[Aerogear team] will give an Ignite talk about https://www.eclipsecon.org/france2014/session/send-push-notifications-your-connected-objects-vertx-and-unifiedpush-server[Sending Push Notifications to your Connected Objects with Vert.x and the UnifiedPush Server]
+and will run a *Workshop* with *Koen Aers* on  https://www.eclipsecon.org/france2014/session/building-multiplatform-clone-whatsapp-cordova-and-eclipse-thym[Building a multiplatform clone of WhatsApp with Cordova and Eclipse Thym].

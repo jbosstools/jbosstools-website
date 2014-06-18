@@ -23,8 +23,8 @@ status: green
       %hr
 
 
-  .row-fluid
-    %section.span4
+  .row-fluid.section-wrapper
+    %section.span4.well.post-bg
       - feature = site.features["jbt_core"].find_all{|feature| feature.highlighted == true}.first
       - if feature != nil
         %header
@@ -36,14 +36,14 @@ status: green
           %a.block{:href=>relative(feature.url)}
             %img{:src=>relative(feature.image_url)}
 
-    %section.span4
+    %section.span4.well.post-bg
       %header
         %h3
-          %a{:href => relative("/blog")} Latest posts
-      - posts = site.posts.sort{|l,r| r.date <=> l.date}.first(2)
+          %a{:href => relative("/blog")} Latest News
+      - posts = site.posts.sort{|l,r| r.date <=> l.date}.first(3)
       - for post in posts
         .post
-          .title-wrapper
+          %header
             %img.img-polaroid{:src => "#{site.team[post.author].photo_32px}"}
             .title
               %h4
@@ -53,17 +53,16 @@ status: green
                     DRAFT
               .author
                 /there is only one author per post but the author splitter adds an array here
-                posted by
+                by
                 %strong< #{site.team[post.author].title}
                 on
                 %strong< #{post.date.strftime( '%b %d, %Y' )}.
-        %footer
-          %a.pull-right{:href=>relative(post.url)}
-            Read more &raquo;
-        %hr
+          %footer
+            %a.btn.btn-small{:href=>relative(post.url)}
+              Read more &raquo;
+          
 
-
-    %section.span4
+    %section.span4.well.post-bg
       %header
         %h3
           %a{:href => relative("/events")} Upcoming Events
@@ -73,15 +72,18 @@ status: green
       - events = events.find_all{|item| item.effective_date.to_s >= a_few_days_ago.strftime("%Y%m%d")}
       - events = events.sort{|l,r| l.effective_date <=> r.effective_date}.first(3)
       - for event in events
-        .item.justify
-          %h4
-            %a{:href=>relative(event.output_path)} #{event.title}
-          %strong
-            #{event.event_date}
+        .event
+          %header
+            %h4
+              %a{:href=>relative(event.output_path)} #{event.title}
+          .abstract
+            %strong
+              #{event.event_date}
             in
-            #{event.location}
-        .footer
-          %a.pull-right{:href=>relative(event.output_path)}
+            %strong
+              #{event.location}
+        %footer
+          %a.btn.btn-small{:href=>relative("/events")}
             Read more &raquo;
 
 

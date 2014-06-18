@@ -41,36 +41,16 @@ module Awestruct
             end
             # for each Eclipse versions can have many product builds, each one with build info
             eclipse_stream.each do |build_version, build_info|
-              info = OpenStruct.new
-              build_type_label = ProductsHelper.get_build_type_label(site, product_id, build_version) 
-              info.name = site.products[product_id].name
-              info.product_id = product_id
-              info.version = build_version
-              info.release_date = build_info["release_date"]
-              info.eclipse_version = eclipse_version
-              info.build_type_label = build_type_label
-              info.blog_announcement_url = build_info["blog_announcement_url"]
-              info.release_notes_url = build_info["release_notes_url"]
-              #info.supported_jbt_is_version = build_info["supported_jbt_is_version"]
-              info.required_jbt_core_version = build_info["required_jbt_core_version"]
-              info.required_devstudio_version = build_info["required_devstudio_version"]
-              #info.supported_devstudio_is_version = build_info["supported_devstudio_is_version"]
-              info.whatsnew_url = get_whatsnew_page_output_path(product_id, build_version) 
-              info.installers = build_info["installers"]
-              info.update_site_url = build_info["update_site_url"]
-              info.marketplace_install_url = build_info["marketplace_install_url"]
-              info.zips = build_info["zips"]
-              info.archived = build_info["archived"] || false
-              # finally, build regular download page
+              product_info = ProductsHelper.get_build_info(site, product_id, build_version, eclipse_version, build_info)
               download_page = generate_download_page(product_id, eclipse_version, 
-                    build_version.to_s, info)
+                    build_version.to_s, product_info)
               
               # used to provide links to download .Final versions on /downloads
               # and links to latest builds per type on /download/<product_id>
-              if (!build_type_label.nil? && 
-                  (@site.latest_builds_download_pages[product_id][build_type_label].nil? || 
-                    (@site.latest_builds_download_pages[product_id][build_type_label].build_info.version <=> download_page.build_info.version) == -1 ))
-                @site.latest_builds_download_pages[product_id][build_type_label] = download_page
+              if (!product_info.build_type_label.nil? && 
+                  (@site.latest_builds_download_pages[product_id][product_info.build_type_label].nil? || 
+                    (@site.latest_builds_download_pages[product_id][product_info.build_type_label].build_info.version <=> download_page.build_info.version) == -1 ))
+                @site.latest_builds_download_pages[product_id][product_info.build_type_label] = download_page
               end
             end
           end
@@ -117,11 +97,12 @@ module Awestruct
             download_pages_per_eclipse_stream[product_id][eclipse_stream] = Hash.new
             product_versions.each do |product_version, product_info| 
               # the real build type, not the one for the labels
-              build_type = ProductsHelper.get_build_type(site, product_id, product_version) 
+              build_info = ProductsHelper.get_build_info(site, product_id, product_version, eclipse_stream, product_info) 
+              build_type = build_info.build_type
               if (download_pages_per_eclipse_stream[product_id][eclipse_stream][build_type].nil? || 
-                  download_pages_per_eclipse_stream[product_id][eclipse_stream][build_type] < product_version) then
+                  download_pages_per_eclipse_stream[product_id][eclipse_stream][build_type].version < product_version)  then
                   #puts "  Adding build type #{product_version} as latest #{build_type} version of #{product_id} / #{eclipse_stream}"
-                download_pages_per_eclipse_stream[product_id][eclipse_stream][build_type] = product_version
+                download_pages_per_eclipse_stream[product_id][eclipse_stream][build_type] = build_info
               end
             end
           end
@@ -140,21 +121,16 @@ module Awestruct
             summary_page = generate_download_per_eclipse_stream_page(product_id, eclipse_stream)
             summary_page.build_versions = Hash.new
             for build_type in [:stable, :development, :nightly]
-              #puts "  Using #{download_pages_per_eclipse_stream[product_id][eclipse_stream][build_type]} as latest #{build_type} version of #{product_id} / #{eclipse_stream}"
-              summary_page.build_versions[build_type] = download_pages_per_eclipse_stream[product_id][eclipse_stream][build_type] unless download_pages_per_eclipse_stream[product_id][eclipse_stream][build_type].nil?
+              if !download_pages_per_eclipse_stream[product_id][eclipse_stream][build_type].nil?
+                #puts "  Using #{download_pages_per_eclipse_stream[product_id][eclipse_stream][build_type].version} as latest #{build_type} version of #{product_id} / #{eclipse_stream}"
+                summary_page.build_versions[build_type] = download_pages_per_eclipse_stream[product_id][eclipse_stream][build_type]
+              end
             end
           end
         end
         $LOG.debug "*** Done with downloads extension." if $LOG.debug?
       end
       
-      def get_whatsnew_page_output_path(product_id, product_version)
-        unless @site.whatsnew_pages[product_id].nil? || @site.whatsnew_pages[product_id][product_version].nil? then
-          return @site.whatsnew_pages[product_id][product_version].output_path
-        end
-        return nil
-      end
-
       def generate_download_page(product_id, eclipse_version, page_path_fragment, build_info)
         page_title ||= @site.products[product_id].name + " " + build_info.version.to_s
         product_path_fragment = @site.products[product_id].url_path_fragment

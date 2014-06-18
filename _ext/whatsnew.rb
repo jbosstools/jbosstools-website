@@ -94,12 +94,14 @@ module Awestruct
           product_active = ProductsHelper.is_product_version_active(site, product_id, product_version)
           puts "  building  N&N page for #{product_id} #{product_version}"
           page = create_page(site, @@whatsnew_layout_path, @target_path_prefix, product_url_path_fragment, product_version)
+          page.build_info = ProductsHelper.get_product_info(site, product_id, product_version)
           page.product_id = product_id
           page.product_name = site.products[product_id].name
           page.product_version = product_version
           page.component_news = Hash.new
           page.product_active = product_active
           # see downloads.rb for symbols
+          page.build_type= ProductsHelper.get_build_type(site, product_id, product_version)
           page.build_type_label= ProductsHelper.get_build_type_label(site, product_id, product_version)
           site.whatsnew_pages[product_id][product_version] = page
         end

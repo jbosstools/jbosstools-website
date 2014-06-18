@@ -24,16 +24,17 @@ tab: docs
             %a{:href=>"#"} #{site.components[page.component_id].name}
     
              
-  .span9.scrolledContent
-    - download_page = site.download_pages[page.product_id][page.product_version]
-    - unless download_page.nil?
-      %p.direct-download
-        %a.btn.btn-primary{:href => relative(download_page.output_path)} 
-          %i.icon-download
-          Download
-      
+  .span9.whatsnew.scrolledContent
+    %header 
+      %h1.center What's New in #{page.product_name} #{page.product_version}
+      - download_page = site.download_pages[page.product_id][page.product_version]
+      - unless download_page.nil?
+        .center
+          %a{:href => relative(download_page.output_path)} 
+            Download
+  
     - default_imagesdir = site.asciidoctor.attributes['imagesdir']
-    %div.component-wrapper{:id=>component_id}
+    %div.component-wrapper.well.post-bg{:id=>component_id}
       %h1.component-header #{site.components[page.component_id].name}
       - site.asciidoctor.attributes['imagesdir'] = relative(Pathname.new(page.output_path).parent.to_s)
       #{content}

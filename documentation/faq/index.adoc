@@ -1,11 +1,9 @@
 = Frequently Asked Questions
-:page-layout: project
+:page-layout: faq
 :page-tab: docs
 :page-status: green
 
-== Frequently Asked Questions 
-
-=== General
+== General
 
 [qanda]
 What is JBoss Tools?::
@@ -31,7 +29,7 @@ How do I install JBoss Tools Integration Stack?::
 Is JBoss Tools open source?::
    Yes! Please feel free to link:/getinvolved[get involved]!
 
-==== JBoss Tools Features
+=== JBoss Tools Features
 
 [qanda]
 Why does the visual part in the visual editor not work?::

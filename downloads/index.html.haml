@@ -8,26 +8,26 @@ issues: [JBIDE-17047]
 
 - devstudio_current_stable_release = site.latest_builds_download_pages[:devstudio][:stable]
 - jbtcore_current_stable_release = site.latest_builds_download_pages[:jbt_core][:stable]
+- devstudio_current_development_release = site.latest_builds_download_pages[:devstudio][:development]
+- jbtcore_current_development_release = site.latest_builds_download_pages[:jbt_core][:development]
 
 .row-fluid
   .hero-unit.center
-    %h1
-      Downloads
-    %p
-      Latest Stable Versions of #{devstudio_current_stable_release.build_info.name} and #{jbtcore_current_stable_release.build_info.name}
+    %h1 Downloads
+    %p Latest stable versions of #{devstudio_current_stable_release.build_info.name} and #{jbtcore_current_stable_release.build_info.name}
+    %hr
 .row-fluid#downloads
   %section.span6.well
     %header
       %h3
-        %a{:href=>relative(devstudio_current_stable_release.output_path)} #{devstudio_current_stable_release.build_info.name} #{devstudio_current_stable_release.build_info.version}
-        - unless devstudio_current_stable_release.build_info.build_type_label.nil?
-          %span{:class=>"label label_#{devstudio_current_stable_release.build_info.build_type_label}"}
-            #{site.labels[devstudio_current_stable_release.build_info.build_type_label]}
+        =partial('product_link.html.haml', { :parent => page, :product_release => devstudio_current_stable_release })
+      %hr
+      
     .item
       :markdown
         * One click install - for Windows, Linux and Mac
         * Based on JBoss Tools 4.1 supported plugins
-        * Full IDE installer or install to existing Eclipse
+        * Full IDE installer or install to existing **Eclipse Kepler**
         * JBoss Central to install extra features
         *  **Supported by Red Hat**
         * Released on #{devstudio_current_stable_release.build_info.release_date}
@@ -36,20 +36,23 @@ issues: [JBIDE-17047]
       %a.btn.btn-primary.btn-large{:href=>relative(devstudio_current_stable_release.output_path)}
         %i.icon-download
         Download
-      %br
-      %br
+      %hr
+      - unless devstudio_current_development_release.nil?
+        or try&nbsp;
+        %a{:href=>relative(devstudio_current_development_release.output_path)}> the latest development build
+        \.
+      
 
   %section.span6.well
     %header
       %h3
-        %a{:href=>relative(jbtcore_current_stable_release.output_path)} #{jbtcore_current_stable_release.build_info.name} #{jbtcore_current_stable_release.build_info.version}
-        - unless jbtcore_current_stable_release.build_info.build_type_label.nil?
-          %span{:class=>"label label_#{jbtcore_current_stable_release.build_info.build_type_label}"}
-            #{site.labels[jbtcore_current_stable_release.build_info.build_type_label]}
+        =partial('product_link.html.haml', { :parent => page, :product_release => jbtcore_current_stable_release })
+      %hr
+        
     .item
       :markdown
         * Individual plugins for Eclipse, including experimental plugins
-        * Install into existing Eclipse only
+        * Install into existing **Eclipse Kepler** only
         * Some assembly required
         * JBoss Central to install extra features
         * **Community only support**
@@ -59,10 +62,14 @@ issues: [JBIDE-17047]
       %a.btn.btn-primary.btn-large{:href=>relative(jbtcore_current_stable_release.output_path)}
         %i.icon-download
         Download
-      - unless jbtcore_current_stable_release.build_info.whatsnew_url.nil?
-        %br
-          %span
-            %a{:href=>relative(jbtcore_current_stable_release.build_info.whatsnew_url)} What's New
+      %hr
+      - unless jbtcore_current_development_release.nil?
+        or try&nbsp;
+        %a{:href=>relative(jbtcore_current_development_release.output_path)}> the latest development build
+        \.
+
+
+      
 
 .row-fluid
   .span12

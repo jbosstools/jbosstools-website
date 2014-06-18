@@ -1,0 +1,17 @@
+= EclipseCon Europe
+:page-layout: event
+:page-event_date: October 28-30, 2014
+:page-effective_date: 20141028
+:page-location: Ludwigsburg, Germany
+:page-event_url: http://www.eclipsecon.org/europe2014/
+
+http://www.eclipsecon.org/europe2014/cfp[Call for Paper] is open until *May, 27th*. You can submit *Standard talks* (35min) and *Tutorials* (3 hours) in the following categories:
+
+- Eclipse Technology
+- OSGi 
+- Java
+- IoT / Embedded
+- Industry Solutions
+- Web Technology
+- Other Cool Stuff
+- Project Quality Day

@@ -1,6 +1,7 @@
 ---
 layout: project
 title: Events
+tab: community
 status: green
 ---
 .row-fluid
@@ -11,10 +12,11 @@ status: green
     - events = site.events.sort{|l,r| r.effective_date <=> l.effective_date}
     - for event in events
       .justify
-        %h4
+        %h3
           %a{:href=>relative(event.output_path)} #{event.title}
         %strong  
           #{event.event_date} 
           in
           #{event.location}
         #{event.content}
+        %hr

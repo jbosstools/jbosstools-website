@@ -1,0 +1,10 @@
+= Face-to-Face Team Meeting
+:page-layout: event
+:page-event_date: October 2014, 20th to 24th
+:page-effective_date: 20141020
+:page-location: Brno, Czech Republic
+
+Most of the team members will meet again at Red Hat's office in Brno for the annual face-to-face meeting, 
+where the roadmap and features of the upcoming version of JBoss Tools and JBoss Developer Studio will be planned. 
+
+Feel free to link:/community/[contact us] now if you have ideas or feature requests

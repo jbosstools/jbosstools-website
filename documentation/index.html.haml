@@ -6,12 +6,13 @@ status: green
 ---
 
 .row-fluid
-  .hero-unit.center
+  .hero-unit.hidden-phone.center
     %h1 Documentation
     %p Documentation about the JBoss Tools project
+    %hr
 
-.row-fluid
-  %section.span3
+.row-fluid.section-wrapper
+  %section.span3.well.post-bg
     %header
       %h3 
         %a{:href => relative("/documentation/whatsnew")} What's New ? 
@@ -22,7 +23,7 @@ status: green
         describes what is new and noteworthy in each of the milestones and releases for JBoss Tools.
     %footer
       %a.btn.btn-small{:href => relative("/documentation/whatsnew"), :role => "button"} See What's New &raquo;
-  %section.span3
+  %section.span3.well.post-bg
     %header
       %h3 
         %a{:href => relative("/documentation/faq")} FAQ
@@ -34,7 +35,7 @@ status: green
         %a{:href => relative("/community")} community
     %footer
       %a.btn.btn-small{:href => relative("/documentation/faq"), :role => "button"} Read the FAQ &raquo;
-  %section.span3
+  %section.span3.well.post-bg
     %header
       %h3 
         %a{:href => relative("/documentation/videos")} Videos
@@ -45,7 +46,7 @@ status: green
         for learning about how install, setup and how to use some of the features of JBoss Tools.
     %footer
       %a.btn.btn-small{:href => relative("/documentation/videos"), :role => "button"} Watch the Video Tutorials &raquo;
-  %section.span3
+  %section.span3.well.post-bg
     %header
       %h3 
         %a{:href => "http://docs.jboss.org/tools"} Reference Guides

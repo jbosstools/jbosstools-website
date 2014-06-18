@@ -4,10 +4,11 @@ tab: features
 title: Features
 ---
 .row-fluid
-  .span12.hero-unit.center
+  .hero-unit.center
     %h1 Features
-    %p Main Features of #{site.products[:jbt_core].name} and #{site.products[:jbt_is].name}
-
+    %p Main features of #{site.products[:jbt_core].name} and #{site.products[:jbt_is].name}
+    %hr
+    
 - site.features.each do |product_id, features|
   -# show all other features
   - f = Array.new() + features
@@ -23,8 +24,6 @@ title: Features
             %h3.center< #{feature.name}
             %h4.center< #{feature.tagline}
             %img{:src=>relative(feature.image_url), :alt=>"#{feature.name}", :width=>"128px"}
-  .row-fluid.features
-    .span12
 
 
 

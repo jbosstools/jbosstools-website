@@ -6,47 +6,74 @@ status: yellow
 #issues: JBIDE-17038,JBIDE-17039,JBIDE-17040
 ---
 - if page.selected_tag
-  .posts-header
-    %h1< Articles tagged with "#{page.selected_tag}"
-    - page.title = "Articles tagged with \"" + page.selected_tag + "\""
+  .row-fluid
+    .hero-unit.center
+      %h1< Articles tagged with "#{page.selected_tag}"
+      %hr
+    
 - elsif !page.posts.nil?
   .row-fluid
     .hero-unit.center
       %h1< 
-        Latest Articles
-        %a{:href=>relative("/blog/news.atom")}
-          %img#rss-icon{:src=>relative("/images/feed-icon-28x28.png")}
+        Latest Articles        
+      %hr
 - if !page.posts.nil?
   .row-fluid
-    .span12#core-page.posts
+    .span9#core-page.posts
       - for post in page.posts
-        .post
-          .title-wrapper
-            %img.img-polaroid{:src=>"#{site.team[post.author].photo_64px}"}
+        .well.post-bg
+          .post
+            %header
+              %img.img-polaroid{:src=>"#{site.team[post.author].photo_64px}"}
+              .title
+                %h3
+                  %a{:href=>relative("#{post.url}")}= post.title
+                  - if post.draft_article
+                    %span{:class=>"label label-important"}
+                      DRAFT
+                .author
+                  /there is only one author per post but the author splitter adds an array here
+                  posted by 
+                  %strong< #{site.team[post.author].title}
+                  on 
+                  %strong< #{post.date.strftime( '%b %d, %Y' )}.
+                  %p
+                    - if(post.tags != null && !post.tags.empty?) 
+                      - post.tags.each do |tag|
+                        %a.label.label-info{:href=>relative("#{tag.primary_page.url}")} #{tag}
+            .body
+              - default_imagesdir = site.asciidoctor.attributes['imagesdir']
+              - site.asciidoctor.attributes['imagesdir'] = relative(Pathname.new(post.output_path).parent.to_s)
+              #{post.content}
+              - site.asciidoctor.attributes['imagesdir'] = default_imagesdir
+
+            %hr
+    
+    .span3.well.post-bg
+      %header
+        %h3
+          %a{:href => relative("/blog")} Latest posts
+          %a{:href=>relative("/blog/news.atom")}
+            %img#rss-icon{:src=>relative("/images/feed-icon-28x28.png"), :width=>"20px"}
+      .latest-posts
+        - posts = site.posts.sort{|l,r| r.date <=> l.date}.first(3)
+        - for post in posts
+          %header
+            %img.img-polaroid{:src => "#{site.team[post.author].photo_32px}"}
             .title
-              %h3
-                %a{:href=>relative("#{post.url}")}= post.title
+              %h4
+                %a{:href=>relative(post.url)}= post.title
                 - if post.draft_article
                   %span{:class=>"label label-important"}
                     DRAFT
               .author
                 /there is only one author per post but the author splitter adds an array here
-                posted by 
+                by
                 %strong< #{site.team[post.author].title}
-                on 
+                on
                 %strong< #{post.date.strftime( '%b %d, %Y' )}.
-                %p
-                  - if(post.tags != null && !post.tags.empty?) 
-                    - post.tags.each do |tag|
-                      %a.label.label-info{:href=>relative("#{tag.primary_page.url}")} #{tag}
-          .body
-            - default_imagesdir = site.asciidoctor.attributes['imagesdir']
-            - site.asciidoctor.attributes['imagesdir'] = relative(Pathname.new(post.output_path).parent.to_s)
-            #{post.content}
-            - site.asciidoctor.attributes['imagesdir'] = default_imagesdir
-
-          %hr
-  
+            
+                
   .row-fluid
     .span12.center
       %hr

@@ -64,14 +64,25 @@ tab: docs
         %a{:href=>"http://docs.jboss.org/tools/whatsnew/"} Previous Versions
       
             
-  .span9.scrolledContent
-    - download_page = site.download_pages[page.product_id][page.product_version]
-    - unless download_page.nil?
-      %p.direct-download
-        %a.btn.btn-primary{:href => relative(download_page.output_path)} 
-          %i.icon-download
-          Download #{page.product_name} #{page.product_version}
-      
+  .span9.whatsnew.scrolledContent.well.post-bg
+    %header 
+      %h1.center What's New in #{page.product_name} #{page.product_version}
+      - download_page = site.download_pages[page.product_id][page.product_version]
+      .center
+        -# Blog announcement
+        - unless download_page.nil? || download_page.build_info.blog_announcement_url.nil?
+          %a{:href=>relative(page.build_info.blog_announcement_url)} Blog Announcement 
+          &#124;
+        - unless download_page.nil?
+          %a{:href => relative(download_page.output_path)} Download
+          &#124;
+        -# JBDS has Release Notes
+        - unless download_page.nil? || download_page.build_info.release_notes_url.nil?
+          %a{:href=>relative(page.build_info.release_notes_url)} Release Notes 
+          &#124;
+        %a{:href=>relative("/downloads/installation.html")} Installation Instructions
+    
+                
     - default_imagesdir = site.asciidoctor.attributes['imagesdir']
     - component_ids.each do |component_id|
       - component_news = page.component_news[component_id]

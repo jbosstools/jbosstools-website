@@ -8,63 +8,67 @@ tab: downloads
   .hero-unit.hidden-phone.center
     %h1 Downloads
     %p Latest versions of #{product_name} 
-      
-.row-fluid
-  %section.span4
-    - download_page = page.build_versions[:stable]
-    - if !download_page.nil?
-      %header
-        %h3 
-          Version #{download_page.build_info.version}
-          - unless download_page.build_info.build_type_label.nil?
-            %span{:class=>"label label_#{download_page.build_info.build_type_label}"}
-              #{site.labels[download_page.build_info.build_type_label]}
-        %h4
-          for #{download_page.build_info.eclipse_version.full_name}
-      .item.center
-        %a.btn.btn-primary{:href => relative(download_page.output_path)} 
-          %i.icon-download
-          Download
-    - else
-      :markdown
-        Sorry, there is no **stable** build of #{site.products[page.product_id].name} at the moment.
+    %hr
 
-  %section.span4
-    - download_page = page.build_versions[:development]
-    - if !download_page.nil?
-      %header
-        %h3 
-          Version #{download_page.build_info.version}
-          - unless download_page.build_info.build_type_label.nil?
-            %span{:class=>"label label_#{download_page.build_info.build_type_label}"}
-              #{site.labels[download_page.build_info.build_type_label]}
-        %h4
-          for #{download_page.build_info.eclipse_version.full_name}
-      .item.center
-        %a.btn.btn-primary{:href => relative(download_page.output_path)} 
-          %i.icon-download
-          Download
-    - else
-      :markdown
-        Sorry, there is no **development** build of #{site.products[page.product_id].name} at the moment.
-  %section.span4
-    - download_page = page.build_versions[:nightly]
-    - if !download_page.nil?
-      %header
-        %h3
-          Version #{download_page.build_info.version}
-          - unless download_page.build_info.build_type_label.nil?
-            %span{:class=>"label label_#{download_page.build_info.build_type_label}"}
-              #{site.labels[download_page.build_info.build_type_label]}
-        %h4
-          for #{download_page.build_info.eclipse_version.full_name}
-      .item.center
-        %a.btn.btn-primary{:href => relative(download_page.output_path)} 
-          %i.icon-download
-          Download
-    - else
-      :markdown
-        Sorry, there is no **nightly** build of #{site.products[page.product_id].name} at the moment.
+
+- count = 0    
+- downloads = Hash.new
+- for build_type in [:stable, :development, :nightly] do
+  - product_version = page.build_versions[build_type]
+  - if !product_version.nil?
+    - count += 1
+  
+- spanValue = "span" << (12/count).to_s
+
+    
+.row-fluid.section-wrapper
+  - for build_type in [:stable, :development] do
+    - product_version = page.build_versions[build_type]
+    - if !product_version.nil?
+      %section{:class=>"spanValue well post-bg"}
+        %header
+          %h3 
+            %a{:href => relative(product_version.output_path)} #{site.products[page.product_id].name} #{product_version.build_info.version}
+            - unless build_type.nil?
+              %span{:class=>"label label_#{build_type}"}
+                #{site.labels[build_type]}
+          
+        .item.justify
+          %strong #{site.products[page.product_id].name} #{product_version.build_info.version}
+          is the latest 
+          %strong #{build_type} 
+          version available 
+          for 
+          %strong #{product_version.build_info.eclipse_version.full_name}.
+        
+        %footer
+          %a.btn.btn-primary{:href => relative(product_version.output_path)} 
+            %i.icon-download
+            Download 
+
+  - for build_type in [:nightly] do
+    - product_version = page.build_versions[build_type]
+    - if !product_version.nil?
+      %section{:class=>"spanValue well post-bg"}
+        %header
+          %h3 
+            %a{:href => relative(product_version.output_path)} #{site.products[page.product_id].name} 
+            - unless build_type.nil?
+              %span{:class=>"label label_#{build_type}"}
+                #{site.labels[build_type]}
+          
+        .item.justify
+          Download the latest 
+          %strong nightly build 
+          for 
+          %strong #{product_version.build_info.eclipse_version.full_name}
+          to test the changes in #{site.products[page.product_id].name}. 
+        
+        %footer
+          %a.btn.btn-primary{:href => relative(product_version.output_path)} 
+            %i.icon-download
+            Download 
+        
 .row-fluid
   .span12    
     %hr

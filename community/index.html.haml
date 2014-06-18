@@ -9,21 +9,23 @@ status: yellow
   .hero-unit.center
     %h1 Community
     %p How to partipate in JBoss Tools community
-
-.row-fluid
-  %section.span4
+    %hr
+    
+.row-fluid.section-wrapper
+  %section.span4.well.post-bg
     %header
       %h3 User Forums
-      .item
-        %p
-          The user forums should be your first port of call for any user-related issues with JBoss Tools.  Be it a question, wanting to report a bug, looking for advice, or simply sharing some cool stories you may have.
-          %br
-          We have two forums, one for JBoss Tools and one for JBoss Developer Studio.
-      %footer
-        %a.btn.btn-small{:href => "https://community.jboss.org/en/tools/content?filterID=contentstatus[published]~objecttype~objecttype[thread]", :role => "button"} Visit JBoss Tools User Forums &raquo;
-        %a.btn.btn-small{:href => "https://community.jboss.org/en//jbossdevstudio/content?filterID=contentstatus[published]~objecttype~objecttype[thread]", :role => "button"} Visit JBoss Developer Studio User Forums &raquo;
+    .item
+      %p
+        The user forums should be your first port of call for any user-related issues with JBoss Tools.  Be it a question, wanting to report a bug, looking for advice, or simply sharing some cool stories you may have.
+        %br
+        We have two forums, one for JBoss Tools and one for JBoss Developer Studio.
+    %footer
+      %a.btn.btn-small{:href => "https://community.jboss.org/en/tools/content?filterID=contentstatus[published]~objecttype~objecttype[thread]", :role => "button"} Visit JBoss Tools User Forums &raquo;
+      %br
+      %a.btn.btn-small{:href => "https://community.jboss.org/en//jbossdevstudio/content?filterID=contentstatus[published]~objecttype~objecttype[thread]", :role => "button"} Visit JBoss Developer Studio User Forums &raquo;
 
-  %section.span4
+  %section.span4.well.post-bg
     %header
       %h3 IRC
     .item
@@ -56,7 +58,7 @@ status: yellow
           .modal-footer
           %button.btn{"aria-hidden" => "true", "data-dismiss" => "modal"} Close
 
-  %section.span4
+  %section.span4.well.post-bg
     %header
       %h3 Developers Mailing List
     .item

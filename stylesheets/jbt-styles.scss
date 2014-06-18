@@ -46,7 +46,7 @@
 h1, h2, h3, h4, h5, h6 {
   letter-spacing: -.25px;
 }
-h2 {
+h1, h2 {
   color: #444;
 }
 h3 {
@@ -65,7 +65,7 @@ h4, h5, h6 {
   margin-right:auto;
 }
 
-div.right, span.right {
+div.right, span.right, footer.right {
   width: 100%;
   text-align: right;
 }
@@ -110,8 +110,11 @@ td.right {
   font-weight: bold;
 }
 
+.justify {
+  text-align: justify;
+}
+
 p {
-  //text-align: justify;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
   //font-size: 1.1em;
@@ -148,7 +151,7 @@ section {
     margin-bottom: 10px;
     h3, h4 {
       //text-align: center;
-      border-bottom: 1px solid #EEEEEE;
+      //border-bottom: 1px solid #EEEEEE;
     }
   }
 
@@ -173,7 +176,7 @@ section {
       }
     }
 
-    ul.double {
+    ul.columns.double {
       overflow:hidden;
 
       li {
@@ -206,7 +209,7 @@ section {
       margin: 5px 5px;
     }
     a.btn-small {
-      background-color: #ebf0f9;
+      background-color: #DFF3EA;
       border: 1px solid #d3dae5;
       background-image: none;
       &:hover, &:focus {
@@ -342,17 +345,21 @@ blockquote > p {
 // Flex layout
 // ******************************************************
 @media (min-width: 767px) {
-  .flex {
+  .section-wrapper {
     display: flex;
     align-items: strech;
     flex-direction: row;
     section {
       position: relative;
+      .item {
+        margin-top: 1em;
+        margin-bottom: 3em;
+      }
       footer {
-        position: absolute; bottom: 0;
+        position: absolute; bottom: 0.5em;
         width: 100%;
       }
-    }
+    }    
 
   }
 }
@@ -394,7 +401,7 @@ blockquote > p {
 }
 
 .scrolledContent {
-  margin-top: 40px;
+  margin-top: 30px; // matches .bs-docs-sidenav !
 }
 
 // ******************************************************
@@ -501,9 +508,15 @@ a.dropdown-toggle {
   background-image: none;
   padding: 30px 30px 0px 30px;
 }
+.hero-unit {
+  background: #ebf5f1;
+}
+
 #homepage .hero-unit {
   background: url("http://static.jboss.org/tools/images/bkg_binding_light.png") 0 0 repeat-x #ebf5f1;
 }
+
+
 .hero-unit > img {
   padding-left: 20px;
   float: right;
@@ -524,6 +537,10 @@ a.dropdown-toggle {
 .hero-unit p {
   margin-bottom: 20px;
   display: inline-block;
+}
+
+.post-bg {
+  background: #fefefe;
 }
 
 // ****************************************
@@ -666,6 +683,9 @@ body {
     margin-top: 2em;
     margin-bottom: 4em;
   }
+  .abstract {
+    margin-bottom: 1em;
+  }
 }
 
 // ****************************************
@@ -727,10 +747,6 @@ body {
 #release_info {
   margin-top: 2em;
   margin-bottom: 2em;
-}
-
- .label {
-  vertical-align: top;
 }
 
 #installation_tabs {
@@ -816,10 +832,8 @@ body {
 span.label {
   font-weight: normal;
   text-shadow: none;
-  &#displayed-version {
-    vertical-align:top;
-  }
-
+  vertical-align: super;
+  
   &.label_stable, &.label_latest_release {
     background-color: rgb(70, 136, 71);
   }
@@ -832,10 +846,6 @@ span.label {
   &.float-right {
     font-size: smaller;
   }
-}
-
-section  h3 > span.label {
-  vertical-align: text-top;
 }
 
 .sidenav  li:first-child  a {
@@ -953,7 +963,7 @@ section  h3 > span.label {
   color: #4A5D75;
 }
 
-.post {
+.post, .latest-posts {
   padding-left: 0px;
   padding-right: 0px;
   text-align: left;
@@ -962,7 +972,7 @@ section  h3 > span.label {
     display:none;
   }
 
-  .title-wrapper {
+  header {
     img.img-polaroid {
       float:left;
       margin-right: 10px;
@@ -1080,25 +1090,20 @@ section  h3 > span.label {
   }
 }
 
-.whatsnew-nav {
-  margin-top: 4em;
-}
+$scrollmargin: 40px;
 
-@media screen and (min-width: 940px) {
-  .whatsnew {
-    .sectionbody {
-      .paragraph {
-        //margin-left:4em;
-      }
-    }
+.whatsnew {
+  header {
+    margin-bottom: $scrollmargin * 1.5;
   }
 }
 .component-wrapper {
-  margin-top: -40px;
-  padding-top: 60px;
-  margin-bottom: 40px;
-  &:first {
-    margin-top: 0;
+  margin-top: -$scrollmargin;
+  margin-bottom: $scrollmargin;
+  padding-top: $scrollmargin;
+  &:first-child {
+    margin-top: 0px;
+    padding-top: 0px;
   }
   .component-header {
     text-align: center;
@@ -1214,6 +1219,5 @@ section  h3 > span.label {
       text-align:left;
     }
   }
-
-
 }
+

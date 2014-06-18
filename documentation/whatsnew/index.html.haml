@@ -6,24 +6,29 @@ status: yellow
 ---
 .row-fluid
   .hero-unit.center
-    %h1 
-      What's New 
-    %p
-      New and Noteworthy about #{site.products[:jbt_core].name} and
-      #{site.products[:jbt_is].name} 
+    %h1 What's New 
+    %p New and Noteworthy about #{site.products[:jbt_core].name} and #{site.products[:jbt_is].name} 
+    %hr
 
+-# store the latest Dev and Stable N&N of JBT Core and JBT IS  in a map
 - count = 0    
+- new_noteworthies = Hash.new
 - for product_id in [:jbt_core, :jbt_is] do 
   - unless site.whatsnew_pages[product_id].nil?
-    - count += site.whatsnew_pages[product_id].values.select{|whatsnew_page| !whatsnew_page.build_type_label.nil?}.length
+    - new_noteworthies[product_id] = Hash.new
+    - news = site.whatsnew_pages[product_id].values.select{|whatsnew_page| !whatsnew_page.build_type_label.nil?}.sort{|p1, p2| p2.product_version <=> p1.product_version}
+    - news.each do |n|
+      - if new_noteworthies[product_id][n.build_type_label].nil?
+        - new_noteworthies[product_id][n.build_type_label] = n 
+        - count += 1
   
 - spanValue = "span" << (12/count).to_s
 
-.row-fluid.whatsnew-index.flex
-  - for product_id in [:jbt_core, :jbt_is, :devstudio, :devstudio_is] do 
-    - unless site.whatsnew_pages[product_id].nil?
+.row-fluid.section-wrapper.whatsnew-index.flex
+  - for product_id in [:jbt_core, :jbt_is] do 
+    - unless new_noteworthies[product_id].nil?
       - site.whatsnew_pages[product_id].values.select{|whatsnew_page| !whatsnew_page.build_type_label.nil?}.sort{|p1, p2| p2.product_version <=> p1.product_version}.each do |whatsnew_page|
-        %section{:class=>spanValue}
+        %section{:class=>"spanValue well post-bg"}
           %header
             %h3 
               %a{:href=>relative(whatsnew_page.output_path)} #{site.products[product_id].name} #{whatsnew_page.product_version}
@@ -31,17 +36,27 @@ status: yellow
                 %span{:class=>"label label_#{whatsnew_page.build_type_label}"}
                   #{site.labels[whatsnew_page.build_type_label]}
           
-          .item.center
-            - relevant_components = whatsnew_page.component_news.keys.select{|k| k != "general"}
-            - if relevant_components.length > 0
-              %p
-                See what's new in #{site.products[product_id].name} #{whatsnew_page.product_version}, including:
-              %ul.double
-                - relevant_components.each_with_index do |component_id, index|
-                  %li 
-                    %a{:href=>relative("#{whatsnew_page.output_path}##{component_id}")} #{site.components[component_id].name}
-            - else
-              %p See what's new in #{site.products[product_id].name} #{whatsnew_page.product_version}.
-          %footer.center
+          .item
+            %p
+              %strong #{site.products[product_id].name} #{whatsnew_page.product_version}
+              is the latest 
+              %strong #{site.labels[whatsnew_page.build_type_label]}
+              version available for download.
+              
+              
+              - relevant_components = whatsnew_page.component_news.keys.select{|k| k != "general"}
+              - if relevant_components.length > 0
+                %p
+                  See what's new in it, including changes for:
+                %ul.columns.double
+                  - relevant_component_names = Hash.new
+                  - relevant_components.each do |component_id|
+                    - relevant_component_names[site.components[component_id].name] = component_id
+                  - relevant_component_names.sort{|x,y| x <=> y}.each do |component_name, component_id|
+                    %li 
+                      %a{:href=>relative("#{whatsnew_page.output_path}##{component_id}")} #{component_name}
+              - else
+                %p This version is a primarily bug-fix release.
+          %footer
             %a.btn.btn-small{:href=>relative(whatsnew_page.output_path)} Read more &raquo;
       

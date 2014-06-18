@@ -104,6 +104,52 @@ module Awestruct
       end
       module_function :is_product_version_active
       
+      # returns an 'info' structure for the given product id/version and the build_info found in products.yml
+      def get_product_info(site, product_id, product_version) 
+        site.products[product_id][:streams].each do |eclipse_id, eclipse_stream|
+          eclipse_version = site.products[:eclipse][eclipse_id]
+          if eclipse_version.nil?
+            raise "Eclipse version '#{eclipse_id}' referenced in stream not defined in products.yml"
+          end
+          # for each Eclipse versions can have many product builds, each one with build info
+          eclipse_stream.each do |build_version, build_info|
+            if build_version == product_version
+              return ProductsHelper.get_build_info(site, product_id, build_version, eclipse_version, build_info)
+            end
+          end
+        end
+        nil
+      end
+      module_function :get_product_info
+      
+      # returns an 'info' structure for the given product id/version and the build_info found in products.yml
+      def get_build_info(site, product_id, product_version, eclipse_version, build_info) 
+        info = OpenStruct.new
+        info.name = site.products[product_id].name
+        info.product_id = product_id
+        info.version = product_version
+        info.release_date = build_info["release_date"]
+        info.eclipse_version = eclipse_version
+        info.build_type = get_build_type(site, product_id, product_version) 
+        info.build_type_label = get_build_type_label(site, product_id, product_version) 
+        info.blog_announcement_url = build_info["blog_announcement_url"]
+        info.release_notes_url = build_info["release_notes_url"]
+        #info.supported_jbt_is_version = build_info["supported_jbt_is_version"]
+        info.required_jbt_core_version = build_info["required_jbt_core_version"]
+        info.required_devstudio_version = build_info["required_devstudio_version"]
+        #info.supported_devstudio_is_version = build_info["supported_devstudio_is_version"]
+        unless site.whatsnew_pages[product_id].nil? || site.whatsnew_pages[product_id][product_version].nil? then
+          info.whatsnew_url = site.whatsnew_pages[product_id][product_version].output_path
+        end
+        info.installers = build_info["installers"]
+        info.update_site_url = build_info["update_site_url"]
+        info.marketplace_install_url = build_info["marketplace_install_url"]
+        info.zips = build_info["zips"]
+        info.archived = build_info["archived"] || false
+        return info
+      end
+      module_function :get_build_info
+      
     end
   end
 end
