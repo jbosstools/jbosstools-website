@@ -12,6 +12,6 @@ The _Import > Checkout Maven Projects from SCM_ wizard doesn't have any SCM prov
 
 m2eclipse-egit will now be automatically installed when a JBoss Maven integration feature is installed from the JBoss Tools update site. 
 
-It will be installed by default with JBDS 8.0.0 as well.
+It will be installed by default with JBoss Developer Studio 8.0.0 as well.
 
 related_jira::JBIDE-16574[]
