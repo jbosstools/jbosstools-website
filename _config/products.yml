@@ -217,14 +217,35 @@ jbt_core:
   url_path_fragment: jbosstools
   streams:
     luna:
-      4.2.0.Beta2:
+      4.2.0.Beta3:
         build_type: development
         documentation_url: http://docs.jboss.org/tools/
         update_site_url: http://download.jboss.org/jbosstools/updates/development/luna/
         marketplace_url: http://marketplace.eclipse.org/node/1617241
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1617241
-
+      4.2.0.Beta2:
+        #archived: true
+        #build_type: development
+        release_date: 2014-06-19
+        blog_announcement_url: /blog/2014-06-19-beta2-for-luna.html
+        documentation_url: http://docs.jboss.org/tools/
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 497MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.0.x/jbosstools-4.2.0.Beta2_2014-06-17_16-43-46-B174-updatesite-core.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.0.x/jbosstools-4.2.0.Beta2_2014-06-17_16-43-46-B174-updatesite-core.zip.MD5
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 40MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.0.x/jbosstools-4.2.0.Beta2_2014-06-17_16-43-46-B174-src.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.0.x/jbosstools-4.2.0.Beta2_2014-06-17_16-43-46-B174-src.zip.MD5
+          - name: Update site (including sources) bundle of all Hibernate Tools
+            file_size: 96MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.0.x/jbosstools-4.2.0.Beta2_2014-06-17_16-57-53-B113-updatesite-hibernatetools.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.0.x/jbosstools-4.2.0.Beta2_2014-06-17_16-57-53-B113-updatesite-hibernatetools.zip.MD5
+          - name: Release Notes
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.0.x/zz_Release_Notes_4.2.0.Beta2.readme.html
       4.2.0.Beta1:
+        #archived: true
         #build_type: development
         release_date: 2014-04-11
         blog_announcement_url: /blog/2014-04-14-beta1-for-luna.html
@@ -243,11 +264,11 @@ jbt_core:
             url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/hibernatetools-Update-4.2.0.Beta1_2014-04-08_19-49-44-B47.zip
             md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/hibernatetools-Update-4.2.0.Beta1_2014-04-08_19-49-44-B47.zip.MD5
           - name: Release Notes
-            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/zz_Release_Notes_4.2.0.Beta1.readme.htm
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/zz_Release_Notes_4.2.0.Beta1.readme.html
       4.2.0.Alpha2:
-        release_date: 2014-02-14
+        archived: true
         #build_type: development
-        #archived: true
+        release_date: 2014-02-14
         documentation_url: http://docs.jboss.org/tools/
         zips:
           - name: Update site (including sources) bundle of all JBoss Core Tools
