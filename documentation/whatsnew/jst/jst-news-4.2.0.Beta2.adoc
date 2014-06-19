@@ -6,6 +6,16 @@
 :page-product_version: 4.2.0.Beta2
 :experimental true
 
+== JavaScript Editing improvments
+
+Content Assistant in JavaScript is extended with the proposals on Objects, Properties and Functions of ECMA5 JavaScript Specification
+
+image::images/4.2.0.Beta2/js-ecma5-1.png[]
+
+image::images/4.2.0.Beta2/js-ecma5-2.png[]
+
+related_jira::JBIDE-17159[]
+
 == AngularJS Eclipse Plugin integration
 
 If you have AngularJS Eclipse Plugin installed in your Eclipse then JBoss Tools will enable AngularJS support in JavaScript projects automatically. For such projects, JBoss Tools HTML editor now provides AngularJS specific code assist, navigation, etc.
@@ -46,12 +56,3 @@ video::LY1bcIyIZc8[youtube]
 
 related_jira::JBIDE-16687[]
 
-== JavaScript Editing improvments
-
-Content Assistant in JavaScript is extended with the proposals on Objects, Properties and Functions of ECMA5 JavaScript Specification
-
-image::images/4.2.0.Beta2/js-ecma5-1.png[]
-
-image::images/4.2.0.Beta2/js-ecma5-2.png[]
-
-related_jira::JBIDE-17159[]

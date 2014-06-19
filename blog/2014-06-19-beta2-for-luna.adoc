@@ -48,6 +48,66 @@ The "Early Access" features are from an isolated update site that only gets adde
 
 Try it out!
 
+=== VPE is dead, long live VPE!
+
+VPE has been refactored to use the new HTML Preview feature.
+
+This means we will use your system native browser to preview HTML5 based pages (XHTML/JSF will still use the old XULRunner based browser if possible).
+
+image:/documentation/whatsnew/vpe/images/4.2.0.Beta2/html-preview-vpe.png[Visual Page Editor]
+
+This new preview has much better Javascript support and just looks better.
+
+If you do not like the split editor view you can also open it as a separate view which will show the HTML representation of editors that
+uses the WTP based XML DOM model (i.e. our html editor and wtp xml editors).
+
+The preview supports navigating between source and the visual elements allowing you to easily find the right place in the code.
+
+=== Better JavaScript
+
+To improve Eclipse JSDT default JavaScript we've done many fixes to it that are available in stock Eclipse, but for JBoss Tools we've started to try use Tern behind the scenes
+via Angello Zerr's https://github.com/angelozerr/angularjs-eclipse[angularjs-eclipse] and https://github.com/angelozerr/tern.javap[tern-java] projects.
+
+In JBoss Tools Tern is now automatically enabled on Javascript based projects intended to give you much stronger and better content assist in addition to what Eclipse JSDT provides.
+
+image:/documentation/whatsnew/jst/images/4.2.0.Beta2/js-ecma5-2.png[JavaScript ECMA 5]
+
+We are trying to make it that there is no user setup needed for most common javascript functionallity to work.
+
+For example if you create a Hybrid Mobile Tooling project we will enable the support for Apache Cordova Javascript out of the box.
+
+image:/documentation/whatsnew/aerogear/images/1.1.0.Beta2/ca-cordovajs-2.png[CordvaJS Content assist]
+
+Please note that in Beta2 on Windows 64 bit you will need to
+http://nodejs.org/download/[Download and Install node.js] to have it
+working - in the next release we will have this handled out of the
+box. Windows 32-bit, Linux and OS X users should be able to see it
+enabled on any javascript project.
+ 
+=== AngularJS support
+
+As an experiemnt, we've made AngularJS available from JBoss Central under "Early Access" to give a try if you are an Angular user.
+
+image:/documentation/whatsnew/jst/images/4.2.0.Beta2/angular.png[Angular JS Support]
+
+We are really interested in hearing if these improvements to JavaScript and Angular support is working for you!
+
+=== OpenShift Quickstarts
+
+The OpenShift wizard now supports OpenShift's notion of quickstarts or instant apps.
+
+image:/documentation/whatsnew/openshift/images/new-quickstart.png[OpenShift Quickstarts]
+
+This means it is now possible to just use OpenShift Wizard in Eclipse to use one of the many custom defined quickstarts without having to use the browser.
+
+Examples of interesting JBoss server related quickstarts are WildFly 8.1, AeroGear Push server and CapeDwarf.
+
+=== OpenShift Snapshots
+
+On request OpenShift now supports saving and restoring your OpenShift instances via Snapshots.
+
+image:/documentation/whatsnew/openshift/images/context-menu-snapshot.png[Save/Restore snapshots]
+
 === Local Java Process Monitoring via JMX Navigator on steroids!
 
 The view before called 'MBeans Explorer' is now called 'JMX Navigator' and it now can do much more than before.
@@ -78,58 +138,10 @@ Thus now our WildFly/JBoss EAP based servers understand the notion of JBoss Modu
 image:/documentation/whatsnew/server/images/JBIDE-9479.png[]
 
 It even will detect if your `manifest.mf` has `Dependencies` and add them to the list of jboss modules to the classpath Eclipse will use for compiling.
-
-=== VPE is dead, long live VPE!
-
-VPE has been refactored to use the new HTML Preview feature.
-
-This means we will use your system native browser to preview HTML5 based pages (XHTML/JSF will still use the old XULRunner based browser if possible).
-
-image:/documentation/whatsnew/vpe/images/4.2.0.Beta2/html-preview-vpe.png[Visual Page Editor]
-
-This new preview has much better Javascript support and just looks better.
-
-If you do not like the split editor view you can also open it as a separate view which will show the HTML representation of editors that
-uses the WTP based XML DOM model (i.e. our html editor and wtp xml editors).
-
-The preview supports navigating between source and the visual elements allowing you to easily find the right place in the code.
-
-=== Better JavaScript and AngularJS support
-
-To improve Eclipse JSDT default JavaScript we've done many fixes to it that are available in stock Eclipse, but for JBoss Tools we've started to try use Tern behind the scenes
-via Angello Zerr's https://github.com/angelozerr/angularjs-eclipse[angularjs-eclipse] and https://github.com/angelozerr/tern.javap[tern-java] projects.
-
-In JBoss Tools Tern is now automatically enabled on Javascript based projects intended to give you much stronger and better content assist in addition to what Eclipse JSDT provides.
-
-
-
-AngularJS is available from JBoss Central under "Early Access" to give a try if you are an Angular user.
-
-image:/documentation/whatsnew/jst/images/4.2.0.Beta2/angular.png[Angular JS Support]
-
-Please note though that in Beta2 on Windows 64 bit you will need to http://nodejs.org/download/[Download and Install node.js] to have it working - in the next release we will have this handled out of the box. Windows 32-bit, Linux and OS X users should be able to see it enabled on any javascript project.
-
-We are really interested in hearing if these improvements to JavaScript and Angular support is working for you!
-
-=== OpenShift Quickstarts
-
-The OpenShift wizard now supports OpenShift's notion of quickstarts or instant apps.
-
-image:/documentation/whatsnew/openshift/images/new-quickstart.png[OpenShift Quickstarts]
-
-This means it is now possible to just use OpenShift Wizard in Eclipse to use one of the many custom defined quickstarts without having to use the browser.
-
-Examples of interesting JBoss server related quickstarts are WildFly 8.1, AeroGear Push server and CapeDwarf.
-
-=== OpenShift Snapshots
-
-On request OpenShift now supports saving and restoring your OpenShift instances via Snapshots.
-
-image:/documentation/whatsnew/openshift/images/context-menu-snapshot.png[Save/Restore snapshots]
  
 == ...and more
 
-There is more over at link:/documentation/whatsnew/jbosstools/4.2.0.Beta2.html[What's New].
+There is more improvemnts in areas of JAX-RS, Maven, Mobile palette, Forge, etc. over at link:/documentation/whatsnew/jbosstools/4.2.0.Beta2.html[What's New].
 
 Let us know what you think in the comments below!
 
