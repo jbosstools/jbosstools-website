@@ -217,13 +217,12 @@ jbt_core:
   url_path_fragment: jbosstools
   streams:
     luna:
-      4.2.0.Beta3:
+      4.2.0.Beta2:
         build_type: development
         documentation_url: http://docs.jboss.org/tools/
         update_site_url: http://download.jboss.org/jbosstools/updates/development/luna/
         marketplace_url: http://marketplace.eclipse.org/node/1617241
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1617241
-      4.2.0.Beta2:
         #archived: true
         #build_type: development
         release_date: 2014-06-19
