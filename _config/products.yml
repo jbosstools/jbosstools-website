@@ -91,7 +91,7 @@ devstudio:
       7.1.1.GA:
         build_type: stable
         release_date: 2014-03-24
-        supported_devstudio_is_version: 7.0.1.GA
+        supported_devstudio_is_version: 7.0.2.GA
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         #release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/7.1/html-single/Release_Notes_7.1.1/index.html
         #blog_announcement_url: http://bit.ly/jbt-412
@@ -189,6 +189,18 @@ devstudio_is:
   url_path_fragment: devstudio_is
   streams:
     kepler:
+      7.0.2.GA:
+        build_type: stable
+        blog_announcement_url: /blog/2014-06-19-JBTIS-4.html
+        release_notes_url: https://devstudio.jboss.com/updates/7.0/integration-stack/release-notes/Release_Notes_7.0.2.html
+        release_date: 2014-06-19
+        required_devstudio_version: 7.1.1.GA
+        update_site_url: https://devstudio.jboss.com/updates/7.0/integration-stack/
+        zips:
+          - name: Update site (including sources) bundle of JBoss Developer Studio Integration Stack
+            file_size: 248MB
+            url: https://devstudio.jboss.com/updates/7.0.0/jbdevstudio-integration-stack-updatesite-7.0.2.GA.zip
+            md5_url: https://devstudio.jboss.com/updates/7.0.0/jbdevstudio-integration-stack-updatesite-7.0.2.GA.zip.MD5
       7.0.1.GA:
         build_type: stable
         blog_announcement_url: /blog/2014-04-14-JBTIS-4.html
@@ -312,7 +324,7 @@ jbt_core:
       4.1.2.Final:
         build_type: stable
         release_date: 2014-03-24
-        supported_jbt_is_version: 4.1.4.Final
+        supported_jbt_is_version: 4.1.5.Final
         documentation_url: http://docs.jboss.org/tools/4.1.x.Final/
         whatsnew_url: http://docs.jboss.org/tools/whatsnew/
         blog_announcement_url: https://community.jboss.org/community/tools/blog/2014/03/25/jboss-tools-412final-and-developer-studio-711ga-released
@@ -715,6 +727,18 @@ jbt_is:
   url_path_fragment: jbosstools_is
   streams:
     kepler:
+      4.1.5.Final:
+        build_type: stable
+        blog_announcement_url: /blog/2014-06-19-JBTIS-4.html
+        release_notes_url: https://devstudio.jboss.com/updates/7.0/integration-stack/release-notes/Release_Notes_7.0.2.html
+        release_date: 2014-06-19
+        required_jbt_core_version: 4.1.2.Final
+        update_site_url: http://download.jboss.org/jbosstools/updates/stable/kepler/integration-stack 
+        zips:
+          - name: Update site (including sources) bundle of JBoss Tools Integration Stack
+            file_size: 236MB
+            url: http://download.jboss.org/jbosstools/updates/stable/kepler/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.1.5.Final-SNAPSHOT.zip
+            md5_url: http://download.jboss.org/jbosstools/updates/stable/kepler/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.1.5.Final-SNAPSHOT.zip.MD5
       4.1.4.Final:
         build_type: stable
         blog_announcement_url: /blog/2014-04-14-JBTIS-4.html
