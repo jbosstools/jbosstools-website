@@ -34,4 +34,13 @@ image::./images/1.1.0.Beta2/iOS64.png[]
 
 related_jira::JBIDE-17099[]
 
+== CordovaJS library provider improvments
+
+It is possible to get Content Assistant on 'cordova' Object as well as on its Properties and Methods in JavaScript.
+
+image::./images/1.1.0.Beta2/ca-cordovajs-1.png[]
+
+image::./images/1.1.0.Beta2/ca-cordovajs-2.png[]
+
+related_jira::JBIDE-15837[]
 
