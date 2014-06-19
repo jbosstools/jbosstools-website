@@ -3,22 +3,22 @@
 :page-author: pleacu
 :page-tags: [release, jbosstools, devstudio, jbosscentral]
 
-*Maintenance updates of your favorite tools!*
+*Maintenance updates of your favorite integration tools!*
 
 image::images/jbosstools-jbdevstudio-blog-header.png[]
 
 The Integration Stack for JBoss Tools Developer Studio is a set of plugins for Eclipse that provides tooling for the following frameworks:
 
-* link:http://tools.jboss.org/features/bpel.html[BPEL Designer] - Orchestrating your business processes.
-* link:http://tools.jboss.org/features/bpmn2.html[BPMN2 Modeler] - A graphical modeling tool which allows creation and editing of Business Process Modeling Notation diagrams using graphiti.
-* link:http://tools.jboss.org/features/drools.html[Drools] - A Business Logic integration Platform which provides a unified and integrated platform for Rules, Workflow and Event Processing.
+* link:/features/bpel.html[BPEL Designer] - Orchestrating your business processes.
+* link:/features/bpmn2.html[BPMN2 Modeler] - A graphical modeling tool which allows creation and editing of Business Process Modeling Notation diagrams using graphiti.
+* link:/features/drools.html[Drools] - A Business Logic integration Platform which provides a unified and integrated platform for Rules, Workflow and Event Processing.
 * link:http://www.jboss.org/jbossesb"[JBoss ESB] - An enterprise service bus for connecting enterprise applications and services.
-* link:http://tools.jboss.org/features/apachecamel.html[Fuse Apache Camel Tooling] - A graphical tool for integrating software components that works with Apache ServiceMix, Apache ActiveMQ, Apache Camel and the FuseSource distributions.
+* link:/features/apachecamel.html[Fuse Apache Camel Tooling] - A graphical tool for integrating software components that works with Apache ServiceMix, Apache ActiveMQ, Apache Camel and the FuseSource distributions.
 * link:http://docs.jboss.com/jbpm/v3.2/userguide/html_single/"[jBPM3] - A flexible Business Process Management (BPM) Suite - JBoss Enterprise SOA Platform 5.3.x compatible version.
-* link:http://tools.jboss.org/features/modeshape.html[Modeshape] - A distributed, hierarchical, transactional and consistent data store with support for queries, full-text search, events, versioning, references, and flexible and dynamic schemas. It is very fast, highly available, extremely scalable, and it is 100% open source.
+* link:/features/modeshape.html[Modeshape] - A distributed, hierarchical, transactional and consistent data store with support for queries, full-text search, events, versioning, references, and flexible and dynamic schemas. It is very fast, highly available, extremely scalable, and it is 100% open source.
 * link:http://www.jboss.org/savara[Savara] (JBoss Tools only) - A tool for ensuring artifacts defined at different stages of the software development lifecycle are valid against each other, and remain valid through the evolution of the system.
-* link:http://tools.jboss.org/features/switchyard.html[SwitchYard] - A lightweight service delivery framework providing full lifecycle support for developing, deploying, and managing service-oriented applications.
-* link:http://tools.jboss.org/features/teiiddesigner.html[Teiid Designer] - A visual tool that enables rapid, model-driven definition, integration, management and testing of data services without programming using the link:http://www.jboss.org/teiid.html[Teiid] runtime framework.
+* link:/features/switchyard.html[SwitchYard] - A lightweight service delivery framework providing full lifecycle support for developing, deploying, and managing service-oriented applications.
+* link:/features/teiiddesigner.html[Teiid Designer] - A visual tool that enables rapid, model-driven definition, integration, management and testing of data services without programming using the link:http://www.jboss.org/teiid.html[Teiid] runtime framework.
 
 All of these components have been verified to work with the same dependencies as JBoss Tools 4.1 and Developer Studio 7, so installation is easy.
 
