@@ -77,12 +77,6 @@ We are trying to make it that there is no user setup needed for most common java
 For example if you create a Hybrid Mobile Tooling project we will enable the support for Apache Cordova Javascript out of the box.
 
 image:/documentation/whatsnew/aerogear/images/1.1.0.Beta2/ca-cordovajs-2.png[CordvaJS Content assist]
-
-Please note that in Beta2 on Windows 64 bit you will need to
-http://nodejs.org/download/[Download and Install node.js] to have it
-working - in the next release we will have this handled out of the
-box. Windows 32-bit, Linux and OS X users should be able to see it
-enabled on any javascript project.
  
 === AngularJS support
 
