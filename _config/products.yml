@@ -66,15 +66,15 @@ devstudio:
         blog_announcement_url: /blog/2014-06-19-beta2-for-luna.html
         installers: 
           - name: Stand-alone Installer
-            #url: 
+            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/3c/3c4508c0c43f9aae305c289b946cfc963b8be01678dc9d538b9847872fa80ef6/jboss-devstudio-8.0.0.Beta2-v20140617-2058-B166-installer-standalone.jar
             file_size: 550MB
           - name: Installer With EAP 6.2.0
-            #url: 
+            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/41/41bbfb910533778ac059a5fceafd814b06cc7e0b34086ef76c302cbddc687f0f/jboss-devstudio-8.0.0.Beta2-v20140617-2058-B166-installer-eap.jar
             file_size: 676MB
         zips:
           - name: Update site (including sources) bundle of JBoss Developer Studio
             file_size: 850MB
-            #url: 
+            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/9d/9da04d293283afcff48c85d382e4f57dccce181382aa556e9b44d38f5cadf94a/jboss-devstudio-8.0.0.Beta2-v20140617-2058-B166-updatesite-core.zip
             #md5_url: n/a
 
       8.0.0.Beta1:
