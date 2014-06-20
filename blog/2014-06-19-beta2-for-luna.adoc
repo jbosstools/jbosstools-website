@@ -7,11 +7,11 @@ It is time to get some more Eclipse Love out in the world - we start by shipping
 
 image::images/devstudio8_splash.png[JBoss Developer Studio 8 Splashscreen]
 
-Nice ain't it ? 
+Nice, isn't it?
 
 == Installation
 
-JBoss Developer Studio comes with everything pre-bundled in its installer. Simply download it from our https://www.jboss.org/products/devstudio/download/[JBoss Products page] run it like this:
+JBoss Developer Studio comes with everything pre-bundled in its installer. Simply link:/downloads/devstudio/luna/8.0.0.Beta2.html[download it] and install it like this:
  
     java -jar jboss-devstudio-{version}-installer.jar   
 
@@ -30,7 +30,7 @@ For JBoss Tools you can also use our update site directly if you are up for it.
  
 Note: Integration Stack tooling will become available from JBoss Central at a later date.
 
-== What is new ? 
+== What's new? 
 
 This Beta 2 contains quite some new additions that I believe you will like!
 
@@ -40,7 +40,7 @@ To start with this is not tested and developed against Eclipse Luna M7 and newer
 
 === Early Access in JBoss Central
 
-To allow users of JBoss Developer Studio to try out plugins more easily which have not yet reached supported level we've added a notion
+To allow users of JBoss Developer Studio to try out plugins more easily which have not yet reached supported level we've added the notion
 of Early Access to JBoss Central.
 
 image:/documentation/whatsnew/central/images/central-earlyaccess.png[JBoss Central Early Access]
@@ -137,9 +137,9 @@ image:/documentation/whatsnew/server/images/JBIDE-9479.png[]
 
 It even will detect if your `manifest.mf` has `Dependencies` and add them to the list of jboss modules to the classpath Eclipse will use for compiling.
  
-== ...and more
+== ...And more
 
-There is more improvemnts in areas of JAX-RS, Maven, Mobile palette, Forge, etc. over at link:/documentation/whatsnew/jbosstools/4.2.0.Beta2.html[What's New].
+There are more improvements in the areas of JAX-RS, Maven, Mobile palette, Forge. See details here: link:/documentation/whatsnew/jbosstools/4.2.0.Beta2.html[What's New].
 
 Let us know what you think in the comments below!
 
