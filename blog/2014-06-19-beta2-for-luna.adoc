@@ -7,7 +7,7 @@ It is time to get some more Eclipse Love out in the world - we start by shipping
 
 image::images/devstudio8_splash.png[JBoss Developer Studio 8 Splashscreen]
 
-Nice, isn't it?
+Nice, ain't it?
 
 == Installation
 
@@ -30,7 +30,7 @@ For JBoss Tools you can also use our update site directly if you are up for it.
  
 Note: Integration Stack tooling will become available from JBoss Central at a later date.
 
-== What's new? 
+== What is new ? 
 
 This Beta 2 contains quite some new additions that I believe you will like!
 
@@ -137,7 +137,7 @@ image:/documentation/whatsnew/server/images/JBIDE-9479.png[]
 
 It even will detect if your `manifest.mf` has `Dependencies` and add them to the list of jboss modules to the classpath Eclipse will use for compiling.
  
-== ...And more
+== ...and more
 
 There are more improvements in the areas of JAX-RS, Maven, Mobile palette, Forge. See details here: link:/documentation/whatsnew/jbosstools/4.2.0.Beta2.html[What's New].
 
@@ -151,3 +151,4 @@ Max Rydahl Andersen +
 http://twitter.com/maxandersen[@maxandersen]
 
 
+	
