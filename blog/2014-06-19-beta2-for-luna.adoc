@@ -3,7 +3,7 @@
 :page-author: maxandersen
 :page-tags: [release, jbosstools, devstudio, jbosscentral]
 
-It is time to get some more Eclipse Love out in the world - we start by shipping JBoss Tools 4.2 Beta2 and Red Hat JBoss Developer Studio 8 Beta2 for Eclipse Luna.
+It is time to get some more Eclipse Love out in the world - we start by shipping link:/downloads/jbosstools/luna/4.2.0.Beta2.html[JBoss Tools 4.2 Beta2] and link:/downloads/devstudio/luna/8.0.0.Beta2.html[Red Hat JBoss Developer Studio 8 Beta2] for Eclipse Luna.
 
 image::images/devstudio8_splash.png[JBoss Developer Studio 8 Splashscreen]
 
@@ -33,6 +33,10 @@ Note: Integration Stack tooling will become available from JBoss Central at a la
 == What is new ? 
 
 This Beta 2 contains quite some new additions that I believe you will like!
+
+== Java 8 
+
+To start with this is not tested and developed against Eclipse Luna M7 and newer which means it comes with Java 8 tooling support out-of-the-box.
 
 === Early Access in JBoss Central
 
