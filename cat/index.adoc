@@ -39,7 +39,7 @@ development builds too.
 So, select the features in JBoss Tools that you are most interested in, and start testing!
 
 You can communicate to the JBoss Tools team and other CAT members via
-the CAT community forum, irc, the mailing list or jira.
+irc, the mailing list or jira.
 
 We may request additional input via surveys or online IRC meetings when JBoss Tools CAT 
 is active and at the end of a release we will send a survey where you can express your opinion
@@ -56,12 +56,8 @@ The JBoss Tools CAT team managers will review and respond to all new bugs and fe
 |Name | Description | Link 
 
 |Mailing list
-| Archived mailing list for JBoss Tools CAT. Synchronized with the community forum 
-| https://lists.jboss.org/mailman/listinfo/jbosstools-cat[Signup] http://lists.jboss.org/pipermail/jbosstools-dev/[Archive]
-
-| Forum
-| Online forum on jboss.org 
-| https://community.jboss.org/thread/241985[Link]
+| Archived mailing list for JBoss Tools CAT.  
+| https://lists.jboss.org/mailman/listinfo/jbosstools-cat[Signup] http://lists.jboss.org/pipermail/jbosstools-cat/[Archive]
 
 | Chat
 | irc chat room on #freenode
