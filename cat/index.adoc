@@ -6,15 +6,16 @@
 
 Welcome to JBoss Tools Community Acceptance Testing (JBoss Tools CAT)!
 
-JBoss Tools CAT is an effort to get better and early feedback that the
-features in JBoss Tools are working well and getting confirmation from
-JBoss Tools and Developer Studio community that the quality is ready
-for the final release.
+JBoss Tools CAT is an effort to obtain feedback from the JBoss
+Tools and JBoss Developer Studio users that the features in early
+builds are working fine. This will help us asses the quality of the
+final release.
 
 The goal of the JBoss Tools CAT is to get as much feedback on our Alpha, Beta and pre-GA 
-builds as possible.  We are looking for feedback on usability, quality and
-performance for new features, and especially also for reports on any 
-regression for existing features that you already are using.
+builds as possible.  We are looking for feedback on usability,
+stability, quality and performance for new features. Reports on any
+regression for any existing features that are already used is very
+important.
 
 == Get started
 
@@ -30,8 +31,8 @@ To particpate please follow these steps:
 
 What types of tests should you perform? 
 
-As a member of the JBoss Tools CAT team you are asked to give feedback
-on the two functional areas you choose to focus on. It is fully
+As a member of the JBoss Tools CAT team you are requested to give feedback
+on any two functional areas you choose to focus on. It is fully
 acceptable to only use the Beta and CR builds, but it is highly
 recommended and appreciated if you use and test the nightly
 development builds too. 
@@ -39,7 +40,9 @@ development builds too.
 So, select the features in JBoss Tools that you are most interested in, and start testing!
 
 You can communicate to the JBoss Tools team and other CAT members via
-irc, the mailing list or jira.
+irc://irc.freenode.org/jbosstools-cat[irc],
+http://lists.jboss.org/pipermail/jbosstools-cat/[mailing list] or
+https://issues.jboss.org/secure/Dashboard.jspa?selectPageId=12316999[JIRA].
 
 We may request additional input via surveys or online IRC meetings when JBoss Tools CAT 
 is active and at the end of a release we will send a survey where you can express your opinion
