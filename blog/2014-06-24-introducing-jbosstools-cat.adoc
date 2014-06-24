@@ -34,7 +34,7 @@ If you are interested in participating please go and link:http://bit.ly/jbosstoo
 
 Yes, the Netbeans CAT program is what inspired us to do this. We think it will work equally well for us too.
 
-== What is in it for me ?
+== What is in it for you ?
 
 Besides you being able to influence the readyness of JBoss Tools for your usecases we will also at 
 the release of the final JBoss Tools put your name as part of the release and dependent on the number
