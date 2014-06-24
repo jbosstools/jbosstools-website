@@ -746,8 +746,8 @@ jbt_is:
         zips:
           - name: Update site (including sources) bundle of JBoss Tools Integration Stack
             file_size: 236MB
-            url: http://download.jboss.org/jbosstools/updates/stable/kepler/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.1.5.Final-SNAPSHOT.zip
-            md5_url: http://download.jboss.org/jbosstools/updates/stable/kepler/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.1.5.Final-SNAPSHOT.zip.MD5
+            url: http://download.jboss.org/jbosstools/updates/stable/kepler/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.1.5.Final.zip
+            md5_url: http://download.jboss.org/jbosstools/updates/stable/kepler/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.1.5.Final.zip.MD5
       4.1.4.Final:
         build_type: stable
         blog_announcement_url: /blog/2014-04-14-JBTIS-4.html
