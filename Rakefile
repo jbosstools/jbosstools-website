@@ -316,12 +316,6 @@ task :travis do
     profile = 'staging'
     deploy_url = "tools@filemgmt.jboss.org:/stg_htdocs/tools/"
 
-  elsif ENV['TRAVIS_BRANCH'].to_s.scan(/^new_noteworthy$/).length > 0
-   
-    puts 'Building staging(new_noteworthy) branch build.'
-    profile = 'new_noteworthy'
-    deploy_url = "tools@filemgmt.jboss.org:/stg_htdocs/tools/new_noteworthy"
-  
   else
 
     puts ENV['TRAVIS_BRANCH'].to_s + ' branch is not configured for Travis builds - skipping.'
@@ -335,7 +329,7 @@ task :travis do
   # Workaround for not having the above separated out properly in subtasks
   errorcheck
 
-  puts '## Deploying website via rsync to #{deploy_url}'
+  puts "## Deploying website via rsync to #{deploy_url}"
   success = system("rsync -Pqr --protocol=28 --delete-after _site/* #{deploy_url}")
 
   if tag
