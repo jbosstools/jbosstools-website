@@ -49,5 +49,5 @@ Fix release versions of Fuse Tooling 7.2.1, jBPM/Drools 6.0.3, SwitchYard 1.1.6 
 
 == Keep up to date with the JBoss Tools home
 
-Don't miss the new Features tab for up to date information on your favorite Integration Stack component: link:/features[features]
+Don't miss the new link:/features[Features tab] for up to date information on your favorite Integration Stack component !
 
