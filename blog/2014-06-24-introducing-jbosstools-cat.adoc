@@ -21,8 +21,8 @@ and give feedback on new features and we will help you in any issues you have.
 We'll also be doing some surveys where JBoss Tools CAT members get to tell us if
 you find JBoss Tools are ready to be released or not. 
 
-The program will run for every major release, this time we are focusing on link:/downloads/jbosstools/luna[JBoss Tools 4.2] and
-link:/downloads/devstudio/luna/[Developer Studio 8.0] for Eclipse Luna.
+The program will run for every major release, this time we are focusing on JBoss Tools 4.2 and
+Developer Studio 8.0 - current release for that is link:/downloads/jbosstools/luna/4.2.0.Beta2.html[4.2.0.Beta2]
 
 You can see the details about the program at the link:/cat[CAT] page.
 
