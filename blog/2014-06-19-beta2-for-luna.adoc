@@ -13,7 +13,7 @@ Nice, ain't it?
 
 JBoss Developer Studio comes with everything pre-bundled in its installer. Simply link:/downloads/devstudio/luna/8.0.0.Beta2.html[download it] and install it like this:
  
-    java -jar jboss-devstudio-{version}-installer.jar   
+    java -jar jboss-devstudio-{version}-{standalone|installer}.jar   
 
 JBoss Tools or JBoss Developer Studio Bring-Your-Own-Eclipse (BYOE) requires a bit more:
 
@@ -36,11 +36,11 @@ This Beta 2 contains quite some new additions that I believe you will like!
 
 == Java 8 
 
-To start with this is not tested and developed against Eclipse Luna M7 and newer which means it comes with Java 8 tooling support out-of-the-box.
+To start with, this is now tested and developed against Eclipse Luna M7 and newer which means it comes with Java 8 tooling support out-of-the-box.
 
 === Early Access in JBoss Central
 
-To allow users of JBoss Developer Studio to try out plugins more easily which have not yet reached supported level we've added the notion
+To allow users of JBoss Developer Studio to try out plugins which have not yet reached supported level more easily we've added the notion
 of Early Access to JBoss Central.
 
 image:/documentation/whatsnew/central/images/central-earlyaccess.png[JBoss Central Early Access]
@@ -88,7 +88,7 @@ As an experiemnt, we've made AngularJS available from JBoss Central under "Early
 
 image:/documentation/whatsnew/jst/images/4.2.0.Beta2/angular.png[Angular JS Support]
 
-We are really interested in hearing if these improvements to JavaScript and Angular support is working for you!
+We are really interested in hearing if these improvements to JavaScript and Angular support work for you!
 
 === OpenShift Quickstarts
 
@@ -110,7 +110,7 @@ image:/documentation/whatsnew/openshift/images/context-menu-snapshot.png[Save/Re
 
 The view before called 'MBeans Explorer' is now called 'JMX Navigator' and it now can do much more than before.
 
-First of, it will automatically list locally detected Java Virtual Machines which you can connect to and browse their internal state via JMX MBeans.
+First off, it will automatically list locally detected Java Virtual Machines which you can connect to and browse their internal state via JMX MBeans.
 
 image::images/jmx_navigator.png[Locally detected processes]
 
