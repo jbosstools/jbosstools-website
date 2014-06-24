@@ -6,7 +6,7 @@
 
 Welcome to JBoss Tools Community Acceptance Testing (JBoss Tools CAT)!
 
-JBoss Tools CAT is an effort to get better and early feedback that the
+JBoss Tools CAT is an effort to get better and receive early feedback that the
 features in JBoss Tools are working well and getting confirmation from
 JBoss Tools and Developer Studio community that the quality is ready
 for the final release.

@@ -1,0 +1,53 @@
+= Introducing JBoss Tools Community Acceptance Testing
+:page-layout: blog
+:page-author: maxandersen
+:page-tags: [jbosscentral, jbosstools-cat, community]
+
+I believe very much in our tools are only as good as our users think they are.
+
+As an opensource project we have always said that any input or
+contribution are welcome but sometimes I feel many are interested in
+helping out but not sure where to go.
+
+I also believe a special attribute of IDE's in general are that
+there is about the same amount of usecases for the IDE as there are
+users.
+
+As an IDE we are really interested in hearing about such usescases,
+but also making sure those usecases you as a user are using
+with the tools (within reason :) continue to support and work
+with them.
+
+Today I'm glad to say we are introducing JBoss Tools Community Acceptance Testing (CAT)
+to try address these concerns.
+
+image:/images/jbosstools-cat-logo.png[JBoss Tools CAT Logo]
+
+== What is it ?
+
+JBoss Tools CAT is a program where you signup
+and give feedback on new features and we will help you in any issues you have.
+We'll also be doing some surveys where JBoss Tools CAT members where you get to tell us if
+you find JBoss Tools are ready to be released or not. 
+
+You can see the details about the program at the link:/cat[CAT] page.
+
+== How do I participate ?
+
+If you are interested in participating please go and link:http://bit.ly/jbosstoolscatsignup[Register!]
+
+== What is in it for me ?
+
+Besides you being able to influence the readyness of JBoss Tools for your usecases we will also at 
+the release of the final JBoss Tools put your name as part of the release and dependent on the number
+of participants give out some extra prizes.
+
+You can see more at link:/cat[the JBoss Tools CAT] web page.
+
+Lets Have fun!
+
+Max Rydahl Andersen +
+http://twitter.com/maxandersen[@maxandersen]
+
+
+
