@@ -32,7 +32,7 @@ If you are interested in participating please go and link:http://bit.ly/jbosstoo
 
 == Is this not similar to NetBeans CAT ?
 
- Yes, the Netbeans CAT program is what inspired us to do this. We think it will work equally well for us too.
+Yes, the Netbeans CAT program is what inspired us to do this. We think it will work equally well for us too.
 
 == What is in it for me ?
 
