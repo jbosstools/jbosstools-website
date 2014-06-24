@@ -2,7 +2,7 @@
 :page-layout: project
 :page-status: red
 
-== JBoss Tools Community Acceptance Testing (CAT)
+image:/images/jbosstools-cat-logo.png[JBoss Tools CAT Logo]
 
 Welcome to JBoss Tools Community Acceptance Testing (JBoss Tools CAT)!
 
