@@ -13,7 +13,7 @@ Nice, ain't it?
 
 JBoss Developer Studio comes with everything pre-bundled in its installer. Simply link:/downloads/devstudio/luna/8.0.0.Beta2.html[download it] and install it like this:
  
-    java -jar jboss-devstudio-{version}-{standalone|installer}.jar   
+    java -jar jboss-devstudio-{version}-installer-{standalone|eap}.jar   
 
 JBoss Tools or JBoss Developer Studio Bring-Your-Own-Eclipse (BYOE) requires a bit more:
 
