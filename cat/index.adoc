@@ -2,7 +2,7 @@
 :page-layout: project
 :page-status: red
 
-== JBoss Tools Community Acceptance Testing (CAT)
+image:/images/jbosstools-cat-logo.png[]
 
 Welcome to JBoss Tools Community Acceptance Testing (JBoss Tools CAT)!
 
@@ -76,3 +76,6 @@ The JBoss Tools CAT team managers will review and respond to all new bugs and fe
 * 2014/09/01 -- JBoss Tools 4.2.0.CR1 testing starts - TBA on jbosstools-cat mailing list
 * 2014/09/22 -- JBoss Tools 4.2.0.CR1 released
 * 2014/10/13 -- JBoss Tools 4.2.0.Final released
+
+
+To participate - http://bit.ly/jbosstoolscatsignup[Register here].
