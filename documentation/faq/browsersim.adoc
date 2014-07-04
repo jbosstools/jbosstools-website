@@ -3,7 +3,7 @@
 :page-tab: docs
 :page-status: green
 
-== General
+== General BrowserSim
 
 [qanda]
 What is BrowserSim?::
@@ -16,12 +16,12 @@ How does BrowserSim work?::
   It wraps a WebKit browser (http://help.eclipse.org/indigo/index.jsp?topic=%2Forg.eclipse.platform.doc.isv%2Freference%2Fapi%2Forg%2Feclipse%2Fswt%2Fbrowser%2FBrowser.html[SWT WebKit] and http://docs.oracle.com/javafx/2/api/javafx/scene/web/WebView.html[JavaFX WebView]) and makes it respond and work like a mobile browser by spoofing content and media request headers.
 
 So, BrowserSim has two web engines, doesn't it?::
-  Yes. In the original there was only one web engine - http://help.eclipse.org/indigo/index.jsp?topic=%2Forg.eclipse.platform.doc.isv%2Freference%2Fapi%2Forg%2Feclipse%2Fswt%2Fbrowser%2FBrowser.html[SWT WebKit]. Apparently it has several drawbacks. For instance, the main concern about using SWT WebKit on Windows is the http://support.apple.com/kb/DL1531[Apple Safari] requirement (provides SWT WebKit engine), which is pretty obsolete for now - *May 9, 2012* is the date of the last update. What's more SWT WebKit doesn't support Debugger API. Due to this limitations it was decided to add http://docs.oracle.com/javafx/2/api/javafx/scene/web/WebView.html[JavaFX] web engine support. Web engine can be switched via BrowserSim's preferences in the `Settings` tab:
+  Yes. In the original there was only one web engine - http://help.eclipse.org/indigo/index.jsp?topic=%2Forg.eclipse.platform.doc.isv%2Freference%2Fapi%2Forg%2Feclipse%2Fswt%2Fbrowser%2FBrowser.html[SWT WebKit]. Unfortunately it has several drawbacks. For example, using SWT WebKit on Windows requires users to install http://support.apple.com/kb/DL1531[Apple Safari] (provides SWT WebKit engine), which is pretty obsolete for now - *May 9, 2012* was the last update. Additional SWT WebKit doesn't support Debugger API. Due to these limitations it was decided to add http://docs.oracle.com/javafx/2/api/javafx/scene/web/WebView.html[JavaFX] web engine support. Web engine can be switched via BrowserSim's preferences in the `Settings` tab:
 +
 image::images/browsersim-web-engine.png[BrowserSim's web engine seletion]
 
 What do I need to run BrowserSim?::
-  If you want to use JavaFX web engine all you need is to run BrowserSim against http://www.oracle.com/technetwork/java/javase/downloads/index.html[Oracle JDK]. JDK can be specified via *Window* -> *Preferences* -> *JBoss Tools* -> *BrowserSim/CordovaSim*:
+  If you want to use JavaFX web engine all you need is to run BrowserSim against http://www.oracle.com/technetwork/java/javase/downloads/index.html[Oracle JDK] version 7 or higher (version 8 is recommended). JDK can be specified via *Window* -> *Preferences* -> *JBoss Tools* -> *BrowserSim/CordovaSim*:
 + 
 image::images/browsersim-cordovasim-preferences.png[BrowserSim/CordovaSim preferences]
 
@@ -51,10 +51,10 @@ Can I debug with BrowserSim?::
 image::images/browsersim-dev-tools.png[BrowserSim Dev Tools]
 
 +
-Open URL in Chrome and start to debug.
+Open URL in Chrome and start to debugging.
 
 +
-WARNING: URL for debugging must be opened only in one browser
+WARNING: URL for debugging must be opened only in one browser. If you open in a second browser the browser will just stay empty. 
 
 +
 SWT WebKit can't handle Debugger API. However there is a *FireBug Lite* menu item instead of *Dev Tools* for that web engine. Using FireBug Lite you can preview HTML, CSS, DOM and scripts.
