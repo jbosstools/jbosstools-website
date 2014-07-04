@@ -327,7 +327,7 @@ jbt_core:
             url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/zz_Release_Notes_4.2.0.Alpha1.readme.html
       4.2.0.Nightly: 
         build_type: nightly
-        update_site_url: http://download.jboss.org/jbosstools/updates/nightly/core/master/
+        update_site_url: http://download.jboss.org/jbosstools/builds/nightly/core/master/
         download_url: http://download.jboss.org/jbosstools/builds/nightly/core/master/latestBuild.html
     kepler:
       4.1.2.Final:
