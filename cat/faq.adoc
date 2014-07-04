@@ -14,7 +14,6 @@ What is JBoss Tools CAT?::
   are working fine. This will help us asses the quality of the final
   release.
 
-
 Didn't Netbeans have this first?::
    Yes, the Netbeans CAT program is what inspired us to do this. We hope it will
 work equally well here too. Thanks for the inspiration.
@@ -22,4 +21,8 @@ work equally well here too. Thanks for the inspiration.
 What is the award for participating in the JBoss Tools CAT?::
    At the end of a testing/release, we will give the CAT testers that have been active a certificate for participation, a honorable mention on the release blog/website and for the top contributors we will give LinkedIn recommendations.
 
+Where do I report bugs and feature requests?::
+   https://issues.jboss.org/browse/JBIDE[The JBoss Tools project] in jira is for majority of issues, if your concern is with something specific to Developer Studio such as the Installer use the https://issues.jboss.org/browse/JBDS[Developer Studio project].
++
+You can use these links to report a https://issues.jboss.org/secure/CreateIssueDetails!init.jspa?pid=10020&issuetype=1[Bug] or https://issues.jboss.org/secure/CreateIssueDetails!init.jspa?pid=10020&issuetype=2[Feature request] directly.
 
