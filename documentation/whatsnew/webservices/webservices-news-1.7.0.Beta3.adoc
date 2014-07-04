@@ -13,9 +13,9 @@ Note that as opposed to "cascade validation" (see below) that occurs when the un
 
 related_jira::JBIDE-17308[]
 
-== Validating JAX-RS elements in cascade
+== Validating related JAX-RS elements 
 
-When fixing problems in a class, all related JAX-RS elements are included in the set of classes of to be validated, which means that related problems can end up being resolved.
+When fixing problems in a class, all related JAX-RS elements are included in the set of classes of to be validated, which means that related problems can end up being resolved too.
 
 For example, let's assume that a user has the following classes:
 
