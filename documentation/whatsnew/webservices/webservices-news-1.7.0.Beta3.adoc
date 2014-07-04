@@ -1,0 +1,120 @@
+= WebServices Tools 1.7.0.Beta3 What's New
+:page-layout: whatsnew
+:page-component_id: webservices
+:page-component_version: 1.7.0.Beta3
+:page-product_id: jbt_core 
+:page-product_version: 4.2.0.Beta3
+
+
+== As-you-type Validation
+
+As-you-type validation occurs in the scope of the java element (type declaration or method) that is being edited. If the java element corresponds to a JAX-RS element, this later is validated. 
+Note that as opposed to "cascade validation" (see below) that occurs when the underlying file is saved, the related JAX-RS elements are not validated "as-you-type", in order to keep the process as fast as possible. 
+
+related_jira::JBIDE-17308[]
+
+== Validating JAX-RS elements in cascade
+
+When fixing problems in a class, all related JAX-RS elements are included in the set of classes of to be validated, which means that related problems can end up being resolved.
+
+For example, let's assume that a user has the following classes:
+
+[source,java]
+----
+public class Car {
+	
+	public Car fromString(String value) {
+		return ...;
+	}
+
+}
+----
+
+and
+
+[source,java]
+----
+@Path("/cars")
+public class CarResource
+
+  @POST 
+  public Response createCar(Car car) { 
+    ...
+  }
+} 
+----
+
+In this example, the JAX-RS validator will report a problem on the +CarResource#create(Car)+ method because the +Car+ class is not a valid parameter: the +Car#fromString(String)+ method should actually be static. When the user adds the missing static modifier on the +Car#fromString(String)+ method and saves the file, not only the +Car+ class will be validated, but also the +CarResource+, and at the end of the day, the problem reported earlier will be resolved.
+
+related_jira::JBIDE-17368[]
+
+== Support for Resource Fields, Resource Properties and Parameter Aggregators 
+
+JAX-RS Resource Fields and Properties (ie, fields or setter methods annotated with +@PathParam+, +@QueryParam+, +@MatrixParam+), as well as  the JAX-RS 2.0 Parameter Aggregators (ie, method parameters, fields or setter methods annotated with +@BeanParam+) are recognized. 
+
+These elements are taken into account when validating the project and when displaying the Endpoints URI templates in the Project explorer.
+
+For example, let's assume that a user has the following class:
+
+[source,java]
+----
+@Path("/cars")
+public class CarResource {
+	
+	@MatrixParam("year")
+	private String year;
+	
+	@QueryParam("color")
+	private String color;
+	
+	@GET
+	@Path("{id}") 
+	public Response getCar(@PathParam("id") String id) {
+		return ...;
+	}
+}
+----
+
+In that case, the Endpoint URI template associated with the Resource Method and displayed in the Project Explorer will be +/{id:String};year={String}?color={String}+
+
+Now, if the user has the following classes:
+
+[source,java]
+----
+@Path("/cars")
+public class CarResource {
+	
+	@GET
+	@Path("/{id}")
+	public Response getCar(@PathParam("id") String id, @BeanParam OptionalParams options) {
+		return null; 
+	}
+}
+----
+
+and
+
+[source,java]
+----
+public class OptionalParams {
+
+	@QueryParam("color")
+	public String color;
+	
+	private String year;
+
+	public String getYear() {
+		return year;
+	}
+
+	@MatrixParam("year")
+	public void setYear(String year) {
+		this.year = year;
+	}
+	
+}
+----
+
+then the Endpoint URI template associated with the Resource Method (and its associated Parameter Aggregator) and displayed in the Project Explorer will also be +/cars/{id:String};year={String}?color={String}+
+
+In this second example, it is the +@BeanParam+ annotation on the method parameter that is used to link to the Parameter Aggregator.
