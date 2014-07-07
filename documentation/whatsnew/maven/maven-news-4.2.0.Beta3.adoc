@@ -1,0 +1,19 @@
+= Maven Tools What's New in 4.2.0.Beta3
+:page-layout: whatsnew
+:page-component_id: maven
+:page-component_version: 4.2.0.Beta3
+:page-product_id: jbt_core 
+:page-product_version: 4.2.0.Beta3
+
+== JBoss Maven Integration
+=== Maven Central Archetype catalog  	
+
+Since m2e 1.5.0 no longer downloads Nexus Indexes by default, a very small, outdated subset of Maven Archetypes is available out of the box.
+
+To mitigate that, the JBoss Tools Maven integration feature now registers by default the Maven Central Archetype catalog, 
+providing more than 9600 archetypes to chose from, when creating a new Maven project. Accessing the complete list of archetypes 
+is even way, way faster (a few seconds) than relying on the old Nexus index download.
+
+image:./images/maven-central-catalog.png[]
+
+related_jira::JBDS-3033[]
