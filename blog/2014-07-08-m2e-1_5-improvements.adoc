@@ -47,7 +47,7 @@ See bug https://bugs.eclipse.org/404417[404417]
 The JBoss Tools team contributed its https://marketplace.eclipse.org/content/maven-profiles-management[Maven Profile management interface] to m2e 1.5.0. This new interface eases switching between profiles.
 
 Rather than right-clicking on a project, going to the menu:Properties[Maven] page, then manually (mis)typing a list of active or disabled profiles, 
-you can now just use btn:[Ctrl+Alt+P] to open the new Maven Profile selection interface.
+you can now just use kbd:[Ctrl+Alt+P] to open the new Maven Profile selection interface.
 
 image:./images/m2e-profile-selection.png[]
 
@@ -67,7 +67,7 @@ See bug https://bugs.eclipse.org/428094[428094]
 
 == Easily update outdated projects
 
-The Update Maven Project dialog (launched via Right-click project menu:Maven[Update Project...] or via btn:[Alt-F5]), now shows a _dirty_ overlay on projects which need updating.
+The Update Maven Project dialog (launched via Right-click project menu:Maven[Update Project...] or via kbd:[Alt-F5]), now shows a _dirty_ overlay on projects which need updating.
 
 Additionally, an "Add out-of-date" button adds all out-of-date (OOD)  projects to the current selection.
 If an OOD project has not been selected, a warning is shown underneath the selection table with a link equivalent to "Add out-of-date". 
