@@ -20,11 +20,11 @@ video::92255691[vimeo, width=640, height=400]
 
 == How can I try it?
 
-HTML Preview is not in production yet. It will be a part of JBoss Tools and Developer Studio Beta2 release for Eclipse Luna. However, you can today access to the "nightly" build of JBoss Tools VPE updatesite at:
+HTML Preview is not in production yet. It will be a part of JBoss Tools and Developer Studio Beta2 release for Eclipse Luna. However, you can today access to the "nightly" build of JBoss Tools VPE update site at:
 
   http://download.jboss.org/jbosstools/builds/staging/jbosstools-vpe_master/all/
 
-On this updatesite you find "HTML Preview" when unselecting "Show categorized". Once installed and you have restarted Eclipse you should have a "HTML Preview" view available.
+On this update site you find "HTML Preview" when unselecting "Show categorized". Once installed and you have restarted Eclipse you should have a "HTML Preview" view available.
 
 == Conclusion
 
@@ -33,3 +33,4 @@ Have fun!
 
 Ilya Buziuk +
 https://twitter.com/ilyabuziuk[@ilyabuziuk]
+

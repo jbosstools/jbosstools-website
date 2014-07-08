@@ -18,9 +18,9 @@ For now those need to be installed individually.
 
 We wanted to make that even simpler.
 
-Thus today we deployed our Java 8 packaged install and updatesite which does not require you to do four different installs.
+Thus today we deployed our Java 8 packaged install and update site which does not require you to do four different installs.
 
-There are two ways to use this. Using JBoss Central or the composite updatesite.
+There are two ways to use this. Using JBoss Central or the composite update site.
 
 == Using JBoss Central
 
@@ -36,9 +36,9 @@ You will then be shown a screen where you can choose to install all or select a 
 
 If you have JBoss Tools installed the recommended way is that you install them all since then you get the best Java 8 coverage possible in Eclipse.
 
-== Using plain old updatesite
+== Using plain old update site
 
-If you do not want to use JBoss Central you can also use this updatesite directly:
+If you do not want to use JBoss Central you can also use this update site directly:
 
    http://download.jboss.org/jbosstools/updates/stable/kepler/central/java8/
 
@@ -56,8 +56,4 @@ Have fun!
 
 Max Rydahl Andersen +
 https://twitter.com/maxandersen[@maxandersen]
-
-
-
-
 
