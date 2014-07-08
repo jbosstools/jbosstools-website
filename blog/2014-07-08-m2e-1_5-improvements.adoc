@@ -8,8 +8,10 @@ https://bugs.eclipse.org/bugs/buglist.cgi?bug_status=UNCONFIRMED&bug_status=NEW&
 
 == Improved project import workflow
 
-Selecting Maven projects to import used to take an inordinate amount of time, due to an inefficient Maven Lifecycle Mapping Analysis (LMA). LMA is used to determine whether the projects would require further configuration to operate properly in Eclipse. 
-That LMA is now only run _after projects are imported_, making selection of projects to import much, *much* faster (eg., for the wildfly 8.0 codebase and its 130 projects, it now takes only a few seconds where it used to take up to 2 minutes).
+Selecting Maven projects to import used to take an inordinate amount of time, due to a suboptimal - I love that word :-) - 
+Maven Lifecycle Mapping Analysis (LMA). LMA is used to determine whether the projects would require further configuration to operate properly in Eclipse. 
+That LMA is now only run after projects are imported, making selection of projects to import much, *much* faster (< couple seconds
+vs 1-2 min for the wildfly 8.0 codebase and its 130 projects, for instance)
 
 After import, lifecycle mapping error markers are collected on imported projects and the discovery service is invoked to find proposals to fix those errors.
 
@@ -35,7 +37,7 @@ Depending on your internet connection, that whole process could take 15 minutes 
 Once the indexes were updated, the size of the workspace would increase by approximately 500 MB. 
 Even though space is relatively cheap these days, those with many workspaces (eg., for testing) or large workspaces, this extra disk usage can add up quickly.
 
-m2e 1.5.0 now has this feature disabled by default. You can still enable it in `Preferences > Maven > [x] Download repository index updates on startup`. 
+m2e 1.5.0 now has this feature disabled by default. You can still enable it in menu:Preferences[Maven > Download repository index updates on startup]. 
 One major downside of having this feature disabled by default though, is Archetype and Artifact/Plugin searches are now much less efficient, as they rely on this indexed content.
 
 See bug https://bugs.eclipse.org/404417[404417]
@@ -44,12 +46,12 @@ See bug https://bugs.eclipse.org/404417[404417]
 
 The JBoss Tools team contributed its https://marketplace.eclipse.org/content/maven-profiles-management[Maven Profile management interface] to m2e 1.5.0. This new interface eases switching between profiles.
 
-Rather than right-clicking on a project, going to the `Properties > Maven` page, then manually (mis)typing a list of active or disabled profiles, 
-you can now just use `Ctrl+Alt+P` to open the new Maven Profile selection interface.
+Rather than right-clicking on a project, going to the menu:Properties[Maven] page, then manually (mis)typing a list of active or disabled profiles, 
+you can now just use btn:[Ctrl+Alt+P] to open the new Maven Profile selection interface.
 
 image:./images/m2e-profile-selection.png[]
 
-The new interface is also accessible from the Maven context menu: `Right-click project > Maven > Select Maven Profiles...`
+The new interface is also accessible from the Maven context menu: Right-click project menu:Maven[Select Maven Profiles...]
 
 The list of available profiles is inferred from profiles defined in:
 
@@ -65,7 +67,7 @@ See bug https://bugs.eclipse.org/428094[428094]
 
 == Easily update outdated projects
 
-The Update Maven Project dialog (launched via `Right-click project > Maven > Update Project...` or via `Alt-F5`), now shows a _dirty_ overlay on projects which need updating.
+The Update Maven Project dialog (launched via Right-click project menu:Maven[Update Project...] or via btn:[Alt-F5]), now shows a _dirty_ overlay on projects which need updating.
 
 Additionally, an "Add out-of-date" button adds all out-of-date (OOD)  projects to the current selection.
 If an OOD project has not been selected, a warning is shown underneath the selection table with a link equivalent to "Add out-of-date". 
@@ -97,7 +99,7 @@ Maven CLI builds can use these flags:
 * `-C` - fail build if checksums do not match
 * `-c` - warn if checksums do not match
 
-m2e now has a global Checksum Policy available in `Preferences > Maven`, that will help you keep your sanity, and yor local repository clean:
+m2e now has a global Checksum Policy available in menu:Preferences[Maven], that will help you keep your sanity, and yor local repository clean:
 
 image:./images/m2e-checksum-policy-flag.png[]
 
@@ -112,7 +114,7 @@ m2e has been known for generating specific errors that have puzzled more than on
 * `Project Configuration is not up-to-date` - a change in pom.xml *might* require a full project configuration update.
 * `Plugin execution not covered by lifecycle` - m2e doe not know if it is safe to execute a maven plugin as part of the Eclipse build
 
-With the new `Preferences > Errors/Warnings` page, users can now decide according to their own needs whether these errors should be downgraded to `Warning`, or even be ignored entirely.
+With the new menu:Preferences[Errors/Warnings] page, users can now decide according to their own needs whether these errors should be downgraded to `Warning`, or even be ignored entirely.
 
 image:./images/m2e-warnerrors-prefs.png[]
 

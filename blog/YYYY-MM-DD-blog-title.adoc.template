@@ -32,6 +32,11 @@ If you got code to show do it like this:
 
  }
 
+=== Menus, keyboard and buttons have their own style
+
+When using menus like menu:Preferences[Guide > The > User], keyboard
+shortcuts like kbd:[Ctrl+Alt+P] or even buttons like btn:[Ok] then
+there is a style for it.
 
 == End on a positive note
 

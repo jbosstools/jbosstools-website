@@ -317,6 +317,11 @@ blockquote > p {
   background-image: linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
 }
 
+// make menu:Preferences[element] stand out more clearly
+.menuseq {
+  font-weight: bold;
+}
+
 .button {
   cursor: pointer;
 }
