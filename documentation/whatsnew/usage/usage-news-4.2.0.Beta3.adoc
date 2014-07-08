@@ -1,0 +1,17 @@
+= Usage What's New in 4.2.0.Beta3
+:page-layout: whatsnew
+:page-component_id: usage
+:page-component_version: 4.2.0.Beta3
+:page-product_id: jbt_core 
+:page-product_version: 4.2.0.Beta3
+
+== JVM name usage 
+
+JVM name and architecture (32/64 bit) are now collected for usage statistics to help JBoss Tools team to learn more about how our users are using the tooling.
+JBoss Tools also tracks events when the runtime detection mechanism creates a new server.
+
+All information which is going to be collected is reflected in Preferences > JBoss Tools > Usage Reporting for you to review.
+
+As always JBoss Tools will not send any information before a user have opted in, nor is there any personal information sent.
+
+related_jira::JBIDE-15596,JBIDE-17520[]
