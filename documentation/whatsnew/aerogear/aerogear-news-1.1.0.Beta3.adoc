@@ -1,0 +1,21 @@
+= Aerogear What's New in 1.1.0.Beta3
+:page-layout: whatsnew
+:page-component_id: aerogear
+:page-component_version: 1.1.0.Beta3
+:page-product_id: jbt_core
+:page-product_version: 4.2.0.Beta3
+
+== Hybrid Mobile (Cordova) Tools
+
+=== Restore Cordova plugins during import
+
+When importing a Cordova project, if the project already references a list of plugins on its config.xml file, they 
+are restored to the project during import. Also, config.xml is always kept up-to-date with the installed Cordova
+plugin information but the Hybrid Mobile Tools. 
+
+See http://www.gorkem-ercan.com/2014/06/sharing-cordova-projects-becomes-easier.html[Gorkem's post] for a demo of 
+the feature.
+
+related_jira::JBIDE-17301[]
+
+
