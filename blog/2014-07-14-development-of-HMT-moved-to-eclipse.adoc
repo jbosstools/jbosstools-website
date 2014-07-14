@@ -1,0 +1,36 @@
+= Development of Hybrid Mobile Tools has moved to Eclipse Foundation
+:page-layout: blog
+:page-author: gercan 
+:page-tags: [cordova, thym, eclipse, aerogear]
+
+Even back when the first line of code was dropped for Hybrid Mobile tooling, making the tools as part of the Eclipse foundation 
+was a goal. When starting, we looked at the available tools for developing Cordova applications. We found out that there were no open source
+solutions that we could contribute and use as part of our tools. Furthermore, interoperability among what very little existed was poor. 
+Of course, our main goal is _creating good tools for Apache Cordova development_, but while doing that we always keep an eye on 
+interoperability and extendibility.
+
+It is only natural that we are moving the development of our tools for Cordova based application development and forming 
+the Eclipse http://www.eclipse.org/thym[THyM] project. We hope that, as a vendor 
+neutral non-profit organization, http://www.eclipse.org[Eclipse foundation] will encourage contributions and be the base for interoperable Cordova tooling.
+
+== What is contributed
+
+Everything related to Cordova based development including the project management, plugin discovery, and support for iOS and Android excluding 
+the Cordova simulator is contributed to Eclipse.org. We have excluded CordovaSim for now because of its complex set of dependencies 
+
+== What is changing
+
+The development will continue to happen on GitHub but on a https://github.com/eclipse/thym[repository] owned by Eclipse foundation. The 
+contributed code is already renamed, cleaned and on the new repository. If you are a contributor, or want to be one,
+please use https://github.com/eclipse/thym
+
+We will use https://bugs.eclipse.org/bugs/enter_bug.cgi?product=Thym[bugzilla], and https://dev.eclipse.org/mailman/listinfo/thym-dev[thym-dev] mailing list from now on  
+as provided by Eclipse foundation. As expected project documentation is at the https://wiki.eclipse.org/Thym[wiki].
+The builds will be running on eclipse.org build server https://hudson.eclipse.org/thym/[instance].
+
+== What is NOT changing
+
+JBoss tools will continue to have support for Cordova development. We will consume Thym project and extend them with more capabilities and integrate with other parts of the tools
+and technologies coming from projects such as http://aerogear.org/[Aerogear].
+
+And of course our wish to create good tools for Apache Cordova development continues with a hope for better collaboration with other individuals and companies.
