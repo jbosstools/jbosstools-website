@@ -11,7 +11,7 @@
 
 When importing a Cordova project, if the project already references a list of plugins on its config.xml file, they 
 are restored to the project during import. Also, config.xml is always kept up-to-date with the installed Cordova
-plugin information but the Hybrid Mobile Tools. 
+plugin information. 
 
 See http://www.gorkem-ercan.com/2014/06/sharing-cordova-projects-becomes-easier.html[Gorkem's post] for a demo of 
 the feature.
