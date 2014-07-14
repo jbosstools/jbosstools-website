@@ -1,4 +1,4 @@
-= Max Rydahl Andersen
+= Gorkem Ercan
 :page-photo_64px: https://community.jboss.org/people/gercan/avatar/64.png
 :page-photo_32px: https://community.jboss.org/people/gercan/avatar/32.png
 
