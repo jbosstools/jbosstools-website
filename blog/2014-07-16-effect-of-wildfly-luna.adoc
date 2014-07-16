@@ -11,7 +11,7 @@ These numbers are just for the last month of beta testers thus do take these abs
 
 In any case I find the numbers interesting and thought I would share since there are some lessons to be learned.
 
-== JBoss Server Usage 
+== JBoss Server Usage
 
 One of the data points are which JBoss servers users create.
 
@@ -23,10 +23,10 @@ image::images/server_creation_stats.png[]
 The numbers above shows the last two weeks of server creation by our
 beta users. Not surprisingly majority of users are using the
 community version of the latest JBoss servers (AS 7.1 and WildFly 8),
-and its great to see the third most used server is the free for
-development/enterprise supported EAP 6.0/EAP 6.1 server is picking up.
+and it's great to see the third most used server is the free for
+development/enterprise supported EAP 6.1/6.2/6.3.
 
-== Oldie but goodie 
+== Oldie but goodie
 
 What I find funny is that there are still users using the latest/greatest
 development tools, but who runs JBoss AS 3.2 - this was last released back
@@ -42,9 +42,9 @@ I'm convinced as users move to our release that gathers these data we will start
 
 == Deploy Only Server
 
-What is a bit disconcerning is how few seem to know about our Deploy only server (in this list noted as `systemCopyServer` ).
+What is a bit disconcerting is how few seem to know about our Deploy only server (in this list noted as `systemCopyServer` ).
 This server allows you to use Eclipse's support for incremental deployments to any directory locally or remotely available.
-Really useful for deploying to a non-JBoss server, a remote PHP or just a plain html app. 
+Really useful for deploying to a non-JBoss server, a remote PHP or just a plain html app.
 
 You should try it out!
 
@@ -52,7 +52,7 @@ menu:File[New,Server, Basic, Deploy Only]
 
 Combine this with our LiveReload support and you get a great and fast workflow!
 
-== Uptake of Eclipse versions 
+== Uptake of Eclipse versions
 
 Another data item we have insight to is the uptake of Eclipse versions.
 
@@ -78,7 +78,7 @@ even older eclipse versions). Meaning total usage of JBoss Tools is up/stable. E
 I wish Google Analytics had a way to show this graph cumulative instead of per line...anyone up for a data extraction and visualization project ?
 I'll give you access to the data to play with.
 
-== Uptake of Eclipse Luna 
+== Uptake of Eclipse Luna
 
 Finally, my personal main interest was to see what the uptake of Eclipse Luna is.
 
