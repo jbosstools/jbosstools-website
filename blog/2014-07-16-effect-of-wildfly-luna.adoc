@@ -52,7 +52,7 @@ menu:File[New,Server, Basic, Deploy Only]
 
 Combine this with our LiveReload support and you get a great and fast workflow!
 
-= Uptake of Eclipse versions 
+== Uptake of Eclipse versions 
 
 Another data item we have insight to is the uptake of Eclipse versions.
 
