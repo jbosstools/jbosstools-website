@@ -58,14 +58,20 @@ Another data item we have insight to is the uptake of Eclipse versions.
 
 image::images/eclipse-version-update-2014-07-16.png[Uptake of Eclipse versions]
 
-The graph above is our recorded startups of Eclipse Java EE installs since January pr. week. Two things to note: the "Drop" at the end is just the
-effect of the numbers ending middle of the month, the "Dip" in mid April I'm not sure what is but we see it across all our Google analytics thus
-I expect it was an Google Analytics anomoly. The numbers have since stabilized, that said...lets interpret!
+The graph above is our recorded startups of Eclipse Java EE installs
+since January pr. week. Be aware the versions listed are the EPP versions, not
+Eclipse release train versions - I'll do the mapping for you below.
+
+Two things to note: the "Drop" at the end is just the effect of the
+numbers ending middle of the month, the "Dip" in mid April I'm not
+sure what is but we see it across all our Google analytics thus I
+expect it was an Google Analytics anomoly. The numbers have since
+stabilized, that said...lets interpret!
 
 This graph shows how Eclipse Kepler SR1 release (2.0.1) usage is dropping as users upgrade to Kepler SR2 release (2.0.2) - this
 are most likely the effect of users using Eclipse built-in update mechanism to upgrade.
 
-What also can be seen is that the latest stable release uptake is
+What also can be seen is that the latest stable release (4.4.0) uptake is
 gaining faster than total Eclipse version usage (the faint lines are
 even older eclipse versions). Meaning total usage of JBoss Tools is up/stable. Eclipse isn't dead yet :)
 
