@@ -17,3 +17,48 @@ Target Platform is updated with the Tern.java v.0.4.0.201407030911 in order to b
 
 related_jira::JBIDE-17673[]
 
+== Ionic
+
+In this release we introduce an initial support for http://www.ionicframework.com[Ionic] widgets in the HTML5 palette view.
+
+image::images/4.2.0.Beta3/palette.png[]
+
+=== Content
+
+image::images/4.2.0.Beta3/content.png[]
+
+related_jira::JBIDE-17851[]
+
+=== Header bar
+
+image::images/4.2.0.Beta3/header.png[]
+
+related_jira::JBIDE-17728[]
+
+=== Footer bar
+
+image::images/4.2.0.Beta3/footer.png[]
+
+related_jira::JBIDE-17874[]
+
+=== Tabs
+
+image::images/4.2.0.Beta3/tabs.png[]
+
+related_jira::JBIDE-17912[]
+
+=== Scroll
+
+image::images/4.2.0.Beta3/scroll.png[]
+
+related_jira::JBIDE-17850[]
+
+=== Content assist
+
+All these widgets are also available as templates in code assist.
+
+image::images/4.2.0.Beta3/ca.png[]
+
+related_jira::JBIDE-17852[]
+
+We continue to work on this palette and more widgets are coming with the next release.
