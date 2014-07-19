@@ -40,3 +40,11 @@ Which operating systems, runtimes and frameworks does JBoss Tools support?::
 
 Where can I find answers about the Browser Simulator?::
   See the link:./browsersim.html[Browser Simulator FAQ]
+
+=== Server/Publishing
+
+[qanda]
+I use eclipse with the jboss tools installed, is there any way to republish my app that doesnt involve what feels like 50 clicks by opening server tab, expanding server, right clicking the module and selecting full publish?::
+
+Use menu:Help[Key assist] and a yellow window pops up with current keyboard shortcuts. Type "Full" and a "Full Publish module" should show up with the right key.
+It is a bit long you can reconfigure it if you wish to under menu:Preferences[General, Keys].
