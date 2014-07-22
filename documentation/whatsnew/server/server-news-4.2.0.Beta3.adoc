@@ -11,7 +11,7 @@
 
 === Grouping of connections
 
-The JMX Navigator now has three groupings: User-defined connections, Server connections, and Local Processes. This categorization makes it clearer where the connection comes from and when connections comes and go it does not disturb the overall ordering.
+The JMX Navigator now has three groupings: User-defined connections, Server connections, and Local Processes. This categorization makes it clearer where the connection comes from. As connections are added to or removed from the view, the overall ordering will no longer be disturbed, which could otherwise be distracting.
 
 image::images/JBIDE-17639.png[JMX Navigator Categories]
 
