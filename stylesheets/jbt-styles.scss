@@ -41,6 +41,29 @@
 }
 
 // *************************************
+// mobile/tablets specifics
+// *************************************
+@media screen and (min-width: 360px) and (max-width: 768px) {
+  .hero-unit {
+    font-size: 18px;
+    h1 {
+      font-size: 38.5px;
+    }
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .hero-unit {
+    font-size: 18px;
+    h1 {
+      font-size: 38.5px;
+    }
+  }
+
+}
+  
+
+// *************************************
 // Common styles
 // *************************************
 h1, h2, h3, h4, h5, h6 {
