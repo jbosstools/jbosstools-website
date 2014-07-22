@@ -8,13 +8,12 @@
 
 
 == JMX Support
-   The JMX Navigator previously had connections of various different behaviors all as top-level elements in the tree. Users could manually create a JMX connection from a url, or the server adapter tooling could create one for you. With the addition of JVM Monitor in the beta2 release, a new type of JMX connection was added. This connection represented any locally-discoverable running java process which exposed JMX. While the view still only contained elements representing JMX connections, the behavior of various connections appearing or disappearing at various times could be confusing. Also, some connections appear to be duplicates of each other, and users may be unsure which one to use. 
 
-In Beta3, the JMX Navigator now has three top level elements, representing different types of connections. These top level elements include User-defined connections, Server connections, and Local Processes. This categorization will help prevent users from getting confused, and ensure they are aware which connection they are using. 
+=== Grouping of connections
 
+The JMX Navigator now has three groupings: User-defined connections, Server connections, and Local Processes. This categorization makes it clearer where the connection comes from and when connections comes and go it does not disturb the overall ordering.
 
 image::images/JBIDE-17639.png[JMX Navigator Categories]
-
 
 related_jira::JBIDE-17639[]
 
@@ -24,10 +23,7 @@ related_jira::JBIDE-17639[]
 
 === Servers and Execution Environments
 
-In the past, server adapters and runtimes would have a minimal execution environment that was compatible with the server type. If chosen, the tools would choose the best match for the minimal execution environment. Users could override this option by choosing a specific JRE to provide classpaths to projects or use to launch their server adapters. While this worked fairly well, it left a lot of usecases out. 
-
-With the changes in Beta3, users have more options. They now have the option to choose any execution environment that has the minimal environment as a subset. What this means is that if a server has a minimal environment of Java 5, those users can now choose either a specific JRE, or, any execution environment from Java-5 and up.  The framework will choose the JRE that best matches the chosen environment. 
-
+Servers can now specify either an execution environment or specific JRE to be used for its launch. The list of available environments or JRE's are based on the server type.
 
 image::images/JBIDE-17646.png[Servers and JREs]
 
@@ -35,14 +31,13 @@ related_jira::JBIDE-17646[]
 
 === Modifying server profile
 
-Modifying a server profile often requires some changes to various settings. Without these changes, the resultant server adapter may be in a state that doesn't make much sense. For example, a remote server that does not expose its management port should not be using the management API to determine if the remote server has started successfully. 
+Modifying a server profile often requires some changes to various settings. Without these changes, the resultant server adapter may be in a inconsistent state. For example, a remote server that does not expose its management port should not be using the management API to determine if the remote server has started successfully. 
 
-In order to centralize the behavior for changing a server profile, along with all of its critical individual settings, we have added a hyperlink in the server editor by which you can do so.  The wizard that appears when clicked very closely resembles the new server wizard, which helps to keep the UI uniform for each server. 
+Until Beta3 you could not change this via the UI, now you can. There is now a "Behavior Profile" hyperlink in the server editor to change the used profile via a wizard.
 
-Once finished, the server editor will save, close, and re-open. 
+Once the wizard is complete, the server editor will save, close, and re-open to pickup the latest changes.
 
 image::images/JBIDE-17636.png[Changing Server Profile]
-
 
 related_jira::JBIDE-17636[]
 
