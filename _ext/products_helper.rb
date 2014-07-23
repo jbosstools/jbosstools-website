@@ -37,9 +37,11 @@ module Awestruct
       end
       module_function :get_higher_version
       
-      # Returns a build type based on the given version 
+      # Returns a build type based on the product version 
       def get_build_type(site, product_id, product_version)
-        if is_stable_version(product_version)
+        if is_unreleased_version(site, product_id, product_version)
+          return :unreleased
+        elsif is_stable_version(product_version)
           return :stable
         elsif is_nightly_version(product_version)
           return :nightly
@@ -49,19 +51,34 @@ module Awestruct
       end
       module_function :get_build_type
       
-      # Returns a build type label if provided in product.yml, nil otherwise
+      # Returns a build type label if provided in products.yml and not marked as archived (otherwise it will return 'nil'), 
+      # or 'unreleased' if there is no such product id/version in products.yml
       def get_build_type_label(site, product_id, product_version)
         stream = site.products[product_id].streams.select{|stream_id, versions| versions[product_version] != nil}.values.first
-        build_type_label = nil
+        build_type_label = "unreleased"
         unless stream.nil?
           info = stream.select{|build_version, build_info| build_version == product_version}.values.first
-          build_type_label = info[:build_type] unless (info[:archived] == true)
+          if info[:archived]
+            build_type_label = nil
+          else
+            build_type_label = info[:build_type] 
+          end
           #puts "  #{product_id} #{product_version} build type: '#{build_type_label}'"
         end
         return build_type_label
       end
       module_function :get_build_type_label
      
+      def is_unreleased_version(site, product_id, product_version)
+        site.products[product_id].streams.each do |stream_id, product_versions|
+          if product_versions.include? product_version 
+            return false
+          end
+        end
+        true
+      end
+      module_function :is_unreleased_version
+      
       def get_stable_version(site, product_id, product_version)
         final_version = get_main_version(product_version) << ".Final"
         ga_version = get_main_version(product_version) << ".GA"
@@ -129,6 +146,7 @@ module Awestruct
         info.product_id = product_id
         info.version = product_version
         info.release_date = build_info["release_date"]
+        info.renamed_as = build_info["renamed_as"]
         info.eclipse_version = eclipse_version
         info.build_type = get_build_type(site, product_id, product_version) 
         info.build_type_label = get_build_type_label(site, product_id, product_version) 

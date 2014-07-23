@@ -17,7 +17,7 @@ tab: docs
         %a{:href=>"#"}
           #{page.product_version}
           - unless page.build_type_label.nil?
-            %span{:class=>"label label_#{current_whatsnew_page.build_type_label}"}
+            %span.visible-desktop.visible-phone{:class=>"label label_#{current_whatsnew_page.build_type_label}"}
               #{site.labels[current_whatsnew_page.build_type_label]}
         %ul.nav.nav-nested.components
           %li.component{:class=>"active"}

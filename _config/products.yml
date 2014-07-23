@@ -356,6 +356,10 @@ jbt_core:
           - name: Release Notes
             file_size: 13kB
             url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.x/zz_Release_Notes_4.1.2.Final.readme.html
+      4.1.2.CR1:
+        archived: true
+        build_type: development
+        renamed_as: 4.1.2.Final
       4.1.1.Final:
         archived: true
         build_type: stable
@@ -498,6 +502,10 @@ jbt_core:
           - name: Release Notes 4.1.0
             file_size: 5.7kB
             url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.x/zz_Release_Notes_4.1.0.Final.readme.html
+      4.1.0.CR1:
+        archived: true
+        build_type: development
+        renamed_as: 4.1.0.Final
       4.1.x.Nightly:   
         archived: true
         build_type: nightly

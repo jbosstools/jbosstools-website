@@ -7,7 +7,7 @@ module Awestruct
     class Whatsnew
       
       @@whatsnew_layout_path = "whatsnew_aggregated.html.haml"
-      @@whatsnew_overview_layout_path = "whatsnew_overview.html.haml"
+      @@whatsnew_standalone_path = "whatsnew_aggregated.html.haml"
       
       def initialize(source_path_prefix, target_path_prefix)
         puts "Initializing Whatsnew"

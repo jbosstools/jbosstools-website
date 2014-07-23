@@ -39,7 +39,7 @@ tab: docs
             %a{:href=>relative(whatsnew_page.output_path)}
               #{whatsnew_page.product_version}
               - unless whatsnew_page.build_type_label.nil?
-                %span{:class=>"label label_#{whatsnew_page.build_type_label}"}
+                %span.visible-desktop.visible-phone{:class=>"label label_#{whatsnew_page.build_type_label}"}
                   #{site.labels[whatsnew_page.build_type_label]}
             - if whatsnew_page.product_version == page.product_version
               %ul.nav.nav-nested.components
@@ -68,6 +68,9 @@ tab: docs
     %header 
       %h1.center What's New in #{page.product_name} #{page.product_version}
       - download_page = site.download_pages[page.product_id][page.product_version]
+      - if download_page.nil? && page.build_type == :unreleased then
+        - download_page = site.latest_builds_download_pages[page.product_id][:nightly]
+      - puts "#{page.product_id} #{page.product_version}: #{page.build_type} -> #{download_page.output_path}"
       .center
         -# Blog announcement
         - unless download_page.nil? || download_page.build_info.blog_announcement_url.nil?

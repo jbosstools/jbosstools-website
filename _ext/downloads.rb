@@ -8,10 +8,10 @@ module Awestruct
       @@index_path = "/downloads/index.html"
       @@output_path_prefix = "/downloads/"
       @@download_single_version_layout_path = "download_single_version.html.haml"
+      @@download_renamed_version_layout_path = "download_renamed_version.html.haml"
       @@downloads_per_product_layout_path = "downloads_per_product_summary.html.haml"
       @@downloads_per_eclipse_stream_layout_path = "downloads_per_eclipse_stream_summary.html.haml"
-      #@@build_types = {:stable => [".GA", ".Final"], :development=>[".Alpha", ".Beta", ".CR"], :nightly=>["nightly", "Nightly"]}
-
+      
       def initialize()
       end
 
@@ -19,7 +19,7 @@ module Awestruct
       def execute(site)
         $LOG.debug "*** Executing downloads extension..." if $LOG.debug?
         # making these labels available in layouts, too.
-        site.labels = {:stable=>"Stable", :development=>"Development", :nightly=>"Nightly"}
+        site.labels = {:stable=>"Stable", :development=>"Development", :nightly=>"Nightly", :unreleased=>"Coming Soon"}
         @site = site
         @site.download_pages = Hash.new
         @site.latest_builds_download_pages = Hash.new
@@ -128,6 +128,7 @@ module Awestruct
             end
           end
         end
+        
         $LOG.debug "*** Done with downloads extension." if $LOG.debug?
       end
       
@@ -135,7 +136,11 @@ module Awestruct
         page_title ||= @site.products[product_id].name + " " + build_info.version.to_s
         product_path_fragment = @site.products[product_id].url_path_fragment
         path = @@output_path_prefix + product_path_fragment + "/" + eclipse_version.url_path_fragment + "/" + page_path_fragment + ".html"
-        download_page = find_layout_page(@@download_single_version_layout_path)
+        if build_info.renamed_as.nil?
+          download_page = find_layout_page(@@download_single_version_layout_path)
+        else
+          download_page = find_layout_page(@@download_renamed_version_layout_path)
+        end
         download_page.output_path = File.join(path)
         download_page.title = page_title
         download_page.build_info = build_info

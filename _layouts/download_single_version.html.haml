@@ -15,7 +15,7 @@ tab: downloads
               %span
                 #{download_page.build_info.version}
               - unless download_page.build_info.build_type_label.nil?
-                %span{:class=>"label label_#{download_page.build_info.build_type_label}"}
+                %span.visible-desktop.visible-phone{:class=>"label label_#{download_page.build_info.build_type_label}"}
                   #{site.labels[download_page.build_info.build_type_label]}
       %li
         %a{:href=>relative("/downloads/overview.html")} All downloads
@@ -23,9 +23,9 @@ tab: downloads
   .span9#download.well.post-bg
     %h2.center
       #{page.build_info.name} #{page.build_info.version}
-      - unless page.build_info.build_type_label.nil?
-        %span#displayed-version{:class=>"label label_#{page.build_info.build_type_label}"}
-          #{site.labels[page.build_info.build_type_label]}
+      - unless page.build_info.build_type.nil?
+        %span#displayed-version{:class=>"label label_#{page.build_info.build_type}"}
+          #{site.labels[page.build_info.build_type]}
     .center
       - unless page.build_info.documentation_url.nil?
         %a{:href=>relative(page.build_info.documentation_url)} Documentation
