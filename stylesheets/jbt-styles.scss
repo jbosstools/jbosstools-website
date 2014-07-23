@@ -41,29 +41,6 @@
 }
 
 // *************************************
-// mobile/tablets specifics
-// *************************************
-@media screen and (min-width: 360px) and (max-width: 768px) {
-  .hero-unit {
-    font-size: 18px;
-    h1 {
-      font-size: 38.5px;
-    }
-  }
-}
-
-@media screen and (max-width: 360px) {
-  .hero-unit {
-    font-size: 18px;
-    h1 {
-      font-size: 38.5px;
-    }
-  }
-
-}
-  
-
-// *************************************
 // Common styles
 // *************************************
 h1, h2, h3, h4, h5, h6 {
@@ -400,29 +377,29 @@ kbd {
 // Anchors near the titles
 // ******************************************************
 
-  h1, h2, h3, h4, h5, h6 {
-    & > a.anchor {
-      position: absolute;
-      width: 1em;
-      margin-left: -0.75em;
-      display: block;
-      text-decoration: none !important;
-      visibility: hidden;
-      text-align: center;
-      font-weight: normal;
-    }
-    &:hover > a.anchor {
-      visibility: visible;
-    }
-
-    & > a.anchor::before {
-      content: "*";
-      font-size: 0.85em;
-      vertical-align: text-top;
-      display: inline;
-      margin-top: 0.085em;
-    }
+h1, h2, h3, h4, h5, h6 {
+  & > a.anchor {
+    position: absolute;
+    width: 1em;
+    margin-left: -0.75em;
+    display: block;
+    text-decoration: none !important;
+    visibility: hidden;
+    text-align: center;
+    font-weight: normal;
   }
+  &:hover > a.anchor {
+    visibility: visible;
+  }
+
+  & > a.anchor::before {
+    content: "*";
+    font-size: 0.85em;
+    vertical-align: text-top;
+    display: inline;
+    margin-top: 0.085em;
+  }
+}
 
 
 // ******************************************************
@@ -539,36 +516,60 @@ a.dropdown-toggle {
   background-color: #FAFAFA;
   background-image: none;
   padding: 30px 30px 0px 30px;
-}
-.hero-unit {
   background: #ebf5f1;
+  
+  & > img {
+    padding-left: 20px;
+    float: right;
+  }
+
+  p {
+    margin-bottom: 20px;
+    display: inline-block;
+  }
+  
+  .hero-content h1 {
+    margin-top: 40px;
+  }
+  .hero-content h2 img {
+    vertical-align: text-bottom;
+  }
+  .hero-content p {
+    white-space: nowrap;
+  }
+  
+  @media screen and (max-width: 979px) {
+    font-size: 18px;
+    h1 {
+      font-size: 38.5px;
+    }
+    .hero-content {
+      h1, h2, p {
+        text-align: center;
+      }
+    }
+    .hero-buttons {
+      text-align: center;
+    }
+  }
+
+  @media screen and (min-width: 980px) {
+    .hero-content {
+      h1, h2, p {
+        text-align: right;
+      }
+    }
+    .hero-buttons {
+        text-align: right;
+    }
+  }
+  
+  
+  
 }
 
 #homepage .hero-unit {
   background: url("http://static.jboss.org/tools/images/bkg_binding_light.png") 0 0 repeat-x #ebf5f1;
-}
-
-
-.hero-unit > img {
-  padding-left: 20px;
-  float: right;
-}
-
-.hero-content h1, .hero-content h2, .hero-content p {
-  text-align: right;
-}
-.hero-content h1 {
-  margin-top: 40px;
-}
-.hero-content h2 img {
-  vertical-align: text-bottom;
-}
-.hero-content p {
-  white-space: nowrap;
-}
-.hero-unit p {
-  margin-bottom: 20px;
-  display: inline-block;
 }
 
 .post-bg {
