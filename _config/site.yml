@@ -86,7 +86,7 @@ profiles:
     jborg_fonts_url: /cache/static.jboss.org/theme/fonts
     jborg_images_url: /cache/static.jboss.org/theme/images
     jborg_js_url: /cache/static.jboss.org/theme/js
-    project_images_url: http://static.jboss.org/jbosstools/images
+    project_images_url: http://static.jboss.org/tools/images
     bootstrap_css_url: /stylesheets/bootstrap-community
     bootstrap_js_url: /javascripts/bootstrap-community
     disqus: jbosstools-dev
@@ -98,7 +98,7 @@ profiles:
     jborg_fonts_url: http://static.jboss.org/theme/fonts
     jborg_images_url: http://static.jboss.org/theme/images
     jborg_js_url: http://static.jboss.org/theme/js
-    project_images_url: http://static.jboss.org/jbosstools/images
+    project_images_url: http://static.jboss.org/tools/images
     bootstrap_css_url: http://static.jboss.org/theme/css/bootstrap-community/2.3.1.4/bootstrap-community
     bootstrap_js_url: http://static.jboss.org/theme/js/libs/bootstrap-community/2.3.1.4/bootstrap-community
     disqus: jbosstools-preview
@@ -115,7 +115,7 @@ profiles:
     jborg_fonts_url: http://static.jboss.org/theme/fonts
     jborg_images_url: http://static.jboss.org/theme/images
     jborg_js_url: http://static.jboss.org/theme/js
-    project_images_url: http://static.jboss.org/jbosstools/images
+    project_images_url: http://static.jboss.org/tools/images
     bootstrap_css_url: http://static.jboss.org/theme/css/bootstrap-community/2.3.1.4/bootstrap-community
     bootstrap_js_url: http://static.jboss.org/theme/js/libs/bootstrap-community/2.3.1.4/bootstrap-community
     disqus: jbosstools-preview
@@ -132,7 +132,7 @@ profiles:
     jborg_fonts_url: http://static.jboss.org/theme/fonts
     jborg_images_url: http://static.jboss.org/theme/images
     jborg_js_url: http://static.jboss.org/theme/js
-    project_images_url: http://static.jboss.org/jbosstools/images
+    project_images_url: http://static.jboss.org/tools/images
     bootstrap_css_url: http://static.jboss.org/theme/css/bootstrap-community/2.3.1.4/bootstrap-community
     bootstrap_js_url: http://static.jboss.org/theme/js/libs/bootstrap-community/2.3.1.4/bootstrap-community
     google_analytics: UA-17645367-6
