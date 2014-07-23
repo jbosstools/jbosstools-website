@@ -28,9 +28,10 @@ title: All Downloads
                 - site.download_pages[product_id].each do |product_version, download_page|
                   - next if download_page.build_info.eclipse_version != eclipse_info
                   .block
-                    %a{:href=>relative(download_page.output_path)} #{product_version}
-                    - if labels[download_page.build_info.build_type_label].nil? 
-                      %span{:class=>"label label_#{download_page.build_info.build_type_label}"} #{download_page.build_info.build_type_label}
+                    %a{:href=>relative(download_page.output_path)} #{product_version} 
+                    - if (!download_page.build_info.build_type_label.nil? && labels[download_page.build_info.build_type_label].nil?) 
+                      %span{:class=>"label label_#{download_page.build_info.build_type_label}"} 
+                        #{site.labels[download_page.build_info.build_type]}
                       - labels[download_page.build_info.build_type_label] = true
                   
                   

@@ -38,25 +38,42 @@ status: yellow
           
           .item
             %p
-              %strong #{site.products[product_id].name} #{whatsnew_page.product_version}
-              is the latest 
-              %strong #{site.labels[whatsnew_page.build_type_label]}
-              version available for download.
-              
-              
               - relevant_components = whatsnew_page.component_news.keys.select{|k| k != "general"}
+              
+              - if whatsnew_page.build_type == :unreleased
+                %strong #{site.products[product_id].name} #{whatsnew_page.product_version}
+                is 
+                %strong coming soon
+                \!
+                - if relevant_components.length > 0
+                  %p See what we are preparing in it, including changes for:
+                - else
+                  %p This version is a primarily bug-fix release.
+                
+              - else 
+                %strong #{site.products[product_id].name} #{whatsnew_page.product_version}
+                is the latest 
+                %strong #{site.labels[whatsnew_page.build_type_label]}
+                version available for download.
+                - if relevant_components.length > 0
+                  %p See what's new in it, including changes for:
+                - else
+                  %p This version is a primarily bug-fix release.
+                
               - if relevant_components.length > 0
-                %p
-                  See what's new in it, including changes for:
-                %ul.columns.double
-                  - relevant_component_names = Hash.new
-                  - relevant_components.each do |component_id|
-                    - relevant_component_names[site.components[component_id].name] = component_id
-                  - relevant_component_names.sort{|x,y| x <=> y}.each do |component_name, component_id|
-                    %li 
-                      %a{:href=>relative("#{whatsnew_page.output_path}##{component_id}")} #{component_name}
-              - else
-                %p This version is a primarily bug-fix release.
+                - relevant_component_names = Hash.new
+                - relevant_components.each do |component_id|
+                  - relevant_component_names[site.components[component_id].name] = component_id
+                - relevant_component_names.keys.sort{|x,y| x <=> y}.each_index do |index|
+                  - component_name = relevant_component_names.keys[index]
+                  %a{:href=>relative("#{whatsnew_page.output_path}##{relevant_component_names[component_name]}")} #{component_name}
+                  - if index < relevant_component_names.keys.length - 3
+                    %span<>,&nbsp;
+                  - elsif index == relevant_component_names.keys.length - 2
+                    %span<> &nbsp; and &nbsp;
+                  - elsif index == relevant_component_names.keys.length - 1
+                    %span<> .
+                    
           %footer
             %a.btn.btn-small{:href=>relative(whatsnew_page.output_path)} Read more &raquo;
       

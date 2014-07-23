@@ -1,0 +1,53 @@
+---
+layout: project
+tab: downloads
+---
+.row-fluid
+  .span3.bs-docs-sidebar
+    %ul.nav.nav-list.bs-docs-sidenav
+      - active_page_found = false
+      -# show active versions
+      - site.download_pages[page.product_id].each do |product_version, download_page| 
+        - if !download_page.build_info.archived
+          - active_page_found = active_page_found || download_page.build_info.version == page.build_info.version
+          %li{:class=>("active" if download_page.build_info.version == page.build_info.version)}
+            %a{:href=>relative(download_page.output_path)}
+              %span
+                #{download_page.build_info.version}
+              - unless download_page.build_info.build_type_label.nil?
+                %span.visible-desktop.visible-phone{:class=>"label label_#{download_page.build_info.build_type_label}"}
+                  #{site.labels[download_page.build_info.build_type_label]}
+      %li
+        %a{:href=>relative("/downloads/overview.html")} All downloads
+        
+  .span9#download.well.post-bg
+    %h2.center
+      #{page.build_info.name} #{page.build_info.version}
+      - unless page.build_info.build_type.nil?
+        %span#displayed-version{:class=>"label label_#{page.build_info.build_type}"}
+          #{site.labels[page.build_info.build_type]}
+    .center
+      - unless page.build_info.documentation_url.nil?
+        %a{:href=>relative(page.build_info.documentation_url)} Documentation
+        &#124;
+      -# Blog announcement
+      - unless page.build_info.blog_announcement_url.nil?
+        %a{:href=>relative(page.build_info.blog_announcement_url)} Blog Announcement 
+        &#124;
+      -# JBoss Tools has a What's New
+      - unless page.build_info.whatsnew_url.nil?
+        %a{:href=>relative(page.build_info.whatsnew_url)} What's New 
+        &#124;
+      -# devstudio has Release Notes
+      - unless page.build_info.release_notes_url.nil?
+        %a{:href=>relative(page.build_info.release_notes_url)} Release Notes 
+        &#124;
+      %a{:href=>relative("/downloads/installation.html")} Installation Instructions
+      
+    .alert.alert-warning
+      %strong Heads up! 
+      This version was promoted as&nbsp;
+      %a{:href=>"#{page.build_info.renamed_as}.html"}>
+        %strong<> #{page.build_info.renamed_as}
+      \.
+   
