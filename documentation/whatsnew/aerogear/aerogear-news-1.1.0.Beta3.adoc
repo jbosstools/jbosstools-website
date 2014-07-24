@@ -9,10 +9,7 @@
 
 === Restore Cordova plugins during import
 
-When importing a Cordova project, if the project already references a list of plugins on its _config.xml_ 
-file, they are restored to the project during import. Also, _config.xml_ is always updated during plugin 
-installation and removal. This causes the plugins installed via *registry* to be always restorable hence  
-eliminates the need to put them on source control if preffered.
+On importing Cordova projects to the IDE, *registry* plug-ins referenced in the project _config.xml_ files are automatically restored. This makes sharing Cordova projects within teams possible without adding plug-ins to a source control system. Additionally, project _config.xml_ files are updated when plug-ins are added or removed from projects using the IDE Install and Remove Cordova Plug-in tools so you can be confident that the _config.xml_ files contains up to date plug-in information.
 
 See http://www.gorkem-ercan.com/2014/06/sharing-cordova-projects-becomes-easier.html[Gorkem's post] for
 a demo of the feature.
