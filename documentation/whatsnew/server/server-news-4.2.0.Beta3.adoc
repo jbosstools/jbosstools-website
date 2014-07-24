@@ -23,7 +23,7 @@ related_jira::JBIDE-17639[]
 
 === Servers and Execution Environments
 
-Servers can now specify either an execution environment or specific JRE to be used for its launch. The list of available environments or JRE's are based on the server type.
+Servers can now specify either an execution environment or specific JRE to be used for its launch. The list of available environments or JREs are based on the server type.
 
 image::images/JBIDE-17646.png[Servers and JREs]
 
