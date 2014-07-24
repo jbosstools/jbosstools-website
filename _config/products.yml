@@ -327,8 +327,12 @@ jbt_core:
             url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/zz_Release_Notes_4.2.0.Alpha1.readme.html
       4.2.0.Nightly: 
         build_type: nightly
-        update_site_url: http://download.jboss.org/jbosstools/updates/nightly/core/master/
-        download_url: http://download.jboss.org/jbosstools/builds/nightly/core/master/latestBuild.html
+        # TODO when master branch moves to 4.3.0 (mars), make sure 4.2.0.Nightly points at 4.2.luna instead of master
+        #update_site_url: http://download.jboss.org/jbosstools/updates/nightly/core/4.2.luna/
+        #download_url: http://download.jboss.org/jbosstools/builds/nightly/core/4.2.luna/
+        # TODO move this symlink to point at builds/nightly/core/4.2.luna, and create a new one for mars
+        update_site_url: http://download.jboss.org/jbosstools/updates/nightly/luna/
+        download_url: http://download.jboss.org/jbosstools/builds/nightly/core/master/
     kepler:
       4.1.2.Final:
         build_type: stable
