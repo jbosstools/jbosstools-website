@@ -5,14 +5,14 @@
 :page-product_id: jbt_core 
 :page-product_version: 4.2.0.Beta3
 
-== Improving the way of handling unsupported plugins in CordovaSim
+== Improving the way of handling unsupported plug-ins in CordovaSim
 
-Now every time when CordovaSim can't handle a plugin, the following pop-up will be shown:
+Now every time when CordovaSim can't handle a plug-in, the following prompt is displayed:
 
-image::images/4.2.0.Beta3/error-message.png[Error message with unsupported plugin info]
+image::images/4.2.0.Beta3/error-message.png[Error message with unsupported plug-in info]
 
 Notifications can also be disabled in the `Settings` tab of CordovaSim's preferences :
 
-image::images/4.2.0.Beta3/preferences.png[Unsupported plugins option]
+image::images/4.2.0.Beta3/preferences.png[Unsupported plug-ins option]
 
 related_jira::JBIDE-17588[]
