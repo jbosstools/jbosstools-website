@@ -44,7 +44,7 @@ public class CarResource
 } 
 ----
 
-In this example, the JAX-RS validator will report a problem on the +CarResource#create(Car)+ method because the +Car+ class is not a valid parameter: the +Car#fromString(String)+ method should actually be static. When the user adds the missing static modifier on the +Car#fromString(String)+ method and saves the file, not only the +Car+ class will be validated, but also the +CarResource+, and at the end of the day, the problem reported earlier will be resolved.
+In this example, the JAX-RS validator will report a problem on the +CarResource#createCar(Car)+ method because the +Car+ class is not a valid parameter: the +Car#fromString(String)+ method should actually be static. When the user adds the missing static modifier on the +Car#fromString(String)+ method and saves the file, not only the +Car+ class will be validated, but also the +CarResource+, and at the end of the day, the problem reported earlier will be resolved.
 
 related_jira::JBIDE-17368[]
 
