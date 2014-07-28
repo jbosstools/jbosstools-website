@@ -1,4 +1,4 @@
-== Beta3 for Luna - Cordova, Ionic, OpenShift, Server
+= Beta3 for Luna - Cordova, Ionic, OpenShift, Server
 :page-layout: blog
 :page-author: maxandersen
 :page-tags: [release, jbosstools, devstudio, jbosscentral]
