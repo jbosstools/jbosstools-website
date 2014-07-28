@@ -63,8 +63,7 @@ devstudio:
         #supported_devstudio_is_version: 8.0.0.GA
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/8.0/html/Release_Notes_8.0.0/index.html
-        # TODO: write a blog and uncomment the next line (or set different URL)
-        # blog_announcement_url: /blog/2014-07-28-beta3-for-luna.html 
+        blog_announcement_url: /blog/2014-07-28-beta3-for-luna.html
         installers: 
           - name: Stand-alone Installer
             url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/96/96d6ab7107c64283b9e92396f046ccec3301b263df81bd8b3a9abf4e7934deb9/jboss-devstudio-8.0.0.Beta3-v20140722-2011-B194-installer-standalone.jar
@@ -266,8 +265,7 @@ jbt_core:
         #archived: true
         build_type: development
         release_date: 2014-07-28
-        # TODO: write a blog and uncomment the next line (or set different URL)
-        # blog_announcement_url: /blog/2014-07-28-beta3-for-luna.html 
+        blog_announcement_url: /blog/2014-07-28-beta3-for-luna.html
         documentation_url: http://docs.jboss.org/tools/
         zips:
           - name: Update site (including sources) bundle of all JBoss Core Tools
