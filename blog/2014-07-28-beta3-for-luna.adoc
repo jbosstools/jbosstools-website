@@ -1,0 +1,115 @@
+== Beta3 for Luna - Cordova, Ionic, OpenShift, Server
+:page-layout: blog
+:page-author: maxandersen
+:page-tags: [release, jbosstools, devstudio, jbosscentral]
+
+Happy to announce link:/downloads/jbosstools/luna/4.2.0.Beta3.html[JBoss Tools 4.2 Beta3] and link:/downloads/devstudio/luna/8.0.0.Beta3.html[Red Hat JBoss Developer Studio 8 Beta3] for Eclipse Luna is now available.
+
+image::images/devstudio8_splash.png[JBoss Developer Studio 8 Splashscreen]
+
+== Installation
+
+JBoss Developer Studio comes with everything pre-bundled in its installer. Simply link:/downloads/devstudio/luna/8.0.0.Beta3.html[download it] and install it like this:
+ 
+    java -jar jboss-devstudio-{version}-installer-{standalone|eap}.jar   
+
+JBoss Tools or JBoss Developer Studio Bring-Your-Own-Eclipse (BYOE) requires a bit more:
+
+This release requires at least Eclipse 4.4 (Luna) but we recommend
+using the
+http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/lunar[Eclipse
+4.4 JEE Bundle] since then you get most of the dependencies preinstalled.
+
+Once you have installed Eclipse, you either find us on Eclipse Marketplace under "JBoss Tools (Luna)" or "JBoss Developer Studio (Luna)".
+
+For JBoss Tools you can also use our update site directly if you are up for it.
+
+    http://download.jboss.org/jbosstools/updates/development/luna/
+ 
+Note: Integration Stack tooling will become available from JBoss Central at a later date.
+
+== What is new ? 
+
+This release is mainly a bunch of bug fixes but also a few new features and a very important regression fix.
+
+=== Better Plugin Management for Apache Cordova
+
+Our Hybrid Mobile Tools now supports automatically downloading the plugins listed in your `config.xml` giving you two benefits:
+
+. Allow you to exclude the physical plugin binaries from your source control
+. On import the right plugin will be fetched dynamically, great for sharing examples and code.
+
+Also don't forget we have proposed and contributed Hybrid Mobile Tools at Eclipse under https://github.com/eclipse/thym[Eclipse Thym].
+
+=== CordovaSim is now less meme-compatible
+
+CordovaSim using Ripple had a "easter-egg" in the sense when you used a Cordova plugin that the Ripple engine did not understand would 
+show a dialog titled "I Haz Cheeseburger?!?!". Great for those with a great love for internet memes but it was not very informative.
+
+Now we provide a less meme heavy dialog letting the user know what plugin that is not supported and allow you to not have to see the message again. 
+
+image::/documentation/whatsnew/browsersim/images/4.2.0.Beta3/error-message.png[Plug-in not supported dialog]
+
+Btw. if you use a popular and/or important plugin that is not supported open a jira or PR against CordovaSim.
+
+== Ionic framework in palette
+
+We've added support for http://www.ionicframework.com/[Ionic framework]. Ionic is a AngularJS based framework that provides nice mobile components that works
+especially well with Cordova based application. 
+
+image::/documentation/whatsnew/jst/images/4.2.0.Beta3/palette.png[Ionic palette]
+
+=== Maven Central archetype catalog
+
+One of the improvements in m2e 1.5 for Luna was that it no longer by default download the Nexus indexes for all repositories by default. It was simply too slow.
+
+Thus that had to go but by removingt this the list of archetypes for the 'New Maven Project' was heavily reduced.
+
+In Beta3 we've added the Maven Central Archetype catalog meaning you get access to ~9600 archetypes in a few seconds vs several minutes in pre m2e 1.5 days.
+
+image:/documentation/whatsnew/maven/images/maven-central-catalog.png[Maven Central Archetype Catalog]
+
+=== Review commit changes when pushing to OpenShift
+
+When pushing changes to OpenShift and you have uncommitted changes we now show a variation of the standard git commit dialog allowing you to 
+be selective about what files you want to get committed/added before your push.
+
+image::/documentation/whatsnew/openshift/images/commit-and-push-dialog.png[Review changes before committing to OpenShift]
+
+=== JMX Navigator grouping of connections
+
+With all the great additions to the JMX tooling in last beta we realized the JMX Navigator view could benefit from having its connections grouped by type.
+
+Allows you to more easily find what you are looking for and when auto-discovered connections come and go the view stays stable.
+
+image::/documentation/whatsnew/server/images/JBIDE-17639.png[JMX Navigator group by connection type]
+
+=== Fixed incremental deployment regression
+
+...and finally we fixed a rather severe regression in our server tools. The server adapter were triggering full redeployments if your project had certain
+type or module or jar dependencies. 
+
+Making your development workflow really slow compared to the more or less instant feedback you should get when just updating dynamic content like html or jsf.
+
+Sorry for having that broken but now it is fixed - thus if you felt the server publishing was slow then please try it now! It should be back to its fast self again.
+ 
+== ...and more
+
+There are more improvements covered in the more detailed: link:/documentation/whatsnew/jbosstools/4.2.0.Beta3.html[What's New].
+
+== What is Next
+
+This Beta is the last planned Beta for JBoss Tools 4.2 and Developer Studio 8. The next release is set to be the candidate release thus 
+please do try this release out and give feedback to make sure you'll have a good experience with JBoss Tools on Eclipse Luna!
+
+Let us know what you think in the comments below!
+
+Hope you enjoy it and remember...
+
+Have fun!
+
+Max Rydahl Andersen +
+http://twitter.com/maxandersen[@maxandersen]
+
+
+	

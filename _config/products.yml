@@ -259,12 +259,12 @@ jbt_core:
   url_path_fragment: jbosstools
   streams:
     luna:
-      4.2.0.Beta2:
+      4.2.0.Beta3:
         update_site_url: http://download.jboss.org/jbosstools/updates/development/luna/
         marketplace_url: http://marketplace.eclipse.org/node/1617241
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1617241
         #archived: true
-        #build_type: development
+        build_type: development
         release_date: 2014-07-28
         # TODO: write a blog and uncomment the next line (or set different URL)
         # blog_announcement_url: /blog/2014-07-28-beta3-for-luna.html 
