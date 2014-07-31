@@ -79,7 +79,7 @@ See the link:./faq.html[FAQ]
 
 * 2014/06/19 -- JBoss Tools 4.2.0.Beta2 released - get it http://tools.jboss.org/downloads/jbosstools/luna/4.2.0.Beta2.html[here]
 * 2014/07/07 -- JBoss Tools 4.2.0.Beta3 testing starts - announced http://lists.jboss.org/pipermail/jbosstools-cat/2014-July/000004.html[here]
-* 2014/07/28 -- JBoss Tools 4.2.0.Beta3 released
+* 2014/07/28 -- JBoss Tools 4.2.0.Beta3 released - feedback survey http://lists.jboss.org/pipermail/jbosstools-cat/2014-July/000008.html[here]
 * 2014/09/01 -- JBoss Tools 4.2.0.CR1 testing starts - TBA on jbosstools-cat mailing list
 * 2014/09/22 -- JBoss Tools 4.2.0.CR1 released
 * 2014/10/13 -- JBoss Tools 4.2.0.Final released
