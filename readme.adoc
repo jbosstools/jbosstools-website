@@ -4,7 +4,7 @@
 
 image:https://travis-ci.org/jbosstools/jbosstools-website.png?branch=develop["Build Status", link="https://travis-ci.org/jbosstools/jbosstools-website"]
 
-A bit of Git, a bit of Ruby and you will get your local tools.jboss.org served..
+A bit of Git, a bit of Ruby and you will get your local tools.jboss.org served.
 
 == Prerequisites
 
