@@ -55,6 +55,10 @@ The JBoss Tools CAT team managers will review and respond to all new bugs and fe
 == I have other questions ?
 
 See the link:./faq.html[FAQ]
+
+Or take a look at this http://blog.arungupta.me/2014/06/jboss-tools-community-acceptance-testing-jboss-tools-cat/[blog] or video introducing JBoss Tools CAT:
+
+video::99072427[vimeo]
  
 == Resources
 
