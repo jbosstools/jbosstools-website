@@ -32,6 +32,8 @@ update errors because mid in their update because the nightly build kicked in an
 To remedy this we now moved to use a nightly *composite* updatesite of a number of previous nightly builds instead. 
 This means the updatesite might be slightly slower but you should now not bump (as often) into the case where the nightly updatesite gets removed when you build.
 
+Another advantage is that with this site you can now revert back a few days of builds in case they work better for you.
+
 Thus in short - if you are willing to test our JBoss Tools please use this as your nightly updatesite:
 
 `http://download.jboss.org/jbosstools/updates/nightly/luna/`
