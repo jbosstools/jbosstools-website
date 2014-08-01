@@ -29,7 +29,7 @@ When these change we build an update site for each of them and when one is built
 In the beginning this was not a big problem but over the years with more traffic and more frequent builds users risk having 
 update errors because during their update the build from which they were updating could be overwritten with a newer one.
 
-To remedy this we now offer a *composite* of a all the latest nightly builds instead. 
+To remedy this we now offer a *composite* of the latest nightly builds instead. 
 This means that parsing the site's metadata will be slightly slower but after that the download speed will be the same,
 and you should now rarely encounter the above issue.
 
