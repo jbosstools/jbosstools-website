@@ -1,7 +1,7 @@
 = Face-to-Face Team Meeting
 :page-layout: event
-:page-event_date: October 2014, 20th to 24th
-:page-effective_date: 20141020
+:page-event_date: November 2014, 3rd to 7th
+:page-effective_date: 20141103
 :page-location: Brno, Czech Republic
 
 Most of the team members will meet again at Red Hat's office in Brno for the annual face-to-face meeting, 
