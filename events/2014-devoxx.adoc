@@ -1,0 +1,9 @@
+= Devoxx
+:page-layout: event
+:page-event_date: 10-14 November 2014
+:page-effective_date: 20141114
+:page-location: Antwerp, Belgium
+:page-event_url: http://www.devoxx.be/
+
+Xavier Coulon will be speaking together with Arun Gupta demoing JBoss Tools and JavaEE 7.
+
