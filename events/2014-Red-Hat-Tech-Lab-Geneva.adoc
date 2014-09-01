@@ -1,0 +1,10 @@
+= Red Hat Tech Labs Geneva
+:page-layout: event
+:page-event_date: 25. September 2014
+:page-effective_date: 20140925
+:page-location: Geneva, Switzerland
+:page-event_url: https://engage.redhat.com/tech-labs-suisse-e-201408251135-fr
+
+Max Rydahl Andersen will present on OpenShift tooling as part of "Dev/Ops und Paas" talk.
+
+The talk will be in English. Registration required.
