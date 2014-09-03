@@ -44,13 +44,13 @@ public class CarResource
 } 
 ----
 
-In this example, the JAX-RS validator will report a problem on the +CarResource#createCar(Car)+ method because the +Car+ class is not a valid parameter: the +Car#fromString(String)+ method should actually be static. When the user adds the missing static modifier on the +Car#fromString(String)+ method and saves the file, not only the +Car+ class will be validated, but also the +CarResource+, and at the end of the day, the problem reported earlier will be resolved.
+In this example, the JAX-RS validator will report a problem on the `CarResource#createCar(Car)` method because the `Car` class is not a valid parameter: the `Car#fromString(String)` method should actually be static. When the user adds the missing static modifier on the `Car#fromString(String)` method and saves the file, not only the `Car` class will be validated, but also the `CarResource`, and at the end of the day, the problem reported earlier will be resolved.
 
 related_jira::JBIDE-17368[]
 
 == Support for Resource Fields, Resource Properties and Parameter Aggregators 
 
-JAX-RS Resource Fields and Properties (ie, fields or setter methods annotated with +@PathParam+, +@QueryParam+, +@MatrixParam+), as well as  the JAX-RS 2.0 Parameter Aggregators (ie, method parameters, fields or setter methods annotated with +@BeanParam+) are recognized. 
+JAX-RS Resource Fields and Properties (ie, fields or setter methods annotated with `@PathParam`, `@QueryParam`, `@MatrixParam`), as well as  the JAX-RS 2.0 Parameter Aggregators (ie, method parameters, fields or setter methods annotated with `@BeanParam`) are recognized. 
 
 These elements are taken into account when validating the project and when displaying the Endpoints URI templates in the Project explorer.
 
@@ -75,7 +75,7 @@ public class CarResource {
 }
 ----
 
-In that case, the Endpoint URI template associated with the Resource Method and displayed in the Project Explorer will be +/{id:String};year={String}?color={String}+
+In that case, the Endpoint URI template associated with the Resource Method and displayed in the Project Explorer will be `/{id:String};year={String}?color={String}`
 
 Now, if the user has the following classes:
 
@@ -115,6 +115,6 @@ public class OptionalParams {
 }
 ----
 
-then the Endpoint URI template associated with the Resource Method (and its associated Parameter Aggregator) and displayed in the Project Explorer will also be +/cars/{id:String};year={String}?color={String}+
+then the Endpoint URI template associated with the Resource Method (and its associated Parameter Aggregator) and displayed in the Project Explorer will also be `/cars/{id:String};year={String}?color={String}`
 
-In this second example, it is the +@BeanParam+ annotation on the method parameter that is used to link to the Parameter Aggregator.
+In this second example, it is the `@BeanParam` annotation on the method parameter that is used to link to the Parameter Aggregator.
