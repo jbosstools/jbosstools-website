@@ -6,9 +6,9 @@
 :page-product_version: 4.2.0.Beta3
 :experimental true
 
-== JavaScript Editing improvments
+== JavaScript Editing improvements
 
-Target Platform is updated with the Tern.java v.0.4.0.201407030911 in order to bring the latest improvments and fixes of JavaScript Content Assistant into JBoss Tools:
+Target Platform is updated with the Tern.java v.0.4.0.201407030911 in order to bring the latest improvements and fixes of JavaScript Content Assistant into JBoss Tools:
 
 * Embedded Node.js distribution provided for Windows x86/x86_64, Mac OS X, Lunix x86/x86_64
 * Embedded Node.js is used by default, so tern works right out-of-the-box
