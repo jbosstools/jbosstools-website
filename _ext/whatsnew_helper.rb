@@ -1,8 +1,15 @@
 require 'products_helper'
 
+require 'git'
+
 module Awestruct
   module Extensions
     module WhatsnewHelper
+
+      def last_commit_or_modifed_date (file)
+        repo = Git.open('.')
+        repo.log(1).object('./' + file).first.date
+      end
       
       # returns the list of pages that will appear in the sidenavbar
       def get_active_whatsnew_pages(site, product_id, product_version) 

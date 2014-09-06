@@ -26,6 +26,7 @@ require 'myposts'
 require 'videos'
 require 'uri_helper'
 require 'build_info'
+require 'atomizer_helper'
 
 Awestruct::Extensions::Pipeline.new do
   
@@ -72,7 +73,8 @@ Awestruct::Extensions::Pipeline.new do
   
   extension Awestruct::Extensions::Disqus.new()
   
-  extension Awestruct::Extensions::Atomizer.new(:posts, '/blog/news.atom')
+  extension Awestruct::Extensions::Atomizer.new(:posts, '/blog/news.atom', :template => 'atom.template.haml')
+  helper Awestruct::Extensions::AtomizerHelper
   
   helper Awestruct::Extensions::GoogleAnalytics
   
