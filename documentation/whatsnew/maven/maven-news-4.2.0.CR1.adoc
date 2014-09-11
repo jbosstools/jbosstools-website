@@ -20,10 +20,10 @@ JBoss project configurators for m2e now support an activation property in the <p
 
 Available properties are : 
 
-- <m2e.cdi.activation>true</m2e.cdi.activation> for the CDI Project configurator,
-- <m2e.seam.activation>true</m2e.seam.activation> for the Seam Project configurator,
-- <m2e.hibernate.activation>true</m2e.hibernate.activation> for the Hibernate Project configurator,
-- <m2e.portlet.activation>true</m2e.portlet.activation> for the Portlet Project configurator.
+- `<m2e.cdi.activation>true</m2e.cdi.activation>` for the CDI Project configurator,
+- `<m2e.seam.activation>true</m2e.seam.activation>` for the Seam Project configurator,
+- `<m2e.hibernate.activation>true</m2e.hibernate.activation>` for the Hibernate Project configurator,
+- `<m2e.portlet.activation>true</m2e.portlet.activation>` for the Portlet Project configurator.
 
 The pom.xml editor also provides matching XML templates for these properties, when doing `ctrl+space` in the <properties> section.
 
