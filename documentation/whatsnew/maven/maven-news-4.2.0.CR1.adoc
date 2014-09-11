@@ -8,7 +8,7 @@
 == JBoss Maven Integration
 === Advanced options for maven repositories
 
-Configure Maven Repositories wizard now allow you to choose repository layout, enable/disable snapshots or releases and change update policy. These options can be found under `advanced`. 
+The Configure Maven Repositories wizard, available under `Preferences > Jboss Tools > JBoss Maven Integration`, now allows you to choose the repository layout, enable/disable snapshots or releases, and change the update policy. These options can be found under the `advanced` section. 
 
 image:./images/maven_repository_advanced.png[]
 
