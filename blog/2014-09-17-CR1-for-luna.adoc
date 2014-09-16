@@ -1,0 +1,99 @@
+= CR1 for Luna - Cordova, Ionic, Forge, Server
+:page-layout: blog
+:page-author: maxandersen
+:page-tags: [release, jbosstools, devstudio, jbosscentral]
+
+Happy to announce link:/downloads/jbosstools/luna/4.2.0.CR1.html[JBoss Tools 4.2 CR1] and link:/downloads/devstudio/luna/8.0.0.CR1.html[Red Hat JBoss Developer Studio 8 CR1] for Eclipse Luna is now available.
+
+image::images/devstudio8_splash.png[JBoss Developer Studio 8 Splashscreen]
+
+== Installation
+
+JBoss Developer Studio comes with everything pre-bundled in its installer. Simply link:/downloads/devstudio/luna/8.0.0.CR1.html[download it] and install it like this:
+ 
+    java -jar jboss-devstudio-{version}-installer-{standalone|eap}.jar   
+
+JBoss Tools or JBoss Developer Studio Bring-Your-Own-Eclipse (BYOE) requires a bit more:
+
+This release requires at least Eclipse 4.4 (Luna) but we recommend
+using the
+http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/lunar[Eclipse
+4.4 JEE Bundle] since then you get most of the dependencies preinstalled.
+
+Once you have installed Eclipse, you either find us on Eclipse Marketplace under "JBoss Tools (Luna)" or "JBoss Developer Studio (Luna)".
+
+For JBoss Tools you can also use our update site directly if you are up for it.
+
+    http://download.jboss.org/jbosstools/updates/development/luna/
+ 
+Note: Integration Stack tooling will become available from JBoss Central at a later date.
+
+== What is new ? 
+
+This release is mainly a bunch of bug fixes but we managed to slip in a bunch of new features.
+
+=== New AngularJS Forge wizard
+
+JBoss Central now features a new AngularJS with Forge project wizard to let you kickstart new JavaEE based applications almost from scratch, using the powerful http://forge.jboss.org/[JBoss Forge] scaffolding capabilities.
+
+image:./images/new-forge-wizard.png[]
+
+You will be asked to install Forge Tools, if it is not already installed. The wizard will also recommend you to install the AngularJS tooling.
+
+Once you create the project skeleton from the new wizard, a cheatsheet will open and will guide you through the different steps necessary to use JBoss Forge and scaffold REST endpoints and a UI layer based on AngularJS.
+
+=== Updated AngularJS tooling
+
+AngularJS IDE https://github.com/angelozerr/angularjs-eclipse/wiki/New-and-Noteworthy-0.5.0[v.0.5.0] is now available in JBoss Central Early Access (go to the software/updates page in JBoss Central and click on the Early Access checkbox). The Angular JS editor has been removed and content assist, code highlighting and easy navigation are now available from the standard and JBoss Tools HTML editors.
+
+image::images/angular.png[]
+
+
+=== More Ionic goodies for mobile development
+More widget components have been added to the http://www.ionicframework.com[Ionic] Palette for HTML5 files. See the link:/documentation/whatsnew/jbosstools/4.2.0.CR1.html#ionic[New and Noteworthy] page for a complete list of newly available widgets.
+
+image::images/palette.png[]
+
+When an Ionic widget is added to an HTML file the links to ionic JS/CSS CDN resources may also be created automatically.
+
+image::images/ionic-js.png[]
+
+Content assist (Ctrl+Space) for <ion-*> tags and their attributes is now supported by the JBoss Tools HTML editor.
+
+image::images/ionic-ca.png[]
+
+
+=== Pom properties activated m2e configurators
+
+JBoss project configurators for m2e now support an activation property in the <properties> section of pom.xml. Expected values are true/false and override the workspace-wide preferences found under `Preferences > JBoss Tools > JBoss Maven Integration`.  
+
+Available properties are : 
+
+- `<m2e.cdi.activation>true</m2e.cdi.activation>` for the CDI Project configurator,
+- `<m2e.seam.activation>true</m2e.seam.activation>` for the Seam Project configurator,
+- `<m2e.hibernate.activation>true</m2e.hibernate.activation>` for the Hibernate Project configurator,
+- `<m2e.portlet.activation>true</m2e.portlet.activation>` for the Portlet Project configurator.
+
+The pom.xml editor also provides matching XML templates for these properties, when doing `ctrl+space` in the <properties> section.
+
+
+ 
+== ...and more
+
+There are more improvements covered in the more detailed: link:/documentation/whatsnew/jbosstools/4.2.0.CR1.html[What's New].
+
+== What is Next
+
+The next release is set to be the last candidate release thus please do try this release out and give feedback to make sure you'll have a good experience with JBoss Tools on Eclipse Luna!
+
+Let us know what you think in the comments below!
+
+Hope you enjoy it and remember...
+
+Have fun!
+
+Max Rydahl Andersen & Fred Bricon +
+http://twitter.com/maxandersen[@maxandersen]
+http://twitter.com/fbricon[@fbricon]
+
+	
