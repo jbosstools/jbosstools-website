@@ -1,4 +1,4 @@
-= CR1 for Luna - Cordova, Ionic, Forge, Server
+= CR1 for Luna - Ionic, Forge, Hibernate, Server
 :page-layout: blog
 :page-author: fbricon
 :page-tags: [release, jbosstools, devstudio, jbosscentral]
