@@ -30,7 +30,7 @@ Note: Integration Stack tooling will become available from JBoss Central at a la
 
 == What is new ?
 
-This release is mainly a bunch of bug fixes but we managed to slip in a bunch of new features.
+This release is mainly a big set of bug fixes but we managed to slip in a bunch of new features too.
 
 === Hotcode replace aware server adapter
 
