@@ -36,31 +36,31 @@ This release is mainly a bunch of bug fixes but we managed to slip in a bunch of
 
 Ever been annoyed by Eclipse's "Hot Code Replace Failed" dialog and how it only offers you to Continue, Terminate or fully restart your running VM ?
 
-Ever wondered why Eclipse couldn't just restart your deployed module(s) and you could continue working without have to wait for a restart of
+Ever wonder why Eclipse couldn't just restart your deployed modules and let you continue working without have to wait for a restart of
 the application server + your own application ?
 
-If you can answer yes to the above then you will be happy to hear we now support this.
+If you can answer yes to the above, then you will be happy to hear we now support this.
 
 image:../documentation/whatsnew/server/images/JBIDE-18094a.png[]
 
-Now if you run a server in Debug mode and a hot code replace fails due to some class or jar changes
-the dialog above shows up giving you the choice wether you want to restart the modules, terminate the server, restart it or just continue as nothing happened.
+Now, if you run a server in Debug mode and a hot code replace fails due to some class or jar changes,
+the dialog above will appear, giving you the option to restart the modules, terminate the server, restart the server, or just continue as if nothing happened.
 
-But beyond this it also allow you to say "Remember this choice for this server", allowing you to i.e. click "Restart modules" once and then all consequent hot code replace
-failed will just automatically trigger a restart of just the modules.
+But beyond this, it also offer you the option to "Remember this choice for this server", allowing you to click "Restart modules" once and then all subsequent hot code replace
+failures will automatically trigger a restart of just the modules.
 
 This is probably my personal most wanted feature improvement in years - sorry for it to take so long but please do enjoy it now.
 
 === Hibernate Tools "rewired"
 
-To support latest Hibernate 4.3 and JPA 2.1 we had to "rewire" large part of Hibernate Tools internals.
-In past Hibernate 3.6 was hardwired to be used for loading users mapping configurations for the UI - that is no longer the case.
+To support the latest Hibernate 4.3 and JPA 2.1 releases, we had to "rewire" large part of Hibernate Tools' internals.
+In the past Hibernate 3.6 was hardwired to be used for loading users mapping configurations for the UI - that is no longer the case.
 The configured version for your console configuration is now used everywhere instead of only for codegeneration.
 
-I'll spare you for the details here but just outline that the rewiring has been completed and we now support
-Hibernate 4.3 and JPA 2.1 but beyond that previous versions should be much more stable now too.
+I'll spare you from the details here but just outline that the rewiring has been completed and we now support
+Hibernate 4.3 and JPA 2.1. But beyond that, previous versions should be much more stable now too!
 
-If you do find discrepancies in this area please let us know by open a https://jira.jboss.org/jira/browse/JBIDE[bug report].
+If you do find discrepancies in this area, please let us know by open a https://jira.jboss.org/jira/browse/JBIDE[bug report].
 
 === New AngularJS Forge wizard
 
@@ -120,7 +120,7 @@ There are more improvements covered in the more details: link:/documentation/wha
 
 == What is Next
 
-The next release is set to be the last candidate release thus please do try this release out and give feedback to make sure you'll have a good experience with JBoss Tools on Eclipse Luna!
+The next release is set to be the last candidate release, so please do try this release out and give feedback to make sure you'll have a good experience with JBoss Tools on Eclipse Luna!
 
 Let us know what you think in the comments below!
 
