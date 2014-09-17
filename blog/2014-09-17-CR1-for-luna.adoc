@@ -60,7 +60,7 @@ The configured version for your console configuration is now used everywhere ins
 I'll spare you from the details here but just outline that the rewiring has been completed and we now support
 Hibernate 4.3 and JPA 2.1. But beyond that, previous versions should be much more stable now too!
 
-If you do find discrepancies in this area, please let us know by open a https://jira.jboss.org/jira/browse/JBIDE[bug report].
+If you do find discrepancies in this area, please let us know by opening a https://jira.jboss.org/jira/browse/JBIDE[bug report].
 
 === New AngularJS Forge wizard
 
