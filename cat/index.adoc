@@ -23,7 +23,7 @@ To particpate please follow these steps:
 
 * Register for community membership here: http://bit.ly/jbosstoolscatsignup[registration form]
 * Subscribe to the JBoss Tools CAT mailing list here: https://lists.jboss.org/mailman/listinfo/jbosstools-cat[email subscription form]
-* Download the latest JBoss Tools bits - as of today - you should download: link:../downloads/jbosstools/luna/4.2.0.Beta2.html[4.2.0.Beta2]
+* Download the latest JBoss Tools bits - as of today you should install: link:http://download.jboss.org/jbosstools/updates/staging/luna/jbosstools-4.2.0.CR1b-updatesite-core/[4.2.0.CR1 respin-b]
 * Request a JBoss JIRA account (to be used to log https://issues.jboss.org/secure/CreateIssueDetails!init.jspa?pid=10020&issuetype=1[bugs] and https://issues.jboss.org/secure/CreateIssueDetails!init.jspa?pid=10020&issuetype=2[feature requests] in JBoss Tools project): https://issues.jboss.org[JBoss JIRA]
 * And, then start testing!
 
@@ -85,5 +85,5 @@ video::99072427[vimeo]
 * 2014/07/07 -- JBoss Tools 4.2.0.Beta3 testing starts - announced http://lists.jboss.org/pipermail/jbosstools-cat/2014-July/000004.html[here]
 * 2014/07/28 -- JBoss Tools 4.2.0.Beta3 released - feedback survey http://lists.jboss.org/pipermail/jbosstools-cat/2014-July/000008.html[here]
 * 2014/09/01 -- JBoss Tools 4.2.0.CR1 testing starts - announced http://lists.jboss.org/pipermail/jbosstools-cat/2014-September/000010.html[here]
-* 2014/09/22 -- JBoss Tools 4.2.0.CR1 released
+* 2014/09/17 -- JBoss Tools 4.2.0.CR1 released
 * 2014/10/13 -- JBoss Tools 4.2.0.Final released
