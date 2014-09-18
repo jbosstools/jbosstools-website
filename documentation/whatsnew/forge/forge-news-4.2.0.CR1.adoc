@@ -7,7 +7,7 @@
 
 == Forge 2 Runtime 	
 
-The included Forge 2 runtime is 2.10.1.Final. See the release notes link::http://forge.jboss.org/news/2014-09-12/forge-2.10.1.final-(blazed)-is-here[here]
+The included Forge 2 runtime is 2.10.1.Final. See the release notes link:http://forge.jboss.org/news/2014-09-12/forge-2.10.1.final-(blazed)-is-here[here]
 
 image::images/4.2.0.CR1/f2runtime.png[]
 
