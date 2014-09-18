@@ -41,7 +41,7 @@ the application server + your own application ?
 
 If you can answer yes to the above, then you will be happy to hear we now support this.
 
-image:../documentation/whatsnew/server/images/JBIDE-18094a.png[]
+image:/documentation/whatsnew/server/images/JBIDE-18094a.png[]
 
 Now, if you run a server in Debug mode and a hot code replace fails due to some class or jar changes,
 the dialog above will appear, giving you the option to restart the modules, terminate the server, restart the server, or just continue as if nothing happened.
