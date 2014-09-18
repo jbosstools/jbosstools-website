@@ -37,7 +37,7 @@ image::images/4.2.0.CR1/clearconsole.png[]
 
 == "Go To Selection" and "Link with Editor" are now available in Forge 2 Console
 
-We have added support for the "Go To Selection" (change the current resource in the console to be the selected in Eclipse) and "Link with Editor" (change the selected resource in Eclipse from the console) console actions 
+We have added support for the "Go To Selection" (change the current resource in the console to be the selected resource in Eclipse) and "Link with Editor" (change the current resource in the console to be the selected resource in Eclipse when a file is open in the editor) console actions 
 
 image::images/4.2.0.CR1/gotoselection.png[]
 image::images/4.2.0.CR1/linkwitheditor.png[]
