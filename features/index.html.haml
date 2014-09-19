@@ -7,7 +7,6 @@ title: Features
   .hero-unit.center
     %h1 Features
     %p Main features of #{site.products[:jbt_core].name} and #{site.products[:jbt_is].name} (*)
-  %hr
   
 - site.features.each do |product_id, features|
   -# show all other features
@@ -22,9 +21,9 @@ title: Features
         %section.span3.well
           %a{:href=>relative(feature.url) }
             %h3.center< #{feature.name}
-            %h4.center< #{feature.tagline}
             %img{:src=>relative(feature.image_url), :alt=>"#{feature.name}", :width=>"128px"}
-
+            %h4.center< #{feature.tagline}
+         
 
 .hero-unit.center
   %p * Not all features are installed by default. You can install these from JBoss Central or their update site. 
