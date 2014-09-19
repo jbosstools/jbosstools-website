@@ -29,30 +29,6 @@ css_minifier: disabled
 js_minifier: disabled
 html_minifier: disabled
 
-# Merge multiple JavaScript files to improve performance
-fileMerger:
-  enabled: false
-  outputFilePath: /javascripts/bootstrap-community.js
-  paths:
-    - /javascripts/_bootstrap-transition.js
-    - /javascripts/_bootstrap-alert.js
-    - /javascripts/_bootstrap-button.js
-    - /javascripts/_bootstrap-carousel.js
-    - /javascripts/_bootstrap-collapse.js
-    - /javascripts/_bootstrap-dropdown.js
-    - /javascripts/_bootstrap-modal.js
-    - /javascripts/_bootstrap-tooltip.js
-    - /javascripts/_bootstrap-popover.js
-    - /javascripts/_bootstrap-scrollspy.js
-    - /javascripts/_bootstrap-tab.js
-    - /javascripts/_bootstrap-typeahead.js
-    - /javascripts/_bootstrap-affix.js
-    - /javascripts/_jbossorg-navbarfix.js
-    - /javascripts/_jbossorg-misc.js
-    - /javascripts/_jquery-easytabs.js
-    - /javascripts/_crisp-scripts.js
-    - /javascripts/_jbossorg-tabzilla.js
-
 # Cache hosted fonts, images and javascript
 wget:
   enabled: true
@@ -77,6 +53,7 @@ wget:
     - http://static.jboss.org/theme/fonts/font-awesome/
     - http://static.jboss.org/theme/images/common/
     - http://static.jboss.org/example/
+    - http://static.jboss.org/tools/images/tools-banner-1180px.png
 
 
 profiles:
@@ -86,7 +63,7 @@ profiles:
     jborg_fonts_url: /cache/static.jboss.org/theme/fonts
     jborg_images_url: /cache/static.jboss.org/theme/images
     jborg_js_url: /cache/static.jboss.org/theme/js
-    project_images_url: http://static.jboss.org/tools/images
+    project_images_url: /cache/static.jboss.org/tools/images
     bootstrap_css_url: /stylesheets/bootstrap-community
     bootstrap_js_url: /javascripts/bootstrap-community
     disqus: jbosstools-dev
@@ -95,46 +72,39 @@ profiles:
     showwip: true
     base_url: http://tools-stg.jboss.org/
     minified: .min
+    css_minifier: enabled
+    js_minifier: enabled
+    html_minifier: enabled
     jborg_fonts_url: http://static.jboss.org/theme/fonts
     jborg_images_url: http://static.jboss.org/theme/images
     jborg_js_url: http://static.jboss.org/theme/js
     project_images_url: http://static.jboss.org/tools/images
-    bootstrap_css_url: http://static.jboss.org/theme/css/bootstrap-community/2.3.1.4/bootstrap-community
-    bootstrap_js_url: http://static.jboss.org/theme/js/libs/bootstrap-community/2.3.1.4/bootstrap-community
+    bootstrap_css_url: http://static.jboss.org/theme/css/bootstrap-community/2.3.1.5/bootstrap-community
+    bootstrap_js_url: http://static.jboss.org/theme/js/libs/bootstrap-community/2.3.1.5/bootstrap-community
     disqus: jbosstools-preview
     deploy:
       host: github_pages
       repository: origin
       branch: gh-pages
     google_analytics: UA-46704212-1
+    wget:
+      enabled: false
     
-  new_noteworthy:
-    showwip: true
-    base_url: http://tools-stg.jboss.org/new_noteworthy
-    minified: .min
-    jborg_fonts_url: http://static.jboss.org/theme/fonts
-    jborg_images_url: http://static.jboss.org/theme/images
-    jborg_js_url: http://static.jboss.org/theme/js
-    project_images_url: http://static.jboss.org/tools/images
-    bootstrap_css_url: http://static.jboss.org/theme/css/bootstrap-community/2.3.1.4/bootstrap-community
-    bootstrap_js_url: http://static.jboss.org/theme/js/libs/bootstrap-community/2.3.1.4/bootstrap-community
-    disqus: jbosstools-preview
-    deploy:
-      host: github_pages
-      repository: origin
-      branch: gh-pages
-    google_analytics: UA-46704212-1
-  
   production:
     showwip: false
     base_url: http://tools.jboss.org
     minified: .min
+    css_minifier: enabled
+    js_minifier: enabled
+    html_minifier: enabled
     jborg_fonts_url: http://static.jboss.org/theme/fonts
     jborg_images_url: http://static.jboss.org/theme/images
     jborg_js_url: http://static.jboss.org/theme/js
     project_images_url: http://static.jboss.org/tools/images
-    bootstrap_css_url: http://static.jboss.org/theme/css/bootstrap-community/2.3.1.4/bootstrap-community
-    bootstrap_js_url: http://static.jboss.org/theme/js/libs/bootstrap-community/2.3.1.4/bootstrap-community
+    bootstrap_css_url: http://static.jboss.org/theme/css/bootstrap-community/2.3.1.5/bootstrap-community
+    bootstrap_js_url: http://static.jboss.org/theme/js/libs/bootstrap-community/2.3.1.5/bootstrap-community
     google_analytics: UA-17645367-6
     disqus: jbosstools
-
+    wget:
+      enabled: false
+    

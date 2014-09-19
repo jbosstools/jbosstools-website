@@ -7996,6 +7996,7 @@ embed,
 }
 .well,
 .breadcrumb,
+.breadcrumb-fixed,
 .pagination a:hover,
 .pagination .active a,
 .pagination .active span {
@@ -8167,6 +8168,14 @@ ul.icons-ul {
   margin: -10px 0 10px;
   padding: 4px 15px;
 }
+/* adjusting the vertical spacing for when a stickynav is engaged */
+.breadcrumb-fixed > .active {
+  color: #8c8f91;
+}
+.breadcrumb-fixed {
+  margin: 52px 0 10px;
+  padding: 4px 15px;
+}
 /* Alerts
 -------------------------------------------------- */
 .alert.alert-block .userinfo {
@@ -8301,6 +8310,12 @@ ul.icons-ul {
 #subproject #navbar-fixed {
   margin-top: 0px;
 }
+/* -- id changed to class for stickynav ---- */
+#subproject .navbar-fixed {
+  margin-top: 0px;
+  z-index: 1000;
+}
+/* -- id changed to class for stickynav ---- */
 #subproject .navbar-inverse {
   margin-top: 0px;
 }
@@ -8332,7 +8347,8 @@ ul.icons-ul {
   height: 100%;
   clear: both;
   padding: 20px 25px;
-  border: 1px solid #E1EEF4;
+  /*   border: 1px solid #E1EEF4;  */
+
 }
 #tabnav .tabcontent .overview {
   padding-bottom: 30px;
@@ -8521,11 +8537,17 @@ ul.icons-ul {
     width: 1230px;
     margin: 0 auto;
   }
+  #tabnav-panel.fullwidth {
+    width: 100%;
+  }
 }
 @media (min-width: 980px) and (max-width: 1199px) {
   #tabnav-panel {
     width: 1000px;
     margin: 0 auto;
+  }
+  #tabnav-panel.fullwidth {
+    width: 100%;
   }
 }
 @media (min-width: 768px) and (max-width: 979px) {
@@ -8533,11 +8555,17 @@ ul.icons-ul {
     width: 784px;
     margin: 0 auto;
   }
+  #tabnav-panel.fullwidth {
+    width: 100%;
+  }
 }
 @media (max-width: 767px) {
   #tabnav-panel {
     max-width: 767px;
     margin: 0 auto;
+  }
+  #tabnav-panel.fullwidth {
+    width: 100%;
   }
   #tabnav-panel .middlewarelogo {
     border-right: 0px;
@@ -8851,6 +8879,14 @@ hr.soften {
     top: 0px;
     width: inherit;
   }
+  /* -- id changed to class for stickynav ---- */
+  .navbar-fixed {
+    position: fixed;
+    top: 0px;
+    width: inherit;
+    z-index: 1000;
+  }
+  /* -- id changed to class for stickynav ---- */
   .bs-docs-sidenav {
     width: 258px;
   }
@@ -8872,7 +8908,14 @@ hr.soften {
     top: 0px;
     width: inherit;
   }
-  /* When affixed, space properly */
+  /* -- id changed to class for stickynav ---- */
+  .navbar-fixed {
+    position: fixed;
+    top: 0px;
+    width: inherit;
+    z-index: 1000;
+  }
+  /* -- id changed to class for stickynav ---- *//* When affixed, space properly */
   .bs-docs-sidenav {
     top: 0;
     width: 218px;
@@ -8888,7 +8931,10 @@ hr.soften {
   #navbar-fixed {
     display: none;
   }
-  /* Adjust sidenav width */
+  /* -- id changed to class for stickynav ---- */.navbar-fixed {
+    display: none;
+  }
+  /* -- id changed to class for stickynav ---- *//* Adjust sidenav width */
   .bs-docs-sidenav {
     width: 166px;
     margin-top: 20px;
@@ -8902,7 +8948,10 @@ hr.soften {
   #navbar-fixed {
     display: none;
   }
-  /* Sidenav */
+  /* -- id changed to class for stickynav ---- */.navbar-fixed {
+    display: none;
+  }
+  /* -- id changed to class for stickynav ---- *//* Sidenav */
   .bs-docs-sidenav {
     width: auto;
     margin-bottom: 20px;
@@ -8913,7 +8962,7 @@ hr.soften {
     top: 0;
   }
 }
-/* --------------- JBoss Badge ---------------------  */
+/* --------------- JBoss Badge (DEPRECATED!!)---------------------  */
 .jbossbadge {
   border: 1px solid #e6e7e8;
   -moz-border-radius: 3px;

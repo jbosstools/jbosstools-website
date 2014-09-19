@@ -2287,42 +2287,75 @@
 
 }(window.jQuery);
 /*
- * This script prevents a navbar with the #navbar-fix identifier
+ * This script prevents a navbar with the #sticky-navbar identifier
  * from scrolling off the top of the browser window. It does this by
- * detecting when that's about to occur and creating a copy that's
- * added to the page with a fixed position, aligned to the top of
+ * detecting when that's about to occur and switching a style class
+ * which sets it at a fixed position, aligned to the top of
  * the page.
  *
- * When the user scrolls back up then this copy is
- * removed so the normal navbar is fully visible again.
+ * When the user scrolls back up then this style class is switched
+ * back so the normal navbar is fully visible again.
  *
  * Because you can't scroll the fixed copy we're not able to use this
  * for the collapsed navigation where menu items are shown vertically.
  */
 
-var isFixed = 0;
+var isNavBarFixed = 0;
 
-processScroll()
-$(window).on('scroll', processScroll)
+var defaultNavbarOffset = $("#sticky-navbar").length ? $("#sticky-navbar").offset().top : 0 ;
+
+processScroll();
+$(window).on('scroll', processScroll);
 
 function processScroll() {
   
-  var navbar = document.getElementById("navbar-fix");
-
-  if (navbar == null) {
+  var navbar = $("#sticky-navbar");
+  
+  if (navbar.length==0) {
     return
   }
-  
-  if (!isFixed && $(window).scrollTop() >= $('.navbar#navbar-fix').offset().top) {
-    var element = navbar.cloneNode(true);
-    element.id = "navbar-fixed";
-    navbar.parentNode.appendChild(element);
-    isFixed = 1;
+
+  var breadcrumb;
+
+  if (isNavBarFixed) {
+    breadcrumb = $(".breadcrumb-fixed");
+  } else {
+    breadcrumb = $(".breadcrumb");
   }
-  else if (isFixed && $(window).scrollTop() < $('.navbar#navbar-fix').offset().top)  {
-    element = document.getElementById("navbar-fixed");
-    element.parentNode.removeChild(element);
-    isFixed = 0
+
+  // Measuring additionall offset depending whether tabzilla exists and is open.
+  var additionalTabzillaOffset = 0;
+  var tabzilla = $('#tabnav-panel');
+  if (tabzilla.length) {
+    if (tabzilla.hasClass('tabnav-opened')) {
+      additionalTabzillaOffset=240;
+    }
+  }
+  
+  // Tabzilla offset needs to bo added if it's open.
+  if (!isNavBarFixed && $(window).scrollTop() >= (defaultNavbarOffset + additionalTabzillaOffset) ) {
+
+    // Switching navbar style to fixed position at the top.
+    navbar.addClass("navbar-fixed");
+    navbar.removeClass("navbar-fix");
+
+    // Trick in order to prevent content movement when the navigation starts to scroll.
+    breadcrumb.addClass("breadcrumb-fixed");
+    breadcrumb.removeClass("breadcrumb");
+
+    isNavBarFixed = 1;
+
+  } else if (isNavBarFixed && $(window).scrollTop() < (defaultNavbarOffset + additionalTabzillaOffset) ) {
+    
+    // Switching navbar style to non-fixed position.
+    navbar.addClass("navbar-fix");
+    navbar.removeClass("navbar-fixed");
+
+    breadcrumb.removeClass("breadcrumb-fixed");
+    breadcrumb.addClass("breadcrumb");
+
+    isNavBarFixed = 0;
+
   }
 }
 
@@ -2340,7 +2373,7 @@ function processScroll() {
         }
         var r = e(this).attr("id");
         var i;
-        e("#" + r).empty().append('<div style="padding:3px;"><img src="http://static.jboss.org/theme/images/common/loading.gif" /></div>');
+        e("#" + r).empty().append('<div style="padding:3px;"><img src="#{site.jborg_images_url}/common/loading.gif" /></div>');
         e.ajax({
             url: "http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=" + n.MaxCount + "&output=json&q=" + encodeURIComponent(n.FeedUrl) + "&hl=en&callback=?",
             dataType: "json",
@@ -3380,7 +3413,7 @@ if (agentID)   {
  * Event handling portions adapted from the YUI Event component used under
  * the following license:
  *
- *   Copyright Â© 2012 Yahoo! Inc. All rights reserved.
+ *   Copyright © 2012 Yahoo! Inc. All rights reserved.
  *
  *   Redistribution and use of this software in source and binary forms,
  *   with or without modification, are permitted provided that the following conditions
@@ -3716,7 +3749,7 @@ Tabzilla.preventDefault = function(ev)
 Tabzilla.content =
 '<div class="tabnavclearfix" id="tabnav">'
 +'<div class="tabcontent">'
-+'  <p class="overview"> Like the project? Itâ€™s part of the community of Red Hat projects. Learn more about Red Hat and our open source communities:</p>'
++'  <p class="overview"> Like the project? It’s part of the community of Red Hat projects. Learn more about Red Hat and our open source communities:</p>'
 +'  <div class="row-fluid">'
 +'    <span class="span4 middlewarelogo">'
 +'      <img src="http://static.jboss.org/common/images/tabzilla/RHJB_Middleware_Logotype.png" alt="Red Hat JBoss MIDDLEWARE" />'
@@ -3924,11 +3957,15 @@ Tabzilla();
 
 // Function checks LocalStorage if there is cached content, validates its age
 // and optionally downloads again from the REST service and then caches it.
-function renderTabzilla( projectName , projectId ) {
+function renderTabzilla( projectName , projectId, fullWidth ) {
 
   if ( ( typeof projectName=='undefined' ) || ( typeof projectId=='undefined' ) ) {
     console.error("Variables 'project' and 'project_name' have to be provided in your site.yml configuration file.");
     return;
+  }
+
+  if ( fullWidth ) {
+    $("#tabnav-panel").addClass( "fullwidth" );
   }
 
   var valueFromCache = null;
@@ -3948,7 +3985,7 @@ function renderTabzilla( projectName , projectId ) {
 
     /* THIS PART OF CODE IS TEMPORARILY DISABLED TILL THE SERVICE WILL BE IN PRODUCTION.  
     // Getting information in what products the project is supported in.
-    var data = $.ajax({url:"http://rysiek.apiary.io/v1/rest/products/supported/Example",
+    var data = $.ajax({url:"http://rysiek.apiary.io/v1/rest/products/supported/#{site.project_name}",
       dataType:'json'
     });
     */
