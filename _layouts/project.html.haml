@@ -65,7 +65,7 @@
         %div#ajbossproject A JBoss Project
         %a#tab.tabnav-closed{:href=>"https://www.jboss.org"} Red Hat
         %script
-          window.addEventListener('load', function() { renderTabzilla("#{site.project_name}","#{site.project}") }, false);
+          window.addEventListener('load', function() { renderTabzilla("#{site.project_name}","#{site.project}" , false ) }, false);
 
       - if page.subproject
         = partial( page.navparent_partial.nil? ? 'navparent.html.haml' : page.navparent_partial , { "real_page" => page } )
@@ -75,7 +75,7 @@
       .banner
         %a{:href=>"#{site.base_url}"}<
       
-      .navbar.navbar-inverse#navbar-fix
+      .navbar.navbar-inverse.navbar-fix#sticky-navbar
         .navbar-inner
           .container#main-container
             %a.btn.btn-navbar{:"data-toggle"=>"collapse", :"data-target"=>".nav-collapse"}
@@ -183,10 +183,6 @@
           %h4 Licenses
           %p Most plugins are available under the Eclipse Public License (EPL) others Lesser General Public License (LGPL). 
           %p They may also contain some libraries licensed under certain open source licenses such as ASL, BSD, and/or certain other open source licenses.
-          %p
-          .jbossbadge
-            %a{:href=>"http://www.jboss.org/"}
-              %img{:src => "#{site.jborg_images_url}/common/jbossbadge.png"}/
     
     = partial( page.companyfooter_partial.nil? ? 'companyfooter.html.haml' : page.companyfooter_partial , { "real_page" => page } )
 
