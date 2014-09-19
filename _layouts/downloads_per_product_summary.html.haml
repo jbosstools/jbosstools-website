@@ -8,8 +8,6 @@ tab: downloads
   .hero-unit.hidden-phone.center
     %h1 Downloads
     %p Latest versions of #{product_name} 
-    %hr
-
 
 - count = 0    
 - downloads = Hash.new
@@ -71,7 +69,6 @@ tab: downloads
         
 .row-fluid
   .span12    
-    %hr
-      .center
-        Looking for another version ? See the 
-        %a{:href=>relative("/downloads/overview.html")}< overview of all downloadable versions.
+    .center
+      Looking for another version ? See the 
+      %a{:href=>relative("/downloads/overview.html")}< overview of all downloadable versions.

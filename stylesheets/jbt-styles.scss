@@ -156,6 +156,14 @@ hr {
   border: 0;
 }
 
+.well hr {
+  background-image: none;
+  height: 1px;
+  border-top: 1px solid rgb(227, 227, 227);
+  margin-left: -19px;
+  margin-right: -19px;
+}
+
 section {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -230,6 +238,13 @@ section {
       }
     }
   }
+}
+
+aside section {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 
 #content-wrapper {
@@ -367,22 +382,19 @@ kbd {
 // Flex layout
 // ******************************************************
 @media (min-width: 767px) {
-  .section-wrapper {
+  .flexbox {
     display: flex;
-    align-items: strech;
-    flex-direction: row;
-    section {
+    &.stretch-row {
+      justify-content: space-between;
+      flex-direction: row;
+    }
+    &.stretch-column {
+      justify-content: space-between;
+      flex-direction: column;
+    }
+    & > * {
       position: relative;
-      .item {
-        margin-top: 1em;
-        margin-bottom: 3em;
-      }
-      footer {
-        position: absolute; bottom: 0.5em;
-        width: 100%;
-      }
     }    
-
   }
 }
 
@@ -503,6 +515,42 @@ a.dropdown-toggle {
   }
 }
 
+ul.dropdown-menu {
+  span.header {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: normal;
+    line-height: 20px;
+    color: #656565;
+    white-space: nowrap;
+  }
+  
+  ul.download-versions {
+    text-decoration: none;
+    list-style: none;
+    margin-left: 0;
+    li > a {
+      padding: 3px 10px 3px 30px;
+      display: block;
+      &:hover {
+        text-decoration: none;
+        color: #ffffff;
+        background-color: #46586f;
+        background-image: -moz-linear-gradient(top, #4a5d75, #405165);
+        background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#4a5d75), to(#405165));
+        background-image: -webkit-linear-gradient(top, #4a5d75, #405165);
+        background-image: -o-linear-gradient(top, #4a5d75, #405165);
+        background-image: linear-gradient(to bottom, #4a5d75, #405165);
+        background-repeat: repeat-x;
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff4a5d75', endColorstr='#ff405165', GradientType=0);
+      }
+      span.label {
+        float: right;
+      }
+    } 
+  }
+}
 
 // ******************************************************
 // Customizing the NavBar
@@ -520,27 +568,24 @@ a.dropdown-toggle {
 .hero-unit {
   background-color: #FAFAFA;
   background-image: none;
-  padding: 30px 30px 0px 30px;
+  padding: 30px;
   background: #ebf5f1;
   
   & > img {
     padding-left: 20px;
-    float: right;
+    
   }
 
-  p {
-    margin-bottom: 20px;
-    display: inline-block;
-  }
-  
-  .hero-content h1 {
-    margin-top: 40px;
-  }
-  .hero-content h2 img {
-    vertical-align: text-bottom;
-  }
-  .hero-content p {
-    white-space: nowrap;
+  .hero-content {
+    h1 {
+      margin-top: 40px;
+    }
+    h2 img {
+      vertical-align: text-bottom;
+    }
+    p {
+      white-space: nowrap;
+    }
   }
   
   @media screen and (max-width: 979px) {
@@ -568,8 +613,6 @@ a.dropdown-toggle {
         text-align: right;
     }
   }
-  
-  
   
 }
 
@@ -728,39 +771,6 @@ body {
 #downloads {
   footer {
     margin-top: 2em;
-  }
-
-}
-
-@media screen and (min-width: 680px) {
-  .hero-unit {
-    .hero-left {
-      float: left;
-      display: inline;
-      margin-bottom: 2em;
-
-      width: 45%;
-        text-align: right;
-      h1 {
-      }
-      a {
-        margin-top: 1em;
-      }
-    }
-    .hero-right {
-      float: right;
-      display: inline;
-      width: 45%;
-      margin-bottom: 2em;
-      ul {
-        list-style-type: none;
-      }
-    }
-  }
-
-  hr {
-    content: "";
-    clear: both;
   }
 
 }
@@ -1014,7 +1024,7 @@ span.label {
     display:none;
   }
 
-  header {
+  .header {
     img.img-polaroid {
       float:left;
       margin-right: 10px;
@@ -1096,27 +1106,6 @@ span.label {
 // *************************************
 // What's New
 // *************************************
-.whatsnew-index {
-  .hero-unit {
-    .hero-left {
-      width: 40%;
-    }
-    .hero-right {
-      width: 55%;
-      ul {
-        overflow: hidden;
-      }
-    }
-    &.jbt_core li {
-      width: 50%;
-      line-height: 1.5em;
-      float: left;
-      display: inline;
-    }
-  }
-
-}
-
 .whatsnew {
   @media screen and (min-width: 980px) {
     margin-top: 30px;

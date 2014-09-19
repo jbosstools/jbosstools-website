@@ -6,93 +6,105 @@ status: green
 ---
 #homepage
   .row-fluid
-    .hero-unit
-      %img.visible-desktop{:src=>relative("/images/tools/jbt-jaxrs.jpg"), :width=>500, :height=>331, :alt=>"JBoss Tools - Plugins for JBoss Technology"}
-      .hero-content
-        %h1
-          JBoss Tools
-        %h2
-          Eclipse Plugins for
-          JBoss Technology
-        .hero-buttons
-          %a.btn.btn-primary.btn-large{:href => relative("/downloads")}
-            %i.icon-download
-            Download
-          %br
-          %a.small{:href=>relative("/documentation/whatsnew")} What's New
-      %hr
-
-
-  .row-fluid.section-wrapper
-    %section.span4.well.post-bg
-      - feature = site.features["jbt_core"].find_all{|feature| feature.feature_id == "openshift"}.first
-      - if feature != nil
-        %header
-          %h3
-            %a{:href=>relative(feature.url)}
-              #{feature.tagline}
-        .item.center
-          %span.tagline
-          %a.block{:href=>relative(feature.url)}
-            -# specify the exact width/height of the feature image to avoid multiple repaints while rnedering the page in the browser
-            %img{:src=>relative(feature.image_url), :width=>256, :height=>256}
-
-    %section.span4.well.post-bg
-      %header
-        %h3
-          %a{:href => relative("/blog")} Latest News
-      - posts = site.posts.sort{|l,r| r.date <=> l.date}.first(3)
-      - for post in posts
-        .post
+    .span12
+      .hero-unit.flexbox.stretch-row
+        .hero-content
+          %h1
+            JBoss Tools
+          %h2
+            Eclipse Plugins for
+            JBoss Technology
+          .hero-buttons
+            %a.btn.btn-primary.btn-large{:href => relative("/downloads")}
+              %i.icon-download
+              Download
+            %br
+            %a.small{:href=>relative("/documentation/whatsnew")} What's New
+        %img.visible-desktop{:src=>relative("/images/tools/jbt-jaxrs.jpg"), :width=>500, :height=>331, :alt=>"JBoss Tools - Plugins for JBoss Technology"}
+      
+  .row-fluid
+    -# main column
+    #main.span8
+      .row-fluid
+        %section.span12
           %header
-            %a{:href=>site.team[post.author].developer_page}
-              %img.img-polaroid{:src => "#{site.team[post.author].photo_32px}", :width=>32, :height=>32}
-            .title
-              %h4
-                %a{:href=>relative(post.url)}= post.title
-                - if post.draft_article
-                  %span{:class=>"label label-important"}
-                    DRAFT
-              .author
-                /there is only one author per post but the author splitter adds an array here
-                by
-                %a{:href=>site.team[post.author].developer_page} 
-                  %strong #{site.team[post.author].title}
-                on
-                %strong< #{post.date.strftime( '%b %d, %Y' )}.
-          %footer
-            %a.btn.btn-small{:href=>relative(post.url)}
-              Read more &raquo;
-          
-
-    %section.span4.well.post-bg
-      %header
-        %h3
-          %a{:href => relative("/events")} Upcoming Events
-      - events = site.events
-      - now = Time.now
-      - a_few_days_ago = now - 4 * 24 * 60 * 60
-      - events = events.find_all{|item| item.effective_date.to_s >= a_few_days_ago.strftime("%Y%m%d")}
-      - events = events.sort{|l,r| l.effective_date <=> r.effective_date}.first(3)
-      - for event in events
-        .event
+            %h3
+              %a{:href=>"/features"} Highlighted Features
+          .flexbox.stretch-row
+            - features = site.features["jbt_core"].find_all{|feature| ["forge", "server", "cdi"].include?(feature.feature_id)}
+            - for feature in features
+              .flexbox.stretch-column.center
+                .title
+                  %a.block{:href=>relative(feature.url)}
+                    %h4 #{feature.name}
+                .body
+                  %a.block{:href=>relative(feature.url)}
+                    -# specify the exact width/height of the feature image to avoid multiple repaints while rnedering the page in the browser
+                    %img{:src=>relative(feature.image_url), :width=>200, :height=>200}
+                .footer
+                  %a.block{:href=>relative(feature.url)}
+                    %span #{feature.tagline}
+      
+      .row-fluid.visible-desktop
+        .span12
+          %hr
+      .row-fluid
+        %section.span12
           %header
-            %h4
-              %a{:href=>relative(event.output_path)} #{event.title}
-          .abstract
-            %strong
-              #{event.event_date}
-            in
-            %strong
-              #{event.location}
-        %footer
-          %a.btn.btn-small{:href=>relative("/events")}
-            Read more &raquo;
-
-
-
-
-
-
-
-
+            %h3
+              %a{:href=>"/features"} Call for Feedback
+          .content.center
+            %a{:href=>"/cat"}
+              %img{:src=>"/images/jbosstools-cat-logo.png", :width=>600, :height=>200}
+      
+    -# aside column
+    %aside.span4
+      .row-fluid
+        .span12.well
+          %section
+            %header
+              %h3
+                %a{:href => relative("/blog")} Latest News
+                %a{:href => relative("/blog/news.atom")}
+                  %img#rss-icon{:src=>relative("/images/feed-icon-28x28.png"), :width=>21, :height=>21}
+        
+            - posts = site.posts.sort{|l,r| r.date <=> l.date}.first(4)
+            - for post in posts
+              .post
+                .header
+                  %a{:href=>site.team[post.author].developer_page}
+                    %img.img-polaroid{:src => "#{site.team[post.author].photo_32px}", :width=>32, :height=>32}
+                  .title
+                    %h4
+                      %a{:href=>relative(post.url)}= post.title
+                      - if post.draft_article
+                        %span{:class=>"label label-important"}
+                          DRAFT
+                    .author
+                      /there is only one author per post but the author splitter adds an array here
+                      by
+                      %a{:href=>site.team[post.author].developer_page}
+                        %strong< #{site.team[post.author].title}
+                      on
+                      %strong< #{post.date.strftime( '%b %d, %Y' )}.
+          %hr
+          %section
+            %header
+              %h3
+                %a{:href => relative("/events")} Upcoming Events
+            - events = site.events
+            - now = Time.now
+            - a_few_days_ago = now - 4 * 24 * 60 * 60
+            - events = events.find_all{|item| item.effective_date.to_s >= a_few_days_ago.strftime("%Y%m%d")}
+            - events = events.sort{|l,r| r.effective_date <=> l.effective_date}
+            - for event in events
+              .event
+                .header
+                  %h4
+                    %a{:href=>relative(event.output_path)} #{event.title}
+                .abstract
+                  %strong
+                    #{event.event_date}
+                  in
+                  %strong
+                    #{event.location}

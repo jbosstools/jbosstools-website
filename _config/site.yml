@@ -25,7 +25,6 @@ asciidoctor:
     linkattrs: ''
 
 # Default minify settings
-minified: .min
 css_minifier: disabled
 js_minifier: disabled
 html_minifier: disabled
@@ -60,10 +59,6 @@ wget:
 profiles:
   development:
     showwip: false
-    minified: .min
-    css_minifier: enabled
-    js_minifier: enabled
-    html_minifier: disabled
     base_url: http://localhost:4242
     jborg_fonts_url: /cache/static.jboss.org/theme/fonts
     jborg_images_url: /cache/static.jboss.org/theme/images
@@ -76,6 +71,7 @@ profiles:
   staging:
     showwip: true
     base_url: http://tools-stg.jboss.org/
+    minified: .min
     css_minifier: enabled
     js_minifier: enabled
     jborg_fonts_url: http://static.jboss.org/theme/fonts
@@ -96,6 +92,7 @@ profiles:
   production:
     showwip: false
     base_url: http://tools.jboss.org
+    minified: .min
     css_minifier: enabled
     js_minifier: enabled
     jborg_fonts_url: http://static.jboss.org/theme/fonts
