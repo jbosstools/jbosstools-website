@@ -41,19 +41,20 @@ module Awestruct
 
         output = ''
 
-        # Test if it's a javascript file.
         ext = File.extname(page.output_path)
-        if !ext.empty?
-          ext_txt = ext[1..-1]
+        # skip if the file has no extension
+        if ext.empty?
+          return input
+        end
 
-          # Filtering out non-css files and those which were already minimized with added suffix.
-          if ext_txt == "js" and !page.output_path.to_s.end_with?("min.js")
-            print "Minifying javascript #{page.output_path} \n"
-            output = Uglifier.new.compile(input)
-          else
-            return input
-          end
+        ext_txt = ext[1..-1]
 
+        # Filtering out non-js files and those which were already minimized with added suffix.
+        if ext_txt == "js" and !page.output_path.to_s.end_with?("min.js")
+          print "Minifying javascript #{page.output_path} \n"
+          output = Uglifier.new.compile(input)
+        else
+          return input
         end
 
         oldFileName = File.basename(page.output_path).to_s

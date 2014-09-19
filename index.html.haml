@@ -7,7 +7,7 @@ status: green
 #homepage
   .row-fluid
     .hero-unit
-      %img.visible-desktop{:src=>relative("/images/tools/jbt-jaxrs.png"), :alt=>"JBoss Tools - Plugins for JBoss Technology"}
+      %img.visible-desktop{:src=>relative("/images/tools/jbt-jaxrs.jpg"), :width=>500, :height=>331, :alt=>"JBoss Tools - Plugins for JBoss Technology"}
       .hero-content
         %h1
           JBoss Tools
@@ -25,7 +25,7 @@ status: green
 
   .row-fluid.section-wrapper
     %section.span4.well.post-bg
-      - feature = site.features["jbt_core"].find_all{|feature| feature.highlighted == true}.first
+      - feature = site.features["jbt_core"].find_all{|feature| feature.feature_id == "openshift"}.first
       - if feature != nil
         %header
           %h3
@@ -34,7 +34,8 @@ status: green
         .item.center
           %span.tagline
           %a.block{:href=>relative(feature.url)}
-            %img{:src=>relative(feature.image_url)}
+            -# specify the exact width/height of the feature image to avoid multiple repaints while rnedering the page in the browser
+            %img{:src=>relative(feature.image_url), :width=>256, :height=>256}
 
     %section.span4.well.post-bg
       %header
@@ -44,7 +45,7 @@ status: green
       - for post in posts
         .post
           %header
-            %img.img-polaroid{:src => "#{site.team[post.author].photo_32px}"}
+            %img.img-polaroid{:src => "#{site.team[post.author].photo_32px}", :width=>32, :height=>32}
             .title
               %h4
                 %a{:href=>relative(post.url)}= post.title
