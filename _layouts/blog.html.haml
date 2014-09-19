@@ -14,7 +14,7 @@ tab: blog
 .row-fluid
   .span9#core-page.well.post-bg
     .post
-      %header
+      .header
         %a{:href=>site.team[page.author].developer_page}
           %img.img-polaroid{:src => "#{site.team[page.author].photo_64px}", :width=>64, :height=>64}
         .title
@@ -22,7 +22,7 @@ tab: blog
             %span 
               = page.title
             %a{:href => relative("/blog/news.atom")}
-              %img#rss-icon{:src=>relative("/images/feed-icon-28x28.png")}
+              %img#rss-icon{:src=>relative("/images/feed-icon-28x28.png"), :width=>28, :height=>28}
           .author
             /there is only one author per post but the author splitter adds an array here
             posted by 
@@ -47,7 +47,6 @@ tab: blog
         #{content}
         
       .navigation
-        %hr
         .row-fluid
           .span4.previous
             - if page.previous_post
@@ -61,7 +60,7 @@ tab: blog
       .comments
         #{page.disqus_comments}
 
-  .span3.well.post-bg
+  .span3.well
     %header
       %h3
         %a{:href => relative("/blog")} Latest posts
@@ -69,9 +68,9 @@ tab: blog
           %img#rss-icon{:src=>relative("/images/feed-icon-28x28.png"), :width=>"20px"}
         
     .latest-posts
-      - posts = site.posts.sort{|l,r| r.date <=> l.date}.first(3)
+      - posts = site.posts.sort{|l,r| r.date <=> l.date}.first(5)
       - for post in posts
-        %header
+        .header
           %img.img-polaroid{:src => "#{site.team[post.author].photo_32px}"}
           .title
             %h4
@@ -85,16 +84,10 @@ tab: blog
               %strong< #{site.team[post.author].title}
               on
               %strong< #{post.date.strftime( '%b %d, %Y' )}.
-    %footer
-      %hr
-      %a.btn.btn-small{:href=>relative("/blog")}
-        Read more &raquo;
-      
     
         
 .row-fluid
   .span12    
-    %hr
-      .center
-        Looking for older articles ? See the 
-        %a{:href=>"https://community.jboss.org/en/tools/blog"}< Archived entries.
+    .center
+      Looking for older articles ? See the 
+      %a{:href=>"https://community.jboss.org/en/tools/blog"}< Archived entries.
