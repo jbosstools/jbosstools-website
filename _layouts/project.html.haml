@@ -22,8 +22,8 @@
     %link(rel="apple-touch-icon-precomposed" sizes="72x72" href="#{site.project_images_url}/apple-touch-icon-72x72-precomposed.png")
     %link(rel="apple-touch-icon-precomposed" href="#{site.project_images_url}/apple-touch-icon-precomposed.png")
 
-    %link{ :rel=>'stylesheet', :type=>"text/css", :href=>relative("/stylesheets/jbt-styles.css") }
-    %link{ :rel=>"stylesheet", :type=>"text/css", :href=>relative("/fonts/font-awesome/font-awesome.css"), :media=>"screen, projection"}
+    %link{ :rel=>'stylesheet', :type=>"text/css", :href=>relative("/stylesheets/jbt-styles#{site.minified}.css") }
+    %link{ :rel=>"stylesheet", :type=>"text/css", :href=>relative("/fonts/font-awesome/font-awesome#{site.minified}.css"), :media=>"screen, projection"}
     
     / Defines the project banner, using variables (cannot be done in .scss)
   
@@ -44,12 +44,6 @@
         }
       }
   
-    %script(src="#{site.jborg_js_url}/libs/jquery/jquery-1.9.1#{site.minified}.js")
-    - if page.javascripts
-      - page.javascripts.each do |javascript|
-        %script{:src=>javascript, :type=>'text/javascript'}
-
-    
   %body
     - if site["showwip"] 
       = partial( 'underdevelopment.html.haml', { :parent => page } )
@@ -112,10 +106,10 @@
                   %ul.dropdown-menu.projectsocialmedia
                     %li<
                       %a{:href=>"http://twitter.com/jbosstools"}<
-                        %img(src="#{site.jborg_images_url}/common/socialmedia_icon40_twitter.png")
+                        %img{:src=>"#{site.jborg_images_url}/common/socialmedia_icon40_twitter.png", :width=>40, :height=>40}
                     %li<
                       %a{:href=>"https://plus.google.com/109915195368578219327"}<
-                        %img(src="#{site.jborg_images_url}/common/socialmedia_icon40_googleplus.png")
+                        %img{src=>"#{site.jborg_images_url}/common/socialmedia_icon40_googleplus.png", :width=>40, :height=>40}
 
 
 
@@ -190,8 +184,12 @@
       %a{:href=>"#top"} back to top
 
 
+    %script(src="#{site.jborg_js_url}/libs/jquery/jquery-1.9.1#{site.minified}.js")
+    - if page.javascripts
+      - page.javascripts.each do |javascript|
+        %script{:src=>javascript, :type=>'text/javascript'}
     %script{:src=>"#{pageStyle ? site[pageStyle].bootstrap_js_url : site.bootstrap_js_url}#{site.minified}.js"}
-    %script{:src=>relative("/javascripts/application.js")}
+    %script{:src=>relative("/javascripts/application#{site.minified}.js")}
     - if page.bottom_javascripts
       - page.bottom_javascripts.each do |javascript|
         %script{:src=>javascript, :type=>'text/javascript'}

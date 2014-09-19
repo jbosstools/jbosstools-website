@@ -8291,7 +8291,7 @@ ul.icons-ul {
   /* display: none;  HIDE IT UNTIL WORKING */
 
   height: 37px;
-  background-image: url("http://static.jboss.org/common/images/tabzilla/tabzilla-redhat-logo-sprite.png");
+  background-image: url("http://static.jboss.org/images/tabzilla/tabzilla-redhat-logo-sprite.png");
   background-repeat: no-repeat;
   background-position: right top;
   width: 250px;
@@ -8505,7 +8505,7 @@ ul.icons-ul {
   -ms-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   order-radius: 8px;
-  background: url("http://static.jboss.org/common/images/arrow-tabnav-down.png") repeat scroll 0 0 transparent;
+  background: url("http://static.jboss.org/images/arrow-tabnav-down.png") repeat scroll 0 0 transparent;
   content: "x";
   height: 15px;
   position: absolute;
@@ -8577,7 +8577,7 @@ ul.icons-ul {
   }
   .dropup {
     height: 37px;
-    background-image: url("http://static.jboss.org/common/images/tabzilla/tabzilla-redhat-logo-sprite.png");
+    background-image: url("http://static.jboss.org/images/tabzilla/tabzilla-redhat-logo-sprite.png");
     background-position: left bottom;
     width: 74px;
     right: 30px;
@@ -9042,7 +9042,7 @@ hr.soften {
   text-indent: -9999px;
   display: block;
   margin: 0;
-  background: #243446 url(http://static.jboss.org/common/images/top.png) no-repeat center center;
+  background: #243446 url(http://static.jboss.org/images/top.png) no-repeat center center;
 }
 .backToTop a:hover {
   background-color: #4a5d75;
