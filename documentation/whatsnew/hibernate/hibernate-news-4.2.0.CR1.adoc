@@ -1,0 +1,12 @@
+= Hibernate Tools 4.2.0.CR1 What's New
+:page-layout: whatsnew
+:page-component_id: hibernate
+:page-component_version: 4.0.0.CR1
+:page-product_id: jbt_core 
+:page-product_version: 4.2.0.CR1
+
+== Hibernate 4.3 and JPA 2.1 	
+
+Hibernate Tools now supports JPA 2.1 and can now work with Hibernate 4.3 (while still continuing to work with Hibernate 3.x and previous 4.x).
+ 
+Due to API changes in Hibernate 4.3 we had to rewire Hibernate tools api which means we now should have less classloader issues but we can't give any promises we did not miss something. In future we'll need to decouple Hibernate Tools fully from the underlying Hibernate core to continue supporting multiple versions. That will be for next major.
