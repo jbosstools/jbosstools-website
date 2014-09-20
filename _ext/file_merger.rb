@@ -24,7 +24,7 @@
 #        - /javascripts/prettify.js
 #        - /javascripts/bootstrap-transition.js
 #        - /javascripts/bootstrap-alert.js
-#
+#        
 ##
 
 module Awestruct
@@ -59,6 +59,7 @@ module Awestruct
         # Create a temporary file with the merged content.
         tmpOutputPath = File.join( "./_tmp/" , File.basename(outputPath))
         tmpOutputFile = File.new(tmpOutputPath,"w")
+        puts "Merging files into " + tmpOutputPath.to_s
         tmpOutputFile.write(output)
         tmpOutputFile.close
 
