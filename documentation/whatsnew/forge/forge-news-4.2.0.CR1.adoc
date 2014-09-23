@@ -46,7 +46,7 @@ image::images/4.2.0.CR1/linkwitheditor.png[]
 
 We have introduced a command to allow execution of Forge 2 commands (as Eclipse Wizards) given its name. The command also allows to pass pre-populated values for the chosen Wizard.
 
-[source:xml]
+[source,xml]
 ====
     <command serialization="org.jboss.tools.forge.ui.runForgeCommand(org.jboss.tools.forge.ui.runForgeCommand.commandName=REST: Generate Endpoints From Entities)"/>
 ====
