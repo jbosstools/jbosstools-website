@@ -1,9 +1,15 @@
 eclipse:
   luna:
+    url_path_fragment: mars
+    short_name: Mars
+    full_name: Eclipse Mars 4.5
+    download_url:  http://www.eclipse.org/downloads/index-developer.php
+    requirements: Java 7 or Java 8
+  luna:
     url_path_fragment: luna
     short_name: Luna
     full_name: Eclipse Luna 4.4
-    download_url: http://www.eclipse.org/downloads/index-developer.php
+    download_url: http://www.eclipse.org/downloads/packages/release/luna/R
     requirements: Java 7 or Java 8
   kepler:
     url_path_fragment: kepler
