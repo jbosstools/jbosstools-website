@@ -40,7 +40,10 @@ Which operating systems, runtimes and frameworks does JBoss Tools support?::
 
 Where can I find answers about the Browser Simulator?::
   See the link:./browsersim.html[Browser Simulator FAQ]
-
+  
+Where can I find answers about the Visual Page Editor?::
+  See the link:./visualeditor.html[Visual Page Editor FAQ]
+  
 === Server/Publishing
 
 [qanda]
