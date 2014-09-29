@@ -25,6 +25,8 @@
     %link{ :rel=>'stylesheet', :type=>"text/css", :href=>relative("/stylesheets/jbt-styles#{site.minified}.css") }
     %link{ :rel=>"stylesheet", :type=>"text/css", :href=>relative("/fonts/font-awesome/font-awesome#{site.minified}.css"), :media=>"screen, projection"}
     
+    -# RSS feeds
+    %link{:rel=>"alternate", :type=>"application/rss+xml", :title=>"RSS", :href=>relative("/blog/news.atom")}
     / Defines the project banner, using variables (cannot be done in .scss)
   
     :css
