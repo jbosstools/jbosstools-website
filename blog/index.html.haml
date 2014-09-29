@@ -24,7 +24,8 @@ status: yellow
         .well.post-bg
           .post
             %header
-              %img.img-polaroid{:src=>"#{site.team[post.author].photo_64px}"}
+              %a{:href=>site.team[post.author].developer_page}
+                %img.img-polaroid{:src=>"#{site.team[post.author].photo_64px}"}
               .title
                 %h3
                   %a{:href=>relative("#{post.url}")}= post.title
@@ -34,7 +35,8 @@ status: yellow
                 .author
                   /there is only one author per post but the author splitter adds an array here
                   posted by 
-                  %strong< #{site.team[post.author].title}
+                  %a{:href=>site.team[post.author].developer_page}
+                    %strong< #{site.team[post.author].title}
                   on 
                   %strong< #{post.date.strftime( '%b %d, %Y' )}.
                   %p

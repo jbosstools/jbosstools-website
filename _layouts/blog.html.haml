@@ -15,7 +15,8 @@ tab: blog
   .span9#core-page.well.post-bg
     .post
       %header
-        %img.img-polaroid{:src => "#{site.team[page.author].photo_64px}", :width=>64, :height=>64}
+        %a{:href=>site.team[page.author].developer_page}
+          %img.img-polaroid{:src => "#{site.team[page.author].photo_64px}", :width=>64, :height=>64}
         .title
           %h3
             %span 
@@ -25,7 +26,8 @@ tab: blog
           .author
             /there is only one author per post but the author splitter adds an array here
             posted by 
-            %strong #{site.team[page.author].title}
+            %a{:href=>site.team[page.author].developer_page}
+              %strong #{site.team[page.author].title}
             on 
             %strong #{page.date.strftime( '%b %d, %Y' )}.
             %p

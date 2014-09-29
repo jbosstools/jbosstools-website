@@ -1,5 +1,5 @@
 = Max Rydahl Andersen
 :page-photo_64px: https://developer.jboss.org/people/maxandersen/avatar/64.png
 :page-photo_32px: https://developer.jboss.org/people/maxandersen/avatar/32.png
-
+:page-developer_page: https://developer.jboss.org/people/maxandersen
 

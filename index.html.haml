@@ -45,7 +45,8 @@ status: green
       - for post in posts
         .post
           %header
-            %img.img-polaroid{:src => "#{site.team[post.author].photo_32px}", :width=>32, :height=>32}
+            %a{:href=>site.team[post.author].developer_page}
+              %img.img-polaroid{:src => "#{site.team[post.author].photo_32px}", :width=>32, :height=>32}
             .title
               %h4
                 %a{:href=>relative(post.url)}= post.title
@@ -55,7 +56,8 @@ status: green
               .author
                 /there is only one author per post but the author splitter adds an array here
                 by
-                %strong< #{site.team[post.author].title}
+                %a{:href=>site.team[post.author].developer_page} 
+                  %strong #{site.team[post.author].title}
                 on
                 %strong< #{post.date.strftime( '%b %d, %Y' )}.
           %footer
