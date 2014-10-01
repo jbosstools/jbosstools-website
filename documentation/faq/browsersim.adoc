@@ -85,3 +85,7 @@ image::images/browsersim-linux-gtk.png[GTK selection on Linux]
 NOTE: In order to run BrowserSim against GTK 3 `libwebkitgtk-3.0` must be installed. + 
 Fedora, RHEL - `yum install libwebkitgtk-3.0.so.0` +
 Ubuntu - `apt-get install libwebkitgtk-3.0-0`
+
+[qanda]
+I'm not able to find libwebkitgtk-1.0.so.0 on RHEL 7. What should I do?::
+  You can use following command to find RPM package to install `yum provides '*/libwebkitgtk-1.0.so.0'`. If this command does not yield any results, you probably need to enable https://fedoraproject.org/wiki/EPEL[EPEL repository] first.
