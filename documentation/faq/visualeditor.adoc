@@ -61,4 +61,4 @@ I open HTML file on Linux and see incorrect preview image:images/ve-linux-html.p
 	That happens because xulrunner we use does not support HTML5 features. We have to use xulrunner for previewing HTML files due to the https://issues.jboss.org/browse/JBIDE-9144[WebKit and XULRunner conflict].
 	
 +
-To have correct HTML preview you should start Eclipse/JBDS with `–Dorg.jboss.tools.vpe.loadxulrunner=false` option(or add this option to eclipse.ini/jbdevstudio.ini).
+To have correct HTML preview you should start Eclipse or JBoss Developer Studio with `–Dorg.jboss.tools.vpe.loadxulrunner=false` option in eclipse.ini or jbdevstudio.ini).
