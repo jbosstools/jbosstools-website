@@ -194,7 +194,7 @@
     %script{:src=>relative("/javascripts/application#{site.minified}.js")}
     - if page.bottom_javascripts
       - page.bottom_javascripts.each do |javascript|
-        %script{:src=>javascript, :type=>'text/javascript'}
+        %script{:src=>relative(javascript), :type=>'text/javascript'}
 
     :plain
       <!-- begin eloqua tracking -->
