@@ -15,13 +15,12 @@ issues: [JBIDE-17047]
   .hero-unit.center
     %h1 Downloads
     %p Latest stable versions of #{devstudio_current_stable_release.build_info.name} and #{jbtcore_current_stable_release.build_info.name}
-    %hr
+
 .row-fluid#downloads
   %section.span6.well
     %header
       %h3
         =partial('product_link.html.haml', { :parent => page, :product_release => devstudio_current_stable_release })
-      %hr
       
     .item
       :markdown
@@ -36,8 +35,8 @@ issues: [JBIDE-17047]
       %a.btn.btn-primary.btn-large{:href=>relative(devstudio_current_stable_release.output_path)}
         %i.icon-download
         Download
-      %hr
       - unless devstudio_current_development_release.nil?
+        %br
         or try&nbsp;
         %a{:href=>relative(devstudio_current_development_release.output_path)}> the latest development build
         \.
@@ -47,7 +46,6 @@ issues: [JBIDE-17047]
     %header
       %h3
         =partial('product_link.html.haml', { :parent => page, :product_release => jbtcore_current_stable_release })
-      %hr
         
     .item
       :markdown
@@ -62,8 +60,8 @@ issues: [JBIDE-17047]
       %a.btn.btn-primary.btn-large{:href=>relative(jbtcore_current_stable_release.output_path)}
         %i.icon-download
         Download
-      %hr
       - unless jbtcore_current_development_release.nil?
+        %br
         or try&nbsp;
         %a{:href=>relative(jbtcore_current_development_release.output_path)}> the latest development build
         \.
@@ -73,7 +71,6 @@ issues: [JBIDE-17047]
 
 .row-fluid
   .span12
-    %hr
-      .center
-        :markdown
-          Looking for another version ? See the [overview of all downloadable versions](overview.html).
+    .center
+      :markdown
+        Looking for another version ? See the [overview of all downloadable versions](overview.html).

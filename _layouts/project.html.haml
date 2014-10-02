@@ -83,25 +83,67 @@
                 %li#home<
                   %a{:href=>relative("/")} Home
           
-                %li#downloads<
-                  %a{:href=>relative("/downloads/")} Downloads
-          
+                %li.dropdown#downloads<
+                  %a.dropdown-toggle{:href=>"#", "data-toggle"=>"dropdown"}<
+                    = precede 'Downloads' do
+                      %b.caret>
+                  %ul.dropdown-menu
+                    - [:devstudio, :devstudio_is, :jbt_core, :jbt_is].each do |product_id|
+                      %li< 
+                        %span.header #{site.products[product_id].name}
+                        %ul.download-versions<
+                          - site.latest_builds_download_pages[product_id].each do |build_type, download_page|
+                            %li<
+                              %a{:href=>relative(download_page.output_path)} 
+                                #{download_page.build_info.version}
+                                - unless download_page.build_info.build_type_label.nil?
+                                  %span{:class=>"label label_#{build_type}"}
+                                    #{site.labels[build_type]}
+                      %li.divider
+                    %li
+                      %a{:href=>"/downloads/overview.html"} All downloadable versions
+                    
                 %li#features<
                   %a{:href=>relative("/features/")} Features
                   
                 %li#blog<
                   %a{:href=>relative("/blog/")} Blog
   
-                %li#docs<
-                  %a{:href=>relative("/documentation/")} Documentation
-                
-                %li#community<
-                  %a{:href=>relative("/community")} Community
-                
+                %li.dropdown#docs<
+                  %a.dropdown-toggle{:href=>"#", "data-toggle"=>"dropdown"}<
+                    = precede 'Documentation' do
+                      %b.caret>
+                  %ul.dropdown-menu
+                    %li< 
+                      %a{:href=>relative("/documentation/whatsnew")} What's New 
+                    %li< 
+                      %a{:href=>relative("/documentation/faq")} FAQ
+                    %li< 
+                      %a{:href=>relative("/documentation/videos")} Videos
+                    %li.divider
+                    %li< 
+                      %a{:href=>"http://docs.jboss.org/tools"} Reference Guides
+                  
+                %li.dropdown#community<
+                  %a.dropdown-toggle{:href=>"#", "data-toggle"=>"dropdown"}<
+                    = precede 'Community' do
+                      %b.caret>
+                  %ul.dropdown-menu
+                    %li< 
+                      %a{:href=>"https://community.jboss.org/en/tools/content?filterID=contentstatus[published]~objecttype~objecttype[thread]"} JBoss Tools User Forum
+                    %li< 
+                      %a{:href=>"https://community.jboss.org/en//jbossdevstudio/content?filterID=contentstatus[published]~objecttype~objecttype[thread]"} JBoss Developer Studio User Forum
+                    %li.divider
+                    %li< 
+                      %a{:href=>"https://lists.jboss.org/mailman/listinfo/jbosstools-dev"} Developers Mailing List
+                    %li.divider
+                    %li< 
+                      %a{:href=>"irc://irc.freenode.org/jbosstools"} #jbosstools IRC Channel
+                    
                 %li#getinvolved<
                   %a{:href=>relative("/getinvolved")} Get Involved
                 
-                %li.dropdown
+                %li.dropdown#socialmedia
                   %a.dropdown-toggle{:href=>"#", "data-toggle"=>"dropdown"}<
                     = precede 'Follow Us ' do
                       %b.caret>
