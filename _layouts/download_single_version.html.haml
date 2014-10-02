@@ -48,12 +48,11 @@ bottom_javascripts: ["/javascripts/download_tabs.js"]
     - if page.build_info.build_type_label == "stable"
       .alert.alert-success
         #{page.build_info.name} #{page.build_info.version} was released on #{page.build_info.release_date}. 
-        - if page.build_info.blog_announcement_url 
-          %a{:href=>relative(page.build_info.blog_announcement_url)} Read the announcement.
-          
         
     - elsif page.build_info.build_type_label == "development"
       .alert.alert-info
+        #{page.build_info.name} #{page.build_info.version} was released on #{page.build_info.release_date}. 
+        %br
         %strong Development builds
         have received basic testing, but are not considered fully stable yet.
         
@@ -69,6 +68,7 @@ bottom_javascripts: ["/javascripts/download_tabs.js"]
       - higher_version_download_page = site.download_pages[page.build_info.product_id][higher_version]
       .alert.alert-info
         %strong Heads up! 
+        #{page.build_info.name} #{page.build_info.version} was released on #{page.build_info.release_date}, but
         %strong 
           %a{:href=>higher_version_download_page.output_path} #{page.build_info.name} #{higher_version_download_page.build_info.version}
         is our latest stable release for #{page.build_info.eclipse_version.full_name}
