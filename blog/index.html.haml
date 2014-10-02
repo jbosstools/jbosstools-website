@@ -9,21 +9,14 @@ status: yellow
   .row-fluid
     .hero-unit.center
       %h1< Articles tagged with "#{page.selected_tag}"
-      %hr
     
-- elsif !page.posts.nil?
-  .row-fluid
-    .hero-unit.center
-      %h1< 
-        Latest Articles        
-      %hr
 - if !page.posts.nil?
   .row-fluid
     .span9#core-page.posts
       - for post in page.posts
         .well.post-bg
           .post
-            %header
+            .header
               %a{:href=>site.team[post.author].developer_page}
                 %img.img-polaroid{:src=>"#{site.team[post.author].photo_64px}"}
               .title
@@ -49,18 +42,16 @@ status: yellow
               #{post.content}
               - site.asciidoctor.attributes['imagesdir'] = default_imagesdir
 
-            %hr
-    
-    .span3.well.post-bg
+    .span3.well
       %header
         %h3
           %a{:href => relative("/blog")} Latest posts
           %a{:href=>relative("/blog/news.atom")}
             %img#rss-icon{:src=>relative("/images/feed-icon-28x28.png"), :width=>"20px"}
       .latest-posts
-        - posts = site.posts.sort{|l,r| r.date <=> l.date}.first(3)
+        - posts = site.posts.sort{|l,r| r.date <=> l.date}.first(5)
         - for post in posts
-          %header
+          .header
             %img.img-polaroid{:src => "#{site.team[post.author].photo_32px}"}
             .title
               %h4
@@ -78,7 +69,6 @@ status: yellow
                 
   .row-fluid
     .span12.center
-      %hr
       .pagination
         - next_page = page.posts.next_page
         - previous_page = page.posts.previous_page
@@ -120,7 +110,6 @@ status: yellow
   
 .row-fluid
   .span12    
-    %hr
-      .center
-        Looking for older articles ? See the 
-        %a{:href=>"https://community.jboss.org/en/tools/blog"} Archived entries.
+    .center
+      Looking for older articles ? See the 
+      %a{:href=>"https://community.jboss.org/en/tools/blog"} Archived entries.

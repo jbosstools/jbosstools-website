@@ -14,7 +14,7 @@ gem 'asciidoctor', '1.5.1'
 gem 'slim'
 gem 'less'
 #gem 'therubyracer'
-gem 'tilt', '~> 2.0.1'
+gem 'tilt'
 gem 'coderay'
 gem 'html_press', '~> 0.8.1'
 gem 'git' # required to run the '-deploy' option
