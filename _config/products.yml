@@ -308,10 +308,6 @@ jbt_core:
             file_size: 104MB
             url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.x/jbosstools-4.2.0.CR1_2014-09-15_02-47-21-B157-updatesite-hibernatetools.zip
             md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.x/jbosstools-4.2.0.CR1_2014-09-15_02-47-21-B157-updatesite-hibernatetools.zip.MD5
-          - name: Stand-alone BrowserSim
-            file_size: 16MB
-            url: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.jboss.tools.vpe.browsersim&a=org.jboss.tools.vpe.browsersim-standalone&v=3.6.0-SNAPSHOT&e=jar&c=standalone
-            #md5_url: .MD5
           - name: Release Notes
             url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.x/zz_Release_Notes_4.2.0.CR1.readme.html
       4.2.0.Beta3:
@@ -425,12 +421,6 @@ jbt_core:
         # TODO move this symlink to point at builds/nightly/core/4.2.luna, and create a new one for mars
         update_site_url: http://download.jboss.org/jbosstools/updates/nightly/luna/
         download_url: http://download.jboss.org/jbosstools/builds/nightly/core/master/
-        zips:
-          - name: Stand-alone BrowserSim
-            file_size: 16MB
-            url: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.jboss.tools.vpe.browsersim&a=org.jboss.tools.vpe.browsersim-standalone&v=3.6.0-SNAPSHOT&e=jar&c=standalone
-            #md5_url: .MD5
-
     kepler:
       4.1.2.Final:
         build_type: stable
