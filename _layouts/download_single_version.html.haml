@@ -28,6 +28,8 @@ bottom_javascripts: ["/javascripts/download_tabs.js"]
         %span#displayed-version{:class=>"label label_#{page.build_info.build_type}"}
           #{site.labels[page.build_info.build_type]}
     .center
+      #{page.build_info.release_date}
+    .center
       - unless page.build_info.documentation_url.nil?
         %a{:href=>relative(page.build_info.documentation_url)} Documentation
         &#124;
@@ -44,15 +46,9 @@ bottom_javascripts: ["/javascripts/download_tabs.js"]
         %a{:href=>relative(page.build_info.release_notes_url)} Release Notes 
         &#124;
       %a{:href=>relative("/downloads/installation.html")} Installation Instructions
-      
-    - if page.build_info.build_type_label == "stable"
-      .alert.alert-success
-        #{page.build_info.name} #{page.build_info.version} was released on #{page.build_info.release_date}. 
-        
-    - elsif page.build_info.build_type_label == "development"
+             
+    - if page.build_info.build_type_label == "development"
       .alert.alert-info
-        #{page.build_info.name} #{page.build_info.version} was released on #{page.build_info.release_date}. 
-        %br
         %strong Development builds
         have received basic testing, but are not considered fully stable yet.
         
@@ -68,7 +64,6 @@ bottom_javascripts: ["/javascripts/download_tabs.js"]
       - higher_version_download_page = site.download_pages[page.build_info.product_id][higher_version]
       .alert.alert-info
         %strong Heads up! 
-        #{page.build_info.name} #{page.build_info.version} was released on #{page.build_info.release_date}, but
         %strong 
           %a{:href=>higher_version_download_page.output_path} #{page.build_info.name} #{higher_version_download_page.build_info.version}
         is our latest stable release for #{page.build_info.eclipse_version.full_name}
