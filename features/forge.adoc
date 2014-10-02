@@ -1,4 +1,4 @@
-= Forge Tool
+= Forge Tools
 :page-layout: features
 :page-product_id: jbt_core
 :page-feature_id: forge
