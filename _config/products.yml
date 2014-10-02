@@ -310,7 +310,7 @@ jbt_core:
             md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.x/jbosstools-4.2.0.CR1_2014-09-15_02-47-21-B157-updatesite-hibernatetools.zip.MD5
           - name: Stand-alone BrowserSim
             file_size: 16MB
-            url: http://download.jboss.org/jbosstools/builds/development/jbosstools-4.2.0.CR2-browsersim-standalone/org.jboss.tools.vpe.browsersim-standalone-3.6.0-SNAPSHOT.zip
+            url: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.jboss.tools.vpe.browsersim&a=org.jboss.tools.vpe.browsersim-standalone&v=3.6.0-SNAPSHOT&e=jar&c=standalone
             #md5_url: .MD5
           - name: Release Notes
             url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.x/zz_Release_Notes_4.2.0.CR1.readme.html
