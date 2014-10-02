@@ -1,0 +1,21 @@
+= EclipseCon NA 2015 Call for papers!
+:page-layout: blog
+:page-author: maxandersen
+:page-tags: [eclipseorg, jbosscentral]
+
+I did not make it to EclipseCon 2014 since I was enjoying my new found Fatherhood too much.
+
+Thus I was happy when I got invited on board the EclipseCon Program Committee by Martin Lippert (Pivotal) 
+to not only have a new reason to go to EclipseCon but also help form next years conference.
+
+To kickstart forming next year conference the https://www.eclipsecon.org/na2015/cfp[Call For Papers] are now open!
+
+EclipseCon 2015 is to be held March 9 - 12 in (sometimes) sunny California at the Hyatt Regency San Francisco Airport.
+
+I look forward to what we will get to see of talks - and I hear it will be not so fun trying to filter everything down
+but I'm up for a new kind of challenge.
+
+See you in the CfP's and remember...Have fun!
+
+Max Rydahl Andersen +
+http://twitter.com/maxandersen[@maxandersen]
