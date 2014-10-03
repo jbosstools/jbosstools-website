@@ -1,4 +1,7 @@
 = Create and Deploy your First OpenShift Online Application with OpenShift Tools
+:page-layout: howto
+:page-tab: docs
+:page-status: green
 
 OpenShift Tools provides an all-in-one `New OpenShift Application` wizard for creating new OpenShift applications from templates and existing projects. This wizard is the starting point for creating all new OpenShift Online applications from the IDE and also for importing OpenShift Online applications to your workspace.
 
