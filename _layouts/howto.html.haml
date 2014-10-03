@@ -1,0 +1,16 @@
+---
+layout: project
+tab: docs
+---
+.row-fluid
+  .hero-unit.center    
+    - if page.title == "How to" 
+      %h1 #{page.title}
+    - else
+      %h1 How To: 
+      %h1 #{page.title}
+    %hr
+    
+.row-fluid
+  .span12
+    ~content
