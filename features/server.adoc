@@ -8,7 +8,7 @@
 :page-issues_url: https://issues.jboss.org/browse/JBIDE/component/12310642
 
 == Server Tooling
-=== All your server are belong to us
+=== All your servers belong to us
 
 image::images/server-overview.png[Overview]
 
