@@ -24,41 +24,40 @@ status: green
       
   .row-fluid
     -# main column
-    #main.span8
+    #main.span9
       .row-fluid
         %section.span12
           %header
-            %h3
+            %h2
               %a{:href=>"/features"} Highlighted Features
-          .flexbox.stretch-row
-            - features = site.features["jbt_core"].find_all{|feature| ["forge", "server", "cdi"].include?(feature.feature_id)}
-            - for feature in features
-              .flexbox.stretch-column.center
-                .title
-                  %a.block{:href=>relative(feature.url)}
-                    %h4 #{feature.name}
-                .body
-                  %a.block{:href=>relative(feature.url)}
-                    -# specify the exact width/height of the feature image to avoid multiple repaints while rnedering the page in the browser
-                    %img{:src=>relative(feature.image_url), :width=>200, :height=>200}
-                .footer
-                  %a.block{:href=>relative(feature.url)}
-                    %span #{feature.tagline}
-      
+
+      .row-fluid.features
+        - features = site.features["jbt_core"].find_all{|feature| ["forge", "server", "cdi"].include?(feature.feature_id)}
+        - for feature in features
+          %section.span4.well
+            %a{:href=>relative(feature.url) }
+              %h3.center< #{feature.name}
+              %img{:align=>"center",:src=>relative(feature.image_url), :alt=>"#{feature.name}", :width=>"128px"}
+              %h4.center< #{feature.tagline}
+     
       .row-fluid.visible-desktop
-        .span12
-          %hr
+        %hr
       .row-fluid
         %section.span12
           %header
-            %h3
+            %h2
               %a{:href=>"/features"} Call for Feedback
-          .content.center
-            %a{:href=>"/cat"}
-              %img{:src=>"/images/jbosstools-cat-logo.png", :width=>600, :height=>200}
+      .row-fluid.visible-desktop
+        %hr
+      .row-fluid.visible-desktop
+        %section
+      .content.center
+        %section.span12.well.post-bg
+          %a{:href=>"/cat"}
+            %img{:src=>"/images/jbosstools-cat-logo.png", :width=>600, :height=>200}
       
     -# aside column
-    %aside.span4
+    %aside.span3
       .row-fluid
         .span12.well
           %section
