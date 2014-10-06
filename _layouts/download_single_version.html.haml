@@ -144,7 +144,7 @@ bottom_javascripts: ["/javascripts/download_tabs.js"]
                   - elsif installer.url.end_with? "tar.gz"
                     %a{:href=>installer.url} tar.gz
                   - else
-                    %a{:href=>installer.url} unknown
+                    %a{:href=>installer.url} Download
                     - puts "Unknown file type: #{installer.url} (in installers of #{page.build_info.name} #{page.build_info.version})"
                   - if installer.md5_url?
                     (
