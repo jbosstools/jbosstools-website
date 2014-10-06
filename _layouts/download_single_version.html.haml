@@ -263,7 +263,7 @@ bottom_javascripts: ["/javascripts/download_tabs.js"]
                   - elsif zip.url.end_with? "tar.gz"
                     %a{:href=>zip.url} tar.gz
                   - else
-                    %a{:href=>zip.url} unknown
+                    %a{:href=>zip.url} Download
                     - puts "Unknown file type: #{zip.url} (in zips of #{page.build_info.name} #{page.build_info.version})"
                   - if zip.md5_url?
                     (
