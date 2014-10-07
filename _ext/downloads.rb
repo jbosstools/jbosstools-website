@@ -41,16 +41,16 @@ module Awestruct
             end
             # for each Eclipse versions can have many product builds, each one with build info
             eclipse_stream.each do |build_version, build_info|
-              product_info = ProductsHelper.get_build_info(site, product_id, build_version, eclipse_version, build_info)
+              product_info = Products_Helper.get_build_info(site, product_id, build_version, eclipse_version, build_info)
               download_page = generate_download_page(product_id, eclipse_version, 
                     build_version.to_s, product_info)
               
               # used to provide links to download .Final versions on /downloads
               # and links to latest builds per type on /download/<product_id>
-              if (!product_info.build_type_label.nil? && 
-                  (@site.latest_builds_download_pages[product_id][product_info.build_type_label].nil? || 
-                    (@site.latest_builds_download_pages[product_id][product_info.build_type_label].build_info.version <=> download_page.build_info.version) == -1 ))
-                @site.latest_builds_download_pages[product_id][product_info.build_type_label] = download_page
+              if (!product_info.build_type.nil? && 
+                  (@site.latest_builds_download_pages[product_id][product_info.build_type].nil? || 
+                    (@site.latest_builds_download_pages[product_id][product_info.build_type].build_info.version <=> download_page.build_info.version) == -1 ))
+                @site.latest_builds_download_pages[product_id][product_info.build_type] = download_page
               end
             end
           end
@@ -97,7 +97,7 @@ module Awestruct
             download_pages_per_eclipse_stream[product_id][eclipse_stream] = Hash.new
             product_versions.each do |product_version, product_info| 
               # the real build type, not the one for the labels
-              build_info = ProductsHelper.get_build_info(site, product_id, product_version, eclipse_stream, product_info) 
+              build_info = Products_Helper.get_build_info(site, product_id, product_version, eclipse_stream, product_info) 
               build_type = build_info.build_type
               if (download_pages_per_eclipse_stream[product_id][eclipse_stream][build_type].nil? || 
                   download_pages_per_eclipse_stream[product_id][eclipse_stream][build_type].version < product_version)  then

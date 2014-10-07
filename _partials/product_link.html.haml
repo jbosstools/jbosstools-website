@@ -1,4 +1,8 @@
-%a{:href=>relative(page.product_release.output_path)} #{page.product_release.build_info.name} #{page.product_release.build_info.version}
-- unless page.product_release.build_info.build_type_label.nil?
-  %span{:class=>"label label_#{page.product_release.build_info.build_type_label}"}
-    #{site.labels[page.product_release.build_info.build_type_label]}
+%a{:href=>relative(page.product_info.output_path)} 
+  - if page.display_product_name.nil? || page.display_product_name
+    #{page.product_info.build_info.name} 
+    
+  #{page.product_info.build_info.version}
+- unless page.product_info.build_info.build_type_label.nil?
+  %span{:class=>"label label_#{page.product_info.build_info.build_type_label}"}
+    #{site.labels[page.product_info.build_info.build_type_label]}

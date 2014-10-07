@@ -23,15 +23,10 @@ title: All Downloads
             - for product_id in [:devstudio, :devstudio_is, :jbt_core, :jbt_is]
               - next if site.download_pages[product_id].nil? || site.download_pages[product_id].empty?
               %td
-                - labels = Hash.new
                 - site.download_pages[product_id].each do |product_version, download_page|
                   - next if download_page.build_info.eclipse_version != eclipse_info
                   .block
-                    %a{:href=>relative(download_page.output_path)} #{product_version} 
-                    - if (!download_page.build_info.build_type_label.nil? && labels[download_page.build_info.build_type_label].nil?) 
-                      %span{:class=>"label label_#{download_page.build_info.build_type_label}"} 
-                        #{site.labels[download_page.build_info.build_type]}
-                      - labels[download_page.build_info.build_type_label] = true
+                    =partial('product_link.html.haml', { :parent => page, :product_info => download_page, :display_product_name=>false })
                   
                   
                   

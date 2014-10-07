@@ -2,13 +2,13 @@
 layout: project
 tab: docs
 ---
-- page.title = "#{page.product_name} #{page.product_version}"
+- page.title = "#{page.product_name} #{page.build_info.version}"
 - component_ids = page.component_news.keys.sort{|x,y| site.components[x].name <=> site.components[y].name}
 
-- if is_stable_version(page.product_version)
+- if is_stable_version(page.build_info.version)
   -# Banner for .Final versions (it's an aggregate of non-.Final pages)
-  - related_whatsnew_pages = get_related_whatsnew_pages(site, page.product_id, page.product_version)
-  - unless related_whatsnew_pages.empty?
+  - related_whatsnew_pages = get_related_whatsnew_pages(site, page.build_info.product_id, page.build_info.version)
+  - unless related_whatsnew_pages.empty? || related_whatsnew_pages.length == 1 
     .row-fluid
       .span12.alert.alert-info><
         %span><= "Heads Up! This is a summary page of all New & Noteworthy of #{page.product_name}&nbsp;"
@@ -20,28 +20,29 @@ tab: docs
             %span><= ",&nbsp;" 
 - else 
   -# Banner for non-.Final version pages which are related a an existing .Final version page
-  - final_whatsnew_page = get_stable_version_whatsnew_page(site, page.product_id, page.product_version)
+  - final_whatsnew_page = get_stable_version_whatsnew_page(site, page.build_info.product_id, page.build_info.version)
   - unless final_whatsnew_page.nil?
     .row-fluid
       .span12.alert.alert-warning><
         %span><= "Heads Up! This is the archived New & Noteworthy page is also part of of #{page.product_name}&nbsp;"
-        %a{:href=>final_whatsnew_page.output_path}><= final_whatsnew_page.product_version
+        %a{:href=>final_whatsnew_page.output_path}><= final_whatsnew_page.build_info.version
 
 
 .row-fluid.affixedContent
   .span3.bs-docs-sidebar
     %ul.nav.nav-list.bs-docs-sidenav
-      - if (page.product_active == true)
-        - whatsnew_pages = get_active_whatsnew_pages(site, page.product_id, page.product_version)
+      -# puts " #{page.build_info.product_id} #{page.build_info.version} archived: #{page.build_info.archived}"
+      - if (page.build_info.archived == false)
+        - whatsnew_pages = get_active_whatsnew_pages(site, page.build_info.product_id, page.build_info.version)
         -# sorting active versions in reverse order
-        - whatsnew_pages.sort{|x,y| y.product_version <=> x.product_version}.each_with_index do |whatsnew_page, index|
-          %li{:class=>("selected expanded" if whatsnew_page.product_version == page.product_version)}
+        - whatsnew_pages.sort{|x,y| y.build_info.version <=> x.build_info.version}.each_with_index do |whatsnew_page, index|
+          %li{:class=>("selected expanded" if whatsnew_page.build_info.version == page.build_info.version)}
             %a{:href=>relative(whatsnew_page.output_path)}
-              #{whatsnew_page.product_version}
-              - unless whatsnew_page.build_type_label.nil?
-                %span.visible-desktop.visible-phone{:class=>"label label_#{whatsnew_page.build_type_label}"}
-                  #{site.labels[whatsnew_page.build_type_label]}
-            - if whatsnew_page.product_version == page.product_version
+              #{whatsnew_page.build_info.version}
+              - unless whatsnew_page.build_info.build_type_label.nil?
+                %span.visible-desktop.visible-phone{:class=>"label label_#{whatsnew_page.build_info.build_type_label}"}
+                  #{site.labels[whatsnew_page.build_info.build_type_label]}
+            - if whatsnew_page.build_info.version == page.build_info.version
               %ul.nav.nav-nested.components
                 - component_ids.each_with_index do |component_id, index|
                   %li.component{:class=>(index == 0 ? "active" : "")}
@@ -51,10 +52,10 @@ tab: docs
       - else
         %li{:class=>("selected expanded")}
           %a{:href=>relative(page.output_path)}
-            #{page.product_version}
-            - unless page.build_type_label.nil?
-              %span{:class=>"label label_#{page.build_type_label}"}
-                #{site.labels[page.build_type_label]}
+            #{page.build_info.version}
+            - unless page.build_info.build_type_label.nil?
+              %span{:class=>"label label_#{page.build_info.build_type_label}"}
+                #{site.labels[page.build_info.build_type_label]}
           %ul.nav.nav-nested.components
             - component_ids.each_with_index do |component_id, index|
               %li.component{:class=>(index == 0 ? "active" : "")}
@@ -66,11 +67,11 @@ tab: docs
             
   .span9.whatsnew.scrolledContent.well.post-bg
     %header 
-      %h1.center What's New in #{page.product_name} #{page.product_version}
-      - download_page = site.download_pages[page.product_id][page.product_version]
+      %h1.center What's New in #{page.product_name} #{page.build_info.version}
+      - download_page = site.download_pages[page.build_info.product_id][page.build_info.version]
       - if download_page.nil? && page.build_type == :unreleased then
-        - download_page = site.latest_builds_download_pages[page.product_id][:nightly]
-      - puts "#{page.product_id} #{page.product_version}: #{page.build_type} -> #{download_page.output_path}"
+        - download_page = site.latest_builds_download_pages[page.build_info.product_id][:nightly]
+      - puts "#{page.build_info.product_id} #{page.build_info.version}: #{page.build_type} -> #{download_page.output_path}"
       .center
         -# Blog announcement
         - unless download_page.nil? || download_page.build_info.blog_announcement_url.nil?

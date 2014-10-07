@@ -13,7 +13,7 @@ module Awestruct
       
       # returns the list of pages that will appear in the sidenavbar
       def get_active_whatsnew_pages(site, product_id, product_version) 
-        site.whatsnew_pages[product_id].values.select{|p| p.product_active == true && (is_stable_version(p.product_version) || !exists_stable_version_whatsnew_page(site, p.product_id, p.product_version))}
+        site.whatsnew_pages[product_id].values.select{|p| !p.build_info.archived && (is_stable_version(p.build_info.version) || !exists_stable_version_whatsnew_page(site, p.build_info.product_id, p.build_info.version))}
       end
       
       # Returns the list of pages whose version match the given version (minus the qualifier) 
@@ -25,19 +25,20 @@ module Awestruct
       def get_stable_version_whatsnew_page(site, product_id, product_version)
         main_version = get_main_version(product_version)
         final_version = main_version << ".Final"
-        site.whatsnew_pages[product_id].values.select{|p| p.product_version == final_version}.first
+        site.whatsnew_pages[product_id][final_version]
       end
 
       def get_current_version_whatsnew_page(site, product_id, product_version)
-        site.whatsnew_pages[product_id].values.select{|p| p.product_version == product_version}.first
+        site.whatsnew_pages[product_id][product_version]
       end
       
       def get_aggregate_whatsnew_page(site, product_id, product_version)
-        if exists_stable_version_whatsnew_page(site, product_id, product_version)
-          get_stable_version_whatsnew_page(site, product_id, product_version)
-        else
-          aggregated_whatsnew_page = get_current_version_whatsnew_page(site, product_id, product_version)
+        aggregate_whatsnew_page = get_stable_version_whatsnew_page(site, product_id, product_version)
+        if aggregate_whatsnew_page.nil?
+          aggregate_whatsnew_page = get_current_version_whatsnew_page(site, product_id, product_version)
         end
+        #puts "aggregate_whatsnew_page for #{product_id} #{product_version} found: #{!aggregate_whatsnew_page.nil?}"
+        aggregate_whatsnew_page
       end
       
       def exists_stable_version_whatsnew_page(site, product_id, product_version)

@@ -41,9 +41,9 @@ module Awestruct
             whatsnew_page = get_whatsnew_page(site, component_page.product_id, component_page.product_version)
             add_component_page(whatsnew_page, component_page)
             # now, deal with *.Final* versions if they exist in site.products
-            unless ProductsHelper.is_stable_version(component_page.component_version)
-              product_stable_version = ProductsHelper.get_stable_version(site, component_page.product_id, component_page.product_version)
-              #puts " stable version of #{component_page.product_id} #{component_page.product_version}: #{product_stable_version}"
+            unless Products_Helper.is_stable_version(component_page.component_version)
+              product_stable_version = Products_Helper.get_stable_version(site, component_page.product_id, component_page.product_version)
+              #puts " stable version of #{component_page.product_id} #{component_page.build_info.version}: #{product_stable_version}"
               unless product_stable_version.nil? 
                 whatsnew_final_page = get_whatsnew_page(site, component_page.product_id, product_stable_version)
                 add_component_page(whatsnew_final_page, component_page)
@@ -91,18 +91,10 @@ module Awestruct
         site.whatsnew_pages[product_id] = Hash.new if site.whatsnew_pages[product_id].nil?
         if site.whatsnew_pages[product_id][product_version].nil? then
           product_url_path_fragment = site.products[product_id].url_path_fragment
-          product_active = ProductsHelper.is_product_version_active(site, product_id, product_version)
-          puts "  building  N&N page for #{product_id} #{product_version}"
           page = create_page(site, @@whatsnew_layout_path, @target_path_prefix, product_url_path_fragment, product_version)
-          page.build_info = ProductsHelper.get_product_info(site, product_id, product_version)
-          page.product_id = product_id
-          page.product_name = site.products[product_id].name
-          page.product_version = product_version
+          page.build_info = Products_Helper.get_product_info(site, product_id, product_version)
+          puts "  building  N&N page for #{product_id} #{product_version}: #{page.build_info}"
           page.component_news = Hash.new
-          page.product_active = product_active
-          # see downloads.rb for symbols
-          page.build_type= ProductsHelper.get_build_type(site, product_id, product_version)
-          page.build_type_label= ProductsHelper.get_build_type_label(site, product_id, product_version)
           site.whatsnew_pages[product_id][product_version] = page
         end
         site.whatsnew_pages[product_id][product_version]

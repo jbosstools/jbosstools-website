@@ -53,7 +53,7 @@ Awestruct::Extensions::Pipeline.new do
   extension Awestruct::Extensions::MyTagger.new( :posts, '/blog/index', '/blog/tags', :per_page=>10,
    :sanitize=>true )
   #extension Awestruct::Extensions::Indexifier.new
-  helper Awestruct::Extensions::ProductsHelper
+  helper Awestruct::Extensions::Products_Helper
   # Needs to be after Indexifier to get the linking correct; 
   #extension Awestruct::Extensions::DataDir.new('/features')
   extension Awestruct::Extensions::Features.new('/features')

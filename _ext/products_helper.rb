@@ -1,6 +1,6 @@
 module Awestruct
   module Extensions
-    module ProductsHelper
+    module Products_Helper
       
       def get_main_version(version, include_revision = true)
         if include_revision
@@ -51,20 +51,16 @@ module Awestruct
       end
       module_function :get_build_type
       
-      # Returns a build type label if provided in products.yml and not marked as archived (otherwise it will return 'nil'), 
-      # or 'unreleased' if there is no such product id/version in products.yml
-      def get_build_type_label(site, product_id, product_version)
-        stream = site.products[product_id].streams.select{|stream_id, versions| versions[product_version] != nil}.values.first
+      # Returns a build type label if provided in products.yml, nil if the product is archived or has a higher version in the
+      # same stream or 'unreleased' 
+      def get_build_type_label(site, product_id, product_version, build_type, archived)
         build_type_label = "unreleased"
-        unless stream.nil?
-          info = stream.select{|build_version, build_info| build_version == product_version}.values.first
-          if info[:archived]
-            build_type_label = nil
-          else
-            build_type_label = info[:build_type] 
-          end
-          #puts "  #{product_id} #{product_version} build type: '#{build_type_label}'"
+        if archived || has_higher_version(site, product_id, product_version)
+          build_type_label = nil
+        else
+          build_type_label = build_type
         end
+        #puts "  #{product_id} #{product_version} build type: '#{build_type_label}'"
         return build_type_label
       end
       module_function :get_build_type_label
@@ -103,24 +99,6 @@ module Awestruct
       end
       module_function :is_nightly_version
       
-      # returns true if the given product_id/product_version has no "archived: true" attribute or if it is a .Final version (even archived)
-      def is_product_version_active(site, product_id, product_version)
-        unless site.products[product_id].nil? then
-          site.products[product_id].streams.each do |stream_id, stream_versions|
-            unless stream_versions[product_version].nil? then
-              product_archived = false
-              # final versions are not considered archived
-              product_archived = stream_versions[product_version][:archived] ||= false unless is_stable_version(product_version)
-              #puts " #{product_id} #{product_version} active: #{!product_archived}"
-              return !product_archived
-            end
-          end
-        end
-        #puts "  #{product_id} #{product_version} is not defined in products.yml - N&N content is considered as *active*"
-        return true
-      end
-      module_function :is_product_version_active
-      
       # returns an 'info' structure for the given product id/version and the build_info found in products.yml
       def get_product_info(site, product_id, product_version) 
         site.products[product_id][:streams].each do |eclipse_id, eclipse_stream|
@@ -128,10 +106,10 @@ module Awestruct
           if eclipse_version.nil?
             raise "Eclipse version '#{eclipse_id}' referenced in stream not defined in products.yml"
           end
-          # for each Eclipse versions can have many product builds, each one with build info
+          # each Eclipse versions can have many product builds, each one with build info
           eclipse_stream.each do |build_version, build_info|
             if build_version == product_version
-              return ProductsHelper.get_build_info(site, product_id, build_version, eclipse_version, build_info)
+              return Products_Helper.get_build_info(site, product_id, build_version, eclipse_version, build_info)
             end
           end
         end
@@ -144,12 +122,14 @@ module Awestruct
         info = OpenStruct.new
         info.name = site.products[product_id].name
         info.product_id = product_id
+        info.product_name = site.products[product_id].name
         info.version = product_version
+        info.archived = build_info[:archived]
         info.release_date = build_info["release_date"]
         info.renamed_as = build_info["renamed_as"]
         info.eclipse_version = eclipse_version
         info.build_type = get_build_type(site, product_id, product_version) 
-        info.build_type_label = get_build_type_label(site, product_id, product_version) 
+        info.build_type_label = get_build_type_label(site, product_id, product_version, info.build_type, info.archived) 
         info.blog_announcement_url = build_info["blog_announcement_url"]
         info.release_notes_url = build_info["release_notes_url"]
         #info.supported_jbt_is_version = build_info["supported_jbt_is_version"]
