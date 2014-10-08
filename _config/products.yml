@@ -61,7 +61,6 @@ devstudio:
   streams:
     luna:
       8.0.0.CR1:
-        build_type: development
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         marketplace_url: http://marketplace.eclipse.org/node/1616973
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
@@ -83,7 +82,6 @@ devstudio:
             url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/ea/ea08cbdc79fa982989d578cbb1c39cc3e42dd36b5cee598411d3814d4148c96b/jboss-devstudio-8.0.0.CR1-v20140915-0805-B246-updatesite-core.zip
             #md5_url: n/a
       8.0.0.Beta3:
-        #build_type: development
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         marketplace_url: http://marketplace.eclipse.org/node/1616973
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
@@ -106,7 +104,6 @@ devstudio:
             #md5_url: n/a
 
       8.0.0.Beta2:
-        #build_type: development
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         release_date: 2014-06-20
         #supported_devstudio_is_version: 8.0.0.GA
@@ -126,7 +123,6 @@ devstudio:
             url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/9d/9da04d293283afcff48c85d382e4f57dccce181382aa556e9b44d38f5cadf94a/jboss-devstudio-8.0.0.Beta2-v20140617-2058-B166-updatesite-core.zip
             #md5_url: n/a
       8.0.0.Beta1:
-        #build_type: development
         release_date: 2014-04-11
         #supported_devstudio_is_version: 8.0.0.GA
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
@@ -146,7 +142,6 @@ devstudio:
             #md5_url: n/a
     kepler:
       7.1.1.GA:
-        build_type: stable
         release_date: 2014-03-24
         supported_devstudio_is_version: 7.0.2.GA
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
@@ -169,7 +164,6 @@ devstudio:
       7.1.0.GA:
         release_date: 2013-12-16
         archived: true
-        build_type: stable
         supported_devstudio_is_version: 7.0.0.GA
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/7.1/html-single/Release_Notes_7.1.0/index.html
@@ -189,7 +183,6 @@ devstudio:
             md5_url: https://devstudio.jboss.com/updates/7.0.0/jbdevstudio-updatesite-7.1.0.GA-v20131208-0703-B592.zip.MD5
       7.0.1.GA:
         archived: true
-        build_type: stable
         release_date: 2013-09-23
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/7.0/html-single/Release_Notes_7.0.1/index.html
@@ -207,7 +200,6 @@ devstudio:
     juno:
       6.0.1.GA:
         archived: true
-        build_type: stable
         release_date: 2012-11-01
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/6.0/html-single/6.0.1_Release_Notes/index.html
@@ -225,7 +217,6 @@ devstudio:
     indigo:
       5.0.2.GA:
         archived: true
-        build_type: stable
         release_date: 2012-06-21
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/5.0/html-single/5.0.2_Release_Notes/index.html
@@ -247,7 +238,6 @@ devstudio_is:
   streams:
     kepler:
       7.0.2.GA:
-        build_type: stable
         blog_announcement_url: /blog/2014-06-19-JBTIS-4.html
         release_notes_url: https://devstudio.jboss.com/updates/7.0/integration-stack/release-notes/Release_Notes_7.0.2.html
         release_date: 2014-06-19
@@ -259,7 +249,6 @@ devstudio_is:
             url: https://devstudio.jboss.com/updates/7.0.0/jbdevstudio-integration-stack-updatesite-7.0.2.GA.zip
             md5_url: https://devstudio.jboss.com/updates/7.0.0/jbdevstudio-integration-stack-updatesite-7.0.2.GA.zip.MD5
       7.0.1.GA:
-        build_type: stable
         blog_announcement_url: /blog/2014-04-14-JBTIS-4.html
         release_date: 2014-04-14
         required_devstudio_version: 7.1.1.GA
@@ -271,7 +260,6 @@ devstudio_is:
             md5_url: https://devstudio.jboss.com/updates/7.0.0/jbdevstudio-integration-stack-updatesite-7.0.1.GA.zip.MD5
       7.0.0.GA:
         archived: true
-        build_type: stable
         blog_announcement_url: https://community.jboss.org/en/tools/blog/2014/01/30/integration-stack-tooling-for-jboss-tools-developer-studio?et=watches.email.blog
         release_date: 2014-01-30
         required_devstudio_version: 7.1.0.GA
@@ -291,7 +279,6 @@ jbt_core:
         marketplace_url: http://marketplace.eclipse.org/node/1617241
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1617241
         #archived: true
-        build_type: development
         release_date: 2014-09-17
         blog_announcement_url: /blog/2014-09-17-CR1-for-luna.html
         documentation_url: http://docs.jboss.org/tools/
@@ -316,7 +303,6 @@ jbt_core:
             url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.x/zz_Release_Notes_4.2.0.CR1.readme.html
       4.2.0.Beta3:
         #archived: true
-        #build_type: development
         release_date: 2014-07-28
         blog_announcement_url: /blog/2014-07-28-beta3-for-luna.html
         documentation_url: http://docs.jboss.org/tools/
@@ -337,7 +323,6 @@ jbt_core:
             url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.0.x/zz_Release_Notes_4.2.0.Beta3.readme.html
       4.2.0.Beta2:
         #archived: true
-        #build_type: development
         release_date: 2014-06-19
         blog_announcement_url: /blog/2014-06-19-beta2-for-luna.html
         documentation_url: http://docs.jboss.org/tools/
@@ -358,7 +343,6 @@ jbt_core:
             url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.0.x/zz_Release_Notes_4.2.0.Beta2.readme.html
       4.2.0.Beta1:
         #archived: true
-        #build_type: development
         release_date: 2014-04-11
         blog_announcement_url: /blog/2014-04-14-beta1-for-luna.html
         documentation_url: http://docs.jboss.org/tools/
@@ -379,7 +363,6 @@ jbt_core:
             url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/zz_Release_Notes_4.2.0.Beta1.readme.html
       4.2.0.Alpha2:
         #archived: true
-        #build_type: development
         release_date: 2014-02-14
         documentation_url: http://docs.jboss.org/tools/
         zips:
@@ -399,7 +382,6 @@ jbt_core:
             url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/zz_Release_Notes_4.2.0.Alpha2.readme.html
       4.2.0.Alpha1:
         #archived: true
-        #build_type: development
         release_date: 2013-12-19
         documentation_url: http://docs.jboss.org/tools/
         zips:
@@ -418,7 +400,7 @@ jbt_core:
           - name: Release Notes
             url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/zz_Release_Notes_4.2.0.Alpha1.readme.html
       4.2.0.Nightly: 
-        build_type: nightly
+        #build_type: nightly
         # TODO when master branch moves to 4.3.0 (mars), make sure 4.2.0.Nightly points at 4.2.luna instead of master
         #update_site_url: http://download.jboss.org/jbosstools/updates/nightly/core/4.2.luna/
         #download_url: http://download.jboss.org/jbosstools/builds/nightly/core/4.2.luna/
@@ -433,7 +415,6 @@ jbt_core:
 
     kepler:
       4.1.2.Final:
-        build_type: stable
         release_date: 2014-03-24
         supported_jbt_is_version: 4.1.5.Final
         documentation_url: http://docs.jboss.org/tools/4.1.x.Final/
@@ -460,11 +441,9 @@ jbt_core:
             url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.x/zz_Release_Notes_4.1.2.Final.readme.html
       4.1.2.CR1:
         archived: true
-        build_type: development
         renamed_as: 4.1.2.Final
       4.1.1.Final:
         archived: true
-        build_type: stable
         release_date: 2013-12-16
         supported_jbt_is_version: 4.1.3.Final
         documentation_url: http://docs.jboss.org/tools/4.1.x.Final/
@@ -492,7 +471,6 @@ jbt_core:
             url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.x/zz_Release_Notes_4.1.1.Final.readme.html
       4.1.1.CR1:
         archived: true
-        build_type: development
         zips:
           - name: Update site (including sources) bundle of all JBoss Core Tools
             file_size: 438.1MB
@@ -512,7 +490,6 @@ jbt_core:
       
       4.1.1.Beta1:
         archived: true
-        build_type: development
         zips:
           - name: Update site (including sources) bundle of all JBoss Core Tools
             file_size: 423.9MB
@@ -532,7 +509,6 @@ jbt_core:
         
       4.1.1.Alpha2:
         archived: true
-        build_type: development
         zips:
           - name: Update site (including sources) bundle of all JBoss Core Tools
             file_size: 432.5MB
@@ -552,7 +528,6 @@ jbt_core:
               
       4.1.1.Alpha1:
         archived: true
-        build_type: development
         zips:
           - name: Update site (including sources) bundle of all JBoss Core Tools
             file_size: 432.2MB
@@ -572,7 +547,6 @@ jbt_core:
               
       4.1.0.Final:
         archived: true
-        build_type: stable
         release_date: 2013-07-23
         documentation_url: http://docs.jboss.org/tools/4.1.0.Final/
         whatsnew_url: http://docs.jboss.org/tools/whatsnew/
@@ -604,20 +578,13 @@ jbt_core:
           - name: Release Notes 4.1.0
             file_size: 5.7kB
             url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.x/zz_Release_Notes_4.1.0.Final.readme.html
+
       4.1.0.CR1:
         archived: true
-        build_type: development
         renamed_as: 4.1.0.Final
-      4.1.x.Nightly:   
-        archived: true
-        build_type: nightly
-        documentation_url: http://docs.jboss.org/tools/
-        update_site_url: http://download.jboss.org/jbosstools/updates/nightly/core/4.1.kepler/
-        download_url: http://download.jboss.org/jbosstools/builds/nightly/core/4.1.kepler/
                
       4.1.0.Beta2:
         archived: true
-        build_type: development 
         zips:
           - name: Update site (including sources) bundle of all JBoss Core Tools
             file_size: 419.4MB
@@ -637,7 +604,6 @@ jbt_core:
               
       4.1.0.Beta1:
         archived: true
-        build_type: development
         zips:
           - name: Update site (including sources) bundle of all JBoss Core Tools
             file_size: 422.5MB
@@ -657,7 +623,6 @@ jbt_core:
               
       4.1.0.Alpha2:
         archived: true
-        build_type: development
         zips:
           - name: Update site (including sources) bundle of all JBoss Core Tools
             file_size: 315.7MB
@@ -677,7 +642,6 @@ jbt_core:
               
       4.1.0.Alpha1:
         archived: true
-        build_type: development
         zips:
           - name: Update site (including sources) bundle of all JBoss Core Tools
             file_size: 199.8MB
@@ -695,10 +659,15 @@ jbt_core:
             file_size: 31.8kB
             url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.0.x/zz_Release_Notes_4.1.0.Alpha1.readme.html
 
+      4.1.x.Nightly:   
+        archived: true
+        documentation_url: http://docs.jboss.org/tools/
+        update_site_url: http://download.jboss.org/jbosstools/updates/nightly/core/4.1.kepler/
+        download_url: http://download.jboss.org/jbosstools/builds/nightly/core/4.1.kepler/
+
     juno:
       4.0.1.Final:
         archived: true
-        build_type: stable
         release_date: 2013-04-03
         marketplace_url: http://marketplace.eclipse.org/node/420896
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=420896
@@ -723,7 +692,6 @@ jbt_core:
     indigo:
       3.3.2.Final:
         archived: true
-        build_type: stable
         release_date: 2013-01-25
         marketplace_url: http://marketplace.eclipse.org/node/121986
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=121986
@@ -748,7 +716,6 @@ jbt_core:
     helios:
       3.2.2.Final:
         archived: true
-        build_type: stable
         release_date: 2011-11-30
         marketplace_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=15557
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=15557
@@ -771,7 +738,6 @@ jbt_core:
     galileo:
       3.1.1.GA:
         archived: true
-        build_type: stable
         release_date: 2010-06-01
         update_site_url: http://download.jboss.org/jbosstools/updates/stable/galileo/
         zips:
@@ -791,7 +757,6 @@ jbt_core:
       # TODO: add all the other downloads from http://www.jboss.org/tools/download/archive/3_0_GA
       3.0.3.GA:
         archived: true
-        build_type: stable
         release_date: 2009-10-21
         update_site_url: http://download.jboss.org/jbosstools/updates/stable/ganymede/
         zips:
@@ -823,7 +788,6 @@ jbt_core:
       # TODO: add all the other downloads from http://www.jboss.org/tools/download/archive/3_0_GA
       2.1.2.GA:
         archived: true
-        build_type: stable
         release_date: 2008-07-01
         zips:
           - name: Update site bundle of all JBoss Core Tools - Windows
@@ -847,7 +811,6 @@ jbt_is:
   streams:
     kepler:
       4.1.5.Final:
-        build_type: stable
         blog_announcement_url: /blog/2014-06-19-JBTIS-4.html
         release_notes_url: https://devstudio.jboss.com/updates/7.0/integration-stack/release-notes/Release_Notes_7.0.2.html
         release_date: 2014-06-19
@@ -858,8 +821,8 @@ jbt_is:
             file_size: 236MB
             url: http://download.jboss.org/jbosstools/updates/stable/kepler/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.1.5.Final.zip
             md5_url: http://download.jboss.org/jbosstools/updates/stable/kepler/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.1.5.Final.zip.MD5
+
       4.1.4.Final:
-        build_type: stable
         blog_announcement_url: /blog/2014-04-14-JBTIS-4.html
         release_date: 2014-04-14
         required_jbt_core_version: 4.1.2.Final
@@ -869,8 +832,8 @@ jbt_is:
             file_size: 236MB
             url: http://download.jboss.org/jbosstools/updates/stable/kepler/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.1.4.Final-SNAPSHOT.zip
             md5_url: http://download.jboss.org/jbosstools/updates/stable/kepler/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.1.4.Final-SNAPSHOT.zip.MD5
+
       4.1.3.Final:
-        build_type: stable
         archived: true
         blog_announcement_url: https://community.jboss.org/en/tools/blog/2014/01/30/integration-stack-tooling-for-jboss-tools-developer-studio?et=watches.email.blog
         release_date: 2014-01-30
@@ -880,10 +843,10 @@ jbt_is:
             file_size: 218MB
             url: http://download.jboss.org/jbosstools/updates/stable/kepler/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.1.3.Final-SNAPSHOT.zip
             md5_url: http://download.jboss.org/jbosstools/updates/stable/kepler/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.1.3.Final-SNAPSHOT.zip.MD5
+
     indigo:  
       3.3.3.Final:
         archived: true
-        build_type: stable
         release_date: 2013-02-19
         required_jbt_core_version: 3.3.2.Final
         update_site_url: http://download.jboss.org/jbosstools/updates/stable/indigo/soa-tooling/
