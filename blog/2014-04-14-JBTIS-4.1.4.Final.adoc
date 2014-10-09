@@ -26,11 +26,11 @@ All of these components have been verified to work with the same dependencies as
 
 To install the Integration Stack tools, first install JBoss Developer Studio from the link:https://www.jboss.org/products/devstudio.html[all-in-one installer], bundled and configured out of the box with everything you need to get started. Alternatively, if you already have eclipse-jee-kepler installed, you can install link:https://marketplace.eclipse.org/content/red-hat-jboss-developer-studio-kepler[JBoss Developer Studio] or link:https://marketplace.eclipse.org/content/jboss-tools-kepler[JBoss Tools] from the Eclipse Marketplace via Help > Eclipse Marketplace...
 
-image:/blog/images/jbtis-b1.png[]
+image::/blog/images/jbtis-b1.png[]
 
 Once Developer Studio is installed, restart Eclipse and select the Software/Update tab in the JBoss Central view and look for the JBoss Developer Studio Integration Stack installation section.  Select the items you'd like to install:
 
-image:/blog/images/jbtis-b2.png[]
+image::/blog/images/jbtis-b2.png[]
 
 If you want to try out Savara you will need to use the JBoss Tools Integration Stack URL instead: 
 

@@ -41,7 +41,7 @@ the application server + your own application ?
 
 If you can answer yes to the above, then you will be happy to hear we now support this.
 
-image:/documentation/whatsnew/server/images/JBIDE-18094a.png[]
+image::/documentation/whatsnew/server/images/JBIDE-18094a.png[]
 
 Now, if you run a server in Debug mode and a hot code replace fails due to some class or jar changes,
 the dialog above will appear, giving you the option to restart the modules, terminate the server, restart the server, or just continue as if nothing happened.
@@ -66,7 +66,7 @@ If you do find discrepancies in this area, please let us know by opening a https
 
 JBoss Central now features a new AngularJS with Forge project wizard to let you kickstart new JavaEE based applications almost from scratch, using the powerful http://forge.jboss.org/[JBoss Forge] scaffolding capabilities.
 
-image:./images/new-forge-wizard.png[]
+image::./images/new-forge-wizard.png[]
 
 You will be asked to install Forge Tools, if it is not already installed. The wizard will also recommend you to install the AngularJS tooling.
 

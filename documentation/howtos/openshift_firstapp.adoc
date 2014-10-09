@@ -1,18 +1,19 @@
-= Create and Deploy your First OpenShift Online Application with OpenShift Tools
+= Create and Deploy your First OpenShift Online Application 
 :page-layout: howto
 :page-tab: docs
 :page-status: green
+:experimental:
 
 OpenShift Tools provides an all-in-one `New OpenShift Application` wizard for creating new OpenShift applications from templates and existing projects. This wizard is the starting point for creating all new OpenShift Online applications from the IDE and also for importing OpenShift Online applications to your workspace.
 
 The `New OpenShift Application` wizard is an ideal starting point for new users to OpenShift and OpenShift Tools as it guides you through all the steps necessary to set up the IDE to use your OpenShift Online account and configure your account ready for applications.
 
-The instructions here demonstrate how to use this wizard and a default OpenShift application template to create a basic OpenShift Online application. This includes one-time steps (marked with N), such as signing up for an OpenShift Online account, creating an OpenShift Online domain and uploading SSH keys. If you have previously used OpenShift Online and OpenShift Tools, you can omit these one-time steps as appropriate.     
+The instructions here demonstrate how to use this wizard and a default OpenShift application template to create a basic OpenShift Online application. This includes one-time steps (appended with 1), such as signing up for an OpenShift Online account, creating an OpenShift Online domain and uploading SSH keys. If you have previously used OpenShift Online and OpenShift Tools, you can omit these one-time steps as appropriate.     
 
 == Start the New OpenShift Application Wizard
 . In `JBoss Central`, under `Start from scratch`, click `OpenShift Application`.
 
-== (N) Sign up for an OpenShift Online Account
+== Sign up for an OpenShift Online Account (1)
 [start=2]
 . If you do not have an OpenShift Online account, click the link provided to sign up for an OpenShift account and follow the instructions on the OpenShift website.
 +
@@ -33,7 +34,7 @@ image::images/openshift_connect.png[Completed OpenShift Online connection fields
 +
 . Click `Next`.
 
-== (N) Create a Domain
+== Create a Domain (1)
 [start=6]
 . In the `Domain Name` field, type an alphanumeric name for your new OpenShift Online domain and click `Finish`. The provided domain name must be unique across all domains on OpenShift Online; if it is not unique, you are directed back to the `Create Domain` window to provide a unique domain name. 
 +
@@ -72,7 +73,7 @@ image::images/openshift_newapp-details.png[Completed new OpenShift application f
 .Valid Git Clone Destination Specified
 image::images/openshift_git-destination.png[Default Git clone destination check box selected]
 
-== (N) Enable Communication between the IDE and OpenShift
+== Enable Communication between the IDE and OpenShift (1)
 [start=14]
 . Click `SSH Keys` wizard.             
 . Click `New`.
@@ -101,7 +102,7 @@ image::images/openshift_new-sshkey.png[Completed new SSH key fields]
 * Scaling: Enables your application to react to changes in traffic and automatically allocate the necessary resources to handle the current demand
 
 == Did You Know
-* You can also start the `New OpenShift Application` wizard from the `OpenShift Explorer` view by right-clicking a connection, domain or existing application and clicking `New` &rarr; `Application`.
+* You can also start the `New OpenShift Application` wizard from the `OpenShift Explorer` view by right-clicking a connection, domain or existing application and clicking menu:New[Application].
 * To save time when logging in to OpenShift Online in future, you can click the `Save Password` check box in the `Sign in to OpenShift` window. The password is retained in secure storage provided by the IDE and automatically populates the `Password` field for the associated connection.
 * Using the `New OpenShift Application` wizard, you can also create a new OpenShift application from an existing workspace project or a Git source.
 +
@@ -109,4 +110,5 @@ image::images/openshift_new-sshkey.png[Completed new SSH key fields]
 See <link to other article once it is made.>
 ////
 +
-* Each time you start the IDE or switch workspaces you need to reconnect the IDE to OpenShift Online. To do this, in the `OpenShift Explorer` view click the `Connection` icon image:images/openshift_icon-connection.png[Connection icon].
+* Each time you start the IDE or switch workspaces the IDE is initially disconnected from OpenShift. When you attempt to complete an action that requires an active OpenShift connection, you are automaticaly prompted to reconnect.
+* To manually reconnect the IDE to OpenShift, in the `OpenShift Explorer` view click the `Connection` icon image:images/openshift_icon-connection.png[Connection icon].

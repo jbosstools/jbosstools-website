@@ -9,7 +9,7 @@
 
 JBoss Central now features the Hybrid Mobile Project wizard to let you kickstart new Cordova-based mobile applications. 
 
-image:./images/new-hmt-wizard.png[]
+image::./images/new-hmt-wizard.png[]
 
 If the Hybrid Mobile Toolkit is not installed, you'll be asked to install it, as well as a few useful companion features (CordovaSim, BrowserSim). When using JBoss Tools you'll also be offered to add LiveReload and the Visual Plugin Editor, if these features are not already installed. 
 

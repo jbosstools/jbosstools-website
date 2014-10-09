@@ -43,7 +43,7 @@ To start with, this is now tested and developed against Eclipse Luna M7 and newe
 To allow users of JBoss Developer Studio to try out plugins which have not yet reached supported level more easily we've added the notion
 of Early Access to JBoss Central.
 
-image:/documentation/whatsnew/central/images/central-earlyaccess.png[JBoss Central Early Access]
+image::/documentation/whatsnew/central/images/central-earlyaccess.png[JBoss Central Early Access]
 
 For now we've moved Eclipse VJET into this area and made Arquillian Tools and AngularJS available for Developer Studio users.
 
@@ -58,7 +58,7 @@ VPE has been refactored to use the new HTML Preview feature.
 
 This means we will use your system native browser to preview HTML5 based pages (XHTML/JSF will still use the old XULRunner based browser if possible).
 
-image:/documentation/whatsnew/vpe/images/4.2.0.Beta2/html-preview-vpe.png[Visual Page Editor]
+image::/documentation/whatsnew/vpe/images/4.2.0.Beta2/html-preview-vpe.png[Visual Page Editor]
 
 This new preview has much better Javascript support and just looks better.
 
@@ -74,19 +74,19 @@ via Angello Zerr's https://github.com/angelozerr/angularjs-eclipse[angularjs-ecl
 
 In JBoss Tools Tern is now automatically enabled on Javascript based projects intended to give you much stronger and better content assist in addition to what Eclipse JSDT provides.
 
-image:/documentation/whatsnew/jst/images/4.2.0.Beta2/js-ecma5-2.png[JavaScript ECMA 5]
+image::/documentation/whatsnew/jst/images/4.2.0.Beta2/js-ecma5-2.png[JavaScript ECMA 5]
 
 We are trying to make it that there is no user setup needed for most common javascript functionallity to work.
 
 For example if you create a Hybrid Mobile Tooling project we will enable the support for Apache Cordova Javascript out of the box.
 
-image:/documentation/whatsnew/aerogear/images/1.1.0.Beta2/ca-cordovajs-2.png[CordvaJS Content assist]
+image::/documentation/whatsnew/aerogear/images/1.1.0.Beta2/ca-cordovajs-2.png[CordvaJS Content assist]
  
 === AngularJS support
 
 As an experiemnt, we've made AngularJS available from JBoss Central under "Early Access" to give a try if you are an Angular user.
 
-image:/documentation/whatsnew/jst/images/4.2.0.Beta2/angular.png[Angular JS Support]
+image::/documentation/whatsnew/jst/images/4.2.0.Beta2/angular.png[Angular JS Support]
 
 We are really interested in hearing if these improvements to JavaScript and Angular support work for you!
 
@@ -94,7 +94,7 @@ We are really interested in hearing if these improvements to JavaScript and Angu
 
 The OpenShift wizard now supports OpenShift's notion of quickstarts or instant apps.
 
-image:/documentation/whatsnew/openshift/images/new-quickstart.png[OpenShift Quickstarts]
+image::/documentation/whatsnew/openshift/images/new-quickstart.png[OpenShift Quickstarts]
 
 This means it is now possible to just use OpenShift Wizard in Eclipse to use one of the many custom defined quickstarts without having to use the browser.
 
@@ -104,7 +104,7 @@ Examples of interesting JBoss server related quickstarts are WildFly 8.1, AeroGe
 
 On request OpenShift now supports saving and restoring your OpenShift instances via Snapshots.
 
-image:/documentation/whatsnew/openshift/images/context-menu-snapshot.png[Save/Restore snapshots]
+image::/documentation/whatsnew/openshift/images/context-menu-snapshot.png[Save/Restore snapshots]
 
 === Local Java Process Monitoring via JMX Navigator on steroids!
 
@@ -133,7 +133,7 @@ With JBoss Modules where there can be multiple versions and several layers of pa
 
 Thus now our WildFly/JBoss EAP based servers understand the notion of JBoss Modules and will locate the proper module.
 
-image:/documentation/whatsnew/server/images/JBIDE-9479.png[]
+image::/documentation/whatsnew/server/images/JBIDE-9479.png[]
 
 It even will detect if your `manifest.mf` has `Dependencies` and add them to the list of jboss modules to the classpath Eclipse will use for compiling.
  
