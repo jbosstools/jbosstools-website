@@ -50,7 +50,7 @@ bottom_javascripts: ["/javascripts/download_tabs.js"]
     - if page.build_info.build_type == :development
       .alert.alert-info
         %strong Development builds
-        have received basic testing, but are 
+        have received basic testing, but are&nbsp;
         %strong<> not considered fully stable yet
         &#46;
         - if has_higher_version(site, page.build_info.product_id, page.build_info.version)
