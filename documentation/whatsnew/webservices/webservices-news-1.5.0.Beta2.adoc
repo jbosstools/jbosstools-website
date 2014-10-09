@@ -9,6 +9,6 @@
 
 The WS Tester used to have JAX-WS as the default test type in the drop-down. As much of our effort has been towards RESTful services, we have changed the default test type to a RESTful GET operation.
 
-image:./images/defaultget_webservice.png[]
+image::./images/defaultget_webservice.png[]
 
 related_jira::JBIDE-14861[]

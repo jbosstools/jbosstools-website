@@ -1,4 +1,4 @@
-= How to
+= How-tos
 :page-layout: howto
 :page-tab: docs
 :page-status: green

@@ -10,7 +10,7 @@
 New jQuery Mobile Palette is now available for HTML files. The old JSF Palette and the new one shares the same Palette View so if you open any XHTML/HTML file with JBoss HTML Editor from a JSF project then you will see the old JSF Palette. But if you open an HTML file from non-JSF project you will see the new HTML5 Widget Palette which contains jQuery Moblile widgets now.
 Also we removed the deprecated JBoss Palette (Window->Show View->Other->JBoss Tools Web->JBoss Palette) which was a clone of the general palette view (Window->Other->General->Palette).
 
-image:images/4.1.0.Alpha1/palette.png[]
+image::images/4.1.0.Alpha1/palette.png[]
 
 related_jira::JBIDE-13454,JBIDE-13453[]
 

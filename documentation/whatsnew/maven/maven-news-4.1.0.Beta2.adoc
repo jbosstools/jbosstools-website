@@ -10,6 +10,6 @@
 
 Non-default scopes and the optional attribute are now shown when converting a project to maven. It is on the dependency identification page where it is directly displayed in the "Maven Dependency" column.
 
-image:./images/display-dependency-scope.png[]
+image::./images/display-dependency-scope.png[]
 
 related_jira::JBIDE-14811[]

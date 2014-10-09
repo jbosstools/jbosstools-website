@@ -17,7 +17,7 @@ After import, lifecycle mapping error markers are collected on imported projects
 
 Another improvement to this workflow is the ability to easily import multi-module projects to an Eclipse Working Set. The default name is inferred from the root project but can be overridden manually:
 
-image:./images/m2e-workingset-import.png[]
+image::./images/m2e-workingset-import.png[]
 
 More http://bugs.eclipse.org/436679[performance] http://bugs.eclipse.org/436668[improvements] during import itself are to be expected to be included in m2e 1.6.0.
 
@@ -49,7 +49,7 @@ The JBoss Tools team contributed its https://marketplace.eclipse.org/content/mav
 Rather than right-clicking on a project, going to the menu:Properties[Maven] page, then manually (mis)typing a list of active or disabled profiles, 
 you can now just use kbd:[Ctrl+Alt+P] to open the new Maven Profile selection interface.
 
-image:./images/m2e-profile-selection.png[]
+image::./images/m2e-profile-selection.png[]
 
 The new interface is also accessible from the Maven context menu: Right-click project menu:Maven[Select Maven Profiles...]
 
@@ -73,7 +73,7 @@ Additionally, an "Add out-of-date" button adds all out-of-date (OOD)  projects t
 If an OOD project has not been selected, a warning is shown underneath the selection table with a link equivalent to "Add out-of-date". 
 Warning text and "Add out-of-date" button tooltip show a count of unselected OOD projects.
 
-image:./images/m2e-select-ood-projects.png[]
+image::./images/m2e-select-ood-projects.png[]
 
 See it in action: http://screencast.com/t/27S0qeca
 
@@ -101,7 +101,7 @@ Maven CLI builds can use these flags:
 
 m2e now has a global Checksum Policy available in menu:Preferences[Maven], that will help you keep your sanity, and yor local repository clean:
 
-image:./images/m2e-checksum-policy-flag.png[]
+image::./images/m2e-checksum-policy-flag.png[]
 
 While m2e actually won't create any Warning markers on projects when "Warn" is selected, it will override existing checksum policies set on repositories.
 
@@ -116,7 +116,7 @@ m2e has been known for generating specific errors that have puzzled more than on
 
 With the new menu:Preferences[Errors/Warnings] page, users can now decide according to their own needs whether these errors should be downgraded to `Warning`, or even be ignored entirely.
 
-image:./images/m2e-warnerrors-prefs.png[]
+image::./images/m2e-warnerrors-prefs.png[]
 
 See bugs https://bugs.eclipse.org/433776[433776], https://bugs.eclipse.org/434053[434053]
 

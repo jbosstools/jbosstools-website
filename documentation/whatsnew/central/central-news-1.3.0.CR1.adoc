@@ -9,7 +9,7 @@
 
 JBoss Central now features a new AngularJS with Forge project wizard to let you kickstart new JavaEE based applications with HTML5 and AngularJS for the front-end, while using the powerful http://forge.jboss.org/[JBoss Forge] scaffolding capabilities.
 
-image:./images/new-forge-wizard.png[]
+image::./images/new-forge-wizard.png[]
 
 If the Forge Tool is not installed, you'll be asked to install it. The wizard will also recommend you to install the AngularJS tooling.
 

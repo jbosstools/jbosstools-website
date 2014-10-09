@@ -14,6 +14,6 @@ To mitigate that, the JBoss Tools Maven integration feature now registers by def
 providing more than 9600 archetypes to chose from, when creating a new Maven project. Accessing the complete list of archetypes 
 is even way, way faster (a few seconds) than relying on the old Nexus index download.
 
-image:./images/maven-central-catalog.png[]
+image::./images/maven-central-catalog.png[]
 
 related_jira::JBDS-3033[]

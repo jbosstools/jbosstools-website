@@ -83,7 +83,7 @@ GEM
       rb-inotify (>= 0.9)
     lumberjack (1.0.9)
     method_source (0.8.2)
-    mime-types (2.3)
+    mime-types (2.4.1)
     multi_css (0.1.0)
       css_press
     multi_js (0.1.0)
