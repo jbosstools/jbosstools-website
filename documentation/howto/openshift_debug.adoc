@@ -1,9 +1,12 @@
-= Debug an OpenShift Online Application
+= Debug an OpenShift Online Java Application
 :page-layout: howto
 :page-tab: docs
 :page-status: green
+:experimental:
  
-OpenShift Tools enables you to debug your deployed OpenShift Online applications within the IDE, enabling you to take advantage of the IDE debugging tools. A number of configuration tasks are required both locally and remotely  to enable the IDE debugger to connect to the OpenShift server and OpenShift Tools for achieving this. Some tasks only need to be completed once for each OpenShift Online application but others must be completed every time you reconnect to OpenShift Online from the IDE. Instructions are provided for the following tasks:
+OpenShift Tools enables you to debug your deployed OpenShift applications within the IDE, enabling you to take advantage of the IDE debugging tools. This article specifically details the steps needed to set up an OpenShift Online Java application for debugging. A number of configuration tasks are required both locally and remotely  to enable the IDE debugger to connect to the OpenShift server and OpenShift Tools for achieving this. Some tasks only need to be completed once for each OpenShift Online application but others must be completed every time you reconnect to OpenShift Online from the IDE. 
+
+Instructions are provided for the following tasks:
 
 . <<configurefordebugging,Configure the OpenShift Server for Debugging>>
 . <<enableportforwarding,Enable Port Forwarding for the Local and Remote Debug Ports>>
@@ -20,7 +23,7 @@ You must first configure the OpenShift server, to which your application is depl
 
 To configure the OpenShift server for debugging, complete the following steps:
 
-. In the `Project Explorer` view, right-click the project and click `OpenShift` &rarr; `Configure Markers`.                     
+. In the `Project Explorer` view, right-click the project and click menu:OpenShift[Configure Markers]. 
 . In the `Configure OpenShift Markers` window, select the `Enable JPDA` check box and click `OK`.
 +
 .OpenShift Enable JPDA Marker Selected
@@ -33,7 +36,7 @@ image::images/openshift_jpda-marker.png[Enable JPDA check box selected]
 The project changes are pushed to the remote Git repository and the application is automatically updated on the OpenShift server. 
 
 [NOTE]
-When debugging is enabled on the OpenShift server a debug port is assigned. To perform the remaining tasks, it is important to know which port is the debug port. To identify the debug port, see the cartridge documentation.
+When debugging is enabled on the OpenShift server a debug port is assigned; for default Java applications the debug port is `8787`. To perform the remaining tasks, it is important to know which port is the debug port. To identify the debug port for other applications, see the cartridge documentation.
 
 [[enableportforwarding]]
 == 2. Enable Port Forwarding for the Local and Remote Debug Ports
@@ -69,6 +72,7 @@ Connecting to the OpenShift server may take some time to complete and you can mo
 
 == Did You Know?
 * Setting the Enable JPDA marker adds an `.openshift/markers/enable_jpda` file to your project. To locate the hidden `.openshift` directory and access the file, open the `Navigator` view.
-* You can also access the `Port Forwarding` wizard by right-clicking the server adapter of the application in the `Servers` view, and then clicking `OpenShift`&rarr;`Port forwarding`.
-* The `Debug` perspective automatically arranges useful views for debugging. To open the `Debug` perspective, click `Window` &rarr; `Open Perspective` &rarr; `Debug`.
+* You can also access the `Port Forwarding` wizard by right-clicking the server adapter of the application in the `Servers` view, and then clicking menu:OpenShift[Port forwarding].
+* The `Debug` perspective automatically arranges useful views for debugging. To open the `Debug` perspective, click menu:Window[Open Perspective>Debug].
 * You can set the debugger to look up source code for classes it encounters that are not contained in your project, for example classes used by application servers defined in the IDE. When inputing values for the launch configuration, in the `Source` tab click `Add`. From the list of source containers, select `JBoss Maven Source Container` and click `OK`. The JBoss Maven Source Container uses indexes available from Maven repositories to locate the source code. From the list, select a runtime server, the libraries of which will be indexed in the JBoss Maven Source Container, and click `OK`.
+
