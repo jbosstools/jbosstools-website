@@ -265,6 +265,11 @@ aside section {
   }*/
 }
 
+#call_for_participation {
+  header {
+    margin-bottom: 2em;
+  }
+}
 
 blockquote > p {
   font-size: 14px;
@@ -381,6 +386,11 @@ kbd {
 // ******************************************************
 // Flex layout
 // ******************************************************
+@media (max-width: 766px) {
+  .stretch-column {
+    margin-bottom: 2em;
+  }
+}
 @media (min-width: 767px) {
   .flexbox {
     display: flex;
@@ -391,10 +401,26 @@ kbd {
     &.stretch-column {
       justify-content: space-between;
       flex-direction: column;
+      margin-bottom: 0em;
     }
     & > * {
       position: relative;
-    }    
+
+    }
+    & > .body {
+      height: 128px; 
+      // there should be only 1 child element here
+      & img {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        max-width: 128px;
+        max-height: 128px;
+      }
+    }
   }
 }
 
@@ -923,7 +949,7 @@ span.label {
 // *************************************
 .features {
   .well {
-    height: 300px;
+    min-height: 270px;
     overflow: hidden;
   }
   a {
@@ -931,11 +957,12 @@ span.label {
     text-align: center;
   }
 
-  img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
+  @media screen and (min-width: 767px) {
+    &.row-fluid {
+      margin-bottom: 2em;
+    }
+  }  
+  
 }
 
 @media screen and (min-width: 940px) {

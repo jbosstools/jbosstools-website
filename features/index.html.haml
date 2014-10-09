@@ -12,17 +12,21 @@ title: Features
   -# show all other features
   - f = Array.new() + features
   - while f.size > 0 do
-    .row-fluid.features
+    .row-fluid.features.flexbox.stretch-row
+    
       - i = 0
       - limit = [f.size, 4].min
       - while i < limit do
         - i += 1
         - feature = f.shift
-        %section.span3.well
-          %a{:href=>relative(feature.url) }
-            %h3.center< #{feature.name}
-            %img{:src=>relative(feature.image_url), :alt=>"#{feature.name}", :width=>"128px"}
-            %h4.center< #{feature.tagline}
+        %a.span3{:href=>relative(feature.url) }
+          .flexbox.stretch-column.center.well
+            .title
+              %h3.center< #{feature.name}
+            .body
+              %img{:src=>relative(feature.image_url), :alt=>"#{feature.name}"}
+            .footer
+              %h4.center< #{feature.tagline}
          
 
 .hero-unit.center
