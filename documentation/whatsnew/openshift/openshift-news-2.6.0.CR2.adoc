@@ -1,0 +1,37 @@
+= OpenShift What's New in OpenShift 2.6.0.CR2
+:page-layout: whatsnew
+:page-component_id: openshift
+:page-component_version: 2.6.0.CR2
+:page-product_id: jbt_core 
+:page-product_version: 4.2.0.CR2
+
+== OpenShift Server Adapter now supports JEE7
+Prior to JBoss Tools 4.2.0.CR2 one could not deploy JEE 7 projects to OpenShift. 
+The OpenShift server adapter complained that it was not supporting version 3.1 of the J2EE Web module specification. 
+In this new milestone we now fixed this.
+
+related_jira::JBIDE-18365[]
+
+== Disable bad SSL Ciphers
+JBoss Tools could not connect to OpenShift when run on openjdk 1.7/Linux while the server was running on Red Hat Enterprise 6.6. 
+OpenJDK 1.8, Oracle JDKs, Windows and MacOS machines were not affected.
+This was caused by the server offering DHE cipher keys larger than 1024 bits. 
+The cipher provider in openjdk 1.7/linux were not able to handle these and failed handshaking (see https://bugzilla.redhat.com/show_bug.cgi?id=1131221).
+OpenJDK fixed this bug with openjdk-1.7.0.71 (see https://rhn.redhat.com/errata/RHSA-2014-1633.html). 
+For our users that are stuck with the failing combination we offer the following system property that disabels the faulty DHE ciphers:
+We now allow you to disable the causing cipher with the following system property (the flag is off by default):
+
+ -Ddisable_bad_sslciphers=yes
+
+You can add this to your eclipse.ini and avoid the problem. +
+We also provide an automatic mode where we test the jdk for it's ability to handle DHE cipher keys > 1024 bits and disable the DHE ciphers accordingly:
+
+ -Ddisable_bad_sslciphers=auto
+
+related_jira::JBIDE-18454[]
+
+== Incorrect output directory for Wildfly (Quickstart)
+When you try to deploy an existing project to OpenShift the tooling gladly assists you and adds the OpenShift maven profile to the pom.xml in your project.
+When using a Wilfly 8.1 Quickstart the tooling created an incorrect outputDirectory in the OpenShift profile causing the deployment to fail. We fixed this for CR2.
+
+related_jira::JBIDE-18397[]
