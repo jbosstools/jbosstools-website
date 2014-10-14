@@ -14,7 +14,7 @@ Coming in JBoss Tools 4.1.0.Beta2, LiveReload now also supports 'Server Mode', w
 * As with 'Directory Mode', if the 'livereload.js script injection' option is enabled, each returned HTML page will be enriched on-the-fly but the proxy which will inject the <script> tag to load the livereload.js script at the bottom of the <body> element, which removes the need to manually install the LiveReload extension on the browsers.
 * If remote connections are enabled, users can also access their applications deployed on their App Server from external computers or devices such as smartphones or tablets.
 
-image:./images/LiveReload_open_in_web_browser_via_browser-menu.png[]
+image::./images/LiveReload_open_in_web_browser_via_browser-menu.png[]
 
 related_jira::JBIDE-14502,JBIDE-13984,JBIDE-14914[]
 
@@ -24,9 +24,9 @@ Having the proxy with both 'livereload.js script injection' and 'allow remote co
 
 However, typing the entire URL on such devices is not a good experience. This is why JBoss Tools now provides with a dialog showing a QR Code for such use-cases. Users just need to select the network interface on which they will connect and then scan the generated QR Code with their devices to get access to the resource. The dialog also displays an hyperlink to open the location in the external browser.
 
-image:./images/LiveReload_open_in_web_browser_via_qrcode-menu.png[]
+image::./images/LiveReload_open_in_web_browser_via_qrcode-menu.png[]
 
-image:./images/LiveReload_open_in_web_browser_via_qrcode-dialog.png[]
+image::./images/LiveReload_open_in_web_browser_via_qrcode-dialog.png[]
 
 related_jira::JBIDE-13984[]
 

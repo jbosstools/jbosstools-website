@@ -4,7 +4,11 @@ tab: docs
 ---
 .row-fluid
   .hero-unit.hidden-phone.center
-    %h1 Frequently Asked Questions
+    - if page.title == "How to" 
+      %h1 #{page.title}
+    - else
+      %h1 How To:
+      %h1 #{page.title}
     
 .row-fluid
   .span12

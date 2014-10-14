@@ -10,23 +10,23 @@ status: green
     %h1 Documentation
     %p Documentation about the JBoss Tools project
 
-.row-fluid.section-wrapper
-  %section.span3.well.post-bg
-    %header
+.row-fluid.flexbox.stretch-row
+  %section.flexbox.stretch-column.span3.well.post-bg
+    .header
       %h3 
         %a{:href => relative("/documentation/whatsnew")} What's New ? 
-    .item
+    .body
       %p
         The 
         %a{:href => relative("/documentation/whatsnew")} What's New section 
         describes what is new and noteworthy in each of the milestones and releases for JBoss Tools.
     %footer
       %a.btn.btn-small{:href => relative("/documentation/whatsnew"), :role => "button"} See What's New &raquo;
-  %section.span3.well.post-bg
+  %section.flexbox.stretch-column.span3.well.post-bg
     %header
       %h3 
         %a{:href => relative("/documentation/faq")} FAQ
-    .item
+    .body
       %p
         The 
         %a{:href => relative("/documentation/faq")} FAQ 
@@ -34,27 +34,27 @@ status: green
         %a{:href => relative("/community")} community
     %footer
       %a.btn.btn-small{:href => relative("/documentation/faq"), :role => "button"} Read the FAQ &raquo;
-  %section.span3.well.post-bg
+  %section.flexbox.stretch-column.span3.well.post-bg
     %header
       %h3 
         %a{:href => relative("/documentation/videos")} Videos
-    .item
+    .body
       %p
         There are a set of  
         %a{:href => relative("/documentation/videos"), } Video Tutorials
         for learning about how install, setup and how to use some of the features of JBoss Tools.
     %footer
       %a.btn.btn-small{:href => relative("/documentation/videos"), :role => "button"} Watch the Video Tutorials &raquo;
-  %section.span3.well.post-bg
+  %section.flexbox.stretch-column.span3.well.post-bg
     %header
       %h3 
-        %a{:href => "http://docs.jboss.org/tools"} Reference Guides
-    .item
+        %a{:href => relative("/documentation/howtos")} How-tos
+    .body
       %p
         The 
-        %a{:href => "http://docs.jboss.org/tools"} Reference Guides 
-        are the main documentation for the main functionality 
-        of each major module in JBoss Tools. 
+        %a{:href => relative("/documentation/howto")} How-tos
+        section contains articles describing features of JBoss Tools and Developer Studio with a focus on how to do specfic tasks.
+        
     %footer
-      %a.btn.btn-small{:href => "http://docs.jboss.org/tools", :role => "button"} Read the Reference Guides &raquo;
+      %a.btn.btn-small{:href => relative("/documentation/howtos"), :role => "button"} Read the How-tos &raquo;
      

@@ -11,7 +11,7 @@
 Hybrid Mobile tools can search and use Cordova engines from local directories. This permits custom Cordova engines to be used together with the tools.
 At this time only custom engines that adhere to the file and naming structure of Apache Cordova distributions will be recognized by the tools.
 
-image:./images/1.1.0.Beta1/EnginePreferences.png[]
+image::./images/1.1.0.Beta1/EnginePreferences.png[]
 
 related_jira::JBIDE-16408[]
 
@@ -38,7 +38,7 @@ related_jira::JBIDE-16744[]
 
 There is a new "Show Installed" check box to show already installed Cordova plug-ins on a project.
 
-image:./images/1.1.0.Beta1/showinstalled.png[]
+image::./images/1.1.0.Beta1/showinstalled.png[]
 
 
 related_jira::JBIDE-16257[]

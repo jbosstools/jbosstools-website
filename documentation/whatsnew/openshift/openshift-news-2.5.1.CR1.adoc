@@ -10,6 +10,6 @@
 
 There is now a preference available to set the timeout used when waiting for OpenShift requests to complete. We're using a default of 120 seconds (2 minutes) if no preference value (0) is provided. You can try raise this value if you are getting time out errors when using OpenShift.
 
-image:./images/openshift-client-timeout.png[]
+image::./images/openshift-client-timeout.png[]
 
 related_jira::JBIDE-15905[]

@@ -12,7 +12,7 @@ As Thanks you get better tools that works better with your usecases!
 Today we are introducing JBoss Tools Community Acceptance Testing (CAT)
 program to make sure we hear from you to know what is working and what is not working.
 
-image:/images/jbosstools-cat-logo.png[JBoss Tools CAT Logo]
+image::/images/jbosstools-cat-logo.png[JBoss Tools CAT Logo]
 
 == What is it ?
 

@@ -1,0 +1,12 @@
+= How-tos
+:page-layout: howto
+:page-tab: docs
+:page-status: green
+
+The How-to section contains articles describing features of JBoss Tools and Developer Studio with a focus on how to do specfic tasks.
+
+== OpenShift
+
+link:openshift_debug.html[Debug an OpenShift Online Application]
+
+link:openshift_firstapp.html[Create and Deploy your First OpenShift Online Application with OpenShift Tools]

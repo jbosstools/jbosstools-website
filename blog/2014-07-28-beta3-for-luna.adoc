@@ -67,7 +67,7 @@ Thus that had to go but by removingt this the list of archetypes for the 'New Ma
 
 In Beta3 we've added the Maven Central Archetype catalog meaning you get access to ~9600 archetypes in a few seconds vs several minutes in pre m2e 1.5 days.
 
-image:/documentation/whatsnew/maven/images/maven-central-catalog.png[Maven Central Archetype Catalog]
+image::/documentation/whatsnew/maven/images/maven-central-catalog.png[Maven Central Archetype Catalog]
 
 === Review commit changes when pushing to OpenShift
 

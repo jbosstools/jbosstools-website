@@ -21,7 +21,7 @@ Your cartridge code may run as web- (standalone) or add-on-cartridge
 
 When you launch the OpenShift application wizard you will get to chose whether you want to use your existing application or create a new one. 
 
-image:./images/create-new-or-import-existing.png[]
+image::./images/create-new-or-import-existing.png[]
 
 === Use an Existing Application
 
@@ -29,7 +29,7 @@ Using your existing application is as easy as picking it from the list of all yo
 You may freely type it's name and get content assisted when typing. 
 Alternatively you may hit browse and choose among your applications across all your domains. 
 
-image:./images/select-existing-application.png[]
+image::./images/select-existing-application.png[]
 
 === Code Anything custom cartridge
 
@@ -37,17 +37,17 @@ When creating a new application you will have to choose the application type (ca
 You may choose among the predefined cartridges that are shipped with your OpenShift server.
 Alternatively you may also decide to provide your own framework code via the url of your git repository ("Code Anything"). 
 
-image:./images/downloadable-cart-type.png[]
+image::./images/downloadable-cart-type.png[]
 
 === Adding Cartridges
 
 The page for configuring application details such as the name, domain, gear and the add-on (embeddable) cartridges now only shows
 cartridges you have added. Initially the list will be empty.
 
-image:./images/application-configuration.png[]
+image::./images/application-configuration.png[]
 
 You now can add embeddable cartridges. Here you can choose among the predefined ones or provide your own cartridge code.
 
-image:./images/downloadable-cart-embedded.png[]
+image::./images/downloadable-cart-embedded.png[]
 
 related_jira::JBIDE-15905[]

@@ -9,7 +9,7 @@
 OpenShift allows you to add and remove other users to your domain and grant them view or write permissions. 
 In JBoss Tools 4.2.0.Beta3 we added a link to the domain wizard. Hitting this link points your browser to the webpage in the OpenShift where you can manage your domain members.
 
-image:./images/edit-domain-members.png[]
+image::./images/edit-domain-members.png[]
 
 related_jira::JBDS-2777[]
 
@@ -20,7 +20,7 @@ You may then stage the ones you want to push and provide a commit message. +
 The very same is true for the inital import of your OpenShift application: 
 The application-/import-wizard lists the files it changed and allows you to commit and push them back to OpenShift.
 
-image:./images/commit-and-push-dialog.png[]
+image::./images/commit-and-push-dialog.png[]
 
 related_jira::JBIDE-10541[]
 
@@ -28,7 +28,7 @@ related_jira::JBIDE-10541[]
 
 You can now save and restore your OpenShift application snapshots to and from your Eclipse workspace:
 
-image:./images/save-snapshot-to-workspace.png[]
+image::./images/save-snapshot-to-workspace.png[]
 
 related_jira::JBIDE-17413[]
 

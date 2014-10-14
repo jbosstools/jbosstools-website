@@ -19,7 +19,16 @@ span.icon>.fa{cursor:default}
 .admonitionblock td.icon .icon-warning:before{content:"\f071";color:#bf6900}
 .admonitionblock td.icon .icon-caution:before{content:"\f06d";color:#bf3400}
 .admonitionblock td.icon .icon-important:before{content:"\f06a";color:#bf0000}
+.admonitionblock {
+    table {
+      border-radius: 4px;
+      td {
+        border : 1px solid rgb(101, 101, 101);
+        padding: 1em;
+      }
 
+    }
+  }
 
 // *************************************
 // Fixes in bootstrap-community
@@ -490,20 +499,19 @@ h1, h2, h3, h4, h5, h6 {
 // ******************************************************
 // asciidoctor centered images
 // ******************************************************
-span.image > img {
-  margin-top: 2em;
-  margin-bottom: 2em;
-
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-div.imageblock img {
-
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+div.imageblock {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  
+  .content > img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .title {
+    text-align: center;
+    font-size: small;
+  }
 }
 
 
@@ -1117,17 +1125,6 @@ span.label {
       text-align: right;
     }
   }
-
-  .admonitionblock {
-    table {
-      td {
-        border : 1px solid rgb(101, 101, 101);
-        padding: 1em;
-      }
-
-    }
-  }
-
 }
 
 // *************************************

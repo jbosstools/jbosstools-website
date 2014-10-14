@@ -9,7 +9,7 @@
 
 The JBoss Central UI has been improved to better scale in small(er) resolutions:
 
-image:./images/smaller-jboss-central.png[]
+image::./images/smaller-jboss-central.png[]
 
 related_jira::JBIDE-13884[]
 
@@ -17,7 +17,7 @@ related_jira::JBIDE-13884[]
 
 JBoss Central now displays wizards for plugins that may not have been installed yet. For instance, it will display the OpenShift Application link even if you don't have the JBoss OpenShift tooling installed. Clicking on that link will ask you to install the required OpenShift features:
 
-image:./images/proxy-wizards.png[]
+image::./images/proxy-wizards.png[]
 
 Moreover that wizard list can be updated, reordered at any time, remotely from the JBoss Tools team.
 
@@ -29,6 +29,6 @@ related_jira::JBIDE-13987-JBIDE-14445[]
 
 OpenShift Tools have been added to the JBoss Central Software/Update page, giving users easier access to developing on and for the Cloud.
 
-image:./images/openshift-discovery.png[]
+image::./images/openshift-discovery.png[]
 
 related_jira::JBIDE-14330[]
