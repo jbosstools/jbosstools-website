@@ -2,7 +2,7 @@
 :page-layout: features
 :page-product_id: jbt_is 
 :page-feature_id: jbpm
-:page-feature_image_url: images/jbpm_icon_256px.png
+:page-feature_image_url: images/jbpm_logo_transparent.png
 :page-feature_highlighted: false
 :page-feature_order: 10
 :page-feature_tagline: Business Processes for the masses
