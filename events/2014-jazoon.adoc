@@ -1,0 +1,9 @@
+= Devoxx
+:page-layout: event
+:page-event_date: 21-22 October 2014
+:page-effective_date: 20141021
+:page-location: Zurich, Switzerland
+:page-event_url: http://jazoon.com/talk/Talk219/
+
+Max Rydahl Andersen will speak about "How we made Eclipse fun to use for Mobile apps development"
+at Jazoon in Zurich.
