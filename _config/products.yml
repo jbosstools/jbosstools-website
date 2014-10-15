@@ -455,7 +455,7 @@ jbt_core:
         archived: true
         renamed_as: 4.1.2.Final
       4.1.1.Final:
-        archived: true
+        #archived: true
         release_date: 2013-12-16
         supported_jbt_is_version: 4.1.3.Final
         documentation_url: http://docs.jboss.org/tools/4.1.x.Final/
@@ -558,7 +558,7 @@ jbt_core:
             url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/zz_Release_Notes_4.1.1.Alpha1.readme.html
               
       4.1.0.Final:
-        archived: true
+        #archived: true
         release_date: 2013-07-23
         documentation_url: http://docs.jboss.org/tools/4.1.0.Final/
         whatsnew_url: http://docs.jboss.org/tools/whatsnew/
