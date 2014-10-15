@@ -8,9 +8,9 @@ tab: blog
 .row-fluid
   .hero-unit.center
     - if !page.selected_tag.nil?
-      %h1 News tagged with '#{page.selected_tag}'
+      %h1 Posts tagged with '#{page.selected_tag}'
     - else
-      %h1 Latest News
+      %h1 Latest posts
     
 - if !page.posts.nil?
   .row-fluid
@@ -48,7 +48,7 @@ tab: blog
     .span3.well
       .header
         %h3
-          %a{:href => relative("/blog")} Latest news
+          %a{:href => relative("/blog")} Latest posts
           %a{:href=>relative("/blog/news.atom")}
             %img#rss-icon{:src=>relative("/images/feed-icon-28x28.png"), :width=>"20px"}
       .latest-posts
@@ -71,8 +71,7 @@ tab: blog
       %hr
       .footer
         %h4
-          %a{:href => relative("/blog/all.html")} All news
-            
+          %a{:href => relative("/blog/all.html")} All posts            
                 
   .row-fluid
     .span12.center
@@ -111,12 +110,12 @@ tab: blog
       %h1< 
         Oops... 
       %p
-        We did not publish any new news yet, but you can subscribe to our Atom Feed to get updated when something gets published.
+        We did not post anything yet, but you can subscribe to our Atom Feed to get updated when something gets published.
         %a{:href=>relative("/blog/news.atom")}
           %img#rss-icon{:src=>relative("/images/feed-icon-28x28.png"), :width=>"16", :height=>"16"}
   
 .row-fluid
   .span12    
     .center
-      Looking for older news ? See the 
+      Looking for older posts ? See the 
       %a{:href=>"https://community.jboss.org/en/tools/blog"} Archived entries.

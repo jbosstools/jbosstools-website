@@ -130,10 +130,6 @@ task :deploy => [:push, :check] do |task, args|
   run_awestruct '-P #{profile} --deploy'
 end
 
-desc "Assign publish dates to news entries"
-task :setpub do
-  set_pub_dates 'develop'
-end
 
 desc 'Clean out generated site and temporary files'
 task :clean, :spec do |task, args|
@@ -223,48 +219,6 @@ def msg(text, level = :info)
     puts "\e[31m#{text}\e[0m"
   else
     puts "\e[33m#{text}\e[0m"
-  end
-end
-
-def set_pub_dates(branch)
-  require 'tzinfo'
-  require 'git'
-  local_tz = IO.readlines('_config/site.yml').find {|l| l.start_with?('local_tz: ') }.chomp.sub('local_tz: ', '')
-  local_tz = TZInfo::Timezone.get(local_tz)
-
-  repo = nil
-
-  Dir['news/*.adoc'].select {|e| !e.start_with? 'news/_'}.each do |e|
-    lines = IO.readlines e
-    header = lines.inject([]) {|collector, l|
-      break collector if l.chomp.empty?
-      collector << l 
-      collector
-    }
-  
-    do_commit = false
-    if !header.detect {|l| l.start_with?(':revdate: ') || l.start_with?(':awestruct-draft:') || l.start_with?(':awestruct-layout:') }
-      revdate = Time.now.utc.getlocal(local_tz.current_period.utc_total_offset)
-      lines[2] = "#{revdate.strftime('%Y-%m-%d')}\n"
-      lines.insert(3, ":revdate: #{revdate}\n")
-      File.open(e, 'w') {|f|
-        f.write(lines.join)
-      }
-      if !repo
-        repo = Git.open('.')
-        b = repo.branch(branch)
-        b.remote = 'origin/develop'
-        b.create
-        b.checkout
-      end
-      repo.add(e)
-      repo.commit "Set publish date of post #{e} [ci skip]"
-      do_commit = true
-    end
-  
-    if do_commit
-      repo.push('origin', branch)
-    end
   end
 end
 
