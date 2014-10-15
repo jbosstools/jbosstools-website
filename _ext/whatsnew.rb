@@ -93,7 +93,7 @@ module Awestruct
           product_url_path_fragment = site.products[product_id].url_path_fragment
           page = create_page(site, @@whatsnew_layout_path, @target_path_prefix, product_url_path_fragment, product_version)
           page.build_info = Products_Helper.get_product_info(site, product_id, product_version)
-          puts "  building  N&N page for #{product_id} #{product_version}: #{page.build_info}"
+          #puts "  building  N&N page for #{product_id} #{product_version}: #{page.build_info}"
           page.component_news = Hash.new
           site.whatsnew_pages[product_id][product_version] = page
         end

@@ -1,0 +1,33 @@
+---
+layout: project
+title: All articles
+tab: blog
+#status: yellow
+#issues: none
+---
+.row-fluid
+  .hero-unit.center
+    %h1 All News
+
+.row-fluid
+  .span12#core-page.latest-posts
+    - for post in site.posts
+      .header.flexbox.row-start
+        %img.visible-desktop.img-polaroid{:src=>"#{site.team[post.author].photo_32px}"}
+        .title
+          %h4
+            %a{:href=>relative("#{post.url}")}= post.title
+            - if post.draft_article
+              %span{:class=>"label label-important"}
+                DRAFT
+          .author
+            /there is only one author per post but the author splitter adds an array here
+            posted by 
+            %a{:href=>site.team[post.author].developer_page}
+              %strong< #{site.team[post.author].title}
+            on 
+            %strong< #{post.date.strftime( '%b %d, %Y' )}.
+            %p
+              - if(post.tags != null && !post.tags.empty?) 
+                - post.tags.select{|t| !t.nil?}.each do |tag|
+                  %a.label.label-info{:href=>relative("#{tag.primary_page.url}")} #{tag}

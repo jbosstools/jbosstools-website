@@ -2,13 +2,15 @@
 layout: project
 title: Blog
 tab: blog
-status: yellow
+#status: yellow
 #issues: none
 ---
-- if page.selected_tag
-  .row-fluid
-    .hero-unit.center
-      %h1< Articles tagged with "#{page.selected_tag}"
+.row-fluid
+  .hero-unit.center
+    - if !page.selected_tag.nil?
+      %h1 News tagged with '#{page.selected_tag}'
+    - else
+      %h1 Latest News
     
 - if !page.posts.nil?
   .row-fluid
@@ -16,9 +18,10 @@ status: yellow
       - for post in page.posts
         .well.post-bg
           .post
-            .header
-              %a{:href=>site.team[post.author].developer_page}
-                %img.img-polaroid{:src=>"#{site.team[post.author].photo_64px}"}
+            .header.flexbox.stretch-row
+              .polaroid
+                %a{:href=>site.team[post.author].developer_page}
+                  %img.img-polaroid{:src=>"#{site.team[post.author].photo_64px}"}
               .title
                 %h3
                   %a{:href=>relative("#{post.url}")}= post.title
@@ -43,16 +46,16 @@ status: yellow
               - site.asciidoctor.attributes['imagesdir'] = default_imagesdir
 
     .span3.well
-      %header
+      .header
         %h3
-          %a{:href => relative("/blog")} Latest posts
+          %a{:href => relative("/blog")} Latest news
           %a{:href=>relative("/blog/news.atom")}
             %img#rss-icon{:src=>relative("/images/feed-icon-28x28.png"), :width=>"20px"}
       .latest-posts
         - posts = site.posts.sort{|l,r| r.date <=> l.date}.first(5)
         - for post in posts
           .header
-            %img.img-polaroid{:src => "#{site.team[post.author].photo_32px}"}
+            %img.visible-desktop.img-polaroid{:src => "#{site.team[post.author].photo_32px}"}
             .title
               %h4
                 %a{:href=>relative(post.url)}= post.title
@@ -65,6 +68,10 @@ status: yellow
                 %strong< #{site.team[post.author].title}
                 on
                 %strong< #{post.date.strftime( '%b %d, %Y' )}.
+      %hr
+      .footer
+        %h4
+          %a{:href => relative("/blog/all.html")} All news
             
                 
   .row-fluid
@@ -104,12 +111,12 @@ status: yellow
       %h1< 
         Oops... 
       %p
-        We did not publish any new article yet, but you can subscribe to our Atom Feed to get updated when something gets published.
+        We did not publish any new news yet, but you can subscribe to our Atom Feed to get updated when something gets published.
         %a{:href=>relative("/blog/news.atom")}
           %img#rss-icon{:src=>relative("/images/feed-icon-28x28.png"), :width=>"16", :height=>"16"}
   
 .row-fluid
   .span12    
     .center
-      Looking for older articles ? See the 
+      Looking for older news ? See the 
       %a{:href=>"https://community.jboss.org/en/tools/blog"} Archived entries.

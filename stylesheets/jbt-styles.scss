@@ -394,6 +394,11 @@ kbd {
 @media (min-width: 767px) {
   .flexbox {
     display: flex;
+    &.row-start {
+      justify-content: flex-start;
+      flex-direction: row;
+      align-items: flex-start;
+    }
     &.stretch-row {
       justify-content: space-between;
       flex-direction: row;
@@ -406,20 +411,6 @@ kbd {
     & > * {
       position: relative;
 
-    }
-    & > .body {
-      height: 128px; 
-      // there should be only 1 child element here
-      & img {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        margin: auto;
-        max-width: 128px;
-        max-height: 128px;
-      }
     }
   }
 }
@@ -640,10 +631,6 @@ ul.dropdown-menu {
     }
   }
   
-}
-
-.post-bg {
-  background: #fefefe;
 }
 
 // ****************************************
@@ -962,7 +949,23 @@ span.label {
       margin-bottom: 2em;
     }
   }  
-  
+}
+
+#highlighted_features {
+  .body {
+    height: 128px; 
+    // there should be only 1 child element here
+    & img {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      max-width: 128px;
+      max-height: 128px;
+    }
+  }
 }
 
 @media screen and (min-width: 940px) {
@@ -1042,6 +1045,10 @@ span.label {
   color: #4A5D75;
 }
 
+.post-bg {
+  background: #fefefe;
+}
+
 .post, .latest-posts {
   padding-left: 0px;
   padding-right: 0px;
@@ -1052,10 +1059,12 @@ span.label {
   }
 
   .header {
-    img.img-polaroid {
-      float:left;
-      margin-right: 10px;
+    .polaroid {
+      min-width: 74px;
+      padding-right: 10px;
+      margin-top: 10px;
     }
+    
     .title {
       padding-bottom: 5px;
 
@@ -1127,7 +1136,16 @@ span.label {
 
     }
   }
+}
 
+.latest-posts > .header > .img-polaroid {
+  float: left;
+  margin-right: 5px;
+}
+
+.latest-posts > .header.flexbox > .img-polaroid {
+  float:none;
+  margin-top: 10px;
 }
 
 // *************************************

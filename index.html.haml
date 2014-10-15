@@ -61,18 +61,17 @@ status: green
       .row-fluid
         .span12.well
           %section
-            %header
+            .header
               %h3
                 %a{:href => relative("/blog")} Latest News
                 %a{:href => relative("/blog/news.atom")}
                   %img#rss-icon{:src=>relative("/images/feed-icon-28x28.png"), :width=>21, :height=>21}
         
             - posts = site.posts.sort{|l,r| r.date <=> l.date}.first(4)
-            - for post in posts
-              .post
+            .latest-posts
+              - for post in posts
                 .header
-                  %a{:href=>site.team[post.author].developer_page}
-                    %img.img-polaroid{:src => "#{site.team[post.author].photo_32px}", :width=>32, :height=>32}
+                  %img.img-polaroid{:src => "#{site.team[post.author].photo_32px}", :width=>32, :height=>32}
                   .title
                     %h4
                       %a{:href=>relative(post.url)}= post.title
@@ -88,7 +87,7 @@ status: green
                       %strong< #{post.date.strftime( '%b %d, %Y' )}.
           %hr
           %section
-            %header
+            .header
               %h3
                 %a{:href => relative("/events")} Upcoming Events
             - events = site.events

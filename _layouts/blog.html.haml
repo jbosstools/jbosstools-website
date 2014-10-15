@@ -14,15 +14,14 @@ tab: blog
 .row-fluid
   .span9#core-page.well.post-bg
     .post
-      .header
-        %a{:href=>site.team[page.author].developer_page}
-          %img.img-polaroid{:src => "#{site.team[page.author].photo_64px}", :width=>64, :height=>64}
+      .header.flexbox.stretch-row
+        .polaroid
+          %a{:href=>site.team[page.author].developer_page}
+            %img.img-polaroid{:src => "#{site.team[page.author].photo_64px}", :width=>64, :height=>64}
         .title
           %h3
             %span 
               = page.title
-            %a{:href => relative("/blog/news.atom")}
-              %img#rss-icon{:src=>relative("/images/feed-icon-28x28.png"), :width=>28, :height=>28}
           .author
             /there is only one author per post but the author splitter adds an array here
             posted by 
@@ -35,7 +34,7 @@ tab: blog
                 - page.tags.each do |tag|
                   - if tag.kind_of? String 
                     -# edge case, when the current post is a draft and uses a new tag
-                    %a.label.label-info{} #{tag}
+                    %a.label.label-info #{tag}
                   - else
                     %a.label.label-info{:href=>relative("#{tag.primary_page.url}")} #{tag}
               %span.comments
@@ -63,7 +62,7 @@ tab: blog
   .span3.well
     %header
       %h3
-        %a{:href => relative("/blog")} Latest posts
+        %a{:href => relative("/blog")} Latest news
         %a{:href=>relative("/blog/news.atom")}
           %img#rss-icon{:src=>relative("/images/feed-icon-28x28.png"), :width=>"20px"}
         
@@ -71,7 +70,7 @@ tab: blog
       - posts = site.posts.sort{|l,r| r.date <=> l.date}.first(5)
       - for post in posts
         .header
-          %img.img-polaroid{:src => "#{site.team[post.author].photo_32px}"}
+          %img.visible-desktop.img-polaroid{:src => "#{site.team[post.author].photo_32px}"}
           .title
             %h4
               %a{:href=>relative(post.url)}= post.title
@@ -84,7 +83,10 @@ tab: blog
               %strong< #{site.team[post.author].title}
               on
               %strong< #{post.date.strftime( '%b %d, %Y' )}.
-    
+    %hr
+    .footer
+      %h4
+        %a{:href => relative("/blog/all.html")} All news
         
 .row-fluid
   .span12    
