@@ -39,8 +39,10 @@ List of supported platforms (and their IDs)for previewing/editing JSP/JSF files:
   Visual Editor doesn't start at any platform and shows message 'The VPE editor can't be run because your system environment needs to be changed slightly'::
   	Check if you version of JBoss Developer Studio/JBoss Tools is compatible with you version of Eclipse, see the http://www.jboss.org/community/wiki/MatrixofsupportedplatformsruntimesandtechnologiesinJBossToolsJBDS[compatibility matrix].
 
-  Visual Editor starts OK, but the following message dialog appears image:images/ve-natures-info.png[]::
-  	Some functionality of Visual Editor may not work if a project doesn't have `org.jboss.tools.jsf.jsfnature` or `org.jboss.tools.jst.web.kb.kbnature` in .project configuration. To fix this problem and turn off the message box execute next steps:
+  Visual Editor starts OK, but the following message dialog appears::
++  	
+image::images/ve-natures-info.png[]
+Some functionality of Visual Editor may not work if a project doesn't have `org.jboss.tools.jsf.jsfnature` or `org.jboss.tools.jst.web.kb.kbnature` in .project configuration. To fix this problem and turn off the message box execute next steps:
   	* Right mouse button click on a project in Package Explorer.
   	* Select Configure -> Add JSF Capabilities from the context menu.
   	* Configure your project using Add JSF Capabilities wizard and press Finish.	
