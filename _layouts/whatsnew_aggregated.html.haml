@@ -71,7 +71,6 @@ tab: docs
       - download_page = site.download_pages[page.build_info.product_id][page.build_info.version]
       - if download_page.nil? && page.build_type == :unreleased then
         - download_page = site.latest_builds_download_pages[page.build_info.product_id][:nightly]
-      - puts "#{page.build_info.product_id} #{page.build_info.version}: #{page.build_type} -> #{download_page.output_path}"
       .center
         -# Blog announcement
         - unless download_page.nil? || download_page.build_info.blog_announcement_url.nil?
