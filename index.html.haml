@@ -25,22 +25,19 @@ status: green
   .row-fluid
     -# main column
     #main.span8
-      .row-fluid
-        %section#highlighted_features
-          %header
-            %h2
-              %a{:href=>"/features"} Highlighted Features
-          .flexbox.stretch-row
-            - features = site.features["jbt_core"].find_all{|feature| ["forge", "server", "cdi"].include?(feature.feature_id)}
-            - for feature in features
-              .span4.flexbox.stretch-column.center
+      %section#highlighted_features
+        %header
+          %h2
+            %a{:href=>"/features"} Highlighted Features
+        .row-fluid.flexbox.stretch-row
+          - features = site.features["jbt_core"].find_all{|feature| ["forge", "server", "cdi"].include?(feature.feature_id)}
+          - for feature in features
+            .span4.center
+              %a{:href=>relative(feature.url)}
                 .title
-                  %a.block{:href=>relative(feature.url)}
-                    %h3 #{feature.name}
+                  %h3 #{feature.name}
                 .body
-                  %a.block{:href=>relative(feature.url)}
-                    -# specify the exact width/height of the feature image to avoid multiple repaints while rnedering the page in the browser
-                    %img{:src=>relative(feature.image_url), :width=>200, :height=>200}
+                  %img{:src=>relative(feature.image_url), :alt=>"#{feature.name}"}
                 .footer
                   %h4 #{feature.tagline}
       

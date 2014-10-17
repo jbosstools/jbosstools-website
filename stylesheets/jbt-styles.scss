@@ -411,15 +411,47 @@ kbd {
     &.stretch-row {
       justify-content: space-between;
       flex-direction: row;
+      align-items: stretch;
     }
     &.stretch-column {
       justify-content: space-between;
       flex-direction: column;
       margin-bottom: 0em;
+      // use the whole container for uniform height
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+    .title {
+      padding-left: 1em;
+      padding-right: 1em;
+      padding-top: 1em;
+    }
+    .footer {
+      padding-left: 1em;
+      padding-right: 1em;
+      padding-bottom: 1em;
+    } 
+    .body {
+      margin-top: 2em;
+      margin-bottom: 2em;
+      height: 128px;
+      // there should be only 1 child element here
+      & img {
+        //position: absolute;
+        //top: 0;
+        //bottom: 0;
+        //left: 0;
+        //right: 0;
+        margin: auto;
+        max-width: 128px;
+        max-height: 128px;
+      }
     }
     & > * {
       position: relative;
-
     }
   }
 }
@@ -964,11 +996,6 @@ span.label {
     height: 128px; 
     // there should be only 1 child element here
     & img {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
       margin: auto;
       max-width: 128px;
       max-height: 128px;
