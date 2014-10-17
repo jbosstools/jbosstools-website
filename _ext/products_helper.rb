@@ -15,13 +15,15 @@ module Awestruct
       
       # checks if there's a .Final version matching the given product_version of the given product_id
       def has_higher_version(site, product_id, product_version)
-        unless is_nightly_version(product_version)
+        unless is_nightly_version(product_version) || is_unreleased_version(site, product_id, product_version)
           return get_higher_version(site, product_id, product_version) > product_version
         end
         false
       end
       module_function :has_higher_version
      
+      # returns the higher version in the stream of the given product_id / product_version, 
+      # or nil if the given product_version is unknown (ie, the stream could not be found) 
       def get_higher_version(site, product_id, product_version) 
         main_version = get_main_version(product_version, false)
         site.products[product_id].streams.each do |stream_id, product_versions|
@@ -33,6 +35,7 @@ module Awestruct
             return higher_product_version
           end
         end
+        puts "higher version for #{product_id}/#{product_version} is unknown"
         nil
       end
       module_function :get_higher_version
@@ -113,7 +116,8 @@ module Awestruct
             end
           end
         end
-        nil
+        # return a product info for an "unreleased/coming soon" product because it is unknown
+        get_build_info(site, product_id, product_version, nil, nil)
       end
       module_function :get_product_info
       
@@ -124,26 +128,26 @@ module Awestruct
         info.product_id = product_id
         info.product_name = site.products[product_id].name
         info.version = product_version
-        info.archived = build_info[:archived]
-        info.release_date = build_info["release_date"]
-        info.renamed_as = build_info["renamed_as"]
+        info.archived = (build_info[:archived] unless build_info.nil?) || false
+        info.release_date = build_info["release_date"] unless build_info.nil?
+        info.renamed_as = build_info["renamed_as"] unless build_info.nil?
         info.eclipse_version = eclipse_version
         info.build_type = get_build_type(site, product_id, product_version) 
         info.build_type_label = get_build_type_label(site, product_id, product_version, info.build_type, info.archived) 
-        info.blog_announcement_url = build_info["blog_announcement_url"]
-        info.release_notes_url = build_info["release_notes_url"]
-        #info.supported_jbt_is_version = build_info["supported_jbt_is_version"]
-        info.required_jbt_core_version = build_info["required_jbt_core_version"]
-        info.required_devstudio_version = build_info["required_devstudio_version"]
-        #info.supported_devstudio_is_version = build_info["supported_devstudio_is_version"]
+        info.blog_announcement_url = build_info["blog_announcement_url"] unless build_info.nil?
+        info.release_notes_url = build_info["release_notes_url"] unless build_info.nil?
+        #info.supported_jbt_is_version = build_info["supported_jbt_is_version"] unless build_info.nil?
+        info.required_jbt_core_version = build_info["required_jbt_core_version"] unless build_info.nil?
+        info.required_devstudio_version = build_info["required_devstudio_version"] unless build_info.nil?
+        #info.supported_devstudio_is_version = build_info["supported_devstudio_is_version"] unless build_info.nil?
         unless site.whatsnew_pages[product_id].nil? || site.whatsnew_pages[product_id][product_version].nil? then
           info.whatsnew_url = site.whatsnew_pages[product_id][product_version].output_path
         end
-        info.installers = build_info["installers"]
-        info.update_site_url = build_info["update_site_url"]
-        info.marketplace_install_url = build_info["marketplace_install_url"]
-        info.zips = build_info["zips"]
-        info.archived = build_info["archived"] || false
+        info.installers = build_info["installers"] unless build_info.nil?
+        info.update_site_url = build_info["update_site_url"] unless build_info.nil?
+        info.marketplace_install_url = build_info["marketplace_install_url"] unless build_info.nil?
+        info.zips = build_info["zips"] unless build_info.nil?
+        #info.archived = build_info["archived"] unless build_info.nil?
         return info
       end
       module_function :get_build_info
