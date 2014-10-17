@@ -19,15 +19,15 @@ title: Features
       - while i < limit do
         - i += 1
         - feature = f.shift
-        %a.span3{:href=>relative(feature.url) }
-          .flexbox.stretch-column.center.well
+        .span3.center.well
+          %a.flexbox.stretch-column{:href=>relative(feature.url) }
             .title
               %h3.center< #{feature.name}
             .body
               %img{:src=>relative(feature.image_url), :alt=>"#{feature.name}"}
             .footer
               %h4.center< #{feature.tagline}
-         
+       
 
 .hero-unit.center
   %p * Not all features are installed by default. You can install these from JBoss Central or their update site. 
