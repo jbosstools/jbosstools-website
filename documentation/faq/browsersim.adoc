@@ -84,4 +84,12 @@ image::images/browsersim-linux-gtk.png[GTK selection on Linux]
 +
 NOTE: In order to run BrowserSim against GTK 3 `libwebkitgtk-3.0` must be installed. + 
 Fedora, RHEL - `yum install libwebkitgtk-3.0.so.0` +
-Ubuntu - `apt-get install libwebkitgtk-3.0-0`
++
+I'm not able to find libwebkitgtk-1.0.so.0 on RHEL 7. What should I do?::
+Since there is no webkitgtk package for RHEL 7, you cannot launch BrowserSim with SWT.Webkit engine under GTK2. You can launch BrowserSim under GTK2 only with JavaFX(requires Oracle JDK).
++
+I'm not able to find libwebkitgtk-3.0.so.0 on RHEL 6. What should I do?::
+Since there is no webkitgtk3 package for RHEL 6, you cannot launch BrowserSim with SWT.Webkit engine under GTK3. You can launch BrowserSim only under GTK2 in RHEL 6.
++
+I have Oracle JDK installed on Linux, but I cannot set JavaFX as web engine. What should I do?::
+If you install Oracle JDK via package manager(using command like `yum install java-1.7.0-oracle-1.7.0`) you also need to install JavaFX package. It can be installed using command like `yum install java-1.7.0-oracle-javafx`.
