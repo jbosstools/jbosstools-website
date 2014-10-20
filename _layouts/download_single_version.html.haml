@@ -62,7 +62,7 @@ bottom_javascripts: ["/javascripts/download_tabs.js"]
             %a{:href=>higher_version_download_page.output_path}<> #{page.build_info.name} #{higher_version_download_page.build_info.version}
           &#44; which is our latest #{page.build_info.build_type_label} release for #{page.build_info.eclipse_version.full_name}.
           
-    - elsif page.build_info.build_type_label == "nightly"
+    - elsif page.build_info.build_type_label == :nightly
       .alert.alert-warning
         %strong Warning! 
         The
