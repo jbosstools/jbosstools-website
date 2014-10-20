@@ -1,0 +1,27 @@
+= Maven Tools What's New in 4.2.0.CR2
+:page-layout: whatsnew
+:page-component_id: usage
+:page-component_version: 4.2.0.CR2
+:page-product_id: jbt_core 
+:page-product_version: 4.2.0.CR2
+
+== JBoss Maven Integration
+=== Automatically identify local Maven repositories 
+
+In the Configure Maven Repositories wizard, available under `Preferences > Jboss Tools > JBoss Maven Integration > Add Repository`, you can scan for JBoss Maven repositories unzipped locally, with the `Recognize JBoss Maven Enterprise Repositories...` button, in order to automatically add it to your .m2/settings.xml. 
+
+image::./images/recognize-maven-repo.png[]
+
+The identification process now looks for a .maven-repository file at the root of the folder you selected. This file follows the http://en.wikipedia.org/wiki/.properties[`.properties`] file format and is expected to contain up to 3 attributes :
+
+- `repository-id` : the repository id
+- `name` : a (descriptive) repository name. _Optional, defaults to repository-id_
+- `profile-id` : the profile id the repository will be activated from. _Optional, defaults to repository-id_
+
+As a concrete example, the JBoss Mobile repository .maven-reppsitory file would contain :
+
+ repository-id=local-jboss-mobile
+ name=JBoss Mobile Maven Repository
+ profile-id=local-jboss-mobile
+
+related_jira::JBIDE-14553[]
