@@ -32,7 +32,7 @@ Windows:::
 * http://support.apple.com/kb/DL1531[Apple Safari] must be installed (it provides WebKit engine for BrowserSim).
 Linux:::
 * `WebKitGTK 1.2.0` or newer must be installed and available in the library load path. To do it use your package manager: +
-Fedora, RHEL - `yum install libwebkitgtk-1.0.so.0` +
+Fedora, Red Hat Enterprise Linux (RHEL) - `yum install libwebkitgtk-1.0.so.0` +
 Ubuntu - `apt-get install libwebkitgtk-1.0-0`
 Mac OS X:::
 * Available out-of-the-box.
@@ -92,4 +92,4 @@ I'm not able to find libwebkitgtk-3.0.so.0 on RHEL 6. What should I do?::
 Since there is no webkitgtk3 package for RHEL 6, you cannot launch BrowserSim with SWT.Webkit engine under GTK3. You can launch BrowserSim only under GTK2 in RHEL 6.
 +
 I have Oracle JDK installed on Linux, but I cannot set JavaFX as web engine. What should I do?::
-If you install Oracle JDK via package manager(using command like `yum install java-1.7.0-oracle-1.7.0`) you also need to install JavaFX package. It can be installed using command like `yum install java-1.7.0-oracle-javafx`.
+If you install Oracle JDK via package manager (using i.e. `yum install java-1.7.0-oracle-1.7.0`) you might need to also install JavaFX package. The instructions might vary for your distribution, but on RHEL it can be installed using command like `yum install java-1.7.0-oracle-javafx`. 
