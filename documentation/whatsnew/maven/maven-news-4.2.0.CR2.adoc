@@ -1,6 +1,6 @@
 = Maven Tools What's New in 4.2.0.CR2
 :page-layout: whatsnew
-:page-component_id: usage
+:page-component_id: maven
 :page-component_version: 4.2.0.CR2
 :page-product_id: jbt_core 
 :page-product_version: 4.2.0.CR2
