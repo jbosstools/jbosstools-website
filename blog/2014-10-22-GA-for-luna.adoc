@@ -3,7 +3,7 @@
 :page-author: maxandersen
 :page-tags: [release, jbosstools, devstudio, jbosscentral]
 
-The day have finally come! 
+The day has finally come! 
 
 link:/downloads/jbosstools/luna/4.2.0.GA.html[JBoss Tools 4.2] and link:/downloads/devstudio/luna/8.0.0.GA.html[Red Hat JBoss Developer Studio 8] for Eclipse Luna is now available.
 
@@ -20,9 +20,9 @@ JBoss Tools or JBoss Developer Studio Bring-Your-Own-Eclipse (BYOE) requires a b
 This release requires at least Eclipse 4.4 (Luna) but we recommend
 using the
 http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/lunar[Eclipse
-4.4 JEE Bundle] since then you get most of the dependencies preinstalled.
+4.4 Java EE Bundle] since then you get most of the dependencies preinstalled.
 
-Once you have installed Eclipse, you either find us on Eclipse Marketplace under "JBoss Tools (Luna)" or "JBoss Developer Studio (Luna)".
+Once you have installed Eclipse, you can either find us on Eclipse Marketplace under "JBoss Tools (Luna)" or "JBoss Developer Studio (Luna)".
 
 For JBoss Tools you can also use our update site directly if you are up for it.
 
@@ -51,11 +51,11 @@ The main headlines are:
 
 === Where is integration stack tooling ?
 
-The integration stack covers the tooling for Fuse, Drools, jbpm, SwitchYard, JBoss ESB etc.
+The integration stack covers the tooling for Fuse, Drools, jBPM, SwitchYard, JBoss ESB etc.
 
 I'm happy to announce that we for now have made them available as "Early access" in JBoss Tools under JBoss Central Software/Update page.
 
-In near future it is planned to also show up in JBoss Developer Studio and eventually be available as fully supported.
+In the near future it is planned to also show up in JBoss Developer Studio and eventually be available as fully supported.
  
 == Thank You!
 
