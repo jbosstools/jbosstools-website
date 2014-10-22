@@ -5,7 +5,7 @@
 
 The day has finally come! 
 
-link:/downloads/jbosstools/luna/4.2.0.GA.html[JBoss Tools 4.2] and link:/downloads/devstudio/luna/8.0.0.GA.html[Red Hat JBoss Developer Studio 8] for Eclipse Luna is now available.
+link:/downloads/jbosstools/luna/4.2.0.Final.html[JBoss Tools 4.2] and link:/downloads/devstudio/luna/8.0.0.GA.html[Red Hat JBoss Developer Studio 8] for Eclipse Luna is now available.
 
 image::images/devstudio8_splash.png[JBoss Developer Studio 8 Splashscreen]
 
@@ -63,7 +63,6 @@ This release would not have been possible without feedback and contributions fro
 
 The following people that have participated in this release with either code, ideas, feedback and testing:
 
-Alexander Silgidjian, Alexey Pakseykin, Andrei Ivanov, Andy Goldstein, Antonio Goncalves, Asif Kilwani, Axel Wathne, Chris West, Chunyun Chen, Clovis Seragiotto, Cody Lerum, Cojan van Ballegooijen, Daniel Castro, Daniel Cunha, Daniel Dekany, Darren hartford, Darryl Miles, Eduardo de souza, Emily Brand, Ender Wiggin, Eric Barber, Filippo rossoni, Guillaume Jouvelot, Harald Wellmann, Henk de boer, Hermes Waldemarin, Hernán Chanfreau, Igor Jacy Lino Campista, Jeffrey Simpson, Jesper Skov, Jim Boettcher, Joe Guzzardo, Jorge Yagüe París, Josh B, Juergen Zimmermann, Karl Pietrzak, Labdoui labdoui, Luke Maurer, Marcel Neuwohner, Martin Lippert, Masao Kunii, Mikhail Kalkov, Nan wei, Nero M, Nicolas duminil, Oliver Pfau, Palmer Eldritch, Patrick Decat, Paul Richardson, Pei-Tang Huang, Radosław Józwik, Rainer Schön, Randall Smith, Rich DiCroce, Robert Baty, Robert Munteanu, Roman Ilin, Ron Ratovsky, Sebastien Deleuze, Stephen Neal, Suz Dorfield, Sébastien Pinel, Tagir Valeev, Thiago andrade, Thomas Maslen, Weiweijiang jiang, Wolfgang Knauf, Zerr Angelo, Alexander Kurtakov, Alexey Kazakov, Aliaksey Nis, Andre Dietisheim, Andrea Vibelli, Andrej Podhradsky, Arun Gupta, Aslak Knutsen, Barry LaFond, Boleslaw Dawidowicz, Brenton Leanhardt, Brian Fitzpatrick, Burr Sutter, Catherine Robson, Corey Daley, Daniel Azarov, David Chia, David Hladky, David Stephan, Denis Golovin, Denis Maliarevich, Duncan Doyle, Emil Cervenan, Emmanuel Bernard, Eric Rich, Fred Bricon, Gavin King, George Gastaldi, Gorkem Ercan, Ilya Buziuk, Isaac Rooskov, Jakub Niedermertl, James Cobb, Jane Murphey, Jaroslav Jankovič, Jeff Cantrill, Jim Tyrrell, Jiri Pallich, Jiri Peterka, Joshua Wilson, Juraci Paixão Kröhling, Juraj Húska, Karel Piwko, Koen Aers, Konstantin Marmalyukov, Krzysztof Daniel, Lars Heinemann, Len DiMaggio, Lincoln Baxter III, Lucia Jelinkova, Lukáš Fryč, Marek Novotny, Marek Schmidt, Marius Bogoevici, Marián Labuda, Martin Malina, Matthias Wessendorf, Max Rydahl Andersen, Maxim Areshkau, Michelle Murray, Mickael Istria, Mustafa Musaji, Nick Boldt, Paul Leacu, Pavol Srna, Pete Muir, Peter Palaga, Petr Stribny, Petr Suchý, Radim Hopp, Radoslav Rábara, Rafael Benevides, Rastislav Wagner, Rick Wagner, Rob Cernich, Rob Stryker, Robb Greathouse, Ron Šmeral, Sande Gilda, Sebastien Blanc, Snjezana Peco, Stefan Bunciak, Ståle Pedersen, Tadeas Kriz, Takayuki Konishi, Tomas Repel, Tomáš Sedmík, Travis Rogers, Van Halbert, Viacheslav Kabanovich, Victor Rubezhny, Vineet Reynolds, Vitali Yemialyanchyk, Vladimir Vasilev, Vlado Pakan, Vojtech Juranek, Xavier Coulon and Yahor Radtsevich.
 
 Thank you!
 
