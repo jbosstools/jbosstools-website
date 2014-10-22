@@ -18,7 +18,7 @@ tab: blog
       - for post in page.posts
         .well.post-bg
           .post
-            .header.flexbox.stretch-row
+            .header.flexbox.row-start
               .polaroid
                 %a{:href=>site.team[post.author].developer_page}
                   %img.img-polaroid{:src=>"#{site.team[post.author].photo_64px}"}
