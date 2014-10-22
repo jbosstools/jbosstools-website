@@ -145,6 +145,7 @@ module Awestruct
         end
         info.installers = build_info["installers"] unless build_info.nil?
         info.update_site_url = build_info["update_site_url"] unless build_info.nil?
+        info.marketplace_url = build_info["marketplace_url"] unless build_info.nil?
         info.marketplace_install_url = build_info["marketplace_install_url"] unless build_info.nil?
         info.zips = build_info["zips"] unless build_info.nil?
         #info.archived = build_info["archived"] unless build_info.nil?
