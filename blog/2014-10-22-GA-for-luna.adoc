@@ -45,7 +45,7 @@ The main headlines are:
   * link:/documentation/whatsnew/jbosstools/4.2.0.Final.html#jmx-enhanced-with-jvm-monitor[JMX/VM Monitoring] of local process
   * link:/documentation/whatsnew/jbosstools/4.2.0.Final.html#html-preview-as-a-part-of-vpe[HTML5 visual preview] and navigation
   * link:/documentation/whatsnew/jbosstools/4.2.0.Final.html#server[Deployment via WildFly/EAP Management API's]
-  * /documentation/whatsnew/jbosstools/4.2.0.Final.html#server[Support remote only] Server runtimes
+  * link:/documentation/whatsnew/jbosstools/4.2.0.Final.html#server[Support remote only] Server runtimes
   * link:/documentation/whatsnew/jbosstools/4.2.0.Final.html#classpath-containers-will-also-support-jboss-modules-dependencies[Support JBoss Modules] dependencies
   * ..and link:/documentation/whatsnew/jbosstools/4.2.0.Final.html[much more]
 
