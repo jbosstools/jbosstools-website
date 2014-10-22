@@ -1,9 +1,9 @@
 = Aerogear What's New in 1.1.0.Beta3
 :page-layout: whatsnew
 :page-component_id: aerogear
-:page-component_version: 1.1.0.CR2
+:page-component_version: 1.1.0.Final
 :page-product_id: jbt_core
-:page-product_version: 4.2.0.CR2
+:page-product_version: 4.2.0.Final
 
 == Hybrid Mobile (Cordova) Tools
 

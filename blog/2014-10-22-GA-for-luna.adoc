@@ -34,19 +34,20 @@ There have been many feature additions and a lot of bugfixing polish going into 
 
 The main headlines are:
 
-  * Better Apache Cordova Tooling
-  * Early Access section in JBoss Central
-  * Better JavaScript content assist via Tern
-  * Experimental AngularJS support
-  * Cordova Ionic Palette
-  * OpenShift Quickstarts
-  * Forge 2 Integrated (Forge 1 deprecated)
-  * BrowserSim using JavaFX Webbrowser 
-  * JMX/VM Monitoring of local process
-  * HTML5 visual preview and navigation
-  * Deployment via WildFly/EAP Management API's
-  * Support remote only Server runtimes
-  * ..and much more
+  * Better link:/documentation/whatsnew/jbosstools/4.2.0.Final.html#aerogear[Apache Cordova Tooling]
+  * link:/documentation/whatsnew/jbosstools/4.2.0.Final.html#early-access[Early Access] section in JBoss Central
+  * Better link:/documentation/whatsnew/jbosstools/4.2.0.Final.html#javascript-editing-improvements[JavaScript content assist via Tern]
+  * link:/documentation/whatsnew/jbosstools/4.2.0.Final.html#angularjs-eclipse-plugin-integration[Experimental AngularJS] support
+  * link:/documentation/whatsnew/jbosstools/4.2.0.Final.html#ionic[Ionic Palette]
+  * link:/documentation/whatsnew/jbosstools/4.2.0.Final.html#start-an-application-from-quickstarts[OpenShift Quickstarts]
+  * link:/documentation/whatsnew/jbosstools/4.2.0.Final.html#forge[Forge 2 Integrated] (Forge 1 deprecated)
+  * link:/documentation/whatsnew/jbosstools/4.2.0.Final.html#browsersim[BrowserSim] using JavaFX Webbrowser 
+  * link:/documentation/whatsnew/jbosstools/4.2.0.Final.html#jmx-enhanced-with-jvm-monitor[JMX/VM Monitoring] of local process
+  * link:/documentation/whatsnew/jbosstools/4.2.0.Final.html#html-preview-as-a-part-of-vpe[HTML5 visual preview] and navigation
+  * link:/documentation/whatsnew/jbosstools/4.2.0.Final.html#server[Deployment via WildFly/EAP Management API's]
+  * /documentation/whatsnew/jbosstools/4.2.0.Final.html#server[Support remote only] Server runtimes
+  * link:/documentation/whatsnew/jbosstools/4.2.0.Final.html#classpath-containers-will-also-support-jboss-modules-dependencies[Support JBoss Modules] dependencies
+  * ..and link:/documentation/whatsnew/jbosstools/4.2.0.Final.html[much more]
 
 === Where is integration stack tooling ?
 
@@ -58,15 +59,17 @@ In near future it is planned to also show up in JBoss Developer Studio and event
  
 == Thank You!
 
-This release would not have been possible without feedback and contributions from our community and the team(s) around Developer Studio. For that I'm truly grateful. The smallest contribution count!
+This release would not have been possible without feedback and contributions from our community and the team(s) around Developer Studio. For that I'm truly grateful. Any contribution count!
 
-Thus thank you to the following people that have participated in this release:
+The following people that have participated in this release with either code, ideas, feedback and testing:
 
 Alexander Silgidjian, Alexey Pakseykin, Andrei Ivanov, Andy Goldstein, Antonio Goncalves, Asif Kilwani, Axel Wathne, Chris West, Chunyun Chen, Clovis Seragiotto, Cody Lerum, Cojan van Ballegooijen, Daniel Castro, Daniel Cunha, Daniel Dekany, Darren hartford, Darryl Miles, Eduardo de souza, Emily Brand, Ender Wiggin, Eric Barber, Filippo rossoni, Guillaume Jouvelot, Harald Wellmann, Henk de boer, Hermes Waldemarin, Hernán Chanfreau, Igor Jacy Lino Campista, Jeffrey Simpson, Jesper Skov, Jim Boettcher, Joe Guzzardo, Jorge Yagüe París, Josh B, Juergen Zimmermann, Karl Pietrzak, Labdoui labdoui, Luke Maurer, Marcel Neuwohner, Martin Lippert, Masao Kunii, Mikhail Kalkov, Nan wei, Nero M, Nicolas duminil, Oliver Pfau, Palmer Eldritch, Patrick Decat, Paul Richardson, Pei-Tang Huang, Radosław Józwik, Rainer Schön, Randall Smith, Rich DiCroce, Robert Baty, Robert Munteanu, Roman Ilin, Ron Ratovsky, Sebastien Deleuze, Stephen Neal, Suz Dorfield, Sébastien Pinel, Tagir Valeev, Thiago andrade, Thomas Maslen, Weiweijiang jiang, Wolfgang Knauf, Zerr Angelo, Alexander Kurtakov, Alexey Kazakov, Aliaksey Nis, Andre Dietisheim, Andrea Vibelli, Andrej Podhradsky, Arun Gupta, Aslak Knutsen, Barry LaFond, Boleslaw Dawidowicz, Brenton Leanhardt, Brian Fitzpatrick, Burr Sutter, Catherine Robson, Corey Daley, Daniel Azarov, David Chia, David Hladky, David Stephan, Denis Golovin, Denis Maliarevich, Duncan Doyle, Emil Cervenan, Emmanuel Bernard, Eric Rich, Fred Bricon, Gavin King, George Gastaldi, Gorkem Ercan, Ilya Buziuk, Isaac Rooskov, Jakub Niedermertl, James Cobb, Jane Murphey, Jaroslav Jankovič, Jeff Cantrill, Jim Tyrrell, Jiri Pallich, Jiri Peterka, Joshua Wilson, Juraci Paixão Kröhling, Juraj Húska, Karel Piwko, Koen Aers, Konstantin Marmalyukov, Krzysztof Daniel, Lars Heinemann, Len DiMaggio, Lincoln Baxter III, Lucia Jelinkova, Lukáš Fryč, Marek Novotny, Marek Schmidt, Marius Bogoevici, Marián Labuda, Martin Malina, Matthias Wessendorf, Max Rydahl Andersen, Maxim Areshkau, Michelle Murray, Mickael Istria, Mustafa Musaji, Nick Boldt, Paul Leacu, Pavol Srna, Pete Muir, Peter Palaga, Petr Stribny, Petr Suchý, Radim Hopp, Radoslav Rábara, Rafael Benevides, Rastislav Wagner, Rick Wagner, Rob Cernich, Rob Stryker, Robb Greathouse, Ron Šmeral, Sande Gilda, Sebastien Blanc, Snjezana Peco, Stefan Bunciak, Ståle Pedersen, Tadeas Kriz, Takayuki Konishi, Tomas Repel, Tomáš Sedmík, Travis Rogers, Van Halbert, Viacheslav Kabanovich, Victor Rubezhny, Vineet Reynolds, Vitali Yemialyanchyk, Vladimir Vasilev, Vlado Pakan, Vojtech Juranek, Xavier Coulon and Yahor Radtsevich.
 
+Thank you!
+
 If you like to be part of shaping the next update and major release please take a look at link:/cat[JBoss Tools Community Acceptance] program! It will start up soon!
 
-Hope you enjoy it and remember...
+Hope you enjoy this release and remember...
 
 Have fun!
 

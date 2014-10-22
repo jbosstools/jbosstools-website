@@ -1,9 +1,9 @@
 = OpenShift What's New in OpenShift 2.6.0.CR2
 :page-layout: whatsnew
 :page-component_id: openshift
-:page-component_version: 2.6.0.CR2
+:page-component_version: 2.6.0.GA
 :page-product_id: jbt_core 
-:page-product_version: 4.2.0.CR2
+:page-product_version: 4.2.0.GA
 
 == OpenShift Server Adapter now supports JEE7
 Prior to JBoss Tools 4.2.0.CR2 one could not deploy JEE 7 projects to OpenShift. 
