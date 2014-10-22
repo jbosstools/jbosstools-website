@@ -17,10 +17,8 @@ JBoss Developer Studio comes with everything pre-bundled in its installer. Simpl
 
 JBoss Tools or JBoss Developer Studio Bring-Your-Own-Eclipse (BYOE) requires a bit more:
 
-This release requires at least Eclipse 4.4 (Luna) but we recommend
-using the
-http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/lunar[Eclipse
-4.4 Java EE Bundle] since then you get most of the dependencies preinstalled.
+This release requires at least Eclipse 4.4 (Luna) but we recommend using the
+http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/lunasr1[Eclipse Luna SR1 Java EE Bundle] since then you get most of the dependencies preinstalled.
 
 Once you have installed Eclipse, you can either find us on Eclipse Marketplace under "JBoss Tools (Luna)" or "JBoss Developer Studio (Luna)".
 
@@ -30,7 +28,7 @@ For JBoss Tools you can also use our update site directly if you are up for it.
 
 == What is new ?
 
-There have been many feature additions and a lot of bugfixing polish going into this main release and these have been documented/described in details at link:/documentation/whatsnew/jbosstools/4.2.0.GA.html[What's New].
+There have been many feature additions and a lot of bugfixing polish going into this main release and these have been documented/described in details at link:/documentation/whatsnew/jbosstools/4.2.0.Final.html[What's New].
 
 The main headlines are:
 
