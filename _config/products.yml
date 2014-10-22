@@ -69,7 +69,7 @@ devstudio:
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/8.0/html/Release_Notes_8.0.0/index.html
         # TODO link to real blog here
-        blog_announcement_url: /blog/2014-10-20-something-goes-here.html
+        blog_announcement_url: /blog/2014-10-22-GA-for-luna.adoc
         installers: 
           - name: Stand-alone Installer
             url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/8f/8f5805a6370372bbe29f4f39d696dad3608aaa3ddf8ff4f707585cd4b3fbd1aa/jboss-devstudio-8.0.0.GA-v20141020-1042-B317-installer-standalone.jar
@@ -311,7 +311,7 @@ jbt_core:
         #archived: true
         release_date: 2014-10-20
         # TODO link to real blog here
-        blog_announcement_url: /blog/2014-10-20-something-goes-here.html
+        blog_announcement_url: /blog/2014-10-22-GA-for-luna.adoc
         documentation_url: http://docs.jboss.org/tools/
         zips:
           - name: Update site (including sources) bundle of all JBoss Core Tools
