@@ -24,7 +24,7 @@ tab: docs
   - unless final_whatsnew_page.nil?
     .row-fluid
       .span12.alert.alert-warning><
-        %span><= "Heads Up! This is the archived New & Noteworthy page is also part of of #{page.product_name}&nbsp;"
+        %span><= "Heads Up! This is the archived New & Noteworthy page that is also part of #{page.product_name}&nbsp;"
         %a{:href=>final_whatsnew_page.output_path}><= final_whatsnew_page.build_info.version
 
 
