@@ -1,0 +1,90 @@
+// This is a template for How To articles. Please remove the comments and template text before actually uploading.
+= Article Title
+
+// page-layout is there to indicate this template is a How To.
+// experimental is there to indicate ...
+// imagesdir is there to indicate the base path for images 
+:page-layout: howto
+:page-tab: docs
+:page-status: green
+:experimental:
+:imagesdir: ./images
+
+Start with an introduction. What is the purpose of the How To workflow described in this article? When and why would a user use this workflow? Which type of user would use this workflow (new, existing, etc.)?
+
+Instructions are provided for the following tasks:
+
+. <<section1shorttitle,Task 1 Title>>
+. <<section2shorttitle,Task 2 Title>>
+. <<section3shorttitle,Task 3 Title>>
+
+This article guides you through each of these configuration requirements and must be completed in the order given.
+
+[[section1shorttitle]]
+== 1. Task 1 Title
+
+Give an intro to the task - what specifically is it going to achieve?
+
+To do X, complete the following steps:
+
+. x
+. y
++
+.Image Title
+image::filename.png[Alternative image text] 
++
+. z
+* a
+* b
+* c
+
+[NOTE]
+If you don't know asciidoctor syntax you can see more at http://asciidoctor.org/docs/asciidoc-syntax-quick-reference.
+
+[[section2shorttitle]]
+== 2. Task 2 Title
+
+If you got code to show do it like this:
+[source,java]
+----
+ import org.jboss.tools.*;
+ 
+ class JBossTools extends Eclipse {
+
+   protected Team spirit;
+   public Issues development;
+   private Satisfaction guaranteed;
+
+ }
+----
+
+[[section3shorttitle]]
+== 3. Task 3 Title
+
+When using menus like menu:Preferences[Guide > The > User], keyboard
+shortcuts like kbd:[Ctrl+Alt+P] or even buttons like btn:[OK] then
+there is a style for it.
+
+
+== Troubleshooting
+
+Issue::
+* Resolution
+
+Issue::
+* Resolution
+
+
+== Did You Know?
+
+* End with a succinct bullet list
+* Of alternative ways of 
+* Completing actions
+* And tips for being more efficient
+
+
+// remember that the filename must take the format {maintool}_shorttitle.adoc
+// likewise for images {maintool}_shorttitle.png
+// keep all file names lowercase! 
+// commit the file to https://github.com/jbosstools/jbosstools-website/tree/master/documentation/howto
+// remember to commit images and update index.adoc too
