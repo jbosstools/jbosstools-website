@@ -42,8 +42,8 @@ The main headlines are:
   * link:/documentation/whatsnew/jbosstools/4.2.0.Final.html#browsersim[BrowserSim] using JavaFX Webbrowser 
   * link:/documentation/whatsnew/jbosstools/4.2.0.Final.html#jmx-enhanced-with-jvm-monitor[JMX/VM Monitoring] of local process
   * link:/documentation/whatsnew/jbosstools/4.2.0.Final.html#html-preview-as-a-part-of-vpe[HTML5 visual preview] and navigation
-  * link:/documentation/whatsnew/jbosstools/4.2.0.Final.html#server[Deployment via WildFly/EAP Management API's]
-  * link:/documentation/whatsnew/jbosstools/4.2.0.Final.html#server[Support remote only] Server runtimes
+  * link:/documentation/whatsnew/jbosstools/4.2.0.Final.html#deployment-over-management[Deployment via WildFly/EAP Management API's]
+  * link:/documentation/whatsnew/jbosstools/4.2.0.Final.html#optional-runtimes-for-remote-servers[Support remote only] Server runtimes
   * link:/documentation/whatsnew/jbosstools/4.2.0.Final.html#classpath-containers-will-also-support-jboss-modules-dependencies[Support JBoss Modules] dependencies
   * ..and link:/documentation/whatsnew/jbosstools/4.2.0.Final.html[much more]
 
@@ -57,9 +57,9 @@ In the near future it is planned to also show up in JBoss Developer Studio and e
  
 == Thank You!
 
-This release would not have been possible without feedback and contributions from our community and the team(s) around Developer Studio. For that I'm truly grateful. Any contribution count!
+This release would not have been possible without feedback and contributions from our community and the team(s) around Developer Studio. For that I'm truly grateful. Any contribution counts!
 
-The following people that have participated in this release with either code, ideas, feedback and testing:
+The following people have participated in this release with either code, ideas, feedback and testing:
 
 Alexander Silgidjian, Alexey Pakseykin, Andrei Ivanov, Andy Goldstein, Antonio Goncalves, Asif Kilwani, Axel Wathne, Chris West, Chunyun Chen, Clovis Seragiotto, 
 Cody Lerum, Cojan van Ballegooijen, Daniel Castro, Daniel Cunha, Daniel Dekany, Darren hartford, Darryl Miles, Eduardo de souza, Emily Brand, Ender Wiggin, Eric Barber, 
