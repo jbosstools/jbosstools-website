@@ -43,5 +43,5 @@ there is a style for it.
 ...and enjoy the simplicity
 
 // remember that filename should start with a date and then title (i.e. 2014-04-13-<title>.adoc) 
-// if you commit a file with a date in the future it will but published after the first built after that date.
-// building locally it will just be shown as a Draf.
+// if you commit a file with a date in the future it will be published after the first built after that date.
+// building locally it will just be shown as a Draft.
