@@ -74,7 +74,7 @@ devstudio:
           - name: Stand-alone Installer
             url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/8f/8f5805a6370372bbe29f4f39d696dad3608aaa3ddf8ff4f707585cd4b3fbd1aa/jboss-devstudio-8.0.0.GA-v20141020-1042-B317-installer-standalone.jar
             file_size: 548MB
-          - name: Installer With EAP 6.3.0.Beta
+          - name: Installer With EAP 6.3.0
             url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/9f/9f3fab096014e0a14d9038d68677a2f4223e1a978447232b5f8b1e17cc58b989/jboss-devstudio-8.0.0.GA-v20141020-1042-B317-installer-eap.jar
             file_size: 687MB
         zips:
@@ -93,7 +93,7 @@ devstudio:
           - name: Stand-alone Installer
             url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/5a/5a748e631b667f78fd6c9bd6e8aa13e29d9b4731555762df191aad684d866759/jboss-devstudio-8.0.0.CR1-v20140915-0805-B246-installer-standalone.jar
             file_size: 552MB
-          - name: Installer With EAP 6.3.0.Beta
+          - name: Installer With EAP 6.3.0
             url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/1e/1e0b9468604aa20ac8c44b63cd651cfba2c97ccc7a0f6f4ebb23b90a6244b2f1/jboss-devstudio-8.0.0.CR1-v20140915-0805-B246-installer-eap.jar
             file_size: 691MB
         zips:
