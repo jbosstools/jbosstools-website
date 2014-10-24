@@ -87,4 +87,4 @@ video::99072427[vimeo]
 * 2014/09/01 -- JBoss Tools 4.2.0.CR1 testing starts - announced http://lists.jboss.org/pipermail/jbosstools-cat/2014-September/000010.html[here]
 * 2014/09/17 -- JBoss Tools 4.2.0.CR1 released - feedback survey http://lists.jboss.org/pipermail/jbosstools-cat/2014-September/000011.html[here]
 * 2014/10/06 -- JBoss Tools 4.2.0.CR2 testing starts - announced http://lists.jboss.org/pipermail/jbosstools-cat/2014-October/000013.html[here]
-* 2014/10/20 -- JBoss Tools 4.2.0.Final released
+* 2014/10/22 -- JBoss Tools 4.2.0.Final released - announced http://lists.jboss.org/pipermail/jbosstools-cat/2014-October/000015.html[here]
