@@ -1,8 +1,9 @@
-= Debug an OpenShift Online Java Application
+= Debug an OpenShift Online Java App
 :page-layout: howto
 :page-tab: docs
 :page-status: green
 :experimental:
+:imagesdir: ./images
  
 OpenShift Tools enables you to debug your deployed OpenShift applications within the IDE, enabling you to take advantage of the IDE debugging tools. This article specifically details the steps needed to set up an OpenShift Online Java application for debugging. A number of configuration tasks are required both locally and remotely  to enable the IDE debugger to connect to the OpenShift server and OpenShift Tools for achieving this. Some tasks only need to be completed once for each OpenShift Online application but others must be completed every time you reconnect to OpenShift Online from the IDE. 
 
@@ -23,11 +24,11 @@ You must first configure the OpenShift server, to which your application is depl
 
 To configure the OpenShift server for debugging, complete the following steps:
 
-. In the `Project Explorer` view, right-click the project and click menu:OpenShift[Configure Markers]. 
+. In the `Project Explorer` view, right-click `_{project name}_` and click menu:OpenShift[Configure Markers]. 
 . In the `Configure OpenShift Markers` window, select the `Enable JPDA` check box and click `OK`.
 +
 .OpenShift Enable JPDA Marker Selected
-image::images/openshift_jpda-marker.png[Enable JPDA check box selected] 
+image::openshift_jpda-marker.png[Enable JPDA check box selected] 
 +               
 . In the `Servers` view, right-click the server adapter for the application and click `Publish`. 
 . In the `Publish Changes` window, in the `Commit message` field type a message for the commit.
@@ -46,11 +47,11 @@ Port forwarding is automatically stopped when your OpenShift Online connection c
 
 To enable port forwarding, complete the following steps:
 
-. In the `OpenShift Explorer` view, right-click the application and click `Port Forwarding`. 
+. In the `OpenShift Explorer` view, right-click `_{application name}_` and click `Port Forwarding`. 
 . In the `Application port forwarding` window, click `Start All`. Ensure the `Status` value shows `Started` for the debug ports and click `OK` to close the `Application port forwarding` window. 
 +
 .Port Forwarding Started for All Ports
-image::images/openshift_portforward-start.png[The Application port forwarding window]    
+image::openshift_portforward-start.png[The Application port forwarding window]    
 
 [[idedebugger]]
 == 3. Configure and Connect the IDE Debugger
@@ -59,14 +60,14 @@ With port forwarding configured for the debug ports, you must create a debug con
 To configure and connect the IDE Debugger, complete the following steps:
 
 . In the global toolbar of the JBoss perspective, click the drop-down list for the `Debug` icon and select `Debug Configurations`.                     
-. From the debug configurations list, select `Remote Java Application` and click the `New launch configuration` icon image:images/openshift_icon-newlaunchconfig.png[New launch configuration icon]
+. From the debug configurations list, select `Remote Java Application` and click the `New launch configuration` icon image:openshift_icon-newlaunchconfig.png[New launch configuration icon]
 . In the `Connect` tab, complete the following fields:
 ** In the `Project` field, type the name of the workspace project associated with the OpenShift application or click `Browse` to locate the project.
 ** In the `Port` field, type the value of the debug port.     
 ** Click `Apply` and then click `Debug`. 
 +
 .Debug Configuration Ready for Your OpenShift Application 
-image::images/openshift_debug-config.png[Configuration completed for the OpenShift application]
+image::openshift_debug-config.png[Configuration completed for the OpenShift application]
 
 Connecting to the OpenShift server may take some time to complete and you can monitor the progress in the `Progress` bar or `Progress` view. 
 
