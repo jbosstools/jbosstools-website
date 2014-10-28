@@ -11,7 +11,7 @@ Mobile Hybrid Tools enables you to quickly create Cordova-based hybrid mobile ap
 
 As illustrated in this article, from this foundation you can customize the application by adding a range of Cordova plug-ins for accessing device hardware with the Cordova Plug-in Discovery wizard. You can also test your Cordova-based hybrid mobile applications without leaving the IDE using CordovaSim, a mobile application simulator.
 
-The Hybrid Mobile Project wizard is also an ideal starting point for new users to Hybrid Mobile Tools and CordovaSim, guiding you through the necessary steps to set up the IDE for developing Cordova applications before generating a basic Cordova project.
+The Hybrid Mobile Project wizard is also an ideal starting point for new users to Hybrid Mobile Tools and CordovaSim, guiding you through the necessary steps to set up the IDE and your system for developing Cordova applications before generating a basic Cordova project.
 
 The instructions here demonstrate how to complete the following tasks:
 
@@ -24,7 +24,7 @@ The instructions here demonstrate how to complete the following tasks:
 [[install]]
 == 1. Install the Hybrid Mobile Project Requirements
 
-The Hybrid Mobile project requires additional plug-ins to be installed before it can be successfully completed. As demonstrated here, the wizard automatically checks that all necessary plug-ins are installed when it starts and in the case that they are not installed the wizard starts the installation process for you.
+The Hybrid Mobile project requires additional plug-ins to be installed before it can be successfully completed. As demonstrated here, the wizard automatically checks that all necessary plug-ins are installed when it starts and if they are not installed the wizard starts the installation process for you.
 
 To install the Hybrid Mobile project requirements, complete the following steps:
 
@@ -49,13 +49,13 @@ To create a Hybrid Mobile project, complete the following steps:
 . Complete the fields about the project and application as follows:
 ** In the `Project name` field, type a name for the project. 
 ** In the `Name` field, type a name for the application 
-** In the `ID` field, type an alpha-numeric package for the application; IDs must begin with an alpha character and contain at least one dot. 
+** In the `ID` field, type an alpha-numeric package name for the application; IDs are akin to Java package names and must begin with an alpha character and contain at least one dot.
 +
 .Project and Application Information Provided
 image::hmt_newproj-details.png[]
 +
 . Click `Next`.
-. From the `Available Engines` table, select the latest Apache Cordova version.
+. From the `Available Engines` table, select the latest Apache Cordova version. If the `Available Engines` table is empty, first click `Download` and follow the instructions to install the latest Cordova engine version on your system.
 . Click `Finish`.
 
 The project is created and listed in the `Project Explorer` view. 
@@ -163,7 +163,7 @@ image::hmt_accel-csim.png[]
 
 . You can manually initiate installation of JBoss Hybrid Mobile Tools and CordovaSim by locating them in the JBoss Central `Software/Update` tab or by dragging the following link into JBoss Central: https://devstudio.jboss.com/central/install?connectors=org.jboss.tools.aerogear.hybrid
 . You can change the Cordova engine associated with the project after it is created. In the `Project Explorer` view, right-click the project and click `Properties`. Click `Hybrid Mobile Engine` and select the engine you want to use. Click `OK` to save the engine change and close the `Properties` window. 
-. You can download other Cordova engines with which to build your projects. The `Download` wizard can be accessed from the `Hybrid Mobile Project` wizard and `Hybrid Mobile Engine` pane in the project `Properties` window.
+. You can download multiple Cordova engines to your system with which to build your projects. The `Download` wizard can be accessed from the `Hybrid Mobile Engine` pane in the project `Properties` window, in addition to the `Hybrid Mobile Project` wizard.
 . From the IDE you can also initiate testing of Cordova projects with a connected Android device, system Android Emulator, and system iOS Simulator. The project is built in the necessary native format during the process.
 . With the CordovaSim control panel, you can generate simulated data for a range of device hardware, including geolocation and battery status. CordovaSim also manages camera actions, enabling you to upload system images to simulate receiving camera data.
 . A `Shake` button under `Accelerometer` in the CordovaSim control panel enables you to simulate a hardware-shake gesture and test the impact on your application. 
