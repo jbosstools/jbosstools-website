@@ -1,0 +1,172 @@
+= Create Your First Hybrid Mobile App
+============================================
+:page-layout: howto
+:page-tab: docs
+:page-status: green
+:experimental:
+:imagesdir: ./images
+
+
+Mobile Hybrid Tools enables you to quickly create Cordova-based hybrid mobile applications using the `Hybrid Mobile Project` wizard. This wizard is a useful starting point for creating all new Cordova-based mobile applications in the IDE. 
+
+As illustrated in this article, from this foundation you can customize the application by adding a range of Cordova plug-ins for accessing device hardware with the Cordova Plug-in Discovery wizard. You can also test your Cordova-based hybrid mobile applications without leaving the IDE using CordovaSim, a mobile application simulator.
+
+The Hybrid Mobile Project wizard is also an ideal starting point for new users to Hybrid Mobile Tools and CordovaSim, guiding you through the necessary steps to set up the IDE and your system for developing Cordova applications before generating a basic Cordova project.
+
+The instructions here demonstrate how to complete the following tasks:
+
+. <<install,Install the Hybrid Mobile Project Requirements>>
+. <<create,Create a Hybrid Mobile Project>>
+. <<customize,Customize the Hybrid Mobile Project>>
+. <<test,Test the Hybrid Mobile Application using CordovaSim>>
+
+
+[[install]]
+== 1. Install the Hybrid Mobile Project Requirements
+
+The Hybrid Mobile project requires additional plug-ins to be installed before it can be successfully completed. As demonstrated here, the wizard automatically checks that all necessary plug-ins are installed when it starts and if they are not installed the wizard starts the installation process for you.
+
+To install the Hybrid Mobile project requirements, complete the following steps:
+
+. In JBoss Central, under `Start from scratch`, click `Hybrid Mobile Project`.
+
+. When prompted to install the required features for the wizard, click `Yes`.
+
+. Follow the on-screen instructions to complete the installation.
+
+During the installation process you may receive warnings about installing unsigned content. If this is the case, review the details of the content and if satisfied click `OK` to continue with the installation.
+
+Once installation is complete, you are prompted to restart Eclipse. Click `Yes` to restart immediately and `No` if you need to save any unsaved changes to open projects. Note that IDE changes do not take effect until the IDE is restarted.
+
+[[create]]
+== 2. Create a Hybrid Mobile Project 
+
+After the project wizard requirements are installed, you can restart the Hybrid Mobile Project wizard and follow it through to completion to create a template-based project. Within the wizard you must specify identifiers for the project and application and select the Cordova engine version to be used for building the project.
+
+To create a Hybrid Mobile project, complete the following steps:
+
+. In JBoss Central, under `Start from scratch`, click `Hybrid Mobile Project`.
+. Complete the fields about the project and application as follows:
+** In the `Project name` field, type a name for the project. 
+** In the `Name` field, type a name for the application 
+** In the `ID` field, type an alpha-numeric package name for the application; IDs are akin to Java package names and must begin with an alpha character and contain at least one dot.
++
+.Project and Application Information Provided
+image::hmt_newproj-details.png[]
++
+. Click `Next`.
+. From the `Available Engines` table, select the latest Apache Cordova version. If the `Available Engines` table is empty, first click `Download` and follow the instructions to install the latest Cordova engine version on your system.
+. Click `Finish`.
+
+The project is created and listed in the `Project Explorer` view. 
+
+[[customize]]
+== 3. Customize the Hybrid Mobile Project
+
+Before building and running the Hybrid Mobile application, instructions are given here for customizing the project by adding the Cordova Device Motion plug-in and modifying the source code to make use of it. The plug-in gives access to the mobile device accelerometer and the code snippets added to this project check for data every one second and display the X, Y, Z acceleration values on the front page of the application. This plug-in is just one of a catalog of plug-ins available to add to your Hybrid Mobile project.
+
+To customize the Hybrid Mobile project with the Cordova Device Motion plug-in, complete the following steps:
+
+. In the `Project Explorer` view, right-click `_{project name}_` and click `Install Cordova Plug-in`.
+. In the `Find` field, enter `motion`.
+. From the filtered list of plug-ins, select `org.apache.cordova.device-motion` and click `Finish`.
+. In the `Project Explorer` view, expand `_{project name}_ > www`. 
+. Double-click `index.html` to open it in the JBoss Tools HTML Editor.
+. Edit `index.html` as follows:
+** Before the closing `</head>` tag, add the following lines
++
+[source,html]
+----
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/index.js"></script>
+----
++
+** Replace the code inside the `<body></body>` tags with the following lines
++
+[source,html]
+------------
+<div class="app">
+     <h1>My Cordova Accelerometer App</h1>
+     <div id="accelerometer">Waiting for accelerometer...</div>
+</div>
+------------
++
+.Modified `index.html` File
+image::hmt_accel-index.png[]
++
+. Save the `index.html` file by pressing kbd:[Ctrl+S] (or kbd:[Cmd+S]).
+. In the `Project Explorer` view, expand `_{project name}_ > www > js`.
+. Double-click `index.js` to open it in the IDE JavaScript Editor.
+. Replace the code in `index.js` with the following lines
++
+[source, js]
+----
+// The watch id references the current `watchAcceleration`
+    var watchID = null;
+
+    // Wait for device API libraries to load
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // device APIs are available
+    function onDeviceReady() {
+        console.log("deviceready");
+        startWatch();
+    }
+
+    // Start watching the acceleration
+    function startWatch() {
+
+        // Update acceleration every 1 seconds
+        var options = { frequency: 1000 };
+        watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
+    }
+
+    // Stop watching the acceleration
+    function stopWatch() {
+        if (watchID) {
+            navigator.accelerometer.clearWatch(watchID);
+            watchID = null;
+        }
+    }
+
+    // onSuccess: Get a snapshot of the current acceleration
+    function onSuccess(acceleration) {
+        var element = document.getElementById('accelerometer');
+        element.innerHTML = 'Acceleration X: ' + acceleration.x + '<br />' +
+                            'Acceleration Y: ' + acceleration.y + '<br />' +
+                            'Acceleration Z: ' + acceleration.z;
+    }
+
+    // onError: Failed to get the acceleration
+    function onError() {
+        alert('onError!');
+    }
+
+----
++
+. Save the `index.js` file.
+
+[[test]]
+== 4. Test the Hybrid Mobile Application using CordovaSim 
+
+You can build and test the Hybrid Mobile application within the IDE using CordovaSim. CordovaSim is a mobile device simulator specifically for testing Cordova-based hybrid mobile applications. Using the CordovaSim control panel you can input sample data for mobile device hardware, as illustrated here for a device accelerometer. 
+
+To run and test your Hybrid Mobile application using CordovaSim, complete the following steps:
+
+. In the `Project Explorer` view, right-click `_{project name}_` and click menu:Run As[Run with CordovaSim]. 
+. In the CordovaSim control panel, expand `Accelerometer` and drag the 3D device representation to generate device accelerometer data.
++
+.Generated Device Accelerometer Data Displayed in Application
+image::hmt_accel-csim.png[]
+
+== Did You Know?
+
+. You can manually initiate installation of JBoss Hybrid Mobile Tools and CordovaSim by locating them in the JBoss Central `Software/Update` tab or by dragging the following link into JBoss Central: https://devstudio.jboss.com/central/install?connectors=org.jboss.tools.aerogear.hybrid
+. You can change the Cordova engine associated with the project after it is created. In the `Project Explorer` view, right-click the project and click `Properties`. Click `Hybrid Mobile Engine` and select the engine you want to use. Click `OK` to save the engine change and close the `Properties` window. 
+. You can download multiple Cordova engines to your system with which to build your projects. The `Download` wizard can be accessed from the `Hybrid Mobile Engine` pane in the project `Properties` window, in addition to the `Hybrid Mobile Project` wizard.
+. From the IDE you can also initiate testing of Cordova projects with a connected Android device, system Android Emulator, and system iOS Simulator. The project is built in the necessary native format during the process.
+. With the CordovaSim control panel, you can generate simulated data for a range of device hardware, including geolocation and battery status. CordovaSim also manages camera actions, enabling you to upload system images to simulate receiving camera data.
+. A `Shake` button under `Accelerometer` in the CordovaSim control panel enables you to simulate a hardware-shake gesture and test the impact on your application. 
+
+
+

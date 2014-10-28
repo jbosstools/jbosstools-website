@@ -5,7 +5,11 @@
 
 The How To section contains articles describing features of JBoss Tools and Developer Studio with a focus on how to do specfic tasks.
 
-== OpenShift
+== Developing Hybrid Mobile Apps
+
+link:hmt_firstapp.html[Create Your First Hybrid Mobile App]
+
+== Developing Apps for the Cloud
 
 link:openshift_firstapp.html[Create Your First OpenShift Online App]
 
