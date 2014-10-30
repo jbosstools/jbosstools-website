@@ -20,7 +20,7 @@ tab: downloads
     - product_info = page.build_versions[build_type]
     - if !product_info.nil?
       - download_page = site.download_pages[page.product_id][product_info.version]
-      %section{:class=>"spanValue well post-bg"}
+      %section{:class=>"#{spanValue} well post-bg"}
         %header
           %h3 
             %a{:href => relative(download_page.output_path)} #{site.products[page.product_id].name} #{product_info.version}
@@ -46,7 +46,7 @@ tab: downloads
     - product_info = page.build_versions[build_type]
     - if !product_info.nil?
       - download_page = site.download_pages[page.product_id][product_info.version]
-      %section{:class=>"spanValue well post-bg"}
+      %section{:class=>"#{spanValue} well post-bg"}
         %header
           %h3 
             %a{:href => relative(download_page.output_path)} #{site.products[page.product_id].name} 
@@ -68,7 +68,7 @@ tab: downloads
             %i.icon-download
             Download 
     -else 
-      %section{:class=>"spanValue well post-bg"}
+      %section{:class=>"#{spanValue} well post-bg"}
         %header
           %h3 
             %a{:href => relative(download_page.output_path)} #{site.products[page.product_id].name} 

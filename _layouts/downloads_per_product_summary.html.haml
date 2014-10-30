@@ -23,7 +23,7 @@ tab: downloads
   - for build_type in [:stable, :development] do
     - product_version = page.build_versions[build_type]
     - if !product_version.nil?
-      %section{:class=>"spanValue well post-bg"}
+      %section{:class=>"#{spanValue} well post-bg"}
         %header
           %h3 
             %a{:href => relative(product_version.output_path)} #{site.products[page.product_id].name} #{product_version.build_info.version}
@@ -47,7 +47,7 @@ tab: downloads
   - for build_type in [:nightly] do
     - product_version = page.build_versions[build_type]
     - if !product_version.nil?
-      %section{:class=>"spanValue well post-bg"}
+      %section{:class=>"#{spanValue} well post-bg"}
         %header
           %h3 
             %a{:href => relative(product_version.output_path)} #{site.products[page.product_id].name} 
