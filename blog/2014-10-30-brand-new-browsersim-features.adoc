@@ -31,7 +31,7 @@ Here is a short demo https://vimeo.com/109909395[video] with the new features:
 
 video::109909395[vimeo, width=640, height=400]
 
-NOTE: All this features are also available for https://github.com/jbosstools/jbosstools-aerogear/tree/master/cordovasim[CordovaSim]
+NOTE: All these features are also available for https://github.com/jbosstools/jbosstools-aerogear/tree/master/cordovasim[CordovaSim]
 
 == BrowserSim standalone
 For one who doesn't use Eclipse / JBoss Developer Studio there is a standalone mode of BrowserSim. However, only *SWT WebKit* web engine is supported (we are planning to add *JavaFx* support in the next releases - https://issues.jboss.org/browse/JBIDE-18703[JBIDE-18703]). More details about BrowserSim standalone can be found in the following http://tools.jboss.org/blog/2014-10-30-standalone-browsersim-is-back.html[blog].
