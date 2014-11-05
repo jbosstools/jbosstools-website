@@ -403,19 +403,37 @@ kbd {
 @media (min-width: 767px) {
   .flexbox {
     display: flex;
+    display: -webkit-flex;
+    display: -ms-flex;
     &.row-start {
       justify-content: flex-start;
+      -webkit-justify-content: flex-start;
+      -ms-justify-content: flex-start;
       flex-direction: row;
+      -webkit-flex-direction: row;
+      -ms-flex-direction: row;
       align-items: flex-start;
+      -webkit-align-items: flex-start;
+      -ms-align-items: flex-start;
     }
     &.stretch-row {
       justify-content: space-between;
+      -webkit-justify-content: space-between;
+      -ms-justify-content: space-between;
       flex-direction: row;
+      -webkit-flex-direction: row;
+      -ms-flex-direction: row;
       align-items: stretch;
+      -webkit-align-items: stretch;
+      -ms-align-items: stretch;
     }
     &.stretch-column {
       justify-content: space-between;
+      -webkit-justify-content: space-between;
+      -ms-justify-content: space-between;
       flex-direction: column;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
       margin-bottom: 0em;
       // use the whole container for uniform height
       position: absolute;
