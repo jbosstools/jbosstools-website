@@ -1,0 +1,105 @@
+= Develop an Existing OpenShift Online Application
+
+:page-layout: howto
+:page-tab: docs
+:page-status: green
+:experimental:
+:imagesdir: ./images
+
+OpenShift Tools enables you to import existing OpenShift Online applications into the IDE so that you can take advantage of the IDE features in further developing your applications. As illustrated in this article, during the import process you can configure the IDE for easy republishing to OpenShift Online.
+
+The instructions here demonstrate how to complete the following tasks:
+
+. <<importexistingOSapp,Import an Existing OpenShift Online Application>>
+. <<modifyappsourcecode,Modify the Application Source Code>>
+. <<republishmodifiedapp,Republish the Modified Application>>
+. <<viewmodifiedapp,View the Modified Application>>
+
+
+[[importexistingOSapp]]
+== 1. Import an Existing OpenShift Online Application        
+Applications associated with your OpenShift Online account(s) are listed in the `OpenShift Explorer` view. The source code for these applications can be individually imported into the IDE using the OpenShift Tools `Import OpenShift Application` wizard.
+
+To import an existing OpenShift Online application as a new project in the existing IDE workspace, complete the following steps:
+
+. In the `OpenShift Explorer` view, expand the connection and domain to locate the application you want to import.
+. Right-click the application and click `Import Application`.
+. Complete the fields about the application to be imported as follows:
+** Ensure that `Use my existing OpenShift application` is selected.
+** Ensure that the name of the application you want to import is listed. If this is not the case, type the name of the application or click `Browse` to select the application.
++
+.Existing OpenShift Online Application Information Provided
+image::openshift_importapp.png[Existing OpenShift Online Application Information Provided]
++
+. Click `Next`.
+. Complete the fields about the corresponding new workspace project as follows:
+** Ensure the `Create a new project` check box is selected.
+** Ensure the `Create and set up a server adapter for easy publishing` check box is selected.
+. Click `Next`.
+. Ensure the location in the `Git Clone Destination` field exists and corresponds to where you want to make a local copy of the OpenShift Online application Git repository.
+. Ensure a public SSH key is uploaded to OpenShift Online and private key location is specified in the IDE preferences by clicking `SSH Keys Wizard` and reviewing the information.
+. Click `Finish`.
+
+If you are prompted that the authenticity of the host cannot be established and asked whether you want to continue connecting, ensure that the host name matches that of your application and domain and click `Yes`.
+
+When the import process is complete, the project is listed in the `Project Explorer` view and a server adapter is listed for the application in the `Servers` view. 
+
+OpenShift Tools makes  a number of small changes to the application source code on import. It adds several IDE-specific files to the project and modifies the `.gitignore` file so that you are not prompted about these files each time you commit  project changes to the Git repository.
+
+[[modifyappsourcecode]]
+== 2. Modify the Application Source Code
+The files contained in your project depend on the type of project that you have imported. As an example of modifying the project source code, here a fictional project `index.html` file is changed. You can opt to change this file or another file of your project.
+
+To modify the `index.html` file, complete the following steps:
+
+. In the `Project Explorer` view, expand `_{project name}_ > src > main > webapp`.
+. Double-click `index.html` to open it in the JBoss Tools HTML Editor.
+. After the opening <body> tag add the following line:
++
+[source, html]
+----
+<h1>This is a change made to my OpenShift Online app from the IDE.</h1>
+----
++
+. Save the `index.html` file by pressing kbd:[Ctrl+S] (or kbd:[Cmd+S]).
+
+Note that in the `Project Explorer` view, `index.html` has `>` prepended to show that the source code has changed since the last Git commit.
+
+[[republishmodifiedapp]]
+== 3. Republish the Modified Application
+You must commit and push any changes you have made to the project source code and then republish the application before you can see changes reflected at the OpenShift Online application URL. As an example of committing and pushing source code changes to the OpenShift Online application repository and republishing the application, here the `index.html` file changed earlier is used. You can opt to use the project file that you changed earlier.
+
+To commit and push the `index.html` changes and republish the application to OpenShift Online, complete the following steps:     
+
+. In the `Servers` view, right-click `_{project name}_ at OpenShift` and click `Publish`.
+. Complete the fields about the project changes to commit and push to the OpenShift Online application Git repository as follows:
+** In the `Commit message` field, type the following message
++
+----
+Added new heading in body of index.html
+----
++
+** In the table of files, ensure the `index.html` file is selected.
++
+.Commit Message Provided and Changed Project File Selected
+image::openshift_commit-publish.png[Commit Message Provided and Changed Project File Selected]
++
+. Click `Commit and Publish`.
+
+The republishing process can take some time. When the `Console` view shows `Deployment completed with status: success`, the republishing process is complete.
+
+[[viewmodifiedapp]]
+== 4. View the Modified Application
+After the modified application is republished, you can view the live updated version at the OpenShift Online application URL.
+
+To view the modified OpenShift Online application in the IDE default web browser, complete the following steps:
+
+. In the `OpenShift Explorer` view, expand the connection and the domain.
+. Right-click the application and click menu:Show In[Web Browser].
+
+Your modified and republished OpenShift Online application is displayed in the IDE default web browser.
+
+== Did You Know?
+* On the first occasion that you republish your application to OpenShift Online, you may be prompted to provide a username and email address for use by Git. The IDE looks for a default Git configuration file on your system from which to obtain this information and if the IDE cannot find the file it prompts you to provide the values. You can specify the location of your system Git configuration file in the IDE Preferences, under menu:Team[Git > Configuration].
+* You can review the progress of republishing applications to OpenShift Online in the `Console` view.
+* You can change the IDE default web browser by clicking menu:Window[Web Browser] and selecting from the available web browser options.
