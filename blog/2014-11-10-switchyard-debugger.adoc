@@ -1,3 +1,8 @@
+= SwitchYard Service Debugger
+:page-layout: blog
+:page-author: ldimaggi
+:page-tags: [switchyard, jbosscentral]
+
 This post introduces the new service debugger for JBoss SwitchYard and provides the reader with an overview of SwitchYard’s capabilities, as demonstrated in its example “quickstart” programs.
 
 == Introduction
