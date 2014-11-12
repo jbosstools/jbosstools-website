@@ -1,8 +1,0 @@
-rvm ruby-1.9.3@jbosstools-website
-
-# this speeds up awestruct
-# saves about 3-4 seocnds.
-export RUBY_GC_MALLOC_LIMIT=90000000
-export RUBY_FREE_MIN=200000
-
-

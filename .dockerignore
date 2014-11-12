@@ -1,0 +1,22 @@
+# exclude everything from Docker except gemfile's that specify dependencies needed.
+.git
+_*/*
+*.haml
+*.adoc
+*.properties
+Font
+Guardfile
+blog
+cache
+cat
+community
+documentation
+downloads
+events
+features
+fonts
+getinvolved
+images
+javascripts
+stylesheets
+usage
