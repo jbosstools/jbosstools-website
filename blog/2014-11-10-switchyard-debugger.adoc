@@ -41,7 +41,8 @@ The steps to install SwitchYard’s Eclipse tooling are:
 
 * Install Eclipse Luna - Download the compressed file from http://www.eclipse.org/downloads/packages/release/Luna
 * Install JBoss Tools version 4.2.1 from the Eclipse Marketplace
-* Install the SwitchYard tooling from http://download.jboss.org/jbosstools/updates/development/luna/integration-stack/aggregate/4.2.0.Alpha1/
+* Install the SwitchYard tooling from http://download.jboss.org/jbosstools/updates/development/luna/integration-stack/aggregate/4.2.0.Beta1/
+
 * Create a new runtime definition for WildFly 8.0 in Eclipse
 
 (We’re using the latest versions of the software available when this post is being written.)
