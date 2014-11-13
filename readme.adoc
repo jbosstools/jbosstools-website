@@ -122,6 +122,8 @@ That's ok, it's not your fault ;) It's related to some Awestruct limitations.
 
 Using you local site, you can have a look at our link:/survivalguide.adoc[survival guide to editing this website] to get you started.
 
+If you are viewing this page while rendered locally this would be link:/survivalguide.html[survivalguide.html] instead.
+
 == Tips & Tricks
 
 === If your changes are not visible...
