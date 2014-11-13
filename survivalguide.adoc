@@ -1,0 +1,173 @@
+= Survival guide to editing of the website
+Max Rydahl Andersen
+:awestruct-layout: project
+:toc:
+:toc-placement: preamble
+:numbered:
+
+This document will guide you through the ways of website editing.
+
+== TL;DR
+
+Wanna start hacking right away? This section is for you.
+
+Want to add a blog ? Add a file to the `blog` directory following the structure outlined in the `*.adoc.template` file, then submit a PR.
+
+Want to release a project/product ? Add info to `_config/products.yml` following similar structure, then submit a PR.
+
+Want to write new and noteworthy ? Add a page into the structure at `documentation/whatsnew`, if your component is not there already create a corresponding directory, then submit a PR.
+
+Want to add info about an upcoming event ? Add file to `events`, copying one of the existing ones, then submit a PR.
+
+Want something that is not listed here ? Look in the directory and see if you can find it or send mail to mailto:jbosstools-dev@lists.jboss.org asking for help/guidance or even better submit a PR adding the missing info.
+ 
+== Prerequisites
+
+Follow the link:/README/[README] instructions to get Awestruct and its dependencies up and running.
+
+== How to edit
+
+Use your favorite editor. I personally use a mix of +emacs+, +vim+ and Eclipse.
+All pages are using text based markups with various degrees of flexibility and readability.
+Indentation is two spaces.
+
+CAUTION: In Ruby indentation matters, be careful.
+
+=== Live reload (optional)
+
+You can make the edition / review faster by using the livereload plugin in your browser.
+
+You can install the livereload extension to get instant refresh in your browser when pages are regenerated
+by running guard.
+
+The dependencies should already be installed by the Gemfile thus you just need to start guard:
+
+[source]
+----
+gem install guard guard-livereload 
+guard start
+----
+
+Install the LiveReload extension in your browser and click on the button next to the Location to activate the extension.
+
+Chrome users can install the v.2.0.9 extension from the https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei/details[Chrome Marketplace].
+
+Firefox users should use v. 2.0.9 or newer of the LiveReload extension available from https://github.com/downloads/siasia/livereload-extensions/LiveReload-2.0.9.xpi[here]. If you hit an issue where the browser disconnects just after it has connected, which means the server cannot push refresh commands to it, you are using an old plugin and should update it. 
+
+. Install the appropriate http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-[live reload plugin].
+. Install the right guard gems
++
+[source]
+----
+gem install guard guard-livereload yajl-ruby
+----
+. Start `guard` (in separate terminal from the root of the repository checkout)
++
+[source]
+----
+guard
+----
+
+Every time you save a file, the web page will be automatically reloaded assuming you have activated the browser plugin.
+
+TIP: you can also use JBoss Tools Livereload plugin to do the same thing!
+
+== Add a page
+
+There are two types of pages, http://haml.info[HAML] based (`*.html.haml`) and http://asciidoctor.org/docs/asciidoc-writers-guide/[Asciidoc] (`*.adoc`).
+
+HAML::
+HAML is close to HTML and let's you use Ruby. Use this when you need special layouts in your page or use the site metadata.
+In general, only super users should use them.
+Asciidoc::
+Asciidoc is a markup language close to Markdown but more powerful. When you start a page, prefer this format.
+The best resource to learn the Asciidoc syntax are http://asciidoctor.org/docs/asciidoc-writers-guide/[the writer guide] and http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[the syntax quick reference].
+
+A file named `downloads.html.haml` or `downloads.adoc` in the `community` directory will generate `/community/downloads.html`.
+
+=== Page attributes
+
+Each page has some metadata attributes associated and put at the top of the file. Here we just document the asciidoc format, but similar exist for haml if you need to use it look in the existing haml files.
+
+[source]
+.An Asciidoc file
+....
+= Frequently Asked Questions
+:page-layout: faq
+:page-tab: docs
+:toc:
+:toc-placement: preamble
+:toc-title: Questions
+
+You've got a question burning you? We might have the answer for you.
+
+== General
+
+[qanda]
+What is JBoss Tools?::
+  JBoss Tools is a set of plugins for Eclipse that complements, enhances and goes beyond the support that exists for JBoss and related technologies in the default Eclipse distribution.
+
+....
+
+Here is a list of the most useful attributes.
+
+layout (or page-layout in Asciidoc)::
+Represents the layout the page will use. Layouts are present in the `_layout` directory
+title::
+The page title.
++
+[NOTE]
+====
+The page title of an Asciidoc file is the text in the first line following `=`.
+
+----
+= Some title
+:some-attribute: value
+
+Preamble (usually bigger)
+
+== First section
+
+Some text.
+----
+====
+page-tab::
+Optional. Represents the tab this page is found under. Used to properly compute navigation.
+toc (Asciidoc only)::
+Optional. Enable the rendering of the table of content in Asciidoc documents
+toc-placement (Asciidoc only)::
+Mandatory if `toc` is used. On this website, the table of content position is imposed and defined in css.
+Just set the value to _preamble_.
+toc-title (Asciidoc only)::
+Optional. Defines the table of content title. Defaults to _Table of content_.
+numbered (Asciidoc only)::
+Number the sections and the ToC.
+
+== List of layouts
+
+Layouts are used to share the same site structure. They can be nested.
+All are in the `_layouts` directory.
+Here are a few important layouts:
+
+* `project` (`project.html.haml`): it represents a generic page structure (we will change the name in a little while)
+* `blog` (`blog.html.haml`): represents a blog page. All files under `blog` uses this.
+* `event` (`event..html.haml`): represents an event page with a title and no column. All files under 'event' uses this.
+
+== Publishing the site
+
+The site is automatically published when commits are pushed to
+https://github.com/jbosstools/jbosstools-website[jbosstools/jbosstools-website].
+
+If you push changes to the +master+ branch,
+the updated website will be visible after roughly a minute to
+tools-stg.jboss.org.
+
+This is good to share experiments with others. Be aware that if you push content to +master+ that is not ready/complete it "blocks" urgent updates. Better to do local rendering for longer lasting experiments. Eventually we will have a setup of the site that builds and publish content per PR instead of just for the two branches.
+
+// tools-stg.jboss.org is not rendered as URL to limit the crawling
+// TODO create a noindex in robots.txt for non production profiles
+
+If you push changes to the +production+ branch,
+the updated website will be visible after roughly 5 minutes to http://tools.jboss.org[tools.jboss.org].
+
+You can see the build progress over at https://travis-ci.org/jbosstools/jbosstools-website[travis-ci].

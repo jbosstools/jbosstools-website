@@ -118,29 +118,9 @@ Please use Listen::Adapter#start for a non-blocking listener and Listen::Listene
 That's ok, it's not your fault ;) It's related to some Awestruct limitations.
 ====
 
-== guard and livereload
-
-You can install the livereload extension to get instant refresh in your browser when pages are regenerated
-by running guard.
-
-The dependencies should already be installed by the Gemfile thus you just need to start guard:
-
-[source]
-----
-# run these as root
-gem install guard guard-livereload 
-guard start
-----
-
-Install the LiveReload extension in your browser and click on the button next to the Location to activate the extension.
-
-Chrome users can install the v.2.0.9 extension from the https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei/details[Chrome Marketplace].
-
-Firefox users should use v. 2.0.9 or newer of the LiveReload extension available from https://github.com/downloads/siasia/livereload-extensions/LiveReload-2.0.9.xpi[here]. If you hit an issue where the browser disconnects just after it has connected, which means the server cannot push refresh commands to it, you are using an old plugin and should update it. 
-
 == Next steps
 
-Using you local site, you can have a look at our link:/survival-guide/[survival guide to editing this website] to get you started.
+Using you local site, you can have a look at our link:/survivalguide.html[survival guide to editing this website] to get you started.
 
 == Tips & Tricks
 
