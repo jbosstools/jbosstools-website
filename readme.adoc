@@ -120,7 +120,7 @@ That's ok, it's not your fault ;) It's related to some Awestruct limitations.
 
 == Next steps
 
-Using you local site, you can have a look at our link:/survivalguide.html[survival guide to editing this website] to get you started.
+Using you local site, you can have a look at our link:/survivalguide.adoc[survival guide to editing this website] to get you started.
 
 == Tips & Tricks
 
