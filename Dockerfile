@@ -7,6 +7,8 @@ RUN yum install -y epel-release which tar bzip2 gcc ruby-devel libxml2 libxml2-d
 # when running with above nodejs was not available
 RUN yum install -y nodejs
 
+RUN yum install -y wget
+
 # Add RVM keys
 RUN gpg2 --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
 
