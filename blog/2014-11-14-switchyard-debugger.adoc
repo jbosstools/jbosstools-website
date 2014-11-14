@@ -1,9 +1,11 @@
 = SwitchYard Service Debugger
 :page-layout: blog
-:page-author: ldimaggi
+:page-author: ldimaggio
 :page-tags: [switchyard, jbosscentral]
 
 This post introduces the new service debugger for JBoss SwitchYard and provides the reader with an overview of SwitchYard’s capabilities, as demonstrated in its example “quickstart” programs.
+
+WARNING: To install this feature in Developer Studio 8 and JBoss Tools 4.2 you should enable 'Early Access' in Central and install the 'JBoss Integration and SOA Development' connector. See more in the link:/blog/2014-11-13-JBTIS-Beta1-for-luna.html[Integration Stack Beta release blog].
 
 == Introduction
 
@@ -398,7 +400,9 @@ The author would like to thank Rob Cernich for his input and reviews of the arti
 * JBoss SwitchYard - http://switchyard.jboss.org
 * Discussion on JBoss SwitchYard Debugger - https://community.jboss.org/message/849326#849326
 * OASIS Service Component Architecture Assembly Model Specification - http://docs.oasis-open.org/opencsa/sca-assembly/sca-assembly-spec-v1.1.html
-* JBoss Tools Integration Stack (SwitchYard Tooling for Eclipse) - http://download.jboss.org/jbosstools/updates/development/luna/integration-stack/
+* JBoss Tools Integration Stack Development updatesite (SwitchYard Tooling for Eclipse) - http://download.jboss.org/jbosstools/updates/development/luna/integration-stack/
+* Earlyaccess of JBoss Tools Integration Stack - link:/blog/2014-11-13-JBTIS-Beta1-for-luna.html
+
 
 
 

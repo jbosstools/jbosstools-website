@@ -3,7 +3,7 @@
 :page-author: maxandersen
 :page-tags: [award, jbdevstudio, jbosscentral]
 
-I just got the great news that last night http://tools.jboss.org/downloads/devstudio/kepler/[Red Hat JBoss Developer Studio 7] (built on top of http://tools.jboss.org/downloads/jbosstools/kepler/4.1.2.Final.html[JBoss Tools 4.2]) 
+I just got the great news that last night link:/downloads/devstudio/kepler/[Red Hat JBoss Developer Studio 7] (built on top of link:/downloads/jbosstools/kepler/4.1.2.Final.html[JBoss Tools 4.2]) 
 was one of the http://www.siia.net/codies/2014/winners.asp[Winners in the CODiE Awards].
 
 We won in the http://www.siia.net/codies/2014/finalist_detail.asp?ID=20["Best Mobile Development Solution"] category.
