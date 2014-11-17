@@ -47,5 +47,5 @@ ENV LC_ALL en_US.UTF-8
 EXPOSE 4242
 
 ENTRYPOINT [ "/bin/bash", "-l", "-c" ]
-CMD [ "rake", "setup", "preview" ]
+CMD [ "rake", "clean", "preview" ]
 
