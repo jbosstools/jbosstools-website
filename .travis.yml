@@ -17,6 +17,7 @@ before_script:
 script: rake travis
 notifications:
   irc: chat.freenode.net#jbosstools
+  irc: chat.freenode.net#jbosstools-website
 env:
   global:
   - secure: WDLFyxn62s8Oh5UiVt5PFvw4MznhPcbHhfV/FCqjDbRAjR+Ar7rZRdr0FRymt0g0uQyTuzggO+zTY2R4IUoPyPspD40Ll3N9vTkmAbWD3o5WyuMbVEyLvasstLI0bVbw6LAkFikyOCxQStVXT7+w9HMb6/4nNkb9l/gUfL89xxA=
