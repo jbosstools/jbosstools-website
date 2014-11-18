@@ -387,10 +387,35 @@ kbd {
     display: block;
   }
   
-  iframe:not([width]) {
-    width: 640px;
-    height: 480px;
+  @media (min-width: 981px) {
+    iframe:not([width]) {
+      width: 640px;
+      height: 480px;
+    }
   }
+  
+  @media (min-width: 767px) and (max-width: 980px) {
+    iframe:not([width]) {
+      width: 480px;
+      height: 360px;
+    }
+  }
+  
+  @media (min-width: 641px) and (max-width: 766px){
+    iframe:not([width]) {
+      width: 480px;
+      height: 360px;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    iframe:not([width]) {
+      width: 320px;
+      height: 240px;
+    }
+  }
+  
+
 }
 // ******************************************************
 // Flex layout
@@ -1286,7 +1311,6 @@ $scrollmargin: 40px;
   .playerbox #player {
     z-index: 910;
     width: 100%;
-    height: 400px;
     background: black;
     border: 1px solid black;
     margin-left: auto;

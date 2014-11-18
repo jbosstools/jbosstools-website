@@ -1,0 +1,9 @@
+= Cordova, jQuery Mobile and REST
+:page-layout: videos
+:page-category: hybrid_tooling
+:page-order_in_category: 2
+
+video::FstGLMr3W8s[youtube, width=640, height=400]
+   
+
+   

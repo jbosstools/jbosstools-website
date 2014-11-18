@@ -39,7 +39,7 @@ tab: blog
                   %p
                     - if(post.tags != null && !post.tags.empty?) 
                       - post.tags.each do |tag|
-                        - if(!tag.primary_page.empty?)
+                        - if(!tag.nil? && !tag.primary_page.empty?)
                           %a.label.label-info{:href=>relative(tag.primary_page.url)} #{tag}
                         - else 
                           #{tag}

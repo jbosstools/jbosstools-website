@@ -3,14 +3,12 @@ layout: videos
 tab: docs
 title: Videos
 status: green
+category: installation
+bottom_javascripts: ["/javascripts/select_first_video.js"]
 ---
 
 -# copy the content from the first video
 - first_video_page = site.videos[:installation].select{|p| p.order_in_category == 1}.first
 #{first_video_page.content} 
 
--# manually set the first element as active in the side navbar
-:javascript
-  $(document).ready(function() {
-    $('.nav-list > li:nth-child(1)').addClass("active")
-  });
+  

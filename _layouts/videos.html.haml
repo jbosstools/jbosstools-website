@@ -2,20 +2,22 @@
 layout: project
 tab: docs
 ---
-- category_labels = {"installation"=>"Installation", "introduction"=>"Technical Introduction", "reveng"=>"Reverse Engineering"}
-.row-fluid
+- category_labels = {"installation"=>"Installation", "introduction"=>"Technical Introduction", "reveng"=>"Reverse Engineering", "hybrid_tooling"=>"Hybrid Tooling"}
+.row-fluid.affixedContent
   .span3.bs-docs-sidebar
     %ul.nav.nav-list.bs-docs-sidenav
-      - site.videos.each do |category, videos|
-        -#%li.nav-header
-        -#  #{category_labels[category]}
-        - videos.sort{|x,y| x.order_in_category <=> y.order_in_category}.each do |video|
-          - if page.output_path == video.output_path
-            %li.active 
-              %a{:href=>relative(video.output_path)} #{video.title}
-          - else
-            %li
-              %a{:href=>relative(video.output_path)} #{video.title}
-                      
+      - category_labels.each do |category_key, category_label|
+        - videos = site.videos[category_key].sort{|x,y| x.order_in_category <=> y.order_in_category}
+        - if page.category == category_key
+          %li.selected.expanded
+            %a{:href=>videos.first.output_path} #{category_label}
+            %ul.nav.nav-nested.components
+              - videos.each do |video|
+                %li{:class=>(page.output_path == video.output_path ? "active" : "")}
+                  %a{:href=>relative(video.output_path)} #{video.title}
+        - else 
+          %li
+            %a{:href=>videos.first.output_path} #{category_label}
+                              
   .span9.video
     ~content

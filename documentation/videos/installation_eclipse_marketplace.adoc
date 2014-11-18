@@ -3,5 +3,5 @@
 :page-category: installation
 :page-order_in_category: 1
 
-video::39743315[vimeo, width=640, height=400]
+video::39743315[vimeo]
    

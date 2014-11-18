@@ -1,0 +1,21 @@
+= New Videos on Hybrid Mobile Developement Tools 
+:page-layout: blog
+:page-author: xcoulon
+:page-tags: [jbosscentral, videos, hybrid, mobile, cordova, jquery, ionic]
+
+http://twitter.com/burrsutter[Burr Sutter] recently recorded and uploaded a handful of screencasts on *Hybrid Mobile Development Tools* that just ships link:/downloads/jbosstools/luna/4.2.0.Final.html[JBoss Tools 4.2.0.Final] and link:/downloads/devstudio/luna/8.0.0.GA.html[JBoss Developer Studio 8.0.0.Final].
+
+Those videos (totalling more than 1h15 of materials!) cover the following topics:
+
+- link:/documentation/videos/hybrid_cordova_installation.html[Installation and Introduction to Apache Cordova]
+- link:/documentation/videos/hybrid_cordova_jquerymobile_rest.html[Cordova, jQuery Mobile and REST]
+- link:/documentation/videos/hybrid_cordova_device_contacts.html[Device Contacts via Apache Cordova]
+- link:/documentation/videos/hybrid_angularjs_ionic.html[Developing AngularJS + Ionic Hybrid Apps]
+- link:/documentation/videos/hybrid_push_notifications.html[Push Notifications GCM]
+- link:/documentation/videos/hybrid_fun_stuff_cordova.html[Fun Stuff with Apache Cordova]
+- link:/documentation/videos/hybrid_iphone_dev_cordova.html[iPhone Development & Deployment with Apache Cordova]
+
+Sit back, grab your headphones and enjoy ;-)
+
+Xavier +
+http://twitter.com/xcoulon[@xcoulon]
