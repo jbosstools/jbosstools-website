@@ -163,7 +163,7 @@ In the upcoming wizard you check the *Code Anything* cartridge and paste the fol
 
   https://cartreflect-claytondev.rhcloud.com/reflect?github=openshift-cartridges/openshift-jrebel-cartridge
 
-image::: ./images/code-anything-cartridge.png[]
+image::./images/code-anything-cartridge.png[]
 
 Once you hit btn:[Finish] the wizard will add the cartridge to your OpenShift application and enable JRebel for it.
 
