@@ -9,6 +9,7 @@ tab: blog
   .hero-unit.center
     - if !page.selected_tag.nil?
       %h1 Posts tagged with '#{page.selected_tag}'
+      - page.title = "Posts tagged with '#{page.selected_tag}'"
     - else
       %h1 Latest posts
     
@@ -38,8 +39,8 @@ tab: blog
                   %p
                     - if(post.tags != null && !post.tags.empty?) 
                       - post.tags.each do |tag|
-                        - if(tag.primary_page.empty?)
-                          %a.label.label-info{:href=>relative("#{tag}")}FUCK #{tag}
+                        - if(!tag.primary_page.empty?)
+                          %a.label.label-info{:href=>relative(tag.primary_page.url)} #{tag}
                         - else 
                           #{tag}
             .body
