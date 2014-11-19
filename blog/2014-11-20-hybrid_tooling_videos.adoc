@@ -3,7 +3,7 @@
 :page-author: xcoulon
 :page-tags: [jbosscentral, videos, hybrid, mobile, cordova, jquery, ionic]
 
-http://twitter.com/burrsutter[Burr Sutter] recently recorded and uploaded a handful of screencasts on *Hybrid Mobile Development Tools* that just ships link:/downloads/jbosstools/luna/4.2.0.Final.html[JBoss Tools 4.2.0.Final] and link:/downloads/devstudio/luna/8.0.0.GA.html[JBoss Developer Studio 8.0.0.Final].
+http://twitter.com/burrsutter[Burr Sutter] recently recorded and uploaded a handful of screencasts on *Hybrid Mobile Development Tools* that we recently shipped in link:/downloads/jbosstools/luna/4.2.0.Final.html[JBoss Tools 4.2.0.Final] and link:/downloads/devstudio/luna/8.0.0.GA.html[JBoss Developer Studio 8.0.0.Final].
 
 Those videos (totalling more than 1h15 of materials!) cover the following topics:
 
