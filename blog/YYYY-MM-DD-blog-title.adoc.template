@@ -32,6 +32,12 @@ If you got code to show do it like this:
 
  }
 
+And you can add screenshots:
+
+image::images/devstudio8_splash.png
+
+Put images inside the `images` folder with a unique name, all lowercase.
+
 === Menus, keyboard and buttons have their own style
 
 When using menus like menu:Preferences[Guide > The > User], keyboard

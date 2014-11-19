@@ -38,7 +38,10 @@ tab: blog
                   %p
                     - if(post.tags != null && !post.tags.empty?) 
                       - post.tags.each do |tag|
-                        %a.label.label-info{:href=>relative("#{tag.primary_page.url}")} #{tag}
+                        - if(tag.primary_page.empty?)
+                          %a.label.label-info{:href=>relative("#{tag}")}FUCK #{tag}
+                        - else 
+                          #{tag}
             .body
               - default_imagesdir = site.asciidoctor.attributes['imagesdir']
               - site.asciidoctor.attributes['imagesdir'] = relative(Pathname.new(post.output_path).parent.to_s)
