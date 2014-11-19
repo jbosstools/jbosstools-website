@@ -14,3 +14,5 @@ link:hmt_firstapp.html[Create Your First Hybrid Mobile App]
 link:openshift_firstapp.html[Create Your First OpenShift Online App]
 
 link:openshift_debug.html[Debug an OpenShift Online Java App]
+
+link:openshift_configssh.html[Configure SSH Keys for OpenShift Online]
