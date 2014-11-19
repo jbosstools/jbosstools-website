@@ -13,4 +13,6 @@ link:hmt_firstapp.html[Create Your First Hybrid Mobile App]
 
 link:openshift_firstapp.html[Create Your First OpenShift Online App]
 
+link:openshift_deployproj.html[Deploy a Workspace Project to OpenShift Online]
+
 link:openshift_debug.html[Debug an OpenShift Online Java App]
