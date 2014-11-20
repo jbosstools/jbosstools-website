@@ -102,4 +102,5 @@ Your modified and republished OpenShift Online application is displayed in the I
 == Did You Know?
 * On the first occasion that you republish your application to OpenShift Online, you may be prompted to provide a username and email address for use by Git. The IDE looks for a default Git configuration file on your system from which to obtain this information and if the IDE cannot find the file it prompts you to provide the values. You can specify the location of your system Git configuration file in the IDE Preferences, under menu:Team[Git > Configuration].
 * You can review the progress of republishing applications to OpenShift Online in the `Console` view.
-* You can change the IDE default web browser by clicking menu:Window[Web Browser] and selecting from the available web browser options.
+* You can also open the OpenShift application in a web browser from the `Servers` view by right-clicking `_{project name}_ at OpenShift` and clicking menu:Show In[Web Browser]. 
+* You can change the IDE default web browser to be either the IDE internal web browser, BrowserSim (when installed) or an external system web browser. Click menu:Window[Web Browser] and select from the available web browser options.
