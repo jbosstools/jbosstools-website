@@ -3,7 +3,7 @@
 :page-author: kaers
 :page-tags: [jbosscentral, forge, javaee, html5]
 
-While JBoss Forge has been included in JBoss Tools and Developer Studio for a while now, the recent JBT 4.2 and JBDS 8.0 releases contain support for Forge 2.12.1. Forge has now become a matured component inside JBT and JBDS with a plethora of available commands that can be executed either using the convenient wizard style or using the integrated Forge console. 
+While JBoss Forge has been included in JBoss Tools and Developer Studio for a while now, the recent JBoss Tools 4.2 and Devloper Studio 8.0 releases contain support for Forge 2.12.1. Forge has now become a mature component inside JBoss Tools and Developer Studio with a plethora of available commands that can be executed either using the convenient wizard style or using the integrated Forge console. 
 
 == Wise Wizards
 
