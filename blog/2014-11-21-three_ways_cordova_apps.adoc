@@ -1,0 +1,47 @@
+
+= 3 Ways to start developing Apache Cordova applications with JBoss Tools
+:page-layout: blog
+:page-author: gercan
+:page-tags: [mobile, cordova, aerogear, jbosscentral]
+
+The JBoss Developer Studio 8 and JBoss Tools 4.2 release enables developers to use these tools to build 
+mobile applications by using the http://cordova.apache.org[Apache Cordova] framework. Apache Cordova (fka, PhongeGap) is a framework for building
+packaged mobile applications using web technologies such as HTML5, JavaScript and CSS3. In this article, I will explore
+different scenarios for getting started with the tools and Apache Cordova.
+
+== Where are the tools? 
+
+Hybrid mobile tools are not part of the default installation but getting installing them is easy. Although there are other ways, I usually 
+use JBoss Central to pull them in. Here is how. 
+
+First switch to `Software/Update` tab on JBoss Central. Next select 
+`JBoss Hybrid Mobile Tools + CordovaSim`. I usually select the `AngularJS for Web Tools` option before hitting the btn:[Install/Update],
+in order to get the improved support for http://ionicframework.com[Ionic framework]. 
+
+Here is a screeen cast for getting started with the hybrid mobile tools.
+
+video::H5ry5WpziVw[youtube]
+
+== 1. Start a new Cordova project 
+This is the option when starting a new project or just experimenting with Apache Cordova development.It gives a basic  
+project template that you can easily change and you can select the initial set of cordova plug-ins to include into your project.
+I usually add the http://plugins.cordova.io/#/package/org.apache.cordova.console[console] plugin at this time, to be able to
+use `console.log()` during development and remove it before the final export.
+
+The video above not only shows how a project is created but also introduces the tools at your disposal going forward. 
+
+== 2. Import your existing Cordova application
+If your Cordova application already exists and it was developed using a compatible tool such as Cordova CLI, you can import it easily and 
+start using all the functionality available. Import process will also restore your plugins if you have been using the new `cordova save` command.
+
+Here is a short video that shows the import feature in action.
+
+video::E0YdJNdnOYk[youtube]
+
+== 3. Use existing mobile web site code
+Often getting started with your packaged mobile application requires sharing the assets with a web application. 
+We do support linking of resources from different locations to create a Cordova based mobile application. Although 
+I do not recommend using artifacts, let alone whole web sites, that were created for desktop to be turned to mobile applications, 
+but it helps to know that your tools are capable when it gets desperate.
+
+video::rrU-j5hrh3k[youtube]
