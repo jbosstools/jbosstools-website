@@ -9,14 +9,16 @@ OpenShift Tools provides an all-in-one `New OpenShift Application` wizard for cr
 
 The `New OpenShift Application` wizard is an ideal starting point for new users to OpenShift and OpenShift Tools as it guides you through all the steps necessary to set up the IDE to use your OpenShift Online account and configure your account ready for applications.
 
-The instructions here demonstrate how to use this wizard and a default OpenShift application template to create a basic OpenShift Online application. This includes one-time steps (appended with 1), such as signing up for an OpenShift Online account, creating an OpenShift Online domain and uploading SSH keys. If you have previously used OpenShift Online or OpenShift Tools, you can omit unnecessary one-time steps as appropriate.
+The instructions here demonstrate how to use this wizard and a default OpenShift application template to create a basic OpenShift Online application. This includes one-time steps, such as signing up for an OpenShift Online account, creating an OpenShift Online domain and uploading SSH keys. If you have previously used OpenShift Online or OpenShift Tools, you can omit unnecessary one-time steps as appropriate.
 
 == Start the New OpenShift Application Wizard
 . In `JBoss Central`, under `Start from scratch`, click `OpenShift Application`.
 
-== Sign up for an OpenShift Online Account (1)
+== Sign up for an OpenShift Online Account
+If you do not have an OpenShift Online account, you should complete the following steps:
+
 [start=2]
-. If you do not have an OpenShift Online account, click the link provided to sign up for an OpenShift account and follow the instructions on the OpenShift website.
+. Click the link provided to sign up for an OpenShift account and follow the instructions on the OpenShift website.
 +
 .Link to Sign up for a New OpenShift Online User Account
 image::openshift_signuplink.png[Link to sign up for a new OpenShift Online user account]
@@ -35,7 +37,7 @@ image::openshift_connect.png[Completed OpenShift Online connection fields]
 +
 . Click `Next`.
 
-== Enable Communication between the IDE and OpenShift (1)
+== Enable Communication between the IDE and OpenShift
 If your OpenShift Online account has no SSH public keys stored, you are prompted with the `Add SSH Keys` wizard and you should complete the following steps:
 
 [start=6]           
@@ -52,7 +54,9 @@ image::openshift_new-sshkey.png[Completed new SSH key fields]
 . Click `Finish`.             
 . Click `Finish` to close the `Add SSH Keys` window.
 
-== Create a Domain (1)
+== Create a Domain
+If your OpenShift Online account has no domains, you are prompted with the `Create Domain` wizard and you should complete the following step:
+
 [start=10]
 . In the `Domain Name` field, type an alphanumeric name for your new OpenShift Online domain and click `Finish`. The provided domain name must be unique across all domains on OpenShift Online; if it is not unique, you are directed back to the `Create Domain` window to provide a unique domain name. 
 +
@@ -95,6 +99,14 @@ image::openshift_git-destination.png[Default Git clone destination check box sel
 [start=18]
 . Click `Finish` for the wizard to start generating the new OpenShift application. This process may take some time to complete.
 . If you are prompted that the authenticity of the host cannot be established and asked whether you want to continue connecting, ensure that the host name matches that of your application and domain and click `Yes`.
+
+== View the OpenShift Online Application
+[start=20]
+. In the `OpenShift Explorer` view, expand the connection and domain.
+. Right-click `_{application name}_` and click menu:Show In[Web Browser].
+
+Your OpenShift Online application is displayed in the IDE default web browser.
+
 
 == Some OpenShift Terminology
 * Gear: A server container with a set of resources that allow you to run your application
