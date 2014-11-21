@@ -54,7 +54,7 @@ image::./images/forge-angularjs-cheatsheet.png[]
 There is no point in repeating here all the information that is available in the cheatsheet but in short, it will provide you with some general information and then guide you through the development, deployment and execution of a HTML5 application. You will see different examples of using Forge commands such as REST endpoint generation and scaffolding an AngularJS user interface. Check it out!
 
 
-Happy Forging,
+Happy Forging, +
 Koen Aers +
 https://twitter.com/koentsje[@koentsje] 
 
