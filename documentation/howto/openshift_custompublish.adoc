@@ -1,0 +1,144 @@
+= Custom Publish Your OpenShift Online App
+:page-layout: howto
+:page-tab: docs
+:page-status: green
+:experimental:
+:imagesdir: ./images
+
+Through the IDE you can manage your OpenShift Online application beyond simply its source code. OpenShift Online allows customization of the build and deployment process with markers and action hooks, each of which can be added to the application configuration files using OpenShift Tools and existing IDE functionality. Further, the Git commit and push processes for your changed application source code and configuration files can be customized through the IDE preferences to meet your needs.
+
+The instructions here demonstrate how to complete the following tasks:
+
+. <<addmarker,Add a Marker to the Application>>
+. <<addactionhook,Add an Action Hook to the Application>>
+. <<extendtimeout,Extend the Git Remote Connection Timeout>>
+. <<republishapp,Republish the Application>>
+
+[[addmarker]]
+== 1. Add a Marker to the Application
+OpenShift Tools provides the `Configure Markers` wizard for adding and removing markers from your OpenShift application. The wizard lists markers that are already applied to your application and those that are available to add given the cartridge configuration of your application. The wizard manages the adding and removing of markers from your application, creating or deleting marker files and adding or removing them from the Git index respectively.
+
+As an example, here the hot deploy marker is added to the application, which triggers OpenShift to publish application changes without first restarting the application cartridges and hence making the republishing faster.
+
+To add the hot deploy marker to the application, complete the following steps:
+
+. In the `Project Explorer` view, right-click `_{application name}_` and click menu:OpenShift[Configure Markers].
+. From the `Marker` table, select `Hot Deploy` and click `OK`.
++
+.Hot Deploy Marker Selected
+image::openshift_hotdeploy-selected.png[Hot Deploy Marker Selected]
++ 
+An empty `.openshift/markers/hot_deploy` file is added to the application. OpenShift Tools automatically completes the `git add` action so that this new file is added to the Git index and can be committed and pushed to the OpenShift application repository when ready. 
+
+[[addactionhook]]
+== 2. Add an Action Hook to the Application
+Using IDE features, you can quickly add action hooks to your OpenShift application. Adding an action hook requires creating a script file named according to the phase in which it is to run, locating it in the application `.openshift/action_hooks` directory, adding the file to the Git index and ensuring the file is executable by all.
+
+As an example, here a post deploy action hook is added to the application, which triggers a simple bash script to execute on the application main gear after the application is deployed.
+
+To add a post deploy action hook to the application, complete the following steps:
+
+*Ensure hidden application directories and files are visible*
+
+. In the `Package Explorer` view, click the `View Menu` icon image:openshift_viewmenuicon.png[View Menu icon] and click `Filters`.
+. From the table, ensure the `.* resources` check box is cleared and click `OK`. 
+
+*Create the post deploy action hook*
+
+[start=3]
+. In the `Package Explorer` view, expand `_{application name}_ > .openshift`.
+. Right-click `action_hooks` and click menu:New[File].
+. In the `File name` field, type `post_deploy` and click `Finish`. 
+. In the file editor, add the following lines to the post_deploy file: 
++
+[source]
+----
+#!/bin/bash
+echo "This is my post-deploy bash script”
+----
++
+. Save the file by pressing kbd:[Ctrl+S] (or kbd:[Cmd+S]).
+
+*Add the post deploy action hook to the Git index*
+
+[start=8]
+. In the `Package Explorer` view, expand `_{application name}_ > .openshift > action_hooks`.
+. Right-click the `post_deploy` file and click menu:Team[Add to Index].
+
+*Make the post deploy action hook executable*
+
+[start=10]
+. In the `Package Explorer` view, right-click the `post_deploy` file and click `Properties`.
+. In the `Permissions` table, select the `Execute` check boxes for all user types.
++
+.Execute Permissions Check Boxes Selected for All Users
+image::openshift_executeperms.png[Execute Permissions Check Boxes Selected for All Users]
++
+. Click `Apply` and click `OK`.
+
+[[extendtimeout]]
+== 3. Extend the Git Remote Connection Timeout
+As your application source code grows in size, the remote connection from the IDE to the OpenShift Online application Git repository may not remain open long enough for the push process to complete. The default Git remote connection timeout is set to 30 seconds after which the connection is closed. But you can extend the Git timeout through the IDE preferences to ensure that the push process is provided sufficient time to complete.
+
+To extend the Git remote connection timeout, complete the following steps:
+
+. Click menu:Window[Preferences], expand `Team` and select `Git`. 
+. In the `Remote connection timeout (seconds)` field, type a value in seconds.
++
+.Git Remote Connection Timeout Set
+image::openshift_remotetimeout-set.png[Git Remote Connection Timeout Set]
++
+. Click `Apply` and click `OK` to close the `Preferences` window.
+
+[[republishapp]]
+== 4. Republish the Application
+Before markers and action hooks take effect on your application building and deployment process you must commit the files and push changes to the OpenShift application repository. OpenShift Tools assists you to perform these Git actions as part of the republishing process. 
+
+To republish the application, complete the following steps:
+
+. In the `Servers` view, right-click `_{application name}_ at OpenShift`  and click `Publish`.
+. Complete the fields about the application changes to commit and push to the OpenShift Online application repository as follows:
+** In the `Commit message` field, type the following message:
++
+[source]
+----
+Added hot_deploy marker and post_deploy bash script
+----
++
+** In the `Files` table, ensure the `hot_deploy` and `post_deploy` files are selected.
++
+.Commit Message Supplied and Files Selected for Committing and Publishing
+image::openshift_commitpublish-changes.png[Committing and Publishing Changes to OpenShift]
++
+. Click `Commit and Publish`.
+
+The `Console` view becomes the view in focus showing the application publication progress. A snippet of the output demonstrating the effect of the hot deploy marker and post deploy action hook is shown here for the sample application:
+
+[source]
+----
+Not stopping cartridge xyz because hot deploy is enabled
+Building git ref 'master', commit abc123
+...
+Activating deployment
+Deploying xyz cartridge
+Not starting cartridge xyz because hot deploy is enabled
+This is my post-deploy bash script
+-------------------------
+Git Post-Receive Result: success
+Activation status: success
+Deployment completed with status: success
+----
+
+Note that the server has not been stopped and restarted because hot deploy is enabled and the bash script is run post application deployment as required.
+
+
+== Terminology
+* Git: The revision control system used by OpenShift.
+* Marker: A set-named empty file added in the OpenShift application in the `.openshift/markers` directory; markers are used to specify configuration to the OpenShift server.
+* Action hook: A user-specified script that is added in the OpenShift application, in the `.openshift/action_hooks` directory; scripts are run by OpenShift at specified stages of the application build and deploy process as denoted by the file name.
+
+== Did You Know?
+* You can also access the `Configure Markers` wizard from the `Server` view by right-clicking `_{application name}_ at OpenShift` and clicking menu:OpenShift[Configure Markers].
+* You can see more information relating to the application Git repository by opening the `Git` perspective or individual Git views. All of these can be assessed from the `Window` menu.
+
+
