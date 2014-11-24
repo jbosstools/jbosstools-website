@@ -15,6 +15,8 @@ link:openshift_firstapp.html[Create Your First OpenShift Online App]
 
 link:openshift_importapp.html[Develop an Existing OpenShift Online App]
 
+link:openshift_custompublish.html[Custom Publish Your OpenShift Online App]
+
 link:openshift_debug.html[Debug an OpenShift Online Java App]
 
 link:openshift_configssh.html[Configure SSH Keys for OpenShift Online]
