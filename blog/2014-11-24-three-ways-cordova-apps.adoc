@@ -11,7 +11,7 @@ different scenarios for getting started with the tools and Apache Cordova.
 
 == Where are the tools? 
 
-Hybrid mobile tools are not part of the default installation but getting installing them is easy. Although there are other ways, I usually 
+Hybrid mobile tools are not part of the default installation but getting them is easy. Although there are other ways, I usually 
 use JBoss Central to pull them in. Here is how. 
 
 First switch to `Software/Update` tab on JBoss Central. Next select 
