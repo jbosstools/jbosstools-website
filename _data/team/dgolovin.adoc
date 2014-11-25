@@ -1,0 +1,4 @@
+= Denis Golovin
+:page-photo_64px: https://developer.jboss.org/people/dgolovin/avatar/64.png
+:page-photo_32px: https://developer.jboss.org/people/dgolovin/avatar/32.png
+:page-developer_page: https://developer.jboss.org/people/dgolovin
