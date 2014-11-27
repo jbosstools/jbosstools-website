@@ -2,9 +2,7 @@
 layout: project
 tab: docs
 ---
-- startTime = DateTime.now.to_time
-
-- page.title = "What's New in #{site.components[page.component_id].name} #{page.product_version}"
+- page.title = "#{page.product_name} #{page.product_version}"
 - aggregated_whatsnew_page = get_aggregate_whatsnew_page(site, page.product_id, page.product_version)
 - current_whatsnew_page = get_current_version_whatsnew_page(site, page.product_id, page.product_version)
 .row-fluid
@@ -42,5 +40,3 @@ tab: docs
       #{content}
     - site.asciidoctor.attributes['imagesdir'] = default_imagesdir
     
-- endTime = DateTime.now.to_time
-- puts "Generated #{page.title} in #{endTime - startTime}s"
