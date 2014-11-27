@@ -1,12 +1,10 @@
 ---
 layout: project
-title: All News
+title: All articles
 tab: blog
 #status: yellow
 #issues: none
 ---
-- startTime = DateTime.now.to_time
-
 .row-fluid
   .hero-unit.center
     %h1 All News
@@ -33,6 +31,3 @@ tab: blog
               - if(post.tags != null && !post.tags.empty?) 
                 - post.tags.select{|t| !t.nil?}.each do |tag|
                   %a.label.label-info{:href=>relative("#{tag.primary_page.url}")} #{tag}
-
-- endTime = DateTime.now.to_time
-- puts "Generated 'All News' page in #{endTime - startTime}s"

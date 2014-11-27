@@ -2,10 +2,8 @@
 layout: project
 tab: docs
 ---
-
-- page.title = "What's New in #{page.build_info.product_name} #{page.build_info.version}"
+- page.title = "#{page.product_name} #{page.build_info.version}"
 - component_ids = page.component_news.keys.sort{|x,y| site.components[x].name <=> site.components[y].name}
-- startTime = DateTime.now.to_time
 
 - if is_stable_version(page.build_info.version)
   -# Banner for .Final versions (it's an aggregate of non-.Final pages)
@@ -99,5 +97,3 @@ tab: docs
       %hr
     - site.asciidoctor.attributes['imagesdir'] = default_imagesdir
     
-- endTime = DateTime.now.to_time
-- puts "Generated #{page.title} in #{endTime - startTime}s"

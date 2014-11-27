@@ -15,7 +15,6 @@ asciidoctor:
   :safe: safe
   :compact: true
   :eruby: erubis
-  :backend: xhtml5
   :attributes:
     imagesdir: ./@
     icons: font

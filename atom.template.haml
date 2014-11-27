@@ -1,7 +1,7 @@
 ---
 ---
 !!! XML
-- startTime = DateTime.now.to_time
+
 %feed{ 'xml:lang'=>'en-US', :xmlns=>'http://www.w3.org/2005/Atom' }
   %id= "#{page.content_url}/"
   %title= escape_once( page.title )
@@ -38,9 +38,5 @@
         %summary
           #{summarize( html_to_text( entry.content ), 100 )}
         %content{:type=>'html'}
-          - raw_content = find_and_preserve( "<div>#{entry.content}</div>" )
-          - content = clean_html( html_escape( fully_qualify_urls( site.base_url, raw_content) ) )
-          = content
-- endTime = DateTime.now.to_time
-- puts "Ended Atom feed generation in #{endTime - startTime}s"
+          = clean_html( html_escape( fully_qualify_urls( site.base_url, find_and_preserve( entry.content ) ) ) )
   
