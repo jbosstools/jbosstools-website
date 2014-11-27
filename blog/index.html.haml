@@ -1,10 +1,12 @@
 ---
 layout: project
-title: Blog
+title: Latest Posts
 tab: blog
 #status: yellow
 #issues: none
 ---
+- startTime = DateTime.now.to_time
+
 .row-fluid
   .hero-unit.center
     - if !page.selected_tag.nil?
@@ -123,3 +125,7 @@ tab: blog
     .center
       Looking for older posts ? See the 
       %a{:href=>"https://community.jboss.org/en/tools/blog"} Archived entries.
+
+    
+- endTime = DateTime.now.to_time
+- puts "Generated #{page.title} in #{endTime - startTime}s"
