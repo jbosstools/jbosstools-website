@@ -13,16 +13,16 @@ Instructions are provided for the following tasks:
 . <<enableportforwarding,Enable Port Forwarding for the Local and Remote Debug Ports>>
 . <<idedebugger,Configure and Connect the IDE Debugger>>
 
-This article guides you through each of these configuration requirements and must be completed in the order given.
+This article guides you through each of these configuration requirements and must be completed in the given order.
 
 [NOTE] 
 Your application must be deployed on OpenShift before attempting to configure the OpenShift server for debugging and enabling port forwarding.
 
 [[configurefordebugging]]
-== 1. Configure the OpenShift Server for Debugging             
+== 1. Configure the OpenShift Application for Debugging             
 You must first configure the OpenShift server, to which your application is deployed, for debugging. This requires setting the `Enable JPDA` (Java Platform Debugger Architecture) marker in your application source code and republishing the application. Marker information is retained with the application so you only need to complete this task once for each OpenShift Online Application:
 
-To configure the OpenShift server for debugging, complete the following steps:
+To configure the OpenShift application for debugging, complete the following steps:
 
 . In the `Project Explorer` view, right-click `_{project name}_` and click menu:OpenShift[Configure Markers]. 
 . In the `Configure OpenShift Markers` window, select the `Enable JPDA` check box and click `OK`.
@@ -43,7 +43,7 @@ When debugging is enabled on the OpenShift server a debug port is assigned; for 
 == 2. Enable Port Forwarding for the Local and Remote Debug Ports
 After the OpenShift server is configured for debugging, you must enable port forwarding for the local (IDE) and remote (OpenShift server) debug ports. You can achieve this with the OpenShift Tools `Application port forwarding` wizard, which connects all local ports to their remote counterpart ports, including the local and remote debug ports.
 
-Port forwarding is automatically stopped when your OpenShift Online connection closes; this includes when you close the IDE or change workspaces. You must enable port forwarding every time you reconnect to OpenShift Online from the IDE.
+Port forwarding is automatically stopped when your OpenShift Online connection closes; this includes closing the IDE or changing workspaces. You must enable port forwarding every time you reconnect to OpenShift Online from the IDE.
 
 To enable port forwarding, complete the following steps:
 
