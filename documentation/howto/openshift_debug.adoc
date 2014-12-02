@@ -16,11 +16,11 @@ Instructions are provided for the following tasks:
 This article guides you through each of these configuration requirements and must be completed in the given order.
 
 [NOTE] 
-Your application must be deployed on OpenShift before attempting to configure the OpenShift server for debugging and enabling port forwarding.
+Your application must be deployed on OpenShift before attempting to configure the OpenShift application for debugging and enabling port forwarding.
 
 [[configurefordebugging]]
 == 1. Configure the OpenShift Application for Debugging             
-You must first configure the OpenShift server, to which your application is deployed, for debugging. This requires setting the `Enable JPDA` (Java Platform Debugger Architecture) marker in your application source code and republishing the application. Marker information is retained with the application so you only need to complete this task once for each OpenShift Online Application:
+You must first configure your OpenShift application for debugging, which requires setting the `Enable JPDA` (Java Platform Debugger Architecture) marker in your application source code and republishing the application. Marker information is retained with the application so you only need to complete this task once for each OpenShift Online application:
 
 To configure the OpenShift application for debugging, complete the following steps:
 
@@ -37,11 +37,11 @@ image::openshift_jpda-marker.png[Enable JPDA check box selected]
 The project changes are pushed to the remote Git repository and the application is automatically updated on the OpenShift server. 
 
 [NOTE]
-When debugging is enabled on the OpenShift server a debug port is assigned; for default Java applications the debug port is `8787`. To perform the remaining tasks, it is important to know which port is the debug port. To identify the debug port for other applications, see the cartridge documentation.
+When debugging is enabled on the OpenShift application a debug port is assigned; for default Java applications the debug port is `8787`. To perform the remaining tasks, it is important to know which port is the debug port. To identify the debug port for other applications, see the cartridge documentation.
 
 [[enableportforwarding]]
 == 2. Enable Port Forwarding for the Local and Remote Debug Ports
-After the OpenShift server is configured for debugging, you must enable port forwarding for the local (IDE) and remote (OpenShift server) debug ports. You can achieve this with the OpenShift Tools `Application port forwarding` wizard, which connects all local ports to their remote counterpart ports, including the local and remote debug ports.
+After the OpenShift application is configured for debugging, you must enable port forwarding for the local (IDE) and remote (OpenShift server) debug ports. You can achieve this with the OpenShift Tools `Application port forwarding` wizard, which connects all local ports to their remote counterpart ports, including the local and remote debug ports.
 
 Port forwarding is automatically stopped when your OpenShift Online connection closes; this includes closing the IDE or changing workspaces. You must enable port forwarding every time you reconnect to OpenShift Online from the IDE.
 
@@ -55,7 +55,7 @@ image::openshift_portforward-start.png[The Application port forwarding window]
 
 [[idedebugger]]
 == 3. Configure and Connect the IDE Debugger
-With port forwarding configured for the debug ports, you must create a debug configuration for the OpenShift server and connect the IDE debugger. You can then review debug output in the `Debug` and `Console` views. The debug configuration is retained with the workspace so you only need to create a new debug configuration once for each OpenShift Online Application. But you must restart each debug configuration every time you reconnect to OpenShift Online from the IDE.
+With port forwarding configured for the debug ports, you must create a debug configuration for the OpenShift server and connect the IDE debugger. You can then review debug output in the `Debug` and `Console` views. The debug configuration is retained with the workspace so you only need to create a new debug configuration once for each OpenShift Online application. But you must restart each debug configuration every time you reconnect to OpenShift Online from the IDE.
 
 To configure and connect the IDE Debugger, complete the following steps:
 
