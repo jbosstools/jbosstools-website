@@ -45,21 +45,6 @@ lower level functionality, or if your deployment is intended as, or has dependen
 
 related_jira::JBIDE-17236[]
 
-
-=== Externally managed setting for servers moved to launch configuration
-
-While previously the server editor had checkboxes for indicating that a server
-was externally managed, and would be started or stopped manually by the user themself, 
-it was decided that this setting fit much more naturally into the launch configuration
-and its associated user interfaces. This setting has been moved, but your old settings 
-should still work. 
-
-image::images/JBIDE-17076a.png[Marking local server as externally managed]
-image::images/JBIDE-17076b.png[Marking remote server as externally managed]
-
-
-related_jira::JBIDE-17076[]
-
 == JMX enhanced with JVM Monitor
 
 === JVM Monitor
@@ -91,4 +76,3 @@ documentation applies currently. Most notable is the absence of a JVM Explorer
 view. While no complete list of differences is available at the moment, we expect to make one available for our GA release.
 
 related_jira::JBIDE-17309[]
-
