@@ -9,7 +9,7 @@ got some high level topics we are looking into working on and was wondering what
 == Overall features
 
 The overall features we are currently planning to work on in 2015 for
-our core tools (excluding Integration stack plugins) is listed belo at
+our core tools (excluding Integration stack plugins) is listed below at
 a high level.
 
 - (Hybrid) Mobile Tooling
