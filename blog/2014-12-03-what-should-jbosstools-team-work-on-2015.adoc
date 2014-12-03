@@ -15,9 +15,9 @@ The overall features we are currently planning to work on in 2015 for our core t
 - Making Eclipse Better
 - Docker/Vagrant
 - JBoss Modules support
-- Java EE 7 (server, batch, ws, jaxrs,...)
+- Java EE 7 (Server, Batch, Web Services, JAX-RS, etc.)
 - OpenShift 3 (kubernetes)
-- Persistence tools (hibernate,JPA,querying, ...)
+- Persistence tools (hibernate, JPA, querying, etc.)
 
 == Make your voice heard
 
