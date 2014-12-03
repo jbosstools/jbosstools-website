@@ -1,0 +1,32 @@
+= What should JBoss Tools team work on in 2015 ? 
+:page-layout: blog
+:page-author: maxandersen
+:page-tags: [roadmap, jbosscentral]
+
+We are working on our plans for JBoss Tools and Eclipse in 2015 and 
+got some high level topics we are looking into working on and was wondering what *you* would like to see improved.
+
+== Overall features
+
+The overall features we are currently planning to work on in 2015 for our core tools (excluding Integration stack plugins) is listed belowat a high level.
+
+- (Hybrid) Mobile Tooling
+- HTML5/JavaScript/AngularJS
+- Making Eclipse Better
+- Docker/Vagrant
+- JBoss Modules support
+- Java EE 7 (server, batch, ws, jaxrs,...)
+- OpenShift 3 (kubernetes)
+- Persistence tools (hibernate,JPA,querying, ...)
+
+== Make your voice heard
+
+You can make your voice heard by going to http://twtsurvey.com/jbosstools2015 and answer the 2 simple questions!
+
+...and we do have a 'Other' field where you can let us know if we forgot something above ? :)
+
+Thanks for your input!
+
+Have fun! +
+Max Rydahl Andersen +
+http://twitter.com/maxandersen[@maxandersen]
