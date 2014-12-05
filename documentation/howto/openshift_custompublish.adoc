@@ -38,15 +38,9 @@ As an example, here a post deploy action hook is added to the application, which
 
 To add a post deploy action hook to the application, complete the following steps:
 
-*Ensure hidden application directories and files are visible*
-
-. In the `Package Explorer` view, click the `View Menu` icon image:openshift_viewmenuicon.png[View Menu icon] and click `Filters`.
-. From the table, ensure the `.* resources` check box is cleared and click `OK`. 
-
 *Create the post deploy action hook*
 
-[start=3]
-. In the `Package Explorer` view, expand `_{application name}_ > .openshift`.
+. In the `Navigator` view, expand `_{application name}_ > .openshift`.
 . Right-click `action_hooks` and click menu:New[File].
 . In the `File name` field, type `post_deploy` and click `Finish`. 
 . In the file editor, add the following lines to the post_deploy file: 
@@ -59,16 +53,10 @@ echo "This is my post-deploy bash script”
 +
 . Save the file by pressing kbd:[Ctrl+S] (or kbd:[Cmd+S]).
 
-*Add the post deploy action hook to the Git index*
-
-[start=8]
-. In the `Package Explorer` view, expand `_{application name}_ > .openshift > action_hooks`.
-. Right-click the `post_deploy` file and click menu:Team[Add to Index].
-
 *Make the post deploy action hook executable*
 
-[start=10]
-. In the `Package Explorer` view, right-click the `post_deploy` file and click `Properties`.
+[start=6]
+. In the `Navigator` view, right-click the `post_deploy` file and click `Properties`.
 . In the `Permissions` table, select the `Execute` check boxes for all user types.
 +
 .Execute Permissions Check Boxes Selected for All Users
@@ -105,7 +93,7 @@ To republish the application, complete the following steps:
 Added hot_deploy marker and post_deploy bash script
 ----
 +
-** In the `Files` table, ensure the `hot_deploy` and `post_deploy` files are selected.
+** In the `Files` table, ensure the `hot_deploy` file is selected and select the `post_deploy` file.
 +
 .Commit Message Supplied and Files Selected for Committing and Publishing
 image::openshift_commitpublish-changes.png[Committing and Publishing Changes to OpenShift]
@@ -139,6 +127,7 @@ Note that the server has not been stopped and restarted because hot deploy is en
 
 == Did You Know?
 * You can also access the `Configure Markers` wizard from the `Server` view by right-clicking `_{application name}_ at OpenShift` and clicking menu:OpenShift[Configure Markers].
+* You can add files to the Git index at any time by right-clicking the file in, for example, the `Navigator` view and clicking menu:Team[Add to Index].
 * You can see more information relating to the application Git repository by opening the `Git` perspective or individual Git views. All of these can be assessed from the `Window` menu.
 
 
