@@ -1,0 +1,90 @@
+= How to deploy your web application test resources during development
+:page-layout: blog
+:page-author: fbricon
+:page-tags: [jbosscentral, maven, m2e, m2e-wtp, web-resources]
+
+I previously decribed link:/blog/2014-04-17-web-resource-optimization-and-profiles.html[how to use a combination of maven-war-plugin webresources and Maven profiles, in order to deploy minified resources]. In this article, we'll expand on these concepts a bit, to demonstrate how to deploy test resources, in a somewhat elegant and portable way.
+
+
+== User story
+In some cases, you want your web application to deploy test resources, whether it's logging or database configuration files, or even some test mocks during development.
+
+When you're using Eclipse Java EE, https://www.eclipse.org/m2e-wtp/[m2e-wtp] explicitely prevents test resources from being deployed (in order to limit behavior discrepancies between Maven CLI and Eclipse), and if you try to mess with Eclipse's Deployment Assembly page, its settings _will_ be reset next time you perform a `Maven > Update projet configuration`.
+
+So you need a solution that works for both Eclipse, command line and even other IDEs as well. Let's see how you can achieve that...
+
+== Pre-requisites
+You only need :
+
+. a https://www.eclipse.org/downloads/[Java EE based Eclipse distribution] for the following to work: stock Eclipse, http://tools.jboss.org/downloads/[JBoss Developer Studio] or http://spring.io/tools/sts/all[SpringSource Tools Suite] for instance, as long as m2e-wtp is installed with it.
+. a Maven project with packaging `war`
+
+== Configure a new `dev` profile
+In order to deploy test resources with WTP, we need to add a new Maven `dev` profile to the `<profiles>` section of your pom.xml. This can easily be done with `Ctrl+space` assist. Selecting the m2e profile template and changing the id to `dev` will get you started.
+
+The profile is automatically enabled when running in m2e, via the `m2e.version` property.
+
+Then, you need to add a `maven-war-plugin` configuration to the `<build><plugins>` section of the new profile, and configure `<webResources>` so that test resources from the test output directory are copied to WEB-INF/classes, using a regexp to only include specific files.
+
+Eventually, this is how your dev profile should look :
+
+[source,xml]
+----
+<profile>
+  <id>dev</id>
+  <activation>
+    <property> <!-- this will automatically be enabled when using m2e -->
+    <name>m2e.version</name>
+    </property>
+  </activation>
+  <build>
+    <plugins>
+    ...
+      <plugin>
+        <artifactId>maven-war-plugin</artifactId>
+        <!-- this will inherit existing maven-war-plugin configuration-->
+        <configuration>
+          <webResources>
+            <resource>
+              <directory>${project.build.testOutputDirectory}</directory>
+              <includes>
+                <include>**/some/test/resources/**</include>
+              </includes>
+              <targetPath>WEB-INF/classes/</targetPath>
+            </resource>
+          </webResources>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</profile>
+----
+
+[NOTE]
+=====
+In Eclipse, the matching test resources are not served directly but are actually copied/processed to `target/m2e-wtp/web-resources/WEB-INF/classes` and  deployed from there.
+=====
+
+[WARNING]
+=====
+If the original configuration already defines `<webResources>`, use `<webResources combine.children="append">` in the `dev` profile, so all resources get deployed. You can learn more about merging plugin configuration on the http://blog.sonatype.com/2011/01/maven-how-to-merging-plugin-configuration-in-complex-projects/[Sonatype blog].
+=====
+
+
+[WARNING]
+=====
+If you decide to declare this profile in a parent pom, don't forget to put the `<plugins>` node under  the `<pluginManagement>` section, or else, these configurations will not be inherited by your war projects.
+=====
+
+This extra configuration will be merged to your existing `maven-war-plugin` configuration (check the `maven-war-plugin` configuration in the Effective POM tab of the pom.xml editor).
+
+Now, using m2e-wtp, every time a test resource is modified, it will automatically be deployed to your server, on-the-fly. This is borderline magic, I know.
+
+
+== Conclusion
+Hopefully, this article gave you a glimpse of the powerful Maven capabilities m2e-wtp brings to Eclipse, showing how you can easily deploy your test resources in your development environment in a portable way.
+
+Take it easy!
+
+Fred Bricon
+https://twitter.com/fbricon
