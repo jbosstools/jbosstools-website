@@ -1,0 +1,83 @@
+= Deploy Apps to a Local Server
+
+:page-layout: howto
+:page-tab: docs	
+:page-status: green
+:experimental:
+:imagesdir: ./images
+
+In order to deploy applications to a server from within the IDE, you must configure the IDE with information about the server. For a local server this information includes the following:
+
+* a server runtime environment with details about the server location, runtime JRE, and configuration files
+
+* a server adapter with management settings for the server runtime environment, including access parameters, launch arguments, and publishing options 
+
+JBoss Server Tools enables you to efficiently configure a local server ready for use with the IDE using Runtime Detection. As demonstrated here, this feature is useful for quickly configuring a server for deploying and testing an application.
+
+Instructions are provided here for completing the following tasks:
+
+. <<Configure, Configure the IDE for a Local Runtime Server>>
+
+. <<Deploy, Deploy an Application>>
+
+. <<Change_and_Publish, Change and Republish the Application>>
+
+[[Configure]]
+== 1. Configure the IDE for a Local Runtime Server
+
+Runtime Detection searches a given local system path to locate certain types of runtime servers. For any servers found, Runtime Detection automatically generates both a default server runtime environment and a default server adapter. These items can be used as is for immediate application deployment or customized to meet your requirements.
+
+To configure the IDE for a local runtime server, complete the following steps:
+
+. Click menu:Window[Preferences > JBoss Tools > JBoss Runtime Detection]
+
+. Click `Add`.
+
+. Locate the directory containing the runtime server and click `OK`. 
+
+. In the table of located runtimes, ensure the runtime is selected and click `OK`.
+
+. Click `Apply` and click `OK` to close the `Preferences` window.
+
+A default runtime environment and server adapter are generated for the server, with the server adapter listed in the `Servers` view.
+
+[[Deploy]]
+== 2. Deploy an Application
+
+When you have configured the IDE for the server, you can deploy applications to the server using the server adapter. The server adapter enables runtime communication between the server and IDE for easy deployment of applications and server management.
+
+To deploy an application to the server, complete the following steps: 
+
+. In the `Project Explorer` view, right-click `_{project name}_` and click menu:Run As[Run on Server].
+
+. Ensure `Choose an existing server` is selected.
+
+. From the table of servers, expand `localhost`, select the server on which to deploy the application and click `Finish`.
+
+The `Console` view shows output from the server starting and deploying the application. When deployment is complete, an IDE default web browser opens and shows the deployed web application.
+
+[[Change_and_Publish]]
+== 3. Change and Republish the Application
+
+By default, the server adapter configures the server for automatic publishing when changed resources are saved. This automatic publishing action applies to application resources that can be interchanged in the dedicated deployment location of the server without requiring the application to stop and restart, such as *.html* files. For other changed resources, such as *.java* files, you need to republish the application such that it forces a rebuild of the application. 
+
+To republish the application to the server after changes that cannot be automatically published, complete the following steps:
+
+. In the `Servers` view, expand the server adapter to list the projects allocated to the server.
+
+. Right-click `_{project name}_` and click `Full Publish`.
+
+The `Console` view shows output from the server replacing the deploying application. Unless LiveReload is enabled in the web browser, you must manually reload the web browser to see the changed application.
+
+== Did You Know?
+
+* You can also configure servers for use with the IDE when deploying applications by clicking `Manually define a new server` in the `Run on Server` wizard.
+
+* Paths previously searched by Runtime Detection can be automatically searched on every workspace startup. Click menu:Window[Preferences > JBoss Tools > JBoss Runtime Detection] and from the `Paths` table select the check boxes of the appropriate paths. Click `Apply` and click `OK` to close the `Preferences` window.
+
+* You can customize the server adapter and server runtime environment with the `Server` Editor. In the `Servers` view, double-click the server to open the Server Editor.
+
+* You can initiate download and installation of runtime servers from the IDE. Click menu:Window[Preferences > JBoss Tools > JBoss Runtime Detection]. Click `Download` and from the table of runtime servers select the one to install and click `Next`. Follow the on-screen instructions to complete the download and installation process.
+
+
+
