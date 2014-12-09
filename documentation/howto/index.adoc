@@ -9,6 +9,14 @@ The How To section contains articles describing features of JBoss Tools and Deve
 
 link:hmt_firstapp.html[Create Your First Hybrid Mobile App]
 
+== Developing Mobile Web Apps
+
+link:mobiledev_createwebapp.html[Create Your First Mobile Web App]
+
+== Configuring Servers in the IDE
+
+link:servers_deploytolocalserver.html[Deploy Apps to a Local Server]
+
 == Developing Apps for the Cloud
 
 link:openshift_firstapp.html[Create Your First OpenShift Online App]
