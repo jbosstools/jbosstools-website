@@ -90,7 +90,7 @@ image::openshift_newapp-details.png[Completed new OpenShift application fields]
 ** Ensure the `Create a new project` check box is selected.
 ** Ensure the `Create and set up a server for easy publishing` check box is selected. This automatically creates an OpenShift server adapter for the application, enabling you to easily publish project changes to the OpenShift server. 
 . Click `Next`.
-. Ensure the location in the `Git Clone Destination` field exists and corresponds to where you want to make a local git repository for the project source code.
+. Ensure the location in the `Git Clone Destination` field corresponds to where you want to make a local git repository for the project source code.
 +
 .Valid Git Clone Destination Specified
 image::openshift_git-destination.png[Default Git clone destination check box selected]
