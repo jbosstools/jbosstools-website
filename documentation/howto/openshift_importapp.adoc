@@ -21,6 +21,7 @@ Applications associated with your OpenShift Online account(s) are listed in the 
 
 To import an existing OpenShift Online application as a new project in the existing IDE workspace, complete the following steps:
 
+. In the `OpenShift Explorer` view, ensure your OpenShift Online connection is listed or click the `Connection` icon image:openshift_icon-connection.png[Connection icon] and complete your OpenShift Online account details to create a new connection.
 . In the `OpenShift Explorer` view, expand the connection and domain to locate the application you want to import.
 . Right-click the application and click `Import Application`.
 . Complete the fields about the application to be imported as follows:
@@ -35,7 +36,7 @@ image::openshift_importapp.png[Existing OpenShift Online Application Information
 ** Ensure the `Create a new project` check box is selected.
 ** Ensure the `Create and set up a server adapter for easy publishing` check box is selected.
 . Click `Next`.
-. Ensure the location in the `Git Clone Destination` field exists and corresponds to where you want to make a local copy of the OpenShift Online application Git repository.
+. Ensure the location in the `Git Clone Destination` field corresponds to where you want to make a local copy of the OpenShift Online application Git repository.
 . Ensure a public SSH key is uploaded to OpenShift Online and private key location is specified in the IDE preferences by clicking `SSH Keys Wizard` and reviewing the information.
 . Click `Finish`.
 
@@ -47,7 +48,7 @@ OpenShift Tools makes  a number of small changes to the application source code 
 
 [[modifyappsourcecode]]
 == 2. Modify the Application Source Code
-The files contained in your project depend on the type of project that you have imported. As an example of modifying the project source code, here a fictional project `index.html` file is changed. You can opt to change this file or another file of your project.
+The files contained in your project depend on the type of project that you have imported. Here a common OpenShift application file, `index.html`, is changed as an example of modifying the project source code. You can opt to change this file or another file of your project.
 
 To modify the `index.html` file, complete the following steps:
 
@@ -66,7 +67,7 @@ Note that in the `Project Explorer` view, `index.html` has `>` prepended to show
 
 [[republishmodifiedapp]]
 == 3. Republish the Modified Application
-You must commit and push any changes you have made to the project source code and then republish the application before you can see changes reflected at the OpenShift Online application URL. As an example of committing and pushing source code changes to the OpenShift Online application repository and republishing the application, here the `index.html` file changed earlier is used. You can opt to use the project file that you changed earlier.
+You must commit and push any changes you have made to the project source code and then republish the application before you can see changes reflected in the OpenShift Online application. As an example of committing and pushing source code changes to the OpenShift Online application repository and republishing the application, here the `index.html` file changed earlier is used. You can opt to use the project file that you changed earlier.
 
 To commit and push the `index.html` changes and republish the application to OpenShift Online, complete the following steps:     
 
