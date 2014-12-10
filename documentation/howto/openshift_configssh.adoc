@@ -7,9 +7,9 @@
 
 OpenShift Online uses SSH authentication for development tasks that interact directly with gears such as pushing code changes to application OpenShift Online Git repositories, reading application log files, listing and setting environment variables, and port forwarding.
 
-You must have an SSH key pair configured for OpenShift Online before using OpenShift Tools features to create, edit and manage OpenShift Online applications. This requires a private-public key pair, with the private key stored on your local system and its location specified in the IDE and the associated public key stored on the OpenShift Online server and associated with your account.
+You must have an SSH key pair configured for your OpenShift Online account before using OpenShift Tools features to create, edit and manage OpenShift Online applications. This requires a private-public key pair, with the private key stored on your local system and its location specified in the IDE and the associated public key stored on the OpenShift Online server and associated with your account.
 
-OpenShift Tools enables you to quickly complete these requirements with the assistance of SSH wizards. If you are new to OpenShift Online, the wizards can help you configure a new or existing SSH key pair. If you are already using OpenShift Online through the web interface or RHC client tools, you only need to specify the private key location in the IDE preferences to complete the SSH key configuration.
+OpenShift Tools enables you to quickly complete these requirements with the assistance of a multipurpose SSH wizard. If you are new to OpenShift Online, the wizards can help you configure a new or existing SSH key pair. If you are already using OpenShift Online through the web interface or RHC client tools, you only need to specify the private key location in the IDE preferences to complete the SSH key configuration.
 
 The instructions here demonstrate how to complete the following tasks:
 
@@ -29,7 +29,7 @@ To create and use a new SSH key pair, complete the following steps:
 ** In the `Name` field, type a name to distinguish the key pair from any other keys associated with the connection.
 ** From the `Key Type` list, select `SSH_RSA`.                     
 ** Ensure that the `SSH2 Home` field contains the location where you want to create the files associated with the key pair. To change the location, clear the `Default` check box and type the location in the `SSH2 Home` field or click `Browse` to navigate to the desired location.
-** In the `Private Key File Name` field, type a name for the private key file. The `Public Key File Name` field is automatically completed and displays the private key file name with `.pub` appended.
+** In the `Private Key File Name` field, type a name for the private key file. The `Public Key File Name` field is automatically completed and displays the private key file name appended with `.pub`.
 +
 .Completed Fields for the New SSH Key Pair
 image::openshift_addnew-sshkey.png[Completed Fields for the New SSH Key Pair] 
@@ -44,7 +44,7 @@ To use an existing SSH key pair, complete the following steps:
 
 . In the `OpenShift Explorer` view, right-click the connection and click `Manage SSH Keys`.
 . Click `Add Existing`.
-. Complete the fields about the already generated public SSH key as follows:
+. Complete the fields about the existing public SSH key as follows:
 ** In the `Name` field, type a name for the SSH key.
 ** In the `Public Key` field, type the path of the public key file or click `Browse` to locate the public key file.
 +
@@ -58,7 +58,7 @@ image::openshift_addexisting-sshkey.png[Completed Fields for Adding an Existing 
 
 [[specifyexistingprivatekeyfile]]
 == Option C: Specify an Existing Private Key File
-When using a public key that is already uploaded to OpenShift Online, you must ensure the location of the corresponding private key is set in the IDE preferences. This option may be applicable if you are an existing OpenShift Online user and you have not yet accessed OpenShift Online from your IDE workspace.
+When using a public key that is already uploaded to OpenShift Online, you must ensure the location of the corresponding private key is set in the IDE preferences. This option may be applicable if you are an existing OpenShift Online user and you have not yet accessed OpenShift Online from your IDE workspace or you are using multiple IDE workspaces.
 
 To specify an existing private key file, complete the following steps:
 
