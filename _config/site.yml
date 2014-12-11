@@ -10,20 +10,25 @@ encoding: UTF-8
 
 textile:
   :no_span_caps: true
+scss:
+  :line_numbers: true
+  :style: expanded
+sass:
+  :line_numbers: true
+  :style: expanded
+
 
 asciidoctor:
   :safe: safe
-  :compact: true
-  :eruby: erubis
   :attributes:
     imagesdir: ./@
     icons: font
-    experimental: true
     idprefix: ''
     idseparator: '-'
     sectanchors: ''
     linkattrs: ''
-
+    source-highlighter: prettify
+    
 # Default minify settings
 css_minifier: disabled
 js_minifier: disabled

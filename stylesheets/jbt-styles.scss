@@ -20,15 +20,28 @@ span.icon>.fa{cursor:default}
 .admonitionblock td.icon .icon-caution:before{content:"\f06d";color:#bf3400}
 .admonitionblock td.icon .icon-important:before{content:"\f06a";color:#bf0000}
 .admonitionblock {
-    table {
-      border-radius: 4px;
-      td {
-        border : 1px solid rgb(101, 101, 101);
-        padding: 1em;
-      }
-
+  table {
+    border-radius: 4px;
+    td {
+      border : 1px solid rgb(101, 101, 101);
+      padding: 1em;
     }
   }
+}
+
+// **************************************
+// Pretty print: force content border and 
+// padding
+// **************************************
+.prettyprint {
+  padding: 8px !important;
+  border: 1px solid #e1e1e8 !important;
+}
+
+code {
+  background-color: #F7F7F9;
+  color: #656565;
+}
 
 // *************************************
 // Fixes in bootstrap-community
@@ -1149,6 +1162,7 @@ span.label {
       h3 {
         text-decoration: none;
         margin-bottom: 0px;
+        line-height: 30px;
       }
 
       h4 {

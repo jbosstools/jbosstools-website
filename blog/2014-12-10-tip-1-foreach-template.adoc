@@ -1,4 +1,5 @@
 = Tools Tip#1 - Effective editing of enhanced for loops in Eclipse
+:page-interpolate: true
 :page-layout: blog
 :page-author: maxandersen
 :page-tags: [tip, jbosscentral]

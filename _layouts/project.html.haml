@@ -1,7 +1,7 @@
 !!! 5
 %html(lang="en")
   %head
-    %title #{site.title} #{page.title ? (" - " + page.title): ""}
+    %title #{site.title}#{page.title ? (" - " + page.title): ""}
     %meta(charset="utf-8")
     %meta(name="viewport" content="width=device-width, initial-scale=1.0")
     %meta(name="description" content="#{page.description}")
@@ -24,6 +24,7 @@
 
     %link{ :rel=>'stylesheet', :type=>"text/css", :href=>relative("/stylesheets/jbt-styles#{site.minified}.css") }
     %link{ :rel=>"stylesheet", :type=>"text/css", :href=>relative("/fonts/font-awesome/font-awesome#{site.minified}.css"), :media=>"screen, projection"}
+    %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css", :media=>"screen, projection"}
     
     -# RSS feeds
     %link{:rel=>"alternate", :type=>"application/rss+xml", :title=>"RSS", :href=>relative("/blog/news.atom")}
@@ -195,7 +196,8 @@
     - if page.bottom_javascripts
       - page.bottom_javascripts.each do |javascript|
         %script{:src=>relative(javascript), :type=>'text/javascript'}
-
+    %script{:src=>"https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"}
+      
     :plain
       <!-- begin eloqua tracking -->
       <script type='text/javascript' language='JavaScript' src='http://www.redhat.com/j/elqNow/elqCfg.js'></script>

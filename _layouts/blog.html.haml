@@ -1,7 +1,6 @@
 ---
 layout: project
 tab: blog
-bottom_javascripts: ["http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"]
 ---
 - if page.draft_article
   .row-fluid
@@ -31,12 +30,12 @@ bottom_javascripts: ["http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/hig
             on 
             %strong #{page.date.strftime( '%b %d, %Y' )}.
             %p
-              - if(page.tags != nil && !page.tags.empty?) 
+              - if(page.tags != null && !page.tags.empty?) 
                 - page.tags.each do |tag|
-                  - if (tag != nil && tag.kind_of?(String))
+                  - if tag.kind_of? String 
                     -# edge case, when the current post is a draft and uses a new tag
                     %a.label.label-info #{tag}
-                  - elsif !tag.nil?
+                  - else
                     %a.label.label-info{:href=>relative("#{tag.primary_page.url}")} #{tag}
               %span.comments
                 %i.icon-comments
@@ -44,7 +43,7 @@ bottom_javascripts: ["http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/hig
                 #{page.disqus_comments_count} 
          
       .body
-        #{content}
+        ~content
         
       .navigation
         .row-fluid
