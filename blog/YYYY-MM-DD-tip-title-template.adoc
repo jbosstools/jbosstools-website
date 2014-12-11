@@ -1,0 +1,52 @@
+x// This is a template for Tools tip entries. Please remove the comments before actually posting.
+= Tools Tip#<next number> - title of tip
+// page-layout is there to indicate this template is a blog.
+:page-layout: blog
+// page-author: is a field that should match up with a file found at _data/team/<author>.adoc 
+// if that file is missing create one and submit together with the blog.
+:page-author: maxandersen
+// page-tags: used to categorize the blog entry. Try not going overboard here.
+// use components from jira, try keep them short and not require spaces. 
+// Note: jbosscentral is a magic tag that makes it show up on jbosscentral
+// Leave that out if your blog entry has a narrow audience scope.  
+:page-tags: [tip, jbosscentral]
+
+Setup the context for the tip - keep it short and sweet.
+
+This is not a blog - should preferably fit on a single page or even paragraph.
+
+If the tip has multiple steps create a *small* (<10-30s), zoomed in and
+without sound.
+
+The following video is short and set to autoplay/loop:
+
+video::114184876[vimeo, width=551, height=310, options="autoplay,loop"]
+
+
+```java
+ import org.jboss.tools.*;
+ 
+ class JBossTools extends Eclipse {
+
+   protected Team spirit;
+   public Issues development;
+   private Satisfaction guaranteed;
+
+ }
+
+And you can add screenshots:
+
+image::images/devstudio8_splash.png
+
+Put images inside the `images` folder with a unique name, all lowercase.
+
+=== Menus, keyboard and buttons have their own style
+
+When using menus like menu:Preferences[Guide > The > User], keyboard
+shortcuts like kbd:[Ctrl+Alt+P] or even buttons like btn:[Ok] then
+there is a style for it.
+
+
+// remember that filename should start with a date and then title (i.e. 2014-04-13-tip-1-<title>.adoc) 
+// if you commit a file with a date in the future it will be published after the first built after that date.
+// building locally it will just be shown as a Draft.
