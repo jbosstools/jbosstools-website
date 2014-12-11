@@ -1,4 +1,4 @@
-x// This is a template for Tools tip entries. Please remove the comments before actually posting.
+// This is a template for Tools tip entries. Please remove the comments before actually posting.
 = Tools Tip#<next number> - title of tip
 // page-layout is there to indicate this template is a blog.
 :page-layout: blog
