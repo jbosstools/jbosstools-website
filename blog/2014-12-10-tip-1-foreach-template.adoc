@@ -1,0 +1,47 @@
+= Tools Tip#1 - Effective editing of enhanced for loops in Eclipse
+:page-layout: blog
+:page-author: maxandersen
+:page-tags: [tip, jbosscentral]
+
+When you have have typed collections in your code like:
+
+[source,java]
+----
+public void process(List<Product> products) {
+  List<Customer> customers = getCustomers();
+  // cursor here
+}
+----
+
+Most know that you can use the `foreach` template via normal content assist to quickly generate
+code like this:
+
+[source,java]
+----
+public void process(List<Product> products) {
+  List<Customer> customers = getCustomers();
+  for(Customer c : customers) {
+    // cursor here
+  }
+}
+----
+
+But the `foreach` template will always choose the *nearest* collection, making it
+impossible to use with for example the `products` parameter in the above example.
+
+The solution is to use the 'enhanced for loop' Quick Fix.
+
+It is available when you have type the name of the collection and use the kbd:[Ctrl+1]
+(kbd:[Cmd+1] if on OS X) shortcut.
+
+To illustrate it, here is a small video of it in Eclipse.
+
+video::114184876[vimeo, width=551, height=310, options="autoplay,loop"]
+
+Hope you enjoyed this little tip!
+
+Thanks to https://twitter.com/xcoulon[Xavier Coulon] for asking the question and giving the idea for this Tip blog, and thanks to Markus Keller (JDT UI lead) for reminding me about the Quick Fix solution.
+
+Have fun, +
+Max Rydahl Andersen +
+http://twitter.com/maxandersen[@maxandersen]
