@@ -1,0 +1,14 @@
+= BrowserSim and CordovaSim What's New in 4.2.1.Final
+:page-layout: whatsnew
+:page-component_id: browsersim
+:page-component_version: 4.2.1.Final
+:page-product_id: jbt_core 
+:page-product_version: 4.2.1.Final
+
+== IPhone 6 / 6 plus skin
+
+Brand new IPhone 6 / 6 plus skin is now available in BrowserSim and CordovaSim:
+
+image::images/4.2.1.Final/iphone6.png[IPhone 6 / 6 plus skin]
+
+related_jira::JBIDE-18363,JBIDE-18771[]
