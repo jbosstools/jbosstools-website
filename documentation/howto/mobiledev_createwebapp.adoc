@@ -124,16 +124,16 @@ To change your application, complete the following steps:
 . Double-click `index.html` to open it for editing with the `JBoss Tools HTML Editor`.
 
 . Replace the code in `index.html` `<body>` tag with the following lines:
-
++
 [source,html]
-------------
+----
 <body>
     <section>
         <h1>Welcome to Your First Mobile Web Application</h1>
     </section>
 </body>
-------------
-
+----
++
 . Save the file by pressing kbd:[Ctrl+S] (kbd:[Cmd+S]).
 
 The above code changes the name of the application. 
