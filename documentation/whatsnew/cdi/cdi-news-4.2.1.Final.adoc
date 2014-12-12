@@ -1,0 +1,17 @@
+= CDI Tools What's New in 4.2.1.Final
+:page-layout: whatsnew
+:page-component_id: cdi
+:page-component_version: 4.2.1.Final
+:page-product_id: jbt_core 
+:page-product_version: 4.2.1.Final
+
+== CDI auto enablement for Java EE 7 projects
+
+CDI support is now enabled automatically for Eclipse Web Tools faceted projects if they have any Java EE 7 facet:
+- Web (Servlet) version 3.1 or higher
+- EJB facet version 3.2 or higher
+- Utility module
+
+For example if you create a project via New Dynamic Web Project Wizard and selected Web facet v.3.1 you don't need to enable CDI support in project properties or to install CDI facet. JBoss Tools will do it automatically.
+
+related_jira::JBIDE-18694[]
