@@ -1,14 +1,13 @@
 // This is a template for How To articles. Please remove the comments and template text before actually uploading.
 = Article Title
-
-// page-layout is there to indicate this template is a How To.
-// experimental is there to indicate ...
-// imagesdir is there to indicate the base path for images 
 :page-layout: howto
 :page-tab: docs
 :page-status: green
 :experimental:
 :imagesdir: ./images
+// page-layout is there to indicate this template is a How To.
+// experimental is there to indicate ...
+// imagesdir is there to indicate the base path for images 
 
 Start with an introduction. What is the purpose of the How To workflow described in this article? When and why would a user use this workflow? Which type of user would use this workflow (new, existing, etc.)?
 
@@ -22,7 +21,6 @@ This article guides you through each of these configuration requirements and mus
 
 [[section1shorttitle]]
 == 1. Task 1 Title
-
 Give an intro to the task - what specifically is it going to achieve?
 
 To do X, complete the following steps:
@@ -43,7 +41,6 @@ If you don't know asciidoctor syntax you can see more at http://asciidoctor.org/
 
 [[section2shorttitle]]
 == 2. Task 2 Title
-
 If you got code to show do it like this:
 [source,java]
 ----
@@ -60,10 +57,8 @@ If you got code to show do it like this:
 
 [[section3shorttitle]]
 == 3. Task 3 Title
-
-When using menus like menu:Preferences[Guide > The > User], keyboard
-shortcuts like kbd:[Ctrl+Alt+P] or even buttons like btn:[OK] then
-there is a style for it.
+When using menus like menu:Preferences[Guide > The > User] or keyboard
+shortcuts like kbd:[Ctrl+Alt+P] then there is a style for it.
 
 
 == Troubleshooting
@@ -76,7 +71,6 @@ Issue::
 
 
 == Did You Know?
-
 * End with a succinct bullet list
 * Of alternative ways of 
 * Completing actions

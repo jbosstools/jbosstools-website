@@ -92,7 +92,7 @@ image::openshift_newapp-details.png[Completed new OpenShift application fields]
 . Click `Next`.
 . Ensure the location in the `Git Clone Destination` field corresponds to where you want to make a local git repository for the project source code.
 +
-.Valid Git Clone Destination Specified
+.Git Clone Destination Specified
 image::openshift_git-destination.png[Default Git clone destination check box selected]
 
 == Create the OpenShift Online Application
@@ -115,7 +115,7 @@ Your OpenShift Online application is displayed in the IDE default web browser.
 ** Embedded cartridge: Functionality to enhance your application
 * Scaling: Enables your application to react to changes in traffic and automatically allocate the necessary resources to handle the current demand
 
-== Did You Know
+== Did You Know?
 * You can also start the `New OpenShift Application` wizard from the `OpenShift Explorer` view by right-clicking a connection, domain or existing application and clicking menu:New[Application] or from the IDE main menus by clicking menu:File[New > OpenShift Application].
 * To save time when logging in to OpenShift Online in future, you can click the `Save Password` check box in the `Sign in to OpenShift` window. The password is retained in secure storage provided by the IDE and automatically populates the `Password` field for the associated connection.
 * Using the `New OpenShift Application` wizard, you can also create a new OpenShift application from an existing workspace project or a Git source.

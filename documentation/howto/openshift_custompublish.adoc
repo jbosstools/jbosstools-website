@@ -22,7 +22,7 @@ As an example, here the hot deploy marker is added to the application, which tri
 
 To add the hot deploy marker to the application, complete the following steps:
 
-. In the `Project Explorer` view, right-click `_{application name}_` and click menu:OpenShift[Configure Markers].
+. In the `Project Explorer` view, right-click `_{project name}_` and click menu:OpenShift[Configure Markers].
 . From the `Marker` table, select `Hot Deploy` and click `OK`.
 +
 .Hot Deploy Marker Selected
@@ -40,7 +40,7 @@ To add a post deploy action hook to the application, complete the following step
 
 *Create the post deploy action hook*
 
-. In the `Navigator` view, expand `_{application name}_ > .openshift`.
+. In the `Navigator` view, expand `_{project name}_ > .openshift`.
 . Right-click `action_hooks` and click menu:New[File].
 . In the `File name` field, type `post_deploy` and click `Finish`. 
 . In the file editor, add the following lines to the post_deploy file: 
@@ -70,7 +70,7 @@ As your application source code grows in size, the remote connection from the ID
 
 To extend the Git remote connection timeout, complete the following steps:
 
-. Click menu:Window[Preferences], expand `Team` and select `Git`. 
+. Click menu:Window[Preferences > Team > Git]. 
 . In the `Remote connection timeout (seconds)` field, type a value in seconds.
 +
 .Git Remote Connection Timeout Set

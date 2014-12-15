@@ -62,8 +62,8 @@ When using a public key that is already uploaded to OpenShift Online, you must e
 
 To specify an existing private key file, complete the following steps:
 
-. Click menu:Window[Preferences], expand `General > Network Connections` and select `SSH2`.
-. In the `General` tab, click `Add Private Key` and locate the private key file..
+. Click menu:Window[Preferences > General > Network Connections > SSH2].
+. In the `General` tab, click `Add Private Key` and locate the private key file.
 . Click `Apply` and click `OK` to close the `Preferences` window.
 
 == Did You Know?
@@ -72,4 +72,4 @@ To specify an existing private key file, complete the following steps:
 * IDE preferences are workspace specific and therefore you must specify private key location under `Preferences` for each workspace.
 * You can remove an existing public SSH key from your OpenShift Online account with the `Manage SSH Keys` wizard. Note that this only disassociates keys with your OpenShift account. The files associated with a removed SSH key pair still exist in the local location where they were generated and the private key is still set in the IDE preferences.
 * If you are using the OpenShift Online web interface or RHC client tools to manage SSH keys simultaneously with OpenShift Tools, the information specified by OpenShift Tools about keys may be out of sync. You can resync the information in the `Manage SSH Keys` wizard with the `Refresh` button.
-* You can change the default location used by the IDE to store newly created SSH keys. Click menu:Window[Preferences], expand `General > Network Connections` and select `SSH2`. In the `General` tab, in the `SSH2 home` field type the new location.
+* You can change the default location used by the IDE to store newly created SSH keys. Click menu:Window[Preferences > General > Network Connections > SSH2]. In the `General` tab, in the `SSH2 home` field type the new location.

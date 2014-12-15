@@ -30,7 +30,7 @@ To configure the OpenShift application for debugging, complete the following ste
 .OpenShift Enable JPDA Marker Selected
 image::openshift_jpda-marker.png[Enable JPDA check box selected] 
 +               
-. In the `Servers` view, right-click the server adapter for the application and click `Publish`. 
+. In the `Servers` view, right-click `_{application name}_ at OpenShift` and click `Publish`. 
 . In the `Publish Changes` window, in the `Commit message` field type a message for the commit.
 . From the `Files` list, ensure the `.openshift/markers/enable_jpda` check box is selected and click `Commit and Publish`.
 
@@ -73,7 +73,7 @@ Connecting to the OpenShift server may take some time to complete and you can mo
 
 == Did You Know?
 * Setting the Enable JPDA marker adds an `.openshift/markers/enable_jpda` file to your project. To locate the hidden `.openshift` directory and access the file, open the `Navigator` view.
-* You can also access the `Port Forwarding` wizard by right-clicking the server adapter of the application in the `Servers` view, and then clicking menu:OpenShift[Port forwarding].
+* You can also access the `Port Forwarding` wizard by right-clicking `_{application name}_ at OpenShift` in the `Servers` view, and clicking menu:OpenShift[Port forwarding].
 * The `Debug` perspective automatically arranges useful views for debugging. To open the `Debug` perspective, click menu:Window[Open Perspective>Debug].
 * You can set the debugger to look up source code for classes it encounters that are not contained in your project, for example classes used by application servers defined in the IDE. When inputing values for the launch configuration, in the `Source` tab click `Add`. From the list of source containers, select `JBoss Maven Source Container` and click `OK`. The JBoss Maven Source Container uses indexes available from Maven repositories to locate the source code. From the list, select a runtime server, the libraries of which will be indexed in the JBoss Maven Source Container, and click `OK`.
 
