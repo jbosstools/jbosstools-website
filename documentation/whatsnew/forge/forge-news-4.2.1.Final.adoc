@@ -1,0 +1,10 @@
+= Forge Tools 4.2.1.Final What's New
+:page-layout: whatsnew
+:page-component_id: forge
+:page-component_version: 4.2.1.Final
+:page-product_id: jbt_core 
+:page-product_version: 4.2.1.Final
+
+== Forge 2 Runtime 	
+
+The included Forge 2 runtime is 2.12.3.Final. See the release notes link:http://forge.jboss.org/news/2014-12-01/forge-2.12.3.final-%28needles%29-is-here[here]
