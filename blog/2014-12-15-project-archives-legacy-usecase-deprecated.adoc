@@ -1,0 +1,16 @@
+= Project Archives - External Build has been deprecated and removed
+:page-layout: blog
+:page-author: rstryker
+:page-tags: [archives]
+
+A legacy usecase involving using our internal project archives descriptor file to build and package your project from outside eclipse (specifically, inside Ant) has been deprecated, and, in the next year's Mars release, will not be present at all.  This usecase was quite complicated for users, and while we suspect that there are almost no users of this usecase, it's still important to publicly alert anyone who may have been using this feature. 
+
+The feature in question involved taking our custom internal descriptor file, named .packages, which is created in your workspace when using the project archives features to zip and package your projects. With this descriptor in hand, a user would have had to craft a custom ant build.xml file and manually add several JBoss Tools jars, as well as five or six Eclipse jars, to the ant classpath. The user would also need to mock out several elements of eclipse's resource model, specifically, mapping full filesystem paths for what the descriptor file uses only a project name for. 
+
+The end result of this action was that if the user added these handfulls of jars to their classpath, made an ant script, referenced our internal descriptor file, mapped several filesystem paths and other properties, and made use of a custom ant task we had provided, they would be able to package an eclipse project using our Project Archives descriptor without the involvement of a full eclipse installation. 
+
+This feature was extremely complicated to use, and was tied to what we consider a legacy build technology. Several advancements have been made to build systems in general, and Ant, while still a very useful utility, is not a top-level supported usecase for JBoss Tools. 
+
+We apologize for any inconvenience. 
+Rob Stryker
+
