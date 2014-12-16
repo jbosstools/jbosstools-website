@@ -19,14 +19,13 @@ The instructions here demonstrate how to complete the following tasks:
 
 This article guides you through each of these configuration requirements and must be completed in the order given.
 
-[[Create]]
 == Prequisite: Configure the IDE for an Available Server
 Part of the instructions in this article show you how to deploy your HTML5 web application to a server. The IDE must be configured for any servers to which you want to deploy applications, including the location and type of application server and any custom configuration or management settings. You can complete this configuration at the time of deploying the application but in this article it is assumed that you have completed the configuration beforehand. 
 
 For information on configuring a local runtime server and deploying applications to it, see   
 link:servers_deploytolocalserver.html[Deploy Apps to a Local Server].
 
-[[Build_and_deploy]]
+[[Create]]
 == 1. Create an HTML5 Project
 The `HTML5 Project` wizard generates a sample project based on a Maven archetype and the project and application identifiers provided by you. The Maven archetype version is indicated in the `Description` field of the wizard first page and you can change the version, and therefore the project look and dependencies, by selected either an enterprise or non-enterprise target runtime within the wizard.
 
@@ -38,7 +37,7 @@ To create a HTML5 project, complete the following steps:
 * In the `Project name` field, type a name for the project.
 * In the `Package` field, type an alpha-numeric package for the project.
 . Click `Finish`.
-. When prompted with `HTML5 Project` Project is now ready, click `Finish`.
+. When prompted with \'HTML5 Project' Project is now ready, click `Finish`.
 
 The project is generated and listed in the `Project Explorer` view.
 
@@ -93,7 +92,7 @@ With LiveReload enabled for BrowserSim, you can make changes to your application
 
 To change your application, complete the following steps:
 
-. In the `Project Explorer` view,  expand `_{project name}_` > `src` > `main`.
+. In the `Project Explorer` view,  expand `_{project name}_` > `src` > `main` > `webapp`.
 . Double-click `index.html` to open it for editing with the `JBoss Tools HTML Editor`.
 . Replace the code in `index.html` `<body>` tag with the following lines:
 +
@@ -101,7 +100,7 @@ To change your application, complete the following steps:
 ----
 <body>
     <section>
-        <h1>Welcome to Your First Mobile Web Application</h1>
+        <h3>My Quickstart</h3>
     </section>
 </body>
 ----
