@@ -60,15 +60,26 @@ devstudio:
   url_path_fragment: devstudio
   streams:
     luna:
-      8.0.0.GA:
+      8.0.1.GA:
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         marketplace_url: http://marketplace.eclipse.org/node/1616973
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
+        release_date: 2014-12-15
+        supported_devstudio_is_version: 8.0.0.Beta2
+        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/8.0/html/Release_Notes_8.0.0/index.html
+        blog_announcement_url: /blog/2014-12-15-GA-for-luna.html
+        zips:
+          - name: Update site (including sources) bundle of JBoss Developer Studio
+            file_size: 516MB
+            url: https://devstudio.redhat.com/static/updates/8.0.0/jboss-devstudio-8.0.1.GA-v20141215-0057-B362-updatesite-core.zip
+            #md5_url: n/a
+      8.0.0.GA:
+        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         release_date: 2014-10-21
         supported_devstudio_is_version: 8.0.0.Beta1
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/8.0/html/Release_Notes_8.0.0/index.html
-        # TODO link to real blog here
         blog_announcement_url: /blog/2014-10-22-GA-for-luna.html
         installers: 
           - name: Stand-alone Installer
@@ -323,7 +334,6 @@ jbt_core:
         #archived: true
         release_date: 2014-12-15
         supported_jbt_is_version: 4.2.0.Beta2
-        # TODO link to real blog here
         blog_announcement_url: /blog/2014-12-15-GA-for-luna.html
         documentation_url: http://docs.jboss.org/tools/
         zips:
@@ -349,7 +359,6 @@ jbt_core:
         #archived: true
         release_date: 2014-10-20
         supported_jbt_is_version: 4.2.0.Beta1
-        # TODO link to real blog here
         blog_announcement_url: /blog/2014-10-22-GA-for-luna.html
         documentation_url: http://docs.jboss.org/tools/
         zips:
