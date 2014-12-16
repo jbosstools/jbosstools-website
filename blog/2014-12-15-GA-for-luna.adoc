@@ -9,16 +9,16 @@ image::images/jbosstools-jbdevstudio-blog-header.png[]
 
 == Installation
 
-JBoss Developer Studio comes with everything pre-bundled in its installer. Simply link:/downloads/devstudio/luna/8.0.1.GA.html[download it] and install it like this:
+=== JBoss Developer Studio 8.0.1
 
-    java -jar jboss-devstudio-{version}-installer-{standalone|eap}.jar
+This is an updatesite-only update. If you have JBoss Developer Studio 8.0.0.GA already installed, just run:
 
-JBoss Tools or JBoss Developer Studio Bring-Your-Own-Eclipse (BYOE) requires a bit more:
+    Help > Check for updates
+    
+=== JBoss Tools 4.2.1 and JBoss Developer Studio Bring-Your-Own-Eclipse (BYOE)
 
-This release requires at least Eclipse 4.4 (Luna) but we recommend using the
-http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/lunasr1[Eclipse Luna SR1 Java EE Bundle] since then you get most of the dependencies preinstalled.
-
-Once you have installed Eclipse, you can either find us on Eclipse Marketplace under "JBoss Tools (Luna)" or "JBoss Developer Studio (Luna)".
+JBoss Tools and JBoss Developer Studio Bring-Your-Own-Eclipse (BYOE) require at least Eclipse 4.4 (Luna) but we recommend using the
+http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/lunasr1[Eclipse Luna SR1 Java EE Bundle] since then you get most of the dependencies preinstalled. Once you have installed Eclipse, you can find us on Eclipse Marketplace under "JBoss Tools (Luna)" or "JBoss Developer Studio (Luna)".
 
 For JBoss Tools you can also use our update site directly if you are up for it.
 
