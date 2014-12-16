@@ -1,7 +1,7 @@
 = JBoss Tools 4.2.1 and Red Hat JBoss Developer Studio 8.0.1
 :page-layout: blog
 :page-author: akazakov
-:page-tags: [release, jbosstools, devstudio]
+:page-tags: [release, jbosstools, devstudio, jbosscentral]
 
 Maintenance update of link:/downloads/jbosstools/luna/4.2.1.Final.html[JBoss Tools 4.2.1] and link:/downloads/devstudio/luna/8.0.1.GA.html[Red Hat JBoss Developer Studio 8.0.1] for Eclipse Luna is now available.
 
