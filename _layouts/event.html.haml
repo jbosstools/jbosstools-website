@@ -7,6 +7,10 @@ tab: community
     .title
       %h3 
         %a{:href=>page.event_url} #{page.title}
+      %a{:href=>"https://github.com/jbosstools/jbosstools-website/edit/master#{page.relative_source_path}"}
+        %i.icon-edit
+      %a{:href=>"https://github.com/jbosstools/jbosstools-website/commits/master#{page.relative_source_path}"}
+        %i.icon-github
       %p.info
         #{page.event_date}, #{page.location}
     .content

@@ -29,6 +29,10 @@ tab: blog
               %strong #{site.team[page.author].title}
             on 
             %strong #{page.date.strftime( '%b %d, %Y' )}.
+            %a{:href=>"https://github.com/jbosstools/jbosstools-website/edit/master#{page.relative_source_path}"}
+              %i.icon-edit
+            %a{:href=>"https://github.com/jbosstools/jbosstools-website/commits/master#{page.relative_source_path}"}
+              %i.icon-github
             %p
               - if(page.tags != nil && !page.tags.empty?)
                 - page.tags.each do |tag|
@@ -41,6 +45,7 @@ tab: blog
                 %i.icon-comments
                 =page.disqus_comments_link 
                 #{page.disqus_comments_count} 
+              
          
       .body
         ~content
