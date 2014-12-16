@@ -30,7 +30,7 @@ This maintenance release includes mostly bug fixes but there are also a few new 
 
 == BrowserSim and CordovaSim skins for iPhone 6 and 6 Plus
 
-Brand new IPhone 6 / 6 plus skins is now available in BrowserSim and CordovaSim
+Brand new IPhone 6 / 6 plus skins are now available in BrowserSim and CordovaSim
 
 image::images/iphone6.png[]
 
@@ -51,7 +51,7 @@ image::images/arquilliannonstatic.png[]
 == CDI auto enablement for Java EE 7 projects
 
 CDI (Contexts and Dependency Injection) support is now enabled automatically for Eclipse Web Tools faceted projects if they have any Java EE 7 facet.
-For example if you create a project via New Dynamic Web Project Wizard and selected Web facet v.3.1 you don't need to enable CDI support in project properties or to install CDI facet. CDI Tools will do it automatically.
+For example if you create a project via New Dynamic Web Project Wizard and select Web facet v.3.1 you don't need to enable CDI support in project properties or to install CDI facet. CDI Tools will do it automatically.
 
 == Updated Forge 2 Runtime 	
 
