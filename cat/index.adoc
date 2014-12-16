@@ -90,4 +90,4 @@ video::99072427[vimeo]
 * 2014/10/22 -- JBoss Tools 4.2.0.Final released - announced http://lists.jboss.org/pipermail/jbosstools-cat/2014-October/000015.html[here]
 
 * 2014/11/24 -- JBoss Tools 4.2.1.CR1 testing starts - announced http://lists.jboss.org/pipermail/jbosstools-cat/2014-November/000016.html[here]
-* 2014/12/15 -- JBoss Tools 4.2.1.Final release
+* 2014/12/15 -- JBoss Tools 4.2.1.Final release - announced http://lists.jboss.org/pipermail/jbosstools-cat/2014-December/000017.html[here]
