@@ -30,12 +30,12 @@ tab: blog
             on 
             %strong #{page.date.strftime( '%b %d, %Y' )}.
             %p
-              - if(page.tags != null && !page.tags.empty?) 
+              - if(page.tags != nil && !page.tags.empty?)
                 - page.tags.each do |tag|
-                  - if tag.kind_of? String 
+                  - if (tag != nil && tag.kind_of?(String))
                     -# edge case, when the current post is a draft and uses a new tag
                     %a.label.label-info #{tag}
-                  - else
+                  - elsif !tag.nil?
                     %a.label.label-info{:href=>relative("#{tag.primary_page.url}")} #{tag}
               %span.comments
                 %i.icon-comments
