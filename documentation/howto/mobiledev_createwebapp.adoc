@@ -37,7 +37,7 @@ To create a HTML5 project, complete the following steps:
 * In the `Project name` field, type a name for the project.
 * In the `Package` field, type an alpha-numeric package for the project.
 . Click `Finish`.
-. When prompted with \'HTML5 Project' Project is now ready, click `Finish`.
+. When prompted with 'HTML5 Project' Project is now ready, click `Finish`.
 
 The project is generated and listed in the `Project Explorer` view.
 
