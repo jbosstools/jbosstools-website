@@ -5,42 +5,43 @@
 :experimental:
 :imagesdir: ./images
 
-OpenShift Tools enables you to deploy existing workspace projects to OpenShift Online using the `OpenShift Application` wizard. The wizard modifies the project as necessary for use with OpenShift Online and triggers the build and deployment of the application on OpenShift Online. The wizard can also generate a server adapter for easy future publishing of changes to the project.        
+OpenShift Tools enables you to deploy existing workspace projects to OpenShift Online using the `OpenShift Application` wizard. The wizard creates a templated OpenShift application based on your cartridge choices, modifies the project as necessary for use with OpenShift Online and commits the project code to the local application Git repository ready for publishing. The wizard can also generate a server adapter for easy publishing of the application both for first deployment and for future changes.
 
 The instructions here demonstrate how to complete the following tasks:
 
-. <<deployworkspaceproject,Deploy a Workspace Project to OpenShift Online>>
+. <<prepproject,Prepare a Workspace Project for OpenShift Online Deployment>>
+. <<deployapp,Deploy the OpenShift Online Application>>
 . <<viewapp,View the Deployed OpenShift Online Application>>
 
+[[prepproject]]
+== Prepare a Workspace Project for OpenShift Online Deployment
+In preparing workspace projects for OpenShift Online, the `OpenShift Application` wizard merges the existing project content with the key metadata files from a new OpenShift application and connects the project to the OpenShift application Git repository. 
 
-[[deployworkspaceproject]]
-== Deploy a Workspace Project to OpenShift Online
-In deploying workspace projects to OpenShift Online, the `OpenShift Application` wizard merges the existing project content with the key metadata files from a new OpenShift application and connects the project to the OpenShift application Git repository. After completing these modifications, the wizard commits and pushes the changes to the upstream OpenShift application Git repository, triggering building and deploying of the application on OpenShift Online.
+To prepare an existing workspace project for OpenShift Online, complete the following steps:
 
-To deploy an existing workspace project to OpenShift Online, complete the following steps:
-
-. In `JBoss Central`, under `Start from scratch`, click `OpenShift Application`.
+. In the `Project Explorer`, right-click `_{project name}_` and click menu:Configure[New/Import OpenShift Application].
 . Complete the fields about your OpenShift Online account as follows:
 ** In the `Connection` list, select the connection.
 ** In the `Password` field, type your OpenShift Online account password.
 . Click `Next`.
 . Complete the fields about the type of OpenShift application you want to create as follows:
 ** Ensure `Create a new OpenShift application` is selected.
-** Expand `Basic Cartridges` and select the core cartridge to match the application type; for example, for applications with Java-based server-side functionality select `jbossas-7` or `jbosseap-6`. 
+** Expand `Basic Cartridges` and select the core cartridge to match the application type; for example, for applications with Java-based server-side functionality select `jbossas-7`, `jboss-wildfly-8`, or `jbosseap-6`.
 . Click `Next`.
 . Complete the fields about your OpenShift application as follows:
 ** Ensure that the 'Domain' list displays the domain in which you want to host your application.
-** In the `Name` field, type a name for your application.
-** In the `Gear profile` field, select the gear size that you want for your application.
+** Ensure the `Name` field contains a valid alphanumeric name for your application.
+** In the `Gear profile` field, select the gear size that you want for your application or leave blank to use the default gear profile.
+** Select the `Enable Scaling` check box to make your application scalable.
 . Click `Next`.
 . Complete the fields about the corresponding workspace project as follows:
-** Clear the `Create a new project` check box.
-** In the `Use existing project` field, type the name of your project. Alternatively, click `Browse` to select the project from your workspace and in the `Select Existing Project` window, select the project that you want to deploy on OpenShift and click `OK`.  
+** Ensure the `Create a new project` check box is clear.
+** Ensure the `Use existing project` field lists the workspace project that you want to deploy on OpenShift.  
 ** Ensure the `Create and set up a server adapter for easy publishing` check box is selected.
 +
 .Existing Workspace Project Selected for the New OpenShift Application
 image::openshift_select-proj.png[Selecting an Existing Workspace Project]
-+ 
++
 . Click `Next`.
 . Ensure the location in the `Git Clone Destination` field exists and corresponds to where you want to make a local git repository for the project source code.
 . Ensure a public SSH key is uploaded to OpenShift Online and private key location specified in the IDE preferences by clicking `SSH Keys` wizard and reviewing the information.
@@ -49,27 +50,34 @@ image::openshift_select-proj.png[Selecting an Existing Workspace Project]
 
 If you are prompted that the authenticity of the host cannot be established and asked whether you want to continue connecting, ensure that the host name matches that of your application and domain and click `Yes`.
 
-The `Console` view becomes the view in focus showing the application publication progress. Once the application has been published, the following message displays in the `Console` view
+[[deployapp]]
+== 2. Deploy the OpenShift Online Application
+When the workspace project is prepared, you must republish the OpenShift Online application to push the project source code to your waiting OpenShift Online application and trigger a build and redeployment of the application. Republishing can be achieved using the server adapter created by the `OpenShift Application` wizard and completes the deployment of the workspace project to OpenShift Online.
 
+To deploy the OpenShift Online application, complete the following steps:
+
+. In the `Servers` view, right-click `_{application name}_ at OpenShift` and click `Full Publish`.
+. When prompted if you want to publish the committed project changes to OpenShift, click `Yes`.
+
+The `Console` view becomes the view in focus showing the application publication progress. After the workspace project is published at OpenShift Online, the following message displays in the `Console` view:
 [source, html]
 ----
-Deployment completed with status: success 
+Deployment completed with status: success
 ----
-and your workspace project is deployed at OpenShift Online.
 
 [[viewapp]]
-== View the Deployed OpenShift Online Application
+== 3. View the Deployed OpenShift Online Application
 After the application is published, you can view the live version at the OpenShift Online application URL.
 
 To view the OpenShift Online application in a web browser, complete the following steps:
 
 . In the `OpenShift Explorer` view, expand the connection and the domain.
-. Right-click the application and click menu:Show In[Web Browser].
+. Right-click `_{application name}_` and click menu:Show In[Web Browser].
 
 Your deployed OpenShift Online application is displayed in the IDE default web browser.
 
 == Did You Know?
-* You can find the URL of your OpenShift Online application by right-clicking the application name in the `OpenShift Explorer` view, and then clicking `Details`.
-* You can set the preference for which type of web browser the IDE opens by default. Click menu:Window[Web Browser] and then click the type of web browser. 
-* If your project is large, it may require more time than the default set by the IDE to push changes to the application OpenShift Online Git repository. You can increase the Git timeout by clicking menu:Windows[Preferences][JBoss Tools][OpenShift] and changing the `OpenShift request timeout (in seconds)` value. 
-
+* You can find the URL of your OpenShift Online application from the `OpenShift Explorer` view by right-clicking `_{application name}_` and clicking `Details` or from the `Servers` view by right-clicking `_{application name}_ on OpenShift` and clicking menu:OpenShift[Details].
+* You can set the preference for which type of web browser the IDE opens by default. Click menu:Window[Web Browser] and click the type of web browser.
+* If your project is large, it may require more time than the default set by the IDE to push changes to the application OpenShift Online Git repository. You can increase the Git timeout by clicking menu:Windows[Preferences > JBoss Tools > OpenShift] and changing the `OpenShift request timeout (in seconds)` value.
+* You can also access the same wizard for deploying an existing workspace project to OpenShift Online from JBoss Central by click `OpenShift Application` under `Start from scratch`.
