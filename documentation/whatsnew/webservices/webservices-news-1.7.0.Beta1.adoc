@@ -35,10 +35,9 @@ related_jira::JBIDE-16824[]
 
 The JAX-RS validator reports a problem if the user-defined `@NameBinding` annotation(s) on a *Filter* or *Interceptor* is(are) not bound to a *Resource*, a *Resource Method* or the *Application* (and vice-versa), as the JAX-RS Specification states:
 
-____
-
+[quote]
 A filter or interceptor class can be decorated with multiple binding annotations. In this case, in accordance with the semantics described in CDI, all those annotations must be present in the resource class or method for the binding to be established. 
-____
+
 
 Also, the `@PreMatching` annotation is only allowed on implementations of `javax.ws.rs.container.ContainerRequestFilter` (in which case, the user-defined Container Request Filters are invoked before the Resource method is matched). The JAX-RS Validator will report a problem if this annotation is used on any other type of JAX-RS element.
 
