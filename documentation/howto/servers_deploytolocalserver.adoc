@@ -20,7 +20,7 @@ Instructions are provided here for completing the following tasks:
 
 [[Configure]]
 == 1. Configure the IDE for a Local Runtime Server
-Runtime Detection searches a given local system path to locate certain types of runtime servers. For any servers found, Runtime Detection automatically generates both a default server runtime environment and a default server adapter. These items can be used as is for immediate application deployment or customized to meet your requirements.
+Runtime Detection searches a given local system path to locate certain types of runtime servers. For any servers found, Runtime Detection automatically generates both a default server runtime environment and a default server adapter. These items can be used as they are for immediate application deployment or customized to meet your requirements.
 
 To configure the IDE for a local runtime server, complete the following steps:
 
@@ -34,7 +34,7 @@ A default runtime environment and server adapter are generated for the server, w
 
 [[Deploy]]
 == 2. Deploy an Application
-When you have configured the IDE for the server, you can deploy applications to the server using the server adapter. The server adapter enables runtime communication between the server and IDE for easy deployment of applications and server management.
+When you have configured the IDE for the server, you can deploy applications to the server from the IDE using the server adapter. The server adapter enables runtime communication between the server and IDE for easy deployment of applications and server management.
 
 To deploy an application to the server, complete the following steps: 
 
@@ -46,19 +46,19 @@ The `Console` view shows output from the server starting and deploying the appli
 
 [[Change_and_Publish]]
 == 3. Change and Republish the Application
-By default, the server adapter configures the server for automatic publishing when changed resources are saved. This automatic publishing action applies to application resources that can be interchanged in the dedicated deployment location of the server without requiring the application to stop and restart, such as *.html* files. For other changed resources, such as *.java* files, you need to republish the application such that it forces a rebuild of the application. 
+By default, the server adapter configures the server for automatic publishing when changed resources are saved. This automatic publishing action applies to application resources that can be interchanged in the dedicated deployment location of the server without requiring the application to stop and restart, such as `.html` files. For other changed resources, such as `.java` files, you need to republish the application such that it forces a rebuild of the application. 
 
 To republish the application to the server after changes that cannot be automatically published, complete the following steps:
 
-. In the `Servers` view, expand the server adapter to list the projects allocated to the server.
-. Right-click `_{project name}_` and click `Full Publish`.
+. In the `Servers` view, expand the server adapter to list the applications allocated to the server.
+. Right-click `_{application name}_` and click `Full Publish`.
 
 The `Console` view shows output from the server replacing the deploying application. Unless LiveReload is enabled in the web browser, you must manually reload the web browser to see the changed application.
 
 == Did You Know?
-* You can configure the server by right-clicking the `Servers` view and selecting menu:New[Server] or by clicking `Manually define a new server` in the `Run on Server` wizard.
-* Paths previously searched by Runtime Detection can be automatically searched on every workspace startup. Click menu:Window[Preferences > JBoss Tools > JBoss Runtime Detection] and from the `Paths` table select the check boxes of the appropriate paths. Click `Apply` and click `OK` to close the `Preferences` window.
-* You can customize the server adapter and server runtime environment with the Server Editor. In the `Servers` view, double-click the server to open the Server Editor.
+* You can also configure servers for use with the IDE when deploying applications by clicking `Manually define a new server` in the `Run on Server` wizard.
+* Paths previously searched by Runtime Detection can be automatically searched on every workspace start. Click menu:Window[Preferences > JBoss Tools > JBoss Runtime Detection] and from the `Paths` table select the check boxes of the appropriate paths. Click `Apply` and click `OK` to close the `Preferences` window.
+* You can customize the server adapter and server runtime environment with the `Server Editor`. In the `Servers` view, double-click the server adapter to open the `Server Editor`.
 * You can initiate download and installation of runtime servers from the IDE. Click menu:Window[Preferences > JBoss Tools > JBoss Runtime Detection]. Click `Download` and from the table of runtime servers select the one to install and click `Next`. Follow the on-screen instructions to complete the download and installation process.
 
 
