@@ -1,0 +1,14 @@
+= Forge Tools 4.2.2.Final What's New
+:page-layout: whatsnew
+:page-component_id: forge
+:page-component_version: 4.2.2.Final
+:page-product_id: jbt_core 
+:page-product_version: 4.2.2.Final
+
+== Forge 2 Runtime 	
+
+The included Forge 2 runtime is 2.13.0.Final. See the release notes link:http://forge.jboss.org/news/2014-12-15/forge-2.13.0.final-%28flange%29-is-here[here]
+
+== Command window is now focused on Linux environments
+
+When the command window is invoked (Ctrl + 4), the command window was not being focused when run in Linux.
