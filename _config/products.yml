@@ -77,7 +77,7 @@ devstudio:
       8.0.0.GA:
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         release_date: 2014-10-21
-        supported_devstudio_is_version: 8.0.0.Beta1
+        supported_devstudio_is_version: 8.0.0.Beta2
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/8.0/html/Release_Notes_8.0.0/index.html
         blog_announcement_url: /blog/2014-10-22-GA-for-luna.html
@@ -270,6 +270,17 @@ devstudio_is:
   url_path_fragment: devstudio_is
   streams:
     luna:
+      8.0.0.Beta2:
+        blog_announcement_url: /blog/2015-01-12-JBTIS-Beta2-for-luna.html
+        #release_notes_url: https://devstudio.jboss.com/updates/8.0/integration-stack/release-notes/Release_Notes_8.0.0.html
+        release_date: 2015-01-12
+        required_devstudio_version: 8.0.1.GA
+        update_site_url: https://devstudio.jboss.com/updates/8.0-development/integration-stack/
+        zips:
+          - name: Update site bundle of JBoss Developer Studio Integration Stack
+            file_size: 294MB
+            url: https://devstudio.jboss.com/updates/8.0.0/jbdevstudio-integration-stack-updatesite-8.0.0.Beta2a.zip
+            md5_url: https://devstudio.jboss.com/updates/8.0.0/jbdevstudio-integration-stack-updatesite-8.0.0.Beta2a.zip.MD5
       8.0.0.Beta1:
         blog_announcement_url: /blog/2014-11-13-JBTIS-Beta1-for-luna.html
         #release_notes_url: https://devstudio.jboss.com/updates/8.0/integration-stack/release-notes/Release_Notes_8.0.0.html
@@ -362,7 +373,7 @@ jbt_core:
       4.2.0.Final:
         #archived: true
         release_date: 2014-10-20
-        supported_jbt_is_version: 4.2.0.Beta1
+        supported_jbt_is_version: 4.2.0.Beta2
         blog_announcement_url: /blog/2014-10-22-GA-for-luna.html
         documentation_url: http://docs.jboss.org/tools/
         zips:
@@ -917,6 +928,17 @@ jbt_is:
   url_path_fragment: jbosstools_is
   streams:
     luna:
+      4.2.0.Beta2:
+        blog_announcement_url: /blog/2015-01-12-JBTIS-Beta2-for-luna.html
+        #release_notes_url: https://devstudio.jboss.com/updates/8.0/integration-stack/release-notes/Release_Notes_8.0.0.html
+        release_date: 2015-01-12
+        required_jbt_core_version: 4.2.1.Final
+        update_site_url: http://download.jboss.org/jbosstools/updates/development/luna/integration-stack/ 
+        zips:
+          - name: Update site bundle of JBoss Tools Integration Stack
+            file_size: 214MB
+            url: http://download.jboss.org/jbosstools/updates/development/luna/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.2.0.Beta2a.zip
+            md5_url: http://download.jboss.org/jbosstools/updates/development/luna/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.2.0.Beta2a.zip.MD5
       4.2.0.Beta1:
         blog_announcement_url: /blog/2014-11-13-JBTIS-Beta1-for-luna.html
         #release_notes_url: https://devstudio.jboss.com/updates/8.0/integration-stack/release-notes/Release_Notes_8.0.0.html
