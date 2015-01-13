@@ -271,7 +271,7 @@ devstudio_is:
   streams:
     luna:
       8.0.0.Beta2:
-        blog_announcement_url: /blog/2015-01-12-JBTIS-Beta2-for-luna.html
+        blog_announcement_url: /blog/2015-01-13-JBTIS-Beta2-for-luna.html
         #release_notes_url: https://devstudio.jboss.com/updates/8.0/integration-stack/release-notes/Release_Notes_8.0.0.html
         release_date: 2015-01-12
         required_devstudio_version: 8.0.1.GA
@@ -929,7 +929,7 @@ jbt_is:
   streams:
     luna:
       4.2.0.Beta2:
-        blog_announcement_url: /blog/2015-01-12-JBTIS-Beta2-for-luna.html
+        blog_announcement_url: /blog/2015-01-13-JBTIS-Beta2-for-luna.html
         #release_notes_url: https://devstudio.jboss.com/updates/8.0/integration-stack/release-notes/Release_Notes_8.0.0.html
         release_date: 2015-01-12
         required_jbt_core_version: 4.2.1.Final
