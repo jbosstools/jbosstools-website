@@ -293,6 +293,10 @@ aside section {
   }*/
 }
 
+.sect1 .paragraph > .title {
+  font-weight: bold;
+}
+
 #call_for_participation {
   header {
     margin-bottom: 2em;
@@ -1426,4 +1430,6 @@ $scrollmargin: 40px;
     }
   }
 }
+
+
 

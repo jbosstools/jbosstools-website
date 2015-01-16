@@ -73,3 +73,33 @@ To specify an existing private key file, complete the following steps:
 * You can remove an existing public SSH key from your OpenShift Online account with the `Manage SSH Keys` wizard. Note that this only disassociates keys with your OpenShift account. The files associated with a removed SSH key pair still exist in the local location where they were generated and the private key is still set in the IDE preferences.
 * If you are using the OpenShift Online web interface or RHC client tools to manage SSH keys simultaneously with OpenShift Tools, the information specified by OpenShift Tools about keys may be out of sync. You can resync the information in the `Manage SSH Keys` wizard with the `Refresh` button.
 * You can change the default location used by the IDE to store newly created SSH keys. Click menu:Window[Preferences > General > Network Connections > SSH2]. In the `General` tab, in the `SSH2 home` field type the new location.
+
+== Troubleshoot SSH Key Issues
+
+=== “You have no SSH public keys in your OpenShift account”
+
+.Error Message
+`You have no SSH public keys in your OpenShift account user@example.com yet, please add your key(s) or create new one(s).`
+
+.No SSH Keys Window Displaying the Error Message
+image::openshift_error-nosshkey.png[No SSH Key Window Displaying the Error Message] 
+
+.Issue
+There are no SSH public keys assigned to your OpenShift account. After you have connected to OpenShift Online from the IDE, the `No SSH Keys` window appears informing you that there are no SSH public keys associated with your account. 
+
+.Resolution
+In the `No SSH Keys` window, click `Add Existing` or `New` and add an SSH public key to your OpenShift Online account as detailed in Option A, <<createnewsshkeypair,Create and Use a New SSH Key Pair>> and Option B, <<existingsshkeypair,Use an Existing SSH Key Pair>> above.
+
+=== “Please make sure that you added your private key to the ssh preferences.”
+
+.Error Message
+`Could not clone the repository. Authentication failed. Please make sure that you added your private key to the ssh preferences.`
+
+.Problem Occured Window Displaying the Error Message
+image::openshift_error-noprivatekey.png[Problem Occured Window Displaying the Error Message] 
+
+.Issue
+An SSH public key is associated with your OpenShift Online account but the IDE cannot locate the companion  private key. Consequently, the IDE cannot complete actions for the OpenShift applications associated with your account. This error may be encountered when creating new OpenShift applications or importing existing OpenShift applications into the IDE. 
+
+.Resolution
+Click `OK` to close the `Problem Occurred` window. The `OpenShift Application` wizard opens. Click the `SSH2 Preferences` link to add the private key as detailed in Option C, <<specifyexistingprivatekeylocation,Specify an Existing Private Key Location>> above.
