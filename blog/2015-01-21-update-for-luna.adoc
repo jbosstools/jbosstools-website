@@ -1,9 +1,11 @@
-= JBoss Tools 4.2.2 and Red Hat JBoss Developer Studio 8.0.2
+= Security and bugfix release for Luna
 :page-layout: blog
 :page-author: akazakov
 :page-tags: [release, jbosstools, devstudio, jbosscentral]
 
 A new maintenance update of link:/downloads/jbosstools/luna/4.2.2.Final.html[JBoss Tools 4.2.2] and link:/downloads/devstudio/luna/8.0.2.GA.html[Red Hat JBoss Developer Studio 8.0.2] for Eclipse Luna has been released.
+
+It is recommended everyone, especially those using git install this update!
 
 image::images/jbosstools-jbdevstudio-blog-header.png[]
 
@@ -11,7 +13,7 @@ image::images/jbosstools-jbdevstudio-blog-header.png[]
 
 === JBoss Developer Studio 8.0.2
 
-This is an updatesite-only update. If you have JBoss Developer Studio 8.0.0.GA or 8.0.1.GA already installed, just run:
+This is an updatesite-only update. If you have JBoss Tools 4.2.x or JBoss Developer Studio 8.0.x already installed, just run:
 
     Help > Check for updates
     
@@ -26,13 +28,19 @@ For JBoss Tools you can also use our update site directly if you are up for it.
 
 == What is new ?
 
-This is a second JBoss Developer Studio/JBoss Tools maintenance update for Eclipse Luna with even more bug fixes.
+This is a JBoss Developer Studio/JBoss Tools maintenance update for Eclipse Luna with critical security and performance bug fixes.
 
 == Eclipse Luna SR1a Git Security Release
 
 JBoss Developer Studio 8.0.2 includes Eclipse Luna SR1a Git Security Release which has a fix for a serious security vulnerability in JGit client.
 You can read more link:https://mmilinkov.wordpress.com/2015/01/12/eclipse-ships-luna-sr1a-git-security-release/[here].
 
+== JBoss Central Software page performance fixes
+
+JBoss Central software page had a performance regression that caused the page to take several pages to load where it should only be a few miliseconds. That is fixed.
+
+And we fixed it so Early Access features (like integration stack) can now contribute wizards to central when users have enabled Early access.
+   
 == Updated Forge 2 Runtime
 
 The included Forge 2 runtime is now 2.13.0.Final. See the release notes link:http://forge.jboss.org/news/2014-12-15/forge-2.13.0.final-%28flange%29-is-here[here].
