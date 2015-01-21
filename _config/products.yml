@@ -342,10 +342,35 @@ jbt_core:
   url_path_fragment: jbosstools
   streams:
     luna:
-      4.2.1.Final:
+      4.2.2.Final:
         update_site_url: http://download.jboss.org/jbosstools/updates/stable/luna/
         marketplace_url: http://marketplace.eclipse.org/node/1617241
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1617241
+        #archived: true
+        release_date: 2015-01-21
+        supported_jbt_is_version: 4.2.0.Beta2
+        # TODO blog_announcement_url: /blog/2014-12-15-GA-for-luna.html
+        documentation_url: http://docs.jboss.org/tools/
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 519MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.x/jbosstools-4.2.2.Final_2015-01-13_13-28-49-B326-updatesite-core.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.x/jbosstools-4.2.2.Final_2015-01-13_13-28-49-B326-updatesite-core.zip.MD5
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 36.5MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.x/jbosstools-4.2.2.Final_2015-01-13_13-28-49-B326-src.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.x/jbosstools-4.2.2.Final_2015-01-13_13-28-49-B326-src.zip.MD5
+          - name: Update site (including sources) bundle of all Hibernate Tools
+            file_size: 105MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.x/jbosstools-4.2.1.Final_2014-12-14_19-57-05-B217-updatesite-hibernatetools.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.x/jbosstools-4.2.1.Final_2014-12-14_19-57-05-B217-updatesite-hibernatetools.zip.MD5
+          - name: Stand-alone BrowserSim
+            file_size: 15.7MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.x/jbosstools-4.2.2.Final-browsersim-standalone.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.x/jbosstools-4.2.2.Final-browsersim-standalone.zip.MD5
+          - name: Release Notes
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.x/zz_Release_Notes_4.2.2.Final.readme.html
+      4.2.1.Final:
         #archived: true
         release_date: 2014-12-15
         supported_jbt_is_version: 4.2.0.Beta2
