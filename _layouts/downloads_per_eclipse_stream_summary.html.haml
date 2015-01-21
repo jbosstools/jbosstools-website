@@ -7,84 +7,120 @@ tab: downloads
     %h1 Downloads
     %p Latest versions of #{site.products[page.product_id].name} for #{page.eclipse_version.full_name}
       
-- count = 1
-- downloads = Hash.new
-- for build_type in [:stable, :development] do
-  - product_version = page.build_versions[build_type]
-  - if !product_version.nil?
-    - count += 1
-- spanValue = "span" << (12/count).to_s
-
 .row-fluid.section-wrapper
-  - for build_type in [:stable, :development] do
-    - product_info = page.build_versions[build_type]
-    - if !product_info.nil?
-      - download_page = site.download_pages[page.product_id][product_info.version]
-      %section{:class=>"#{spanValue} well post-bg"}
-        %header
-          %h3 
-            %a{:href => relative(download_page.output_path)} #{site.products[page.product_id].name} #{product_info.version}
-            - unless build_type.nil?
-              %span{:class=>"label label_#{build_type}"}
-                #{site.labels[build_type]}
-          
-        .item.justify
-          %strong #{site.products[page.product_id].name} #{product_info.version}
-          is the latest  
-          %strong #{build_type}
-          version available 
-          for&nbsp;
-          %strong> #{page.eclipse_version.full_name}
-          \.
-          
-        %footer
-          %a.btn.btn-primary{:href => relative(download_page.output_path)} 
-            %i.icon-download
-            Download 
+  -# stable version
+  - build_type = :stable
+  - product_info = page.build_versions[build_type]
+  - if !product_info.nil?
+    - download_page = site.download_pages[page.product_id][product_info.version]
+    %section{:class=>"span4 well post-bg"}
+      %header
+        %h3 
+          %a{:href => relative(download_page.output_path)} #{site.products[page.product_id].name} #{product_info.version}
+          - unless build_type.nil?
+            %span{:class=>"label label_#{build_type}"}
+              #{site.labels[build_type]}
         
-  - for build_type in [:nightly] do
-    - product_info = page.build_versions[build_type]
-    - if !product_info.nil?
-      - download_page = site.download_pages[page.product_id][product_info.version]
-      %section{:class=>"#{spanValue} well post-bg"}
-        %header
-          %h3 
-            %a{:href => relative(download_page.output_path)} #{site.products[page.product_id].name} 
-            - unless build_type.nil?
-              %span{:class=>"label label_#{build_type}"}
-                #{site.labels[build_type]}
-            
-        .item.justify
-          Download the latest 
-          %strong nightly build 
-          to test the changes in 
-          %strong #{site.products[page.product_id].name}
-          for&nbsp;
-          %strong> #{page.eclipse_version.full_name}
-          \.
-          
-        %footer
-          %a.btn.btn-primary{:href => relative(download_page.output_path)} 
-            %i.icon-download
-            Download 
-    -else 
-      %section{:class=>"#{spanValue} well post-bg"}
-        %header
-          %h3 
-            %a{:href => relative(download_page.output_path)} #{site.products[page.product_id].name} 
-            - unless build_type.nil?
-              %span{:class=>"label label_#{build_type}"}
-                #{site.labels[build_type]}
-        .item.justify
-          Sorry, there is no 
-          %strong nightly build 
-          of
-          %strong #{site.products[page.product_id].name}
-          for
-          %strong #{page.eclipse_version.full_name}
-          at the moment...
+      .item.justify
+        %strong #{site.products[page.product_id].name} #{product_info.version}
+        is the latest  
+        %strong #{build_type}
+        version available 
+        for&nbsp;
+        %strong> #{page.eclipse_version.full_name}
+        \.
         
-  
+      %footer
+        %a.btn.btn-primary{:href => relative(download_page.output_path)} 
+          %i.icon-download
+          Download 
+  -# development version
+  - build_type = :development
+  - product_info = page.build_versions[build_type]
+  - if !product_info.nil? && product_info.archived == false
+    - download_page = site.download_pages[page.product_id][product_info.version]
+    %section{:class=>"span4 well post-bg"}
+      %header
+        %h3 
+          %a{:href => relative(download_page.output_path)} #{site.products[page.product_id].name} #{product_info.version}
+          - unless build_type.nil?
+            %span{:class=>"label label_#{build_type}"}
+              #{site.labels[build_type]}
+        
+      .item.justify
+        %strong #{site.products[page.product_id].name} #{product_info.version}
+        is the latest  
+        %strong #{build_type}
+        version available 
+        for&nbsp;
+        %strong> #{page.eclipse_version.full_name}
+        \.
+        
+      %footer
+        %a.btn.btn-primary{:href => relative(download_page.output_path)} 
+          %i.icon-download
+          Download 
+  - else
+    %section{:class=>"span4 well post-bg"}
+      %header
+        %h3 
+          #{site.products[page.product_id].name} 
+          - unless build_type.nil?
+            %span{:class=>"label label_#{build_type}"}
+              #{site.labels[build_type]}
+      .item.justify
+        There is no 
+        %strong development build 
+        of
+        %strong #{site.products[page.product_id].name}
+        for
+        %strong #{page.eclipse_version.full_name}
+        at the moment...
+    
+  -# nightly version
+  - build_type = :nightly
+  - product_info = page.build_versions[build_type]
+  - if !product_info.nil?
+    - download_page = site.download_pages[page.product_id][product_info.version]
+    %section{:class=>"span4 well post-bg"}
+      %header
+        %h3 
+          %a{:href => relative(download_page.output_path)} #{site.products[page.product_id].name} 
+          - unless build_type.nil?
+            %span{:class=>"label label_#{build_type}"}
+              #{site.labels[build_type]}
+          
+      .item.justify
+        Download the latest 
+        %strong nightly build 
+        to test the changes in 
+        %strong #{site.products[page.product_id].name}
+        for&nbsp;
+        %strong> #{page.eclipse_version.full_name}
+        \.
+        
+      %footer
+        %a.btn.btn-primary{:href => relative(download_page.output_path)} 
+          %i.icon-download
+          Download 
+  -else 
+    %section{:class=>"span4 well post-bg"}
+      %header
+        %h3 
+          #{site.products[page.product_id].name} 
+          - unless build_type.nil?
+            %span{:class=>"label label_#{build_type}"}
+              #{site.labels[build_type]}
+      .item.justify
+        There is no 
+        %strong nightly build 
+        of
+        %strong #{site.products[page.product_id].name}
+        for
+        %strong #{page.eclipse_version.full_name}
+        at the moment...
+      
+
 .row-fluid
   .span12    
     .center
