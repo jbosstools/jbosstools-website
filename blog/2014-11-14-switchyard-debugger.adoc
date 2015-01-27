@@ -94,11 +94,11 @@ image::images/debugger_4.png[height="400" width="237"]
 
 To open the file in the editor, simple double-click on the switchyard.xml file's icon. When the editor opens, here's what we see:
 
-image::images/debugger_5.png"[height="218" width="400"]
+image::images/debugger_5.png[height="218" width="400"]
 
 The big blue box in the center window is called the canvas. Here's where you can see the graphical representation of the service definitions:
 
-image::images/debugger_6.png"[height="400" width="390"]
+image::images/debugger_6.png[height="400" width="390"]
 
 At this point, we should take a moment to understand the graphical symbols that are used in the service definitions.
 
@@ -118,7 +118,7 @@ The other symbols relate to the SwitchYard-specific service implementations and 
 
 The full range of options supported by SwitchYard is displayed in the Palette view:
 
-image::images/debugger_7.png"[height="400" width="135"]
+image::images/debugger_7.png[height="400" width="135"]
 
 (Yes, it's a long list. You have to scroll to see all the options.)
 
@@ -134,7 +134,7 @@ What happens in the quickstart is a three step process:
 
 How is this all accomplished? Let's look at the RoutingService definition. Select the RoutingService in the diagram, open the Properties view and you'll see this:
 
-image::images/debugger_8.png"[height="48" width="400"]
+image::images/debugger_8.png[height="48" width="400"]
 
 Remember that this service is a Camel XML service. The implementation of that route is defined in the route.xml file. The route definitions take the form of a Spring DSL. (See http://camel.apache.org/spring-xml-extensions.html for more details.)
 
@@ -162,7 +162,7 @@ As seen in route.xml:
 
 Let's look at the DestinationService definition. Select the DestinationService in the diagram, open the Properties view and you'll see this:
 
-image::images/debugger_9.png"[height="118" width="400"]
+image::images/debugger_9.png[height="118" width="400"]
 
 Then, the DestinationService service uses an MVEL statement to find the Widget class's ID, and rules defined in JBoss Drools (remember that this service is implemented as a JBoss Drools service) to set the Destination value:
 
@@ -204,7 +204,7 @@ First, deploy the quickstart to a SwitchYard server. In JBDS, this is a simple t
 
 To start the server, select it in the “servers” view, and press the start button. 
 
-image::images/debugger_10.png"[height="57" width="400"]
+image::images/debugger_10.png[height="57" width="400"]
 
 The server console window will open, and you should see something like this:
 ....
@@ -232,7 +232,7 @@ INFO  [org.switchyard.quickstarts.rules.camel.cbr.BlueServiceBean] Blue service 
 
 And the green bar appears!
 
-image::images/debugger_12.png"[height="78" width="640"]
+image::images/debugger_12.png[height="78" width="640"]
 
 Now, we'll use the debugger to interrupt a running service in a QuickStart and enable us to examine the data in a message being processed by the service. After this, we'll take things one step further and introduce a bug into a service and then use the debugger to find that bug.  
 

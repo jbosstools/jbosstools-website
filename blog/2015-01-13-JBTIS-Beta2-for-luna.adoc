@@ -29,8 +29,8 @@ The Integration Stack for JBoss Tools Developer Studio is a set of plugins for E
 
 == SOA 5.x Development
 
-* link:http://www.jboss.org/jbossesb"[JBoss ESB] - An enterprise service bus for connecting enterprise applications and services.
-* link:http://docs.jboss.com/jbpm/v3.2/userguide/html_single/"[jBPM3] - A flexible Business Process Management (BPM) Suite - JBoss Enterprise SOA Platform 5.3.x compatible version.
+* link:http://www.jboss.org/jbossesb[JBoss ESB] - An enterprise service bus for connecting enterprise applications and services.
+* link:http://docs.jboss.com/jbpm/v3.2/userguide/html_single/[jBPM3] - A flexible Business Process Management (BPM) Suite - JBoss Enterprise SOA Platform 5.3.x compatible version.
 
 All of these components have been verified to work with the same dependencies as JBoss Tools 4.2 and Developer Studio 8.
 
