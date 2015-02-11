@@ -1,0 +1,44 @@
+= BrowserSim and CordovaSim What's New in 4.3.0.Alpha1
+:page-layout: whatsnew
+:page-component_id: browsersim
+:page-component_version: 4.3.0.Alpha1
+:page-product_id: jbt_core 
+:page-product_version: 4.3.0.Alpha1
+
+== iPhone 6 / 6 plus skin
+
+Brand new iPhone 6 and iPhone 6 Plus skins are now available in BrowserSim and CordovaSim:
+
+image::images/4.3.0.Alpha1/iphone6.png[iPhone 6 / 6 Plus skin]
+
+related_jira::JBIDE-18874,JBIDE-18875[]
+
+== JavaFx web engine support for BrowserSim standalone 
+
+For whose who do not use Eclipse / JBoss Developer Studio, there is a standalone mode of BrowserSim. However, only `SWT WebKit` web engine used to be supported. Now there is a possibility to run BrowserSim standalone against `JavaFx` web engine which provides features like *Dev Tools Debugger* and *JavaScript logging* in the console.
+
+image::images/4.3.0.Alpha1/standalone-javafx.png[JavaFx web engine for BrowserSim standalone]
+
+related_jira::JBIDE-18703[]
+
+== Basic FeedHenry support for CordovaSim
+
+CordovaSim has gained basic http://www.feedhenry.com/[FeedHenry] support. Now it is possible to run http://www.feedhenry.com/[FeedHenry] hybrid apps against both `local` and `remote` Node.js server:
+
+image::images/4.3.0.Alpha1/basic-fh-support.png[Basic FeedHenry support]
+
+related_jira::JBIDE-18900[]
+
+== Saving all CordovaSim preferences on close
+
+From now on all specific preferences (UI themes, tabs order, settings, etc.) are saved on CordovaSim close. 
+
+related_jira::JBIDE-18732[]
+
+== Security note for "Remote" proxy in CordovaSim
+
+Now there is a security warning for *"Remote"* proxy. Basically, If the app is transferring sensitive data (authentication tokens, credentials etc.), it is strongly recommended  to use *"Local"* proxy instead of the *"Remote"* one. 
+ 
+image::images/4.3.0.Alpha1/remote-warning.png[Security warning for "Remote" proxy]
+
+related_jira::JBIDE-19094[]
