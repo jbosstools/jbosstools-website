@@ -64,7 +64,7 @@ devstudio:
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         marketplace_url: http://marketplace.eclipse.org/node/1616973
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
-        release_date: 2015-21-01
+        release_date: 2015-01-12
         supported_devstudio_is_version: 8.0.0.Beta2
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/8.0/html/Release_Notes_8.0.2/index.html
