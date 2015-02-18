@@ -1,5 +1,5 @@
 eclipse:
-  luna:
+  mars:
     url_path_fragment: mars
     short_name: Mars
     full_name: Eclipse Mars 4.5
@@ -218,7 +218,7 @@ devstudio:
         # comment out marketplace and point download_url at the EA page
         #marketplace_url: http://marketplace.eclipse.org/node/827807
         #marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=827807
-        old_download_url: https://devstudio.jboss.com/earlyaccess/7.1.0.GA.html
+        #old_download_url: https://devstudio.jboss.com/earlyaccess/7.1.0.GA.html
         installers: 
           - name: Stand-alone Installer
             url: https://devstudio.jboss.com/earlyaccess/builds/development/7.1.0.GA/jbdevstudio-product-universal-7.1.0.GA-v20131208-0703-B592.jar
@@ -355,6 +355,15 @@ jbt_core:
   name: JBoss Tools
   url_path_fragment: jbosstools
   streams:
+    mars:
+      4.3.0.Nightly: 
+        update_site_url: http://download.jboss.org/jbosstools/updates/nightly/mars/
+        zips:
+          - name: Stand-alone BrowserSim
+            file_size: 15MB
+            url: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.jboss.tools.vpe.browsersim&a=org.jboss.tools.vpe.browsersim-standalone&v=3.7.0-SNAPSHOT&e=zip&c=standalone
+            #md5_url: .MD5
+
     luna:
       4.2.2.Final:
         update_site_url: http://download.jboss.org/jbosstools/updates/stable/luna/
@@ -560,10 +569,8 @@ jbt_core:
         #build_type: nightly
         # TODO when master branch moves to 4.3.0 (mars), make sure 4.2.0.Nightly points at 4.2.luna instead of master
         #update_site_url: http://download.jboss.org/jbosstools/updates/nightly/core/4.2.luna/
-        #download_url: http://download.jboss.org/jbosstools/builds/nightly/core/4.2.luna/
         # TODO move this symlink to point at builds/nightly/core/4.2.luna, and create a new one for mars
         update_site_url: http://download.jboss.org/jbosstools/updates/nightly/luna/
-        download_url: http://download.jboss.org/jbosstools/builds/nightly/core/master/
         zips:
           - name: Stand-alone BrowserSim
             file_size: 15MB
@@ -820,7 +827,6 @@ jbt_core:
         archived: true
         documentation_url: http://docs.jboss.org/tools/
         update_site_url: http://download.jboss.org/jbosstools/updates/nightly/core/4.1.kepler/
-        download_url: http://download.jboss.org/jbosstools/builds/nightly/core/4.1.kepler/
 
     juno:
       4.0.1.Final:
