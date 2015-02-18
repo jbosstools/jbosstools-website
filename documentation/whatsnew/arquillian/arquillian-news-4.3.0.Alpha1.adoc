@@ -7,17 +7,23 @@
 
 == Better support for ShrinkWrap API in Generate Deployment
 
+image::images/GenerateDeployment.png[]
+
 Dependent classes for the same package are added with addClasses(...) instead of using addClass on all individually.
 
 related_jira::JBIDE-18270[]
 
 == 'Export Archive' to Arquillian Cruiser view
 
+image::images/ExportArchive.png[]
+
 An archive can be exported by right-clicking an archive entry in the Arquillia Cruiser view and selecting the Export Archive action.
 
 related_jira::JBIDE-16385[]
 
 == ShrinkWrap Archive file location validation
+
+image::images/FileLocationValidation.png[]
 
 Arquillian warns that known EE descriptor files are in a wrong location
 
@@ -27,6 +33,8 @@ related_jira::JBIDE-14782[]
 
 Now, Arquillian includes a Maven configurator that configures arquillian capabilities if a project includes arquillian classes.
 The configurator is disabled by default.
+
+image::images/ArquillianConfigurator.png[]
 
 related_jira::JBIDE-14427[]
  
