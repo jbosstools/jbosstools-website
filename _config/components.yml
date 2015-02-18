@@ -3,6 +3,9 @@ arquillian:
   
 aerogear:
   name: Aerogear
+
+batch:
+  name: Batch Tools
  
 browsersim:
   name: BrowserSim
