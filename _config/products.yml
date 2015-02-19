@@ -67,7 +67,7 @@ devstudio:
         release_date: 2015-01-12
         supported_devstudio_is_version: 8.0.0.Beta2
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
-        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/8.0/html/Release_Notes_8.0.2/index.html
+        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/8.0/html/8.0.2_Release_Notes/index.html
         blog_announcement_url: /blog/2015-01-21-update-for-luna.html
         zips:
           - name: Update site (including sources) bundle of JBoss Developer Studio
@@ -81,7 +81,7 @@ devstudio:
         release_date: 2014-12-15
         supported_devstudio_is_version: 8.0.0.Beta2
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
-        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/8.0/html/Release_Notes_8.0.1/index.html
+        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/8.0/html/8.0.1_Release_Notes/index.html
         blog_announcement_url: /blog/2014-12-15-GA-for-luna.html
         zips:
           - name: Update site (including sources) bundle of JBoss Developer Studio
@@ -93,7 +93,7 @@ devstudio:
         release_date: 2014-10-21
         supported_devstudio_is_version: 8.0.0.Beta2
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
-        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/8.0/html/Release_Notes_8.0.0/index.html
+        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/8.0/html/8.0.0_Release_Notes/index.html
         blog_announcement_url: /blog/2014-10-22-GA-for-luna.html
         installers: 
           - name: Stand-alone Installer
@@ -113,7 +113,7 @@ devstudio:
         archived: true
         #supported_devstudio_is_version: 8.0.0.GA
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
-        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/8.0/html/Release_Notes_8.0.0/index.html
+        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/8.0/html/8.0.0_Release_Notes/index.html
         blog_announcement_url: /blog/2014-09-17-CR1-for-luna.html
         installers: 
           - name: Stand-alone Installer
@@ -133,7 +133,7 @@ devstudio:
         archived: true
         #supported_devstudio_is_version: 8.0.0.GA
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
-        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/8.0/html/Release_Notes_8.0.0/index.html
+        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/8.0/html/8.0.0_Release_Notes/index.html
         blog_announcement_url: /blog/2014-07-28-beta3-for-luna.html
         installers: 
           - name: Stand-alone Installer
@@ -154,7 +154,7 @@ devstudio:
         archived: true
         #supported_devstudio_is_version: 8.0.0.GA
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
-        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/8.0/html/Release_Notes_8.0.0/index.html
+        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/8.0/html/8.0.0_Release_Notes/index.html
         blog_announcement_url: /blog/2014-06-19-beta2-for-luna.html
         installers: 
           - name: Stand-alone Installer
@@ -173,7 +173,7 @@ devstudio:
         archived: true
         #supported_devstudio_is_version: 8.0.0.GA
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
-        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/8.0/html/Release_Notes_8.0.0/index.html
+        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/8.0/html/8.0.0_Release_Notes/index.html
         blog_announcement_url: /blog/2014-04-14-beta1-for-luna.html
         installers: 
           - name: Stand-alone Installer
@@ -1059,4 +1059,3 @@ jbt_is:
             md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/SOATools3.3.x/soatools-3.3.3.Final.aggregate-Sources-2013-01-28_17-58-40-H2.zip
           - name: Release notes
             url: http://sourceforge.net/projects/jboss/files/JBossTools/SOATools3.3.x/zz_Release_Notes_SOA_3.3.3.Final.readme.html
-
