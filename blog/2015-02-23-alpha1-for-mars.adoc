@@ -5,7 +5,7 @@
 
 Happy to announce first Alpha build for Eclipse Mars M5.
 
-Downloads available at link:/downloads/jbosstools/luna/4.3.0.Alpha1[JBoss Tools 4.3.0.Alpha1] or through Eclipse Marketplace.
+Downloads available at link:/downloads/jbosstools/mars/4.3.0.Alpha1[JBoss Tools 4.3.0.Alpha1] or through Eclipse Marketplace.
 
 == Installation
 
