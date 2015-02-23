@@ -1,0 +1,17 @@
+= EclipseCon (USA)
+:page-layout: event
+:page-event_date: March 9-12, 2014
+:page-effective_date: 20150312
+:page-location: San Francisco, California
+:page-event_url: http://www.eclipsecon.org/na2015/
+
+We got several JBoss and Red Hat speakers at EclipseCon US this year.
+
+Max Rydahl Andersen on https://www.eclipsecon.org/na2015/session/making-eclipse-html-and-javascript-fun-again[Making Eclipse with HTML and JavaScript fun again!]
+Arun Gupta on https://www.eclipsecon.org/na2015/session/java-ee-7-using-eclipse[Java EE 7 using Eclipse]
+Mickael Istria on https://www.eclipsecon.org/na2015/user/546[Making Eclipse IDE better at handling real-life projects]
+Jeff Johnston on https://www.eclipsecon.org/na2015/session/docker-and-linux-tools[Docker and Linux Tools]
+
+and Red Hat will also host a Docker at Eclipse BOF Monday evening.
+
+
