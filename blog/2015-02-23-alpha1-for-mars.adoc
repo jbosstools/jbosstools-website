@@ -20,7 +20,7 @@ Once you have installed Eclipse, you use our update site directly:
 
     http://download.jboss.org/jbosstools/mars/development/updates/core/
  
-Note: Marketplace entry and Integration Stack tooling will become available from JBoss Central at an later date.
+Note: Marketplace entry and Integration Stack tooling will become available from JBoss Central at a later date.
 
 == What is new ? 
 
@@ -64,7 +64,7 @@ curl -L -o bs.zip http://bit.ly/browsersim-3-7-ss-jar && unzip bs.zip && java -X
 
 == "Most popular" Palette
 
-We've extended the HTML5 palette to include more easy add of html5 elements.
+We've extended the HTML5 palette to allow easier adding of often used html5 elements.
 
 image::/documentation/whatsnew/jst/images/4.3.0.Alpha1/palette.png[]
 
@@ -75,10 +75,10 @@ The following video shows how that works.
 
 video::cmgU4eKzJDQ[youtube]
 
-== Feed Henry support
+== FeedHenry support
 
-If you are Feed Henry user we've now added support for easy importing and running of 
-your Feed Henry Cordova applications.
+If you are a FeedHenry user we've now added support for easy importing and running of 
+your FeedHenry Cordova applications.
 
 image::/documentation/whatsnew/aerogear/images/1.2.0.Alpha1/importFeedHenryAppWiz.png[]
 
@@ -86,7 +86,7 @@ image::/documentation/whatsnew/aerogear/images/1.2.0.Alpha1/importFeedHenryAppWi
 
 Apache Cordova support now includes support for Windows Phone projects (requires you to run on Windows still though :)
 
-image::/documentation/whatsnew/aerogear/images/1.2.0.Alpha1/WPExport.png
+image::/documentation/whatsnew/aerogear/images/1.2.0.Alpha1/WPExport.png[]
 
 This also adds support for running Windows Phone Emulator.
 
@@ -107,16 +107,16 @@ This is especially super helpful for those who have large multimodule Maven proj
 
 == Next steps
 
-While we wait for feedback on Alpha1, we are already working on what will become Alph2. Some of things that are moving here are:
+While we wait for feedback on Alpha1, we are already working on what will become Alpha2. Some of the things that are moving here are:
 
 . OpenShift v3 
 . Docker Tooling 
 . Better JavaScript content assist
-. deprecate/remove visual JSF page editor, focusing on html5 preview.
+. Deprecate/remove visual JSF page editor, focusing on html5 preview
 . Making project imports in Eclipse simpler
-. and more
+. And more...
 
-We'll keep you posted!
+As always, ask/suggest away and we'll keep you posted!
 
 Have fun!
 
