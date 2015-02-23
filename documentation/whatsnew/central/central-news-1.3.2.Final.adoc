@@ -1,0 +1,13 @@
+= JBoss Central What's New in 1.3.2.Final
+:page-layout: whatsnew
+:page-component_id: central
+:page-component_version: 1.3.2.Final
+:page-product_id: jbt_core
+:page-product_version: 4.2.3.Beta1
+
+== New Wildfly Archetypes
+
+http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.wildfly.archetype%22%20AND%20v%3A%228.2.0.Final%22[WildFly 8.2.0.GA archetypes] are now available for the HTML5, JavaEE Web & EAR project wizards.
+They will be automatically enabled when you select a http://wildfly.org/[WildFly] runtime in the project wizards.
+
+related_jira::JBDS-3275[]
