@@ -174,7 +174,6 @@ In `_config/site.yml` various profiles are configured. The following table docum
 
 == License
 
-The content of this repository is released under TBD.
 Sample code available on this website is released under EPL.
 
 By submitting a "pull request" or otherwise contributing to this repository, you
