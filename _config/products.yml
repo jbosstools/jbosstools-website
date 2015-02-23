@@ -363,7 +363,7 @@ jbt_core:
         #archived: true
         release_date: 2015-02-20
         #supported_jbt_is_version: 4.3.0.Alpha0
-        #blog_announcement_url: /blog/2015-02-21-update-for-mars.html
+        blog_announcement_url: /blog/2015-02-23-alpha1-for-mars.html
         documentation_url: http://docs.jboss.org/tools/
         zips:
           - name: Update site (including sources) bundle of all JBoss Core Tools
