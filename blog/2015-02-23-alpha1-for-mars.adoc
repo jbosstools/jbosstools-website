@@ -44,7 +44,7 @@ activating CDI.
 
 BrowserSim adds skins and layout for iPhone 6 devices. 
 
-image::/documentation/whatsnew/browsersim/images/4.3.0.Alpha1/iphone6.png
+image::/documentation/whatsnew/browsersim/images/4.3.0.Alpha1/iphone6.png[]
 
 These skins and others are also available in BrowserSim Standalone
 mode which allow you to run Browersim without depending on a full
@@ -78,7 +78,7 @@ video::cmgU4eKzJDQ[youtube]
 == Feed Henry support
 
 If you are Feed Henry user we've now added support for easy importing and running of 
-your Feed Henry Cordova applicatons.
+your Feed Henry Cordova applications.
 
 image::/documentation/whatsnew/aerogear/images/1.2.0.Alpha1/importFeedHenryAppWiz.png[]
 
