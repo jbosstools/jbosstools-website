@@ -1,0 +1,30 @@
+= JST/JSF/HTML Tools What's New in 4.2.3.Beta1
+:page-layout: whatsnew
+:page-component_id: jst
+:page-component_version: 4.2.3.Beta1
+:page-product_id: jbt_core 
+:page-product_version: 4.2.3.Beta1
+:experimental true
+
+== Custom HTML Tag Validation
+
+HTML validation in Eclipse Web Tools Luna has an annoying issue with custom HTML5 tags. It warns about any HTML tag name that is not mentioned in the HTML specification.
+We contributed a patch to Eclipse Mars which allows to disable those warnings for any particular tag name (or a tag name mask, e.g. <ion-*>).
+Though this was fixed in Eclipse Mars only we back ported this useful feature to JBoss Tools 4.2.3 which is based on Eclipse Luna SR2:
+
+image::images/4.2.3.Beta1/validation.png[]
+
+related_jira::JBIDE-18724[]
+
+== Tern.java & AngularJS Eclipse 0.8.2
+
+Tern.java and AngularJS Eclipse (available via JBoss Central - Early Access) has been upgraded to the latest 0.8.2 version.
+
+There is a bunch of new features which were introduced in 0.8.0 releases: 
+
+- https://github.com/angelozerr/tern.java/wiki/New-and-Noteworthy-0.8.0[Tern.java 0.8.0 New and Noteworthy]
+- https://github.com/angelozerr/angularjs-eclipse/wiki/New-and-Noteworthy-0.8.0[AngularJS Eclipse Plugin 0.8.0 New and Noteworthy]
+
+0.8.2 releases also include bug fixes for some critical issues which caused Eclipse to freeze.
+
+related_jira::JBIDE-19184[]
