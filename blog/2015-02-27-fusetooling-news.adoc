@@ -5,7 +5,7 @@
 
 
 I am happy to announce some of the highlights of the upcoming release of the http://tools.jboss.org/features/apachecamel.html[Red Hat JBoss Fuse Tooling].
-It will be available via early access in the JBoss Tools Integration Stack 8. 
+It will be available via early access in the JBoss Tools Integration Stack 4.2 / Developer Studio Integration Stack 8.0. 
 
 
 == What is new?
