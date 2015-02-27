@@ -32,6 +32,8 @@ This command will run the Docker image for jboss/wildfly in its default state wi
 Once this is run, the command will not only start up your container, but also launch the server
 in standalone mode, and connect a terminal to it so you can see the output. 
 
+image::images/20150226_docker/terminal_wf_docker.png[]
+
 Assuming you see the console output, and the server runs with no errors, then you're 
 generally set up and ready for the next step. 
 
@@ -166,7 +168,7 @@ create a simple `index.html` in the `WebContent` folder.
 
 Now that everything's set up in Eclipse, we can start our Docker container as we mentioned before:
 
- docker run -it -p 8080:8080 -p 9990:9990 -v /home/rob/tmp/dockertest1:/opt/jboss/wildfly/standalone/deployments/:rw  jboss/wildfly
+ docker run -it -p 8080:8080 -v /home/rob/tmp/dockertest1:/opt/jboss/wildfly/standalone/deployments/:rw  jboss/wildfly
 
 === Starting the Server Adapter
 
@@ -200,7 +202,7 @@ as if they were ports on our localhost.
 
 Depending on our usecase, we may do some or all of the above.
 
-= Conclusion
+== Conclusion
 
 In this first example, we've seen how to install and configure the default
 Wildfly Docker images. In future examples, we'll see how to extend those images
