@@ -1,11 +1,11 @@
-= Getting started with Docker and Wildfly
+= Docker and WildFly #1 - Deployment via Docker volumes
 :page-layout: blog
 :page-author: rstryker
 :page-tags: [jbosstools, devstudio, server, docker, wildfly]
 
 So you've heard the buzzwords and all the hype around link:http://www.docker.com[Docker],
 but you haven't had the chance to play around with it yet or see if it fits your needs. 
-You're already an avid user of JBossTools, and are fairly familiar with starting and stopping
+You're already an avid user of JBoss Tools, and are fairly familiar with starting and stopping
 your local or remote Wildfly installation, and deploying web applications to it. 
 
 If this describes you, and you're interested in trying out Docker, then this blog is targeted to you. 
@@ -18,9 +18,13 @@ for your respective platforms.
 
 == Running the default wildfly image
 
-Wildfly has published their docker images for public consumption. These images are very standard, 
+Wildfly has published their docker images for public consumption. 
+You can browse them at the link:https://registry.hub.docker.com/u/jboss/wildfly/[docker registry],
+or go to link:http://www.jboss.org/docker/[http://www.jboss.org/docker/] for more information. 
+
+These images are very standard, 
 but a little restrictive for our needs. But, just to make sure your docker installation has worked, 
-and that Wildfly can start without any errors, we can do the following:
+and that Wildfly can start without any errors, you can do the following:
 
  docker run -it jboss/wildfly
 
@@ -46,34 +50,23 @@ a798d07859f8        jboss/wildfly:latest   "/opt/jboss/wildfly/   4 seconds ago 
 To kill the container, we'd then execute `docker kill a798d07859f8`, replacing the given hash with your CONTAINER ID. 
 
 
-== What's Missing
-
-The default docker image is lacking a few things for our needs. 
-First, we'd generally like our Wildfly installation to expose our 
-management port if we
-require any management actions or JMX introspection. 
-We might also like SSH access to this machine, if we intend to treat it as a remote system
-and deploy our applications over SCP. 
-We might like to map in 
-some local folders to the running container, if we'd prefer a more quick-and-dirty solution. 
-We could also expose some of the ports from our container 
-as if they were ports on our localhost. 
-
-Depending on our usecase, we may do some or all of the above. 
-
-
 == Externally Managed Local Server With Deployment Folder Mapping
+
+In this example, we intend to start Wildfly via the Docker image, on the command-line. 
+This means we'll want to configure our Server Adapter in JBoss Tools
+in such a way that is not involved in the startup or shutdown of the server. 
+We call this an "externally managed" server. 
 
 For an externally managed server, where we won't be starting or 
 stopping it from Eclipse, there's a few small changes we can make
-in our command line to launch the image that can make the default
+to our Docker command line that can make the default
 image much more useful for us. 
 
 === Viewing the Running Server's Welcome Page
 
 At each launch of our container, the container is granted an IP address. 
 If we were to run our container with the default command as shown above, 
-we'd need to constantly change the IP address of our Server Adapter in JBossTools. 
+we'd need to constantly change the IP address of our Server Adapter in JBoss Tools. 
 To find out the IP of the container, we'd run the following:
 
 ....
@@ -94,24 +87,28 @@ and not at all convenient.
 To make this easier, we can map 
 our container's ports to our localhost ports, exposing those from our container as if they were on localhost. 
 
- docker run -it -p 8080:8080 -p 9990:9990 jboss/wildfly
+ docker run -it -p 8080:8080 jboss/wildfly
 
 In this way, we can now open our browser to `http://localhost:8080` to see the Wildfly welcome page. 
 
 === Mapping a deployment folder
 
-Since we're not exposing SSH in this example, and we're not using the Management profiles in JBossTools, 
-we need a way for our server to pick up our deployments. The easiest way to do this is to map in a local folder 
+Since the Docker image in this example does not have SSH enabled, and the Wildfly server 
+is not exposing the Management port, we will need to configure JBoss Tools to use filesystem deployments. 
+The easiest way to do this is to map in a local folder 
 from our host into our container. For this example, we'll make a temporary directory somewhere on our host, 
 and tell our Docker container to treat that as the standalone/deployments folder inside the container. In this way, 
 changes the container makes to the folder can be visible on the host, and vice versa. 
 
-*Mapping Folders may cause IO errors for SELinux!*  To ensure your container can actually read and write to the folder, 
+
+WARNING: Mapping Folders may cause IO errors for SELinux!*  To ensure your container can actually read and write to the folder, 
 you'll need to run `setenforce 0` to disable SELinux, or, alternatively, give Docker the permissions and exceptions in SELinux. 
+See link:http://stackoverflow.com/questions/24288616/permission-denied-on-accessing-host-directory-in-docker[this] stackoverflow post for more information.
+
 
 ....
 [root@localhost jbds_wf_external]$  mkdir /home/rob/tmp/dockertest1
-[root@localhost jbds_wf_external]$  docker run -it -p 8080:8080 -p 9990:9990 \
+[root@localhost jbds_wf_external]$  docker run -it -p 8080:8080 \
 -v /home/rob/tmp/dockertest1:/opt/jboss/wildfly/standalone/deployments/:rw  jboss/wildfly
 ....
 
@@ -120,7 +117,7 @@ and visible in a web browser.
 
 === Making your Server Adapter
 
-The final step of this example is to create your Wildfly 8.2 server adapter in JBossTools, 
+The final step of this example is to create your Wildfly 8.2 server adapter in JBoss Tools, 
 and to create and deploy a web application to your temporary folder, which in my case is
 `/home/rob/tmp/dockertest1`
 
@@ -139,13 +136,13 @@ runtime in this example, so there's no real way to avoid that.
 Once your server is created, you'll find it in the `Servers View`, where we can double-click
 it to open the `Server Editor`.  From here, we can make what configuration changes we'll need. 
 First, we'll need to make sure the server is `Externally Managed`.  This means 
-our attempts to start and stop it in Eclipse will be mostly ignored, since we're
+our attempts to start and stop it in Eclipse will be mostly ignored, since JBoss Tools is
 expecting the user to handle that via Docker. 
 
 image::images/20150226_docker/local_fs_externally_managed.png[]
 
 Next, we'll need to disable the tooling for keeping deployment scanners in sync with
-the locations JBossTools expects to be deploying. Since we've already mapped the folder
+the locations JBoss Tools expects to be deploying. Since we've already mapped the folder
 in via the Docker command line, we won't need any additions to the deployment scanners at all. 
 
 image::images/20150226_docker/local_fs_scanners.png[]
@@ -186,7 +183,24 @@ our web application.  We should then notice the Eclipse internal browser
 pop up and display the content of our index.html files. 
 
 
-== Conclusion
+
+
+== What's Missing
+
+The default docker image is lacking a few things for our needs.
+First, we'd generally like our Wildfly installation to expose our
+management port if we
+require any management actions or JMX introspection.
+We might also like SSH access to this machine, if we intend to treat it as a remote system
+and deploy our applications over SCP.
+We might like to map in
+some local folders to the running container, if we'd prefer a more quick-and-dirty solution.
+We could also expose some of the ports from our container
+as if they were ports on our localhost.
+
+Depending on our usecase, we may do some or all of the above.
+
+= Conclusion
 
 In this first example, we've seen how to install and configure the default
 Wildfly Docker images. In future examples, we'll see how to extend those images
