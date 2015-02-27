@@ -1,16 +1,16 @@
-= Docker and Wildfly - Part Two
+= Docker and WildFly #2 - Deployment over management API
 :page-layout: blog
 :page-author: rstryker
 :page-tags: [jbosstools, devstudio, server, docker, wildfly]
 
 If you've already link:2015-02-26-Getting-Started-With_Docker-And-Wildfly.html[gotten started] with trying out 
 Docker and JBoss Tools, and want to see what other options are available, this blog post will  
-explaini how to run Wildfly in a Docker container and configure it for management tasks and
+explain how to run Wildfly in a Docker container and configure it for management tasks and
 managed deployments. 
 
 === Customizing your Dockerfile
 
-Since the default `jboss/wildfly` Docker configuration isn't good enough for us, we'll need
+Since the default `jboss/wildfly` Docker configuration doesn't expose the management port by default, we'll need
 to customize it, and this means writing your very first Dockerfile. Our goals here are 
 to add a management user to the Dockerfile, and also to expose the management ports when
 running the container. 
@@ -30,6 +30,10 @@ CMD ["/opt/jboss/wildfly/bin/standalone.sh", "-b", "0.0.0.0", "-bmanagement", "0
 You can see that we're extending the original `jboss/wildfly` container. 
 In the above `RUN` command, we're also adding a management user. Feel free
 to customize the password as you wish.  
+
+WARNING: Exposing actual or sensitive passwords in a publicly accessible Dockerfile is dangerous.
+Make sure to only use example credentials in publicly available Dockerfiles.
+
 
 Finally, we're making sure that when the Docker container runs
 `standalone.sh`, it is also making sure to bind the management port to 
