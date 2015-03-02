@@ -133,4 +133,5 @@ does have a downside since all publishes are full publishes over the management 
 In a future example, I hope that we'll see how to create an image customized for SSH access, 
 which will allow starting and stopping the server and support incremental updates. 
 
- - Rob Stryker 
+
+Rob Stryker 
