@@ -1,6 +1,6 @@
 = Docker and WildFly #2 - Deployment over management API
 :page-layout: blog
-:page-author: rstryker
+:page-author: rob.stryker
 :page-tags: [jbosstools, devstudio, server, docker, wildfly]
 
 If you've already link:2015-02-26-Getting-Started-With_Docker-And-Wildfly.html[gotten started] with trying out 
