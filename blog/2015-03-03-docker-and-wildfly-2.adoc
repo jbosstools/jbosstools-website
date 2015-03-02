@@ -3,7 +3,7 @@
 :page-author: rob.stryker
 :page-tags: [jbosstools, devstudio, server, docker, wildfly]
 
-If you've already link:2015-02-26-Getting-Started-With_Docker-And-Wildfly.html[gotten started] with trying out 
+If you've already link:2015-03-02-getting-started-with-docker-and-wildfly.html[gotten started] with trying out 
 Docker and JBoss Tools, and want to see what other options are available, this blog post will  
 explain how to run Wildfly in a Docker container and configure it for management tasks and
 managed deployments. 
@@ -11,7 +11,7 @@ managed deployments.
 === Customizing your Dockerfile
 
 Since the default `jboss/wildfly` Docker configuration doesn't expose the management port by default, we'll need
-to customize it, and this means writing your very first Dockerfile. Our goals here are 
+to customize it, and this means writing your very first `Dockerfile`. Our goals here are 
 to add a management user to the Dockerfile, and also to expose the management ports when
 running the container. 
 
@@ -42,18 +42,23 @@ all possible hosts, helping to expose it for use.
 === Building your new Dockerfile
 
 You can give your new configuration any name you want when building it. 
-I'll build mine here, and give it the name `jboss/wildfly-jbds_mgmt` :
+I'll build mine here, and give it the name `wildfly-mgmt` :
 
- docker build --tag=jboss/wildfly-jbds_mgmt .
+ docker build --tag=wildfly-mgmt .
 
 === Running your new Dockerfile
 
 To run your new configuration, run the following command, replacing the last
 parameter with what name you chose when building the Dockerfile. 
 
- docker run -it -p 8080:8080 -p 9990:9990  jboss/wildfly-jbds_mgmt
+ docker run -it -p 8080:8080 -p 9990:9990  wildfly-mgmt
+
+Note, that compared to previous post we do not need to launch with custom volume mappings.
+Just the addition of the management port.
 
 ==  Configuring a Server in JBoss Tools
+
+When creating the server remember to set the host to be `dockerhost` ( at least on OSX and Windows ).
 
 image::images/20150226_docker/remote_mgmt_1.png[]
 
@@ -70,7 +75,7 @@ image::images/20150226_docker/remote_mgmt_2.png[]
 
 On the next page, you'll note that our remote runtime details are optional. 
 Since the server is configured only for management operations, we have no real need
-to know where their filesystem is located or how to access it. So we can safely ignore
+to know where the filesystem is located or how to access it. We can safely ignore
 this page and just proceed through it. 
 
 Now, your server is created, but we still need to set the management credentials. 
@@ -92,13 +97,13 @@ create a simple `index.html` in the `WebContent` folder.
 
 Now that everything's set up in Eclipse, we can start our Docker container as we mentioned before:
 
- docker run -it -p 8080:8080 -p 9990:9990  jboss/wildfly-jbds_mgmt
+ docker run -it -p 8080:8080 -p 9990:9990  wildfly-mgmt
 
 === Starting the Server Adapter
 
 In Eclipse, we can now right-click our server, and select `Start`. This
 shouldn't launch any commands, since we marked the server as `Externally Managed`. 
-The server adapter is configured to check over the management port at `localhost:9990` 
+The server adapter is configured to check over the management port at `dockerhost:9990` 
 to see if the server is up or not, so it should quickly move to a state of `[Started, Synchronized]`. 
 
 === Deploying the Web Application
@@ -113,7 +118,18 @@ pop up and display the content of our index.html files.
 
 In this second example, we've seen how to install and configure a
 Wildfly Docker image customized for management operations in JBoss Tools. 
+
+To summarize, here are the steps needed:
+
+. Create your own 'Dockerfile` that uses `jboss/wildfly` adding management user and start server with management exposed
+. Start Docker with 8080 and 9090 mapped
+. Configure server to run on `dockerhost`, using Remote management settings and have lifecycle *externally managed*
+
+As you hopefully noted, this kind of setup is much more straightforward (no messing with paths), unforunatly it
+does have a downside since all publishes are full publishes over the management API thus incremental updates will not work
+in this case.
+
 In a future example, I hope that we'll see how to create an image customized for SSH access, 
-which will allow starting and stopping the server. 
+which will allow starting and stopping the server and support incremental updates. 
 
  - Rob Stryker 
