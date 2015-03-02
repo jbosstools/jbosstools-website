@@ -16,10 +16,10 @@ Docker's installation method differs based on your platform. You'll want to
 review link:https://docs.docker.com/installation/#installation[Docker's Installation] guides
 for your respective platforms. 
 
-To make things unified across the various platform we recommend you go and map `dockerhost` to
+To make things unified across the various platform, we recommend you go and map `dockerhost` to
 the ip of where your docker instance is running. 
 
-By default on Linux that will be `127.0.0.1` thus the following line make sense to add:
+By default on Linux that will be `127.0.0.1`, so you would add the following line to your `/etc/hosts` file:
 
    127.0.0.1 dockerhost
 
@@ -36,9 +36,9 @@ Wildfly has published their docker images for public consumption.
 You can browse them at the link:https://registry.hub.docker.com/u/jboss/wildfly/[docker registry],
 or go to link:http://www.jboss.org/docker/[http://www.jboss.org/docker/] for more information. 
 
-These images are standard Docker images and as is the norm they do not expose more features than just
-the bare minimum for production and reuse. This first blog will show how to use them as is, but going
-forward we will show how to configure them to be a bit more useful for development uses.
+These images are JBoss' standard Docker images and they do not expose more features than just
+the bare minimum for production and reuse. This first blog will show how to use them as-is, but going
+forward we will show how to configure them to be a bit more useful for development use cases. 
 
 To make sure your docker installation has worked, and that Wildfly can
 start without any errors, you can do the following:
@@ -70,7 +70,7 @@ CONTAINER ID        IMAGE                  COMMAND                CREATED       
 f70149043400        jboss/wildfly:latest   "/opt/jboss/wildfly/   58 seconds ago      Up 58 seconds       0.0.0.0:8080->8080/tcp   ecstatic_darwin     
 ....
 
-Here I only have one container running, you might have more. But to
+Here I only have one container running; you might have more. But to
 kill any container, you execute `docker kill f70149043400`, replacing
 the given hash with your value from `CONTAINER ID` column.
 
@@ -103,7 +103,7 @@ See link:http://stackoverflow.com/questions/24288616/permission-denied-on-access
 The ':rw' at the end is important, since without it the docker container cannot write to it, only read.
 
 If you were to now place a .war file inside `/home/rob/tmp/dockertest1`, it will be picked up by the deployment scanner, 
-and visible in a web browser. Take note of the folder, we'll use that in the configuration of the Server Adapter.
+and visible in a web browser. Take note of the folder, since we'll use that in the configuration of the Server Adapter.
 
 === Making your Server Adapter
 
@@ -113,7 +113,11 @@ and to create and deploy a web application to your temporary folder, which in my
 
 First, we'll open the `Servers View` and create a new `Wildfly 8.x` server adapter.
 Since we're exposing our container's ports on `dockerhost`, we need to set the host to 
-`dockerhost`. The server should still be marked as `Local` and Controlled by `Filesystem and shell operations` 
+`dockerhost`. 
+
+image::images/20150226_docker/local_fs_0.png[]
+
+The server should still be marked as `Local` and Controlled by `Filesystem and shell operations` 
 as shown below. 
 
 image::images/20150226_docker/local_fs_1.png[]
@@ -121,7 +125,7 @@ image::images/20150226_docker/local_fs_1.png[]
 Since we're hacking a Local Filesystem server adapter to work for Docker, we'll still need a local
 runtime in this example, so point it to any locally installed WildFly server you have. 
 
-In JBIDE-TBD we are looking at ways to avoid requiring this step.
+In link:https://issues.jboss.org/browse/JBIDE-19388[JBIDE-19388] we are looking at ways to avoid requiring this step.
  
 === Configuring your Server Adapter
 
