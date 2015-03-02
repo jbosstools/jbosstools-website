@@ -24,7 +24,7 @@ module Awestruct
             basename=$1
             post.output_path="#{@path_prefix}/#{basename}.html"
             #puts "  post date: #{post.date} >  #{Date.today.next_day} ? #{post.date > Date.today.next_day}"
-            if post.date > Date.today.next_day
+            if post.date >= Date.today.next_day
               draft_posts << post
               post.draft_article = true
             end
