@@ -203,4 +203,5 @@ To summarize, here are the steps needed:
 
 In future examples, we'll see how to extend those images for Management or SSH/SCP usecases. 
 
- - Rob Stryker 
+
+Rob Stryker 
