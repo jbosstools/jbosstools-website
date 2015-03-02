@@ -1,4 +1,4 @@
-= Docker and WildFly #1 - Deployment via Docker volumes
+= Docker and WildFly Part 1 - Deployment via Docker volumes
 :page-layout: blog
 :page-author: robstryker
 :page-tags: [jbosstools, devstudio, server, docker, wildfly]

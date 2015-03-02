@@ -1,4 +1,4 @@
-= Docker and WildFly #2 - Deployment over management API
+= Docker and WildFly Part 2 - Deployment over management API
 :page-layout: blog
 :page-author: robstryker
 :page-tags: [jbosstools, devstudio, server, docker, wildfly]
