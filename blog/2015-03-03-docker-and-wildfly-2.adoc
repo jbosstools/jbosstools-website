@@ -1,6 +1,6 @@
 = Docker and WildFly #2 - Deployment over management API
 :page-layout: blog
-:page-author: rob.stryker
+:page-author: robstryker
 :page-tags: [jbosstools, devstudio, server, docker, wildfly]
 
 If you've already link:2015-03-02-getting-started-with-docker-and-wildfly.html[gotten started] with trying out 
@@ -58,13 +58,15 @@ All we need is the addition of the management port.
 
 ==  Configuring a Server in JBoss Tools
 
-When creating the server remember to set the host to be `dockerhost` ( at least on OSX and Windows ).
+image::images/20150226_docker/local_fs_0.png[]
+
+When creating the server remember to set the host to be `dockerhost` ( at least on OSX and Windows ) as shown above. 
 
 image::images/20150226_docker/remote_mgmt_1.png[]
 
 Since we've configured the server to be remote, and for communication with the server
 to be handled over the management port, we mark it as `Remote` and 
-controlled by `Management Operations` in the first page of the New Server wizard. 
+controlled by `Management Operations` in the second page of the New Server wizard. 
 We also don't require a runtime here, though we may need one later when creating 
 a functional web project with classes. For now, we won't create one. You'll also
 note that we have marked that the `Server lifecycle is externally managed`, 

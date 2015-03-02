@@ -1,6 +1,6 @@
 = Docker and WildFly #1 - Deployment via Docker volumes
 :page-layout: blog
-:page-author: rob.stryker
+:page-author: robstryker
 :page-tags: [jbosstools, devstudio, server, docker, wildfly]
 
 So you've heard the buzzwords and all the hype around link:http://www.docker.com[Docker],
