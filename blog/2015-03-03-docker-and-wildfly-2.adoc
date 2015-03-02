@@ -8,7 +8,7 @@ Docker and JBoss Tools, and want to see what other options are available, this b
 explain how to run Wildfly in a Docker container and configure it for management tasks and
 managed deployments. 
 
-=== Customizing your Dockerfile
+== Customizing your Dockerfile
 
 Since the default `jboss/wildfly` Docker configuration doesn't expose the management port by default, we'll need
 to customize it, and this means writing your very first `Dockerfile`. Our goals here are 
