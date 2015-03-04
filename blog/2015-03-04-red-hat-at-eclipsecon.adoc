@@ -27,8 +27,7 @@ https://www.eclipsecon.org/na2015/hackathon[Hackathon] where Mickael and I will 
 
 https://www.eclipsecon.org/na2015/node/1405[Java EE 7 using Eclipse] by Arun Gupta
 
-https://www.eclipsecon.org/na2015/session/making-eclipse-html-and-javascript-fun-again
-[Making Eclipse with HTML and JavaScript fun again!] by me
+https://www.eclipsecon.org/na2015/session/making-eclipse-html-and-javascript-fun-again[Making Eclipse with HTML and JavaScript fun again!] by me
 
 == Booth
 
