@@ -1,0 +1,53 @@
+= Red Hat at EclipseCon 2015 
+:page-layout: blog
+:page-author: maxandersen
+:page-tags: [eclipsecon, jbosscentral]
+
+Next week http://eclipsecon.org/[EclipseCon US] is on.
+
+It is going to be a busy week and Red Hat is a silver sponsor this year. 
+
+Here are some of the highlights related to Red Hat and JBoss.
+
+== Monday
+
+https://www.eclipsecon.org/na2015/cdt[CDT Summit] about using Eclipse for C/C++, Linux tools etc.
+
+https://www.eclipsecon.org/na2015/session/docker-and-linux-tools[Docker and Linux Tools] with Jeff Johnston
+
+18:00 - 19:00 Docker in Eclipse - BOF hosted by Red Hat
+
+== Tuesday
+
+https://www.eclipsecon.org/na2015/node/1520[Making Eclipse IDE better at handling real-life projects] with Mickael Istria
+
+https://www.eclipsecon.org/na2015/hackathon[Hackathon] where Mickael and I will be to work on Easier & smart import of projects
+
+== Wednesday 
+
+https://www.eclipsecon.org/na2015/node/1405[Java EE 7 using Eclipse] by Arun Gupta
+
+https://www.eclipsecon.org/na2015/session/making-eclipse-html-and-javascript-fun-again
+[Making Eclipse with HTML and JavaScript fun again!] by me
+
+== Booth
+
+Red Hat will also have a booth this year, come and say Hi! 
+
+oh..and we might have a surprise :)
+
+== Other EclipseCon
+
+If you are near Burlinggame, SFO then be aware there are other https://www.eclipsecon.org/na2015/themedays[Theme Days] such as ioT, Science, polarsys and XText, these you can get into for $200.
+
+EclipseCon is also co-loated with the https://2015.foss4g-na.org/[FOSS4G] conference if you are into location technology.
+
+See you there!
+
+Have fun!
+
+
+Max Rydahl Andersen +
+http://twitter.com/maxandersen[@maxandersen]
+
+  
