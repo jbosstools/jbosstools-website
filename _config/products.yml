@@ -60,6 +60,30 @@ devstudio:
   url_path_fragment: devstudio
   streams:
     luna:
+      8.1.0.Beta1:
+        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        #marketplace_url: http://marketplace.eclipse.org/node/1616973
+        #marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
+        release_date: 2015-03-04
+        supported_devstudio_is_version: 8.0.0.Beta2
+        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        #TODO: blog_announcement_url: /blog/2015-03-04-update-for-luna-sr2.html
+        installers: 
+          - name: Stand-alone Installer
+            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/8f/8f7b797dd0ff04a75801e34f6dea3627e89b0faf598144d06892f119eb64add1/jboss-devstudio-8.1.0.Beta1-installer-standalone.jar
+            file_size: 546MB
+          - name: Installer With EAP 6.3.0
+            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/a5/a5fd25450ba0b64c491fc9effab10351ed269cdc1ca90d0218d1d24496ab2b41/jboss-devstudio-8.1.0.Beta1-installer-eap.jar
+            file_size: 685MB
+        zips:
+          - name: Update site (including sources) bundle of JBoss Developer Studio
+            file_size: 524MB
+            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/5d/5d70ee2e8199a031152caf42b8a52b6d14b79b3f4960f03e6e8ad0341447ce37/jboss-devstudio-8.1.0.Beta1-updatesite-core.zip
+          - name: Target Platform for JBoss Developer Studio
+            file_size: 426MB
+            url: https://devstudio.redhat.com/updates/8.0.0/jboss-devstudio-8.1.0.Beta1-target-platform.zip
+            md5_url: https://devstudio.redhat.com/updates/8.0.0/jboss-devstudio-8.1.0.Beta1-target-platform.zip.MD5
       8.0.2.GA:
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         marketplace_url: http://marketplace.eclipse.org/node/1616973
@@ -393,6 +417,34 @@ jbt_core:
             #md5_url: .MD5
 
     luna:
+      4.2.3.Beta1:
+        update_site_url: http://download.jboss.org/jbosstools/updates/development/luna/
+        #marketplace_url: http://marketplace.eclipse.org/node/1617241
+        #marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1617241
+        #archived: true
+        release_date: 2015-03-04
+        supported_jbt_is_version: 4.2.0.Final
+        #TODO: blog_announcement_url: /blog/2015-03-04-update-for-luna-sr2.html
+        documentation_url: http://docs.jboss.org/tools/
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 525MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.3.x/jbosstools-4.2.3.Beta1_2015-03-01_13-40-40-B357-updatesite-core.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.3.x/jbosstools-4.2.3.Beta1_2015-03-01_13-40-40-B357-updatesite-core.zip.MD5
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 37.1MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.3.x/jbosstools-4.2.3.Beta1_2015-03-01_13-40-40-B357-src.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.3.x/jbosstools-4.2.3.Beta1_2015-03-01_13-40-40-B357-src.zip.MD5
+          - name: Update site (including sources) bundle of all Hibernate Tools
+            file_size: 105MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.3.x/jbosstools-4.2.3.Beta1_2015-03-01_14-25-34-B252-updatesite-hibernatetools.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.3.x/jbosstools-4.2.3.Beta1_2015-03-01_14-25-34-B252-updatesite-hibernatetools.zip.MD5
+          - name: Stand-alone BrowserSim
+            file_size: 15.8MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.3.x/jbosstools-4.2.3.Beta1_2015-03-01_13-40-40-B357-browsersim-standalone.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.3.x/jbosstools-4.2.3.Beta1_2015-03-01_13-40-40-B357-browsersim-standalone.zip.MD5
+          - name: Release Notes
+            url: http://tools.jboss.org/documentation/whatsnew/jbosstools/4.2.3.Beta1.html
       4.2.2.Final:
         update_site_url: http://download.jboss.org/jbosstools/updates/stable/luna/
         marketplace_url: http://marketplace.eclipse.org/node/1617241
