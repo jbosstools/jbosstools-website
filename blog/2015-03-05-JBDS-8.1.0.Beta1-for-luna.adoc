@@ -1,0 +1,86 @@
+= Beta Time for JBoss Developer Studio 8.1.0 and JBoss Tools 4.2.3 
+:page-layout: blog
+:page-author: akazakov
+:page-tags: [release, jbosstools, devstudio, jbosscentral]
+
+We are ready with link:/downloads/devstudio/luna/8.1.0.Beta1.html[Red Hat JBoss Developer Studio 8.1.0 Beta1] and link:/downloads/jbosstools/luna/4.2.3.Beta1.html[JBoss Tools 4.2.3 Beta1] for Eclipse Luna SR2.
+
+image::images/jbosstools-jbdevstudio-blog-header.png[]
+
+== Installation
+
+Red Hat JBoss Developer Studio comes with everything pre-bundled in its installer. Simply link:/downloads/devstudio/luna/8.1.0.Beta1.html[download it] and install it like this:
+
+    java -jar jboss-devstudio-{version}-installer-{standalone|eap}.jar
+
+JBoss Tools or JBoss Developer Studio Bring-Your-Own-Eclipse (BYOE) requires a bit more:
+
+This release requires at least Eclipse 4.4 (Luna) but we recommend using the
+http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/lunasr2[Eclipse Luna SR2 Java EE Bundle] since then you get most of the dependencies preinstalled with Java EE Bundle and SR2 release includes some critical fixes.
+
+Once you have installed or if you have JBoss Tools 4.2.x already installed, you can use our update site directly for JBoss Tools:
+
+    http://download.jboss.org/jbosstools/updates/development/luna/
+
+And for JBoss Developer Studio Bring-Your-Own-Eclipse:
+
+    https://devstudio.redhat.com/updates/8.0-development/
+
+Note: JBoss Tools 4.2.3 and JBoss Developer Studio 8.1.0 will become available in Marketplace only for Final releases at early April
+
+== What is New?
+
+This release is update for Eclipse Luna and also includes some new features which we would like to highlight. You can see everything in the link:/documentation/whatsnew/jbosstools/4.2.3.Beta1.html[What's New section for this release].
+
+== Eclipse Luna SR2
+
+This version of JBoss Tools targets Eclipse Luna SR2. More stability. Less false positive JavaScript errors. And many other fixed bugs. 
+
+== FeedHenry support
+
+If you are a http://www.feedhenry.com/[FeedHenry] user we’ve now added support for easy importing and running of your FeedHenry Cordova applications.
+
+image::/documentation/whatsnew/aerogear/images/1.2.0.Beta1/importFeedHenryAppWiz.png[]
+
+== New Wildfly Archetypes in JBoss Central
+
+http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.wildfly.archetype%22%20AND%20v%3A%228.2.0.Final%22[WildFly 8.2.0.GA archetypes] are now available for the HTML5, JavaEE Web & EAR project wizards.
+They will be automatically enabled when you select a http://wildfly.org/[WildFly] runtime in the project wizards.
+
+== HTML5 & JavaScript Editing Improvements
+
+HTML validation in Eclipse Web Tools Luna has an annoying issue with custom HTML5 tags. It warns about any HTML tag name that is not mentioned in the HTML specification. We contributed a patch to Eclipse Mars which allows to disable those warnings for any particular tag name (or a tag name mask, e.g. <ion-*>). Though this was fixed in Eclipse Mars only we back ported this useful feature to JBoss Tools 4.2.3 which is based on Eclipse Luna SR2:
+
+image::/documentation/whatsnew/jst/images/4.2.3.Beta1/validation.png[]
+
+JavaSript file validation now respects ECMA5 keywords.   
+
+== Tern.java and AngularJS Eclipse 0.8.2
+
+Tern.java and AngularJS Eclipse (available via JBoss Central - Early Access) has been upgraded to the latest 0.8.2 version.
+
+There is a bunch of new features which were introduced in 0.8.0 releases: 
+
+- https://github.com/angelozerr/tern.java/wiki/New-and-Noteworthy-0.8.0[Tern.java 0.8.0 New and Noteworthy]
+- https://github.com/angelozerr/angularjs-eclipse/wiki/New-and-Noteworthy-0.8.0[AngularJS Eclipse Plugin 0.8.0 New and Noteworthy]
+
+0.8.2 releases also include bug fixes for some critical issues which caused Eclipse to freeze.
+
+== Multiple Browser Engine Support on Linux in Visual Editor 
+
+On Linux Visual Page Editor can be opened in HTML5 mode for HTML files, where all HTML5 features are supported.
+Visual Page editor mode can be changed with dialog, which appears during HTML file opening or in Visual Page Editor Preferences.
+
+image::/documentation/whatsnew/vpe/images/4.2.3.Beta1/engine_dialog.png[]
+
+== IP6 Support Added for Server Tools
+
+For JBoss 7 and Wildfly installations, using hostnames with an IPv6 format often failed to connect, show webpages, or even verify the server’s state. Several changes have made this work as expected. With updated wildfly jars, management commands will execute without issue. In addition, our tools will now automatically recognize host names in an IPv6 pattern, and update your launch configuration’s various launch arguments to ensure that the server starts properly and with all expected flags set.
+
+== What's Next?
+
+We are going to release a candidate release for JBoss Tools 4.2.3 and JBoss Developer Studio 8.1.0 soon, and we are also working on the next Alpha release for Eclipse Mars.
+
+Enjoy!
+
+Alexey Kazakov
