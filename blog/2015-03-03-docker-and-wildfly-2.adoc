@@ -124,7 +124,7 @@ Wildfly Docker image customized for management operations in JBoss Tools.
 To summarize, here are the steps needed:
 
 . Create your own 'Dockerfile` that uses the existing `jboss/wildfly` configuration, but also adds  a management user and starts server with the management port exposed
-. Start Docker with 8080 and 9090 mapped
+. Start Docker with 8080 and 9990 mapped
 . Configure the server to run on `dockerhost`, using Remote management settings and have lifecycle *externally managed*
 
 As you hopefully noted, this kind of setup is much more straightforward (no messing with paths); unfortunately it
