@@ -1,0 +1,164 @@
+= Luna integration tools - JBoss Data Virtualization Tooling + Early Access
+:page-layout: blog
+:page-author: pleacu
+:page-tags: [release, jbosstools, devstudio, jbosscentral]
+
+*We're there! - JBoss Data Virtualization tooling is now available.  JBoss Tools Integration Stack 4.2.0.Final / JBoss Developer Studio Integration Stack 8.0.0.GA*
+
+image::images/jbosstools-jbdevstudio-blog-header.png[]
+
+The Integration Stack for JBoss Tools Developer Studio is a set of plugins for Eclipse that provides tooling for the following frameworks.
+
+== JBoss Business Process and Rules Development
+
+* link:/features/bpel.html[BPEL Designer] - Orchestrating your business processes.
+* link:/features/bpmn2.html[BPMN2 Modeler] - A graphical modeling tool which allows creation and editing of Business Process Modeling Notation diagrams using graphiti.
+* link:/features/drools.html[Drools] - A Business Logic integration Platform which provides a unified and integrated platform for Rules, Workflow and Event Processing.
+* link:/features/jbpm.html[jBPM] - A flexible Business Process Management (BPM) suite.
+
+== JBoss Data Virtualization Development
+
+* link:/features/modeshape.html[Modeshape] - A distributed, hierarchical, transactional and consistent data store with support for queries, full-text search, events, versioning, references, and flexible and dynamic schemas. It is very fast, highly available, extremely scalable, and it is 100% open source.
+* link:/features/teiiddesigner.html[Teiid Designer] - A visual tool that enables rapid, model-driven definition, integration, management and testing of data services without programming using the Teiid runtime framework.
+
+== JBoss Integration and SOA Development
+
+* All of the Business Process and Rules Development plugins, plus...
+* link:/features/apachecamel.html[Fuse Apache Camel Tooling] - A graphical tool for integrating software components that works with Apache ServiceMix, Apache ActiveMQ, Apache Camel and the FuseSource distributions.
+* link:/features/switchyard.html[SwitchYard] - A lightweight service delivery framework providing full lifecycle support for developing, deploying, and managing service-oriented applications.
+
+== SOA 5.x Development
+
+* link:http://www.jboss.org/jbossesb[JBoss ESB] - An enterprise service bus for connecting enterprise applications and services.
+* link:http://docs.jboss.com/jbpm/v3.2/userguide/html_single/[jBPM3] - A flexible Business Process Management (BPM) Suite - JBoss Enterprise SOA Platform 5.3.x compatible version.
+
+All of these components have been verified to work with the same dependencies as JBoss Tools 4.2 and Developer Studio 8.
+
+== Installation
+
+To install the Integration Stack tools, first install JBoss Developer Studio from the link:https://www.jboss.org/products/devstudio.html[all-in-one installer], bundled and configured out of the box with everything you need to get started. Alternatively, if you already have eclipse-jee-luna installed, you can install link:https://marketplace.eclipse.org/content/red-hat-jboss-developer-studio-luna[JBoss Developer Studio] or link:https://marketplace.eclipse.org/content/jboss-tools-luna[JBoss Tools] from the Eclipse Marketplace via *Help > Eclipse Marketplace...*
+
+image::/blog/images/jbtis/jbtis-420-b1.png[Eclipse Marketplace - JBDS]
+
+Once Developer Studio is installed, restart Eclipse and select the Software/Update tab in the JBoss Central view.  The current 8.0.0.GA integration stack is available automatically with the released *JBoss Data Virtualization Development* tooling.  The remainder of the integration tooling is available as *Early Access* so you must check the *Enable Early Access* checkbox in the installer window in order to install.  
+
+Select the items you'd like to install:
+
+image::/blog/images/jbtis/jbtis-420-b3.png[JBoss Central Early Access - JBoss Developer Studio Integration Stack]
+
+The standard p2 installer is available for JBoss Developer Studio Integration Stack.  Simply start jbdevstudio or eclipse-with-jbds, then:
+
+[source]
+----
+ Help > Install New Software...
+ Add...
+ - use this for 'Location:' for the production integration stack:
+   http://www.qa.jboss.com/binaries/RHDS/updates/stable/luna/integration-stack/aggregate/8.0.0.GA/
+
+ - use this for 'Location:' for the early access integration stack:
+   http://www.qa.jboss.com/binaries/RHDS/updates/stable/luna/integration-stack/aggregate/8.0.0.GA/earlyaccess/
+
+----
+
+The community JBoss Tools Integration Stack installation is easy as well.  If you already have eclipse-jee-luna installed, install link:https://marketplace.eclipse.org/content/jboss-tools-luna[JBoss Tools] from the Eclipse Marketplace via Help > Eclipse Marketplace...  
+
+image::/blog/images/jbtis/jbtis-420-b4.png[Eclipse Marketplace - JBoss Tools]
+
+Once JBoss Tools is installed, restart Eclipse and select the Software/Update tab in the JBoss Central view.  The current 4.2.0.Final integration stack is available automatically with the released 'JBoss Data Virtualization Development' tooling.  In a manner similar to devstudio, the remainder of the integration tooling is available as "Early Access" so you must check the "Enable Early Access" checkbox in the installer window in order to install.  
+
+Select the items you'd like to install:
+
+image::/blog/images/jbtis/jbtis-420-b5.png[JBoss Central Early Access - JBoss Tools Integration Stack]
+
+The standard p2 installer is available for JBoss Tools Integration Stack.  Simply start eclipse-with-jbt, then:
+
+[source]
+----
+ Help > Install New Software...
+ Add...
+ - use this for 'Location:' for the released-components integration stack:
+   http://download.jboss.org/jbosstools/updates/stable/luna/integration-stack/
+
+ - use this for 'Location:' for the early access integration stack:
+   http://download.jboss.org/jbosstools/updates/stable/luna/integration-stack/earlyaccess
+
+----
+
+Note: If you installed into your own Eclipse you should bump up the launch resource parameters:
+
+[source,xml]
+-------------------------------------------------------------------------------
+--launcher.XXMaxPermSize 256m --launcher.appendVmargs -vmargs -Dosgi.requiredJavaVersion=1.6 -XX:MaxPermSize=256m -Xms512m -Xmx1024m
+-------------------------------------------------------------------------------
+
+== What's Been Updated?
+
+The JBoss Data Virtualization tooling (ModeShape, Teiid Designer) is released.  New features and bug fixes in the early access tooling are available as well.
+
+=== Released Tooling Highlights
+
+==== Teiid Designer Highlights
+
+===== Teiid Designer 8.4 introduces the following changes and features
+
+* Added option to auto-create VDB data source after deployment
+* Improved model name validation in wizards and dialogs 
+* Expanded SQL Template insert/replace functionality 
+* Added ability to define virtual table as global temporary table
+* Improved Guides View functionality 
+* Lock Diagrams feature 
+* Teiid Connection Importer allows saving DDL to workspace
+* for details: link:https://developer.jboss.org/wiki/TeiidDesigner84WhatsNew[Teiid Designer 8.4]
+
+===== Teiid Designer 8.5 introduces the following changes and features
+
+* Replaced teiid client plugins with a single runtime plugin
+* Support for dynamic extension metadata
+* VDB Editor layout improvements 
+* Added ability to view a built-in MED 
+* Improved Default Server naming 
+* Enhance security for Data Roles UI
+* Add ability to create User Function in Transformation Editor
+* for details: link:https://developer.jboss.org/wiki/TeiidDesigner85WhatsNew[Teiid Designer 8.5]
+
+===== Teiid Designer 8.6 introduces the following changes and features
+
+* Support for a Native Query Procedure
+* REST Importer Enhancements
+* Added Dynamic Parameter Capability to REST Importer
+* Added Dynamic Parameters to Generated REST Procedure
+* Added JSON REST Web Service Support
+* Improved Security Definition for Data Roles
+* for details: link:https://developer.jboss.org/wiki/TeiidDesigner86WhatsNew[Teiid Designer 8.6]
+
+===== Teiid Designer 9.0 introduces the following changes and features
+
+* Show Rest WS Response Document on Import
+* Quick Fix for migrating Designer 7.7 REST model extension properties
+* Added additional support for comments in transformation SQL
+* for details: link:https://developer.jboss.org/wiki/TeiidDesigner90WhatsNew[Teiid Designer 9.0]
+
+=== Early Access Highlights
+
+For more specifics see:
+
+==== BPMN2 Modeler
+
+* The Graphiti framework dependency was changed to require only 0.11. This is now aligned with the same version that is shipped with Eclipse Luna.
+* BPMN 2.0 Model validation has been reworked to allow extension plug-ins to override specific model element constraints. See Bug 427470 for details.
+* Double-click handling in the Outline and Problems views has been improved: a double-click on a node in the Outline view, or an error item in the Problems view will now display the Property sheet for the associated model object to allow immediate editing of the object.
+* The editor now performs a Live validation just before saving a file, and cancels the save process if the model is found to be corrupt (invalid ID string, duplicate IDs, etc.) This prevents the model file from being corrupted.
+* A new User Preference has been added to the Editor Behavior preference page, which allows Text fields to be limited to a maximum length. The default is 255 characters. Note that Multiline text boxes, such as those used for Documentation and Scripts, are not subject to this limit.
+* for details: link:https://www.eclipse.org/bpmn2-modeler/whatsnew/whatsnew-1.1.2.php[]
+
+=== Fuse Tooling
+
+See  link:http://lhein.blogspot.com/2014/07/improved-server-adapters-for-jboss-fuse.html[Lars Heinemann's Blog] for more insights.
+
+=== The JBoss Tools website features tab
+
+Don't miss the link:/features[Features tab] for up to date information on your favorite Integration Stack components.
+
+*Give it a try!*
+
+Paul Leacu.
