@@ -309,7 +309,7 @@ devstudio_is:
     luna:
       8.0.0.GA:
         blog_announcement_url: /blog/2015-03-11-JBTIS-420-Final.html
-        #release_notes_url: https://devstudio.jboss.com/updates/8.0/integration-stack/release-notes/Release_Notes_8.0.0.html
+        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/8.0/html/8.0.0_Release_Notes/index.html
         release_date: 2015-03-11
         required_devstudio_version: 8.0.2.GA
         update_site_url: https://devstudio.jboss.com/updates/8.0/integration-stack/
@@ -1065,7 +1065,6 @@ jbt_is:
     luna:
       4.2.0.Final:
         blog_announcement_url: /blog/2015-03-11-JBTIS-420-Final.html
-        #release_notes_url: https://devstudio.jboss.com/updates/8.0/integration-stack/release-notes/Release_Notes_8.0.0.html
         release_date: 2015-03-11
         required_jbt_core_version: 4.2.2.Final
         update_site_url: http://download.jboss.org/jbosstools/updates/stable/luna/integration-stack/ 
