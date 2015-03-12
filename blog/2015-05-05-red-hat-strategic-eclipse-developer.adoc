@@ -1,0 +1,80 @@
+= Red Hat becomes Strategic Eclipse Developer
+:page-layout: blog
+:page-author: maxandersen
+:page-tags: [eclipse, jbosscentral]
+
+I'm happy to report that a few days ago the final paperwork around
+Red Hat upgrading their membership to Strategic Developer at Eclipse
+was completed and now https://www.eclipse.org/org/press-release/20150505_redhat.php[announced at Eclipse.org].
+
+== What does this mean ?
+
+Strategic Members are organizations that view Eclipse as a strategic
+platform and are investing developer and other resources to further
+develop Eclipse Foundation technologies. Strategic Developers commit to
+assign at least eight developers full time to develop Eclipse technology,
+lead Eclipse projects and contribute annual dues up to 250.000 $.
+
+At Red Hat we already have more than eight developers doing 
+development Eclipse technology, both at and around the base Eclipse distribution.
+
+We are http://jboss.org/eclipse[leading multiple Eclipse projects]:
+
+* m2e-wtp
+* JavaScript Development Tools (JSDT)
+* vert.x
+* Linux Tools
+* Thym
+* BPMN2
+* BPEL
+* SWTBot
+
+..and contributing to https://www.eclipse.org/membership/showMember.php?member_id=731[many more].
+
+This work is used in our JBoss Tools project and two products: http://www.jboss.org/products/devstudio/overview/[JBoss
+Developer Studio (Middleware)] and https://access.redhat.com/documentation/en-US/Red_Hat_Developer_Toolset/[Red Hat Developer Toolset (Linux
+Platform)].
+
+By upgrading to Strategic Developer we are confirming our continued
+support and commitement of resources to Eclipse, but also increasing
+our funding to be $250.000 annually.
+
+Red Hat have an interest in Eclipse Foundation continues to thrive,
+and that its flagship, the Eclipse IDE and other opensource
+development tools and runtimes continues to evolve and improve.
+
+== Stepping down and up from the board
+
+This announcement also means I'll have to step down from the board as
+solutions member representative, but I'll be joining again as Red
+Hat's representative for their newly aquired Strategic Developer
+position.
+
+I'm happy to have served and I'm looking forward to see which
+other solutions member will come join in on the board and
+bring Eclipse Foundation forward.
+
+== What next ? 
+
+We've been contributing and continue to help making Eclipse Mars a
+great release, together with the rest of the community. We are
+especially working on fixing GTK/SWT on Linux, making Docker support
+and looking at improving the Java Script Development tools. The latter
+I did a https://www.eclipsecon.org/na2015/session/making-eclipse-html-and-javascript-fun-again[presentation at EclipseCon]
+which provide some of ideas what we are working on.
+
+By becoming strategic developer we also plan to be involved more in
+how Eclipse IP and Development process works and evolves. Something
+that become more important to make more effective for
+fast moving projects to feel better at home at Eclipse.
+
+On top of that Eclipse have a lot of other areas going on which Red Hat are keeping our
+eye on - especially in the area of web IDE's and Internet-of-things.
+
+If you are interested in hearing more about this or have a suggestion please
+feel free to contact me by mailto:manderse@redhat.com[mail] or leave a comment below! 
+
+Let's Have fun!, +
+Max Rydahl Andersen +
+http://twitter.com/maxandersen[@maxandersen]
+
