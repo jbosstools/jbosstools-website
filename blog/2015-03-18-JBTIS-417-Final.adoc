@@ -78,6 +78,18 @@ Don't miss the link:/features[Features tab] for up to date information on your f
 
 == Installation
 
+=== If you already have JBDSIS installed...
+
+Simply start jbdevstudio or eclipse-with-jbds, then:
+
+Select Help > Check for Updates
+
+Select the components you'd like to install from the available updates:
+
+image::/blog/images/jbtis/jbtis-417-b3.png[Check for Updates - JBoss Tools Integration Stack]
+
+=== If you'd like a fresh install...
+
 To install the Integration Stack tools, first install JBoss Developer Studio from the link:https://www.jboss.org/products/devstudio.html[all-in-one installer], bundled and configured out of the box with everything you need to get started. Alternatively, if you already have eclipse-jee-kepler installed, you can install link:https://marketplace.eclipse.org/content/red-hat-jboss-developer-studio-kepler[JBoss Developer Studio] or link:https://marketplace.eclipse.org/content/jboss-tools-kepler[JBoss Tools] from the Eclipse Marketplace via *Help > Eclipse Marketplace...*
 
 image:/blog/images/jbtis-b1.png[Eclipse Marketplace - JBDS]
