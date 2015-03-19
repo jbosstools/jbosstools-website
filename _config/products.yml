@@ -60,6 +60,29 @@ devstudio:
   url_path_fragment: devstudio
   streams:
     luna:
+      8.1.0.CR1:
+        #marketplace_url: http://marketplace.eclipse.org/node/1616973
+        #marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
+        release_date: 2015-03-19
+        supported_devstudio_is_version: 8.0.0.GA
+        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        blog_announcement_url: /blog/2015-03-19-JBDS-8.1.0.CR1-for-luna.html
+        installers: 
+          - name: Stand-alone Installer
+            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/
+            file_size: 546MB
+          - name: Installer With EAP 6.3.0
+            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/
+            file_size: 685MB
+        zips:
+          - name: Update site (including sources) bundle of JBoss Developer Studio
+            file_size: 524MB
+            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/
+          - name: Target Platform for JBoss Developer Studio
+            file_size: 426MB
+            url: https://devstudio.redhat.com/updates/8.0.0/jboss-devstudio-8.1.0.CR1-target-platform.zip
+            md5_url: https://devstudio.redhat.com/updates/8.0.0/jboss-devstudio-8.1.0.CR1-target-platform.zip.MD5
       8.1.0.Beta1:
         #marketplace_url: http://marketplace.eclipse.org/node/1616973
         #marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
