@@ -37,7 +37,7 @@ The LiveReload server features an embedded proxy which enhances the Directory Mo
 
 == Easy access for External Devices
 === QR Code to avoid fastidious URLs
-image::images/liveReload-open-in-web-browser-via-qrcode-dialog.png[]
+image::images/livereload-open-in-web-browser-via-qrcode-dialog.png[]
 
 Having the proxy with both livereload.js script injection and allow remote connections options enabled makes a perfect combination to test applications on smartphones and tablets, especially when the LiveReload Browser Extension cannot be installed on such devices.
 
