@@ -1,17 +1,10 @@
-= Forge Tools 4.2.3.Beta1 What's New
+= Forge Tools 4.2.3.Final What's New
 :page-layout: whatsnew
 :page-component_id: forge
-:page-component_version: 4.2.3.Beta1
+:page-component_version: 4.2.3.Final
 :page-product_id: jbt_core 
-:page-product_version: 4.2.3.Beta1
+:page-product_version: 4.2.3.Final
 
 == Forge 2 Runtime 	
 
-The included Forge 2 runtime is 2.14.0.Final. 
-
-- Goodbye Illegal Brick Road: We got rid of some nasty IllegalStateExceptions that used to happen when you run Furnace tests. Thanks goes to Matej Briskar and Lincoln Baxter, III for finding out the issue and fixing it appropriately.
-- Use your own formatting rules: now it’s possible to specify a default formatter profile. Use the "Java: Set Default Formatter" command to choose an exported Eclipse XML Formatter file to be used whenever a Java artifact is produced (JPA Entity, REST endpoint created, etc)
-- Component Upgrades: We’ve upgraded Roaster to 2.12.0.Final, Maven to 3.2.5, Aether to 1.0 and jGit to 3.6.1.201501031845-r (fixes security flaws). For this reason, it’s highly recommended that you upgrade to this version and use Maven 3.2.5 if you plan to use the furnace-maven-plugin.
-
-
-See the full release notes link:http://forge.jboss.org/news/2015-01-30/forge-2.14.0.final-%28sword%29-is-here[here.]
+The included Forge 2 runtime is 2.15.2.Final. See the full release notes link:http://forge.jboss.org/news/2015-03-19/forge-2.15.2.final-%28morning-star%29-is-here[here.]
