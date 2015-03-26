@@ -126,6 +126,40 @@ If you are viewing this page while rendered locally this would be link:/survival
 
 == Tips & Tricks
 
+=== How to add a blog ?
+
+To add a blog add a file to the link:blog[blog] folder, following the structure of 
+this link:YYYY-MM-DD-blog-title.adoc.template[template]
+
+=== How to add New and Noteworthy
+
+To add a new and noteworthy add a dir+file to the link:documentation/whatsnew[whatsnew folder], using
+one of the existing entries as a template.
+
+Take care to ensure you have listed all the proper component and project versions and the site generation will
+automatically aggregate the news for the full release.
+
+=== How do I exclude New and Noteworthy content from Final version ?
+
+Sometimes a N&N in earlier versions are not appropriate in the Final release.
+To avoid having to manually create a full NN you can use a asciidoctor macro
+to skip content based on the `finalnn` property being defined.
+
+Example:
+
+```
+ifndef::finalnn[]
+== Really cool feature
+
+This awesome feature is very dangerous and might be removed, but 
+for now it is in there.
+endif::finalnn[]
+
+```
+
+If that is in version 1.0.0.Beta1 NN then it will still be listed in 1.0.0.Beta1 but
+for the 1.0.0.Final version it will not.
+
 === If your changes are not visible...
 
 completely regenerate the site via:
