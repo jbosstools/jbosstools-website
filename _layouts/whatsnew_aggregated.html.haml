@@ -87,6 +87,9 @@ tab: docs
     
                 
     - default_imagesdir = site.asciidoctor.attributes['imagesdir']
+    - if is_stable_version(page.build_info.version) then
+      - site.asciidoctor.attributes['finalnn'] = true
+    
     - component_ids.each do |component_id|
       - component_news = page.component_news[component_id]
       %div.component-wrapper{:id=>component_id}
@@ -95,5 +98,9 @@ tab: docs
           - site.asciidoctor.attributes['imagesdir'] = relative(Pathname.new(n.output_path).parent.to_s)
           ~n.content
       %hr
+    -# restore the default 'imagesdir'
     - site.asciidoctor.attributes['imagesdir'] = default_imagesdir
+    -# unset the 'finalnn' attribute (used to exclude some version specific content)
+    - site.asciidoctor.attributes['finalnn'] = null
+    
     

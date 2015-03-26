@@ -30,11 +30,13 @@ module Awestruct
             whatsnew_data[data_key.to_sym] = data_map 
           end
         end
-        # grouping all components' N&N pages per product id and product version
+        # grouping all components' N&N pages per product id/version
         site.whatsnew_pages = Hash.new
         whatsnew_data.each do |component_id, component_pages|
+          puts " processing N&N for #{component_id}"
           # treat .adoc pages
           component_pages.select{|key, component_page| File.extname(key.to_s) == ".adoc"}.each do |key, component_page|
+            puts " processing N&N for #{component_id} in #{component_page.product_id}.#{component_page.product_version}"
             if site.whatsnew_pages[component_page.product_id].nil? then
               site.whatsnew_pages[component_page.product_id] = Hash.new
             end
@@ -43,8 +45,10 @@ module Awestruct
             # now, deal with *.Final* versions if they exist in site.products
             unless Products_Helper.is_stable_version(component_page.component_version)
               product_stable_version = Products_Helper.get_stable_version(site, component_page.product_id, component_page.product_version)
-              #puts " stable version of #{component_page.product_id} #{component_page.build_info.version}: #{product_stable_version}"
-              unless product_stable_version.nil? 
+              if product_stable_version.nil? 
+                puts " Skipping aggregation for #{component_page.product_id}.#{component_page.product_version} .Final page since there's no such product yet"
+              else product_stable_version.nil? 
+                puts " adding #{component_page.product_version} to stable version of #{component_page.product_id}.#{product_stable_version}"
                 whatsnew_final_page = get_whatsnew_page(site, component_page.product_id, product_stable_version)
                 add_component_page(whatsnew_final_page, component_page)
               end
@@ -93,7 +97,7 @@ module Awestruct
           product_url_path_fragment = site.products[product_id].url_path_fragment
           page = create_page(site, @@whatsnew_layout_path, @target_path_prefix, product_url_path_fragment, product_version)
           page.build_info = Products_Helper.get_product_info(site, product_id, product_version)
-          puts "  building  N&N page for #{product_id} #{product_version}: #{page.build_info}"
+          # puts "  building  N&N page for #{product_id} #{product_version}: #{page.build_info}"
           page.component_news = Hash.new
           site.whatsnew_pages[product_id][product_version] = page
         end
