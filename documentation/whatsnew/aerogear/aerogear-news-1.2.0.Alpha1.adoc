@@ -5,7 +5,7 @@
 :page-product_id: jbt_core
 :page-product_version: 4.3.0.Alpha1
 
-=== Import FeedHenry Applications
+== Import FeedHenry Applications
 
 A new wizard allows you to import Cordova Applications from FeedHenry to take
 advantage of the Cordova features and the CordovaSim on JBoss Tools.
@@ -13,7 +13,7 @@ advantage of the Cordova features and the CordovaSim on JBoss Tools.
 image::./images/1.2.0.Alpha1/importFeedHenryAppWiz.png[]
 
 
-=== Windows Phone Support
+== Windows Phone Support
 
 Hybrid Mobile(Cordova) projects now support Windows Phone. The new Windows
 Phone allows cordova projects to run on Windows Phone emulator directly from
