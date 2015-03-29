@@ -2,7 +2,7 @@
 :page-layout: features
 :page-product_id: jbt_core
 :page-feature_id: cdi
-:page-feature_image_url: images/weld_icon_256px.png
+:page-feature_image_url: images/java_ee_logo_vert_v2.png
 :page-feature_order: 5
 :page-feature_tagline: Bringing CDI to Eclipse
 :page-issues_url: https://issues.jboss.org/browse/JBIDE/component/12311164
