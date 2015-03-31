@@ -494,7 +494,7 @@ jbt_core:
         update_site_url: http://download.jboss.org/jbosstools/updates/development/luna/
         #marketplace_url: http://marketplace.eclipse.org/node/1617241
         #marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1617241
-        archived: true
+        #archived: true
         release_date: 2015-03-04
         supported_jbt_is_version: 4.2.0.Final
         blog_announcement_url: /blog/2015-03-05-JBDS-8.1.0.Beta1-for-luna.html
