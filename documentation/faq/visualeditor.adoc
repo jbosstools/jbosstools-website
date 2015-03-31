@@ -55,7 +55,10 @@ Visual Part doesn't start and *"XPCOM error -2147467259"* is shown::
       * Go to Eclipse -> Help -> About -> Installation Details... ->  Configuration
       * find org.eclipse.swt.browser.XULRunnerPath and open this path in terminal
       * try xulrunner.exe -version or ./xulrunner -version and it should show what is needed for XR to work
-	
+
+After choosing HTML5 Visual Editor mode on Linux, Eclipse freezes during restart. What can I do about it?::
+	This may happen because SWT.WebKit conflicts with http://bluejeans.com/[BlueJeans] plugin for Firefox. The cause of this problem may also be http://www.google.com/hangouts/[Google+ Hangouts] browser plugin. Uninstalling these plugins will fix Eclipse freezing.
+
 == Platform Specific Questions
 
 [qanda]
