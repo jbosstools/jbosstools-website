@@ -56,9 +56,16 @@ Visual Part doesn't start and *"XPCOM error -2147467259"* is shown::
       * find org.eclipse.swt.browser.XULRunnerPath and open this path in terminal
       * try xulrunner.exe -version or ./xulrunner -version and it should show what is needed for XR to work
 
-After choosing HTML5 Visual Editor mode on Linux, Eclipse freezes during restart. What can I do about it?::
-	This may happen because SWT.WebKit conflicts with http://bluejeans.com/[BlueJeans] plugin for Firefox. The cause of this problem may also be http://www.google.com/hangouts/[Google+ Hangouts] browser plugin. Uninstalling these plugins will fix Eclipse freezing.
+After choosing HTML5 Visual Editor mode on Linux, Eclipse crashes unexpectedly. What can I do about it?::
+	The reason of Eclipse crash may be connected with SWT.WebKit conflicts with http://bluejeans.com/[BlueJeans] or http://www.google.com/hangouts/[Google Talk] browser plugins. We recommend to update Google Talk plugin to the latest version, it can help to avoid crashes. Uninstalling these plugin will also fix Eclipse crashing.
+	Related issues: 
+		* https://bugs.eclipse.org/bugs/show_bug.cgi?id=334466[Google Talk issue in Eclipse bugzilla]
+		* https://bugs.eclipse.org/bugs/show_bug.cgi?id=433606[BlueJeans issue in Eclipse bugzilla]
+		* https://bugzilla.redhat.com/show_bug.cgi?id=1160411[BlueJeans issue in RedHat bugzilla]
 
+After choosing HTML5 Visual Editor mode on Linux, Eclipse freezes during restart. What can I do about it?::
+	This may happen because SWT.WebKit conflicts with http://bluejeans.com/[BlueJeans] plugin for Firefox. Uninstalling these plugin will fix Eclipse freezing. See related issues in  https://bugs.eclipse.org/bugs/show_bug.cgi?id=433606[eclipse bugzilla] and https://bugzilla.redhat.com/show_bug.cgi?id=1160411[RedHat bugzilla].
+	
 == Platform Specific Questions
 
 [qanda]
