@@ -8,8 +8,8 @@ eclipse:
   luna:
     url_path_fragment: luna
     short_name: Luna
-    full_name: Eclipse Luna 4.4
-    download_url: http://www.eclipse.org/downloads/packages/release/luna/R
+    full_name: Eclipse Luna 4.4.2
+    download_url: http://www.eclipse.org/downloads/packages/release/Luna/SR2
     requirements: Java 7 or Java 8
   kepler:
     url_path_fragment: kepler
@@ -462,11 +462,39 @@ jbt_core:
             #md5_url: .MD5
 
     luna:
+      4.2.3.Final:
+        update_site_url: http://download.jboss.org/jbosstools/updates/stable/luna/
+        marketplace_url: http://marketplace.eclipse.org/node/1617241
+        marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1617241
+        #archived: true
+        release_date: 2015-04-02
+        supported_jbt_is_version: 4.2.0.Final
+        blog_announcement_url: /blog/2015-04-02-devstudio-8.1.0.GA-for-luna.html
+        documentation_url: http://tools.jboss.org/documentation/
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 530MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.x/jbosstools-4.2.3.Final_2015-03-26_22-41-56-B370-updatesite-core.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.x/jbosstools-4.2.3.Final_2015-03-26_22-41-56-B370-updatesite-core.zip.MD5
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 37.1MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.x/jbosstools-4.2.3.Final_2015-03-26_22-41-56-B370-src.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.x/jbosstools-4.2.3.Final_2015-03-26_22-41-56-B370-src.zip.MD5
+          - name: Update site (including sources) bundle of all Hibernate Tools
+            file_size: 105MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.x/jbosstools-4.2.3.Final_2015-03-26_23-05-30-B264-updatesite-hibernatetools.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.x/jbosstools-4.2.3.Final_2015-03-26_23-05-30-B264-updatesite-hibernatetools.zip.MD5
+          - name: Stand-alone BrowserSim
+            file_size: 15.8MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.x/jbosstools-4.2.3.Final-browsersim-standalone.jar
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.x/jbosstools-4.2.3.Final-browsersim-standalone.jar.MD5
+          - name: Release Notes
+            url: http://tools.jboss.org/documentation/whatsnew/jbosstools/4.2.3.Final.html
       4.2.3.CR1:
         update_site_url: http://download.jboss.org/jbosstools/updates/development/luna/
         #marketplace_url: http://marketplace.eclipse.org/node/1617241
         #marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1617241
-        #archived: true
+        archived: true
         release_date: 2015-03-19
         supported_jbt_is_version: 4.2.0.Final
         blog_announcement_url: /blog/2015-03-19-devstudio-8.1.0.CR1-for-luna.html
@@ -494,7 +522,7 @@ jbt_core:
         update_site_url: http://download.jboss.org/jbosstools/updates/development/luna/
         #marketplace_url: http://marketplace.eclipse.org/node/1617241
         #marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1617241
-        #archived: true
+        archived: true
         release_date: 2015-03-04
         supported_jbt_is_version: 4.2.0.Final
         blog_announcement_url: /blog/2015-03-05-JBDS-8.1.0.Beta1-for-luna.html
