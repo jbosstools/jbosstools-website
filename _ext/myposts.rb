@@ -20,7 +20,7 @@ module Awestruct
         draft_posts = Array.new
         site.posts.each do |post|
           #puts " processing blog with title: '#{post.title}'..." 
-          if ( post.relative_source_path =~ /^#{@path_prefix}\/([^.]+)\..*$/ ) then
+          if ( post.relative_source_path =~ /^#{@path_prefix}\/(.+).adoc$/ ) then
             basename=$1
             post.output_path="#{@path_prefix}/#{basename}.html"
             #puts "  post date: #{post.date} >  #{Date.today.next_day} ? #{post.date > Date.today.next_day}"

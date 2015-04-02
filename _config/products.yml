@@ -1225,7 +1225,7 @@ jbt_is:
             md5_url: http://download.jboss.org/jbosstools/updates/stable/kepler/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.1.7.Final.zip.MD5
       4.1.6.Final:
         build_type: stable
-        blog_announcement_url: /blog/2014-10-09-JBTIS-4.html
+        blog_announcement_url: /blog/2014-10-09-JBTIS-4.1.6.Final.html
         release_notes_url: https://devstudio.jboss.com/updates/7.0/integration-stack/release-notes/Release_Notes_7.0.3.html
         release_date: 2014-10-09
         required_jbt_core_version: 4.1.2.Final
@@ -1236,7 +1236,7 @@ jbt_is:
             url: http://download.jboss.org/jbosstools/updates/stable/kepler/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.1.6.Final.zip
             md5_url: http://download.jboss.org/jbosstools/updates/stable/kepler/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.1.6.Final.zip.MD5
       4.1.5.Final:
-        blog_announcement_url: /blog/2014-06-19-JBTIS-4.html
+        blog_announcement_url: /blog/2014-06-19-JBTIS-4.1.5.Final.html
         release_notes_url: https://devstudio.jboss.com/updates/7.0/integration-stack/release-notes/Release_Notes_7.0.2.html
         release_date: 2014-06-19
         required_jbt_core_version: 4.1.2.Final
@@ -1248,7 +1248,7 @@ jbt_is:
             md5_url: http://download.jboss.org/jbosstools/updates/stable/kepler/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.1.5.Final.zip.MD5
 
       4.1.4.Final:
-        blog_announcement_url: /blog/2014-04-14-JBTIS-4.html
+        blog_announcement_url: /blog/2014-04-14-JBTIS-4.1.4.Final.html
         release_date: 2014-04-14
         required_jbt_core_version: 4.1.2.Final
         update_site_url: http://download.jboss.org/jbosstools/updates/stable/kepler/integration-stack 
