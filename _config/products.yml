@@ -84,6 +84,29 @@ devstudio:
             url: https://devstudio.jboss.com/static/updates/8.0.0/jboss-devstudio-8.1.0.GA-target-platform.zip
             md5_url: https://devstudio.jboss.com/static/updates/8.0.0/jboss-devstudio-8.1.0.GA-target-platform.zip.MD5
       8.1.0.CR1:
+        marketplace_url: http://marketplace.eclipse.org/node/1616973
+        marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
+        release_date: 2015-04-01
+        supported_devstudio_is_version: 8.0.0.GA
+        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        blog_announcement_url: /blog/2015-04-02-devstudio-8.1.0.GA-for-luna.html
+        installers: 
+          - name: Stand-alone Installer
+            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager//content/origin/files/sha256/0e/0e3e78a641196d21742730f23a6e1c9aa04e0596c16349e74dbd4ea2d1109d40/jboss-devstudio-8.1.0.GA-installer-standalone.jar
+            file_size: 546MB
+          - name: Installer With EAP 6.3.0
+            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/94/94adf11b2934eea040bde7cafa9f827cb6641638b650ccdc09f6f2e911ba43e9/jboss-devstudio-8.1.0.GA-installer-eap.jar
+            file_size: 685MB
+        zips:
+          - name: Update site (including sources) bundle of JBoss Developer Studio
+            file_size: 524MB
+            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/60/60abd4b755f5b89202d391f75dbe3ac2e4b607123e249842c961281c65155b68/jboss-devstudio-8.1.0.GA-updatesite-core.zip
+          - name: Target Platform for JBoss Developer Studio
+            file_size: 430MB
+            url: https://devstudio.jboss.com/static/updates/8.0.0/jboss-devstudio-8.1.0.GA-target-platform.zip
+            md5_url: https://devstudio.jboss.com/static/updates/8.0.0/jboss-devstudio-8.1.0.GA-target-platform.zip.MD5
+      8.1.0.CR1:
         #marketplace_url: http://marketplace.eclipse.org/node/1616973
         #marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
         release_date: 2015-03-20
