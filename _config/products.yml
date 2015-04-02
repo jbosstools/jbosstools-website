@@ -60,7 +60,7 @@ devstudio:
   url_path_fragment: devstudio
   streams:
     luna:
-      8.1.0.CR1:
+      8.1.0.GA:
         marketplace_url: http://marketplace.eclipse.org/node/1616973
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
         release_date: 2015-04-01
