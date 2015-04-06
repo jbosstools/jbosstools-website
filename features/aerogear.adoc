@@ -62,3 +62,12 @@ image::images/features-aerogear-explorer-extensions.png[]
 When a plugin is installed into a project it is installed into the 'plugins' directory
 and will show up with corresponding icon in the Project Explorer.
 
+== CordovaSim
+=== Test & Debug mobile apps easily
+image::images/features-aerogear-cordovasim.png[]
+
+Cordova Simulator (CordovaSim) is a http://ripple.incubator.apache.org/[Ripple] based tool for hybrid mobile application development and testing. Basically, if one has no mobile phone ready to hand or does not want to use native emulator, CordovaSim is what they are looking for. It provides the following features:
+
+* Dev Tools Debugger
+* LiveReload support
+* Eclipse Console logging
