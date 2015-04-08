@@ -1,7 +1,7 @@
 language: ruby
 bundler_args: --without development --path .bundle
 rvm:
-- 1.9.3
+- 2.2.0
 branches:
   only:
   - master
