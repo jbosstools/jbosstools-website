@@ -9,7 +9,7 @@ A bit of Git, a bit of Ruby and you will get your local tools.jboss.org served..
 == Prerequisites
 
 * Get http://git-scm.com/[Git]
-* Get http://www.ruby-lang.org/en/[Ruby 1.9.3] (part of the RVM install if you follow that path - see below)
+* Get http://www.ruby-lang.org/en/[Ruby 2.2.0] (part of the RVM install if you follow that path - see below)
 * Get http://rubygems.org/[RubyGems 1.3.6] or above
 * Get http://www.gnu.org/software/wget/[GNU Wget 1.14]
 * If on Linux, you might need to install stuff for nokogiri (`sudo yum install libxml libxml-devel libxslt libxslt-devel`)
@@ -43,12 +43,12 @@ you are running in a proper terminal/login.
 # The purpose of using rvm is to have non-root, user isolated and reproducible gem/ruby environment
 # During the rvm install it might ask to install system level packages, for these your user need to have sudo permissions
 # or you have to run those installs as root seperately and then run rvm install again as a normal user
-rvm install 1.9.3
-rvm use 1.9.3
+rvm install 2.2
+rvm use 2.2
 rvm gemset create jbosstools-website
 ----
 
-Note: the project has a `.rvmrc` file which will be used by rvm when you
+Note: the project has a `.ruby-gemset` file which will be used by rvm when you
 enter the `jbosstools-website` directory. This file will assume you have
 the above installed.
 

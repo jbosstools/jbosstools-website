@@ -107,9 +107,20 @@ task :update => :init do
   exit 0
 end
 
+desc 'Update/install the environment to run Awestruct'
+task :install => :init do
+  if File.exist? 'Gemfile'
+    system 'bundle install'
+  else
+    system 'gem update awestruct'
+  end
+  # Don't execute any more tasks, need to reset env
+  exit 0
+end
+
 desc 'Build and preview the site locally in development mode'
 task :preview => :check do
-  run_awestruct '-d'
+  run_awestruct "-d --no-livereload"
 end
 
 desc 'Generate the site using the specified profile (default: development)'
@@ -177,7 +188,7 @@ task :check => :init do |task, args|
     if which('awestruct').nil?
       msg 'Run `rake setup` or `rake setup[local]` to install required gems from RubyGems.'
     else
-      msg 'Run `rake update` to install additional required gems from RubyGems.'
+      msg 'Run `rake install` to install additional required gems from RubyGems.'
     end
     exit e.status_code
   end
