@@ -3,12 +3,16 @@ layout: project
 tab: features
 title: Features
 ---
-.row-fluid
-  .hero-unit.center
-    %h1 Features
-    %p Main features of #{site.products[:jbt_core].name} and #{site.products[:jbt_is].name} (*)
-  
 - site.features.each do |product_id, features|
+  .row-fluid
+    .hero-unit.center
+      - if product_id == "jbt_core"
+        %h1 Features
+      - else 
+        %h2 #{site.products[product_id].name}
+        
+      %p * Not all features are installed by default. You can install these from JBoss Central or their update site. 
+        
   -# show all other features
   - f = Array.new() + features
   - while f.size > 0 do
@@ -29,6 +33,4 @@ title: Features
               %h4.center< #{feature.tagline}
        
 
-.hero-unit.center
-  %p * Not all features are installed by default. You can install these from JBoss Central or their update site. 
 
