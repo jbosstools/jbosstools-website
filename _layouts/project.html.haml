@@ -22,7 +22,7 @@
     %link(rel="apple-touch-icon-precomposed" sizes="72x72" href="#{site.project_images_url}/apple-touch-icon-72x72-precomposed.png")
     %link(rel="apple-touch-icon-precomposed" href="#{site.project_images_url}/apple-touch-icon-precomposed.png")
 
-    %link{ :rel=>'stylesheet', :type=>"text/css", :href=>relative("/stylesheets/jbt-styles#{site.minified}.css") }
+    %link{ :rel=>'stylesheet', :type=>"text/css", :href=>relative("/stylesheets/jbt-styles.css") }
     %link{ :rel=>"stylesheet", :type=>"text/css", :href=>relative("/fonts/font-awesome/font-awesome.min.css"), :media=>"screen, projection"}
     %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css", :media=>"screen, projection"}
     
@@ -192,7 +192,7 @@
       - page.javascripts.each do |javascript|
         %script{:src=>javascript, :type=>'text/javascript'}
     %script{:src=>"#{pageStyle ? site[pageStyle].bootstrap_js_url : site.bootstrap_js_url}#{site.minified}.js"}
-    %script{:src=>relative("/javascripts/application#{site.minified}.js")}
+    %script{:src=>relative("/javascripts/application.js")}
     - if page.bottom_javascripts
       - page.bottom_javascripts.each do |javascript|
         %script{:src=>relative(javascript), :type=>'text/javascript'}
@@ -248,4 +248,4 @@
       <!-- End oTags -->
 
     - if site.google_analytics
-      = google_analytics_async
+      = google_analytics
