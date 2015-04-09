@@ -5,7 +5,7 @@
 :page-feature_order: 8
 :page-feature_tagline: Front-end Tooling
 :page-feature_image_url: images/features-html5-js-css3_icon_256px.png
-:page-issues_url: https://issues.jboss.org/browse/JBIDE/component/
+:page-issues_url: https://issues.jboss.org/browse/JBIDE/component/12311318
 
 == HTML Preview
 === Develop UI Faster & Easier 
