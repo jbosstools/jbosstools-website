@@ -4,7 +4,8 @@ source 'https://rubygems.org'
 ruby '2.2.1'
 #gem 'awestruct', '0.5.5'         # Framework for creating static HTML sites
 #gem 'awestruct', :git => 'git://github.com/aslakknutsen/awestruct.git', :branch => 'lazy_gen'
-gem 'awestruct', :git => 'git://github.com/lightguard/awestruct.git', :branch => 'switch_from_rexml_to_oga'
+#gem 'awestruct', :git => 'git://github.com/lightguard/awestruct.git', :branch => 'switch_from_rexml_to_oga'
+gem 'awestruct', :git => 'git://github.com/awestruct/awestruct.git', :branch => 'master'
 
 
 gem 'uglifier', '~> 2.0.1'        # Ruby wrapper for UglifyJS JavaScript compressor
@@ -23,6 +24,8 @@ gem 'coderay'
 gem 'html_press', '~> 0.8.1'
 gem 'git' # required to run the '-deploy' option
 
+gem 'bootstrap-sass'
+gem 'compass'
 # To enable guard and livereload (is C native thus not available on windows. Commented out for now)
 #gem 'guard'
 #gem 'guard-livereload'

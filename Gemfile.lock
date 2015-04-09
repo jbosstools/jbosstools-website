@@ -1,14 +1,11 @@
 GIT
-  remote: git://github.com/lightguard/awestruct.git
-  revision: 9e5e1b6bcfd8af9e57ac04c050012a8e854958ac
-  branch: switch_from_rexml_to_oga
+  remote: git://github.com/awestruct/awestruct.git
+  revision: 33415cb888763dc9bbd420f335ac3c7e27f93f1f
+  branch: master
   specs:
     awestruct (0.5.6.beta8)
       asciidoctor
-      bootstrap-sass (~> 3.2.0.2)
       colorize (~> 0.7.1)
-      compass (~> 1.0.1)
-      compass-960-plugin (~> 0.10.4)
       git (~> 1.2.6)
       guard-livereload (~> 2.1.2)
       haml (~> 4.0.5)
@@ -20,7 +17,6 @@ GIT
       rest-client (~> 1.7.2)
       ruby-s3cmd (~> 0.1.5)
       tilt (~> 2.0.1)
-      zurb-foundation (~> 4.3.2)
 
 GEM
   remote: https://rubygems.org/
@@ -33,8 +29,12 @@ GEM
     ansi (1.5.0)
     asciidoctor (1.5.2)
     ast (2.0.0)
-    bootstrap-sass (3.2.0.2)
-      sass (~> 3.2)
+    autoprefixer-rails (5.1.8.1)
+      execjs
+      json
+    bootstrap-sass (3.3.4.1)
+      autoprefixer-rails (>= 5.0.0.1)
+      sass (>= 3.2.19)
     celluloid (0.16.0)
       timers (~> 4.0.0)
     chunky_png (1.3.4)
@@ -48,8 +48,6 @@ GEM
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
       sass (>= 3.3.13, < 3.5)
-    compass-960-plugin (0.10.4)
-      compass (>= 0.10.0)
     compass-core (1.0.3)
       multi_json (~> 1.0)
       sass (>= 3.3.0, < 3.5)
@@ -113,7 +111,7 @@ GEM
     notiffany (0.0.6)
       nenv (~> 0.1)
       shellany (~> 0.0)
-    oga (0.3.0)
+    oga (0.3.1)
       ast
       ruby-ll (~> 2.1)
     open4 (1.3.4)
@@ -149,8 +147,6 @@ GEM
       multi_json (~> 1.0, >= 1.0.2)
     yui-compressor (0.9.6)
       POpen4 (>= 0.1.4)
-    zurb-foundation (4.3.2)
-      sass (>= 3.2.0)
 
 PLATFORMS
   ruby
@@ -159,7 +155,9 @@ DEPENDENCIES
   RedCloth
   asciidoctor (= 1.5.2)
   awestruct!
+  bootstrap-sass
   coderay
+  compass
   cssminify (~> 1.0.2)
   git
   html_press (~> 0.8.1)
