@@ -13,6 +13,8 @@ link:mobiledev_createwebapp.html[Create Your First Mobile Web App]
 
 link:hmt_firstapp.html[Create Your First Hybrid Mobile App]
 
+link:import_FH_app.adoc[Import Your FeedHenry App]
+
 == Developing Apps for the Cloud
 
 link:openshift_firstapp.html[Create Your First OpenShift Online App]
