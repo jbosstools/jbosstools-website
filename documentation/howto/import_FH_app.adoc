@@ -65,7 +65,7 @@ To import your FeedHenry application:
 . Click `Finish`.
    
 .Selecting an Application to be Imported
-image::selecting_Feedhenry_app_to_be_imported.png[Selecting an Application to be Imported]
+image::selecting_FeedHenry_app_to_be_imported.png[Selecting an Application to be Imported]
 
 If you have set a password for the SSH keys, the IDE will prompt you to enter the password so that it can import the application.
 
