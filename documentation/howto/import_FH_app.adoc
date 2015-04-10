@@ -43,7 +43,7 @@ To set the preferences:
 ** In the `API Key` field, copy and paste the API key from the FeedHenry website.
 
 .Setting Preferences for FeedHenry
-image::image/preferences.png[Setting Preferences for FeedHenry]
+image::preferences.png[Setting Preferences for FeedHenry]
 
 *Note:* The user can either use an existing API key or generate a new one to set the preferences. To obtain the API key from the FeedHenry website click `Settings` > `API Key Management`. To generate a new API key, click `Settings` > `API Key Management`, and then click `Add New Key`. 
 
@@ -65,7 +65,7 @@ To import your FeedHenry application:
 . Click `Finish`.
    
 .Selecting an Application to be Imported
-image::selecting_feedhenry_app_to_be_imported.png[Selecting an Application to be Imported]
+image::selecting_Feedhenry_app_to_be_imported.png[Selecting an Application to be Imported]
 
 If you have set a password for the SSH keys, the IDE will prompt you to enter the password so that it can import the application.
 
