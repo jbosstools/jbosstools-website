@@ -28,7 +28,7 @@ To enable the FeedHenry feature:
 . In the Features Available` list, select the `Hybrid Mobile Tools + CordovaSim` check box and then click `Install/Update`.
 
 .Hybrid Mobile Tools + CordovaSim Check Box Selected
-image::images/hybrid_mobile_tools__cordovasim_check_box_selected_1.png[Hybrid Mobile Tools + CordovaSim Check Box Selected]
+image::hybrid_mobile_tools__cordovasim_check_box_selected_1.png[Hybrid Mobile Tools + CordovaSim Check Box Selected]
 
 . Follow the on-screen instructions to complete the installation.
 
