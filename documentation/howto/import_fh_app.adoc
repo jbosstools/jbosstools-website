@@ -1,11 +1,11 @@
 = Import Your FeedHenry Application into the IDE
 :page-layout: howto
-:page-tab: docs    
+:page-tab: docs
 :page-status: green
 :experimental:
 :imagesdir: ./images
 
-Use Red Hat JBoss Developer Studio’s `Import` wizard to import a FeedHenry application into your workspace. When imported, edit the application as required and push it back to the FeedHenry server. 
+Use the Mobile Hybrid Tools' `Import` wizard to import a FeedHenry application into your workspace. When imported, edit the application as required and push it back to the FeedHenry server.
 
 Follow the provided steps to import and make changes to a FeedHenry application using your Red Hat JBoss Developer Studio workspace:
 
@@ -14,14 +14,14 @@ Follow the provided steps to import and make changes to a FeedHenry application 
 . <<test_app, Test the Application>>
 . <<push_changes_to_FH, Push the Changes Back to the FeedHenry Server>>
 
-== Prerequisites 
-Ensure that the following prerequisites are met to enable the FeedHenry feature in JBoss Developer Studio:
+== Prerequisites
+Ensure that the following prerequisites are met to enable the FeedHenry feature:
 
 * <<enable_FH, Enable the FeedHenry Feature>>
 * <<set_preferences, Set the Preferences for your application import>>
 
 [[enable_FH]]
-=== Enable the FeedHenry Feature 
+=== Enable the FeedHenry Feature
 To enable the FeedHenry feature:
 
 . In JBoss Central, click the `Software/Update` tab.
@@ -39,13 +39,13 @@ To set the preferences:
 . Click `Window` > `Preferences`.
 . In the `Preferences` window, in the search field type, `FeedHenry` and press Enter.
 . Complete the following fields in the `Preferences` window:
-** Ensure that the `Target URL` field displays the URL to your FeedHenry server. The URL to your FeedHenry server should be something like: `https://_[your-studio-domain]_.feedhenry.com`. 
+** Ensure that the `Target URL` field displays the URL to your FeedHenry server. The URL to your FeedHenry server should be something like: `https://_[your-studio-domain]_.feedhenry.com`.
 ** In the `API Key` field, copy and paste the API key from the FeedHenry website.
 
 .Setting Preferences for FeedHenry
 image::preferences.png[Setting Preferences for FeedHenry]
 
-*Note:* The user can either use an existing API key or generate a new one to set the preferences. To obtain the API key from the FeedHenry website click `Settings` > `API Key Management`. To generate a new API key, click `Settings` > `API Key Management`, and then click `Add New Key`. 
+*Note:* The user can either use an existing API key or generate a new one to set the preferences. To obtain the API key from the FeedHenry website click `Settings` > `API Key Management`. To generate a new API key, click `Settings` > `API Key Management`, and then click `Add New Key`.
 
 [start=4]
 . Click `Apply` and then click `OK` to close the `Preferences` window.
@@ -54,30 +54,30 @@ image::preferences.png[Setting Preferences for FeedHenry]
 [[import_app]]
 == 1. Import Your FeedHenry Application
 
-Ensure that your JBoss Developer Studio preferences are set before importing a FeedHenry application. If not set yet, JBoss Developer Studio will prompt you to set the preferences. These preferences are set once when importing an application for the first time and the configured preferences are used for all imports in the future. 
+Ensure that your Preferences are set before importing a FeedHenry application. If not set yet, JBoss Developer Studio will prompt you to set the preferences. These preferences are set once when importing an application for the first time and the configured preferences are used for all imports in the future.
 
 To import your FeedHenry application:
 
 . Click `File` > `Import`.
 . Expand `FeedHenry`, click Import Cordova Application, and click `Next`.
-. The `Import` wizard displays the projects that you can import into JBoss Developer Studio. Expand the project to import an application from and select the FeedHenry application to be imported.
+. The `Import` wizard displays the projects that you can import. Expand the project to import an application from and select the FeedHenry application to be imported.
 . In the `Directory` field, enter the location where you want to clone the application locally.
 . Click `Finish`.
-   
-.Selecting an Application to be Imported
-image::selecting_FeedHenry_app_to_be_imported.png[Selecting an Application to be Imported]
 
-If you have set a password for the SSH keys, the IDE will prompt you to enter the password so that it can import the application.
+.Selecting an Application to be Imported
+image::selecting_feedhenry_app_to_be_imported.png[Selecting an Application to be Imported]
+
+If you have set a password for the SSH keys, you are prompted to enter the password so that it can import the application.
 
 *Result:* The FeedHenry project is successfully imported into JBoss Developer Studio and appears in the `Project Explorer` view. The `Cordova config.xml` file for this project opens in the Editor.
 
-=== Test the Application Import 
+=== Test the Application Import
 To test the application import:
 
-. In the `Project Explore` view, right-click the application and then click `Run As` > `Run w/remote FeedHenry server`.  A CordovaSim simulated device displaying the application appears.
+. In the `Project Explorer` view, right-click the application and then click `Run As` > `Run w/remote FeedHenry server`.  A CordovaSim simulated device displaying the application appears.
 +
 .Simulated Device Displaying the Imported Application
-image::selecting_FeedHenry_app_to_be_imported.png[Simulated Device Displaying the Imported Application]
+image::selecting_feedhenry_app_to_be_imported.png[Simulated Device Displaying the Imported Application]
 +
 . In the  `Enter Your Name Here` field on the simulated device, type your name.
 . Click `Say Hello From The Cloud`.
@@ -87,9 +87,9 @@ image::selecting_FeedHenry_app_to_be_imported.png[Simulated Device Displaying th
 [[change_app]]
 == 2. Change the Application
 
-After successfully importing the FeedHenry application in JBoss Developer Studio, follow the instructions to change the application: 
+After successfully importing the FeedHenry application in JBoss Developer Studio, follow the instructions to change the application:
 
-. In the `Project Explorer` view, expand `_[application name]_` > `www` and then double-click `index.html` to open it using the Editor.    
+. In the `Project Explorer` view, expand `_[application name]_` > `www` and then double-click `index.html` to open it using the Editor.
 . In the code, locate and delete the following line:
 +
 [source,html]
@@ -101,7 +101,7 @@ This is a basic Cordova App that can take in your name, send it to a cloud app a
 +
 [source, html]
 ----
-Hello from JBoss Developer Studio!
+Hello from Hybrid Mobile Tools!
 ----
 +
 . Save the `index.html` file by pressing Ctrl+S. Alternatively, to save click `File` > `Save` or click the `Save` icon.
@@ -112,22 +112,22 @@ image::index_html_file_edited.png[index.html File Edited]
 [[test_app]]
 == 3. Test the Application
 
-To test the imported application, right-click the application and then click `Run As` > `Run w/remote FeedHenry server`.
+To test the imported application, right-click the application and then click menu:Context[Run As > Run w/remote FeedHenry server].
 
 .FeedHenry Application Edited
-image::FeedHenry_app_edited.png[FeedHenry Application Edited]
+image::feedhenry_app_edited.png[FeedHenry Application Edited]
 
-The changes made to the `index.html` file are reflected on the simulated device. Click a corner of the displayed device to rotate it in that direction. Alternatively, right-click the simulated device and click `Rotate Right` or `Rotate Left` as to rotate it in the desired direction. 
-To view the application on a different CordovaSim simulated device, right-click the device and click `Skin`. From the list of skins, select a skin to view the application. 
+The changes made to the `index.html` file are reflected on the simulated device. Click a corner of the displayed device to rotate it in that direction. Alternatively, right-click the simulated device and click `Rotate Right` or `Rotate Left` as to rotate it in the desired direction.
+To view the application on a different CordovaSim simulated device, right-click the device and click `Skin`. From the list of skins, select a skin to view the application.
 
 [[push_changes_to_FH]]
 == 4.  Push the Changes Back to the FeedHenry Server
 
-Use the following instructions to push changes to the application back to the FeedHenry server: 
+Use the following instructions to push changes to the application back to the FeedHenry server:
 
 . In the `Project Explorer` view, right-click the application name.
 . Click `Team` > `Commit`.
-. In the `Commit Changes` window, `Commit message` field, type a message for the commit. 
+. In the `Commit Changes` window, `Commit message` field, type a message for the commit.
 . In the `Files` field, select the files that you have edited and want to push to the server and then click `Commit and Push`.
 . In the `Push Results _[application name]_` window, ensure all the details are correct and click `OK`.
 . Log into FeedHenry at `https://_[your-studio-domain]_.feedhenry.com`.
@@ -137,20 +137,20 @@ Use the following instructions to push changes to the application back to the Fe
 *Result:* The simulated device in the `App Preview` section displays the change that you have just pushed to the FeedHenry server.
 
 .FeedHenry Application Edited and Displayed on the FeedHenry Server
-image::FeedHenry_app_edited_on_FeedHenry_server.png[FeedHenry Application Edited and Displayed on the FeedHenry Server]
+image::feedhenry_app_edited_on_feedhenry_server.png[FeedHenry Application Edited and Displayed on the FeedHenry Server]
 
-== Did You Know 
+== Did You Know
 
 * Add a new API key to your FeedHenry account by clicking `Add New Key` and then following the on-screen instructions.
 
 * Set up your SSH key in the FeedHenry account by clicking `Settings` > `SSH Key Management` and then following the on-screen instructions.
 
-== Troubleshooting 
+== Troubleshooting
 
-=== Git Communication Error 
+=== Git Communication Error
 
 .Git Communication Error
-image::FeedHenry_git_communication_error.png[Git Communication Error]
+image::feedhenry_git_communication_error.png[Git Communication Error]
 
 *Error Message*
 
@@ -158,13 +158,13 @@ Problem when cloning the application. This can be due to a network problem or mi
 
 **Issue**
 
-When a FeedHenry account is set up, the user’s API Keys are configured by default, but the SSH Public key must be manually configured. Importing a FeedHenry application into JBoss Developer Studio means that the application repository is accessed via Git. Without a Public SSH key, the IDE is unable to complete the action and this error appears.
+When a FeedHenry account is set up, the user’s API Keys are configured by default, but the SSH Public key must be manually configured. Importing a FeedHenry application means that the application repository is accessed via Git. Without a Public SSH key, the tools are unable to complete the action and this error appears.
 
 *Resolution*
 
-. Click `OK` to close the `Git Communication Error` window. 
-. Log into FeedHenry at: `https://_[your-studio-domain]_.feedhenry.com`. 
-. Click the icon located in the uppermost right-side corner of the screen to display the context menu. 
+. Click `OK` to close the `Git Communication Error` window.
+. Log into FeedHenry at: `https://_[your-studio-domain]_.feedhenry.com`.
+. Click the icon located in the uppermost right-side corner of the screen to display the context menu.
 . Click `Settings` > `SSH Key Management` and then click `Add New Key`.
 . In the `Public Key` field, enter your SSH Public key. An existing Public SSH key is available at `~/.ssh/id_rsa.pub`. Alternatively, generate a new Public SSH key with the following command:
 [source]
@@ -173,7 +173,7 @@ ssh-keygen -t rsa -C "username@example.com"
 ----
 
 
-=== Invalid Preferences 
+=== Invalid Preferences
 
 .Invalid Preferences
 image::invalid_preferences_error_2.png[Invalid Preferences]
@@ -181,9 +181,3 @@ image::invalid_preferences_error_2.png[Invalid Preferences]
 *Issue*
 
 When the user logs into FeedHenry for the first time, the `Invalid Preferences` dialog box appears informing the user that the FeedHenry connection preferences are unidentified or invalid and that the user must correct the preferences. Refer to the <<set_preferencess,Set the Preferences>> section for details to set the connection preferences.
-
-
-
-
- 
-
