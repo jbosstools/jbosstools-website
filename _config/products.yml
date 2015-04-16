@@ -64,7 +64,7 @@ devstudio:
         marketplace_url: http://marketplace.eclipse.org/node/1616973
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
         release_date: 2015-04-01
-        supported_devstudio_is_version: 8.0.0.GA
+        supported_devstudio_is_version: 8.0.1.GA
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         blog_announcement_url: /blog/2015-04-02-devstudio-8.1.0.GA-for-luna.html
@@ -354,6 +354,20 @@ devstudio_is:
   url_path_fragment: devstudio_is
   streams:
     luna:
+      8.0.1.GA:
+        blog_announcement_url: /blog/2015-04-16-JBTIS-421-Final.html
+        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/8.0/html/8.0.1_Release_Notes/index.html
+        release_date: 2015-04-16
+        required_devstudio_version: 8.1.0.GA
+        update_site_url: https://devstudio.jboss.com/updates/8.0/integration-stack/
+        zips:
+          - name: Update site bundle of JBoss Developer Studio Integration Stack
+            file_size: 185MB
+            url: https://devstudio.jboss.com/updates/8.0.0/jbdevstudio-integration-stack-updatesite-8.0.1.GA.zip
+            md5_url: https://devstudio.jboss.com/updates/8.0.0/jbdevstudio-integration-stack-updatesite-8.0.1.GA.zip.MD5
+            file_size: 187MB
+            url: https://devstudio.jboss.com/updates/8.0.0/jbdevstudio-integration-stack-updatesite-8.0.1.GA-earlyaccess.zip
+            md5_url: https://devstudio.jboss.com/updates/8.0.0/jbdevstudio-integration-stack-updatesite-8.0.1.GA-earlyaccess.zip.MD5
       8.0.0.GA:
         blog_announcement_url: /blog/2015-03-11-JBTIS-420-Final.html
         release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/8.0/html/8.0.0_Release_Notes/index.html
@@ -492,7 +506,7 @@ jbt_core:
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1617241
         #archived: true
         release_date: 2015-04-02
-        supported_jbt_is_version: 4.2.0.Final
+        supported_jbt_is_version: 4.2.1.Final
         blog_announcement_url: /blog/2015-04-02-devstudio-8.1.0.GA-for-luna.html
         documentation_url: http://tools.jboss.org/documentation/
         zips:
@@ -1178,6 +1192,19 @@ jbt_is:
   url_path_fragment: jbosstools_is
   streams:
     luna:
+      4.2.1.Final:
+        blog_announcement_url: /blog/2015-04-16-JBTIS-421-Final.html
+        release_date: 2015-04-16
+        required_jbt_core_version: 4.2.2.Final
+        update_site_url: http://download.jboss.org/jbosstools/updates/stable/luna/integration-stack/ 
+        zips:
+          - name: Update site bundle of JBoss Tools Integration Stack
+            file_size: 214MB
+            url: http://download.jboss.org/jbosstools/updates/stable/luna/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.2.1.Final.zip
+            md5_url: http://download.jboss.org/jbosstools/updates/stable/luna/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.2.1.Final.zip.MD5
+            file_size: 214MB
+            url: http://download.jboss.org/jbosstools/updates/stable/luna/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.2.1.Final-earlyaccess.zip
+            md5_url: http://download.jboss.org/jbosstools/updates/stable/luna/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.2.1.Final-earlyaccess.zip.MD5
       4.2.0.Final:
         blog_announcement_url: /blog/2015-03-11-JBTIS-420-Final.html
         release_date: 2015-03-11
