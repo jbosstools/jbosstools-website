@@ -1,0 +1,13 @@
+= Forge Tools 4.3.0.Alpha2 What's New
+:page-layout: whatsnew
+:page-component_id: forge
+:page-component_version: 4.3.0.Alpha2
+:page-product_id: jbt_core 
+:page-product_version: 4.3.0.Alpha2
+
+ifndef::finalnn[]
+== Forge 2 Runtime 	
+
+The included Forge 2 runtime is 2.16.0.Final. See the release notes link:https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12311820&version=12326883[here].
+
+endif::finalnn[]
