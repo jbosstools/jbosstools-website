@@ -11,13 +11,13 @@ You can now select the Cordova version per platform. This allows you to mix and
 match different Cordova version to best accommodate the requirements of your
 application.
 
-image::./images/1.2.0.Alpha.2/engineDialog.png[]
+image::./images/1.2.0.Alpha2/engine_dialog.png[]
 
 == FeedHenry Application import dialog refreshed
 
 Uses improved iconography and better connection handling.
 
-image::./images/1.2.0.Alpha.2/FHImportRefresh.png[]
+image::./images/1.2.0.Alpha2/fhimport_refresh.png[]
 
 == Cordova platform downloads is using npm.
 
