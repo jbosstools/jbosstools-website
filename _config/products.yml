@@ -468,8 +468,29 @@ jbt_core:
         # No marketplace before Beta marketplace_url: http://marketplace.eclipse.org/node/1617241 
         # No marketplace before Beta marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1617241
         #archived: true
-        release_date: 2015-02-20
+        release_date: 2015-04-27
         #supported_jbt_is_version: 4.3.0.Alpha0
+        blog_announcement_url: /blog/2015-04-27-alpha2-for-mars.html
+        documentation_url: http://docs.jboss.org/tools/
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 378MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Alpha2_2015-04-20_11-16-43-B32-updatesite-core.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Alpha2_2015-04-20_11-16-43-B32-updatesite-core.zip.MD5
+          # JBIDE-19467, JBIDE-19718 source zip missing 
+          # - name: Sources zip of all JBoss Core Tools
+          #   file_size: 33.2kB
+          #   url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Alpha1_2015-02-15_14-44-55-B13-src.zip
+          #   md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Alpha1_2015-02-15_14-44-55-B13-src.zip.MD5
+          - name: Stand-alone BrowserSim
+            file_size: 16MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Alpha2_2015-04-21_14-02-11-B6-browsersim-standalone.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Alpha2_2015-04-21_14-02-11-B6-browsersim-standalone.zip.MD5
+          - name: Release Notes
+            url: http://tools.jboss.org/documentation/whatsnew/index.html
+      4.3.0.Alpha1:
+        update_site_url: http://download.jboss.org/jbosstools/mars/development/updates/core/
+        release_date: 2015-02-20
         blog_announcement_url: /blog/2015-02-23-alpha1-for-mars.html
         documentation_url: http://docs.jboss.org/tools/
         zips:
