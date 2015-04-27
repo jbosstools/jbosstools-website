@@ -1,0 +1,20 @@
+= Server What's New in 4.3.0.Alpha2
+:page-layout: whatsnew
+:page-component_id: server
+:page-component_version: 4.3.0.Alpha2
+:page-feature_jbt_only: true
+:page-product_id: jbt_core 
+:page-product_version: 4.3.0.Alpha2
+
+
+== Experimental support added for the WildFly 9 Application Server Distribution
+
+New server adapter and runtime types have been created for WildFly 9. While we believe these adapters are feature-complete currently, they've been marked 'experimental' because the upstream project is not yet released in its Final form, and could change in ways that break our support between their milestones. 
+
+Behavior and workflows of the new server and runtime types mirror those of previous WildFly adapters, and should operate smoothly with all existing workflows. If a lack tooling support was holding you back from playing with WildFly 9 to see if it works for your usecases, you'll be happy to hear that your roadblock has just been removed. 
+
+This support is currently only added for the "Application Server Distribution" and not the "Servlet-Only Distribution". 
+
+
+related_jira::JBIDE-18348[] - Initial support for WildFly 9, Application Server Distribution
+
