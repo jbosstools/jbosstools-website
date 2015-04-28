@@ -463,14 +463,14 @@ jbt_core:
   url_path_fragment: jbosstools
   streams:
     mars:
-      4.3.0.Alpha1:
+      4.3.0.Alpha2:
         update_site_url: http://download.jboss.org/jbosstools/mars/development/updates/core/
         # No marketplace before Beta marketplace_url: http://marketplace.eclipse.org/node/1617241 
         # No marketplace before Beta marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1617241
         #archived: true
         release_date: 2015-04-27
         #supported_jbt_is_version: 4.3.0.Alpha0
-        blog_announcement_url: /blog/2015-04-27-alpha2-for-mars.html
+        blog_announcement_url: /blog/2015-04-28-alpha2-for-mars.html
         documentation_url: http://docs.jboss.org/tools/
         zips:
           - name: Update site (including sources) bundle of all JBoss Core Tools
