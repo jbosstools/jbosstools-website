@@ -1,6 +1,6 @@
 = EclipseCon (USA)
 :page-layout: event
-:page-event_date: March 9-12, 2014
+:page-event_date: March 9-12, 2015
 :page-effective_date: 20150312
 :page-location: San Francisco, California
 :page-event_url: http://www.eclipsecon.org/na2015/
