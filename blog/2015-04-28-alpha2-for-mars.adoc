@@ -48,7 +48,7 @@ image::/documentation/whatsnew/openshift/images/connection-wizard-server-type.pn
 
 Once connected you can browse the OpenShift/Kubernetes data for your application/projects.
 
-image::/documentation/whatsnew/jst/images/4.2.3.Beta1/validation.png[]
+image::/documentation/whatsnew/openshift/images/view-explorer-v3.png[]
 
 Note: OpenShift v3 is not available from openshift.com to try at this point in time. If you want to try
 use it you can follow the instructions at https://github.com/openshift/origin/tree/master/examples/sample-app[OpenShift Origin sample app].
