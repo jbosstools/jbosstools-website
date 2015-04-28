@@ -1,0 +1,107 @@
+= JBoss Tools Alpha2 for Eclipse Mars
+:page-layout: blog
+:page-author: maxandersen
+:page-tags: [release, jbosstools, jbosscentral]
+
+Alpha 2 build for Eclipse Mars M6 is now available at link:/downloads/jbosstools/mars/4.3.0.Alpha2[Alpha2 download].
+
+== Installation
+
+This version of JBoss Tools targets Eclipse Mars 4.5 (M6).
+
+We recommend using the
+http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/marsm6[Eclipse
+4.5 JEE Bundle] since then you get most of the dependencies
+preinstalled.
+
+Once you have installed Eclipse, you use our update site directly:
+
+    http://download.jboss.org/jbosstools/mars/development/updates/core/
+ 
+Note: Marketplace entry and Integration Stack tooling will become available from JBoss Central at a later date.
+
+== What is new ? 
+
+== Easy Import/Open of projects
+
+We have included our incubation project at Eclipse that makes
+importing and opening of projects much easier than default Eclipse. No
+longer do you need to know or guess at which of many import wizards
+are the right one. With this you just use menu:File[Import Project
+from Folder], point it to a folder and it will auto-detect the type of
+project, imports ann configure it as best as it can.
+
+image::/blog/images/easyimport_filemenu.png[]
+
+Once started it will recursively scan the selected folder and report which directories it found.
+
+image::/blog/images/easyimport_wizard.png[]
+
+We included this incubation feature to get early feedback - please do give it a try
+and let us know if it works great or if we detected some projects "badly".
+
+== OpenShft v3
+
+Our OpenShift integration now allow you to connect to OpenShift 3 in addition to the existing OpenShift 2 support.
+
+image::/documentation/whatsnew/openshift/images/connection-wizard-server-type.png[]
+
+Once connected you can browse the OpenShift/Kubernetes data for your application/projects.
+
+image::/documentation/whatsnew/jst/images/4.2.3.Beta1/validation.png[]
+
+Note: OpenShift v3 is not available from openshift.com to try at this point in time. If you want to try
+use it you can follow the instructions at https://github.com/openshift/origin/tree/master/examples/sample-app[OpenShift Origin sample app].
+
+== Java EE 7 Batch wizards, content assist, validation and refactoring
+
+In Alpha 1 we introduced support for Java EE 7 batch specification and
+now extending this support with a wizard, content assist, linked navigation,
+searching and refactoring of Batch elements.
+
+image::/documentation/whatsnew/batch/images/4.3.0.Alpha2/validation.png[]
+
+Details are in link:/documentation/whatsnew/jbosstools/4.3.0.Alpha2.html#batch[Batch Tools New and Noteworthy].
+
+== WildFly 9
+
+We've added native WildFly 9 runtime detection and server support.
+You no longer need to use the WildFly 8 adapter and detection will
+work correctly now.
+
+== Content assist for AngularJS Expressions
+
+When editing AngularJS single-page html (not templates) the html editor now communicates with the preview
+to provide content assist for angularjs expressions.
+
+image::/documentation/whatsnew/jst/images/4.3.0.Alpha2/angular.gif[]
+
+== Custom HTML Tag validation
+
+There is now a quickfix for marking custom HTML5 elements to be ignored
+in validation.
+
+image::/documentation/whatsnew/jst/images/4.2.3.Beta1/validation.png[]
+
+Note: this is not specific to JBoss Tools, it is built into Eclipse M6
+
+== Next steps
+
+With Alpha2 out we are heading towards a Beta1.
+
+In Beta1 we are targeting including:
+
+. OpenShift v3 support for templates
+. Docker Tooling 
+. Better JavaScript content assist
+. Making project imports in Eclipse even simpler
+. And more...
+
+As always, ask/suggest away and we'll keep you posted!
+
+Have fun!
+
+Max Rydahl Andersen +
+http://twitter.com/maxandersen[@maxandersen]
+
+
