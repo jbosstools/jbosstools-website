@@ -1,0 +1,184 @@
+= Generate a HTML5 Mobile Web Application Using the Mobile Web Palette
+:page-layout: howto
+:page-tab: docs    
+:page-status: green
+:experimental:
+:imagesdir: ./images
+
+Mobile Web Tools provide a `Mobile Web` palette to easily and efficiently develop user interfaces for mobile web applications within the IDE. This palette contains drag-and-drop widgets for adding common web interface framework features such as HTML5, jQuery Mobile, and Ionic tags to html files.
+
+Use the instructions to complete the following steps:
+
+. <<Add_New_jQuery_Mobile_File, Add a New HTML5 jQuery Mobile File to a Project>>
+. <<Add_New_Pages, Add New Pages to the Web Application>>
+. <<Customize_Home_Page, Customize the Home Page of the Web Application>>
+. <<Test_App, Run and Test the HTML5 Mobile Application using BrowserSim>>
+
+[[Add_New_jQuery_Mobile_File]]
+== Add a New HTML5 jQuery Mobile File to a Project
+The HTML5 `jQuery Mobile` file template consists of JavaScript and CSS library references that are inserted in the file’s HTML header. The template also inserts a skeleton of the `jQuery Mobile` page and `listview` widgets in the file’s HTML body. The following procedure details the steps to insert the template into your project.
+
+To create a new HTML5 jQuery Mobile file in an existing project:
+
+. In the `Project Explorer` view, expand _[project name]_ > `src` > `main`.
+. Right-click `webapp` and click menu:New[HTML File].
+. Complete the fields about the html file as follows:
+** Ensure the parent folder field shows `_[project name]_/src/main/webapp`.
+** In the `File name` field, type a name for the HTML5 file.
+. Click `Next`.
+. From the `Templates` table, select `HTML5 jQuery Mobile Page (1.4)` and click `Finish`.
+
+.Select HTML5 jQuery Mobile Page (1.4)
+image::html5_select_jquery_mobile_page.png[HTML5 jQuery Mobile Page (1.4) Selected]
+
+*Result:* The new file is listed in the `Project Explorer` view under the project `webapp` directory and the file opens in the editor.
+
+[[Add_New_Pages]]
+== Add New Pages to the Web Application
+   
+Use the `jQuery Mobile Page` widget to add pages to your mobile web application as follows:
+
+. In the `Project Explorer` view, expand _[project name]_ > `src` > `main` > `webapp`.
+. Right-click the new html file and click menu:Open With[JBoss Tools HTML Editor].
+. In the `Palette` view, click the `jQuery Mobile` tab to view the available widgets and click `Page`.
+. Complete the fields about the page as follows:
+** In the `Header` field, type a name for the page header.
+** In the `Footer` field, type a name for the page footer.
+. Click `Finish`.
++
+.Adding a New Page
+image::html5_insert_tag_new_page.png[Adding a New Page]
++
+. Save the changes to the file by clicking the `Save` icon.
+
+*Result:* A page is added to the html file. JS and CSS references are also automatically added to the file by the `Page` widget wizard.
+
+.New Page Added to the HTML File
+image::html5_new_page_code_snippet.png[New Page Added to the HTML File]
+
+[[Customize_Home_Page]]
+== Customize the Home Page of the Web Application
+
+Use the widgets in the `jQuery Mobile` palette to customize the page. Use the instructions to add a menu to the page. This menu links to three other pages: `Home`, `Search`, and the `Add Contacts` page.
+
+To create and add the menu to your application page:
+
+. <<Add_Panel, Add a Panel to the Page>>
+. <<Add_List, Add a List to the Panel>>
+. <<Add_Button, Add a Button in the Header of the Page to Display the List>>
+
+[[Add_Panel]]
+=== Add a Panel to the Page
+. Place the cursor where you want the panel, in the html file.
+. In the `Palette` view, in the `jQuery Mobile` tab, click `Panel`.
+. Complete the fields about the Panel as follows:
+** In the `ID` field, type `my_panel_ID`.
+** Clear the `Add Menu` check box.
+. Click `Finish`.
+. Save the html file.
+
+.Adding a New Panel
+image::html5_new_panel_code_snippet.png[Adding a New Panel]
+
+*Result:* A corresponding code snippet, for the newly added panel, is added to the html file where you had placed the cursor.
+
+[[Add_List]]
+=== Add a List to the Panel
+. Within the panel's code snippet, place your cursor at the desired location for the new list.
+. In the `Palette` view, in the `jQuery Mobile` tab, click `ListView`.
+. Complete the fields about the ListView as follows:
+** In the `Items` section, `1` tab, in the `Label` field, type the name for the first list item on the page.
+** In the `URL (href)` field, type a URL identifier for the label.
+
+.New Listitem Added to the Panel
+image::html5_add_first_listitem.png[New Listitem Added to the Panel]
+
+. Click `Finish`.
+. Save the html file.
+
+*Result:* The new list item name appears in the code snippet.
+
+.Code for the New Listitem in the Panel Added
+image::html5_new_listitem_code_snippet.png[Code for the New Listitem in the Panel Added]
+
+
+[[Add_Button]]
+=== Add a Button in the Header of the Page to Display the List
+. Place the cursor within the header at the desired location for the new button.
+. In the `Palette` view, in the `jQuery Mobile` tab, click `Button`.
+. Complete the fields about the button as follows:
+** In the `Label` field, type `Menu`.
+** In the `URL (href)` field, type `#` followed by the panel ID (`#my_panel_ID`, in this case).
+** In the `Icon` list, select an icon.
+** In the `Icon position` list, select a desired value.
+** Select the `Icon only` check-box.
+. Click `Finish`.
+. Save the html file.
+
+.Adding a Button
+image::html5_add_button.png[Adding a Button]
+
+*Result:* The following code is added to the body of the html file.
+
+[source, html]
+----
+<div data-role="page" id="page-1">
+
+        <div data-role="panel" id="my_panel_ID">
+
+            <ul data-role="listview" id="listview-1">
+
+                <li><a href="1st_item.html">1st_item</a></li>
+
+                <li><a href="item2.html">Item 2</a></li>
+
+                <li><a href="item3.html">Item 3</a></li>
+
+            </ul>
+
+        </div>
+
+        <div data-role="header">
+
+            <h1>This is the Page Header</h1>
+
+            <a href="#my_panel_ID" id="button-1" class="ui-btn ui-icon-plus ui-btn-icon-notext ui-corner-all">Menu</a>
+
+        </div>
+
+        <div data-role="content">
+
+            <p>Page content goes here.</p>
+
+        </div>
+
+        <div data-role="footer">
+
+            <h4>This is the Page Footer</h4>
+
+        </div>
+
+    </div>
+----
+
+[[Test_App]]
+== Run and Test the HTML5 Mobile Application Using BrowserSim
+
+Test the newly added elements to the application by navigating to the interface on BrowserSim as follows:
+
+. In the `Project Explore` view, expand _[project name]_ > `src` > `main` > `webapp`.
+. Right-click the changed html file and click menu:Open With[BrowserSim].
+
+*Result:* A simulated device appears and displays the application.
+
+.The Changes Made to the HTML File Displayed on BrowserSim
+image::html5_browsersim.png[The Changes Made to the HTML File Displayed on BrowserSim]
+== Did You Know? 
+
+* To access the `jQuery Mobile` palette when the the `Palette` view is not visible, click menu:Window[Show View,Other], expand `General` and select `Palette`.
+* Add BrowserSim in the toolbar by clicking menu:Window[Customize Perspective] and select `BrowserSim` under `Command Groups Availability`. It appears as a Phone icon in the toolbar.
+* Use the `Panel` widget to create menus, collapsible columns, drawers, and more. The `List View` widget is an unordered list containing links to list items. jQuery Mobile applies the necessary styles to make the listview mobile friendly.
+* Add contacts to the `Add Contacts` page by following the above listed procedure. You can add `Name`, `Email`, `Phone Number` fields to the `Add Contacts` page by using the `Text Input` icon in the `Mobile Web` palette.
+
+
+
