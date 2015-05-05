@@ -123,42 +123,27 @@ image::html5_add_button.png[Adding a Button]
 [source, html]
 ----
 <div data-role="page" id="page-1">
-
-        <div data-role="panel" id="my_panel_ID">
-
-            <ul data-role="listview" id="listview-1">
-
-                <li><a href="1st_item.html">1st_item</a></li>
-
-                <li><a href="item2.html">Item 2</a></li>
-
-                <li><a href="item3.html">Item 3</a></li>
-
-            </ul>
-
-        </div>
-
-        <div data-role="header">
-
-            <h1>This is the Page Header</h1>
-
-            <a href="#my_panel_ID" id="button-1" class="ui-btn ui-icon-plus ui-btn-icon-notext ui-corner-all">Menu</a>
-
-        </div>
-
-        <div data-role="content">
-
-            <p>Page content goes here.</p>
-
-        </div>
-
-        <div data-role="footer">
-
-            <h4>This is the Page Footer</h4>
-
-        </div>
-
+    <div data-role="panel" id="my_panel_ID">
+        <ul data-role="listview" id="listview-1">
+            <li><a href="1st_item.html">1st_item</a></li>
+            <li><a href="item2.html">Item 2</a></li>
+            <li><a href="item3.html">Item 3</a></li>
+        </ul>
     </div>
+
+    <div data-role="header">
+        <h1>This is the Page Header</h1>
+        <a href="#my_panel_ID" id="button-1" class="ui-btn ui-icon-plus ui-btn-icon-notext ui-corner-all">Menu</a>
+    </div>
+
+    <div data-role="content">
+        <p>Page content goes here.</p>
+    </div>
+
+    <div data-role="footer">
+        <h4>This is the Page Footer</h4>
+    </div>
+</div>
 ----
 
 [[Test_App]]
