@@ -7,6 +7,8 @@ JBoss Tools and Eclipse Linux Tools team members from Red Hat are currently busy
 Docker tooling for Eclipse and even though the code is not public yet (more details on that at
 the end of this blog entry), I thought it would be interesting to share our progress on the project.
 
+NOTE: Since this blog was published binary builds are now at http://download.eclipse.org/linuxtools/updates-docker-nightly/ and code is available from http://git.eclipse.org/c/linuxtools/org.eclipse.linuxtools.git/tree/containers[git.eclipse.org] and mirrored on https://github.com/eclipse/linuxtools/tree/master/containers[github].
+
 The Docker tooling is aimed at providing at minimum the same basic level features as the command-line
 interface, but also provide some advantages by having access to a full fledged UI.
 
