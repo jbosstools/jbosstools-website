@@ -9,6 +9,8 @@ The How To section contains articles describing features of JBoss Tools and Deve
 
 link:mobiledev_createwebapp.html[Create Your First Mobile Web App]
 
+link:generate_html5_web_app.html[Generate a HTML5 Web App Using the Mobile Web Palette]
+
 == Developing Hybrid Mobile Apps
 
 link:hmt_firstapp.html[Create Your First Hybrid Mobile App]
