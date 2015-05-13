@@ -160,7 +160,7 @@ Test the newly added elements to the application by navigating to the interface 
 image::html5_browsersim.png[The Changes Made to the HTML File Displayed on BrowserSim]
 == Did You Know? 
 
-* To access the `jQuery Mobile` palette when the the `Palette` view is not visible, click menu:Window[Show View,Other], expand `General` and select `Palette`.
+* To access the `jQuery Mobile` palette when the `Palette` view is not visible, click menu:Window[Show View,Other], expand `General` and select `Palette`.
 * Add BrowserSim in the toolbar by clicking menu:Window[Customize Perspective] and select `BrowserSim` under `Command Groups Availability`. It appears as a Phone icon in the toolbar.
 * Use the `Panel` widget to create menus, collapsible columns, drawers, and more. The `List View` widget is an unordered list containing links to list items. jQuery Mobile applies the necessary styles to make the listview mobile friendly.
 * Add contacts to the `Add Contacts` page by following the above listed procedure. You can add `Name`, `Email`, `Phone Number` fields to the `Add Contacts` page by using the `Text Input` icon in the `Mobile Web` palette.
