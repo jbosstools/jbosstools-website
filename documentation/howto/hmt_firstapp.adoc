@@ -11,6 +11,11 @@ As illustrated in this article, from this foundation you can customize the appli
 
 The Hybrid Mobile Project wizard is also an ideal starting point for new users to Hybrid Mobile Tools and CordovaSim, guiding you through the necessary steps to set up the IDE and your system for developing Cordova applications before generating a basic Cordova project.
 
+[NOTE]
+====
+Before attempting to install or create a hybrid mobile project with JBoss Tools, ensure that the Android SDK is installed and up to date. Creating or installing hybrid mobile projects without a working and updated installation of Android SDK can result in unexpected errors.
+====
+
 The instructions here demonstrate how to complete the following tasks:
 
 . <<install,Install the Hybrid Mobile Project Requirements>>
