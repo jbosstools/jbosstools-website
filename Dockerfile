@@ -16,17 +16,20 @@ RUN gpg2 --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
 RUN curl -L get.rvm.io | bash -s stable
 RUN /bin/bash -l -c "rvm requirements && rvm autolibs enable"
 
-# Install Ruby
-ADD ./.ruby-version /tmp/
+# Install Ruby and its gems
+#ADD ./.ruby-version /tmp/
 ADD ./.ruby-gemset /tmp/
-RUN /bin/bash -l -c "rvm install `cat /tmp/.ruby-version`"
-
-## Build setup
-# Build the current gemset (user will only need to build the difference 
 ADD ./Gemfile /tmp/
 ADD ./Gemfile.lock /tmp/
 ADD ./Rakefile  /tmp/
+
 WORKDIR /tmp/
+# tell rvm to install ruby instead of complaining it is missing.
+RUN /bin/bash -l -c "echo rvm_install_on_use_flag=1 > ~/.rvmrc"
+# rvm will get version from Gemfile
+RUN /bin/bash -l -c "rvm install ."
+RUN /bin/bash -l -c "gem install bundler"
+# install base gem's, if any changes user only need to install differences.
 RUN /bin/bash -l -c "bundle install"
 
 # Enable GPG support
