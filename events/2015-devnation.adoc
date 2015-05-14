@@ -1,0 +1,11 @@
+= DevNation (USA)
+:page-layout: event
+:page-event_date: June 21-25, 2015
+:page-effective_date: 20150626
+:page-location: Boston, MA
+:page-event_url: http://www.devnation.org
+
+Xavier Coulon will talk about http://www.devnation.org/#e283096e5e3d1a867d1d2bbb3e6f7efc[Productive Java EE and HTML5 development].
+
+George Gastaldi and Lincoln Baxter III will talk about link:http://www.devnation.org/#a010d8e4b6465fd1821b8ea7bfc83884[Get ($H)IT done with your IDE: Automate development with JBoss Forge].
+

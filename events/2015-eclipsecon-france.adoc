@@ -1,0 +1,11 @@
+= EclipseCon France
+:page-layout: event
+:page-event_date: June 24-25, 2015
+:page-effective_date: 20150625
+:page-location: Toulouse, France
+:page-event_url: https://www.eclipsecon.org/france2015/
+
+*Max Rydahl Andersen* will give talk about https://www.eclipsecon.org/france2015/session/docker-tooling-eclipse[Docker Tooling for Eclipse].
+
+Erik Jan de Wit will talk about https://www.eclipsecon.org/france2015/session/live-building-mobile-app-eclipse-thym-and-java-ee-backend[LIVE! Building a Mobile App with Eclipse Thym and a Java EE backend].
+

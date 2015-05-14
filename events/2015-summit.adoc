@@ -1,0 +1,13 @@
+= DevNation and Red Hat Summit (USA)
+:page-layout: event
+:page-event_date: June 23-26, 2015
+:page-effective_date: 20150626
+:page-location: Boston, MA
+:page-event_url: http://www.redhat.com/summit/
+
+Jeremy Davis will talk about Hands-on complex event processing with JBoss BRMS about authoring and testing rules in JBoss Developer Studio and the Drools Workbench.
+
+Bill Kemp & Kenneth Peeples will talk about Integration with Red Hat JBoss Fuse and Red Hat JBoss Data Virtualization, using JBoss Fuse and Teiid Designer Tools.
+
+William Collins will talk about SAP integration with Red Hat JBoss Fuse showing latest SAP integration in Fuse runtime and tools.
+
