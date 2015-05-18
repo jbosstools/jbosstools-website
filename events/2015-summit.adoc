@@ -1,4 +1,4 @@
-= DevNation and Red Hat Summit (USA)
+= Red Hat Summit (USA)
 :page-layout: event
 :page-event_date: June 23-26, 2015
 :page-effective_date: 20150626
