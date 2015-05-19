@@ -365,6 +365,7 @@ devstudio_is:
             file_size: 185MB
             url: https://devstudio.jboss.com/updates/8.0.0/jbdevstudio-integration-stack-updatesite-8.0.1.GA.zip
             md5_url: https://devstudio.jboss.com/updates/8.0.0/jbdevstudio-integration-stack-updatesite-8.0.1.GA.zip.MD5
+          - name: Update site bundle of JBoss Developer Studio Integration Stack (Early Access)
             file_size: 187MB
             url: https://devstudio.jboss.com/updates/8.0.0/jbdevstudio-integration-stack-updatesite-8.0.1.GA-earlyaccess.zip
             md5_url: https://devstudio.jboss.com/updates/8.0.0/jbdevstudio-integration-stack-updatesite-8.0.1.GA-earlyaccess.zip.MD5
@@ -1220,10 +1221,11 @@ jbt_is:
         update_site_url: http://download.jboss.org/jbosstools/updates/stable/luna/integration-stack/ 
         zips:
           - name: Update site bundle of JBoss Tools Integration Stack
-            file_size: 214MB
+            file_size: 116MB
             url: http://download.jboss.org/jbosstools/updates/stable/luna/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.2.1.Final.zip
             md5_url: http://download.jboss.org/jbosstools/updates/stable/luna/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.2.1.Final.zip.MD5
-            file_size: 214MB
+          - name: Update site bundle of JBoss Tools Integration Stack (Early Access)
+            file_size: 185MB
             url: http://download.jboss.org/jbosstools/updates/stable/luna/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.2.1.Final-earlyaccess.zip
             md5_url: http://download.jboss.org/jbosstools/updates/stable/luna/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.2.1.Final-earlyaccess.zip.MD5
       4.2.0.Final:
