@@ -5,7 +5,7 @@
 :experimental:
 :imagesdir: ./images
 
-Remote servers allow developers to access and deploy to a JBoss instance that is not a local machine. Developers can use remote servers to set up multiple development environments for development and testing purposes and share them with other developers. Another reason to use a remote server with Red Hat JBoss Developer Studio is to allow developers to share and deploy automated tests to run in a non-local environment.
+Remote servers allow developers to access and deploy to a JBoss instance that is not a local machine. Developers can use remote servers to set up multiple environments for development and testing purposes and share them with other developers. Another reason to use a remote server with Red Hat JBoss Developer Studio is to allow developers to share and deploy automated tests to run in a non-local environment.
 
 The following instructions are used to set up a remote server for JBoss Enterprise Middleware application servers. A complete server definition requires a server adapter (or server) that allows the IDE to communicate with and manage the remote server.
 
@@ -36,7 +36,13 @@ NOTE: If you select `Management Operations` for the `Controlled by` field, you m
 image::remote_create_new_server_adapter.png[Create a New Server Adapter]
 +
 . Add the remote system integration details as follows:
-.. In the drop-down menu, select the appropriate host type in the `Host` field. The default host is `Local`. If required, use the `New Host` button to create a new host.
+.. In the drop-down menu, select the appropriate host type in the `Host` field. 
+... The default host is `Local`. 
+... If required, use the `New Host` button to create a new host, which may be remote or local. Supported connection types for remote hosts are `FTP Only` or `SSH Only`.
++
+.New Host Options
+image::remote_connection_options.png[Connection Options for a New Host]
++
 .. Add the `Remote Runtime Details` as follows:
 ... Specify a path to the directory that contains the remote server in the Remote Server Home field.
 ... Specify the remote server’s base directory (the default value for this is the standalone directory within server home directory) in the `Remote Server Base Directory field`. This location is within the `Remote Server Home` directory (specifically in the `$SERVER_HOME/BASE_DIRECTORY/configuration/` directory).
