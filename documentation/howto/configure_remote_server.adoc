@@ -1,0 +1,62 @@
+= Configure a Remote Server
+:page-layout: howto
+:page-tab: docs
+:page-status: green
+:experimental:
+:imagesdir: ./images
+
+Remote servers allow developers to access and deploy to a JBoss instance that is not a local machine. Developers can use remote servers to set up multiple development environments for development and testing purposes and share them with other developers. Another reason to use a remote server with Red Hat JBoss Developer Studio is to allow developers to share and deploy automated tests to run in a non-local environment.
+
+The following instructions are used to set up a remote server for JBoss Enterprise Middleware application servers. A complete server definition requires a server adapter (or server) that allows the IDE to communicate with and manage the remote server.
+
+== Configuring a Remote Server
+
+. Click the `Servers` view. If the `Servers` view is not visible, click menu:Window[Show View > Server].
+. Use the appropriate instructions depending on the number of existing servers listed in the `Servers` tab:
+.. If there are no existing servers, click `No servers are available. Click this link to create a new server...`.
+.. If there are one or more existing servers, right-click an existing server and click menu:New[Server].
+. In the `New Server` wizard, add the relevant information for the following fields:
+.. From the `Select the server type` list, select a JBoss Enterprise Middleware application server.
+.. The `Server's host name` and `Server name` fields are completed by default. In the `Server name` field, you can type a custom name by which to identify the server in the `Servers` view.
+.. Click `Next >` to continue.
++
+.Define a New Remote Server
+image::remote_server_creation_screen.png[Define a New Remote Server]
++
+. Configure the required `Server Adapter` details:
+.. For the `The server is` field, click the `Remote` radio button option.
+.. For the `Controlled by` field, select either the `Filesystem and shell operations` or `Management Operations` radio button option depending on your requirements. 
++
+NOTE: If you select `Management Operations` for the `Controlled by` field, you must set up an admin user on the server by using the `$SERVER_HOME/bin/add-users.sh` script (for Linux, or the `$SERVER_HOME\bin\add-users.bat` file for Windows) and enter the same credentials in the server editor or during the server start.
++
+.. The `Server is externally managed. Assume server is started` field is used when the user wants to deploy the server but does not want the IDE to stop or start the server for them. Depending on the requirements, select this check box or leave it unchecked, as is default.
+.. A remote server can now be created without assigning a runtime to it. Depending on the requirements, select the Assign a runtime to this server check box (and select an existing runtime or create a new one) or leave the box unselected.
++
+.Create a New Server Adapter
+image::remote_create_new_server_adapter.png[Create a New Server Adapter]
++
+. Add the remote system integration details as follows:
+.. In the drop-down menu, select the appropriate host type in the `Host` field. The default host is `Local`. If required, use the `New Host` button to create a new host.
+.. Add the `Remote Runtime Details` as follows:
+... Specify a path to the directory that contains the remote server in the Remote Server Home field.
+... Specify the remote server’s base directory (the default value for this is the standalone directory within server home directory) in the `Remote Server Base Directory field`. This location is within the `Remote Server Home` directory (specifically in the `$SERVER_HOME/BASE_DIRECTORY/configuration/` directory).
+... Specify the file to use for the remote server’s configuration (the default value for this is the _standalone.xml_ file) in the `Remote Server Configuration File` field. This location is within the `Remote Server Home` directory (specifically in the `$SERVER_HOME/BASE_DIRECTORY/configuration/` directory).
+... Either click `Next >` to continue to the (optional) next step to add or remove server resources or click `Finish` to conclude the new remote server configuration.
++
+.Connect to a Remote System
+image::remote_connect_to_remote_system.png[Connect to a Remote System]
++
+. Optional: Add or remove resources configured on the server as follows:
+.. To add a resource, select the appropriate resource in the `Available` pane and click `Add >`. To add all available resources, click `Add All >>`.
+.. To remove a resource, select the appropriate resource in the `Configured` pane and click `< Remove`. To remove all configured resources, click `<< Remove All`.
+.. Click `Finish` to complete the server configuration.
++
+.Add and Remove Server Resources
+image::remote_add_remove_resources.png[Add and Remove Server Resources]
++
+*Result:* You have successfully configured a remote server. The new server is listed in the `Servers` tab. Right click the server to view operations, including `Start` to start the server.
+
+[NOTE]
+====
+If the `Server is externally managed. Assume server is started` check box was selected in step 4, clicking `Start` does not start the server. Instead, it marks the server to indicate that it has started and the web poller checks whether the server is running.
+====
