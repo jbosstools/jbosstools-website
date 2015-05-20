@@ -5,6 +5,10 @@
 
 The How To section contains articles describing features of JBoss Tools and Developer Studio with a focus on how to do specfic tasks.
 
+== Configuring the IDE
+
+link:configure_remote_server.html[Configure a Remote Server]
+
 == Developing Web Apps
 
 link:mobiledev_createwebapp.html[Create Your First Mobile Web App]
