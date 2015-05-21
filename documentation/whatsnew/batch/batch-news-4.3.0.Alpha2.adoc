@@ -23,7 +23,7 @@ related_jira::JBIDE-19158[]
 
 == Content Assist
 
-Job XML Editor is also now provides content assist for <* ref=""> <* next=""> <* to=""> <* restart=""> and for batch properties:
+Job XML Editor now also provides content assist for <* ref="">, <* next="">, <* to="">, <* restart=""> and for batch properties:
 
 image::images/4.3.0.Alpha2/batchCA.png[]
 
@@ -31,7 +31,7 @@ related_jira::JBIDE-19268[]
 
 == Hyperlink navigation (OpenOns) 
 
-Batch artifacts can now be navigated to via OpenOn. Just press Ctrl and click on <* ref=""> <* next=""> <* to=""> <* restart=""> or property name to open the corresponding source code or Job XML element.
+Batch artifacts can now be navigated to via OpenOn. Just press Ctrl and click on <* ref="">, <* next="">, <* to="">, <* restart=""> or property name to open the corresponding source code or Job XML element.
 
 image::images/4.3.0.Alpha2/openOn.png[]
 
