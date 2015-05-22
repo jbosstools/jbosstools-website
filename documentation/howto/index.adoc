@@ -9,6 +9,10 @@ The How To section contains articles describing features of JBoss Tools and Deve
 
 link:configure_remote_server.html[Configure a Remote Server]
 
+== Deploying and Debugging Apps
+
+link:servers_deploytolocalserver.html[Deploy Apps to a Local Server]
+
 == Developing Web Apps
 
 link:mobiledev_createwebapp.html[Create Your First Mobile Web App]
@@ -34,7 +38,3 @@ link:openshift_deployproj.html[Deploy a Workspace Project to OpenShift Online]
 link:openshift_debug.html[Debug an OpenShift Online Java App]
 
 link:openshift_configssh.html[Configure SSH Keys for OpenShift Online]
-
-== Deploying and Debugging Apps
-
-link:servers_deploytolocalserver.html[Deploy Apps to a Local Server]
