@@ -86,7 +86,7 @@ image::mvnbasic_set_packaging.png[Set the Project's Packaging Option]
 .Set the Module Name and Parent
 image::mvnbasic_module_configuration.png[Set the Module Name and Parent]
 +
-.. When the configuration is complete, click Next to continue.
+.. When the configuration is complete, click `Next` to continue.
 . In the second step of the `New Maven Module` wizard, enter the module archetype information:
 .. Ensure that the `Show the last version of Archetype only` check box is selected. This ensures that only the latest version of each archetype displays.
 .. Select an archetype based on the purpose of the project you are creating. Use the keyword `maven-archetype-quickstart` in the `Filter` field to locate a sample Maven project archetype.
