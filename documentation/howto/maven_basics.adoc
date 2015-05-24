@@ -146,5 +146,6 @@ image::mvnbasic_create_new_pom.png[Create a New Pom Descriptor]
 .Identify Maven Dependencies
 image::mvnbasic_convert_dependencies.png[Identify Maven Dependencies]
 +
+. Click `Finish` when all dependencies are converted.
 
-**Reuslt:** The existing project is now configured for Maven support.
+**Result:** The existing project is now configured for Maven support.
