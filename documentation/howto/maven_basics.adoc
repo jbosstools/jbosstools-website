@@ -4,14 +4,17 @@
 :page-status: green
 :experimental:
 :imagesdir: ./images
+:toc:
 
-In the context of application development, Maven allows you to extend your applications by referencing and utilizing resources from local and remote repositories. This article serves as an introduction to using Maven with the IDE and contains instructions for the following tasks:
+In the context of application development, Maven provides a standardized build system for projects. One of the main benefits of using Maven with your project is that it facilitates fetching dependencies from one or more repositories. This article serves as an introduction to using Maven with the IDE and contains instructions for the following tasks:
 
 . <<New_Project,Create a New Maven Project>>
 . <<New_Module,Create a New Maven Module>>
 . <<Maven_Support,Add Maven Support to an Existing Non-Maven Project>>
 
-Maven projects serve as parents for Maven modules. For each Maven module attached to a Maven project, a section is added to the project’s pom.xml file. Each command run by the Maven project is run against each of the included modules first.
+Root Maven projects can serve as aggregators for multiple Maven modules. For each module that is part of a maven project, a <module> entry is added to the project's pom.xml file. A pom.xml that contains <module> entries are often referred to as an aggregator pom.
+
+When modules are included into a project it is possible to execute Maven goals across all of the modules by a single command.
 
 [[New_Project]]
 == 1. Create a New Maven Project
@@ -22,7 +25,7 @@ The first step when using Maven with an IDE is to create a Maven project that ca
 .. Type `maven` in the `Filter` field and select `Maven Project`.
 .. Click `Next` to continue.
 . In the first step of the `New Maven Project` wizard, enter the initial project details:
-.. Select the `Use default Workspace location` check box to use the default workspace. If required, specify a non-default location by deselecting the check box and using the `Browse` button to specify the desired target directory.
+.. Ensure that the `Use default Workspace location` check box is not selected and specify a non-default location for your workspace files using the `Browse` button. Using a non-default workspace location is recommended because this allows other tools to access the workspace location easily.
 .. The following optional steps are available for further configuration, if required:
 ... (Optional) Select the `Create a simple project (skip archetype selection)` check box. If this check box is selected, the `Select an Archetype` step of the wizard is skipped.
 ... (Optional) Select the `Add project(s) to working set` check box to add additional projects to the working set.
@@ -43,7 +46,7 @@ image::mvnbasic_select_archetype.png[Select a Project Archetype]
 . In the third step of the `New Maven Project` wizard, specify the archetype parameters:
 .. Enter the desired group ID in the `Group Id` field.
 .. Enter the desired artifact ID in the `Artifact Id` field.
-.. Set the `Version` field’s value to `0.0.1-SNAPSHOT` (or any other unique value).
+.. Set the `Version` field’s value to `0.0.1-SNAPSHOT` or a similar value. For details about the appropriate version build numbers, see http://books.sonatype.com/mvnref-book/reference/pom-relationships-sect-pom-syntax.html[Project Versions]
 .. The `Package` field automatically populates based on the entered group and artifact IDs.
 +
 .Specify Project Archetype Parameters
@@ -56,7 +59,7 @@ image::mvnbasic_specify_group_parameters.png[Specify Project Archetype Parameter
 [[New_Module]]
 == 2. Create a New Maven Module
 
-Each Maven project can include multiple independent Maven modules. Follow the instructions to create your first Maven module:
+Each Maven project can include multiple Maven modules. Follow the instructions to create your first Maven module:
 
 === Prerequisites
 . You must have an existing Maven project available to use for the new module. See <<New_Project,Create a New Maven Project>> for instructions to create a new Maven project.
@@ -97,7 +100,7 @@ image::mvnbasic_select_module_archetype.png[Select a Module Archetype]
 .. Click `Next` to continue.
 . In the third step of the `New Maven Module` wizard, enter the archetype details:
 .. Add a unique group ID to the `Group Id` field. Note that this ID must be different from the group ID of the included Maven project.
-.. Add the desired version number in the `Version` field. As an example, the version `0.0.1-SNAPSHOT` was used as the version number for the previously created Maven project, therefore here we can use a variation such as `0.1.1-SNAPSHOT`.
+.. Add the desired version number in the `Version` field. For details about the appropriate version build numbers, see http://books.sonatype.com/mvnref-book/reference/pom-relationships-sect-pom-syntax.html[Project Versions]
 +
 .Set the Module Archetype Parameters
 image::mvnbasic_archetype_parameters.png[Set the Module Archetype Parameters]
