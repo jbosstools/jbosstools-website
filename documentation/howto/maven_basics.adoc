@@ -129,6 +129,7 @@ The previous tasks contain instructions to create a new Maven project and Maven 
 image::mvnbasic_java_build_path.png[Set the Java Build Path]
 +
 .. Click `Add External JARs`, navigate to the required JAR file and select it. The new JAR will appear in the list in the `Libraries` tab.
+.. Click `OK` to confirm the changes.
 . Right-click the project name in the `Project Explorer` view.
 . From the displayed options, click `Configure`.
 . From the displayed sub-menu, click `Convert to Maven Project`.
@@ -141,7 +142,7 @@ image::mvnbasic_java_build_path.png[Set the Java Build Path]
 image::mvnbasic_create_new_pom.png[Create a New Pom Descriptor]
 +
 .. Click `Finish` to finalize the pom information.
-. If dependencies were added (using the instructions in step 1), a wizard appears displaying all added dependencies and a green check mark when each dependency is identified.
+. If dependencies were added (using the instructions in step 1), a wizard appears displaying all added dependencies and a green check mark when each dependency is identified. Learn more about dependency identification in the <<did_you_know,Did You Know>> section.
 +
 .Identify Maven Dependencies
 image::mvnbasic_convert_dependencies.png[Identify Maven Dependencies]
@@ -149,3 +150,34 @@ image::mvnbasic_convert_dependencies.png[Identify Maven Dependencies]
 . Click `Finish` when all dependencies are converted.
 
 **Result:** The existing project is now configured for Maven support.
+
+[[did_you_know]]
+==== Did You Know?
+
+* The wizard used to convert a non-Maven project to a Maven project attempts to identify all the project's classpath entries and their equivalent Maven dependencies. From the list of identified dependencies, users can select which ones will be added to the generated Maven pom.xml file. When identifying dependencies, one of several strategies may be used:
+** Checking if the jar contains the relevant maven metadata.
+** Identify the dependency using the Nexus indexer.
+** Identify the dependency using the JBoss Nexus instance REST API (if we are online) via a SHA1 search.
+
+==== Troubleshooting
+
+. **Error Message:** `Unidentifiable Dependency` in the `Maven Dependency` column.
++
+.Unidentifiable Dependency
+image::mvnbasic_error_unidentifiable_dep.png[Unidentifiable Dependency]
++
+.. **Issue:** Either:
+... the jar file is corrupted/invalid.
+... the jar file is valid but does not contain any metadata used for identification.
+.. **Resolution:**
+... Compare the expected size of the file with the downloaded version. If required, download the jar again and ensure that the file size in memory matches the download package size.
+... Confirm the file identified is the jar, rather than the parent file for the jar.
+... Once the issue is identified and corrected, remove the old dependency from your package.
+... Add the new jar as a new dependency.
+. **Error Message:** Some selected dependencies can not be resolved. Click here to configure repositories in your settings.xml.
++
+.Dependencies Can Not Be Resolved Error
+image::mvnbasic_error_generic.png[Dependencies Can Not Be Resolved Error]
++
+.. **Issue:**: This error displays when a dependency can be identified (that is, whether it contains the pom properties or other metadata) but the dependency is not available in any valid repository.
+.. **Resolution**: Click the `here` link in the error message and compare the old and new settings for the dependency and add a new and correct repository. Users may choose to use one of the predefined repositories from Red Hat.
