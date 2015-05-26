@@ -3,7 +3,7 @@
 :page-tab: docs
 :page-status: green
 
-The How To section contains articles describing features of JBoss Tools and Developer Studio with a focus on how to do specfic tasks.
+The How To section contains articles describing features of JBoss Tools and Developer Studio with a focus on how to do specific tasks.
 
 == Configuring the IDE
 
