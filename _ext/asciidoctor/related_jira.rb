@@ -28,10 +28,17 @@ module Awestruct
         jira_jbide_uri_pattern = 'https://issues.jboss.org/browse/%s'
         jira_ids.each do |jira_id|
           jira_jbide_uri = jira_jbide_uri_pattern % jira_id
-          jira_links << %(<a href="#{jira_jbide_uri}">#{jira_id.upcase}</a>)
+          if (attrs.has_key?("text") && !attrs["text"].empty?)
+            puts "Custom JIRA issue title"
+            issue_title = attrs["text"]
+            puts " Custom issue title: #{jira_id} -> #{issue_title}"
+            jira_links << %(<a href="#{jira_jbide_uri}">#{jira_id.upcase} - #{issue_title}</a>)
+          else 
+            jira_links << %(<a href="#{jira_jbide_uri}">#{jira_id.upcase}</a>)
+          end
         end
         html << jira_links.join(", ")
-        html << ".</p>"
+        html << "</p>"
         create_pass_block parent, html, attrs, subs: nil
       end
     end

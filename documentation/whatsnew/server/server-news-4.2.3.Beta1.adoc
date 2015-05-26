@@ -15,9 +15,9 @@ image::images/ip6_host.png[Setting the IPv6 Host]
 image::images/ip6_launch_config.png[Launch Configuration for IPv6 Hosts]
 
 
-related_jira::JBIDE-19113[] - Update of wildfly jars
-related_jira::JBIDE-12352[] - Remote Management Connections to Wildfly IPv6
-related_jira::JBIDE-12351[] - JMX connections to Wildfly IPv6
-related_jira::JBIDE-12282[] - Wildfly server fails to Stop IPv6
+related_jira::JBIDE-19113[Update of wildfly jars] 
+related_jira::JBIDE-12352[Remote Management Connections to Wildfly IPv6]
+related_jira::JBIDE-12351[JMX connections to Wildfly IPv6]
+related_jira::JBIDE-12282[Wildfly server fails to Stop IPv6]
 
 
