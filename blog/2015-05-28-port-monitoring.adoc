@@ -54,5 +54,5 @@ So get in there and monitor some traffic!  Grab a nightly build from our link:ht
 
 Related JIRA: https://issues.jboss.org/browse/JBIDE-19755[JBIDE-19755 - Implement ServerPort portion of wst.servertools API]
 
- Rob Stryker
+Rob Stryker
 
