@@ -18,17 +18,17 @@ When modules are included into a project it is possible to execute Maven goals a
 
 [[New_Project]]
 == 1. Create a New Maven Project
-The first step when using Maven with an Eclipse-based IDE is to create a Maven project that can contain multiple independent Maven modules. Follow the instructions to create a Maven project:
+The first step when using Maven with an Eclipse-based IDE is to create a Maven project. Maven projects may contain a single Maven module, multiple independent Maven modules or no Maven modules. Follow the instructions to create a Maven project:
 
 . Create a new project:
 .. In the workspace, navigate to menu:File[New > Other].
 .. Type `maven` in the `Filter` field and select `Maven Project`.
 .. Click `Next` to continue.
-. In the first step of the `New Maven Project` wizard, enter the initial project details:
-.. Select the `Create a simple project (skip archetype selection)` check box. If this check box is selected, the `Select an Archetype` step of the wizard is skipped and the project type is set to *pom*, which is required to create a Maven Module based on this Maven project.
-.. Ensure that the `Use default Workspace location` check box is not selected and specify a non-default location for your workspace files using the `Browse` button. Using a non-default workspace location is recommended because this allows other tools to access the workspace location easily.
+. Enter the initial project details:
+.. Check the `Create a simple project (skip archetype selection)` check box. If this check box is selected, the `Select an Archetype` step of the wizard is skipped and the project type is set to *pom*, which is required to create a Maven Module based on this Maven project.
+.. Ensure that the `Use default Workspace location` check box is not checked and specify a non-default location for your workspace files using the `Browse` button. Using a non-default workspace location is recommended because this allows other tools to access the workspace location easily.
 .. The following optional steps are available for further configuration, if required:
-... (Optional) Select the `Add project(s) to working set` check box to add the newly created projects to a working set.
+... (Optional) Check the `Add project(s) to working set` check box to add the newly created projects to a working set.
 ... (Optional) Click `Advanced` to view additional optional advanced configuration for the new Maven project, such as:
 .... `Resolve Workspace projects`: dependencies opened as workspace projects will be resolved without having to install them to your local Maven repository first. This way, any changes made to one of these dependencies will have an immediate effect on other projects consuming it (compilation, refactoring, etc.). When `Resolve Workspace projects` is disabled, dependencies existing in the workspace must be installed to your local Maven repository after any change (by running `mvn install`), in order to see effects in projects consuming them.
 .... `Profiles`: select a set of Maven profiles to activate or deactivate in the workspace. Profiles are defined in the project `pom.xml`, or inherited from a parent `pom.xml`, or defined in the relevant `settings.xml`.
@@ -38,7 +38,7 @@ The first step when using Maven with an Eclipse-based IDE is to create a Maven p
 image::mvnbasic_create_project.png[Create a New Maven Project]
 +
 .. When the configuration is complete, click `Next` to continue.
-. In the second step of the `New Maven Project` wizard, configure the project details:
+. Configure the project details:
 .. Enter the desired group ID, which is similar to an organization namespace (for example, *com.company.businessunit.project*), in the `Group Id` field.
 .. Enter the desired artifact ID value, which is the name for your project, in the `Artifact Id` field. This value must not include any spaces and the only special characters allowed are periods ('.'), underscores ('_'), and dashes ('-').
 .. Set the `Version` field’s value to `0.0.1-SNAPSHOT` or a similar value. For details about the appropriate version build numbers, see http://books.sonatype.com/mvnref-book/reference/pom-relationships-sect-pom-syntax.html[Project Versions]
@@ -63,28 +63,36 @@ Each Maven project with a packaging pom can include multiple Maven modules. Foll
 
 === Creating a New Maven Module
 . Create a new Maven module as follows:
-.. In your workspace, navigate to menu:File[New > Other].
+.. In the Project Explorer view, right-click the recently created pom project and select menu:New[Project].
 .. From the wizard selection screen, expand `Maven` and select `Maven Module`.
 .. Click `Next >` to continue.
-. In the first step of the `New Maven Module` wizard, enter the initial module details:
-.. Select the `Create a simple project (skip archetype selection)` check box. If this check box is selected, the `Select an Archetype` step of the wizard is skipped.
+. Enter the initial module details:
+.. Ensure that the `Create a simple project (skip archetype selection)` check box is not checked. If this check box is selected, the `Select an Archetype` step of the wizard is skipped.
 .. Enter the desired module name in the `Module Name` field. This value corresponds to the Maven project's Project ID.
 .. Use the `Browse` button to locate the desired parent project and select it.
 .. The following optional steps are available for further configuration, if required:
-... (Optional) Select the `Add project(s) to working set` check box to add the newly created projects to a working set.
+... (Optional) Check the `Add project(s) to working set` check box to add the newly created projects to a working set.
 ... (Optional) Click `Advanced` to view additional optional advanced configuration for the new Maven project, such as:
 .... `Resolve Workspace projects`: dependencies opened as workspace projects will be resolved without having to install them to your local Maven repository first. This way, any changes made to one of these dependencies will have an immediate effect on other projects consuming it (compilation, refactoring, etc.). When `Resolve Workspace projects` is disabled, dependencies existing in the workspace must be installed to your local Maven repository after any change (by running `mvn install`), in order to see effects in projects consuming them.
 .... `Profiles`: select a set of Maven profiles to activate or deactivate in the workspace. Profiles are defined in the project `pom.xml`, or inherited from a parent `pom.xml`, or defined in the relevant `settings.xml`.
 .... `Name templates`: allows you to disambiguate projects names in the workspace by prepending or appending the group ID or SCM branch names to the default artifact ID.
 +
 .Set the Module Name and Parent
-image::mvnbasic_module_name_parent.png[Set the Module Name and Parent]
+image::mvnbasic_select_module_name.png[Set the Module Name and Parent]
 +
 .. When the configuration is complete, click `Next` to continue.
-. In the second step of the `New Maven Module` wizard, enter the module details:
+. Enter the module archetype information:
+.. Ensure that the `Show the last version of Archetype only` check box is checked. This ensures that only the latest version of each archetype displays.
+.. Select an archetype based on the purpose of the project you are creating. Use the keyword *maven-archetype-quickstart* in the `Filter` field to locate a sample Maven project archetype.
++
+.Select a Module Archetype
+image::mvnbasic_module_archetype.png[Select a Module Archetype]
++
+.. Click Next to continue.
+. Enter the module details:
 .. Add the same group ID value that was used for the Maven project to the `Group Id` field.
 .. Add the desired version number in the `Version` field. For details about the appropriate version build numbers, see http://books.sonatype.com/mvnref-book/reference/pom-relationships-sect-pom-syntax.html[Project Versions]
-.. Set the valye of the `Packaging` field to `pom`.
+.. Set the value of the `Packaging` field to `pom`.
 .. (Optional) Add a name for your module in the `Name` field.
 .. (Optional) Add a description for your module in the `Description` field.
 +
@@ -129,7 +137,7 @@ image::mvnbasic_create_new_pom.png[Create a New Pom Descriptor]
 +
 .. Click `Finish` to finalize the pom information.
 . If dependencies were added (using the instructions in step 1), a wizard appears displaying all added dependencies and a green check mark when each dependency is identified. Learn more about dependency identification in the <<did_you_know,Did You Know>> section.
-. Select the `Delete original references from project` check box to avoid retaining duplicate or stale dependencies in your project.
+. Check the `Delete original references from project` check box to avoid retaining duplicate or stale dependencies in your project.
 +
 .Identify Maven Dependencies
 image::mvnbasic_convert_dependency.png[Identify Maven Dependencies]
