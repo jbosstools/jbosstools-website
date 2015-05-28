@@ -13,10 +13,10 @@ Which platforms are supported by Visual Editor?::
 	Previewing HTML files is supported on every platform. On Windows and Mac OS everything works OOTB, on Linux WebKitGTK required.
 	To install it execute the following command:
 	* For GTK2
-	** Fedora, RHEL - `yum install libwebkitgtk-1.0.so.0`
+	** Fedora, RHEL - `yum install webkitgtk`
 	** Ubuntu - `apt-get install libwebkitgtk-1.0-0`
 	* For GTK3
-	** Fedora, RHEL - `yum install libwebkitgtk-3.0.so.0`
+	** Fedora, RHEL - `yum install webkitgtk3`
 	** Ubuntu - `apt-get install libwebkitgtk-3.0-0`
 	
 
@@ -64,7 +64,7 @@ After choosing HTML5 Visual Editor mode on Linux, Eclipse crashes unexpectedly. 
 		* https://bugzilla.redhat.com/show_bug.cgi?id=1160411[BlueJeans issue in RedHat bugzilla]
 
 After choosing HTML5 Visual Editor mode on Linux, Eclipse freezes during restart. What can I do about it?::
-	This may happen because SWT.WebKit conflicts with http://bluejeans.com/[BlueJeans] plugin for Firefox. Uninstalling these plugin will fix Eclipse freezing. See related issues in  https://bugs.eclipse.org/bugs/show_bug.cgi?id=433606[eclipse bugzilla] and https://bugzilla.redhat.com/show_bug.cgi?id=1160411[RedHat bugzilla].
+	This may happen because SWT.WebKit conflicts with http://bluejeans.com/[BlueJeans] plugin for Firefox. This issue is already fixed, so we recommend to update bluejeans to latest version. See related issues in  https://bugs.eclipse.org/bugs/show_bug.cgi?id=433606[eclipse bugzilla] and https://bugzilla.redhat.com/show_bug.cgi?id=1160411[RedHat bugzilla].
 	
 == Platform Specific Questions
 
