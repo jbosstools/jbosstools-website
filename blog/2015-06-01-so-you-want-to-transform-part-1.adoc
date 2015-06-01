@@ -1,3 +1,4 @@
+= You want to transform data with Fuse ? - Part 1
 :page-layout: blog
 :page-author: bfitzpat
 :page-tags: [fuse, transformation, jbosstools]
