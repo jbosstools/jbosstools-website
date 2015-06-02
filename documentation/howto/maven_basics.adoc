@@ -18,14 +18,14 @@ When modules are included into a project it is possible to execute Maven goals a
 
 [[New_Project]]
 == 1. Create a New Maven Project
-The first step when using Maven with an Eclipse-based IDE is to create a Maven project. Maven projects may contain a single Maven module, multiple independent Maven modules or no Maven modules. Follow the instructions to create a Maven project:
+Use the following instructions to create the parent project of a multi-module Maven project. The instructions provided ensure that the packaging option is set to `pom`, which is a requirement for multi-module Maven projects. Alternately, to create a standalone Maven project instead, set the packaging option to an option other than `pom`.
 
 . Create a new project:
 .. In the workspace, navigate to menu:File[New > Other].
 .. Type `maven` in the `Filter` field and select `Maven Project`.
 .. Click `Next` to continue.
 . Enter the initial project details:
-.. Check the `Create a simple project (skip archetype selection)` check box. If this check box is selected, the `Select an Archetype` step of the wizard is skipped and the project type is set to *pom*, which is required to create a Maven Module based on this Maven project.
+.. Check the `Create a simple project (skip archetype selection)` check box. If this check box is selected, the `Select an Archetype` step of the wizard is skipped and the project type is set to *pom*, which is required to create a Maven Module based on this Maven project. Alternately, to create a standalone project, uncheck the `Create a simple project (skip archetype selection)` check box and follow the instructions in the wizard.
 .. Ensure that the `Use default Workspace location` check box is not checked and specify a non-default location for your workspace files using the `Browse` button. Using a non-default workspace location is recommended because this allows other tools to access the workspace location easily.
 .. The following optional steps are available for further configuration, if required:
 ... (Optional) Check the `Add project(s) to working set` check box to add the newly created projects to a working set.
