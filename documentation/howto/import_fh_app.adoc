@@ -5,7 +5,7 @@
 :experimental:
 :imagesdir: ./images
 
-Use the Mobile Hybrid Tools' `Import` wizard to import a FeedHenry application into your workspace. When imported, edit the application as required and push it back to the FeedHenry server.
+The IDE includes an `Import` wizard to allow users to quickly and easily import previously created FeedHenry applications. Once the application is imported, you can change or enhance the application, test the changes, and then push it back to the FeedHenry server.
 
 Follow the provided steps to import and make changes to a FeedHenry application in your workspace:
 
