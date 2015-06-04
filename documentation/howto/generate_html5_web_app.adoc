@@ -1,11 +1,11 @@
 = Generate a HTML5 Mobile Web Application Using the Mobile Web Palette
 :page-layout: howto
-:page-tab: docs    
+:page-tab: docs
 :page-status: green
 :experimental:
 :imagesdir: ./images
 
-Mobile Web Tools provide a `Mobile Web` palette to easily and efficiently develop user interfaces for mobile web applications within the IDE. This palette contains drag-and-drop widgets for adding common web interface framework features such as HTML5, jQuery Mobile, and Ionic tags to html files.
+The IDE provides the `Mobile Web` palette that allows the user to make interactive web applications. This palette offers a wide range of features including drag-and-drop widgets for adding common web interface framework features such as HTML5, jQuery Mobile, and Ionic tags to html files. It also contains widgets like `Panels`, `Pages`, `Lists`, `Buttons` to make the applications more user friendly and efficient.
 
 Use the instructions to complete the following steps:
 
@@ -35,7 +35,7 @@ image::html5_select_jquery_mobile_page.png[HTML5 jQuery Mobile Page (1.4) Select
 
 [[Add_New_Pages]]
 == Add New Pages to the Web Application
-   
+
 Use the `jQuery Mobile Page` widget to add pages to your mobile web application as follows:
 
 . In the `Project Explorer` view, expand _[project name]_ > `src` > `main` > `webapp`.
@@ -158,12 +158,9 @@ Test the newly added elements to the application by navigating to the interface 
 
 .The Changes Made to the HTML File Displayed on BrowserSim
 image::html5_browsersim.png[The Changes Made to the HTML File Displayed on BrowserSim]
-== Did You Know? 
+== Did You Know?
 
 * To access the `jQuery Mobile` palette when the `Palette` view is not visible, click menu:Window[Show View,Other], expand `General` and select `Palette`.
 * Add BrowserSim in the toolbar by clicking menu:Window[Customize Perspective] and select `BrowserSim` under `Command Groups Availability`. It appears as a Phone icon in the toolbar.
 * Use the `Panel` widget to create menus, collapsible columns, drawers, and more. The `List View` widget is an unordered list containing links to list items. jQuery Mobile applies the necessary styles to make the listview mobile friendly.
 * Add contacts to the `Add Contacts` page by following the above listed procedure. You can add `Name`, `Email`, `Phone Number` fields to the `Add Contacts` page by using the `Text Input` icon in the `Mobile Web` palette.
-
-
-
