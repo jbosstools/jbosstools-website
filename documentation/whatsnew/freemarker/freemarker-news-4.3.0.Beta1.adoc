@@ -1,0 +1,12 @@
+= Freemarker What's New in 4.3.0.Beta1
+:page-layout: whatsnew
+:page-component_id: freemarker
+:page-component_version: 4.3.0.Beta1
+:page-product_id: jbt_core 
+:page-product_version: 4.3.0.Beta1	
+
+== Freemarker 2.3.22
+
+Freemarker library included in Fremarker IDE was updated to latest available version 2.3.22.
+
+related_jira::JBIDE-18815[]
