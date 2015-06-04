@@ -92,12 +92,10 @@ image::mvnbasic_module_archetype.png[Select a Module Archetype]
 . Enter the module details:
 .. Add the same group ID value that was used for the Maven project to the `Group Id` field.
 .. Add the desired version number in the `Version` field. For details about the appropriate version build numbers, see http://books.sonatype.com/mvnref-book/reference/pom-relationships-sect-pom-syntax.html[Project Versions]
-.. Set the value of the `Packaging` field to `pom`.
-.. (Optional) Add a name for your module in the `Name` field.
-.. (Optional) Add a description for your module in the `Description` field.
+.. The `Artefact Id` and `Package` fields are automatically populated based on the parent project details.
 +
-.Configure the Maven Module
-image::mvnbasic_configure_module.png[Configure the Maven Module]
+.Configure the Module Archetype Parameters
+image::mvnbasic_module_archetype_parameters.png[Configure the Module Archetype Parameters]
 +
 .. Click `Finish` to conclude setting up the Maven module.
 . (Optional) To change the settings for the created Maven module, expand the module name in the `Project Explorer` view and double click `pom.xml` from the expanded list. An `Overview` tab appears and all settings can be changed from this tab.
@@ -115,6 +113,7 @@ image::mvnbasic_module_pom_overview.png[Change the Module Settings from the Over
 The previous tasks contain instructions to create a new Maven project and Maven module. However, for an existing application that was not created with Maven support, use the following instructions to add Maven support to the non-Maven project:
 
 ==== Adding Maven Support to an Existing Non-Maven Project ====
+////
 . (Optional) To add dependencies to the project, use the following instructions:
 .. Right-click the project name in the `Project Explorer` view and click `Properties`.
 .. In the `Java Build Path` window, click `Libraries`.
@@ -124,6 +123,7 @@ image::mvnbasic_java_build_path.png[Set the Java Build Path]
 +
 .. Click `Add External JARs`, navigate to the required JAR file and select it. The new JAR will appear in the list in the `Libraries` tab.
 .. Click `OK` to confirm the changes.
+////
 . Right-click the project name in the `Project Explorer` view.
 . From the displayed options, click `Configure`.
 . From the displayed sub-menu, click `Convert to Maven Project`.
