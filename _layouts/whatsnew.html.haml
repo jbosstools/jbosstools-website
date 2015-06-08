@@ -36,7 +36,7 @@ tab: docs
     - default_imagesdir = site.asciidoctor.attributes['imagesdir']
     %div.component-wrapper.well.post-bg{:id=>component_id}
       %h1.component-header #{site.components[page.component_id].name}
-      - site.asciidoctor.attributes['imagesdir'] = relative(Pathname.new(page.output_path).parent.to_s)
+      - site.asciidoctor.attributes['imagesdir'] = Pathname.new(page.output_path).parent.to_s
       ~content
     - site.asciidoctor.attributes['imagesdir'] = default_imagesdir
     

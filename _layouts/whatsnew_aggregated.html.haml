@@ -95,7 +95,7 @@ tab: docs
       %div.component-wrapper{:id=>component_id}
         %h1.component-header #{site.components[component_id].name}
         - component_news.each do |n|
-          - site.asciidoctor.attributes['imagesdir'] = relative(Pathname.new(n.output_path).parent.to_s)
+          - site.asciidoctor.attributes['imagesdir'] = Pathname.new(n.output_path).parent.to_s 
           ~n.content
       %hr
     -# restore the default 'imagesdir'
