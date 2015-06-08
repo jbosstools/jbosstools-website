@@ -1,0 +1,16 @@
+= Usage What's New in 4.3.0.Beta1
+:page-layout: whatsnew
+:page-component_id: usage
+:page-component_version: 4.3.0.Beta1
+:page-product_id: jbt_core 
+:page-product_version: 4.3.0.Beta1
+
+== Browser Usage 
+
+SWT Browser name and version is now collected for usage statistics to help JBoss Tools team to learn more about configuration which our users prefer to have.
+
+All information which is going to be collected is reflected in Preferences > JBoss Tools > Usage Reporting for you to review.
+
+As always JBoss Tools will not send any information before a user have opted in, nor is there any personal information sent.
+
+related_jira::JBIDE-19899[]
