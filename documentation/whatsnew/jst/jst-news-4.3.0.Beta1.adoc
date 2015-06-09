@@ -1,0 +1,24 @@
+= JST/JSF/HTML Tools What's New in 4.3.0.Beta1
+:page-layout: whatsnew
+:page-component_id: jst
+:page-component_version: 4.3.0.Beta1
+:page-product_id: jbt_core 
+:page-product_version: 4.3.0.Beta1
+:experimental true
+
+== JavaScript Editing improvments
+
+Target Platform is updated with the lates Tern.java and AngularJS-Eclipse in order to bring the latest improvments and fixes of JavaScript Content Assistant into JBoss Tools.
+
+* Tern.java v.0.10.0.201506020610
+* AngularJS-Eclipse v.0.10.0.201506020622
+
+Check out its new and noteworthy:
+
+- https://github.com/angelozerr/tern.java/wiki/New-and-Noteworthy-0.10.0[Tern.java 0.10.0 New and Noteworthy]
+- https://github.com/angelozerr/angularjs-eclipse/wiki/New-and-Noteworthy-0.10.0[AngularJS Eclipse Plugin 0.10.0 New and Noteworthy]
+
+Note: These features are available via JBoss Central - Early Access as a part of *AngularJS for Web Tools*
+
+related_jira::JBIDE-19631[]
+
