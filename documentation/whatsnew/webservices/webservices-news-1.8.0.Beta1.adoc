@@ -14,17 +14,17 @@ They can have methods annotated with *@OnClose*, *@OnError*, *@OnMessage*, *@OnO
 
 Content assist provides options:
 
-- onClose(Session session, CloseReason closeReason): void - @OnClose method for WebSocket endpoint
+- `onClose(Session session, CloseReason closeReason): void` - @OnClose method for WebSocket endpoint
 
-- onError(Session session, Throwable throwable): void - @OnError method for WebSocket endpoint
+- `onError(Session session, Throwable throwable): void` - @OnError method for WebSocket endpoint
 
-- onMessage(String message): void - @OnMessage method with text message for WebSocket endpoint
+- `onMessage(String message): void` - @OnMessage method with text message for WebSocket endpoint
 
-- onMessage(byte[] message): void - @OnMessage method with binary message for WebSocket endpoint
+- `onMessage(byte[] message): void` - @OnMessage method with binary message for WebSocket endpoint
 
-- onMessage(PongMessage message): void - @OnMessage method with pong message for WebSocket endpoint
+- `onMessage(PongMessage message): void` - @OnMessage method with pong message for WebSocket endpoint
 
-- onOpen(Session session, EndpointConfig endpointConfig): void - @OnOpen method for WebSocket endpoint
+- `onOpen(Session session, EndpointConfig endpointConfig): void` - @OnOpen method for WebSocket endpoint
 
 Each option may be used once only. Used options do not appear in the choice.
 
@@ -32,7 +32,7 @@ Content assist may be invoked at any position for a new class member.
 Prefix may be used to reduce choice list. 
 For instance, if one types `onO` or `@onO` and invokes content assist, only `onOpen` choice will be suggested.
 
-image::./images/WebsocketEndpointContentAssist.png[]
+image::./images/websocket_endpoint_content_assist.png[]
 
 Example of inserted code:
 
