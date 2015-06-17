@@ -39,7 +39,30 @@ related_jira::JBIDE-19386[]
 == New Batch Artifact wizard
 
 A new Batch Artifact wizard is available in New->Others->Batch menu and allows to create batch artifacts, such as:
-Batchlet, Checkpoint Algorithm, Decider, Item Reader, Item Writer, Item Processor, Partition Analyzer, Partition Reducer, Partition Collector, Partition Mapper, Partition Plan, Chunk Listener, Item Process Listener, Item Reader Listener, Item Writer Listener, Job Listener, Step Listener, Retry Process Listener, Retry Read Listener, Retry Write Listener, Skip Process Listener, Skip Listener, Skip Write Listener.
+
+* Batchlet
+* Checkpoint Algorithm
+* Decider
+* Item Reader
+* Item Writer
+* Item Processor
+* Partition Analyzer
+* Partition Reducer
+* Partition Collector
+* Partition Mapper
+* Partition Plan
+* Chunk Listener
+* Item Process Listener
+* Item Reader Listener
+* Item Writer Listener
+* Job Listener
+* Step Listener
+* Retry Process Listener
+* Retry Read Listener
+* Retry Write Listener
+* Skip Process Listener
+* Skip Listener
+* Skip Write Listener.
 
 image::images/4.3.0.Beta1/artifact.png[]
 
