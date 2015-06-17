@@ -45,7 +45,7 @@ tab: blog
                           #{tag}
             .body
               - default_imagesdir = site.asciidoctor.attributes['imagesdir']
-              - site.asciidoctor.attributes['imagesdir'] = relative(Pathname.new(post.output_path).parent.to_s)
+              - site.asciidoctor.attributes['imagesdir'] = Pathname.new(post.output_path).parent.to_s
               ~post.content
               - site.asciidoctor.attributes['imagesdir'] = default_imagesdir
 
