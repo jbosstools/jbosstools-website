@@ -12,9 +12,12 @@ In the context of application development, Maven provides a standardized build s
 . <<New_Module,Create a New Maven Module>>
 . <<Maven_Support,Add Maven Support to an Existing Non-Maven Project>>
 
-Root Maven projects can serve as aggregators for multiple Maven modules, also known as sub-projects. For each module that is part of a maven project, a <module> entry is added to the project's pom.xml file. A pom.xml that contains <module> entries are often referred to as an aggregator pom.
+Root Maven projects can serve as aggregators for multiple Maven modules, also known as sub-projects. For each module that is part of a maven project, a <module> entry is added to the project's pom.xml file. A pom.xml that contains <module> entries is often referred to as an aggregator pom.
 
 When modules are included into a project it is possible to execute Maven goals across all of the modules by a single command issued from the parent project directory.
+
+[NOTE]
+Note that the provided instructions pertain to the "create a simple project" path. If this is not the desired path, ensure that the group ID, version, package, and archetype properties are set or overridden as required for a custom project.
 
 [[New_Project]]
 == 1. Create a New Maven Project
@@ -136,7 +139,7 @@ image::mvnbasic_java_build_path.png[Set the Java Build Path]
 image::mvnbasic_create_new_pom.png[Create a New Pom Descriptor]
 +
 .. Click `Finish` to finalize the pom information.
-. If dependencies were added (using the instructions in step 1), a wizard appears displaying all added dependencies and a green check mark when each dependency is identified. Learn more about dependency identification in the <<did_you_know,Did You Know>> section.
+. If the project references java dependencies, a wizard appears displaying all these dependencies and a green check mark when each dependency is identified. Learn more about dependency identification in the <<did_you_know,Did You Know>> section.
 . Check the `Delete original references from project` check box to avoid retaining duplicate or stale dependencies in your project.
 +
 .Identify Maven Dependencies
