@@ -2,7 +2,7 @@
 :page-layout: blog
 :page-author: fbricon
 :page-tags: [m2e, maven]
-:experimental:
+
 
 The https://www.eclipse.org/m2e[Maven Integration for Eclipse] plugin, a.k.a. *m2e*, released version 1.5.0 a few weeks ago, as part of the annual Eclipse release train, this year known as Luna. 
 https://bugs.eclipse.org/bugs/buglist.cgi?bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&bug_status=RESOLVED&bug_status=VERIFIED&bug_status=CLOSED&classification=Technology&columnlist=target_milestone%2Ccomponent%2Cassigned_to%2Cresolution%2Cshort_desc%2Cchangeddate&known_name=m2e%201.5&list_id=9536440&product=m2e&query_based_on=m2e%201.5&query_format=advanced&resolution=---&resolution=FIXED&resolution=INVALID&resolution=WONTFIX&resolution=DUPLICATE&resolution=WORKSFORME&resolution=MOVED&resolution=NOT_ECLIPSE&target_milestone=1.5.0%2FLuna%20M1&target_milestone=1.5.0%2FLuna%20M2&target_milestone=1.5.0%2FLuna%20M3&target_milestone=1.5.0%2FLuna%20M4&target_milestone=1.5.0%2FLuna%20M5&target_milestone=1.5.0%2FLuna%20M6&target_milestone=1.5.0%2FLuna%20M7&target_milestone=1.5.0%2FLuna%20RC2[77 Bugs] were fixed as part of that release, compatible with both Eclipse Kepler and Luna. I believe it's a pretty solid one, with numerous interesting fixes and usability improvements that deserve a blog post. So here goes, in no particular order:

@@ -2,7 +2,7 @@
 :page-layout: howto
 :page-tab: docs
 :page-status: green
-:experimental:
+
 :imagesdir: ./images
  
 OpenShift Tools enables you to debug your deployed OpenShift applications within the IDE, enabling you to take advantage of the IDE debugging tools. This article specifically details the steps needed to set up an OpenShift Online Java application for debugging. A number of configuration tasks are required both locally and remotely  to enable the IDE debugger to connect to the OpenShift server and OpenShift Tools for achieving this. Some tasks only need to be completed once for each OpenShift Online application but others must be completed every time you reconnect to OpenShift Online from the IDE. 

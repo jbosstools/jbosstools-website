@@ -2,7 +2,7 @@
 :page-layout: howto
 :page-tab: docs	
 :page-status: green
-:experimental:
+
 :imagesdir: ./images
 
 Mobile Hybrid Tools enables you to quickly create Cordova-based hybrid mobile applications using the `Hybrid Mobile Project` wizard. This wizard is a useful starting point for creating all new Cordova-based mobile applications in the IDE. 

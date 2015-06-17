@@ -2,7 +2,7 @@
 :page-layout: howto
 :page-tab: docs
 :page-status: green
-:experimental:
+
 :imagesdir: ./images
 
 Remote servers allow developers to access and deploy to a JBoss instance that is not a local machine. Developers can use remote servers to set up multiple environments for development and testing purposes and share them with other developers. Another reason to use a remote server with Red Hat JBoss Developer Studio is to allow developers to share and deploy automated tests to run in a non-local environment.

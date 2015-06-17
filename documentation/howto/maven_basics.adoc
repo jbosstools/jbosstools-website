@@ -2,7 +2,7 @@
 :page-layout: howto
 :page-tab: docs
 :page-status: green
-:experimental:
+
 :imagesdir: ./images
 :toc:
 

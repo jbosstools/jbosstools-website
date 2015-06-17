@@ -2,7 +2,6 @@
 :page-layout: howto
 :page-tab: docs	
 :page-status: green
-:experimental:
 :imagesdir: ./images
 
 In order to deploy applications to a server from within the IDE, you must configure the IDE with information about the server. For a local server this information includes the following:

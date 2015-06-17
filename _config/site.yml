@@ -21,6 +21,7 @@ sass:
 asciidoctor:
   :safe: safe
   :attributes:
+    experimental: true
     imagesdir: ./@
     icons: font
     idprefix: ''
@@ -28,6 +29,7 @@ asciidoctor:
     sectanchors: ''
     linkattrs: ''
     source-highlighter: prettify
+    
     
 # Default minify settings
 css_minifier: disabled

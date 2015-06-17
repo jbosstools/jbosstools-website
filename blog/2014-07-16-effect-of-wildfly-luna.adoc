@@ -2,7 +2,7 @@
 :page-layout: blog
 :page-author: maxandersen
 :page-tags: [wildfly, luna, jbosscentral]
-:experimental:
+
 
 In our recent milestone releases of JBoss Tools 4.2 we've started gathering additional data from those
 who are have agreed sending back anonymous usage data to us (Thank you!).

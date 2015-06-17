@@ -2,7 +2,7 @@
 :page-layout: howto
 :page-tab: docs
 :page-status: green
-:experimental:
+
 :imagesdir: ./images
 
 Through the IDE you can manage your OpenShift Online application beyond simply its source code. OpenShift Online allows customization of the build and deployment process with markers and action hooks, each of which can be added to the application configuration files using OpenShift Tools and existing IDE functionality. Further, the Git commit and push processes for your changed application source code and configuration files can be customized through the IDE preferences to meet your needs.

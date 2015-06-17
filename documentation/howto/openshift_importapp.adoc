@@ -2,7 +2,7 @@
 :page-layout: howto
 :page-tab: docs
 :page-status: green
-:experimental:
+
 :imagesdir: ./images
 
 OpenShift Tools enables you to import existing OpenShift Online applications into the IDE so that you can take advantage of the IDE features in further developing your applications. As illustrated in this article, during the import process you can configure the IDE for easy republishing to OpenShift Online.

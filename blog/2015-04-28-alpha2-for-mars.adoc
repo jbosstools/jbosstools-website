@@ -2,7 +2,7 @@
 :page-layout: blog
 :page-author: maxandersen
 :page-tags: [release, jbosstools, jbosscentral]
-:experimental:
+
 
 Alpha 2 build for Eclipse Mars M6 is now available at link:/downloads/jbosstools/mars/4.3.0.Alpha2.html[Alpha2 download].
 
