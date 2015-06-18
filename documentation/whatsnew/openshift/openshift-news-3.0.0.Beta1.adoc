@@ -12,7 +12,7 @@ You retrieve a token by clicking the retrieve link, following the prompts in the
 image::./images/connect-oauth.png[]
 
 http://www.openshift.org/#v3["OpenShift v3"] is not available online yet, as it is for OpenShift v2 at https://www.openshift.com/.
-If you want to check it out, you can run it from source, in a docker container or with vagrant, as described here: http://fabric8.io/guide/getStartedOpenShift.html
+If you want to check it out, you can run it from with vagrant, as described here: http://fabric8.io/guide/openShiftWithFabric8Vagrant.html
 
 related_jira::JBIDE-19829[]
 
