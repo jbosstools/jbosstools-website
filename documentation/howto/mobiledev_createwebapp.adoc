@@ -2,7 +2,7 @@
 :page-layout: howto
 :page-tab: docs	
 :page-status: green
-:experimental:
+
 :imagesdir: ./images
 
 Mobile Web Tools provides an `HTML5 Project` wizard that enables you to create web applications optimized for mobile devices. The `HTML5 Project` wizard is a useful starting point for creating all new HTML5 web applications in the IDE. The wizard generates a sample ready-to-deploy HTML5 mobile application with REST resources from a Maven archetype.

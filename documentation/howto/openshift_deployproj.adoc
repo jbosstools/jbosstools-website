@@ -2,7 +2,7 @@
 :page-layout: howto
 :page-tab: docs
 :page-status: green
-:experimental:
+
 :imagesdir: ./images
 
 OpenShift Tools enables you to deploy existing workspace projects to OpenShift Online using the `OpenShift Application` wizard. The wizard creates a templated OpenShift application based on your cartridge choices, modifies the project as necessary for use with OpenShift Online and commits the project code to the local application Git repository ready for publishing. The wizard can also generate a server adapter for easy publishing of the application both for first deployment and for future changes.

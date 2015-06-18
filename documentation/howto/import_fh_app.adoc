@@ -2,7 +2,7 @@
 :page-layout: howto
 :page-tab: docs
 :page-status: green
-:experimental:
+
 :imagesdir: ./images
 
 The IDE includes an `Import` wizard to allow users to quickly and easily import previously created FeedHenry applications. Once the application is imported, you can change or enhance the application, test the changes, and then push it back to the FeedHenry server.

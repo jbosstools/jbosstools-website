@@ -2,7 +2,7 @@
 :page-layout: howto
 :page-tab: docs
 :page-status: green
-:experimental:
+
 :imagesdir: ./images
 
 OpenShift Online uses SSH authentication for development tasks that interact directly with gears such as pushing code changes to application OpenShift Online Git repositories, reading application log files, listing and setting environment variables, and port forwarding.

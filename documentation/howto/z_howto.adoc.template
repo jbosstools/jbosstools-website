@@ -3,7 +3,7 @@
 :page-layout: howto
 :page-tab: docs
 :page-status: green
-:experimental:
+
 :imagesdir: ./images
 // page-layout is there to indicate this template is a How To.
 // experimental is there to indicate ...

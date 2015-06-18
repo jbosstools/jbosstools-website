@@ -3,6 +3,7 @@
 :page-author: adietish
 :page-tags: [openshift, jbossdeveloper, ticketmonster]
 
+
 http://www.jboss.org/products/devstudio/overview/[JBoss Developer Studio] allows you publish and run your http://www.eclipse.org/home/index.php[Eclipse] projects on https://www.openshift.com/[OpenShift]. 
 This post shows you how to get started using the http://www.jboss.org/ticket-monster/[JBoss Developer Ticket Monster] demo application. +
 In a 2nd part I will show you how to change your code in Eclipse and have those changes instantly available on OpenShift using the http://zeroturnaround.com/software/jrebel/[JRebel] cartridge.
