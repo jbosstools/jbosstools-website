@@ -59,6 +59,33 @@ devstudio:
   name: JBoss Developer Studio
   url_path_fragment: devstudio
   streams:
+    mars:
+      9.0.0.Beta1:
+        update_site_url: https://devstudio.redhat.com/9.0/development/
+        marketplace_url: https://marketplace.eclipse.org/content/red-hat-jboss-developer-studio-mars
+        marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=2397428
+        release_date: 2015-06-22
+        # no supported IS version at this time
+        #supported_devstudio_is_version: 9.0.0.Alpha0
+        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        blog_announcement_url: /blog/2015-06-22-beta1-for-mars.html
+        installers: 
+          - name: Stand-alone Installer
+            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/8f/8f01d0db3cc193f7eb8876cc0c1ad0bcabbfb9a3b794837d572f52209e738908/jboss-devstudio-9.0.0.Beta1-installer-standalone.jar
+            file_size: 484MB
+          - name: Installer With EAP 6.4.0
+            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/3d/3d115879e3be646a563d05452c3a22bac394652e40260a3b43d9dd5c3ba7121e/jboss-devstudio-9.0.0.Beta1-installer-eap.jar
+            file_size: 628MB
+        zips:
+          - name: Update site (including sources) bundle of JBoss Developer Studio
+            file_size: 505MB
+            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/2c/2c92b68d122db901e3acbb74f06950116f4fe29402c25f4391761f9a93e65bba/jboss-devstudio-9.0.0.Beta1-updatesite-core.zip
+          - name: Target Platform for JBoss Developer Studio
+            file_size: 451MB
+            url: https://devstudio.redhat.com/9.0/development/updates/core/jboss-devstudio-9.0.0.Beta1-target-platform.zip
+            # note that we use SHA1 now, not MD5
+            # md5_url: https://devstudio.redhat.com/9.0/development/updates/core/jboss-devstudio-9.0.0.Beta1-target-platform.zip.sha1
     luna:
       8.1.0.GA:
         marketplace_url: http://marketplace.eclipse.org/node/1616973
@@ -478,11 +505,33 @@ jbt_core:
   url_path_fragment: jbosstools
   streams:
     mars:
-      4.3.0.Alpha2:
-        update_site_url: http://download.jboss.org/jbosstools/mars/development/updates/core/
-        # No marketplace before Beta marketplace_url: http://marketplace.eclipse.org/node/1617241 
-        # No marketplace before Beta marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1617241
+      4.3.0.Beta1:
+        update_site_url: http://download.jboss.org/jbosstools/mars/development/
+        marketplace_url: https://marketplace.eclipse.org/content/jboss-tools-mars
+        marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=2397385
         #archived: true
+        release_date: 2015-06-22
+        # no supported IS version at this time
+        #supported_jbt_is_version: 4.3.0.Alpha0
+        blog_announcement_url: /blog/2015-06-22-beta1-for-mars.html
+        documentation_url: http://docs.jboss.org/tools/
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 401MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Beta1_2015-06-18_21-49-21-B59-updatesite-core.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Beta1_2015-06-18_21-49-21-B59-updatesite-core.zip.sha1
+           - name: Sources zip of all JBoss Core Tools
+             file_size: 299MB
+             url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Beta1_2015-06-18_21-49-21-B59-src.zip
+             md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Beta1_2015-06-18_21-49-21-B59-src.zip.sha1
+          - name: Stand-alone BrowserSim
+            file_size: 16.6MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Beta1_2015-06-05_01-14-40-B10-browsersim-standalone.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Beta1_2015-06-05_01-14-40-B10-browsersim-standalone.zip.sha1
+          - name: Release Notes
+            url: http://tools.jboss.org/documentation/whatsnew/index.html
+      4.3.0.Alpha2:
+        # update_site_url: http://download.jboss.org/jbosstools/mars/development/updates/core/
         release_date: 2015-04-27
         #supported_jbt_is_version: 4.3.0.Alpha0
         blog_announcement_url: /blog/2015-04-28-alpha2-for-mars.html
@@ -504,10 +553,11 @@ jbt_core:
           - name: Release Notes
             url: http://tools.jboss.org/documentation/whatsnew/index.html
       4.3.0.Alpha1:
-        update_site_url: http://download.jboss.org/jbosstools/mars/development/updates/core/
+        # update_site_url: http://download.jboss.org/jbosstools/mars/development/updates/core/
         release_date: 2015-02-20
         blog_announcement_url: /blog/2015-02-23-alpha1-for-mars.html
         documentation_url: http://docs.jboss.org/tools/
+        archived: true
         zips:
           - name: Update site (including sources) bundle of all JBoss Core Tools
             file_size: 394MB
@@ -565,7 +615,7 @@ jbt_core:
           - name: Release Notes
             url: http://tools.jboss.org/documentation/whatsnew/jbosstools/4.2.3.Final.html
       4.2.3.CR1:
-        update_site_url: http://download.jboss.org/jbosstools/updates/development/luna/
+        #update_site_url: http://download.jboss.org/jbosstools/updates/development/luna/
         #marketplace_url: http://marketplace.eclipse.org/node/1617241
         #marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1617241
         archived: true
@@ -593,7 +643,7 @@ jbt_core:
           - name: Release Notes
             url: http://tools.jboss.org/documentation/whatsnew/jbosstools/4.2.3.CR1.html
       4.2.3.Beta1:
-        update_site_url: http://download.jboss.org/jbosstools/updates/development/luna/
+        #update_site_url: http://download.jboss.org/jbosstools/updates/development/luna/
         #marketplace_url: http://marketplace.eclipse.org/node/1617241
         #marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1617241
         archived: true
@@ -621,7 +671,7 @@ jbt_core:
           - name: Release Notes
             url: http://tools.jboss.org/documentation/whatsnew/jbosstools/4.2.3.Beta1.html
       4.2.2.Final:
-        update_site_url: http://download.jboss.org/jbosstools/updates/stable/luna/
+        #update_site_url: http://download.jboss.org/jbosstools/updates/stable/luna/
         marketplace_url: http://marketplace.eclipse.org/node/1617241
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1617241
         archived: false
