@@ -19,6 +19,9 @@ central:
 core:
   name: Core Tools
   
+docker:
+  name: Docker Tools
+  
 drools:
   name: Drools
   
