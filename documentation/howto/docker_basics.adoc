@@ -1,0 +1,81 @@
+= Basic Docker Usage
+:page-layout: howto
+:page-tab: docs
+:page-status: green
+:experimental:
+:imagesdir: ./images
+:toc:
+
+Docker offers images that can be managed in one of two ways: build/create your own image using a script file, or pull down an existing image file from public or private registries online. This procedure contains instructions for pulling down an image from the JBoss registry. Such registries are useful to share images between developers or between environments to ensure a standardized software stack for development or testing requirements. Once the Docker Container is created and running, users can manage the container.
+
+JBoss Tools 4.3.0 Beta1 includes the Docker tooling out of the box. This article introduces the basic usage for the Docker tooling, such as:
+
+. <<Prerequisites,Prerequisites for Docker Tooling>>
+. <<Pull_Image,Pulling Docker Images from a Docker Registry>>
+. <<Manage_Containers,Managing Docker Containers>>
+
+[[Prerequisites]]
+== 1. Prerequisites for Docker Tooling
+
+Ensure that the following prerequisites are met when using the Docker tooling with the IDE:
+
+. Install and set up JBoss Tools 4.3.0 Beta1 or higher.
+. Install and set up Docker.
+. Establish a connection to a Docker daemon within JBoss Tools as follows:
+.. Click menu:Window[Show View > Other...].
+.. In the `View` window, type **docker** in the filter text box to view Docker-related options in the list.
+.. Expand the `Docker` item in the results and select `Docker Explorer`.
+.. In the `Docker Explorer` view, if no connection is configured, a message appears stating that **"No connection to a Docker daemon is available. Click this link to create a new connection…”**. Click the link to start configuring a new Docker daemon connection.
++
+.No Connection to a Docker Daemon is Available
+image::docker_no_connections.png[No connection to a Docker daemon is available]
++
+.. In the `Connect to a Docker daemon` wizard:
+... Use the default value or set a desired connection name in the `Connection Name` field.
+... Check the `Use custom connection settings` field.
+... Add the relevant socket information for your host. If you are unsure about this step, use the default Unix socket Location value.
+... Click `Test Connection` to test the connection.
+... When a connection is successfully established, the following message appears:
++
+.Ping Success Message
+image::docker_ping_success.png[Ping Success Message]
++
+... This message indicates that the Docker daemon connection is successfully established.
+
+[[Pull_Image]]
+== 2. Pulling Docker Images from a Docker Registry
+The following instructions detail how to pull a new WildFly Docker Image from the JBoss registry.
+
+. Click menu:Window[Show View > Other...].
+. Type **Docker** in the filter text field to view Docker-related options in the list.
+. Expand the `Docker` entry and double click `Docker Images`.
+. In the listed entries for the `Docker Images` view, locate the entry that ends with **wildfly:latest**. If this entry is not listed, pull the Wildfly image as follows:
+.. Click the Pull Image icon at the top bar of the `Docker Images` view.
+.. In the resulting wizard, type **jboss/wildfly** and click finish.
++
+.Pull WildFly Image from JBoss Registry
+image::docker_pull_wildfly_image.png[Pull WildFly Image from JBoss Registry]
++
+.. The bottom right corner displays the progress as the image is pulled down from the registry. When the pulling process completes, the appropriate entry appears on the Docker Images list as follows:
++
+.The Docker WildFly Image
+image::docker_wildfly_image.png[The Docker WildFly Image]
++
+
+**Result:** You have now pulled a new image for Wildfly from the JBoss registry and run the Docker Image.
+
+[[Manage_Containers]]
+== 3. Managing Docker Containers
+Docker containers are isolated processes that are based on Docker Images. Once created, users can stop, start, pause, unpause, kill, or remove the containers, or read their logs.
+
+. Click menu:Window[Show View > Other...].
+. Type **Docker** in the filter text field to view Docker-related options in the list.
+. In the search results, expand the **Docker** entry and double-click `Docker Containers`.
+. The `Docker Containers` view appears, displaying a list of all containers running on the Docker host.
+. Click the desired container to select it. You can now manage your containers using the following operations:
+.. Click the pause button from the icons on the top right corner of the view to pause the container.
+.. Click the green triangle icon in the row to unpause the container.
+.. To view the container logs, right click the container name and click `Display Log`.
+.. To view a list of all containers, click on the right-most icon in the list of icons in the view, which displays a drop-down option to view all containers. Click this option to view all available containers.
+
+**Result:** You have performed various management operations on your Docker container.
