@@ -9,6 +9,8 @@ The How To section contains articles describing features of JBoss Tools and Deve
 
 link:maven_basics.html[Configure Maven (Basic)]
 
+link:docker_basics.html[Configure Docker Tooling (Basic)]
+
 link:configure_remote_server.html[Configure a Remote Server]
 
 == Deploying and Debugging Apps
