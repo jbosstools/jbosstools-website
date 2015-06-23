@@ -9,63 +9,63 @@ image::/blog/images/jbosstools-jbdevstudio-blog-header.png[]
 
 == Java 8 required to run, all Java's ok for building
 
-In this Beta we are requiring that you run Eclipse with Java 8.
+In this Beta, we are requiring that you run Eclipse with Java 8.
 
-You can still target development for old Java versions. Yes, you can still target you Java 1.4 projects :)
+You can still target development for old Java versions though. Yes, you can still target your Java 1.4 projects :)
 
-We are doing this because certain component of Eclipse Mars now requires Java 8 (especially Sapphire) and
-according to our usage stats Java 8 will have gained majority this year.
+We are doing this because certain components of Eclipse Mars now require Java 8 (especially Sapphire) and
+according to our usage stats, Java 8 will have gained majority this year.
 
-But we have not made JBoss Tools *dependent* on Java 8 yet since we want to get feedback from users on if requiring Java 8 will be a problem.
+But we have not made JBoss Tools *dependent* on Java 8 yet, since we want to get feedback from users on whether requiring Java 8 will be a problem.
 
-Let us know on our forum or contact Red Hat support if this will be problem for you to use it.
+Let us know on our forum, or contact Red Hat support if this will be a problem for you to use it.
 
 == Installation
 
-JBoss Developer Studio comes with everything pre-bundled in its installer. Simply download it from our https://www.jboss.org/products/devstudio.html[JBoss Products page]run it like this:
+JBoss Developer Studio comes with everything pre-bundled in its installer. Simply download it from our https://www.jboss.org/products/devstudio.html[JBoss Products page] and run it like this:
  
     java -jar jbdevstudio-<installername>.jar   
 
-JBoss Tools or Bring-Your-Own-Eclipse (BYOE) JBoss Developer Studio requires a bit more:
+JBoss Tools or Bring-Your-Own-Eclipse (BYOE) JBoss Developer Studio require a bit more:
 
 This release requires at least Eclipse 4.5 (Mars) but we recommend
 using the https://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/marsrc3[Eclipse
 4.4 JEE Bundle] since then you get most of the dependencies
 preinstalled. In case that page it not available check https://www.eclipse.org/downloads/[main eclipse] download for the Mars release.
 
-Once you have installed Eclipse, you either find us on Eclipse Marketplace under "JBoss Tools (Mars)" or "JBoss Developer Studio (Mars)".
+Once you have installed Eclipse, you can either find us on the Eclipse Marketplace under "JBoss Tools (Mars)" or "JBoss Developer Studio (Mars)".
 
-For JBoss Tools you can also use our update site directly if you are up for it.
+For JBoss Tools, you can also use our update site directly if you are up for it.
 
     http://download.jboss.org/jbosstools/mars/development/updates
 
-Note: Integration Stack tooling will become available from JBoss Central at an later date.
+Note: Integration Stack tooling will become available from JBoss Central at a later date.
 
 == What is new ? 
 
-The full details of what is new is available on http://localhost:4242/documentation/whatsnew/jbosstools/4.3.0.Beta1.html[this page], below is the highlights.
+The full details of what is new is available on http://localhost:4242/documentation/whatsnew/jbosstools/4.3.0.Beta1.html[this page], below are the highlights.
 
 === New Shiny Central
 
-JBoss Central now been updated to be faster to load, less overloaded and give access to *any* project example from developer.jboss.org.
+JBoss Central has now been updated to be faster to load, less overloaded and give access to *any* project example from developer.jboss.org.
 
 image::/blog/images/html5_central.png[]
 
 === Docker tooling
 
-There is now tooling to connect to (multiple) Docker daemons which allow you to pull, build, start, stop, etc. Images and Containers.
+There is now tooling to connect to (multiple) Docker daemons which allows you to pull, build, start, stop, etc. Images and Containers.
 
 image::/documentation/whatsnew/docker/images/docker_explorer_view.png[]
 
-The Docker tooling is technically part of Eclipse Mars, but we wanted to make it easily available to all JBoss Tools users we have included it into our updatesite. In future releases we will add some specific JBoss Tools integrations for our server adapters and OpenShift - but for now what is included are the vanilla Eclipse Mars Docker tools.
+The Docker tooling is technically part of Eclipse Mars, but we wanted to make it easily available to all JBoss Tools users, so we included it into our updatesite. In future releases, we will add some specific JBoss Tools integrations for our server adapters and OpenShift - but for now, what is included are the vanilla Eclipse Mars Docker tools.
 
 === Visual Java EE 7 Batch 
 
-We've added visual diagram editor for Java EE 7 Batch tooling. Allowing you to visualize and edit your batch flow.
+We've added a visual diagram editor for Java EE 7 Batch tooling. Allowing you to visualize and edit your batch flow:
 
 image::/documentation/whatsnew/batch/images/4.3.0.Beta1/diagram.png[]
 
-Big thanks to Tomáš Milata who worked on this for his thesis and contributed the foundation for this functionallity!
+Big thanks to Tomáš Milata who worked on this for his thesis and contributed the foundation for this functionality!
 
 Below is a https://www.youtube.com/embed/wmWFQKvTWSc[video] of the highlights of the feature set:
 
@@ -86,18 +86,18 @@ image::/blog/images/20150521-monitoring-view.png[]
 
 === Experimental Launch Bar
 
-The Eclipse CDT project created a new feature called Launcb Bar allowing to easily run launch configurations.
-We've added experimental support for using WTP Server adapters (like JBoss server adapters) making it as easy to run as a Java app.
+The Eclipse CDT project created a new feature called the Launch Bar, allowing to easily run launch configurations.
+We've added experimental support for WTP server adapters (like JBoss server adapters) making them as easy to run as a Java app.
 
 image::/documentation/whatsnew/server/images/20150604_launchbar.png[]
 
 == Next steps
 
 Let us know what you like/hate about the release and if you find
-issues open issue at our
+issues, please open a ticket at our
 https://jira.jboss.org/jira/browse/JBIDE[issue tracker].
 
-Going from Beta1 to Beta2 we are focusing on reported issues and going
+Going from Beta1 to Beta2, we are focusing on reported issues and going
 for improving Docker, OpenShift, JavaScript and JavaEE related
 features.
 
