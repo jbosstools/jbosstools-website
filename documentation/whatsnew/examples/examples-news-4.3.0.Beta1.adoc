@@ -1,0 +1,19 @@
+= Project Examples 4.3.0.Beta1 What's New
+:page-layout: whatsnew
+:page-component_id: examples
+:page-component_version: 4.3.0.Beta1
+:page-product_id: jbt_core
+:page-product_version: 4.3.0.Beta1
+
+== New examples from developer.jboss.org
+
+As mentioned in link:4.3.0.Beta1.html#central[the JBoss Central section], you now have access to more than 200 project
+ examples from the Central page.
+
+However, please note these examples are not integrated yet in the Project Examples wizard, nor completely supported
+by the Offline support mechanism:
+after you run an example once, it will be available even if your internet connection goes down, however,
+the groovy script in `Preferences > JBoss Tools > Project Examples > Offline Support` will not fetch and
+cache these new examples.
+
+We plan to address these issues in the next Beta release.
