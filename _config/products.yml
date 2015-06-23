@@ -64,12 +64,12 @@ devstudio:
         update_site_url: https://devstudio.redhat.com/9.0/development/
         marketplace_url: https://marketplace.eclipse.org/content/red-hat-jboss-developer-studio-mars
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=2397428
-        release_date: 2015-06-22
+        release_date: 2015-06-23
         # no supported IS version at this time
         #supported_devstudio_is_version: 9.0.0.Alpha0
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
-        blog_announcement_url: /blog/2015-06-22-beta1-for-mars.html
+        blog_announcement_url: /blog/2015-06-23-beta1-for-mars.html
         installers: 
           - name: Stand-alone Installer
             url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/8f/8f01d0db3cc193f7eb8876cc0c1ad0bcabbfb9a3b794837d572f52209e738908/jboss-devstudio-9.0.0.Beta1-installer-standalone.jar
@@ -510,10 +510,10 @@ jbt_core:
         marketplace_url: https://marketplace.eclipse.org/content/jboss-tools-mars
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=2397385
         #archived: true
-        release_date: 2015-06-22
+        release_date: 2015-06-23
         # no supported IS version at this time
         #supported_jbt_is_version: 4.3.0.Alpha0
-        blog_announcement_url: /blog/2015-06-22-beta1-for-mars.html
+        blog_announcement_url: /blog/2015-06-23-beta1-for-mars.html
         documentation_url: http://docs.jboss.org/tools/
         zips:
           - name: Update site (including sources) bundle of all JBoss Core Tools
