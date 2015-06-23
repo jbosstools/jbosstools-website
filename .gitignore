@@ -57,3 +57,4 @@ _tmp
 link-checker-crawled-pages.pstore
 .#*
 
+/bin/

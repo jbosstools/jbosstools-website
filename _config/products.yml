@@ -506,7 +506,7 @@ jbt_core:
   streams:
     mars:
       4.3.0.Beta1:
-        update_site_url: http://download.jboss.org/jbosstools/mars/development/
+        update_site_url: http://download.jboss.org/jbosstools/mars/development/updates/
         marketplace_url: https://marketplace.eclipse.org/content/jboss-tools-mars
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=2397385
         #archived: true
@@ -531,9 +531,7 @@ jbt_core:
           - name: Release Notes
             url: http://tools.jboss.org/documentation/whatsnew/index.html
       4.3.0.Alpha2:
-        # update_site_url: http://download.jboss.org/jbosstools/mars/development/updates/core/
         release_date: 2015-04-27
-        #supported_jbt_is_version: 4.3.0.Alpha0
         blog_announcement_url: /blog/2015-04-28-alpha2-for-mars.html
         documentation_url: http://docs.jboss.org/tools/
         zips:
@@ -578,7 +576,7 @@ jbt_core:
           - name: Release Notes
             url: http://tools.jboss.org/documentation/whatsnew/index.html
       4.3.0.Nightly: 
-        update_site_url: http://download.jboss.org/jbosstools/updates/nightly/mars/
+        update_site_url: http://download.jboss.org/jbosstools/mars/development/nightly
         zips:
           - name: Stand-alone BrowserSim
             file_size: 15MB
