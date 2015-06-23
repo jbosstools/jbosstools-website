@@ -520,10 +520,10 @@ jbt_core:
             file_size: 401MB
             url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Beta1_2015-06-18_21-49-21-B59-updatesite-core.zip
             md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Beta1_2015-06-18_21-49-21-B59-updatesite-core.zip.sha1
-           - name: Sources zip of all JBoss Core Tools
-             file_size: 299MB
-             url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Beta1_2015-06-18_21-49-21-B59-src.zip
-             md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Beta1_2015-06-18_21-49-21-B59-src.zip.sha1
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 299MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Beta1_2015-06-18_21-49-21-B59-src.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Beta1_2015-06-18_21-49-21-B59-src.zip.sha1
           - name: Stand-alone BrowserSim
             file_size: 16.6MB
             url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Beta1_2015-06-05_01-14-40-B10-browsersim-standalone.zip
