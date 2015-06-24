@@ -105,7 +105,7 @@ video::99072427[vimeo]
 * 2015/04/20 -- JBoss Tools 4.3.0.Alpha2 testing starts - announced http://lists.jboss.org/pipermail/jbosstools-cat/2015-April/000026.html[here]
 * 2015/04/28 -- JBoss Tools 4.3.0.Alpha2 released - announced http://lists.jboss.org/pipermail/jbosstools-cat/2015-April/000028.html[here]
 * 2015/06/08 -- JBoss Tools 4.3.0.Beta1 testing starts - announced http://lists.jboss.org/pipermail/jbosstools-cat/2015-June/000040.html[here]
-* 2015/06/22 -- JBoss Tools 4.3.0.Beta1 release
+* 2015/06/22 -- JBoss Tools 4.3.0.Beta1 released - announced http://lists.jboss.org/pipermail/jbosstools-cat/2015-June/000042.html[here]
 * 2015/07/20 -- JBoss Tools 4.3.0.Beta2 testing starts
 * 2015/07/27 -- JBoss Tools 4.3.0.Beta2 release
 * 2015/09/14 -- JBoss Tools 4.3.0.CR1 testing starts
