@@ -129,7 +129,7 @@ If you are viewing this page while rendered locally this would be link:/survival
 === How to add a blog ?
 
 To add a blog add a file to the link:blog[blog] folder, following the structure of 
-this link:YYYY-MM-DD-blog-title.adoc.template[template]
+this link:blog-title.adoc.template[template]
 
 === How to add New and Noteworthy
 

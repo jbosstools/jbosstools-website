@@ -1,5 +1,7 @@
-// This is a template for blog entries. Please remove the comments before actually posting.
-= Blog title
+// This is a template for Tools tip entries. Please remove the comments before actually posting.
+= Tools Tip#<next number> - title of tip
+// Set the date for when post should be visible (YYYY-MM-DD, i.e. 2015-06-24)
+:page-date: YYYY-MM-DD
 // page-layout is there to indicate this template is a blog.
 :page-layout: blog
 // page-author: is a field that should match up with a file found at _data/team/<author>.adoc 
@@ -9,17 +11,19 @@
 // use components from jira, try keep them short and not require spaces. 
 // Note: jbosscentral is a magic tag that makes it show up on jbosscentral
 // Leave that out if your blog entry has a narrow audience scope.  
-:page-tags: [jsf, cdi, jbosscentral]
+:page-tags: [tip, jbosscentral]
 
-Start with an introduction. Do not give it a title, just a paragraph or two. 
+Setup the context for the tip - keep it short and sweet.
 
-== Use 2-level titles
+This is not a blog - should preferably fit on a single page or even paragraph.
 
-If you don't know asciidoctor syntax you can see more at http://asciidoctor.org/docs/asciidoc-syntax-quick-reference.
+If the tip has multiple steps create a *small* (<10-30s), zoomed in and
+without sound.
 
-=== You can even go with deeper titles
+The following video is short and set to autoplay/loop:
 
-If you got code to show do it like this:
+video::114184876[vimeo, width=551, height=310, options="autoplay,loop"]
+
 
 ```java
  import org.jboss.tools.*;
@@ -44,10 +48,7 @@ When using menus like menu:Preferences[Guide > The > User], keyboard
 shortcuts like kbd:[Ctrl+Alt+P] or even buttons like btn:[Ok] then
 there is a style for it.
 
-== End on a positive note
 
-...and enjoy the simplicity
-
-// remember that filename should start with a date and then title (i.e. 2014-04-13-<title>.adoc) 
+// remember that filename should start with a date and then title (i.e. 2014-04-13-tip-1-<title>.adoc) 
 // if you commit a file with a date in the future it will be published after the first built after that date.
 // building locally it will just be shown as a Draft.
