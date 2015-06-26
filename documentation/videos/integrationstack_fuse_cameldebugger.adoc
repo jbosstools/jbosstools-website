@@ -1,0 +1,7 @@
+= JBoss Fuse Tooling Camel Debugger
+:page-layout: videos
+:page-category: integration stack
+:page-order_in_category: 2
+
+video::131199128[vimeo, width=640, height=400]
+
