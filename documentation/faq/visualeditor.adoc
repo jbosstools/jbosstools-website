@@ -69,8 +69,12 @@ After choosing HTML5 Visual Editor mode on Linux, Eclipse freezes during restart
 == Platform Specific Questions
 
 [qanda]
-  I open HTML file on Linux and see incorrect preview image:images/ve-linux-html.png[]::
-  	That happens because xulrunner we use does not support HTML5 features. We have to use xulrunner for previewing HTML files due to the https://issues.jboss.org/browse/JBIDE-9144[WebKit and XULRunner conflict].
-	
+I open HTML file on Linux and see incorrect preview image:images/ve-linux-html.png[]::
+	That happens because XulRunner we use for previewing JSP/JSF files does not support HTML5 features. We cannot use WebKit for previewing HTML files together with XulRunner due to the https://issues.jboss.org/browse/JBIDE-9144[WebKit and XULRunner conflict].
 +
-To have correct HTML preview you should start Eclipse or JBoss Developer Studio with `-Dorg.jboss.tools.vpe.loadxulrunner=false` option in eclipse.ini or jbdevstudio.ini).
+To have correct HTML preview you should go to Visual Page Editor preferences page and select HTML5 mode. HTML file will rendered correctly after restart.
+
+I try to install webkitgtk package but it is not available::
+	For some operation systems(i.e. RHEL7) webkitgtk package may not be available. You can either use GTK3 or use XulRunner 24 as a browser engine for HTML files.
++
+To use it you need to download XulRunner 24 from http://ftp.mozilla.org/pub/mozilla.org/xulrunner/releases/24.0/runtimes/[mozilla ftp], unpack it and start Eclipse or JBoss Developer Studio with `-Dorg.eclipse.swt.browser.XULRunnerPath=path_to_xulrunner_folder` option in eclipse.ini or jbdevstudio.ini. Bear in mind that Visual Page Editor for JSP/JSF files will not work.
