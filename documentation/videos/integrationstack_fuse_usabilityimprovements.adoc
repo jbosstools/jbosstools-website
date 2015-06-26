@@ -1,6 +1,6 @@
-= JBoss Fuse Tooling usability improvements
+= Fuse Tooling usability improvements
 :page-layout: videos
-:page-category: integration stack
+:page-category: integrationstack
 :page-order_in_category: 2
 
 video::130987010[vimeo, width=640, height=400]
