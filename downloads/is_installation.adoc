@@ -1,0 +1,76 @@
+= Installation
+:page-layout: project
+
+== If you already have JBDSIS 8.1.0 installed...
+
+Simply start jbdevstudio or eclipse-with-jbds, then:
+
+Select Help > Check for Updates
+
+Select the components you'd like to install from the available updates.
+
+== If you'd like a fresh install...
+
+The easiest way to install the Integratin Stack components is to install link:https://marketplace.eclipse.org/content/red-hat-jboss-developer-studio-integration-stack-luna[JBoss Developer Studio Integration Stack] from the Eclipse Marketplace via *Help > Eclipse Marketplace...*
+
+image::/blog/images/jbtis/jbtis-422-b1.png[Eclipse Marketplace - JBoss Developer Studio Integration Stack]
+
+To install the Integration Stack tools with JBDS, first install JBoss Developer Studio from the link:https://www.jboss.org/products/devstudio.html[all-in-one installer], bundled and configured out of the box with everything you need to get started. Alternatively, if you already have eclipse-jee-luna installed, you can install link:https://marketplace.eclipse.org/content/red-hat-jboss-developer-studio-luna[JBoss Developer Studio] or link:https://marketplace.eclipse.org/content/jboss-tools-luna[JBoss Tools] from the Eclipse Marketplace via *Help > Eclipse Marketplace...*
+
+image::/blog/images/jbtis/jbtis-421-b1.png[Eclipse Marketplace - JBDS]
+
+Once Developer Studio is installed, restart Eclipse and select the Software/Update tab in the JBoss Central view.  The current 8.0.2.GA integration stack is available automatically with the released *JBoss Data Virtualization Development* tooling.  The remainder of the integration tooling is available as *Early Access* so you must check the *Enable Early Access* checkbox in the installer window in order to install.  
+
+image::/blog/images/jbtis/jbtis-422-b2.png[JBoss Central - JBoss Developer Studio Integration Stack]
+
+image::/blog/images/jbtis/jbtis-422-b3.png[JBoss Central Early Access - JBoss Developer Studio Integration Stack]
+
+For more information on JBDS installation options, see link:/downloads/installation.html[JBDS Installation Instructions]
+
+The standard p2 installer is available for JBoss Developer Studio Integration Stack.  Simply start jbdevstudio or eclipse-with-jbds, then:
+
+[source]
+----
+ Help > Install New Software...
+ Add...
+ - use this for 'Location:' for the production integration stack:
+   https://devstudio.redhat.com/updates/8.0/integration-stack/
+
+ - use this for 'Location:' for the early-access-components integration stack:
+   https://devstudio.redhat.com/updates/8.0/integration-stack/earlyaccess/
+----
+
+The community JBoss Tools Integration Stack installation is easy as well.  If you already have eclipse-jee-luna installed, install link:https://marketplace.eclipse.org/content/jboss-tools-luna[JBoss Tools] from the Eclipse Marketplace via Help > Eclipse Marketplace...  
+
+image::/blog/images/jbtis/jbtis-421-b4.png[Eclipse Marketplace - JBoss Tools]
+
+Once JBoss Tools is installed, restart Eclipse and select the Software/Update tab in the JBoss Central view.  The current 4.2.2.Final integration stack is available automatically with the released tooling.  
+
+image::/blog/images/jbtis/jbtis-422-b5.png[JBoss Central - JBoss Tools Integration Stack]
+
+In a manner similar to devstudio, the remainder of the integration tooling is available as "Early Access" so you must check the "Enable Early Access" checkbox in the installer window in order to install.  
+
+Select the items you'd like to install:
+
+image::/blog/images/jbtis/jbtis-422-b6.png[JBoss Central Early Access - JBoss Tools Integration Stack]
+
+The standard p2 installer is available for JBoss Tools Integration Stack.  Simply start eclipse-with-jbt, then:
+
+[source]
+----
+ Help > Install New Software...
+ Add...
+ - use this for 'Location:' for the released-components integration stack:
+   https://devstudio.redhat.com/updates/8.0/integration-stack/
+
+ - use this for 'Location:' for the early access integration stack:
+   https://devstudio.redhat.com/updates/8.0/integration-stack/earlyaccess/
+----
+
+Note: If you installed into your own Eclipse you should bump up the launch resource parameters:
+
+[source,xml]
+-------------------------------------------------------------------------------
+--launcher.XXMaxPermSize 256m --launcher.appendVmargs -vmargs -Dosgi.requiredJavaVersion=1.6 -XX:MaxPermSize=256m -Xms512m -Xmx1024m
+-------------------------------------------------------------------------------
+
