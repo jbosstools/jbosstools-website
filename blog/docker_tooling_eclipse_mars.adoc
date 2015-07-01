@@ -1,0 +1,37 @@
+= Screencast of Docker Tooling for Eclipse
+:page-date: 2015-07-02
+:page-layout: blog
+:page-author: xcoulon
+:page-tags: [docker, wildfly, jbosscentral]
+
+Last week at http://devnation.org[DevNation] I had the chance to show some of the cool features that we
+provide in JBoss Developer Studio, including the Docker tooling that we've built for Eclipse Mars
+and that was released last weekfootnote:[Docker tooling is part of Developer Studio since version 9.0.0.Beta1 and JBoss Tools users can install it from https://marketplace.eclipse.org/content/jboss-tools-mars[Eclipse Marketplace] or from http://download.jboss.org/jbosstools/mars/development/updates/[our Update site]].
+
+I also recorded a screencast that highlights some of those Docker tooling features.
+The video shows how to:
+
+ * Connect to a local Docker engine (https://www.youtube.com/watch?v=RUgEgtLux8Q&t=32s[0:32])
+ * Start a PostgreSQL container with a custom username and password (https://www.youtube.com/watch?v=RUgEgtLux8Q&t=1m42s[1:52])
+ * Build a custom image for Wildfly to include the PostgreSQL JDBC driver and configure a datasource (https://www.youtube.com/watch?v=RUgEgtLux8Q&t=3m20s[3:20])
+ * Start a WildFly container linked to PostgreSQL, with exposed ports and a volume mounted on the host machine (https://www.youtube.com/watch?v=RUgEgtLux8Q&t=6m44s[6:44])
+ * Import a Quickstart project using JBoss Central (https://www.youtube.com/watch?v=RUgEgtLux8Q&t=8m30s[8:30])
+ * Deploy the project on the WildFly container using a Server Adapter with custom settings (https://www.youtube.com/watch?v=RUgEgtLux8Q&t=9m55s[9:55])
+ * Connect to the JVM using the Remote Debugging tools (https://www.youtube.com/watch?v=RUgEgtLux8Q&t=13m25s[13:25])
+
+video::RUgEgtLux8Q[youtube]
+
+I commented all the tasks as I recorded this screencast to highlight the important steps.
+Beware that if you run 'boot2docker', you'll need to use a specific IP address instead of 'localhost' when creating the Server adapter in Eclipse (trust me, I made this mistake before...)..
+
+The dockerfile and its associated resources (module.xml, standalone.xml and JDBC driver) used during the demo is available on https://github.com/xcoulon/wildfly-db-docker[GitHub], so feel free to clone the repo and play with it ;-)
+
+Keep in mind that some wizards showed in this screencast may be refactored in the near future, as we target Eclipse Mars SR1 at the end of September for a more complete version of the Docker tooling.
+
+Feel free to discuss features and report bugs with us on https://bugs.eclipse.org/bugs/buglist.cgi?cmdtype=runnamed&list_id=12135843&namedcmd=docker%20issues[the Docker component of Linux Tools at Eclipse.org].
+As usual, feedback is welcome!
+
+
+Enjoy! +
+Xavier Coulon +
+http://twitter.com/xcoulon[@xcoulon]
