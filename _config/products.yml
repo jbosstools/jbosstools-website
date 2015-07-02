@@ -4,7 +4,7 @@ eclipse:
     short_name: Mars
     full_name: Eclipse Mars 4.5
     download_url:  http://www.eclipse.org/downloads/index-developer.php
-    requirements: Java 7 or Java 8
+    requirements: Java 8
   luna:
     url_path_fragment: luna
     short_name: Luna
@@ -592,7 +592,7 @@ jbt_core:
           - name: Release Notes
             url: http://tools.jboss.org/documentation/whatsnew/index.html
       4.3.0.Nightly: 
-        update_site_url: http://download.jboss.org/jbosstools/mars/development/nightly
+        update_site_url: http://download.jboss.org/jbosstools/updates/nightly/mars/
         zips:
           - name: Stand-alone BrowserSim
             file_size: 15MB
