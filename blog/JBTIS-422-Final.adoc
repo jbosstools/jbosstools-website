@@ -1,0 +1,108 @@
+= Integration tooling for Fuse + Early Access Data Trans and SAP support
+:page-layout: blog
+:page-author: pleacu
+:page-date: 2015-06-30
+:page-tags: [release, jbosstools, devstudio, jbosscentral]
+
+JBoss Fuse Tooling plus an updated Teiid Designer and Early Access versions of the Fuse SAP Tool Suite, Fuse Data Transformation tooling and SwitchYard (Luna/ JBDS 8).
+
+image::/blog/images/jbosstools-jbdevstudio-blog-header.png[]
+
+*JBoss Tools Integration Stack 4.2.2.Final / JBoss Developer Studio Integration Stack 8.0.2.GA*
+
+== What's an Integration Stack?
+
+The Integration Stack for JBoss Tools Developer Studio is a set of plugins for Eclipse that provides integration tooling for the following frameworks.
+
+=== JBoss Fuse Development
+
+*Note - the Fuse Development tooling category has both released and early access components.  Consequently, you will see it in both the release installation dialog and the early access installation dialog.*
+
+* link:/features/apachecamel.html[Fuse Tooling] - Tools related to integrating and developing software components that work with Apache ServiceMix, ActiveMQ and Camel - support for Fuse.
+
+=== JBoss Business Process and Rules Development
+
+* link:/features/bpel.html[BPEL Designer] - Orchestrating your business processes.
+* link:/features/bpmn2.html[BPMN2 Modeler] - A graphical modeling tool which allows creation and editing of Business Process Modeling Notation diagrams using graphiti.
+* link:/features/drools.html[Drools] - A Business Logic integration Platform which provides a unified and integrated platform for Rules, Workflow and Event Processing.
+* link:/features/jbpm.html[jBPM] - A flexible Business Process Management (BPM) suite.
+
+=== JBoss Data Virtualization Development
+
+* link:/features/modeshape.html[Modeshape] - A distributed, hierarchical, transactional and consistent data store with support for queries, full-text search, events, versioning, references, and flexible and dynamic schemas. It is very fast, highly available, extremely scalable, and it is 100% open source.
+* link:/features/teiiddesigner.html[Teiid Designer] - A visual tool that enables rapid, model-driven definition, integration, management and testing of data services without programming using the Teiid runtime framework.
+
+=== JBoss Integration and SOA Development
+
+*Note - the SOA Development tooling category has both released and early access components.  Consequently, you will see it in both the release install dialog and the early access install dialog.*
+
+* All of the Business Process and Rules Development plugins, plus...
+* link:/features/apachecamel.html[Fuse Apache Camel Tooling] - A graphical tool for integrating software components that works with Apache ServiceMix, Apache ActiveMQ, Apache Camel and the FuseSource distributions.
+* link:/features/switchyard.html[SwitchYard] - A lightweight service delivery framework providing full lifecycle support for developing, deploying, and managing service-oriented applications.
+
+=== SOA 5.x Development
+
+* link:http://www.jboss.org/jbossesb[JBoss ESB] - An enterprise service bus for connecting enterprise applications and services.
+* link:http://docs.jboss.com/jbpm/v3.2/userguide/html_single/[jBPM3] - A flexible Business Process Management (BPM) Suite - JBoss Enterprise SOA Platform 5.3.x compatible version.
+
+*All of these components have been verified to work with the same dependencies as JBoss Tools 4.2 and Developer Studio 8.*
+
+== What's Been Updated?
+
+Updates have been made to the Business Process tooling, Fuse Tooling, Data Virtualization and SwitchYard.  See the link:https://access.redhat.com/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/8.0/html/8.0.2_Release_Notes/index.html[JBDSIS 8.0.2 Release Notes]
+
+=== Released Tooling Highlights
+
+=== JBoss Fuse Development Highlights
+
+* New projects can now be given an arbitrary name. Previously, artifactId was used as the project name without the possibility to alter it.
+* JMX Navigator has been moved to JBoss Core and reworked. It now contains 3 categories: Local Processes, Server Connections, and User-Defined Connections.
+* Camel Debugger has been added. It allows to set, edit and remove breakpoints in the Design view. Camel 2.12 or higher is required for this functionality.
+* The Servers view now provides access to JMX when the server is running. Fuse-specific nodes are now also visible in the Servers view.
+* New and reworked server adapters have been added for Apache Karaf, Apache ServiceMix, and JBoss Fuse.
+* The previous deployment mechanism using hotfolder, JMX node and fabric8 nodes has been replaced by a publishing logic in the Servers view.
+* Project running on a server are now automatically redeployed when changed locally.
+* The Servers view now shows deployed projects and their bundle state.
+* The deploy, redeploy and undeploy operations are now all done in the Servers view.
+* Server credentials are now stored in the Eclipse secure storage.
+* A new editor palette drawer has been added for the most frequently used Camel components.
+* New custom component properties pages have been added.
+* Fabric8 tooling is now DEPRECATED and will be removed with the release of Fuse Tooling 8.0.0 (released in sync with JBoss Fuse 7.0.0).
+
+==== BPMN2 Modeler Highlights
+
+* link:https://www.eclipse.org/bpmn2-modeler/whatsnew/whatsnew-1.1.3.php[BPMN2 Modeler 1.1.3 - New and Noteworthy]
+
+==== Teiid Designer Highlights
+
+* Just bug fixing this time around!  See the link:https://access.redhat.com/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/8.0/html/8.0.2_Release_Notes/Teiid_Designer_9.0.2.Final.html[Teiid Designer 9.0.2 Release Notes]
+
+=== Early Access/ Technical Preview Tooling Highlights
+
+==== Fuse Tooling Highlights
+
+* The new SAP Tool Suite enables integration of Camel routes with a remote SAP application server. The suite consists of ten components that support Remote Function Calls (RFC) and transmission of Intermediate Documents (IDocs).
+
+* The new Data Transformation tooling provides a GUI to assist users in implementing data translations as part of Camel routes.
+
+Also see link:http://lhein.blogspot.com/[Lars Heinemann's Blog] for more Fuse Tooling insights.
+
+==== SwitchYard Highlights
+
+* link:https://access.redhat.com/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/8.0/html/8.0.2_Release_Notes/SwitchYard_2.0.0.Final.html[SwitchYard 2.0.0.Final Release Notes]
+
+==== The JBoss Tools website features tab
+
+Don't miss the link:/features[Features tab] for up to date information on your favorite Integration Stack components.
+
+== Installation
+
+The easiest way to install the Integratin Stack components is to install link:https://marketplace.eclipse.org/content/red-hat-jboss-developer-studio-integration-stack-luna[JBoss Developer Studio Integration Stack] from the Eclipse Marketplace via *Help > Eclipse Marketplace...*
+
+image::/blog/images/jbtis/jbtis-422-b1.png[Eclipse Marketplace - JBoss Developer Studio Integration Stack]
+
+For a complete set of Integration Stack installation instructions, see link:/downloads/is_installation.html[JBDSIS Installation Instructions]
+
+*More to come...*
+
+Paul Leacu.
