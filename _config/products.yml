@@ -62,7 +62,7 @@ devstudio:
     mars:
       9.0.0.Beta1:
         update_site_url: https://devstudio.redhat.com/9.0/development/
-        marketplace_url: https://marketplace.eclipse.org/content/red-hat-jboss-developer-studio-mars
+        marketplace_url: https://marketplace.eclipse.org/node/2397428
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=2397428
         release_date: 2015-06-22
         # no supported IS version at this time
@@ -523,7 +523,7 @@ jbt_core:
     mars:
       4.3.0.Beta1:
         update_site_url: http://download.jboss.org/jbosstools/mars/development/updates/
-        marketplace_url: https://marketplace.eclipse.org/content/jboss-tools-mars
+        marketplace_url: https://marketplace.eclipse.org/node/2397385
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=2397385
         #archived: true
         release_date: 2015-06-22
