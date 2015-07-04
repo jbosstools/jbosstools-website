@@ -1,14 +1,13 @@
 = Integration tooling for Fuse + Early Access Data Trans and SAP support
 :page-layout: blog
 :page-author: pleacu
-:page-date: 2015-06-30
+:page-date: 2015-07-03
 :page-tags: [release, jbosstools, devstudio, jbosscentral]
 
-JBoss Fuse Tooling plus an updated Teiid Designer and Early Access versions of the Fuse SAP Tool Suite, Fuse Data Transformation tooling and SwitchYard (Luna/ JBDS 8).
+JBoss Fuse Tooling plus an updated Teiid Designer and Early Access versions of the Fuse SAP Tool Suite, Fuse Data Transformation tooling and SwitchYard (Luna/JBoss Developer Studio 8).
 
-image::/blog/images/jbosstools-jbdevstudio-blog-header.png[]
-
-*JBoss Tools Integration Stack 4.2.2.Final / JBoss Developer Studio Integration Stack 8.0.2.GA*
+.*JBoss Tools Integration Stack 4.2.2.Final / JBoss Developer Studio Integration Stack 8.0.2.GA*
+image::/blog/images/jbosstools-jbdevstudio-blog-header.png[caption=""]
 
 == What's an Integration Stack?
 
@@ -16,9 +15,9 @@ The Integration Stack for JBoss Tools Developer Studio is a set of plugins for E
 
 === JBoss Fuse Development
 
-*Note - the Fuse Development tooling category has both released and early access components.  Consequently, you will see it in both the release installation dialog and the early access installation dialog.*
-
 * link:/features/apachecamel.html[Fuse Tooling] - Tools related to integrating and developing software components that work with Apache ServiceMix, ActiveMQ and Camel - support for Fuse.
+
+NOTE: The Fuse Development tooling category has both released and early access components.  Consequently, you will see it in both the release installation dialog and the early access installation dialog.
 
 === JBoss Business Process and Rules Development
 
@@ -34,22 +33,22 @@ The Integration Stack for JBoss Tools Developer Studio is a set of plugins for E
 
 === JBoss Integration and SOA Development
 
-*Note - the SOA Development tooling category has both released and early access components.  Consequently, you will see it in both the release install dialog and the early access install dialog.*
-
 * All of the Business Process and Rules Development plugins, plus...
 * link:/features/apachecamel.html[Fuse Apache Camel Tooling] - A graphical tool for integrating software components that works with Apache ServiceMix, Apache ActiveMQ, Apache Camel and the FuseSource distributions.
 * link:/features/switchyard.html[SwitchYard] - A lightweight service delivery framework providing full lifecycle support for developing, deploying, and managing service-oriented applications.
+
+NOTE: The SOA Development tooling category has both released and early access components.  Consequently, you will see it in both the release install dialog and the early access install dialog.
 
 === SOA 5.x Development
 
 * link:http://www.jboss.org/jbossesb[JBoss ESB] - An enterprise service bus for connecting enterprise applications and services.
 * link:http://docs.jboss.com/jbpm/v3.2/userguide/html_single/[jBPM3] - A flexible Business Process Management (BPM) Suite - JBoss Enterprise SOA Platform 5.3.x compatible version.
 
-*All of these components have been verified to work with the same dependencies as JBoss Tools 4.2 and Developer Studio 8.*
+NOTE: All of these components have been verified to work with the same dependencies as JBoss Tools 4.2 and Developer Studio 8.
 
 == What's Been Updated?
 
-Updates have been made to the Business Process tooling, Fuse Tooling, Data Virtualization and SwitchYard.  See the link:https://access.redhat.com/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/8.0/html/8.0.2_Release_Notes/index.html[JBDSIS 8.0.2 Release Notes]
+Updates have been made to the Business Process tooling, Fuse Tooling, Data Virtualization and SwitchYard.  See the link:https://access.redhat.com/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/8.0/html/8.0.2_Release_Notes/index.html[Integration Stack 8.0.2 Release Notes]
 
 === Released Tooling Highlights
 
@@ -101,7 +100,7 @@ The easiest way to install the Integratin Stack components is to install link:ht
 
 image::/blog/images/jbtis/jbtis-422-b1.png[Eclipse Marketplace - JBoss Developer Studio Integration Stack]
 
-For a complete set of Integration Stack installation instructions, see link:/downloads/is_installation.html[JBDSIS Installation Instructions]
+For a complete set of Integration Stack installation instructions, see link:/downloads/is_installation.html[Integration Stack Installation Instructions]
 
 *More to come...*
 
