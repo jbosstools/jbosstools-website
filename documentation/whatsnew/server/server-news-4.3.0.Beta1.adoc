@@ -17,13 +17,18 @@ A link:http://tools.jboss.org/blog/2015-05-28-port-monitoring.html[blog entry] h
 
 related_jira::JBIDE-19755[Implement ServerPort portion of wst.servertools API]
 
-== Launch Bar
+== LaunchBar
 
-A new feature hiding in the CDT repository of eclipse is being released with Mars. Called the Launch Bar, this feature aims to update the UI of eclipse to allow for more easy running of launch configurations (and other things). In this Beta1 release, we're adding this feature in an optional addition to our Server Tools. We've also written our own extensions to it, integrating the Launch Bar with WTP's Server Adapters. 
+A new feature hiding in the CDT repository of eclipse is being released with Mars. Called the LaunchBar, this feature aims to update the UI of eclipse to allow for more easy running of launch configurations (and other things). In this Beta1 release, we're adding this feature in an optional addition to our Server Tools. We've also written our own extensions to it, integrating the LaunchBar with WTP's Server Adapters. 
 
-image::images/20150604_launchbar.png[Launch Bar with Server Tools Integration]
+image::images/20150604_launchbar.png[LaunchBar with Server Tools Integration]
 
 The list of launchable objects (center) is linked with your selections in the workspace when used with our extensions, in most cases before you've ever even launched the object. The list of targets (on the right) will include all existing server adapters compatible with the launchable. 
+
+To enable this feature, you need to install from `Help > Install New Software... > http://download.jboss.org/jbosstools/mars/development/updates` then select the `JBoss Tools Server LaunchBar Integration` feature.
+
+image::images/20150604_launchbar_install.png[LaunchBar Installation]
+
 
 For more information, you can also check launchbar's link:https://wiki.eclipse.org/CDT/LaunchBar[documentation] at eclipse.org, or try it for yourself.
 

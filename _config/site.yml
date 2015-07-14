@@ -22,7 +22,7 @@ asciidoctor:
   :safe: safe
   :attributes:
     experimental: true
-    imagesdir: ./@
+    imagesdir: .@
     icons: font
     idprefix: ''
     idseparator: '-'

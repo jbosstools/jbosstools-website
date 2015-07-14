@@ -93,6 +93,7 @@ module Awestruct
 
       def get_whatsnew_page(site, product_id, product_version)
         site.whatsnew_pages[product_id] = Hash.new if site.whatsnew_pages[product_id].nil?
+        puts  "building  N&N page for #{product_id} #{product_version}"
         if site.whatsnew_pages[product_id][product_version].nil? then
           product_url_path_fragment = site.products[product_id].url_path_fragment
           page = create_page(site, @@whatsnew_layout_path, @target_path_prefix, product_url_path_fragment, product_version)

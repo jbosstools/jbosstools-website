@@ -29,14 +29,28 @@ span.icon>.fa{cursor:default}
   }
 }
 
+// *************************************
+// Asciidoctor footnotes
+// *************************************
+#footnotes {
+  border-top: 1px solid rgb(227, 227, 227);
+  padding-top: 0.5em;
+}
+.footnote {
+    font-size: small;
+    a:first-child::after {
+      content: ".";
+    }
+}
+
 // **************************************
-// Pretty print: force content border and 
+// Pretty print: force content border and
 // padding
 // **************************************
 .prettyprint {
   padding: 8px !important;
   border: 1px solid #e1e1e8 !important;
-  
+
   .com {
     color: #080;
   }
@@ -403,41 +417,41 @@ kbd {
 .videoblock {
   margin-top: 1em;
   margin-bottom: 1em;
-  
+
   iframe {
     margin-left: auto;
     margin-right: auto;
     display: block;
   }
-  
+
   @media (min-width: 981px) {
     iframe:not([width]) {
       width: 640px;
       height: 480px;
     }
   }
-  
+
   @media (min-width: 767px) and (max-width: 980px) {
     iframe:not([width]) {
       width: 480px;
       height: 360px;
     }
   }
-  
+
   @media (min-width: 641px) and (max-width: 766px){
     iframe:not([width]) {
       width: 480px;
       height: 360px;
     }
   }
-  
+
   @media (max-width: 640px) {
     iframe:not([width]) {
       width: 320px;
       height: 240px;
     }
   }
-  
+
 
 }
 // ******************************************************
@@ -499,7 +513,7 @@ kbd {
       padding-left: 1em;
       padding-right: 1em;
       padding-bottom: 1em;
-    } 
+    }
     .body {
       margin-top: 2em;
       margin-bottom: 2em;
@@ -591,7 +605,7 @@ h1, h2, h3, h4, h5, h6 {
 div.imageblock {
   margin-top: 1em;
   margin-bottom: 1em;
-  
+
   .content > img {
     display: block;
     margin-left: auto;
@@ -607,7 +621,7 @@ div.imageblock {
 // Quoteblocks with custom style
 // ******************************************************
 .quoteblock {
-  color: #707070;  
+  color: #707070;
   blockquote {
     quotes: "“" "”" "‘" "’";
     margin-bottom: 0px;
@@ -672,7 +686,7 @@ ul.dropdown-menu {
     color: #656565;
     white-space: nowrap;
   }
-  
+
   ul.download-versions {
     text-decoration: none;
     list-style: none;
@@ -695,7 +709,7 @@ ul.dropdown-menu {
       span.label {
         float: right;
       }
-    } 
+    }
   }
 }
 
@@ -717,10 +731,10 @@ ul.dropdown-menu {
   background-image: none;
   padding: 30px;
   background: #ebf5f1;
-  
+
   & > img {
     padding-left: 20px;
-    
+
   }
 
   .hero-content {
@@ -734,7 +748,7 @@ ul.dropdown-menu {
       white-space: nowrap;
     }
   }
-  
+
   @media screen and (max-width: 979px) {
     font-size: 18px;
     h1 {
@@ -760,7 +774,7 @@ ul.dropdown-menu {
         text-align: right;
     }
   }
-  
+
 }
 
 // ****************************************
@@ -1028,7 +1042,7 @@ span.label {
   font-weight: normal;
   text-shadow: none;
   vertical-align: super;
-  
+
   &.label_stable, &.label_latest_release {
     background-color: rgb(70, 136, 71);
   }
@@ -1078,12 +1092,12 @@ span.label {
     &.row-fluid {
       margin-bottom: 2em;
     }
-  }  
+  }
 }
 
 #highlighted_features {
   .body {
-    height: 128px; 
+    height: 128px;
     // there should be only 1 child element here
     & img {
       margin: auto;
@@ -1189,7 +1203,7 @@ span.label {
       padding-right: 10px;
       margin-top: 10px;
     }
-    
+
     .title {
       padding-bottom: 5px;
 
@@ -1430,6 +1444,3 @@ $scrollmargin: 40px;
     }
   }
 }
-
-
-

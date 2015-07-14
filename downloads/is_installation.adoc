@@ -1,0 +1,47 @@
+= Installation of Integration Stack
+:page-layout: project
+:toc: macro
+
+toc::[]
+
+== If you already have Integration Stack installed...
+
+Simply start jbdevstudio or eclipse, then:
+
+Select menu:Help[Check for Updates]
+
+If there are updates they will be offered for you to automatically download and install.
+
+== Eclipse Marketplace
+
+To install the Integration Stack components from Ecipse Markeplace use link:https://marketplace.eclipse.org/content/red-hat-jboss-developer-studio-integration-stack-luna[JBoss Developer Studio Integration Stack] from the Eclipse Marketplace via *Help > Eclipse Marketplace...*
+
+image::/blog/images/jbtis/jbtis-422-b1.png[Eclipse Marketplace - JBoss Developer Studio Integration Stack]
+
+== Install via JBoss Central
+
+To install the Integration Stack tools with JBoss Developer Studio, first install Developer Studio from the link:https://www.jboss.org/products/devstudio.html[all-in-one installer], bundled and configured out of the box with everything you need to get started.
+
+Once Developer Studio or plain Eclipse are running, select the Software/Update tab in JBoss Central.  The supported integration stack is available automatically.
+
+image::/blog/images/jbtis/jbtis-422-b2.png[JBoss Central - JBoss Developer Studio Integration Stack]
+
+*Early access* features might be available, to get these check the *Enable Early Access* checkbox in the installer window in order to install.  
+
+image::/blog/images/jbtis/jbtis-422-b3.png[JBoss Central Early Access - JBoss Developer Studio Integration Stack]
+
+Once JBoss Tools is installed, restart Eclipse and select the Software/Update tab in the JBoss Central view.  
+
+image::/blog/images/jbtis/jbtis-422-b5.png[JBoss Central - JBoss Tools Integration Stack]
+
+In a manner similar to devstudio, the remainder of the integration tooling is available as "Early Access" so you must check the "Enable Early Access" checkbox in the installer window in order to install.  
+
+Select the items you'd like to install:
+
+image::/blog/images/jbtis/jbtis-422-b6.png[JBoss Central Early Access - JBoss Tools Integration Stack]
+
+If you installed into your own Eclipse you should bump up the launch resource parameters:
+----
+--launcher.XXMaxPermSize 256m --launcher.appendVmargs -vmargs -Dosgi.requiredJavaVersion=1.6 -XX:MaxPermSize=256m -Xms512m -Xmx1024m
+----
+
