@@ -12,3 +12,5 @@ application. The wizard creates a client application on the FeedHenry cloud,
 configures the git repository for the project.
 
 image::./images/1.2.0.Beta2/NewApplicationWiz.png[]
+
+related_jira::JBDS-3268[]
