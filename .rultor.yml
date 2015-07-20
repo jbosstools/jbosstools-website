@@ -1,0 +1,8 @@
+architecht:
+  - maxandersen
+docker:
+  image: "jbosstools/jbosstools-website"
+merge:
+  script:
+    - "rake travis"
+  
