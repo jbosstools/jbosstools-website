@@ -2,6 +2,7 @@ architecht:
   - maxandersen
 docker:
   image: "jbosstools/jbosstools-website"
+  as_root: true # unfortunate we have to do this but seem to need ubuntu specific sudo group user setup.
 merge:
   script:
     - "rake travis"
