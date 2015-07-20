@@ -308,7 +308,7 @@ task :travis do
   fail unless success
 end
 
-task :rultor-merge do
+task :rultormerge do
   profile = 'staging'
   deploy_url = "tools@filemgmt.jboss.org:/stg_htdocs/tools/pr/${pull_id}"
 

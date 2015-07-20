@@ -5,5 +5,5 @@ docker:
   as_root: true # unfortunate we have to do this but seem to need ubuntu specific sudo group user setup.
 merge:
   script:
-    - "rake rultor-merge"
+    - "rake rultormerge"
   
