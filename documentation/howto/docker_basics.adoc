@@ -19,7 +19,7 @@ JBoss Tools 4.3.0 Beta1 includes the Docker tooling out of the box. This article
 
 Ensure that the following prerequisites are met when using the Docker tooling with the IDE:
 
-. Install and set up JBoss Tools 4.3.0 Beta1 or higher.
+. Install and set up the JBoss Tools 4.3.0 Beta1 or higher.
 . Install and set up Docker.
 . Establish a connection to a Docker daemon within JBoss Tools as follows:
 .. Click menu:Window[Show View > Other...].
