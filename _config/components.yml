@@ -66,4 +66,6 @@ vpe:
 webservices:
   name: Web Services Tools
 
+javascript:
+  name: JavaScript Tools
 

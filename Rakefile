@@ -307,3 +307,15 @@ task :travis do
   end
   fail unless success
 end
+
+task :rultormerge do
+  profile = 'staging'
+  deploy_url = "tools@filemgmt.jboss.org:/stg_htdocs/tools/pr/${pull_id}"
+
+  # Build execution
+  system "bundle exec awestruct -P #{profile} -g"
+
+  # Workaround for not having the above separated out properly in subtasks
+  errorcheck
+  
+end

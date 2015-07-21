@@ -1,0 +1,4 @@
+= Tomas Milata
+:page-photo_64px: https://static.jboss.org/developer/people/tomas_milata/avatar/64.png
+:page-photo_32px: https://static.jboss.org/developer/people/tomas_milata/avatar/32.png
+:page-developer_page: https://developer.jboss.org/people/tomas_milata
