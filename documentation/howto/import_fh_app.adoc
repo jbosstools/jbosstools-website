@@ -2,10 +2,15 @@
 :page-layout: howto
 :page-tab: docs
 :page-status: green
-
+:experimental:
 :imagesdir: ./images
 
 The IDE includes an `Import` wizard to allow users to quickly and easily import previously created FeedHenry applications. Once the application is imported, you can change or enhance the application, test the changes, and then push it back to the FeedHenry server.
+
+[NOTE]
+====
+Before attempting to install or create a hybrid mobile project with JBoss Tools, ensure that the Android SDK is installed and up to date. Creating or installing hybrid mobile projects without a working and updated installation of Android SDK can result in unexpected errors.
+====
 
 Follow the provided steps to import and make changes to a FeedHenry application in your workspace:
 
@@ -14,16 +19,28 @@ Follow the provided steps to import and make changes to a FeedHenry application 
 . <<test_app, Test the Application>>
 . <<push_changes_to_FH, Push the Changes Back to the FeedHenry Server>>
 
-[NOTE]
-====
-Before attempting to install or create a hybrid mobile project with JBoss Tools, ensure that the Android SDK is installed and up to date. Creating or installing hybrid mobile projects without a working and updated installation of Android SDK can result in unexpected errors.
-====
 
 == Prerequisites
 Ensure that the following prerequisites are met to enable the FeedHenry feature:
 
+* <<install_android_sdk, Install Android SDK>>
 * <<enable_FH, Enable the FeedHenry Feature>>
 * <<set_preferences, Set the Preferences for your application import>>
+
+[[install_android_sdk]]
+=== Install Android SDK
+To install Android SDK:
+
+. Download Android SDK and then unzip the file at a desired location.
+. In the IDE, click `Window` > `Preferences`.
+. In the `Preferences` window, `type filter text` field, type `Hybrid Mobile`.
+. In the `Hybrid Mobile` category, click `Android`.
+. Click `Browse` to locate and select the Android SDK directory on your machine.
++
+.Select the Android SDK Location
+image::fh_android_preferences.png[Select the Android SDK Location]
++
+. Click `Apply` and then click `OK`.
 
 [[enable_FH]]
 === Enable the FeedHenry Feature
@@ -111,16 +128,16 @@ Hello from Hybrid Mobile Tools!
 +
 . Save the `index.html` file by pressing Ctrl+S. Alternatively, to save click `File` > `Save` or click the `Save` icon.
 
-.index.html File Edited
-image::fh_index_html_file_edited.png[index.html File Edited]
+.The Edited index.html File
+image::fh_index_html_file_edited.png[The Edited index.html File]
 
 [[test_app]]
 == 3. Test the Application
 
 To test the imported application, right-click the application and then click menu:Run As[Run w/remote FeedHenry server].
 
-.FeedHenry Application Edited
-image::fh_app_edited.png[FeedHenry Application Edited]
+.The Edited FeedHenry Application
+image::fh_app_edited.png[The Edited FeedHenry Application]
 
 The changes made to the `index.html` file are reflected on the simulated device. Click a corner of the displayed device to rotate it in that direction. Alternatively, right-click the simulated device and click `Rotate Right` or `Rotate Left` as to rotate it in the desired direction.
 To view the application on a different CordovaSim simulated device, right-click the device and click `Skin`. From the list of skins, select a skin to view the application.
