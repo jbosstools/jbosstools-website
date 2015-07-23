@@ -1,9 +1,9 @@
 = Forge Tools 4.2.0.Beta2 What's New
 :page-layout: whatsnew
 :page-component_id: forge
-:page-component_version: 4.2.0.Beta2
+:page-component_version: 4.3.0.Beta2
 :page-product_id: jbt_core 
-:page-product_version: 4.2.0.Beta2
+:page-product_version: 4.3.0.Beta2
 
 == Forge 2 Runtime 	
 
