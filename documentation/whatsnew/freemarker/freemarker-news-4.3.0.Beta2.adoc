@@ -1,0 +1,12 @@
+= Freemarker What's New in 4.3.0.Beta2
+:page-layout: whatsnew
+:page-component_id: freemarker
+:page-component_version: 4.3.0.Beta2
+:page-product_id: jbt_core 
+:page-product_version: 4.3.0.Beta2	
+
+== Include Directive Hyperlink
+
+Freemarker editor now shows hyperlink for #include directive with absolute path to make navigation through complex templates easier. #include directive with relative path and accusition is not supported yet. 
+
+related_jira::JBIDE-19966[]
