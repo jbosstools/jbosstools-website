@@ -7,6 +7,6 @@
 
 == Include Directive Hyperlink
 
-Freemarker editor now shows hyperlink for #include directives wich references a file in the same directory. #include directive with relative/absolute path and accusition is not supported yet. 
+Freemarker editor now shows hyperlink for #include directives which references a file in the same directory. #include directive with relative/absolute path and acquisition is not supported yet. 
 
 related_jira::JBIDE-19966[]
