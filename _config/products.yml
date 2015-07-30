@@ -74,9 +74,9 @@ devstudio:
           - name: Stand-alone Installer
             url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/f4/f4ffd0b36a622229e4a8b5c4db4c8c4fac0fd09750b1ba2cba73c22c5c0f5f83/jboss-devstudio-9.0.0.Beta2-installer-standalone.jar
             file_size: 485MB
-          - name: Installer With EAP 6.4.0
-            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/32/329b93cc424feea6d396d9b9d69f508335c387a0780ee8fa880f5501919f6f65/jboss-devstudio-9.0.0.Beta2-installer-eap.jar
-            file_size: 630MB
+#          - name: Installer With EAP 6.4.0
+#            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/32/329b93cc424feea6d396d9b9d69f508335c387a0780ee8fa880f5501919f6f65/jboss-devstudio-9.0.0.Beta2-installer-eap.jar
+#            file_size: 630MB
         zips:
           - name: Update site (including sources) bundle of JBoss Developer Studio
             file_size: 507MB
