@@ -46,7 +46,7 @@ module Awestruct
             unless Products_Helper.is_stable_version(component_page.component_version)
               product_stable_version = Products_Helper.get_stable_version(site, component_page.product_id, component_page.product_version)
               if product_stable_version.nil? 
-                puts " Skipping aggregation for #{component_page.product_id}.#{component_page.product_version} .Final page since there's no such product yet"
+                puts " Skipping aggregation for #{component_page.product_id}.#{component_page.product_version}.Final page since there's no such product yet"
               else product_stable_version.nil? 
                 puts " adding #{component_page.product_version} to stable version of #{component_page.product_id}.#{product_stable_version}"
                 whatsnew_final_page = get_whatsnew_page(site, component_page.product_id, product_stable_version)
