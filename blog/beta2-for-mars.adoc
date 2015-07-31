@@ -4,11 +4,11 @@
 :page-tags: [release, jbosstools, devstudio, jbosscentral]
 :page-date: 2015-07-25
 
-Today we a new beta is available from our download and updatesites!
+Today a new beta is available from our download and update sites!
 
 image::images/20150721_bower/jbosstools-bower.png[align=center]
 
-CAUTION: Remember that since Beta1 we require Java 8 for installing and use
+CAUTION: Remember that since Beta1 we require Java 8 for installing and using of
 JBoss Tools. We still support developing and running applications using older Java runtimes. See more in link:2015-06-23-beta1-for-mars.html#java-8-to-run-eclipse-older-runtimes-ok-for-builds-deployment[Beta1 blog].
 
 == Installation
@@ -35,18 +35,18 @@ Note: Integration Stack tooling will become available from JBoss Central at a la
 
 == What is new ? 
 
-Full info at http://tools.jboss.org/documentation/whatsnew/jbosstools/4.3.0.Beta2.html[this page]. Some highlights below.
+Full info is at http://tools.jboss.org/documentation/whatsnew/jbosstools/4.3.0.Beta2.html[this page]. Some highlights are below.
 
 === Bower
 
-We've added support for easily setup and invocation of Bower using your locally installed `bower` command line on Windows, OSX and Linux.
+We've added support for easy setup and invocation of Bower using your locally installed `bower` command line tool on Windows, OS X and Linux.
 
 We provide a Bower Init wizard for getting started.
 
 image:images/20150721_bower/bower-init-wizard-page.png[]
 
-Once your project have a `bower.json` file you can now easily run bower update 
-by right clicking and click menu:Run[As... > Bower Update].
+Once your project has a `bower.json` file you can now easily run bower update 
+by right-clicking on the file and selecting menu:Run[As... > Bower Update].
 
 We are working on contributing this and additional Javascript integration to Eclipse JSDT. We will keep you posted!
 
@@ -72,7 +72,7 @@ You can manually trigger builds when selecting your Build Configs in the OpenShi
 image:../documentation/whatsnew/openshift/images/start-build.png[]
 
 Once you triggered you should see a new build appear in the Builds category in the OpenShift Explorer. 
-You can see it's state next to its name or in the Properties view. 
+You can see its state next to its name or in the Properties view. 
 Refreshing the Explorer will show you when the build completes.
 
 ==== Port Forwarding
@@ -81,15 +81,15 @@ Assuming that your application exposes ports you can now forward those to your l
 
 image:../documentation/whatsnew/openshift/images/port-forwarding-wizard.png[] 
 
-More details of new OpenShift v3 features are at link:../documentation/whatsnew/jbosstools/4.3.0.Beta2.html#openshift[Whats new].
+More details of new OpenShift v3 features are at link:../documentation/whatsnew/jbosstools/4.3.0.Beta2.html#openshift[Whats New].
 
 === Java EE Batch Tooling
 
-The batch tooling now have hyperlink support for `@BatchProperty` to navigate between classes and their relevant job `.xml` files.
+The batch tooling now has hyperlink support for `@BatchProperty` to navigate between classes and their relevant job `.xml` files.
 
 image:../documentation/whatsnew/batch/images/4.3.0.Beta2/openon.gif[]
 
-There are more news at link:../documentation/whatsnew/jbosstools/4.3.0.Beta2.html#batch[Whats new].
+There are more news at link:../documentation/whatsnew/jbosstools/4.3.0.Beta2.html#batch[Whats New].
 
 === Exploded nested jars
 
@@ -108,5 +108,3 @@ image:../documentation/whatsnew/aerogear/images/1.2.0.Beta2/NewApplicationWiz.pn
 Enjoy!
 
 Alexey Kazakov
-
-
