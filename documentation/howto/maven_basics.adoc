@@ -54,7 +54,7 @@ image::mvnbasic_maven_project.png[Configure Project Details]
 +
 .. Click `Finish` to conclude the new Maven project creation wizard.
 
-*Result:* Your new Maven project is created and appears in the `Project Explorer` view.
+*Result:* Your new Maven project is created. It appears in the `Project Explorer` view.
 
 [[New_Module]]
 == 2. Create a New Maven Module
