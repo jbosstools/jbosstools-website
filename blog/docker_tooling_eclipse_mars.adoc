@@ -4,6 +4,10 @@
 :page-author: xcoulon
 :page-tags: [docker, wildfly, jbosscentral]
 
+[WARNING]
+The current Docker tooling for Eclipse does not support Docker 1.7.1. See https://bugs.eclipse.org/bugs/show_bug.cgi?id=473743 for more information.
+
+
 Last week at http://devnation.org[DevNation] I had the chance to show some of the cool features that we
 provide in JBoss Developer Studio, including the Docker tooling that we've built for Eclipse Mars
 and that was released last weekfootnote:[Docker tooling is part of Developer Studio since version 9.0.0.Beta1 and JBoss Tools users can install it from https://marketplace.eclipse.org/content/jboss-tools-mars[Eclipse Marketplace] or from http://download.jboss.org/jbosstools/mars/development/updates/[our Update site]].
