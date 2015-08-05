@@ -74,9 +74,9 @@ devstudio:
           - name: Stand-alone Installer
             url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/f4/f4ffd0b36a622229e4a8b5c4db4c8c4fac0fd09750b1ba2cba73c22c5c0f5f83/jboss-devstudio-9.0.0.Beta2-installer-standalone.jar
             file_size: 485MB
-#          - name: Installer With EAP 6.4.0
-#            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/32/329b93cc424feea6d396d9b9d69f508335c387a0780ee8fa880f5501919f6f65/jboss-devstudio-9.0.0.Beta2-installer-eap.jar
-#            file_size: 630MB
+          - name: Installer With EAP 6.4.0
+            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/32/329b93cc424feea6d396d9b9d69f508335c387a0780ee8fa880f5501919f6f65/jboss-devstudio-9.0.0.Beta2-installer-eap.jar
+            file_size: 630MB
         zips:
           - name: Update site (including sources) bundle of JBoss Developer Studio
             file_size: 507MB
@@ -84,8 +84,12 @@ devstudio:
           - name: Target Platform for JBoss Developer Studio
             file_size: 452MB
             url: https://devstudio.redhat.com/9.0/development/updates/core/jboss-devstudio-9.0.0.Beta2-target-platform.zip
-            # note that we use SHA256 now, not MD5
-            # md5_url: https://devstudio.redhat.com/9.0/development/updates/core/jboss-devstudio-9.0.0.Beta1-target-platform.zip.shas56
+          - name: JBoss Central Zip
+            file_size: 116MB
+            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/a8/a8402bfa51e56b272d3283b4b857c522e0a0443ee592503ba977705ed46914df/jboss-devstudio-9.0.0.Beta2-updatesite-central.zip
+          - name: Sources Zip
+            file_size: 332MB
+            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/2a/2a4be9db02604a2ccc471005fee6aa86c20d9c697b6d304fdb7d2bae68bb4970/jboss-devstudio-9.0.0.Beta2-src.zip
       9.0.0.Beta1:
         release_date: 2015-06-22
         # no supported IS version at this time
@@ -107,8 +111,6 @@ devstudio:
           - name: Target Platform for JBoss Developer Studio
             file_size: 451MB
             url: https://devstudio.redhat.com/9.0/development/updates/core/jboss-devstudio-9.0.0.Beta1-target-platform.zip
-            # note that we use SHA1 now, not MD5
-            # md5_url: https://devstudio.redhat.com/9.0/development/updates/core/jboss-devstudio-9.0.0.Beta1-target-platform.zip.sha1
     luna:
       8.1.0.GA:
         marketplace_url: http://marketplace.eclipse.org/node/1616973
