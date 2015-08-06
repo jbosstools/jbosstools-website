@@ -25,19 +25,23 @@ image::remote_server_creation_screen.png[Define a New Remote Server]
 +
 . Configure the required `Server Adapter` details:
 .. For the `The server is` field, click the `Remote` radio button option.
-.. For the `Controlled by` field, select either the `Filesystem and shell operations` or `Management Operations` radio button option depending on your requirements. 
+.. For the `Controlled by` field, select either the `Filesystem and shell operations` or `Management Operations` radio button option depending on your requirements.
 +
 NOTE: If you select `Management Operations` for the `Controlled by` field, you must set up an admin user on the server by using the `$SERVER_HOME/bin/add-users.sh` script (for Linux, or the `$SERVER_HOME\bin\add-users.bat` file for Windows) and enter the same credentials in the server editor or during the server start.
 +
 .. The `Server is externally managed. Assume server is started` field is used when the user wants to deploy the server but does not want the IDE to stop or start the server for them. Depending on the requirements, select this check box or leave it unchecked, as is default.
 .. A remote server can now be created without assigning a runtime to it. Depending on the requirements, select the Assign a runtime to this server check box (and select an existing runtime or create a new one) or leave the box unselected.
 +
+NOTE: Creating a Remote Server without a runtime results in limitations. For example, the JMX connection does not work because it requires libraries from the runtime to connect via JMX. Additionally, automatic port detection occurs using the `standalone.xml` file, which is not available if a runtime is not specified. These and other minor issues related to hard-coded minor fixes in maintenance releases may occur if no runtime is specified for the Remote Server.
++
+
++
 .Create a New Server Adapter
 image::remote_create_new_server_adapter.png[Create a New Server Adapter]
 +
 . Add the remote system integration details as follows:
-.. In the drop-down menu, select the appropriate host type in the `Host` field. 
-... The default host is `Local`. 
+.. In the drop-down menu, select the appropriate host type in the `Host` field.
+... The default host is `Local`.
 ... If required, use the `New Host` button to create a new host, which may be remote or local. Supported connection types for remote hosts are `FTP Only` or `SSH Only`.
 +
 .New Host Options
