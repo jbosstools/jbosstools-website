@@ -1,0 +1,82 @@
+// This is a template for blog entries. Please remove the comments before actually posting.
+= RedDeer 0.8 feedback
+// Set the date for when post should be visible (YYYY-MM-DD, i.e. 2015-06-24)
+:page-date: 2015-08-13
+// page-layout is there to indicate this template is a blog.
+:page-layout: blog
+// page-author: is a field that should match up with a file found at _data/team/<author>.adoc 
+// if that file is missing create one and submit together with the blog.
+:page-author: maxandersen
+// page-tags: used to categorize the blog entry. Try not going overboard here.
+// use components from jira, try keep them short and not require spaces. 
+// Note: jbosscentral is a magic tag that makes it show up on jbosscentral
+// Leave that out if your blog entry has a narrow audience scope.  
+:page-tags: [eclipse, testing, reddeer, jbosscentral]
+
+JBoss Tools team is so lucky to have a great QE team who assist in testing and verifying
+the Eclipse plugin stack continues to function as expected. In that procss they have over
+the years been putting together a eclipse (SWT) testing library called RedDeer.
+
+This RedDeer project released version 0.8 just recently.
+
+RedDeer provides various utility testing, junit and SWTBot extensions and some quite unique
+tools specifically liked by QE to find errors/issues during their Eclipse testing.
+
+We are planning on contributing this to Eclipse.org in the future, but would like to get early feedback
+on it.
+
+Here is what Jiri Peterka recently wrote about it in his announcement on RedDeer:
+
+[quote, Jiri Peterka, on behalf of RedDeer dev team]
+____
+
+Today, version
+http://download.jboss.org/jbosstools/updates/stable/mars/core/reddeer/0.8.0/[0.8.0]
+was released and RedDeer is again a step closer to version
+1.0. RedDeer 0.8 supports Eclipse Mars (EE). This version is mainly
+about architecture improvements, related re-factoring and lot of bug
+fixes. In terms of these changes lots of underlying functionality went
+into o.j.r.common and mainly to o.j.r.core plugin. This helped us to
+keep architecture cleaner and to avoid cross dependency issues we have
+faced. Still you can also find multiple API and tooling features and
+enhancements in this release, for example:
+
+* Utility Project Wizard
+* Property Dialog 
+* https://github.com/jboss-reddeer/reddeer/wiki/RedDeer-Log-Parser[Log Parser] 
+* https://github.com/jboss-reddeer/reddeer/wiki/RedDeer-Log-Parser[RedDeer Spy View] 
+* https://github.com/jboss-reddeer/reddeer/wiki/User-Profile[User Profile support] 
+
+When you start writing test plugin you can also use
+`org.jboss.reddeer.go` as an aggregate plug-in for a start in your
+MANIFEST.MF instead of thinking what set of the individual plugins is
+right for you.
+
+Besides that,
+https://github.com/jboss-reddeer/reddeer/issues?q=milestone%3A0.8.0+is%3Aclosed[many
+(~70) bug fixes and other issues (~180 in total) were resolved].
+Thanks to all who helped again to push RedDeer project forward.
+
+That's it. Enjoy your testing with new RedDeer.
+____
+
+== More info
+
+You can find more info at these locations:
+
+There is complete list of RedDeer public resources: 
+
+* GIT repo: https://github.com/jboss-reddeer
+ * Issue tracker: https://github.com/jboss-reddeer/reddeer/issues
+ * Wiki pages: https://github.com/jboss-reddeer/reddeer/wiki
+ * User guide: https://github.com/jboss-reddeer/reddeer/wiki/User-Guide
+ * Articles and blogs: https://github.com/jboss-reddeer/reddeer/wiki/Articles
+ * Twitter: https://twitter.com/jbossreddeer
+ * Youtube: https://www.youtube.com/channel/UCDDzu0AjJ31POHQGsN5jWJw
+
+Let us know if you like what you see and feel free to leave a comment on this blog or
+reach out to the RedDeer project to give them feedback.
+
+Have fun! +
+Max Rydahl Andersen +
+http://twitter.com/maxandersen[@maxandersen]
