@@ -14,7 +14,7 @@
 :page-tags: [eclipse, testing, reddeer, jbosscentral]
 
 JBoss Tools team is so lucky to have a great QE team who assist in testing and verifying
-the Eclipse plugin stack continues to function as expected. In that procss they have over
+the Eclipse plugin stack continues to function as expected. In that process they have over
 the years been putting together a eclipse (SWT) testing library called RedDeer.
 
 This RedDeer project released version 0.8 just recently.
