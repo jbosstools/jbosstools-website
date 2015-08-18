@@ -7,9 +7,9 @@
 
 Mobile Hybrid Tools enables you to quickly create Cordova-based hybrid mobile applications using the `Hybrid Mobile Project` wizard. This wizard is a useful starting point for creating all new Cordova-based mobile applications in the IDE.
 
-As illustrated in this article, from this foundation you can customize the application by adding a range of Cordova plug-ins for accessing device hardware with the Cordova Plug-in Discovery wizard. You can also test your Cordova-based hybrid mobile applications without leaving the IDE using CordovaSim, a mobile application simulator.
+As illustrated in this article, from this foundation you can customize the application by adding a range of Cordova plug-ins for accessing device hardware with the `Cordova Plug-in Discovery` wizard. You can also test your Cordova-based hybrid mobile applications without leaving the IDE using CordovaSim, a mobile application simulator. The IDE also allows you to deploy your Hybrid Mobile project on the FeedHenry server.
 
-The Hybrid Mobile Project wizard is also an ideal starting point for new users to Hybrid Mobile Tools and CordovaSim, guiding you through the necessary steps to set up the IDE and your system for developing Cordova applications before generating a basic Cordova project.
+The `Hybrid Mobile Project` wizard is also an ideal starting point for new users to Hybrid Mobile Tools and CordovaSim, guiding you through the necessary steps to set up the IDE and your system for developing Cordova applications before generating a basic Cordova project.
 
 [NOTE]
 ====
@@ -18,15 +18,33 @@ Before attempting to install or create a hybrid mobile project with JBoss Tools,
 
 The instructions here demonstrate how to complete the following tasks:
 
-. <<install,Install the Hybrid Mobile Project Requirements>>
 . <<create,Create a Hybrid Mobile Project>>
 . <<customize,Customize the Hybrid Mobile Project>>
 . <<test,Test the Hybrid Mobile Application using CordovaSim>>
+. <<deploy_feedhenry,Deploy the Hybrid Mobile Project on the FeedHenry Server>>
 
 == Prerequisites
-Ensure that the following prerequisite is met to create a hybrid mobile project:
+Ensure that the following prerequisites are met to create a hybrid mobile project:
 
+* <<hybridmobiletool,Enable the JBoss Hybrid Mobile Tools + CordovaSim Feature>>
 * <<install_android_sdk, Install Android SDK>>
+
+[[hybridmobiletool]]
+=== Enable the JBoss Hybrid Mobile Tools + CordovaSim Feature
+To enable the JBoss Hybrid Mobile Tools + CordovaSim feature:
+
+. In JBoss Central, click the `Software/Update` tab.
+. In the `Features Available` list, select the `JBoss Hybrid Mobile Tools + CordovaSim` check box and then click `Install/Update`.
++
+.Hybrid Mobile Tools + CordovaSim Check Box Selected
+image::hmt_hybrid_mobile_tools_cordovasim_selected.png[Hybrid Mobile Tools + CordovaSim Check Box Selected]
++
+
+. Follow the on-screen instructions to complete the installation.
+
+During the installation process you may receive warnings about installing unsigned content. If this is the case, review the details of the content and if satisfied click `OK` to continue with the installation.
+
+Once installation is complete, you are prompted to restart Eclipse. Click `Yes` to restart immediately and `No` if you need to save any unsaved changes to open projects. Note that IDE changes do not take effect until the IDE is restarted.
 
 [[install_android_sdk]]
 === Install Android SDK
@@ -43,22 +61,8 @@ image::hmt_firstapp_android_preferences.png[Select the Android SDK Location]
 +
 . Click `Apply` and then click `OK`.
 
-[[install]]
-== 1. Install the Hybrid Mobile Project Requirements
-The Hybrid Mobile project requires additional plug-ins to be installed before it can be successfully completed. As demonstrated here, the wizard automatically checks that all necessary plug-ins are installed when it starts and if they are not installed the wizard starts the installation process for you.
-
-To install the Hybrid Mobile project requirements, complete the following steps:
-
-. In JBoss Central, under `Start from scratch`, click `Hybrid Mobile Project`.
-. When prompted to install the required features for the wizard, click `Yes`.
-. Follow the on-screen instructions to complete the installation.
-
-During the installation process you may receive warnings about installing unsigned content. If this is the case, review the details of the content and if satisfied click `OK` to continue with the installation.
-
-Once installation is complete, you are prompted to restart Eclipse. Click `Yes` to restart immediately and `No` if you need to save any unsaved changes to open projects. Note that IDE changes do not take effect until the IDE is restarted.
-
 [[create]]
-== 2. Create a Hybrid Mobile Project
+== 1. Create a Hybrid Mobile Project
 After the project wizard requirements are installed, you can restart the Hybrid Mobile Project wizard and follow it through to completion to create a template-based project. Within the wizard you must specify identifiers for the project and application and select the Cordova engine version to be used for building the project.
 
 To create a Hybrid Mobile project, complete the following steps:
@@ -79,7 +83,7 @@ image::hmt_newproj-details.png[Provide the Project and Application Information]
 The project is created and listed in the `Project Explorer` view.
 
 [[customize]]
-== 3. Customize the Hybrid Mobile Project
+== 2. Customize the Hybrid Mobile Project
 Before building and running the Hybrid Mobile application, instructions are given here for customizing the project by adding the Cordova Device Motion plug-in and modifying the source code to make use of it. The plug-in gives access to the mobile device accelerometer and the code snippets added to this project check for data every one second and display the X, Y, Z acceleration values on the front page of the application. This plug-in is just one of a catalog of plug-ins available to add to your Hybrid Mobile project.
 
 To customize the Hybrid Mobile project with the Cordova Device Motion plug-in, complete the following steps:
@@ -164,16 +168,74 @@ image::hmt_accel-index.png[The Modified index.html File]
 . Save the `index.js` file.
 
 [[test]]
-== 4. Test the Hybrid Mobile Application using CordovaSim
+== 3. Test the Hybrid Mobile Application using CordovaSim
 You can build and test the Hybrid Mobile application within the IDE using CordovaSim. CordovaSim is a mobile device simulator specifically for testing Cordova-based hybrid mobile applications. Using the CordovaSim control panel you can input sample data for mobile device hardware, as illustrated here for a device accelerometer.
 
 To run and test your Hybrid Mobile application using CordovaSim, complete the following steps:
 
-. In the `Project Explorer` view, right-click `_{project name}_` and click menu:Run As[Run with CordovaSim].
+. In the `Project Explorer` view, right-click `_{project name}_` and click menu:Run[Run with CordovaSim].
 . In the CordovaSim control panel, expand `Accelerometer` and drag the 3D device representation to generate device accelerometer data.
 +
 .Generated Device Accelerometer Data Displayed in Application
 image::hmt_accel-csim.png[Generated Device Accelerometer Data Displayed in Application]
+
+[[deploy_feedhenry]]
+== 4. Deploy the Hybrid Mobile Project on the FeedHenry Server
+The IDE allows users to quickly and easily publish a Mobile Hybrid (Cordova) application, developed in the IDE, on the FeedHenry server.
+
+The instructions here demonstrate to complete the following tasks:
+
+. <<child_feedhenry_project,Connect the Cordova Application to the FeedHenry Server>>
+. <<push_to_server,Push the Cordova Application to the FeedHenry Server>>
+
+[[child_feedhenry_project]]
+=== 1. Connect the Cordova Application to the FeedHenry Server
+
+To connect the Cordova application to the FeedHenry server:
+
+. In the `Project Explorer` view, right-click the `_{project name}_` and menu:New[Other].
++
+[NOTE]
+====
+Refer to the <<create,Create a Hybrid Mobile Project>> section to create the Hybrid Mobile (Cordova) application.
+====
++
+. In the search field, type `FeedHenry` and then select `New FeedHenry Application` and click `Next`.
+. In the `Create FeedHenry Application` window, enter the following details:
+** Ensure that the `Source project` field displays the name of the master Cordova project
+** In the `Select FeedHenry project` field, select the FeedHenry project name
+** In the `Git remote name` field, type a Git remote name for the FeedHenry repository
+. Click `Finish`.
+
+**Result:** The `Almost Done` window confirms that the project is created on the platform. The project structure in the `Project Explorer` view, shows the `feedhenry.js` and the `fhconfig.json` files.
+
+.Almost done Window Confirms the Application Creation
+image::hmt_almost_done_window_confirms_app_creation.png[Almost done Window Confirms the Application Creation]
+
+[[push_to_server]]
+=== 2. Push the Cordova Application to the FeedHenry Server
+To push the application to the FeedHenry server:
+
+. In the `Project Explorer` view, right-click the `_{project name}_` and click menu:Team[Push Branch “master”].
+. If you are prompted for a confirmation to connect, click `Yes`.
+. In the `Push Branch master` window, enter the following details:
+** In the `Remote` field, enter the location for the remote Git repository.
+** In the `Branch` field, type `master`.
+. Click `Next`.
++
+.Details of the Push Added in the Push Branch master Window
+image::hmt_enter_push_details.png[Details of the Push Added in the Push Branch master Window]
++
+. Confirm the details in the `Push Confirmation` window and click `Finish`.
+. The `Pushed to git` window confirms the push. Click `OK`.
+. Log into FeedHenry at `https://_[your-studio-domain]_.feedhenry.com`.
+. Click `Projects` and then click the relevant application.
+
+**Result:** The Cordova application is visible in the FeedHenry instance.
+
+.Cordova Application Published on the FeedHenry Server
+image::hmt_cordova_app_on_feedhenry.png[Cordova Application Published on the FeedHenry Server]
+
 
 == Did You Know?
 * You can manually initiate installation of JBoss Hybrid Mobile Tools and CordovaSim by locating them in the JBoss Central `Software/Update` tab or by dragging the following link into JBoss Central: https://devstudio.jboss.com/central/install?connectors=org.jboss.tools.aerogear.hybrid
