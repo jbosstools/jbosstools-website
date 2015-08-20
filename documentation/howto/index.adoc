@@ -42,3 +42,7 @@ link:openshift_deployproj.html[Deploy a Workspace Project to OpenShift Online]
 link:openshift_debug.html[Debug an OpenShift Online Java App]
 
 link:openshift_configssh.html[Configure SSH Keys for OpenShift Online]
+
+== Using the IDE Perspectives
+
+link:using_git.html[Using the Git Perspective in the IDE]
