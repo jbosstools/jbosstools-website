@@ -1,0 +1,9 @@
+= Getting Started with OpenShift 3
+:page-layout: howto
+:page-tab: docs
+:page-status: red
+
+:imagesdir: ./images
+
+[NOTE]
+Documentation in progress.
