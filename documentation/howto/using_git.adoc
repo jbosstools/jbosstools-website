@@ -1,4 +1,4 @@
-= Using Git with JBoss Developer Studio
+= Using Git with the IDE
 :page-layout: howto
 :page-tab: docs
 :page-status: green
@@ -6,7 +6,7 @@
 :imagesdir: ./images
 :toc:
 
-Red Hat JBoss Developer Studio includes the Git Perspective to allow developers to create, add, and manage their Git repositories quickly and easily with a graphical interface. This article introduces the basic workflow of a Git project and how to accomplish the most common Git-related tasks via the Git perspective. Common Git-based tasks include:
+The IDE includes the Git Perspective to allow developers to create, add, and manage their Git repositories quickly and easily with a graphical interface. This article introduces the basic workflow of a Git project and how to accomplish the most common Git-related tasks via the Git perspective. Common Git-based tasks include:
 
 . <<configure_repo,Set up a Repository in the Git Perspective>>.
 . <<create_branches,Create and Work With a New Branch>>, which includes:
@@ -19,13 +19,13 @@ Red Hat JBoss Developer Studio includes the Git Perspective to allow developers 
 
 [[configure_repo]]
 == 1. Set up a Repository in the Git Perspective
-The first step to using the Git Perspective in JBoss Developer Studio is to set up a Git repository. There are three ways to set up a Git repository in the Git Perspective:
+The first step to using the Git Perspective in the IDE is to set up a Git repository. There are three ways to set up a Git repository in the Git Perspective:
 
 * <<new_repo,Create a new Git Repository>>
 * <<clone_repo,Clone an Existing Git Repository>>
 * <<add_repo,Add an Existing local Git Repository>>
 
-The most common use case for developers is to clone an existing repository, or import an existing local clone of a repository into JBoss Developer Studio. However, the first option is an easy way to create a full repository (bare or normal) from scratch.
+The most common use case for developers is to clone an existing repository, or import an existing local clone of a repository into the IDE. However, the first option is an easy way to create a full repository (bare or normal) from scratch.
 
 [[new_repo]]
 === Create a New Git Repository
@@ -78,7 +78,7 @@ image::git_local_destination.png[Customize the Local Version of the Git Reposito
 
 [[add_repo]]
 === Add an Existing Local Git Repository
-If you have already cloned a Git repository locally, the following instructions are necessary to add your Git repository to JBoss Developer Studio. If you have not yet cloned your repository, follow the instructions in the prerequisites section below:
+If you have already cloned a Git repository locally, the following instructions are necessary to add your Git repository to the IDE. If you have not yet cloned your repository, follow the instructions in the prerequisites section below:
 
 ==== Prerequisites
 1. Ensure that you have forked the repository online.
@@ -115,7 +115,7 @@ This section provides instructions for creating a new branch and common tasks wi
 
 [[create_branch]]
 === Creating a New Branch
-If your repository is already set up in JBoss Developer Studio, create a new branch to make changes to the files.
+If your repository is already set up in the IDE, create a new branch to make changes to the files.
 
 1. In the `Git Repositories` view:
   a. Expand the name of your Git Repository.
@@ -170,7 +170,7 @@ image::git_terminal_button.png[The Open a Terminal Button]
 === Updating the Branch Before Implementing Changes
 When working locally on a branch, it is important to ensure the local branch is up to date before committing changes or creating a pull request (PR). As an example, if someone else has checked out the same repository and created a new branch, made changes, and merged the changes, use the following procedure to update your repository and branch before committing your own changes.
 
-In the example below, a new branch called *TrackingID-1234* is created using JBoss Developer Studio. Assuming that someone else is working on the same repository and has created a new branch called *NEWBRANCH*, made changes to it, and then merged the changes back into the repository. The local branch (*TrackingID-1234*) is now out of date because it does not include the changes from *NEWBRANCH*. Use the following instructions to update the branch:
+In the example below, a new branch called *TrackingID-1234* is created using the IDE. Assuming that someone else is working on the same repository and has created a new branch called *NEWBRANCH*, made changes to it, and then merged the changes back into the repository. The local branch (*TrackingID-1234*) is now out of date because it does not include the changes from *NEWBRANCH*. Use the following instructions to update the branch:
 
 1. Right-click the name of the repository to update.
 2. From the menu that displays, click `Pull`.
