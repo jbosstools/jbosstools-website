@@ -171,7 +171,7 @@ image::git_terminal_button.png[The Open a Terminal Button]
 
 [[update_branch]]
 === Updating the Branch Before Implementing Changes
-When working locally on a branch, it is important to ensure the local branch is up to date before committing changes or creating a pull request (PR). As an example, if someone else has checked out the same repository and created a new branch, made changes, and merged the changes, use the following procedure to update your repository and branch before committing your own changes.
+When working locally on a branch, it is better to ensure the local branch is up to date before creating a pull request (PR). As an example, if someone else has checked out the same repository and created a new branch, made changes, and merged the changes, use the following procedure to update your repository and branch before committing your own changes.
 
 In the example below, a new branch called *TrackingID-1234* is created using the IDE. Assuming that someone else is working on the same repository and has created a new branch called *NEWBRANCH*, made changes to it, and then merged the changes back into the repository. The local branch (*TrackingID-1234*) is now out of date because it does not include the changes from *NEWBRANCH*. Use the following instructions to update the branch:
 
