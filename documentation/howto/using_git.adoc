@@ -1,0 +1,240 @@
+= Using Git with the IDE
+:page-layout: howto
+:page-tab: docs
+:page-status: green
+:experimental:
+:imagesdir: ./images
+:toc:
+
+The IDE includes the Git Perspective to allow developers to create, add, and manage their Git repositories quickly and easily with a graphical interface. This article introduces the basic workflow of a Git project and how to accomplish the most common Git-related tasks via the Git perspective. Common Git-based tasks include:
+
+. <<configure_repo,Set up a Repository in the Git Perspective>>.
+. <<create_branches,Create and Work With a New Branch>>, which includes:
+.. <<create_branch,Creating a New Branch>>
+.. <<working, Working in the New Branch>>
+.. <<update_branch,Updating the Branch Before Implementing Changes>>
+. <<commits_merges,Commiting and Merging Changes>>
+.. <<commit_push, Committing and Pushing the Changes>>
+.. <<commit_nopush, Committing Without Pushing the Changes>>
+
+[[configure_repo]]
+== 1. Set up a Repository in the Git Perspective
+The first step to using the Git Perspective in the IDE is to set up a Git repository. There are three ways to set up a Git repository in the Git Perspective:
+
+* <<new_repo,Create a new Git Repository>>
+* <<clone_repo,Clone an Existing Git Repository>>
+* <<add_repo,Add an Existing local Git Repository>>
+
+The most common use case for developers is to clone an existing repository, or import an existing local clone of a repository into the IDE. However, the first option is an easy way to create a full repository (bare or normal) from scratch.
+
+[[new_repo]]
+=== Create a New Git Repository
+If a repository is not already created and available, use the following steps to create a new repository:
+
+1. Click the `Create a new Git Repository and add it to this view` button.
++
+.Click the Create a New Git Repository Button
+image::git_create_new_repo.png[Click the Create a New Git Repository Button]
++
+2. In the dialog box:
+  a. Ensure that the automatically populated default value for the `Repository Directory` field is correct.
+  b. Optionally, if required, check the `Create a bare repository` to create a new bare repository. For details about bare repositories and how they differ from a normal repository, see the <<didyouknow, Did You Know?>> section.
++
+.Create a New Git Repository
+image::git_new_git_repo.png[Create a New Git Repository]
++
+
+**Result:** A new git repository is created on your local machine and is listed in the `Git Repositories` view.
+
+[[clone_repo]]
+=== Clone an Existing Git Repository
+If your repository already exists online (for example, in GitHub), use the following steps to create a local clone:
+
+1. Ensure that you have forked the repository online. This option is available in the repository host's website.
+2. Click the `Clone a Git Repository and add the clone to this view` button.
++
+.Click the Clone a Git Repository Button
+image::git_clone_repo_button.png[Click the Clone a Git Repository Button]
++
+3.  Enter the details of the source repository as follows:
+  a. Add the `URI` for the repository's online source. This automatically populates the `Host` and `Repository Path` fields are automatically populated.
+  b. Add your username and password for the source repository under the `Authentication` details.
+  c. Click `Next` to continue.
++
+.Enter the Source Repository Details
+image::git_clone_new_repo.png[Enter the Source Repository Details]
++
+4. Customize the local version of your Git repository as follows:
+  a. Confirm that the automatically populated information for the destination `Directory` and `Initial Branch` are correctly populated.
+  b. Optionally, set a non-default name for the `Remote name` field.
+  c. Optionally, select the `Add project to working sets` option and use the drop down menu and the `Select` button to select the appropriate working sets for this repository.
++
+.Customize the Local Version of the Git Repository
+image::git_local_destination.png[Customize the Local Version of the Git Repository]
++
+  d. Click `Finish` to conclude cloning an existing Git repository.
+
+**Result:** The new cloned repository is listed in the `Git Repositories` view.
+
+[[add_repo]]
+=== Add an Existing Local Git Repository
+If you have already cloned a Git repository locally, the following instructions are necessary to add your Git repository to the IDE. If you have not yet cloned your repository, follow the instructions in the prerequisites section below:
+
+==== Prerequisites
+1. Ensure that you have forked the repository online.
+2. In the command line on your local system, navigate to the location where you want to store the local copy of the repository and enter the following command to clone the repository:
+
++
+----
+$ git clone ${repo_URL}
+----
+
+==== Add an Existing Git Repository
+Use the following instructions to add your existing local Git Repository to the IDE's Git Perspective:
+1. Click the `Add an existing local Git Repository to this view` button.
+
+.Click the Add an Existing Local Git Repository Button
+image::git_add_existing_local_repo.png[Click the Add an Existing Local Git Repository Button]
+
+2. Select the local Git Repository as follows:
+  a. Click `Browse` to navigate to the local directory that contains the Git repository.
+  b. Optionally, select the `Look for nested repositories` checkbox to search for nested repositories.
+  c. In the `Search results` box, ensure that the appropriate *.git* file is selected.
++
+.Find and Add Local Repository
+image::git_local_repo_addition.png[Find and Add Local Repository]
++
+  d. Click `Finish`.
+
+**Result:** The local repository now appears in the `Git Repositories` view.
+
+[[create_branches]]
+== 2. Create and Work With a New Branch
+This section provides instructions for creating a new branch and common tasks with the new branch, such as:
+
+. <<create_branch,Creating a new branch>>
+. <<working, Working in the new branch>>
+. <<update_branch,Updating the branch before implementing changes>>
+
+[[create_branch]]
+=== Creating a New Branch
+If your repository is already set up in the IDE, create a new branch to make changes to the files.
+
+1. In the `Git Repositories` view:
+  a. Expand the name of your Git Repository.
+  b. Click `Branches` to expand the branch view.
+  c. Click `Remote Tracking` to view all remote branches for the repository.
+  d. A branch displays with a name that begins with **origin/master**. Right-click this branch and select `Create Branch` from the displayed options.
++
+.Create a Branch from Origin/Master
+image::git_branching.png[Create a Branch from Origin/Master]
++
+2. Add the required details about the new branch:
+  a. Add the desired new branch name in the `Branch name` field.
+  b. Ensure that the `Configure upstream for push and pull` checkbox is selected.
+  c. In the `When doing a pull` options, select the option that suits your requirement. The `Merge upstream commits into local branch` option creates commits when a merge occurs. These commits are included in the subsequent pull request. The `Rebase commits of a local branch onto upstream` option performs a rebase before adding your changes, which prevents additional commits in your pull request.
+  d. Ensure that the `Checkout new branch` checkbox is selected.
++
+.Add Details for a New Branch
+image::git_create_branch.png[Add Details for a New Branch]
++
+  e. Click `Finish` to create the new branch.
+
+**Result:** The new branch appears under menu:Repository_Name[Branches > Local].
+
+[[working]]
+=== Working in the New Branch
+After creating a new branch, you can implement changes in the new branch as follows:
+
+1. Expand menu:Repository_Name[Branches > Local] and find the new branch where changes are to be implemented.
+2. Confirm that the target branch is checked out. The currently checked-out branch displays a small black check mark:
++
+.An Example of a Checked-out Branch
+image::git_checked_out_branch.png[An Example of a Checked-out Branch]
++
+3. Right-click on the checked-out branch name and mouse-over the `Show In` option in the menu and then click `Terminal` in the submenu.
++
+.The Show Branch in Terminal Option
+image::git_open_terminal.png[The Show Branch in Terminal Option]
++
+4. On the right view, a `Terminal` tab appears. In the same row, click the icon that resembles a computer monitor to view the command line prompt in this view.
++
+.The Open a Terminal Button
+image::git_terminal_button.png[The Open a Terminal Button]
++
+5. In the `Launch Terminal` dialog box:
+  a. Ensure that **Local Terminal** is selected in the `Choose a Terminal` drop-down box.
+  b. Select **Default (ISO-8859-1)** in the `Encoding` box.
+  c. Click `OK`. Note that as a default, the terminal window is at the */home/YourCurrentUser/* directory.
+
+**Result:** The `Terminal` tab now displays a command line terminal. Use the terminal view to make the required changes to your checked-out files.
+
+[[update_branch]]
+=== Updating the Branch Before Implementing Changes
+When working locally on a branch, it is important to ensure the local branch is up to date before committing changes or creating a pull request (PR). As an example, if someone else has checked out the same repository and created a new branch, made changes, and merged the changes, use the following procedure to update your repository and branch before committing your own changes.
+
+In the example below, a new branch called *TrackingID-1234* is created using the IDE. Assuming that someone else is working on the same repository and has created a new branch called *NEWBRANCH*, made changes to it, and then merged the changes back into the repository. The local branch (*TrackingID-1234*) is now out of date because it does not include the changes from *NEWBRANCH*. Use the following instructions to update the branch:
+
+1. Right-click the name of the repository to update.
+2. From the menu that displays, click `Pull`.
+3. A status menu appears that displays the progress of the pull request.
+4. When the pull completes, a `Pull Result for Repository_Name` menu appears that lists the results of the fetch and update operations.
+5. Click `OK` to conclude the operation.
+
+**Result:** The repository now contains the most updated version of the contents.
+
+[[commits_merges]]
+== 4. Commiting and Merging Changes
+After all required changes are complete, commit the changes and then create a Pull Request. Pull Requests are then evaluated by the repository owner and either merged into the repository or rejected.
+
+1. Ensure that the black and white tick mark that indicates the current branch appears at the correct working branch in the `Local` folder of your repository view.
+2. Right-click the name of the repository. In the displayed menu, click the `Commit` option.
+3. In the `Commit Changes` dialog box:
+  a. Add a commit message describing the changes in the `Commit message` text box.
+  b. Confirm that the automatically populated `Author` and `Committer` fields contain the correct name and email address.
+  c. In the `Files` area, all files added using the **git add** command display in the box. Select the checkbox next to each file to include it in the commit. See the <<didyouknow, Did You Know?>> section to learn about only including some of the changed files in a commit.
++
+.Add details to the Commit Changes Dialog Box
+image::git_commit_message.png[Add details to the Commit Changes Dialog Box]
++
+  d. Click `Commit` to create a new commit (without creating a Pull Request) or click `Commit and Push` to commit the changes and create a Pull Request at the same time.
+
+[[commit_nopush]]
+=== Committing Without Pushing the Changes
+If you selected `Commit` in the previous procedure to commit changes but not push them, use the following instructions:
+
+1. When the operation completes, the repository is now ahead by one commit. This is represented with an arrow and the number one, as seen in the screenshot:
++
+.Git Repository Status
+image::git_one_commit_ahead.png[Git Repository Status]
++
+2. When you are ready to create a Pull Request, right click the current branch name and click `Push Branch`.
+3. An automatically populated `Push Branch **Branch_Name**` dialog box appears. Confirm that the settings are correct. The settings selected when creating this branch are used for this step. Click `Next` to continue.
+4. A dialog box appears requesting the repository access username and password.
+5. A `Push Confirmation` dialog box appears. Click `Finish` to create the Pull Request. If requested, supply the username and password for the repository once again.
+6. When the operation completes, a `Push summary` dialog box appears. Click `OK` to dismiss this dialog box.
+
+**Result:** The included changes are now committed and a Pull Request is generated for the repository owner to review.
+
+[[commit_push]]
+=== Committing and Pushing the Changes
+If you selected `Commit and Push` in the previous procedure, use the following instructions:
+
+1. A dialog box appears requesting the repository access username and password.
+2. When the operation completes, the repository is now ahead by one commit. This is represented with an arrow and the number one, as seen in the screenshot:
++
+.Git Repository Status
+image::git_one_commit_ahead.png[Git Repository Status]
++
+3. After the Pull Request is evaluated and merged, right-click the repository and click `Pull` to manually update the repository.
+
+**Result:** A Pull Request is generating and ready for the repository owner to review.
+
+[[didyouknow]]
+== Did You Know?
+
+* **Bare repositories** are recommended for central repositories, but not for development environments. Bare repositories differ from normal repositories because they do not contain a working or checked out copy of any source files. This prevents editing files and committing changes in the repository. Additionally, they store the git revision history for your repository in the repository's root folder instead of in a *.git* sub-folder.
+
+* When selecting the files to commit in the `Commit Changes`, you can select only the files you want included in the commit using the checkboxes next to each file name. The unchecked files are not included in the commit and no extra actions are required to reconcile the uncommitted files when committing and creating a Pull Request.
+
+* If you need to add a **change ID** to each commit message, in the `Comming Changes` dialog box, click the rightmost icon at the top right corner to add a change ID to the commit message.
