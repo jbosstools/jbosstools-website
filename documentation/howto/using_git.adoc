@@ -121,8 +121,9 @@ image::git_local_repo_addition.png[Find and Add Local Repository]
 **Result:** The local repository now appears in the `Git Repositories` view.
 
 [[set_remote]]
- === Add a Remote for the Repository
- After setting up your repository for the first time, set up a remote for repository. This is a one-time set up step for newly created or added repository.
+=== Add a Remote for the Repository
+
+After setting up your repository for the first time, set up a remote for repository. This is a one-time set up step for newly created or added repository.
 
 1. In the `Git Repositories` view, expand the target repository.
 2. From the expanded options, right-click `Remotes` and then `Create Remotes`.
