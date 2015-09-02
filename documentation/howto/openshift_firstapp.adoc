@@ -1,4 +1,4 @@
-= Create Your First OpenShift Online App 
+= Create Your First OpenShift Online App
 :page-layout: howto
 :page-tab: docs
 :page-status: green
@@ -17,7 +17,6 @@ The instructions here demonstrate how to use this wizard and a default OpenShift
 == Sign up for an OpenShift Online Account
 If you do not have an OpenShift Online account, you should complete the following steps:
 
-[start=2]
 . Click the link provided to sign up for an OpenShift account and follow the instructions on the OpenShift website.
 +
 .Link to Sign up for a New OpenShift Online User Account
@@ -26,11 +25,11 @@ image::openshift_signuplink.png[Link to sign up for a new OpenShift Online user 
 . When you have completed the sign-up process, restart the `OpenShift Application` wizard from JBoss Central.
 
 == Connect to OpenShift Online
-[start=4]
+
 . Complete the fields about your OpenShift Online account as follows:
-** From the `Connection` list, select `New Connection`.                
-** Ensure the disabled `Server` field states `https://openshift.redhat.com`.        
-** In the `Username` and `Password` fields, type your account credentials.         
+** From the `Connection` list, select `New Connection`.
+** Ensure the disabled `Server` field states `https://openshift.redhat.com`.
+** In the `Username` and `Password` fields, type your account credentials.
 +
 .Connection Information Provided for OpenShift Online Account
 image::openshift_connect.png[Completed OpenShift Online connection fields]
@@ -40,32 +39,30 @@ image::openshift_connect.png[Completed OpenShift Online connection fields]
 == Enable Communication between the IDE and OpenShift
 If your OpenShift Online account has no SSH public keys stored, you are prompted with the `Add SSH Keys` wizard and you should complete the following steps:
 
-[start=6]           
 . Click `New`.
-. Complete the fields about the SSH Keys to be created as follows:             
+. Complete the fields about the SSH Keys to be created as follows:
 ** In the `Name` field, type a name for the SSH key pair.
-** From the `Key Type` list, ensure `SSH_RSA` is selected. 
-** In the `SSH2 Home` field, ensure your .ssh directory path is correct.         
+** From the `Key Type` list, ensure `SSH_RSA` is selected.
+** In the `SSH2 Home` field, ensure your .ssh directory path is correct.
 ** In the `Private Key File Name` field, type a name for the private key file name. The `Public Key File Name` field populates automatically with the name of the private key file name with .pub appended.
 +
 .New SSH Key Information for OpenShift Online Provided
 image::openshift_new-sshkey.png[Completed new SSH key fields]
 +
-. Click `Finish`.             
+. Click `Finish`.
 . Click `Finish` to close the `Add SSH Keys` window.
 
 == Create a Domain
 If your OpenShift Online account has no domains, you are prompted with the `Create Domain` wizard and you should complete the following step:
 
-[start=10]
-. In the `Domain Name` field, type an alphanumeric name for your new OpenShift Online domain and click `Finish`. The provided domain name must be unique across all domains on OpenShift Online; if it is not unique, you are directed back to the `Create Domain` window to provide a unique domain name. 
+. In the `Domain Name` field, type an alphanumeric name for your new OpenShift Online domain and click `Finish`. The provided domain name must be unique across all domains on OpenShift Online; if it is not unique, you are directed back to the `Create Domain` window to provide a unique domain name.
 +
 .New OpenShift Domain Name Provided
 image::openshift_newdomain.png[Completed new OpenShift Online domain field]
 
 == Provide Essential New Application Details
-[start=11]
-. Complete the fields about the type of OpenShift application you want to create as follows: 
+
+. Complete the fields about the type of OpenShift application you want to create as follows:
 ** Ensure `Create a new OpenShift application` is selected.
 ** Expand `Basic Cartridges` and select `JBoss Application Server 7`.
 +
@@ -85,10 +82,10 @@ image::openshift_newapp-details.png[Completed new OpenShift application fields]
 . Click `Next`.
 
 == Configure the Corresponding Workspace Project for the New Application
-[start=15]
+
 . Complete the fields about the corresponding workspace project as follows:
 ** Ensure the `Create a new project` check box is selected.
-** Ensure the `Create and set up a server for easy publishing` check box is selected. This automatically creates an OpenShift server adapter for the application, enabling you to easily publish project changes to the OpenShift server. 
+** Ensure the `Create and set up a server for easy publishing` check box is selected. This automatically creates an OpenShift server adapter for the application, enabling you to easily publish project changes to the OpenShift server.
 . Click `Next`.
 . Ensure the location in the `Git Clone Destination` field corresponds to where you want to make a local git repository for the project source code.
 +
