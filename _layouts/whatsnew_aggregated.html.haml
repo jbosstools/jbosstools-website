@@ -3,22 +3,22 @@ layout: project
 tab: docs
 ---
 - page.title = "#{page.product_name} #{page.build_info.version}"
-- component_ids = page.component_news.keys.sort{|x,y| site.components[x].name <=> site.components[y].name}
+- component_ids = page.component_news.keys.sort{|x,y| site.components.keys.index(x) <=> site.components.keys.index(y)}
 
 - if is_stable_version(page.build_info.version)
   -# Banner for .Final versions (it's an aggregate of non-.Final pages)
   - related_whatsnew_pages = get_related_whatsnew_pages(site, page.build_info.product_id, page.build_info.version)
-  - unless related_whatsnew_pages.empty? || related_whatsnew_pages.length == 1 
+  - unless related_whatsnew_pages.empty? || related_whatsnew_pages.length == 1
     .row-fluid
       .span12.alert.alert-info><
         %span><= "Heads Up! This is a summary page of all New & Noteworthy of #{page.product_name}&nbsp;"
         - related_whatsnew_pages.keys.sort{|x,y| x <=> y}.each_with_index do |version, index|
           - if index == related_whatsnew_pages.length - 1
-            %span><= "&nbsp;and&nbsp;" 
+            %span><= "&nbsp;and&nbsp;"
           %a{:href=>related_whatsnew_pages[version].output_path}><= version
           - if index < related_whatsnew_pages.length - 2
-            %span><= ",&nbsp;" 
-- else 
+            %span><= ",&nbsp;"
+- else
   -# Banner for non-.Final version pages which are related a an existing .Final version page
   - final_whatsnew_page = get_stable_version_whatsnew_page(site, page.build_info.product_id, page.build_info.version)
   - unless final_whatsnew_page.nil?
@@ -63,10 +63,10 @@ tab: docs
       -# link to older N&N
       %li
         %a{:href=>"http://docs.jboss.org/tools/whatsnew/"} Previous Versions
-      
-            
+
+
   .span9.whatsnew.scrolledContent.well.post-bg
-    %header 
+    %header
       %h1.center What's New in #{page.product_name} #{page.build_info.version}
       - download_page = site.download_pages[page.build_info.product_id][page.build_info.version]
       - if download_page.nil? && page.build_type == :unreleased then
@@ -74,33 +74,31 @@ tab: docs
       .center
         -# Blog announcement
         - unless download_page.nil? || download_page.build_info.blog_announcement_url.nil?
-          %a{:href=>relative(page.build_info.blog_announcement_url)} Blog Announcement 
+          %a{:href=>relative(page.build_info.blog_announcement_url)} Blog Announcement
           &#124;
         - unless download_page.nil?
           %a{:href => relative(download_page.output_path)} Download
           &#124;
         -# devstudio has Release Notes
         - unless download_page.nil? || download_page.build_info.release_notes_url.nil?
-          %a{:href=>relative(page.build_info.release_notes_url)} Release Notes 
+          %a{:href=>relative(page.build_info.release_notes_url)} Release Notes
           &#124;
         %a{:href=>relative("/downloads/installation.html")} Installation Instructions
-    
-                
+
+
     - default_imagesdir = site.asciidoctor.attributes['imagesdir']
     - if is_stable_version(page.build_info.version) then
       - site.asciidoctor.attributes['finalnn'] = true
-    
+
     - component_ids.each do |component_id|
       - component_news = page.component_news[component_id]
       %div.component-wrapper{:id=>component_id}
         %h1.component-header #{site.components[component_id].name}
         - component_news.each do |n|
-          - site.asciidoctor.attributes['imagesdir'] = Pathname.new(n.output_path).parent.to_s 
+          - site.asciidoctor.attributes['imagesdir'] = Pathname.new(n.output_path).parent.to_s
           ~n.content
       %hr
     -# restore the default 'imagesdir'
     - site.asciidoctor.attributes['imagesdir'] = default_imagesdir
     -# unset the 'finalnn' attribute (used to exclude some version specific content)
     - site.asciidoctor.attributes['finalnn'] = null
-    
-    

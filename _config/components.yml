@@ -1,71 +1,74 @@
+# Components in the N&N pages appear in the same order
+# as in this file.
+
+general:
+  name: General
+
 arquillian:
   name: Arquillian
-  
+
 aerogear:
   name: Aerogear
 
 batch:
   name: Batch Tools
- 
+
 browsersim:
   name: BrowserSim
-  
+
 cdi:
   name: CDI Tools
-  
-central:
-  name: JBoss Central
-  
+
 core:
   name: Core Tools
-  
+
 docker:
   name: Docker Tools
-  
+
 drools:
   name: Drools
-  
-examples:
-  name: Project Examples
-  
+
 forge:
   name: Forge Tools
 
 freemarker:
   name: Freemarker
-  
-general:
-  name: General
-  
+
 hibernate:
   name: Hibernate Tools
-  
+
+javascript:
+  name: JavaScript Tools
+
+central:
+  name: JBoss Central
+
 jst:
   name: JST / JSF / HTML Editor
-  
+
 livereload:
   name: LiveReload
-  
+
 maven:
   name: Maven
 
 openshift:
   name: OpenShift
 
+examples:
+  name: Project Examples
+
 server:
   name: Server Tools
 
 switchyard:
   name: SwitchYard
+
 usage:
   name: Usage
-  
-vpe: 
+
+vpe:
   name: Visual Editor
 
 webservices:
   name: Web Services Tools
-
-javascript:
-  name: JavaScript Tools
-
