@@ -29,8 +29,8 @@ asciidoctor:
     sectanchors: ''
     linkattrs: ''
     source-highlighter: prettify
-    
-    
+
+
 # Default minify settings
 css_minifier: disabled
 js_minifier: disabled
@@ -74,6 +74,8 @@ profiles:
     bootstrap_css_url: /stylesheets/bootstrap-community
     bootstrap_js_url: /javascripts/bootstrap-community
     disqus: jbosstools-dev
+    google_analytics:
+      account: UA-46704212-1
 
   staging:
     showwip: true
@@ -96,7 +98,7 @@ profiles:
       account: UA-46704212-1
     wget:
       enabled: false
-    
+
   production:
     showwip: false
     base_url: http://tools.jboss.org
@@ -114,4 +116,3 @@ profiles:
     disqus: jbosstools
     wget:
       enabled: false
-    

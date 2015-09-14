@@ -25,30 +25,30 @@
     %link{ :rel=>'stylesheet', :type=>"text/css", :href=>relative("/stylesheets/jbt-styles.css") }
     %link{ :rel=>"stylesheet", :type=>"text/css", :href=>relative("/fonts/font-awesome/font-awesome.min.css"), :media=>"screen, projection"}
     %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css", :media=>"screen, projection"}
-    
+
     -# RSS feeds
     %link{:rel=>"alternate", :type=>"application/rss+xml", :title=>"RSS", :href=>relative("/blog/news.atom")}
     / Defines the project banner, using variables (cannot be done in .scss)
-  
+
     :css
       @media (min-width: 401px) {
-        .banner { 
-          background-image: url(#{site.project_images_url}/tools-banner-1180px.png); 
-          background-repeat:no-repeat; 
-          height: 110px;  
+        .banner {
+          background-image: url(#{site.project_images_url}/tools-banner-1180px.png);
+          background-repeat:no-repeat;
+          height: 110px;
         }
       }
       @media (max-width: 400px) {
-        .banner { 
-          background-image: url(#{site.project_images_url}/tools_200x150.png); 
-          background-size: 133px 100px; 
-          background-repeat:no-repeat; 
-          height: 110px;  
+        .banner {
+          background-image: url(#{site.project_images_url}/tools_200x150.png);
+          background-size: 133px 100px;
+          background-repeat:no-repeat;
+          height: 110px;
         }
       }
-  
+
   %body
-    - if site["showwip"] 
+    - if site["showwip"]
       = partial( 'underdevelopment.html.haml', { :parent => page } )
     / begin accessibility skip to top
     %ul#top.visuallyhidden
@@ -71,7 +71,7 @@
         = partial( page.banner_partial.nil? ? 'banner.html.haml' : page.banner_partial , { "real_page" => page } )
       .banner
         %a{:href=>"#{site.base_url}"}<
-      
+
       .navbar.navbar-inverse.navbar-fix#sticky-navbar
         .navbar-inner
           .container#main-container
@@ -83,25 +83,25 @@
               %ul.nav
                 %li#home<
                   %a{:href=>relative("/")} Home
-          
+
                 %li#downloads<
                   %a{:href=>relative("/downloads/")} Downloads
-                
+
                 %li#features<
                   %a{:href=>relative("/features/")} Features
-                  
+
                 %li#blog<
                   %a{:href=>relative("/blog/")} Blog
-  
+
                 %li#docs<
                   %a{:href=>relative("/documentation/")} Documentation
 
                 %li#community<
-                  %a{:href=>relative("/community")} Community                    
+                  %a{:href=>relative("/community")} Community
 
                 %li#getinvolved<
                   %a{:href=>relative("/getinvolved")} Get Involved
-                
+
                 %li.dropdown#socialmedia
                   %a.dropdown-toggle{:href=>"#", "data-toggle"=>"dropdown"}<
                     = precede 'Follow Us ' do
@@ -116,9 +116,9 @@
 
 
 
-      
 
-      / activate the tab by adding the 'active' class 
+
+      / activate the tab by adding the 'active' class
       - unless page.nav_partial.nil? && page.tab.nil?
         :javascript
           document.getElementById("#{page.tab}").className += " active";
@@ -146,7 +146,7 @@
               %a{:href=>relative("/getinvolved"), :title => "Get Involved"} Get Involved
             %li
               %a{:href=>relative("/usage"), :title => "Usage"} Usage
-        
+
         .span2
           %h4 Docs
           %ul
@@ -158,7 +158,7 @@
               %a{:href=>relative("/documentation/videos")} Video Tutorials
             %li
               %a{:href=>relative("http://docs.jboss.org/tools")} Reference Guides
-          
+
         .span2
           %h4 Follow Us
           %ul
@@ -178,9 +178,9 @@
               %a{:href=>"irc://irc.freenode.org/jbosstools", :title => "Talk on IRC"} Talk with us on IRC
         .span3.offset1
           %h4 Licenses
-          %p Most plugins are available under the Eclipse Public License (EPL) others Lesser General Public License (LGPL). 
+          %p Most plugins are available under the Eclipse Public License (EPL) others Lesser General Public License (LGPL).
           %p They may also contain some libraries licensed under certain open source licenses such as ASL, BSD, and/or certain other open source licenses.
-    
+
     = partial( page.companyfooter_partial.nil? ? 'companyfooter.html.haml' : page.companyfooter_partial , { "real_page" => page } )
 
     %span.backToTop
@@ -197,7 +197,7 @@
       - page.bottom_javascripts.each do |javascript|
         %script{:src=>relative(javascript), :type=>'text/javascript'}
     %script{:src=>"https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"}
-      
+
     :plain
       <!-- begin eloqua tracking -->
       <script type='text/javascript' language='JavaScript' src='http://www.redhat.com/j/elqNow/elqCfg.js'></script>
@@ -249,7 +249,7 @@
 
     - if site.google_analytics
       = google_analytics
-      %javascript
+      :javascript
         dataLayer = [{'channel' : 'jbosstools', 'additional_tracking_code' : '#{site.google_analytics.account}'}];
       :plain
         <!-- Google Tag Manager -->
