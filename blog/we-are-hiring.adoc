@@ -1,0 +1,29 @@
+= We are hiring
+:page-date: 2015-09-16
+:page-layout: blog
+:page-author: maxandersen
+:page-tags: [job, jbosscentral]
+
+The the Developer Experience team of which JBoss Tools team is part of
+have a set of job openings available. We are looking to continue
+improving the usability not only around Eclipse but also around our
+(Red Hat) overall developer experience.
+
+All ranging from Java to JavaScript, application servers to containers, source code tinkering to full blown CI/CD setups.
+
+If you are into making developers life easier and like to be able to get involved in many different technologies and get them to work great together then do apply for one of the current listings.
+
+You can also ping me (manderse@redhat.com) for questions.
+
+The current list of openings are:
+
+* http://jobs.redhat.com/jobs/descriptions/principal-software-engineer-mountain-view-california-job-1-5796888[Principal software engineer]
+* http://jobs.redhat.com/jobs/descriptions/senior-software-engineer-brno-jihomoravsky-kraj-czech-republic-job-1-5796893[Senior software engineer]
+* http://jobs.redhat.com/jobs/descriptions/senior-software-engineer-brno-jihomoravsky-kraj-czech-republic-job-1-5796887[Senior software engineer]
+* http://jobs.redhat.com/jobs/descriptions/senior-software-engineer-mountain-view-california-job-1-5796895[Senior software engineer]
+
+Note: the job postings currently list a specific location, but do not focus on that. We are looking world wide in any country with a Red Hat representation and yes, you can work remote.
+
+Have fun! +
+Max Rydahl Andersen +
+http://twitter.com/maxandersen[@maxandersen]
