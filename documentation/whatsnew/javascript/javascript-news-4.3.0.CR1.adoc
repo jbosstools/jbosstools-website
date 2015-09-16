@@ -6,9 +6,9 @@
 :page-product_version: 4.3.0.CR1
 :experimental true
 
-== JavaScript Editing improvments
+== JavaScript Editing improvements
 
-Target Platform is updated with the latest Tern.java and AngularJS-Eclipse features, in order to bring the latest improvments and fixes of JavaScript Content Assistant into JBoss Tools.
+JBoss Tools and JBoss Developer Studio's Target Platforms have been updated with the latest Tern.java and AngularJS-Eclipse features, in order to bring the latest improvements and fixes of JavaScript Content Assistant into JBoss Tools.
 
 * Tern.java v.1.0.0.201508302102
 * AngularJS-Eclipse v.1.0.0.201508312121
