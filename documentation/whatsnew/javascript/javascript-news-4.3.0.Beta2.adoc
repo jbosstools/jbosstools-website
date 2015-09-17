@@ -8,50 +8,50 @@
 
 == Bower support
 
-We are happy to introduce brand new http://bower.io/[Bower] Tools. Bower is a front-end package manager which works by fetching and installing frameworks, libraries, assets. Bower keeps track of these packages in a manifest file, `bower.json`  
+We are pleased to introduce the brand new http://bower.io/[Bower] Tools. Bower is a front-end package manager that fetches and installs frameworks, libraries,  and assets. Bower keeps track of these packages in a manifest file named `bower.json`.
 
-=== Pre-Requirements
+=== Prerequisites
 
-JBoss Bower Tools fall back on *native*  Node.js and Bower calls. Hence, the following software must be pre-installed:
+JBoss Bower Tools fall back on *native* Node.js and Bower calls. As a result, the following software must be installed before using Bower Tools:
 
 * Node.js
 * npm
 * Bower
 
-TIP: Installation instructions for *Node.js* and *npm* can be found https://docs.npmjs.com/getting-started/installing-node[here]. Bower is a command line utility which is installed via npm command `npm install -g bower`
+TIP: Installation instructions for *Node.js* and *npm* are available here: https://docs.npmjs.com/getting-started/installing-node[here]. Bower is a command line utility installed via the npm command `npm install -g bower`
 
 === User Manual
 
-For now only *http://bower.io/docs/api/#init[init]* and *http://bower.io/docs/api/#update[update]* commands of Bower API are supported. In order to initialize Bower one need to select *File -> New... -> Other...* and choose *Bower Init* wizard:
+With the current implementation, only the *http://bower.io/docs/api/#init[init]* and *http://bower.io/docs/api/#update[update]* commands from the Bower API are supported. Initialize Bower by selecting *File -> New... -> Other...* and choosing *Bower Init* wizard:
 
 image::images/4.3.0.Beta2/bower-init-new-wizard.png[Bower Init wizard]
 
-This wizard helps to create `bower.json` file depending on set of preferences:
- 
+This wizard creates the `bower.json` file depending on a set of preferences:
+
 image::images/4.3.0.Beta2/bower-init-wizard-page.png[Bower Init wizard page]
 
-After pressing *"Finish"* button `bower.json` will be created under specified directory:
+Click *"Finish"* to create a `bower.json` file in the specified directory:
 
 image::images/4.3.0.Beta2/bower-json-default.png[Default bower.json]
 
-In order to add new dependencies one need to specify them in `bower.json`:
+Add new dependencies by specifying them in `bower.json`:
 
 image::images/4.3.0.Beta2/bower-dependencies.png[Bower dependencies]
 
-For updating dependencies user should right-click on the `bower.json` -> *Run As...* -> *Bower Update*
+Update dependencies by right-clicking `bower.json` -> *Run As...* -> *Bower Update*.
 
-TIP: In most cases *Bower* and *Node.js* will be detected in the system automatically. However, if the detection failed warn dialog will be shown for specifying location in preferences:
+TIP: In most cases *Bower* and *Node.js* will be automatically detected. However, if the detection fails, a warning dialog box appears:
 
 image::images/4.3.0.Beta2/bower-preferences.png[Bower preferences]
 
-*"Bower Update"* launch shortcut makes a native call which will install required packages or update them to the newest version according to `bower.json`:
+The *"Bower Update"* launch shortcut makes a native call which installs the required packages or updates according to `bower.json`:
 
 image::images/4.3.0.Beta2/bower-update-launch.png[Bower Update launch]
 
-Specified packages will be created under `bower_components` folder after *"Bower Update"* execution:
+The specified packages are created in the `bower_components` folder after *"Bower Update"* execution:
 
 image::images/4.3.0.Beta2/bower-components.png[Bower components]
 
-Basically, that is all - one can now use those packages for future front-end development.
+In conclusion, users can now use these packages for future front-end development.
 
 related_jira::JBIDE-19795[]

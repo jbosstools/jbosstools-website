@@ -3,12 +3,12 @@
 :page-component_id: server
 :page-component_version: 4.3.0.Beta2
 :page-feature_jbt_only: true
-:page-product_id: jbt_core 
+:page-product_id: jbt_core
 :page-product_version: 4.3.0.Beta2
 
 
 == Exploded Jars in WEB-INF/lib
 
-In Wildfly 8.2, support was added for exploded jar deployment inside exploded wars. This has allowed our tooling to support the usecase as well. This new functionality will be very useful when creating a modular web application, with different parts implemented in separate projects. Hot deploying of resources, such as Facelets' XHTMLs, is crucial for fast development and speedy testing. 
+In Wildfly 8.2, support was added for exploded jar deployment inside exploded wars. This has allowed our tooling to support this use case as well. This new functionality will be very useful when creating a modular web application, with different parts implemented in separate projects. Hot deployment of resources such as Facelets' XHTMLs is crucial for rapid development and testing. 
 
 related_jira::JBIDE-20071[Allow deploying exploded jars to war/WEB-INF/lib]
