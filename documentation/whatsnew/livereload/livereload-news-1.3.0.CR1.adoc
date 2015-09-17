@@ -1,0 +1,22 @@
+= LiveReload What's New in 1.3.0.CR1
+:page-layout: whatsnew
+:page-component_id: livereload
+:page-component_version: 1.3.0.CR1
+:page-product_id: jbt_core
+:page-product_version: 4.3.0.CR1
+
+== General
+
+=== Quick Access to Launch LiveReload
+
+Users can now launch LiveReload from the 'Quick Access' menu, or using the
+  Ctrl+3 (or Cmd+3) keyboard shortcut.
+
+This will first display the dialog to create and start a LiveReload
+  server. Then, this will open the current element (a selected file in the
+  Project Explorer, a selected module in the Servers view or the content of the active editor)
+  in the browser, without even having to use the 'Open With>Web Browser via LiveReload Server' contextual menu.
+
+image::images/livereload_quick_access.png[Quick Access]
+
+related_jira::JBIDE-20059[]
