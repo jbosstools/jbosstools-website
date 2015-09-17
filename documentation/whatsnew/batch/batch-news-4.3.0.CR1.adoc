@@ -1,0 +1,36 @@
+= Batch Tools What's New in 4.3.0.CR1
+:page-layout: whatsnew
+:page-component_id: batch
+:page-component_version: 4.3.0.CR1
+:page-product_id: jbt_core
+:page-product_version: 4.3.0.CR1
+
+== Quick Fixes for Batch validation problems
+
+There are new Quick Fixes available for the following validation problems in Batch Job XML source editor:
+
+- "Batchlet "<batchlet-name>" is not found"
+- "Checkpoint algorithm "<checkpointalgorithm-name>" is not found"
+- "Decider "<decider-name>" is not found"
+- "Item Processor "<itemprocessor-name>" is not found"
+- "Item Reader "<itemreader-name>" is not found"
+- "Item Writer "<itemwriter-name>" is not found"
+- "Job listener "<joblistener-name>" is not found"
+- "Partition Analyzer "<partitionanalyzer-name>" is not found"
+- "Partition Collector "<partitioncollector-name>" is not found"
+- "Partition Mapper "<partitionmapper-name>" is not found"
+- "Partition Reducer "<partitionreducer-name>" is not found"
+- "Step listener "<steplistener-name>" is not found"
+
+The Quick Fixes opens a pre-set New Batch Artifact wizard to create the missing artifact:
+
+image::images/4.3.0.CR1/qf.png[]
+
+related_jira::JBIDE-19266[]
+
+== Performance improvements
+
+In this release we have fixed a critical performance issue with JBoss Knowledge Base builder for project with large JAR libraries if these JARS contain Batch artifacts.
+For example if your maven project has a dependency on glassfish-embedded-all.jar then it could take more than 5 minutes to build the project just because of this dependency. Now it takes seconds.
+
+related_jira::JBIDE-20593[]
