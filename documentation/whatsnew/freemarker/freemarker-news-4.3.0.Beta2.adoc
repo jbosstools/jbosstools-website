@@ -2,11 +2,11 @@
 :page-layout: whatsnew
 :page-component_id: freemarker
 :page-component_version: 4.3.0.Beta2
-:page-product_id: jbt_core 
-:page-product_version: 4.3.0.Beta2	
+:page-product_id: jbt_core
+:page-product_version: 4.3.0.Beta2
 
 == Include Directive Hyperlink
 
-Freemarker editor now shows hyperlink for #include directives which references a file in the same directory. #include directive with relative/absolute path and acquisition is not supported yet. 
+The Freemarker editor now displays hyperlinks for #include directives that reference a file in the same directory. #include directives with relative/absolute paths and acquisitions are not supported. 
 
 related_jira::JBIDE-19966[]

@@ -2,17 +2,17 @@
 :page-layout: whatsnew
 :page-component_id: webservices
 :page-component_version: 1.8.0.Beta1
-:page-product_id: jbt_core 
+:page-product_id: jbt_core
 :page-product_version: 4.3.0.Beta1
 
-== Content assist for methods in Websocket endpoint classes
+== Content Assist for Methods in Websocket Endpoint Classes
 
-Content assist for methods in Websocket endpoint classes is added.
+Content assist for methods in Websocket endpoint classes is now added.
 
 Websocket endpoint classes are classes annotated with javax.websocket.server.ServerEndpoint or javax.websocket.ClientEndpoint.
 They can have methods annotated with *@OnClose*, *@OnError*, *@OnMessage*, *@OnOpen*.
 
-Content assist provides options:
+Content assist provides the following options:
 
 - `onClose(Session session, CloseReason closeReason): void` - @OnClose method for WebSocket endpoint
 
@@ -26,11 +26,9 @@ Content assist provides options:
 
 - `onOpen(Session session, EndpointConfig endpointConfig): void` - @OnOpen method for WebSocket endpoint
 
-Each option may be used once only. Used options do not appear in the choice.
+Each option can only be used once. After being used once, the option does not appear in the choices.
 
-Content assist may be invoked at any position for a new class member. 
-Prefix may be used to reduce choice list. 
-For instance, if one types `onO` or `@onO` and invokes content assist, only `onOpen` choice will be suggested.
+Use Content assist from any position to add a new class member. Use prefixes to reduce the choice list. For example, if `onO` or `@onO` is typed and Content Assist is invoked, only `onOpen` choice will be suggested.
 
 image::./images/websocket_endpoint_content_assist.png[]
 
@@ -46,4 +44,3 @@ Example of inserted code:
 ----
 
 related_jira::JBIDE-19739[]
-

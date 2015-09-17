@@ -2,17 +2,17 @@
 :page-layout: whatsnew
 :page-component_id: general
 :page-component_version: 4.3.0.Beta1
-:page-product_id: jbt_core 
+:page-product_id: jbt_core
 :page-product_version: 4.3.0.Beta1
 
 
 == Java 8 requirement
 
 Java 8 is now a minimum requirement to *run* JBoss Tools.
-JBoss Tools will continue to support running servers and applications with older Java versions.
+JBoss Tools continues to support running servers and applications with older Java versions.
 
-If JBoss Tools is run on some older Java version a warning dialog will be shown:
+If JBoss Tools is run on an older Java version, a warning dialog appears:
 
-image::images/JavaVersion.png[] 
+image::images/JavaVersion.png[]
 
 related_jira::JBIDE-19500[]
