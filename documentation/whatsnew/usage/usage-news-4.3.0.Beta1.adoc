@@ -2,15 +2,15 @@
 :page-layout: whatsnew
 :page-component_id: usage
 :page-component_version: 4.3.0.Beta1
-:page-product_id: jbt_core 
+:page-product_id: jbt_core
 :page-product_version: 4.3.0.Beta1
 
-== Browser Usage 
+== Browser Usage
 
-SWT Browser name and version is now collected for usage statistics to help JBoss Tools team to learn more about configuration which our users prefer to have.
+The SWT Browser name and version is now collected for usage statistics to help the JBoss Tools team to learn more about preferred user configurations.
 
-All information which is going to be collected is reflected in Preferences > JBoss Tools > Usage Reporting for you to review.
+All collected information is reflected in `Preferences > JBoss Tools > Usage Reporting` for the user's review.
 
-As always JBoss Tools will not send any information before a user have opted in, nor is there any personal information sent.
+As always, JBoss Tools does not send any information unless a user has opted into this option, nor is there ever any personal information sent.
 
 related_jira::JBIDE-19899[]

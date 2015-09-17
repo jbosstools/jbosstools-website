@@ -2,14 +2,14 @@
 :page-layout: whatsnew
 :page-component_id: arquillian
 :page-component_version: 4.3.0.Alpha1
-:page-product_id: jbt_core 
+:page-product_id: jbt_core
 :page-product_version: 4.3.0.Alpha1
 
-== Better support for ShrinkWrap API in Generate Deployment
+== Better support for the ShrinkWrap API in Generate Deployment
 
 image::images/GenerateDeployment.png[]
 
-Dependent classes for the same package are added with addClasses(...) instead of using addClass on all individually.
+Dependent classes for the same package are added with addClasses(...) instead of using addClass on each individual package.
 
 related_jira::JBIDE-18270[]
 
@@ -25,16 +25,15 @@ related_jira::JBIDE-16385[]
 
 image::images/FileLocationValidation.png[]
 
-Arquillian warns that known EE descriptor files are in a wrong location
+Arquillian warns that known EE descriptor files are not in the correct location.
 
 related_jira::JBIDE-14782[]
 
 == Maven configurator for arquillian
 
-Now, Arquillian includes a Maven configurator that configures arquillian capabilities if a project includes arquillian classes.
+Arquillian now includes a Maven configurator that configures Arquillian capabilities if a project includes Arquillian classes.
 The configurator is disabled by default.
 
 image::images/ArquillianConfigurator.png[]
 
 related_jira::JBIDE-14427[]
- 

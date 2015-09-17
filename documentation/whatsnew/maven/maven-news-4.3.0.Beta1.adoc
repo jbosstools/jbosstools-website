@@ -2,15 +2,14 @@
 :page-layout: whatsnew
 :page-component_id: maven
 :page-component_version: 4.3.0.Beta1
-:page-product_id: jbt_core 
+:page-product_id: jbt_core
 :page-product_version: 4.3.0.Beta1
 
 == JBoss Maven Integration
-=== new Bintray JCenter profile 	
+=== new Bintray JCenter profile
 
-https://bintray.com/bintray/jcenter[Bintray JCenter] is an alternative (and superset) to the Maven Central repository. From JBoss Tools/Developer Studio, you can now easily add it in a profile of your Maven settings.xml. Go to `Preferences > JBoss Tools > Maven Integration > Configure Maven Repositories...`, click on the `Add Repository...` button and select the `bintray` profile :
+https://bintray.com/bintray/jcenter[Bintray JCenter] is an alternative (and superset) to the Maven Central repository. From JBoss Tools/Developer Studio, you can now easily add it in a profile of your Maven settings.xml file. Go to `Preferences > JBoss Tools > Maven Integration > Configure Maven Repositories...`, click on the `Add Repository...` button and select the `bintray` profile :
 
 image::./images/bintray-repo.png[]
 
 related_jira::JBIDE-19816[]
-

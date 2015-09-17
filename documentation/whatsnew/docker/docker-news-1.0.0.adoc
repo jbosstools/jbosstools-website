@@ -6,9 +6,9 @@
 :page-product_version: 4.3.0.Beta1
 
 Tooling for Docker is available in Eclipse Mars under the http://eclipse.org/linuxtools[Linux tools]
-umbrella but despite this name, it works on all major developer platforms. It
+umbrella. Despite this name, this works on all major developer platforms. It
 is mirrored on http://tools.jboss.org/downloads/jbosstools/mars/4.3.0.Beta1.html[JBoss Tools update site]
-and included in Developer Studio 9.0.0.Beta1, too.
+and is also included in Developer Studio 9.0.0.Beta1.
 
 == Connection Wizard
 
@@ -26,41 +26,41 @@ image::./images/docker_explorer_view.png[Docker Explorer View]
 
 == Containers View
 
-The new "Containers" view shows the same info as a user would get using the
-`docker ps` or `docker ps -a` commands in his terminal.
+The new "Containers" view displays the same information that appears when using the
+`docker ps` or `docker ps -a` commands in a terminal.
 
 image::./images/docker_containers_view.png[Containers View]
 
 == Images View
 
-The new "Images" view shows the same info as a user would get using the `docker images` command  in his terminal.
+The new "Images" view displays the same information that appears when using the `docker images` command in a terminal.
 
 image::./images/docker_images_view.png[Images View]
 
 == "Run Image" wizard
 
-The new "Run Image" wizard lets users run an Image by passing the arguments that we think are the most relevant in the context of a developer machine:
+The new "Run Image" wizard lets users run an image by passing the most relevant arguments in the context of a developer machine:
 
 - the name of the container (although this is optional)
-- the exposed ports (the table is prefilled with port numbers retrieved from the selected Image info)
+- the exposed ports (the table is prepopulated with port numbers retrieved from the selected Image information)
 - the links to containers
 - the data volume
 - the environment variables
 
 image::./images/docker_run_image.png[Run Image Wizard]
 
-The wizard also lets user search and pull an image from the Docker Registry
+The wizard also lets users search and pull images from the Docker Registry.
 
 image::./images/docker_search.png[Search Images Wizard]
 
 == Properties view
 
-The Properties view responds to the selection on an Image or a Container in the aforementioned views to display general and detailled information
+The `Properties` view responds to the selection on an Image or a Container in the aforementioned views to display general and detailed information.
 
 image::./images/properties_view.png[Properties View]
 
 == Other commands
 
-Pull, push, display logs, commit and tag commands are also available from contextual menus and view toolbars
+The pull, push, display logs, commit, and tag commands are also available from contextual menus and view toolbars.
 
 image::./images/docker_pull_image.png[Pull Image wizard]

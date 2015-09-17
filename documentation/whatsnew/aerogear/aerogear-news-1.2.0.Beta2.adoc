@@ -8,7 +8,7 @@
 == Create FeedHenry Cordova Application
 
 A new wizard allows you to convert a hybrid mobile project to a FeedHenry
-application. The wizard creates a client application on the FeedHenry cloud,
+application. The wizard creates a client application on the FeedHenry cloud and
 configures the git repository for the project.
 
 image::./images/1.2.0.Beta2/NewApplicationWiz.png[]
