@@ -8,16 +8,16 @@
 == OpenShift 3 integration available from JBoss Central
 We've made great progress in the OpenShift 3 Eclipse Tooling,
 but a few features are still missing, like deploying an existing workspace project,
-or editing existing build configurations. And we have some ideas to provide an even better
+or editing existing build configurations; and we have some ideas to provide an even better
 OpenShift Explorer user experience.
 
-So we decided to provide the OpenShift 3 tooling as a TechPreview feature,
+OpenShift 3 tooling is provided as a TechPreview feature,
 available from the JBoss Central Software/Updates page.
-Once we're fully satisfied with the quality of its feature set, OpenShift 3 tooling will mature to a Supported feature,
+Once we're fully satisfied with the quality of its feature set, OpenShift 3 tooling will mature to a Supported feature
  in the upcoming months, and will then be installed by default in JBDS.
 
 == Improvements in New Connection Wizard
-Because OpenShift 3 concepts and behavior are a quite different from OpenShift 2,
+Because OpenShift 3 concepts and behavior are quite different from OpenShift 2,
 we thought it would be a good idea to display a link to the online documentation from the connection wizard for OpenShift 3.
 Hopefully that should help you get started with OpenShift 3 in Eclipse.
 
@@ -26,15 +26,15 @@ image::./images/openshift3-getting-started.png[width="500"]
 == Improvements in New Application Wizard
 The New OpenShift 3 application wizard received a whole lot of enhancements in this release:
 
-* template presentation is now less cluttered, templates are ordered alphabetically,
-* templates can be selected by double-click,
-* a detail panel is shown for selected template parameters,
-* template parameters can be edited by double-click,
-* required template properties are enforced,
-* a new resource name collision detection now prevents the creation of incomplete applications,
-* a summary of all generated application parameters is shown, with a copy-to-clipboard button,
-* Webhook build triggers are now directly accessible, once the application has been created,
-* application code is automatically imported in the workspace, after the application is created,
+* template presentation is now less cluttered, templates are ordered alphabetically
+* templates can be selected by double-click
+* a detail panel is shown for selected template parameters
+* template parameters can be edited by double-click
+* required template properties are enforced
+* a new resource name collision detection now prevents the creation of incomplete applications
+* a summary of all generated application parameters is shown, with a copy-to-clipboard button
+* Webhook build triggers are now directly accessible, once the application has been created
+* application code is automatically imported in the workspace, after the application is created
 
 image::./images/new_v3_application.png[width="600"]
 
