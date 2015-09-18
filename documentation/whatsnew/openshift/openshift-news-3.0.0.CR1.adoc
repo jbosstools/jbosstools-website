@@ -74,6 +74,22 @@ image::./images/stream-logs.gif[]
 
 related_jira::JBIDE-20099[]
 
-
 == Integration with Docker tooling
-TODO Jeff
+The OpenShift 3 Eclipse Tooling now provides some integration with the Docker tooling with improvements coming soon..  Docker images can be deployed to the OpenShift
+cluster with an initial set of OpenShift resources.  The `Deploy Image` wizard can be initiated from either the OpenShift or Docker
+explorer views.  The wizard allows you to:
+
+* Choose an OpenShift project
+* Manually provide a Docker image URI from a local connection
+* Override Environment Variables
+* Expose image ports
+* Create a public route
+* Attach custom OpenShift labels to the generated OpenShift resources
+
+image::./images/deploy_image_menu.png[width="600"]
+image::./images/deploy_image.png[width="600"]
+image::./images/deploy_image_config.png[width="600"]
+image::./images/deploy_image_routing.png[width="600"]
+image::./images/deploy_image_labels.png[width="600"]
+
+related_jira::JBIDE-19010,JBIDE-20402[]
