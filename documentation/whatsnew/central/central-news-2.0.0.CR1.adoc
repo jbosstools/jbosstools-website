@@ -1,0 +1,12 @@
+= JBoss Central What's New in 2.0.0.CR1
+:page-layout: whatsnew
+:page-component_id: central
+:page-component_version: 2.0.0.CR1
+:page-product_id: jbt_core
+:page-product_version: 4.3.0.CR1
+
+== Not installable "promotional" entries on Software/Update page
+
+Some entries in the Software/Update page will now be shown only for information purpose. Those aren't software you can install immediatly into JBoss Tools, but they may represent software that is still being prepared and available soon.
+
+related_jira::JBIDE-20100[]
