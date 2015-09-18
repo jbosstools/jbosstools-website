@@ -45,7 +45,7 @@ The full range of servers are supported, allowing you to maintain old applicatio
 [cols="3,1" options="header", width="50%"]
 |===
 | Name | Versions
-| JBoss Enterprise Application Server | 4,5,6
+| JBoss Enterprise Application Server | 4,5,6,7
 | JBoss SOA Platform | 5
 | JBoss Portal Platform | 4,5,6
 |===
@@ -54,8 +54,8 @@ The full range of servers are supported, allowing you to maintain old applicatio
 [cols="3,1" options="header", width="50%"]
 |===
 | Name | Versions
-| JBoss AS | 3,4,5,6
-| WildFly | 8
+| JBoss AS | 3,4,5,6,7
+| WildFly | 8,9,10
 |===
 
 == Launching
