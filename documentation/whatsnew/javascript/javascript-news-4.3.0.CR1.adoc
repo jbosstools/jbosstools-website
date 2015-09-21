@@ -8,7 +8,7 @@
 
 == JavaScript Editing improvements
 
-JBoss Tools and JBoss Developer Studio's Target Platforms have been updated with the latest Tern.java and AngularJS-Eclipse features, in order to bring the latest improvements and fixes of JavaScript Content Assistant into JBoss Tools.
+JBoss Tools and JBoss Developer Studio's Target Platforms have been updated with the latest Tern.java and AngularJS-Eclipse features to bring the latest improvements and fixes of JavaScript Content Assistant into JBoss Tools.
 
 * Tern.java v.1.0.0.201508302102
 * AngularJS-Eclipse v.1.0.0.201508312121
@@ -24,9 +24,9 @@ related_jira::JBIDE-20545[]
 
 == JavaScript Development Tools improvements
 
-JSDT now provides an option to turn off internal parsing and validation, which could be useful for users working with big projects, where JavaScript is not the main part of development, by reducing the memory/performance requirements. Also the option could be useful when JSDT is used with 3rd-party tools which provide Content Assisting and Validation for JavaScript.
+JSDT now includes an option to turn off internal parsing and validation, which is useful for users working with big projects where JavaScript is not the main part of development by reducing the memory/performance requirements. This option is also useful when JSDT is used with third-party tools which provide Content Assisting and Validation for JavaScript.
 
-For such projects the "External Builder/Validator" mode can be selected for ECMAScript compliance level preference, on Window->Preferences->JavaScript->Validator preference page:
+For such projects the "External Builder/Validator" mode can be selected for ECMAScript compliance level preference on the `Window->Preferences->JavaScript->Validator preference` page:
 
 image::images/4.3.0.CR1/jsdt-external-builder-validator.png[External Builder/Validator]
 

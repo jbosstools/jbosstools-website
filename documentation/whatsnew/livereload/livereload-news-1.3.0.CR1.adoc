@@ -12,10 +12,9 @@
 Users can now launch LiveReload from the 'Quick Access' menu, or using the
   Ctrl+3 (or Cmd+3) keyboard shortcut.
 
-This will first display the dialog to create and start a LiveReload
-  server. Then, this will open the current element (a selected file in the
+This displays the dialog to create and start a LiveReload server and then it opens the current element (a selected file in the
   Project Explorer, a selected module in the Servers view or the content of the active editor)
-  in the browser, without even having to use the 'Open With>Web Browser via LiveReload Server' contextual menu.
+  in the browser, without using the 'Open With>Web Browser via LiveReload Server' contextual menu.
 
 image::images/livereload_quick_access.png[Quick Access]
 

@@ -7,7 +7,7 @@
 
 == Offline Support for Examples in JBoss Central
 
-As mentioned in link:4.3.0.Beta1.html#central[the JBoss Central section], you now have access to more than 200 project
+As mentioned in link:4.3.0.Beta1.html#central[the JBoss Central section], you now have access to over 200 project
  examples from the JBoss Central page. All these examples and their dependencies can now be cached locally via the
  Groovy Offline script, available from `Preferences` > `JBoss Tools` > `Project Examples` > `Offline Support`.
 

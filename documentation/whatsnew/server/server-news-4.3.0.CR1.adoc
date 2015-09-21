@@ -7,15 +7,13 @@
 :page-product_version: 4.3.0.CR1
 
 
-== WildFly 10, and EAP 7 Server Adapters have been added!
+== WildFly 10, and EAP 7 Server Adapters are Added
 
-While there's not much to really go into here, new server adapters for JBoss EAP 7 and WildFly 10 have been added to the toolset, allowing you to enjoy all the past benefits, but with all the newest runtimes. 
+Minor improvements include the inclusion of new server adapters for JBoss EAP 7 and WildFly 10 to the toolset, allowing you to enjoy all the past benefits, but with all the newest runtimes.
 
 related_jira::JBIDE-19964[WildFly 10 Server Adapter]
 related_jira::JBIDE-20481[EAP 7.0 Server Adapter]
 
+== Support for Java 9 Jigsaw builds in WildFly 10
 
-== Support for Java 9 jigsaw builds in WildFly 10
-
-After a few small tweaks, we've now verified that WildFly can be run on the newest builds of Java 9 with Jigsaw. This support is only built into our WildFly 10 adapters by default, but users of earlier application servers can remove the `-jaxpmodule javax.xml.jaxp-provider` portion of the launch arguments to get the same support. 
-
+We have now verified that WildFly can be run on the newest builds of Java 9 with Jigsaw. This support is only built into our WildFly 10 adapters by default, but users of earlier application servers can remove the `-jaxpmodule javax.xml.jaxp-provider` portion of the launch arguments to get the same support.

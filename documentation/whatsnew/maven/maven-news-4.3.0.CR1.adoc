@@ -13,6 +13,6 @@ official `Red Hat GA` (GA: General Availability) repository, for released Red Ha
 
 image::./images/red_hat_maven_ga_repository.png[]
 
-It is recommended you replace the old `TechPreview All` repository with the new `GA` one, in your Maven settings.xml.
+It is recommended you replace the old `TechPreview All` repository with the new `GA` one, in your Maven settings.xml file.
 
 related_jira::JBIDE-20192[]

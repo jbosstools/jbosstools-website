@@ -7,14 +7,14 @@
 
 == Improved Docker Explorer View
 
-We've added icon decorators on the containers to show their state. This makes it
-clearer if a container is running, paused or stopped.
+We have added icon decorators on the containers to show their state. This makes it
+clearer whether a container is running, paused, or stopped.
 
 image::images/docker_mars1/docker_explorer_view.png[Improved Docker Explorer View]
 
 == New Dialog to Search and Pull Images
 
-We've worked on the workflow to pull and search images from Docker Hub.
+We have worked on the workflow to pull and search images from Docker Hub.
  The updated `Pull Image` wizard can be launched from the `Docker Images` view
  or from the `Docker Explorer` view (a new context menu entry is available on the
 connection node and on the `Images` node)
@@ -22,24 +22,24 @@ connection node and on the `Images` node)
 image::images/docker_mars1/docker_pull_image_wizard.png[Pull Image Wizard]
 
 The wizard detects the tag in the image name and if none is specified, the image tagged `latest`
-will be pulled.
+is pulled.
 
 If the user needs to search a specific image name, she can click on the `Search...` button
 which will open the `Search` wizard:
 
 image::images/docker_mars1/docker_search_image_wizard1.png[Search Image Wizard]
 
-followed by a second page that displays all the tags for the selected image:
+This is followed by a second page that displays all the tags for the selected image:
 
 image::images/docker_mars1/docker_search_image_wizard2.png[Search Image Tags Wizard]
 
-Even though this wizard can only search from Docker Hub, users can nonetheless pull images
-from other third-party registries. In that case, image name needs to be prefixed with the
-registry host and port, such as `192.168.59.103:5000/centos:7`.
+Even though this wizard can only search from Docker Hub, users can still pull images
+from other third-party registries. Whend oing tihs, the image name must contain a prefix with the
+registry host and port, for example `192.168.59.103:5000/centos:7`.
 
 == New Launcher to Build a Docker Image
 
-Finally, we`ve also added a new launcher to build images from a Dockerfile.
+We have also added a new launcher to build images from a Dockerfile.
 
 image::images/docker_mars1/docker_image_build_launcher.png[Build Image Launcher]
 
@@ -49,8 +49,8 @@ be built.
 
 == Improved Connection Wizard
 
-The connection wizard did not change on the surface but it was almost fully
- rewritten inside to better validate the input settings. The wizard now
- requires a unique name ot identify the connection and checks the required 
+The interface for the connection wizard has not changed, but at the back end,
+ it has been rewritten to better validate the input settings. The wizard now
+ requires a unique name to identify the connection and checks the required
  permissions on the Unix socket and on the path to the certificates for TCP
- connections.  
+ connections.

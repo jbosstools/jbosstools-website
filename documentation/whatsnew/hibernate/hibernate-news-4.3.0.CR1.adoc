@@ -2,16 +2,16 @@
 :page-layout: whatsnew
 :page-component_id: hibernate
 :page-component_version: 5.0.0.CR1
-:page-product_id: jbt_core 
+:page-product_id: jbt_core
 :page-product_version: 4.3.0.CR1
 
-== Hibernate Runtime Version Updates	
+== Hibernate Runtime Version Updates
 
-A number of new core Hibernate Tools releases have been published:
+The following new core Hibernate Tools releases have been published:
 
-* 3.5.1.Final: This version was build using the 3.5.6.Final version of Hibernate ORM. 
-* 3.6.0.Final: This version was build using the 3.6.10.Final version of Hibernate ORM. 
+* 3.5.1.Final: This version was build using the 3.5.6.Final version of Hibernate ORM.
+* 3.6.0.Final: This version was build using the 3.6.10.Final version of Hibernate ORM.
 * 4.0.0.Final: This version was build using the 4.0.1.Final version of Hibernate ORM.
 * 4.3.1.Final: This version was build using the 4.3.10.Final version of Hibernate ORM.
 
-These 4 new releases with their specific Hibernate ORM dependencies have been included in the corresponding Hibernate runtime provider plugins for this 4.3.0.CR1 release of JBoss Tools.
+These four new releases with their specific Hibernate ORM dependencies have been included in the corresponding Hibernate runtime provider plugins in the 4.3.0.CR1 release of JBoss Tools.
