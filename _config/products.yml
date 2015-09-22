@@ -60,13 +60,38 @@ devstudio:
   url_path_fragment: devstudio
   streams:
     mars:
-      9.0.0.Beta2:
+      9.0.0.CR1:
         update_site_url: https://devstudio.redhat.com/9.0/development/
         marketplace_url: https://marketplace.eclipse.org/node/1616973
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
-        release_date: 2015-07-29
+        release_date: 2015-09-23
         # no supported IS version at this time
         #supported_devstudio_is_version: 9.0.0.Alpha1
+        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        blog_announcement_url: /blog/cr1-for-mars.html
+        installers:
+          - name: Stand-alone Installer
+            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/a1/a114f54eacba4c18c2776963d8f30782ac391f2ee7e35ebf1389d52ba1d7d0fd/jboss-devstudio-9.0.0.CR1-installer-standalone.jar
+            file_size: 490MB
+          - name: Installer With EAP 6.4.0
+            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/56/5692ebc72c60bd49e7c25262bedd3fc3c7579516a52e42d86765ac635d53de89/jboss-devstudio-9.0.0.CR1-installer-eap.jar
+            file_size: 635MB
+        zips:
+          - name: Update site (including sources) bundle of JBoss Developer Studio
+            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/60/60aa02300082284a3fa3c8978d6f7a050fce8b736a7bff038af1ca45ee5db53a/jboss-devstudio-9.0.0.CR1-updatesite-core.zip
+            file_size: 515MB
+          - name: Target Platform for JBoss Developer Studio
+            url: https://devstudio.redhat.com/9.0/development/updates/core/jboss-devstudio-9.0.0.CR1-target-platform.zip
+            file_size: 462MB
+          - name: JBoss Central Zip
+            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/90/90442d1753da7b220011ec99badf5e2551d126d1b2b74bbcf2f0d2c5c41baabb/jboss-devstudio-9.0.0.CR1-updatesite-central.zip
+            file_size: 155MB
+          - name: Sources Zip
+            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/f4/f49eb288824a1f972aeaf020f909d8b3854b6819bcb20a220c662258a828436a/jboss-devstudio-9.0.0.CR1-src.zip
+            file_size: 223MB
+      9.0.0.Beta2:
+        release_date: 2015-07-29
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         blog_announcement_url: /blog/beta2-for-mars.html
@@ -92,8 +117,6 @@ devstudio:
             url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/2a/2a4be9db02604a2ccc471005fee6aa86c20d9c697b6d304fdb7d2bae68bb4970/jboss-devstudio-9.0.0.Beta2-src.zip
       9.0.0.Beta1:
         release_date: 2015-06-22
-        # no supported IS version at this time
-        #supported_devstudio_is_version: 9.0.0.Alpha0
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         blog_announcement_url: /blog/2015-06-22-beta1-for-mars.html
