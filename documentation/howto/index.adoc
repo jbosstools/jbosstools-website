@@ -43,6 +43,14 @@ link:openshift_debug.html[Debug an OpenShift Online Java App]
 
 link:openshift_configssh.html[Configure SSH Keys for OpenShift Online]
 
+== Developing Apps for the Cloud (OpenShift 3)
+
+link:OS3_Evaluate.html[Evaluate the OpenShift 3 Tooling with the IDE]
+
+link:os3_firstapp.html[Create and Build OpenShift 3 Apps with the IDE]
+
+link:OS3_Remote.html[Set up and Remotely Monitor an OpenShift Database Server]
+
 == Using the IDE Perspectives
 
 link:using_git.html[Using the Git Perspective]
