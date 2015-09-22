@@ -29,7 +29,7 @@ link:hmt_firstapp.html[Create Your First Hybrid Mobile App]
 
 link:import_fh_app.html[Import Your FeedHenry App]
 
-== Developing Apps for the Cloud (OpenShift v2.x)
+== Developing Apps for the Cloud (OpenShift 2)
 
 link:openshift_firstapp.html[Create Your First OpenShift Online App]
 
@@ -42,10 +42,6 @@ link:openshift_deployproj.html[Deploy a Workspace Project to OpenShift Online]
 link:openshift_debug.html[Debug an OpenShift Online Java App]
 
 link:openshift_configssh.html[Configure SSH Keys for OpenShift Online]
-
-== Developing Apps for the Cloud (OpenShift v3.x)
-
-link:os3_firstapp.html[Create Your First OpenShift v3 Application]
 
 == Using the IDE Perspectives
 

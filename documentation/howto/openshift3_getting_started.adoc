@@ -5,5 +5,10 @@
 
 :imagesdir: ./images
 
-[NOTE]
-Documentation in progress.
+This section contains articles describing the OpenShift 3 tooling in JBoss Tools and Developer Studio with a focus on how to do specific tasks.
+
+link:OS3_Evaluate.html[Evaluate the OpenShift 3 Tooling with the IDE]
+
+link:os3_firstapp.html[Create and Build OpenShift 3 Apps with the IDE]
+
+link:OS3_Remote.html[Set up and Remotely Monitor an OpenShift Database Server]

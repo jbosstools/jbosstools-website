@@ -1,0 +1,54 @@
+= Evaluate OpenShift 3 with the IDE
+:page-layout: howto
+:page-tab: docs
+:page-status: green
+:experimental:
+:imagesdir: ./images
+:toc:
+
+The fastest way to evaluate using Red Hat JBoss Developer Studio 9 with OpenShift 3 is to create a connection in JBoss Developer Studio to an existing OpenShift 3 instance. **OpenShift 3 tooling is not installed by default in JBoss Developer Studio but is instead available as a Technology Preview feature.**
+
+[add_osv3]
+== Add the OpenShift 3 Tooling to the IDE
+The IDE does not include OpenShift 3 by default. OpenShift 2 is available and supported, but OpenShift 3 is a Technology Preview and must be installed as follows:
+
+1. Navigate to the `JBoss Central` view and click the **Software/Update** tab.
+2. In the `Find` field, type *OpenShift*.
+3. Click the checkbox next to `JBoss OpenShift 3 Tools` and click **Install/Update (1)**.
+4. In the `Install` dialog box, ensure that the checkboxes for **JBoss OpenShift 3 Tools** and **JBoss Tools EGit Integration** are selected and click **Next** and then **Next** again to confirm.
+5. Read the license text and select the relevant radio button to indicate agreement and click **Finish**.
+6. Read the security warning and click **OK** to proceed.
+7. Click **Yes** when prompted to restart the IDE for the changes to take effect.
+
+**Result:** OpenShift 3 Tooling is now installed in the IDE.
+
+== Connect to an Existing OpenShift 3 Instance
+
+==== Prerequisites
+
+1. Add Openshift 3 Tools to the IDE. See <<add_osv3,Add the OpenShift 3 Tooling to the IDE>> for instructions.
+2. A working instance of OpenShift 3.
+
+==== Connect to an OpenShift 3 Instance
+
+1. Click the `OpenShift Explorer` tab to view available connections.
+2. Create a new connection by clicking the **New Connection Wizard** link.
++
+.Create a New Connection
+image::OSEval_new_connection.png[Create a New Connection]
++
+3. In the `Sign in to OpenShift` dialogue box:
+  a. Ensure that **<New Connection>** is selected from the `Connection` drop down menu.
+  b. Set the `Server type` field to **OpenShift 3**.
+  c. Ensure that the `Use default Server` checkbox is not selected and add the server address and port to the `Server` field.
+  d. Depending on the authentication used by your OpenShift 3 instance, select either **Basic** or **OAuth** from the Protocol drop down menu and enter the user credentials.
+  e. Click **Finish** to conclude creating a new connection.
++
+.Sign in to OpenShift
+image::OSEval_sign_in_to_server.png[Sign in to OpenShift]
++
+4. A window appears with authentication details.
+  a. Ensure that the checkbox to remember your settings for future eclipse sessions is checked.
+  b.  Click **OK** to acknowledge this information and complete the configuration process.
+
+**Result:** The newly configured connection displays in the `OpenShift Explorer` tab.
