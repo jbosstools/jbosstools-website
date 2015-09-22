@@ -543,14 +543,33 @@ jbt_core:
   url_path_fragment: jbosstools
   streams:
     mars:
-      4.3.0.Beta2:
+      4.3.0.CR1:
         update_site_url: http://download.jboss.org/jbosstools/mars/development/updates/
         marketplace_url: https://marketplace.eclipse.org/node/1617241
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1617241
         #archived: true
-        release_date: 2015-07-28
+        release_date: 2015-09-22
         # no supported IS version at this time
-        #supported_jbt_is_version: 4.3.0.Alpha1
+        #supported_jbt_is_version: 4.3.0.Alpha2
+        blog_announcement_url: /blog/cr1-for-mars.html
+        documentation_url: http://docs.jboss.org/tools/
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 389MB
+            url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.0.CR1-updatesite-core.zip
+            md5_url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.0.CR1-updatesite-core.zip.sha256
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 389MB
+            url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.0.CR1-src.zip
+            md5_url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.0.CR1-src.zip.sha256
+          - name: Stand-alone BrowserSim
+            file_size: 16MB
+            url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.0.CR1-browsersim-standalone.zip
+            md5_url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.0.CR1-browsersim-standalone.zip.sha256
+          - name: Release Notes
+            url: http://tools.jboss.org/documentation/whatsnew/index.html
+      4.3.0.Beta2:
+        release_date: 2015-07-28
         blog_announcement_url: /blog/beta2-for-mars.html
         documentation_url: http://docs.jboss.org/tools/
         # as of Beta2, publish to dl.jb.org instead of Sourceforge
