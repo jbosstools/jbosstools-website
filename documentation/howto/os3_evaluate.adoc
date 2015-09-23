@@ -35,7 +35,7 @@ The IDE does not include OpenShift 3 by default. OpenShift 2 is available and su
 2. Create a new connection by clicking the **New Connection Wizard** link.
 +
 .Create a New Connection
-image::OSEval_new_connection.png[Create a New Connection]
+image::oseval_new_connection.png[Create a New Connection]
 +
 3. In the `Sign in to OpenShift` dialogue box:
   a. Ensure that **<New Connection>** is selected from the `Connection` drop down menu.
@@ -45,7 +45,7 @@ image::OSEval_new_connection.png[Create a New Connection]
   e. Click **Finish** to conclude creating a new connection.
 +
 .Sign in to OpenShift
-image::OSEval_sign_in_to_server.png[Sign in to OpenShift]
+image::oseval_sign_in_to_server.png[Sign in to OpenShift]
 +
 4. A window appears with authentication details.
   a. Ensure that the checkbox to remember your settings for future eclipse sessions is checked.
