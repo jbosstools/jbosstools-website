@@ -5,6 +5,8 @@
 
 :imagesdir: ./images
 
+NOTE: No public instance of OpenShift 3 is currently available. You can check the https://install.openshift.com/[installlation instructions] to deploy OpenShift 3 on premise.
+
 This section contains articles describing the OpenShift 3 tooling in JBoss Tools and Developer Studio with a focus on how to do specific tasks.
 
 https://docs.openshift.com/enterprise/3.0/getting_started/overview.html[OpenShift 3 Documentation^]
