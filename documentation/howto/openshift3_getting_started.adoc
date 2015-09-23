@@ -7,6 +7,8 @@
 
 This section contains articles describing the OpenShift 3 tooling in JBoss Tools and Developer Studio with a focus on how to do specific tasks.
 
+https://github.com/jbosstools/jbosstools-website[OpenShift 3 Documentation]
+
 link:os3_evaluate.html[Evaluate the OpenShift 3 Tooling with the IDE]
 
 link:os3_firstapp.html[Create and Build OpenShift 3 Apps with the IDE]
