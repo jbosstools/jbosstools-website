@@ -45,6 +45,8 @@ link:openshift_configssh.html[Configure SSH Keys for OpenShift Online]
 
 == Developing Apps for the Cloud (OpenShift 3)
 
+https://github.com/jbosstools/jbosstools-website[OpenShift 3 Documentation]
+
 link:os3_evaluate.html[Evaluate the OpenShift 3 Tooling with the IDE]
 
 link:os3_startusing.html[Create and Build OpenShift 3 Apps with the IDE]
