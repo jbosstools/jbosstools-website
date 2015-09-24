@@ -16,3 +16,9 @@ WYSIWYG preview which is not coupled with a particular editor - one can use it w
 * Automatic refresh (enabled by default)
 * Refresh on save
 * Navigation from source to view and vice versa
+
+== Bower Tools
+=== Package manager for the Web
+image::images/features-html5-js-css3-bower.png[]
+
+Bower is a package manager for JavaScript libraries, frameworks, assets and utilities. Bower keeps track of these packages in a manifest file, `bower.json`. Bower is optimized for the front-end and now it has become available for JBoss Tools developers.
