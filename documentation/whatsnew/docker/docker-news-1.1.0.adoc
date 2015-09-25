@@ -34,7 +34,7 @@ This is followed by a second page that displays all the tags for the selected im
 image::images/docker_mars1/docker_search_image_wizard2.png[Search Image Tags Wizard]
 
 Even though this wizard can only search from Docker Hub, users can still pull images
-from other third-party registries. Whend oing tihs, the image name must contain a prefix with the
+from other third-party registries. When doing this, the image name must contain a prefix with the
 registry host and port, for example `192.168.59.103:5000/centos:7`.
 
 == New Launcher to Build a Docker Image
