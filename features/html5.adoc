@@ -22,3 +22,15 @@ WYSIWYG preview which is not coupled with a particular editor - one can use it w
 image::images/features-html5-js-css3-bower.png[]
 
 Bower is a package manager for JavaScript libraries, frameworks, assets and utilities. Bower keeps track of these packages in a manifest file, `bower.json`. Bower is optimized for the front-end and now it has become available for JBoss Tools developers.
+
+== HTML5 Widget Palette
+=== Power of jQuery, Ionic and HTML5
+image::images/features-html5-palette.png[]
+
+HTML5 Palette has the following groups of widgets: jQuery Mobile, Ionic and HTML5. It also shows your last used and most popular widgets.
+
+== HTML5 Palette Wizards
+=== Easy coding
+image::images/features-html5-palette-wizard.png[]
+
+Wizards helps you to add widgets to your HTML page. The wizards can add JS/CSS references automatically if they are missing on the page.
