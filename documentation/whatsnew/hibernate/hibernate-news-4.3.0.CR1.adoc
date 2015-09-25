@@ -15,3 +15,12 @@ The following new core Hibernate Tools releases have been published:
 * 4.3.1.Final: This version was build using the 4.3.10.Final version of Hibernate ORM.
 
 These four new releases with their specific Hibernate ORM dependencies have been included in the corresponding Hibernate runtime provider plugins in the 4.3.0.CR1 release of JBoss Tools.
+
+== Hibernate Configuration File Wizard
+
+The wizard to create new Hibernate configuration files (*.cfg.xml) now supports multiple Hibernate versions. 
+
+image::images/4.3.0.CR1/cfg_xml_wizard.png[]
+
+A new dropdown box now allows for the selection of the desired Hibernate version.
+
