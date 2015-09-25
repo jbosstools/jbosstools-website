@@ -1,55 +1,55 @@
-= OpenShift
+= OpenShift 2
 :page-layout: features
 :page-product_id: jbt_core
-:page-feature_id: openshift
+:page-feature_id: openshift2
 :page-feature_image_url: images/openshift_icon_256px.png
 :page-feature_highlighted: true
-:page-feature_order: 2 
+:page-feature_order: 2
 :page-feature_tagline: Cloud on steroids
 
-== OpenShift
+== OpenShift 2
 === Integrated deployment to the cloud.
 image::images/features-openshift-applicationwizard-reduced.png[OpenShift Application Wizard]
 
-From developing to deploying on OpenShift, JBoss Tools provides you with a fully fledged 
-environment for your project and aligns with the standard workflows within Eclipse. 
-Using the tooling, you can create and configure your remote container, deploy your application, 
+From developing to deploying on OpenShift 2, JBoss Tools provides you with a fully fledged
+environment for your project and aligns with the standard workflows within Eclipse.
+Using the tooling, you can create and configure your remote container, deploy your application,
 stream remote logs into your local console, access your data and remotely debug the running application.
-Creating a new OpenShift Application along into a new or an existing Eclipse Project, 
-or importing an existing OpenShift Application into a new or an existing project, the Application Wizard supports all the combinations. 
+Creating a new OpenShift 2 Application along into a new or an existing Eclipse Project,
+or importing an existing OpenShift 2 Application into a new or an existing project, the Application Wizard supports all the combinations.
 
 == OpenShift Enterprise Ready!
-=== Ready to go with OpenShift Enterprise
+=== Ready to go with OpenShift Enterprise 2.0
 image::images/features-openshift-connectiondialog-reduced.png[]
 
-If you use OpenShift Enterprise on-site or in the cloud JBoss Tools can connect to it, too. 
-JBoss Tools is your IDE whether you want to work with OpenShift Enterprise, Origin or Online.
+If you use OpenShift Enterprise 2.0 on-site or in the cloud JBoss Tools can connect to it, too.
+JBoss Tools is your IDE whether you want to work with OpenShift Enterprise 2.0, Origin or Online.
 
 == OpenShift Explorer View
 === The embedded Web Console.
 image::images/features-openshift-explorerview-reduced.png[]
 
-The OpenShift Explorer View lets you connect, get access to domain and application creation, 
-set embedded cartridges and execute action such as Port-Forwarding and Tail Files   
+The OpenShift Explorer View lets you connect, get access to domain and application creation,
+set embedded cartridges and execute action such as Port-Forwarding and Tail Files
 
 == Server Adapter
 === Almost like a local server
 image::images/features-openshift-serversview-reduced.png[]
 
-The new OpenShift Server Adapter lets you publish your code changes in a single click. 
-It relies on JGit to perform the git commit and push operation in background. 
-It also gives you access to actions such as 'Tail Files' and 'Port Forwarding'.    
+The OpenShift 2 Server Adapter lets you publish your code changes in a single click.
+It relies on JGit to perform the git commit and push operation in background.
+It also gives you access to actions such as 'Tail Files' and 'Port Forwarding'.
 
 == Port-forwarding
 === Feels like home.
 image::images/features-openshift-portforwarding-reduced.png[]
 
-SSH Port-forwarding lets you bind local ports to remote ports on OpenShift using SSH tunneling. 
-You can then connect to local port for data access or application debugging.  
+SSH Port-forwarding lets you bind local ports to remote ports on OpenShift 2 using SSH tunneling.
+You can then connect to local port for data access or application debugging.
 
 == Tail Files
 === Streaming the logs.
 image::images/features-openshift-tailfiles-reduced.png[]
 
-SSH also allows the OpenShift tooling to execute remote commands such a 'tail' on log files, 
+SSH also allows the OpenShift 2 tooling to execute remote commands such a 'tail' on log files,
 which are streamed live into the Eclipse Console.
