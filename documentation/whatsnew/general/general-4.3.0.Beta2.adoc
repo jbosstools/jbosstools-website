@@ -1,0 +1,18 @@
+= General 4.3.0.Beta2 What's New
+:page-layout: whatsnew
+:page-component_id: general
+:page-component_version: 4.3.0.Beta2
+:page-product_id: jbt_core
+:page-product_version: 4.3.0.Beta2
+
+
+== Easier import of projects
+
+JBoss Tools new integrate new UI entry-points to simplify import of existing projects. This alternative mechanism scans a given folder of the filesystem to detect different kinds of existing projects (Eclipse projects, Maven projects, Cordova projects, Java EE projects, JavaScript projects...) to import and configure them at best inside ythe IDE. The difference with existing import strategies is that user isn't required *how* to import a given project, and can now focus on *what* to import and rely on the IDE to take care of how to do it. 
+
+The entry-points for this import are:
+* File > Import Projects from Folder...
+* File > Import... > General > Projects from Folder
+* File > Import... > Git > Projects from Git (auto-import)
+
+related_jira::JBDS-3285[]
