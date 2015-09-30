@@ -79,3 +79,14 @@ Docker containers are isolated processes that are based on Docker Images. Once c
 .. To view a list of all containers, click on the right-most icon in the list of icons in the view, which displays a drop-down option to view all containers. Click this option to view all available containers.
 
 **Result:** You have performed various management operations on your Docker container.
+
+== Troubleshooting
+
+Attempting to connect to a running local Docker instance as a non-root user results in errors being logged, but not displayed in the User Interface, which results in the error being non-obvious. The following workarounds are available for this problem:
+
+ - Connect to the Docker instance manually. Define a custom configuration file and specify the TCP URL displayed by the systemctl status docker service. As an example, you can use a TCP URL such as `tcp://0.0.0.0:2375` to connect to the running Docker instance instead of the default `unix:///var/run/docker.sock` configuration file.
++
+.Connect to a Docker Daemon
+image::docker_tcp_connection.png[Connect to a Docker Daemon]
++
+ - Run Eclipse as root. This solution avoids the problem but is not the recommended solution.
