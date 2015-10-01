@@ -1,0 +1,14 @@
+= Server What's New in 4.3.0.Final
+:page-layout: whatsnew
+:page-component_id: server
+:page-component_version: 4.3.0.Final
+:page-product_id: jbt_core
+:page-product_version: 4.3.0.Final
+
+== WildFly 9, 10, and EAP 7 Server Adapters are Added
+
+New server adapter and runtime types have been created for WildFly 9, 10 and JBoss EAP 7, allowing you to enjoy all the past benefits, but with all the newest runtimes.
+
+related_jira::JBIDE-18348[Initial support for WildFly 9, Application Server Distribution]
+related_jira::JBIDE-19964[WildFly 10 Server Adapter]
+related_jira::JBIDE-20481[EAP 7.0 Server Adapter]
