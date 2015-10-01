@@ -649,7 +649,6 @@ jbt_core:
         release_date: 2015-02-20
         blog_announcement_url: /blog/2015-02-23-alpha1-for-mars.html
         documentation_url: http://docs.jboss.org/tools/
-        archived: true
         zips:
           - name: Update site (including sources) bundle of all JBoss Core Tools
             file_size: 394MB
