@@ -6,6 +6,7 @@
 :page-product_version: 4.3.0.Beta1
 :experimental true
 
+ifndef::finalnn[]
 == JavaScript Editing Improvements
 
 The Target Platform is updated with the latest Tern.java and AngularJS-Eclipse to bring the latest JavaScript Content Assistant improvements and fixes into JBoss Tools.
@@ -21,3 +22,4 @@ Review information about the note and noteworthy features here:
 Note: These features are available via JBoss Central - Early Access as a part of *AngularJS for Web Tools*
 
 related_jira::JBIDE-19631[]
+endif::finalnn[]

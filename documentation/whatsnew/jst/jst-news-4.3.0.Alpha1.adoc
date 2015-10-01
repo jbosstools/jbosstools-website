@@ -50,6 +50,7 @@ image::images/4.3.0.Alpha1/datalistca.png[]
 
 related_jira::JBIDE-18960,JBIDE-18962[]
 
+ifndef::finalnn[]
 == Tern.java & AngularJS Eclipse 0.8.0
 
 Tern.java and AngularJS Eclipse (available via JBoss Central - Early Access) has been upgraded to the latest 0.8.0 version.
@@ -58,3 +59,4 @@ Check out its new and noteworthy:
 
 - https://github.com/angelozerr/tern.java/wiki/New-and-Noteworthy-0.8.0[Tern.java 0.8.0 New and Noteworthy]
 - https://github.com/angelozerr/angularjs-eclipse/wiki/New-and-Noteworthy-0.8.0[AngularJS Eclipse Plugin 0.8.0 New and Noteworthy]
+endif::finalnn[]
