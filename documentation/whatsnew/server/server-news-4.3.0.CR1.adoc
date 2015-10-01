@@ -2,17 +2,17 @@
 :page-layout: whatsnew
 :page-component_id: server
 :page-component_version: 4.3.0.CR1
-:page-feature_jbt_only: true
 :page-product_id: jbt_core
 :page-product_version: 4.3.0.CR1
 
-
+ifndef::finalnn[]
 == WildFly 10, and EAP 7 Server Adapters are Added
 
 Minor improvements include the inclusion of new server adapters for JBoss EAP 7 and WildFly 10 to the toolset, allowing you to enjoy all the past benefits, but with all the newest runtimes.
 
 related_jira::JBIDE-19964[WildFly 10 Server Adapter]
 related_jira::JBIDE-20481[EAP 7.0 Server Adapter]
+endif::finalnn[]
 
 == Support for Java 9 Jigsaw builds in WildFly 10
 
