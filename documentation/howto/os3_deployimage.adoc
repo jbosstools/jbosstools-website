@@ -1,0 +1,91 @@
+= Deploy a Docker Image to OpenShift 3
+:page-layout: howto
+:page-tab: docs
+:page-status: green
+:experimental:
+:imagesdir: ./images
+:toc:
+
+JBoss Tools' OpenShift 3 tooling allows users to deploy a Docker image to an OpenShift cluster from a Docker daemon.
+Deploying an image to an OpenShift cluster generates several resources to support the image which include:
+
+- ImageStream
+- Deployment Configuration
+- Service
+- Route 'Optional'
+
+Note: The following steps require:
+
+- Connection to a Docker daemon already exist
+- Connection to an OpenShift 3 cluster already exist
+- Openshift 3 project exist
+- A Docker image that explicitly exposes at least one port
+
+Users can begin the image deployment process by:
+
+- From the Docker Explorer choose a Docker image
+
+image::os3_deploy_image_menu.png[Docker Deployment Configuration]
+
+- Select an OpenShift Connection
+- Select an OpenShift project
+
+image::os3_deploy_image.png[Docker Deployment Configuration]
+
+- From the OpenShift Explorer choose an OpenShift 3 cluster
+
+image::os3_deploy_image_menu_from_ose.png[Docker Deployment Configuration from OpenShift Explorer]
+
+- Select a Docker daemon connection
+- Select an OpenShift project
+- Enter a Docker image in the format of '[<repo>/]<username>/<imagename>[:tag]'
+- Enter a unique name for the generated resources
+
+image::os3_deploy_image_from_ose.png[Docker Deployment Configuration from OpenShift Explorer]
+
+Note: The name must be unique within the scope of the OpenShift project.
+
+then:
+
+. <<deploy_config,Modify the Deployment Configuration>>
+. <<routing_and_services,Adding OpenShift routes and Exposing image ports>>
+. <<openshift_labels,Add labels>>
+
+[[deploy_config]]
+== Modify the Deployment Configuration
+The deployment config and scalability page allows a user to over-ride the environment values declared
+by the image.  The variable and their default values are presented initially.  The values can be reset
+to the value which is declared by the image.  Additionally, the exposed data volumes are presented
+along with the number of instances that are desired when the image is deployed.
+
+image::os3_deploy_image_config.png[Docker Deployment Configuration]
+
+[[routing_and_services]]
+== Adding OpenShift routes and Exposing image ports
+The created service will, by default, expose all the ports that are exposed by the docker image.  Ports
+can be removed if necessary.  A route can also be created to allow access to the image from outside
+the cluster.   
+
+image::os3_deploy_image_routing.png[Docker Deployment Configuration]
+
+[[openshift_labels]]
+== Add labels
+Labels are a key concept in OpenShift 3 which allow a user to attach metadata to their deployed resources.
+These labels can be used to query or filter their resources based on desired keys and values.
+
+image::os3_deploy_image_labels.png[Docker Deployment Configuration]
+
+
+**Result:** 
+Successfully deploying a Docker image will present you with a summary of the created resources
+and refresh the Eclipse workspace to display the new OpenShift resources.  The resulting deployment
+may take time before it is available; this might be related to the server pulling the image from
+its source location.  To verify your deployment, check the pod status, visit the public url (if a route
+was included), or retrieve the pod logs.
+
+== Did you know?
+- The name specified initially in the workflow is used to name all the OpenShift 3 resources
+- Resource names are validated before they are created
+- The labels are added to all the created resources
+- The deployment config is generated with a config and image change trigger 
+
