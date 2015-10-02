@@ -54,8 +54,16 @@ eclipse:
     download_url: http://www.eclipse.org/downloads/packages/release/europa/winter
     requirements: Java 5
 
+# -----------------------------------------------------------------------------
 # Product types
-devstudio: 
+#
+# Note:
+# no release_date attribute -> product is defined but not released yet.
+# we can prepare the N&N which will include the "Coming Soon" flag,
+# but it won't show up in the /download section.
+# -----------------------------------------------------------------------------
+
+devstudio:
   name: JBoss Developer Studio
   url_path_fragment: devstudio
   streams:
@@ -378,7 +386,7 @@ devstudio:
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/7.0/html-single/Release_Notes_7.0.1/index.html
         blog_announcement_url: https://community.jboss.org/community/tools/blog/2013/07/23/jboss-tools-41-and-developer-studio-7-go-ga
-        #broken link: 
+        #broken link:
         #download_url: https://devstudio.jboss.com/earlyaccess/7.0.1.GA.html
         zips:
           - name: Update site (including sources) bundle of JBoss Developer Studio
@@ -561,11 +569,15 @@ devstudio_is:
             url: https://devstudio.jboss.com/updates/7.0.0/jbdevstudio-integration-stack-updatesite-7.0.0.GA.zip
             md5_url: https://devstudio.jboss.com/updates/7.0.0/jbdevstudio-integration-stack-updatesite-7.0.0.GA.zip.MD5
 
-jbt_core: 
+jbt_core:
   name: JBoss Tools
   url_path_fragment: jbosstools
   streams:
     mars:
+      4.3.0.Final:
+        # no release_date attribute -> product is defined but not released yet.
+        # we can prepare the N&N which will include the "Coming Soon" flag,
+        # but it won't show up in the /download section.
       4.3.0.CR1:
         update_site_url: http://download.jboss.org/jbosstools/mars/development/updates/
         marketplace_url: https://marketplace.eclipse.org/node/1617241
@@ -668,7 +680,7 @@ jbt_core:
             md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Alpha1_2015-02-15_14-44-55-B13-browsersim-standalone.zip.MD5
           - name: Release Notes
             url: http://tools.jboss.org/documentation/whatsnew/index.html
-      4.3.0.Nightly: 
+      4.3.0.Nightly:
         update_site_url: http://download.jboss.org/jbosstools/updates/nightly/mars/
         zips:
           - name: Stand-alone BrowserSim
@@ -952,7 +964,7 @@ jbt_core:
             md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/hibernatetools-Update-4.2.0.Alpha1_2013-12-11_01-09-15-B32.zip.MD5
           - name: Release Notes
             url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/zz_Release_Notes_4.2.0.Alpha1.readme.html
-      4.2.0.Nightly: 
+      4.2.0.Nightly:
         #build_type: nightly
         # TODO when master branch moves to 4.3.0 (mars), make sure 4.2.0.Nightly points at 4.2.luna instead of master
         #update_site_url: http://download.jboss.org/jbosstools/updates/nightly/core/4.2.luna/
@@ -1034,7 +1046,7 @@ jbt_core:
           - name: Release Notes
             file_size: 27.1kB
             url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/zz_Release_Notes_4.1.1.CR1.readme.html
-      
+
       4.1.1.Beta1:
         archived: true
         zips:
@@ -1053,7 +1065,7 @@ jbt_core:
           - name: Release Notes
             file_size: 22.3kB
             url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/zz_Release_Notes_4.1.1.Beta1.readme.html
-        
+
       4.1.1.Alpha2:
         archived: true
         zips:
@@ -1072,7 +1084,7 @@ jbt_core:
           - name: Release Notes
             file_size: 11.2kB
             url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/zz_Release_Notes_4.1.1.Alpha2.readme.html
-              
+
       4.1.1.Alpha1:
         archived: true
         zips:
@@ -1091,7 +1103,7 @@ jbt_core:
           - name: Release Notes
             file_size: 16.5kB
             url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/zz_Release_Notes_4.1.1.Alpha1.readme.html
-              
+
       4.1.0.Final:
         archived: true
         release_date: 2013-07-23
@@ -1125,7 +1137,7 @@ jbt_core:
       4.1.0.CR1:
         archived: true
         renamed_as: 4.1.0.Final
-               
+
       4.1.0.Beta2:
         archived: true
         zips:
@@ -1144,7 +1156,7 @@ jbt_core:
           - name: Release Notes
             file_size: 44.6kB
             url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.0.x/zz_Release_Notes_4.1.0.Beta2.readme.html
-              
+
       4.1.0.Beta1:
         archived: true
         zips:
@@ -1163,7 +1175,7 @@ jbt_core:
           - name: Release Notes
             file_size: 53.7kB
             url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.0.x/zz_Release_Notes_4.1.0.Beta1.readme.html
-              
+
       4.1.0.Alpha2:
         archived: true
         zips:
@@ -1182,7 +1194,7 @@ jbt_core:
           - name: Release Notes
             file_size: 43.6kB
             url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.0.x/zz_Release_Notes_4.1.0.Alpha2.readme.html
-              
+
       4.1.0.Alpha1:
         archived: true
         zips:
@@ -1202,7 +1214,7 @@ jbt_core:
             file_size: 31.8kB
             url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.0.x/zz_Release_Notes_4.1.0.Alpha1.readme.html
 
-      4.1.x.Nightly:   
+      4.1.x.Nightly:
         archived: true
         documentation_url: http://docs.jboss.org/tools/
         update_site_url: http://download.jboss.org/jbosstools/updates/nightly/core/4.1.kepler/
@@ -1254,7 +1266,7 @@ jbt_core:
           - name: Release Notes
             file_size: 12kB
             url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools3.3.x/zz_Release_Notes_3.3.2.Final.readme.html
-    
+
     helios:
       3.2.2.Final:
         archived: true
@@ -1355,7 +1367,7 @@ jbt_is:
       4.2.3.Final:
         release_date: 2015-08-27
         required_jbt_core_version: 4.2.3.Final
-        update_site_url: http://download.jboss.org/jbosstools/updates/stable/luna/integration-stack/ 
+        update_site_url: http://download.jboss.org/jbosstools/updates/stable/luna/integration-stack/
         zips:
           - name: Update site bundle of JBoss Tools Integration Stack
             file_size: 302MB
@@ -1369,7 +1381,7 @@ jbt_is:
         blog_announcement_url: /blog/integration-stack-4.2.2.Final-for-luna.html
         release_date: 2015-06-23
         required_jbt_core_version: 4.2.3.Final
-        update_site_url: http://download.jboss.org/jbosstools/updates/stable/luna/integration-stack/ 
+        update_site_url: http://download.jboss.org/jbosstools/updates/stable/luna/integration-stack/
         zips:
           - name: Update site bundle of JBoss Tools Integration Stack
             file_size: 298MB
@@ -1383,7 +1395,7 @@ jbt_is:
         blog_announcement_url: /blog/2015-04-16-JBTIS-421-Final.html
         release_date: 2015-04-16
         required_jbt_core_version: 4.2.2.Final
-        update_site_url: http://download.jboss.org/jbosstools/updates/stable/luna/integration-stack/ 
+        update_site_url: http://download.jboss.org/jbosstools/updates/stable/luna/integration-stack/
         zips:
           - name: Update site bundle of JBoss Tools Integration Stack
             file_size: 116MB
@@ -1397,7 +1409,7 @@ jbt_is:
         blog_announcement_url: /blog/2015-03-11-JBTIS-420-Final.html
         release_date: 2015-03-11
         required_jbt_core_version: 4.2.2.Final
-        update_site_url: http://download.jboss.org/jbosstools/updates/stable/luna/integration-stack/ 
+        update_site_url: http://download.jboss.org/jbosstools/updates/stable/luna/integration-stack/
         zips:
           - name: Update site bundle of JBoss Tools Integration Stack
             file_size: 214MB
@@ -1408,7 +1420,7 @@ jbt_is:
         #release_notes_url: https://devstudio.jboss.com/updates/8.0/integration-stack/release-notes/Release_Notes_8.0.0.html
         release_date: 2015-01-12
         required_jbt_core_version: 4.2.1.Final
-        update_site_url: http://download.jboss.org/jbosstools/updates/development/luna/integration-stack/ 
+        update_site_url: http://download.jboss.org/jbosstools/updates/development/luna/integration-stack/
         zips:
           - name: Update site bundle of JBoss Tools Integration Stack
             file_size: 214MB
@@ -1419,7 +1431,7 @@ jbt_is:
         #release_notes_url: https://devstudio.jboss.com/updates/8.0/integration-stack/release-notes/Release_Notes_8.0.0.html
         release_date: 2014-11-12
         required_jbt_core_version: 4.2.0.Final
-        update_site_url: http://download.jboss.org/jbosstools/updates/development/luna/integration-stack/ 
+        update_site_url: http://download.jboss.org/jbosstools/updates/development/luna/integration-stack/
         zips:
           - name: Update site bundle of JBoss Tools Integration Stack
             file_size: 180MB
@@ -1444,7 +1456,7 @@ jbt_is:
         release_notes_url: https://devstudio.jboss.com/updates/7.0/integration-stack/release-notes/Release_Notes_7.0.3.html
         release_date: 2014-10-09
         required_jbt_core_version: 4.1.2.Final
-        update_site_url: http://download.jboss.org/jbosstools/updates/stable/kepler/integration-stack 
+        update_site_url: http://download.jboss.org/jbosstools/updates/stable/kepler/integration-stack
         zips:
           - name: Update site bundle of JBoss Tools Integration Stack
             file_size: 237MB
@@ -1455,7 +1467,7 @@ jbt_is:
         release_notes_url: https://devstudio.jboss.com/updates/7.0/integration-stack/release-notes/Release_Notes_7.0.2.html
         release_date: 2014-06-19
         required_jbt_core_version: 4.1.2.Final
-        update_site_url: http://download.jboss.org/jbosstools/updates/stable/kepler/integration-stack 
+        update_site_url: http://download.jboss.org/jbosstools/updates/stable/kepler/integration-stack
         zips:
           - name: Update site (including sources) bundle of JBoss Tools Integration Stack
             file_size: 236MB
@@ -1466,7 +1478,7 @@ jbt_is:
         blog_announcement_url: /blog/2014-04-14-JBTIS-4.1.4.Final.html
         release_date: 2014-04-14
         required_jbt_core_version: 4.1.2.Final
-        update_site_url: http://download.jboss.org/jbosstools/updates/stable/kepler/integration-stack 
+        update_site_url: http://download.jboss.org/jbosstools/updates/stable/kepler/integration-stack
         zips:
           - name: Update site (including sources) bundle of JBoss Tools Integration Stack
             file_size: 236MB
@@ -1484,7 +1496,7 @@ jbt_is:
             url: http://download.jboss.org/jbosstools/updates/stable/kepler/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.1.3.Final-SNAPSHOT.zip
             md5_url: http://download.jboss.org/jbosstools/updates/stable/kepler/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.1.3.Final-SNAPSHOT.zip.MD5
 
-    indigo:  
+    indigo:
       3.3.3.Final:
         archived: true
         release_date: 2013-02-19

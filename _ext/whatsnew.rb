@@ -5,10 +5,10 @@ require 'products_helper'
 module Awestruct
   module Extensions
     class Whatsnew
-      
+
       @@whatsnew_layout_path = "whatsnew_aggregated.html.haml"
       @@whatsnew_standalone_path = "whatsnew_aggregated.html.haml"
-      
+
       def initialize(source_path_prefix, target_path_prefix)
         puts "Initializing Whatsnew"
         @source_path_prefix = source_path_prefix
@@ -27,16 +27,16 @@ module Awestruct
               chunk_page = site.engine.load_page( chunk )
               data_map[ key ] = chunk_page
             end
-            whatsnew_data[data_key.to_sym] = data_map 
+            whatsnew_data[data_key.to_sym] = data_map
           end
         end
         # grouping all components' N&N pages per product id/version
         site.whatsnew_pages = Hash.new
         whatsnew_data.each do |component_id, component_pages|
-          puts " processing N&N for #{component_id}"
+          puts "Processing N&N for #{component_id}"
           # treat .adoc pages
           component_pages.select{|key, component_page| File.extname(key.to_s) == ".adoc"}.each do |key, component_page|
-            puts " processing N&N for #{component_id} in #{component_page.product_id}.#{component_page.product_version}"
+            puts "  Processing N&N for #{component_id} in #{component_page.product_id}.#{component_page.product_version}"
             if site.whatsnew_pages[component_page.product_id].nil? then
               site.whatsnew_pages[component_page.product_id] = Hash.new
             end
@@ -45,10 +45,10 @@ module Awestruct
             # now, deal with *.Final* versions if they exist in site.products
             unless Products_Helper.is_stable_version(component_page.component_version)
               product_stable_version = Products_Helper.get_stable_version(site, component_page.product_id, component_page.product_version)
-              if product_stable_version.nil? 
-                puts " Skipping aggregation for #{component_page.product_id}.#{component_page.product_version}.Final page since there's no such product yet"
-              else product_stable_version.nil? 
-                puts " adding #{component_page.product_version} to stable version of #{component_page.product_id}.#{product_stable_version}"
+              if product_stable_version.nil?
+                puts "    Skipping aggregation of #{component_page.product_id}.#{component_page.product_version} page into stable version since it does not exist yet"
+              else product_stable_version.nil?
+                puts "    Adding #{component_page.product_version} to stable version of #{component_page.product_id}.#{product_stable_version}"
                 whatsnew_final_page = get_whatsnew_page(site, component_page.product_id, product_stable_version)
                 add_component_page(whatsnew_final_page, component_page)
               end
@@ -61,12 +61,12 @@ module Awestruct
         end
         $LOG.debug "*** Done executing whatsnew extension...." if $LOG.debug?
       end
-      
-      def add_component_page(whatsnew_page, component_page)  
+
+      def add_component_page(whatsnew_page, component_page)
         if whatsnew_page.component_news[component_page.component_id].nil?
           whatsnew_page.component_news[component_page.component_id] = Array.new
         end
-        whatsnew_page.component_news[component_page.component_id] << component_page 
+        whatsnew_page.component_news[component_page.component_id] << component_page
         # set page.output_path to @target_path_prefix to have correct relative path to images in the rendered HTML puput
         if component_page.output_path.include? @source_path_prefix
           output_path = component_page.output_path
@@ -74,11 +74,11 @@ module Awestruct
           component_page.output_path = output_path
         end
       end
-      
+
       def add_extra_content(site, location)
         if ( File.directory?( location ) )
           Dir[ "#{location}/*" ].each do |chunk|
-            if File.directory?(chunk) 
+            if File.directory?(chunk)
               add_extra_content(site, chunk)
             else
               page = site.engine.load_page(chunk)
@@ -93,8 +93,8 @@ module Awestruct
 
       def get_whatsnew_page(site, product_id, product_version)
         site.whatsnew_pages[product_id] = Hash.new if site.whatsnew_pages[product_id].nil?
-        puts  "building  N&N page for #{product_id} #{product_version}"
         if site.whatsnew_pages[product_id][product_version].nil? then
+          puts "Building N&N page for #{product_id} #{product_version}"
           product_url_path_fragment = site.products[product_id].url_path_fragment
           page = create_page(site, @@whatsnew_layout_path, @target_path_prefix, product_url_path_fragment, product_version)
           page.build_info = Products_Helper.get_product_info(site, product_id, product_version)

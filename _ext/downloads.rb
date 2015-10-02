@@ -11,7 +11,7 @@ module Awestruct
       @@download_renamed_version_layout_path = "download_renamed_version.html.haml"
       @@downloads_per_product_layout_path = "downloads_per_product_summary.html.haml"
       @@downloads_per_eclipse_stream_layout_path = "downloads_per_eclipse_stream_summary.html.haml"
-      
+
       def initialize()
       end
 
@@ -24,7 +24,7 @@ module Awestruct
         @site.download_pages = Hash.new
         @site.latest_builds_download_pages = Hash.new
 
-        # generate a page for each dev/nightly/stable build per product until a version with a stable build is found 
+        # generate a page for each dev/nightly/stable build per product until a version with a stable build is found
         # (thus, skipping older product streams),
         # then 1 page for all stable builds (only) per product
         for product_id in [:devstudio, :devstudio_is, :jbt_core, :jbt_is]
@@ -42,14 +42,15 @@ module Awestruct
             # for each Eclipse versions can have many product builds, each one with build info
             eclipse_stream.each do |build_version, build_info|
               product_info = Products_Helper.get_build_info(site, product_id, build_version, eclipse_version, build_info)
-              download_page = generate_download_page(product_id, eclipse_version, 
+              download_page = generate_download_page(product_id, eclipse_version,
                     build_version.to_s, product_info)
-              
+
               # used to provide links to download .Final versions on /downloads
               # and links to latest builds per type on /download/<product_id>
-              if (!product_info.build_type.nil? && 
+              if (!product_info.build_type.nil? &&
                   (product_info.archived == false) &&
-                  (@site.latest_builds_download_pages[product_id][product_info.build_type].nil? || 
+                  (!product_info.release_date.nil?)
+                  (@site.latest_builds_download_pages[product_id][product_info.build_type].nil? ||
                     (@site.latest_builds_download_pages[product_id][product_info.build_type].build_info.version <=> download_page.build_info.version) == -1 ))
                 @site.latest_builds_download_pages[product_id][product_info.build_type] = download_page
               end
@@ -63,7 +64,7 @@ module Awestruct
             # look-up jbt_core download page
             unless required_jbt_core_version.nil?
               jbt_core_download_page = site.download_pages[:jbt_core][required_jbt_core_version]
-              if (!jbt_core_download_page.nil? && (jbt_core_download_page.build_info.supported_jbt_is_version.nil? || 
+              if (!jbt_core_download_page.nil? && (jbt_core_download_page.build_info.supported_jbt_is_version.nil? ||
                  (jbt_core_download_page.build_info.supported_jbt_is_version <=> product_version) == -1 ))
                 #puts "linking jbt_is #{product_version} to jbt_core #{required_jbt_core_version}"
                 jbt_core_download_page.build_info.supported_jbt_is_version = product_version
@@ -71,7 +72,7 @@ module Awestruct
             end
           end
         end
-        
+
         # link devstudio_core to devstudio_is using links from devstudio_is to devstudio_core, using the latest version of devstudio_is
         for product_id in [:devstudio_is]
           site.download_pages[product_id].each do |product_version, download_page|
@@ -79,7 +80,7 @@ module Awestruct
             # look-up devstudio download page
             unless required_devstudio_version.nil?
               devstudio_download_page = site.download_pages[:devstudio][required_devstudio_version]
-              if (!devstudio_download_page.nil? && (devstudio_download_page.build_info.supported_devstudio_is_version.nil? || 
+              if (!devstudio_download_page.nil? && (devstudio_download_page.build_info.supported_devstudio_is_version.nil? ||
                  (devstudio_download_page.build_info.supported_devstudio_is_version <=> product_version) == -1 ))
                 #puts "linking devstudio_is #{product_version} to devstudio #{required_devstudio_version}"
                 devstudio_download_page.build_info.supported_devstudio_is_version = product_version
@@ -87,7 +88,7 @@ module Awestruct
             end
           end
         end
-        
+
         # building download page per Eclipse streams (eg: /downloads/jbosstools/kepler)
         download_pages_per_product = Hash.new
         download_pages_per_eclipse_stream = Hash.new
@@ -96,11 +97,11 @@ module Awestruct
           download_pages_per_eclipse_stream[product_id] = Hash.new
           site.products[product_id].streams.each do |eclipse_stream, product_versions|
             download_pages_per_eclipse_stream[product_id][eclipse_stream] = Hash.new
-            product_versions.each do |product_version, product_info| 
+            product_versions.each do |product_version, product_info|
               # the real build type, not the one for the labels
-              build_info = Products_Helper.get_build_info(site, product_id, product_version, eclipse_stream, product_info) 
+              build_info = Products_Helper.get_build_info(site, product_id, product_version, eclipse_stream, product_info)
               build_type = build_info.build_type
-              if (download_pages_per_eclipse_stream[product_id][eclipse_stream][build_type].nil? || 
+              if (download_pages_per_eclipse_stream[product_id][eclipse_stream][build_type].nil? ||
                   download_pages_per_eclipse_stream[product_id][eclipse_stream][build_type].version < product_version)  then
                   #puts "  Adding build type #{product_version} as latest #{build_type} version of #{product_id} / #{eclipse_stream}"
                 download_pages_per_eclipse_stream[product_id][eclipse_stream][build_type] = build_info
@@ -116,7 +117,7 @@ module Awestruct
           for build_type in [:stable, :development, :nightly]
             summary_page.build_versions[build_type] = @site.latest_builds_download_pages[product_id][build_type]
           end
-          
+
           site.products[product_id].streams.each do |eclipse_stream, product_versions|
             #puts " Last releases for #{product_id} / #{eclipse_stream}: #{download_pages_per_eclipse_stream[product_id][eclipse_stream]}"
             summary_page = generate_download_per_eclipse_stream_page(product_id, eclipse_stream)
@@ -129,10 +130,10 @@ module Awestruct
             end
           end
         end
-        
+
         $LOG.debug "*** Done with downloads extension." if $LOG.debug?
       end
-      
+
       def generate_download_page(product_id, eclipse_version, page_path_fragment, build_info)
         page_title ||= @site.products[product_id].name + " " + build_info.version.to_s
         product_path_fragment = @site.products[product_id].url_path_fragment
@@ -147,12 +148,12 @@ module Awestruct
         download_page.build_info = build_info
         download_page.product_id = product_id
         download_page.eclipse_version = eclipse_version
-        @site.download_pages[product_id][build_info.version] = download_page 
+        @site.download_pages[product_id][build_info.version] = download_page
         @site.pages << download_page
         #puts "  generated download page at '#{download_page.output_path}' with title '#{download_page.title}'"
         download_page
       end
-      
+
       def generate_download_per_eclipse_stream_page(product_id, eclipse_stream)
         eclipse_version = @site.products.eclipse[eclipse_stream]
         page_title ||= eclipse_version.full_name
@@ -194,7 +195,7 @@ module Awestruct
         end
         return nil
       end
-      
+
       def find_layout_page(simple_path)
         path_glob = File.join( @site.config.layouts_dir, simple_path)
         candidates = Dir[ path_glob ]
@@ -204,7 +205,7 @@ module Awestruct
       end
     end
 
-    
+
   end
-  
+
 end
