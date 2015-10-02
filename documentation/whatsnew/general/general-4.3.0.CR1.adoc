@@ -5,7 +5,10 @@
 :page-product_id: jbt_core
 :page-product_version: 4.3.0.CR1
 
-
+ifndef::finalnn[]
 == General for JBoss Tools 4.3.0.CR1
-
-JBoss Tools is now targeting Eclipse Mars.1. 
+endif::finalnn[]
+ifdef::finalnn[]
+== Eclipse Compatibility
+endif::finalnn[]
+JBoss Tools is now targeting Eclipse Mars.1 as a running platform.
