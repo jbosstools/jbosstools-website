@@ -1,6 +1,8 @@
 # Components in the N&N pages appear in the same order
 # as in this file.
 
+# Keep "general" on top here to make it appear before
+# any other component in the N&N pages.
 general:
   name: General
 

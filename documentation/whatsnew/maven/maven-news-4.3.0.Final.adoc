@@ -4,7 +4,7 @@
 :page-component_version: 4.3.0.Final
 :page-product_id: jbt_core
 :page-product_version: 4.3.0.Final
-:include-previous: false
+:page-include-previous: false
 
 == Maven Repository Wizard
 === new Maven Red Hat GA repository

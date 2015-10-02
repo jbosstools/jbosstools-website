@@ -48,10 +48,10 @@ module Awestruct
       def get_build_type(site, product_id, product_version)
         if is_nightly_version(product_version)
           return :nightly
-        elsif is_stable_version(product_version)
-          return :stable
         elsif is_unreleased_version(site, product_id, product_version)
           return :unreleased
+        elsif is_stable_version(product_version)
+          return :stable
         else
           return :development
         end
