@@ -13,6 +13,6 @@ https://docs.openshift.com/enterprise/3.0/getting_started/overview.html[OpenShif
 
 link:os3_evaluate.html[Evaluate the OpenShift 3 Tooling with the IDE]
 
-link:os3_firstapp.html[Create and Build OpenShift 3 Apps with the IDE]
+link:os3_startusing.html[Create and Build OpenShift 3 Apps with the IDE]
 
 link:os3_remote.html[Set up and Remotely Monitor an OpenShift Database Server]
