@@ -5,6 +5,7 @@
 :page-product_id: jbt_core
 :page-product_version: 4.3.0.Beta1
 
+ifndef::finalnn[]
 == JBoss Maven Integration
 === new Bintray JCenter profile
 
@@ -13,3 +14,4 @@ https://bintray.com/bintray/jcenter[Bintray JCenter] is an alternative (and supe
 image::./images/bintray-repo.png[]
 
 related_jira::JBIDE-19816[]
+endif::finalnn[]
