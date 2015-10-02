@@ -2,9 +2,9 @@
 :page-layout: whatsnew
 :page-component_id: batch
 :page-component_version: 4.3.0.Final
-:page-product_id: jbt_core 
+:page-product_id: jbt_core
 :page-product_version: 4.3.0.Final
-:include-previous: false
+:page-include-previous: false
 
 == Batch Job XML Editor
 
@@ -49,7 +49,7 @@ image::images/4.3.0.Beta1/ca.png[]
 
 related_jira::JBIDE-19386[]
 
-=== Hyperlink navigation (OpenOns) 
+=== Hyperlink navigation (OpenOns)
 
 Batch artifacts can be navigated to via OpenOn. Just press Ctrl and click on <* ref="">, <* next="">, <* to="">, <* restart=""> or property name to open the corresponding source code or Job XML element.
 
@@ -102,9 +102,9 @@ image::images/4.3.0.CR1/qf.png[]
 
 related_jira::JBIDE-19266[]
 
-== Searching and Renaming Batch Artifacts 
+== Searching and Renaming Batch Artifacts
 
-Search for references (Ctrl+Shift+G) works for batch artifact classes and its property fields. For example if you have a batchlet class: 
+Search for references (Ctrl+Shift+G) works for batch artifact classes and its property fields. For example if you have a batchlet class:
 ----
 @Named
 public class SearchableBatchlet implements Batchlet {

@@ -8,14 +8,14 @@ tab: docs
 .row-fluid
   .span12.alert.alert-warning><
     %span><= "This individual N&N page is also aggregated in &nbsp;"
-    %a{:href=>aggregated_whatsnew_page.output_path}>< #{aggregated_whatsnew_page.product_version}
+    %a{:href=>aggregated_whatsnew_page.output_path}>< #{aggregated_whatsnew_page.build_info.version}
 
 .row-fluid.affixedContent
   .span3.bs-docs-sidebar
     %ul.nav.nav-list.bs-docs-sidenav
       %li{:class=>("selected expanded")}
         %a{:href=>"#"}
-          #{current_whatsnew_page.build_info.product_version}
+          #{current_whatsnew_page.build_info.version}
           - unless current_whatsnew_page.build_info.build_type_label.nil?
             %span.visible-desktop.visible-phone{:class=>"label label_#{current_whatsnew_page.build_info.build_type_label}"}
               #{site.labels[current_whatsnew_page.build_info.build_type_label]}
