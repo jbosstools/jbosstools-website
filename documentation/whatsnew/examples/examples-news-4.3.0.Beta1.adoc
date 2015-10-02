@@ -5,6 +5,7 @@
 :page-product_id: jbt_core
 :page-product_version: 4.3.0.Beta1
 
+ifndef::finalnn[]
 == New examples from developer.jboss.org
 
 As mentioned in link:4.3.0.Beta1.html#central[the JBoss Central section], the JBoss Central page now provides over 200 project examples.
@@ -14,3 +15,4 @@ by the Offline support mechanism:
 After running an example once, it will be available even if your internet connection goes down, but the groovy script in `Preferences > JBoss Tools > Project Examples > Offline Support` will not fetch and cache these new examples.
 
 These issues will be addressed in the next Beta release.
+endif::finalnn[]
