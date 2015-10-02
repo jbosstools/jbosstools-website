@@ -4,7 +4,7 @@ include ::Asciidoctor
 
 module Awestruct
   module Extensions
-    
+
     #
     # Renders a block with one or more links to JIRA issues, prefixed with "Related JIRA:" or "Related JIRAs:"
     #
@@ -18,7 +18,7 @@ module Awestruct
       named :related_jira
       parse_content_as :text
 
-      
+
       def process parent, target, attrs
         #puts "Processing JIRA extension with target #{target} and attrs #{attrs}..."
         # split the target if multipe JIRA were provided
@@ -29,11 +29,11 @@ module Awestruct
         jira_ids.each do |jira_id|
           jira_jbide_uri = jira_jbide_uri_pattern % jira_id
           if (attrs.has_key?("text") && !attrs["text"].empty?)
-            puts "Custom JIRA issue title"
+            #puts "Custom JIRA issue title"
             issue_title = attrs["text"]
-            puts " Custom issue title: #{jira_id} -> #{issue_title}"
+            #puts " Custom issue title: #{jira_id} -> #{issue_title}"
             jira_links << %(<a href="#{jira_jbide_uri}">#{jira_id.upcase} - #{issue_title}</a>)
-          else 
+          else
             jira_links << %(<a href="#{jira_jbide_uri}">#{jira_id.upcase}</a>)
           end
         end
@@ -42,9 +42,9 @@ module Awestruct
         create_pass_block parent, html, attrs, subs: nil
       end
     end
-    
+
     #
-    # Renders a link to the JIRA issue 
+    # Renders a link to the JIRA issue
     #
     # eg: jira:JBIDE-12345[]
     #
@@ -63,6 +63,6 @@ module Awestruct
         (create_anchor parent, %(#{target.upcase}), type: :link, target: jira_jbide_uri).render
       end
     end
-    
+
   end
 end

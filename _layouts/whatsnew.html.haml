@@ -7,9 +7,9 @@ tab: docs
 - current_whatsnew_page = get_current_version_whatsnew_page(site, page.product_id, page.product_version)
 .row-fluid
   .span12.alert.alert-warning><
-    %span><= "Heads Up! This is an individual N&N page that is also aggregated in &nbsp;"
+    %span><= "This individual N&N page is also aggregated in &nbsp;"
     %a{:href=>aggregated_whatsnew_page.output_path}>< #{aggregated_whatsnew_page.product_version}
-    
+
 .row-fluid.affixedContent
   .span3.bs-docs-sidebar
     %ul.nav.nav-list.bs-docs-sidenav
@@ -22,21 +22,20 @@ tab: docs
         %ul.nav.nav-nested.components
           %li.component{:class=>"active"}
             %a{:href=>"#"} #{site.components[page.component_id].name}
-    
-             
+
+
   .span9.whatsnew.scrolledContent
-    %header 
+    %header
       %h1.center What's New in #{page.product_name} #{page.product_version}
       - download_page = site.download_pages[page.product_id][page.product_version]
       - unless download_page.nil?
         .center
-          %a{:href => relative(download_page.output_path)} 
+          %a{:href => relative(download_page.output_path)}
             Download
-  
+
     - default_imagesdir = site.asciidoctor.attributes['imagesdir']
     %div.component-wrapper.well.post-bg{:id=>component_id}
       %h1.component-header #{site.components[page.component_id].name}
       - site.asciidoctor.attributes['imagesdir'] = Pathname.new(page.output_path).parent.to_s
       ~content
     - site.asciidoctor.attributes['imagesdir'] = default_imagesdir
-    

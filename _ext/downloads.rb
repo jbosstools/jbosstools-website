@@ -43,16 +43,18 @@ module Awestruct
             eclipse_stream.each do |build_version, build_info|
               product_info = Products_Helper.get_build_info(site, product_id, build_version, eclipse_version, build_info)
               download_page = generate_download_page(product_id, eclipse_version,
-                    build_version.to_s, product_info) unless (product_info.nil? || product_info.release_date.nil?)
+                    build_version.to_s, product_info) unless
+                      (product_info.nil? || (product_info.release_date.nil? && product_info.build_type != :nightly))
 
               # used to provide links to download .Final versions on /downloads
               # and links to latest builds per type on /download/<product_id>
               if (!product_info.build_type.nil? &&
                   (product_info.archived == false) &&
-                  (!product_info.release_date.nil?)
+                  (!product_info.release_date.nil?) &&
                   (@site.latest_builds_download_pages[product_id][product_info.build_type].nil? ||
                     (@site.latest_builds_download_pages[product_id][product_info.build_type].build_info.version <=> download_page.build_info.version) == -1 ))
                 @site.latest_builds_download_pages[product_id][product_info.build_type] = download_page
+                puts "Latest build for #{eclipse_id} / #{product_id} #{product_info.build_type}: #{product_info.version}"
               end
             end
           end

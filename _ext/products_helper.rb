@@ -34,24 +34,24 @@ module Awestruct
               select{|p| get_main_version(p, false) == main_version && !is_nightly_version(p) &&
                 !product_versions[p].nil? && !product_versions[p].release_date.nil?}.
               sort{|p1, p2| p1 <=> p2}.last
-            puts " higher version for #{product_id} #{product_version} is #{product_versions[higher_product_version]}"
+            #puts " higher version for #{product_id} #{product_version} is #{product_versions[higher_product_version]}"
 
             return higher_product_version
           end
         end
-        puts "higher version for #{product_id}/#{product_version} is unknown"
+        #puts "higher version for #{product_id}/#{product_version} is unknown"
         nil
       end
       module_function :get_higher_version
 
       # Returns a build type based on the product version
       def get_build_type(site, product_id, product_version)
-        if is_unreleased_version(site, product_id, product_version)
-          return :unreleased
+        if is_nightly_version(product_version)
+          return :nightly
         elsif is_stable_version(product_version)
           return :stable
-        elsif is_nightly_version(product_version)
-          return :nightly
+        elsif is_unreleased_version(site, product_id, product_version)
+          return :unreleased
         else
           return :development
         end
@@ -64,10 +64,10 @@ module Awestruct
         build_type_label = "unreleased"
         if archived || has_higher_version(site, product_id, product_version)
           build_type_label = nil
-          puts "  No specific build type for #{product_id} #{product_version} since it is archived or outdated."
+          #puts "  No specific build type for #{product_id} #{product_version} since it is archived or outdated."
         else
           build_type_label = build_type
-          puts "  Build type for #{product_id} #{product_version}: '#{build_type_label}'"
+          #puts "  Build type for #{product_id} #{product_version}: '#{build_type_label}'"
         end
         return build_type_label
       end
@@ -76,7 +76,7 @@ module Awestruct
       def is_unreleased_version(site, product_id, product_version)
         site.products[product_id].streams.each do |stream_id, product_versions|
           if (product_versions.include? product_version)
-            puts "Release date for #{product_version}: #{product_versions[product_version].release_date}" unless product_versions[product_version].nil?
+            #puts "Release date for #{product_version}: #{product_versions[product_version].release_date}" unless product_versions[product_version].nil?
             return false unless product_versions[product_version].nil? || product_versions[product_version].release_date.nil?
           end
         end
