@@ -30,8 +30,12 @@ module Awestruct
           # locate the stream: ie, it contains the given version
           if product_versions.include? product_version
             # sort versions by name (except nightly), retain higher one
-            higher_product_version = product_versions.keys.select{|p| get_main_version(p, false) == main_version && !is_nightly_version(p)}.sort{|p1, p2| p1 <=> p2}.last
-            #puts " higher version for #{product_id} #{product_version} is #{higher_product_version}"
+            higher_product_version = product_versions.keys.
+              select{|p| get_main_version(p, false) == main_version && !is_nightly_version(p) &&
+                !product_versions[p].nil? && !product_versions[p].release_date.nil?}.
+              sort{|p1, p2| p1 <=> p2}.last
+            puts " higher version for #{product_id} #{product_version} is #{product_versions[higher_product_version]}"
+
             return higher_product_version
           end
         end
