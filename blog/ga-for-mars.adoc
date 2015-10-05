@@ -1,0 +1,92 @@
+= JBoss Tools and Red Hat Developer Studio for Eclipse Mars
+:page-layout: blog
+:page-author: akazakov
+:page-tags: [release, jbosstools, devstudio, jbosscentral]
+:page-date: 2015-10-07
+
+link:/downloads/jbosstools/mars/4.3.0.Final.html[JBoss Tools 4.3] and link:/downloads/devstudio/mars/9.0.0.GA.html[Red Hat JBoss Developer Studio 9] for Eclipse Mars are now generally available!
+
+image::/blog/images/jbds9.png[]
+
+CAUTION: Java 8 is required for installing and using JBoss Tools. We still support developing and running applications using older Java runtimes. See more in link:/blog/2015-06-23-beta1-for-mars.html#java-8-to-run-eclipse-older-runtimes-ok-for-builds-deployment[Beta1 blog].
+
+== Installation
+
+JBoss Developer Studio comes with everything pre-bundled in its installer. Simply download it from our https://www.jboss.org/products/devstudio.html[JBoss Products page] and run it like this:
+ 
+    java -jar jboss-devstudio-<installername>.jar
+
+JBoss Tools or Bring-Your-Own-Eclipse (BYOE) JBoss Developer Studio require a bit more:
+
+This release requires at least Eclipse 4.5 (Mars) but we recommend
+using the latest http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/marsr[Eclipse 4.5.1 Mars JEE Bundle] since then you get most of the dependencies preinstalled. 
+
+Once you have installed Eclipse, you can either find us on the Eclipse Marketplace under "JBoss Tools" or "Red Hat JBoss Developer Studio".
+
+For JBoss Tools, you can also use our update site directly.
+
+    http://download.jboss.org/jbosstools/mars/stable/updates/
+
+== What is new ? 
+
+There are many new features and improvements. The full list of what is new you can find on ink:/documentation/whatsnew/jbosstools/4.3.0.Final.html[this page].
+Hundreds of bugs have been fixed on JBoss Tools side but we also continue to work on making Eclipse better and contribute to many Eclipse projects: Web Tools, Docker, Maven Integration, JavaScript, Hybrid Mobile Tools and many others.
+
+Let me highlight just a few major features in JBoss Tools 4.3 and JBoss Developer Studio 9.
+
+=== OpenShift 3
+
+There is a new tooling available to help you with OpenShift 3 application development.
+
+image::/documentation/whatsnew/openshift/images/new-connection-wizard.png[]
+
+OpenShift 3 tooling is provided as a TechPreview feature, available from the JBoss Central Software/Updates page.
+We are working on improving OpenShift 3 tooling and it will be included in JBoss Developer Studio by default as a Supported feature in the upcoming months.
+
+== Docker
+
+Tooling for Docker is available in Eclipse Mars under the http://eclipse.org/linuxtools[Linux tools]
+umbrella. Despite this name, this works on all major developer platforms. It
+is mirrored on http://tools.jboss.org/downloads/jbosstools/mars/4.3.0.Final.html[JBoss Tools update site]
+and is also included in Developer Studio 9.
+
+image::/documentation/whatsnew/docker/images/docker_mars1/docker_explorer_view.png[]
+
+== Batch
+
+Java EE 7 Batch Tools include an advanced Job XML editor, wizards, validation, navigation, and other features.
+
+image::/documentation/whatsnew/batch/images/4.3.0.Beta1/diagram.png[]
+
+=== And much more
+
+  * link:/documentation/whatsnew/jbosstools/4.3.0.Final.html#easier-import-of-projects[Easier import]
+  * Better link:/documentation/whatsnew/jbosstools/4.3.0.Final.html#arquillian[Arquillian] support
+  * link:/documentation/whatsnew/jbosstools/4.3.0.Final.html#aerogear[Hybrid Mobile Tools] improvements 
+  * link:/documentation/whatsnew/jbosstools/4.3.0.Final.html#cdi[CDI 1.2] support
+  * link:/documentation/whatsnew/jbosstools/4.3.0.Final.html#javascript[Bower] tooling
+  * link:/documentation/whatsnew/jbosstools/4.3.0.Final.html#javascript-editing-improvements[JavaScript Editing] improvements
+  * New and improved link:/documentation/whatsnew/jbosstools/4.3.0.Final.html#central[JBoss Central] page
+  * link:/documentation/whatsnew/jbosstools/4.3.0.Final.html#content-assist-for-angular-expressions[Content assist for Angular expressions]
+  * link:/documentation/whatsnew/jbosstools/4.3.0.Final.html#livereloa[Quick access to launch LiveReload]
+  * News in link:/documentation/whatsnew/jbosstools/4.3.0.Final.html#maven-repository-wizard[Maven Repository Wizard]
+  * link:/documentation/whatsnew/jbosstools/4.3.0.Final.html#examples[Offline support for Examples in JBoss Central]
+  * New link:/documentation/whatsnew/jbosstools/4.3.0.Final.html#server[WildFly 9, 10, and EAP 7 Server Adapters]
+  * link:/documentation/whatsnew/jbosstools/4.3.0.Final.html#webservices[Content assist for methods in websocket endpoint classes]
+  * ..and link:/documentation/whatsnew/jbosstools/4.3.0.Final.html[others]
+
+== Where is integration stack tooling?
+
+The integration stack covers the tooling for Fuse, Drools, jBPM, SwitchYard, JBoss ESB etc.
+
+They are available as "Early access" in JBoss Tools under JBoss Central Software/Update page.
+
+In the near future it is planned to also show up in JBoss Developer Studio and eventually be available as fully supported.
+
+== What is Next
+
+Having JBoss Tools 4.3 and JBoss Developer Studio 9 out we are already working on the next maintenance release for Eclipse Mars. We are also working on Eclipse Neon adoption.
+
+Enjoy!
+
+Alexey Kazakov
