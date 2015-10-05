@@ -11,7 +11,7 @@ Note: Integration Stack tooling will become available from JBoss Central at a la
 image::/blog/images/jbosstools-jbdevstudio-blog-header.png[]
 
 CAUTION: Remember that since Beta1 we require Java 8 for installing and using of
-JBoss Tools. We still support developing and running applications using older Java runtimes. See more in link:2015-06-23-beta1-for-mars.html#java-8-to-run-eclipse-older-runtimes-ok-for-builds-deployment[Beta1 blog].
+JBoss Tools. We still support developing and running applications using older Java runtimes. See more in link:/blog/2015-06-23-beta1-for-mars.html#java-8-to-run-eclipse-older-runtimes-ok-for-builds-deployment[Beta1 blog].
 
 == What is new ? 
 
