@@ -29,7 +29,7 @@ For JBoss Tools, you can also use our update site directly.
 
 == What is new ? 
 
-There are many new features and improvements. The full list of what is new you can find on ink:/documentation/whatsnew/jbosstools/4.3.0.Final.html[this page].
+There are many new features and improvements. The full list of what is new you can find on link:/documentation/whatsnew/jbosstools/4.3.0.Final.html[this page].
 Hundreds of bugs have been fixed on JBoss Tools side but we also continue to work on making Eclipse better and contribute to many Eclipse projects: Web Tools, Docker, Maven Integration, JavaScript, Hybrid Mobile Tools and many others.
 
 Let me highlight just a few major features in JBoss Tools 4.3 and JBoss Developer Studio 9.
