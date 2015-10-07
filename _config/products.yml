@@ -100,6 +100,7 @@ devstudio:
             file_size: 222MB
       9.0.0.CR1:
         release_date: 2015-09-23
+        archived: true
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         blog_announcement_url: /blog/cr1-for-mars.html
@@ -125,6 +126,7 @@ devstudio:
             file_size: 223MB
       9.0.0.Beta2:
         release_date: 2015-07-29
+        archived: true
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         blog_announcement_url: /blog/beta2-for-mars.html
@@ -150,6 +152,7 @@ devstudio:
             url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/2a/2a4be9db02604a2ccc471005fee6aa86c20d9c697b6d304fdb7d2bae68bb4970/jboss-devstudio-9.0.0.Beta2-src.zip
       9.0.0.Beta1:
         release_date: 2015-06-22
+        archived: true
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         blog_announcement_url: /blog/2015-06-22-beta1-for-mars.html
@@ -626,6 +629,7 @@ jbt_core:
             url: http://tools.jboss.org/documentation/whatsnew/index.html
       4.3.0.CR1:
         release_date: 2015-09-22
+        archived: true
         blog_announcement_url: /blog/cr1-for-mars.html
         documentation_url: http://docs.jboss.org/tools/
         zips:
@@ -645,6 +649,7 @@ jbt_core:
             url: http://tools.jboss.org/documentation/whatsnew/index.html
       4.3.0.Beta2:
         release_date: 2015-07-28
+        archived: true
         blog_announcement_url: /blog/beta2-for-mars.html
         documentation_url: http://docs.jboss.org/tools/
         # as of Beta2, publish to dl.jb.org instead of Sourceforge
@@ -665,6 +670,7 @@ jbt_core:
             url: http://tools.jboss.org/documentation/whatsnew/index.html
       4.3.0.Beta1:
         release_date: 2015-06-22
+        archived: true
         blog_announcement_url: /blog/2015-06-22-beta1-for-mars.html
         documentation_url: http://docs.jboss.org/tools/
         zips:
@@ -684,6 +690,7 @@ jbt_core:
             url: http://tools.jboss.org/documentation/whatsnew/index.html
       4.3.0.Alpha2:
         release_date: 2015-04-27
+        archived: true
         blog_announcement_url: /blog/2015-04-28-alpha2-for-mars.html
         documentation_url: http://docs.jboss.org/tools/
         zips:
@@ -699,6 +706,7 @@ jbt_core:
             url: http://tools.jboss.org/documentation/whatsnew/index.html
       4.3.0.Alpha1:
         release_date: 2015-02-20
+        archived: true
         blog_announcement_url: /blog/2015-02-23-alpha1-for-mars.html
         documentation_url: http://docs.jboss.org/tools/
         zips:
