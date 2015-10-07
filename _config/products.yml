@@ -1,4 +1,10 @@
 eclipse:
+  neon:
+    url_path_fragment: neon
+    short_name: Neon
+    full_name: Eclipse Neon 4.6
+    download_url:  http://www.eclipse.org/downloads/index-developer.php
+    requirements: Java 8
   mars:
     url_path_fragment: mars
     short_name: Mars
