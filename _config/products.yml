@@ -224,6 +224,7 @@ devstudio:
             md5_url: https://devstudio.redhat.com/updates/8.0.0/jboss-devstudio-8.1.0.CR1-target-platform.zip.MD5
       8.1.0.Beta1:
         release_date: 2015-03-04
+        archived: true
         supported_devstudio_is_version: 8.0.0.GA
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
