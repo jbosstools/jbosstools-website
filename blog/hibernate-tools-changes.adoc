@@ -1,0 +1,154 @@
+= A Focus on Hibernate Changes 
+:page-layout: blog
+:page-author: koentsje
+:page-tags: [hibernate, jbosstools]
+
+Over the past two years we have been working hard to rationalize and improve 
+the support for different Hibernate versions in the JBoss Tools suite. This 
+effort has resulted in real multiversion support but some of the changes may
+have an impact on the way how you tackle your Hibernate projects in JBoss Tools.
+Read on if you are a user of Hibernate reverse engineering tooling and of the
+Hibernate console configuration.
+
+== Why Did We Need These Changes in the First Place?
+
+Already for a long time there was support for multiple Hibernate versions in 
+JBoss Tools. When creating a console configuration for instance, it was possible 
+to select the desired version using a dropdown box.
+
+image:/blog/images/hibernate/2015-10-06/console-configuration-versions.png[]
+
+After choosing the appropriate version for a console configuration, and using
+this console configuration for the reverse engineering of entity classes from 
+the database, one can see below that effectively the selected version of Hibernate 
+was used for the generation (in this case 4.0).
+
+
+image:/blog/images/hibernate/2015-10-06/tools-generation-4.0.0.png[]
+
+OK, so far so good. But when we needed to provide support for JPA 2.1 
+we stumbled across a major problem. We added the Hibernate 4.3 runtime 
+which contains JPA 2.1 support and all seemed to be going well. Unfortunately we found that expanding the 
+created console configuration for JPA 2.1 projects resulted in the error message below.
+
+
+image:/blog/images/hibernate/2015-10-06/hibernate-configuration-error.png[]
+   
+Investigation of this problem showed that there was a mixup of Hibernate classes due
+to a mistake in the dependency graph between the different Eclipse plugins that contained
+the respective Hibernate runtime contributions. At this point the dependencies looked 
+like the schema below.
+
+
+image:/blog/images/hibernate/2015-10-06/old-dependency-situation.png[]
+
+It turned out that, no matter what Hibernate version you chose for the console configuration,
+expanding the configuration in the Eclipse view was always using the Hibernate 3.5 classes
+exposed by the *org.hibernate.eclipse.libs* plugin. To summarize, some of the functionality 
+of the Hibernate tooling in Eclipse was using the chosen version properly while the rest of the 
+functionality was always using version 3.5.
+
+== OK This Looks Messy Indeed, How Did We Solve It?
+
+So the problem with the schema above is the direct dependency of the *org.hibernate.eclipse*
+plugin (as well as some other of the Hibernate tools Eclipse plugins) on *org.hibernate.eclipse.libs*. 
+This last plugin contains the Hibernate 3.5 runtime as well as some other related libraries and it
+effectively hides the Hibernate runtime classes that are contributed by the different 
+*org.jboss.tools.hibernateX_Y* plugins. 
+
+The correct solution for this problem was, as is
+fairly classical in software engineering, to introduce an additional layer of indirection.
+
+
+image:/blog/images/hibernate/2015-10-06/intermediate-dependency-situation.png[]
+
+As you can see above a new *org.jboss.tools.hibernate.runtime.spi* plugin was created. In the
+Hibernate tools Eclipse plugins only classes and interfaces from this SPI plugin are used while all the 
+immediate uses on core Hibernate classes were removed. A number of runtime provider plugins then
+implement these SPI interfaces and contribute their functionality by means of the Eclipse 
+extension point mechanism. Also the *org.hibernate.eclipse.libs* plugin was removed.
+
+As an additional step and to eliminate a lot of duplicated code in the different runtime 
+plugins, we moved to a situation in which a lot of the code was moved to an abstract implementation
+of the Hibernate runtime providers. All the concrete uses of the actual Hibernate classes 
+remained in the Hibernate runtime provider classes.
+
+
+image:/blog/images/hibernate/2015-10-06/current-dependency-situation.png[]
+
+
+== How Does All of This Affect Me, Avid Hibernate Tools User?
+
+The most important change that can possibly effect you is the removal of the *org.hibernate.eclipse.libs* 
+plugin. Not only did this plugin contain the classes of the core Hibernate 3.5 runtime but it also 
+included some Hibernate related classes that are considered optional. Among these where cache implementations 
+such as *Ehcache* and connection pool implementations such as *C3P0*. As caching and connection
+pooling are not really relevant for the tooling and as there are way too many possible options 
+for them to be all included in all of the Hibernate runtime providers, we dedided to not include 
+them anymore.
+
+So if you include classes from these optional bundles in your Hibernate configuration file, you will 
+probably bump against problems like link:https://issues.jboss.org/browse/JBIDE-18299[this issue].
+
+Assume like in this case that you want to use second level cache and use the Ehcache implementation. So you have 
+written a Hibernate configuration file in which you have defined the session factory like as follows:
+
+------------------------------------------
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">org.h2.Driver</property>
+        <property name="hibernate.connection.url">jdbc:h2:test</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.H2Dialect</property>
+        
+        <property name="hibernate.cache.use_second_level_cache">true</property>
+        <property name="hibernate.cache.use_query_cache">true</property>
+        <property name="hibernate.cache.region.factory_class">
+            org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory
+        </property>
+        
+        <mapping class="..."/>
+		...
+    </session-factory>
+</hibernate-configuration>
+------------------------------------------
+
+When you create a Hibernate console configuration in Eclipse using this definition, and you will try to 
+expand it, this will result in an error like shown below. Evidently, because the *org.hibernate.eclipse.libs* 
+plugin containing the *org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory* class was removed, a 
+ClassNotFoundException will be the cause of this SessionFactory error.
+
+
+image:/blog/images/hibernate/2015-10-06/session-factory-error.png[]
+
+This problem can be solved in two possible ways. The first way is to add the jar files containing the missing
+classes to the project class path. As can be seen on the image below, the console configuration can now be 
+expanded without an error.
+
+
+image:/blog/images/hibernate/2015-10-06/add-to-project-classpath.png[]
+
+One can argue that it is not a very clean solution to pollute the project class path with artifacts that are
+not really needed just to make the tooling run properly. This is a valid point and it is
+the reason why we have a second solution that is probably preferable.
+
+In this case you can just edit the 
+console configuration by using 'Edit Configuration' from the context menu. In the opened dialog, you can 
+switch to the Classpath page and add the missing jar files. The image below illustrates this approach.
+
+
+image:/blog/images/hibernate/2015-10-06/add-to-configuration-classpath.png[]
+
+
+== Conclusion
+
+Because of the architectural changes that we implemented for the Eclipse Hibernate tooling, real support for 
+multiple versions of Hibernate is now available and working properly. 
+
+The removal of the
+*org.hibernate.eclipse.libs* plugin introduced the possibility of missing some classes when working with the
+Hibernate console configuration in Eclipse. As we showed, this can be easily fixed by directly adding the 
+libraries containing the missing classes on the class path of the console configuration.
+
+
+Thanks for reading! +
+Koen Aers
