@@ -84,7 +84,7 @@ plugin. Not only did this plugin contain the classes of the core Hibernate 3.5 r
 included some Hibernate related classes that are considered optional. Among these where cache implementations 
 such as *Ehcache* and connection pool implementations such as *C3P0*. As caching and connection
 pooling are not really relevant for the tooling and as there are way too many possible options 
-for them to be all included in all of the Hibernate runtime providers, we dedided to not include 
+for them to be all included in all of the Hibernate runtime providers, we decided to not include 
 them anymore.
 
 So if you include classes from these optional bundles in your Hibernate configuration file, you will 
