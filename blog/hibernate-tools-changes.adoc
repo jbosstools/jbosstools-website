@@ -1,7 +1,8 @@
 = A Focus on Hibernate Changes 
 :page-layout: blog
-:page-author: koentsje
-:page-tags: [hibernate, jbosstools]
+:page-author: kaers
+:page-date: 2015-10-12
+:page-tags: [central, hibernate, jbosstools]
 
 Over the past two years we have been working hard to rationalize and improve 
 the support for different Hibernate versions in the JBoss Tools suite. This 
