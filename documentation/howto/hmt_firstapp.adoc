@@ -22,6 +22,8 @@ The instructions here demonstrate how to complete the following tasks:
 . <<customize,Customize the Hybrid Mobile Project>>
 . <<test,Test the Hybrid Mobile Application using CordovaSim>>
 . <<deploy_feedhenry,Deploy the Hybrid Mobile Project on the FeedHenry Server>>
+. <<change_icon,Modify Icon for a Mobile Application>>
+. <<splash_screen,Edit an Application Splash Screen>>
 
 == Prerequisites
 Ensure that the following prerequisites are met to create a hybrid mobile project:
@@ -236,6 +238,98 @@ image::hmt_enter_push_details.png[Details of the Push Added in the Push Branch m
 .Cordova Application Published on the FeedHenry Server
 image::hmt_cordova_app_on_feedhenry.png[Cordova Application Published on the FeedHenry Server]
 
+[[icon_change]]
+== 5. Modify Icon for a Mobile Application
+Define the icons for the Mobile Hybrid application using the _icon_ tag in the `config.xml` file. If an icon is not specified, the Apache Cordova logo is used as the default icon.
+
+To change the application icon:
+
+1. Save the icon in the <workspace> `/www/res/icon` directory of your project.
+2. In the IDE, in the `Project Explorer` view, locate the `config.xml` file.
++
+`Note:` If you are using Cordova 4.0.0 or lower, the `config.xml` file is located in the _{project_name}_ > `www` directory. For Cordova versions higher than 4.0.0 the `config.xml` file is located, a level higher, in the project directory.
++
+3. Double-click `config.xml` to open it in the config.xml editor.
+4. Click the `config.xml` tab to edit the file.
+5. To define a single default icon for all platforms, add the following code anywhere withing the _widget_ tag in the `config.xml` file:
++
+[source, xml]
+----
+<icon src="www/res/icon[image name].png" />
+----
++
+.Icon Tag Added to the config.xml File
+image:hmt_config_file_icon_modified.png[Icon Tag Added to the config.xml File]
++
+Alternatively,
+
+** To define a pixel-perfect icon for Android, add the following code in the `config.xml` file:
++
+[source, xml]
+----
+<platform name="android">
+<icon src="www/res/android/[image name].png" density="ldpi" />
+<icon src="www/res/android/[image name].png" density="mdpi" />
+<icon src="www/res/android/[image name].png"density="hdpi" />
+<icon src="www/res/android/[image name].png" density="xhdpi" />
+</platform>
+----
++
+** To define a pixel-perfect icon for iOS, add the following code in the `config.xml` file:
++
+[source, xml]
+----
+<platform name="ios">
+<icon src="www/res/ios/[image name].png" width="180" height="180" >
+</platform>
+----
++
+6. Save the `config.xml` file.
+7. Right-click the application and click menu:Run As[Run on Android Emulator].
+8. On the emulator, click the `Home` button and then click the `Applications` button to view the modified icon for the application.
+
+`Result:` The icon for the application is modified.
+
+.Modified Icon for the Application Displayed on the Android Emulator
+image:hmt_icon_modified.png[Modified Icon for the Application on the Android Emulator]
+
+[[splash_screen]]
+== 6. Edit an Application Splash Screen
+You can edit the splash screen associated with your application using the _splash_ tag within the _platform_ tag in the `config.xml` file. If you are using Cordova 4.0.0 or higher, you must first install the new _cordova-plugin-splashscreen_ to continue to use the splash screen and then use the steps below to edit the splash screen. For Cordova versions lower than 4.0.0, simply follow the steps below to edit the splash screen.
+
+To change the application splash screen:
+
+1. Save the image for the splash screen in the <workspace> `/www/res` directory of your project.
+2. In the IDE, in the `Project Explorer` view, locate the `config.xml` file.
++
+`Note:` If you are using Cordova 4.0.0 or lower, the `config.xml` file is located in the _{project_name}_> `www` directory. For Cordova versions higher than 4.0.0, the `config.xml` file is located, a level higher, in the project directory.
++
+3. Double-click `config.xml` to open it in the config.xml editor.
+4. Click the `config.xml` tab to edit the file.
+5. To define the splash screen add the following code within the _widget_ tag in the `config.xml` file:
++
+`Note:` You can use any density that exists in the Android project.
++
+[source, xml]
+----
+<platform name="android">
+<splash src="www/res/[image name].png" density="land-hdpi"/>
+<splash src="www/res/[image name].png" density="land-ldpi"/>
+<splash src="www/res/[image name].png" density="land-mdpi"/>
+<splash src="www/res/[image name].png" density="land-xhdpi"/>
+
+<splash src="www/res/[image name].png" density="port-hdpi"/>
+<splash src="www/res/[image name].png" density="port-ldpi"/>
+<splash src="www/res/[image name].png" density="port-mdpi"/>
+<splash src="www/res/[image name].png" density="port-xhdpi"/>
+</platform>
+<preference name="SplashScreenDelay" value="10000" />
+----
++
+6. Save the `config.xml`  file.
+7. Right-click the application and click menu:Run As[Run on Android Emulator].
+
+`Result:` The edited splash screen appears while the application is starting.
 
 == Did You Know?
 * You can manually initiate installation of JBoss Hybrid Mobile Tools and CordovaSim by locating them in the JBoss Central `Software/Update` tab or by dragging the following link into JBoss Central: https://devstudio.jboss.com/central/install?connectors=org.jboss.tools.aerogear.hybrid
