@@ -36,11 +36,16 @@ span.icon>.fa{cursor:default}
   border-top: 1px solid rgb(227, 227, 227);
   padding-top: 0.5em;
 }
-.footnote {
-    font-size: small;
-    a:first-child::after {
-      content: ".";
-    }
+span.footnote, span.footnoteref {
+    //font-size: smaller;
+    //vertical-align: super;
+
+    // a:first-child::after {
+    //   content: ".";
+    // }
+}
+a.footnote, a.footnoteref {
+  font-size: inherit;
 }
 
 // **************************************
@@ -1167,7 +1172,7 @@ span.label {
 }
 
 .tableblock {
-  margin-bottom: 1em;
+  //margin-bottom: 1em;
   th, td {
     border: 1px solid rgb(101, 101, 101);
     padding: 4px;
