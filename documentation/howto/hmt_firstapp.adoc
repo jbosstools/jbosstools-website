@@ -18,6 +18,7 @@ Before attempting to install or create a hybrid mobile project with JBoss Tools,
 
 The instructions here demonstrate how to complete the following tasks:
 
+. <<prereq,Prerequisies>>
 . <<create,Create a Hybrid Mobile Project>>
 . <<customize,Customize the Hybrid Mobile Project>>
 . <<test,Test the Hybrid Mobile Application using CordovaSim>>
@@ -25,14 +26,15 @@ The instructions here demonstrate how to complete the following tasks:
 . <<change_icon,Modify Icon for a Mobile Application>>
 . <<splash_screen,Edit an Application Splash Screen>>
 
-== Prerequisites
+[[prereq]]
+=== 1. Prerequisites
 Ensure that the following prerequisites are met to create a hybrid mobile project:
 
 * <<hybridmobiletool,Enable the JBoss Hybrid Mobile Tools + CordovaSim Feature>>
 * <<install_android_sdk, Install Android SDK>>
 
 [[hybridmobiletool]]
-=== Enable the JBoss Hybrid Mobile Tools + CordovaSim Feature
+==== 1.1 Enable the JBoss Hybrid Mobile Tools + CordovaSim Feature
 To enable the JBoss Hybrid Mobile Tools + CordovaSim feature:
 
 . In JBoss Central, click the `Software/Update` tab.
@@ -41,7 +43,6 @@ To enable the JBoss Hybrid Mobile Tools + CordovaSim feature:
 .Hybrid Mobile Tools + CordovaSim Check Box Selected
 image::hmt_hybrid_mobile_tools_cordovasim_selected.png[Hybrid Mobile Tools + CordovaSim Check Box Selected]
 +
-
 . Follow the on-screen instructions to complete the installation.
 
 During the installation process you may receive warnings about installing unsigned content. If this is the case, review the details of the content and if satisfied click `OK` to continue with the installation.
@@ -49,7 +50,7 @@ During the installation process you may receive warnings about installing unsign
 Once installation is complete, you are prompted to restart Eclipse. Click `Yes` to restart immediately and `No` if you need to save any unsaved changes to open projects. Note that IDE changes do not take effect until the IDE is restarted.
 
 [[install_android_sdk]]
-=== Install Android SDK
+==== 1.2 Install Android SDK
 To install Android SDK:
 
 . Download Android SDK and then unzip the file at a desired location.
@@ -64,7 +65,7 @@ image::hmt_firstapp_android_preferences.png[Select the Android SDK Location]
 . Click `Apply` and then click `OK`.
 
 [[create]]
-== 1. Create a Hybrid Mobile Project
+=== 2. Create a Hybrid Mobile Project
 After the project wizard requirements are installed, you can restart the Hybrid Mobile Project wizard and follow it through to completion to create a template-based project. Within the wizard you must specify identifiers for the project and application and select the Cordova engine version to be used for building the project.
 
 To create a Hybrid Mobile project, complete the following steps:
@@ -82,10 +83,10 @@ image::hmt_newproj-details.png[Provide the Project and Application Information]
 . From the `Available Engines` table, select the latest Apache Cordova version. If the `Available Engines` table is empty, first click `Download` and follow the instructions to install the latest Cordova engine version on your system.
 . Click `Finish`.
 
-The project is created and listed in the `Project Explorer` view.
+**Result:** The project is created and listed in the `Project Explorer` view.
 
 [[customize]]
-== 2. Customize the Hybrid Mobile Project
+=== 3. Customize the Hybrid Mobile Project
 Before building and running the Hybrid Mobile application, instructions are given here for customizing the project by adding the Cordova Device Motion plug-in and modifying the source code to make use of it. The plug-in gives access to the mobile device accelerometer and the code snippets added to this project check for data every one second and display the X, Y, Z acceleration values on the front page of the application. This plug-in is just one of a catalog of plug-ins available to add to your Hybrid Mobile project.
 
 To customize the Hybrid Mobile project with the Cordova Device Motion plug-in, complete the following steps:
@@ -169,8 +170,10 @@ image::hmt_accel-index.png[The Modified index.html File]
 +
 . Save the `index.js` file.
 
+**Result:** Your Hybrid Mobile Project is now customized and saved.
+
 [[test]]
-== 3. Test the Hybrid Mobile Application using CordovaSim
+=== 4. Test the Hybrid Mobile Application using CordovaSim
 You can build and test the Hybrid Mobile application within the IDE using CordovaSim. CordovaSim is a mobile device simulator specifically for testing Cordova-based hybrid mobile applications. Using the CordovaSim control panel you can input sample data for mobile device hardware, as illustrated here for a device accelerometer.
 
 To run and test your Hybrid Mobile application using CordovaSim, complete the following steps:
@@ -181,8 +184,10 @@ To run and test your Hybrid Mobile application using CordovaSim, complete the fo
 .Generated Device Accelerometer Data Displayed in Application
 image::hmt_accel-csim.png[Generated Device Accelerometer Data Displayed in Application]
 
+**Result:** Your Hybrid Mobile application is running for testing.
+
 [[deploy_feedhenry]]
-== 4. Deploy the Hybrid Mobile Project on the FeedHenry Server
+=== 5. Deploy the Hybrid Mobile Project on the FeedHenry Server
 The IDE allows users to quickly and easily publish a Mobile Hybrid (Cordova) application, developed in the IDE, on the FeedHenry server.
 
 The instructions here demonstrate to complete the following tasks:
@@ -191,7 +196,7 @@ The instructions here demonstrate to complete the following tasks:
 . <<push_to_server,Push the Cordova Application to the FeedHenry Server>>
 
 [[child_feedhenry_project]]
-=== 1. Connect the Cordova Application to the FeedHenry Server
+==== 5.1 Connect the Cordova Application to the FeedHenry Server
 
 To connect the Cordova application to the FeedHenry server:
 
@@ -215,7 +220,7 @@ Refer to the <<create,Create a Hybrid Mobile Project>> section to create the Hyb
 image::hmt_almost_done_window_confirms_app_creation.png[Almost done Window Confirms the Application Creation]
 
 [[push_to_server]]
-=== 2. Push the Cordova Application to the FeedHenry Server
+=== 5.2 Push the Cordova Application to the FeedHenry Server
 To push the application to the FeedHenry server:
 
 . In the `Project Explorer` view, right-click the `_{project name}_` and click menu:Team[Push Branch “master”].
@@ -238,8 +243,8 @@ image::hmt_enter_push_details.png[Details of the Push Added in the Push Branch m
 .Cordova Application Published on the FeedHenry Server
 image::hmt_cordova_app_on_feedhenry.png[Cordova Application Published on the FeedHenry Server]
 
-[[icon_change]]
-== 5. Modify Icon for a Mobile Application
+[[change_icon]]
+=== 6. Modify Icon for a Mobile Application
 Define the icons for the Mobile Hybrid application using the _icon_ tag in the `config.xml` file. If an icon is not specified, the Apache Cordova logo is used as the default icon.
 
 To change the application icon:
@@ -288,13 +293,13 @@ Alternatively,
 7. Right-click the application and click menu:Run As[Run on Android Emulator].
 8. On the emulator, click the `Home` button and then click the `Applications` button to view the modified icon for the application.
 
-`Result:` The icon for the application is modified.
+**Result:** The icon for the application is modified.
 
 .Modified Icon for the Application Displayed on the Android Emulator
 image:hmt_icon_modified.png[Modified Icon for the Application on the Android Emulator]
 
 [[splash_screen]]
-== 6. Edit an Application Splash Screen
+=== 7. Edit an Application Splash Screen
 You can edit the splash screen associated with your application using the _splash_ tag within the _platform_ tag in the `config.xml` file. If you are using Cordova 4.0.0 or higher, you must first install the new _cordova-plugin-splashscreen_ to continue to use the splash screen and then use the steps below to edit the splash screen. For Cordova versions lower than 4.0.0, simply follow the steps below to edit the splash screen.
 
 To change the application splash screen:
@@ -329,9 +334,9 @@ To change the application splash screen:
 6. Save the `config.xml`  file.
 7. Right-click the application and click menu:Run As[Run on Android Emulator].
 
-`Result:` The edited splash screen appears while the application is starting.
+**Result:** The edited splash screen appears while the application is starting.
 
-== Did You Know?
+=== Did You Know?
 * You can manually initiate installation of JBoss Hybrid Mobile Tools and CordovaSim by locating them in the JBoss Central `Software/Update` tab or by dragging the following link into JBoss Central: https://devstudio.jboss.com/central/install?connectors=org.jboss.tools.aerogear.hybrid
 * You can change the Cordova engine associated with the project after it is created. In the `Project Explorer` view, right-click the project and click `Properties`. Click `Hybrid Mobile Engine` and select the engine you want to use. Click `OK` to save the engine change and close the `Properties` window.
 * You can download multiple Cordova engines to your system with which to build your projects. The `Download` wizard can be accessed from the `Hybrid Mobile Engine` pane in the project `Properties` window, in addition to the `Hybrid Mobile Project` wizard.
