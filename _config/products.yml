@@ -85,23 +85,23 @@ devstudio:
         blog_announcement_url: /blog/ga-for-mars.html
         installers:
           - name: Stand-alone Installer
-            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/b5/b55d3b959d4922f69338095aff4d3cea639766a7c07850e539ebc0b9029e8902/jboss-devstudio-9.0.0.GA-installer-standalone.jar
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/b5/b55d3b959d4922f69338095aff4d3cea639766a7c07850e539ebc0b9029e8902/jboss-devstudio-9.0.0.GA-installer-standalone.jar
             file_size: 488MB
           - name: Installer With EAP 6.4.0
-            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/4f/4fe77f731aa2a46a4d8568786c0c7c2d486e0926025d06a95360e9e767a2af94/jboss-devstudio-9.0.0.GA-installer-eap.jar
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/4f/4fe77f731aa2a46a4d8568786c0c7c2d486e0926025d06a95360e9e767a2af94/jboss-devstudio-9.0.0.GA-installer-eap.jar
             file_size: 633MB
         zips:
           - name: Update site (including sources) bundle of JBoss Developer Studio
-            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/ff/ff2c124a3e6b2de729314745c01f990d786f326c7c8f85c15c3d9b040f5499d2/jboss-devstudio-9.0.0.GA-updatesite-core.zip
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/ff/ff2c124a3e6b2de729314745c01f990d786f326c7c8f85c15c3d9b040f5499d2/jboss-devstudio-9.0.0.GA-updatesite-core.zip
             file_size: 513MB
           - name: Target Platform for JBoss Developer Studio
             url: https://devstudio.redhat.com/9.0/stable/updates/core/jboss-devstudio-9.0.0.GA-target-platform.zip
             file_size: 462MB
           - name: JBoss Central Zip
-            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/a1/a1dd108fe262c37842388b533d4cb0a7cd0152ad06997c399acdd055b08b85d0/jboss-devstudio-9.0.0.GA-updatesite-central.zip
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/a1/a1dd108fe262c37842388b533d4cb0a7cd0152ad06997c399acdd055b08b85d0/jboss-devstudio-9.0.0.GA-updatesite-central.zip
             file_size: 154MB
           - name: Sources Zip
-            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/94/9420cd890bdf0d5211b2a14208f601a039e43edd324e3254a8d25abdd6b24fd5/jboss-devstudio-9.0.0.GA-src.zip
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/94/9420cd890bdf0d5211b2a14208f601a039e43edd324e3254a8d25abdd6b24fd5/jboss-devstudio-9.0.0.GA-src.zip
             file_size: 222MB
       9.0.0.CR1:
         release_date: 2015-09-23
@@ -111,23 +111,23 @@ devstudio:
         blog_announcement_url: /blog/cr1-for-mars.html
         installers:
           - name: Stand-alone Installer
-            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/a1/a114f54eacba4c18c2776963d8f30782ac391f2ee7e35ebf1389d52ba1d7d0fd/jboss-devstudio-9.0.0.CR1-installer-standalone.jar
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/a1/a114f54eacba4c18c2776963d8f30782ac391f2ee7e35ebf1389d52ba1d7d0fd/jboss-devstudio-9.0.0.CR1-installer-standalone.jar
             file_size: 490MB
           - name: Installer With EAP 6.4.0
-            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/56/5692ebc72c60bd49e7c25262bedd3fc3c7579516a52e42d86765ac635d53de89/jboss-devstudio-9.0.0.CR1-installer-eap.jar
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/56/5692ebc72c60bd49e7c25262bedd3fc3c7579516a52e42d86765ac635d53de89/jboss-devstudio-9.0.0.CR1-installer-eap.jar
             file_size: 635MB
         zips:
           - name: Update site (including sources) bundle of JBoss Developer Studio
-            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/60/60aa02300082284a3fa3c8978d6f7a050fce8b736a7bff038af1ca45ee5db53a/jboss-devstudio-9.0.0.CR1-updatesite-core.zip
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/60/60aa02300082284a3fa3c8978d6f7a050fce8b736a7bff038af1ca45ee5db53a/jboss-devstudio-9.0.0.CR1-updatesite-core.zip
             file_size: 515MB
           - name: Target Platform for JBoss Developer Studio
             url: https://devstudio.redhat.com/9.0/development/updates/core/jboss-devstudio-9.0.0.CR1-target-platform.zip
             file_size: 462MB
           - name: JBoss Central Zip
-            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/90/90442d1753da7b220011ec99badf5e2551d126d1b2b74bbcf2f0d2c5c41baabb/jboss-devstudio-9.0.0.CR1-updatesite-central.zip
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/90/90442d1753da7b220011ec99badf5e2551d126d1b2b74bbcf2f0d2c5c41baabb/jboss-devstudio-9.0.0.CR1-updatesite-central.zip
             file_size: 155MB
           - name: Sources Zip
-            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/f4/f49eb288824a1f972aeaf020f909d8b3854b6819bcb20a220c662258a828436a/jboss-devstudio-9.0.0.CR1-src.zip
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/f4/f49eb288824a1f972aeaf020f909d8b3854b6819bcb20a220c662258a828436a/jboss-devstudio-9.0.0.CR1-src.zip
             file_size: 223MB
       9.0.0.Beta2:
         release_date: 2015-07-29
@@ -137,24 +137,24 @@ devstudio:
         blog_announcement_url: /blog/beta2-for-mars.html
         installers:
           - name: Stand-alone Installer
-            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/f4/f4ffd0b36a622229e4a8b5c4db4c8c4fac0fd09750b1ba2cba73c22c5c0f5f83/jboss-devstudio-9.0.0.Beta2-installer-standalone.jar
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/f4/f4ffd0b36a622229e4a8b5c4db4c8c4fac0fd09750b1ba2cba73c22c5c0f5f83/jboss-devstudio-9.0.0.Beta2-installer-standalone.jar
             file_size: 485MB
           - name: Installer With EAP 6.4.0
-            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/32/329b93cc424feea6d396d9b9d69f508335c387a0780ee8fa880f5501919f6f65/jboss-devstudio-9.0.0.Beta2-installer-eap.jar
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/32/329b93cc424feea6d396d9b9d69f508335c387a0780ee8fa880f5501919f6f65/jboss-devstudio-9.0.0.Beta2-installer-eap.jar
             file_size: 630MB
         zips:
           - name: Update site (including sources) bundle of JBoss Developer Studio
             file_size: 507MB
-            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/b7/b7289aa99840cd07fc7f51bf2deaa17f7ca9acaaf1a5b0e72adab85b286fe74d/jboss-devstudio-9.0.0.Beta2-updatesite-core.zip
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/b7/b7289aa99840cd07fc7f51bf2deaa17f7ca9acaaf1a5b0e72adab85b286fe74d/jboss-devstudio-9.0.0.Beta2-updatesite-core.zip
           - name: Target Platform for JBoss Developer Studio
             file_size: 452MB
             url: https://devstudio.redhat.com/9.0/development/updates/core/jboss-devstudio-9.0.0.Beta2-target-platform.zip
           - name: JBoss Central Zip
             file_size: 116MB
-            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/a8/a8402bfa51e56b272d3283b4b857c522e0a0443ee592503ba977705ed46914df/jboss-devstudio-9.0.0.Beta2-updatesite-central.zip
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/a8/a8402bfa51e56b272d3283b4b857c522e0a0443ee592503ba977705ed46914df/jboss-devstudio-9.0.0.Beta2-updatesite-central.zip
           - name: Sources Zip
             file_size: 332MB
-            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/2a/2a4be9db02604a2ccc471005fee6aa86c20d9c697b6d304fdb7d2bae68bb4970/jboss-devstudio-9.0.0.Beta2-src.zip
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/2a/2a4be9db02604a2ccc471005fee6aa86c20d9c697b6d304fdb7d2bae68bb4970/jboss-devstudio-9.0.0.Beta2-src.zip
       9.0.0.Beta1:
         release_date: 2015-06-22
         archived: true
@@ -163,15 +163,15 @@ devstudio:
         blog_announcement_url: /blog/2015-06-22-beta1-for-mars.html
         installers:
           - name: Stand-alone Installer
-            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/8f/8f01d0db3cc193f7eb8876cc0c1ad0bcabbfb9a3b794837d572f52209e738908/jboss-devstudio-9.0.0.Beta1-installer-standalone.jar
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/8f/8f01d0db3cc193f7eb8876cc0c1ad0bcabbfb9a3b794837d572f52209e738908/jboss-devstudio-9.0.0.Beta1-installer-standalone.jar
             file_size: 484MB
           - name: Installer With EAP 6.4.0
-            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/3d/3d115879e3be646a563d05452c3a22bac394652e40260a3b43d9dd5c3ba7121e/jboss-devstudio-9.0.0.Beta1-installer-eap.jar
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/3d/3d115879e3be646a563d05452c3a22bac394652e40260a3b43d9dd5c3ba7121e/jboss-devstudio-9.0.0.Beta1-installer-eap.jar
             file_size: 628MB
         zips:
           - name: Update site (including sources) bundle of JBoss Developer Studio
             file_size: 505MB
-            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/2c/2c92b68d122db901e3acbb74f06950116f4fe29402c25f4391761f9a93e65bba/jboss-devstudio-9.0.0.Beta1-updatesite-core.zip
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/2c/2c92b68d122db901e3acbb74f06950116f4fe29402c25f4391761f9a93e65bba/jboss-devstudio-9.0.0.Beta1-updatesite-core.zip
           - name: Target Platform for JBoss Developer Studio
             file_size: 451MB
             url: https://devstudio.redhat.com/9.0/development/updates/core/jboss-devstudio-9.0.0.Beta1-target-platform.zip
@@ -186,15 +186,15 @@ devstudio:
         blog_announcement_url: /blog/2015-04-02-devstudio-8.1.0.GA-for-luna.html
         installers:
           - name: Stand-alone Installer
-            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager//content/origin/files/sha256/0e/0e3e78a641196d21742730f23a6e1c9aa04e0596c16349e74dbd4ea2d1109d40/jboss-devstudio-8.1.0.GA-installer-standalone.jar
+            url: http://www.jboss.org/download-manager//content/origin/files/sha256/0e/0e3e78a641196d21742730f23a6e1c9aa04e0596c16349e74dbd4ea2d1109d40/jboss-devstudio-8.1.0.GA-installer-standalone.jar
             file_size: 546MB
           - name: Installer With EAP 6.3.0
-            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/94/94adf11b2934eea040bde7cafa9f827cb6641638b650ccdc09f6f2e911ba43e9/jboss-devstudio-8.1.0.GA-installer-eap.jar
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/94/94adf11b2934eea040bde7cafa9f827cb6641638b650ccdc09f6f2e911ba43e9/jboss-devstudio-8.1.0.GA-installer-eap.jar
             file_size: 685MB
         zips:
           - name: Update site (including sources) bundle of JBoss Developer Studio
             file_size: 524MB
-            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/60/60abd4b755f5b89202d391f75dbe3ac2e4b607123e249842c961281c65155b68/jboss-devstudio-8.1.0.GA-updatesite-core.zip
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/60/60abd4b755f5b89202d391f75dbe3ac2e4b607123e249842c961281c65155b68/jboss-devstudio-8.1.0.GA-updatesite-core.zip
           - name: Target Platform for JBoss Developer Studio
             file_size: 430MB
             url: https://devstudio.jboss.com/static/updates/8.0.0/jboss-devstudio-8.1.0.GA-target-platform.zip
@@ -208,15 +208,15 @@ devstudio:
         blog_announcement_url: /blog/2015-03-19-devstudio-8.1.0.CR1-for-luna.html
         installers:
           - name: Stand-alone Installer
-            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/9d/9daef0477c4b1924ae360659d3beb5e0bb405d7d79f6ca785cd5779391bcb9a6/jboss-devstudio-8.1.0.CR1-installer-standalone.jar
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/9d/9daef0477c4b1924ae360659d3beb5e0bb405d7d79f6ca785cd5779391bcb9a6/jboss-devstudio-8.1.0.CR1-installer-standalone.jar
             file_size: 546MB
           - name: Installer With EAP 6.3.0
-            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/ec/ec33cab4d5f7fdaffef12fed1dbcb167f73b09820194c290fe5ee1b01144bfa0/jboss-devstudio-8.1.0.CR1-installer-eap.jar
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/ec/ec33cab4d5f7fdaffef12fed1dbcb167f73b09820194c290fe5ee1b01144bfa0/jboss-devstudio-8.1.0.CR1-installer-eap.jar
             file_size: 685MB
         zips:
           - name: Update site (including sources) bundle of JBoss Developer Studio
             file_size: 524MB
-            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/be/be4c0714df996ee1edd5b082b13c1bc1e10c857a388432de24b1de107913e1ff/jboss-devstudio-8.1.0.CR1-updatesite-core.zip
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/be/be4c0714df996ee1edd5b082b13c1bc1e10c857a388432de24b1de107913e1ff/jboss-devstudio-8.1.0.CR1-updatesite-core.zip
           - name: Target Platform for JBoss Developer Studio
             file_size: 426MB
             url: https://devstudio.redhat.com/updates/8.0.0/jboss-devstudio-8.1.0.CR1-target-platform.zip
@@ -230,15 +230,15 @@ devstudio:
         blog_announcement_url: /blog/2015-03-05-JBDS-8.1.0.Beta1-for-luna.html
         installers:
           - name: Stand-alone Installer
-            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/8f/8f7b797dd0ff04a75801e34f6dea3627e89b0faf598144d06892f119eb64add1/jboss-devstudio-8.1.0.Beta1-installer-standalone.jar
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/8f/8f7b797dd0ff04a75801e34f6dea3627e89b0faf598144d06892f119eb64add1/jboss-devstudio-8.1.0.Beta1-installer-standalone.jar
             file_size: 546MB
           - name: Installer With EAP 6.3.0
-            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/a5/a5fd25450ba0b64c491fc9effab10351ed269cdc1ca90d0218d1d24496ab2b41/jboss-devstudio-8.1.0.Beta1-installer-eap.jar
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/a5/a5fd25450ba0b64c491fc9effab10351ed269cdc1ca90d0218d1d24496ab2b41/jboss-devstudio-8.1.0.Beta1-installer-eap.jar
             file_size: 685MB
         zips:
           - name: Update site (including sources) bundle of JBoss Developer Studio
             file_size: 524MB
-            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/5d/5d70ee2e8199a031152caf42b8a52b6d14b79b3f4960f03e6e8ad0341447ce37/jboss-devstudio-8.1.0.Beta1-updatesite-core.zip
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/5d/5d70ee2e8199a031152caf42b8a52b6d14b79b3f4960f03e6e8ad0341447ce37/jboss-devstudio-8.1.0.Beta1-updatesite-core.zip
           - name: Target Platform for JBoss Developer Studio
             file_size: 426MB
             url: https://devstudio.redhat.com/updates/8.0.0/jboss-devstudio-8.1.0.Beta1-target-platform.zip
@@ -252,10 +252,10 @@ devstudio:
         blog_announcement_url: /blog/2015-01-21-update-for-luna.html
         installers:
           - name: Stand-alone Installer (after install can update to latest 8.x)
-            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/8f/8f5805a6370372bbe29f4f39d696dad3608aaa3ddf8ff4f707585cd4b3fbd1aa/jboss-devstudio-8.0.0.GA-v20141020-1042-B317-installer-standalone.jar
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/8f/8f5805a6370372bbe29f4f39d696dad3608aaa3ddf8ff4f707585cd4b3fbd1aa/jboss-devstudio-8.0.0.GA-v20141020-1042-B317-installer-standalone.jar
             file_size: 548MB
           - name: Installer With EAP 6.3.0 (after install can update to latest 8.x)
-            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/9f/9f3fab096014e0a14d9038d68677a2f4223e1a978447232b5f8b1e17cc58b989/jboss-devstudio-8.0.0.GA-v20141020-1042-B317-installer-eap.jar
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/9f/9f3fab096014e0a14d9038d68677a2f4223e1a978447232b5f8b1e17cc58b989/jboss-devstudio-8.0.0.GA-v20141020-1042-B317-installer-eap.jar
             file_size: 687MB
         zips:
           - name: Update site (including sources) bundle of JBoss Developer Studio
@@ -271,10 +271,10 @@ devstudio:
         blog_announcement_url: /blog/2014-12-15-GA-for-luna.html
         installers:
           - name: Stand-alone Installer (after install can update to latest 8.x)
-            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/8f/8f5805a6370372bbe29f4f39d696dad3608aaa3ddf8ff4f707585cd4b3fbd1aa/jboss-devstudio-8.0.0.GA-v20141020-1042-B317-installer-standalone.jar
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/8f/8f5805a6370372bbe29f4f39d696dad3608aaa3ddf8ff4f707585cd4b3fbd1aa/jboss-devstudio-8.0.0.GA-v20141020-1042-B317-installer-standalone.jar
             file_size: 548MB
           - name: Installer With EAP 6.3.0 (after install can update to latest 8.x)
-            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/9f/9f3fab096014e0a14d9038d68677a2f4223e1a978447232b5f8b1e17cc58b989/jboss-devstudio-8.0.0.GA-v20141020-1042-B317-installer-eap.jar
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/9f/9f3fab096014e0a14d9038d68677a2f4223e1a978447232b5f8b1e17cc58b989/jboss-devstudio-8.0.0.GA-v20141020-1042-B317-installer-eap.jar
             file_size: 687MB
         zips:
           - name: Update site (including sources) bundle of JBoss Developer Studio
@@ -290,15 +290,15 @@ devstudio:
         blog_announcement_url: /blog/2014-10-22-GA-for-luna.html
         installers:
           - name: Stand-alone Installer
-            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/8f/8f5805a6370372bbe29f4f39d696dad3608aaa3ddf8ff4f707585cd4b3fbd1aa/jboss-devstudio-8.0.0.GA-v20141020-1042-B317-installer-standalone.jar
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/8f/8f5805a6370372bbe29f4f39d696dad3608aaa3ddf8ff4f707585cd4b3fbd1aa/jboss-devstudio-8.0.0.GA-v20141020-1042-B317-installer-standalone.jar
             file_size: 548MB
           - name: Installer With EAP 6.3.0
-            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/9f/9f3fab096014e0a14d9038d68677a2f4223e1a978447232b5f8b1e17cc58b989/jboss-devstudio-8.0.0.GA-v20141020-1042-B317-installer-eap.jar
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/9f/9f3fab096014e0a14d9038d68677a2f4223e1a978447232b5f8b1e17cc58b989/jboss-devstudio-8.0.0.GA-v20141020-1042-B317-installer-eap.jar
             file_size: 687MB
         zips:
           - name: Update site (including sources) bundle of JBoss Developer Studio
             file_size: 516MB
-            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/da/da21079c31af1a7dd8ff7dc05a4003fa818307eb3cdad6e10139437b5022d161/jboss-devstudio-8.0.0.GA-v20141020-1042-B317-updatesite-core.zip
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/da/da21079c31af1a7dd8ff7dc05a4003fa818307eb3cdad6e10139437b5022d161/jboss-devstudio-8.0.0.GA-v20141020-1042-B317-updatesite-core.zip
             #md5_url: n/a
       8.0.0.CR1:
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
@@ -309,15 +309,15 @@ devstudio:
         blog_announcement_url: /blog/2014-09-17-CR1-for-luna.html
         installers:
           - name: Stand-alone Installer
-            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/5a/5a748e631b667f78fd6c9bd6e8aa13e29d9b4731555762df191aad684d866759/jboss-devstudio-8.0.0.CR1-v20140915-0805-B246-installer-standalone.jar
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/5a/5a748e631b667f78fd6c9bd6e8aa13e29d9b4731555762df191aad684d866759/jboss-devstudio-8.0.0.CR1-v20140915-0805-B246-installer-standalone.jar
             file_size: 552MB
           - name: Installer With EAP 6.3.0
-            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/1e/1e0b9468604aa20ac8c44b63cd651cfba2c97ccc7a0f6f4ebb23b90a6244b2f1/jboss-devstudio-8.0.0.CR1-v20140915-0805-B246-installer-eap.jar
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/1e/1e0b9468604aa20ac8c44b63cd651cfba2c97ccc7a0f6f4ebb23b90a6244b2f1/jboss-devstudio-8.0.0.CR1-v20140915-0805-B246-installer-eap.jar
             file_size: 691MB
         zips:
           - name: Update site (including sources) bundle of JBoss Developer Studio
             file_size: 514MB
-            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/ea/ea08cbdc79fa982989d578cbb1c39cc3e42dd36b5cee598411d3814d4148c96b/jboss-devstudio-8.0.0.CR1-v20140915-0805-B246-updatesite-core.zip
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/ea/ea08cbdc79fa982989d578cbb1c39cc3e42dd36b5cee598411d3814d4148c96b/jboss-devstudio-8.0.0.CR1-v20140915-0805-B246-updatesite-core.zip
             #md5_url: n/a
       8.0.0.Beta3:
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
@@ -328,15 +328,15 @@ devstudio:
         blog_announcement_url: /blog/2014-07-28-beta3-for-luna.html
         installers:
           - name: Stand-alone Installer
-            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/96/96d6ab7107c64283b9e92396f046ccec3301b263df81bd8b3a9abf4e7934deb9/jboss-devstudio-8.0.0.Beta3-v20140722-2011-B194-installer-standalone.jar
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/96/96d6ab7107c64283b9e92396f046ccec3301b263df81bd8b3a9abf4e7934deb9/jboss-devstudio-8.0.0.Beta3-v20140722-2011-B194-installer-standalone.jar
             file_size: 504MB
           - name: Installer With EAP 6.3.0.Beta
-            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/09/0998b448383eca6e74c86ac58d4a1b88c066a0a39e25b12df8ebb6a2ed72ba73/jboss-devstudio-8.0.0.Beta3-v20140722-2011-B194-installer-eap.jar
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/09/0998b448383eca6e74c86ac58d4a1b88c066a0a39e25b12df8ebb6a2ed72ba73/jboss-devstudio-8.0.0.Beta3-v20140722-2011-B194-installer-eap.jar
             file_size: 643MB
         zips:
           - name: Update site (including sources) bundle of JBoss Developer Studio
             file_size: 850MB
-            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/4a/4ad3df66a4e019827ad53681b7d3bea33a126230ce7e90b4195f1e13f9aba684/jboss-devstudio-8.0.0.Beta3-v20140722-2011-B194-updatesite-core.zip
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/4a/4ad3df66a4e019827ad53681b7d3bea33a126230ce7e90b4195f1e13f9aba684/jboss-devstudio-8.0.0.Beta3-v20140722-2011-B194-updatesite-core.zip
             #md5_url: n/a
 
       8.0.0.Beta2:
@@ -348,15 +348,15 @@ devstudio:
         blog_announcement_url: /blog/2014-06-19-beta2-for-luna.html
         installers:
           - name: Stand-alone Installer
-            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/3c/3c4508c0c43f9aae305c289b946cfc963b8be01678dc9d538b9847872fa80ef6/jboss-devstudio-8.0.0.Beta2-v20140617-2058-B166-installer-standalone.jar
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/3c/3c4508c0c43f9aae305c289b946cfc963b8be01678dc9d538b9847872fa80ef6/jboss-devstudio-8.0.0.Beta2-v20140617-2058-B166-installer-standalone.jar
             file_size: 550MB
           - name: Installer With EAP 6.2.0
-            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/41/41bbfb910533778ac059a5fceafd814b06cc7e0b34086ef76c302cbddc687f0f/jboss-devstudio-8.0.0.Beta2-v20140617-2058-B166-installer-eap.jar
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/41/41bbfb910533778ac059a5fceafd814b06cc7e0b34086ef76c302cbddc687f0f/jboss-devstudio-8.0.0.Beta2-v20140617-2058-B166-installer-eap.jar
             file_size: 676MB
         zips:
           - name: Update site (including sources) bundle of JBoss Developer Studio
             file_size: 850MB
-            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/9d/9da04d293283afcff48c85d382e4f57dccce181382aa556e9b44d38f5cadf94a/jboss-devstudio-8.0.0.Beta2-v20140617-2058-B166-updatesite-core.zip
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/9d/9da04d293283afcff48c85d382e4f57dccce181382aa556e9b44d38f5cadf94a/jboss-devstudio-8.0.0.Beta2-v20140617-2058-B166-updatesite-core.zip
             #md5_url: n/a
       8.0.0.Beta1:
         release_date: 2014-04-11
@@ -366,15 +366,15 @@ devstudio:
         blog_announcement_url: /blog/2014-04-14-beta1-for-luna.html
         installers:
           - name: Stand-alone Installer
-            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/25/2550fbb912f42b6c0e60d124cc0d5b7c1a26b1767e27a0ecd6f2b9c36f3b3d9a/jbdevstudio-product-universal-8.0.0.Beta1-v20140408-2350-B93.jar
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/25/2550fbb912f42b6c0e60d124cc0d5b7c1a26b1767e27a0ecd6f2b9c36f3b3d9a/jbdevstudio-product-universal-8.0.0.Beta1-v20140408-2350-B93.jar
             file_size: 482MB
           - name: Installer With EAP 6.2.0
-            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=https://www.jboss.org/download-manager/content/origin/files/sha256/5f/5f7a06b642bf212a89c9526b2e477bab33cc9aa6b0bb2bb63e8e23e5586b4266/jbdevstudio-product-eap-universal-8.0.0.Beta1-v20140408-2350-B93.jar
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/5f/5f7a06b642bf212a89c9526b2e477bab33cc9aa6b0bb2bb63e8e23e5586b4266/jbdevstudio-product-eap-universal-8.0.0.Beta1-v20140408-2350-B93.jar
             file_size: 609MB
         zips:
           - name: Update site (including sources) bundle of JBoss Developer Studio
             file_size: 725MB
-            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/b9/b9a4d822294c7457522238e81335b8dc5013e9835ce9b1837e4a5be241b6d4c3/jbdevstudio-product-Update-8.0.0.Beta1-v20140408-2350-B93.zip
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/b9/b9a4d822294c7457522238e81335b8dc5013e9835ce9b1837e4a5be241b6d4c3/jbdevstudio-product-Update-8.0.0.Beta1-v20140408-2350-B93.zip
             #md5_url: n/a
     kepler:
       7.1.1.GA:
@@ -387,15 +387,15 @@ devstudio:
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
         installers:
           - name: Stand-alone Installer
-            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/93/9377ef0b9a50beebd1ccc26bfa8390a1f3b96a1a9f1c2dc415d107c05b1c50ad/jbdevstudio-product-universal-7.1.1.GA-v20140314-2145-B688.jar
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/93/9377ef0b9a50beebd1ccc26bfa8390a1f3b96a1a9f1c2dc415d107c05b1c50ad/jbdevstudio-product-universal-7.1.1.GA-v20140314-2145-B688.jar
             file_size: 482MB
           - name: Installer With EAP 6.2.0
-            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/8d/8d6bf16eccb2f4bd9612e18a8dcce5b488296c8725b96107b6f949f8e0481d32/jbdevstudio-product-eap-universal-7.1.1.GA-v20140314-2145-B688.jar
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/8d/8d6bf16eccb2f4bd9612e18a8dcce5b488296c8725b96107b6f949f8e0481d32/jbdevstudio-product-eap-universal-7.1.1.GA-v20140314-2145-B688.jar
             file_size: 609MB
         zips:
           - name: Update site (including sources) bundle of JBoss Developer Studio
             file_size: 713MB
-            url: http://www.redhat.com/j/elqNow/elqRedir.htm?ref=http://www.jboss.org/download-manager/content/origin/files/sha256/e9/e983aba26f1080bed83ce2b705885a079a56df05f20c67d4a63b32bfd265511d/jbdevstudio-product-Update-7.1.1.GA-v20140314-2145-B688.zip
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/e9/e983aba26f1080bed83ce2b705885a079a56df05f20c67d4a63b32bfd265511d/jbdevstudio-product-Update-7.1.1.GA-v20140314-2145-B688.zip
             md5_url: https://devstudio.jboss.com/updates/7.0.0/jbdevstudio-updatesite-7.1.1.GA-v20140314-2145-B688.zip.MD5
       7.1.0.GA:
         release_date: 2013-12-16
