@@ -1,0 +1,37 @@
+= Are you a Developer User Experience lead ?
+:page-date: 2015-11-02
+:page-layout: blog
+:page-author: maxandersen
+:page-tags: [job, jbosscentral]
+
+Happy to report that the Developer Experience and Tooling group are
+looking for a
+http://jobs.redhat.com/jobs/descriptions/user-experience-lead-westford-massachusetts-job-1-5811125[user
+experience lead].
+
+Here is what we are looking for:
+
+- A senior to principal level interaction designer who has experience working end-to-end in user experience
+- Someone with good leadership skills
+- Great listening skills to help them learn from our stakeholders and experts what it is that we can offer to developers for a tooling solution
+- A bold personality & outgoing manner that will help this person pull together a UX vision and get teams working towards that user experience vision for developers
+- A person who either has past development experience, or feels comfortable with technologies and generally understands development toolchains
+
+This person will work on improving developer experience in Eclipse
+based tooling and beyond. Meaning it also covers command line tools,
+web based tooling and anything in between making up the developer
+experience.
+
+Plenty of work to start on - please http://jobs.redhat.com/jobs/descriptions/user-experience-lead-westford-massachusetts-job-1-581112[share the link] if you know someone
+that would be interested in helping us making opensource development
+tools more than just functional but also awesome to use.
+
+Note: the
+http://jobs.redhat.com/jobs/descriptions/user-experience-lead-westford-massachusetts-job-1-581112[job
+posting] do list Westford location, but for the right candidate we are
+happy to consider many locations worldwide (anywhere there is a Red
+Hat office), as well as working from home.
+
+Have fun! +
+Max Rydahl Andersen +
+http://twitter.com/maxandersen[@maxandersen]
