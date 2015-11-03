@@ -14,9 +14,8 @@ The instructions here demonstrate how to complete the following tasks:
 . <<republishmodifiedapp,Republish the Modified Application>>
 . <<viewmodifiedapp,View the Modified Application>>
 
-
 [[importexistingOSapp]]
-== 1. Import an Existing OpenShift Online Application        
+== 1. Import an Existing OpenShift Online Application
 Applications associated with your OpenShift Online account(s) are listed in the `OpenShift Explorer` view. The source code for these applications can be individually imported into the IDE using the OpenShift Tools `Import OpenShift Application` wizard.
 
 To import an existing OpenShift Online application as a new project in the existing IDE workspace, complete the following steps:
@@ -42,7 +41,7 @@ image::openshift_importapp.png[Existing OpenShift Online Application Information
 
 If you are prompted that the authenticity of the host cannot be established and asked whether you want to continue connecting, ensure that the host name matches that of your application and domain and click `Yes`.
 
-When the import process is complete, the project is listed in the `Project Explorer` view and a server adapter is listed for the application in the `Servers` view. 
+When the import process is complete, the project is listed in the `Project Explorer` view and a server adapter is listed for the application in the `Servers` view.
 
 OpenShift Tools makes  a number of small changes to the application source code on import. It adds several IDE-specific files to the project and modifies the `.gitignore` file so that you are not prompted about these files each time you commit  project changes to the Git repository.
 
@@ -69,9 +68,9 @@ Note that in the `Project Explorer` view, `index.html` has `>` prepended to show
 == 3. Republish the Modified Application
 You must commit and push any changes you have made to the project source code and then republish the application before you can see changes reflected in the OpenShift Online application. As an example of committing and pushing source code changes to the OpenShift Online application repository and republishing the application, here the `index.html` file changed earlier is used. You can opt to use the project file that you changed earlier.
 
-To commit and push the `index.html` changes and republish the application to OpenShift Online, complete the following steps:     
+To commit and push the `index.html` changes and republish the application to OpenShift Online, complete the following steps:
 
-. In the `Servers` view, right-click `_{application name}_ at OpenShift` and click `Publish`.
+. In the `Servers` view, right-click `_{application name}_ at OpenShift` and click `Publish`. Or you can drag the `_{project_name}_` from the `Project Explorer` view and drop it on the server adapter in the `Servers` view.
 . Complete the fields about the project changes to commit and push to the OpenShift Online application Git repository as follows:
 ** In the `Commit message` field, type the following message
 +
@@ -102,5 +101,5 @@ Your modified and republished OpenShift Online application is displayed in the I
 == Did You Know?
 * On the first occasion that you republish your application to OpenShift Online, you may be prompted to provide a username and email address for use by Git. The IDE looks for a default Git configuration file on your system from which to obtain this information and if the IDE cannot find the file it prompts you to provide the values. You can specify the location of your system Git configuration file in the IDE Preferences, under menu:Team[Git > Configuration].
 * You can review the progress of republishing applications to OpenShift Online in the `Console` view.
-* You can also open the OpenShift application in a web browser from the `Servers` view by right-clicking `_{application name}_ at OpenShift` and clicking menu:Show In[Web Browser]. 
+* You can also open the OpenShift application in a web browser from the `Servers` view by right-clicking `_{application name}_ at OpenShift` and clicking menu:Show In[Web Browser].
 * You can change the IDE default web browser to be either the IDE internal web browser, BrowserSim (when installed) or an external web browser. Click menu:Window[Web Browser] and select from the available web browser options or click menu:Window[Preferences > General > Web Browser] to extend the list of available external web browsers.
