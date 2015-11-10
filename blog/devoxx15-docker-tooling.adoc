@@ -13,18 +13,18 @@ container running WildFly and linked to another container running PostgreSQL.
 
 The demo showed how a user can:
 
-- connect to a Docker Machine,
-- pull images from Docker Hub,
-- build custom images from a Dockerfile (as we needed to customized WildFly to include the PostgreSQL driver and datasource configuration)
-- run images by configuring environment variables, links to other containers and data volumes,
-- open a web browser on the published ports
-- see the container logs streamed in the Eclipse console
-- create and configure a server adapter in the Servers View to deploy the application in the container data volume.
+- Connect to a Docker Machine.
+- Pull images from Docker Hub.
+- Build custom images from a Dockerfile (as we needed to customized WildFly to include the PostgreSQL driver and datasource configuration)
+- Run images by configuring environment variables, links to other containers and data volumes.
+- Open a web browser on the published ports.
+- See the container logs streamed in the Eclipse console.
+- Create and configure a server adapter in the Servers View to deploy the application in the container data volume.
 
 As explained during the demo, the Docker tooling is available from the http://eclipse.org/linuxtools[Linux Tools project at Eclipse.org] and is also
 bundled in http://tools.jboss.org/downloads/jbosstools/mars/4.3.0.Final.html[JBoss Tools] and http://tools.jboss.org/downloads/devstudio/mars/9.0.0.GA.html[Developer Studio], so you can get it from the update sites or from the marketplace.
 
-Slides for the demo are available online[http://www.slideshare.net/XavierCoulon/docker-tooling-for-java-ee-developers]
+Slides for the demo are available http://www.slideshare.net/XavierCoulon/docker-tooling-for-java-ee-developers[on Slidehare].
 
 As usual, feedback on the Docker tooling is much appreciated, so don't hesitate to contact us on
 mailto:linuxtools-dev@eclipse.org[linuxtools-dev@eclipse.org] or on mailto:jbosstools-dev@jboss.org[jbosstools-dev@jboss.org]
