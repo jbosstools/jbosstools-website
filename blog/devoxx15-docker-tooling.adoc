@@ -1,0 +1,34 @@
+= Docker Tooling at Devoxx'15
+:page-date: 2015-11-10
+:page-layout: blog
+:page-author: xcoulon
+:page-tags: [docker,eclipse,jbosscentral]
+
+On Monday I had the chance to give a http://cfp.devoxx.be/2015/talk/OEI-9379/Docker_Tooling_for_JavaEE__Developers_[Tools In Action talk about Docker Tooling for Java EE Developers].
+After a quick introduction about the main concepts of Docker (images, containers, daemon, clients and registries), I
+gave a demo of the tooling that we've been working on in the Linux Tools and JBoss Tools team.
+
+The goal of the demo was to deploy and debug the "HTML5 Kitchen Sink" quick start application from JBoss Central in a
+container running WildFly and linked to another container running PostgreSQL.
+
+The demo showed how a user can:
+
+- connect to a Docker Machine,
+- pull images from Docker Hub,
+- build custom images from a Dockerfile (as we needed to customized WildFly to include the PostgreSQL driver and datasource configuration)
+- run images by configuring environment variables, links to other containers and data volumes,
+- open a web browser on the published ports
+- see the container logs streamed in the Eclipse console
+- create and configure a server adapter in the Servers View to deploy the application in the container data volume.
+
+As explained during the demo, the Docker tooling is available from the http://eclipse.org/linuxtools[Linux Tools project at Eclipse.org] and is also
+bundled in http://tools.jboss.org/downloads/jbosstools/mars/4.3.0.Final.html[JBoss Tools] and http://tools.jboss.org/downloads/devstudio/mars/9.0.0.GA.html[Developer Studio], so you can get it from the update sites or from the marketplace.
+
+Slides for the demo are available online[http://www.slideshare.net/XavierCoulon/docker-tooling-for-java-ee-developers]
+
+As usual, feedback on the Docker tooling is much appreciated, so don't hesitate to contact us on
+mailto:linuxtools-dev@eclipse.org[linuxtools-dev@eclipse.org] or on mailto:jbosstools-dev@jboss.org[jbosstools-dev@jboss.org]
+
+Enjoy! +
+Xavier +
+http://twitter.com/xcoulon[@xcoulon]

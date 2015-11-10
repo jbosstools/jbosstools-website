@@ -1,0 +1,8 @@
+= Devoxx
+:page-layout: event
+:page-event_date: 9-13 November 2015
+:page-effective_date: 20151109
+:page-location: Antwerp, Belgium
+:page-event_url: http://www.devoxx.be/
+
+Xavier Coulon will be speaking about the http://cfp.devoxx.be/2015/talk/OEI-9379/Docker_Tooling_for_JavaEE__Developers_[Docker Tooling for Java EE Developers].
