@@ -4,6 +4,8 @@
 :page-author: xcoulon
 :page-tags: [docker,eclipse,jbosscentral]
 
+NOTE: Article was updated on Nov. 12th with the video published on YouTube.
+
 On Monday I had the chance to give a http://cfp.devoxx.be/2015/talk/OEI-9379/Docker_Tooling_for_JavaEE__Developers_[Tools In Action talk about Docker Tooling for Java EE Developers].
 After a quick introduction about the main concepts of Docker (images, containers, daemon, clients and registries), I
 gave a demo of the tooling that we've been working on in the Linux Tools and JBoss Tools team.
@@ -25,6 +27,11 @@ As explained during the demo, the Docker tooling is available from the http://ec
 bundled in http://tools.jboss.org/downloads/jbosstools/mars/4.3.0.Final.html[JBoss Tools] and http://tools.jboss.org/downloads/devstudio/mars/9.0.0.GA.html[Developer Studio], so you can get it from the update sites or from the marketplace.
 
 Slides for the demo are available http://www.slideshare.net/XavierCoulon/docker-tooling-for-java-ee-developers[on Slidehare].
+
+As Devoxx decided to stop Parleys and publish all talks for free on Youtube just after they were recorded, you can already watch
+the presentation https://www.youtube.com/watch?v=tq58w0DYmgc[here]:
+
+video::tq58w0DYmgc[youtube, width=640, height=400]
 
 As usual, feedback on the Docker tooling is much appreciated, so don't hesitate to contact us on
 mailto:linuxtools-dev@eclipse.org[linuxtools-dev@eclipse.org] or on mailto:jbosstools-dev@jboss.org[jbosstools-dev@jboss.org]
