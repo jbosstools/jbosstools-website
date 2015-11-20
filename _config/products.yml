@@ -629,8 +629,7 @@ jbt_core:
         zips:
           - name: Stand-alone BrowserSim
             file_size: 16MB
-            # TODO: this URL should be 3.8.0?
-            url: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.jboss.tools.vpe.browsersim&a=org.jboss.tools.vpe.browsersim-standalone&v=3.7.0-SNAPSHOT&e=zip&c=standalone
+            url: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.jboss.tools.browsersim&a=org.jboss.tools.browsersim-standalone&v=3.8.0-SNAPSHOT&e=zip
             #url: http://download.jboss.org/jbosstools/neon/snapshots/builds/jbosstools-browsersim-standalone_master/latest/jbosstools-4.4.0.Alpha1-browsersim-standalone.zip
             #md5_url: http://download.jboss.org/jbosstools/neon/snapshots/builds/jbosstools-browsersim-standalone_master/latest/jbosstools-4.4.0.Alpha1-browsersim-standalone.zip.sha256
 
@@ -765,7 +764,8 @@ jbt_core:
         zips:
           - name: Stand-alone BrowserSim
             file_size: 16MB
-            url: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.jboss.tools.vpe.browsersim&a=org.jboss.tools.vpe.browsersim-standalone&v=3.7.0-SNAPSHOT&e=zip&c=standalone
+            url: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.jboss.tools.browsersim&a=org.jboss.tools.browsersim-standalone&v=3.7.1-SNAPSHOT&e=zip
+            # url: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.jboss.tools.vpe.browsersim&a=org.jboss.tools.vpe.browsersim-standalone&v=3.7.0-SNAPSHOT&e=zip&c=standalone
             #url: http://download.jboss.org/jbosstools/mars/snapshots/builds/jbosstools-browsersim-standalone_4.3.mars/latest/jbosstools-4.3.0.Final-browsersim-standalone.zip
             #md5_url: http://download.jboss.org/jbosstools/mars/snapshots/builds/jbosstools-browsersim-standalone_4.3.mars/latest/jbosstools-4.3.0.Final-browsersim-standalone.zip.sha256
 
