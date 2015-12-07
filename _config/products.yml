@@ -87,8 +87,8 @@ devstudio:
           - name: Stand-alone Installer
             url: https://www.jboss.org/download-manager/content/origin/files/sha256/b5/b55d3b959d4922f69338095aff4d3cea639766a7c07850e539ebc0b9029e8902/jboss-devstudio-9.0.0.GA-installer-standalone.jar
             file_size: 488MB
-          - name: Installer With EAP 6.4.0
-            url: https://www.jboss.org/download-manager/content/origin/files/sha256/4f/4fe77f731aa2a46a4d8568786c0c7c2d486e0926025d06a95360e9e767a2af94/jboss-devstudio-9.0.0.GA-installer-eap.jar
+          - name: Installer With EAP 6.4.0 CVE-2015-7501 (2015-12-08)
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/1e/1efef4d2b109efd9e8136d02067a8d62e00621e5b2b1530811bf52b5aa2fca6f/jboss-devstudio-9.0.0.GA-CVE-2015-7501-installer-eap.jar
             file_size: 633MB
         zips:
           - name: Update site (including sources) bundle of JBoss Developer Studio
