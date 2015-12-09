@@ -82,7 +82,7 @@ devstudio:
         supported_devstudio_is_version: 9.0.0.Alpha2
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
-        blog_announcement_url: /blog/ga-for-mars.html
+        blog_announcement_url: /blog/ga-cve-for-mars.html
         installers:
           - name: Stand-alone Installer
             url: https://www.jboss.org/download-manager/content/origin/files/sha256/b5/b55d3b959d4922f69338095aff4d3cea639766a7c07850e539ebc0b9029e8902/jboss-devstudio-9.0.0.GA-installer-standalone.jar
