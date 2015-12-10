@@ -1,7 +1,7 @@
 = Integration tooling featuring Fuse Data Transformation and SAP support
 :page-layout: blog
 :page-author: pleacu
-:page-date: 2015-12-08
+:page-date: 2015-12-10
 :page-tags: [release, jbosstools, devstudio, jbosscentral]
 
 *JBoss Fuse Tooling is now featuring production versions of the Fuse SAP Tool Suite, Fuse Data Transformation tooling and SwitchYard plus updated Data Virtualization (Teiid Designer/ ModeShape) and BRMS Tooling (BPEL, BPMN2, Drools/jBPM6) for Luna/JBoss Developer Studio 8.*
@@ -21,7 +21,7 @@ The Integration Stack for JBoss Developer Studio is a set of plugins for Eclipse
 
 === JBoss Business Process and Rules Development
 
-JBoss Business Process and Rules Development plug-ins provide design, debug and testing tooling for developing business processes for Red Hat JBoss BRMS and Red Hat JBoss BPM Suite. 
+JBoss Business Process and Rules Development plug-ins provide design, debug and testing tooling for developing business processes for Red Hat JBoss BRMS and Red Hat JBoss BPM Suite.
 
 * link:/features/bpel.html[BPEL Designer] - Orchestrating your business processes.
 * link:/features/bpmn2.html[BPMN2 Modeler] - A graphical modeling tool which allows creation and editing of Business Process Modeling Notation diagrams using graphiti.
@@ -30,7 +30,7 @@ JBoss Business Process and Rules Development plug-ins provide design, debug and 
 
 === JBoss Data Virtualization Development
 
-JBoss Data Virtualization Development plug-ins provide a graphical interface to manage various aspects of Red Hat JBoss Data Virtualization instances, including the ability to design virtual databases and interact with associated governance repositories. 
+JBoss Data Virtualization Development plug-ins provide a graphical interface to manage various aspects of Red Hat JBoss Data Virtualization instances, including the ability to design virtual databases and interact with associated governance repositories.
 
 * link:/features/modeshape.html[Modeshape] - A distributed, hierarchical, transactional and consistent data store with support for queries, full-text search, events, versioning, references, and flexible and dynamic schemas. It is very fast, highly available, extremely scalable, and it is 100% open source.
 * link:/features/teiiddesigner.html[Teiid Designer] - A visual tool that enables rapid, model-driven definition, integration, management and testing of data services without programming using the Teiid runtime framework.
