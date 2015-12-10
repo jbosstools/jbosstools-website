@@ -16,7 +16,7 @@ If there are updates they will be offered for you to automatically download and 
 
 To install the Integration Stack components from Ecipse Markeplace use link:https://marketplace.eclipse.org/content/red-hat-jboss-developer-studio-integration-stack-luna[JBoss Developer Studio Integration Stack] from the Eclipse Marketplace via *Help > Eclipse Marketplace...*
 
-image::/blog/images/jbtis/jbtis-422-b1.png[Eclipse Marketplace - JBoss Developer Studio Integration Stack]
+image::/blog/images/jbtis/jbtis-424-em.png[Eclipse Marketplace - JBoss Developer Studio Integration Stack]
 
 == Install via JBoss Central
 
