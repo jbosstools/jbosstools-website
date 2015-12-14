@@ -1,0 +1,69 @@
+= RedDeer 1.0.0.Final is here!
+:page-date: 2015-12-16
+:page-layout: blog
+:page-author: apodhrad
+:page-tags: [redddeer, release, eclipse, jbosstools]
+
+*I'm glad to announce that the RedDeer project has graduated from the incubation phase to the mature phase.*
+
+image::images/reddeer.png[]
+
+== Don't you know RedDeer?
+RedDeer is a framework for testing Eclipse plugins (or RCP) and can be executed over various operating systems (Linux, Mac, Windows). At the beginning it was developed as an alternative to SWTBot but now it contains many features and tools which can help you with writing automated tests.
+
+Now, when the project has left the incubation phase, the API won't be significantly changed for a long time and you don't have to change your existing code together with RedDeer updates. Like the previous version (0.8.0.Final) the RedDeer 1.0.0.Final is also intended for Eclipse Mars.
+
+=== Main features
+* Easy to use - just create an instance of the needed widget
+```
+New LabeledText("Project name:").setText("Demo");
+new PushButton("OK").click();
+```
+* High level API - wizards, views, etc are already implemented
+```
+NewJavaClassWizardDialog newJavaClassDialog = new NewJavaClassWizardDialog();
+newJavaClassDialog.open();
+new NewJavaClassWizardPage().setName("Demo");
+newJavaClassDialog.finish();
+```
+* Wait conditions - wait for a specific state
+```
+new WaitWhile(new JobIsRunning(), TimePeriod.LONG);
+
+```
+* Requirements - validate and set the environment according to your requirements
+```
+@ApacheTomcatServer(state = ServerReqState.RUNNING)
+```
+
+=== Tools
+* Project wizards - start testing by creating a test project with everything you need
+* Recorder - create an automated test by recording your steps
+* Spy view - spy all widgets just by mouse hover
+* GEF Spy view - spy GEF componets in a GEF editor
+* Log Parser - define rules how you want to see the log file
+* Code Generator - don't write the code manually, generate it
+
+
+== Future of RedDeer
+
+In addition to making the framework more and more stable we also plan to improve the recorder and our code generation tool. Moreover, the RedDeer framework is becoming a part of *JBoss Tools target platform* which means it will be available for any developer contributing to JBoss Tools.
+
+Do you have any idea about a new feature? Raise an issue on github! If you want to contribute, please follow steps described at https://github.com/jboss-reddeer/reddeer/wiki/Developer-guide.
+
+
+== Start using it
+
+You can install the RedDeer framework from http://download.jboss.org/jbosstools/updates/stable/mars/core/reddeer/1.0.0 and learn something about it from the following materials
+
+* link:https://github.com/jboss-reddeer/reddeer/wiki[RedDeer Wiki]
+* link:https://www.youtube.com/channel/UCDDzu0AjJ31POHQGsN5jWJw[RedDeer YouTube]
+* link:https://dzone.com/articles/hunting-swt-test-framework-say[Hunting for an SWT Test Framework? Say Hello to Red Deer]
+* link:https://dzone.com/articles/creating-complex-test[Creating Complex Test Configurations with Red Deer]
+* link:https://dzone.com/articles/if-bad-things-happen-good[If Bad Things Happen to Good Automated Tests - How Red Deer Helps you to Debug Failed Tests]
+* link:https://dzone.com/articles/red-deer-recorder[The Red Deer Recorder]
+
+and don't forget to follow us on twitter *@jbossreddeer* ;-)
+
+
+*Andrej Podhradsky*
