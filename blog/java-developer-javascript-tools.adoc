@@ -1,0 +1,47 @@
+= We are hiring again!
+:page-date: 2015-12-21
+:page-layout: blog
+:page-author: akazakov
+:page-tags: [job, jbosscentral]
+
+The Red Hat JBoss Developer Studio team is looking for a http://jobs.redhat.com/jobs/descriptions/senior-software-engineer-brno-jihomoravsky-kraj-czech-republic-job-1-5856525[Senior Software Engineer] who will help us to provide essential developer tooling for JavaScript and node.js tooling. We'll want the candidate to have good understanding of JavaScript and node.js application development. Be able to deliver a functional, well-tested and beautiful developer experience in and outside of Eclipse.
+This senior software engineer will become part of the core Red Hat JBoss Developer Studio and will collaborate with developers from other middleware products and from open source communities.
+
+=== Primary job responsibilities
+
+- Work with the team to provide tooling related to JavaScript and node.js supporting Red Hat middleware development, especially in context of remote and cloud development scenarios
+
+- Provide tooling that integrates technologies like Red Hat JBoss Middleware, CDI, Maven, Infinispan, Docker, OpenShift, and more; you do not need to know all of these technologies, but having some experience with three or more is a plus
+
+- Interest in how integrated development environments work and how they can be used effectively
+
+- Maintain a balance between making something perfect and shipping on time
+
+- Interact with tooling and runtime developers both inside Red Hat and in open source communities
+
+- Participate in the open source communities through blogs, participating in forums, and speaking at user groups and conferences
+
+=== Required skills
+
+- Knowledge of Eclipse plug-in development; knowledge about Eclipse JavaScript Development Tools (JSDT) or other JavaScript IDE’s/Tools are a plus 
+
+- Knowledge of Java enterprise application development
+
+- Exposure to open source development and projects is a plus
+
+- Experience working with a distributed team and communicating between different groups is a plus 
+
+- Bachelor degree in computer science or equivalent 
+
+- 5+ years of relevant experience
+
+Please http://jobs.redhat.com/jobs/descriptions/senior-software-engineer-brno-jihomoravsky-kraj-czech-republic-job-1-5856525[share the link] if you know someone
+that would be interested in this position.
+
+*Note:* _Please ignore the location posted in the
+http://jobs.redhat.com/jobs/descriptions/senior-software-engineer-brno-jihomoravsky-kraj-czech-republic-job-1-5856525[job
+description]. This position is actually good for many locations worldwide (anywhere there is a Red Hat office), as well as working from home._
+
+Thanks,
+
+Alexey Kazakov +
