@@ -94,6 +94,6 @@ A new server adapter has been added to help start and stop the Red Hat Container
 
 image::./images/cdk-server-adapter.png[width=600]
 
-This plugin is still very experimental, mainly due to the rapidly changing, fast-paced development going on in the underlying CDK. It's also worth nothing that several features will not work with the raw Red Hat CDK, and depend on the presence of a `.cdk` file in the same folder as your `Vagrantfile`.  This `.cdk` file is included along-side the `Vagrantfile` available at the `openshift-vagrant` github repository.  Instruction to install and use this enhanced CDK Vagrantfile can be found at https://github.com/redhat-developer-tooling/openshift-vagrant.
+This plugin is still very experimental, mainly due to the rapidly changing, fast-paced development going on in the underlying CDK. It's also worth noting that several features will not work with the raw Red Hat CDK, and depend on the presence of a `.cdk` file in the same folder as your `Vagrantfile`.  This `.cdk` file is included along-side the `Vagrantfile` available at the `openshift-vagrant` github repository.  Instruction to install and use this enhanced CDK Vagrantfile can be found at https://github.com/redhat-developer-tooling/openshift-vagrant.
 
 related_jira::JBIDE-21157[]
