@@ -1,0 +1,24 @@
+= We are hiring
+:page-date: 2016-01-07
+:page-layout: blog
+:page-author: ldimaggio
+:page-tags: [job, qe]
+
+The Developer Experience and Tooling group, of which JBoss Tools team is part, have a set of software QE job openings available. We are looking to continue improving the usability and quality of the developer experience around Eclipse and around the Red Hat product line, including JBoss Middleware.
+
+This is not your father's software QE! We make extensive use of automation and continuous integration. Topics range from coding tests in Java and JavaScript, to working with application servers and containers, to contributing source code, and working with CI/CD integrations.
+
+If you want to work with multiple different technologies and get them to work together then apply for one of the current listings.
+
+The current list of openings are:
+
+* http://jobs.redhat.com/jobs/descriptions/senior-quality-engineer-jboss-developer-tooling-brno-jihomoravsky-kraj-czech-republic-job-1-6111886[Senior QE Engineer]
+* http://jobs.redhat.com/jobs/descriptions/quality-engineer-brno-jihomoravsky-kraj-czech-republic-job-1-6084176[QE Engineer]
+* http://jobs.redhat.com/jobs/descriptions/quality-engineer-jboss-developer-tooling-brno-jihomoravsky-kraj-czech-republic-job-3-5774716[QE Engineer]
+
+Note: the job postings do list a specific location, but for the right candidate we are happy to consider many locations worldwide (anywhere there is a Red Hat office).
+
+_Happy 2016!_
+
+*Len DiMaggio*
+
