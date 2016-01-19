@@ -105,7 +105,7 @@ tab: downloads
     %section{:class=>"span4 well post-bg"}
       %header
         %h3
-          %a{:href => relative(download_page.output_path)} #{site.products[page.product_id].name}
+          %a{:href => relative(download_page.output_path)} #{site.products[page.product_id].name} #{product_info.version}
           - unless build_type.nil?
             %span{:class=>"label label_#{build_type}"}
               #{site.labels[build_type]}

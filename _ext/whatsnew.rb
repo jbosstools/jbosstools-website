@@ -33,10 +33,10 @@ module Awestruct
         # grouping all components' N&N pages per product id/version
         site.whatsnew_pages = Hash.new
         whatsnew_data.each do |component_id, component_pages|
-          puts "Processing N&N for #{component_id}"
+          #puts "Processing N&N for #{component_id}"
           # treat .adoc pages
           component_pages.select{|key, component_page| File.extname(key.to_s) == ".adoc"}.each do |key, component_page|
-            puts "  Processing N&N for #{component_id} in #{component_page.product_id}.#{component_page.product_version}"
+            #puts "  Processing N&N for #{component_id} in #{component_page.product_id}.#{component_page.product_version}"
             if site.whatsnew_pages[component_page.product_id].nil? then
               site.whatsnew_pages[component_page.product_id] = Hash.new
             end
@@ -51,18 +51,18 @@ module Awestruct
               #puts "    Stable version: #{product_stable_version}"
 
               if product_stable_version.nil?
-                puts "    Skipping aggregation of #{component_page.product_id}.#{component_page.product_version} page into stable version since it does not exist yet"
+                #puts "    Skipping aggregation of #{component_page.product_id}.#{component_page.product_version} page into stable version since it does not exist yet"
               else
                 stable_component_page = component_pages.values.select{|p| p.component_id == component_page.component_id &&
                   p.product_id == component_page.product_id && p.product_version == product_stable_version }.first
                 if stable_component_page.nil? || stable_component_page["include-previous"].nil? || stable_component_page["include-previous"] != false
-                  puts "    Adding #{component_page.product_version} to stable version of #{component_page.product_id}.#{product_stable_version}"
+                  #puts "    Adding #{component_page.product_version} to stable version of #{component_page.product_id}.#{product_stable_version}"
                   whatsnew_final_page = get_whatsnew_page(site, component_page.product_id, product_stable_version)
                   add_component_page(whatsnew_final_page, component_page)
                 elsif !stable_component_page.nil?
-                  puts "    Skipping aggregation because 'include-previous' page attribute was set to 'false'"
+                  #puts "    Skipping aggregation because 'include-previous' page attribute was set to 'false'"
                 else
-                  puts "    Skipping aggregation no 'stable' N&N page was found"
+                  #puts "    Skipping aggregation no 'stable' N&N page was found"
                 end
               end
             end

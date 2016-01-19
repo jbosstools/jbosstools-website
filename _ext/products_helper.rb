@@ -13,28 +13,31 @@ module Awestruct
       end
       module_function :get_main_version
 
-      # checks if there's a .Final version matching the given product_version of the given product_id
-      def has_higher_version(site, product_id, product_version)
+      # checks if there's a a higher version of the same type for the product
+      def has_higher_version(site, product_id, product_version, build_type)
         unless is_nightly_version(product_version) || is_unreleased_version(site, product_id, product_version)
-          return get_higher_version(site, product_id, product_version) > product_version
+          return get_higher_version(site, product_id, product_version, build_type) > product_version
         end
         false
       end
       module_function :has_higher_version
 
-      # returns the higher version in the stream of the given product_id / product_version,
+      # returns the higher version in the stream of the given product_id / product_version / build_type,
       # or nil if the given product_version is unknown (ie, the stream could not be found)
-      def get_higher_version(site, product_id, product_version)
+      def get_higher_version(site, product_id, product_version, build_type)
         main_version = get_main_version(product_version, false)
         site.products[product_id].streams.each do |stream_id, product_versions|
           # locate the stream: ie, it contains the given version
           if product_versions.include? product_version
             # sort versions by name (except nightly), retain higher one
             higher_product_version = product_versions.keys.
-              select{|p| get_main_version(p, false) == main_version && !is_nightly_version(p) &&
-                !product_versions[p].nil? && !product_versions[p].release_date.nil?}.
+              select{|p| get_main_version(p, false) == main_version &&
+                get_build_type(site, product_id, p) == build_type && 
+                !is_nightly_version(p) &&
+                !product_versions[p].nil? &&
+                !product_versions[p].release_date.nil?}.
               sort{|p1, p2| p1 <=> p2}.last
-            #puts " higher version for #{product_id} #{product_version} is #{product_versions[higher_product_version]}"
+            puts " higher version for #{product_id}.#{product_version} (#{build_type}) is #{higher_product_version}"
 
             return higher_product_version
           end
@@ -58,11 +61,10 @@ module Awestruct
       end
       module_function :get_build_type
 
-      # Returns a build type label if provided in products.yml, nil if the product is archived or has a higher version in the
-      # same stream or 'unreleased'
+      # Returns a build type label if provided in products.yml, or 'nil' if the product is archived or has a higher version
+      # of the same type in the same stream
       def get_build_type_label(site, product_id, product_version, build_type, archived)
-        build_type_label = "unreleased"
-        if archived || has_higher_version(site, product_id, product_version)
+        if archived || has_higher_version(site, product_id, product_version, build_type)
           build_type_label = nil
           #puts "  No specific build type for #{product_id} #{product_version} since it is archived or outdated."
         else

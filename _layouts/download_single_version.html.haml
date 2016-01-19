@@ -8,7 +8,7 @@ bottom_javascripts: ["/javascripts/download_tabs.js"]
     %ul.nav.nav-list.bs-docs-sidenav
       - active_page_found = false
       -# show active versions
-      - site.download_pages[page.product_id].each do |product_version, download_page| 
+      - site.download_pages[page.product_id].each do |product_version, download_page|
         - if !download_page.build_info.archived
           - active_page_found = active_page_found || download_page.build_info.version == page.build_info.version
           %li{:class=>("active" if download_page.build_info.version == page.build_info.version)}
@@ -20,7 +20,7 @@ bottom_javascripts: ["/javascripts/download_tabs.js"]
                   #{site.labels[download_page.build_info.build_type_label]}
       %li
         %a{:href=>relative("/downloads/overview.html")} All downloads
-        
+
   .span9#download.well.post-bg
     %h2.center
       #{page.build_info.name} #{page.build_info.version}
@@ -35,73 +35,73 @@ bottom_javascripts: ["/javascripts/download_tabs.js"]
         &#124;
       -# Blog announcement
       - unless page.build_info.blog_announcement_url.nil?
-        %a{:href=>relative(page.build_info.blog_announcement_url)} Blog Announcement 
+        %a{:href=>relative(page.build_info.blog_announcement_url)} Blog Announcement
         &#124;
       -# JBoss Tools has a What's New
       - unless page.build_info.whatsnew_url.nil?
-        %a{:href=>relative(page.build_info.whatsnew_url)} What's New 
+        %a{:href=>relative(page.build_info.whatsnew_url)} What's New
         &#124;
       -# devstudio has Release Notes
       - unless page.build_info.release_notes_url.nil?
-        %a{:href=>relative(page.build_info.release_notes_url)} Release Notes 
+        %a{:href=>relative(page.build_info.release_notes_url)} Release Notes
         &#124;
       %a{:href=>relative("/downloads/installation.html")} Installation Instructions
-             
+
     - if page.build_info.build_type == :development
       .alert.alert-info
         %strong Development builds
         have received basic testing, but are&nbsp;
         %strong<> not considered fully stable yet
         &#46;
-        - if has_higher_version(site, page.build_info.product_id, page.build_info.version)
-          - higher_version = get_higher_version(site, page.build_info.product_id, page.build_info.version)
+        - if has_higher_version(site, page.build_info.product_id, page.build_info.version, page.build_info.build_type)
+          - higher_version = get_higher_version(site, page.build_info.product_id, page.build_info.version, page.build_info.build_type)
           - higher_version_download_page = site.download_pages[page.build_info.product_id][higher_version]
           %br
           You may want to consider&nbsp;
-          %strong<> 
+          %strong<>
             %a{:href=>higher_version_download_page.output_path}<> #{page.build_info.name} #{higher_version_download_page.build_info.version}
           &#44; which is our latest #{page.build_info.build_type_label} release for #{page.build_info.eclipse_version.full_name}.
-          
+
     - elsif page.build_info.build_type_label == :nightly
       .alert.alert-warning
-        %strong Warning! 
+        %strong Warning!
         The
         %strong nightly build
         contains the latest and greatest new features, but nothing is stable or guaranteed - yet.
-        
+
     - unless page.build_info.eclipse_version.requirements.nil?
       .alert.alert-requirements
         - if page.build_info.product_id.to_s == "jbt_core"
           %strong Requirements:
-          #{page.build_info.eclipse_version.requirements} and 
+          #{page.build_info.eclipse_version.requirements} and
           %a{:href=>page.build_info.eclipse_version.download_url} #{page.build_info.eclipse_version.full_name}
         - elsif page.build_info.product_id.to_s == "devstudio"
           %strong Requirements:
           #{page.build_info.eclipse_version.requirements} only.
         - elsif page.build_info.product_id.to_s == "jbt_is"
-          - jbt_core_page = site.download_pages[:jbt_core][page.build_info.required_jbt_core_version] 
+          - jbt_core_page = site.download_pages[:jbt_core][page.build_info.required_jbt_core_version]
           %strong Requirements:
           #{page.build_info.eclipse_version.requirements} plus
           %a{:href=>page.build_info.eclipse_version.download_url} #{page.build_info.eclipse_version.full_name}
-          with 
+          with
           %a{:href=>relative(jbt_core_page.output_path)} #{site.products[:jbt_core].name} #{page.build_info.required_jbt_core_version}
         - elsif page.build_info.product_id.to_s == "devstudio_is"
           - devstudio_page = site.download_pages[:devstudio][page.build_info.required_devstudio_version]
           %strong Requirements:
           #{page.build_info.eclipse_version.requirements} plus
           %a{:href=>relative(devstudio_page.output_path)} #{site.products[:devstudio].name} #{page.build_info.required_devstudio_version}
-    
+
     #installation_tabs.tabbable
       %ul.nav.nav-tabs
-        - unless page.build_info.installers.nil? 
+        - unless page.build_info.installers.nil?
           %li{:id=>"direct_download_tab"}
             %a{:href=>"#direct_download", :"data-toggle"=>"tab"}
               Installer
-        - unless page.build_info.marketplace_install_url.nil? 
+        - unless page.build_info.marketplace_install_url.nil?
           %li{:id=>"marketplace_tab"}
             %a{:href=>"#marketplace", :"data-toggle"=>"tab"}
               Eclipse Marketplace
-        - unless (page.build_info.product_id.to_s == "devstudio" && page.build_info.supported_devstudio_is_version.nil?) || (page.build_info.product_id.to_s == "jbt_core" && page.build_info.supported_jbt_is_version.nil?) 
+        - unless (page.build_info.product_id.to_s == "devstudio" && page.build_info.supported_devstudio_is_version.nil?) || (page.build_info.product_id.to_s == "jbt_core" && page.build_info.supported_jbt_is_version.nil?)
           %li{:id=>"central_tab"}
             %a{:href=>"#central", :"data-toggle"=>"tab"}
               Central
@@ -113,15 +113,15 @@ bottom_javascripts: ["/javascripts/download_tabs.js"]
           %li{:id=>"zips_tab"}
             %a{:href=>"#zips", :"data-toggle"=>"tab"}
               Artifacts
-        
-    #installation-tabs-content.tab-content     
-      - unless page.build_info.installers.nil? 
+
+    #installation-tabs-content.tab-content
+      - unless page.build_info.installers.nil?
         .tab-pane{:id=>"direct_download"}
           .alert
-            :markdown 
+            :markdown
               **Registration required**
-              Downloads require accepting the 
-              [terms and conditions](http://www.jboss.org/developer-program/termsandconditions) 
+              Downloads require accepting the
+              [terms and conditions](http://www.jboss.org/developer-program/termsandconditions)
               of the JBoss Developer Program which provides $0 subscriptions for development use only.
           %p Select the Installer you want to download
           %table.center
@@ -131,11 +131,11 @@ bottom_javascripts: ["/javascripts/download_tabs.js"]
               %th<Links
             - page.build_info.installers.each do |installer|
               %tr
-                %td #{installer.name}  
-                %td.right 
+                %td #{installer.name}
+                %td.right
                   - if installer.file_size?
-                    #{installer.file_size}              
-                %td 
+                    #{installer.file_size}
+                %td
                   - if installer.url.end_with? "zip"
                     %a{:href=>installer.url} zip
                   - elsif installer.url.end_with? "jar"
@@ -151,25 +151,25 @@ bottom_javascripts: ["/javascripts/download_tabs.js"]
                     (
                     %a{:href=>installer.md5_url}> md5
                     )
-      
-      - unless page.build_info.marketplace_install_url.nil? 
+
+      - unless page.build_info.marketplace_install_url.nil?
         .tab-pane{:id=>"marketplace"}
           %p
             Drag and drop this
             %a{:href=>page.build_info.marketplace_install_url, :title=>"Install"}<
               %img{:src=>relative("/images/tools/installbutton.png"), :alt=>"Drag and drop this button into a running #{eclipse_name} workspace to install #{page.build_info.name}", :height=>"25", :width=>"63"}
             icon into your active
-            %strong< #{page.build_info.eclipse_version.full_name} 
+            %strong< #{page.build_info.eclipse_version.full_name}
             workspace, or alternatively, search for &quot;
             %strong> #{page.build_info.name} (#{page.build_info.eclipse_version.short_name})
             &quot; in Eclipse via:
-            %blockquote 
+            %blockquote
               Help > Eclipse Marketplace...
           %p
             You can also view the installation page on the&nbsp
             %a{:href=>page.build_info.marketplace_url, :title=>"Eclipse Marketplace"}> Eclipse Marketplace
             \.
-    
+
       -# Central
       - if page.build_info.supported_jbt_is_version != nil || page.build_info.supported_devstudio_is_version != nil || page.build_info.required_devstudio_version != nil || page.build_info.required_jbt_core_version != nil
         .tab-pane{:id=>"central"}
@@ -183,9 +183,9 @@ bottom_javascripts: ["/javascripts/download_tabs.js"]
               - is_page = site.download_pages[:jbt_is][page.build_info.supported_jbt_is_version]
             %br
             %strong #{is_product_name}
-            provides a number of additional features and tools for 
+            provides a number of additional features and tools for
             %br
-            %strong #{installed_product_name}.  
+            %strong #{installed_product_name}.
             %p
             %a{:href=>relative(is_page.output_path)} Click here to learn more or install.
           - elsif page.build_info.product_id.to_s == "devstudio_is" || page.build_info.product_id.to_s == "jbt_is"
@@ -205,7 +205,7 @@ bottom_javascripts: ["/javascripts/download_tabs.js"]
             1. Drag and drop this
             %a{:href=>central_install_url, :title=>"Install"}<
               %img{:src=>relative("/images/tools/installbutton-#{installed_product_short}.png"), :alt=>"Drag and drop this button into the Software/Update tab of JBoss Central to to choose which #{page.build_info.name} features to install", :height=>"25", :width=>"63"}
-            button into the 
+            button into the
             %a{"data-toggle" => "modal", :href => "#jbosscentral", :role => "button"} Software/Update tab of JBoss Central
             #jbosscentral.modal.hide.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
               .modal-header
@@ -223,19 +223,19 @@ bottom_javascripts: ["/javascripts/download_tabs.js"]
       - unless page.build_info.update_site_url.nil?
         .tab-pane{:id=>"update_site"}
           :markdown
-            Add the following URL to your **#{page.build_info.eclipse_version.full_name}** installation, via:<br/> 
+            Add the following URL to your **#{page.build_info.eclipse_version.full_name}** installation, via:<br/>
 
             > Help > Install New Software... > Work with:
 
             [ #{page.build_info.update_site_url.to_s} ]( #{page.build_info.update_site_url.to_s} )
 
             Then select the individual features that you want to install:
-    
+
       -# Update Site Zips
       - unless page.build_info.zips.nil?
         .tab-pane{:id=>"zips"}
           :markdown
-            Listed below are artifacts related to this release. 
+            Listed below are artifacts related to this release.
 
             Update Site zips (Archived p2 Repos) are for offline installation. You **do not need to unpack these zips** to use them. Install into Eclipse via:<br/>
 
@@ -250,11 +250,11 @@ bottom_javascripts: ["/javascripts/download_tabs.js"]
               %th<Links
             - page.build_info.zips.each do |zip|
               %tr
-                %td #{zip.name}  
-                %td.right 
+                %td #{zip.name}
+                %td.right
                   - if zip.file_size?
-                    #{zip.file_size}              
-                %td 
+                    #{zip.file_size}
+                %td
                   - if zip.url.end_with? "zip"
                     %a{:href=>zip.url} zip
                   - elsif zip.url.end_with? "jar"
@@ -270,5 +270,3 @@ bottom_javascripts: ["/javascripts/download_tabs.js"]
                     (
                     %a{:href=>zip.md5_url}> md5
                     )
-            
- 
