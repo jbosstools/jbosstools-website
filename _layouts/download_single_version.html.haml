@@ -27,8 +27,9 @@ bottom_javascripts: ["/javascripts/download_tabs.js"]
       - unless page.build_info.build_type.nil?
         %span#displayed-version{:class=>"label label_#{page.build_info.build_type}"}
           #{site.labels[page.build_info.build_type]}
-    .center
-      #{page.build_info.release_date}
+    - unless page.build_info.release_date.nil?
+      .center
+        #{page.build_info.release_date}
     .center
       - unless page.build_info.documentation_url.nil?
         %a{:href=>relative(page.build_info.documentation_url)} Documentation

@@ -54,7 +54,7 @@ module Awestruct
                   (@site.latest_builds_download_pages[product_id][product_info.build_type].nil? ||
                     (@site.latest_builds_download_pages[product_id][product_info.build_type].build_info.version <=> download_page.build_info.version) == -1 ))
                 @site.latest_builds_download_pages[product_id][product_info.build_type] = download_page
-                puts "Latest build for #{eclipse_id} / #{product_id} #{product_info.build_type}: #{product_info.version}"
+                #puts "Latest build for #{eclipse_id} / #{product_id} #{product_info.build_type}: #{product_info.version}"
               end
             end
           end

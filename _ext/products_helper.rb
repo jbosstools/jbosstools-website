@@ -32,13 +32,12 @@ module Awestruct
             # sort versions by name (except nightly), retain higher one
             higher_product_version = product_versions.keys.
               select{|p| get_main_version(p, false) == main_version &&
-                get_build_type(site, product_id, p) == build_type && 
+                (get_build_type(site, product_id, p) == build_type || get_build_type(site, product_id, p) == :stable) &&
                 !is_nightly_version(p) &&
                 !product_versions[p].nil? &&
                 !product_versions[p].release_date.nil?}.
               sort{|p1, p2| p1 <=> p2}.last
             puts " higher version for #{product_id}.#{product_version} (#{build_type}) is #{higher_product_version}"
-
             return higher_product_version
           end
         end
@@ -137,7 +136,8 @@ module Awestruct
         info.product_name = site.products[product_id].name
         info.version = product_version
         info.archived = (build_info[:archived] unless build_info.nil?) || false
-        info.release_date = build_info["release_date"] unless build_info.nil?
+        info.release_date = build_info["release_date"] unless (build_info.nil? || !build_info.has_key?("release_date"))
+        #puts " Release date: #{info.version}: #{info.release_date}"
         info.renamed_as = build_info["renamed_as"] unless build_info.nil?
         info.eclipse_version = eclipse_version
         info.build_type = get_build_type(site, product_id, product_version)

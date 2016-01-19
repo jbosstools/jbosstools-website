@@ -1178,6 +1178,7 @@ jbt_core:
             url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.x/zz_Release_Notes_4.1.1.Final.readme.html
       4.1.1.CR1:
         archived: true
+        release_date: 2013-11-29
         zips:
           - name: Update site (including sources) bundle of all JBoss Core Tools
             file_size: 438.1MB
@@ -1197,6 +1198,7 @@ jbt_core:
 
       4.1.1.Beta1:
         archived: true
+        release_date: 2013-11-08
         zips:
           - name: Update site (including sources) bundle of all JBoss Core Tools
             file_size: 423.9MB
@@ -1216,6 +1218,7 @@ jbt_core:
 
       4.1.1.Alpha2:
         archived: true
+        release_date: 2013-10-14
         zips:
           - name: Update site (including sources) bundle of all JBoss Core Tools
             file_size: 432.5MB
@@ -1235,6 +1238,7 @@ jbt_core:
 
       4.1.1.Alpha1:
         archived: true
+        release_date: 2013-09-12
         zips:
           - name: Update site (including sources) bundle of all JBoss Core Tools
             file_size: 432.2MB
