@@ -8,7 +8,7 @@
 
 == OpenShift 3 support improvements
 
-More than 60 issues targeting OpenShift 2 support have been fixed in this release of the OpenShift tooling.
+More than 60 issues targeting OpenShift 3 support have been fixed in this release of the OpenShift tooling.
 The OpenShift 3 integration was introduced as a technology preview feature in JBDS 9.0.0.GA but will graduate to a supported feature in the upcoming JBDS 9.1.0.GA release.
 Here's a selection of the most interesting fixes and improvements in this release:
 
