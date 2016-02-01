@@ -11,13 +11,13 @@ What is JBoss Tools?::
 
 How do I install JBoss Tools?::
 
-Go to link:../../downloads[Downloads] to select the distribution that fits your needs. 
+Go to link:../../downloads[Downloads] to select the distribution that fits your needs.
 +
 Here you can:
 
   * Choose an all-in-one install via link:https://www.jboss.org/products/devstudio[Red Hat JBoss Developer Studio], or
   * Choose individual features from the link:/downloads/[JBoss Tools] update site, or
-  * Install from the link:http://marketplace.eclipse.org/[Eclipse Marketplace]. 
+  * Install from the link:http://marketplace.eclipse.org/[Eclipse Marketplace].
 
 
 What is JBoss Tools Integration Stack?::
@@ -40,10 +40,10 @@ Where can I find answers about the Browser Simulator?::
 
 Where can I find answers about the CordovaSim?::
   See the link:./cordovasim.html[CordovaSim FAQ]
-  
+
 Where can I find answers about the Visual Page Editor?::
   See the link:./visualeditor.html[Visual Page Editor FAQ]
-  
+
 === Server/Publishing
 
 [qanda]
@@ -51,3 +51,13 @@ I use eclipse with the jboss tools installed, is there any way to republish my a
 
 Use menu:Help[Key assist] and a yellow window pops up with current keyboard shortcuts. Type "Full" and a "Full Publish module" should show up with the right key.
 It is a bit long, but you can reconfigure it if you wish to under menu:Preferences[General, Keys].
+
+=== LiveReload
+
+[qanda]
+I use JBoss Tools with LiveReload enabled, but my HTML Page is not refreshed after page a change was published on the application server. Why ?::
+
+The LiveReload server configuration editor provides a "Reload delay" property that can be adjusted to give enough time
+to the application server to detect and take into account the changes before the web browser sends its HTTP request.
+
+image::./images/livereload-server_configuration_editor.png[LiveReload Server Configuration Editor]
