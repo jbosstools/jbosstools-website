@@ -7,7 +7,7 @@
 
 == Run Image Launch Configuration
 
-When running an image, a launch configuration is created, based on the selected image.
+When running an image, a launch configuration is created based on the selected image.
 This is useful when users want to try tweaking a previous run for various reasons
 (e.g. binding in new volumes or changing command parameters, etc.)
 

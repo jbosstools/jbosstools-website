@@ -15,7 +15,7 @@ image::images/4.3.1.Beta1/startup.png[]
 Major changes::
 
 - Forge now requires JDK 8 to run;
-- Commands are now unix-like. Eg. `--targetPackage` was renamed to `--target-package`. This may impact existing scripts and documentation.
+- Commands are now unix-like. For example, `--targetPackage` was renamed to `--target-package`. This may impact existing scripts and documentation.
 
 Start the Forge runtime using the Ctrl+4 (or Cmd+4) key combination.
 endif::finalnn[]

@@ -8,13 +8,13 @@
 
 == OpenShift 3 support improvements
 
-More than 80 issues have been fixed in this release of the OpenShift tooling, mostly targetting OpenShift 3 support.
-OpenShift 3 was introduced as a techpreview feature in JBDS 9.0.0.GA but will graduate to a supported feature in the upcoming JBDS 9.1.0.GA release. Here's a pick of the most interesting fixes and improvements we brought here:
+More than 80 issues are fixed in this release of the OpenShift tooling, mostly targeting OpenShift 3 support.
+OpenShift 3 was introduced as a technology preview feature in JBDS 9.0.0.GA but will graduate to a supported feature in the upcoming JBDS 9.1.0.GA release. The following is a list of improvements and additions in this release:
 
 === Deploy workspace projects
 You can now deploy existing workspace projects to OpenShift 3 instances. You can either create a new OpenShift application, using an OpenShift 3 connection and then select the workspace project to deploy, or you can start by right-clicking on a project and use the `Configure...` > `Deploy to OpenShift...` menu.
 
-The project needs to be shared with git and declare a remote git repository using the HTTP(S) protocol. That repository needs to be accessible from the OpenShift instance you're deploying to. Once a project is selected, a selection of compatible templates will be displayed, matching the type of the project. The remote git url will be injected as a value for the `SOURCE_REPOSITORY_URL` (or legacy `GIT_URI`) template parameter.
+The project needs to be shared with git and declared a remote git repository using the HTTP(S) protocol. That repository needs to be accessible from the target OpenShift instance. Once a project is selected, a selection of compatible templates will be displayed, matching the type of the project. The remote git URL is injected as a value for the `SOURCE_REPOSITORY_URL` (or legacy `GIT_URI`) template parameter.
 
 image::./images/deploy-workspace-project.png[width=600]
 
@@ -22,15 +22,15 @@ related_jira::JBDS-3489[]
 
 === New OpenShift 3 server adapter
 
-A prototype for a new OpenShift 3 server adapter is now available. It's goal is to allow incremental deployment of workspace resources directly into the deployed node on OpenShift, bypassing the whole build step. Its capabilities are currently limited and require a number of manual steps to set it up, but we should streamline its usage in the next Beta. Currently only Node and PHP based applications are supported.
+A prototype for a new OpenShift 3 server adapter is now available. Its goal is to allow incremental deployment of workspace resources directly into the deployed node on OpenShift, bypassing the build step. Its capabilities are currently limited and require a number of manual steps to set up, but the usage will be streamlined in subsequent releases. Currently only Node and PHP based applications are supported.
 
 [NOTE]
-This feature requires a version of the OpenShift binary *higher than 1.1.0.1*. If no https://github.com/openshift/origin/releases[official release] is available, you can download a CI build for your OS from https://ci.openshift.redhat.com/jenkins/job/devenv_ami/lastSuccessfulBuild/artifact/origin/artifacts/release/  
+This feature requires a version of the OpenShift binary *higher than 1.1.0.1*. If no https://github.com/openshift/origin/releases[official release] is available, you can download a CI build for your OS from https://ci.openshift.redhat.com/jenkins/job/devenv_ami/lastSuccessfulBuild/artifact/origin/artifacts/release/
 
-To create a new OpenShift 3 server adapter, you first need :
+To create a new OpenShift 3 server adapter, ensure that you have:
 
 - the oc binary available in your system PATH, or set in `Preferences > JBoss Tools > OpenShift 3`
-- it's strongly recommended rsync be on the PATH too, to get a faster turnaround.
+- it's strongly recommended rsync be on the PATH too, to get a faster turnaround
 - an existing OpenShift 3 connection
 - a workspace project (preferably Node.js or PHP for now) already deployed to that connection
 
@@ -38,13 +38,12 @@ From the Servers view, create a new Server, select `OpenShift 3 Server Adapter` 
 
 image::./images/openshift3-new-server.png[width=600]
 
-Select the workspace project to deploy, that will update the `Source path` to synchronize from. For Node.js and PHP projects, that means the root of the project will be deployed. Other types of projects could use different source folders (eg. an exploded war folder for web projects, but this is currently not heavily tested/working). 
-The `Pod Deployment Path` is the location where the files will be copied to, on the OpenShift pod. The current value is set to work for Node.js and PHP applications, but that could potentially be some place else for other kind of projects. Finally, you need to select the OpenShift service to deploy to. You can click finish directly, once you're set.
+Select the workspace project to deploy and this updates the `Source path` to synchronize from. For Node.js and PHP projects, that means the root of the project will be deployed. Other types of projects could use different source folders (for example, an exploded WAR folder for web projects, but this is currently not heavily tested/working).
+The `Pod Deployment Path` is the target location where the files will be copied on the OpenShift pod. The current value is set to work for Node.js and PHP applications, but that could potentially be some place else for other kind of projects. Finally, you need to select the target OpenShift service. You can click finish directly once you're set.
 
-Now, every time you want to push your local changes directly to OpenShift without having to commit and push them to git first, you can simply right-click on your new OpenShift 3 server, in the `Servers` view, and click `Publish`. The content of `Source path` will be automatically synchronized to the deployed pod. The initial deployment might take several seconds to perform, but subsequent deployments will be much faster. If the deployed application support resource updates (eg. Node.js supports html updates, but needs to be restarted for JS ones, unless it's started in debug mode), then you should be able to see your changes by simply refreshing your browser.
+Now, every time you want to push your local changes directly to OpenShift without having to commit and push them to git first, right-click on your new OpenShift 3 server, in the `Servers` view, and click `Publish`. The content of `Source path` will be automatically synchronized to the deployed pod. The initial deployment might take several seconds to perform, but subsequent deployments will be much faster. If the deployed application support resource updates (for examples, Node.js supports html updates, but needs to be restarted for JS ones, unless it's started in debug mode), then you should be able to see your changes by simply refreshing your browser.
 
-We're working on making the whole setup more streamlined, for the next release. Server creation should be more automatic, changes will be automatically published (and faster) without having to manually hit the Publish menu every time, we should also be able to better support incremental deployment of JavaEE applications.
-
+In future releases, this will become more streamlined. Server creation should be more automatic, changes will be automatically published (and faster) without having to manually hit the Publish menu every time, we should also be able to better support incremental deployment of JavaEE applications.
 
 
 related_jira::JBIDE-20764[]
@@ -62,18 +61,18 @@ A new `Edit...` menu is available in the OpenShift Explorer, allowing you to edi
 image::./images/edit-resources.png[width=600]
 
 [WARNING]
-Be aware this is a very powerful tool, to use with caution, as you might risk accidentaly corrupting your OpenShift project.
+Be aware this is a very powerful tool, to use with caution, as you might risk accidentally corrupting your OpenShift project.
 
 related_jira::JBIDE-20761[]
 
 === Integration with Docker tooling
 
 ==== Search for Docker images
-When deploying a Docker image, searching for a docker image has never been easier, simply click on the `Search...` button and find your favorite image from the the selected Docker registry:
+When deploying a Docker image, searching for a docker image has never been easier. Click on the `Search...` button and find your favorite image from the the selected Docker registry:
 
 image::./images/search_docker_images.png[width=800]
 
-Please note that the image needs to have been pulled in the selected docker registry, before it can be deployed to openshift, or else we won't be able to perform port mapping and openshift will fail to create the service.
+Please note that the image needs to have been pulled in the selected docker registry, before it can be deployed to OpenShift, or else we won't be able to perform port mapping and OpenShift will fail to create the service.
 
 related_jira::JBIDE-20530,JBIDE-21133[]
 
@@ -82,7 +81,7 @@ related_jira::JBIDE-20530,JBIDE-21133[]
 
 It is now possible to expose ports to a deployment, other than just those explicitly exposed on the docker image (they still need to be exposed by the image though).
 
-The default exposed ports can be changed, reset, but not removed, as opposed to the new aforementioned ports. 
+The default exposed ports can be changed, reset, but not removed, as opposed to the new aforementioned ports.
 
 image::./images/expose-service-ports.png[width=450]
 
@@ -94,6 +93,6 @@ A new server adapter has been added to help start and stop the Red Hat Container
 
 image::./images/cdk-server-adapter.png[width=600]
 
-This plugin is still very experimental, mainly due to the rapidly changing, fast-paced development going on in the underlying CDK. It's also worth noting that several features will not work with the raw Red Hat CDK, and depend on the presence of a `.cdk` file in the same folder as your `Vagrantfile`.  This `.cdk` file is included along-side the `Vagrantfile` available at the `openshift-vagrant` github repository.  Instruction to install and use this enhanced CDK Vagrantfile can be found at https://github.com/redhat-developer-tooling/openshift-vagrant.
+This plugin is still experimental, mainly due to the rapidly changing, fast-paced development going on in the underlying CDK. It's also worth noting that several features will not work with the raw Red Hat CDK, and depend on the presence of a `.cdk` file in the same folder as your `Vagrantfile`.  This `.cdk` file is included alnog with the `Vagrantfile` available at the `openshift-vagrant` github repository.  Instruction to install and use this enhanced CDK Vagrantfile can be found at https://github.com/redhat-developer-tooling/openshift-vagrant.
 
 related_jira::JBIDE-21157[]

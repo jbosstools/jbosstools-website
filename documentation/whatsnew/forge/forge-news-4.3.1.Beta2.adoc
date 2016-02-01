@@ -8,7 +8,7 @@
 ifndef::finalnn[]
 == Forge Runtime updated to 3.0.0.Beta3
 
-The included Forge runtime is now 3.0.0.Beta3. Read the official announcement  http://forge.jboss.org/news/forge-3.0.0.beta3-is-here[here]
+The included Forge runtime is now 3.0.0.Beta3. Read the official announcement  http://forge.jboss.org/news/forge-3.0.0.beta3-is-here[here].
 
 image::images/4.3.1.Beta2/startup.png[]
 
@@ -16,7 +16,7 @@ endif::finalnn[]
 
 == Labels now display a tooltip
 
-If you hover the label, you will see the same tooltip as when hovering the input field 
+If your mouse pointer hovers a label, you will see the same tooltip as when the mouse hovers over the input field.
 
 image::images/4.3.1.Beta2/tooltip.png[]
 
@@ -26,6 +26,6 @@ Forge now supports choosing a technology stack when creating a project:
 
 image::images/4.3.1.Beta2/stack-new-project.png[]
 
-Besides setting up your project, choosing a stack will automatically hide some input fields in the existing wizards, like the JPA Version in the `JPA: Setup` wizard:
+In addition to setting up your project, choosing a stack automatically hides some input fields in the existing wizards, such as the JPA Version in the `JPA: Setup` wizard:
 
 image::images/4.3.1.Beta2/stack-jpa-setup.png[]

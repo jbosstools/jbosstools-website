@@ -7,6 +7,6 @@
 
 == Freemarker 2.3.23
 
-Freemarker library included in Fremarker IDE was updated to latest available version 2.3.23.
+Freemarker library included in the Fremarker IDE was updated to latest available version 2.3.23.
 
 related_jira::JBIDE-20908[]
