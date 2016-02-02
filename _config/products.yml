@@ -74,10 +74,36 @@ devstudio:
   url_path_fragment: devstudio
   streams:
     mars:
-      9.1.0.Beta1:
+      9.1.0.Beta2:
         update_site_url: https://devstudio.redhat.com/9.0/development/updates/
         #marketplace_url: https://marketplace.eclipse.org/node/1616973
         #marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
+        release_date: 2016-02-02
+        supported_devstudio_is_version: 9.0.0.Alpha2
+        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        blog_announcement_url: /blog/beta2-for-mars2.adoc
+        installers:
+          - name: Stand-alone Installer
+            url: http://www.jboss.org/download-manager/content/origin/files/sha256/d0/d0514fe0fe3fb492d8728b8f0c48f943596ef357dc12d7ac751a98bf8dc92dc9/jboss-devstudio-9.1.0.Beta2-installer-standalone.jar
+            file_size: 505MB
+          - name: Installer With EAP 6.4.0 CVE-2015-7501
+            url: http://www.jboss.org/download-manager/content/origin/files/sha256/71/71d514a9206f18ac2b4b9f10491c18c80efa27f3e24ecb05b55cbf75a536efc4/jboss-devstudio-9.1.0.Beta2-installer-eap.jar
+            file_size: 651MB
+        zips:
+          - name: Update site (including sources) bundle of JBoss Developer Studio
+            url: http://www.jboss.org/download-manager/content/origin/files/sha256/0e/0ed7ae6e78f7c0a7a607b9dffa41eaecd56671cf8fcaf7f1712304d2c4ca7a70/jboss-devstudio-9.1.0.Beta2-updatesite-core.zip
+            file_size: 528MB
+          - name: Target Platform for JBoss Developer Studio
+            url: https://devstudio.redhat.com/9.0/development/updates/core/jboss-devstudio-9.1.0.Beta2-target-platform.zip
+            file_size: 471MB
+          - name: JBoss Central Zip
+            url: http://www.jboss.org/download-manager/content/origin/files/sha256/ac/ac7c578d8c1824dfacef083a0b6f4fefae14f08caac0b83b92aa91924a8cdc2b/jboss-devstudio-9.1.0.Beta2-updatesite-central.zip
+            file_size: 154MB
+          - name: Sources Zip
+            url: http://www.jboss.org/download-manager/content/origin/files/sha256/16/162775ca1223880bcdf3756b1167faef7caf00a3287d11e9a3ed78160de20408/jboss-devstudio-9.1.0.Beta2-src.zip
+            file_size: 225MB
+      9.1.0.Beta1:
         release_date: 2015-12-21
         supported_devstudio_is_version: 9.0.0.Alpha2
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
@@ -677,11 +703,31 @@ jbt_core:
             #md5_url: http://download.jboss.org/jbosstools/neon/snapshots/builds/jbosstools-browsersim-standalone_master/latest/jbosstools-4.4.0.Alpha1-browsersim-standalone.zip.sha256
 
     mars:
-      4.3.1.Beta1:
+      4.3.1.Beta2:
         update_site_url: http://download.jboss.org/jbosstools/mars/development/updates/
         #marketplace_url: https://marketplace.eclipse.org/node/1617241
         #marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1617241
         #archived: true
+        release_date: 2016-02-02
+        supported_jbt_is_version: 4.3.0.Alpha2
+        blog_announcement_url: /blog/beta2-for-mars2.html
+        documentation_url: http://docs.jboss.org/tools/
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 398MB
+            url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.1.Beta2-updatesite-core.zip
+            md5_url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.1.Beta2-updatesite-core.zip.sha256
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 222MB
+            url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.1.Beta2-src.zip
+            md5_url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.1.Beta2-src.zip.sha256
+          - name: Stand-alone BrowserSim
+            file_size: 16MB
+            url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.1.Beta2-browsersim-standalone.zip
+            md5_url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.1.Beta2-browsersim-standalone.zip.sha256
+          - name: Release Notes
+            url: http://tools.jboss.org/documentation/whatsnew/index.html
+      4.3.1.Beta1:
         release_date: 2015-12-21
         supported_jbt_is_version: 4.3.0.Alpha2
         blog_announcement_url: /blog/beta1-for-mars2.html
