@@ -1,0 +1,98 @@
+= Exploring how to build from pull requests in Jenkins for continuous feedback
+:page-date: 2016-02-25
+:page-layout: blog
+:page-author: nickboldt
+:page-tags: [ci, cd, releng, devstudio, jbosstools]
+
+A couple weeks ago, I started prototyping how we could enable building PRs submitted against the JBoss Tools projects, in order to more easily create installable update sites (Eclipse p2 repositories) from pull requests. This is part of our new thrust to provide more continuous integration and deployment, to better be able to release software faster.
+
+== Purpose
+
+Verify a commit before pushing it to master. Continuous feedback. Easier installation testing. Ability to share a proposed change, including the whole built update site so peer reviews can be done against binaries as well as sources.
+
+== Job Config
+
+Here's how to configure a job to use the https://wiki.jenkins-ci.org/display/JENKINS/GitHub+pull+request+builder+plugin[Github Pull Request Builder Plugin]:
+
+1. add a sha1 parameter
+
+        <hudson.model.StringParameterDefinition>
+          <name>${sha1}</name>
+          <description/>
+          <defaultValue>master</defaultValue>
+        </hudson.model.StringParameterDefinition>
+
+2. pull from git using this remote config:
+
+        <name>origin</name>
+        <refspec>+refs/heads/*:refs/remotes/origin/* +refs/pull/*:refs/remotes/origin/pr/*</refspec>
+
+3. pull from git using this branch:
+
+		${sha1}
+
+4. enable Github Pull Request Trigger
+
+    <org.jenkinsci.plugins.ghprb.GhprbTrigger plugin="ghprb@1.20.1">
+      <spec>H/5 * * * *</spec>
+      <adminlist>nickboldt</adminlist>
+      <allowMembersOfWhitelistedOrgsAsAdmin>false</allowMembersOfWhitelistedOrgsAsAdmin>
+      <orgslist>jbosstools</orgslist>
+      <cron>H/5 * * * *</cron>
+      <triggerPhrase/>
+      <onlyTriggerPhrase>false</onlyTriggerPhrase>
+      <useGitHubHooks>false</useGitHubHooks>
+      <permitAll>false</permitAll>
+      <commentFilePath/>
+      <whitelist>nickboldt</whitelist>
+      <autoCloseFailedPullRequests>false</autoCloseFailedPullRequests>
+      <displayBuildErrorsOnDownstreamBuilds>false</displayBuildErrorsOnDownstreamBuilds>
+      <whiteListTargetBranches>
+        <org.jenkinsci.plugins.ghprb.GhprbBranch>
+          <branch/>
+        </org.jenkinsci.plugins.ghprb.GhprbBranch>
+      </whiteListTargetBranches>
+      <msgSuccess/>
+      <msgFailure/>
+      <commitStatusContext/>
+      <project>jbosstools-build-sites.aggregate.child-sites__pull-request_master</project>
+    </org.jenkinsci.plugins.ghprb.GhprbTrigger>
+
+== Job Steps & Deployment
+
+One way to react to a successful build of a PR is to simply deploy to a different URL than normal builds.
+
+For example, a job could be set up such that if ${ghprbPullId} is defined, a deploy-pr profile is used; if not, the usual deploy-to-jboss.org profile could instead be used.
+
+	mvn deploy -Pdeploy-pr
+
+However, we might also want a different sequence of build steps in a job. Normally, we orchestrate jobs to build, deploy, & test. But for a PR build, we might instead want to sequence the steps as build+test, and only deploy if successful.
+
+So perhaps instead of parameterizing the job to publish to snapshots/pulls/ or snapshots/builds/, we might instead parameterize the maven lifecycle steps:
+
+	if [[ ! ${ghprbPullId} ]]; then
+		mvnStep1="clean install -DskipTests" # build without tests
+		mvnStep2="deploy -Pdeploy-to-jboss.org" # deploy if p2diff or SHA check shows difference into /builds/ folder
+		mvnStep3="verify" # run tests & fail job if problems found
+	else
+		mvnStep1="clean deploy -Pdeploy-pr" # build and test, then deploy to /pulls/ folder if successful or fail if tests fail
+		mvnStep2="NONE"
+		mvnStep3="NONE"
+	fi
+
+Current experiment is here (sorry, VPN required):
+
+http://jenkins.mw.lab.eng.bos.redhat.com/hudson/job/jbosstools-build-sites.aggregate.child-sites__pull-request_master/
+
+
+== Questions / TODOs
+
+* Can whitelists be set up programmatically? (git committerIDs which can trigger a build automatically)
+
+* Can admins be set up programmatically? (git committerIDs which can approve a PR to be built, rather than ANY submitted PR, to prevent malicious attacks)
+
+* How do we roll up a low-level project's pull request build into a larger stack of projects or products? Do we rebuild everything that's downstream? Or just the aggregates/product?
+
+* How aggressively should we purge pull request builds?
+
+* When running matrix jobs, what happens when one part of the job is running, another is waiting, and a force-push updated to a PR arrives? (Answer: the waiting configurations will fail because the expected SHA no longer exists, having been force-replaced.)
