@@ -1,7 +1,7 @@
 = Integration tooling available for Eclipse Mars.2
 :page-layout: blog
 :page-author: pleacu
-:page-date: 2015-03-10
+:page-date: 2016-03-10
 :page-tags: [release, jbosstools, devstudio, jbosscentral]
 
 *Try our complete Mars.2 capable, JBDS 9.1.0.Beta2 compatible Integration tooling (Beta).*
