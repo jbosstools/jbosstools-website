@@ -79,7 +79,7 @@ devstudio:
         #marketplace_url: https://marketplace.eclipse.org/node/1616973
         #marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
         release_date: 2016-02-02
-        supported_devstudio_is_version: 9.0.0.Alpha2
+        supported_devstudio_is_version: 9.0.0.Beta1
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         blog_announcement_url: /blog/beta2-for-mars2.html
@@ -525,6 +525,18 @@ devstudio_is:
   url_path_fragment: devstudio_is
   streams:
     mars:
+      9.0.0.Beta1:
+        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/9.0
+        release_notes_url: https://access.redhat.com/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/9.0-Beta1/html/9.0.0_Beta1_Release_Notes/index.html
+        release_date: 2015-03-11
+        required_devstudio_version: 9.1.0.Beta2
+        update_site_url: https://devstudio.redhat.com/9.0/development/updates/integration-stack/earlyaccess
+        blog_announcement_url: /blog/integration-stack-4.3.0.Beta1-for-mars.html
+        zips:
+          - name: Update site bundle of JBoss Developer Studio Integration Stack (Early Access)
+            file_size: 307MB
+            url: https://devstudio.redhat.com/9.0/development/updates/integration-stack/devstudio-integration-stack-9.0.0.Beta1-earlyaccess.zip
+            md5_url: https://devstudio.redhat.com/9.0/development/updates/integration-stack/devstudio-integration-stack-9.0.0.Beta1-earlyaccess.zip.MD5
       9.0.0.Alpha2:
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/9.0
         #release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/8.0/html/8.0.3_Release_Notes/index.html
@@ -720,7 +732,7 @@ jbt_core:
         #marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1617241
         #archived: true
         release_date: 2016-02-02
-        supported_jbt_is_version: 4.3.0.Alpha2
+        supported_jbt_is_version: 4.3.0.Beta1
         blog_announcement_url: /blog/beta2-for-mars2.html
         documentation_url: http://docs.jboss.org/tools/
         zips:
@@ -1573,6 +1585,16 @@ jbt_is:
   url_path_fragment: jbosstools_is
   streams:
     mars:
+      4.3.0.Beta1:
+        release_date: 2016-03-10
+        required_jbt_core_version: 4.3.1.Beta2
+        update_site_url: http://download.jboss.org/jbosstools/mars/development/updates/integration-stack/earlyaccess
+        blog_announcement_url: /blog/integration-stack-4.3.0.Beta1-for-mars.html
+        zips:
+          - name: Update site bundle of JBoss Tools Integration Stack (Early Access)
+            file_size: 193MB
+            url: http://download.jboss.org/jbosstools/mars/development/updates/integration-stack/jbosstools-integration-stack-4.3.0.Beta1-earlyaccess.zip
+            md5_url: http://download.jboss.org/jbosstools/mars/development/updates/integration-stack/jbosstools-integration-stack-4.3.0.Beta1-earlyaccess.zip.MD5
       4.3.0.Alpha2:
         release_date: 2015-10-12
         required_jbt_core_version: 4.3.0.Final
