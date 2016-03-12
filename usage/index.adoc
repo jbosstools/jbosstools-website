@@ -1,14 +1,31 @@
-= Usage
+= Usage and Error reporting
 :page-layout: project
 :page-status: green
 
-Since medio August 2010 JBoss Tools 3.2 builds now provides a "Usage"
-plugin which when installed and enabled will help us gather anonymous
-statistics about how the JBoss Tools plugins are being used. All the
-data is gathered anonymously and can at any time be disabled if you
-wish.
+Our Eclipse plugins are constantly evolving and in that we are using
+usage data and error reports to know how the plugins are used and what
+areas that could use improvements.
 
-== What will we use the data for
+To do that there are two separate functionalities:
+
+<<Usage>>::
+  Since August 2010 JBoss Tools 3.2 provides a Usage
+  plugin which when installed and enabled helps us gather anonymous
+  statistics about how the JBoss Tools plugins are being used. All the
+  data is gathered anonymously and can at any time be disabled if you
+  wish.
+
+<<Error reporting>>::
+  Since March 2016 JBoss Tools 4.3 enables use of Eclipse AERI to detect
+  errors and offer the user to submit data to us for helping in categorising,
+  reporting and resolving issues. Users can submit these anonymously or
+  provide an e-mail to receive further updates.
+
+Details below.
+
+== Usage
+
+=== How will the data be used
 
 With this enabled we can start seeing better how and where JBoss Tools
 is being used; we are especially currently interested in seeing what
@@ -17,7 +34,7 @@ their workspace.
 
 Over time we hope to learn more to help continuously improve JBoss Tools.
 
-== How to enable/disable usage tracking
+=== How to enable/disable usage tracking
 
 If you have the plugin installed, then on the first start of this
 Eclipse a dialog will pop up asking you to send anonymous usage
@@ -41,7 +58,7 @@ Reporting* Preferences.
 
 image::./images/usage-reporting-preferences.png[]
 
-== How it works
+=== How it works
 
 When the user has enabled reporting anonymous statistics the plugin
 uses Google Analytics to track data as though you visited a page under
@@ -71,7 +88,29 @@ details are sent in these events - just ids for features used for
 generating usage statistics.
 
 If you want to inspect the source code for all of the above it can be
-found
+foun
 https://github.com/jbosstools/jbosstools-base/tree/master/usage[here]
+
+== Error Reporting
+
+The error reporting uses https://wiki.eclipse.org/EPP/Logging[Eclipse AERI] which
+been successfully used by Eclipse Foundation to gather error reports from core Eclipse
+plugins.
+
+The error reporting is available when installing most JBoss Tools plugins after JBoss Tools 4.3.1.
+
+When error occurs that looks like it is related to JBoss Tools plugin a notification will pop-up in the lower right outlining the error the user can dismiss, send directly or provide more details.
+
+In the submission you can *optionally* provide an email address. This address will be used to contact you should more information be required. Without it, all reports are entirely anonymous.
+
+Should you want to adjust, enable, or disable error reporting you can do that in via menu:Preferences[General > Error Reporting] that should look similar to this:
+
+image::./images/error-reporting-preferences.png[]
+
+=== How it works
+
+On startup https://tools.jboss.org/usage/errors/rest/2.0/community/discovery is loaded that configures JBoss Tools as an additional receiver of error reports from Eclipse AERI.
+
+This configuration file lists the packages and bundles to which AERI will listen for errors most likely related to JBoss Tools.
 
  
