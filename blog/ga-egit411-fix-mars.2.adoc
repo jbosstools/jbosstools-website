@@ -1,0 +1,39 @@
+= EGit fix for Red Hat JBoss Developer Studio 9.0.0.GA and JBoss Tools 4.3.0.Final
+:page-layout: blog
+:page-author: nickboldt
+:page-tags: [release, devstudio, jbosstools, eap, jbosseap, jbeap]
+:page-date: 2016-03-16
+
+Updates to link:/downloads/devstudio/mars/9.0.0.GA.html[Red Hat JBoss Developer Studio 9] and link:/downloads/jbosstools/mars/4.3.0.Final.html[JBoss Tools 4.3.0.Final] for Eclipse Mars are now generally available!
+
+image::/blog/images/jbds9.png[]
+
+== What's new?
+
+We've added a link in the composite updates sites to EGit 4.1.1, so that users of Mars.2 can continue to enjoy using EGit with JBoss Tools and Red Hat JBoss Developer Studio.
+
+Without this minor change, installation of JBoss Tools and Red Hat JBoss Developer Studio on Mars.2 cause two versions of jgit to be installed, effectively disabling it and preventing EGit views and preferences from working.
+
+This fixes https://issues.jboss.org/browse/JBIDE-21821[JBIDE-21821] - https://issues.jboss.org/browse/JBIDE-21821[target platforms include org.eclipse.egit.importer.ui 4.0, which installs jgit 4.0 and breaks egit 4.1.1].
+
+This fix does not affect offline installs as we have not rebuilt the target platform zips. So for those users, you will need to wait for JBoss Tools 4.3.1 or Red Hat JBoss Developer Studio 9.1 to be released, or use the latest Beta2 releases here:
+
+* link:/downloads/jbosstools/mars/4.3.1.Beta2.html[4.3.1.Beta2]
+* link:/downloads/devstudio/mars/9.1.0.Beta2.html[9.1.0.Beta2]
+
+== Previous announcements
+
+For what's new in this release of JBoss Tools 4.3.0.Final or JBoss Developer Studio 9.0.0.GA, see our link:ga-for-mars.html[previous GA blog announcement].
+
+
+== What's next?
+
+We are already working on the next maintenance release for Eclipse Mars - JBoss Tools 4.3.1.CR1 and Red Hat JBoss Developer Studio 9.1.0.CR1 will be available shortly, with Final/GA releases soon after.
+
+We are also working on our first Eclipse Neon based builds. Try them out here:
+
+* http://download.jboss.org/jbosstools/neon/snapshots/updates/[JBoss Tools 4.4.0.Alpha1] and https://devstudio.redhat.com/10.0/snapshots/updates/[JBoss Developer Studio 10.0.0.Alpha1]
+
+Enjoy!
+
+Nick Boldt
