@@ -1,7 +1,7 @@
 = EGit fix for Red Hat JBoss Developer Studio 9.0.0.GA and JBoss Tools 4.3.0.Final
 :page-layout: blog
 :page-author: nickboldt
-:page-tags: [release, devstudio, jbosstools, patch, eap, jbosseap, jbeap]
+:page-tags: [release, devstudio, jbosstools, eap, jbosseap, jbeap]
 :page-date: 2016-03-16
 
 Updates to link:/downloads/devstudio/mars/9.0.0.GA.html[Red Hat JBoss Developer Studio 9] and link:/downloads/jbosstools/mars/4.3.0.Final.html[JBoss Tools 4.3.0.Final] for Eclipse Mars are now generally available!
