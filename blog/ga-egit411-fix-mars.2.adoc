@@ -1,4 +1,4 @@
-= EGit fix for Red Hat JBoss Developer Studio 9.0.0.GA and JBoss Tools 4.3.0.Final
+= EGit updatesite fix for Eclipse Mars.2 
 :page-layout: blog
 :page-author: nickboldt
 :page-tags: [release, devstudio, jbosstools, eap, jbosseap, jbeap]
