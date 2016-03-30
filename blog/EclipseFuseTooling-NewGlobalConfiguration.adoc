@@ -1,0 +1,30 @@
+
+= JBoss Fuse Tooling - Support of Global configurations
+
+:page-date: 2016-05-23
+:page-layout: blog
+:page-author: apupier
+:page-tags: [jbtis,fuse, jbosscentral]
+
+Note: This article has been posted also on http://developers.redhat.com/blog/2016/05/18/jboss-fuse-tooling-support-of-global-configurations/[Red Hat Developers Program blog]
+
+As I mentioned in an earlier post[http://developers.redhat.com/blog/2016/05/17/jboss-fuse-tooling-diagram-reworked-new-shiny-colors-and-more/], the 8.0.0.Beta2 version of JBoss Fuse Tooling is now available. Apart from the diagram tooling rework, there is yet another new, awaited feature. You can find it in the new “Configurations” editor — designed to manipulate global configurations, i.e. elements defined at the Camel context scope.
+
+A new editor tab is now available to manipulate global configurations.
+
+image:/blog/images/fuse/201604/newConfigurationTab.png[]
+
+It currently allows to declare global Endpoints and global Data Formats.
+
+image:/blog/images/fuse/201604/availableGlobalConfiguration.png[]
+
+For instance when adding a new Data Format, a dialog allows you to select a specific data format: 
+
+image:/blog/images/fuse/201604/globalDataFormat.png[]
+
+Then you will be able to edit it from the classic Properties view:
+
+image:/blog/images/fuse/201604/globalDataFormatEditionFromProperties.png[]
+
+
+We have a lot of other global elements that we would like to support, please vote on our JIRA (and/or create your own Feature Request). It will help us to prioritize global configuration element support. You can find already filed JIRA ticket link:https://issues.jboss.org/issues/?filter=12326645[here].
