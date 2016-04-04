@@ -1,0 +1,41 @@
+= JBoss Fuse Tooling - Camel File Validation - Existing, Improved and New
+:page-date: 2016-05-24
+:page-layout: blog
+:page-author: apupier
+:page-tags: [jbtis,fuse,jbosscentral]
+
+Note: This article has been posted also on http://developers.redhat.com/blog/2016/05/20/jboss-fuse-tooling-camel-file-validation-existing-improved-and-new/[Red Hat Developers Program blog]
+
+As I mentioned in this earlier http://developers.redhat.com/blog/2016/05/17/jboss-fuse-tooling-diagram-reworked-new-shiny-colors-and-more/[post], the 8.0.0.Beta2 version of JBoss Fuse Tooling is available. In this article I will cover another new and updated feature: validations. I will explain what was already available and what’s new which improves productivity.
+
+== Existing
+
+In Fuse Camel Editor, the classic XML editor is used in the source tab. Consequently, we can rely on the Eclipse built-in validation of xml files against xsd. You just have to right-click on the source code, then Validate.
+
+image:/blog/images/fuse/validation/validation-XSD.png[]
+
+There was a limitation about blueprint, I let you check this issue report in case the validation doesn't work for you in previous versions: link:https://issues.jboss.org/browse/FUSETOOLS-1653[FUSETOOLS-1653].
+
+
+== Improved and New
+
+=== Fuse validation everywhere
+
+Going further than the xsd validation, the Fuse validation validates some characteristics of the component URI. This validation reports Problem markers against the Camel Component. This kind of validation was already available through Properties view but there was no global vision of these issues.
+
+You can now see markers in:
+
+* Project explorer
+* Camel Route Diagram 
+* Tree nodes for Global configuration element
+* Source tab editor
+* Problems view
+
+image:/blog/images/fuse/validation/validationEverywhere.png[]
+image:/blog/images/fuse/validation/validationOnXmlFile.png[]
+
+=== Jump from Problems view
+
+When double-clicking on Fuse Validation error in Problems view, you are redirected to the correct Editor tab depending on which specific Camel element the error comes from.
+
+For the xsd validation, you are redirected to the source editor.
