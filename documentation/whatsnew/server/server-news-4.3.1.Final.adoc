@@ -1,0 +1,28 @@
+= Server What's New in 4.3.1.Final
+:page-layout: whatsnew
+:page-component_id: server
+:page-component_version: 4.3.1.Final
+:page-product_id: jbt_core
+:page-product_version: 4.3.1.Final
+
+== Schema catalog updated with WildFly 10 schema
+
+We've updated our schema catalog to include all bug-fixes or new versions, so that now 
+your example projects targeting WildFly 10 will benefit from the same code-completion
+proposals that past versions have.  
+
+In addition, several schema had small updates, bugfixes, and documentation changes. All of these will be available in the XML Catalog now. 
+
+related_jira::JBIDE-20529[Include updated WildFly 10 schema in catalog]
+
+== Publishing errors on Windows now fixed. 
+
+Windows often locks files when it shouldn't, and this causes a big problem for filesystem-based
+deployments that look to make changes on-the-fly.  We've managed to improve our integration 
+with the WildFly application server, and to make sure we won't make changes to files while they're still 
+locked by the server. Other upstream bugs in WildFly or the JDK directly are being investigated, 
+and we look forward to having patches there in the near future. 
+
+related_jira::JBIDE-22078[Error publishing war to wildfly8 on windows]
+
+
