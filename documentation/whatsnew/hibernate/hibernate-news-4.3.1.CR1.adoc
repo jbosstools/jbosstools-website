@@ -1,19 +1,19 @@
-= Hibernate Tools 4.3.1.CR1 What's New
+= Hibernate Tools 4.3.1.Final What's New
 :page-layout: whatsnew
 :page-component_id: hibernate
-:page-component_version: 5.0.1.CR1
+:page-component_version: 5.0.1.Final
 :page-product_id: jbt_core
-:page-product_version: 4.3.1.CR1
+:page-product_version: 4.3.1.Final
 
 == Hibernate 5 Support
 
-Two new runtime providers for Hibernate where added with in 4.3.1.CR1. Both these new versions can be selected in the relevant wizards.
+Two new runtime providers for Hibernate where added with in 4.3.1.Final. Both these new versions can be selected in the relevant wizards.
 
-image::images/4.3.1.CR1/cfg-xml.png[title="Hibernate Configuration File Wizard", width="381", align="center"]
+image::images/4.3.1.Final/cfg-xml.png[title="Hibernate Configuration File Wizard", width="381", align="center"]
 
 {empty} +
 
-image::images/4.3.1.CR1/console-config.png[title="Hibernate Console Configuration Wizard", width="405", align="center"]
+image::images/4.3.1.Final/console-config.png[title="Hibernate Console Configuration Wizard", width="405", align="center"]
 
 === Hibernate 5.0 Runtime Provider 
 
