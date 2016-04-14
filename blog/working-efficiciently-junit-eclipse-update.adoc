@@ -1,4 +1,8 @@
 = Working Efficiently with JUnit in Eclipse - Update
+:page-date: 2016-04-15
+:page-layout: blog
+:page-author: apupier
+:page-tags: [eclipse]
 
 I just wanted to add a few updates and my two cents to this old but still useful and accurate link:http://www.codeaffine.com/2012/11/26/working-efficiently-with-junit-in-eclipse-2/[blog post] (which is a must read of course!). Some elements were already mentioned in comments and I think all of that is worth providing a new detailed article.
 
@@ -17,7 +21,7 @@ image::images/workEfficientlyWithJunit/favoritesStaticImport.png[]
 
 == Improvements for Method Templates
 
-There is no more need to type twice Ctrl+space to have the JUnit 4 Template proposals. Even better, when you start typing "test", the JUnit 4 Template is listed first.
+There is no more need to type twice kbd:[Ctrl+space] to have the JUnit 4 Template proposals. Even better, when you start typing "test", the JUnit 4 Template is listed first.
 
 image::images/workEfficientlyWithJunit/testAutoCompletionJunit4before.png[]
 
@@ -61,7 +65,7 @@ As some tests might be time consuming or requiring some external configuration o
 
 == Eclemma - Spot untested code
 
-After you wrote your tests, I recommend to launch the link:http://eclemma.org/[Eclemma] Coverage tests. You can use Alt+Shift+E,T. It will show you a nice overview of possible missing test coverage in your code.
+After you wrote your tests, I recommend to launch the link:http://eclemma.org/[Eclemma] Coverage tests. You can use kbd:[Alt+Shift+E,T]. It will show you a nice overview of possible missing test coverage in your code.
 
 image::images/workEfficientlyWithJunit/eclemma.png[]
 
@@ -76,4 +80,3 @@ If you're an Eclipse RCP developer, I will be happy to see you assisting to link
 Do you have some other Tips, Tricks and best practice to share?
 
 If you are using a different IDE, do you know about killer features enabling you to efficiently write unit tests but which are missing in Eclipse? Please share them!
-
