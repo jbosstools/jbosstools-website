@@ -6,6 +6,26 @@ image:https://travis-ci.org/jbosstools/jbosstools-website.png?branch=develop["Bu
 
 A bit of Git, a bit of Ruby and you will get your local tools.jboss.org served..
 
+The simplest way to use this is to use our automatically built docker image. See https://hub.docker.com/r/jbosstools/jbosstools-website/.
+
+```
+   $ docker pull jbosstools/jbosstools-website
+   $ git clone https://github.com/jbosstools/jbosstools-website
+   $ cd jbosstools-website
+   $ docker run -it --rm -p 4242:4242 -v `pwd`:/jbosstools-website jbosstools/jbosstools-website /bin/bash
+```
+
+Now in the Docker you can do:
+
+```
+   $ cd /jbosstools-website
+   $ rake clean preview
+```
+
+and you can browse the result at http://$DOCKER_HOST:4242.
+
+Everything else below is if you want to run awestruct "natively".
+
 == Prerequisites
 
 * Get http://git-scm.com/[Git]
@@ -125,26 +145,6 @@ Using you local site, you can have a look at our link:/survivalguide.adoc[surviv
 If you are viewing this page while rendered locally this would be link:/survivalguide.html[survivalguide.html] instead.
 
 == Tips & Tricks
-
-=== Using Docker to build
-
-You can use Docker to build without installing all the requirements above. See https://hub.docker.com/r/jbosstools/jbosstools-website/.
-
-```
-   $ docker pull jbosstools/jbosstools-website
-   $ git clone https://github.com/jbosstools/jbosstools-website
-   $ cd jbosstools-website
-   $ docker run -it --rm -p 4242:4242 -v `pwd`:/jbosstools-website jbosstools/jbosstools-website /bin/bash
-```
-
-Now in the Docker you can do:
-
-```
-   $ cd /jbosstools-website
-   $ rake clean preview
-```
-
-and you can browse the result at http://$DOCKER_HOST:4242.
 
 === How to add a blog ?
 
