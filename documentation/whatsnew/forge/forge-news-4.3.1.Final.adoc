@@ -5,14 +5,11 @@
 :page-product_id: jbt_core
 :page-product_version: 4.3.1.Final
 
-ifndef::finalnn[]
 == Forge Runtime updated to 3.0.1.Final
 
 The included Forge runtime is now 3.0.1.Final. Read the official announcement  http://forge.jboss.org/news/forge-3.0.1.final-is-here[here].
 
 image::images/4.3.1.Final/startup.png[]
-
-endif::finalnn[]
 
 == Prompt user to save the current open editor before executing a command
 
