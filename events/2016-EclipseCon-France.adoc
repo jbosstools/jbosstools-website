@@ -1,0 +1,10 @@
+= EclipseCon France
+:page-layout: event
+:page-event_date: June 7-9, 2016
+:page-effective_date: 20160607
+:page-location: Toulouse, France
+:page-event_url: https://www.eclipsecon.org/france2016/
+
+*Sopot Cela* and *Mickaël Istria* will give a talk about https://www.eclipsecon.org/france2016/session/whats-new-eclipse-ide-and-ecosystem-around-it[what's new in Eclipse IDE and the ecosystem around it].
+
+*Aurélien Pupier* will give a talk about https://www.eclipsecon.org/france2016/session/fast-unit-tests-eclipse-plugins-possible-architectures-and-available-tooling[possible architectures and available tooling to write fast unit test for Eclipse plugins].
