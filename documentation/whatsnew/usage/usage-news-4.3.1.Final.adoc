@@ -9,7 +9,9 @@
 
 With your permission, Eclipse and Red Hat JBoss Developer Studio can inspect errors logged inside the IDE and inform project committers about the issues you've experienced. This optional service, called https://dev.eclipse.org/recommenders/community/confess/#/about[Automated Error Reporting Initiative (AERI)], can report issues to both the https://bugs.eclipse.org/bugs/[Eclipse Bugzilla] and the https://issues.jboss.org/browse/JBIDE[JBoss JIRA].
 
-To configure the service, open `Preferences > General > Error Reporting`. You can then click `Configure Projects...` to enable or disable reporting to Eclipse or JBoss.
+On startup of Eclipse or Red Hat JBoss Developer Studio, you'll be asked if you'd like to participate in error reporting, which is by default completely anonymous and only happens if an error occurs.
+
+Should you want to configure how the service operates, or provide your email address so that you could be contacted regarding any reports you submit, open `Preferences > General > Error Reporting`. You can then click `Configure Projects...` to enable or disable reporting to Eclipse or JBoss.
 
 image::images/aeri_jbt431.png[AERI Reporting Enabled]
 
