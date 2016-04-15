@@ -1,0 +1,20 @@
+= We are hiring for Migrations
+:page-date: 2016-04-15
+:page-layout: blog
+:page-author: maxandersen
+:page-tags: [job, jbosscentral]
+
+Have some experience developing Eclipse plugins ? Interested in making
+an Eclipse plugin that will work in conjunction with a REST Services
+back end to provide access to the migration process for Enterprise Application Server ?
+
+The look at this recent new opening at jobs.redhat.com.
+
+* https://careers-redhat.icims.com/jobs/50800/senior-software-engineer/job
+
+Note: the job postings do list a specific remote base, but for the right candidate we are happy to consider many locations worldwide (anywhere there is a Red Hat office).
+
+Have fun! +
+Max Rydahl Andersen +
+http://twitter.com/maxandersen[@maxandersen]
+
