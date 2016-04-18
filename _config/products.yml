@@ -737,6 +737,7 @@ jbt_core:
             #md5_url: http://download.jboss.org/jbosstools/neon/snapshots/builds/jbosstools-browsersim-standalone_master/latest/jbosstools-4.4.0.Alpha1-browsersim-standalone.zip.sha256
 
     mars:
+      4.3.1.Final:
       4.3.1.Beta2:
         update_site_url: http://download.jboss.org/jbosstools/mars/development/updates/
         #marketplace_url: https://marketplace.eclipse.org/node/1617241
