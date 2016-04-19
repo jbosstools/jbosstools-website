@@ -77,7 +77,7 @@ See the full list of the new OpenShift tooling stuff on link:/documentation/what
 
 Tooling for Docker is available in Eclipse Mars under the http://eclipse.org/linuxtools[Linux tools]
 umbrella. Despite this name, this works on all major developer platforms. It
-is mirrored on http://tools.jboss.org/downloads/jbosstools/mars/4.3.1.Final.html[JBoss Tools update site].
+is mirrored on http://download.jboss.org/jbosstools/mars/stable/updates/[JBoss Tools update site].
 
 image::/documentation/whatsnew/docker/images/docker_mars1/docker_explorer_view.png[]
 
