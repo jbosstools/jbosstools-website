@@ -15,6 +15,8 @@ link:configure_remote_server.html[Configure a Remote Server]
 
 link:eapwfk_configure_ide.html[Configure JBoss EAP and JBoss Web Framework Kit for the IDE]
 
+link:cdk_howto.html[Using the IDE's Container Development Kit Tooling]
+
 == Deploying and Debugging Apps
 
 link:servers_deploytolocalserver.html[Deploy Apps to a Local Server]
