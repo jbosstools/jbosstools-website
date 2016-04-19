@@ -1,0 +1,126 @@
+= JBoss Tools and Red Hat Developer Studio for Eclipse Mars.2
+:page-layout: blog
+:page-author: akazakov
+:page-tags: [release, jbosstools, devstudio, jbosscentral]
+:page-date: 2016-04-19
+
+link:/downloads/jbosstools/mars/4.3.1.Final.html[JBoss Tools 4.3.1] and link:/downloads/devstudio/mars/9.1.0.GA.html[Red Hat JBoss Developer Studio 9.1] for Eclipse Mars.2 are now generally available!
+
+image::/blog/images/jbds9.png[]
+
+CAUTION: Java 8 is required for installing and using JBoss Tools. We still support developing and running applications using older Java runtimes. See more in link:/blog/2015-06-23-beta1-for-mars.html#java-8-to-run-eclipse-older-runtimes-ok-for-builds-deployment[Beta1 blog].
+
+== Installation
+
+JBoss Developer Studio comes with everything pre-bundled in its installer. Simply download it from our https://www.jboss.org/products/devstudio.html[JBoss Products page] and run it like this:
+ 
+    java -jar jboss-devstudio-<installername>.jar
+
+JBoss Tools or Bring-Your-Own-Eclipse (BYOE) JBoss Developer Studio require a bit more:
+
+This release requires at least Eclipse 4.5.2 (Mars.2) but we recommend
+using the http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/marsr[Eclipse 4.5.2 Mars.2 Java EE Bundle] since then you get most of the dependencies preinstalled. 
+
+Once you have installed Eclipse, you can either find us on the Eclipse Marketplace under "JBoss Tools" or "Red Hat JBoss Developer Studio".
+
+For JBoss Tools, you can also use our update site directly.
+
+    http://download.jboss.org/jbosstools/mars/stable/updates/
+
+There is also a new installer available for 64-bit Windows. See details in link:#new-developer-studio-platform-installer-for-container-based-development[New Developer Studio Platform Installer for Container Based Development] section.
+
+== What is new?
+
+This release is based on Eclipse Mars.2 and our focus was mainly on OpenShift and Red Hat Container Development Kit tools improvements. Besides that there is a bunch of new features and a lot of fixed bugs. 
+The full list of what is new you can find on link:/documentation/whatsnew/jbosstools/4.3.1.Final.html[this page].
+
+=== New Developer Studio Platform Installer for Container Based Development
+
+A new installer for 64-bit Windows is now available. This installer is quite different from the good old Developer Studio universal installer.
+This will help you install Developer Studio with a full development environment for container based development using *Red Hat Enterprise Linux* and *OpenShift*.
+
+Developer Studio Platform Installer Beta currently works on 64-bit Windows only and is available as a Technology Preview.
+
+It helps to install and configure the following components to work together on your machine:
+
+- Red Hat JBoss Developer Studio
+
+- Red Hat Container Development Kit
+
+- Vagrant
+
+- VirtualBox
+
+- OpenJDK
+
+- Cygwin
+
+- OpenShift Client (OC) Tools
+
+image::/documentation/whatsnew/general/images/devstudio_platform.png[Red Hat JBoss Developer Studio Platform]
+
+You can see how this installer works in this short screen cast:
+
+video::dMWAguol3as[youtube]
+
+=== OpenShift 3 and Red Hat Container Development Kit
+
+OpenShift 3 was introduced as a technology preview feature in JBDS 9.0.0.GA. We're happy to see it graduate to the level of *supported* feature in this release.
+
+image::/documentation/whatsnew/openshift/images/new-explorer.png[width=750]
+
+New OpenShift Server Adapter for easier and faster deployment, debug mode, integration with Red Hat Container Development Kit and more notable features were added.
+More than https://issues.jboss.org/issues/?jql=project%20in%20%28JBIDE%2C%20JBDS%29%20AND%20issuetype%20in%20standardIssueTypes%28%29%20AND%20resolution%20%3D%20Done%20AND%20fixVersion%20in%20%284.3.1.Beta1%2C%204.3.1.Beta2%2C%204.3.1.CR1%2C%204.3.1.Final%2C%209.1.0.Beta1%2C%209.1.0.Beta2%2C%209.1.0.CR1%2C%209.1.0.GA%29%20AND%20component%20in%20%28cdk%2C%20openshift%29[300 issues and enhancements] were also tackled in this version.
+See the full list of the new OpenShift tooling stuff on link:/documentation/whatsnew/jbosstools/4.3.1.Final.html#openshift[New and Noteworthy] page. 
+
+== Docker
+
+Tooling for Docker is available in Eclipse Mars under the http://eclipse.org/linuxtools[Linux tools]
+umbrella. Despite this name, this works on all major developer platforms. It
+is mirrored on http://tools.jboss.org/downloads/jbosstools/mars/4.3.1.Final.html[JBoss Tools update site].
+
+image::/documentation/whatsnew/docker/images/docker_mars1/docker_explorer_view.png[]
+
+The Docker tools was introduced in Developer Studio 9.0 and has been improved in Developer Studio 9.1:
+
+- New Docker Machine Support
+
+- Improved Run Image Launch Configuration
+
+- TM Terminal Support for Interactive Shells
+
+- Build Docker Images improvements
+
+More details in link:/documentation/whatsnew/jbosstools/4.3.1.Final.html#docker[New and Noteworthy].
+
+== Hibernate 5
+
+Hibernate 5 is now supported. Two new runtime providers for Hibernate where added with in this release. Both these new versions can be selected in the relevant wizards.
+
+image::/documentation/whatsnew/hibernate/images/4.3.1.Final/cfg-xml.png[title="Hibernate Configuration File Wizard", width="381", align="center"]
+
+== Forge 3
+
+The included Forge runtime is now 3.0.1.Final. Read the official announcement  http://forge.jboss.org/news/forge-3.0.1.final-is-here[here].
+
+image::/documentation/whatsnew/forge/images/4.3.1.Final/startup.png[]
+
+== Automated Error Reporting
+
+With your permission, Eclipse and Red Hat JBoss Developer Studio can now inspect errors logged inside the IDE and inform project committers about the issues you've experienced. This optional service, called https://dev.eclipse.org/recommenders/community/confess/#/about[Automated Error Reporting Initiative (AERI)], can report issues to both the https://bugs.eclipse.org/bugs/[Eclipse Bugzilla] and the https://issues.jboss.org/browse/JBIDE[JBoss JIRA].
+
+When the first error is logged, you'll be asked if you'd like to participate in error reporting, which is by default completely anonymous and only happens if an error occurs.
+
+Should you want to configure how the service operates, or provide your email address so that you could be contacted regarding any reports you submit, open `Preferences > General > Error Reporting`. You can then click `Configure Projects...` to enable or disable reporting to Eclipse or JBoss.
+
+image::/documentation/whatsnew/usage/images/aeri_jbt431.png[AERI Reporting Enabled]
+
+As always, neither Eclipse nor JBoss will use any information unless a user has opted in, nor is there ever any personal information sent unless it is provided on the Preferences page.
+
+== What is Next
+
+Our next stop is a major update for Developer Studio which will be based on Eclipse Neon.
+
+Enjoy!
+
+Alexey Kazakov
