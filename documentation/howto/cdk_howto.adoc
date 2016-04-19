@@ -1,0 +1,131 @@
+= Using the IDE's Container Development Kit Tooling
+:page-layout: howto
+:page-tab: docs
+:page-status: green
+:experimental:
+:imagesdir: ./images
+:toc:
+
+[[about]]
+== About Using the Container Development Kit with the IDE
+
+There are two ways to use the Container Development Kit with the IDE:
+
+. Installation and configuration in one of two ways:
+.. <<automatic,Automatically install and configure>> the Container Development Kit and the IDE using the Red Hat JBoss Developer Studio Platform Installer.
+.. <<manual,Manually download, install, and configure>> the Container Development Kit and the IDE.
+. Use the installed components for <<container_based,Container-Based Development>>.
+
+[[automatic]]
+== Automatic Installation and Configuration
+
+Use the Red Hat JBoss Developer Studio Platform Installer to install the Container Development Kit, JBoss Developer Studio, and other relevant components. The Installer automatically configures these components for use together. This option is currently in *Technical Preview* and only available for Windows.
+
+For instructions about using the Red Hat JBoss Developer Studio Platform Installer, see https://access.redhat.com/articles/2255391
+
+[[manual]]
+== Manual Installation and Configuration
+
+Manually download and install the Red Hat Container Development Kit and the IDE separately. This option requires some additional configuration steps before the two can be used together.
+
+[[prereq]]
+=== Prerequisites
+
+Ensure that the following are installed on your system:
+
+* A virtualization system such as VirtualBox, VMWare, or Linux KVM/libvirt
+
+* Vagrant, which is an open source tool to create and distribute portable development environments
+
+* Red Hat Container Development Kit 2.0
+
+For details about installing these prerequisites, see the Container Development Kit Installation Documentation
+
+[[known]]
+== Known Issues
+
+ * When the Docker Explorer is first started, attempting to extend the Containers or Images causes the explorer to fail and throw an exception. To work around this issue, restart Eclipse/JBoss Developer Studio. Details are in https://issues.jboss.org/browse/JBIDE-21983[JBIDE-21983]
+
+ * When the Container Development Kit is first started, you can use the **OpenShift Explorer** as expected with the automatically created connection. However, if the CDK is stopped and started again, the OpenShift connection requests the OpenShift password because it did not save this information when the connection was created. The default password for this is *devel* and when asked, you can choose to save the password for future use. For details about this issue, see https://issues.jboss.org/browse/JBIDE-22186[JBIDE-22186]
+
+[[setupcdk]]
+== Set Up the Container Development Kit in the IDE
+
+To set up the Container Developement Kit in the IDE:
+
+. Run the IDE.
+. Press the **Ctrl+3** keys and in the **Quick Access** bar, type **Launch CDK**.
+. From the results, click **Launch CDK Server**.
+. In the **New Server** dialog box:
+.. Ensure that the **Show downloadable server adapters** option is selected.
+.. Add the desired **Server host name** in the relevant field.
+.. Add the desired **Server Name** in the relevant field.
+.. Click **Next** to continue.
++
+.Define a New CDK Server
+image::cdk_define_new_server.png[Define a New CDK Server]
++
+. Next, add the security information and your **access.redhat.com** credentials:
+.. Click **Add to add a new Username** for the Red Hat Customer Portal or select an existing user from the drop-down menu.
+.. In the **Folder** field, navigate to the directory that contains your local **Vagrantfile** file. If **Vagrantfile** does not exist on your system, use the **Vagrantfiles** supplied in the **cdk.zip** file to initialize the CDK box.
+.. Click **Finish** to conclude setting up the CDK Server Adapter.
++
+.Define a New CDK Server Adapter
+image::cdk_new_server_adapter.png[Define a New CDK Server Adapter]
++
+. Run the Container Development Kit server.
+. Add the OpenShift server.
+. Test the OpenShift Console at https://10.1.2.2:8443 with the username **openshift-dev** and password **devel**.
+
+You can now choose to continue working with OpenShift within JBoss Developer Studio or view instructions for Container-Based Development with JBoss Developer Studio.
+
+[[container_based]]
+== Container-Based Development
+
+After starting the CDK server in the IDE, you can follow one of two container development workflows:
+
+=== Using Docker for Container-Based Development
+
+Use Docker for Container-Based Development as follows:
+
+. Create a new Dynamic Web Project with your **Dockerfile**.
+.. Click **File** > **New** and select **Project**.
+.. Type **java** in the search bar and from the results, select **Java Project** and click **Next** to continue.
+.. Add a name for the new project and click **Finish**.
+.. Click **File** > **New** and select **File**.
+.. Enter the **Dockerfile** as the name and click **Finish**.
+.. Edit the **Dockerfile** as desired and then save (for example, by creating a new Docker image to customize a given version of JBoss/WildFly by adding a datasource definition and its associated driver). The **Dockerfile** may also package your application as a **war** file via a Maven command, and copy it into the container in the WildFly deployments directory. See https://docs.docker.com/engine/reference/builder for more information about the **Dockerfile** instructions.
+. Do a Docker build using the CDK:
+.. In the **Project Explorer**, right-click the **Dockerfile** and select **Run As** > **Docker Image Build**.
+.. In the dialog box, add your CDK server adapter in the **Connection** field.
+.. For **Repository Name**, enter the desired name for the docker image and click **OK**.
+.. Once the build is done, a new image with the given name will be listed in the **Docker Explorer** view and in the **Docker Images** view.
+. Do a Docker run using the CDK:
+.. Open the **Docker Explorer** view using the quick access menu using **Ctrl+3**.
+.. Navigate to **CDK Server Adapter** > **Images**.
+.. Right-click your image and click **Run**.
+.. Fill in the necessary details and click **Finish** to run your image. Add an optional container name to be able to locate it in a list of containers.
+. In the **Docker Explorer** view, select the container and expand its node and select the **8080** port and click on **Show In**>**Web browser** to access the application deployed in the Docker container.
+
+=== Using OpenShift for Container-Based Development
+
+Use OpenShift for Container-Based Development as follows:
+
+. Create a new OpenShift project. Note that OpenShift projects are not the same as Eclipse projects, although Eclipse projects can be mapped to OpenShift applications.
+.. In the **OpenShift Explorer** tab, click **New Connection Wizard** to create a new OpenShift 3 connection.
+.. Add details for your connections, such as **Connection name**, **Server type**, **Server URL** and **Authentication** information.
+.. Click **Finish** to create the connection.
+.. The **OpenShift Explorer** tab now displays your new connection. Right-click the name of the connection and select **New** > **Project** to create a new OpenShift project.
+.. Add the name and any other relevant details for your new OpenShift project and click **Finish**.
+. Create an application in your OpenShift project using the OpenShift templates:
+.. Right-click your new project’s name and click **New** > **Application**.
+.. In the **Select Template** dialog box, type the application type required. For example, for a node.js application, type **nodejs** and from the displayed list, select **nodejs-example** and click **Finish**.
+.. Click **OK** to accept the results of the application creation process.
+.. When prompted, enter a new git location or click **Finish** in the dialog box to use the listed default git location for your application.
+. Create a new OpenShift server adapter for your project and application:
+.. In the **Servers** tab, right-click a blank area and select **New** > **Server** to create a new server.
+.. In the **Select a server type** field, type **openshift**, and from the listed results, select **OpenShift 3 Server Adapter** and click **Next**.
+.. The next screen asks for connection details. Edit the connection information or use the default information, which is for the previously defined OpenShift 3 connection.
+.. The next step asks for a service for the new server. Click the name of the project to see the applications bound to the project and click the desired application. Click **Finish**.
+. Debug the application, if required.
+.. Right-click the project name and click **Show In** > **Debug** to debug the application.
