@@ -95,7 +95,7 @@ More details in link:/documentation/whatsnew/jbosstools/4.3.1.Final.html#docker[
 
 == Hibernate 5
 
-Hibernate 5 is now supported. Two new runtime providers for Hibernate where added with in this release. Both these new versions can be selected in the relevant wizards.
+Hibernate 5 is now supported. Two new runtime providers for Hibernate were added in this release. Both these new versions can be selected in the relevant wizards.
 
 image::/documentation/whatsnew/hibernate/images/4.3.1.Final/cfg-xml.png[title="Hibernate Configuration File Wizard", width="381", align="center"]
 
