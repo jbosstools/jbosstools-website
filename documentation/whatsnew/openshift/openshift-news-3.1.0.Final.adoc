@@ -57,7 +57,7 @@ Publishing files to a remote pod requires to add the OpenShift binary (version 1
 You can download the binary matching your platform from the https://github.com/openshift/origin/releases[official] 
 release page on github.com. It's strongly recommended rsync be on the PATH too.
 
-From the OpenShift Explorer, right-click on a deployed Service a select the `Server Adapter...` menu: it will either  
+From the OpenShift Explorer, right-click on a deployed Service and select the `Server Adapter...` menu: it will either  
  create a new Server adapter or display one in the Servers view if it already exists.
  
 [WARNING]
@@ -81,7 +81,7 @@ local directory and replaces the version deployed on the remote OpenShift
 pod. 
 A `.dodeploy` marker file is created for the remote server to redeploy the module if necessary (for EAP/WildFly servers supporting it).
 
-related_jira::JBIDE-20764, JBIDE-21371[]
+related_jira::JBIDE-20764,JBIDE-21371[]
 
 ==== Debug Mode support
 The OpenShift 3 server adapter supports running in debug mode. When you click on the debug button, a series of actions are performed under the hood:
