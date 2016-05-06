@@ -79,8 +79,7 @@ devstudio:
         marketplace_url: https://marketplace.eclipse.org/node/1616973
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
         release_date: 2016-04-19
-        # TODO change this to 9.1.0.GA when they release their bits
-        supported_devstudio_is_version: 9.0.0.Beta1
+        supported_devstudio_is_version: 9.0.0.GA
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         blog_announcement_url: /blog/ga-for-mars2.html
@@ -553,10 +552,26 @@ devstudio_is:
   url_path_fragment: devstudio_is
   streams:
     mars:
+      9.0.0.GA:
+        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/9.0
+        release_notes_url: https://access.redhat.com/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/9.0/html/9.0.0_Release_Notes/index.html
+        release_date: 2016-05-06
+        required_devstudio_version: 9.1.0.GA
+        update_site_url: https://devstudio.redhat.com/9.0/stable/updates/integration-stack/
+        blog_announcement_url: /blog/integration-stack-4.3.0.Final.html
+        zips:
+          - name: Update site bundle of JBoss Developer Studio Integration Stack
+            file_size: 144MB
+            url: https://devstudio.redhat.com/9.0/stable/updates/integration-stack/devstudio-integration-stack-9.0.0.GA.zip
+            md5_url: https://devstudio.redhat.com/9.0/stable/updates/integration-stack/devstudio-integration-stack-9.0.0.GA.zip.MD5
+          - name: Update site bundle of JBoss Developer Studio Integration Stack (Early Access)
+            file_size: 288MB
+            url: https://devstudio.redhat.com/9.0/stable/updates/integration-stack/devstudio-integration-stack-9.0.0.GA-earlyaccess.zip
+            md5_url: https://devstudio.redhat.com/9.0/stable/updates/integration-stack/devstudio-integration-stack-9.0.0.GA-earlyaccess.zip.MD5
       9.0.0.Beta1:
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/9.0
         release_notes_url: https://access.redhat.com/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/9.0-Beta1/html/9.0.0_Beta1_Release_Notes/index.html
-        release_date: 2015-03-11
+        release_date: 2016-03-11
         required_devstudio_version: 9.1.0.Beta2
         update_site_url: https://devstudio.redhat.com/9.0/development/updates/integration-stack/earlyaccess
         blog_announcement_url: /blog/integration-stack-4.3.0.Beta1-for-mars.html
@@ -770,8 +785,7 @@ jbt_core:
         marketplace_url: https://marketplace.eclipse.org/node/1617241
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1617241
         release_date: 2016-04-19
-        # TODO change this to 4.3.0.Final when they release their bits
-        supported_jbt_is_version: 4.3.0.Beta1
+        supported_jbt_is_version: 4.3.0.Final
         blog_announcement_url: /blog/ga-for-mars2.html
         documentation_url: http://docs.jboss.org/tools/
         zips:
@@ -1644,6 +1658,20 @@ jbt_is:
   url_path_fragment: jbosstools_is
   streams:
     mars:
+      4.3.0.Final:
+        release_date: 2016-05-06
+        required_jbt_core_version: 4.3.1.Final
+        update_site_url: http://download.jboss.org/jbosstools/mars/stable/updates/integration-stack/
+        blog_announcement_url: /blog/integration-stack-4.3.0.Final.html
+        zips:
+          - name: Update site bundle of JBoss Tools Integration Stack
+            file_size: 51MB
+            url: http://download.jboss.org/jbosstools/mars/stable/updates/integration-stack/jbosstools-integration-stack-4.3.0.Final.zip
+            md5_url: http://download.jboss.org/jbosstools/mars/stable/updates/integration-stack/jbosstools-integration-stack-4.3.0.Final.zip.MD5
+          - name: Update site bundle of JBoss Tools Integration Stack (Early Access)
+            file_size: 153MB
+            url: http://download.jboss.org/jbosstools/mars/stable/updates/integration-stack/jbosstools-integration-stack-4.3.0.Final-earlyaccess.zip
+            md5_url: http://download.jboss.org/jbosstools/mars/stable/updates/integration-stack/jbosstools-integration-stack-4.3.0.Final-earlyaccess.zip.MD5
       4.3.0.Beta1:
         release_date: 2016-03-10
         required_jbt_core_version: 4.3.1.Beta2
