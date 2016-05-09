@@ -556,7 +556,7 @@ devstudio_is:
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/9.0
         release_notes_url: https://access.redhat.com/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/9.0/html/9.0.0_Release_Notes/index.html
         release_date: 2016-05-06
-        required_devstudio_version: 9.1.0.Final
+        required_devstudio_version: 9.1.0.GA
         update_site_url: https://devstudio.redhat.com/9.0/stable/updates/integration-stack/
         blog_announcement_url: /blog/integration-stack-4.3.0.Final.html
         zips:
