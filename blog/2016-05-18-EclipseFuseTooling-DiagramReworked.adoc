@@ -1,0 +1,47 @@
+
+= JBoss Fuse Tooling - Diagram reworked: New shiny colors! (and more)
+:page-date:2016-05-18
+:page-layout: blog
+:page-author: apupier
+:page-tags: [jbtis,fuse]
+
+Note: This article has been posted also on http://developers.redhat.com/blog/2016/05/17/jboss-fuse-tooling-diagram-reworked-new-shiny-colors-and-more/[Red Hat Developers Program blog]
+
+The JBoss Fuse Tooling has been reworked to provide a brighter Look'n'feel and a nice looking automatic layout. The work is still in progress but already available in beta version with the new JBoss Tool Studio version. Please install the JBoss Tools Studio that you can download from http://tools.jboss.org/downloads/devstudio/mars/9.1.0.GA.html[here]. And then follow the steps in this screenshot to have access to JBoss Fuse Tooling 8.0 Beta 2.
+
+image:/blog/images/fuse/201604/HowToInstall.png[]
+
+Ok, now let's see what's new from a Diagram point view!
+
+== New layout and Look'n'Feel
+
+It provides modern colors. Some of them are dynamic depending on the consumer/producer role.
+
+The new default layout is vertical - the horizontal is still available from Preferences - providing more information in a more compact way.
+
+Icons for each component are currently created. It helps to distinguish at first sight which kind of component it is without having to read the scheme of the URI.
+
+An image is worth a thousands words, especially here, so have a look:
+
+image:/blog/images/fuse/201604/FuseNewLayoutAndLookNFeel.png[]
+
+== Multiple routes support
+
+Previously, the editor was supporting editing a single route per Camel file. It is now possible to develop several Camel routes in the same file with the JBoss Fuse Tooling.
+
+== Palette simplification
+
+The Palette has been reworked too. The component list has been shortened to present the most common components only. You can use a search field to filter on the remaining ones. All the other components are still available using the "Generic" tool palette, it opens a dialog where you will be able to search for a specific component and have default filters/presentations.
+
+image:/blog/images/fuse/201604/PaletteHighlighted.png[]
+image:/blog/images/fuse/201604/componentChoose.png[]
+
+If you feel that the component list of the palette must be configurable, you can vote on the corresponding https://issues.jboss.org/browse/FUSETOOLS-1300[feature request].
+
+== Validation decorator
+
+The Fuse Validation issues are now displayed on the diagram:
+
+image:/blog/images/fuse/201604/validationDiagram.png[]
+
+
