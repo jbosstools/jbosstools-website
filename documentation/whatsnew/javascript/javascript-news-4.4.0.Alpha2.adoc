@@ -54,3 +54,18 @@ image::images/4.4.0.Alpha2/run_task.png[Running Gulp Task]
 
 More information about JavaScript task runners can be found in the Eclipse may newsletter article http://www.eclipse.org/community/eclipse_newsletter/2016/may/article4.php[Next station: Grunt and Gulp Automation!]
 
+== JSON Editor
+
+New editor is available for mastering JSON files: JSON Editor. 
+
+image::images/4.4.0.Alpha2/json-editor.png[JSON Editor]
+
+Validation and content assisting are available for the following well-known JSON files:
+* bower.json
+* .bowerrc
+* package.json
+* .jshintrc
+
+image::images/4.4.0.Alpha2/json-editor-ca.png[Bower Editor content assist]
+
+
