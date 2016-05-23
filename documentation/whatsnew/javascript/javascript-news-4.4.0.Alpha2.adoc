@@ -60,4 +60,19 @@ Here is a short https://vimeo.com/167812779[video] which demonstrates new featur
 
 video::167812779[vimeo, width=640, height=400]
 
+== JSON Editor
+
+New editor is available for mastering JSON files: JSON Editor. This Editor is a part of Eclipse Web Tools and available in the latest Eclipse Neon release.
+
+image::images/4.4.0.Alpha2/json-editor.png[JSON Editor]
+
+Validation and content assisting are available for the following well-known JSON files:
+* bower.json
+* .bowerrc
+* package.json
+* .jshintrc
+
+image::images/4.4.0.Alpha2/json-editor-ca.png[Bower Editor content assist]
+
+
 
