@@ -54,3 +54,10 @@ image::images/4.4.0.Alpha2/run_task.png[Running Gulp Task]
 
 More information about JavaScript task runners can be found in the Eclipse may newsletter article http://www.eclipse.org/community/eclipse_newsletter/2016/may/article4.php[Next station: Grunt and Gulp Automation!]
 
+== Demo
+
+Here is a short https://vimeo.com/167812779[video] which demonstrates new features and enhancements of `JSDT 2.0` release:  
+
+video::167812779[vimeo, width=640, height=400]
+
+
