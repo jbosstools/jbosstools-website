@@ -1,0 +1,12 @@
+= General 4.4.0.Alpha2 What's New
+:page-layout: whatsnew
+:page-component_id: general
+:page-component_version: 4.4.0.Alpha2
+:page-product_id: jbt_core 
+:page-product_version: 4.4.0.Alpha2
+
+ifndef::finalnn[]
+== General for JBoss Tools 4.4.0.Alpha2
+
+JBoss Tools is now targeting Eclipse Neon M7.
+endif::finalnn[]
