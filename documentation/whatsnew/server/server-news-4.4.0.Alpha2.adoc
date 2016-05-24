@@ -1,0 +1,35 @@
+= Server What's New in 4.4.0.Alpha2
+:page-layout: whatsnew
+:page-component_id: server
+:page-component_version: 4.4.0.Alpha2
+:page-product_id: jbt_core
+:page-product_version: 4.4.0.Alpha2
+
+== Allow setting exploded or zipped setting on a per-module basis
+
+In the past, the decision of whether to explode or package up a project for deployment was made as a setting on the entire server. This setting would be respected for all top level modules, and for most nested modules (for example, a Web project nested inside a EAR Project would also be exploded if the EAR was exploded). The server-wide setting was not 100% respected at all times, though. Specifically, even if the server-wide setting was to explode deployments, in some cases, nested utility jars would still be zipped, depending on the server type and its support for exploded Utility jars. 
+
+Users requested a more fine-grained control over which of their projects would be exploded or packaged. To help, we've added a new column to the per-module settings section of the deployments tab of the server editor. This will allow users more flexibility and certainty when deciding how specific projects should be packaged. 
+
+image::/documentation/whatsnew/server/images/JBIDE-20577.png[]
+
+related_jira::JBIDE-20577[Allow setting exploded or zipped on per-module basis]
+
+== Starting remote servers will now connect remote debugger
+
+When creating a new server in JBossTools, you are provided the option of using a local framework or a remote framework to manage it. When choosing the remote option, JBossTools will now helpfully add debug JVM options to the startup command when you right-click your server and select 'debug'. Then, it will automatically launch a 'Remote Java Application' launch to connect the eclipse debugger to your remote application server. 
+
+There are, of course, some limitations. We will only automatically add the debug JVM options if you have not customized the launch script at all. You can see below where you would override our default command to launch against a remote server. As long as 'Automatically Calculate' is checked, we will add the flags when you start the server in debug mode. 
+
+image::/documentation/whatsnew/server/images/JBIDE-9442_launch.png[]
+
+
+However, you will not see the added flags in the text field shown. The reason for this is that since we only add those flags when launched in debug mode, it is inappropriate for us to show them in the general launch configuration UI, since they may or may not be included in the remote command. 
+
+New UI has also been added to the Server Editor's 'Ports' section to allow you to customize which port to use when exposing the debug port, and to also use when launching the remote debugger. This new UI is shown below.
+
+image::/documentation/whatsnew/server/images/JBIDE-9442_editor.png[]
+
+related_jira::JBIDE-9442[Investigate possibility for remote debug launch of app servers]
+
+
