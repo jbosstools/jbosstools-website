@@ -1,0 +1,79 @@
+= JBoss Tools Alpha2 for Eclipse Neon
+:page-layout: blog
+:page-author: akazakov
+:page-tags: [release, jbosstools, devstudio, jbosscentral]
+:page-date: 2016-05-25
+
+Happy to announce Alpha2 build for Eclipse Neon M7.
+
+Downloads available at link:/downloads/jbosstools/neon/4.4.0.Alpha2[JBoss Tools 4.4.0.Alpha2].
+
+== Installation
+
+This version of JBoss Tools targets Eclipse Neon 4.6 (M7).
+
+We recommend using the
+http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/neonm7[Eclipse
+4.6 JEE Bundle] since then you get most of the dependencies
+preinstalled.
+
+Once you have installed Eclipse, you use our update site directly:
+
+    http://download.jboss.org/jbosstools/neon/development/updates/core/
+ 
+Note: Marketplace entry and Integration Stack tooling will become available from JBoss Central at a later date.
+
+== What is new ? 
+
+As always there is more than can be covered in a single blog but here are some highlights. You can see everything in the link:/documentation/whatsnew/jbosstools/4.4.0.Alpha2.html[What's New section for this release].
+
+== Dockerfile Editor
+
+A new Dockerfile editor provides users with content assist on the commands (ADD, COPY, RUN, etc.) as well
+as a customizable syntax highlighting.
+
+image::/documentation/whatsnew/docker/images/docker_neon_m7/docker_editor.png[Docker Editor]
+
+== Improved OpenShift 3 support
+
+=== New support for builder images
+The New OpenShift Application wizard now supports builder images, on top of the existing template support:
+
+image::/documentation/whatsnew/openshift/images/builder-support.png[width=600]
+
+=== Create new resources
+The OpenShift Explorer now provides a `New > Resource` menu, that lets you create new OpenShift resources from an existing file, similar to the `oc create -f some_resource.json` command.
+Resource files can be local (from File System or Workspace), or remote, by providing a URL.
+
+image::/documentation/whatsnew/openshift/images/create-resources-wizard.png[width=600]
+
+=== Scaling pods
+It is now possible to scale pods up and down, from the Service context menu in the OpenShift Explorer, or the Deployments and Deployment Configuration context menus in the Properties view.
+`Scale > Up` will spin up one more pod, `Scale > Down` will remove one pod. `Scale > To...` will open a pop-up dialog to let you set the amount of pods you want your OpenShift to spin up.
+
+image::/documentation/whatsnew/openshift/images/scale-up-down.gif[]
+
+== Updated JavaScript Tools
+
+Our team worked hard for last month on rebooting the JavaScript Development Tools (JSDT) project which is part of Eclipse Web Tools. You can install updated JavaScript tooling directly from eclipse.org or using JBoss Tools Target Platform. 
+
+JavaScript Tools now support EcmaScript 2015. No false positive validation errors any more. Performance has been improved dramatically.
+
+image::/documentation/whatsnew/javascript/images/4.4.0.Alpha2/ES6Editor.gif[ES6 features on Editor]
+
+Node.js support now allows you to run and debug Node.js applications. Note: Node.js debugger is currently not available in JBoss Tools Target Platform and has to be installed directly from eclipse.org. It will be available in the next JBoss Tools version and will work OOTB in Developer Studio.
+
+image::/documentation/whatsnew/javascript/images/4.4.0.Alpha2/node_debug.png[Node.js Debug]
+
+Here is a short https://vimeo.com/167812779[video] which demonstrates new features and enhancements of `JSDT 2.0` release:  
+
+video::167812779[vimeo, width=640, height=400]
+
+== Next steps
+
+While we wait for feedback on Alpha2, we are already working on the next JBoss Tools release for Eclipse Neon.
+
+Enjoy!
+
+Alexey Kazakov
+

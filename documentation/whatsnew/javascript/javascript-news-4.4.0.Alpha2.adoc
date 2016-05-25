@@ -36,7 +36,7 @@ Hovering over variables in the editor is also supported:
 
 image::images/4.4.0.Alpha2/hover.png[Hovering over function]					
 
-Live Edit funtionality is supported via *V8 Debugging -> Push Source Changes to VM* menu items:
+Live Edit functionality is supported via *V8 Debugging -> Push Source Changes to VM* menu items:
 
 image::images/4.4.0.Alpha2/push_changes.png[Push Source Changes to VM]
 
