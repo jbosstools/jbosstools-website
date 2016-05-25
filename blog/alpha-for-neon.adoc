@@ -6,7 +6,7 @@
 
 Happy to announce Alpha2 build for Eclipse Neon M7.
 
-Downloads available at link:/downloads/jbosstools/neon/4.4.0.Alpha2[JBoss Tools 4.4.0.Alpha2].
+Downloads available at link:/downloads/jbosstools/neon/4.4.0.Alpha2.html[JBoss Tools 4.4.0.Alpha2].
 
 == Installation
 
