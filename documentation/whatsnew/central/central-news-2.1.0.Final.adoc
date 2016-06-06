@@ -1,0 +1,12 @@
+= JBoss Central What's New in 2.1.0.Final
+:page-layout: whatsnew
+:page-component_id: central
+:page-component_version: 2.1.0.Final
+:page-product_id: jbt_core
+:page-product_version: 4.4.0.Final
+
+== New EAP 7 quickstarts
+
+Red Hat Central now lists quickstarts targeting the newly released Red Hat JBoss Enterprise Application 7.0 server.
+
+related_jira::JBIDE-22459[]
