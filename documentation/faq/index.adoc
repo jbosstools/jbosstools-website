@@ -55,9 +55,12 @@ It is a bit long, but you can reconfigure it if you wish to under menu:Preferenc
 === LiveReload
 
 [qanda]
-I use JBoss Tools with LiveReload enabled, but my HTML Page is not refreshed after page a change was published on the application server. Why ?::
+I use JBoss Tools with LiveReload enabled, but my HTML Page is not refreshed after a change was published on the application server. Why ?::
 
-The LiveReload server configuration editor provides a "Reload delay" property that can be adjusted to give enough time
-to the application server to detect and take into account the changes before the web browser sends its HTTP request.
+The LiveReload tooling is notified by the Server tooling when a resource was published on the application server. But there may be a slight delay before the application server actually handles the resource change.
+In the mean time, the user may still access the old resource in a response to an HTTP request.
+
+To circumvent this problem, the LiveReload server configuration editor provides a "Reload delay" property that can be adjusted to give enough time
+to the application server to detect and take into account the changes before the web browser sends its HTTP request. The default value is 500ms.
 
 image::./images/livereload-server_configuration_editor.png[LiveReload Server Configuration Editor]
