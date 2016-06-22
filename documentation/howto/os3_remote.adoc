@@ -1,107 +1,96 @@
-= Set up and Remotely Monitor an OpenShift Database Server
+= Set up and Remotely Monitor an OpenShift Application
 :page-layout: howto
 :page-tab: docs
 :page-status: green
 :experimental:
 :imagesdir: ./images
-:toc:
 
-In some scenarios, the user may already have a remote instance of OpenShift 3 running with various applications on it and wants to monitor it. Red Hat JBoss Developer Studio allows users to set up a connection to a remote instance of OpenShift 3 and then use logs (such as the application and build logs) to troubleshoot and monitor running applications. Use the following tasks to connect to and work with a remote OpenShift instance:
+In some scenarios, the user may already have a remote instance of OpenShift 3 running with various applications on it and wants to monitor it. The IDE allows users to set up a connection to a remote instance of OpenShift 3 and then use logs (such as the application and build logs) to troubleshoot and monitor running applications. Use the following tasks to connect to and work with a remote OpenShift instance:
 
- - <<add_osv3,Add the OpenShift 3 Tooling to the IDE>>
- - <<set_binaries,Set up OpenShift Client Binaries>>
- - <<port_forwarding,Set up Port Forwarding>>
- - <<stream_app_logs,Stream Application Logs>>
- - <<stream_build_logs,Stream Build Logs>>
+. <<setup_binaries, Set up OpenShift Client Binaries>>
+. <<port_forwarding, Set up Port Forwarding>>
+. <<pod_logs, Stream Pod Logs>>
+. <<build_logs, Stream Build Logs>>
 
-[add_osv3]
-== Add the OpenShift 3 Tooling to the IDE
-The IDE does not include OpenShift 3 as a default. OpenShift 2 is available and supported, but OpenShift 3 is a Technology Preview and must be installed as follows:
-
-. Navigate to the `JBoss Central` view and click the **Software/Update** tab.
-. In the `Find` field, type *OpenShift*.
-. Click the checkbox next to `JBoss OpenShift 3 Tools` and click **Install/Update (1)**.
-. In the `Install` dialog box, ensure that the checkboxes for **JBoss OpenShift 3 Tools** and **JBoss Tools EGit Integration** are selected and click **Next** and then **Next** again to confirm.
-. Read the license text and select the relevant radio button to indicate agreement and click **Finish**.
-. Read the security warning and click **OK** to proceed.
-. Click **Yes** when prompted to restart JBoss Developer Studio for the changes to take effect.
-
-**Result:** OpenShift 3 Tooling is now installed in JBoss Developer Studio.
-
-[set_binaries]
+[[setup_binaries]]
 == Set up OpenShift Client Binaries
 Before setting up port forwarding or streaming application and build logs, it is mandatory to set up OpenShift Client Binaries as follows:
 
-==== Prerequisites
- - Ensure that OpenShift 3 tooling is added to JBoss Developer Studio. For instructions, see <<add_osv3,Add the OpenShift 3 Tooling to the IDE>>.
+. In the IDE, click menu:Windows[Preferences, JBoss Tools, OpenShift v3].
 
-To set up OpenShift Client Binaries:
-
-. In the IDE, click `Windows > Preferences > JBoss Tools > OpenShift v3`.
 . Click the `here` link.
-. In the `Download from GitHub` section, click the **Releases** page link.
-. Scroll to the `Downloads` section and click the appropriate link to begin the download for the binary for your operating system.
+
+. In the `Download from GitHub` section, click the `Release page` link.
+
+. Scroll to the `Downloads` section and click the appropriate link to begin the client tools download for the binary for your operating system.
+
 . After the download is complete, extract the contents of the file.
-. Click `Windows > Preferences > JBoss Tools > OpenShift v3`.
-. Click **Browse** and select the location of the OpenShift Client executable file.
-. Click **Apply** and then click **OK**.
 
-**Result:** OpenShift Client Binaries are now set up for your IDE.
+. Click menu:Windows[Preferences, JBoss Tools, OpenShift v3].
 
-[port_forwarding]
+. Click `Browse` and select the location of the OpenShift Client executable file.
+
+. Click `Apply` and then click `OK`.
+
+`Result:` OpenShift Client Binaries are now set up for your IDE.
+
+[[port_forwarding]]
 == Set up Port Forwarding
-
 Using the `Application Port Forwarding` window, you can connect the local ports to their remote counterparts to access data or debug the application.
-
 Port forwarding automatically stops when the OpenShift connection terminates, or when the IDE is shut down or when the workspace is changed. Port forwarding must be enabled each time to connect to OpenShift from the IDE.
 
-==== Prerequisites
- - Ensure that OpenShift Client Binaries are set up (see <<set_binaries,Set up OpenShift Client Binaries>> for instructions).
+`Prerequisite:` Ensure that the OpenShift Client Binaries are set up (see <<setup_binaries, Set up OpenShift Client Binaries>> for instructions).
 
 Set up port forwarding as follows:
 
-. In the `OpenShift Explorer` view, expand the connection and then expand `Pods`.
-. Right-click the relevant Pod and then click **Port Forwarding**.
+. In the `OpenShift Explorer` view, expand the connection and then expand the project, the services, and then the Pods.
+
+. Right-click the relevant pod and then click `Port Forwarding`.
 +
 .Set up Port Forwarding
-image::os_v3_dbserver_selectportforwarding.png[Set up Port Forwarding]
+image::os3_setupapp_portforward.png[Set up Port Forwarding]
 +
-. In the` Application Port Forwarding` window, click the **Find free local ports for remote ports** check box.
-. Click **Local Port** and then click **Start All**.
+. In the `Application Port Forwarding` window, click the `Find free local ports for remote ports` check box.
 
-**Result:** The `Status` column now shows `Started`, indicating that port forwarding is now active. Additionally, the `Console` view shows the status of port forwarding for the particular service.
+. Click `Start All`.
 
-[steam_app_logs]
-== Stream Application Logs
+`Result:` The `Status` column now shows `Started`, indicating that port forwarding is now active. Additionally, the `Console` view shows the status of port forwarding for the particular service.
 
-Application logs are general logs for an application running on a remote OpenShift 3 instance. The streaming application logs feature in JBoss Developer Studio is used to monitor applications and use the historical information to troubleshoot if the application fails or returns errors.
+.Start Port Forwarding
+image::os3_setupapp_start_portforward.png[Start Port Forwarding]
 
-==== Prerequisites
- - Ensure that OpenShift Client Binaries are set up (see <<set_binaries,Set up OpenShift Client Binaries>> for instructions).
+[[pod_logs]]
+== Stream Pod Logs
+
+Pod logs are general logs for an application running on a remote OpenShift 3 instance. The streaming application logs feature in the IDE is used to monitor applications and use the previous pod log to troubleshoot if the application fails or returns errors.
+
+`Prerequisite:` Ensure that the OpenShift Client Binaries are set up (see <<setup_binaries, Set up OpenShift Client Binaries>> for instructions).
 
 To stream the application logs:
 
-. In the `OpenShift Explorer` view, expand the connection and then expand **Pods**.
-. Right-click the relevant Pod and then click **Pod Log**.
+. In the `OpenShift Explorer` view, expand the project, the services, and then the Pods.
 
-image::os_v3_dbserver_selectpodlog.png[View the Pod Logs]
+. Right-click the relevant Pod and then click `Pod Log`.
 
-**Result:** The `Console` view displays the pod log.
+.Stream Pod Log
+image::os3_setupapp_podlog.png[Stream Pod Log]
 
-[stream_build_logs]
+`Result:` The `Console` view displays the Pod log.
+
+[[build_logs]]
 == Stream Build Logs
 
-Build logs are logs documenting changes to applications running on a remote OpenShift 3 instance. The streaming build logs feature in JBoss Developer Studio is used to view the progress of the application build process and to debug the application.
+Build logs are logs documenting changes to applications running on a remote OpenShift 3 instance. The streaming build logs feature in the IDE is used to view the progress of the application build process and to debug the application.
 
-==== Prerequisites
- - Ensure that OpenShift Client Binaries are set up (see <<set_binaries,Set up OpenShift Client Binaries>> for instructions).
+`Prerequisite:` Ensure that the OpenShift Client Binaries are set up (see <<setup_binaries, Set up OpenShift Client Binaries>> for instructions).
 
 To stream build logs:
 
-. In the `OpenShift Explorer` view, expand the connection.
-. Expand **Builds**.
-. Right-click the relevant build instance and click **Build Log**.
+. In the `OpenShift Explorer` view, expand the project, the services, and then the build.
 
-image::os_v3_dbserver_selectbuildlog.png[View Build Logs]
+. Right-click the relevant build instance and click `Build Log`.
 
-**Result:** The Console view is now the view in focus showing the build log.
+.Stream Build Log
+image::os3_setupapp_buildlog.png[Stream Build Log]
+
+`Result:` The `Console` view is now the view in focus showing the build log.
