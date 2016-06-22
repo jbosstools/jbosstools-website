@@ -1,0 +1,101 @@
+= JBoss Tools and Red Hat Developer Studio for Eclipse Neon
+:page-layout: blog
+:page-author: akazakov
+:page-tags: [release, jbosstools, devstudio, jbosscentral]
+:page-date: 2016-06-27
+
+link:/downloads/jbosstools/neon/4.4.0.Final.html[JBoss Tools 4.4] and link:/downloads/devstudio/neon/10.0.0.GA.html[Red Hat JBoss Developer Studio 10.0] for Eclipse Neon are here waiting for you. Check it out!
+
+image::/blog/images/devstudio10.png[]
+
+== Installation
+
+JBoss Developer Studio comes with everything pre-bundled in its installer. Simply download it from our https://www.jboss.org/products/devstudio.html[JBoss Products page] and run it like this:
+ 
+    java -jar jboss-devstudio-<installername>.jar
+
+JBoss Tools or Bring-Your-Own-Eclipse (BYOE) JBoss Developer Studio require a bit more:
+
+This release requires at least Eclipse 4.6 (Neon) but we recommend
+using the latest http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/neonr[Eclipse 4.6 Neon JEE Bundle] since then you get most of the dependencies preinstalled. 
+
+Once you have installed Eclipse, you can either find us on the Eclipse Marketplace under "JBoss Tools" or "Red Hat JBoss Developer Studio".
+
+For JBoss Tools, you can also use our update site directly.
+
+    http://download.jboss.org/jbosstools/neon/stable/updates/
+
+== What is new? 
+
+Our main focus for this release was on adoption of Eclipse Neon, improvements for container based development and bug fixing.
+Eclipse Neon itself has link:/blog/eclipse_neon_webinar_series.html[a lot of new cool stuff] but let me highlight just a few updates in both Eclipse Neon and JBoss Tools plugins that I think are worth mentioning.
+
+=== JavaScript Development Tools 2.0
+
+Red Hat team along with other contributers have been working hard for the last months on restarting https://eclipse.org/webtools/jsdt/[JavaScript Development Tools (JSDT)] project for Eclipse Neon.
+The updated tooling includes EcmaScript 2015 support, JSON editor, Node.js, grunt, gulp, bower and npm tools.
+
+Here is a short https://vimeo.com/167812779[video] which demonstrates new features and enhancements of JavaScript Tools:  
+
+video::167812779[vimeo, width=640, height=400]
+
+=== Improved OpenShift 3 and Docker Tools
+
+We continue to work on providing better experience for container based development in JBoss Tools and Developer Studio. Let's go through a few interesting updates here and you can find more details on link:/documentation/whatsnew/jbosstools/4.4.0.Final.html[the What's New page].
+
+==== Dockerfile Editor
+
+The new Dockerfile editor provides users with content assist on the commands (ADD, COPY, RUN, etc.) as well as a customizable syntax highlighting.
+
+image::/documentation/whatsnew/docker/images/docker_neon_m7/docker_editor.png[Docker Editor]
+
+==== Deploy docker images to the CDK OpenShift registry
+
+The New OpenShift Connection wizard supports setting a Docker registry URL in the advanced properties section.
+This allows you to push docker images to the given Docker registry via the Deploy Docker Image wizard, right before actually creating the OpenShift resources. The URL is automatically added if the connection has been created by the CDK server adapter.
+
+image::/documentation/whatsnew/openshift/images/deploy-push-docker-image.png[width=600]
+
+==== New support for builder images
+
+The New OpenShift Application wizard now supports builder images, on top of the existing template support.
+
+image::/documentation/whatsnew/openshift/images/builder-support.png[width=600]
+
+Compared to regular templates, with the builder image-based workflow, users will be able to define:
+
+- git source url
+- build triggers
+- environment variables
+- data volumes
+- replicas
+- exposed service ports and routes
+
+==== Create new resources
+
+The OpenShift Explorer provides a `New > Resource` menu, that lets you create new OpenShift resources from an existing file, similar to the `oc create -f some_resource.json` command.
+Resource files can be local (from File System or Workspace), or remote, by providing a URL.
+
+==== Scaling pods
+
+It is possible to scale pods up and down, from the Service context menu in the OpenShift Explorer, or the Deployments and Deployment Configuration context menus in the Properties view.
+
+image::/documentation/whatsnew/openshift/images/scale-up-down.gif[]
+
+=== New EAP 7 quickstarts
+
+Red Hat Central now lists quickstarts targeting the newly released Red Hat JBoss Enterprise Application 7.0 server.
+
+image::/blog/images/central-eap7.png[width=600]
+
+=== And more...
+
+You can find more noteworthy updates in on link:/documentation/whatsnew/jbosstools/4.4.0.Final.html[this page].
+
+== What is next?
+
+Having JBoss Tools 4.4 and Developer Studio 10.0 out we are already working on the next maintenance release for Eclipse Neon.
+
+Enjoy!
+
+Alexey Kazakov
