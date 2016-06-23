@@ -6,7 +6,7 @@
 
 To celebrate the release of http://eclipse.org[Eclipse Neon], the Eclipse Foundation
 produced a https://www.eclipse.org/community/webinars/[webinar series] with a list of
-the *Top 7 New & Noteworthy Features* that are integral to the Eclipse Neon Release.
+ *7 of the Top New & Noteworthy Features* that are integral to the Eclipse Neon Release.
 
 Amongst those webinars, https://developer.jboss.org/people/ibuziuk[Ilya] and
 https://developer.jboss.org/people/gercan[Gorkem] presented the Eclipse JavaScript Development Tools (JSDT)
