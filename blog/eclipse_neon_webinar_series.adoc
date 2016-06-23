@@ -1,0 +1,54 @@
+= Eclipse Webinar series - JSDT and Docker Tooling for Eclipse Neon
+:page-date: 2016-06-23
+:page-layout: blog
+:page-author: xcoulon
+:page-tags: [jsdt, docker, eclipse, webinar, jbosscentral]
+
+To celebrate the release of http://eclipse.org[Eclipse Neon], the Eclipse Foundation
+produced a https://www.eclipse.org/community/webinars/[webinar series] with a list of
+the *Top 7 New & Noteworthy Features* that are integral to the Eclipse Neon Release.
+
+Amongst those webinars, https://developer.jboss.org/people/ibuziuk[Ilya] and
+https://developer.jboss.org/people/gercan[Gorkem] presented the Eclipse JavaScript Development Tools (JSDT)
+and I presented the Docker tooling.
+
+== JSDT Tooling
+
+*Description:*
+
+The Eclipse JavaScript Development Tools have reached a new level of features and usability with Eclipse Neon.
+Many things were implemented as part of the JSDT 2.0 release that is now available with http://eclipse.org[Eclipse Neon].
+This webinar demonstrates the following new features:
+
+- Package managers (npm / bower)
+- Build systems (grunt / gulp)
+- Node.js Tools
+- ECMAScript 2015 (ES6) parser
+
+The talk also features plans for the future of JavaScript development in Eclipse IDE.
+
+video::UxGwu2adzIc[youtube]
+
+The slides for the presentation are available http://eclipsecon2016.herokuapp.com/#/[here].
+
+== Docker Tooling
+
+*Description:*
+
+Docker is awesome, but how to use it well when doing development?
+In this talk you will get a quick introduction on how to use Docker effectively, especially for development from within Eclipse.
+We will show how the release of Eclipse Neon supports Docker to make it even more integrated into your day-to-day work from within your IDE.
+In particular, you'll see how you can pull and run an image for a database, build a custom image for an application server, run it and deploy an application using data volume, exposed ports and container links.
+We will also take a look at some of the newest features, such as support for Docker Machine, TM Terminal integration, run configurations for containers, and a variety of other UI improvements.
+
+video::PTVZXkvUnWQ[youtube]
+
+The slides for the presentation are available http://www.slideshare.net/XavierCoulon/eclipse-neon-webinar-docker-tooling-for-developers[here].
+
+== Other Webinars
+
+Other webinars have also been recorded and are available on the https://www.youtube.com/playlist?list=PLy7t4z5SYNaTzWo4OTOxRisfKNby7dENY[Eclipse Neon Webinar Series] on Youtube.
+
+Enjoy ! +
+Xavier Coulon +
+http://twitter.com/xcoulon[@xcoulon]
