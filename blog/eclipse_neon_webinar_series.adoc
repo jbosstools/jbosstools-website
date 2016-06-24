@@ -29,7 +29,7 @@ The talk also features plans for the future of JavaScript development in Eclipse
 
 video::UxGwu2adzIc[youtube]
 
-The slides for the presentation are available http://eclipsecon2016.herokuapp.com/#/[here].
+The slides for the presentation are available http://www.slideshare.net/IlyaBuziuk/eclipse-neon-webinar-jsdt-20[here].
 
 == Docker Tooling
 
