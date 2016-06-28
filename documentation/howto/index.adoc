@@ -51,8 +51,6 @@ link:openshift_configssh.html[Configure SSH Keys for OpenShift Online]
 
 https://docs.openshift.com/enterprise/3.0/getting_started/overview.html[OpenShift 3 Documentation^]
 
-link:os3_evaluate.html[Evaluate the OpenShift 3 Tooling with the IDE]
-
 link:os3_startusing.html[Create and Build OpenShift 3 Apps with the IDE]
 
 link:os3_remote.html[Set up and Remotely Monitor an OpenShift Database Server]
