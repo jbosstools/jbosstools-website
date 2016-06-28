@@ -89,7 +89,7 @@ devstudio:
             file_size: 530MB
           - name: Installer With EAP 7.0.0
             url: http://www.jboss.org/download-manager/content/origin/files/sha256/ba/ba8686980ccd9bd308dfea0aa662e1e1746974928618cc4bb42be21e9e59fa56/devstudio-10.0.0.GA-installer-eap.jar
-            file_size: 687MB 
+            file_size: 687MB
         zips:
           - name: Update site (including sources) bundle of JBoss Developer Studio
             url: http://www.jboss.org/download-manager/content/origin/files/sha256/87/8772a9e376d748fc107d56baae1dc05477cb841792cac5d97ab84f0141bf88b5/devstudio-10.0.0.GA-updatesite-core.zip
@@ -144,6 +144,7 @@ devstudio:
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         blog_announcement_url: /blog/beta2-for-mars2.html
+        archived: true
         installers:
           - name: Stand-alone Installer
             url: http://www.jboss.org/download-manager/content/origin/files/sha256/d0/d0514fe0fe3fb492d8728b8f0c48f943596ef357dc12d7ac751a98bf8dc92dc9/jboss-devstudio-9.1.0.Beta2-installer-standalone.jar
@@ -170,6 +171,7 @@ devstudio:
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         blog_announcement_url: /blog/beta1-for-mars2.html
+        archived: true
         installers:
           - name: Stand-alone Installer
             url: https://www.jboss.org/download-manager/content/origin/files/sha256/e1/e14e6cb8ef0a2d2ddade71bd365c6c566480c40b2ecc9c8c02230752d626c9c9/jboss-devstudio-9.1.0.Beta1-installer-standalone.jar
