@@ -1,191 +1,155 @@
-= Create an OpenShift 3 Application in the IDE
+= Create and Build OpenShift 3 Applications in the IDE
 :page-layout: howto
 :page-tab: docs
 :page-status: green
 :experimental:
 :imagesdir: ./images
+:toc:
 
-The OpenShift 3 Tooling allows users to create, import, and modify OpenShift 3 applications as follows:
+JBoss Tools' OpenShift 3 Tooling allows users to create, import, and modify OpenShift 3 applications and then set up manual or automatic builds for changes to the new applications as follows:
 
-. <<connection, Create a New OpenShift 3 Connection>>
-. <<project, Create a New OpenShift 3 Project>>
-. <<application, Create a New OpenShift 3 Application>>
-. <<import_app, Import an Existing OpenShift 3 Application into the IDE>>
-. <<deploy_app, Deploy an Application Using the Server Adapter>>
+. <<add_osv3,Add the OpenShift 3 Tooling to the IDE>>
+. <<create_app_template,Create a new OpenShift 3 Application Using a Template>>
+. <<import_app,Import an Existing OpenShift 3 Application>>
+. <<build_app_manually,Build an Application Manually>>
+. <<set_up_githooks,Build an Application Automatically>>
 . <<view_app,View an Existing Application in a Web Browser>>
-. <<delete_app, Delete an OpenShift Project>>
+. <<delete_project,Delete an OpenShift Project>>
 
-[[connection]]
-== Create a New OpenShift 3 Connection
-To be able to use the OpenShift 3 tooling in the IDE, you must first create an OpenShift 3 connection.
-To create a new OpenShift 3 connection:
+[add_osv3]
+== Add the OpenShift 3 Tooling to the IDE
+The IDE does not include OpenShift 3 as a default. OpenShift 2 is available and supported, but OpenShift 3 is a Technology Preview and must be installed as follows:
 
-. In the `OpenShift Explorer` view, click `New Connection Wizard`. In case the `OpenShift Explorer` view is not available, click `Window` > `Show View` > `Other` and then in the `Show View` window search for `OpenShift Explorer` and click `OK` after you find it.
+1. Navigate to the `JBoss Central` view and click the **Software/Update** tab.
+2. In the `Find` field, type *OpenShift*.
+3. Click the checkbox next to `JBoss OpenShift 3 Tools` and click **Install/Update (1)**.
+4. In the `Install` dialog box, ensure that the checkboxes for **JBoss OpenShift 3 Tools** and **JBoss Tools EGit Integration** are selected and click **Next** and then **Next** again to confirm.
+5. Read the license text and select the relevant radio button to indicate agreement and click **Finish**.
+6. Read the security warning and click **OK** to proceed.
+7. Click **Yes** when prompted to restart the IDE for the changes to take effect.
 
-. In the `New OpenShift Connection` wizard:
+**Result:** OpenShift 3 Tooling is now installed in the IDE.
+
+[create_app_template]
+== Create a new OpenShift 3 Application Using a Template
+
+Use the new `OpenShift Application` wizard to create OpenShift applications from default or custom templates. Using a template to create an application is useful because the same template can be used to create multiple similar applications with different or identical configurations for each of them.
+
+**Note:** To learn more about using and creating templates with OpenShift 3, see https://docs.openshift.org/latest/dev_guide/templates.html[Using Templates with OpenShift 3]
+
+. In `JBoss Central`, click **OpenShift Application**.
+. If required, in the `New OpenShift Application` wizard, sign into your OpenShift server and click **Next**.
+. Click the **Manage Project** link. If there are no previously created projects on the server, the `Create OpenShift Project` wizard displays the fields to create a new project.
+. In the `OpenShift Projects` window, click **New** and enter the following project details:
+.. In the `Project Name` field, type a name for the project. Project names must be alphanumeric and can contain the character “-” but must not begin or end with this character.
+.. In the `Display Name` field, type a display name for the project. This name is used as the display name for your project in the `OpenShift Explorer` view and on the OpenShift website after the project is created.
+.. In the `Description` field, type a description of the project.
+.. Click **Finish**.
+. In the `OpenShift Projects` window, click **OK**.
+. In the `New OpenShift Application` window:
+.. Ensure that the `Project` field displays the name of the relevant project.
+.. To use a template from the server, click **Use a template from the server** and select the relevant template. You can also use the `type filter` text field to search for specific templates.
+.. To use a custom template from your local machine:
+... Click `Use a template from my local file system` and click **Browse**.
+... Select the template and click **OK** to continue.
+. Click **Next**.
 +
-	a. In the `Connection` list, click `<New Connection>`.
-
-	b. In the `Server type` list, click `OpenShift 3`.
-
-   	c. In the `Server` field, type the URL for an OpenShift 3 server.
-
-   	d. In the `Authentication` section, in the `Protocol` list, click `OAuth` to authenticate using the token or click `Basic` to authenticate using login credentials.
+.Create a New OpenShift Application
+image::os3_art1_create_selecttemplate.png[Create a New OpenShift Application]
 +
-. Click `Finish`.
-
-.Set up a New OpenShift3 Connection
-image::os3_createapp_newconnection.png[Set up a New OpenShift3 Connection]
-
-`Result:` The connection is listed in the `OpenShift Explorer` view.
-
-[[project]]
-== Create a New OpenShift 3 Project
-To create a new OpenShift 3 project:
-
-. In the `OpenShift Explorer` view, right-click the connection and click `New` > `Project`.
-
-. In the `Create OpenShift Project` window:
+. In the `Template Parameters` window, confirm the parameter values and click **Next**.
 +
-	a. In the `Project Name` field, type a name for the project. Project names must be alphanumeric and can contain the character “-” but must not begin or end with this character.
-
-	b. In the `Display Name` field, type a display name for the project. This name is used as the display name for your project in the `OpenShift Explorer` view and on the OpenShift web console after the project is created.
-
-	c. In the `Description` field, type a description of the project.
+.Set Up Template Parameters
+image::os3_art1_create_templateparameters.png[Set Up Template Parameters]
 +
-. Click `Finish`.
-
-`Result:` The project is listed in the `OpenShift Explorer` view, under the relevant connection.
-
-[[application]]
-== Create a New OpenShift 3 Application
-Use the `New OpenShift Application` wizard to create OpenShift applications from default or custom templates. Using a template to create an application is useful because the same template can be used to create multiple similar applications with different or identical configurations for each of them.
-
-[NOTE]
-====
-To learn more about using and creating templates with OpenShift 3, see https://docs.openshift.org/latest/dev_guide/templates.html[Using Templates with OpenShift 3].
-====
-
-. In the `OpenShift Explorer` view, right-click the connection and click `New` > `Application`.
-
-. If required, in the `New OpenShift Application` wizard, sign into your OpenShift server using the `Basic` protocol (username and password) or the `OAuth` protocol (token) and click `Next`.
-
-. In the `Select Template` window, click the `Server application source` tab.
+**Important:** Ensure that you have push access to the repository mentioned in the GIT_URI parameter field so that you can push the local changes to the OpenShift server. It is recommended that you fork the original Git repository and replace the default GIT_URI value with the URL of your forked repository.
+. In the `Resource Labels` window, confirm the labels that you want to add to each resource. You can also click **Add** or **Edit** to add labels or edit the existing ones.
+. Click **Finish**.
 +
-[NOTE]
-====
-To create an application from the a local template, click the `Local template` tab and then click `Browse File System` or `Browse Workspace` to locate the template that you want to base the project on.
-====
+.Create Resource Labels
+image::os3_art1_create_resourcelabels.png[Create Resource Labels]
 +
-. From the list, click the template that you want to base your project on. You can also use the `type filter text` field to search for specific templates.
+. Review the details and click **OK** on the `Create Application Summary` window.
 
-. Click `Next`.
-+
-.Select a Template for Project Creation
-image::os3_createapp_selecttemplate.png[Select a Template for Project Creation]
-+
-. In the `Template Parameters` window, confirm the parameter values and click `Next`.
+In the `Create Application Summary` window, click the link to obtain the GitHub webhook and use it to automate the build process. In the Create Application Summary window, click the link to obtain the build trigger webhook and use it to automate the build process. A GitHub specific webhook is available for project sources hosted on GitHub. A generic Git webhook is available for other Git repositories. For detailed steps to set up GitHub webhooks, see <<set_up_githooks,Build an Application Automatically>>.
 
-. In the `Resource Labels` window, confirm the labels that you want to add to each resource. You can also click `Add` or `Edit` to add labels or edit the existing ones.
+**Note:** The link to obtain the webhook is available only for projects created from templates that have GitHub repositories.
 
-. Click `Finish`.
+.Create Webhook Triggers
+image::os3_art1_create_obtainwebhook.png[Create Webhook Triggers]
 
-. In the `Results of creating the resources from the _[template_name]_` window, review the details and click `OK`.
+**Result:** The application appears in the `Project Explorer` view. To view the application in a web browser, in the `OpenShift Explorer` view, expand the connection and then expand `Routes`, right-click the specific resource and then click **Show In > Web Browser**.
 
-. In the `Import Application` window, click `Use default clone destination` to clone the application at the default location or in the `Git Clone Location` field, type or browse for the location where you want to clone the application and click `Finish`.
-+
-.Select a Git Clone Location
-image::os3_createapp_clonelocation.png[Select a Git Clone Location]
-+
-[NOTE]
-====
-If the Git location chosen to clone the application already contains a folder with the application name that you are trying to import, you must select a new location for the Git clone. In case you do not select a new location, the existing repository will be reused with the changes you made being retained but not reflected on the OpenShift console.
-====
-.Git Clone Location Reuse
-image::os3_createapp_gitcloneerror.png[Git Clone Location Reuse]
-
-`Result:` The application appears in the `Project Explorer` view.
-
-[[import_app]]
+[import_app]
 == Import an Existing OpenShift 3 Application into the IDE
 
-[NOTE]
-====
-Only an application that has its source specified in the `build config` file can be imported in the workspace.
-====
+**Note:** Only an application that has its source specified in the build config file can be imported into the workspace.
 
-Applications associated with your OpenShift account(s) are listed in the `OpenShift Explorer` view. The source code for these applications can be individually imported into the IDE using the OpenShift tools `Import OpenShift Application` wizard. Once imported, the user can easily modify the application source code, as required, build the application and view it in a web browser.
+Applications associated with your OpenShift account(s) are listed in the `OpenShift Explorer` view. The source code for these applications can be individually imported into the IDE using the OpenShift Tools Import OpenShift Application wizard. Once imported, the user can easily modify the application source code, as required, build the application and view it in a web browser.
 
 To import an existing OpenShift 3 application as a new project in the existing IDE workspace:
 
-. If required, sign into your OpenShift server using the `Basic` protocol or the `OAuth` protocol.
-
+. In the `OpenShift Explorer` view, ensure your OpenShift connection is listed or click the connection icon image:os3_art1_import_connectionicon.png[] and enter your OpenShift account details to create a new connection.
 . In the `OpenShift Explorer` view, expand the connection to locate the application to import.
+. Right-click `{project name}` and click **Import Application**.
+. In the `Import OpenShift Application` wizard's `Existing Build Configs`  list, click the application that you want to import and click **Next**.
+. Ensure the location in the `Git Clone Destination` field corresponds to where you want to make a local copy of the OpenShift application Git repository and click **Finish**.
 
-. Right-click _{project name}_ and click `Import Application`.
+**Result:** Once imported, the application is listed in the `Project Explorer` view.
+
+== Build an Application
+
+The user can either build the application manually or use the GitHub webhooks to build it automatically. Building applications automatically makes the build process quicker. Also, if set to build automatically, the application build process is triggered every time a change is made to the application source code without you having to remember to build it manually.
+
+[build_app_manually]
+=== Build an Application Manually
+
+To build an application manually:
+
+. In the `OpenShift Explorer` view, expand the connection, then expand the `{project_name}`, and then expand `Build Configs`.
+. Right-click the application name and click **Start Build**.
+
+**Result:** The `Builds` folder in the `OpenShift Explorer` view shows the status of the build.
+
+[set_up_githooks]
+=== Build an Application Automatically Using Git Webhooks
+
+The IDE allows you to either build OpenShift 3 applications manually (<<build_app_manually,Build an Application Manually>>) or build them automatically by setting up GitHub webhooks. Since OpenShift 3 does not provide a Git repository that can directly push the changes to the OpenShift server, set up webhooks to push any changes made to a project file and to build an application automatically. By setting up webhooks, you can configure your GitHub repository to make a webhook call whenever you want to push the changes made to a project file.
+
+To add a webhook to your GitHub repository:
+
+. In the `OpenShift Explorer` view, expand the connection and then expand **Build Configs**.
+. Right-click the `Build Configs` resource and then click **Show Webhooks**.
+. Copy the webhook in the `GitHub webhook` field.
 +
-[NOTE]
-====
-To import a particular application from a service, right-click the service and then click `Import Application`. If you right-click a project and click `Import Application`, and if there are more than one build configs with source code under a project, you will be prompted to select the desired application for import because of existence of several applications under one project.
-====
+.Create a Git Webhook
+image::os3_art1_webhook.png[Create a Git Webhook]
 +
-. In the `Import OpenShift Application` wizard, `Existing Build Configs` list, click the application that you want to import and click `Next`.
+. In the Webhooks triggers window, click the GitHub link to navigate to the GitHub repository.
+. Click Settings.
+. In the Options section, click `Webhooks & services` and then click **Add webhook**.
+. In the `Payload URL` field, paste the copied webhook and then click **Add webhook**.
 
-. Ensure the location in the `Git Clone Destination` field corresponds to where you want to make a local copy of the OpenShift application Git repository and click `Finish`.
+**Result:** A Git webhook is now set up to trigger automatic builds for your OpenShift 3 application.
 
-`Result:` The application is listed in the `Project Explorer` view.
-
-[[deploy_app]]
-== Deploy an Application Using the Server Adapte
-
-The server adapter allows incremental deployment of applications directly into the deployed pods on OpenShift.
-
-To deploy an application:
-
-. In the `OpenShift Explorer` view, expand the connection, the project, and then the application.
-
-. Right-click the _{application_name}_ and click `Server Adapter`.
-In the `Server Settings` window, `Services` section, select the service.
-+
-[NOTE]
-====
-A workspace project will be selected automatically, if the OpenShift service has a Build Config with a git URL matching the git remote URL of one of the workspace projects.
-====
-+
-. Click `Finish`.
-
-`Result:` The `Servers` view is the view in focus with the server showing `[Started, Publishing…]` followed by the `Console` view showing the progress of application publishing.
-
-.Console View Showing Application Publication Progress
-image::os3_createapp_deployprogress.png[Console View Showing Application Publication Progress]
-
-[[view_app]]
+[view_app]
 == View an Existing Application in a Web Browser
 
-To view an application in the internal web browser, after it has been successfully deployed, in the `OpenShift Explorer` view, right-click the application, and click `Show In` > `Web browser`.
+To view an application in the internal web browser after it has been successfully deployed, in the `OpenShift Explorer` view, right-click the application, and click **Show In > Web browser**.
 
-`Result:` The application displays in the built-in web browser.
+. In the `OpenShift Explorer` view, right-click the application, and click **Show In > Web browser**.
 
-[[delete_app]]
+**Result:** The application displays in the built-in web browser.
+
+[delete_project]
 == Delete an OpenShift Project
 
 You may choose to delete a project from the workspace to make a fresh start in project development or after you have concluded development in a project. All resources associated with a project get deleted when the project is deleted.
 
 To delete an OpenShift 3 project:
 
-. In the `OpenShift Explorer` view, expand the connection and then the project to locate the application you want to delete.
+. In the `OpenShift Explorer` view, expand the connection to locate the application you want to delete.
+. Right-click `{project name}` and click **Delete Project**.
+. In the OpenShift project deletion window, click **OK**.
 
-. Right-click _{project name}_ and click `Delete Project`.
-
-. In the `OpenShift resource deletion` window, click `OK`.
-
-[NOTE]
-====
-To delete more than one project (and the containing applications), in the `OpenShift Explorer` view, click the project to select it and while holding the Control key select another project that you want to delete and then press Delete.
-====
-
-== Did You Know
-
-* Scale the project deployment, using the context menu for the service (the first node below the project). You can also scale the deployment from the `Properties` tab of a deployment (replication controller) and deploymentconfig.
-
-* View the rsync output in the `Console` view. You can also see the progress of the file transfer after you publish local changes to OpenShift.
+**Result:** The selected project is now removed.
