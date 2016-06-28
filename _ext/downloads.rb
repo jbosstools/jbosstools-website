@@ -51,24 +51,11 @@ module Awestruct
               if (!product_info.build_type.nil? &&
                   (product_info.archived == false) &&
                   (!product_info.release_date.nil?))
-                 if (@site.latest_builds_download_pages[product_id][product_info.build_type].nil?)
+                if (@site.latest_builds_download_pages[product_id][product_info.build_type].nil?)
                  	@site.latest_builds_download_pages[product_id][product_info.build_type] = download_page
-                 else
-                    # we can't just compare two string versions because "10.0" is less than "9.0" but "9.1" is bigger than "9.0". So we need to compare "10.0" with "09.0" instead.
-                    # See https://issues.jboss.org/browse/JBIDE-22670
-	              	v1 = @site.latest_builds_download_pages[product_id][product_info.build_type].build_info.version
-	              	if(v1.split('.')[0].length==1)
-	                	v1 = "0" + v1
-	              	end
-	              	v2 = download_page.build_info.version
-	              	if(v2.split('.')[0].length==1)
-	                	v2 = "0" + v2
-	              	end
-	              	#puts "#{v1} vs. #{v2}"
-	              	if ((v1 <=> v2) == -1)
-	              		@site.latest_builds_download_pages[product_id][product_info.build_type] = download_page
-	              	end
-                 end
+                elsif Gem::Version.new(@site.latest_builds_download_pages[product_id][product_info.build_type].build_info.version) < Gem::Version.new(download_page.build_info.version)
+                  	@site.latest_builds_download_pages[product_id][product_info.build_type] = download_page
+	              end
               end
             end
           end

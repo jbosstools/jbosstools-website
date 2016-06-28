@@ -153,6 +153,7 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.1)
+    version (1.0.0)
     yui-compressor (0.9.6)
       POpen4 (>= 0.1.4)
 
@@ -177,3 +178,4 @@ DEPENDENCIES
   slim
   tilt
   uglifier (~> 2.0.1)
+  version (= 1.0.0)

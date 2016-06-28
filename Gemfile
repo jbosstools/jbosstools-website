@@ -30,3 +30,6 @@ gem 'compass'
 #gem 'guard'
 #gem 'guard-livereload'
 #gem 'yajl-ruby'
+
+# to allow for proper product version comparison
+gem 'version', '1.0.0'
