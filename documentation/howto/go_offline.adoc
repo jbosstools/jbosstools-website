@@ -1,0 +1,112 @@
+= Working offline with the project examples
+:page-layout: howto
+:page-tab: docs
+:page-status: green
+
+:imagesdir: ./images
+// page-layout is there to indicate this template is a How To.
+// experimental is there to indicate ...
+// imagesdir is there to indicate the base path for images
+
+JBoss Tools / Red Hat Developer studio provides a groovy script that pre-caches all JBoss Tools examples
+and their dependencies for anyone wanting to be able to work offline (after an initial online session).
+For instance, an instructor can download all the required dependencies and then provide a zipped
+.m2/repository to his students via flash drive, all students can then work offline.
+
+A groovy command with proper arguments is generated under `Preferences > JBoss Tools > Project Examples > Offline Support`.
+
+image::../../whatsnew/examples/images/examples-offline-support2.png[]
+
+Click on the copy to clipboard button and then paste the clipboard in a terminal. An offline/ directory will be created in the directory the script is run under.
+
+Basically, the go_offline.groovy script will:
+
+- download all the examples, from various sources
+- run a maven build on each of them, thus
+- populate a local Maven repository
+
+
+[[requirements]]
+== Requirements
+Une order to execute the offline script, the following software requirements must be met:
+
+- JDK 8 must be available in path
+- http://groovy-lang.org/install.html[Groovy 2.4+] must be available in the path
+- A recent version of Maven must be available in the path (used to bootstrap the example builds)
+
+[[usage]]
+== Usage
+The script takes a list of urls to <<xml,project examples descriptors>> for arguments, as well as a series of options.
+
+Usage:
+
+```
+groovy -Dgrape.config="/path/to/grapeconfig.xml" "/path/to/offline/go_offline_version.groovy" url1 url2 ... urlN
+```
+Setting the `-Dgrape.config` system property is strongly recommended to avoid groovy dependency resolution issues. This https://github.com/jbosstools/jbosstools-central/blob/master/examples/plugins/org.jboss.tools.project.examples/offline/jbossToolsGrapeConfig.xml[configuration] is a good reference to use.
+
+The following options are supported by the script:
+
+- `-h` (or `--help`): displays help
+- `-q` (or `--quiet`) : Quiet mode (reduced console output), false by default
+- `-c` (or `--clean`): Clean offline directory, false by default
+- `-od` (or `--offline-dir`): Base offline directory, `./offline` by default
+- `-s` (or `--settings`): Path to a custom Maven settings.xml, declaring the proxy settings, maven repositories
+- `-m` (or `--maven`): Maven version to use to build the examples, 3.3.3 by default
+- `-u` (or `--url`): Quickstarts Search URL, matching the http://dcp2.jboss.org/[Searchisko] format. (eg. http://dcp2.jboss.org/v2/rest/search?size=500&content_provider=jboss-developer&content_provider=rht&field=target_product&field=github_repo_url&field=sys_description&field=sys_title&field=sys_tags&field=sys_type&field=experimental&field=git_download&field=prerequisites&field=quickstart_id&field=git_tag&field=git_commit&sys_type=quickstart[this query])
+
+
+[[xml]]
+== Project Example XML descriptor format
+The format of the xml descriptors has no XSD, but should contain a list of `project` nodes. 3 `importType` values are possible:
+
+- zip (default, so optional): the example defines the URL to a zip file that will be downloaded and unzipped;
+- maven: the example defines the URL to a zip file that will be downloaded, unzipped and will be built with Maven
+- mavenArchetype: the example contain the Maven coordinates (Group Id, Artifact Id, version) to a Maven archetype. A project will be built from that archetype.
+
+The following gives you an example of the 3 types of projects supported in a descriptor:
+[source,xml]
+----
+<projects>
+  <project>
+    <!-- importType>zip</importType -->
+    <url>http://foo/bar/example.zip</url>
+  </project>
+  <project>
+    <importType>maven</importType>
+    <url>http://foo/bar/maven-example.zip</url>
+  </project>
+  <project>
+    <importType>mavenArchetype</importType>
+    <mavenArchetype>
+      <archetypeGroupId>some.groupId</archetypeGroupId>
+      <archetypeArtifactId>some.artifactId</archetypeArtifactId>
+      <archetypeVersion>X.Y.Z</archetypeVersion>
+    </mavenArchetype>
+  </project>
+   ...
+</projects>
+----
+
+[[exclusions]]
+== Excluded examples
+Some legacy examples have been excluded from the list of projects to build, as they're broken.
+This list is hard coded in the go_offine.groovy script.
+You might need to edit it manually at some point.
+
+- jboss-errai-kitchensink-archetype,
+- picketlink-authorization-drools,
+- jboss-push-contacts-mobile-android,
+- jboss-push-helloworld-android,
+- cdi-scopes-portlet,
+- jsf2-rf4-hello-world-portlet,
+- cdi-jsf-portlet,
+- page-composition-api-portlet,
+- sample-portal,
+- cdi-generic-portlet,
+- navigation-api-portlet,
+- simplest-hello-world-portlet,
+- portal-extension,
+- jsf2-hello-world-portlet,
+- social-portlets,
+- jboss-servlet-security-genericheader-auth

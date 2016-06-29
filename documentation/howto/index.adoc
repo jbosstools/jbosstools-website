@@ -60,3 +60,7 @@ link:os3_deployimage.html[Deploy a Docker Image to an OpenShift 3 Cluster with t
 == Using the IDE Perspectives
 
 link:using_git.html[Using the Git Perspective]
+
+== Working offline
+
+link:go_offline.html[Working offline with the project examples]
