@@ -37,7 +37,7 @@ The updated tooling includes EcmaScript 2015 support, JSON editor, Node.js, grun
 
 Here is a short https://vimeo.com/167812779[video] which demonstrates new features and enhancements of JavaScript Tools:  
 
-video::167812779[vimeo, width=640, height=400]
+video::a2RjTK2CfsQ[youtube, width=640, height=400]
 
 === Improved OpenShift 3 and Docker Tools
 
