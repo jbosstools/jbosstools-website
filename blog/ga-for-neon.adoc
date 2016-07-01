@@ -35,9 +35,9 @@ Eclipse Neon itself has link:/blog/eclipse_neon_webinar_series.html[a lot of new
 Red Hat team along with other contributers have been working hard for the last months on restarting https://eclipse.org/webtools/jsdt/[JavaScript Development Tools (JSDT)] project for Eclipse Neon.
 The updated tooling includes EcmaScript 2015 support, JSON editor, Node.js, grunt, gulp, bower and npm tools.
 
-Here is a short https://vimeo.com/167812779[video] which demonstrates new features and enhancements of JavaScript Tools:  
+Here is a short https://www.youtube.com/watch?v=9Ifvm38zGVk[video] which demonstrates new features and enhancements of JavaScript Tools:  
 
-video::a2RjTK2CfsQ[youtube, width=640, height=400]
+video::9Ifvm38zGVk[youtube, width=640, height=400]
 
 === Improved OpenShift 3 and Docker Tools
 
