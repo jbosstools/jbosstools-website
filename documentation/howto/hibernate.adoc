@@ -1,0 +1,425 @@
+= Develop an Application Using the Hibernate Tools
+:page-layout: howto
+:page-tab: docs
+:page-status: green
+:experimental:
+:imagesdir: ./images
+
+Hibernate Tools is a collection of tools for projects related to Hibernate version 5 and earlier. The tools provide Eclipse plugins for reverse engineering, code generation, visualization and interaction with Hibernate.
+Use the Hibernate Tools to easily generate, test and prototype your Hibernate or JPA mapped projects. You can also use Hibernate to Run queries, browse mappings and generate code for your data projects.
+
+== Create a JPA Project and Connect to the Sakila-h2 Database
+
+=== Prerequisite
+To connect to the sakila-h2 database:
+
+1. Download the sakila-h2 database from <<https://github.com/maxandersen/sakila-h2, h2 version of the Sakila database>>.
+
+2. On the terminal, navigate to the directory where you have saved the `sakila-h2.jar` file and run the following command to start the database: 
+`$ ./runh2.sh`.
+
+To create a JPA project and connect to the database:
+
+1. In the workspace, click `File` > `New` > `Other` and then search for `JPA Project` and double-click it to open the `New JPA Project` wizard.
+
+2. In the `New JPA Project` wizard:
+
+	a. In the `Project name` field, type a name for the project.
+
+	b. In the `Target runtime` field, click a runtime server that you wish to use.
+
+	c. In the `JPA version` list, click `2.1`.
+
+3. Click `Next`.
++
+.Create a New JPA Project
+image::hibernate_dev_app_create_proj.png)[Create a New JPA Project]
++ 
+4. In the `Java Configure project for building a Java application` window, select the source folder on the build path and click `Next`.
+
+5. In the `JPA Facet` window, click `Add connection`.
+
+6. In the `New Connection Profile` window:
+
+	a. Click `Generic JDBC`.
+	
+	b. In the `Name` field, type `sakila`.
+
+7. Click `Next`.
+
+8. Click the `New Driver Definition` icon (image::hibernate_dev_app_newdriverdef_icon.png)[New Driver Definition Icon]) located next to the `Drivers` field.
+
+9. Click the `Name/Type` tab, click `Generic JBDC Driver` and then click the `JAR list` tab.
+
+10. Click `Add JAR/Zip` and then select the previously downloaded _sakila-h2.jar_ file. 
++
+.Select sakila-h2.jar File
+image::hibernate_dev_app_select_sakilah2.png[Select sakila-h2.jar File]
++
+11. Click the `Properties` tab and enter the following details in the `Properties` table:
+
+	a. Click `Connection URL` and type `jdbc:h2:tcp://localhost/sakila`.
+
+	b. Click `Driver Class`, and then click the ellipsis icon ![ellipses icon](https://access.redhat.com/sites/default/files/images/hibernate_dev_app_ellipses_icon.png).
+
+	c. In the `Available Classes from Jar List` window, click `Browse for class`. Click `OK` when the required driver is found. 
+
+	d. Click `User ID`, type `sa`.
+
+12. In the `New Driver Definition` window, click `OK`.
+
+13. In the `New Connection Profile` window, click `Finish` to return to the `JPA Facet` window.
+
+14. In the `Platform` list, click `Hibernate (JPA 2.1)`.
+
+15. In the `JPA implementation` pane, `Type` list, either click `User Library` and then click `Manage libraries` (![manage libraries icon](https://access.redhat.com/sites/default/files/images/hibernate_dev_app_manage_libraries.png)). In the `Preferences (Filtered)` window add the libraries, OR click `Disable Library Configuration`.
+
+16. Click `Finish`.
+
+`Result:` The project is created and is listed in the `Project Explorer` view.
+
+## Generate DDL and Entities
+
+DDL, Data Definition Language, is a syntax to define data structures. Generate DDL and entities to enable Hibernate runtime support in an Eclipse JPA project.
+
+To generate DDL and Entities:
+
+1. In the `Project Explorer` view, right-click the _{project_name}_.
+
+2. Click `JPA Tools` > `Generate Tables from Entities` or `Generate Entities from Tables`. The `Generate Entities` window (or the `Generate Tables from Entities` window) appears.
+
+3. In the `Generate Entities` window:
+
+	a. In the `Output directory` field, change the default directory, if required.
+
+	b. Optionally, in the `Package` field, type the package name.
+
+	c. Ensure that the `Use Console Configuration` check box is selected.
+
+	d. In the `Console Configuration` list, ensure that the relevant configuration is shown.
+
+4. Click `Finish`.
++
+.Generate Entities
+image::hibernate_dev_app_generate_entities.png[Generate Entities]
+
+== Create a Hibernate Mapping File
+
+Hibernate mapping files specify how your objects relate to database tables.         
+To create basic mappings for properties and associations, i. e. generate _.hbm.xml_ files:
+
+1. Create a new Hibernate Mapping file:
+
+	a. Click `File` > `New`. 
+
+	b. In the `New` wizard, locate `Hibernate` and then click `Hibernate XML Mapping file (hbm.xml)`. 
+
+2. Click `Next`.  
+  
+3. In the `New Hibernate XML Mapping files (hbm.xml)` window:
+
+	a. Click `Add Class` to add classes or click `Add Packages` to add packages.
+	
+	`Note:` You can create an empty *.hbm* file by not selecting any packages or classes.  An empty *.hbm* file is created in the specified location.
+
+	b. Click the `depth control` check box to define the dependency depth used when choosing classes.
+
+	c. Click `Next`.
+
+	d. Select the target folder location.
+
+	e. In the `File name` field, type a name for the file and click `Finish`.
+
+`Result:` The _hibernate.hbm.xml_ file opens in the default editor.
+
+== Create a Hibernate Configuration File
+
+For reverse engineering, prototype queries, or to simply use Hibernate Core, a _hibernate.properties_ or _hibernate.cfg.xml_ file is needed. Hibernate Tools provides a wizard to generate the _hibernate.cfg.xml_ file if required.
+
+To create a Hibernate Configuration file:
+
+1. Create a new _cfg.xml_ file:
+
+	a. Click menu:File[New,Other].
+ 
+	b. In the `New` wizard, locate `Hibernate` and then click `Hibernate Configuration File (cfg.xml)`.
+ 
+2. Click `Next`.
+
+3. In the `Create Hibernate Configuration File (cfg.xml)` window, select the target folder for the file and then click `Next`.
+
+4. In the `Hibernate Configuration File (cfg.xml)` window:
+
+	a. The `Container` field, by default, shows the container folder.
+
+	b. The `File name` field, by default, shows the configuration file name.
+
+	c. In the `Database dialect` list, click the relevant database.
+
+	d. In the `Driver class` list, click the driver class depending on the database dialect that you just selected.
+
+	e. In the `Connection URL` list, click the relevant URL.
+
+	f. Click the `Create a console configuration` check box to use the _hibernate.cfg.xml_ file as the basis of the console configuration.
+
+5. Click `Finish`.
++
+.Create a New cfg.xml File
+image::hibernate_dev_app_create_cfg_file.png[Create a New cfg.xml File]
+
+`Result:` The new _hibernate.cfg.xml_ file opens in the default editor.
+
+== Create a Hibernate Console Configuration
+
+A Console configuration describes how the Hibernate plugin configures Hibernate. It also describes the configuration files and classpaths needed to load the POJOs, JDBC drivers, etc. It is required to make use of query prototyping, reverse engineering and code generation. You can have multiple console configurations per project, but for most requirements, one configuration is sufficient.
+
+To create a Hibernate console configuration:
+
+1. Create a _cfg.xml_ file:
+
+	a. Click menu:File[New,Other].
+ 
+	b. In the `New` wizard, locate `Hibernate` and then click `Hibernate Configuration File (cfg.xml)`.
+ 
+2. Click `Next`.
+
+3. In the `Create Hibernate Configuration` window, `Main` tab:
+
+	a. In the `Name` field, the generated name provided by default can be edited if required.
+
+	b. In the `Type` field, click `Core`.
+
+	c. In the `Hibernate Version` list, select the relevant version.
+
+	d. In the `Project` field, type a project name or click `Browse` to locate an existing project.
+
+	e. In the `Database connection` field, click `New` to configure a new database connection or leave as is to use the default connection.
+
+	f. In the `Property file` field, click `Setup` to set the path to the first _hibernate.properties_ file found in the selected project (refer to the Did You Know, <<setup_property_file, Setup Property File>> section for detailed steps). Once created the path of the _.properties_ file displays in the `Property file` field.
+    
+    g. In the `Configuration file` field, click `Setup` to set the path to the first _hibernate.cfg.xml_ file found in the selected project (refer to the Did you know, <<setup_config_file, Setup Configuration File>> section for detailed steps). 
+	Once created the path of the _hibernate.cfg.xml_ file displays in the `Configuration file` field.
+
+4. Click `Finish`.
+
+.Create Hibernate Console 
+image::hibernate_dev_app_create_console_config.png[Create Hibernate Console]
+
+== Modify the Hibernate Configurations
+
+You can edit the Hibernate Configurations from the `Hibernate Configurations` view.
+
+To modify the Hibernate Configurations: 
+
+1. Click menu:Window[Show View,Other] and then click `Hibernate Configurations`.
+
+2. In the `Hibernate Configurations` view, right-click the _{project_name}_ and click `Edit Configuration`.
+ 
+3. The `Edit launch configuration properties` window displays. Edit the fields.
+
+4. To close the `Hibernate Configurations` view, right-click the configuration and then click `Close Configuration`.
+
+== Generate Code and Reverse Engineering
+
+Hibernate tools’ reverse engineering and code generation features allow you to generate a range of artifacts based on a database or an existing Hibernate configuration, like mapping files or annotated classes. Among others, these generated artifacts can be POJO Java source files, _hibernate.hbm.xml_ files, _hibernate.cfg.xml_ generation and schema documentation.
+
+To generate code:
+
+1. Configure Hibernate:
+
+	a. Click menu:Window[Perspective,Open Perspective,Other].
+ 
+	b. Search for `Hibernate` and double-click it. The `Hibernate Configurations` view appears.
+
+2. View the Hibernate Code Generation Configurations:
+ 	a. In the toolbar, next to the `Run` icon, click the down arrow.
+ 
+	b. Click `Hibernate Code Generation Configurations`.
+
+3. Expand `Hibernate Code Generation` and then click `New_configuration`.
+
+4. In the `Create, manage, and run configurations` window, in the `Name` field, type a logical name for the code generation launcher. If you do not specify a name, the default name, `New_Generation`, is used.
+
+5. In the `Main` tab, enter the following details:
++
+[NOTE]
+====
+The `At least one exporter option must be selected` warning indicates that for the launcher to work you must select an exporter on the `Exporter` tab. The warning disappears after you select an exporter.
+====
++
+	a. In the `Console Configuration` list, click the name of the console configuration to be used when generating code.
+
+	b. In the `Output directory` field, click `Browse` and select an output directory. This is the default location where all output will be written. You can enter absolute directory paths, for example: _d:/temp_. Note that existing files will be overwritten/ if the correct directory is not specified.
+
+	c. To reverse engineer the database defined in the connection information, click the Reverse engineering from JDBC connection check box. JBoss Developer Studio generates code based on the database schema when this option is used.If this option is not enabled, the code generation is based on the existing mappings specified in the Hibernate Console configuration.
+
+	d. In the `Package` field, add a default package name for any entities found when reverse engineering.
+
+	e. In the `reveng.xml` field, click `Setup` to select an existing _reveng.xml_ file, or create a new one. This file controls certain aspects of the reverse engineering process, such as: 
+
+	** how JDBC types are mapped to Hibernate types
+
+	** which tables are included or excluded from the process
+
+	f. In the `reveng. strategy` field, click `Browse` and provide an implementation of a ReverseEngineeringStrategy. this must be done if the _reveng.xml_ file does not provide enough customization; the class must be in the classpath of the Console Configuration because if not, you will get a class not found exception.
++
+[NOTE]
+====
+Refer to the Did You Know, <<main_tab_checkboxes, Create, manage, and run configurations window, Main tab, Check Boxes>> section for details of the selected check boxes.
+====
++
+
+	g. The `Exporter` tab specifies the type of code that is generated. Each selection represents an Exporter that generates the code. In the Exporter tab:
+
+	** Click the `Use Java 5 syntax` check box to use a Java 5 syntax for the Exporter
+	- Click the `Generate EJB3 annotations` check box to generate EJB 3 annotations
+	- Select the Exporters from the `Exporters` table. Refer to the Did You Know, <<exporter, Exporter>> section for details about the exporters.
++
+Each Exporter selected in the preceding step uses certain properties that can be set up in the `Properties` section. In the `Properties` section, you can add and remove predefined or custom properties for each of the exporters.
++
+6. Click `Add` next to the `Properties` table to add a property to the chosen Exporter. In the resulting dialog box, select the property from the proposed list and the appropriate value for it. For an explanation of the property and its value, refer to the Did You Know, <<exporter_values, Exporter Property and its Values>> section.
+
+7. Click the `Refresh` tab and enter the following:
+
+	a. Click the `Refresh resources upon completion` check box to refresh the resources and click one of the following:
+
+	** `The entire workspace`: To refresh the entire workspace.
+
+	** `The selected resource`: To only refresh the selected resource
+
+	** `The project containing the selected resource`: To refresh the project containing the selected resource
+
+	** `The folder containing the selected resource`: To refresh the folder containing the selected resource
+
+	** `Specific resources`: To refresh specific resources; then click `Specify Resources` to open the `Edit Working Set` window and select the working set.
+
+	b. Click the `Recursively include sub-folders` check box to refresh the sub-folders.
+
+8. Click the **Common** tab and enter the following:
+
+	a. In the **Save as** pane, click **Local file** to save the configuration as a local file, OR click **Shared file** and then select a shared file location.
+
+	b. In the **Display in favourites menu** pane, click the menu to display the configuration.
+
+	c. In the **Encoding** pane, click the format that you want the configuration to be encoded to.
+
+	d. In the **Standard Input and Output** pane, click the **Allocate console** check box and optionally click the **Input File** and **Output File** check boxes and select the relevant options. 
+
+	e. Click the **Launch in background** check box to show the configuration launch progress in the background.
+
+9. Click **Apply** and then click **Run**.
+
+## Did You Know {#dyk}
+
+### Set Up the Property File ### {#setup_property_file}
+
+To set up the property file:
+
+1. In the **Create Hibernate Configuration** window, **Main** tab, click **Setup**.
+
+2. In the **Setup property file** window, clic**Create new** to create a new property file (or click **Use existing** to choose an existing file as a property file).
+
+3. In the **Create Hibernate Properties file (.properties)** window, click the parent folder name and then click **Finish**.
+
+![Set up Property File](https://access.redhat.com/sites/default/files/images/hibernate_app_dev_property_file.png)
+
+### Set Up the Configuration File ## {#setup_config_file}
+
+To set up the configuration file:
+
+1. In the **Create Hibernate Configuration** window, **Main** tab, click **Setup**.
+
+2. In the **Setup configuration file** window, click **Use existing** to choose an existing file as a property file (or click **Create new** to create a new property file).
+
+3. In the **Select hibernate.cfg.xml file** window, expand the parent folder, 
+choose the file to use as the *hibernate.cfg.xml* file, and then click **OK**.
+
+![Set up hibernate.cfg.xml File](https://access.redhat.com/sites/default/files/images/hibernate_dev_app_config_file.png)
+
+### Create, manage, and run configurations Window, Main tab, Check Boxes ### {#main_tab_checkboxes}
+
+The following check boxes are selected by default in the **Create, manage, and run configurations** window, **Main** tab:
+
+- **Generate basic typed composite ids**: When a table has a multi-column primary key, a **<composite-id>** mapping will always be created. If this option is enabled and there are matching foreign-keys, each key column is still considered a 'basic' scalar (string, long, etc.) instead of a reference to an entity. If you disable this option a **<key-many-to-one>** property is created instead. Note that a **<many-to-one>** property is still created, but is simply marked as non-updatable and non-insertable.  
+   
+- **Detect optimistic lock columns**: Automatically detects optimistic lock columns. Controllable via *reveng. strategy*; the current default is to use columns named **VERSION** or **TIMESTAMP**.
+        
+- **Detect many-to-many tables**: Automatically detects many-to-many tables. Controllable via *reveng. Strategy*.
+
+- **Detect one-to-one associations**: Reverse engineering detects one-to-one associations via primary key and both the *hbm.xml* file and annotation generation generates the proper code for it. The detection is enabled by default (except for Seam 1.2 and Seam 2.0) reverse engineering. For Hibernate Tools generation there is a check box to disable this feature if it is not required.
+
+### Exporter Property and its Values ### {#exporter_values}
+
+- **jdj5**: Generates Java 5 syntax     
+
+- **ejb3**: Generates EJB 3 annotations     
+
+- **for_each**: Specifies for which type of model elements the exporter should create a file and run through the templates. Possible values are: entity, component, configuration.
+
+- **template_path**: Creates a custom template directory for this specific exporter. You can use Eclipse variables.    
+
+- **template_name**: Name for template relative to the template path.
+
+- **outputdir**: Custom output directory for the specific exporter. You can use Eclipse variables.  
+   
+- **file_pattern**: Pattern to use for the generated files, with a path relative to the output dir. Example: {package-name}/{class-name}.java.
+
+- **Dot.executable**: Executable to run GraphViz (only relevant, but optional for Schema documentation).
+
+- **Drop**: Output will contain drop statements for the tables, indices, and constraints.
+
+- **delimiter**: Is used in the output file.
+
+- **create**: Output will contain create statements for the tables, indices, and constraints.
+
+- **scriptToConsole**: The script will be output to Console.
+
+- **exportToDatabase**: Executes the generated statements against the database.
+
+- **outputFileName**: If specified the statements will be dumped to this file.
+
+- **haltOnError**: Halts the build process if an error occurs.
+
+- **Format**: Applies basic formatting to the statements.
+
+- **schemaUpdate**: Updates a schema.
+
+- **query**: HQL Query template
+
+### Exporter ### {#exporter}
+
+- **Domain code (.java)**: Generates POJOs for all the persistent classes and components found in the given Hibernate configuration.
+     
+- **Hibernate XML Mappings (.hbm.xml)**: Generate mapping (hbm.xml) files for each entity.     
+
+- **DAO code (.java)**: Generates a set of DAOs for each entity found.
+
+- **Generic Exporter (<hbmtemplate>)**: Generates a fully customizable exporter that can be used to perform custom generation.
+
+- **Hibernate XML Configuration (.cfg.xml)**: Generates a *hibernate.cfg.xml* file; used to keep the *hibernate.cfg.xml* file updated with any newly discovered mapping files. 
+
+- **Schema Documentation (.html)**: Generates a set of HTML pages that document the database schema and some of the mappings.
+
+- **Schema Export (.ddl)**: Generates the appropriate SQL DDL and allows you to store the result in a file or export it directly to the database.
+
+- **HQL Query Execution Exporter**: Generates HQL Query according to given properties.
+
+## Troubleshooting
+
+### Problems while loading database driverclass
+
+![Problems while loading database driverclass Warning](https://access.redhat.com/sites/default/files/images/hibernate_dev_app_error_msg.png)
+
+**Error message**: Problems while loading database driverclass (org.h2.Driver)
+
+**Resolution**:
+To avoid this error, you must select a predefined DTP connection profile in the **Database Connection** dropdown. Also, the jar can be added on the **Classpath** page of the **Console Configuration** wizard if you don't want to have it on the project classpath.
+
+1. Right-click *{project_name}* > **Properties** > **Java Build Path**.
+
+2. Click the **Libraries** tab and then click **Add External JARs**.
+
+3. Navigate to the downloaded database JAR file and click **OK**.
+
+4. In the **Properties for *{project_name}* ** window, click **Apply** and then click **OK**.
+

@@ -21,11 +21,15 @@ link:cdk_howto.html[Using the IDE's Container Development Kit Tooling (CDK)]
 
 link:servers_deploytolocalserver.html[Deploy Apps to a Local Server]
 
+link:hibernate.html[Develop Applications Using the Hibernate Tools]
+
 == Developing Web Apps
 
 link:mobiledev_createwebapp.html[Create Your First Mobile Web App]
 
 link:generate_html5_web_app.html[Generate a HTML5 Web App Using the Mobile Web Palette]
+
+link:forge.html[Develop Applications Using the Forge Tool]
 
 == Developing Hybrid Mobile Apps
 
