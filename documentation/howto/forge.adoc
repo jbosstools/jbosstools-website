@@ -1,0 +1,273 @@
+= Develop Applications Using the Forge Tools
+:page-layout: howto
+:page-tab: docs
+:page-status: green
+:experimental:
+:imagesdir: ./images
+
+Red Hat JBoss Developer Studio offers Forge Tools for developing Java EE applications and to extend the IDE functionality in Eclipse. Start developing Java EE applications using either the Forge context menu or the command line from the IDE.
+
+== Create a New Project 
+
+After you have created a Forge project you can set up persistence, add entities and fields, and create scaffold for the project.
+
+To create a new project:
+
+1. Press Ctrl+4 to start Forge and open the JBoss Forge context menu.
+
+2. Click `Project:New` to open the `Create a new project` window.
+
+3. In the `Create a new project` window:
+
+    a. In the `Project name` field, type a project name.
+
+    b. In the `Top level package` field, type `{com.example}` as the top package.
+
+    c. In the `Project location` field, enter a target location for the Forge project.
+
+    d. In the `Stack` list, click `Java EE 7`.
+
+4. Click `Finish`.
+
+.Create a New Forge Project
+image::forge_new_project.png[Create a New Forge Project]
+
+`Result:` The project is listed in the `Project Explorer` view.
+
+=== Set Up Persistence
+
+Setting up the JPA prerequisites, creates the _persistence.xml_ file in the project and adds the required dependencies to the _pom.xml_ file.
+
+`Note:` While creating the JPA entity, the Forge console automatically detects any prerequisites that must be set up and prompts you to create those at runtime. 
+
+To set up persistence:
+
+1. Press Ctrl+4 to open the JBoss Forge context menu.
+
+2. Click `JPA: New Entity`. The window is populated with default values. 
+ 
+3. Click `Next` to continue using the default values or edit the fields to change the values.
+
+4. In the `Configure your connection settings` window, ensure that the fields display the appropriate values and then click `Next`.
+
+5. In the `Create a new JPA entity` window:
+
+    a. In the `Package Name` field, type the package name.
+
+    b. In the `Type Name` field, type a name for the new entity.
+
+6. Click `Finish`.
+
+`Result`: The new entity appears in the JBoss editor and is also listed in the `Project Explorer` view with the name: `_{entity_name}_.java`.
+
+.{entity_name}.java Displayed in the JBoss Editor
+image::forge_new_entity_in_editor.png[{entity_name}.java Displayed in the JBoss Editor]
+
+==== Add Fields to the Entity
+
+To add fields to the entity:
+
+1. Press Ctrl+4 to open the JBoss Forge context menu.
+
+2. Click `JPA: New Field`.
+
+3. In the `Create a new field` window:
+
+    a. In the `Target Entity` field, select `{package_name.model.entity}`.
+
+    b. In the `Field Name` field, type `FirstName`.
+
+4. Click `Finish`.
++
+.Add Field to the Entity
+image::forge_add_fields_to_entity.png[Add Field to the Entity]
++
+5. Repeat steps 1 through 4  to add more fields to the entity.
+
+`Result:` The fields are added to the _Customer.java_ file.
+
+==== Create Scaffold
+
+Scaffolding is automatic code generation by a program, using available information, usually a database to generate a basic CRUD (create, read, update, delete) admin interface. The `Scaffold Generate` command is used to create the scaffold.
+
+To create the scaffold:
+
+1. Press Ctrl+4 to open the JBoss Forge context menu.
+
+2. Click `Scaffold Generate`.
+ 
+3. In the `Scaffold Type` list, click `Angular JS` and then click `Next`.
+
+4. If your project is not configured to use all the technologies that you want to use, Forge  prompts you to set up the dependencies. Click `Next`.
+   
+5. In the `Select JPA entities` window:
+
+    a. Select the check box in the `Targets` field.
+
+    b. Select the `Generate REST resources` check box.
+ 
+6. Click `Finish`.
+
+.Select JPA Entities to Create the Scaffold
+image::forge_generate_scaffold.png[Select JPA Entities to Create the Scaffold]
+
+`Result:` The entities are created and listed in the `Project Explorer` view.
+
+== Run and Test the Application 
+
+In this example we use the JBoss EAP server to run the application. 
+
+To run the application:
+
+1. In the `Project Explorer` view, right-click the application and click `Run As` > `Run on Server`. Alternatively, drag and drop the application from the `Project Explorer` view to the `JBoss EAP  _{version}_` server in the `Servers` view. The application opens in the default browser. 
+
+2. Click `Customers` and then click `Create` to create a new customer.
+
+3. In the `FirstName` and the `LastName` fields, enter the first and last names and click `Save`. The customer is added to the application.
+
+Use the `Search for Customers` section to search for customers by their first and/or last names.
+
+== Create Extensions/Add Ons 
+
+The add ons/extensions run inside the IDE. After adding commands and features to the add-on, no further changes are required for the extensions or add-ons to run in another IDE.
+
+To create an add-on:
+
+1. Press Ctrl+4 to open the JBoss Forge context menu.
+
+2. Click `Project:New`.
+
+3. In the `Create a new project` window:
+
+    a. In the `Project name` field, type a name for the add-on.
+
+    b. In the `Project type` list, click `Forge Addon (JAR)`.
+
+4. Click `Next`.
+
+5. In the `Furnace Addon Setup` window, `Depend on these addons` section, Forge automatically selects the prerequisites. Review the dependencies and click `Finish`.
+
+6. Press Ctrl+4 to open the Forge context menu.
+
+7. Select `Java: New Class` to open the `Java: New Class` window.
+
+8. In the `Type Name` field, type `CustomCommand` and click `Finish`. The _CustomCommand.java_ file opens in the JBoss editor.
+
+9. To change this Java class into a Forge command:
+
+    a. Press Ctrl+4 to open the Forge context menu.
+
+    b. Select `Addon: New UI Command` to open the `Generates a UICommand implementation` window.
+
+    c. In the `Generates a UICommand implementation` window:
+        
+            * In the `Type Name` field, type `CustomCommand`.
+
+            * In the `Command name` field, type `custom`.
+
+    d. Click `Finish`.
++    
+.Add a Command
+image::forge_add_command.png[Add a Command]
++
+The command is listed in the _CustomerCommand.java_ file. 
+
+10. Press Ctrl+4 to open the Forge context menu.
+
+11. Select `Build and Install an Addon` to open the `Build and install a Forge addon` window.
+
+12. Click `Finish` to install the add-on into the IDE.
+
+13. To execute the installed command:
+
+    a. Press Ctrl+4 to open the Forge context menu.
+     
+    b. Select `custom`.
+
+    c. Add parameters to the method in order to add user input to the command. Copy and paste the following command in the _CustomCommand.java_ file:
++
+----
+        package org.jboss.forge.addon.commands; 
+
+        import org.jboss.forge.addon.configuration.Configuration; 
+        import org.jboss.forge.addon.resource.URLResource; 
+        import org.jboss.forge.addon.ui.command.AbstractUICommand; 
+        import org.jboss.forge.addon.ui.context.UIBuilder; 
+        import org.jboss.forge.addon.ui.context.UIContext; 
+        import org.jboss.forge.addon.ui.context.UIExecutionContext; 
+        import org.jboss.forge.addon.ui.input.UIInput; 
+        import org.jboss.forge.addon.ui.metadata.UICommandMetadata; 
+        import org.jboss.forge.addon.ui.metadata.WithAttributes; 
+        import org.jboss.forge.addon.ui.util.Metadata; 
+        import org.jboss.forge.addon.ui.util.Categories; 
+        import org.jboss.forge.addon.ui.result.Result; 
+        import org.jboss.forge.addon.ui.result.Results; 
+
+        import java.lang.Override; 
+        import java.lang.Exception; 
+
+        import javax.inject.Inject; 
+
+        public class JIRASetupCommand extends AbstractUICommand 
+        { 
+               @Inject 
+               @WithAttributes(label = "JIRA URL", required = true) 
+                private UIInput<URLResource> url; 
+
+        @Inject 
+        private Configuration config; 
+
+        @Override 
+        public UICommandMetadata getMetadata(UIContext context) 
+        {
+
+             return Metadata.forCommand(getClass()) 
+                    .name("JIRA: Setup") 
+                    .description("Setup the JIRA Addon") 
+                    .category(Categories.create("JIRA", "Setup")); 
+        } 
+
+        @Override 
+        public void initializeUI(UIBuilder builder) throws Exception 
+
+        { 
+              builder.add(url); 
+        } 
+
+         @Override 
+         public Result execute(UIExecutionContext context) 
+         { 
+               String targetUrl = url.getValue().getFullyQualifiedName(); 
+               Configuration subset = config.subset("jira"); 
+               subset.setProperty("url", targetUrl); 
+               return Results.success("JIRA URL set to: "+targetUrl); 
+          } 
+         }
+----
++
+14. To rebuild and install:
+
+    a. In the `Project Explorer` view, click the created add-on.
+
+    b. Press Ctrl+4 to open the Forge context menu.
+
+    c. Select `Build and Install an Addon`.
+
+    d. Click `Finish` to install the add-on into the IDE.
+
+    e. Press Ctrl+4 to open the Forge context menu.
+
+    f. Click `JIRA: Setup`.
+
+.Add-on Listed in the Forge Context Menu
+image::forge_addon_in_context_menu.png[Add-on Listed in the Forge Context Menu]
+
+`Result:` The add-on is created and listed in the Forge context menu.
+
+== Did You Know 
+
+* You can launch the Forge Console by clicking menu:Window[Show view>Forge Console]. The `Forge Console` view opens in an inactive state.
+
+* You can start JBoss Forge by clicking the `Start _{JBoss Forge_version}_ ` button image:forge_start_button.png[Start Button]).
+
+* To link the Forge Console output with the open editor, click the `Link with Editor` button (image:forge_link_with_editor_button.png[Link with Editor Button]).
