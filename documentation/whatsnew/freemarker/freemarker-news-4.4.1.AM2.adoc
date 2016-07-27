@@ -1,0 +1,18 @@
+= Freemarker What's New in 4.4.1.AM2
+:page-layout: whatsnew
+:page-component_id: freemarker
+:page-component_version: 4.4.1.AM2
+:page-product_id: jbt_core
+:page-product_version: 4.4.1.AM2
+
+== Freemarker 2.3.25
+
+Freemarker library included in the Freemarker IDE was updated to latest available version 2.3.25.
+
+related_jira::JBIDE-22700[]
+
+== flth / fltx file extensions added
+
+The new flth and fltx extensions have been added and associated with Freemarker IDE. `flth` stands for HTML content whereas `fltx` stands for XML content.
+
+related_jira::JBIDE-22636[]
