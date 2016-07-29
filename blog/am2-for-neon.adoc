@@ -1,0 +1,47 @@
+= JBoss Tools AM2 for Eclipse Neon
+:page-layout: blog
+:page-author: jeffmaury
+:page-tags: [release, jbosstools, jbosscentral]
+:page-date: 2016-07-29
+
+link:/downloads/jbosstools/neon/4.4.1.AM2.html[JBoss Tools 4.4.1 AM2] for Eclipse Neon are here waiting for you. Check it out!
+
+== What is New?
+
+Full info is at link:/documentation/whatsnew/jbosstools/4.4.1.AM2.html[this page]. Some highlights are below.
+
+=== OpenShift 3
+
+Although our main focus is bug fixes, we continue to work on providing better experience for container based development in JBoss Tools and Developer Studio. Let's go through a few interesting updates here and you can find more details on link:/documentation/whatsnew/jbosstools/4.4.1.AM2.html[the What's New page].
+
+==== Server templates
+
+Server templates are now displayed in the property view under the Templates tab:
+
+image::/documentation/whatsnew/openshift/images/property-view-template.png[Property view]
+
+=== Forge
+
+==== Forge Runtime updated to 3.2.3.Final
+
+The included Forge runtime is now 3.2.3.Final. Read the official announcement http://forge.jboss.org/news/jboss-forge-3.2.3.final-is-here[here].
+
+image::/documentation/whatsnew/forge/images/4.4.1.AM2/startup.png[]
+
+=== Freemarker
+
+==== Freemarker 2.3.25
+
+Freemarker library included in the Freemarker IDE was updated to latest available version 2.3.25.
+
+related_jira::JBIDE-22700[]
+
+==== flth / fltx file extensions added
+
+The new flth and fltx extensions have been added and associated with Freemarker IDE. `flth` stands for HTML content whereas `fltx` stands for XML content.
+
+related_jira::JBIDE-22636[]
+
+Enjoy!
+
+Jeff Maury
