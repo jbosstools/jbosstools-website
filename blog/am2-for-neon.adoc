@@ -4,7 +4,9 @@
 :page-tags: [release, jbosstools, jbosscentral]
 :page-date: 2016-07-29
 
-link:/downloads/jbosstools/neon/4.4.1.AM2.html[JBoss Tools 4.4.1 AM2] for Eclipse Neon are here waiting for you. Check it out!
+Happy to announce AM2 (Developer Milestone 2) build for Eclipse Neon.
+
+Downloads available at link:/downloads/jbosstools/neon/4.4.1.AM2.html[JBoss Tools 4.4.1 AM2].
 
 == What is New?
 
