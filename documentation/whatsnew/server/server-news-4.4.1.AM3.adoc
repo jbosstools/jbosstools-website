@@ -1,0 +1,34 @@
+= Server What's New in 4.4.1.AM3
+:page-layout: whatsnew
+:page-component_id: server
+:page-component_version: 4.4.1.AM3
+:page-product_id: jbt_core
+:page-product_version: 4.4.1.AM3
+
+== QuickFixes now available in runtime detection
+
+Runtime detection has been a feature of JBossTools for a long while, however, it would sometimes create runtime and server adapters with configuration errors without alerting the user. Now, the user will have an opportunity to execute quickfixes before completing the creation of their runtimes and servers. 
+
+image::/documentation/whatsnew/server/images/JBIDE-15189_rt_detect_1.png[]
+
+To see this in action, we can first open up the runtime-detection preference page. We can see that our runtime-detection will automatically search three paths for valid runtimes of any type. 
+
+image::/documentation/whatsnew/server/images/JBIDE-15189_rt_detect_2.png[]
+
+Once we click search, the runtime-detection's search dialog appears, with results it has found. In this case, it has located an EAP 6.4 and an EAP 7.0 installation. However, we can see that both have errors. If we click on the error column for the discovered EAP 7.0, the error is expanded, and we see that we're missing a valid / compatible JRE. To fix the issue, we should click on this item. 
+
+image::/documentation/whatsnew/server/images/JBIDE-15189_rt_detect_3.png[]
+
+When we click on the problem for EAP 7, the new JRE dialog appears, allowing us to add a compatible JRE. The dialog helpfully informs us of what the restrictions are for this specific runtime. In this case, we're asked to define a JRE with a minimum version of Java-8. 
+
+image::/documentation/whatsnew/server/images/JBIDE-15189_rt_detect_4.png[]
+
+If we continue along with the process by locating and adding a Java 8 JRE, as shown above, and finish the dialog, we'll see that all the errors will disappear for both runtimes. In this example, the EAP 6.4 required a JRE of Java 7 or higher. The addition of the Java 8 JRE fixed this issue as well. 
+
+image::/documentation/whatsnew/server/images/JBIDE-15189_rt_detect_5.png[]
+
+Hopefully, this will help users preemptively discover and fix errors before being hit with surprising errors when trying to use the created server adapters. 
+
+related_jira::JBIDE-15189[Add quickfixes to runtime detection]
+
+
