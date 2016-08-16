@@ -1,0 +1,12 @@
+= Freemarker What's New in 4.4.1.AM3
+:page-layout: whatsnew
+:page-component_id: freemarker
+:page-component_version: 4.4.1.AM3
+:page-product_id: jbt_core
+:page-product_version: 4.4.1.AM3
+
+== Improved automatic finishing of FreeMarker constructs
+
+When you type <#, <@, ${, \#{ and <#-- the freemarker editor now automatically close them.
+
+related_jira::JBIDE-22749[]
