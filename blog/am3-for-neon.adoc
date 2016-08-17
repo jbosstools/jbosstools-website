@@ -8,7 +8,7 @@ Happy to announce AM3 (Developer Milestone 3) build for Eclipse Neon.
 
 Downloads available at link:/downloads/jbosstools/neon/4.4.1.AM3.html[JBoss Tools 4.4.1 AM3].
 
-WARNING: a late bug has been discovered in the Docker Tools on the Windows platform. It prevents the Docker Explorer to be displayed and affects also Openshift users.
+WARNING: A late bug has been discovered in the Docker Tools on the Windows platform. It prevents the Docker Explorer to be displayed and affects also Openshift users.
 This will be fixed in the next release of JBoss Tools. A workaround exists: after you install JBoss Tools, restart your Eclipse and run
 `Help > Install new software > Work with:` http://download.eclipse.org/linuxtools/updates-docker-nightly/ > select `Docker Tooling` > install. Restart when prompted.
 
