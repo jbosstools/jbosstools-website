@@ -1,0 +1,118 @@
+= JBoss Tools AM3 for Eclipse Neon
+:page-layout: blog
+:page-author: jeffmaury
+:page-tags: [release, jbosstools, jbosscentral]
+:page-date: 2016-08-18
+
+Happy to announce AM3 (Developer Milestone 3) build for Eclipse Neon.
+
+Downloads available at link:/downloads/jbosstools/neon/4.4.1.AM3.html[JBoss Tools 4.4.1 AM3].
+
+WARNING: a late bug has been discovered in the Docker Tools on the Windows platform. It prevents the Docker Explorer to be displayed and affects also Openshift users.
+This will be fixed in the next release of JBoss Tools. A workaround exists: after you install JBoss Tools, restart your Eclipse and run
+`Help > Install new software > Work with:` http://download.eclipse.org/linuxtools/updates-docker-nightly/ > select `Docker Tooling` > install. Restart when prompted.
+
+== What is New?
+
+Full info is at link:/documentation/whatsnew/jbosstools/4.4.1.AM3.html[this page]. Some highlights are below.
+
+=== OpenShift 3
+
+Although our main focus is bug fixes, we continue to work on providing better experience for container based development in JBoss Tools and Developer Studio. Let's go through a few interesting updates here and you can find more details on link:/documentation/whatsnew/jbosstools/4.4.1.AM3.html[the What's New page].
+
+==== Events
+
+Events generated as part of the application livecycle are now displayed in the property view under the `Events` tab (available at the project level):
+
+image::/documentation/whatsnew/openshift/images/property-view-event.png[Property view]
+
+==== Volume claims
+
+Volume claims are now displayed in the property view under the `Storage` tab (available at the project level):
+
+image::/documentation/whatsnew/openshift/images/property-view-storage2.png[Property view]
+
+Here is a short https://www.youtube.com/watch?v=dbre3Bv3R6w[video] which demonstrates these new features:  
+
+video::dbre3Bv3R6w[youtube, width=640, height=400]
+
+=== Docker Tools
+
+==== Support for Container Labels
+
+Users can now specify labels when running a container.
+The labels are saved in the launch configuration and can also be edited before relaunching the container.
+
+image::/documentation/whatsnew/docker/images/docker_neon1_sprint118/container_labels.png[Container Labels]
+
+==== Docker Hierarchy View
+
+The new Docker Image Hierarchy view lets the user view the layers for
+a selected image in the Docker Explorer View.
+This is especially interesting when an image was built locally, as it helps understanding on which layers the top-level image depends.
+
+image::/documentation/whatsnew/docker/images/docker_neon1_sprint118/docker_image_hierarchy_view.png[Docker Image Hierarchy View]
+
+==== Automatically detect known Docker daemon connections
+
+When the Docker Explorer view is opened, the list of existing connections (saved from a previous session) is reloaded.
+In addition to this behaviour, the view will also attempt to find new connections using default settings such
+the 'unix:///var/run/docker.sock' Unix socket or the 'DOCKER_HOST', 'DOCKER_CERT_PATH' and 'DOCKER_TLS_VERIFY' environment
+variables. This means that by default, in a new workspace, if a Docker daemon is reachable using one of those methods, the
+user does not have to use the "New Connection" wizard to get a connection.
+
+==== Extension point for Docker daemon connection settings
+
+An extension point has been added to the Docker core plugin to allow for custom connection settings provisionning.
+
+=== Server Tools
+
+==== QuickFixes now available in runtime detection
+
+Runtime detection has been a feature of JBossTools for a long while, however, it would sometimes create runtime and server adapters with configuration errors without alerting the user. Now, the user will have an opportunity to execute quickfixes before completing the creation of their runtimes and servers. 
+
+image::/documentation/whatsnew/server/images/JBIDE-15189_rt_detect_1.png[]
+
+To see this in action, we can first open up the runtime-detection preference page. We can see that our runtime-detection will automatically search three paths for valid runtimes of any type. 
+
+image::/documentation/whatsnew/server/images/JBIDE-15189_rt_detect_2.png[]
+
+Once we click search, the runtime-detection's search dialog appears, with results it has found. In this case, it has located an EAP 6.4 and an EAP 7.0 installation. However, we can see that both have errors. If we click on the error column for the discovered EAP 7.0, the error is expanded, and we see that we're missing a valid / compatible JRE. To fix the issue, we should click on this item. 
+
+image::/documentation/whatsnew/server/images/JBIDE-15189_rt_detect_3.png[]
+
+When we click on the problem for EAP 7, the new JRE dialog appears, allowing us to add a compatible JRE. The dialog helpfully informs us of what the restrictions are for this specific runtime. In this case, we're asked to define a JRE with a minimum version of Java-8. 
+
+image::/documentation/whatsnew/server/images/JBIDE-15189_rt_detect_4.png[]
+
+If we continue along with the process by locating and adding a Java 8 JRE, as shown above, and finish the dialog, we'll see that all the errors will disappear for both runtimes. In this example, the EAP 6.4 required a JRE of Java 7 or higher. The addition of the Java 8 JRE fixed this issue as well. 
+
+image::/documentation/whatsnew/server/images/JBIDE-15189_rt_detect_5.png[]
+
+Hopefully, this will help users preemptively discover and fix errors before being hit with surprising errors when trying to use the created server adapters. 
+
+
+=== Forge
+
+==== Forge Runtime updated to 3.3.0.Final
+
+The included Forge runtime is now 3.3.0.Final. Read the official announcement http://forge.jboss.org/news/jboss-forge-3.3.0.final-is-here[here].
+
+image::/documentation/whatsnew/forge/images/4.4.1.AM3/startup.png[]
+
+==== Added Install addon from the catalog command
+
+From Forge 3.3.0.Final onwards it is now possible to query and install addons listed in the http://forge.jboss.org/addons[Forge addons page].
+
+image::/documentation/whatsnew/forge/images/4.4.1.AM3/addon-install-from-catalog.png[]
+
+
+=== Freemarker
+
+==== Improved automatic finishing of FreeMarker constructs
+
+When you type <#, <@, ${, \#{ and <#-- the freemarker editor now automatically close them.
+
+Enjoy!
+
+Jeff Maury
