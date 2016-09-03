@@ -7,6 +7,21 @@
 
 == Improved automatic finishing of FreeMarker constructs
 
-When you type <#, <@, ${, \#{ and <#-- the freemarker editor now automatically close them.
+When you type `<#`, `<@`, `${`, `\#{` and `<#--` the freemarker editor now automatically closes them.
 
 related_jira::JBIDE-22749[]
+
+== Error positions links on the console
+
+When a FreeMarker exception is printed to the console, the error
+position in it is a link that navigates to the error. This has worked
+long ago, but was broken for quite a while.
+
+related_jira::JBIDE-22701[]
+
+== Fixed auto-indentation
+
+When hitting enter, sometimes the new line haven't inherited the
+indentation of the last line.
+
+related_jira::JBIDE-20512[]

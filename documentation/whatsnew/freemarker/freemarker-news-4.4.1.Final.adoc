@@ -1,0 +1,13 @@
+= Freemarker What's New in 4.4.1.Final
+:page-layout: whatsnew
+:page-component_id: freemarker
+:page-component_version: 4.4.1.Final
+:page-product_id: jbt_core
+:page-product_version: 4.4.1.Final
+
+== Updated the "database" used for auto completion
+
+Auto completion now knows all directives and "built-ins" up to
+FreeMarker 2.3.25.
+
+related_jira::JBIDE-20386,JBIDE-22765[]
