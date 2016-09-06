@@ -1,0 +1,14 @@
+= Server What's New in 4.4.1.Final
+:page-layout: whatsnew
+:page-component_id: server
+:page-component_version: 4.4.1.Final
+:page-product_id: jbt_core
+:page-product_version: 4.4.1.Final
+
+== Support for WildFly 10.1
+
+The WildFly 10.0 Server adapter has been renamed to WildFly 10.x. It has been tested and verified to work for WildFly 10.1 installations. 
+
+related_jira::JBIDE-23035[Support WildFly 10.1 - change server adapter name]
+
+
