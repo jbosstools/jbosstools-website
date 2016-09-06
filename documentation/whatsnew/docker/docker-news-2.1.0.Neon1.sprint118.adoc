@@ -18,6 +18,7 @@ https://bugs.eclipse.org/bugs/show_bug.cgi?id=485913[485913] and
 https://bugs.eclipse.org/bugs/show_bug.cgi?id=485936[485936]
 in Eclipse Bugzilla for more details.
 
+ifndef::finalnn[]
 == Docker Hierarchy View
 
 The new Docker Image Hierarchy view lets the user view the layers for
@@ -27,6 +28,7 @@ This is especially interesting when an image was built locally, as it helps unde
 image::images/docker_neon1_sprint118/docker_image_hierarchy_view.png[Docker Image Hierarchy View]
 
 See issue https://bugs.eclipse.org/bugs/show_bug.cgi?id=496308[496308] in Eclipse Bugzilla for more details.
+endif::finalnn[]
 
 == Automatically detect known Docker daemon connections
 
