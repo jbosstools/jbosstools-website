@@ -14,6 +14,12 @@ The simplest way to use this is to use our automatically built docker image. See
    $ cd jbosstools-website
    $ docker run -it --rm -p 4242:4242 -v `pwd`:/jbosstools-website jbosstools/jbosstools-website /bin/bash
 ```
+WARNING: On Linux (SELinux, Fedora), you may experience permission issues inside the container on the jbosstools-website folder. Add a trailing *:Z* to the volume.
+The command will now be:
+```
+   $ docker run -it --rm -p 4242:4242 -v `pwd`:/jbosstools-website:Z jbosstools/jbosstools-website /bin/bash
+```
+
 
 Now in the Docker you can do:
 
