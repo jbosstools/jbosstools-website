@@ -90,19 +90,19 @@ devstudio:
           - name: Installer With EAP 7.0.0
             url: http://www.jboss.org/download-manager/content/origin/files/sha256/ec/ec7e3593b19199eff711afa9b0f92ca5008aea6ee5bd687dbc19803f63422ff3/devstudio-10.1.0.GA-installer-eap.jar
             file_size: 695MB
-         zips:
-          - name: Update site (including sources) bundle of JBoss Developer Studio
-            url: http://www.jboss.org/download-manager/content/origin/files/sha256/55/5578c7bd85d6a308aff4d299864a802fd1df271f395f4fa9bedecb0ab9032be0/devstudio-10.1.0.GA-updatesite-core.zip
-            file_size: 561MB
-          - name: Target Platform for JBoss Developer Studio
-            url: https://devstudio.redhat.com/static/10.0/stable/updates/core/devstudio-10.1.0.GA-target-platform.zip
-            file_size: 487MB
-          - name: JBoss Central Zip
-            url: http://www.jboss.org/download-manager/content/origin/files/sha256/23/2382c5402cf2c8093080f138eeb47dcc479577d79dc8490c60d51c36c919b46f/devstudio-10.1.0.GA-updatesite-central.zip
-            file_size: 158MB
-          - name: Sources Zip
-            url: http://www.jboss.org/download-manager/content/origin/files/sha256/cf/cfda7f9ef8a9f0b208f66087b16f3bb314818e0c6ba106aa92719da3dcbe7567/devstudio-10.1.0.GA-src.zip
-            file_size: 224MB
+        zips:
+         - name: Update site (including sources) bundle of JBoss Developer Studio
+           url: http://www.jboss.org/download-manager/content/origin/files/sha256/55/5578c7bd85d6a308aff4d299864a802fd1df271f395f4fa9bedecb0ab9032be0/devstudio-10.1.0.GA-updatesite-core.zip
+           file_size: 561MB
+         - name: Target Platform for JBoss Developer Studio
+           url: https://devstudio.redhat.com/static/10.0/stable/updates/core/devstudio-10.1.0.GA-target-platform.zip
+           file_size: 487MB
+         - name: JBoss Central Zip
+           url: http://www.jboss.org/download-manager/content/origin/files/sha256/23/2382c5402cf2c8093080f138eeb47dcc479577d79dc8490c60d51c36c919b46f/devstudio-10.1.0.GA-updatesite-central.zip
+           file_size: 158MB
+         - name: Sources Zip
+           url: http://www.jboss.org/download-manager/content/origin/files/sha256/cf/cfda7f9ef8a9f0b208f66087b16f3bb314818e0c6ba106aa92719da3dcbe7567/devstudio-10.1.0.GA-src.zip
+           file_size: 224MB
       10.0.0.GA:
         update_site_url: https://devstudio.redhat.com/10.0/stable/updates/
         release_date: 2016-06-27
