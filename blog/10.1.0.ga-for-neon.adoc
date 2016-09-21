@@ -1,0 +1,243 @@
+= JBoss Tools and Red Hat Developer Studio Maintenance Release for Eclipse Neon
+:page-layout: blog
+:page-author: jeffmaury
+:page-tags: [release, jbosstools, devstudio, jbosscentral]
+:page-date: 2016-09-21
+
+link:/downloads/jbosstools/neon/4.4.1.Final.html[JBoss Tools 4.4.1] and link:/downloads/devstudio/neon/10.1.0.GA.html[Red Hat JBoss Developer Studio 10.1] for Eclipse Neon are here waiting for you. Check it out!
+
+image::/blog/images/devstudio10.png[]
+
+== Installation
+
+JBoss Developer Studio comes with everything pre-bundled in its installer. Simply download it from our https://www.jboss.org/products/devstudio.html[JBoss Products page] and run it like this:
+ 
+    java -jar jboss-devstudio-<installername>.jar
+
+JBoss Tools or Bring-Your-Own-Eclipse (BYOE) JBoss Developer Studio require a bit more:
+
+This release requires at least Eclipse 4.6 (Neon) but we recommend
+using the latest http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/neonr[Eclipse 4.6 Neon JEE Bundle] since then you get most of the dependencies preinstalled. 
+
+Once you have installed Eclipse, you can either find us on the Eclipse Marketplace under "JBoss Tools" or "Red Hat JBoss Developer Studio".
+
+For JBoss Tools, you can also use our update site directly.
+
+    http://download.jboss.org/jbosstools/neon/stable/updates/
+
+== What is new? 
+
+Our main focus for this release was improvements for container based development and bug fixing.
+
+=== Improved OpenShift 3 and Docker Tools
+
+We continue to work on providing better experience for container based development in JBoss Tools and Developer Studio. Let's go through a few interesting updates here.
+
+==== Support for Container Labels
+
+Users can now specify labels when running a container.
+The labels are saved in the launch configuration and can also be edited before relaunching the container.
+
+image::/documentation/whatsnew/docker/images/docker_neon1_sprint118/container_labels.png[Container Labels]
+
+==== Automatically detect known Docker daemon connections
+
+When the Docker Explorer view is opened, the list of existing connections (saved from a previous session) is reloaded.
+In addition to this behaviour, the view will also attempt to find new connections using default settings such
+the 'unix:///var/run/docker.sock' Unix socket or the 'DOCKER_HOST', 'DOCKER_CERT_PATH' and 'DOCKER_TLS_VERIFY' environment
+variables. This means that by default, in a new workspace, if a Docker daemon is reachable using one of those methods, the
+user does not have to use the "New Connection" wizard to get a connection.
+
+==== Extension point for Docker daemon connection settings
+
+An extension point has been added to the Docker core plugin to allow for custom connection settings provisionning.
+
+==== Support for Docker Compose
+
+Support for Docker Compose has finally landed !
+
+Users can select a `docker-compose.yml` file and start Docker Compose from the
+context menu, using the `Run > Docker Compose` launcher shortcut.
+
+The Docker Compose process displays it logs (with support for text coloring based on ANSI escape codes)
+and provides a `stop` button to stop the underlying process.
+
+image::/documentation/whatsnew/docker/images/docker_neon1_sprint119/docker_compose.png[Docker Compose]
+
+Also, as with the support for building and running containers, a launch configuration is created after the
+first call to Docker Compose on the selected `docker-compose.yml` file.
+
+==== Docker Image Hierarchy View Improvements
+
+The new Docker Image Hierarchy view not only shows the relationships between
+images (which is particularly interesting when an image is built using a Dockerfile),
+but it also includes containers based on the images in the tree view
+while providing with all relevant commands (in the context menu) for containers and images.
+
+image::/documentation/whatsnew/docker/images/docker_neon1_sprint119/docker_image_hierarch_view.png[Docker Image Hierarchy View]
+
+==== Server templates can now be displayed / edited
+Server templates are now displayed in the property view under the `Templates` tab:
+
+image::/documentation/whatsnew/openshift/images/property-view-template.png[width=600]
+
+You can access/edit the content of the template with the `Edit` command. 
+
+==== Events can now be displayed
+Events generated as part of the application livecycle are now displayed in the property view under the `Events` tab (available at the project level):
+
+image::/documentation/whatsnew/openshift/images/property-view-event.png[width=600]
+
+You can refresh the content of the event with the `Refresh` command or open the event in the OpenShift web console with the `Show In -> Web Console` command. 
+
+==== Volume claims can now be displayed
+Volume claims are now displayed in the property view under the `Storage` tab (available at the project level):
+
+image::/documentation/whatsnew/openshift/images/property-view-storage1.png[width=600]
+
+You can create a new volume claim using a resource file like the following:
+
+```json
+{
+    "apiVersion": "v1",
+    "kind": "PersistentVolumeClaim",
+    "metadata": {
+        "name": "claim1"
+    },
+    "spec": {
+        "accessModes": [ "ReadWriteOnce" ],
+        "resources": {
+            "requests": {
+                "storage": "1Gi"
+            }
+        }
+    }
+}
+```
+
+If you deploy such a resource file with the `New -> Resource` command at the project level, the `Storage` tab will be updated:
+
+image::/documentation/whatsnew/openshift/images/property-view-storage2.png[width=600]
+
+You can access/edit the content of the volume claim with the `Edit` command or open the volume claim in the OpenShift web console with the `Show In -> Web Console` command.
+
+=== Server Tools
+
+==== QuickFixes now available in runtime detection
+
+Runtime detection has been a feature of JBossTools for a long while, however, it would sometimes create runtime and server adapters with configuration errors without alerting the user. Now, the user will have an opportunity to execute quickfixes before completing the creation of their runtimes and servers. 
+
+image::/documentation/whatsnew/server/images/JBIDE-15189_rt_detect_1.png[]
+
+To see this in action, we can first open up the runtime-detection preference page. We can see that our runtime-detection will automatically search three paths for valid runtimes of any type. 
+
+image::/documentation/whatsnew/server/images/JBIDE-15189_rt_detect_2.png[]
+
+Once we click search, the runtime-detection's search dialog appears, with results it has found. In this case, it has located an EAP 6.4 and an EAP 7.0 installation. However, we can see that both have errors. If we click on the error column for the discovered EAP 7.0, the error is expanded, and we see that we're missing a valid / compatible JRE. To fix the issue, we should click on this item. 
+
+image::/documentation/whatsnew/server/images/JBIDE-15189_rt_detect_3.png[]
+
+When we click on the problem for EAP 7, the new JRE dialog appears, allowing us to add a compatible JRE. The dialog helpfully informs us of what the restrictions are for this specific runtime. In this case, we're asked to define a JRE with a minimum version of Java-8. 
+
+image::/documentation/whatsnew/server/images/JBIDE-15189_rt_detect_4.png[]
+
+If we continue along with the process by locating and adding a Java 8 JRE, as shown above, and finish the dialog, we'll see that all the errors will disappear for both runtimes. In this example, the EAP 6.4 required a JRE of Java 7 or higher. The addition of the Java 8 JRE fixed this issue as well. 
+
+image::/documentation/whatsnew/server/images/JBIDE-15189_rt_detect_5.png[]
+
+Hopefully, this will help users preemptively discover and fix errors before being hit with surprising errors when trying to use the created server adapters. 
+
+==== Support for WildFly 10.1
+
+The WildFly 10.0 Server adapter has been renamed to WildFly 10.x. It has been tested and verified to work for WildFly 10.1 installations. 
+
+=== Hibernate Tools
+
+==== Hibernate Runtime Provider Updates
+
+A number of additions and updates have been performed on the available Hibernate runtime  providers.
+
+===== New Hibernate 5.2 Runtime Provider
+
+With final releases available in the Hibernate 5.2 stream, the time was right to make available a corresponding Hibernate 5.2 runtime provider. This runtime provider incorporates Hibernate Core version 5.2.2.Final and Hibernate Tools version 5.2.0.Beta1.  
+
+image::/documentation/whatsnew/hibernate/images/4.4.1.Final/hibernate_5_2.png[title="Hibernate 5.2 is available", width="381", align="center"]
+
+===== Other Runtime Provider Updates
+
+The Hibernate 4.3 runtime provider now incorporates Hibernate Core version 4.3.11.Final and Hibernate Tools version 4.3.5.Final.
+
+The Hibernate 5.0 runtime provider now incorporates Hibernate Core version 5.0.10.Final and Hibernate Tools version 5.0.2.Final.
+
+The Hibernate 5.1 runtime provider now incorporates Hibernate Core version 5.1.1.Final and Hibernate Tools version 5.1.0.CR1.
+
+=== Forge Tools
+
+==== Added Install addon from the catalog command
+
+From Forge 3.3.0.Final onwards it is now possible to query and install addons listed in the http://forge.jboss.org/addons[Forge addons page].
+
+image::/documentation/whatsnew/forge/images/4.4.1.AM3/addon-install-from-catalog.png[]
+
+==== Forge Runtime updated to 3.3.1.Final
+
+The included Forge runtime is now 3.3.1.Final. Read the official announcement http://forge.jboss.org/news/jboss-forge-3.3.1.final-is-here[here].
+
+image::/documentation/whatsnew/forge/images/4.4.1.Final/startup.png[]
+
+=== Freemarker
+
+==== Freemarker 2.3.25
+
+Freemarker library included in the Freemarker IDE was updated to latest available version 2.3.25.
+
+==== flth / fltx file extensions added
+
+The new flth and fltx extensions have been added and associated with Freemarker IDE. `flth` stands for HTML content whereas `fltx` stands for XML content.
+
+==== Overhaul of the plugin template parser
+
+The parser that FreeMarker IDE uses to extract IDE-centric information
+(needed for syntax highlighting, related tag highlighting,
+auto-completion, outline view, etc.) was overhauled. Several bugs were
+fixed, and support for the newer template language features were
+added. Also, the syntax highlighting is now more detailed inside
+expressions.
+
+==== Related tag background highlighting fixed
+
+Fixed the issue when the (by default) yellow highlighting of the
+related FTL tags shift away from under the tag as you type.
+
+==== Showing whitespace, block selection mode
+
+The standard "Show whitespace characters" and "Toggle block selection
+mode" icons are now available when editing a template.
+
+==== Improved automatic finishing of FreeMarker constructs
+
+When you type `<#`, `<@`, `${`, `\#{` and `<#--` the freemarker editor now automatically closes them.
+
+==== Error positions links on the console
+
+When a FreeMarker exception is printed to the console, the error
+position in it is a link that navigates to the error. This has worked
+long ago, but was broken for quite a while.
+
+==== Fixed auto-indentation
+
+When hitting enter, sometimes the new line haven't inherited the
+indentation of the last line.
+
+==== Updated the "database" used for auto completion
+
+Auto completion now knows all directives and "built-ins" up to
+FreeMarker 2.3.25.
+
+== What is next?
+
+Having JBoss Tools 4.4.1 and Developer Studio 10.1 out we are already working on the next maintenance release for Eclipse Neon.1.
+
+Enjoy!
+
+Jeff Maury
