@@ -79,7 +79,7 @@ devstudio:
         marketplace_url: https://marketplace.eclipse.org/node/1616973
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
         release_date: 2016-09-21
-        supported_devstudio_is_version: 9.0.0.GA
+        supported_devstudio_is_version: 10.0.0.Alpha1
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         blog_announcement_url: /blog/10.1.0.ga-for-neon.html
@@ -611,6 +611,17 @@ devstudio_is:
   name: JBoss Developer Studio Integration Stack
   url_path_fragment: devstudio_is
   streams:
+    neon:
+      10.0.0.Alpha1:
+        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/
+        release_date: 2016-09-27
+        required_devstudio_version: 10.1.0.GA
+        update_site_url: https://devstudio.redhat.com/10.0/development/updates/integration-stack/earlyaccess
+        zips:
+          - name: Update site bundle of JBoss Developer Studio Integration Stack (Early Access)
+            file_size: 337MB
+            url: https://devstudio.redhat.com/10.0/development/updates/integration-stack/devstudio-integration-stack-10.0.0.Alpha1-earlyaccess.zip
+            md5_url: https://devstudio.redhat.com/10.0/development/updates/integration-stack/devstudio-integration-stack-10.0.0.Alpha1-earlyaccess.zip.MD5
     mars:
       9.0.1.GA:
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/9.0
@@ -870,7 +881,7 @@ jbt_core:
         marketplace_url: https://marketplace.eclipse.org/node/1617241
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1617241
         release_date: 2016-09-21
-        supported_jbt_is_version: 4.3.0.Final
+        supported_jbt_is_version: 4.4.0.Alpha1
         blog_announcement_url: /blog/10.1.0.ga-for-neon.html
         documentation_url: http://docs.jboss.org/tools/
         zips:
@@ -1850,6 +1861,17 @@ jbt_is:
   name: JBoss Tools Integration Stack
   url_path_fragment: jbosstools_is
   streams:
+    neon:
+      4.4.0.Alpha1:
+        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/
+        release_date: 2016-09-27
+        required_jbt_core_version: 4.4.1.Final
+        update_site_url: http://download.jboss.org/jbosstools/neon/development/updates/integration-stack/earlyaccess
+        zips:
+          - name: Update site bundle of JBoss Tools Integration Stack (Early Access)
+            file_size: 211MB
+            url: http://download.jboss.org/jbosstools/neon/development/updates/integration-stack/jbosstools-integration-stack-4.4.0.Alpha1-earlyaccess.zip
+            md5_url: http://download.jboss.org/jbosstools/neon/development/updates/integration-stack/jbosstools-integration-stack-4.4.0.Alpha1-earlyaccess.zip.MD5
     mars:
       4.3.1.Final:
         release_date: 2016-08-11
