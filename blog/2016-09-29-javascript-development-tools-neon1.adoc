@@ -11,7 +11,7 @@ In this article we are happy to introduce new features and improvements that hav
 - "Quick Access" for Gulp / Grunt tasks
 - npm scripts support
 
-Overall, 42 https://bugs.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&bug_status=VERIFIED&bug_status=CLOSED&chfield=resolution&chfieldfrom=2016-06-22&chfieldto=2016-09-28&product=JSDT&resolution=FIXED[bugzillas] have been resolved during the Neon.1 development cycle (some of the bugs have been waiting to be fixed for more than 5 years!) Also, we would like to shed some light on our plans for the Neon.2 release.
+Overall, 41 https://bugs.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&bug_status=VERIFIED&bug_status=CLOSED&chfield=resolution&chfieldfrom=2016-06-22&chfieldto=2016-09-28&product=JSDT&resolution=FIXED[bugzillas] have been resolved during the Neon.1 development cycle (some of the bugs have been waiting to be fixed for more than 5 years!) Also, we would like to shed some light on our plans for the Neon.2 release.
 
 NOTE: In order to have all new JavaScript features available out-of-the-box, please, use *"Eclipse IDE for JavaScript and Web Developers" / "Eclipse IDE for Java EE Developers"* packages
 
