@@ -3,6 +3,7 @@
 :page-author: lhein
 :page-tags: [fuse, camel, integration, jbosstools, devstudio, jbosscentral]
 
+NOTE: This article has been posted also on http://developers.redhat.com/blog/2016/10/06/jboss-fuse-tooling-released-for-eclipse-mars/[Red Hat Developers Program blog].
 
 We are happy to announce the release of http://tools.jboss.org/features/apachecamel.html[Red Hat JBoss Fuse Tooling] for Eclipse Mars.
 It is available now in the JBoss Tools Integration Stack 4.3.2 / Developer Studio Integration Stack 9.0.2. 
