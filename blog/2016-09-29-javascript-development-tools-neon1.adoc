@@ -72,7 +72,7 @@ Other plans are coupled with polishing Node.js / JavaScript debuggers and making
 Thank you to the contributors who made the Neon.1 release happen:
 [square]
 * Patrik Suzzi
-* Esteban Dugueperoux, Obeo
+* Esteban Dugueperoux
 * Victor Rubezhny, Red Hat
 * Gorkem Ercan, RedHat
 * Angel Misevski, RedHat
