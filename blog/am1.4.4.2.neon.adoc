@@ -18,10 +18,10 @@ Although our main focus is bug fixes, we continue to work on providing better ex
 
 ==== Cluster common namespace
 
-When looking for Openshift resources (builder images, templates), a common namespace is browsed. It used to be hardcoded to `òpenshift`
-It is now configurable by the user and defaults to `òpenshift`.
+When looking for Openshift resources (builder images, templates), a common namespace is browsed.
+Earlier hardcoded `openshift` namespace is now configurable with default value `openshift`.
 
-WARNING: Please note that templates are still loaded from the `òpenshift` namespace and not the configured common namespace, this will be fixed for the next release.
+WARNING: Please note that templates are still loaded from the `òpenshift` namespace and not the from configured common namespace, this will be fixed for the next release.
 
 It can be accessed and modified through the connection extended properties:
 
