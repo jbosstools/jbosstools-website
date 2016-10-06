@@ -1,0 +1,113 @@
+= Production Fuse Tooling emerges on Mars
+:page-layout: blog
+:page-author: pleacu
+:page-date: 2016-10-06
+:page-tags: [release, jbosstools, devstudio, jbosscentral]
+
+*Try our complete Eclipse-Mars capable, JBDS 9.1.0 compatible integration tooling.*
+
+.*JBoss Tools Integration Stack*
+image::/blog/images/jbosstools-jbdevstudio-blog-header.png[caption=""]
+
+CAUTION: Since JBoss Tools 4.3.0 we require Java 8 for the installation and use of all JBoss Tools, including the Integration Stack tooling.  We still support developing and running applications using older Java runtimes. See more in link:2015-06-23-beta1-for-mars.html#java-8-to-run-eclipse-older-runtimes-ok-for-builds-deployment[Beta1 blog].
+
+*JBoss Tools Integration Stack 4.3.2.Final / JBoss Developer Studio Integration Stack 9.0.2.GA*
+
+NOTE: All of the Integratioon Stack components have been verified to work with the same dependencies as JBoss Tools 4.3 and Developer Studio 9.
+
+== What's new for this release?
+
+The highlight of this release is full Fuse tooling and SwitchYard support for link:http://access.redhat.com/documentation/en/red-hat-jboss-fuse/6.3/[Red Hat JBoss Fuse 6.3] on Eclipse Mars.  Included in the Fuse Tooling enhancements is a new Fuse Integration Project wizard, an updated Visual Camel Editor and improvements to the validation of Camel files.  See the link:http://developers.redhat.com/blog/2016/10/06/jboss-fuse-tooling-released-for-eclipse-mars/[Red Hat Developers Program blog] for a view of the updated Fuse Tooling support in detail.
+
+=== Released Tooling Highlights
+
+==== JBoss Fuse Development Highlights
+
+===== Fuse Tooling Highlights
+
+See the Fuse Tooling section in the link:http://access.redhat.com/documentation/en/red-hat-jboss-developer-studio-integration-stack/9.0/paged/902ga-release-notes/chapter-4-resolved-issues[Resolved Issues Section] of the Integration Stack 9.0.2.GA release notes.
+
+===== SwitchYard Highlights
+
+See the SwitchYard section in the link:http://access.redhat.com/documentation/en/red-hat-jboss-developer-studio-integration-stack/9.0/paged/902ga-release-notes/chapter-4-resolved-issues[Resolved Issues Section] of the Integration Stack 9.0.2.GA release notes.
+
+==== JBoss Business Process and Rules Development
+
+===== BPMN2 Modeler Highlights
+
+See the BPMN2 Modeler section in the link:http://access.redhat.com/documentation/en/red-hat-jboss-developer-studio-integration-stack/9.0/paged/902ga-release-notes/chapter-4-resolved-issues[Resolved Issues Section] of the Integration Stack 9.0.2.GA release notes.
+
+===== Drools/jBPM6 Highlights
+
+* link:http://access.redhat.com/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/9.0/html/9.0.0_Release_Notes/sect-Resolved_Issues.html#Drools_6.4.1.Final[Drools 6.4.1 Release Notes]
+
+==== Data Virtualization Highlights
+
+===== Teiid Designer Highlights
+
+See the link:http://access.redhat.com/articles/2505131#teiid-designer-1001final-4[Teiid Designer 10.0.1.Final Release Notes]
+
+==== SOA 5.x Development
+
+JBoss ESB, jBPM3 and guvnor.  *These tools have been deprecated.*
+
+=== Early Access/ Technical Preview Tooling Highlights
+
+*None!*  We're happy to say that all JBDS 9/ Eclipse-Mars compatible features are now released as production plugins.
+
+== What's an Integration Stack?
+
+The Integration Stack for JBoss Developer Studio is a set of features and plugins for Eclipse that further enhances the IDE development functionality provided by JBoss Developer Studio.  It's where the Fuse Tooling, DataVirt Tooling and BRMS tooling is aggregated.  The following frameworks are supported:
+
+=== JBoss Fuse Development
+
+* link:/features/apachecamel.html[Fuse Tooling] - JBoss Fuse Development provides tooling for Red Hat JBoss Fuse.  It features the latest versions of the Fuse Data Transformation tooling, SwitchYard and access to the Fuse SAP Tool Suite.
+* link:/features/switchyard.html[SwitchYard] - A lightweight service delivery framework providing full lifecycle support for developing, deploying, and managing service-oriented applications.
+
+=== JBoss Business Process and Rules Development
+
+JBoss Business Process and Rules Development plug-ins provide design, debug and testing tooling for developing business processes for Red Hat JBoss BRMS and Red Hat JBoss BPM Suite.
+
+* link:/features/bpel.html[BPEL Designer] - Orchestrating your business processes.
+* link:/features/bpmn2.html[BPMN2 Modeler] - A graphical modeling tool which allows creation and editing of Business Process Modeling Notation diagrams using graphiti.
+* link:/features/drools.html[Drools] - A Business Logic integration Platform which provides a unified and integrated platform for Rules, Workflow and Event Processing including KIE.
+* link:/features/jbpm.html[jBPM6] - A flexible Business Process Management (BPM) suite.
+
+=== JBoss Data Virtualization Development
+
+JBoss Data Virtualization Development plug-ins provide a graphical interface to manage various aspects of Red Hat JBoss Data Virtualization instances, including the ability to design virtual databases and interact with associated governance repositories.
+
+* link:/features/teiiddesigner.html[Teiid Designer] - A visual tool that enables rapid, model-driven definition, integration, management and testing of data services without programming using the Teiid runtime framework.
+
+* link:/features/modeshape.html[ModeShape] - A distributed, hierarchical, transactional and consistent data store with support for queries, full-text search, events, versioning, references, and flexible and dynamic schemas. It is very fast, highly available, extremely scalable, and it is 100% open source.
+
+NOTE: *ModeShape is deprecated.*
+
+=== JBoss Integration and SOA Development
+
+JBoss Integration and SOA Development plug-ins provide tooling for developing, configuring and deploying BRMS, SwitchYard and Fuse applications to Red Hat JBoss Fuse Service Works, Red Hat JBoss Fuse and Fuse Fabric containers, Apache ServiceMix, and Apache Karaf instances.
+
+* All of the Business Process and Rules Development plugins, plus...
+* link:/features/apachecamel.html[Fuse Apache Camel Tooling] - A graphical tool for integrating software components that works with Apache ServiceMix, Apache ActiveMQ, Apache Camel and the FuseSource distributions.
+* link:/features/switchyard.html[SwitchYard] - A lightweight service delivery framework providing full lifecycle support for developing, deploying, and managing service-oriented applications.
+
+=== SOA 5.x Development
+
+NOTE: *Please note that the plugins in this category have been deprecated.*
+
+* link:http://www.jboss.org/jbossesb[JBoss ESB] - An enterprise service bus for connecting enterprise applications and services.
+* link:http://docs.jboss.com/jbpm/v3.2/userguide/html_single/[jBPM3] - A flexible Business Process Management (BPM) Suite - JBoss Enterprise SOA Platform 5.3.x compatible version.
+
+=== The JBoss Tools website features tab
+
+Don't miss the link:/features[Features tab] for up to date information on your favorite Integration Stack components.
+
+== Installation
+
+The easiest way to install the Integration Stack components is to first install link:/downloads/jbosstools/mars/4.3.1.Final.html[JBoss Tools 4.3.1] or link:/downloads/devstudio/mars/9.1.0.GA.html[JBoss Developer Studio 9.1.0] and then select the Software/Update tab in the JBoss Central view.  There's also a link:http://developers.redhat.com/download-manager/file/devstudio-integration-stack-9.0.2.GA-standalone-installer.jar[stand-alone installer] available.
+
+For a complete set of Integration Stack installation instructions, see link:http://access.redhat.com/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/9.0/html/Install_Red_Hat_JBoss_Developer_Studio_Integration_Stack/index.html[Integration Stack Installation Instructions]
+
+_Let us know!_
+
+Paul Leacu.
