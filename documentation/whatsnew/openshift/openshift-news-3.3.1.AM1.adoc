@@ -28,7 +28,7 @@ First, make sure your CDK server adapter is configured not to pass credentials:
 
 image::./images/cdk-editor-no-credentials-pass.png[width=80%]
 
-Then, start the CDK server adapter and a new terminal window will open, asking for regsitration:
+Then, start the CDK server adapter and a new terminal window will open, asking for registration:
 
 image::./images/cdk-terminal-asks-for-registration.png[width=600]
 
