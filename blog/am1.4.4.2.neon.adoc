@@ -37,7 +37,7 @@ First, make sure your CDK server adapter is configured not to pass credentials:
 
 image::/documentation/whatsnew/openshift/images/cdk-editor-no-credentials-pass.png[CDK editor]
 
-Then, start the CDK server adapter and a new terminal window will open, asking for regsitration:
+Then, start the CDK server adapter and a new terminal window will open, asking for registration:
 
 image::/documentation/whatsnew/openshift/images/cdk-terminal-asks-for-registration.png[Registration]
 
