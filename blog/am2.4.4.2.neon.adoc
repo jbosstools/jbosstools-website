@@ -1,0 +1,50 @@
+= JBoss Tools 4.4.2.AM2 for Eclipse Neon
+:page-layout: blog
+:page-author: jeffmaury
+:page-tags: [release, jbosstools, jbosscentral]
+:page-date: 2016-10-18
+
+Happy to announce 4.4.2.AM2 (Developer Milestone 2) build for Eclipse Neon.
+
+Downloads available at link:/downloads/jbosstools/neon/4.4.2.AM2.html[JBoss Tools 4.4.2 AM2].
+
+== What is New?
+
+Full info is at link:/documentation/whatsnew/jbosstools/4.4.2.AM2.html[this page]. Some highlights are below.
+
+=== OpenShift 3
+
+Although our main focus is bug fixes, we continue to work on providing better experience for container based development in JBoss Tools and Developer Studio. Let's go through a few interesting updates here and you can find more details on link:/documentation/whatsnew/jbosstools/4.4.2.AM2.html[the What's New page].
+
+==== Common namespace template support
+
+Common namespace was link:/documentation/whatsnew/jbosstools/4.4.2.AM1.html#openshift[added] but templates were still loaded from the hardcoded `openshift` namespace.
+They are now loaded from the configured common namespace (which still default to `openshift`)
+
+==== User controlled hostname when creating routes
+
+When an application is being deployed to Openshift, a route is optionally created if required by the user.
+Openshift/CDK used to create an http://xip.io[xip.io] based hostname. User can now set its own hostname.
+This allows for both changing the DNS to local IP provider (http://nip.io[nip.io]) or using you own enterprise DNS naming strategy.
+
+The hostname can be accessed from the Services and Routing Settings page when deploying an application:
+
+image::/documentation/whatsnew/openshift/images/wizard-new-application-hostname.png[width=600]
+
+=== Forge
+
+==== Forge Runtime updated to 3.3.2.Final
+
+The included Forge runtime is now 3.3.2.Final. Read the official announcement http://forge.jboss.org/news/jboss-forge-3.3.2.final-is-here[here].
+
+image::/documentation/whatsnew/forge/images/4.4.2.AM2/startup.png[]
+
+==== New Menu in Forge Console view to trigger the Command Selection Dialog
+
+Now it's possible to bring the Command Selection Dialog menu (invoked when Ctrl/Command + 4 is pressed) by choosing the "Open Command Selection Dialog..." menu item in the Forge Console view.
+
+image::/documentation/whatsnew/forge/images/4.4.2.AM2/open-command-dialog.png[]
+
+Enjoy!
+
+Jeff Maury
