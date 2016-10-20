@@ -18,7 +18,7 @@ Although our main focus is bug fixes, we continue to work on providing better ex
 
 ==== Common namespace template support
 
-Common namespace was link:/documentation/whatsnew/4.4.2.AM1.html#openshift[added] but templates were still loaded from the hardcoded `openshift` namespace.
+Common namespace was link:/documentation/whatsnew/jbosstools/4.4.2.AM1.html#openshift[added] but templates were still loaded from the hardcoded `openshift` namespace.
 They are now loaded from the configured common namespace (which still default to `openshift`)
 
 ==== User controlled hostname when creating routes
