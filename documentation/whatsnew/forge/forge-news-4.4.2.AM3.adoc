@@ -1,0 +1,14 @@
+= Forge Tools 4.4.2.AM3 What's New
+:page-layout: whatsnew
+:page-component_id: forge
+:page-component_version: 4.4.2.AM3
+:page-product_id: jbt_core
+:page-product_version: 4.4.2.AM3
+
+ifndef::finalnn[]
+== Forge Runtime updated to 3.3.3.Final
+
+The included Forge runtime is now 3.3.3.Final. Read the official announcement http://forge.jboss.org/news/jboss-forge-3.3.3.final-is-here[here].
+
+image::images/4.4.2.AM3/startup.png[]
+endif::finalnn[]
