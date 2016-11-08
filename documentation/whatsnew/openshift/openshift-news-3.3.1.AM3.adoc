@@ -43,7 +43,7 @@ image::./images/node-js-debugger-servers-view1.png[width=600]
 ===== Step 4: Add a breakpoint into the server code
 
 Open the `server.js` file located into the `nodejs-ex` project that you imported in Step 1. Around line 79, the handler for the *pagecount* is defined so you can add
-a breakpoint in the following lines (line 81 for the first instruction).
+a breakpoint in the following lines (line 82 for the first instruction).
 
 image::./images/node-js-debugger-js-editor.png[width=600]
 
