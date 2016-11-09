@@ -1,0 +1,45 @@
+= JBoss Tools 4.4.2.AM3 for Eclipse Neon
+:page-layout: blog
+:page-author: jeffmaury
+:page-tags: [release, jbosstools, jbosscentral]
+:page-date: 2016-11-15
+
+Happy to announce 4.4.2.AM3 (Developer Milestone 3) build for Eclipse Neon.1, the latest milestone before the GA release.
+
+Downloads available at link:/downloads/jbosstools/neon/4.4.2.AM3.html[JBoss Tools 4.4.2 AM3].
+
+== What is New?
+
+Full info is at link:/documentation/whatsnew/jbosstools/4.4.2.AM3.html[this page]. Some highlights are below.
+
+=== OpenShift 3
+
+An important new feature made it into this milestone: the NodeJS application support on OpenShift.
+
+==== Node.js Debugger 
+
+Now it is possible to debug Node.js applications deployed to Openshift. All you need to do is creating a *Server Adapter* for the app and running it in the *Debug* mode. After that a new *V8* debug session will be created: 
+
+image::/documentation/whatsnew/openshift/images/v8-debug-console.png[width=600]
+
+Put some breakpoints in the code and start debugging!
+
+image::/documentation/whatsnew/openshift/images/node-js-debugger.png[width=600]
+
+Changing the code during the debug session is also supported - just save the file and new changes will be applied automatically. Here is a short demo video which describes the debugging process in action:
+
+video::1cKPPQrlC4k[youtube, width=640, height=400]
+
+Step by step instructions are available link:/documentation/whatsnew/jbosstools/4.4.2.AM3.html#openshift[here].
+
+=== Forge
+
+==== Forge Runtime updated to 3.3.3.Final
+
+The included Forge runtime is now 3.3.3.Final. Read the official announcement http://forge.jboss.org/news/jboss-forge-3.3.3.final-is-here[here].
+
+image::/documentation/whatsnew/forge/images/4.4.2.AM3/startup.png[]
+
+Enjoy!
+
+Jeff Maury
