@@ -892,8 +892,28 @@ jbt_core:
             url: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.jboss.tools.browsersim&a=org.jboss.tools.browsersim-standalone&v=3.8.0-SNAPSHOT&e=zip
             #url: http://download.jboss.org/jbosstools/neon/snapshots/builds/jbosstools-browsersim-standalone_master/latest/jbosstools-4.4.0.Alpha1-browsersim-standalone.zip
             #md5_url: http://download.jboss.org/jbosstools/neon/snapshots/builds/jbosstools-browsersim-standalone_master/latest/jbosstools-4.4.0.Alpha1-browsersim-standalone.zip.sha256
-      4.4.2.AM2:
+      4.4.2.AM3:
         update_site_url: http://download.jboss.org/jbosstools/neon/development/updates/
+        release_date: 2016-11-10
+        supported_jbt_is_version: 4.4.0.Alpha1
+        blog_announcement_url: /blog/am3.4.4.2.neon.html
+        documentation_url: http://docs.jboss.org/tools/
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 474MB
+            url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.2.AM3-updatesite-core.zip
+            md5_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.2.AM3-updatesite-core.zip.sha256
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 244MB
+            url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.2.AM3-src.zip
+            md5_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.2.AM3-src.zip.sha256
+          - name: Stand-alone BrowserSim
+            file_size: 17MB
+            url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.2.AM3-browsersim-standalone.zip
+            md5_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.2.AM3-browsersim-standalone.zip.sha256
+          - name: Release Notes
+            url: http://tools.jboss.org/documentation/whatsnew/index.html
+      4.4.2.AM2:
         release_date: 2016-10-19
         supported_jbt_is_version: 4.4.0.Alpha1
         blog_announcement_url: /blog/am2.4.4.2.neon.html
