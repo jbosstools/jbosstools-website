@@ -2,7 +2,7 @@
 :page-layout: blog
 :page-author: jeffmaury
 :page-tags: [release, jbosstools, jbosscentral]
-:page-date: 2016-11-15
+:page-date: 2016-11-10
 
 Happy to announce 4.4.2.AM3 (Developer Milestone 3) build for Eclipse Neon.1, the latest milestone before the GA release.
 
