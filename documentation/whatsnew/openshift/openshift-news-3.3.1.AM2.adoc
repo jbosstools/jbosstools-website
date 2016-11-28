@@ -6,12 +6,13 @@
 :page-product_version: 4.4.2.AM2
 :page-include-previous: true
 
+ifndef::finalnn[]
 === Common namespace template support
 Common namespace was link:4.4.2.AM1.html#openshift[added] but templates were still loaded from the hardcoded `openshift` namespace.
 They are now loaded from the configured common namespace (which still default to `openshift`)
 
 related_jira::JBIDE-23014[]
-
+endif::finalnn[]
 === User controlled hostname when creating routes
 
 When an application is being deployed to Openshift, a route is optionally created if required by the user.

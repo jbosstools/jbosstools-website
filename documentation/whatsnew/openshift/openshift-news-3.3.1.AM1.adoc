@@ -10,7 +10,9 @@
 When looking for Openshift resources (builder images, templates), a common namespace is browsed.
 Earlier hardcoded `openshift` namespace is now configurable with default value `openshift`.
 
+ifndef::finalnn[]
 WARNING: Please note that templates are still loaded from the `openshift` namespace and not from the configured common namespace, this will be fixed for the next release.
+endif::finalnn[]
 
 It can be accessed and modified through the connection extended properties:
 
