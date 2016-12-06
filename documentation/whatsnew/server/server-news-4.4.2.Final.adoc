@@ -1,0 +1,39 @@
+= Server What's New in 4.4.2.Final
+:page-layout: whatsnew
+:page-component_id: server
+:page-component_version: 4.4.2.Final
+:page-product_id: jbt_core
+:page-product_version: 4.4.2.Final
+
+== Support for Jolokia JMX Connections
+
+For some users, accessing a remote test server via standard JMX may require opening ports that, for one reason or another, cannot be opened. In these cases, a user may choose to deploy a jolokia agent to their server. Jolokia is a deployable war archive that exposes JMX over http, typically using JSON. This feature is handy as an added tool for debugging a development application, but is not really suitable or safe to expose on production. With that in mind, the workflow is as follows:
+
+1) Download the Jolokia war file from jolokia.org, and place it in the proper deployments folder for your application server. For wildfly, this folder is 'standalone/deployments'
+
+2) Start your server via whatever method you typically use. If your usecase allows it, use the Servers view to create and start a server adapter. If this workflow doesn't work for you, you may wish to start the server manually. 
+
+3) Once your server is started, open the JMX Navigator
+
+4) Right click on the "User-Defined Connections" item, and select 'New Connection'
+
+image::/documentation/whatsnew/server/images/JBIDE-23429_jolokia_1.png[]
+
+5) Select 'Jolokia Connection'
+
+image::/documentation/whatsnew/server/images/JBIDE-23429_jolokia_2.png[]
+
+6) Give the connection a name, and the url at which jolokia can be reached. Then finish the wizard
+
+image::/documentation/whatsnew/server/images/JBIDE-23429_jolokia_3.png[]
+
+7) Now you can browse your JMX tree in the JMX Navigator!
+
+image::/documentation/whatsnew/server/images/JBIDE-23429_jolokia_4.png[]
+
+Most other JMX operations will work. You can double-click an MBean node to open the editor, check properties, or invoke operations. Notifications, however, are not supported. 
+
+
+related_jira::JBIDE-23429[Jolokia JMX Connection]
+
+
