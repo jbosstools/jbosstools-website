@@ -74,10 +74,33 @@ devstudio:
   url_path_fragment: devstudio
   streams:
     neon:
-      10.1.0.GA:
+      10.2.0.GA:
         update_site_url: https://devstudio.redhat.com/10.0/stable/updates/
         marketplace_url: https://marketplace.eclipse.org/node/1616973
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
+        release_date: 2016-12-07
+        supported_devstudio_is_version: 10.0.0.GA
+        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        blog_announcement_url: /blog/10.2.0.ga-for-neon.1.html
+        installers:
+          - name: Stand-alone Installer
+            url: http://www.jboss.org/download-manager/content/origin/files/sha256/f7/f7ab824501a7236fe110f17e10d0a9c32c18efbcdeee2497cc7fdd14701ba71e/devstudio-10.2.0.GA-installer-standalone.jar
+            file_size: 540MB
+          - name: Installer With EAP 7.0.0
+            url: http://www.jboss.org/download-manager/content/origin/files/sha256/8c/8c34cc5ffa45fba795e634d4e686a59493ce73a5761d25f9017de7a585850646/devstudio-10.2.0.GA-installer-eap.jar
+            file_size: 696MB
+        zips:
+          - name: Update site (including sources) bundle of JBoss Developer Studio
+            url: http://www.jboss.org/download-manager/content/origin/files/sha256/7d/7d4d4ffe12a7a7ab5b4719726d7ac060a6d1f59148adbb1515ac95c47fc33c7e/devstudio-10.2.0.GA-updatesite-core.zip
+            file_size: 562MB
+          - name: Target Platform for JBoss Developer Studio
+            url: https://devstudio.redhat.com/static/10.0/stable/updates/core/devstudio-10.2.0.GA-target-platform.zip
+            file_size: 487MB
+          - name: JBoss Central Zip
+            url: http://www.jboss.org/download-manager/content/origin/files/sha256/f9/f9ea154e9fd1bc6a15e17f4dd53ecc653638d3c5769ef5446e97d870ce9e69bf/devstudio-10.2.0.GA-updatesite-central.zip
+            file_size: 155MB
+      10.1.0.GA:
         release_date: 2016-09-21
         supported_devstudio_is_version: 10.0.0.GA
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
@@ -104,7 +127,6 @@ devstudio:
            url: http://www.jboss.org/download-manager/content/origin/files/sha256/cf/cfda7f9ef8a9f0b208f66087b16f3bb314818e0c6ba106aa92719da3dcbe7567/devstudio-10.1.0.GA-src.zip
            file_size: 224MB
       10.0.0.GA:
-        update_site_url: https://devstudio.redhat.com/10.0/stable/updates/
         release_date: 2016-06-27
         supported_devstudio_is_version: 9.0.0.GA
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
@@ -927,7 +949,26 @@ jbt_core:
             #url: http://download.jboss.org/jbosstools/neon/snapshots/builds/jbosstools-browsersim-standalone_master/latest/jbosstools-4.4.0.Alpha1-browsersim-standalone.zip
             #md5_url: http://download.jboss.org/jbosstools/neon/snapshots/builds/jbosstools-browsersim-standalone_master/latest/jbosstools-4.4.0.Alpha1-browsersim-standalone.zip.sha256
       4.4.2.Final:
-        release_date:
+        update_site_url: http://download.jboss.org/jbosstools/neon/stable/updates/
+        release_date: 2016-12-07
+        supported_jbt_is_version: 4.4.0.Final
+        blog_announcement_url: /blog/10.2.0.ga-for-neon.1.html
+        documentation_url: http://docs.jboss.org/tools/
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 474MB
+            url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.2.Final-updatesite-core.zip
+            md5_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.2.Final-updatesite-core.zip.sha256
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 244MB
+            url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.2.Final-src.zip
+            md5_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.2.Final-src.zip.sha256
+          - name: Stand-alone BrowserSim
+            file_size: 17MB
+            url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.2.Final-browsersim-standalone.zip
+            md5_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.2.Final-browsersim-standalone.zip.sha256
+          - name: Release Notes
+            url: http://tools.jboss.org/documentation/whatsnew/index.html
       4.4.2.AM3:
         update_site_url: http://download.jboss.org/jbosstools/neon/development/updates/
         release_date: 2016-11-10
