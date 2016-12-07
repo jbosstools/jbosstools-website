@@ -1,10 +1,10 @@
-= JBoss Tools and Red Hat Developer Studio Maintenance Release for Eclipse Neon 1
+= JBoss Tools and Red Hat Developer Studio Maintenance Release for Eclipse Neon.1
 :page-layout: blog
 :page-author: jeffmaury
 :page-tags: [release, jbosstools, devstudio, jbosscentral]
 :page-date: 2016-12-07
 
-link:/downloads/jbosstools/neon/4.4.2.Final.html[JBoss Tools 4.4.2] and link:/downloads/devstudio/neon/10.2.0.GA.html[Red Hat JBoss Developer Studio 10.2] for Eclipse Neon 1 are here waiting for you. Check it out!
+link:/downloads/jbosstools/neon/4.4.2.Final.html[JBoss Tools 4.4.2] and link:/downloads/devstudio/neon/10.2.0.GA.html[Red Hat JBoss Developer Studio 10.2] for Eclipse Neon.1 are here waiting for you. Check it out!
 
 image::/blog/images/devstudio10.png[]
 
@@ -16,7 +16,7 @@ JBoss Developer Studio comes with everything pre-bundled in its installer. Simpl
 
 JBoss Tools or Bring-Your-Own-Eclipse (BYOE) JBoss Developer Studio require a bit more:
 
-This release requires at least Eclipse 4.6.1 (Neon 1a) but we recommend
+This release requires at least Eclipse 4.6.1 (Neon.1a) but we recommend
 using the latest http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/neon1a[Eclipse 4.6.1 Neon JEE Bundle] since then you get most of the dependencies preinstalled. 
 
 Once you have installed Eclipse, you can either find us on the Eclipse Marketplace under "JBoss Tools" or "Red Hat JBoss Developer Studio".
@@ -219,7 +219,7 @@ FreeMarker 2.3.25.
 
 == What is next?
 
-Having JBoss Tools 4.4.1 and Developer Studio 10.1 out we are already working on the next maintenance release for Eclipse Neon.1.
+Having JBoss Tools 4.4.2 and Developer Studio 10.2 out we are already working on the next maintenance release for Eclipse Neon.2.
 
 Enjoy!
 
