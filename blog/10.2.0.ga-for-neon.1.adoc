@@ -1,0 +1,226 @@
+= JBoss Tools and Red Hat Developer Studio Maintenance Release for Eclipse Neon 1
+:page-layout: blog
+:page-author: jeffmaury
+:page-tags: [release, jbosstools, devstudio, jbosscentral]
+:page-date: 2016-12-07
+
+link:/downloads/jbosstools/neon/4.4.2.Final.html[JBoss Tools 4.4.2] and link:/downloads/devstudio/neon/10.2.0.GA.html[Red Hat JBoss Developer Studio 10.2] for Eclipse Neon 1 are here waiting for you. Check it out!
+
+image::/blog/images/devstudio10.png[]
+
+== Installation
+
+JBoss Developer Studio comes with everything pre-bundled in its installer. Simply download it from our https://www.jboss.org/products/devstudio.html[JBoss Products page] and run it like this:
+ 
+    java -jar jboss-devstudio-<installername>.jar
+
+JBoss Tools or Bring-Your-Own-Eclipse (BYOE) JBoss Developer Studio require a bit more:
+
+This release requires at least Eclipse 4.6.1 (Neon 1a) but we recommend
+using the latest http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/neon1a[Eclipse 4.6.1 Neon JEE Bundle] since then you get most of the dependencies preinstalled. 
+
+Once you have installed Eclipse, you can either find us on the Eclipse Marketplace under "JBoss Tools" or "Red Hat JBoss Developer Studio".
+
+For JBoss Tools, you can also use our update site directly.
+
+    http://download.jboss.org/jbosstools/neon/stable/updates/
+
+== What is new? 
+
+Our main focus for this release was improvements for container based development and bug fixing.
+
+=== Improved OpenShift 3 and Docker Tools
+
+We continue to work on providing better experience for container based development in JBoss Tools and Developer Studio. Let's go through a few interesting updates here.
+
+==== Node.js Debugger 
+
+Now it is possible to debug Node.js applications deployed to Openshift. All you need to do is creating a *Server Adapter* for the app and running it in the *Debug* mode. After that a new *V8* debug session will be created: 
+
+image::/documentation/whatsnew/openshift/images/v8-debug-console.png[width=600]
+
+Put some breakpoints in the code and start debugging!
+
+image::/documentation/whatsnew/openshift/images/node-js-debugger.png[width=600]
+
+Changing the code during the debug session is also supported - just save the file and new changes will be applied automatically. Here is a short demo video which describes the debugging process in action:
+
+video::1cKPPQrlC4k[youtube, width=640, height=400]
+
+Step by step instructions are available link:/documentation/whatsnew/jbosstools/4.4.2.AM3.html#openshift[here].
+
+==== Cluster common namespace
+
+When looking for Openshift resources (builder images, templates), a common namespace is browsed.
+Earlier hardcoded `openshift` namespace is now configurable with default value `openshift`.
+
+It can be accessed and modified through the connection extended properties:
+
+image::/documentation/whatsnew/openshift/images/connection-extended-properties-namespace.png[Connection extended properties]
+
+==== User controlled hostname when creating routes
+
+When an application is being deployed to Openshift, a route is optionally created if required by the user.
+Openshift/CDK used to create an http://xip.io[xip.io] based hostname. User can now set its own hostname.
+This allows for both changing the DNS to local IP provider (http://nip.io[nip.io]) or using you own enterprise DNS naming strategy.
+
+The hostname can be accessed from the Services and Routing Settings page when deploying an application:
+
+image::/documentation/whatsnew/openshift/images/wizard-new-application-hostname.png[width=600]
+
+==== Create routes targetting a specific service port
+
+When an application is being deployed to Openshift, a route is optionally created if required by the user.
+It is now possible to target a specific port (exposed by a to be created service). When the ports are being
+displayed, it is now possible to select one of them to be used by the route. By default, the first port is selected.
+
+The route port can be accessed from the Services and Routing Settings page when deploying an application:
+
+image::/documentation/whatsnew/openshift/images/wizard-new-application-route-port.png[width=600]
+
+==== CDK server using native terminal for better user interactions
+
+The CDK server adapter now uses a native terminal that allows better interaction with the user.
+In the case credentials are not passed in the Vagrant environment, the user will be asked just as with
+the standard Vagrant CLI and in case of registration failures, retries will be performed.
+
+First, make sure your CDK server adapter is configured not to pass credentials:
+
+image::/documentation/whatsnew/openshift/images/cdk-editor-no-credentials-pass.png[CDK editor]
+
+Then, start the CDK server adapter and a new terminal window will open, asking for registration:
+
+image::/documentation/whatsnew/openshift/images/cdk-terminal-asks-for-registration.png[Registration]
+
+If you answered `y` to the previous questions, then the terminal window will ask for username:
+
+image::/documentation/whatsnew/openshift/images/cdk-terminal-asks-for-username.png[Username]
+
+Then the terminal window will ask for password:
+
+image::/documentation/whatsnew/openshift/images/cdk-terminal-asks-for-password.png[Password]
+
+If the registration fails, then the terminal window will perform retries and ask again for username and password:
+
+image::/documentation/whatsnew/openshift/images/cdk-terminal-asks-for-password2.png[Password]
+
+=== Server Tools
+
+==== QuickFixes now available in runtime detection
+
+Runtime detection has been a feature of JBossTools for a long while, however, it would sometimes create runtime and server adapters with configuration errors without alerting the user. Now, the user will have an opportunity to execute quickfixes before completing the creation of their runtimes and servers. 
+
+image::/documentation/whatsnew/server/images/JBIDE-15189_rt_detect_1.png[]
+
+To see this in action, we can first open up the runtime-detection preference page. We can see that our runtime-detection will automatically search three paths for valid runtimes of any type. 
+
+image::/documentation/whatsnew/server/images/JBIDE-15189_rt_detect_2.png[]
+
+Once we click search, the runtime-detection's search dialog appears, with results it has found. In this case, it has located an EAP 6.4 and an EAP 7.0 installation. However, we can see that both have errors. If we click on the error column for the discovered EAP 7.0, the error is expanded, and we see that we're missing a valid / compatible JRE. To fix the issue, we should click on this item. 
+
+image::/documentation/whatsnew/server/images/JBIDE-15189_rt_detect_3.png[]
+
+When we click on the problem for EAP 7, the new JRE dialog appears, allowing us to add a compatible JRE. The dialog helpfully informs us of what the restrictions are for this specific runtime. In this case, we're asked to define a JRE with a minimum version of Java-8. 
+
+image::/documentation/whatsnew/server/images/JBIDE-15189_rt_detect_4.png[]
+
+If we continue along with the process by locating and adding a Java 8 JRE, as shown above, and finish the dialog, we'll see that all the errors will disappear for both runtimes. In this example, the EAP 6.4 required a JRE of Java 7 or higher. The addition of the Java 8 JRE fixed this issue as well. 
+
+image::/documentation/whatsnew/server/images/JBIDE-15189_rt_detect_5.png[]
+
+Hopefully, this will help users preemptively discover and fix errors before being hit with surprising errors when trying to use the created server adapters. 
+
+==== Support for WildFly 10.1
+
+The WildFly 10.0 Server adapter has been renamed to WildFly 10.x. It has been tested and verified to work for WildFly 10.1 installations. 
+
+=== Hibernate Tools
+
+==== Hibernate Runtime Provider Updates
+
+A number of additions and updates have been performed on the available Hibernate runtime  providers.
+
+===== New Hibernate 5.2 Runtime Provider
+
+With final releases available in the Hibernate 5.2 stream, the time was right to make available a corresponding Hibernate 5.2 runtime provider. This runtime provider incorporates Hibernate Core version 5.2.2.Final and Hibernate Tools version 5.2.0.Beta1.  
+
+image::/documentation/whatsnew/hibernate/images/4.4.1.Final/hibernate_5_2.png[title="Hibernate 5.2 is available", width="381", align="center"]
+
+===== Other Runtime Provider Updates
+
+The Hibernate 4.3 runtime provider now incorporates Hibernate Core version 4.3.11.Final and Hibernate Tools version 4.3.5.Final.
+
+The Hibernate 5.0 runtime provider now incorporates Hibernate Core version 5.0.10.Final and Hibernate Tools version 5.0.2.Final.
+
+The Hibernate 5.1 runtime provider now incorporates Hibernate Core version 5.1.1.Final and Hibernate Tools version 5.1.0.CR1.
+
+=== Forge Tools
+
+==== Added Install addon from the catalog command
+
+From Forge 3.3.0.Final onwards it is now possible to query and install addons listed in the http://forge.jboss.org/addons[Forge addons page].
+
+image::/documentation/whatsnew/forge/images/4.4.1.AM3/addon-install-from-catalog.png[]
+
+==== Forge Runtime updated to 3.3.1.Final
+
+The included Forge runtime is now 3.3.1.Final. Read the official announcement http://forge.jboss.org/news/jboss-forge-3.3.1.final-is-here[here].
+
+image::/documentation/whatsnew/forge/images/4.4.1.Final/startup.png[]
+
+=== Freemarker
+
+==== Freemarker 2.3.25
+
+Freemarker library included in the Freemarker IDE was updated to latest available version 2.3.25.
+
+==== flth / fltx file extensions added
+
+The new flth and fltx extensions have been added and associated with Freemarker IDE. `flth` stands for HTML content whereas `fltx` stands for XML content.
+
+==== Overhaul of the plugin template parser
+
+The parser that FreeMarker IDE uses to extract IDE-centric information
+(needed for syntax highlighting, related tag highlighting,
+auto-completion, outline view, etc.) was overhauled. Several bugs were
+fixed, and support for the newer template language features were
+added. Also, the syntax highlighting is now more detailed inside
+expressions.
+
+==== Related tag background highlighting fixed
+
+Fixed the issue when the (by default) yellow highlighting of the
+related FTL tags shift away from under the tag as you type.
+
+==== Showing whitespace, block selection mode
+
+The standard "Show whitespace characters" and "Toggle block selection
+mode" icons are now available when editing a template.
+
+==== Improved automatic finishing of FreeMarker constructs
+
+When you type `<#`, `<@`, `${`, `\#{` and `<#--` the freemarker editor now automatically closes them.
+
+==== Error positions links on the console
+
+When a FreeMarker exception is printed to the console, the error
+position in it is a link that navigates to the error. This has worked
+long ago, but was broken for quite a while.
+
+==== Fixed auto-indentation
+
+When hitting enter, sometimes the new line haven't inherited the
+indentation of the last line.
+
+==== Updated the "database" used for auto completion
+
+Auto completion now knows all directives and "built-ins" up to
+FreeMarker 2.3.25.
+
+== What is next?
+
+Having JBoss Tools 4.4.1 and Developer Studio 10.1 out we are already working on the next maintenance release for Eclipse Neon.1.
+
+Enjoy!
+
+Jeff Maury
