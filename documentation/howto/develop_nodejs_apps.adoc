@@ -1,0 +1,106 @@
+== Create and Import Node.js Applications
+
+Node.js is an event-based, asynchronous I/O framework and is used to develop applications that run JavaScript on the client and server side. This allows the application to re-use parts of the code and to avoid switching contexts. Node.js is commonly used to create applications such as static file servers, messaging middleware, HTML5 game servers, web application framework, and others.
+
+JBoss Tools supports node.js application development using the npm package installer and offers a built-in debugging tool to identify and fix issues with applications. In the subsequent sections, instructions are available for the following tasks:
+
+. <<prereqs>>
+. <<create_js_app>>
+. <<import_project>>
+. <<debug_apps>>
+
+[[prereqs]]
+=== Setting Up Prerequisites for Node.js Development
+
+Ensure that the following prerequisites are met to start developing node.js applications in JBoss Tools:
+
+. Install npm. On Red Hat Enterprise Linux and Fedora, use the `sudo dnf install npm` command. See the npm documentation (https://docs.npmjs.com/getting-started/installing-node) for installation information about other operating systems.
+. Install JBoss Tools.
+
+**Result:** You are now ready to start developing Node.js applications with JBoss Tools.
+
+[[create_js_app]]
+=== Creating a new JavaScript Application
+
+To create a new JavaScript project and application in JBoss Tools:
+
+. To create a new JavaScript project:
+.. Click menu:File[New > Other] and type `JavaScript` in the search text box.
+.. Select `JavaScript Project` and click *Next*.
+.. In the `Project Name` field, add a name for your new project.
+.. Ensure that the rest of the fields, which are set to the default settings, are as required, and then click *Finish* to create the new project.
+.. If asked to view the JavaScript perspective, click *Yes*. Your new project is listed in the `Project Explorer` view.
+. To interactively create a `package.json` file:
+.. Click menu:File[New > Other] and then type `npm` in the search box.
+.. From the search results, click *npm Init*.
+.. Set the Base directory to your JavaScript project folder in your JBoss Tools workspace.
+.. Optionally, clear the `Use default configuration` check box to supply non-default values for these fields.
+.. Click *Finish* to continue with the default values for the `package.json` file or to continue after changing the default values.
++
+.Generate a New package.json File
+image::nodejs_generate_package_json_file.png[Generate a New package.json File]
++
+.. The new `package.json` file is generated and displayed for editing. If required, manually edit the file in the displayed pane and save the changes.
++
+.Manually Edit the Generated package.json File
+image::nodejs_manual_edit_package_file.png[Manually Edit the Generated package.json File]
++
+. Manually edit the `package.json` file to add dependencies. Dependencies are modules which provide extended functionality, such as libraries and frameworks. See the following screen capture for an example of the required format for dependencies and developer dependencies.
++
+.Adding Dependencies to the package.json File
+image::nodejs_adding_dependencies.png[Adding Dependencies to the package.json File]
++
+For further details about dependencies, see the NPM documentation: https://docs.npmjs.com/files/package.json#dependencies
+. Create a new JavaScript file with the required business logic:
+.. In the `Project Explorer` view, right-click the name of your project, and select menu:New[File].
+.. In the dialog box, add a name for the new file, for example `index.js`, and click *Finish* to create the new file.
+.. The new file displays for editing in a new tab. Add the required business logic to the your JavaScript files and save the changes.
+. Run the project files by right-clicking the `index.js` file in your project and select menu:Run As[Node.js Application]. The `Console` view appears and displays details about the application as it runs, or errors if it is unable to run the application.
+
+**Result:** You have created a new JavaScript project and application.
+
+[[import_project]]
+=== Importing an Existing JavaScript Project
+
+You can import an existing JavaScript project directly into JBoss Tools and then make changes and run the project as follows:
+
+. Import an existing project into JBoss Tools:
+.. Click menu:File[Import].
+.. In the `Import` dialog box, expand the *General* option.
+.. Click *Existing Projects into Workspace* and then click *Next*.
+.. In the `Import Projects` dialog box:
+... Click either the `Select root directory` or `Select archive file` options based on your project format.
+... Click *Browse* to add the path to the project root directory or archive file.
+... In the `Projects` box, select one or more projects to import into the workspace.
+... If required, click the `Search for nested projects` option to locate nested projects in the root directory or archive file.
+... Click the `Copy projects into workspace` option to save a copy of the imported project in the workspace directory specified for JBoss Tools.
+... If required, select the `Add project to working sets` checkbox and add the details for a new or existing working set.
+... Click *Finish* to add the project to the workspace. The `Project Explorer` view now contains your imported project.
+. If required, expand the project in the `Project Explorer` view and either double-click the project files to edit them, or right-click and select menu:New[File] to add a new JavaScript file for your project.
+. Run the project files by right-clicking the `index.js` file in your project and click menu:Run As[Node.js Application]. The `Console` view appears and displays details about the application as it runs, or errors if it is unable to run the application.
+
+**Result:** You have imported an existing JavaScript project into JBoss Tools.
+
+[[debug_apps]]
+=== Debugging Node.js Applications
+
+After either creating a new Node.js project or importing an existing one and then running the project, some errors may appear. JBoss Tools includes a debugger to help identify and resolve these issues. To use the debugging feature:
+
+. Start the debugger for your project:
+.. In the `Project Explorer` view, expand your project.
+.. Right-click the `index.js` file for your project and click menu:Debug As[Node.js Project].
+.. Select the `Remember my decision` check box in the dialog box to apply your selection to subsequent perspective shifts and then click *Yes* or *No* to continue.
+. Review the elements of your project’s JavaScript files to locate errors in one of two ways:
+.. Expand any variable listed in the `Variables` tab to view additional objects and edit the details for each item.
+.. Hover the mouse cursor over any variables in the `index.js` tab to view and edit its property details.
+. Make changes to the files to address the errors:
+.. Edit the `index.js` file in the appropriate view.
+.. Save the changes. The `Console` view runs the updated file and displays changes.
+. After debugging the errors, use the *Resume*, *Suspend*, and *Terminate* buttons (image:nodejs_resume_pause.png[title="Resume, Suspect, and Terminate Buttons"]) as follows to test your changes:
+.. The *Resume* button (green triangle) continues running the project files.
+.. The *Suspend* button (two yellow rectangles) temporarily stops running the project files to allow users to make changes.
+.. The *Terminate* button (red square) ends the running of the project files.
+. Repeat steps 4 through 6 as necessary to locate and fix errors found by the debugger.
+. When debugging is concluded, click menu:Window[Show View > Other] and select `Project Explorer` from the options. This displays the list of projects again.
+
+**Result:** You have debugged your application and returned to the `Project Explorer` view.

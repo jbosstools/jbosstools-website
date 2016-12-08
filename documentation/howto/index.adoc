@@ -27,6 +27,8 @@ link:mobiledev_createwebapp.html[Create Your First Mobile Web App]
 
 link:generate_html5_web_app.html[Generate a HTML5 Web App Using the Mobile Web Palette]
 
+link:develop_nodejs_apps.html[Create and Import Node.js Applications]
+
 link:forge.html[Develop Applications Using the Forge Tool]
 
 link:hibernate.html[Develop Applications Using the Hibernate Tools]
