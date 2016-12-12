@@ -196,8 +196,7 @@
     - if page.bottom_javascripts
       - page.bottom_javascripts.each do |javascript|
         %script{:src=>relative(javascript), :type=>'text/javascript'}
-    %script{:src=>"https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"}
-
+    %script{:src=>"https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"}
     :plain
       <!-- begin eloqua tracking -->
       <script type='text/javascript' language='JavaScript' src='http://www.redhat.com/j/elqNow/elqCfg.js'></script>
