@@ -58,7 +58,7 @@ metadata_expire=24h
 
 == Red Hat developer signing key
 
-As this is tech preview, you need to access the Red Hat developer signing key that has been used for producing the JBoss Developer Studio RPM.
+As this is tech preview, you need to accept the Red Hat developer signing key that has been used for producing the JBoss Developer Studio RPM.
 
 Execute the following command:
 
