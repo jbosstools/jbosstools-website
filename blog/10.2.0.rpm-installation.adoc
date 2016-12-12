@@ -1,0 +1,99 @@
+= Installing Red Hat Developer Studio 10.2.0.GA through RPM
+:page-layout: blog
+:page-author: jeffmaury
+:page-tags: [tech-preview, jbosstools, devstudio, rpm]
+:page-date: 2016-12-12
+
+With the release of link:/downloads/devstudio/neon/10.2.0.GA.html[Red Hat JBoss Developer Studio 10.2], it is now possible to install Red Hat JBoss Developer Studio as an RPM.
+It is available as a tech preview. The purpose of this article is to describe the steps you should follow in order to install Red Hat JBoss Developer Studio.
+ 
+== Red Hat Software Collections
+
+JBoss Developer Studio RPM relies on Red Hat Software Collections. You don't need to install Red Hat Software Collections but you need to enable
+the Red Hat Software Collections repositories before you start the installation of the Red Hat JBoss Developer Studio.
+
+=== Enabling the Red Hat Software Collections base repository
+
+The identifier for the repository is *rhel-server-rhscl-7-rpms* on Red Hat Enterprise Linux Server and *rhel-workstation-rhscl-7-rpms* on Red Hat Enterprise Linux Workstation.
+
+The command to enable the repository on Red Hat Enterprise Linux Server is:
+
+```
+sudo subscription-manager repos --enable rhel-server-rhscl-7-rpms
+```
+
+The command to enable the repository on Red Hat Enterprise Linux Workstation is:
+
+```
+sudo subscription-manager repos --enable rhel-workstation-rhscl-7-rpms
+```
+
+=== Enabling the Red Hat Software Collections Extended Update Support repository
+
+The identifier for the repository is *rhel-server-rhscl-7-eus-rpms*.
+
+The command to enable the repository is:
+
+```
+sudo subscription-manager repos --enable rhel-server-rhscl-7-rpms
+```
+
+For more information, please refer to the https://access.redhat.com/documentation/en/red-hat-software-collections/?version=2/[Red Hat Software Collections] documentation.
+
+== JBoss Developer Studio repository
+
+As this is a tech preview, you need to manually configure the JBoss Developer Studio repository. 
+
+Create a file */etc/yum.repos.d/rh-eclipse46-devstudio.repo* with the following content:
+
+```
+[rh-eclipse46-devstudio-stable-10.x]
+name=rh-eclipse46-devstudio-stable-10.x
+baseurl=https://devstudio.redhat.com/static/10.0/stable/rpms/x86_64/
+enabled=1
+gpgcheck=1
+upgrade_requirements_on_install=1
+metadata_expire=24h
+```
+
+== Red Hat developer signing key
+
+As this is tech preview, you need to access the Red Hat developer signing key that has been used for producing the JBoss Developer Studio RPM.
+
+Execute the following command:
+
+```
+sudo rpm --import "https://www.redhat.com/security/a5787476.txt"
+```
+
+== Install Red Hat JBoss Developer Studio
+
+You're now ready to install Red Hat JBoss Developer Studio through RPM.
+
+Enter the following command:
+
+```
+sudo yum install rh-eclipse46-devstudio
+```
+
+Answer 'y' when asked and after all required dependencies have been downloaded and installed, Red Hat JBoss Developer Studio is available on your 
+system through the standard update channel !!!
+
+You should see messages like the following:
+
+image::/blog/images/20161212-rpm/rh-eclipse46-devstudio.log.png[]
+
+== Launch Red Hat JBoss Developer Studio
+
+From the system menu, mouse over the *Programming* menu, and the *Red Hat Eclipse* menu item will appear. 
+
+image::/blog/images/20161212-rpm/programming-menu.png[]
+
+Select this menu item and Red Hat JBoss Developer Studio user interface will appear then:
+
+image::/blog/images/20161212-rpm/devstudio.png[]
+
+
+Enjoy!
+
+Jeff Maury
