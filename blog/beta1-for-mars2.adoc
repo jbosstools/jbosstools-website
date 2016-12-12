@@ -4,16 +4,16 @@
 :page-tags: [release, jbosstools, devstudio, jbosscentral]
 :page-date: 2015-12-22
 
-Just in time for Christmas, http://tools.jboss.org/downloads/jbosstools/mars/4.3.1.Beta1.html[JBoss Tools 4.3.1.Beta1] and http://tools.jboss.org/downloads/devstudio/mars/9.1.0.Beta1.html[JBoss Developer Studio 9.1.0.Beta1] are ready for download. This is the first beta for our maintenance Mars release.
+Just in time for Christmas, https://tools.jboss.org/downloads/jbosstools/mars/4.3.1.Beta1.html[JBoss Tools 4.3.1.Beta1] and https://tools.jboss.org/downloads/devstudio/mars/9.1.0.Beta1.html[JBoss Developer Studio 9.1.0.Beta1] are ready for download. This is the first beta for our maintenance Mars release.
 
 image::/blog/images/jbosstools-jbdevstudio-blog-header.png[]
 
 CAUTION: Remember that since JBoss Tools 4.3.0 we require Java 8 for installing and using of
 JBoss Tools. We still support developing and running applications using older Java runtimes. See more in link:2015-06-23-beta1-for-mars.html#java-8-to-run-eclipse-older-runtimes-ok-for-builds-deployment[Beta1 blog].
 
-== What is New? 
+== What is New?
 
-Full info is at http://tools.jboss.org/documentation/whatsnew/jbosstools/4.3.1.Beta1.html[this page]. Some highlights are below.
+Full info is at https://tools.jboss.org/documentation/whatsnew/jbosstools/4.3.1.Beta1.html[this page]. Some highlights are below.
 
 == Docker Tools
 
@@ -47,12 +47,12 @@ image:../documentation/whatsnew/docker/images/docker_mars2/terminal_tm_support.p
 
 The Import wizard that you can access via _File > Import Projects from Folder..._, _File > Import... > General > Projects from Folder_ or _File > Import... > Git > Projects from Git (auto-import)_ allows more user control. You can now see a proposal for the import (what will be imported and how) and select which sub-projects to import or not.
 
-Performances have also been highly improved, and importing a Maven project will now suggest installation of m2e connectors when necessary.  
+Performances have also been highly improved, and importing a Maven project will now suggest installation of m2e connectors when necessary.
 
 
 == Credential Framework
 
-A new feature has been added to safely store your credentials for various domains in a central location. As our tools grow, it has become more likely that at least some credentials will be re-used by several different features. Having a central place to store, for example, your Red Hat Access credentials or JBoss.org credentials, for re-use by our server adapters or download-runtime features helps to prevent you from having to constantly type the same usernames and passwords in multiple locations. It also helps to ensure that if you change your password on some remote server, you only need to update one location in eclipse. 
+A new feature has been added to safely store your credentials for various domains in a central location. As our tools grow, it has become more likely that at least some credentials will be re-used by several different features. Having a central place to store, for example, your Red Hat Access credentials or JBoss.org credentials, for re-use by our server adapters or download-runtime features helps to prevent you from having to constantly type the same usernames and passwords in multiple locations. It also helps to ensure that if you change your password on some remote server, you only need to update one location in eclipse.
 
 image:../documentation/whatsnew/general/images/credentials1.png[Credentials Preference Page]
 
@@ -61,7 +61,7 @@ image:../documentation/whatsnew/general/images/credentials1.png[Credentials Pref
 
 More than 80 issues have been fixed in this release of the OpenShift tooling, mostly targetting OpenShift 3 support.
 OpenShift 3 was introduced as a techpreview feature in JBDS 9.0.0.GA but will graduate to a supported feature in the upcoming JBDS 9.1.0.GA release.
-More details for all improvements you can find http://tools.jboss.org/documentation/whatsnew/jbosstools/4.3.1.Beta1.html#openshift[here]. 
+More details for all improvements you can find https://tools.jboss.org/documentation/whatsnew/jbosstools/4.3.1.Beta1.html#openshift[here].
 
 ==== Deploy Workspace Projects
 You can now deploy existing workspace projects to OpenShift 3 instances. You can either create a new OpenShift application, using an OpenShift 3 connection and then select the workspace project to deploy, or you can start by right-clicking on a project and use the `Configure...` > `Deploy to OpenShift...` menu.

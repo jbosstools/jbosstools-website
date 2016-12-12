@@ -41,11 +41,11 @@ functionality already and we'll walk through some of that.
 
 The new tooling appears in the JBoss Tools Integration Stack "Early
 Access" site, so be sure to keep up with that effort. (You can see
-Paul's latest post here: link:http://tools.jboss.org/blog/2015-04-16-JBTIS-421-Final.html[
-"JBoss Tools Integration Stack - Luna integration tooling for BRMS/BPMS, 
+Paul's latest post here: link:https://tools.jboss.org/blog/2015-04-16-JBTIS-421-Final.html[
+"JBoss Tools Integration Stack - Luna integration tooling for BRMS/BPMS,
 Data Virt, SOA 5.x + Early Access Fuse and SwitchYard."]
 
-Keep up to date with JBoss Tools Integration Stack to ensure you have the 
+Keep up to date with JBoss Tools Integration Stack to ensure you have the
 latest version of the Transformation tooling.
 
 == Let's Start With a Use Case - XML to JSON
@@ -65,7 +65,7 @@ Why yes, I did! But I also said that we have ways to create Java models
 from other formats. And in this first wave of Transformation
 functionality we offer built-in conversion from XML (XML schemas or
 instance documents) and JSON (JSON schemas or instance documents) to
-help get you that far. plus some other, more open-ended capabilities we'll talk about down the line, 
+help get you that far. plus some other, more open-ended capabilities we'll talk about down the line,
 we will walk through each step of getting you
 from your sample data to a fully testable solution.
 

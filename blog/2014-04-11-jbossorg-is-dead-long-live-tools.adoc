@@ -3,24 +3,24 @@
 :page-author: maxandersen
 :page-tags: [jbosstools, website, jbosscentral]
 
-We have been working for a while on doing a refresh of our website, and today we are happy to announce http://tools.jboss.org[tools.jboss.org].
+We have been working for a while on doing a refresh of our website, and today we are happy to announce https://tools.jboss.org[tools.jboss.org].
 
-== Goals 
+== Goals
 
 We had a few goals for the website:
 
 . Make it simple and clear how to download the plugins
 . Explain what features are in the tools
-. Include New and noteworthy 
+. Include New and noteworthy
 . Make it easier to update/fix the content
 
-and I think we reached all of them. 
+and I think we reached all of them.
 
 === Make it simple and clear how to download the plugins
 
 Our old download page had grown organically over the last 7 years and, despite all good intentions, we had ended up with a download
 page with way too many options presented by default. With the new site, we went for simplicity first, and so the Downloads page
-now simply presents you with two options: Download either latest stable JBoss Tools or Developer Studio. 
+now simply presents you with two options: Download either latest stable JBoss Tools or Developer Studio.
 
 image::images/newsite_downloads.png[link=/downloads]
 
@@ -31,7 +31,7 @@ dirty details.
 === Explain what features are in the tools
 
 For this we created the link:/features[Features] page. This page gives an overview over all of the various projects and technologies we
-support and if you click on the images you get more information about each feature. 
+support and if you click on the images you get more information about each feature.
 
 image::images/newsite_features.png[]
 

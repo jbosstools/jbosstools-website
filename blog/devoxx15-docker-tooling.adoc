@@ -24,7 +24,7 @@ The demo showed how a user can:
 - Create and configure a server adapter in the Servers View to deploy the application in the container data volume.
 
 As explained during the demo, the Docker tooling is available from the http://eclipse.org/linuxtools[Linux Tools project at Eclipse.org] and is also
-bundled in http://tools.jboss.org/downloads/jbosstools/mars/4.3.0.Final.html[JBoss Tools] and http://tools.jboss.org/downloads/devstudio/mars/9.0.0.GA.html[Developer Studio], so you can get it from the update sites or from the marketplace.
+bundled in https://tools.jboss.org/downloads/jbosstools/mars/4.3.0.Final.html[JBoss Tools] and https://tools.jboss.org/downloads/devstudio/mars/9.0.0.GA.html[Developer Studio], so you can get it from the update sites or from the marketplace.
 
 Slides for the demo are available http://www.slideshare.net/XavierCoulon/docker-tooling-for-java-ee-developers[on Slidehare].
 

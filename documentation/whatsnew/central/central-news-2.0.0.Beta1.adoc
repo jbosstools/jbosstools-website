@@ -16,7 +16,7 @@ This release includes a slick, http://english.stackexchange.com/questions/19689/
  * links to:
  ** the software updates page, where you can install new Eclipse features that have been tested to work with JBoss Tools
  ** the http://www.jboss.org/developer-materials/ website
- ** the http://tools.jboss.org/cat/[Community Acceptance testing] page, where you can help us make JBoss Tools better
+ ** the https://tools.jboss.org/cat/[Community Acceptance testing] page, where you can help us make JBoss Tools better
  * Finally, the lowest section displays common wizards and the list of recently used examples, helping you to start new projects quickly and easily
 
 image::./images/html-central.png[]

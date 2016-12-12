@@ -23,7 +23,7 @@ Let us know on our forum, or contact Red Hat support if this will be a problem f
 == Installation
 
 JBoss Developer Studio comes with everything pre-bundled in its installer. Simply download it from our https://www.jboss.org/products/devstudio.html[JBoss Products page] and run it like this:
- 
+
     java -jar jboss-devstudio-<installername>.jar
 
 JBoss Tools or Bring-Your-Own-Eclipse (BYOE) JBoss Developer Studio require a bit more:
@@ -41,9 +41,9 @@ For JBoss Tools, you can also use our update site directly if you are up for it.
 
 Note: Integration Stack tooling will become available from JBoss Central at a later date.
 
-== What is new ? 
+== What is new ?
 
-The full details of what is new is available on http://tools.jboss.org/documentation/whatsnew/jbosstools/4.3.0.Beta1.html[this page]. Some highlights below.
+The full details of what is new is available on https://tools.jboss.org/documentation/whatsnew/jbosstools/4.3.0.Beta1.html[this page]. Some highlights below.
 
 === New Shiny Central
 
@@ -56,10 +56,10 @@ image::/blog/images/html5_central.png[]
 There is now tooling to connect to (multiple) Docker daemons which allows you to pull, build, start, stop, etc. Images and Containers.
 
 image::/documentation/whatsnew/docker/images/docker_explorer_view.png[]
-		
+
 The Docker tooling is technically part of Eclipse Mars, but we wanted to make it easily available to all JBoss Tools users, so we included it into our updatesite. In future releases, we will add some specific JBoss Tools integrations for our server adapters and OpenShift - but for now, what is included are the vanilla Eclipse Mars Docker tools.
 
-=== Visual Java EE 7 Batch 
+=== Visual Java EE 7 Batch
 
 We've added a visual diagram editor for Java EE 7 Batch tooling. Allowing you to visualize and edit your batch flow:
 
@@ -73,7 +73,7 @@ video::wmWFQKvTWSc[youtube]
 
 === OpenShift 3
 
-OpenShift 3 now works with OAuth logins as well as basic authentication and there is now support 
+OpenShift 3 now works with OAuth logins as well as basic authentication and there is now support
 for creating applications from OpenShift/Kubernetes templates.
 
 image::/documentation/whatsnew/openshift/images/create-from-template.png[]
@@ -87,8 +87,8 @@ image::/blog/images/20150521-monitoring-view.png[]
 === Experimental LaunchBar
 
 The Eclipse CDT project created a new feature called the LaunchBar, allowing to easily run launch configurations.
-We've added experimental support for WTP server adapters (like JBoss server adapters) making them as easy to run as a Java app. 
-http://tools.jboss.org/documentation/whatsnew/jbosstools/4.3.0.Beta1.html#launchbar[Details here].
+We've added experimental support for WTP server adapters (like JBoss server adapters) making them as easy to run as a Java app.
+https://tools.jboss.org/documentation/whatsnew/jbosstools/4.3.0.Beta1.html#launchbar[Details here].
 
 image::/documentation/whatsnew/server/images/20150604_launchbar.png[]
 

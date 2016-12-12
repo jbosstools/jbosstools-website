@@ -13,15 +13,15 @@ What is CordovaSim?::
   * *Eclipse Console logging*
 
 Is CordovaSim built on top of https://github.com/jbosstools/jbosstools-browsersim[BrowserSim] ?::
-   Yes. Basically, CordovaSim extends BrowserSim functionality by adding simulation of https://cordova.apache.org/[*Apache Cordova API*]. So, questions covered in http://tools.jboss.org/documentation/faq/browsersim.html[BrowserSim FAQ] are 100 % relevant to CordovaSim.
+   Yes. Basically, CordovaSim extends BrowserSim functionality by adding simulation of https://cordova.apache.org/[*Apache Cordova API*]. So, questions covered in https://tools.jboss.org/documentation/faq/browsersim.html[BrowserSim FAQ] are 100 % relevant to CordovaSim.
    *N.B.* the most important sections are:
 
-   * http://tools.jboss.org/documentation/faq/browsersim.html#main-features[Main Features]
-   * http://tools.jboss.org/documentation/faq/browsersim.html#known-issues[Known Issues]
-   * http://tools.jboss.org/documentation/faq/browsersim.html#platform-specific-questions[Platform Specific Questions]  
+   * https://tools.jboss.org/documentation/faq/browsersim.html#main-features[Main Features]
+   * https://tools.jboss.org/documentation/faq/browsersim.html#known-issues[Known Issues]
+   * https://tools.jboss.org/documentation/faq/browsersim.html#platform-specific-questions[Platform Specific Questions]
 
 == Known issues
-* *Livereload does not work with CordovaSim on default https://www.eclipse.org/thym/[THYM] project*. 
+* *Livereload does not work with CordovaSim on default https://www.eclipse.org/thym/[THYM] project*.
 Basically, this issue is coupled with the https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy[Content Security Policy] in the `cordova-plugin-whitelist` which implements a whitelist policy for navigating the application webview on Cordova 4.0. In order to fix LiveReload one needs to remove the following meta tag with `Content-Security-Policy`
 ```
  <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">

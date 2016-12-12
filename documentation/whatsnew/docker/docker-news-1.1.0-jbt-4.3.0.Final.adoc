@@ -8,7 +8,7 @@
 
 Tooling for Docker is available in Eclipse Mars under the http://eclipse.org/linuxtools[Linux tools]
 umbrella. Despite this name, this works on all major developer platforms. It
-is mirrored on http://tools.jboss.org/downloads/jbosstools/mars/4.3.0.Final.html[JBoss Tools update site]
+is mirrored on https://tools.jboss.org/downloads/jbosstools/mars/4.3.0.Final.html[JBoss Tools update site]
 and is also included in Developer Studio 9.0.0.Final.
 
 == Connection Wizard

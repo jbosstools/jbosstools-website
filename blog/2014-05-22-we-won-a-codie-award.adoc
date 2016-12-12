@@ -3,12 +3,12 @@
 :page-author: maxandersen
 :page-tags: [award, jbdevstudio, jbosscentral]
 
-I just got the great news that last night link:/downloads/devstudio/kepler/[Red Hat JBoss Developer Studio 7] (built on top of link:/downloads/jbosstools/kepler/4.1.2.Final.html[JBoss Tools 4.2]) 
+I just got the great news that last night link:/downloads/devstudio/kepler/[Red Hat JBoss Developer Studio 7] (built on top of link:/downloads/jbosstools/kepler/4.1.2.Final.html[JBoss Tools 4.2])
 was one of the http://www.siia.net/codies/2014/winners.asp[Winners in the CODiE Awards].
 
 We won in the http://www.siia.net/codies/2014/finalist_detail.asp?ID=20["Best Mobile Development Solution"] category.
 
-Really happy to see that happening! 
+Really happy to see that happening!
 
 A big giant thank you and congratulations to the JBoss Tools and Developer Studio https://github.com/orgs/jbosstools/members[team] and https://www.ohloh.net/p/11081/contributors[contributors]
 for making it all possible!
@@ -17,8 +17,8 @@ One of the materials submitted was this video outlining the mobile features in p
 
 video::67480300[vimeo, width=640, height=400]
 
-Take a look at that and know since the nomination back in September 2013 we now got 
-http://tools.jboss.org/downloads/devstudio/luna/8.0.0.Beta1.html[JBoss Developer Studio 8 Beta 1] with even more goodies, including http://tools.jboss.org/documentation/whatsnew/jbosstools/4.2.0.Beta1.html[Mobile tooling improvements].
+Take a look at that and know since the nomination back in September 2013 we now got
+https://tools.jboss.org/downloads/devstudio/luna/8.0.0.Beta1.html[JBoss Developer Studio 8 Beta 1] with even more goodies, including https://tools.jboss.org/documentation/whatsnew/jbosstools/4.2.0.Beta1.html[Mobile tooling improvements].
 
 Worth mentioning that http://www.siia.net/codies/2014/winners_detail.asp?nID=157[OpenShift] won in the http://www.siia.net/codies/2014/finalist_detail.asp?ID=7["Best Cloud Platform as a Service"] category too - Congratulations!.
 

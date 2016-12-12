@@ -13,13 +13,13 @@ CAUTION: Java 8 is required for installing and using JBoss Tools. We still suppo
 == Installation
 
 JBoss Developer Studio comes with everything pre-bundled in its installer. Simply download it from our https://www.jboss.org/products/devstudio.html[JBoss Products page] and run it like this:
- 
+
     java -jar jboss-devstudio-<installername>.jar
 
 JBoss Tools or Bring-Your-Own-Eclipse (BYOE) JBoss Developer Studio require a bit more:
 
 This release requires at least Eclipse 4.5 (Mars) but we recommend
-using the latest http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/marsr[Eclipse 4.5.1 Mars JEE Bundle] since then you get most of the dependencies preinstalled. 
+using the latest http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/marsr[Eclipse 4.5.1 Mars JEE Bundle] since then you get most of the dependencies preinstalled.
 
 Once you have installed Eclipse, you can either find us on the Eclipse Marketplace under "JBoss Tools" or "Red Hat JBoss Developer Studio".
 
@@ -27,7 +27,7 @@ For JBoss Tools, you can also use our update site directly.
 
     http://download.jboss.org/jbosstools/mars/stable/updates/
 
-== What is new ? 
+== What is new ?
 
 There are many new features and improvements. The full list of what is new you can find on link:/documentation/whatsnew/jbosstools/4.3.0.Final.html[this page].
 Hundreds of bugs have been fixed on JBoss Tools side but we also continue to work on making Eclipse better and contribute to many Eclipse projects: Web Tools, Docker, Maven Integration, JavaScript, Hybrid Mobile Tools and many others.
@@ -47,7 +47,7 @@ We are working on improving OpenShift 3 tooling and it will be included in JBoss
 
 Tooling for Docker is available in Eclipse Mars under the http://eclipse.org/linuxtools[Linux tools]
 umbrella. Despite this name, this works on all major developer platforms. It
-is mirrored on http://tools.jboss.org/downloads/jbosstools/mars/4.3.0.Final.html[JBoss Tools update site]
+is mirrored on https://tools.jboss.org/downloads/jbosstools/mars/4.3.0.Final.html[JBoss Tools update site]
 and is also included in Developer Studio 9.
 
 image::/documentation/whatsnew/docker/images/docker_mars1/docker_explorer_view.png[]
@@ -62,7 +62,7 @@ image::/documentation/whatsnew/batch/images/4.3.0.Beta1/diagram.png[]
 
   * link:/documentation/whatsnew/jbosstools/4.3.0.Final.html#easier-import-of-projects[Easier import]
   * Better link:/documentation/whatsnew/jbosstools/4.3.0.Final.html#arquillian[Arquillian] support
-  * link:/documentation/whatsnew/jbosstools/4.3.0.Final.html#aerogear[Hybrid Mobile Tools] improvements 
+  * link:/documentation/whatsnew/jbosstools/4.3.0.Final.html#aerogear[Hybrid Mobile Tools] improvements
   * link:/documentation/whatsnew/jbosstools/4.3.0.Final.html#cdi[CDI 1.2] support
   * link:/documentation/whatsnew/jbosstools/4.3.0.Final.html#javascript[Bower] tooling
   * link:/documentation/whatsnew/jbosstools/4.3.0.Final.html#javascript-editing-improvements[JavaScript Editing] improvements

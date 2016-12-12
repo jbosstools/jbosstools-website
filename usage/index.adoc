@@ -113,4 +113,4 @@ On startup https://tools.jboss.org/usage/errors/rest/2.0/community/discovery is 
 
 This configuration file lists the packages and bundles to which AERI will listen for errors most likely related to JBoss Tools.
 
- 
+

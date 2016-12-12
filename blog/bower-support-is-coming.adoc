@@ -21,7 +21,7 @@ JBoss Bower Tools fall back on *native*  Node.js and Bower calls. Hence, the fol
 
 TIP: Installation instructions for *Node.js* and *npm* can be found https://docs.npmjs.com/getting-started/installing-node[here]. Bower is a command line utility which is installed via npm command `npm install -g bower`
 
-And then of course http://tools.jboss.org/downloads/jbosstools/mars/4.3.0.Nightly.html[latest build of JBoss Tools for Mars].
+And then of course https://tools.jboss.org/downloads/jbosstools/mars/4.3.0.Nightly.html[latest build of JBoss Tools for Mars].
 
 == Quick Start Guide
 
@@ -30,7 +30,7 @@ For now only *http://bower.io/docs/api/#init[init]* and *http://bower.io/docs/ap
 image::images/20150721_bower/bower-init-new-wizard.png[Bower Init wizard]
 
 This wizard helps to create `bower.json` file depending on set of preferences:
- 
+
 image::images/20150721_bower/bower-init-wizard-page.png[Bower Init wizard page]
 
 After pressing *"Finish"* button `bower.json` will be created under specified directory:
@@ -57,7 +57,7 @@ image::images/20150721_bower/bower-components.png[Bower components]
 
 Basically, that is all - one can now use those packages for future front-end development.
 
-== Demo 
+== Demo
 Here is a short demo https://vimeo.com/133675030[video] which describes a basic use case of JBoss Bower Tools:
 
 video::133675030[vimeo, width=640, height=400]
@@ -66,7 +66,7 @@ video::133675030[vimeo, width=640, height=400]
 Bower support will be available in `4.3.0.Beta2` release and above. You can also use our nightly http://download.jboss.org/jbosstools/updates/nightly/mars/[update site] in order to try Bower Tools (`JBoss Tools JavaScript Tools` category) before the official release:
 
 image::images/20150721_bower/bower-javascript-tools.png[Bower dependencies]
-   
+
 == Conclusion
 We are trying our best to make our tools as good as possible. User feedback is what we are seeking for now. We look forward to hearing your comments, remarks and proposals. +
 Have fun!

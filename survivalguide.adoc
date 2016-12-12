@@ -20,7 +20,7 @@ Want to write new and noteworthy ? Add a page into the structure at `documentati
 Want to add info about an upcoming event ? Add file to `events`, copying one of the existing ones, then submit a PR.
 
 Want something that is not listed here ? Look in the directory and see if you can find it or send mail to mailto:jbosstools-dev@lists.jboss.org asking for help/guidance or even better submit a PR adding the missing info.
- 
+
 == Prerequisites
 
 Follow the link:/README/[README] instructions to get Awestruct and its dependencies up and running.
@@ -44,7 +44,7 @@ The dependencies should already be installed by the Gemfile thus you just need t
 
 [source]
 ----
-gem install guard guard-livereload 
+gem install guard guard-livereload
 guard start
 ----
 
@@ -52,7 +52,7 @@ Install the LiveReload extension in your browser and click on the button next to
 
 Chrome users can install the v.2.0.9 extension from the https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei/details[Chrome Marketplace].
 
-Firefox users should use v. 2.0.9 or newer of the LiveReload extension available from https://github.com/downloads/siasia/livereload-extensions/LiveReload-2.0.9.xpi[here]. If you hit an issue where the browser disconnects just after it has connected, which means the server cannot push refresh commands to it, you are using an old plugin and should update it. 
+Firefox users should use v. 2.0.9 or newer of the LiveReload extension available from https://github.com/downloads/siasia/livereload-extensions/LiveReload-2.0.9.xpi[here]. If you hit an issue where the browser disconnects just after it has connected, which means the server cannot push refresh commands to it, you are using an old plugin and should update it.
 
 . Install the appropriate http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-[live reload plugin].
 . Install the right guard gems
@@ -168,6 +168,6 @@ This is good to share experiments with others. Be aware that if you push content
 // TODO create a noindex in robots.txt for non production profiles
 
 If you push changes to the +production+ branch,
-the updated website will be visible after roughly 5 minutes to http://tools.jboss.org[tools.jboss.org].
+the updated website will be visible after roughly 5 minutes to https://tools.jboss.org[tools.jboss.org].
 
 You can see the build progress over at https://travis-ci.org/jbosstools/jbosstools-website[travis-ci].

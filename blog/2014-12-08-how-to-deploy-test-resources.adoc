@@ -16,7 +16,7 @@ So you need a solution that works for both Eclipse, command line and even other 
 == Pre-requisites
 You only need :
 
-. a https://www.eclipse.org/downloads/[Java EE based Eclipse distribution] for the following to work: stock Eclipse, http://tools.jboss.org/downloads/[JBoss Developer Studio] or http://spring.io/tools/sts/all[SpringSource Tools Suite] for instance, as long as m2e-wtp is installed with it.
+. a https://www.eclipse.org/downloads/[Java EE based Eclipse distribution] for the following to work: stock Eclipse, https://tools.jboss.org/downloads/[JBoss Developer Studio] or http://spring.io/tools/sts/all[SpringSource Tools Suite] for instance, as long as m2e-wtp is installed with it.
 . a Maven project with packaging `war`
 
 == Configure a new `dev` profile

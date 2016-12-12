@@ -51,16 +51,16 @@ wget:
     - -e robots=off
     - --directory-prefix=cache
   urls:
-    - //static.jboss.org/theme/js/libs/jquery/jquery-1.9.1.js
-    - //static.jboss.org/theme/js/libs/jquery/jquery-1.9.1.min.js
-    - //static.jboss.org/theme/js/libs/html5/pre3.6/html5.min.js
-    - //static.jboss.org/theme/js/libs/prettify/188.0.0/prettify.min.js
-    - //static.jboss.org/theme/js/libs/holder/1.9/holder.js
-    - //static.jboss.org/theme/fonts/titilliumtext/
-    - //static.jboss.org/theme/fonts/font-awesome/
-    - //static.jboss.org/theme/images/common/
-    - //static.jboss.org/example/
-    - //static.jboss.org/tools/images/tools-banner-1180px.png
+    - https://static.jboss.org/theme/js/libs/jquery/jquery-1.9.1.js
+    - https://static.jboss.org/theme/js/libs/jquery/jquery-1.9.1.min.js
+    - https://static.jboss.org/theme/js/libs/html5/pre3.6/html5.min.js
+    - https://static.jboss.org/theme/js/libs/prettify/188.0.0/prettify.min.js
+    - https://static.jboss.org/theme/js/libs/holder/1.9/holder.js
+    - https://static.jboss.org/theme/fonts/titilliumtext/
+    - https://static.jboss.org/theme/fonts/font-awesome/
+    - https://static.jboss.org/theme/images/common/
+    - https://static.jboss.org/example/
+    - https://static.jboss.org/tools/images/tools-banner-1180px.png
 
 
 profiles:
@@ -83,12 +83,12 @@ profiles:
     minified: .min
     css_minifier: enabled
     js_minifier: enabled
-    jborg_fonts_url: //static.jboss.org/theme/fonts
-    jborg_images_url: //static.jboss.org/theme/images
-    jborg_js_url: //static.jboss.org/theme/js
-    project_images_url: //static.jboss.org/tools/images
-    bootstrap_css_url: //static.jboss.org/theme/css/bootstrap-community/2.3.1.5/bootstrap-community
-    bootstrap_js_url: //static.jboss.org/theme/js/libs/bootstrap-community/2.3.1.5/bootstrap-community
+    jborg_fonts_url: https://static.jboss.org/theme/fonts
+    jborg_images_url: https://static.jboss.org/theme/images
+    jborg_js_url: https://static.jboss.org/theme/js
+    project_images_url: https://static.jboss.org/tools/images
+    bootstrap_css_url: https://static.jboss.org/theme/css/bootstrap-community/2.3.1.5/bootstrap-community
+    bootstrap_js_url: https://static.jboss.org/theme/js/libs/bootstrap-community/2.3.1.5/bootstrap-community
     disqus: jbosstools-preview
     deploy:
       host: github_pages
@@ -105,12 +105,12 @@ profiles:
     minified: .min
     css_minifier: enabled
     js_minifier: enabled
-    jborg_fonts_url: //static.jboss.org/theme/fonts
-    jborg_images_url: //static.jboss.org/theme/images
-    jborg_js_url: //static.jboss.org/theme/js
-    project_images_url: //static.jboss.org/tools/images
-    bootstrap_css_url: //static.jboss.org/theme/css/bootstrap-community/2.3.1.5/bootstrap-community
-    bootstrap_js_url: //static.jboss.org/theme/js/libs/bootstrap-community/2.3.1.5/bootstrap-community
+    jborg_fonts_url: https://static.jboss.org/theme/fonts
+    jborg_images_url: https://static.jboss.org/theme/images
+    jborg_js_url: https://static.jboss.org/theme/js
+    project_images_url: https://static.jboss.org/tools/images
+    bootstrap_css_url: https://static.jboss.org/theme/css/bootstrap-community/2.3.1.5/bootstrap-community
+    bootstrap_js_url: https://static.jboss.org/theme/js/libs/bootstrap-community/2.3.1.5/bootstrap-community
     google_analytics:
       account: UA-17645367-6
     disqus: jbosstools

@@ -40,13 +40,13 @@ project nightly builds update site at
 
 To use the plugins, it is assumed that Docker is already installed.
 You can see https://docs.docker.com/installation/#installation[Docker's Installation guide] on how
-to do this on various platforms. 
+to do this on various platforms.
 
 == Views and Perspectives
 
 Once you have installed the Docker tooling, you will get access to three new views:
 
-Docker Explorer :: a tree view listing all connected Docker instances, with image and containers. 
+Docker Explorer :: a tree view listing all connected Docker instances, with image and containers.
 Docker Containers :: a table view listing containers for selected Docker connection
 Docker Images :: a table view listing images available in the selected Docker connection
 
@@ -126,13 +126,13 @@ image::images/dockerarrived/docker_properties.png[width="300"]
 == Future
 
 For Eclipse Mars we added all of the above base features and you can use it in your day-to-day work with Docker.
- 
+
 For Eclipse Mars SR1, we will work on getting some of the rough edges fixed, like 'Run' and 'Build' should be available in the context menu and not only in the views menu.
- 
+
 Work also started in Eclipse CDT to support using Docker images to build binaries for an OS other than the one you are running on.
 The vision for this would allow running on Windows or Mac, but target native deployment on multiple various Linux architectures.
 
-Furthermore in http://tools.jboss.org[JBoss Tools] we are working on better integrating Docker with Eclipse server adapters, to ease deployment of your web applications to a Docker container. You can see how server deployment works with the current Docker tooling by leveraging http://tools.jboss.org/blog/2015-03-02-getting-started-with-docker-and-wildfly.html[docker volumes] and http://tools.jboss.org/blog/2015-03-03-docker-and-wildfly-2.html[remote deployment] support.
+Furthermore in https://tools.jboss.org[JBoss Tools] we are working on better integrating Docker with Eclipse server adapters, to ease deployment of your web applications to a Docker container. You can see how server deployment works with the current Docker tooling by leveraging https://tools.jboss.org/blog/2015-03-02-getting-started-with-docker-and-wildfly.html[docker volumes] and https://tools.jboss.org/blog/2015-03-03-docker-and-wildfly-2.html[remote deployment] support.
 
 If you have suggestions or find bugs, please open these in the https://bugs.eclipse.org/bugs/enter_bug.cgi?product=Linux%20Tools[Linux Tools project under Docker].
 

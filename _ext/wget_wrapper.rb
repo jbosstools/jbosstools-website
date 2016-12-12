@@ -20,10 +20,10 @@
 #      enabled: true
 #      createGitIgnoreFiles: true
 #      urls:
-#        - //static.jboss.org/theme/css/bootstrap-community.js
-#        - //static.jboss.org/theme/js/bootstrap-community.js
-#        - //static.jboss.org/theme/fonts/titilliumtext/
-#        - //static.jboss.org/theme/images/common/
+#        - https://static.jboss.org/theme/css/bootstrap-community.js
+#        - https://static.jboss.org/theme/js/bootstrap-community.js
+#        - https://static.jboss.org/theme/fonts/titilliumtext/
+#        - https://static.jboss.org/theme/images/common/
 #
 #   Note: 'enabled' and 'createGitIgnoreFiles' properties default to 'true' if not defined.
 #

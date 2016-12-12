@@ -14,28 +14,28 @@ JBoss Tools. We still support developing and running applications using older Ja
 == Installation
 
 JBoss Developer Studio comes with everything pre-bundled in its installer. Simply download it from our https://www.jboss.org/products/devstudio.html[JBoss Products page] and run it like this:
- 
+
     java -jar jboss-devstudio-<installername>.jar
 
 JBoss Tools or Bring-Your-Own-Eclipse (BYOE) JBoss Developer Studio require a bit more:
 
 This release requires at least Eclipse 4.5 (Mars) but we recommend
 using the http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/marsr[Eclipse 4.5 Mars JEE Bundle] since then you get most of the dependencies
-preinstalled. 
+preinstalled.
 
 Once you have installed Eclipse, you can either find us on the Eclipse Marketplace under "JBoss Tools" or "JBoss Developer Studio".
 
 NOTE: We are now using Eclipse Marketplace feature of having just one market place entry for all old versions.
- 
+
 For JBoss Tools, you can also use our update site directly if you are up for it.
 
     http://download.jboss.org/jbosstools/mars/development/updates
 
 Note: Integration Stack tooling will become available from JBoss Central at a later date.
 
-== What is new ? 
+== What is new ?
 
-Full info is at http://tools.jboss.org/documentation/whatsnew/jbosstools/4.3.0.Beta2.html[this page]. Some highlights are below.
+Full info is at https://tools.jboss.org/documentation/whatsnew/jbosstools/4.3.0.Beta2.html[this page]. Some highlights are below.
 
 === Bower
 
@@ -45,7 +45,7 @@ We provide a Bower Init wizard for getting started.
 
 image:images/20150721_bower/bower-init-wizard-page.png[]
 
-Once your project has a `bower.json` file you can now easily run bower update 
+Once your project has a `bower.json` file you can now easily run bower update
 by right-clicking on the file and selecting menu:Run[As... > Bower Update].
 
 We are working on contributing this and additional Javascript integration to Eclipse JSDT. We will keep you posted!
@@ -71,15 +71,15 @@ You can manually trigger builds when selecting your Build Configs in the OpenShi
 
 image:../documentation/whatsnew/openshift/images/start-build.png[]
 
-Once you triggered you should see a new build appear in the Builds category in the OpenShift Explorer. 
-You can see its state next to its name or in the Properties view. 
+Once you triggered you should see a new build appear in the Builds category in the OpenShift Explorer.
+You can see its state next to its name or in the Properties view.
 Refreshing the Explorer will show you when the build completes.
 
 ==== Port Forwarding
 
 Assuming that your application exposes ports you can now forward those to your local machine with JBoss Tools 4.3.0.Beta2.
 
-image:../documentation/whatsnew/openshift/images/port-forwarding-wizard.png[] 
+image:../documentation/whatsnew/openshift/images/port-forwarding-wizard.png[]
 
 More details of new OpenShift v3 features are at link:../documentation/whatsnew/jbosstools/4.3.0.Beta2.html#openshift[Whats New].
 
@@ -95,10 +95,10 @@ There are more news at link:../documentation/whatsnew/jbosstools/4.3.0.Beta2.htm
 
 In WildFly 8.2 there is now support for hotloading resources from exploded jars inside deployments, i.e. a jar inside your `WEB-INF/libs`.
 
-This allows you to have faster reload times for module web applications using resources from nested jars. 
+This allows you to have faster reload times for module web applications using resources from nested jars.
 
 Thanks to patch from https://developer.jboss.org/people/vsevolodgolovanov[Vsevolod Golovanov] we now support this when you are using our server tools. Thanks Vsevolod!
- 
+
 === Deploy Hybrid project to FeedHenry
 
 You can now take a hybrid mobile project created with Thym and deploy it to a FeedHenry cloud.

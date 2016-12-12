@@ -1,4 +1,4 @@
-= What JBoss Tools Team should do in 2015 survey results! 
+= What JBoss Tools Team should do in 2015 survey results!
 :page-layout: blog
 :page-author: maxandersen
 :page-tags: [jbosscentral]
@@ -7,8 +7,8 @@ We recently tweeted and link:2014-12-03-what-should-jbosstools-team-work-on-2015
 
 Today the results are in!
 
-WARNING: This is not a scientific survey, just an informal one thus neither we or you should use this as source of the single truth of what JBoss Tools users want or think - it is just one of many datapoints on the internet. 
- 
+WARNING: This is not a scientific survey, just an informal one thus neither we or you should use this as source of the single truth of what JBoss Tools users want or think - it is just one of many datapoints on the internet.
+
 == Background
 
 We based the survey on the overall topics we have on our tentative roadmap for 2015:
@@ -63,11 +63,11 @@ On the serious note we actually in past reached out to the NetBeans community to
 would gladly help but it would need someone separately to drive the implementation. A few showed up but most faded away again (unfortunately).
 +
 That said recently there seem to be an active http://plugins.netbeans.org/plugin/52143/drools-netbeans-plugin[Drools plugin] and http://plugins.netbeans.org/plugin/53333/wildfly-application-server[WildFly integration] (maintained by Red Hatter Emmanuel Hugonnet) and the Forge team is working on making its scaffolding and wizard tools available from Netbeans too. So there is hope!
-	
+
 bpmn, drl tools?::
-The BPMN and Drools tools are part of the http://tools.jboss.org/downloads/devstudio_is/luna/8.0.0.Beta1.html[Integration stack] that is part of overall JBoss Tools but works at a different release cadence which is why they were not included in this survey. I think it would make sense we made a similar one when they start planning for their new development. 	
+The BPMN and Drools tools are part of the https://tools.jboss.org/downloads/devstudio_is/luna/8.0.0.Beta1.html[Integration stack] that is part of overall JBoss Tools but works at a different release cadence which is why they were not included in this survey. I think it would make sense we made a similar one when they start planning for their new development.
 +
-BPMN tooling is being maintained, but Drools is currently mainly just sustained since they focus more on their web based Uberfire based toolsuite.  
+BPMN tooling is being maintained, but Drools is currently mainly just sustained since they focus more on their web based Uberfire based toolsuite.
 
 ccccccdkkfkfdhjcviebihnvturkunncufjtnnntfhui?::
 Thanks for your salty password. It was very tasty.
@@ -77,17 +77,17 @@ Apache Cordova is what Hybrid mobile tooling mainly covers at the moment. We wil
 
 IoT stack?::
 We do not have any intermediate plans for Internet-of-Things related tooling; but if you are interested in this area do checkout out the http://iot.eclipse.org/[IoT Eclipse working group] which has a lot of interesting projects and tools.
- 
+
 Java 9/Project Jigsaw support?::
 This is being worked on in the Eclipse JDT platform as part of the Java 9 feature development.
-This is also part of a platform vision being worked at in the Eclipse Foundation and I hope I can 
+This is also part of a platform vision being worked at in the Eclipse Foundation and I hope I can
 post more details/info about this soon.
 
 JSF?::
 JSF is fully supported by our Java EE runtimes and tooling, but we do not have active plans on doing much feature addition or new features around JSF tooling. We are even planning on deprecating the JSF visual tooling since it has become a high cost to maintain and our usage stats shows only a small portion of users use it. That said we do want to keep JSF tooling updated to spec for content assist, code navigation etc. thus if you have specific issues you feel are missing do let us know in our https://jira.jboss.org/jira/browse/JBIDE[issue tracker] and we will follow up.
 
 m2e?::
-We are committers on the Maven tooling for Eclipse and Fred Bricon leads the m2e-wtp integration that makes it possible to easily to configure, build and deploy war and ear modules. All our examples rely on Maven thus we are definitely actively working on making the Maven experience better from within Eclipse and JBoss Tools. In that context if you are still on Eclipse Kepler based tooling then try our Luna tools where m2e import performance have been greatly improved!  
+We are committers on the Maven tooling for Eclipse and Fred Bricon leads the m2e-wtp integration that makes it possible to easily to configure, build and deploy war and ear modules. All our examples rely on Maven thus we are definitely actively working on making the Maven experience better from within Eclipse and JBoss Tools. In that context if you are still on Eclipse Kepler based tooling then try our Luna tools where m2e import performance have been greatly improved!
 
 move to idea as a base?::
 There are many that wish this to happen, and I understand the reasoning. Intellij IDEA is an awesome IDE, has a lot of great features but it is not possible for us to contribute to because the interesting parts are closed source. I've always said that if IDEA had been opensource 10+ years ago when I started moving Hibern8IDE to an IDE, JBoss Tools would probably have been IDEA based today. But Eclipse being opensource and the most used IDE Eclipse that is where we ended up.
@@ -98,7 +98,7 @@ That said, IntelliJ already has good JBoss support and we are engaged with the I
 +
 But, just be aware all of that does require the Ultimate Edition.
 +
-For those that do not know, JBoss Forge is https://plugins.jetbrains.com/plugin/7515[available today] in Intellij. That at least gives you some of the scaffolding features also available from JBoss Tools. 
+For those that do not know, JBoss Forge is https://plugins.jetbrains.com/plugin/7515[available today] in Intellij. That at least gives you some of the scaffolding features also available from JBoss Tools.
 
 Nestor?::
 Nestor is one of our https://github.com/jbosstools/jbosstools-playground[JBoss Tools Playground] features that are experiments that we are making to explore what things we can do to improve the Eclipse experience. Nestor is the one that allows viewing your projects nested as they are on your filesystem instead of the flat project layout default available in Eclipse.
@@ -113,7 +113,7 @@ We are also going to make our Easymport feature available as incubation for Mars
 
 I want to say many thanks to those who participated and let their
 voice heard about what we should be working on in 2015. I hope you
-will see that we do attack most of the high priority items. 
+will see that we do attack most of the high priority items.
 
 But do remember we can always use your help too - bug reports, feature requests and pull requests are always welcome!
 

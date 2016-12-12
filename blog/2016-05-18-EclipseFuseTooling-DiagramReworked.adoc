@@ -6,7 +6,7 @@
 
 Note: This article has been posted also on http://developers.redhat.com/blog/2016/05/17/jboss-fuse-tooling-diagram-reworked-new-shiny-colors-and-more/[Red Hat Developers Program blog]
 
-The JBoss Fuse Tooling has been reworked to provide a brighter Look'n'feel and a nice looking automatic layout. The work is still in progress but already available in beta version with the new JBoss Tool Studio version. Please install the JBoss Tools Studio that you can download from http://tools.jboss.org/downloads/devstudio/mars/9.1.0.GA.html[here]. And then follow the steps in this screenshot to have access to JBoss Fuse Tooling 8.0 Beta 2.
+The JBoss Fuse Tooling has been reworked to provide a brighter Look'n'feel and a nice looking automatic layout. The work is still in progress but already available in beta version with the new JBoss Tool Studio version. Please install the JBoss Tools Studio that you can download from https://tools.jboss.org/downloads/devstudio/mars/9.1.0.GA.html[here]. And then follow the steps in this screenshot to have access to JBoss Fuse Tooling 8.0 Beta 2.
 
 image:/blog/images/fuse/201604/HowToInstall.png[]
 
