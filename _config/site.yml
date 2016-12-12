@@ -79,7 +79,7 @@ profiles:
 
   staging:
     showwip: true
-    base_url: http://tools.stage.jboss.org/
+    base_url: https://tools.stage.jboss.org/
     minified: .min
     css_minifier: enabled
     js_minifier: enabled
@@ -101,7 +101,7 @@ profiles:
 
   production:
     showwip: false
-    base_url: http://tools.jboss.org
+    base_url: https://tools.jboss.org
     minified: .min
     css_minifier: enabled
     js_minifier: enabled

@@ -968,7 +968,7 @@ jbt_core:
             url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.2.Final-browsersim-standalone.zip
             md5_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.2.Final-browsersim-standalone.zip.sha256
           - name: Release Notes
-            url: http://tools.jboss.org/documentation/whatsnew/index.html
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
       4.4.2.AM3:
         update_site_url: http://download.jboss.org/jbosstools/neon/development/updates/
         release_date: 2016-11-10
@@ -989,7 +989,7 @@ jbt_core:
             url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.2.AM3-browsersim-standalone.zip
             md5_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.2.AM3-browsersim-standalone.zip.sha256
           - name: Release Notes
-            url: http://tools.jboss.org/documentation/whatsnew/index.html
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
       4.4.2.AM2:
         release_date: 2016-10-19
         supported_jbt_is_version: 4.4.0.Final
@@ -1009,7 +1009,7 @@ jbt_core:
             url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.2.AM2-browsersim-standalone.zip
             md5_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.2.AM2-browsersim-standalone.zip.sha256
           - name: Release Notes
-            url: http://tools.jboss.org/documentation/whatsnew/index.html
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
       4.4.2.AM1:
         release_date: 2016-09-29
         supported_jbt_is_version: 4.4.0.Final
@@ -1029,7 +1029,7 @@ jbt_core:
             url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.2.AM1-browsersim-standalone.zip
             md5_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.2.AM1-browsersim-standalone.zip.sha256
           - name: Release Notes
-            url: http://tools.jboss.org/documentation/whatsnew/index.html
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
       4.4.1.Final:
         update_site_url: http://download.jboss.org/jbosstools/neon/stable/updates/
         marketplace_url: https://marketplace.eclipse.org/node/1617241
@@ -1052,7 +1052,7 @@ jbt_core:
             url: http://download.jboss.org/jbosstools/static/neon/stable/updates/core/jbosstools-4.4.1.Final-browsersim-standalone.zip
             md5_url: http://download.jboss.org/jbosstools/static/neon/stable/updates/core/jbosstools-4.4.1.Final-browsersim-standalone.zip.sha256
           - name: Release Notes
-            url: http://tools.jboss.org/documentation/whatsnew/index.html
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
       4.4.1.AM3:
         update_site_url: http://download.jboss.org/jbosstools/neon/development/updates/
         release_date: 2016-08-17
@@ -1073,7 +1073,7 @@ jbt_core:
             url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.1.AM3-browsersim-standalone.zip
             md5_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.1.AM3-browsersim-standalone.zip.sha256
           - name: Release Notes
-            url: http://tools.jboss.org/documentation/whatsnew/index.html
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
       4.4.1.AM2:
         update_site_url: http://download.jboss.org/jbosstools/neon/development/updates/
         release_date: 2016-07-29
@@ -1094,7 +1094,7 @@ jbt_core:
             url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.1.AM2-browsersim-standalone.zip
             md5_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.1.AM2-browsersim-standalone.zip.sha256
           - name: Release Notes
-            url: http://tools.jboss.org/documentation/whatsnew/index.html
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
       4.4.0.Final:
         update_site_url: http://download.jboss.org/jbosstools/neon/stable/updates/
         release_date: 2016-05-27
@@ -1115,7 +1115,7 @@ jbt_core:
             url: http://download.jboss.org/jbosstools/static/neon/stable/updates/core/jbosstools-4.4.0.Final-browsersim-standalone.zip
             md5_url: http://download.jboss.org/jbosstools/static/neon/stable/updates/core/jbosstools-4.4.0.Final-browsersim-standalone.zip.sha256
           - name: Release Notes
-            url: http://tools.jboss.org/documentation/whatsnew/index.html
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
       4.4.0.Alpha2:
         update_site_url: http://download.jboss.org/jbosstools/neon/development/updates/
         release_date: 2016-05-25
@@ -1135,7 +1135,7 @@ jbt_core:
             url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.0.Alpha2-browsersim-standalone.zip
             md5_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.0.Alpha2-browsersim-standalone.zip.sha256
           - name: Release Notes
-            url: http://tools.jboss.org/documentation/whatsnew/index.html
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
 
     mars:
       4.3.1.Final:
@@ -1160,7 +1160,7 @@ jbt_core:
             url: http://download.jboss.org/jbosstools/static/mars/stable/updates/core/jbosstools-4.3.1.Final-browsersim-standalone.zip
             md5_url: http://download.jboss.org/jbosstools/static/mars/stable/updates/core/jbosstools-4.3.1.Final-browsersim-standalone.zip.sha256
           - name: Release Notes
-            url: http://tools.jboss.org/documentation/whatsnew/index.html
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
       4.3.1.Beta2:
         update_site_url: http://download.jboss.org/jbosstools/mars/stable/updates/
         archived: true
@@ -1182,7 +1182,7 @@ jbt_core:
             url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.1.Beta2-browsersim-standalone.zip
             md5_url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.1.Beta2-browsersim-standalone.zip.sha256
           - name: Release Notes
-            url: http://tools.jboss.org/documentation/whatsnew/index.html
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
       4.3.1.Beta1:
         archived: true
         release_date: 2015-12-21
@@ -1203,7 +1203,7 @@ jbt_core:
             url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.1.Beta1-browsersim-standalone.zip
             md5_url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.1.Beta1-browsersim-standalone.zip.sha256
           - name: Release Notes
-            url: http://tools.jboss.org/documentation/whatsnew/index.html
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
       4.3.0.Final:
         #archived: true
         release_date: 2015-10-06
@@ -1224,7 +1224,7 @@ jbt_core:
             url: http://download.jboss.org/jbosstools/static/mars/stable/updates/core/jbosstools-4.3.0.Final-browsersim-standalone.zip
             md5_url: http://download.jboss.org/jbosstools/static/mars/stable/updates/core/jbosstools-4.3.0.Final-browsersim-standalone.zip.sha256
           - name: Release Notes
-            url: http://tools.jboss.org/documentation/whatsnew/index.html
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
       4.3.0.CR1:
         release_date: 2015-09-22
         archived: true
@@ -1244,7 +1244,7 @@ jbt_core:
             url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.0.CR1-browsersim-standalone.zip
             md5_url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.0.CR1-browsersim-standalone.zip.sha256
           - name: Release Notes
-            url: http://tools.jboss.org/documentation/whatsnew/index.html
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
       4.3.0.Beta2:
         release_date: 2015-07-28
         archived: true
@@ -1265,7 +1265,7 @@ jbt_core:
             url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.0.Beta2-browsersim-standalone.zip
             md5_url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.0.Beta2-browsersim-standalone.zip.sha256
           - name: Release Notes
-            url: http://tools.jboss.org/documentation/whatsnew/index.html
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
       4.3.0.Beta1:
         release_date: 2015-06-22
         archived: true
@@ -1285,7 +1285,7 @@ jbt_core:
             url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Beta1_2015-06-05_01-14-40-B10-browsersim-standalone.zip
             md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Beta1_2015-06-05_01-14-40-B10-browsersim-standalone.zip.sha1
           - name: Release Notes
-            url: http://tools.jboss.org/documentation/whatsnew/index.html
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
       4.3.0.Alpha2:
         release_date: 2015-04-27
         archived: true
@@ -1301,7 +1301,7 @@ jbt_core:
             url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Alpha2_2015-04-21_14-02-11-B6-browsersim-standalone.zip
             md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Alpha2_2015-04-21_14-02-11-B6-browsersim-standalone.zip.MD5
           - name: Release Notes
-            url: http://tools.jboss.org/documentation/whatsnew/index.html
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
       4.3.0.Alpha1:
         release_date: 2015-02-20
         archived: true
@@ -1325,7 +1325,7 @@ jbt_core:
             url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Alpha1_2015-02-15_14-44-55-B13-browsersim-standalone.zip
             md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Alpha1_2015-02-15_14-44-55-B13-browsersim-standalone.zip.MD5
           - name: Release Notes
-            url: http://tools.jboss.org/documentation/whatsnew/index.html
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
       4.3.x.Nightly:
         update_site_url: http://download.jboss.org/jbosstools/mars/snapshots/updates/
         zips:
@@ -1345,7 +1345,7 @@ jbt_core:
         release_date: 2015-04-02
         supported_jbt_is_version: 4.2.7.Final
         blog_announcement_url: /blog/2015-04-02-devstudio-8.1.0.GA-for-luna.html
-        documentation_url: http://tools.jboss.org/documentation/
+        documentation_url: https://tools.jboss.org/documentation/
         zips:
           - name: Update site (including sources) bundle of all JBoss Core Tools
             file_size: 530MB
@@ -1364,13 +1364,13 @@ jbt_core:
             url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.x/jbosstools-4.2.3.Final-browsersim-standalone.jar
             md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.x/jbosstools-4.2.3.Final-browsersim-standalone.jar.MD5
           - name: Release Notes
-            url: http://tools.jboss.org/documentation/whatsnew/jbosstools/4.2.3.Final.html
+            url: https://tools.jboss.org/documentation/whatsnew/jbosstools/4.2.3.Final.html
       4.2.3.CR1:
         archived: true
         release_date: 2015-03-19
         supported_jbt_is_version: 4.2.0.Final
         blog_announcement_url: /blog/2015-03-19-devstudio-8.1.0.CR1-for-luna.html
-        documentation_url: http://tools.jboss.org/documentation/
+        documentation_url: https://tools.jboss.org/documentation/
         zips:
           - name: Update site (including sources) bundle of all JBoss Core Tools
             file_size: 525MB
@@ -1389,13 +1389,13 @@ jbt_core:
             url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.3.x/jbosstools-4.2.3.Beta1_2015-03-01_13-40-40-B357-browsersim-standalone.zip
             md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.3.x/jbosstools-4.2.3.Beta1_2015-03-01_13-40-40-B357-browsersim-standalone.zip.MD5
           - name: Release Notes
-            url: http://tools.jboss.org/documentation/whatsnew/jbosstools/4.2.3.CR1.html
+            url: https://tools.jboss.org/documentation/whatsnew/jbosstools/4.2.3.CR1.html
       4.2.3.Beta1:
         archived: true
         release_date: 2015-03-04
         supported_jbt_is_version: 4.2.0.Final
         blog_announcement_url: /blog/2015-03-05-JBDS-8.1.0.Beta1-for-luna.html
-        documentation_url: http://tools.jboss.org/documentation/
+        documentation_url: https://tools.jboss.org/documentation/
         zips:
           - name: Update site (including sources) bundle of all JBoss Core Tools
             file_size: 525MB
@@ -1414,7 +1414,7 @@ jbt_core:
             url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.3.x/jbosstools-4.2.3.Beta1_2015-03-01_13-40-40-B357-browsersim-standalone.zip
             md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.3.x/jbosstools-4.2.3.Beta1_2015-03-01_13-40-40-B357-browsersim-standalone.zip.MD5
           - name: Release Notes
-            url: http://tools.jboss.org/documentation/whatsnew/jbosstools/4.2.3.Beta1.html
+            url: https://tools.jboss.org/documentation/whatsnew/jbosstools/4.2.3.Beta1.html
       4.2.2.Final:
         archived: true
         release_date: 2015-01-21

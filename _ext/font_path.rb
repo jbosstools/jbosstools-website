@@ -16,7 +16,7 @@
 #
 # 2. This is an example site.yml configuration:
 #
-#    fonts_url: http://static.jboss.org/theme/fonts
+#    fonts_url: //static.jboss.org/theme/fonts
 #
 ##
 module Awestruct
