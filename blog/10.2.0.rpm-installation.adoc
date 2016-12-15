@@ -28,16 +28,6 @@ The command to enable the repository on Red Hat Enterprise Linux Workstation is:
 sudo subscription-manager repos --enable rhel-workstation-rhscl-7-rpms
 ```
 
-=== Enabling the Red Hat Software Collections Extended Update Support repository
-
-The identifier for the repository is *rhel-server-rhscl-7-eus-rpms*.
-
-The command to enable the repository is:
-
-```
-sudo subscription-manager repos --enable rhel-server-rhscl-7-rpms
-```
-
 For more information, please refer to the https://access.redhat.com/documentation/en/red-hat-software-collections/?version=2/[Red Hat Software Collections] documentation.
 
 == JBoss Developer Studio repository
