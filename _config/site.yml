@@ -79,7 +79,7 @@ profiles:
 
   staging:
     showwip: true
-    base_url: //tools.stage.jboss.org/
+    base_url: https://tools.stage.jboss.org/
     minified: .min
     css_minifier: enabled
     js_minifier: enabled
@@ -87,8 +87,8 @@ profiles:
     jborg_images_url: //static.jboss.org/theme/images
     jborg_js_url: //static.jboss.org/theme/js
     project_images_url: //static.jboss.org/tools/images
-    bootstrap_css_url: //static.jboss.org/theme/css/bootstrap-community/2.3.1.5/bootstrap-community
-    bootstrap_js_url: //static.jboss.org/theme/js/libs/bootstrap-community/2.3.1.5/bootstrap-community
+    bootstrap_css_url: //static.jboss.org/theme/css/bootstrap-community/2.3.1.6/bootstrap-community
+    bootstrap_js_url: //static.jboss.org/theme/js/libs/bootstrap-community/2.3.1.6/bootstrap-community
     disqus: jbosstools-preview
     deploy:
       host: github_pages
@@ -109,8 +109,8 @@ profiles:
     jborg_images_url: https://static.jboss.org/theme/images
     jborg_js_url: https://static.jboss.org/theme/js
     project_images_url: https://static.jboss.org/tools/images
-    bootstrap_css_url: https://static.jboss.org/theme/css/bootstrap-community/2.3.1.5/bootstrap-community
-    bootstrap_js_url: https://static.jboss.org/theme/js/libs/bootstrap-community/2.3.1.5/bootstrap-community
+    bootstrap_css_url: https://static.jboss.org/theme/css/bootstrap-community/2.3.1.6/bootstrap-community
+    bootstrap_js_url: https://static.jboss.org/theme/js/libs/bootstrap-community/2.3.1.6/bootstrap-community
     google_analytics:
       account: UA-17645367-6
     disqus: jbosstools
