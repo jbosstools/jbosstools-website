@@ -80,9 +80,9 @@ profiles:
   staging:
     showwip: true
     base_url: //tools.stage.jboss.org/
-    #minified: .min
-    #css_minifier: enabled
-    #js_minifier: enabled
+    minified: .min
+    css_minifier: enabled
+    js_minifier: enabled
     jborg_fonts_url: //static.jboss.org/theme/fonts
     jborg_images_url: //static.jboss.org/theme/images
     jborg_js_url: //static.jboss.org/theme/js
