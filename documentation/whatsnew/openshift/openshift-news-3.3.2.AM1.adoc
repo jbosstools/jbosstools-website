@@ -13,7 +13,7 @@ service resource.
 
 image::./images/scale-command-from-service.png[width=600]
 
-However, it was not a very logical choice. So the command is also alailable at the pod level, leading to better usability.
+However, it was not a very logical choice. So the command is also available at the pod level, leading to better usability.
 
 image::./images/scale-command-from-pod.png[width=600]
 
