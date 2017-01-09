@@ -1,0 +1,32 @@
+= JBoss Tools 4.4.3.AM1 for Eclipse Neon.1
+:page-layout: blog
+:page-author: jeffmaury
+:page-tags: [release, jbosstools, jbosscentral]
+:page-date: 2017-01-10
+
+Happy to announce 4.4.3.AM1 (Developer Milestone 1) build for Eclipse Neon.1.
+
+Downloads available at link:/downloads/jbosstools/neon/4.4.3.AM1.html[JBoss Tools 4.4.3 AM1].
+
+== What is New?
+
+Full info is at link:/documentation/whatsnew/jbosstools/4.4.3.AM1.html[this page]. Some highlights are below.
+
+=== OpenShift 3
+
+Although our main focus is bug fixes, we continue to work on providing better experience for container based development in JBoss Tools and Developer Studio. Let's go through a few interesting updates here and you can find more details on link:/documentation/whatsnew/jbosstools/4.4.2.AM1.html[the What's New page].
+
+==== Scaling from pod resources
+
+When an application is being deployed to Openshift, it was possible to scale the pod resources from the 
+service resource.
+
+image::/documentation/whatsnew/openshift/images/scale-command-from-service.png[width=600]
+
+However, it was not a very logical choice. So the command is also available at the pod level, leading to better usability.
+
+image::/documentation/whatsnew/openshift/images/scale-command-from-pod.png[width=600]
+
+Enjoy!
+
+Jeff Maury
