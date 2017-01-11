@@ -1,10 +1,10 @@
-= JBoss Tools 4.4.3.AM1 for Eclipse Neon.1
+= JBoss Tools 4.4.3.AM1 for Eclipse Neon.2
 :page-layout: blog
 :page-author: jeffmaury
 :page-tags: [release, jbosstools, jbosscentral]
 :page-date: 2017-01-10
 
-Happy to announce 4.4.3.AM1 (Developer Milestone 1) build for Eclipse Neon.1.
+Happy to announce 4.4.3.AM1 (Developer Milestone 1) build for Eclipse Neon.2.
 
 Downloads available at link:/downloads/jbosstools/neon/4.4.3.AM1.html[JBoss Tools 4.4.3 AM1].
 
