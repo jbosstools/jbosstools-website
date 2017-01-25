@@ -148,7 +148,11 @@ bottom_javascripts: ["/javascripts/download_tabs.js"]
                   - else
                     %a{:href=>installer.url} Download
                     - puts "Unknown file type: #{installer.url} (in installers of #{page.build_info.name} #{page.build_info.version})"
-                  - if installer.md5_url?
+                  - if installer.sha256_url?
+                    (
+                    %a{:href=>installer.sha256_url}> sha256
+                    )
+                  - elsif installer.md5_url?
                     (
                     %a{:href=>installer.md5_url}> md5
                     )
@@ -267,7 +271,11 @@ bottom_javascripts: ["/javascripts/download_tabs.js"]
                   - else
                     %a{:href=>zip.url} Download
                     - puts "Unknown file type: #{zip.url} (in zips of #{page.build_info.name} #{page.build_info.version})"
-                  - if zip.md5_url?
+                  - if zip.sha256_url?
+                    (
+                    %a{:href=>zip.sha256_url}> sha256
+                    )
+                  - elsif zip.md5_url?
                     (
                     %a{:href=>zip.md5_url}> md5
                     )
