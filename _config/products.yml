@@ -1350,12 +1350,12 @@ jbt_core:
             md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Alpha1_2015-02-15_14-44-55-B13-browsersim-standalone.zip.MD5
           - name: Release Notes
             url: https://tools.jboss.org/documentation/whatsnew/index.html
-      4.3.x.Nightly:
-        update_site_url: http://download.jboss.org/jbosstools/mars/snapshots/updates/
-        zips:
-          - name: Stand-alone BrowserSim
-            file_size: 16MB
-            url: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.jboss.tools.browsersim&a=org.jboss.tools.browsersim-standalone&v=3.7.1-SNAPSHOT&e=zip
+      # 4.3.x.Nightly:
+        # update_site_url: http://download.jboss.org/jbosstools/mars/snapshots/updates/
+        # zips:
+          # - name: Stand-alone BrowserSim
+            # file_size: 16MB
+            # url: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.jboss.tools.browsersim&a=org.jboss.tools.browsersim-standalone&v=3.7.1-SNAPSHOT&e=zip
             # url: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.jboss.tools.vpe.browsersim&a=org.jboss.tools.vpe.browsersim-standalone&v=3.7.0-SNAPSHOT&e=zip&c=standalone
             #url: http://download.jboss.org/jbosstools/mars/snapshots/builds/jbosstools-browsersim-standalone_4.3.mars/latest/jbosstools-4.3.0.Final-browsersim-standalone.zip
             #sha256_url: http://download.jboss.org/jbosstools/mars/snapshots/builds/jbosstools-browsersim-standalone_4.3.mars/latest/jbosstools-4.3.0.Final-browsersim-standalone.zip.sha256
@@ -1636,17 +1636,6 @@ jbt_core:
             md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/hibernatetools-Update-4.2.0.Alpha1_2013-12-11_01-09-15-B32.zip.MD5
           - name: Release Notes
             url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/zz_Release_Notes_4.2.0.Alpha1.readme.html
-      #4.2.0.Nightly:
-        #build_type: nightly
-        # TODO when master branch moves to 4.3.0 (mars), make sure 4.2.0.Nightly points at 4.2.luna instead of master
-        #update_site_url: http://download.jboss.org/jbosstools/updates/nightly/core/4.2.luna/
-        # TODO move this symlink to point at builds/nightly/core/4.2.luna, and create a new one for mars
-        #update_site_url: http://download.jboss.org/jbosstools/updates/nightly/luna/
-        #zips:
-        #  - name: Stand-alone BrowserSim
-        #    file_size: 15MB
-        #    url: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.jboss.tools.vpe.browsersim&a=org.jboss.tools.vpe.browsersim-standalone&v=3.6.0-SNAPSHOT&e=zip&c=standalone
-        #    #md5_url: .MD5
 
     kepler:
       4.1.2.Final:
@@ -1890,11 +1879,6 @@ jbt_core:
           - name: Release Notes
             file_size: 31.8kB
             url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.0.x/zz_Release_Notes_4.1.0.Alpha1.readme.html
-
-      4.1.x.Nightly:
-        archived: true
-        documentation_url: http://docs.jboss.org/tools/
-        update_site_url: http://download.jboss.org/jbosstools/updates/nightly/core/4.1.kepler/
 
     juno:
       4.0.1.Final:
