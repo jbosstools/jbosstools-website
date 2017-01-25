@@ -370,49 +370,49 @@ devstudio:
             url: https://devstudio.jboss.com/static/updates/8.0.0/jboss-devstudio-8.1.0.GA-target-platform.zip
             md5_url: https://devstudio.jboss.com/static/updates/8.0.0/jboss-devstudio-8.1.0.GA-target-platform.zip.MD5
       8.1.0.CR1:
-        release_date: 2015-03-20
-        archived: true
-        supported_devstudio_is_version: 8.0.0.GA
-        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
-        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
-        blog_announcement_url: /blog/2015-03-19-devstudio-8.1.0.CR1-for-luna.html
-        installers:
-          - name: Stand-alone Installer
-            url: https://www.jboss.org/download-manager/content/origin/files/sha256/9d/9daef0477c4b1924ae360659d3beb5e0bb405d7d79f6ca785cd5779391bcb9a6/jboss-devstudio-8.1.0.CR1-installer-standalone.jar
-            file_size: 546MB
-          - name: Installer With EAP 6.3.0
-            url: https://www.jboss.org/download-manager/content/origin/files/sha256/ec/ec33cab4d5f7fdaffef12fed1dbcb167f73b09820194c290fe5ee1b01144bfa0/jboss-devstudio-8.1.0.CR1-installer-eap.jar
-            file_size: 685MB
-        zips:
-          - name: Update site (including sources) bundle of JBoss Developer Studio
-            file_size: 524MB
-            url: https://www.jboss.org/download-manager/content/origin/files/sha256/be/be4c0714df996ee1edd5b082b13c1bc1e10c857a388432de24b1de107913e1ff/jboss-devstudio-8.1.0.CR1-updatesite-core.zip
-          - name: Target Platform for JBoss Developer Studio
-            file_size: 426MB
-            url: https://devstudio.redhat.com/updates/8.0.0/jboss-devstudio-8.1.0.CR1-target-platform.zip
-            md5_url: https://devstudio.redhat.com/updates/8.0.0/jboss-devstudio-8.1.0.CR1-target-platform.zip.MD5
+        # release_date: 2015-03-20
+        # archived: true
+        # supported_devstudio_is_version: 8.0.0.GA
+        # documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        # release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        # blog_announcement_url: /blog/2015-03-19-devstudio-8.1.0.CR1-for-luna.html
+        # installers:
+        #   - name: Stand-alone Installer
+        #     url: https://www.jboss.org/download-manager/content/origin/files/sha256/9d/9daef0477c4b1924ae360659d3beb5e0bb405d7d79f6ca785cd5779391bcb9a6/jboss-devstudio-8.1.0.CR1-installer-standalone.jar
+        #     file_size: 546MB
+        #   - name: Installer With EAP 6.3.0
+        #     url: https://www.jboss.org/download-manager/content/origin/files/sha256/ec/ec33cab4d5f7fdaffef12fed1dbcb167f73b09820194c290fe5ee1b01144bfa0/jboss-devstudio-8.1.0.CR1-installer-eap.jar
+        #     file_size: 685MB
+        # zips:
+        #   - name: Update site (including sources) bundle of JBoss Developer Studio
+        #     file_size: 524MB
+        #     url: https://www.jboss.org/download-manager/content/origin/files/sha256/be/be4c0714df996ee1edd5b082b13c1bc1e10c857a388432de24b1de107913e1ff/jboss-devstudio-8.1.0.CR1-updatesite-core.zip
+        #   - name: Target Platform for JBoss Developer Studio
+        #     file_size: 426MB
+        #     url: https://devstudio.redhat.com/updates/8.0.0/jboss-devstudio-8.1.0.CR1-target-platform.zip
+        #     md5_url: https://devstudio.redhat.com/updates/8.0.0/jboss-devstudio-8.1.0.CR1-target-platform.zip.MD5
       8.1.0.Beta1:
-        release_date: 2015-03-04
-        archived: true
-        supported_devstudio_is_version: 8.0.0.GA
-        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
-        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
-        blog_announcement_url: /blog/2015-03-05-JBDS-8.1.0.Beta1-for-luna.html
-        installers:
-          - name: Stand-alone Installer
-            url: https://www.jboss.org/download-manager/content/origin/files/sha256/8f/8f7b797dd0ff04a75801e34f6dea3627e89b0faf598144d06892f119eb64add1/jboss-devstudio-8.1.0.Beta1-installer-standalone.jar
-            file_size: 546MB
-          - name: Installer With EAP 6.3.0
-            url: https://www.jboss.org/download-manager/content/origin/files/sha256/a5/a5fd25450ba0b64c491fc9effab10351ed269cdc1ca90d0218d1d24496ab2b41/jboss-devstudio-8.1.0.Beta1-installer-eap.jar
-            file_size: 685MB
-        zips:
-          - name: Update site (including sources) bundle of JBoss Developer Studio
-            file_size: 524MB
-            url: https://www.jboss.org/download-manager/content/origin/files/sha256/5d/5d70ee2e8199a031152caf42b8a52b6d14b79b3f4960f03e6e8ad0341447ce37/jboss-devstudio-8.1.0.Beta1-updatesite-core.zip
-          - name: Target Platform for JBoss Developer Studio
-            file_size: 426MB
-            url: https://devstudio.redhat.com/updates/8.0.0/jboss-devstudio-8.1.0.Beta1-target-platform.zip
-            md5_url: https://devstudio.redhat.com/updates/8.0.0/jboss-devstudio-8.1.0.Beta1-target-platform.zip.MD5
+        # release_date: 2015-03-04
+        # archived: true
+        # supported_devstudio_is_version: 8.0.0.GA
+        # documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        # release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        # blog_announcement_url: /blog/2015-03-05-JBDS-8.1.0.Beta1-for-luna.html
+        # installers:
+        #   - name: Stand-alone Installer
+        #     url: https://www.jboss.org/download-manager/content/origin/files/sha256/8f/8f7b797dd0ff04a75801e34f6dea3627e89b0faf598144d06892f119eb64add1/jboss-devstudio-8.1.0.Beta1-installer-standalone.jar
+        #     file_size: 546MB
+        #   - name: Installer With EAP 6.3.0
+        #     url: https://www.jboss.org/download-manager/content/origin/files/sha256/a5/a5fd25450ba0b64c491fc9effab10351ed269cdc1ca90d0218d1d24496ab2b41/jboss-devstudio-8.1.0.Beta1-installer-eap.jar
+        #     file_size: 685MB
+        # zips:
+        #   - name: Update site (including sources) bundle of JBoss Developer Studio
+        #     file_size: 524MB
+        #     url: https://www.jboss.org/download-manager/content/origin/files/sha256/5d/5d70ee2e8199a031152caf42b8a52b6d14b79b3f4960f03e6e8ad0341447ce37/jboss-devstudio-8.1.0.Beta1-updatesite-core.zip
+        #   - name: Target Platform for JBoss Developer Studio
+        #     file_size: 426MB
+        #     url: https://devstudio.redhat.com/updates/8.0.0/jboss-devstudio-8.1.0.Beta1-target-platform.zip
+        #     md5_url: https://devstudio.redhat.com/updates/8.0.0/jboss-devstudio-8.1.0.Beta1-target-platform.zip.MD5
       8.0.2.GA:
         archived: true
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
@@ -472,81 +472,81 @@ devstudio:
             url: https://www.jboss.org/download-manager/content/origin/files/sha256/da/da21079c31af1a7dd8ff7dc05a4003fa818307eb3cdad6e10139437b5022d161/jboss-devstudio-8.0.0.GA-v20141020-1042-B317-updatesite-core.zip
             #md5_url: n/a
       8.0.0.CR1:
-        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
-        release_date: 2014-09-18
-        archived: true
-        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
-        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/8.0/html/8.0.0_Release_Notes/index.html
-        blog_announcement_url: /blog/2014-09-17-CR1-for-luna.html
-        installers:
-          - name: Stand-alone Installer
-            url: https://www.jboss.org/download-manager/content/origin/files/sha256/5a/5a748e631b667f78fd6c9bd6e8aa13e29d9b4731555762df191aad684d866759/jboss-devstudio-8.0.0.CR1-v20140915-0805-B246-installer-standalone.jar
-            file_size: 552MB
-          - name: Installer With EAP 6.3.0
-            url: https://www.jboss.org/download-manager/content/origin/files/sha256/1e/1e0b9468604aa20ac8c44b63cd651cfba2c97ccc7a0f6f4ebb23b90a6244b2f1/jboss-devstudio-8.0.0.CR1-v20140915-0805-B246-installer-eap.jar
-            file_size: 691MB
-        zips:
-          - name: Update site (including sources) bundle of JBoss Developer Studio
-            file_size: 514MB
-            url: https://www.jboss.org/download-manager/content/origin/files/sha256/ea/ea08cbdc79fa982989d578cbb1c39cc3e42dd36b5cee598411d3814d4148c96b/jboss-devstudio-8.0.0.CR1-v20140915-0805-B246-updatesite-core.zip
-            #md5_url: n/a
+        # documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        # release_date: 2014-09-18
+        # archived: true
+        # documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        # release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/8.0/html/8.0.0_Release_Notes/index.html
+        # blog_announcement_url: /blog/2014-09-17-CR1-for-luna.html
+        # installers:
+        #   - name: Stand-alone Installer
+        #     url: https://www.jboss.org/download-manager/content/origin/files/sha256/5a/5a748e631b667f78fd6c9bd6e8aa13e29d9b4731555762df191aad684d866759/jboss-devstudio-8.0.0.CR1-v20140915-0805-B246-installer-standalone.jar
+        #     file_size: 552MB
+        #   - name: Installer With EAP 6.3.0
+        #     url: https://www.jboss.org/download-manager/content/origin/files/sha256/1e/1e0b9468604aa20ac8c44b63cd651cfba2c97ccc7a0f6f4ebb23b90a6244b2f1/jboss-devstudio-8.0.0.CR1-v20140915-0805-B246-installer-eap.jar
+        #     file_size: 691MB
+        # zips:
+        #   - name: Update site (including sources) bundle of JBoss Developer Studio
+        #     file_size: 514MB
+        #     url: https://www.jboss.org/download-manager/content/origin/files/sha256/ea/ea08cbdc79fa982989d578cbb1c39cc3e42dd36b5cee598411d3814d4148c96b/jboss-devstudio-8.0.0.CR1-v20140915-0805-B246-updatesite-core.zip
+        #     #md5_url: n/a
       8.0.0.Beta3:
-        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
-        release_date: 2014-07-28
-        archived: true
-        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
-        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/8.0/html/8.0.0_Release_Notes/index.html
-        blog_announcement_url: /blog/2014-07-28-beta3-for-luna.html
-        installers:
-          - name: Stand-alone Installer
-            url: https://www.jboss.org/download-manager/content/origin/files/sha256/96/96d6ab7107c64283b9e92396f046ccec3301b263df81bd8b3a9abf4e7934deb9/jboss-devstudio-8.0.0.Beta3-v20140722-2011-B194-installer-standalone.jar
-            file_size: 504MB
-          - name: Installer With EAP 6.3.0.Beta
-            url: https://www.jboss.org/download-manager/content/origin/files/sha256/09/0998b448383eca6e74c86ac58d4a1b88c066a0a39e25b12df8ebb6a2ed72ba73/jboss-devstudio-8.0.0.Beta3-v20140722-2011-B194-installer-eap.jar
-            file_size: 643MB
-        zips:
-          - name: Update site (including sources) bundle of JBoss Developer Studio
-            file_size: 850MB
-            url: https://www.jboss.org/download-manager/content/origin/files/sha256/4a/4ad3df66a4e019827ad53681b7d3bea33a126230ce7e90b4195f1e13f9aba684/jboss-devstudio-8.0.0.Beta3-v20140722-2011-B194-updatesite-core.zip
-            #md5_url: n/a
+        # documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        # release_date: 2014-07-28
+        # archived: true
+        # documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        # release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/8.0/html/8.0.0_Release_Notes/index.html
+        # blog_announcement_url: /blog/2014-07-28-beta3-for-luna.html
+        # installers:
+        #   - name: Stand-alone Installer
+        #     url: https://www.jboss.org/download-manager/content/origin/files/sha256/96/96d6ab7107c64283b9e92396f046ccec3301b263df81bd8b3a9abf4e7934deb9/jboss-devstudio-8.0.0.Beta3-v20140722-2011-B194-installer-standalone.jar
+        #     file_size: 504MB
+        #   - name: Installer With EAP 6.3.0.Beta
+        #     url: https://www.jboss.org/download-manager/content/origin/files/sha256/09/0998b448383eca6e74c86ac58d4a1b88c066a0a39e25b12df8ebb6a2ed72ba73/jboss-devstudio-8.0.0.Beta3-v20140722-2011-B194-installer-eap.jar
+        #     file_size: 643MB
+        # zips:
+        #   - name: Update site (including sources) bundle of JBoss Developer Studio
+        #     file_size: 850MB
+        #     url: https://www.jboss.org/download-manager/content/origin/files/sha256/4a/4ad3df66a4e019827ad53681b7d3bea33a126230ce7e90b4195f1e13f9aba684/jboss-devstudio-8.0.0.Beta3-v20140722-2011-B194-updatesite-core.zip
+        #     #md5_url: n/a
 
       8.0.0.Beta2:
-        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
-        release_date: 2014-06-20
-        archived: true
-        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
-        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/8.0/html/8.0.0_Release_Notes/index.html
-        blog_announcement_url: /blog/2014-06-19-beta2-for-luna.html
-        installers:
-          - name: Stand-alone Installer
-            url: https://www.jboss.org/download-manager/content/origin/files/sha256/3c/3c4508c0c43f9aae305c289b946cfc963b8be01678dc9d538b9847872fa80ef6/jboss-devstudio-8.0.0.Beta2-v20140617-2058-B166-installer-standalone.jar
-            file_size: 550MB
-          - name: Installer With EAP 6.2.0
-            url: https://www.jboss.org/download-manager/content/origin/files/sha256/41/41bbfb910533778ac059a5fceafd814b06cc7e0b34086ef76c302cbddc687f0f/jboss-devstudio-8.0.0.Beta2-v20140617-2058-B166-installer-eap.jar
-            file_size: 676MB
-        zips:
-          - name: Update site (including sources) bundle of JBoss Developer Studio
-            file_size: 850MB
-            url: https://www.jboss.org/download-manager/content/origin/files/sha256/9d/9da04d293283afcff48c85d382e4f57dccce181382aa556e9b44d38f5cadf94a/jboss-devstudio-8.0.0.Beta2-v20140617-2058-B166-updatesite-core.zip
-            #md5_url: n/a
+        # documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        # release_date: 2014-06-20
+        # archived: true
+        # documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        # release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/8.0/html/8.0.0_Release_Notes/index.html
+        # blog_announcement_url: /blog/2014-06-19-beta2-for-luna.html
+        # installers:
+        #   - name: Stand-alone Installer
+        #     url: https://www.jboss.org/download-manager/content/origin/files/sha256/3c/3c4508c0c43f9aae305c289b946cfc963b8be01678dc9d538b9847872fa80ef6/jboss-devstudio-8.0.0.Beta2-v20140617-2058-B166-installer-standalone.jar
+        #     file_size: 550MB
+        #   - name: Installer With EAP 6.2.0
+        #     url: https://www.jboss.org/download-manager/content/origin/files/sha256/41/41bbfb910533778ac059a5fceafd814b06cc7e0b34086ef76c302cbddc687f0f/jboss-devstudio-8.0.0.Beta2-v20140617-2058-B166-installer-eap.jar
+        #     file_size: 676MB
+        # zips:
+        #   - name: Update site (including sources) bundle of JBoss Developer Studio
+        #     file_size: 850MB
+        #     url: https://www.jboss.org/download-manager/content/origin/files/sha256/9d/9da04d293283afcff48c85d382e4f57dccce181382aa556e9b44d38f5cadf94a/jboss-devstudio-8.0.0.Beta2-v20140617-2058-B166-updatesite-core.zip
+        #     #md5_url: n/a
       8.0.0.Beta1:
-        release_date: 2014-04-11
-        archived: true
-        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
-        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/8.0/html/8.0.0_Release_Notes/index.html
-        blog_announcement_url: /blog/2014-04-14-beta1-for-luna.html
-        installers:
-          - name: Stand-alone Installer
-            url: https://www.jboss.org/download-manager/content/origin/files/sha256/25/2550fbb912f42b6c0e60d124cc0d5b7c1a26b1767e27a0ecd6f2b9c36f3b3d9a/jbdevstudio-product-universal-8.0.0.Beta1-v20140408-2350-B93.jar
-            file_size: 482MB
-          - name: Installer With EAP 6.2.0
-            url: https://www.jboss.org/download-manager/content/origin/files/sha256/5f/5f7a06b642bf212a89c9526b2e477bab33cc9aa6b0bb2bb63e8e23e5586b4266/jbdevstudio-product-eap-universal-8.0.0.Beta1-v20140408-2350-B93.jar
-            file_size: 609MB
-        zips:
-          - name: Update site (including sources) bundle of JBoss Developer Studio
-            file_size: 725MB
-            url: https://www.jboss.org/download-manager/content/origin/files/sha256/b9/b9a4d822294c7457522238e81335b8dc5013e9835ce9b1837e4a5be241b6d4c3/jbdevstudio-product-Update-8.0.0.Beta1-v20140408-2350-B93.zip
-            #md5_url: n/a
+        # release_date: 2014-04-11
+        # archived: true
+        # documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        # release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/8.0/html/8.0.0_Release_Notes/index.html
+        # blog_announcement_url: /blog/2014-04-14-beta1-for-luna.html
+        # installers:
+        #   - name: Stand-alone Installer
+        #     url: https://www.jboss.org/download-manager/content/origin/files/sha256/25/2550fbb912f42b6c0e60d124cc0d5b7c1a26b1767e27a0ecd6f2b9c36f3b3d9a/jbdevstudio-product-universal-8.0.0.Beta1-v20140408-2350-B93.jar
+        #     file_size: 482MB
+        #   - name: Installer With EAP 6.2.0
+        #     url: https://www.jboss.org/download-manager/content/origin/files/sha256/5f/5f7a06b642bf212a89c9526b2e477bab33cc9aa6b0bb2bb63e8e23e5586b4266/jbdevstudio-product-eap-universal-8.0.0.Beta1-v20140408-2350-B93.jar
+        #     file_size: 609MB
+        # zips:
+        #   - name: Update site (including sources) bundle of JBoss Developer Studio
+        #     file_size: 725MB
+        #     url: https://www.jboss.org/download-manager/content/origin/files/sha256/b9/b9a4d822294c7457522238e81335b8dc5013e9835ce9b1837e4a5be241b6d4c3/jbdevstudio-product-Update-8.0.0.Beta1-v20140408-2350-B93.zip
+        #     #md5_url: n/a
     kepler:
       7.1.1.GA:
         release_date: 2014-03-24
@@ -733,17 +733,17 @@ devstudio_is:
             url: https://devstudio.redhat.com/9.0/stable/updates/integration-stack/devstudio-integration-stack-9.0.0.GA-earlyaccess.zip
             md5_url: https://devstudio.redhat.com/9.0/stable/updates/integration-stack/devstudio-integration-stack-9.0.0.GA-earlyaccess.zip.MD5
       9.0.0.Beta1:
-        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/9.0
-        release_notes_url: https://access.redhat.com/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/9.0-Beta1/html/9.0.0_Beta1_Release_Notes/index.html
-        release_date: 2016-03-11
-        required_devstudio_version: 9.1.0.Beta2
-        update_site_url: https://devstudio.redhat.com/9.0/development/updates/integration-stack/earlyaccess
-        blog_announcement_url: /blog/integration-stack-4.3.0.Beta1-for-mars.html
-        zips:
-          - name: Update site bundle of JBoss Developer Studio Integration Stack (Early Access)
-            file_size: 307MB
-            url: https://devstudio.redhat.com/9.0/development/updates/integration-stack/devstudio-integration-stack-9.0.0.Beta1-earlyaccess.zip
-            md5_url: https://devstudio.redhat.com/9.0/development/updates/integration-stack/devstudio-integration-stack-9.0.0.Beta1-earlyaccess.zip.MD5
+        # documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/9.0
+        # release_notes_url: https://access.redhat.com/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/9.0-Beta1/html/9.0.0_Beta1_Release_Notes/index.html
+        # release_date: 2016-03-11
+        # required_devstudio_version: 9.1.0.Beta2
+        # update_site_url: https://devstudio.redhat.com/9.0/development/updates/integration-stack/earlyaccess
+        # blog_announcement_url: /blog/integration-stack-4.3.0.Beta1-for-mars.html
+        # zips:
+        #   - name: Update site bundle of JBoss Developer Studio Integration Stack (Early Access)
+        #     file_size: 307MB
+        #     url: https://devstudio.redhat.com/9.0/development/updates/integration-stack/devstudio-integration-stack-9.0.0.Beta1-earlyaccess.zip
+        #     md5_url: https://devstudio.redhat.com/9.0/development/updates/integration-stack/devstudio-integration-stack-9.0.0.Beta1-earlyaccess.zip.MD5
       9.0.0.Alpha2:
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/9.0
         #release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/8.0/html/8.0.3_Release_Notes/index.html
