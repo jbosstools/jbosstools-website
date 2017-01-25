@@ -2,26 +2,26 @@ eclipse:
   neon:
     url_path_fragment: neon
     short_name: Neon
-    full_name: Eclipse Neon 4.6
-    download_url:  http://www.eclipse.org/downloads/index-developer.php
+    full_name: Eclipse Neon 4.6.2
+    download_url:  http://www.eclipse.org/downloads/packages/release/Neon/2
     requirements: Java 8
   mars:
     url_path_fragment: mars
     short_name: Mars
-    full_name: Eclipse Mars 4.5
-    download_url:  http://www.eclipse.org/downloads/index-developer.php
+    full_name: Eclipse Mars 4.5.2
+    download_url:  http://www.eclipse.org/downloads/packages/release/Mars/2
     requirements: Java 8
   luna:
     url_path_fragment: luna
     short_name: Luna
     full_name: Eclipse Luna 4.4.2
-    download_url: http://www.eclipse.org/downloads/packages/release/Luna/SR2
+    download_url: http://www.eclipse.org/downloads/packages/release/luna/sr2
     requirements: Java 7 or Java 8
   kepler:
     url_path_fragment: kepler
     short_name: Kepler
     full_name: Eclipse Kepler 4.3
-    download_url: http://www.eclipse.org/downloads/packages/release/kepler/sr1
+    download_url: http://www.eclipse.org/downloads/packages/release/kepler/sr2
     requirements: Java 6 or Java 7
   juno:
     url_path_fragment: juno
