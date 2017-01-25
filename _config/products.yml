@@ -1075,6 +1075,7 @@ jbt_core:
             url: https://tools.jboss.org/documentation/whatsnew/index.html
       4.4.1.AM3:
         update_site_url: http://download.jboss.org/jbosstools/neon/development/updates/
+        archived: true
         release_date: 2016-08-17
         supported_jbt_is_version: 4.3.0.Final
         blog_announcement_url: /blog/am3-for-neon.html
@@ -1096,6 +1097,7 @@ jbt_core:
             url: https://tools.jboss.org/documentation/whatsnew/index.html
       4.4.1.AM2:
         update_site_url: http://download.jboss.org/jbosstools/neon/development/updates/
+        archived: true
         release_date: 2016-07-29
         supported_jbt_is_version: 4.3.0.Final
         blog_announcement_url: /blog/am2-for-neon.html
@@ -1117,6 +1119,7 @@ jbt_core:
             url: https://tools.jboss.org/documentation/whatsnew/index.html
       4.4.0.Final:
         update_site_url: http://download.jboss.org/jbosstools/neon/stable/updates/
+        archived: true
         release_date: 2016-05-27
         supported_jbt_is_version: 4.3.0.Final
         blog_announcement_url: /blog/ga-for-neon.html
@@ -1138,6 +1141,7 @@ jbt_core:
             url: https://tools.jboss.org/documentation/whatsnew/index.html
       4.4.0.Alpha2:
         update_site_url: http://download.jboss.org/jbosstools/neon/development/updates/
+        archived: true
         release_date: 2016-05-25
         blog_announcement_url: /blog/alpha-for-neon.html
         documentation_url: http://docs.jboss.org/tools/
@@ -1225,7 +1229,7 @@ jbt_core:
           - name: Release Notes
             url: https://tools.jboss.org/documentation/whatsnew/index.html
       4.3.0.Final:
-        #archived: true
+        archived: true
         release_date: 2015-10-06
         supported_jbt_is_version: 4.3.0.Alpha2
         blog_announcement_url: /blog/ga-for-mars.html
@@ -1361,7 +1365,7 @@ jbt_core:
         update_site_url: http://download.jboss.org/jbosstools/updates/stable/luna/
         marketplace_url: http://marketplace.eclipse.org/node/1617241
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1617241
-        #archived: true
+        archived: true
         release_date: 2015-04-02
         supported_jbt_is_version: 4.2.7.Final
         blog_announcement_url: /blog/2015-04-02-devstudio-8.1.0.GA-for-luna.html
@@ -1646,6 +1650,7 @@ jbt_core:
 
     kepler:
       4.1.2.Final:
+        archived: true
         release_date: 2014-03-24
         supported_jbt_is_version: 4.1.7.Final
         documentation_url: http://docs.jboss.org/tools/4.1.x.Final/
