@@ -10,6 +10,7 @@ bottom_javascripts: ["/javascripts/download_tabs.js"]
       -# show active versions
       - site.download_pages[page.product_id].each do |product_version, download_page|
         - if !download_page.build_info.archived
+          - puts " adding #{download_page.build_info.version}"
           - active_page_found = active_page_found || download_page.build_info.version == page.build_info.version
           %li{:class=>("active" if download_page.build_info.version == page.build_info.version)}
             %a{:href=>relative(download_page.output_path)}

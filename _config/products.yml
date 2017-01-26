@@ -998,6 +998,7 @@ jbt_core:
           - name: Release Notes
             url: https://tools.jboss.org/documentation/whatsnew/index.html
       4.4.2.AM3:
+        archived: true
         release_date: 2016-11-10
         supported_jbt_is_version: 4.4.0.Final
         blog_announcement_url: /blog/am3.4.4.2.neon.html
@@ -1018,6 +1019,7 @@ jbt_core:
           - name: Release Notes
             url: https://tools.jboss.org/documentation/whatsnew/index.html
       4.4.2.AM2:
+        archived: true
         release_date: 2016-10-19
         supported_jbt_is_version: 4.4.0.Final
         blog_announcement_url: /blog/am2.4.4.2.neon.html
@@ -1038,6 +1040,7 @@ jbt_core:
           - name: Release Notes
             url: https://tools.jboss.org/documentation/whatsnew/index.html
       4.4.2.AM1:
+        archived: true
         release_date: 2016-09-29
         supported_jbt_is_version: 4.4.0.Final
         blog_announcement_url: /blog/am1-for-neon.1.html
@@ -2049,6 +2052,7 @@ jbt_is:
              url: http://download.jboss.org/jbosstools/neon/stable/updates/integration-stack/jbosstools-integration-stack-4.4.0.Final-updatesite-earlyaccess.zip
              md5_url: http://download.jboss.org/jbosstools/neon/stable/updates/integration-stack/jbosstools-integration-stack-4.4.0.Final-updatesite-earlyaccess.zip.MD5
       4.4.0.Alpha1:
+        archived: true
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/
         release_date: 2016-09-27
         required_jbt_core_version: 4.4.1.Final
@@ -2069,6 +2073,7 @@ jbt_is:
             url: http://download.jboss.org/jbosstools/mars/stable/updates/integration-stack/jbosstools-integration-stack-4.3.3.Final-updatesite.zip
             md5_url: http://download.jboss.org/jbosstools/mars/stable/updates/integration-stack/jbosstools-integration-stack-4.3.3.Final-updatesite.zip.MD5
       4.3.2.Final:
+        archived: true
         release_date: 2016-10-06
         required_jbt_core_version: 4.3.1.Final
         update_site_url: http://download.jboss.org/jbosstools/mars/stable/updates/integration-stack/
@@ -2079,6 +2084,7 @@ jbt_is:
             url: http://download.jboss.org/jbosstools/mars/stable/updates/integration-stack/jbosstools-integration-stack-4.3.2.Final-updatesite.zip
             md5_url: http://download.jboss.org/jbosstools/mars/stable/updates/integration-stack/jbosstools-integration-stack-4.3.2.Final-updatesite.zip.MD5
       4.3.1.Final:
+        archived: true
         release_date: 2016-08-11
         required_jbt_core_version: 4.3.1.Final
         update_site_url: http://download.jboss.org/jbosstools/mars/stable/updates/integration-stack/
@@ -2093,6 +2099,7 @@ jbt_is:
             url: http://download.jboss.org/jbosstools/mars/stable/updates/integration-stack/jbosstools-integration-stack-4.3.1.Final-earlyaccess.zip
             md5_url: http://download.jboss.org/jbosstools/mars/stable/updates/integration-stack/jbosstools-integration-stack-4.3.1.Final-earlyaccess.zip.MD5
       4.3.0.Final:
+        archived: true
         release_date: 2016-05-06
         required_jbt_core_version: 4.3.1.Final
         update_site_url: http://download.jboss.org/jbosstools/mars/stable/updates/integration-stack/
@@ -2107,6 +2114,7 @@ jbt_is:
             url: http://download.jboss.org/jbosstools/mars/stable/updates/integration-stack/jbosstools-integration-stack-4.3.0.Final-earlyaccess.zip
             md5_url: http://download.jboss.org/jbosstools/mars/stable/updates/integration-stack/jbosstools-integration-stack-4.3.0.Final-earlyaccess.zip.MD5
       4.3.0.Beta1:
+        archived: true
         release_date: 2016-03-10
         required_jbt_core_version: 4.3.1.Beta2
         update_site_url: http://download.jboss.org/jbosstools/mars/development/updates/integration-stack/earlyaccess
@@ -2117,6 +2125,7 @@ jbt_is:
             url: http://download.jboss.org/jbosstools/mars/development/updates/integration-stack/jbosstools-integration-stack-4.3.0.Beta1-earlyaccess.zip
             md5_url: http://download.jboss.org/jbosstools/mars/development/updates/integration-stack/jbosstools-integration-stack-4.3.0.Beta1-earlyaccess.zip.MD5
       4.3.0.Alpha2:
+        archived: true
         release_date: 2015-10-12
         required_jbt_core_version: 4.3.0.Final
         update_site_url: http://download.jboss.org/jbosstools/mars/development/updates/integration-stack/
@@ -2140,6 +2149,7 @@ jbt_is:
             url: http://download.jboss.org/jbosstools/updates/stable/luna/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.2.7.Final.zip
             md5_url: http://download.jboss.org/jbosstools/updates/stable/luna/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.2.7.Final.zip.MD5
       4.2.6.Final:
+        archived: true
         release_date: 2016-03-30
         required_jbt_core_version: 4.2.3.Final
         update_site_url: http://download.jboss.org/jbosstools/updates/stable/luna/integration-stack/
@@ -2149,7 +2159,8 @@ jbt_is:
             url: http://download.jboss.org/jbosstools/updates/stable/luna/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.2.6.Final.zip
             md5_url: http://download.jboss.org/jbosstools/updates/stable/luna/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.2.6.Final.zip.MD5
       4.2.5.Final:
-        release_date: 2016-02-02
+        rarchived: true
+        elease_date: 2016-02-02
         required_jbt_core_version: 4.2.3.Final
         update_site_url: http://download.jboss.org/jbosstools/updates/stable/luna/integration-stack/
         zips:
@@ -2158,6 +2169,7 @@ jbt_is:
             url: http://download.jboss.org/jbosstools/updates/stable/luna/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.2.5.Final.zip
             md5_url: http://download.jboss.org/jbosstools/updates/stable/luna/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.2.5.Final.zip.MD5
       4.2.4.Final:
+        archived: true
         release_date: 2015-12-07
         required_jbt_core_version: 4.2.3.Final
         update_site_url: http://download.jboss.org/jbosstools/updates/stable/luna/integration-stack/
@@ -2167,6 +2179,7 @@ jbt_is:
             url: http://download.jboss.org/jbosstools/updates/stable/luna/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.2.4.Final.zip
             md5_url: http://download.jboss.org/jbosstools/updates/stable/luna/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.2.4.Final.zip.MD5
       4.2.3.Final:
+        archived: true
         release_date: 2015-08-27
         required_jbt_core_version: 4.2.3.Final
         update_site_url: http://download.jboss.org/jbosstools/updates/stable/luna/integration-stack/
@@ -2180,6 +2193,7 @@ jbt_is:
             url: http://download.jboss.org/jbosstools/updates/stable/luna/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.2.3.Final-earlyaccess.zip
             md5_url: http://download.jboss.org/jbosstools/updates/stable/luna/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.2.3.Final-earlyaccess.zip.MD5
       4.2.2.Final:
+        archived: true
         blog_announcement_url: /blog/integration-stack-4.2.2.Final-for-luna.html
         release_date: 2015-06-23
         required_jbt_core_version: 4.2.3.Final
@@ -2194,6 +2208,7 @@ jbt_is:
             url: http://download.jboss.org/jbosstools/updates/stable/luna/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.2.2.Final-earlyaccess.zip
             md5_url: http://download.jboss.org/jbosstools/updates/stable/luna/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.2.2.Final-earlyaccess.zip.MD5
       4.2.1.Final:
+        archived: true
         blog_announcement_url: /blog/2015-04-16-JBTIS-421-Final.html
         release_date: 2015-04-16
         required_jbt_core_version: 4.2.2.Final
@@ -2208,6 +2223,7 @@ jbt_is:
             url: http://download.jboss.org/jbosstools/updates/stable/luna/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.2.1.Final-earlyaccess.zip
             md5_url: http://download.jboss.org/jbosstools/updates/stable/luna/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.2.1.Final-earlyaccess.zip.MD5
       4.2.0.Final:
+        archived: true
         blog_announcement_url: /blog/2015-03-11-JBTIS-420-Final.html
         release_date: 2015-03-11
         required_jbt_core_version: 4.2.2.Final
@@ -2218,6 +2234,7 @@ jbt_is:
             url: http://download.jboss.org/jbosstools/updates/stable/luna/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.2.0.Final.zip
             md5_url: http://download.jboss.org/jbosstools/updates/stable/luna/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.2.0.Final.zip.MD5
       4.2.0.Beta2:
+        archived: true
         blog_announcement_url: /blog/2015-01-13-JBTIS-Beta2-for-luna.html
         #release_notes_url: https://devstudio.jboss.com/updates/8.0/integration-stack/release-notes/Release_Notes_8.0.0.html
         release_date: 2015-01-12
@@ -2229,6 +2246,7 @@ jbt_is:
             url: http://download.jboss.org/jbosstools/updates/development/luna/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.2.0.Beta2a.zip
             md5_url: http://download.jboss.org/jbosstools/updates/development/luna/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.2.0.Beta2a.zip.MD5
       4.2.0.Beta1:
+        archived: true
         blog_announcement_url: /blog/2014-11-13-JBTIS-Beta1-for-luna.html
         #release_notes_url: https://devstudio.jboss.com/updates/8.0/integration-stack/release-notes/Release_Notes_8.0.0.html
         release_date: 2014-11-12
@@ -2253,6 +2271,7 @@ jbt_is:
             url: http://download.jboss.org/jbosstools/updates/stable/kepler/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.1.7.Final.zip
             md5_url: http://download.jboss.org/jbosstools/updates/stable/kepler/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.1.7.Final.zip.MD5
       4.1.6.Final:
+        archived: true
         build_type: stable
         blog_announcement_url: /blog/2014-10-09-JBTIS-4.1.6.Final.html
         release_notes_url: https://devstudio.jboss.com/updates/7.0/integration-stack/release-notes/Release_Notes_7.0.3.html
@@ -2265,6 +2284,7 @@ jbt_is:
             url: http://download.jboss.org/jbosstools/updates/stable/kepler/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.1.6.Final.zip
             md5_url: http://download.jboss.org/jbosstools/updates/stable/kepler/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.1.6.Final.zip.MD5
       4.1.5.Final:
+        archived: true
         blog_announcement_url: /blog/2014-06-19-JBTIS-4.1.5.Final.html
         release_notes_url: https://devstudio.jboss.com/updates/7.0/integration-stack/release-notes/Release_Notes_7.0.2.html
         release_date: 2014-06-19
@@ -2277,6 +2297,7 @@ jbt_is:
             md5_url: http://download.jboss.org/jbosstools/updates/stable/kepler/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.1.5.Final.zip.MD5
 
       4.1.4.Final:
+        archived: true
         blog_announcement_url: /blog/2014-04-14-JBTIS-4.1.4.Final.html
         release_date: 2014-04-14
         required_jbt_core_version: 4.1.2.Final

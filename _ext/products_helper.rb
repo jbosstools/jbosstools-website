@@ -63,12 +63,12 @@ module Awestruct
       # Returns a build type label if provided in products.yml, or 'nil' if the product is archived or has a higher version
       # of the same type in the same stream
       def get_build_type_label(site, product_id, product_version, build_type, archived)
-        if archived || has_higher_version(site, product_id, product_version, build_type)
+        if has_higher_version(site, product_id, product_version, build_type)
           build_type_label = nil
-          #puts "  No specific build type for #{product_id} #{product_version} since it is archived or outdated."
+          puts "  No specific build type for #{product_id} #{product_version} since it is archived or outdated."
         else
           build_type_label = build_type
-          #puts "  Build type for #{product_id} #{product_version}: '#{build_type_label}'"
+          puts "  Build type for #{product_id} #{product_version}: '#{build_type_label}'"
         end
         return build_type_label
       end
