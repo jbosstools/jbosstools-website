@@ -1,0 +1,25 @@
+= OpenShift What's New in 3.3.2.AM2
+:page-layout: whatsnew
+:page-component_id: openshift
+:page-component_version: 4.4.3.AM2
+:page-product_id: jbt_core
+:page-product_version: 4.4.3.AM2
+:page-include-previous: true
+
+=== OpenShift Container Platform 3.4 support
+
+OpenShift Container Platform (OCP) 3.4 has been
+https://www.redhat.com/en/about/press-releases/red-hat-breaks-down-barriers-enterprise-container-adoption-dynamic-storage-provisioning-latest-version-red-hat-openshift-container-platform[announced, window="_blank"] by Red Hat.
+JBossTools 4.4.3.AM2 has been validated against OCP 3.4.
+
+If you are using JBossTools together with the https://developers.redhat.com/products/cdk/overview/[Container Development Toolkit, window="_blank"] (CDK),
+the latest version is using OCP 3.3 by default. If you are using CDK 2.3, there is a way to upgrade to OCP 3.4. Edit the *Vagrantfile*,
+locate the line with *IMAGE_TAG=""* and replace by *IMAGE_TAG="v3.4.1.2-2"*. then restart the CDK VM (vagrant halt; vagrant up).
+
+WARNING: It seems there are some upgrade problems between OCP 3.3 and OCP 3.4 so you may experience deploy errors. We recommand
+that you destroy the CDK VM (vagrant destroy) before upgrading to OCP.
+   
+[WARNING] 
+related_jira::JBIDE-23389[]
+
+
