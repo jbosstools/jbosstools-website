@@ -1,0 +1,35 @@
+= JBoss Tools 4.4.3.AM2 for Eclipse Neon.2
+:page-layout: blog
+:page-author: jeffmaury
+:page-tags: [release, jbosstools, jbosscentral]
+:page-date: 2017-02-01
+
+Happy to announce 4.4.3.AM2 (Developer Milestone 2) build for Eclipse Neon.2.
+
+Downloads available at link:/downloads/jbosstools/neon/4.4.3.AM2.html[JBoss Tools 4.4.3 AM2].
+
+== What is New?
+
+Full info is at link:/documentation/whatsnew/jbosstools/4.4.3.AM2.html[this page]. Some highlights are below.
+
+=== OpenShift 3
+
+Although our main focus is bug fixes, we continue to work on providing better experience for container based development in JBoss Tools and Developer Studio. Let's go through a few interesting updates here and you can find more details on link:/documentation/whatsnew/jbosstools/4.4.2.AM1.html[the What's New page].
+
+==== OpenShift Container Platform 3.4 support
+
+OpenShift Container Platform (OCP) 3.4 has been
+https://www.redhat.com/en/about/press-releases/red-hat-breaks-down-barriers-enterprise-container-adoption-dynamic-storage-provisioning-latest-version-red-hat-openshift-container-platform[announced, window="_blank"] by Red Hat.
+JBossTools 4.4.3.AM2 has been validated against OCP 3.4.
+
+If you are using JBossTools together with the https://developers.redhat.com/products/cdk/overview/[Container Development Toolkit, window="_blank"] (CDK),
+the latest version is using OCP 3.3 by default. If you are using CDK 2.3, there is a way to upgrade to OCP 3.4. Edit the *Vagrantfile*,
+locate the line with *IMAGE_TAG=""* and replace by *IMAGE_TAG="v3.4.1.2-2"*. then restart the CDK VM (vagrant halt; vagrant up).
+
+WARNING: It seems there are some upgrade problems between OCP 3.3 and OCP 3.4 so you may experience deploy errors. We recommand
+that you destroy the CDK VM (vagrant destroy) before upgrading to OCP.
+
+
+Enjoy!
+
+Jeff Maury
