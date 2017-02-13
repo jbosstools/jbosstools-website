@@ -1,0 +1,11 @@
+= JBoss Tools Survey
+:page-layout: blog
+:page-author: dbocharov
+:page-tags: [jbosstools, survey]
+:page-date: 2017-02-11
+
+JBoss Tools team invites you to take a short survey: https://goo.gl/forms/DCU6KUakhcuxMVMB3. We need your opinion to get a better understanding of how we can help you to be more efficient as a developer. It won't take more than 5 minutes, but can save you much more time in the future. +
+Every voice is very important for us and will be heard.
+
+Thanks in advance, +
+Dmitrii
