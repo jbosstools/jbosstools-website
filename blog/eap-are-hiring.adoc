@@ -1,0 +1,18 @@
+= WildFly/EAP are hiring
+:page-date: 2017-02-20
+:page-layout: blog
+:page-author: maxandersen
+:page-tags: [job, jbosscentral]
+
+The WildFly/EAP team is looking for a Eclipse developer to help move forward
+the Eclipse IDE tooling around WildFly/EAP server, Java and JavaEE.
+
+If you are into making developers life easier and like to be able to
+get involved in many different technologies and get them to work great
+together then do apply for this one.
+
+The official job listing are here: https://careers-redhat.icims.com/jobs/55763/senior-software-engineer---jboss-eap/job?mobile=false&width=900&height=500&bga=true&needsRedirect=false&jan1offset=60&jun1offset=120[Senior Software Engineer]
+
+Have fun! +
+Max Rydahl Andersen +
+http://twitter.com/maxandersen[@maxandersen]
