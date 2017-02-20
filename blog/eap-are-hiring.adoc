@@ -1,4 +1,4 @@
-= WildFly/EAP are hiring
+= WildFly/EAP team are hiring
 :page-date: 2017-02-20
 :page-layout: blog
 :page-author: maxandersen
