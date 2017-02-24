@@ -1,0 +1,108 @@
+= JBoss Tools and Red Hat Developer Studio Maintenance Release for Eclipse Neon.2
+:page-layout: blog
+:page-author: jeffmaury
+:page-tags: [release, jbosstools, devstudio, jbosscentral]
+:page-date: 2017-02-23
+
+link:/downloads/jbosstools/neon/4.4.3.Final.html[JBoss Tools 4.4.3] and link:/downloads/devstudio/neon/10.3.0.GA.html[Red Hat JBoss Developer Studio 10.3] for Eclipse Neon.2 are here waiting for you. Check it out!
+
+image::/blog/images/devstudio10.png[]
+
+== Installation
+
+JBoss Developer Studio comes with everything pre-bundled in its installer. Simply download it from our https://www.jboss.org/products/devstudio.html[JBoss Products page] and run it like this:
+ 
+    java -jar jboss-devstudio-<installername>.jar
+
+JBoss Tools or Bring-Your-Own-Eclipse (BYOE) JBoss Developer Studio require a bit more:
+
+This release requires at least Eclipse 4.6.2 (Neon.2) but we recommend
+using the latest http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/neon2[Eclipse 4.6.2 Neon JEE Bundle] since then you get most of the dependencies preinstalled. 
+
+Once you have installed Eclipse, you can either find us on the Eclipse Marketplace under "JBoss Tools" or "Red Hat JBoss Developer Studio".
+
+For JBoss Tools, you can also use our update site directly.
+
+    http://download.jboss.org/jbosstools/neon/stable/updates/
+
+== What is new? 
+
+Our main focus for this release was improvements for container based development and bug fixing.
+
+=== Improved OpenShift 3 and Docker Tools
+
+We continue to work on providing better experience for container based development in JBoss Tools and Developer Studio. Let's go through a few interesting updates here.
+
+==== Scaling from pod resources
+
+When an application is being deployed to Openshift, it was possible to scale the pod resources from the 
+service resource.
+
+image::/documentation/whatsnew/openshift/images/scale-command-from-service.png[width=600]
+
+However, it was not a very logical choice. So the command is also available at the pod level, leading to better usability.
+
+image::/documentation/whatsnew/openshift/images/scale-command-from-pod.png[width=600]
+
+==== OpenShift Container Platform 3.4 support
+
+OpenShift Container Platform (OCP) 3.4 has been
+https://www.redhat.com/en/about/press-releases/red-hat-breaks-down-barriers-enterprise-container-adoption-dynamic-storage-provisioning-latest-version-red-hat-openshift-container-platform[announced, window="_blank"] by Red Hat.
+JBossTools 4.4.3 has been validated against OCP 3.4.
+
+==== CDK 3 Beta Server Adapter
+
+A new server adapter has been added to support the next generation of CDK 3. This is Tech Preview in this release as CDK 3 is Beta.
+While the server adapter itself has limited functionality, it is able to start and stop the CDK virtual machine via its minishift binary.
+Simply hit Ctrl+3 (Cmd+3 on OSX) and type CDK, that will bring up a command to setup and/or launch the CDK server adapter.
+You should see the old CDK 2 server adapter along with the new CDK 3 one (labeled *Red Hat Container Development Kit 3 (Tech Preview)* ).
+
+
+image::/documentation/whatsnew/openshift/images/cdk3-server-adapter.png[width=600]
+
+All you have to do is set the credentials for your Red Hat account and the location of the CDK’s minishift binary file and the type of virtualization hypervisor.
+
+image::/documentation/whatsnew/openshift/images/cdk3-server-adapter1.png[width=600]
+
+Once you’re finished, a new CDK Server adapter will then be created and visible in the Servers view.
+
+image::/documentation/whatsnew/openshift/images/cdk3-server-adapter2.png[width=600]
+
+Once the server is started, Docker and OpenShift connections should appear in their respective views, allowing the user to quickly create a new Openshift application and begin developing their AwesomeApp in a highly-replicatable environment.
+
+image::/documentation/whatsnew/openshift/images/cdk3-server-adapter3.png[width=600]
+image::/documentation/whatsnew/openshift/images/cdk3-server-adapter4.png[width=600]
+
+WARNING: This is Tech Preview. The implementation is subject to change, may not work with next releases of CDK 3 and testing has been limited.
+
+=== Hibernate Tools
+
+==== Hibernate Runtime Provider Updates
+
+A number of additions and updates have been performed on the available Hibernate runtime  providers.
+
+===== Hibernate Runtime Provider Updates
+
+The Hibernate 5.0 runtime provider now incorporates Hibernate Core version 5.0.12.Final and Hibernate Tools version 5.0.4.Final.
+
+The Hibernate 5.1 runtime provider now incorporates Hibernate Core version 5.1.4.Final and Hibernate Tools version 5.1.2.Final.
+
+The Hibernate 5.2 runtime provider now incorporates Hibernate Core version 5.2.7.Final and Hibernate Tools version 5.2.1.Final.
+
+
+=== Forge Tools
+
+
+==== Forge Runtime updated to 3.5.1.Final
+
+The included Forge runtime is now 3.5.1.Final. Read the official announcement http://forge.jboss.org/news/jboss-forge-3.5.1.final-is-here[here].
+
+image::/documentation/whatsnew/forge/images/4.4.3.Final/startup.png[]
+
+== What is next?
+
+Having JBoss Tools 4.4.3 and Developer Studio 10.3 out we are already working on the next maintenance release for Eclipse Neon.3.
+
+Enjoy!
+
+Jeff Maury
