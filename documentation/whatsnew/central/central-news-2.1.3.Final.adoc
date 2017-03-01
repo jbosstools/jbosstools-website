@@ -7,7 +7,7 @@
 
 == Updated Red Hat Central Experience
 
-Red Hat Central, designed to provide instant access to a large variety of JBoss Developer materials, has been given a fresh look, matching Red Hat’s color theme :
+Red Hat Central, designed to provide instant access to a large variety of http://www.jboss.org/get-started/[JBoss Developer], has been given a fresh look, matching Red Hat’s color theme :
 
 image::./images/new-red-hat-central-2017.png[]
 
