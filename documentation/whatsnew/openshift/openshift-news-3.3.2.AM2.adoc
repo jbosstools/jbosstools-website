@@ -14,7 +14,7 @@ JBossTools 4.4.3.AM2 has been validated against OCP 3.4.
 
 If you are using JBossTools together with the https://developers.redhat.com/products/cdk/overview/[Container Development Toolkit, window="_blank"] (CDK),
 the latest version is using OCP 3.3 by default. If you are using CDK 2.3, there is a way to upgrade to OCP 3.4. Edit the *Vagrantfile*,
-locate the line with *IMAGE_TAG=""* and replace by *IMAGE_TAG="v3.4.1.2-2"*. then restart the CDK VM (vagrant halt; vagrant up).
+locate the line with *IMAGE_TAG=""* and replace with *IMAGE_TAG="v3.4.1.2-2"*. then restart the CDK VM (vagrant halt; vagrant up).
 
 WARNING: It seems there are some upgrade problems between OCP 3.3 and OCP 3.4 so you may experience deploy errors. We recommand
 that you destroy the CDK VM (vagrant destroy) before upgrading to OCP.
