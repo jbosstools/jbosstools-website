@@ -1,0 +1,20 @@
+= Server What's New in 4.4.4.AM1
+:page-layout: whatsnew
+:page-component_id: server
+:page-component_version: 4.4.4.AM1
+:page-product_id: jbt_core
+:page-product_version: 4.4.4.AM1
+
+== API Change in JMX UI's New Connection Wizard
+
+While hardly something most users will care about, extenders may need to be aware that the API for adding connection types to the 'New JMX Connection' wizard in the 'JMX Navigator' has changed.  Specifically, the 'org.jboss.tools.jmx.ui.providerUI' extension point has been changed. While previously having a child element called 'wizardPage', it now requires a 'wizardFragment'. 
+
+A 'wizardFragment' is part of the 'TaskWizard' framework first used in WTP's ServerTools, which has, for a many years, been used throughout JBossTools. This framework allows wizard workflows where the set of pages to be displayed can change based on what selections are made on previous pages. 
+
+This change was made as a direct result of a bug caused by the addition of the Jolokia connection type in which some standard workflows could no longer be completed. 
+
+This change only affects adopters and extenders, and should have no noticable change for the user, other than that the below bug has been fixed. 
+
+related_jira::JBIDE-24029[Create JMX Connection wizard can not be finished when Jolokia plugin is activated]
+
+
