@@ -54,7 +54,7 @@ image::/documentation/whatsnew/openshift/images/server-adapter-enhanced1.png[wid
 
 Once created, the kind of OpenShift resource adapter is also displayed in the Servers view:
 
-image::./images/server-adapter-enhanced2.png[width=600]
+image::/documentation/whatsnew/openshift/images/server-adapter-enhanced2.png[width=600]
 
 This information is also available from the server editor:
 
