@@ -1,0 +1,45 @@
+= JBoss Tools 4.4.4.AM2 for Eclipse Neon.3
+:page-layout: blog
+:page-author: jeffmaury
+:page-tags: [release, jbosstools, jbosscentral]
+:page-date: 2017-04-04
+
+Happy to announce 4.4.4.AM2 (Developer Milestone 2) build for Eclipse Neon.3.
+
+Downloads available at link:/downloads/jbosstools/neon/4.4.4.AM2.html[JBoss Tools 4.4.4 AM2].
+
+== What is New?
+
+Full info is at link:/documentation/whatsnew/jbosstools/4.4.4.AM2.html[this page]. Some highlights are below.
+
+=== Docker Tools
+
+==== Run Image Network Support
+
+A new page has been added to the Docker Run Image Wizard and Docker Run Image Launch configuration that allows
+the end-user to specify the network mode to use.  A user can choose from Default, Bridge, Host, None, Container,
+or Other.  If Container is selected, the user must choose from an active Container to use the same network mode.
+If Other is specified, a named network can be specified.
+
+image::/documentation/whatsnew/docker/images/docker_neon3_sprint129/LinuxToolsDockerNetworkMode.png[Network Mode]
+
+image::/documentation/whatsnew/docker/images/docker_neon3_sprint129/LinuxToolsDockerRunConfigNetworkMode.png[Network Mode Configuration]
+
+==== Refresh Connection
+
+Users can now refresh the entire connection from the Docker Explorer View.  Refresh can be performed two ways:
+
+. using the right-click context menu from the Connection
+. using the Refresh menu button when the Connection is selected
+
+image::/documentation/whatsnew/docker/images/docker_neon3_sprint129/LinuxToolsDockerRefreshConnection.png[Refresh Connection]
+
+WARNING: A late problem has been found between Neon.3 packages and Docker Tools packages. It has been fixed since then, but
+you need to install the latest Docker Tools bits from http://download.eclipse.org/linuxtools/update-docker-2.3.1 if you want
+the best Docker Tools experience with Neon.3.
+
+
+
+Enjoy!
+
+Jeff Maury
