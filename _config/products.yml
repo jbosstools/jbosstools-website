@@ -1020,8 +1020,28 @@ jbt_core:
           - name: Stand-alone BrowserSim
             file_size: 16MB
             url: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.jboss.tools.browsersim&a=org.jboss.tools.browsersim-standalone&v=3.8.0-SNAPSHOT&e=zip
-      4.4.4.AM1:
+      4.4.4.AM2:
         update_site_url: http://download.jboss.org/jbosstools/neon/development/updates/
+        release_date: 2017-04-04
+        supported_jbt_is_version: 4.4.2.Final
+        blog_announcement_url: /blog/4.4.4.am2-for-neon.3.html
+        documentation_url: http://docs.jboss.org/tools/
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 480MB
+            url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.4.AM2-updatesite-core.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.4.AM2-updatesite-core.zip.sha256
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 222MB
+            url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.4.AM2-src.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.4.AM2-src.zip.sha256
+          - name: Stand-alone BrowserSim
+            file_size: 17MB
+            url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.4.AM2-browsersim-standalone.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.4.AM2-browsersim-standalone.zip.sha256
+          - name: Release Notes
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
+      4.4.4.AM1:
         release_date: 2017-03-15
         supported_jbt_is_version: 4.4.2.Final
         blog_announcement_url: /blog/4.4.4.am1-for-neon.2.html
