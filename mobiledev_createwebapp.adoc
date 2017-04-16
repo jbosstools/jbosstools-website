@@ -1,0 +1,150 @@
+= Create Your First Mobile Web App
+
+:page-layout: howto
+:page-tab: docs	
+:page-status: green
+:experimental:
+:imagesdir: ./images
+
+Mobile Web Tools provides an HTML5 Project wizard that enables you to create web applications optimized for mobile devices. The HTML5 Project wizard is a useful starting point for creating all new HTML5 web applications in the IDE. The wizard generates a sample read-to-deploy HTML5 mobile application with REST resources from a Maven archetype.
+
+As demonstrated in this article, you can customize the application using the JBoss Tools HTML Editor, deploy and view the application with the mobile browser simulator BrowserSim, and use LiveReload to refresh BrowserSim as the application source code is modified and saved in the IDE.
+
+The instructions here demonstrate how to complete the following tasks:
+
+. <<Create,Create an HTML5 Project>>
+
+. <<Build_and_deploy,Build and Deploy the Application>>
+
+. <<View,View the Application with BrowserSim>>
+
+. <<Enable_Livereload,Enable Livereload for BrowserSim>>
+
+. <<Change,Change the Application>>
+
+This article guides you through each of these configuration requirements and must be completed in the order given.
+
+[[Create]]
+
+== Prequisite: Configure the IDE for an Available Server
+
+Part of the instructions in this article show you how to deploy your HTML5 web application to a server. The IDE must be configured for any servers to which you want to deploy applications, including the location and type of application server and any custom configuration or management settings. You can complete this configuration at the time of deploying the application but in this article it is assumed that you have completed the configuration beforehand. 
+
+For information on configuring a local runtime server and deploying applications to it, see   
+_Deploy Apps to a Local Server_
+
+[[Build_and_deploy]]
+== 1. Create an HTML5 Project
+
+The `HTML5 Project` wizard generates a sample project based on a Maven archetype and the project and application identifiers provided by you. The Maven archetype version is indicated in the `Description` field of the wizard first page and you can change the version, and therefore the project look and dependencies, by selected either an enterprise or non-enterprise target runtime within the wizard.
+
+To create a HTML5 project, complete the following steps:
+
+. In JBoss Central, under `Start from scratch`, click `HTML5 Project`.
+
+. From the `Target Runtime` list, select an `IDE-ready server` and click `Next`.
+
+. Complete the fields about the HTML5 project as follows:
+
+* In the `Project name` field, type a name for the project.
+
+* In the `Package` field, type an alpha-numeric package for the project.
+
+. Click `Finish`.
+
+. When prompted with `HTML5 Project` Project is now ready, click `Finish`.
+
+The project is generated and listed in the `Project Explorer` view.
+
+[[Build_and_deploy]]
+== 2. Build and Deploy the Application
+
+After the HTML5 project is generated, it can immediately be built and deployed to an application server. 
+
+To build and deploy the application, complete the following steps:
+
+. In the `Project Explorer` view, right-click `_{project name}_` and click menu:Run As[Run on Server].
+
+. Ensure `Choose an existing server` is selected.
+
+. From the table of servers, expand `localhost`, select the server on which to deploy the application and click `Finish`.
+
+.Selecting the server to run the application
+image::mobiledev_createwebapp-runtimeserver.png[Select the runtime server to run the application.]
+
+The `Console` view shows output from the server starting and deploying the application. When deployment is complete, an IDE default web browser opens and shows the deployed web application.
+
+.Enterprise HTML5 web application Viewed in Browser
+image::mobiledev_createwebapp-enterpriseapp.png[Select the runtime server to run the application.]
+
+.Non-enterprise HTML5 web application Viewed in Browser
+image::mobiledev_createwebapp-communityapp.png[Select the runtime server to run the application.]
+
+
+[[View]]
+== 3. View the Application with BrowserSim
+
+The HTML5 web application has an interface optimized for mobile devices. You can view and test such web pages as they would be on mobile devices using BrowserSim. This mobile device web browser simulator provides skins for different mobile devices, making it easy to test and debug web applications for mobile devices.
+
+
+To view the application with BrowserSim, complete the following steps:
+
+. Ensure JBoss is the perspective in use. To open the JBoss perspective, click menu:Window[Open Perspective > Other > double-click JBoss].
+
+. In the `Servers` view, expand the server to list the application.
+
+. Right-click `_{project name}_` and click menu:Show In[BrowserSim]. 
+
+.HTML5 Web Application Viewed with BrowserSim
+image::mobiledev_createwebapp-browersimapp.png[HTML5 Web Application Viewed with BrowserSim.]
+
+[[Enable_Livereload]]
+== 4. Enable LiveReload for BrowserSim
+
+Mobile Web Tools supports the LiveReload protocol for automatic reloading of web pages in enabled browsers as the project source is modified and saved. LiveReload can be enabled for your system browsers and, as demonstrated here, BrowserSim. This provides an interactive web development experience.
+
+To enable LiveReload for BrowserSim, complete the following steps:
+
+. In the `Servers` view, right-click an existing server to display the context menu and click menu:New[Server].
+
+. From the list, expand `Basic`, select `LiveReload Server` and click `Finish`.
+
+. In the `Servers` view, right-click `LiveReload Server` and click `Start`. 
+
+. When the LiveReload Server is started, right-click the BrowserSim simulated device frame, click `Enable LiveReload`.
+
+[[Change]]
+== 5. Change the Application
+
+With LiveReload enabled for BrowserSim, you can make changes to your application source code and BrowserSim automatically reloads the application when changes are saved. This is demonstrated here by making a simple change to the project index.html file, specifically changing the name of the application in the file header.
+
+To change your application, complete the following steps:
+
+. In the `Project Explorer` view,  expand `_{project name}_` > `src` > `main`.
+
+. Double-click `index.html` to open it for editing with the `JBoss Tools HTML Editor`.
+
+. Replace the code in `index.html` `<body>` tag with the following lines:
+
+[source,html]
+------------
+<body>
+    <section>
+        <h1>Welcome to Your First Mobile Web Application</h1>
+    </section>
+</body>
+------------
+
+. Save the file by pressing kbd:[Ctrl+S] (kbd:[Cmd+S]).
+
+The above code changes the name of the application. 
+
+== Did You Know?
+* You can also launch the HTML5 Project wizard from the JBoss perspective by clicking  menu:File[New > HTML5 Project]. 
+
+* You can test an undeployed HTML file on BrowserSim by right-clicking the `.html` file in the `Project Explorer` view and clicking menu:Open With[BrowserSim].
+
+* To set BrowserSim as the IDE default web browser, in the JBoss perspective click menu:Window[Web Browser > BrowserSim or click Windows > Preferences > General > Web Browser] and from the `External web browsers` list select `BrowserSim`. 
+
+
+	
