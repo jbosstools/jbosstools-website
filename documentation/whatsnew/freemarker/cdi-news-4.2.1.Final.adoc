@@ -1,0 +1,12 @@
+= CDI Tools What's New in 4.2.1.Final
+:page-layout: whatsnew
+:page-component_id: freemarker
+:page-component_version: 4.2.1.Final
+:page-product_id: jbt_core 
+:page-product_version: 4.2.1.Final
+
+== Freemarker 2.3.21 
+
+Freemarker library included in Fremarker IDE was updated to latest available version 2.3.21.
+
+related_jira::JBIDE-18815[]
