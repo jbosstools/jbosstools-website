@@ -80,6 +80,13 @@ WARNING: If you want to use https://tools.jboss.org/features/livereload.html[Liv
 * JavaFx which is shipped with Oracle JDK 7 has no *WebSocket* support, which is vital for *LiveReload* functionality. So, *LiveReload* doesn't work with Oracle JDK 7 for JavaFx web engine. Fortunately, it is fixed in JDK 8 - https://bugs.openjdk.java.net/browse/JDK-8097808[JDK-8097808]
 * JavaFx HTML 5 Date and time inputs do not function properly - https://bugs.openjdk.java.net/browse/JDK-8087937[JDK-8087937], https://issues.jboss.org/browse/JBIDE-17054[JBIDE-17054]
 
+== Known issues
+[square]
+* *Dev Tools Debugger* doesn't work properly with the Oracle *JDK 8u20* - https://bugs.openjdk.java.net/browse/JDK-8090205[JDK-8090205], https://issues.jboss.org/browse/JBIDE-18526[JBIDE-18526]
+* JavaFx which is shipped with Oracle JDK 7 has no *localStorage* support. Fortunately, it is fixed in JDK 8 - https://bugs.openjdk.java.net/browse/JDK-8101833[JDK-8101833] 
+* JavaFx which is shipped with Oracle JDK 7 has no *WebSocket* support, which is vital for *LiveReload* functionality. So, *LiveReload* doesn't work with Oracle JDK 7 for JavaFx web engine. Fortunately, it is fixed in JDK 8 - https://bugs.openjdk.java.net/browse/JDK-8097808[JDK-8097808] 
+* JavaFx HTML 5 Date and time inputs do not function properly - https://bugs.openjdk.java.net/browse/JDK-8087937[JDK-8087937], https://issues.jboss.org/browse/JBIDE-17054[JBIDE-17054]
+
 == Platform Specific Questions
 
 [qanda]
