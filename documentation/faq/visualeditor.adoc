@@ -78,3 +78,9 @@ I try to install webkitgtk package but it is not available::
 	For some operation systems(i.e. RHEL7) webkitgtk package may not be available. You can either use GTK3 or use XulRunner 24 as a browser engine for HTML files.
 +
 To use it you need to download XulRunner 24 from http://ftp.mozilla.org/pub/mozilla.org/xulrunner/releases/24.0/runtimes/[mozilla ftp], unpack it and start Eclipse or JBoss Developer Studio with `-Dorg.eclipse.swt.browser.XULRunnerPath=path_to_xulrunner_folder` option in eclipse.ini or jbdevstudio.ini. Bear in mind that Visual Page Editor for JSP/JSF files will not work.
+
+== Known Issues
+
+[qanda]
+Opening xhtml with Visual Page Editor ends up with the eclipse crash::
+  If one faces this issue, then it is likely coupled with the regression XULRunner https://bugs.eclipse.org/bugs/show_bug.cgi?id=472956[Bug 472956]. Basically, XULRunner crashes when profile path does not exist. The workaround is to create profile folder `C:\Users\<USER_NAME>\AppData\Roaming\Mozilla\eclipse` manually. More details can be found in https://issues.jboss.org/browse/JBIDE-20524[JBIDE-20524]
