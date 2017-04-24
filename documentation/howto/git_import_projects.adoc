@@ -1,0 +1,150 @@
+= Importing Projects in {devstudio} Using Git Import
+:page-layout: howto
+:page-tab: docs
+:page-status: green
+:experimental:
+:imagesdir: ./images
+
+The Git Import feature allows you to easily configure most of the settings required to make a project workable immediately after it is imported in the IDE.
+
+The *Import* wizard assists you in importing projects into the IDE in one of the following ways:
+
+. <<smart_import>>: Use this method if you are unaware of the type of the project that you are importing.
++
+[NOTE]
+====
+We recommend using the Projects from Git (with smart import) option because it is the easiest and most efficient way to import projects into the IDE with minimal effort.
+====
++
+. <<from_git>>: Use this method when you are aware of the type of the project that you are importing.
+.. <<existing_repo>>: Use this method if you have a cloned copy of the repository on your local system.
+... <<existing_eclipse>>: Use to import Eclipse projects.
+... <<new_project_wizard>>: Use to import a project that you want to begin working on from scratch.
+... <<general_project>>: Use to import non-Eclipse projects.
+.. <<clone_uri>>: Use this method if a cloned copy of the repository does not exist on your local system.
+
+[NOTE]
+====
+The three options namely: importing existing eclipse projects, using the New Project wizard, and importing as a general project, are available under this method, too. 
+====
+
+[[smart_import]]
+== Importing Projects from Git with Smart Import
+Use the `Project from Git (with smart import)` option, if you are unaware of the type of the project that you want to import.
+
+The `Import` wizard will automatically detect the type of project being imported and will configure the project so that you have to put in minimal effort to make the project workable.
+
+The Git Import feature detects the various modules of a project that is a set of other individual projects. It detects markers such as `pom.xml`, `MANIFEST.MF`, etc. to determine the type of project that you are importing.
+
+To import projects from Git with smart import:
+
+. Click `File` > `Import`.
+. In the `Import` window, click `Projects from Git (with smart import)` and click `Next`.
+. In the `Select Repository Source` window, click `Existing local repository` or `Clone URI`.
+. Step through the wizard and click `Finish` for the wizard to analyze the content of the project folder to find projects for import and import them in the IDE.
+`Result:` The imported project is listed in the `Project Explorer` view.
+
+[[from_git]]
+== Importing Projects from Git
+Use the `Projects from Git` option when you are aware of the type of project that you want to import into the IDE.
+
+You can import projects in any one of the following ways:
+
+. <<existing_repo>>
+.. <<existing_eclipse>>
+.. <<new_project_wizard>>
+.. <<general_project>>
+. <<clone_uri>>
+
+[[existing_repo]]
+=== Importing from the Existing local repositories
+Use the `Existing local repository` option, if you have, at some point in time, cloned the remote Git repository and the repository is present on your local system.
+
+[[existing_eclipse]]
+==== Importing Existing Eclipse Projects
+Use the `Existing local repositories` option to import Eclipse projects in the IDE. These projects essentially have a `.project` file. This `.project` file contains the project description and settings needed to configure and build project in Eclipse.
+
+To import projects as existing Eclipse projects: 
+
+. Click `File` > `Import`.
+. In the `Import` wizard:
+.. Expand `Git` and then click `Projects from Git`. Click `Next`.
+.. Click `Existing local repository` and then click `Next`.
+.. Click `Git` to choose one of the recently used repositories from the list or click `Add` to browse to any local repository. Click `Next`.
+In the `Wizard for project import` section, click `Import existing Eclipse project`. Click `Next`. 
+.. In the `Import Projects` window, select all the projects that you want to import.
+.. Ensure that the `Select nested projects` check box is clicked to import the nested projects under the parent project that you are importing.
+.. Click `Finish`.
+
+image::git_import_existing_eclipse_project.png[Importing an Existing Eclipse Project]
+
+`Result:` The imported project is listed in the `Project Explorer` view.
+
+[[new_project_wizard]]
+=== Importing Using the New Project Wizard
+Use the `Import using the New Project wizard` option, if your repository is empty and you want to start developing a new project and then push the code to the remote repository. 
+
+To import projects using the New Project wizard:
+
+. Click `File` > `Import`.
+. In the `Import` wizard:
+.. Click `Git` > `Projects from Git`. Click `Next`.
+.. Click `Existing local repository` and then click `Next`.
+.. Click `Git` and then click `Next`.
+.. In the `Wizard for project import` section, click `Import using the New Project wizard`. Click `Finish`.
+.. In the `New Project` wizard, expand the category, and then click the project type that you want to create and import. Click `Next`.
++
+image::git_import_new_project.png[Importing a Project Using the New Project Wizard]
++
+.. In the `New _<type_of_project>_` window, fill in the information for the new project and click `Next` or `Finish` to create the new project.
+`Result:` The imported project is listed in the `Project Explorer` view.
+
+[[general_project]]
+=== Importing as a General Project
+Use the `Import as general project` option if the project being imported does not have a `.project` file, meaning it is not an Eclipse project. In this case Eclipse will create a clean `.project` file with default settings.
+
+To import a project as a general project:
+
+. Click `File` > `Import`.
+. In the `Import` wizard:
+.. Click `Git` > `Projects from Git`. Click `Next`.
+.. Click `Existing local repository` and then click `Next`.
+.. Click `Git` and then click `Next`.
+.. In the `Wizard for project import` section, click `Import as general project`.
+.. Select the project and click `Next`.
+.. In the `Import Projects from Git` window, confirm or edit the default parameters and click `Finish`.
+
+image::git_import_as_general_project.png[Importing a Project as a General Project]
+
+`Result:` The imported project is listed in the `Project Explorer` view.
+
+[[clone_uri]]
+== Importing Projects from the Remote Git Repository 
+Use the `Clone URI` option to clone the repository on your system if you have never cloned the Git repository; meaning, the repository does not exist on your local system.
+
+[NOTE]
+====
+The three options, importing existing eclipse projects, importing using the New Project wizard, and importing as a general project, are available under the Clone URI method, too. For detailed steps, see the preceding sections: <<existing_eclipse>>, <<new_project_wizard>>, and <<general_project>>.
+====
+
+To import projects in the Cloned URI:
+
+. Click `File` > `Import`.
+. In the `Import` wizard:
+.. Click `Git` > `Projects from Git` and then click `Next`.
+.. Click `Clone URI` and click `Next`.
+.. In the `Source Git Repository` window, in the `URI` field, enter an existing Git repository URL, either local or remote and click `Next`.
++
+image::git_import_as_clone_uri.png[Importing Project in the Cloned URI]
++
+.. In the `Branch Selection` window, click all the branches that you want to clone from the remote repository and click `Next`.
++
+image::git_import_branch_selection.png[Select Branch]
++
+.. In the `Local Destination` window, ensure that the directory that you want to set as the local storage location for the repository is selected in the `Directory` field. Or, click `Browse` to select the location.
++
+The `Cloning from _<GitHub_repository>_` window shows the progress of the cloning process.
++
+.. In the `Select a wizard to use for importing projects` window, `Import as general project` is selected by default. Click `Next`.
+.. In the `Import Projects` window, ensure that the `Directory` field shows the path to the directory where you want to import the projects and click `Finish`.
+`Result:` The imported project is listed in the `Project Explorer` view. The cloned repository of the remote Git repository is now located in the local file system.
