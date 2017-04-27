@@ -17,6 +17,8 @@ link:eapwfk_configure_ide.html[Configure JBoss EAP and JBoss Web Framework Kit f
 
 link:cdk_howto.html[Using the IDE's Container Development Kit Tooling (CDK)]
 
+link: git_import_projects.html[Importing Projects in the IDE Using Git Import]
+
 == Deploying and Debugging Apps
 
 link:servers_deploytolocalserver.html[Deploy Apps to a Local Server]
