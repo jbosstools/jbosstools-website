@@ -1,4 +1,4 @@
-= Importing Projects in {devstudio} Using Git Import
+= Importing Projects in the IDE Using Git Import
 :page-layout: howto
 :page-tab: docs
 :page-status: green
