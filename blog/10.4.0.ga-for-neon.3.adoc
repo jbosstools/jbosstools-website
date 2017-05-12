@@ -1,0 +1,222 @@
+= JBoss Tools and Red Hat Developer Studio Maintenance Release for Eclipse Neon.3
+:page-layout: blog
+:page-author: jeffmaury
+:page-tags: [release, jbosstools, devstudio, jbosscentral]
+:page-date: 2017-05-16
+
+link:/downloads/jbosstools/neon/4.4.4.Final.html[JBoss Tools 4.4.4] and link:/downloads/devstudio/neon/10.4.0.GA.html[Red Hat JBoss Developer Studio 10.4] for Eclipse Neon.3 are here waiting for you. Check it out!
+
+image::/blog/images/devstudio10.png[]
+
+== Installation
+
+JBoss Developer Studio comes with everything pre-bundled in its installer. Simply download it from our https://www.jboss.org/products/devstudio.html[JBoss Products page] and run it like this:
+ 
+    java -jar jboss-devstudio-<installername>.jar
+
+JBoss Tools or Bring-Your-Own-Eclipse (BYOE) JBoss Developer Studio require a bit more:
+
+This release requires at least Eclipse 4.6.3 (Neon.3) but we recommend
+using the latest http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/neon3[Eclipse 4.6.3 Neon JEE Bundle] since then you get most of the dependencies preinstalled. 
+
+Once you have installed Eclipse, you can either find us on the Eclipse Marketplace under "JBoss Tools" or "Red Hat JBoss Developer Studio".
+
+For JBoss Tools, you can also use our update site directly.
+
+    http://download.jboss.org/jbosstools/neon/stable/updates/
+
+== What is new? 
+
+Our main focus for this release was improvements for container based development and bug fixing.
+
+=== Improved OpenShift 3 and Docker Tools
+
+We continue to work on providing better experience for container based development in JBoss Tools and Developer Studio. Let's go through a few interesting updates here.
+
+==== OpenShift Server Adapter enhanced flexibility
+
+OpenShift server adapter is a great tool that allows developers to synchronize local changes in the Eclipse workspace with running pods in the
+OpenShift cluster. It also allows you to remote debug those pods when the server adapter is launched in Debug mode.
+The supported stacks are Java and NodeJS.
+
+As pods are ephemeral OpenShift resources, the server adapter definition was based on an OpenShift service resource and the pods are then
+dynamically computed from the service selector.
+
+This has a major drawback as it allows to use this feature only for pods that are part of a service, which may be logical for Web based applications
+as a route (and thus a service) is required in order to access the application.
+
+So, it is now possible to create a server adapter from the following OpenShift resources:
+
+* service (as before)
+* deployment config
+* replication controller
+* pod
+
+If a server adapter is created from a pod, it will be created from the associated OpenShift resource, in the preferred order:
+
+* service
+* deployment config
+* replication controller
+
+As the OpenShift explorer used to display OpenShift resources that were linked to a service, it has been enhanced as well.
+It now displays resources linked to a deployment config or replication controller.
+Here is an example of a deployment with no service ie a deployment config:
+
+image::/documentation/whatsnew/openshift/images/server-adapter-enhanced.png[width=600]
+
+So, as an OpenShift server adapter can be created from different kind of resources, the kind of associated resource is displayed when 
+creating the OpenShift server adapter:
+
+image::/documentation/whatsnew/openshift/images/server-adapter-enhanced1.png[width=600]
+
+Once created, the kind of OpenShift resource adapter is also displayed in the Servers view:
+
+image::/documentation/whatsnew/openshift/images/server-adapter-enhanced2.png[width=600]
+
+This information is also available from the server editor:
+
+image::/documentation/whatsnew/openshift/images/server-adapter-enhanced3.png[width=600]
+
+==== Security vulnerability fixed in certificate validation database
+
+[IMPORTANT]
+=====
+When you use the OpenShift tooling to connect to an OpenShift API server, the certificate of the OpenShift API server
+is first validated. If the issuer authority is a known one, then the connection is then established. If the issuer is an
+unknown one, a validation dialog is first shown to the user with the details of the OpenShift API server certificate as well
+as the details of the issuer authority. If the user accepts it, then the connection is established. There is also an option to
+store the certificate in a database so that next time a connection is attempted to the same OpenShift API server, then the certificate
+will be considered valid an no validation dialog will be show again.
+
+image::/documentation/whatsnew/openshift/images/certificate-validation-dialog.png[width=600]
+
+We found a security vulnerabilty as the certificate was wrongly stored: it was partially stored (not all attributes were stored) so we may
+interpret a different certificate as validated where it should not.
+
+We had to change the format of the certificate database. As the certificates stored in the previous database were not entirelly stored, there was
+no way to provide a migration path. As a result, after the upgrade, the certificate database will be empty. So if you had previously accepted some
+certificates, then you need to accept them again and fill the certificate database again.
+
+=====
+
+==== CDK 3 Server Adapter
+
+The CDK 3 server adapter has been here for quite a long time. It used to be Tech Preview as CDK 3 was not officially released. It is now officiallly available.
+While the server adapter itself has limited functionality, it is able to start and stop the CDK virtual machine via its minishift binary.
+Simply hit Ctrl+3 (Cmd+3 on OSX) and type CDK, that will bring up a command to setup and/or launch the CDK server adapter.
+You should see the old CDK 2 server adapter along with the new CDK 3 one (labeled *Red Hat Container Development Kit 3*).
+
+
+image::/documentation/whatsnew/openshift/images/cdk3-server-adapter5.png[width=600]
+
+All you have to do is set the credentials for your Red Hat account and the location of the CDK’s minishift binary file and the type of virtualization hypervisor.
+
+image::/documentation/whatsnew/openshift/images/cdk3-server-adapter1.png[width=600]
+
+Once you’re finished, a new CDK Server adapter will then be created and visible in the Servers view.
+
+image::/documentation/whatsnew/openshift/images/cdk3-server-adapter2.png[width=600]
+
+Once the server is started, Docker and OpenShift connections should appear in their respective views, allowing the user to quickly create a new Openshift application and begin developing their AwesomeApp in a highly-replicatable environment.
+
+image::/documentation/whatsnew/openshift/images/cdk3-server-adapter3.png[width=600]
+image::/documentation/whatsnew/openshift/images/cdk3-server-adapter4.png[width=600]
+
+==== OpenShift Container Platform 3.5 support
+
+OpenShift Container Platform (OCP) 3.5 has been
+https://www.redhat.com/en/about/press-releases/red-hat-brings-kubernetes-new-application-workloads-latest-version-red-hat-openshift-container-platform[announced, window="_blank"] by Red Hat.
+JBossTools 4.4.4.Final has been validated against OCP 3.5.
+
+==== OpenShift server adapter extensibility
+
+The OpenShift server adapter had long support for EAP/Wildfly and NodeJS based deployments. It turns out that it does a great deal of synchronizing
+local workspace changes to remote deployments on OpenShift which have been standardized through images metadata (labels). But each runtime has its
+own specific. As an example, Wildfly/EAP deployments requires that a re-deploy trigger is sent after the files have been synchronized.
+
+In order to reduce the technical debt and allow support for other runtimes (lots of them in the microservice world), we have refactored the OpenShift
+server adapter so that each runtime specific is now isolated and that it will be easy and safe to add support for new runtime.
+
+For a full in-depth description, see the following https://github.com/jbosstools/jbosstools-openshift/wiki/Openshift-server-adapter-profile-and-its-subsystems[wiki page]. 
+
+==== Pipeline builds support
+
+Pipeline based builds are now supported by the OpenShift tooling. 
+When creating an application, if using a template, if one of the builds is based on pipeline, you can view the detail
+of the pipeline:
+
+image::/documentation/whatsnew/openshift/images/pipeline-wizard.png[width=600]
+
+When your application is deployed, you can see the details of the build configuration for the pipeline based builds:
+
+image::/documentation/whatsnew/openshift/images/pipeline-details.png[width=600]
+
+More to come as we are improving the pipeline support in the OpenShift tooling.
+
+==== Update of Docker Client
+
+The level of the underlying com.spotify.docker.client plug-in used to access the Docker daemon has been upgraded to 3.6.8.
+
+==== Run Image Network Support
+
+A new page has been added to the Docker Run Image Wizard and Docker Run Image Launch configuration that allows
+the end-user to specify the network mode to use.  A user can choose from Default, Bridge, Host, None, Container,
+or Other.  If Container is selected, the user must choose from an active Container to use the same network mode.
+If Other is specified, a named network can be specified.
+
+image::/documentation/whatsnew/docker/images/docker_neon3_sprint129/LinuxToolsDockerNetworkMode.png[Network Mode]
+
+image::/documentation/whatsnew/docker/images/docker_neon3_sprint129/LinuxToolsDockerRunConfigNetworkMode.png[Network Mode Configuration]
+
+==== Refresh Connection
+
+Users can now refresh the entire connection from the Docker Explorer View.  Refresh can be performed two ways:
+
+. using the right-click context menu from the Connection
+. using the Refresh menu button when the Connection is selected
+
+image::/documentation/whatsnew/docker/images/docker_neon3_sprint129/LinuxToolsDockerRefreshConnection.png[Refresh Connection]
+
+=== Server Tools
+
+==== API Change in JMX UI's New Connection Wizard
+
+While hardly something most users will care about, extenders may need to be aware that the API for adding connection types to the 'New JMX Connection' wizard in the 'JMX Navigator' has changed.  Specifically, the 'org.jboss.tools.jmx.ui.providerUI' extension point has been changed. While previously having a child element called 'wizardPage', it now requires a 'wizardFragment'. 
+
+A 'wizardFragment' is part of the 'TaskWizard' framework first used in WTP's ServerTools, which has, for a many years, been used throughout JBossTools. This framework allows wizard workflows where the set of pages to be displayed can change based on what selections are made on previous pages. 
+
+This change was made as a direct result of a bug caused by the addition of the Jolokia connection type in which some standard workflows could no longer be completed. 
+
+This change only affects adopters and extenders, and should have no noticable change for the user, other than that the below bug has been fixed. 
+
+=== Hibernate Tools
+
+==== Hibernate Runtime Provider Updates
+
+A number of additions and updates have been performed on the available Hibernate runtime  providers.
+
+== Hibernate Runtime Provider Updates
+
+The Hibernate 5.0 runtime provider now incorporates Hibernate Core version 5.0.12.Final and Hibernate Tools version 5.0.5.Final.
+
+The Hibernate 5.1 runtime provider now incorporates Hibernate Core version 5.1.4.Final and Hibernate Tools version 5.1.3.Final.
+
+The Hibernate 5.2 runtime provider now incorporates Hibernate Core version 5.2.8.Final and Hibernate Tools version 5.2.2.Final.
+
+
+=== Forge Tools
+
+==== Forge Runtime updated to 3.6.1.Final
+
+The included Forge runtime is now 3.6.1.Final. Read the official announcement http://forge.jboss.org/news/jboss-forge-3.6.1.final-is-here[here].
+
+image::/documentation/whatsnew/forge/images/4.4.4.AM3/startup.png[]
+
+
+== What is next?
+
+Having JBoss Tools 4.4.4 and Developer Studio 10.4 out we are already working on the next release for Eclipse Oxygen.
+
+Enjoy!
+
+Jeff Maury
