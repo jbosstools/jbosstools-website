@@ -3,7 +3,7 @@
 :page-component_id: docker
 :page-component_version: 2.3.0
 :page-product_id: jbt_core
-:page-product_version: 4.4.4.FINAL
+:page-product_version: 4.4.4.Final
 
 == Run Image Network Support
 
