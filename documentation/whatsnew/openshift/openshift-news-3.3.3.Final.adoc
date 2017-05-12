@@ -6,7 +6,7 @@
 :page-product_version: 4.4.4.Final
 :page-include-previous: true
 
-=== Security vulnerability fixed in certficate validation database
+=== Security vulnerability fixed in certificate validation database
 
 [IMPORTANT]
 ====
