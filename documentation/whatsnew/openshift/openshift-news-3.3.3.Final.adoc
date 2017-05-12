@@ -53,6 +53,12 @@ Once the server is started, Docker and OpenShift connections should appear in th
 image::./images/cdk3-server-adapter3.png[width=600]
 image::./images/cdk3-server-adapter4.png[width=600]
 
+=== OpenShift Container Platform 3.5 support
+
+OpenShift Container Platform (OCP) 3.5 has been
+https://www.redhat.com/en/about/press-releases/red-hat-brings-kubernetes-new-application-workloads-latest-version-red-hat-openshift-container-platform[announced, window="_blank"] by Red Hat.
+JBossTools 4.4.4.Final has been validated against OCP 3.5.
+
 === OpenShift server adapter extensibility
 
 The OpenShift server adapter had long support for EAP/Wildfly and NodeJS based deployments. It turns out that it does a great deal of synchronizing
