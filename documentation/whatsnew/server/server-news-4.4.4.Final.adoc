@@ -1,0 +1,19 @@
+= Server What's New in 4.4.4.Final
+:page-layout: whatsnew
+:page-component_id: server
+:page-component_version: 4.4.4.Final
+:page-product_id: jbt_core
+:page-product_version: 4.4.4.Final
+
+== WildFly 11 Server Adapter
+
+A server adapter has been added to work with WildFly 11. It's currently released in Tech-Preview mode only, since the underlying WildFly 11 continues to be under active development with substantial opportunity for breaking changes. 
+
+
+
+== WildFly 11 Incremental Management Deployment
+
+JBoss Tools finally has support for incremental publishing commands issued over the management API to a running application server. Publishing over the management protocol has, in the past, always suffered from slow performance due to the requirement that the full deployment be sent over the wire on each change. In WildFly 11 and EAP 7.1, support for changes to individual files without having to send the entire deployment has been added. 
+
+related_jira::JBIDE-23784[WF 11 / EAP 7.1 Incremental MGMT publishing]
+
