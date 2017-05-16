@@ -18,7 +18,6 @@ before_script:
 - echo -e "Host filemgmt.jboss.org\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 script: rake travis
 notifications:
-  irc: chat.freenode.net#jbosstools
   irc: chat.freenode.net#jbosstools-website
 env:
   global:
@@ -71,4 +70,4 @@ env:
   - secure: BLD2ExjBNRmk0ttSF55jwbJUM8sWzfqpVGALRcno/H5a4r6I4hL6Bb0s6vRI+KKinx0ufocLZzKCoOWiIOnnBWqr4m6+SWF0xsOYkRbzLgGVYC3VU62u765QX5cvq3hrNWPCfaOzFs9ZthrXw6MTw8VHpCI77C40yBJp9DJQujU=
   - secure: Z0+uzCNmTT5BGKXcrhoB3iaSqa7QZtI5eNq47r/d2KZJGyfKe/jPEtZOJC9RFBdf6ty7wkAFkfegxRGU/NjCH6YurdLALv1/FYup5XVR6I1/NSbazGOy9s/bftI3hExJLDsq5UFl6oLKxbPvgkQnF1ZL16nTlPH3RVKSGZ6fp4k=
   - secure: MnL8azMD/IAuo8vQ1Jan027soQ6JJMnsTFVMTov/JPMQ0xoawqLwLr0HcBIEXxy2GMKw+rNo8bq/9H0eXUnB0cTUJgX1Bb5rCALouAAQdiyQ7wC+Vt18F2+10YvXNQMg1jLGC2rm3ThwOi39/yR0DHfHthfnIt0+ubIvBEpU28A=
-  - secure: j21C7mnuubln8WuRUpH0jtrGqJVTxY1UsLrrHdOcd9xpHA21ngC6rcsE6vEu1yq4mS67bvyjpKlJ/Xhs/eydJbRYZlZg9LeVy2wic/hGDHoHx/B6TUp2kmeLDUAkegh3CwCPsV/y59nTnneYpUKHfpplUmIkoEdnnyo3F/Ff7bw=
+  - secure: UgCtXQsw0nbAElcdBkHJbWsHPC0/E9TH3kqsc5vx+P9X8O1+XMV9aZYfPrnhDu6HUrpGYCFYmWMXIuxXj9GzKasX3KrC9yFg2hebReuqlA6pZk8tXnMDzVJW0HE5Vdmz2vhXlQ6YhMgg7T5COO4TKuPfSga8CZypg+RXQLCvgvw=
