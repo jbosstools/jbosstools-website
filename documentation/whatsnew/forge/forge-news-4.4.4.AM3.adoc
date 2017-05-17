@@ -5,10 +5,8 @@
 :page-product_id: jbt_core
 :page-product_version: 4.4.4.AM3
 
-ifndef::finalnn[]
 == Forge Runtime updated to 3.6.1.Final
 
 The included Forge runtime is now 3.6.1.Final. Read the official announcement http://forge.jboss.org/news/jboss-forge-3.6.1.final-is-here[here].
 
-image::images/4.4.4.AM1/startup.png[]
-endif::finalnn[]
+image::images/4.4.4.AM3/startup.png[]
