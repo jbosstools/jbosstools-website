@@ -74,7 +74,7 @@ devstudio:
   url_path_fragment: devstudio
   streams:
     neon:
-      10.3.0.GA:
+      10.4.0.GA:
         update_site_url: https://devstudio.redhat.com/10.0/stable/updates/
         marketplace_url: https://marketplace.eclipse.org/node/1616973
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
