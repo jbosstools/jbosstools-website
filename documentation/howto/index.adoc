@@ -19,6 +19,8 @@ link:cdk_howto.html[Using the IDE's Container Development Kit Tooling (CDK)]
 
 link:git_import_projects.html[Importing Projects in the IDE Using Git Import]
 
+link:neon3_getting_started.html[Getting Started with JavaScript Development for Neon 3]
+
 == Deploying and Debugging Apps
 
 link:servers_deploytolocalserver.html[Deploy Apps to a Local Server]
