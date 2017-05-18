@@ -6,7 +6,7 @@
 
 With the release of link:/downloads/devstudio/neon/10.2.0.GA.html[Red Hat JBoss Developer Studio 10.2], it is now possible to install Red Hat JBoss Developer Studio as an RPM.
 It is available as a tech preview. The purpose of this article is to describe the steps you should follow in order to install Red Hat JBoss Developer Studio.
- 
+
 == Red Hat Software Collections
 
 JBoss Developer Studio RPM relies on Red Hat Software Collections. You don't need to install Red Hat Software Collections but you need to enable
@@ -32,7 +32,7 @@ For more information, please refer to the https://access.redhat.com/documentatio
 
 == JBoss Developer Studio repository
 
-As this is a tech preview, you need to manually configure the JBoss Developer Studio repository. 
+As this is a tech preview, you need to manually configure the JBoss Developer Studio repository.
 
 Create a file */etc/yum.repos.d/rh-eclipse46-devstudio.repo* with the following content:
 
@@ -41,19 +41,10 @@ Create a file */etc/yum.repos.d/rh-eclipse46-devstudio.repo* with the following 
 name=rh-eclipse46-devstudio-stable-10.x
 baseurl=https://devstudio.redhat.com/static/10.0/stable/rpms/x86_64/
 enabled=1
+gpgkey=https://www.redhat.com/security/data/a5787476.txt
 gpgcheck=1
 upgrade_requirements_on_install=1
 metadata_expire=24h
-```
-
-== Red Hat developer signing key
-
-As this is tech preview, you need to accept the Red Hat developer signing key that has been used for producing the JBoss Developer Studio RPM.
-
-Execute the following command:
-
-```
-sudo rpm --import "https://www.redhat.com/security/a5787476.txt"
 ```
 
 == Install Red Hat JBoss Developer Studio
@@ -66,7 +57,21 @@ Enter the following command:
 sudo yum install rh-eclipse46-devstudio
 ```
 
-Answer 'y' when asked and after all required dependencies have been downloaded and installed, Red Hat JBoss Developer Studio is available on your 
+Answer 'y' when transaction summary is ready to continue installation.
+
+Answer 'y' one more time when you see request to import GPG public key
+
+```
+Public key for rh-eclipse46-devstudio .rpm is not installed
+Retrieving key from https://www.redhat.com/security/data/a5787476.txt
+Importing GPG key 0xA5787476:
+ Userid     : "Red Hat, Inc. (development key) <security@redhat.com>"
+ Fingerprint: 2d6d 2858 5549 e02f 2194 3840 08b8 71e6 a578 7476
+ From       : https://www.redhat.com/security/data/a5787476.txt
+Is this ok [y/N]:
+```
+
+After all required dependencies have been downloaded and installed, Red Hat JBoss Developer Studio is available on your
 system through the standard update channel !!!
 
 You should see messages like the following:
@@ -75,7 +80,7 @@ image::/blog/images/20161212-rpm/rh-eclipse46-devstudio.log.png[]
 
 == Launch Red Hat JBoss Developer Studio
 
-From the system menu, mouse over the *Programming* menu, and the *Red Hat Eclipse* menu item will appear. 
+From the system menu, mouse over the *Programming* menu, and the *Red Hat Eclipse* menu item will appear.
 
 image::/blog/images/20161212-rpm/programming-menu.png[]
 
