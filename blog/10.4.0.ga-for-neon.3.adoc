@@ -90,7 +90,7 @@ will be considered valid an no validation dialog will be show again.
 
 image::/documentation/whatsnew/openshift/images/certificate-validation-dialog.png[width=600]
 
-We found a security vulnerabilty as the certificate was wrongly stored: it was partially stored (not all attributes were stored) so we may
+We found a security vulnerability as the certificate was wrongly stored: it was partially stored (not all attributes were stored) so we may
 interpret a different certificate as validated where it should not.
 
 We had to change the format of the certificate database. As the certificates stored in the previous database were not entirelly stored, there was
@@ -101,7 +101,7 @@ certificates, then you need to accept them again and fill the certificate databa
 
 ==== CDK 3 Server Adapter
 
-The CDK 3 server adapter has been here for quite a long time. It used to be Tech Preview as CDK 3 was not officially released. It is now officiallly available.
+The CDK 3 server adapter has been here for quite a long time. It used to be Tech Preview as CDK 3 was not officially released. It is now officially available.
 While the server adapter itself has limited functionality, it is able to start and stop the CDK virtual machine via its minishift binary.
 Simply hit Ctrl+3 (Cmd+3 on OSX) and type CDK, that will bring up a command to setup and/or launch the CDK server adapter.
 You should see the old CDK 2 server adapter along with the new CDK 3 one (labeled *Red Hat Container Development Kit 3*).
@@ -117,7 +117,7 @@ Once you’re finished, a new CDK Server adapter will then be created and visibl
 
 image::/documentation/whatsnew/openshift/images/cdk3-server-adapter2.png[width=600]
 
-Once the server is started, Docker and OpenShift connections should appear in their respective views, allowing the user to quickly create a new Openshift application and begin developing their AwesomeApp in a highly-replicatable environment.
+Once the server is started, Docker and OpenShift connections should appear in their respective views, allowing the user to quickly create a new Openshift application and begin developing their AwesomeApp in a highly-replicable environment.
 
 image::/documentation/whatsnew/openshift/images/cdk3-server-adapter3.png[width=600]
 image::/documentation/whatsnew/openshift/images/cdk3-server-adapter4.png[width=600]
