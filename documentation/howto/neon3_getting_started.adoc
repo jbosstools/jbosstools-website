@@ -115,22 +115,35 @@ To create an `index.html` file:
 . Click *Finish*. The empty `index.html` file opens in the default editor.
 . Copy the following code snippet and paste it in the `index.html` file.
 +
-[source, java]
+[source, html]
 ----
+<!DOCTYPE html>
+<html> 
+<head> 
 <title>npm / bower / JSON editor</title> 
-
+<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script> <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script> 
 <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"> 
-<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">  
-
-= My First Bootstrap Page
-
-Resize this responsive page to see the effect!
-
-=== Column 1
-
-=== Column 2
-
-=== Column 3
+<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css"> </head> 
+<body> 
+<div class="container"> 
+<div class="jumbotron"> 
+<h1>My First Bootstrap Page</h1> 
+<p>Resize this responsive page to see the effect!</p> 
+</div> 
+<div class="row"> 
+<div class="col-sm-4"> 
+<h3>Column 1</h3> 
+</div> 
+<div class="col-sm-4"> 
+<h3>Column 2</h3> 
+</div> 
+<div class="col-sm-4"> 
+<h3>Column 3</h3> 
+</div> 
+</div> 
+</div> 
+</body> 
+</html>
 ----
 +
 . Save the file.
@@ -217,7 +230,7 @@ You must add the dependencies to the `package.json` file to be able to use it in
 To add the dependencies:
 
 . In the *Project Explorer* view, expand *neon3_features* and double-click *package.json* to open the file in the default editor.
-. After *"license": "ISC"*, add a comma (*,*).
+. After *"license": "MIT"*, add a comma (*,*).
 . On the next line add the following code snippet:
 +
 [source, java]
@@ -226,6 +239,7 @@ To add the dependencies:
     "jquery" : "*",
      "angular" : "*",
     "bootstrap" : "~3.3.6"
+    }
 ----    
 +
 . Save the file. The contents of the `package.json` file are as displayed in the following image.
@@ -249,7 +263,7 @@ To enable the Gulp plugin:
 
 . In the *Project Explorer* view, expand *neon3_features* and double-click *package.json* to open it in the default editor.
 . In the `package.json` file, under *devDependencies*,  after the last dependency defined in the file, type a comma (*,*).
-. On the next line, type _"gulp": "*"_. 
+. On the next line, type _"gulp": "*",_. 
 . On the next line type _"gulp-rename": "*"_ and save the file. The contents of the `package.json` file are as displayed in the following image.
 +
 .package.json File with Gulp Enabled
