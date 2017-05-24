@@ -10,9 +10,9 @@ image::/blog/images/devstudio10.png[]
 
 == Installation
 
-JBoss Developer Studio comes with everything pre-bundled in its installer. Simply download it from our https://www.jboss.org/products/devstudio.html[JBoss Products page] and run it like this:
+JBoss Developer Studio comes with everything pre-bundled in its installer. Simply download it from our https://developers.redhat.com/products/devstudio[Red Hat developers] and run it like this:
  
-    java -jar jboss-devstudio-<installername>.jar
+    java -jar devstudio-<installername>.jar
 
 JBoss Tools or Bring-Your-Own-Eclipse (BYOE) JBoss Developer Studio require a bit more:
 
