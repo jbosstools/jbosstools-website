@@ -1,0 +1,91 @@
+= Fuse and BRMS Tooling Maintenance Release for Neon.3
+:page-layout: blog
+:page-author: pleacu
+:page-date: 2017-05-23
+:page-tags: [release, jbosstools, devstudio, jbosscentral]
+
+*Try our complete Eclipse-Neon capable, Devstudio 10.4.0 compatible integration tooling.*
+
+image::/blog/images/jbosstools-jbdevstudio-blog-header.png[caption=""]
+
+*JBoss Tools Integration Stack 4.4.3.Final / JBoss Developer Studio Integration Stack 10.3.0.GA*
+
+NOTE: All of the Integration Stack components have been verified to work with the same dependencies as JBoss Tools 4.4 and Developer Studio 10.
+
+== What's new for this release?
+
+This release syncs up with Devstudio 10.4.0, JBoss Tools 4.4.4 and Eclipse Neon.3.  It is also a maintenance release for Fuse Tooling, SwitchYard and the BRMS tooling.
+
+=== Released Tooling Highlights
+
+==== JBoss Fuse Development Highlights
+
+===== Fuse Tooling Highlights
+
+See the link:https://access.redhat.com/documentation/en-us/red_hat_jboss_developer_studio_integration_stack/10.3/html/10.3.0_release_notes_and_known_issues/resolved_issues[Fuse Tooling 9.2.0.Final Resolved Issues Section] of the Integration Stack 10.3.0.GA release notes.
+
+===== SwitchYard Highlights
+
+See the link:https://access.redhat.com/documentation/en-us/red_hat_jboss_developer_studio_integration_stack/10.3/html/10.3.0_release_notes_and_known_issues/resolved_issues#switchyard_2_3_1_final_2[SwitchYard 2.3.1.Final Resolved Issues Section] of the Integration Stack 10.3.0.GA release notes.
+
+==== JBoss Business Process and Rules Development
+
+===== BPMN2 Modeler Known Issues
+
+See the link:https://access.redhat.com/documentation/en-us/red_hat_jboss_developer_studio_integration_stack/10.3/html/10.3.0_release_notes_and_known_issues/known_issues#bpmn2_1_3_3_final_1_3_1_final[BPMN2 1.3.3.Final Known Issues Section] of the Integration Stack 10.3.0.GA release notes.
+
+===== Drools/jBPM6 Known Issues
+
+See the link:https://access.redhat.com/documentation/en-us/red_hat_jboss_developer_studio_integration_stack/10.3/html/10.3.0_release_notes_and_known_issues/known_issues#drools_6_5_1_final[Drools 6.5.1.Final Known Issues Section]
+
+==== Data Virtualization Highlights
+
+===== Teiid Designer Known Issues
+
+See the link:https://access.redhat.com/documentation/en-us/red_hat_jboss_developer_studio_integration_stack/10.3/html/10.3.0_release_notes_and_known_issues/known_issues#teiid_designer_11_0_1_final[Teiid Designer 11.0.1.Final Resolved Issues Section] of the Integration Stack 10.1.0.GA release notes.
+
+== What's an Integration Stack?
+
+Red Hat JBoss Developer Studio Integration Stack is a set of Eclipse-based development tools. It further enhances the IDE functionality provided by JBoss Developer Studio, with plug-ins specifically for use when developing for other Red Hat JBoss products.  It's where the Fuse Tooling, DataVirt Tooling and BRMS tooling is aggregated.  The following frameworks are supported:
+
+=== JBoss Fuse Development
+
+* link:/features/apachecamel.html[Fuse Tooling] - JBoss Fuse Development provides tooling for Red Hat JBoss Fuse.  It features the latest versions of the Fuse Data Transformation tooling, Fuse Integration Services support, SwitchYard and access to the Fuse SAP Tool Suite. 
+* link:/features/switchyard.html[SwitchYard] - A lightweight service delivery framework providing full lifecycle support for developing, deploying, and managing service-oriented applications.
+
+=== JBoss Business Process and Rules Development
+
+JBoss Business Process and Rules Development plug-ins provide design, debug and testing tooling for developing business processes for Red Hat JBoss BRMS and Red Hat JBoss BPM Suite.
+
+* link:/features/bpel.html[BPEL Designer] - Orchestrating your business processes.
+* link:/features/bpmn2.html[BPMN2 Modeler] - A graphical modeling tool which allows creation and editing of Business Process Modeling Notation diagrams using graphiti.
+* link:/features/drools.html[Drools] - A Business Logic integration Platform which provides a unified and integrated platform for Rules, Workflow and Event Processing including KIE.
+* link:/features/jbpm.html[jBPM6] - A flexible Business Process Management (BPM) suite.
+
+=== JBoss Data Virtualization Development
+
+JBoss Data Virtualization Development plug-ins provide a graphical interface to manage various aspects of Red Hat JBoss Data Virtualization instances, including the ability to design virtual databases and interact with associated governance repositories.
+
+* link:/features/teiiddesigner.html[Teiid Designer] - A visual tool that enables rapid, model-driven definition, integration, management and testing of data services without programming using the Teiid runtime framework.
+
+=== JBoss Integration and SOA Development
+
+JBoss Integration and SOA Development plug-ins provide tooling for developing, configuring and deploying BRMS, SwitchYard and Fuse applications to Red Hat JBoss Fuse and Fuse Fabric containers, Apache ServiceMix, and Apache Karaf instances.
+
+* All of the Business Process and Rules Development plugins, plus...
+* link:/features/apachecamel.html[Fuse Apache Camel Tooling] - A graphical tool for integrating software components that works with Apache ServiceMix, Apache ActiveMQ, Apache Camel and the FuseSource distributions.
+* link:/features/switchyard.html[SwitchYard] - A lightweight service delivery framework providing full lifecycle support for developing, deploying, and managing service-oriented applications.
+
+=== The JBoss Tools website features tab
+
+Don't miss the link:/features[Features tab] for up to date information on your favorite Integration Stack components.
+
+== Installation
+
+The easiest way to install the Integration Stack components is through the link:https://access.redhat.com/jbossnetwork/restricted/listSoftware.html?downloadType=distributions&product=jbossdeveloperstudio&version=6.3.0&productChanged=yes[stand-alone installer].  If you're interested specifically in Fuse we have the all-in-one installer link:https://developers.redhat.com/download-manager/file/devstudio-integration-stack-10.3.0.GA-fuse-installer-runtime.jar[JBoss Fuse Tooling + JBoss Fuse/Karaf runtime].
+
+For a complete set of Integration Stack installation instructions, see link:https://access.redhat.com/documentation/en/red-hat-jboss-developer-studio-integration-stack/10.0/paged/installation-guide/[Integration Stack Installation Instructions]
+
+_Give it a try!_
+
+Paul Leacu.

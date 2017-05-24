@@ -79,7 +79,7 @@ devstudio:
         marketplace_url: https://marketplace.eclipse.org/node/1616973
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
         release_date: 2017-05-22
-        supported_devstudio_is_version: 10.2.0.GA
+        supported_devstudio_is_version: 10.3.0.GA
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         blog_announcement_url: /blog/10.4.0.ga-for-neon.3.html
@@ -685,6 +685,27 @@ devstudio_is:
   url_path_fragment: devstudio_is
   streams:
     neon:
+      10.3.0.GA:
+        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/
+        release_notes_url: https://access.redhat.com/documentation/en-us/red_hat_jboss_developer_studio_integration_stack/10.3/html/10.3.0_release_notes_and_known_issues/
+        release_date: 2017-05-23
+        required_devstudio_version: 10.4.0.GA
+        update_site_url: https://devstudio.redhat.com/10.0/stable/updates/integration-stack/
+        installers:
+          - name: Integration Stack Stand-Alone Installer
+            file_size: 913MB
+            url: https://access.redhat.com/jbossnetwork/restricted/listSoftware.html?downloadType=distributions&product=jbossdeveloperstudio&version=6.3.0&productChanged=yes
+          - name: Integration Stack Fuse Tooling + Fuse/Karaf Runtime Installer
+            file_size: 1.56GB
+            url: https://developers.redhat.com/download-manager/file/devstudio-integration-stack-10.3.0.GA-fuse-installer-runtime.jar
+          - name: Integration Stack Fuse Tooling Installer
+            file_size: 804MB
+            url: https://developers.redhat.com/download-manager/file/devstudio-integration-stack-10.3.0.GA-fuse-tooling-installer.jar
+        zips:
+          - name: Update site bundle of JBoss Developer Studio Integration Stack
+            file_size: 350MB
+            url: https://devstudio.redhat.com/10.0/stable/updates/integration-stack/10.3.0.GA/devstudio-integration-stack-10.3.0.GA-updatesite.zip
+            sha256_url: https://devstudio.redhat.com/10.0/stable/updates/integration-stack/10.3.0.GA/devstudio-integration-stack-10.3.0.GA-updatesite.zip.sha256
       10.2.0.GA:
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/
         release_notes_url: https://access.redhat.com/documentation/en-us/red_hat_jboss_developer_studio_integration_stack/10.2/html/10.2.0_release_notes_and_known_issues/
@@ -1048,7 +1069,7 @@ jbt_core:
         marketplace_url: https://marketplace.eclipse.org/node/1617241
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1617241
         release_date: 2017-05-22
-        supported_jbt_is_version: 4.4.2.Final
+        supported_jbt_is_version: 4.4.3.Final
         blog_announcement_url: /blog/10.4.0.ga-for-neon.3.html
         documentation_url: http://docs.jboss.org/tools/
         zips:
@@ -2247,6 +2268,16 @@ jbt_is:
   url_path_fragment: jbosstools_is
   streams:
     neon:
+      4.4.3.Final:
+        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/
+        release_date: 2017-05-23
+        required_jbt_core_version: 4.4.4.Final
+        update_site_url: http://download.jboss.org/jbosstools/neon/stable/updates/integration-stack/
+        zips:
+           - name: Update site bundle of JBoss Tools Integration Stack
+             file_size: 221MB
+             url: http://download.jboss.org/jbosstools/neon/stable/updates/integration-stack/4.4.3.Final/jbosstools-integration-stack-4.4.3.Final-updatesite.zip
+             sha256_url: http://download.jboss.org/jbosstools/neon/stable/updates/integration-stack/4.4.3.Final/jbosstools-integration-stack-4.4.3.Final-updatesite.zip.sha256
       4.4.2.Final:
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/
         release_date: 2017-03-29
