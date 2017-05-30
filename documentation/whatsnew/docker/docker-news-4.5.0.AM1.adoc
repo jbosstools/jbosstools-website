@@ -1,0 +1,11 @@
+= Docker Tools What's New in 4.5.0.AM1
+:page-layout: whatsnew
+:page-component_id: docker
+:page-component_version: 3.0.0
+:page-product_id: jbt_core
+:page-product_version: 4.5.0.AM1
+
+== Docker Client Upgrade
+
+The version of docker-client used by the Docker Tooling plug-ins has been upgraded to 6.1.1 for the 3.0.0 release of the Docker Tooling feature.
+
