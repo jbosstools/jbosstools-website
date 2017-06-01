@@ -1,0 +1,20 @@
+= Server What's New in 4.5.0.AM1
+:page-layout: whatsnew
+:page-component_id: server
+:page-component_version: 4.5.0.AM1
+:page-product_id: jbt_core
+:page-product_version: 4.5.0.AM1
+
+== EAP 7.1 Server Adapter
+
+A server adapter has been added to work with EAP 7.1. It's currently released in Tech-Preview mode only, since the underlying WildFly 11 continues to be under active development with substantial opportunity for breaking changes. This new server adapter includes support for incremental management deployment like it's upstream WildFly 11 counterpart. 
+
+related_jira::JBIDE-24508[WF 11 / EAP 7.1 server adapter]
+
+== Removal of Event Log and other Deprecated Code
+
+The Event Log view has been removed. The standard eclipse log is to be used for errors and other important messages regarding errors during server state transitions. 
+
+related_jira::JBIDE-22717[Remove all server log view code]
+
+
