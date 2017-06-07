@@ -1,9 +1,15 @@
 eclipse:
+  oxygen:
+    url_path_fragment: oxygen
+    short_name: Oxygen
+    full_name: Eclipse Oxygen 4.7
+    download_url:  http://www.eclipse.org/downloads/packages/release/Oxygen/
+    requirements: Java 8
   neon:
     url_path_fragment: neon
     short_name: Neon
-    full_name: Eclipse Neon 4.6.1
-    download_url:  http://www.eclipse.org/downloads/packages/release/Neon/1
+    full_name: Eclipse Neon 4.6.3
+    download_url:  http://www.eclipse.org/downloads/packages/release/Neon/3
     requirements: Java 8
   mars:
     url_path_fragment: mars
@@ -73,6 +79,9 @@ devstudio:
   name: JBoss Developer Studio
   url_path_fragment: devstudio
   streams:
+    oxygen:
+      11.x.0.CI:
+        update_site_url: https://devstudio.redhat.com/11/snapshots/updates/
     neon:
       10.4.0.GA:
         update_site_url: https://devstudio.redhat.com/10.0/stable/updates/
@@ -684,6 +693,7 @@ devstudio_is:
   name: JBoss Developer Studio Integration Stack
   url_path_fragment: devstudio_is
   streams:
+    oxygen:
     neon:
       10.3.0.GA:
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/
@@ -1057,13 +1067,20 @@ jbt_core:
   name: JBoss Tools
   url_path_fragment: jbosstools
   streams:
-    neon:
-      4.4.x.Nightly:
-        update_site_url: http://download.jboss.org/jbosstools/neon/snapshots/updates/
+    oxygen:
+      4.5.x.CI:
+        update_site_url: http://download.jboss.org/jbosstools/oxygen/snapshots/updates/
         zips:
           - name: Stand-alone BrowserSim
             file_size: 16MB
-            url: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.jboss.tools.browsersim&a=org.jboss.tools.browsersim-standalone&v=3.8.0-SNAPSHOT&e=zip
+            url: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.jboss.tools.browsersim&a=org.jboss.tools.browsersim-standalone&v=3.8.4-SNAPSHOT&e=zip      
+    neon:
+      # 4.4.x.Nightly:
+      #   update_site_url: http://download.jboss.org/jbosstools/neon/snapshots/updates/
+      #   zips:
+      #     - name: Stand-alone BrowserSim
+      #       file_size: 16MB
+      #       url: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.jboss.tools.browsersim&a=org.jboss.tools.browsersim-standalone&v=3.8.3-SNAPSHOT&e=zip
       4.4.4.Final:
         update_site_url: http://download.jboss.org/jbosstools/neon/stable/updates/
         marketplace_url: https://marketplace.eclipse.org/node/1617241
@@ -1593,15 +1610,6 @@ jbt_core:
             md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Alpha1_2015-02-15_14-44-55-B13-browsersim-standalone.zip.MD5
           - name: Release Notes
             url: https://tools.jboss.org/documentation/whatsnew/index.html
-      # 4.3.x.Nightly:
-      #   update_site_url: http://download.jboss.org/jbosstools/mars/snapshots/updates/
-      #   zips:
-      #     - name: Stand-alone BrowserSim
-      #       file_size: 16MB
-      #       url: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.jboss.tools.browsersim&a=org.jboss.tools.browsersim-standalone&v=3.7.1-SNAPSHOT&e=zip
-      #       url: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.jboss.tools.vpe.browsersim&a=org.jboss.tools.vpe.browsersim-standalone&v=3.7.0-SNAPSHOT&e=zip&c=standalone
-      #       url: http://download.jboss.org/jbosstools/mars/snapshots/builds/jbosstools-browsersim-standalone_4.3.mars/latest/jbosstools-4.3.0.Final-browsersim-standalone.zip
-      #       sha256_url: http://download.jboss.org/jbosstools/mars/snapshots/builds/jbosstools-browsersim-standalone_4.3.mars/latest/jbosstools-4.3.0.Final-browsersim-standalone.zip.sha256
 
     luna:
       4.2.3.Final:
@@ -2267,6 +2275,7 @@ jbt_is:
   name: JBoss Tools Integration Stack
   url_path_fragment: jbosstools_is
   streams:
+    oxygen:
     neon:
       4.4.3.Final:
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/
