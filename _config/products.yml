@@ -80,7 +80,7 @@ devstudio:
   url_path_fragment: devstudio
   streams:
     oxygen:
-      11.x.0.Nightly:
+      11.x.Nightly:
         update_site_url: https://devstudio.redhat.com/11/snapshots/updates/
     neon:
       10.4.0.GA:
