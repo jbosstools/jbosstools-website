@@ -1,0 +1,18 @@
+= Are you a Developer User Experience lead ?
+:page-date: 2017-05-31
+:page-layout: blog
+:page-author: mhusnain
+:page-tags: [devstudio, survey]
+
+Are you a user of JBoss Tools or Red Hat JBoss Developer Studio? If so, the documentation team would love to hear from you!
+
+We've created a very brief survey that should only take a few minutes of your time. This survey is about the documentation for JBoss Developer Studio and asks users about what sort of things are useful and effective in the documentation as well as what we could be doing better.
+
+If you have a few minutes to spare, we would appreciate your thoughts. All results are completely anonymous (unless you choose to leave your details to be contacted for further feedback in the future). Click the following link for the survey:
+
+https://goo.gl/forms/ng0kH0CxKVwJo0xw2[Click here for survey link]
+
+For any other thoughts, feel free to contact us at devtools-docs@redhat.com and we'll be happy to hear any feedback you may have.
+
+Thank you all for your time! +
+The Developer Tools Documentation Team
