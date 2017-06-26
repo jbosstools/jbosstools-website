@@ -11,13 +11,14 @@ tab: docs
   - unless related_whatsnew_pages.empty? || related_whatsnew_pages.length == 1
     .row-fluid
       .span12.alert.alert-info><
-        %span><= "This is a summary page of all New & Noteworthy of #{page.product_name}&nbsp;"
-        - related_whatsnew_pages.keys.sort{|x,y| x <=> y}.each_with_index do |version, index|
+        %span><= "This is a summary page of all New & Noteworthy for #{page.product_name}&#32; "
+        -# reverse sort so new shown before old
+        - related_whatsnew_pages.keys.sort{|y,x| x <=> y}.each_with_index do |version, index|
           - if index == related_whatsnew_pages.length - 1
-            %span><= "&nbsp;and&nbsp;"
+            %span><= " &#32;and&#32; "
           %a{:href=>related_whatsnew_pages[version].output_path}><= version
           - if index < related_whatsnew_pages.length - 2
-            %span><= ",&nbsp;"
+            %span><= ",&#32; "
 - else
   -# Banner for non-.Final version pages which are related a an existing .Final version page
   - final_whatsnew_page = get_stable_version_whatsnew_page(site, page.build_info.product_id, page.build_info.version)

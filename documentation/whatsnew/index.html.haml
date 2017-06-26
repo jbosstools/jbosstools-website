@@ -15,8 +15,7 @@ status: yellow
 - for product_id in [:jbt_core, :jbt_is] do
   - unless site.whatsnew_pages[product_id].nil?
     - new_noteworthies[product_id] = Hash.new
-    - news = site.whatsnew_pages[product_id].values.select{|whatsnew_page| !whatsnew_page.build_info.build_type_label.nil? &&
-    -        !whatsnew_page.build_info.archived}.sort{|p1, p2| p2.build_info.version <=> p1.build_info.version}
+    - news = site.whatsnew_pages[product_id].values.select{|whatsnew_page| !whatsnew_page.build_info.build_type_label.nil? }.sort{|p1, p2| p2.build_info.version <=> p1.build_info.version}
     - news.each do |n|
       - puts "N&N #{n.build_info.version}: #{n.build_info.archived}"
       - if new_noteworthies[product_id][n.build_info.build_type_label].nil?
@@ -28,7 +27,7 @@ status: yellow
 .row-fluid.section-wrapper.whatsnew-index.flexbox.stretch-row
   - for product_id in [:jbt_core, :jbt_is] do
     - unless new_noteworthies[product_id].nil?
-      - site.whatsnew_pages[product_id].values.select{|whatsnew_page| !whatsnew_page.build_info.build_type_label.nil? && !whatsnew_page.build_info.archived}.sort{|p1, p2| p2.build_info.version <=> p1.build_info.version}.each do |whatsnew_page|
+      - site.whatsnew_pages[product_id].values.select{|whatsnew_page| !whatsnew_page.build_info.build_type_label.nil? }.sort{|p1, p2| p2.build_info.version <=> p1.build_info.version}.each do |whatsnew_page|
         %section{:class=>"#{spanValue} well post-bg"}
           %header
             %h3
