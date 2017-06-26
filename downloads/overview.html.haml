@@ -1,11 +1,11 @@
 ---
 layout: project
-title: Downloads
+title: Recent Downloads
 ---
 
 .row-fluid
   .hero-unit.center
-    %h1 Downloads
+    %h1 Recent Downloads
     
 #all-downloads
   .row-fluid
@@ -17,29 +17,21 @@ title: Downloads
             - next if site.download_pages[product_id].nil? || site.download_pages[product_id].empty?
             %th.center #{site.products[product_id].name}
         - site.products[:eclipse].each do |eclipse_version, eclipse_info|
-          %tr
-            %td 
-              %a{:href=>eclipse_info.download_url, :alt=>"Download #{eclipse_info.full_name}"} #{eclipse_info.full_name}
-            - for product_id in [:devstudio, :devstudio_is, :jbt_core, :jbt_is]
-              - next if site.download_pages[product_id].nil? || site.download_pages[product_id].empty?
-              %td
-                - site.download_pages[product_id].each do |product_version, download_page|
-                  - next if download_page.build_info.eclipse_version != eclipse_info
-                  .block
-                    =partial('product_link.html.haml', { :parent => page, :product_info => download_page, :display_product_name=>false })
-                  
-                  
-                  
-            
-            
-            
-                                    
-            
-            
-          
-            
-            
-            
-                  
-            
-      
+          - if !eclipse_info.archived
+            %tr
+              %td 
+                %a{:href=>eclipse_info.download_url, :alt=>"Download #{eclipse_info.full_name}"} #{eclipse_info.full_name}
+              - for product_id in [:devstudio, :devstudio_is, :jbt_core, :jbt_is]
+                - next if site.download_pages[product_id].nil? || site.download_pages[product_id].empty?
+                %td
+                  - site.download_pages[product_id].each do |product_version, download_page|
+                    - next if download_page.build_info.eclipse_version != eclipse_info
+                    .block
+                      - if download_page.build_info.archived != true
+                        =partial('product_link.html.haml', { :parent => page, :product_info => download_page, :display_product_name=>false })
+
+.row-fluid
+  .span12
+    .center
+      :markdown
+        Looking for an older version ? See the [archives](archives.html).
