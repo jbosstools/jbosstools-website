@@ -1,0 +1,42 @@
+---
+layout: project
+title: Archived Downloads
+---
+
+.row-fluid
+  .hero-unit.center
+    %h1 Archived Downloads
+    
+.row-fluid
+  .span12
+    .center
+      :markdown
+        These archived downloads are no longer supported. Please use a [newer version](overview.html). 
+#all-downloads
+  .row-fluid
+    .span12
+      %table.center
+        %tr
+          %th Eclipse Version
+          - for product_id in [:devstudio, :devstudio_is, :jbt_core, :jbt_is]
+            - next if site.download_pages[product_id].nil? || site.download_pages[product_id].empty?
+            %th.center #{site.products[product_id].name}
+        - site.products[:eclipse].each do |eclipse_version, eclipse_info|
+          %tr
+            %td 
+              %a{:href=>eclipse_info.download_url, :alt=>"Download #{eclipse_info.full_name}"} #{eclipse_info.full_name}
+            - for product_id in [:devstudio, :devstudio_is, :jbt_core, :jbt_is]
+              - next if site.download_pages[product_id].nil? || site.download_pages[product_id].empty?
+              %td
+                - site.download_pages[product_id].each do |product_version, download_page|
+                  - next if download_page.build_info.eclipse_version != eclipse_info
+                  .block
+                    - if download_page.build_info.archived
+                      =partial('product_link.html.haml', { :parent => page, :product_info => download_page, :display_product_name=>false })
+
+.row-fluid
+  .span12
+    .center
+      :markdown
+        Looking for a newer version ? See [recent downloads](overview.html). See also <a href="https://access.redhat.com/support/policy/updates/jboss_notes">Red Hat JBoss Middleware Product Update and Support Policy</a>.
+

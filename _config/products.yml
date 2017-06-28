@@ -1,65 +1,80 @@
 eclipse:
   oxygen:
+    # TODO archive this as of Sep 2019
+    archived: false
     url_path_fragment: oxygen
     short_name: Oxygen
     full_name: Eclipse Oxygen 4.7
     download_url:  http://www.eclipse.org/downloads/packages/release/Oxygen/
     requirements: Java 8
   neon:
+    # TODO archive this as of Jul 2019
+    archived: false
     url_path_fragment: neon
     short_name: Neon
     full_name: Eclipse Neon 4.6.3
     download_url:  http://www.eclipse.org/downloads/packages/release/Neon/3
     requirements: Java 8
   mars:
+    # TODO archive this as of Nov 2018
+    archived: false
     url_path_fragment: mars
     short_name: Mars
     full_name: Eclipse Mars 4.5.2
     download_url:  http://www.eclipse.org/downloads/packages/release/Mars/2
     requirements: Java 8
   luna:
+    # TODO archive this as of Nov 2017
+    archived: false
     url_path_fragment: luna
     short_name: Luna
     full_name: Eclipse Luna 4.4.2
     download_url: http://www.eclipse.org/downloads/packages/release/luna/sr2
     requirements: Java 7 or Java 8
   kepler:
+    archived: true
     url_path_fragment: kepler
     short_name: Kepler
     full_name: Eclipse Kepler 4.3.2
     download_url: http://www.eclipse.org/downloads/packages/release/kepler/sr2
     requirements: Java 6 or Java 7
   juno:
+    archived: true
     url_path_fragment: juno
     short_name: Juno
     full_name: Eclipse Juno 4.2.2
     download_url: http://www.eclipse.org/downloads/packages/release/juno/sr2
     requirements: Java 6
   indigo:
+    archived: true
     url_path_fragment: indigo
     short_name: Indigo
     full_name: Eclipse Indigo 3.7
     download_url: http://www.eclipse.org/downloads/packages/release/indigo/sr2
     requirements: Java 6
   helios:
+    archived: true
     url_path_fragment: helios
     short_name: Helios
     full_name: Eclipse Helios 3.6
     download_url: http://www.eclipse.org/downloads/packages/release/helios/sr2
     requirements: Java 6
   galileo:
+    archived: true
     url_path_fragment: galileo
     short_name: Galileo
     full_name: Eclipse Galileo 3.5
     download_url: http://www.eclipse.org/downloads/packages/release/galileo/sr2
     requirements: Java 5
   ganymede:
+    archived: true
     url_path_fragment: ganymede
     short_name: Ganymede
     full_name: Eclipse Ganymede 3.4
     download_url: http://www.eclipse.org/downloads/packages/release/ganymede/sr2
     requirements: Java 5
   europa:
+    archived: true
     url_path_fragment: europa
     short_name: Europa
     full_name: Eclipse Europa 3.3
@@ -404,6 +419,7 @@ devstudio:
       #       url: https://devstudio.redhat.com/9.0/development/updates/core/jboss-devstudio-9.0.0.Beta1-target-platform.zip
     luna:
       8.1.0.GA:
+        archived: false
         marketplace_url: http://marketplace.eclipse.org/node/1616973
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
         release_date: 2015-04-01
@@ -491,6 +507,7 @@ devstudio:
             url: https://devstudio.redhat.com/static/updates/8.0.0/jboss-devstudio-8.0.2.GA-updatesite-core.zip
             md5_url: https://devstudio.redhat.com/static/updates/8.0.0/jboss-devstudio-8.0.2.GA-updatesite-core.zip.MD5
       8.0.1.GA:
+        archived: true
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         release_date: 2014-12-15
         supported_devstudio_is_version: 8.0.0.Beta2
@@ -510,6 +527,7 @@ devstudio:
             url: https://devstudio.redhat.com/static/updates/8.0.0/jboss-devstudio-8.0.1.GA-v20141215-0057-B362-updatesite-core.zip
             #md5_url: n/a
       8.0.0.GA:
+        archived: true
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         release_date: 2014-10-21
         supported_devstudio_is_version: 8.0.0.Beta2
@@ -781,17 +799,17 @@ devstudio_is:
             file_size: 187MB
             url: https://devstudio.redhat.com/10.0/stable/updates/integration-stack/devstudio-integration-stack-10.0.0.GA-updatesite-earlyaccess.zip
             md5_url: https://devstudio.redhat.com/10.0/stable/updates/integration-stack/devstudio-integration-stack-10.0.0.GA-updatesite-earlyaccess.zip.MD5
-      # 10.0.0.Alpha1:
-      #   archived: true
-      #   documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/
-      #   release_date: 2016-09-27
-      #   required_devstudio_version: 10.1.0.GA
-      #   update_site_url: https://devstudio.redhat.com/10.0/development/updates/integration-stack/earlyaccess
-      #   zips:
-      #     - name: Update site bundle of JBoss Developer Studio Integration Stack (Early Access)
-      #       file_size: 337MB
-      #       url: https://devstudio.redhat.com/10.0/development/updates/integration-stack/devstudio-integration-stack-10.0.0.Alpha1-earlyaccess.zip
-      #       md5_url: https://devstudio.redhat.com/10.0/development/updates/integration-stack/devstudio-integration-stack-10.0.0.Alpha1-earlyaccess.zip.MD5
+      10.0.0.Alpha1:
+        archived: true
+        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/
+        release_date: 2016-09-27
+        required_devstudio_version: 10.1.0.GA
+        update_site_url: https://devstudio.redhat.com/10.0/development/updates/integration-stack/earlyaccess
+        zips:
+          - name: Update site bundle of JBoss Developer Studio Integration Stack (Early Access)
+            file_size: 337MB
+            url: https://devstudio.redhat.com/10.0/development/updates/integration-stack/devstudio-integration-stack-10.0.0.Alpha1-earlyaccess.zip
+            md5_url: https://devstudio.redhat.com/10.0/development/updates/integration-stack/devstudio-integration-stack-10.0.0.Alpha1-earlyaccess.zip.MD5
     mars:
       9.0.3.GA:
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/9.0
@@ -809,6 +827,7 @@ devstudio_is:
             url: https://devstudio.redhat.com/9.0/stable/updates/integration-stack/devstudio-integration-stack-9.0.3.GA-updatesite.zip
             md5_url: https://devstudio.redhat.com/9.0/stable/updates/integration-stack/devstudio-integration-stack-9.0.3.GA-updatesite.zip.MD5
       9.0.2.GA:
+        archived: true
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/9.0
         release_notes_url: https://access.redhat.com/documentation/en/red-hat-jboss-developer-studio-integration-stack/9.0/paged/902ga-release-notes/
         release_date: 2016-10-06
@@ -825,6 +844,7 @@ devstudio_is:
             url: https://devstudio.redhat.com/9.0/stable/updates/integration-stack/devstudio-integration-stack-9.0.2.GA-updatesite.zip
             md5_url: https://devstudio.redhat.com/9.0/stable/updates/integration-stack/devstudio-integration-stack-9.0.2.GA-updatesite.zip.MD5
       9.0.1.GA:
+        archived: true
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/9.0
         release_notes_url: https://access.redhat.com/articles/2505131
         release_date: 2016-08-11
@@ -857,35 +877,38 @@ devstudio_is:
             file_size: 288MB
             url: https://devstudio.redhat.com/9.0/stable/updates/integration-stack/devstudio-integration-stack-9.0.0.GA-earlyaccess.zip
             md5_url: https://devstudio.redhat.com/9.0/stable/updates/integration-stack/devstudio-integration-stack-9.0.0.GA-earlyaccess.zip.MD5
-      # 9.0.0.Beta1:
-      #   documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/9.0
-      #   release_notes_url: https://access.redhat.com/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/9.0-Beta1/html/9.0.0_Beta1_Release_Notes/index.html
-      #   release_date: 2016-03-11
-      #   required_devstudio_version: 9.1.0.Beta2
-      #   update_site_url: https://devstudio.redhat.com/9.0/development/updates/integration-stack/earlyaccess
-      #   blog_announcement_url: /blog/integration-stack-4.3.0.Beta1-for-mars.html
-      #   zips:
-      #     - name: Update site bundle of JBoss Developer Studio Integration Stack (Early Access)
-      #       file_size: 307MB
-      #       url: https://devstudio.redhat.com/9.0/development/updates/integration-stack/devstudio-integration-stack-9.0.0.Beta1-earlyaccess.zip
-      #       md5_url: https://devstudio.redhat.com/9.0/development/updates/integration-stack/devstudio-integration-stack-9.0.0.Beta1-earlyaccess.zip.MD5
-      # 9.0.0.Alpha2:
-      #   documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/9.0
-      #   #release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/8.0/html/8.0.3_Release_Notes/index.html
-      #   release_date: 2015-10-12
-      #   required_devstudio_version: 9.0.0.GA
-      #   update_site_url: https://devstudio.redhat.com/9.0/development/updates/integration-stack/
-      #   zips:
-      #     - name: Update site bundle of JBoss Developer Studio Integration Stack
-      #       file_size: 53MB
-      #       url: https://devstudio.redhat.com/9.0/development/updates/integration-stack/devstudio-integration-stack-9.0.0.Alpha2.zip
-      #       md5_url: https://devstudio.redhat.com/9.0/development/updates/integration-stack/devstudio-integration-stack-9.0.0.Alpha2.zip.MD5
-      #     - name: Update site bundle of JBoss Developer Studio Integration Stack (Early Access)
-      #       file_size: 326MB
-      #       url: https://devstudio.redhat.com/9.0/development/updates/integration-stack/devstudio-integration-stack-9.0.0.Alpha2-earlyaccess.zip
-      #       md5_url: https://devstudio.redhat.com/9.0/development/updates/integration-stack/devstudio-integration-stack-9.0.0.Alpha2-earlyaccess.zip.MD5
+      9.0.0.Beta1:
+        archived: true
+        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/9.0
+        release_notes_url: https://access.redhat.com/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/9.0-Beta1/html/9.0.0_Beta1_Release_Notes/index.html
+        release_date: 2016-03-11
+        required_devstudio_version: 9.1.0.Beta2
+        update_site_url: https://devstudio.redhat.com/9.0/development/updates/integration-stack/earlyaccess
+        blog_announcement_url: /blog/integration-stack-4.3.0.Beta1-for-mars.html
+        zips:
+          - name: Update site bundle of JBoss Developer Studio Integration Stack (Early Access)
+            file_size: 307MB
+            url: https://devstudio.redhat.com/9.0/development/updates/integration-stack/devstudio-integration-stack-9.0.0.Beta1-earlyaccess.zip
+            md5_url: https://devstudio.redhat.com/9.0/development/updates/integration-stack/devstudio-integration-stack-9.0.0.Beta1-earlyaccess.zip.MD5
+      9.0.0.Alpha2:
+        archived: true
+        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/9.0
+        #release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/8.0/html/8.0.3_Release_Notes/index.html
+        release_date: 2015-10-12
+        required_devstudio_version: 9.0.0.GA
+        update_site_url: https://devstudio.redhat.com/9.0/development/updates/integration-stack/
+        zips:
+          - name: Update site bundle of JBoss Developer Studio Integration Stack
+            file_size: 53MB
+            url: https://devstudio.redhat.com/9.0/development/updates/integration-stack/devstudio-integration-stack-9.0.0.Alpha2.zip
+            md5_url: https://devstudio.redhat.com/9.0/development/updates/integration-stack/devstudio-integration-stack-9.0.0.Alpha2.zip.MD5
+          - name: Update site bundle of JBoss Developer Studio Integration Stack (Early Access)
+            file_size: 326MB
+            url: https://devstudio.redhat.com/9.0/development/updates/integration-stack/devstudio-integration-stack-9.0.0.Alpha2-earlyaccess.zip
+            md5_url: https://devstudio.redhat.com/9.0/development/updates/integration-stack/devstudio-integration-stack-9.0.0.Alpha2-earlyaccess.zip.MD5
     luna:
       8.0.7.GA:
+        archived: false
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/8.0
         release_notes_url: https://access.redhat.com/articles/2345171
         release_date: 2016-06-02
@@ -897,6 +920,7 @@ devstudio_is:
             url: https://devstudio.jboss.com/updates/8.0.0/jbdevstudio-integration-stack-updatesite-8.0.7.GA.zip
             md5_url: https://devstudio.jboss.com/updates/8.0.0/jbdevstudio-integration-stack-updatesite-8.0.7.GA.zip.MD5
       8.0.6.GA:
+        archived: true
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/8.0
         release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/8.0/html/8.0.6_Release_Notes/index.html
         release_date: 2016-03-30
@@ -908,6 +932,7 @@ devstudio_is:
             url: https://devstudio.jboss.com/updates/8.0.0/jbdevstudio-integration-stack-updatesite-8.0.6.GA.zip
             md5_url: https://devstudio.jboss.com/updates/8.0.0/jbdevstudio-integration-stack-updatesite-8.0.6.GA.zip.MD5
       8.0.5.GA:
+        archived: true
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/8.0
         release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/8.0/html/8.0.5_Release_Notes/index.html
         release_date: 2016-02-02
@@ -919,6 +944,7 @@ devstudio_is:
             url: https://devstudio.jboss.com/updates/8.0.0/jbdevstudio-integration-stack-updatesite-8.0.5.GA.zip
             md5_url: https://devstudio.jboss.com/updates/8.0.0/jbdevstudio-integration-stack-updatesite-8.0.5.GA.zip.MD5
       8.0.4.GA:
+        archived: true
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/8.0
         release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/8.0/html/8.0.4_Release_Notes/index.html
         release_date: 2015-12-07
@@ -930,6 +956,7 @@ devstudio_is:
             url: https://devstudio.jboss.com/updates/8.0.0/jbdevstudio-integration-stack-updatesite-8.0.4.GA.zip
             md5_url: https://devstudio.jboss.com/updates/8.0.0/jbdevstudio-integration-stack-updatesite-8.0.4.GA.zip.MD5
       8.0.3.GA:
+        archived: true
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/8.0
         release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/8.0/html/8.0.3_Release_Notes/index.html
         release_date: 2015-08-27
@@ -962,6 +989,7 @@ devstudio_is:
             url: https://devstudio.jboss.com/updates/8.0.0/jbdevstudio-integration-stack-updatesite-8.0.2.GA-earlyaccess.zip
             md5_url: https://devstudio.jboss.com/updates/8.0.0/jbdevstudio-integration-stack-updatesite-8.0.2.GA-earlyaccess.zip.MD5
       8.0.1.GA:
+        archived: true
         blog_announcement_url: /blog/2015-04-16-JBTIS-421-Final.html
         release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/8.0/html/8.0.1_Release_Notes/index.html
         release_date: 2015-04-16
@@ -977,6 +1005,7 @@ devstudio_is:
             url: https://devstudio.jboss.com/updates/8.0.0/jbdevstudio-integration-stack-updatesite-8.0.1.GA-earlyaccess.zip
             md5_url: https://devstudio.jboss.com/updates/8.0.0/jbdevstudio-integration-stack-updatesite-8.0.1.GA-earlyaccess.zip.MD5
       8.0.0.GA:
+        archived: true
         blog_announcement_url: /blog/2015-03-11-JBTIS-420-Final.html
         release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/8.0/html/8.0.0_Release_Notes/index.html
         release_date: 2015-03-11
@@ -987,28 +1016,30 @@ devstudio_is:
             file_size: 294MB
             url: https://devstudio.jboss.com/updates/8.0.0/jbdevstudio-integration-stack-updatesite-8.0.0.GA.zip
             md5_url: https://devstudio.jboss.com/updates/8.0.0/jbdevstudio-integration-stack-updatesite-8.0.0.GA.zip.MD5
-      # 8.0.0.Beta2:
-      #   blog_announcement_url: /blog/2015-01-13-JBTIS-Beta2-for-luna.html
-      #   #release_notes_url: https://devstudio.jboss.com/updates/8.0/integration-stack/release-notes/Release_Notes_8.0.0.html
-      #   release_date: 2015-01-12
-      #   required_devstudio_version: 8.0.1.GA
-      #   update_site_url: https://devstudio.jboss.com/updates/8.0-development/integration-stack/
-      #   zips:
-      #     - name: Update site bundle of JBoss Developer Studio Integration Stack
-      #       file_size: 294MB
-      #       url: https://devstudio.jboss.com/updates/8.0.0/jbdevstudio-integration-stack-updatesite-8.0.0.Beta2a.zip
-      #       md5_url: https://devstudio.jboss.com/updates/8.0.0/jbdevstudio-integration-stack-updatesite-8.0.0.Beta2a.zip.MD5
-      # 8.0.0.Beta1:
-      #   blog_announcement_url: /blog/2014-11-13-JBTIS-Beta1-for-luna.html
-      #   #release_notes_url: https://devstudio.jboss.com/updates/8.0/integration-stack/release-notes/Release_Notes_8.0.0.html
-      #   release_date: 2014-11-12
-      #   required_devstudio_version: 8.0.0.GA
-      #   update_site_url: https://devstudio.jboss.com/updates/8.0-development/integration-stack/
-      #   zips:
-      #     - name: Update site bundle of JBoss Developer Studio Integration Stack
-      #       file_size: 352MB
-      #       url: https://devstudio.jboss.com/updates/8.0.0/jbdevstudio-integration-stack-updatesite-8.0.0.Beta1.zip
-      #       md5_url: https://devstudio.jboss.com/updates/8.0.0/jbdevstudio-integration-stack-updatesite-8.0.0.Beta1.zip.MD5
+      8.0.0.Beta2:
+        archived: true
+        blog_announcement_url: /blog/2015-01-13-JBTIS-Beta2-for-luna.html
+        #release_notes_url: https://devstudio.jboss.com/updates/8.0/integration-stack/release-notes/Release_Notes_8.0.0.html
+        release_date: 2015-01-12
+        required_devstudio_version: 8.0.1.GA
+        update_site_url: https://devstudio.jboss.com/updates/8.0-development/integration-stack/
+        zips:
+          - name: Update site bundle of JBoss Developer Studio Integration Stack
+            file_size: 294MB
+            url: https://devstudio.jboss.com/updates/8.0.0/jbdevstudio-integration-stack-updatesite-8.0.0.Beta2a.zip
+            md5_url: https://devstudio.jboss.com/updates/8.0.0/jbdevstudio-integration-stack-updatesite-8.0.0.Beta2a.zip.MD5
+      8.0.0.Beta1:
+        archived: true
+        blog_announcement_url: /blog/2014-11-13-JBTIS-Beta1-for-luna.html
+        #release_notes_url: https://devstudio.jboss.com/updates/8.0/integration-stack/release-notes/Release_Notes_8.0.0.html
+        release_date: 2014-11-12
+        required_devstudio_version: 8.0.0.GA
+        update_site_url: https://devstudio.jboss.com/updates/8.0-development/integration-stack/
+        zips:
+          - name: Update site bundle of JBoss Developer Studio Integration Stack
+            file_size: 352MB
+            url: https://devstudio.jboss.com/updates/8.0.0/jbdevstudio-integration-stack-updatesite-8.0.0.Beta1.zip
+            md5_url: https://devstudio.jboss.com/updates/8.0.0/jbdevstudio-integration-stack-updatesite-8.0.0.Beta1.zip.MD5
     kepler:
       7.1.0.GA:
         build_type: stable
@@ -1108,71 +1139,72 @@ jbt_core:
             sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.4.Final-browsersim-standalone.zip.sha256
           - name: Release Notes
             url: https://tools.jboss.org/documentation/whatsnew/index.html
-      # 4.4.4.AM3:
-      #   archived: true
-      #   update_site_url: http://download.jboss.org/jbosstools/neon/development/updates/
-      #   release_date: 2017-04-25
-      #   supported_jbt_is_version: 4.4.2.Final
-      #   blog_announcement_url: /blog/4.4.4.am3-for-neon.3.html
-      #   documentation_url: http://docs.jboss.org/tools/
-      #   zips:
-      #     - name: Update site (including sources) bundle of all JBoss Core Tools
-      #       file_size: 480MB
-      #       url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.4.AM3-updatesite-core.zip
-      #       sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.4.AM3-updatesite-core.zip.sha256
-      #     - name: Sources zip of all JBoss Core Tools
-      #       file_size: 222MB
-      #       url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.4.AM3-src.zip
-      #       sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.4.AM3-src.zip.sha256
-      #     - name: Stand-alone BrowserSim
-      #       file_size: 17MB
-      #       url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.4.AM3-browsersim-standalone.zip
-      #       sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.4.AM2-browsersim-standalone.zip.sha256
-      #     - name: Release Notes
-      #       url: https://tools.jboss.org/documentation/whatsnew/index.html
-      # 4.4.4.AM2:
-      #   archived: true
-      #   release_date: 2017-04-04
-      #   supported_jbt_is_version: 4.4.2.Final
-      #   blog_announcement_url: /blog/4.4.4.am2-for-neon.3.html
-      #   documentation_url: http://docs.jboss.org/tools/
-      #   zips:
-      #     - name: Update site (including sources) bundle of all JBoss Core Tools
-      #       file_size: 480MB
-      #       url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.4.AM2-updatesite-core.zip
-      #       sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.4.AM2-updatesite-core.zip.sha256
-      #     - name: Sources zip of all JBoss Core Tools
-      #       file_size: 222MB
-      #       url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.4.AM2-src.zip
-      #       sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.4.AM2-src.zip.sha256
-      #     - name: Stand-alone BrowserSim
-      #       file_size: 17MB
-      #       url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.4.AM2-browsersim-standalone.zip
-      #       sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.4.AM2-browsersim-standalone.zip.sha256
-      #     - name: Release Notes
-      #       url: https://tools.jboss.org/documentation/whatsnew/index.html
-      # 4.4.4.AM1:
-      #   archived: true
-      #   release_date: 2017-03-15
-      #   supported_jbt_is_version: 4.4.2.Final
-      #   blog_announcement_url: /blog/4.4.4.am1-for-neon.2.html
-      #   documentation_url: http://docs.jboss.org/tools/
-      #   zips:
-      #     - name: Update site (including sources) bundle of all JBoss Core Tools
-      #       file_size: 480MB
-      #       url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.4.AM1-updatesite-core.zip
-      #       sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.4.AM1-updatesite-core.zip.sha256
-      #     - name: Sources zip of all JBoss Core Tools
-      #       file_size: 222MB
-      #       url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.4.AM1-src.zip
-      #       sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.4.AM1-src.zip.sha256
-      #     - name: Stand-alone BrowserSim
-      #       file_size: 17MB
-      #       url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.4.AM1-browsersim-standalone.zip
-      #       sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.4.AM1-browsersim-standalone.zip.sha256
-      #     - name: Release Notes
-      #       url: https://tools.jboss.org/documentation/whatsnew/index.html
+      4.4.4.AM3:
+        archived: true
+        update_site_url: http://download.jboss.org/jbosstools/neon/development/updates/
+        release_date: 2017-04-25
+        supported_jbt_is_version: 4.4.2.Final
+        blog_announcement_url: /blog/4.4.4.am3-for-neon.3.html
+        documentation_url: http://docs.jboss.org/tools/
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 480MB
+            url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.4.AM3-updatesite-core.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.4.AM3-updatesite-core.zip.sha256
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 222MB
+            url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.4.AM3-src.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.4.AM3-src.zip.sha256
+          - name: Stand-alone BrowserSim
+            file_size: 17MB
+            url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.4.AM3-browsersim-standalone.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.4.AM2-browsersim-standalone.zip.sha256
+          - name: Release Notes
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
+      4.4.4.AM2:
+        archived: true
+        release_date: 2017-04-04
+        supported_jbt_is_version: 4.4.2.Final
+        blog_announcement_url: /blog/4.4.4.am2-for-neon.3.html
+        documentation_url: http://docs.jboss.org/tools/
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 480MB
+            url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.4.AM2-updatesite-core.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.4.AM2-updatesite-core.zip.sha256
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 222MB
+            url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.4.AM2-src.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.4.AM2-src.zip.sha256
+          - name: Stand-alone BrowserSim
+            file_size: 17MB
+            url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.4.AM2-browsersim-standalone.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.4.AM2-browsersim-standalone.zip.sha256
+          - name: Release Notes
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
+      4.4.4.AM1:
+        archived: true
+        release_date: 2017-03-15
+        supported_jbt_is_version: 4.4.2.Final
+        blog_announcement_url: /blog/4.4.4.am1-for-neon.2.html
+        documentation_url: http://docs.jboss.org/tools/
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 480MB
+            url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.4.AM1-updatesite-core.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.4.AM1-updatesite-core.zip.sha256
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 222MB
+            url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.4.AM1-src.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.4.AM1-src.zip.sha256
+          - name: Stand-alone BrowserSim
+            file_size: 17MB
+            url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.4.AM1-browsersim-standalone.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.4.AM1-browsersim-standalone.zip.sha256
+          - name: Release Notes
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
       4.4.3.Final:
+        archived: true
         release_date: 2017-02-23
         supported_jbt_is_version: 4.4.2.Final
         blog_announcement_url: /blog/10.3.0.ga-for-neon.2.html
@@ -1192,51 +1224,52 @@ jbt_core:
             sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.3.Final-browsersim-standalone.zip.sha256
           - name: Release Notes
             url: https://tools.jboss.org/documentation/whatsnew/index.html
-      # 4.4.3.AM2:
-      #   archived: true
-      #   update_site_url: http://download.jboss.org/jbosstools/neon/development/updates/
-      #   release_date: 2017-02-01
-      #   supported_jbt_is_version: 4.4.1.Final
-      #   blog_announcement_url: /blog/am2-for-neon.2.html
-      #   documentation_url: http://docs.jboss.org/tools/
-      #   zips:
-      #     - name: Update site (including sources) bundle of all JBoss Core Tools
-      #       file_size: 480MB
-      #       url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.3.AM2-updatesite-core.zip
-      #       sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.3.AM2-updatesite-core.zip.sha256
-      #     - name: Sources zip of all JBoss Core Tools
-      #       file_size: 222MB
-      #       url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.3.AM2-src.zip
-      #       sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.3.AM2-src.zip.sha256
-      #     - name: Stand-alone BrowserSim
-      #       file_size: 17MB
-      #       url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.3.AM2-browsersim-standalone.zip
-      #       sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.3.AM2-browsersim-standalone.zip.sha256
-      #     - name: Release Notes
-      #       url: https://tools.jboss.org/documentation/whatsnew/index.html
-      # 4.4.3.AM1:
-      #   archived: true
-      #   update_site_url: http://download.jboss.org/jbosstools/neon/development/updates/
-      #   release_date: 2017-01-11
-      #   supported_jbt_is_version: 4.4.1.Final
-      #   blog_announcement_url: /blog/am1-for-neon.2.html
-      #   documentation_url: http://docs.jboss.org/tools/
-      #   zips:
-      #     - name: Update site (including sources) bundle of all JBoss Core Tools
-      #       file_size: 474MB
-      #       url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.3.AM1-updatesite-core.zip
-      #       sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.3.AM1-updatesite-core.zip.sha256
-      #     - name: Sources zip of all JBoss Core Tools
-      #       file_size: 244MB
-      #       url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.3.AM1-src.zip
-      #       sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.3.AM1-src.zip.sha256
-      #     - name: Stand-alone BrowserSim
-      #       file_size: 17MB
-      #       url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.3.AM1-browsersim-standalone.zip
-      #       sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.3.AM1-browsersim-standalone.zip.sha256
-      #     - name: Release Notes
-      #       url: https://tools.jboss.org/documentation/whatsnew/index.html
+      4.4.3.AM2:
+        archived: true
+        update_site_url: http://download.jboss.org/jbosstools/neon/development/updates/
+        release_date: 2017-02-01
+        supported_jbt_is_version: 4.4.1.Final
+        blog_announcement_url: /blog/am2-for-neon.2.html
+        documentation_url: http://docs.jboss.org/tools/
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 480MB
+            url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.3.AM2-updatesite-core.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.3.AM2-updatesite-core.zip.sha256
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 222MB
+            url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.3.AM2-src.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.3.AM2-src.zip.sha256
+          - name: Stand-alone BrowserSim
+            file_size: 17MB
+            url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.3.AM2-browsersim-standalone.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.3.AM2-browsersim-standalone.zip.sha256
+          - name: Release Notes
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
+      4.4.3.AM1:
+        archived: true
+        update_site_url: http://download.jboss.org/jbosstools/neon/development/updates/
+        release_date: 2017-01-11
+        supported_jbt_is_version: 4.4.1.Final
+        blog_announcement_url: /blog/am1-for-neon.2.html
+        documentation_url: http://docs.jboss.org/tools/
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 474MB
+            url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.3.AM1-updatesite-core.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.3.AM1-updatesite-core.zip.sha256
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 244MB
+            url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.3.AM1-src.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.3.AM1-src.zip.sha256
+          - name: Stand-alone BrowserSim
+            file_size: 17MB
+            url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.3.AM1-browsersim-standalone.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.3.AM1-browsersim-standalone.zip.sha256
+          - name: Release Notes
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
       4.4.2.Final:
+        archived: true
         update_site_url: http://download.jboss.org/jbosstools/neon/stable/updates/
         release_date: 2016-12-07
         supported_jbt_is_version: 4.4.1.Final
@@ -1454,49 +1487,49 @@ jbt_core:
             sha256_url: http://download.jboss.org/jbosstools/static/mars/stable/updates/core/jbosstools-4.3.1.Final-browsersim-standalone.zip.sha256
           - name: Release Notes
             url: https://tools.jboss.org/documentation/whatsnew/index.html
-      # 4.3.1.Beta2:
-      #   update_site_url: http://download.jboss.org/jbosstools/mars/stable/updates/
-      #   archived: true
-      #   release_date: 2016-02-02
-      #   supported_jbt_is_version: 4.3.0.Beta1
-      #   blog_announcement_url: /blog/beta2-for-mars2.html
-      #   documentation_url: http://docs.jboss.org/tools/
-      #   zips:
-      #     - name: Update site (including sources) bundle of all JBoss Core Tools
-      #       file_size: 398MB
-      #       url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.1.Beta2-updatesite-core.zip
-      #       sha256_url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.1.Beta2-updatesite-core.zip.sha256
-      #     - name: Sources zip of all JBoss Core Tools
-      #       file_size: 222MB
-      #       url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.1.Beta2-src.zip
-      #       sha256_url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.1.Beta2-src.zip.sha256
-      #     - name: Stand-alone BrowserSim
-      #       file_size: 16MB
-      #       url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.1.Beta2-browsersim-standalone.zip
-      #       sha256_url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.1.Beta2-browsersim-standalone.zip.sha256
-      #     - name: Release Notes
-      #       url: https://tools.jboss.org/documentation/whatsnew/index.html
-      # 4.3.1.Beta1:
-      #   archived: true
-      #   release_date: 2015-12-21
-      #   supported_jbt_is_version: 4.3.0.Alpha2
-      #   blog_announcement_url: /blog/beta1-for-mars2.html
-      #   documentation_url: http://docs.jboss.org/tools/
-      #   zips:
-      #     - name: Update site (including sources) bundle of all JBoss Core Tools
-      #       file_size: 395MB
-      #       url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.1.Beta1-updatesite-core.zip
-      #       sha256_url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.1.Beta1-updatesite-core.zip.sha256
-      #     - name: Sources zip of all JBoss Core Tools
-      #       file_size: 222MB
-      #       url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.1.Beta1-src.zip
-      #       sha256_url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.1.Beta1-src.zip.sha256
-      #     - name: Stand-alone BrowserSim
-      #       file_size: 16MB
-      #       url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.1.Beta1-browsersim-standalone.zip
-      #       sha256_url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.1.Beta1-browsersim-standalone.zip.sha256
-      #     - name: Release Notes
-      #       url: https://tools.jboss.org/documentation/whatsnew/index.html
+      4.3.1.Beta2:
+        update_site_url: http://download.jboss.org/jbosstools/mars/stable/updates/
+        archived: true
+        release_date: 2016-02-02
+        supported_jbt_is_version: 4.3.0.Beta1
+        blog_announcement_url: /blog/beta2-for-mars2.html
+        documentation_url: http://docs.jboss.org/tools/
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 398MB
+            url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.1.Beta2-updatesite-core.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.1.Beta2-updatesite-core.zip.sha256
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 222MB
+            url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.1.Beta2-src.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.1.Beta2-src.zip.sha256
+          - name: Stand-alone BrowserSim
+            file_size: 16MB
+            url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.1.Beta2-browsersim-standalone.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.1.Beta2-browsersim-standalone.zip.sha256
+          - name: Release Notes
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
+      4.3.1.Beta1:
+        archived: true
+        release_date: 2015-12-21
+        supported_jbt_is_version: 4.3.0.Alpha2
+        blog_announcement_url: /blog/beta1-for-mars2.html
+        documentation_url: http://docs.jboss.org/tools/
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 395MB
+            url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.1.Beta1-updatesite-core.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.1.Beta1-updatesite-core.zip.sha256
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 222MB
+            url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.1.Beta1-src.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.1.Beta1-src.zip.sha256
+          - name: Stand-alone BrowserSim
+            file_size: 16MB
+            url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.1.Beta1-browsersim-standalone.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.1.Beta1-browsersim-standalone.zip.sha256
+          - name: Release Notes
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
       4.3.0.Final:
         archived: true
         release_date: 2015-10-06
@@ -1518,114 +1551,115 @@ jbt_core:
             sha256_url: http://download.jboss.org/jbosstools/static/mars/stable/updates/core/jbosstools-4.3.0.Final-browsersim-standalone.zip.sha256
           - name: Release Notes
             url: https://tools.jboss.org/documentation/whatsnew/index.html
-      # 4.3.0.CR1:
-      #   release_date: 2015-09-22
-      #   archived: true
-      #   blog_announcement_url: /blog/cr1-for-mars.html
-      #   documentation_url: http://docs.jboss.org/tools/
-      #   zips:
-      #     - name: Update site (including sources) bundle of all JBoss Core Tools
-      #       file_size: 389MB
-      #       url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.0.CR1-updatesite-core.zip
-      #       sha256_url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.0.CR1-updatesite-core.zip.sha256
-      #     - name: Sources zip of all JBoss Core Tools
-      #       file_size: 389MB
-      #       url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.0.CR1-src.zip
-      #       sha256_url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.0.CR1-src.zip.sha256
-      #     - name: Stand-alone BrowserSim
-      #       file_size: 16MB
-      #       url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.0.CR1-browsersim-standalone.zip
-      #       sha256_url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.0.CR1-browsersim-standalone.zip.sha256
-      #     - name: Release Notes
-      #       url: https://tools.jboss.org/documentation/whatsnew/index.html
-      # 4.3.0.Beta2:
-      #   release_date: 2015-07-28
-      #   archived: true
-      #   blog_announcement_url: /blog/beta2-for-mars.html
-      #   documentation_url: http://docs.jboss.org/tools/
-      #   # as of Beta2, publish to dl.jb.org instead of Sourceforge
-      #   zips:
-      #     - name: Update site (including sources) bundle of all JBoss Core Tools
-      #       file_size: 384MB
-      #       url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.0.Beta2-updatesite-core.zip
-      #       sha256_url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.0.Beta2-updatesite-core.zip.sha256
-      #     - name: Sources zip of all JBoss Core Tools
-      #       file_size: 361MB
-      #       url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.0.Beta2-src.zip
-      #       sha256_url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.0.Beta2-src.zip.sha256
-      #     - name: Stand-alone BrowserSim
-      #       file_size: 16.6MB
-      #       url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.0.Beta2-browsersim-standalone.zip
-      #       sha256_url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.0.Beta2-browsersim-standalone.zip.sha256
-      #     - name: Release Notes
-      #       url: https://tools.jboss.org/documentation/whatsnew/index.html
-      # 4.3.0.Beta1:
-      #   release_date: 2015-06-22
-      #   archived: true
-      #   blog_announcement_url: /blog/2015-06-22-beta1-for-mars.html
-      #   documentation_url: http://docs.jboss.org/tools/
-      #   zips:
-      #     - name: Update site (including sources) bundle of all JBoss Core Tools
-      #       file_size: 401MB
-      #       url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Beta1_2015-06-18_21-49-21-B59-updatesite-core.zip
-      #       md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Beta1_2015-06-18_21-49-21-B59-updatesite-core.zip.sha1
-      #     - name: Sources zip of all JBoss Core Tools
-      #       file_size: 299MB
-      #       url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Beta1_2015-06-18_21-49-21-B59-src.zip
-      #       md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Beta1_2015-06-18_21-49-21-B59-src.zip.sha1
-      #     - name: Stand-alone BrowserSim
-      #       file_size: 16.6MB
-      #       url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Beta1_2015-06-05_01-14-40-B10-browsersim-standalone.zip
-      #       md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Beta1_2015-06-05_01-14-40-B10-browsersim-standalone.zip.sha1
-      #     - name: Release Notes
-      #       url: https://tools.jboss.org/documentation/whatsnew/index.html
-      # 4.3.0.Alpha2:
-      #   release_date: 2015-04-27
-      #   archived: true
-      #   blog_announcement_url: /blog/2015-04-28-alpha2-for-mars.html
-      #   documentation_url: http://docs.jboss.org/tools/
-      #   zips:
-      #     - name: Update site (including sources) bundle of all JBoss Core Tools
-      #       file_size: 378MB
-      #       url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Alpha2_2015-04-20_11-16-43-B32-updatesite-core.zip
-      #       md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Alpha2_2015-04-20_11-16-43-B32-updatesite-core.zip.MD5
-      #     - name: Stand-alone BrowserSim
-      #       file_size: 16MB
-      #       url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Alpha2_2015-04-21_14-02-11-B6-browsersim-standalone.zip
-      #       md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Alpha2_2015-04-21_14-02-11-B6-browsersim-standalone.zip.MD5
-      #     - name: Release Notes
-      #       url: https://tools.jboss.org/documentation/whatsnew/index.html
-      # 4.3.0.Alpha1:
-      #   release_date: 2015-02-20
-      #   archived: true
-      #   blog_announcement_url: /blog/2015-02-23-alpha1-for-mars.html
-      #   documentation_url: http://docs.jboss.org/tools/
-      #   zips:
-      #     - name: Update site (including sources) bundle of all JBoss Core Tools
-      #       file_size: 394MB
-      #       url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Alpha1_2015-02-15_14-44-55-B13-updatesite-core.zip
-      #       md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Alpha1_2015-02-15_14-44-55-B13-updatesite-core.zip.MD5
-      #     - name: Sources zip of all JBoss Core Tools
-      #       file_size: 33.2kB
-      #       url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Alpha1_2015-02-15_14-44-55-B13-src.zip
-      #       md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Alpha1_2015-02-15_14-44-55-B13-src.zip.MD5
-      #     - name: Update site (including sources) bundle of all Hibernate Tools
-      #       file_size: 60.1MB
-      #       url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Alpha1_2015-02-15_15-01-49-B8-updatesite-hibernatetools.zip
-      #       md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Alpha1_2015-02-15_15-01-49-B8-updatesite-hibernatetools.zip.MD5
-      #     - name: Stand-alone BrowserSim
-      #       file_size: 16.1MB
-      #       url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Alpha1_2015-02-15_14-44-55-B13-browsersim-standalone.zip
-      #       md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Alpha1_2015-02-15_14-44-55-B13-browsersim-standalone.zip.MD5
-      #     - name: Release Notes
-      #       url: https://tools.jboss.org/documentation/whatsnew/index.html
+      4.3.0.CR1:
+        release_date: 2015-09-22
+        archived: true
+        blog_announcement_url: /blog/cr1-for-mars.html
+        documentation_url: http://docs.jboss.org/tools/
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 389MB
+            url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.0.CR1-updatesite-core.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.0.CR1-updatesite-core.zip.sha256
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 389MB
+            url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.0.CR1-src.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.0.CR1-src.zip.sha256
+          - name: Stand-alone BrowserSim
+            file_size: 16MB
+            url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.0.CR1-browsersim-standalone.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.0.CR1-browsersim-standalone.zip.sha256
+          - name: Release Notes
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
+      4.3.0.Beta2:
+        release_date: 2015-07-28
+        archived: true
+        blog_announcement_url: /blog/beta2-for-mars.html
+        documentation_url: http://docs.jboss.org/tools/
+        # as of Beta2, publish to dl.jb.org instead of Sourceforge
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 384MB
+            url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.0.Beta2-updatesite-core.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.0.Beta2-updatesite-core.zip.sha256
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 361MB
+            url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.0.Beta2-src.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.0.Beta2-src.zip.sha256
+          - name: Stand-alone BrowserSim
+            file_size: 16.6MB
+            url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.0.Beta2-browsersim-standalone.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/mars/development/updates/core/jbosstools-4.3.0.Beta2-browsersim-standalone.zip.sha256
+          - name: Release Notes
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
+      4.3.0.Beta1:
+        release_date: 2015-06-22
+        archived: true
+        blog_announcement_url: /blog/2015-06-22-beta1-for-mars.html
+        documentation_url: http://docs.jboss.org/tools/
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 401MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Beta1_2015-06-18_21-49-21-B59-updatesite-core.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Beta1_2015-06-18_21-49-21-B59-updatesite-core.zip.sha1
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 299MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Beta1_2015-06-18_21-49-21-B59-src.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Beta1_2015-06-18_21-49-21-B59-src.zip.sha1
+          - name: Stand-alone BrowserSim
+            file_size: 16.6MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Beta1_2015-06-05_01-14-40-B10-browsersim-standalone.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Beta1_2015-06-05_01-14-40-B10-browsersim-standalone.zip.sha1
+          - name: Release Notes
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
+      4.3.0.Alpha2:
+        release_date: 2015-04-27
+        archived: true
+        blog_announcement_url: /blog/2015-04-28-alpha2-for-mars.html
+        documentation_url: http://docs.jboss.org/tools/
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 378MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Alpha2_2015-04-20_11-16-43-B32-updatesite-core.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Alpha2_2015-04-20_11-16-43-B32-updatesite-core.zip.MD5
+          - name: Stand-alone BrowserSim
+            file_size: 16MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Alpha2_2015-04-21_14-02-11-B6-browsersim-standalone.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Alpha2_2015-04-21_14-02-11-B6-browsersim-standalone.zip.MD5
+          - name: Release Notes
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
+      4.3.0.Alpha1:
+        release_date: 2015-02-20
+        archived: true
+        blog_announcement_url: /blog/2015-02-23-alpha1-for-mars.html
+        documentation_url: http://docs.jboss.org/tools/
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 394MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Alpha1_2015-02-15_14-44-55-B13-updatesite-core.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Alpha1_2015-02-15_14-44-55-B13-updatesite-core.zip.MD5
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 33.2kB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Alpha1_2015-02-15_14-44-55-B13-src.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Alpha1_2015-02-15_14-44-55-B13-src.zip.MD5
+          - name: Update site (including sources) bundle of all Hibernate Tools
+            file_size: 60.1MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Alpha1_2015-02-15_15-01-49-B8-updatesite-hibernatetools.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Alpha1_2015-02-15_15-01-49-B8-updatesite-hibernatetools.zip.MD5
+          - name: Stand-alone BrowserSim
+            file_size: 16.1MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Alpha1_2015-02-15_14-44-55-B13-browsersim-standalone.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Alpha1_2015-02-15_14-44-55-B13-browsersim-standalone.zip.MD5
+          - name: Release Notes
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
 
     luna:
       4.2.3.Final:
+        archived: false
         update_site_url: http://download.jboss.org/jbosstools/updates/stable/luna/
         marketplace_url: http://marketplace.eclipse.org/node/1617241
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1617241
-        archived: true
+        archived: false
         release_date: 2015-04-02
         supported_jbt_is_version: 4.2.7.Final
         blog_announcement_url: /blog/2015-04-02-devstudio-8.1.0.GA-for-luna.html
@@ -1649,56 +1683,56 @@ jbt_core:
             md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.x/jbosstools-4.2.3.Final-browsersim-standalone.jar.MD5
           - name: Release Notes
             url: https://tools.jboss.org/documentation/whatsnew/jbosstools/4.2.3.Final.html
-      # 4.2.3.CR1:
-      #   archived: true
-      #   release_date: 2015-03-19
-      #   supported_jbt_is_version: 4.2.0.Final
-      #   blog_announcement_url: /blog/2015-03-19-devstudio-8.1.0.CR1-for-luna.html
-      #   documentation_url: https://tools.jboss.org/documentation/
-      #   zips:
-      #     - name: Update site (including sources) bundle of all JBoss Core Tools
-      #       file_size: 525MB
-      #       url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.3.x/jbosstools-4.2.3.CR1_2015-03-14_07-45-25-B363-updatesite-core.zip
-      #       md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.3.x/jbosstools-4.2.3.CR1_2015-03-14_07-45-25-B363-updatesite-core.zip.MD5
-      #     - name: Sources zip of all JBoss Core Tools
-      #       file_size: 37.0MB
-      #       url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.3.x/jbosstools-4.2.3.CR1_2015-03-14_07-45-25-B363-src.zip
-      #       md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.3.x/jbosstools-4.2.3.CR1_2015-03-14_07-45-25-B363-src.zip.MD5
-      #     - name: Update site (including sources) bundle of all Hibernate Tools
-      #       file_size: 105MB
-      #       url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.3.x/jbosstools-4.2.3.CR1_2015-03-14_08-49-30-B257-updatesite-hibernatetools.zip.MD5
-      #       md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.3.x/jbosstools-4.2.3.CR1_2015-03-14_08-49-30-B257-updatesite-hibernatetools.zip.MD5
-      #     - name: Stand-alone BrowserSim
-      #       file_size: 15.8MB
-      #       url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.3.x/jbosstools-4.2.3.Beta1_2015-03-01_13-40-40-B357-browsersim-standalone.zip
-      #       md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.3.x/jbosstools-4.2.3.Beta1_2015-03-01_13-40-40-B357-browsersim-standalone.zip.MD5
-      #     - name: Release Notes
-      #       url: https://tools.jboss.org/documentation/whatsnew/jbosstools/4.2.3.CR1.html
-      # 4.2.3.Beta1:
-      #   archived: true
-      #   release_date: 2015-03-04
-      #   supported_jbt_is_version: 4.2.0.Final
-      #   blog_announcement_url: /blog/2015-03-05-JBDS-8.1.0.Beta1-for-luna.html
-      #   documentation_url: https://tools.jboss.org/documentation/
-      #   zips:
-      #     - name: Update site (including sources) bundle of all JBoss Core Tools
-      #       file_size: 525MB
-      #       url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.3.x/jbosstools-4.2.3.Beta1_2015-03-01_13-40-40-B357-updatesite-core.zip
-      #       md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.3.x/jbosstools-4.2.3.Beta1_2015-03-01_13-40-40-B357-updatesite-core.zip.MD5
-      #     - name: Sources zip of all JBoss Core Tools
-      #       file_size: 37.1MB
-      #       url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.3.x/jbosstools-4.2.3.Beta1_2015-03-01_13-40-40-B357-src.zip
-      #       md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.3.x/jbosstools-4.2.3.Beta1_2015-03-01_13-40-40-B357-src.zip.MD5
-      #     - name: Update site (including sources) bundle of all Hibernate Tools
-      #       file_size: 105MB
-      #       url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.3.x/jbosstools-4.2.3.Beta1_2015-03-01_14-25-34-B252-updatesite-hibernatetools.zip
-      #       md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.3.x/jbosstools-4.2.3.Beta1_2015-03-01_14-25-34-B252-updatesite-hibernatetools.zip.MD5
-      #     - name: Stand-alone BrowserSim
-      #       file_size: 15.8MB
-      #       url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.3.x/jbosstools-4.2.3.Beta1_2015-03-01_13-40-40-B357-browsersim-standalone.zip
-      #       md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.3.x/jbosstools-4.2.3.Beta1_2015-03-01_13-40-40-B357-browsersim-standalone.zip.MD5
-      #     - name: Release Notes
-      #       url: https://tools.jboss.org/documentation/whatsnew/jbosstools/4.2.3.Beta1.html
+      4.2.3.CR1:
+        archived: true
+        release_date: 2015-03-19
+        supported_jbt_is_version: 4.2.0.Final
+        blog_announcement_url: /blog/2015-03-19-devstudio-8.1.0.CR1-for-luna.html
+        documentation_url: https://tools.jboss.org/documentation/
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 525MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.3.x/jbosstools-4.2.3.CR1_2015-03-14_07-45-25-B363-updatesite-core.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.3.x/jbosstools-4.2.3.CR1_2015-03-14_07-45-25-B363-updatesite-core.zip.MD5
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 37.0MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.3.x/jbosstools-4.2.3.CR1_2015-03-14_07-45-25-B363-src.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.3.x/jbosstools-4.2.3.CR1_2015-03-14_07-45-25-B363-src.zip.MD5
+          - name: Update site (including sources) bundle of all Hibernate Tools
+            file_size: 105MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.3.x/jbosstools-4.2.3.CR1_2015-03-14_08-49-30-B257-updatesite-hibernatetools.zip.MD5
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.3.x/jbosstools-4.2.3.CR1_2015-03-14_08-49-30-B257-updatesite-hibernatetools.zip.MD5
+          - name: Stand-alone BrowserSim
+            file_size: 15.8MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.3.x/jbosstools-4.2.3.Beta1_2015-03-01_13-40-40-B357-browsersim-standalone.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.3.x/jbosstools-4.2.3.Beta1_2015-03-01_13-40-40-B357-browsersim-standalone.zip.MD5
+          - name: Release Notes
+            url: https://tools.jboss.org/documentation/whatsnew/jbosstools/4.2.3.CR1.html
+      4.2.3.Beta1:
+        archived: true
+        release_date: 2015-03-04
+        supported_jbt_is_version: 4.2.0.Final
+        blog_announcement_url: /blog/2015-03-05-JBDS-8.1.0.Beta1-for-luna.html
+        documentation_url: https://tools.jboss.org/documentation/
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 525MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.3.x/jbosstools-4.2.3.Beta1_2015-03-01_13-40-40-B357-updatesite-core.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.3.x/jbosstools-4.2.3.Beta1_2015-03-01_13-40-40-B357-updatesite-core.zip.MD5
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 37.1MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.3.x/jbosstools-4.2.3.Beta1_2015-03-01_13-40-40-B357-src.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.3.x/jbosstools-4.2.3.Beta1_2015-03-01_13-40-40-B357-src.zip.MD5
+          - name: Update site (including sources) bundle of all Hibernate Tools
+            file_size: 105MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.3.x/jbosstools-4.2.3.Beta1_2015-03-01_14-25-34-B252-updatesite-hibernatetools.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.3.x/jbosstools-4.2.3.Beta1_2015-03-01_14-25-34-B252-updatesite-hibernatetools.zip.MD5
+          - name: Stand-alone BrowserSim
+            file_size: 15.8MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.3.x/jbosstools-4.2.3.Beta1_2015-03-01_13-40-40-B357-browsersim-standalone.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.3.x/jbosstools-4.2.3.Beta1_2015-03-01_13-40-40-B357-browsersim-standalone.zip.MD5
+          - name: Release Notes
+            url: https://tools.jboss.org/documentation/whatsnew/jbosstools/4.2.3.Beta1.html
       4.2.2.Final:
         archived: true
         release_date: 2015-01-21
@@ -1774,128 +1808,128 @@ jbt_core:
             md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.x/jbosstools-4.2.0.Final_2014-10-17_02-38-33-B287-browsersim-standalone.zip.MD5
           - name: Release Notes
             url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.x/zz_Release_Notes_4.2.0.Final.readme.html
-      # 4.2.0.CR1:
-      #   archived: true
-      #   release_date: 2014-09-17
-      #   blog_announcement_url: /blog/2014-09-17-CR1-for-luna.html
-      #   documentation_url: http://docs.jboss.org/tools/
-      #   zips:
-      #     - name: Update site (including sources) bundle of all JBoss Core Tools
-      #       file_size: 516MB
-      #       url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.0.x/jbosstools-4.2.0.CR1_2014-09-14_02-42-22-B242-updatesite-core.zip
-      #       md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.0.x/jbosstools-4.2.0.CR1_2014-09-14_02-42-22-B242-updatesite-core.zip.MD5
-      #     - name: Sources zip of all JBoss Core Tools
-      #       file_size: 36MB
-      #       url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.0.x/jbosstools-4.2.0.CR1_2014-09-14_02-42-22-B242-src.zip
-      #       md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.0.x/jbosstools-4.2.0.CR1_2014-09-14_02-42-22-B242-src.zip.MD5
-      #     - name: Update site (including sources) bundle of all Hibernate Tools
-      #       file_size: 104MB
-      #       url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.0.x/jbosstools-4.2.0.CR1_2014-09-15_02-47-21-B157-updatesite-hibernatetools.zip
-      #       md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.0.x/jbosstools-4.2.0.CR1_2014-09-15_02-47-21-B157-updatesite-hibernatetools.zip.MD5
-      #     - name: Stand-alone BrowserSim
-      #       file_size: 15MB
-      #       url: http://download.jboss.org/jbosstools/builds/development/jbosstools-4.2.0.CR2-browsersim-standalone/jbosstools-4.2.0.CR2-browsersim-standalone.zip
-      #       #md5_url: .MD5
-      #     - name: Release Notes
-      #       url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.x/zz_Release_Notes_4.2.0.CR1.readme.html
-      # 4.2.0.Beta3:
-      #   archived: true
-      #   release_date: 2014-07-28
-      #   blog_announcement_url: /blog/2014-07-28-beta3-for-luna.html
-      #   documentation_url: http://docs.jboss.org/tools/
-      #   zips:
-      #     - name: Update site (including sources) bundle of all JBoss Core Tools
-      #       file_size: 513MB
-      #       url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.0.x/jbosstools-4.2.0.Beta3_2014-07-22_15-40-19-B198-updatesite-core.zip
-      #       md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.0.x/jbosstools-4.2.0.Beta3_2014-07-22_15-40-19-B198-updatesite-core.zip.MD5
-      #     - name: Sources zip of all JBoss Core Tools
-      #       file_size: 42MB
-      #       url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.0.x/jbosstools-4.2.0.Beta3_2014-07-22_15-40-19-B198-src.zip
-      #       md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.0.x/jbosstools-4.2.0.Beta3_2014-07-22_15-40-19-B198-src.zip.MD5
-      #     - name: Update site (including sources) bundle of all Hibernate Tools
-      #       file_size: 96MB
-      #       url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.0.x/jbosstools-4.2.0.Beta3_2014-07-22_16-09-46-B136-updatesite-hibernatetools.zip
-      #       md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.0.x/jbosstools-4.2.0.Beta3_2014-07-22_16-09-46-B136-updatesite-hibernatetools.zip.MD5
-      #     - name: Release Notes
-      #       url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.0.x/zz_Release_Notes_4.2.0.Beta3.readme.html
-      # 4.2.0.Beta2:
-      #   archived: true
-      #   release_date: 2014-06-19
-      #   blog_announcement_url: /blog/2014-06-19-beta2-for-luna.html
-      #   documentation_url: http://docs.jboss.org/tools/
-      #   zips:
-      #     - name: Update site (including sources) bundle of all JBoss Core Tools
-      #       file_size: 497MB
-      #       url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.0.x/jbosstools-4.2.0.Beta2_2014-06-17_16-43-46-B174-updatesite-core.zip
-      #       md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.0.x/jbosstools-4.2.0.Beta2_2014-06-17_16-43-46-B174-updatesite-core.zip.MD5
-      #     - name: Sources zip of all JBoss Core Tools
-      #       file_size: 40MB
-      #       url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.0.x/jbosstools-4.2.0.Beta2_2014-06-17_16-43-46-B174-src.zip
-      #       md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.0.x/jbosstools-4.2.0.Beta2_2014-06-17_16-43-46-B174-src.zip.MD5
-      #     - name: Update site (including sources) bundle of all Hibernate Tools
-      #       file_size: 96MB
-      #       url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.0.x/jbosstools-4.2.0.Beta2_2014-06-17_16-57-53-B113-updatesite-hibernatetools.zip
-      #       md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.0.x/jbosstools-4.2.0.Beta2_2014-06-17_16-57-53-B113-updatesite-hibernatetools.zip.MD5
-      #     - name: Release Notes
-      #       url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.0.x/zz_Release_Notes_4.2.0.Beta2.readme.html
-      # 4.2.0.Beta1:
-      #   archived: true
-      #   release_date: 2014-04-11
-      #   blog_announcement_url: /blog/2014-04-14-beta1-for-luna.html
-      #   documentation_url: http://docs.jboss.org/tools/
-      #   zips:
-      #     - name: Update site (including sources) bundle of all JBoss Core Tools
-      #       file_size: 460MB
-      #       url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/jbosstools-Update-4.2.0.Beta1_2014-04-08_19-15-41-B105.zip
-      #       md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/jbosstools-Update-4.2.0.Beta1_2014-04-08_19-15-41-B105.zip.MD5
-      #     - name: Sources zip of all JBoss Core Tools
-      #       file_size: 28KB
-      #       url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/jbosstools-Sources-4.2.0.Beta1_2014-04-08_19-15-41-B105.zip
-      #       md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/jbosstools-Sources-4.2.0.Beta1_2014-04-08_19-15-41-B105.zip.MD5
-      #     - name: Update site (including sources) bundle of all Hibernate Tools
-      #       file_size: 80MB
-      #       url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/hibernatetools-Update-4.2.0.Beta1_2014-04-08_19-49-44-B47.zip
-      #       md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/hibernatetools-Update-4.2.0.Beta1_2014-04-08_19-49-44-B47.zip.MD5
-      #     - name: Release Notes
-      #       url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/zz_Release_Notes_4.2.0.Beta1.readme.html
-      # 4.2.0.Alpha2:
-      #   archived: true
-      #   release_date: 2014-02-14
-      #   documentation_url: http://docs.jboss.org/tools/
-      #   zips:
-      #     - name: Update site (including sources) bundle of all JBoss Core Tools
-      #       file_size: 441MB
-      #       url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/jbosstools-Update-4.2.0.Alpha2_2014-02-14_09-54-39-B84.zip
-      #       md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/jbosstools-Update-4.2.0.Alpha2_2014-02-14_09-54-39-B84.zip.MD5
-      #     - name: Sources zip of all JBoss Core Tools
-      #       file_size: 24KB
-      #       url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/jbosstools-Sources-4.2.0.Alpha2_2014-02-14_09-54-39-B84.zip
-      #       md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/jbosstools-Sources-4.2.0.Alpha2_2014-02-14_09-54-39-B84.zip.MD5
-      #     - name: Update site (including sources) bundle of all Hibernate Tools
-      #       file_size: 66MB
-      #       url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/hibernatetools-Update-4.2.0.Alpha2_2014-02-10_02-48-32-B13.zip
-      #       md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/hibernatetools-Update-4.2.0.Alpha2_2014-02-10_02-48-32-B13.zip.MD5
-      #     - name: Release Notes
-      #       url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/zz_Release_Notes_4.2.0.Alpha2.readme.html
-      # 4.2.0.Alpha1:
-      #   archived: true
-      #   release_date: 2013-12-19
-      #   documentation_url: http://docs.jboss.org/tools/
-      #   zips:
-      #     - name: Update site (including sources) bundle of all JBoss Core Tools
-      #       file_size: 417MB
-      #       url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/jbosstools-Update-4.2.0.Alpha1_2013-12-11_01-09-15-B32.zip
-      #       md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/jbosstools-Update-4.2.0.Alpha1_2013-12-11_01-09-15-B32.zip.MD5
-      #     - name: Sources zip of all JBoss Core Tools
-      #       file_size: 93MB
-      #       url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/jbosstools-Sources-4.2.0.Alpha1_2013-12-11_01-09-15-B32.zip
-      #       md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/jbosstools-Sources-4.2.0.Alpha1_2013-12-11_01-09-15-B32.zip.MD5
-      #     - name: Update site (including sources) bundle of all Hibernate Tools
-      #       file_size: 77MB
-      #       url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/hibernatetools-Update-4.2.0.Alpha1_2013-12-11_01-09-15-B32.zip
-      #       md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/hibernatetools-Update-4.2.0.Alpha1_2013-12-11_01-09-15-B32.zip.MD5
-      #     - name: Release Notes
-      #       url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/zz_Release_Notes_4.2.0.Alpha1.readme.html
+      4.2.0.CR1:
+        archived: true
+        release_date: 2014-09-17
+        blog_announcement_url: /blog/2014-09-17-CR1-for-luna.html
+        documentation_url: http://docs.jboss.org/tools/
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 516MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.0.x/jbosstools-4.2.0.CR1_2014-09-14_02-42-22-B242-updatesite-core.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.0.x/jbosstools-4.2.0.CR1_2014-09-14_02-42-22-B242-updatesite-core.zip.MD5
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 36MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.0.x/jbosstools-4.2.0.CR1_2014-09-14_02-42-22-B242-src.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.0.x/jbosstools-4.2.0.CR1_2014-09-14_02-42-22-B242-src.zip.MD5
+          - name: Update site (including sources) bundle of all Hibernate Tools
+            file_size: 104MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.0.x/jbosstools-4.2.0.CR1_2014-09-15_02-47-21-B157-updatesite-hibernatetools.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.0.x/jbosstools-4.2.0.CR1_2014-09-15_02-47-21-B157-updatesite-hibernatetools.zip.MD5
+          - name: Stand-alone BrowserSim
+            file_size: 15MB
+            url: http://download.jboss.org/jbosstools/builds/development/jbosstools-4.2.0.CR2-browsersim-standalone/jbosstools-4.2.0.CR2-browsersim-standalone.zip
+            #md5_url: .MD5
+          - name: Release Notes
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.x/zz_Release_Notes_4.2.0.CR1.readme.html
+      4.2.0.Beta3:
+        archived: true
+        release_date: 2014-07-28
+        blog_announcement_url: /blog/2014-07-28-beta3-for-luna.html
+        documentation_url: http://docs.jboss.org/tools/
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 513MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.0.x/jbosstools-4.2.0.Beta3_2014-07-22_15-40-19-B198-updatesite-core.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.0.x/jbosstools-4.2.0.Beta3_2014-07-22_15-40-19-B198-updatesite-core.zip.MD5
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 42MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.0.x/jbosstools-4.2.0.Beta3_2014-07-22_15-40-19-B198-src.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.0.x/jbosstools-4.2.0.Beta3_2014-07-22_15-40-19-B198-src.zip.MD5
+          - name: Update site (including sources) bundle of all Hibernate Tools
+            file_size: 96MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.0.x/jbosstools-4.2.0.Beta3_2014-07-22_16-09-46-B136-updatesite-hibernatetools.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.0.x/jbosstools-4.2.0.Beta3_2014-07-22_16-09-46-B136-updatesite-hibernatetools.zip.MD5
+          - name: Release Notes
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.0.x/zz_Release_Notes_4.2.0.Beta3.readme.html
+      4.2.0.Beta2:
+        archived: true
+        release_date: 2014-06-19
+        blog_announcement_url: /blog/2014-06-19-beta2-for-luna.html
+        documentation_url: http://docs.jboss.org/tools/
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 497MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.0.x/jbosstools-4.2.0.Beta2_2014-06-17_16-43-46-B174-updatesite-core.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.0.x/jbosstools-4.2.0.Beta2_2014-06-17_16-43-46-B174-updatesite-core.zip.MD5
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 40MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.0.x/jbosstools-4.2.0.Beta2_2014-06-17_16-43-46-B174-src.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.0.x/jbosstools-4.2.0.Beta2_2014-06-17_16-43-46-B174-src.zip.MD5
+          - name: Update site (including sources) bundle of all Hibernate Tools
+            file_size: 96MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.0.x/jbosstools-4.2.0.Beta2_2014-06-17_16-57-53-B113-updatesite-hibernatetools.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.0.x/jbosstools-4.2.0.Beta2_2014-06-17_16-57-53-B113-updatesite-hibernatetools.zip.MD5
+          - name: Release Notes
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.2.0.x/zz_Release_Notes_4.2.0.Beta2.readme.html
+      4.2.0.Beta1:
+        archived: true
+        release_date: 2014-04-11
+        blog_announcement_url: /blog/2014-04-14-beta1-for-luna.html
+        documentation_url: http://docs.jboss.org/tools/
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 460MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/jbosstools-Update-4.2.0.Beta1_2014-04-08_19-15-41-B105.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/jbosstools-Update-4.2.0.Beta1_2014-04-08_19-15-41-B105.zip.MD5
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 28KB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/jbosstools-Sources-4.2.0.Beta1_2014-04-08_19-15-41-B105.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/jbosstools-Sources-4.2.0.Beta1_2014-04-08_19-15-41-B105.zip.MD5
+          - name: Update site (including sources) bundle of all Hibernate Tools
+            file_size: 80MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/hibernatetools-Update-4.2.0.Beta1_2014-04-08_19-49-44-B47.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/hibernatetools-Update-4.2.0.Beta1_2014-04-08_19-49-44-B47.zip.MD5
+          - name: Release Notes
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/zz_Release_Notes_4.2.0.Beta1.readme.html
+      4.2.0.Alpha2:
+        archived: true
+        release_date: 2014-02-14
+        documentation_url: http://docs.jboss.org/tools/
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 441MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/jbosstools-Update-4.2.0.Alpha2_2014-02-14_09-54-39-B84.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/jbosstools-Update-4.2.0.Alpha2_2014-02-14_09-54-39-B84.zip.MD5
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 24KB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/jbosstools-Sources-4.2.0.Alpha2_2014-02-14_09-54-39-B84.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/jbosstools-Sources-4.2.0.Alpha2_2014-02-14_09-54-39-B84.zip.MD5
+          - name: Update site (including sources) bundle of all Hibernate Tools
+            file_size: 66MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/hibernatetools-Update-4.2.0.Alpha2_2014-02-10_02-48-32-B13.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/hibernatetools-Update-4.2.0.Alpha2_2014-02-10_02-48-32-B13.zip.MD5
+          - name: Release Notes
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/zz_Release_Notes_4.2.0.Alpha2.readme.html
+      4.2.0.Alpha1:
+        archived: true
+        release_date: 2013-12-19
+        documentation_url: http://docs.jboss.org/tools/
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 417MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/jbosstools-Update-4.2.0.Alpha1_2013-12-11_01-09-15-B32.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/jbosstools-Update-4.2.0.Alpha1_2013-12-11_01-09-15-B32.zip.MD5
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 93MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/jbosstools-Sources-4.2.0.Alpha1_2013-12-11_01-09-15-B32.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/jbosstools-Sources-4.2.0.Alpha1_2013-12-11_01-09-15-B32.zip.MD5
+          - name: Update site (including sources) bundle of all Hibernate Tools
+            file_size: 77MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/hibernatetools-Update-4.2.0.Alpha1_2013-12-11_01-09-15-B32.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/hibernatetools-Update-4.2.0.Alpha1_2013-12-11_01-09-15-B32.zip.MD5
+          - name: Release Notes
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.2.0.x/zz_Release_Notes_4.2.0.Alpha1.readme.html
 
     kepler:
       4.1.2.Final:
@@ -1950,85 +1984,82 @@ jbt_core:
           - name: Release Notes
             file_size: 7.5kB
             url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.x/zz_Release_Notes_4.1.1.Final.readme.html
-      # 4.1.1.CR1:
-      #   archived: true
-      #   release_date: 2013-11-29
-      #   zips:
-      #     - name: Update site (including sources) bundle of all JBoss Core Tools
-      #       file_size: 438.1MB
-      #       url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/jbosstools-Update-4.1.1.CR1_2013-11-24_01-06-56-B575.zip
-      #       md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/jbosstools-Update-4.1.1.CR1_2013-11-24_01-06-56-B575.zip.MD5
-      #     - name: Sources zip of all JBoss Core Tools
-      #       file_size: 97.8MB
-      #       url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/jbosstools-Sources-4.1.1.CR1_2013-11-24_01-06-56-B575.zip
-      #       md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/jbosstools-Sources-4.1.1.CR1_2013-11-24_01-06-56-B575.zip.MD5
-      #     - name: Update site (including sources) bundle of all Hibernate Tools
-      #       file_size: 82.0MB
-      #       url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/hibernatetools-Update-4.1.1.CR1_2013-11-24_01-06-56-B575.zip
-      #       md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/hibernatetools-Update-4.1.1.CR1_2013-11-24_01-06-56-B575.zip.MD5
-      #     - name: Release Notes
-      #       file_size: 27.1kB
-      #       url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/zz_Release_Notes_4.1.1.CR1.readme.html
-
-      # 4.1.1.Beta1:
-      #   archived: true
-      #   release_date: 2013-11-08
-      #   zips:
-      #     - name: Update site (including sources) bundle of all JBoss Core Tools
-      #       file_size: 423.9MB
-      #       url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/jbosstools-Update-4.1.1.Beta1_2013-11-02_11-05-10-B511.zip
-      #       md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/jbosstools-Update-4.1.1.Beta1_2013-11-02_11-05-10-B511.zip.MD5
-      #     - name: Sources zip of all JBoss Core Tools
-      #       file_size: 86.7MB
-      #       url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/jbosstools-Sources-4.1.1.Beta1_2013-11-02_11-05-10-B511.zip
-      #       md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/jbosstools-Sources-4.1.1.Beta1_2013-11-02_11-05-10-B511.zip.MD5
-      #     - name: Update site (including sources) bundle of all Hibernate Tools
-      #       file_size: 82.0MB
-      #       url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/hibernatetools-Update-4.1.1.Beta1_2013-11-02_11-05-10-B511.zip
-      #       md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/hibernatetools-Update-4.1.1.Beta1_2013-11-02_11-05-10-B511.zip.MD5
-      #     - name: Release Notes
-      #       file_size: 22.3kB
-      #       url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/zz_Release_Notes_4.1.1.Beta1.readme.html
-
-      # 4.1.1.Alpha2:
-      #   archived: true
-      #   release_date: 2013-10-14
-      #   zips:
-      #     - name: Update site (including sources) bundle of all JBoss Core Tools
-      #       file_size: 432.5MB
-      #       url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/jbosstools-Update-4.1.1.Alpha2_2013-10-02_14-08-05-B444.zip
-      #       md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/jbosstools-Update-4.1.1.Alpha2_2013-10-02_14-08-05-B444.zip.MD5
-      #     - name: Sources zip of all JBoss Core Tools
-      #       file_size: 91.2MB
-      #       url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/jbosstools-Sources-4.1.1.Alpha2_2013-10-02_14-08-05-B444.zip
-      #       md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/jbosstools-Sources-4.1.1.Alpha2_2013-10-02_14-08-05-B444.zip.MD5
-      #     - name: Update site (including sources) bundle of all Hibernate Tools
-      #       file_size: 82.0MB
-      #       url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/hibernatetools-Update-4.1.1.Alpha2_2013-10-02_14-08-05-B444.zip
-      #       md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/hibernatetools-Update-4.1.1.Alpha2_2013-10-02_14-08-05-B444.zip.MD5
-      #     - name: Release Notes
-      #       file_size: 11.2kB
-      #       url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/zz_Release_Notes_4.1.1.Alpha2.readme.html
-
-      # 4.1.1.Alpha1:
-      #   archived: true
-      #   release_date: 2013-09-12
-      #   zips:
-      #     - name: Update site (including sources) bundle of all JBoss Core Tools
-      #       file_size: 432.2MB
-      #       url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/jbosstools-Update-4.1.1.Alpha1_2013-09-08_21-08-29-B392.zip
-      #       md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/jbosstools-Update-4.1.1.Alpha1_2013-09-08_21-08-29-B392.zip.MD5
-      #     - name: Sources zip of all JBoss Core Tools
-      #       file_size: 92.3MB
-      #       url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/jbosstools-Sources-4.1.1.Alpha1_2013-09-08_21-08-29-B392.zip
-      #       md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/jbosstools-Sources-4.1.1.Alpha1_2013-09-08_21-08-29-B392.zip.MD5
-      #     - name: Update site (including sources) bundle of all Hibernate Tools
-      #       file_size: 82.0MB
-      #       url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/hibernatetools-Update-4.1.1.Alpha1_2013-09-08_21-08-29-B392.zip
-      #       md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/hibernatetools-Update-4.1.1.Alpha1_2013-09-08_21-08-29-B392.zip.MD5
-      #     - name: Release Notes
-      #       file_size: 16.5kB
-      #       url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/zz_Release_Notes_4.1.1.Alpha1.readme.html
+      4.1.1.CR1:
+        archived: true
+        release_date: 2013-11-29
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 438.1MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/jbosstools-Update-4.1.1.CR1_2013-11-24_01-06-56-B575.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/jbosstools-Update-4.1.1.CR1_2013-11-24_01-06-56-B575.zip.MD5
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 97.8MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/jbosstools-Sources-4.1.1.CR1_2013-11-24_01-06-56-B575.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/jbosstools-Sources-4.1.1.CR1_2013-11-24_01-06-56-B575.zip.MD5
+          - name: Update site (including sources) bundle of all Hibernate Tools
+            file_size: 82.0MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/hibernatetools-Update-4.1.1.CR1_2013-11-24_01-06-56-B575.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/hibernatetools-Update-4.1.1.CR1_2013-11-24_01-06-56-B575.zip.MD5
+          - name: Release Notes
+            file_size: 27.1kB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/zz_Release_Notes_4.1.1.CR1.readme.html
+      4.1.1.Beta1:
+        archived: true
+        release_date: 2013-11-08
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 423.9MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/jbosstools-Update-4.1.1.Beta1_2013-11-02_11-05-10-B511.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/jbosstools-Update-4.1.1.Beta1_2013-11-02_11-05-10-B511.zip.MD5
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 86.7MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/jbosstools-Sources-4.1.1.Beta1_2013-11-02_11-05-10-B511.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/jbosstools-Sources-4.1.1.Beta1_2013-11-02_11-05-10-B511.zip.MD5
+          - name: Update site (including sources) bundle of all Hibernate Tools
+            file_size: 82.0MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/hibernatetools-Update-4.1.1.Beta1_2013-11-02_11-05-10-B511.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/hibernatetools-Update-4.1.1.Beta1_2013-11-02_11-05-10-B511.zip.MD5
+          - name: Release Notes
+            file_size: 22.3kB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/zz_Release_Notes_4.1.1.Beta1.readme.html
+      4.1.1.Alpha2:
+        archived: true
+        release_date: 2013-10-14
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 432.5MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/jbosstools-Update-4.1.1.Alpha2_2013-10-02_14-08-05-B444.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/jbosstools-Update-4.1.1.Alpha2_2013-10-02_14-08-05-B444.zip.MD5
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 91.2MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/jbosstools-Sources-4.1.1.Alpha2_2013-10-02_14-08-05-B444.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/jbosstools-Sources-4.1.1.Alpha2_2013-10-02_14-08-05-B444.zip.MD5
+          - name: Update site (including sources) bundle of all Hibernate Tools
+            file_size: 82.0MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/hibernatetools-Update-4.1.1.Alpha2_2013-10-02_14-08-05-B444.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/hibernatetools-Update-4.1.1.Alpha2_2013-10-02_14-08-05-B444.zip.MD5
+          - name: Release Notes
+            file_size: 11.2kB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/zz_Release_Notes_4.1.1.Alpha2.readme.html
+      4.1.1.Alpha1:
+        archived: true
+        release_date: 2013-09-12
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 432.2MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/jbosstools-Update-4.1.1.Alpha1_2013-09-08_21-08-29-B392.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/jbosstools-Update-4.1.1.Alpha1_2013-09-08_21-08-29-B392.zip.MD5
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 92.3MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/jbosstools-Sources-4.1.1.Alpha1_2013-09-08_21-08-29-B392.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/jbosstools-Sources-4.1.1.Alpha1_2013-09-08_21-08-29-B392.zip.MD5
+          - name: Update site (including sources) bundle of all Hibernate Tools
+            file_size: 82.0MB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/hibernatetools-Update-4.1.1.Alpha1_2013-09-08_21-08-29-B392.zip
+            md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/hibernatetools-Update-4.1.1.Alpha1_2013-09-08_21-08-29-B392.zip.MD5
+          - name: Release Notes
+            file_size: 16.5kB
+            url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/zz_Release_Notes_4.1.1.Alpha1.readme.html
 
       4.1.0.Final:
         archived: true
@@ -2296,6 +2327,7 @@ jbt_is:
              url: http://download.jboss.org/jbosstools/neon/stable/updates/integration-stack/4.4.3.Final/jbosstools-integration-stack-4.4.3.Final-updatesite.zip
              sha256_url: http://download.jboss.org/jbosstools/neon/stable/updates/integration-stack/4.4.3.Final/jbosstools-integration-stack-4.4.3.Final-updatesite.zip.sha256
       4.4.2.Final:
+        archived: true
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/
         release_date: 2017-03-29
         required_jbt_core_version: 4.4.3.Final
@@ -2306,6 +2338,7 @@ jbt_is:
              url: http://download.jboss.org/jbosstools/neon/stable/updates/integration-stack/jbosstools-integration-stack-4.4.2.Final-updatesite.zip
              sha256_url: http://download.jboss.org/jbosstools/neon/stable/updates/integration-stack/jbosstools-integration-stack-4.4.2.Final-updatesite.zip.sha256
       4.4.1.Final:
+        archived: true
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/
         release_date: 2017-02-21
         required_jbt_core_version: 4.4.2.Final
@@ -2317,6 +2350,7 @@ jbt_is:
              url: http://download.jboss.org/jbosstools/neon/stable/updates/integration-stack/jbosstools-integration-stack-4.4.1.Final-updatesite.zip
              md5_url: http://download.jboss.org/jbosstools/neon/stable/updates/integration-stack/jbosstools-integration-stack-4.4.1.Final-updatesite.zip.MD5
       4.4.0.Final:
+        archived: true
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/
         release_date: 2016-11-17
         required_jbt_core_version: 4.4.1.Final
@@ -2331,17 +2365,17 @@ jbt_is:
              file_size: 56MB
              url: http://download.jboss.org/jbosstools/neon/stable/updates/integration-stack/jbosstools-integration-stack-4.4.0.Final-updatesite-earlyaccess.zip
              md5_url: http://download.jboss.org/jbosstools/neon/stable/updates/integration-stack/jbosstools-integration-stack-4.4.0.Final-updatesite-earlyaccess.zip.MD5
-      # 4.4.0.Alpha1:
-      #   archived: true
-      #   documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/
-      #   release_date: 2016-09-27
-      #   required_jbt_core_version: 4.4.1.Final
-      #   update_site_url: http://download.jboss.org/jbosstools/neon/development/updates/integration-stack/earlyaccess
-      #   zips:
-      #     - name: Update site bundle of JBoss Tools Integration Stack (Early Access)
-      #       file_size: 211MB
-      #       url: http://download.jboss.org/jbosstools/neon/development/updates/integration-stack/jbosstools-integration-stack-4.4.0.Alpha1-earlyaccess.zip
-      #       md5_url: http://download.jboss.org/jbosstools/neon/development/updates/integration-stack/jbosstools-integration-stack-4.4.0.Alpha1-earlyaccess.zip.MD5
+      4.4.0.Alpha1:
+        archived: true
+        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/
+        release_date: 2016-09-27
+        required_jbt_core_version: 4.4.1.Final
+        update_site_url: http://download.jboss.org/jbosstools/neon/development/updates/integration-stack/earlyaccess
+        zips:
+          - name: Update site bundle of JBoss Tools Integration Stack (Early Access)
+            file_size: 211MB
+            url: http://download.jboss.org/jbosstools/neon/development/updates/integration-stack/jbosstools-integration-stack-4.4.0.Alpha1-earlyaccess.zip
+            md5_url: http://download.jboss.org/jbosstools/neon/development/updates/integration-stack/jbosstools-integration-stack-4.4.0.Alpha1-earlyaccess.zip.MD5
     mars:
       4.3.3.Final:
         release_date: 2016-11-09
@@ -2393,34 +2427,35 @@ jbt_is:
             file_size: 153MB
             url: http://download.jboss.org/jbosstools/mars/stable/updates/integration-stack/jbosstools-integration-stack-4.3.0.Final-earlyaccess.zip
             md5_url: http://download.jboss.org/jbosstools/mars/stable/updates/integration-stack/jbosstools-integration-stack-4.3.0.Final-earlyaccess.zip.MD5
-      # 4.3.0.Beta1:
-      #   archived: true
-      #   release_date: 2016-03-10
-      #   required_jbt_core_version: 4.3.1.Beta2
-      #   update_site_url: http://download.jboss.org/jbosstools/mars/development/updates/integration-stack/earlyaccess
-      #   blog_announcement_url: /blog/integration-stack-4.3.0.Beta1-for-mars.html
-      #   zips:
-      #     - name: Update site bundle of JBoss Tools Integration Stack (Early Access)
-      #       file_size: 193MB
-      #       url: http://download.jboss.org/jbosstools/mars/development/updates/integration-stack/jbosstools-integration-stack-4.3.0.Beta1-earlyaccess.zip
-      #       md5_url: http://download.jboss.org/jbosstools/mars/development/updates/integration-stack/jbosstools-integration-stack-4.3.0.Beta1-earlyaccess.zip.MD5
-      # 4.3.0.Alpha2:
-      #   archived: true
-      #   release_date: 2015-10-12
-      #   required_jbt_core_version: 4.3.0.Final
-      #   update_site_url: http://download.jboss.org/jbosstools/mars/development/updates/integration-stack/
-      #   zips:
-      #     - name: Update site bundle of JBoss Tools Integration Stack
-      #       file_size: 29MB
-      #       url: http://download.jboss.org/jbosstools/mars/development/updates/integration-stack/jbosstools-integration-stack-4.3.0.Alpha2.zip
-      #       md5_url: http://download.jboss.org/jbosstools/mars/development/updates/integration-stack/jbosstools-integration-stack-4.3.0.Alpha2.zip.MD5
-      #     - name: Update site bundle of JBoss Tools Integration Stack (Early Access)
-      #       file_size: 208MB
-      #       url: http://download.jboss.org/jbosstools/mars/development/updates/integration-stack/jbosstools-integration-stack-4.3.0.Alpha2-earlyaccess.zip
-      #       md5_url: http://download.jboss.org/jbosstools/mars/development/updates/integration-stack/jbosstools-integration-stack-4.3.0.Alpha2-earlyaccess.zip.MD5
+      4.3.0.Beta1:
+        archived: true
+        release_date: 2016-03-10
+        required_jbt_core_version: 4.3.1.Beta2
+        update_site_url: http://download.jboss.org/jbosstools/mars/development/updates/integration-stack/earlyaccess
+        blog_announcement_url: /blog/integration-stack-4.3.0.Beta1-for-mars.html
+        zips:
+          - name: Update site bundle of JBoss Tools Integration Stack (Early Access)
+            file_size: 193MB
+            url: http://download.jboss.org/jbosstools/mars/development/updates/integration-stack/jbosstools-integration-stack-4.3.0.Beta1-earlyaccess.zip
+            md5_url: http://download.jboss.org/jbosstools/mars/development/updates/integration-stack/jbosstools-integration-stack-4.3.0.Beta1-earlyaccess.zip.MD5
+      4.3.0.Alpha2:
+        archived: true
+        release_date: 2015-10-12
+        required_jbt_core_version: 4.3.0.Final
+        update_site_url: http://download.jboss.org/jbosstools/mars/development/updates/integration-stack/
+        zips:
+          - name: Update site bundle of JBoss Tools Integration Stack
+            file_size: 29MB
+            url: http://download.jboss.org/jbosstools/mars/development/updates/integration-stack/jbosstools-integration-stack-4.3.0.Alpha2.zip
+            md5_url: http://download.jboss.org/jbosstools/mars/development/updates/integration-stack/jbosstools-integration-stack-4.3.0.Alpha2.zip.MD5
+          - name: Update site bundle of JBoss Tools Integration Stack (Early Access)
+            file_size: 208MB
+            url: http://download.jboss.org/jbosstools/mars/development/updates/integration-stack/jbosstools-integration-stack-4.3.0.Alpha2-earlyaccess.zip
+            md5_url: http://download.jboss.org/jbosstools/mars/development/updates/integration-stack/jbosstools-integration-stack-4.3.0.Alpha2-earlyaccess.zip.MD5
     luna:
       4.2.7.Final:
         release_date: 2016-06-02
+        archived: false
         required_jbt_core_version: 4.2.3.Final
         update_site_url: http://download.jboss.org/jbosstools/updates/stable/luna/integration-stack/
         zips:
@@ -2513,30 +2548,30 @@ jbt_is:
             file_size: 214MB
             url: http://download.jboss.org/jbosstools/updates/stable/luna/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.2.0.Final.zip
             md5_url: http://download.jboss.org/jbosstools/updates/stable/luna/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.2.0.Final.zip.MD5
-      # 4.2.0.Beta2:
-      #   archived: true
-      #   blog_announcement_url: /blog/2015-01-13-JBTIS-Beta2-for-luna.html
-      #   #release_notes_url: https://devstudio.jboss.com/updates/8.0/integration-stack/release-notes/Release_Notes_8.0.0.html
-      #   release_date: 2015-01-12
-      #   required_jbt_core_version: 4.2.1.Final
-      #   update_site_url: http://download.jboss.org/jbosstools/updates/development/luna/integration-stack/
-      #   zips:
-      #     - name: Update site bundle of JBoss Tools Integration Stack
-      #       file_size: 214MB
-      #       url: http://download.jboss.org/jbosstools/updates/development/luna/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.2.0.Beta2a.zip
-      #       md5_url: http://download.jboss.org/jbosstools/updates/development/luna/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.2.0.Beta2a.zip.MD5
-      # 4.2.0.Beta1:
-      #   archived: true
-      #   blog_announcement_url: /blog/2014-11-13-JBTIS-Beta1-for-luna.html
-      #   #release_notes_url: https://devstudio.jboss.com/updates/8.0/integration-stack/release-notes/Release_Notes_8.0.0.html
-      #   release_date: 2014-11-12
-      #   required_jbt_core_version: 4.2.0.Final
-      #   update_site_url: http://download.jboss.org/jbosstools/updates/development/luna/integration-stack/
-      #   zips:
-      #     - name: Update site bundle of JBoss Tools Integration Stack
-      #       file_size: 180MB
-      #       url: http://download.jboss.org/jbosstools/updates/development/luna/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.2.0.Beta1.zip
-      #       md5_url: http://download.jboss.org/jbosstools/updates/development/luna/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.2.0.Beta1.zip.MD5
+      4.2.0.Beta2:
+        archived: true
+        blog_announcement_url: /blog/2015-01-13-JBTIS-Beta2-for-luna.html
+        #release_notes_url: https://devstudio.jboss.com/updates/8.0/integration-stack/release-notes/Release_Notes_8.0.0.html
+        release_date: 2015-01-12
+        required_jbt_core_version: 4.2.1.Final
+        update_site_url: http://download.jboss.org/jbosstools/updates/development/luna/integration-stack/
+        zips:
+          - name: Update site bundle of JBoss Tools Integration Stack
+            file_size: 214MB
+            url: http://download.jboss.org/jbosstools/updates/development/luna/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.2.0.Beta2a.zip
+            md5_url: http://download.jboss.org/jbosstools/updates/development/luna/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.2.0.Beta2a.zip.MD5
+      4.2.0.Beta1:
+        archived: true
+        blog_announcement_url: /blog/2014-11-13-JBTIS-Beta1-for-luna.html
+        #release_notes_url: https://devstudio.jboss.com/updates/8.0/integration-stack/release-notes/Release_Notes_8.0.0.html
+        release_date: 2014-11-12
+        required_jbt_core_version: 4.2.0.Final
+        update_site_url: http://download.jboss.org/jbosstools/updates/development/luna/integration-stack/
+        zips:
+          - name: Update site bundle of JBoss Tools Integration Stack
+            file_size: 180MB
+            url: http://download.jboss.org/jbosstools/updates/development/luna/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.2.0.Beta1.zip
+            md5_url: http://download.jboss.org/jbosstools/updates/development/luna/integration-stack/aggregate/jbosstools-integration-stack-aggregate-4.2.0.Beta1.zip.MD5
     kepler:
       4.1.7.Final:
         build_type: stable
