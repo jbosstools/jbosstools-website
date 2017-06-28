@@ -260,61 +260,61 @@ devstudio:
           - name: Sources Zip
             url: http://www.jboss.org/download-manager/content/origin/files/sha256/8e/8e8335f5c6149f0faa7dd96abc9c71dd79176bee70514abdb4f248f33a614ac2/jboss-devstudio-9.1.0.GA-src.zip
             file_size: 225MB
-      # 9.1.0.Beta2:
-      #   update_site_url: https://devstudio.redhat.com/9.0/development/updates/
-      #   release_date: 2016-02-02
-      #   supported_devstudio_is_version: 9.0.0.Beta1
-      #   documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
-      #   release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
-      #   blog_announcement_url: /blog/beta2-for-mars2.html
-      #   archived: true
-      #   installers:
-      #     - name: Stand-alone Installer
-      #       url: http://www.jboss.org/download-manager/content/origin/files/sha256/d0/d0514fe0fe3fb492d8728b8f0c48f943596ef357dc12d7ac751a98bf8dc92dc9/jboss-devstudio-9.1.0.Beta2-installer-standalone.jar
-      #       file_size: 505MB
-      #     - name: Installer With EAP 6.4.0 CVE-2015-7501
-      #       url: http://www.jboss.org/download-manager/content/origin/files/sha256/71/71d514a9206f18ac2b4b9f10491c18c80efa27f3e24ecb05b55cbf75a536efc4/jboss-devstudio-9.1.0.Beta2-installer-eap.jar
-      #       file_size: 651MB
-      #   zips:
-      #     - name: Update site (including sources) bundle of JBoss Developer Studio
-      #       url: http://www.jboss.org/download-manager/content/origin/files/sha256/0e/0ed7ae6e78f7c0a7a607b9dffa41eaecd56671cf8fcaf7f1712304d2c4ca7a70/jboss-devstudio-9.1.0.Beta2-updatesite-core.zip
-      #       file_size: 528MB
-      #     - name: Target Platform for JBoss Developer Studio
-      #       url: https://devstudio.redhat.com/9.0/development/updates/core/jboss-devstudio-9.1.0.Beta2-target-platform.zip
-      #       file_size: 471MB
-      #     - name: JBoss Central Zip
-      #       url: http://www.jboss.org/download-manager/content/origin/files/sha256/ac/ac7c578d8c1824dfacef083a0b6f4fefae14f08caac0b83b92aa91924a8cdc2b/jboss-devstudio-9.1.0.Beta2-updatesite-central.zip
-      #       file_size: 154MB
-      #     - name: Sources Zip
-      #       url: http://www.jboss.org/download-manager/content/origin/files/sha256/16/162775ca1223880bcdf3756b1167faef7caf00a3287d11e9a3ed78160de20408/jboss-devstudio-9.1.0.Beta2-src.zip
-      #       file_size: 225MB
-      # 9.1.0.Beta1:
-      #   release_date: 2015-12-21
-      #   supported_devstudio_is_version: 9.0.0.Alpha2
-      #   documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
-      #   release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
-      #   blog_announcement_url: /blog/beta1-for-mars2.html
-      #   archived: true
-      #   installers:
-      #     - name: Stand-alone Installer
-      #       url: https://www.jboss.org/download-manager/content/origin/files/sha256/e1/e14e6cb8ef0a2d2ddade71bd365c6c566480c40b2ecc9c8c02230752d626c9c9/jboss-devstudio-9.1.0.Beta1-installer-standalone.jar
-      #       file_size: 501MB
-      #     - name: Installer With EAP 6.4.0 CVE-2015-7501
-      #       url: https://www.jboss.org/download-manager/content/origin/files/sha256/cc/cc2d921a34d22ae99ebb428325a278b8350f58f664ad556754708e282eb650f8/jboss-devstudio-9.1.0.Beta1-installer-eap.jar
-      #       file_size: 646MB
-      #   zips:
-      #     - name: Update site (including sources) bundle of JBoss Developer Studio
-      #       url: https://www.jboss.org/download-manager/content/origin/files/sha256/6e/6e290569e3b5cc2d0c2f08a42de267233509143cdadc6edb5da669691cd4329d/jboss-devstudio-9.1.0.Beta1-updatesite-core.zip
-      #       file_size: 523MB
-      #     - name: Target Platform for JBoss Developer Studio
-      #       url: https://devstudio.redhat.com/9.0/development/updates/core/jboss-devstudio-9.1.0.Beta1-target-platform.zip
-      #       file_size: 470MB
-      #     - name: JBoss Central Zip
-      #       url: https://www.jboss.org/download-manager/content/origin/files/sha256/f8/f8f576f79aec0fe6a2eb99ad5303d4a5cd7a92738029f44dbe1b399eb8385b46/jboss-devstudio-9.1.0.Beta1-updatesite-central.zip
-      #       file_size: 154MB
-      #     - name: Sources Zip
-      #       url: https://www.jboss.org/download-manager/content/origin/files/sha256/b5/b5a55868f18971bfc6c1fb5d4415abc66acefb849cca52d5dc8ea627e092c1d5/jboss-devstudio-9.1.0.Beta1-src.zip
-      #       file_size: 224MB
+      9.1.0.Beta2:
+        update_site_url: https://devstudio.redhat.com/9.0/development/updates/
+        release_date: 2016-02-02
+        supported_devstudio_is_version: 9.0.0.Beta1
+        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        blog_announcement_url: /blog/beta2-for-mars2.html
+        archived: true
+        installers:
+          - name: Stand-alone Installer
+            url: http://www.jboss.org/download-manager/content/origin/files/sha256/d0/d0514fe0fe3fb492d8728b8f0c48f943596ef357dc12d7ac751a98bf8dc92dc9/jboss-devstudio-9.1.0.Beta2-installer-standalone.jar
+            file_size: 505MB
+          - name: Installer With EAP 6.4.0 CVE-2015-7501
+            url: http://www.jboss.org/download-manager/content/origin/files/sha256/71/71d514a9206f18ac2b4b9f10491c18c80efa27f3e24ecb05b55cbf75a536efc4/jboss-devstudio-9.1.0.Beta2-installer-eap.jar
+            file_size: 651MB
+        zips:
+          - name: Update site (including sources) bundle of JBoss Developer Studio
+            url: http://www.jboss.org/download-manager/content/origin/files/sha256/0e/0ed7ae6e78f7c0a7a607b9dffa41eaecd56671cf8fcaf7f1712304d2c4ca7a70/jboss-devstudio-9.1.0.Beta2-updatesite-core.zip
+            file_size: 528MB
+          - name: Target Platform for JBoss Developer Studio
+            url: https://devstudio.redhat.com/9.0/development/updates/core/jboss-devstudio-9.1.0.Beta2-target-platform.zip
+            file_size: 471MB
+          - name: JBoss Central Zip
+            url: http://www.jboss.org/download-manager/content/origin/files/sha256/ac/ac7c578d8c1824dfacef083a0b6f4fefae14f08caac0b83b92aa91924a8cdc2b/jboss-devstudio-9.1.0.Beta2-updatesite-central.zip
+            file_size: 154MB
+          - name: Sources Zip
+            url: http://www.jboss.org/download-manager/content/origin/files/sha256/16/162775ca1223880bcdf3756b1167faef7caf00a3287d11e9a3ed78160de20408/jboss-devstudio-9.1.0.Beta2-src.zip
+            file_size: 225MB
+      9.1.0.Beta1:
+        release_date: 2015-12-21
+        supported_devstudio_is_version: 9.0.0.Alpha2
+        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        blog_announcement_url: /blog/beta1-for-mars2.html
+        archived: true
+        installers:
+          - name: Stand-alone Installer
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/e1/e14e6cb8ef0a2d2ddade71bd365c6c566480c40b2ecc9c8c02230752d626c9c9/jboss-devstudio-9.1.0.Beta1-installer-standalone.jar
+            file_size: 501MB
+          - name: Installer With EAP 6.4.0 CVE-2015-7501
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/cc/cc2d921a34d22ae99ebb428325a278b8350f58f664ad556754708e282eb650f8/jboss-devstudio-9.1.0.Beta1-installer-eap.jar
+            file_size: 646MB
+        zips:
+          - name: Update site (including sources) bundle of JBoss Developer Studio
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/6e/6e290569e3b5cc2d0c2f08a42de267233509143cdadc6edb5da669691cd4329d/jboss-devstudio-9.1.0.Beta1-updatesite-core.zip
+            file_size: 523MB
+          - name: Target Platform for JBoss Developer Studio
+            url: https://devstudio.redhat.com/9.0/development/updates/core/jboss-devstudio-9.1.0.Beta1-target-platform.zip
+            file_size: 470MB
+          - name: JBoss Central Zip
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/f8/f8f576f79aec0fe6a2eb99ad5303d4a5cd7a92738029f44dbe1b399eb8385b46/jboss-devstudio-9.1.0.Beta1-updatesite-central.zip
+            file_size: 154MB
+          - name: Sources Zip
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/b5/b5a55868f18971bfc6c1fb5d4415abc66acefb849cca52d5dc8ea627e092c1d5/jboss-devstudio-9.1.0.Beta1-src.zip
+            file_size: 224MB
       9.0.0.GA:
         archived: true
         release_date: 2015-10-06
@@ -345,78 +345,78 @@ devstudio:
           - name: Sources Zip
             url: https://www.jboss.org/download-manager/content/origin/files/sha256/94/9420cd890bdf0d5211b2a14208f601a039e43edd324e3254a8d25abdd6b24fd5/jboss-devstudio-9.0.0.GA-src.zip
             file_size: 222MB
-      # 9.0.0.CR1:
-      #   release_date: 2015-09-23
-      #   archived: true
-      #   documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
-      #   release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
-      #   blog_announcement_url: /blog/cr1-for-mars.html
-      #   installers:
-      #     - name: Stand-alone Installer
-      #       url: https://www.jboss.org/download-manager/content/origin/files/sha256/a1/a114f54eacba4c18c2776963d8f30782ac391f2ee7e35ebf1389d52ba1d7d0fd/jboss-devstudio-9.0.0.CR1-installer-standalone.jar
-      #       file_size: 490MB
-      #     - name: Installer With EAP 6.4.0
-      #       url: https://www.jboss.org/download-manager/content/origin/files/sha256/56/5692ebc72c60bd49e7c25262bedd3fc3c7579516a52e42d86765ac635d53de89/jboss-devstudio-9.0.0.CR1-installer-eap.jar
-      #       file_size: 635MB
-      #   zips:
-      #     - name: Update site (including sources) bundle of JBoss Developer Studio
-      #       url: https://www.jboss.org/download-manager/content/origin/files/sha256/60/60aa02300082284a3fa3c8978d6f7a050fce8b736a7bff038af1ca45ee5db53a/jboss-devstudio-9.0.0.CR1-updatesite-core.zip
-      #       file_size: 515MB
-      #     - name: Target Platform for JBoss Developer Studio
-      #       url: https://devstudio.redhat.com/9.0/development/updates/core/jboss-devstudio-9.0.0.CR1-target-platform.zip
-      #       file_size: 462MB
-      #     - name: JBoss Central Zip
-      #       url: https://www.jboss.org/download-manager/content/origin/files/sha256/90/90442d1753da7b220011ec99badf5e2551d126d1b2b74bbcf2f0d2c5c41baabb/jboss-devstudio-9.0.0.CR1-updatesite-central.zip
-      #       file_size: 155MB
-      #     - name: Sources Zip
-      #       url: https://www.jboss.org/download-manager/content/origin/files/sha256/f4/f49eb288824a1f972aeaf020f909d8b3854b6819bcb20a220c662258a828436a/jboss-devstudio-9.0.0.CR1-src.zip
-      #       file_size: 223MB
-      # 9.0.0.Beta2:
-      #   release_date: 2015-07-29
-      #   archived: true
-      #   documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
-      #   release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
-      #   blog_announcement_url: /blog/beta2-for-mars.html
-      #   installers:
-      #     - name: Stand-alone Installer
-      #       url: https://www.jboss.org/download-manager/content/origin/files/sha256/f4/f4ffd0b36a622229e4a8b5c4db4c8c4fac0fd09750b1ba2cba73c22c5c0f5f83/jboss-devstudio-9.0.0.Beta2-installer-standalone.jar
-      #       file_size: 485MB
-      #     - name: Installer With EAP 6.4.0
-      #       url: https://www.jboss.org/download-manager/content/origin/files/sha256/32/329b93cc424feea6d396d9b9d69f508335c387a0780ee8fa880f5501919f6f65/jboss-devstudio-9.0.0.Beta2-installer-eap.jar
-      #       file_size: 630MB
-      #   zips:
-      #     - name: Update site (including sources) bundle of JBoss Developer Studio
-      #       file_size: 507MB
-      #       url: https://www.jboss.org/download-manager/content/origin/files/sha256/b7/b7289aa99840cd07fc7f51bf2deaa17f7ca9acaaf1a5b0e72adab85b286fe74d/jboss-devstudio-9.0.0.Beta2-updatesite-core.zip
-      #     - name: Target Platform for JBoss Developer Studio
-      #       file_size: 452MB
-      #       url: https://devstudio.redhat.com/9.0/development/updates/core/jboss-devstudio-9.0.0.Beta2-target-platform.zip
-      #     - name: JBoss Central Zip
-      #       file_size: 116MB
-      #       url: https://www.jboss.org/download-manager/content/origin/files/sha256/a8/a8402bfa51e56b272d3283b4b857c522e0a0443ee592503ba977705ed46914df/jboss-devstudio-9.0.0.Beta2-updatesite-central.zip
-      #     - name: Sources Zip
-      #       file_size: 332MB
-      #       url: https://www.jboss.org/download-manager/content/origin/files/sha256/2a/2a4be9db02604a2ccc471005fee6aa86c20d9c697b6d304fdb7d2bae68bb4970/jboss-devstudio-9.0.0.Beta2-src.zip
-      # 9.0.0.Beta1:
-      #   release_date: 2015-06-22
-      #   archived: true
-      #   documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
-      #   release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
-      #   blog_announcement_url: /blog/2015-06-22-beta1-for-mars.html
-      #   installers:
-      #     - name: Stand-alone Installer
-      #       url: https://www.jboss.org/download-manager/content/origin/files/sha256/8f/8f01d0db3cc193f7eb8876cc0c1ad0bcabbfb9a3b794837d572f52209e738908/jboss-devstudio-9.0.0.Beta1-installer-standalone.jar
-      #       file_size: 484MB
-      #     - name: Installer With EAP 6.4.0
-      #       url: https://www.jboss.org/download-manager/content/origin/files/sha256/3d/3d115879e3be646a563d05452c3a22bac394652e40260a3b43d9dd5c3ba7121e/jboss-devstudio-9.0.0.Beta1-installer-eap.jar
-      #       file_size: 628MB
-      #   zips:
-      #     - name: Update site (including sources) bundle of JBoss Developer Studio
-      #       file_size: 505MB
-      #       url: https://www.jboss.org/download-manager/content/origin/files/sha256/2c/2c92b68d122db901e3acbb74f06950116f4fe29402c25f4391761f9a93e65bba/jboss-devstudio-9.0.0.Beta1-updatesite-core.zip
-      #     - name: Target Platform for JBoss Developer Studio
-      #       file_size: 451MB
-      #       url: https://devstudio.redhat.com/9.0/development/updates/core/jboss-devstudio-9.0.0.Beta1-target-platform.zip
+      9.0.0.CR1:
+        release_date: 2015-09-23
+        archived: true
+        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        blog_announcement_url: /blog/cr1-for-mars.html
+        installers:
+          - name: Stand-alone Installer
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/a1/a114f54eacba4c18c2776963d8f30782ac391f2ee7e35ebf1389d52ba1d7d0fd/jboss-devstudio-9.0.0.CR1-installer-standalone.jar
+            file_size: 490MB
+          - name: Installer With EAP 6.4.0
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/56/5692ebc72c60bd49e7c25262bedd3fc3c7579516a52e42d86765ac635d53de89/jboss-devstudio-9.0.0.CR1-installer-eap.jar
+            file_size: 635MB
+        zips:
+          - name: Update site (including sources) bundle of JBoss Developer Studio
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/60/60aa02300082284a3fa3c8978d6f7a050fce8b736a7bff038af1ca45ee5db53a/jboss-devstudio-9.0.0.CR1-updatesite-core.zip
+            file_size: 515MB
+          - name: Target Platform for JBoss Developer Studio
+            url: https://devstudio.redhat.com/9.0/development/updates/core/jboss-devstudio-9.0.0.CR1-target-platform.zip
+            file_size: 462MB
+          - name: JBoss Central Zip
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/90/90442d1753da7b220011ec99badf5e2551d126d1b2b74bbcf2f0d2c5c41baabb/jboss-devstudio-9.0.0.CR1-updatesite-central.zip
+            file_size: 155MB
+          - name: Sources Zip
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/f4/f49eb288824a1f972aeaf020f909d8b3854b6819bcb20a220c662258a828436a/jboss-devstudio-9.0.0.CR1-src.zip
+            file_size: 223MB
+      9.0.0.Beta2:
+        release_date: 2015-07-29
+        archived: true
+        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        blog_announcement_url: /blog/beta2-for-mars.html
+        installers:
+          - name: Stand-alone Installer
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/f4/f4ffd0b36a622229e4a8b5c4db4c8c4fac0fd09750b1ba2cba73c22c5c0f5f83/jboss-devstudio-9.0.0.Beta2-installer-standalone.jar
+            file_size: 485MB
+          - name: Installer With EAP 6.4.0
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/32/329b93cc424feea6d396d9b9d69f508335c387a0780ee8fa880f5501919f6f65/jboss-devstudio-9.0.0.Beta2-installer-eap.jar
+            file_size: 630MB
+        zips:
+          - name: Update site (including sources) bundle of JBoss Developer Studio
+            file_size: 507MB
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/b7/b7289aa99840cd07fc7f51bf2deaa17f7ca9acaaf1a5b0e72adab85b286fe74d/jboss-devstudio-9.0.0.Beta2-updatesite-core.zip
+          - name: Target Platform for JBoss Developer Studio
+            file_size: 452MB
+            url: https://devstudio.redhat.com/9.0/development/updates/core/jboss-devstudio-9.0.0.Beta2-target-platform.zip
+          - name: JBoss Central Zip
+            file_size: 116MB
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/a8/a8402bfa51e56b272d3283b4b857c522e0a0443ee592503ba977705ed46914df/jboss-devstudio-9.0.0.Beta2-updatesite-central.zip
+          - name: Sources Zip
+            file_size: 332MB
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/2a/2a4be9db02604a2ccc471005fee6aa86c20d9c697b6d304fdb7d2bae68bb4970/jboss-devstudio-9.0.0.Beta2-src.zip
+      9.0.0.Beta1:
+        release_date: 2015-06-22
+        archived: true
+        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        blog_announcement_url: /blog/2015-06-22-beta1-for-mars.html
+        installers:
+          - name: Stand-alone Installer
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/8f/8f01d0db3cc193f7eb8876cc0c1ad0bcabbfb9a3b794837d572f52209e738908/jboss-devstudio-9.0.0.Beta1-installer-standalone.jar
+            file_size: 484MB
+          - name: Installer With EAP 6.4.0
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/3d/3d115879e3be646a563d05452c3a22bac394652e40260a3b43d9dd5c3ba7121e/jboss-devstudio-9.0.0.Beta1-installer-eap.jar
+            file_size: 628MB
+        zips:
+          - name: Update site (including sources) bundle of JBoss Developer Studio
+            file_size: 505MB
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/2c/2c92b68d122db901e3acbb74f06950116f4fe29402c25f4391761f9a93e65bba/jboss-devstudio-9.0.0.Beta1-updatesite-core.zip
+          - name: Target Platform for JBoss Developer Studio
+            file_size: 451MB
+            url: https://devstudio.redhat.com/9.0/development/updates/core/jboss-devstudio-9.0.0.Beta1-target-platform.zip
     luna:
       8.1.0.GA:
         archived: false
@@ -442,50 +442,50 @@ devstudio:
             file_size: 430MB
             url: https://devstudio.jboss.com/static/updates/8.0.0/jboss-devstudio-8.1.0.GA-target-platform.zip
             md5_url: https://devstudio.jboss.com/static/updates/8.0.0/jboss-devstudio-8.1.0.GA-target-platform.zip.MD5
-      # 8.1.0.CR1:
-      #   release_date: 2015-03-20
-      #   archived: true
-      #   supported_devstudio_is_version: 8.0.0.GA
-      #   documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
-      #   release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
-      #   blog_announcement_url: /blog/2015-03-19-devstudio-8.1.0.CR1-for-luna.html
-      #   installers:
-      #     - name: Stand-alone Installer
-      #       url: https://www.jboss.org/download-manager/content/origin/files/sha256/9d/9daef0477c4b1924ae360659d3beb5e0bb405d7d79f6ca785cd5779391bcb9a6/jboss-devstudio-8.1.0.CR1-installer-standalone.jar
-      #       file_size: 546MB
-      #     - name: Installer With EAP 6.3.0
-      #       url: https://www.jboss.org/download-manager/content/origin/files/sha256/ec/ec33cab4d5f7fdaffef12fed1dbcb167f73b09820194c290fe5ee1b01144bfa0/jboss-devstudio-8.1.0.CR1-installer-eap.jar
-      #       file_size: 685MB
-      #   zips:
-      #     - name: Update site (including sources) bundle of JBoss Developer Studio
-      #       file_size: 524MB
-      #       url: https://www.jboss.org/download-manager/content/origin/files/sha256/be/be4c0714df996ee1edd5b082b13c1bc1e10c857a388432de24b1de107913e1ff/jboss-devstudio-8.1.0.CR1-updatesite-core.zip
-      #     - name: Target Platform for JBoss Developer Studio
-      #       file_size: 426MB
-      #       url: https://devstudio.redhat.com/updates/8.0.0/jboss-devstudio-8.1.0.CR1-target-platform.zip
-      #       md5_url: https://devstudio.redhat.com/updates/8.0.0/jboss-devstudio-8.1.0.CR1-target-platform.zip.MD5
-      # 8.1.0.Beta1:
-      #   release_date: 2015-03-04
-      #   archived: true
-      #   supported_devstudio_is_version: 8.0.0.GA
-      #   documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
-      #   release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
-      #   blog_announcement_url: /blog/2015-03-05-JBDS-8.1.0.Beta1-for-luna.html
-      #   installers:
-      #     - name: Stand-alone Installer
-      #       url: https://www.jboss.org/download-manager/content/origin/files/sha256/8f/8f7b797dd0ff04a75801e34f6dea3627e89b0faf598144d06892f119eb64add1/jboss-devstudio-8.1.0.Beta1-installer-standalone.jar
-      #       file_size: 546MB
-      #     - name: Installer With EAP 6.3.0
-      #       url: https://www.jboss.org/download-manager/content/origin/files/sha256/a5/a5fd25450ba0b64c491fc9effab10351ed269cdc1ca90d0218d1d24496ab2b41/jboss-devstudio-8.1.0.Beta1-installer-eap.jar
-      #       file_size: 685MB
-      #   zips:
-      #     - name: Update site (including sources) bundle of JBoss Developer Studio
-      #       file_size: 524MB
-      #       url: https://www.jboss.org/download-manager/content/origin/files/sha256/5d/5d70ee2e8199a031152caf42b8a52b6d14b79b3f4960f03e6e8ad0341447ce37/jboss-devstudio-8.1.0.Beta1-updatesite-core.zip
-      #     - name: Target Platform for JBoss Developer Studio
-      #       file_size: 426MB
-      #       url: https://devstudio.redhat.com/updates/8.0.0/jboss-devstudio-8.1.0.Beta1-target-platform.zip
-      #       md5_url: https://devstudio.redhat.com/updates/8.0.0/jboss-devstudio-8.1.0.Beta1-target-platform.zip.MD5
+      8.1.0.CR1:
+        release_date: 2015-03-20
+        archived: true
+        supported_devstudio_is_version: 8.0.0.GA
+        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        blog_announcement_url: /blog/2015-03-19-devstudio-8.1.0.CR1-for-luna.html
+        installers:
+          - name: Stand-alone Installer
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/9d/9daef0477c4b1924ae360659d3beb5e0bb405d7d79f6ca785cd5779391bcb9a6/jboss-devstudio-8.1.0.CR1-installer-standalone.jar
+            file_size: 546MB
+          - name: Installer With EAP 6.3.0
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/ec/ec33cab4d5f7fdaffef12fed1dbcb167f73b09820194c290fe5ee1b01144bfa0/jboss-devstudio-8.1.0.CR1-installer-eap.jar
+            file_size: 685MB
+        zips:
+          - name: Update site (including sources) bundle of JBoss Developer Studio
+            file_size: 524MB
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/be/be4c0714df996ee1edd5b082b13c1bc1e10c857a388432de24b1de107913e1ff/jboss-devstudio-8.1.0.CR1-updatesite-core.zip
+          - name: Target Platform for JBoss Developer Studio
+            file_size: 426MB
+            url: https://devstudio.redhat.com/updates/8.0.0/jboss-devstudio-8.1.0.CR1-target-platform.zip
+            md5_url: https://devstudio.redhat.com/updates/8.0.0/jboss-devstudio-8.1.0.CR1-target-platform.zip.MD5
+      8.1.0.Beta1:
+        release_date: 2015-03-04
+        archived: true
+        supported_devstudio_is_version: 8.0.0.GA
+        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        blog_announcement_url: /blog/2015-03-05-JBDS-8.1.0.Beta1-for-luna.html
+        installers:
+          - name: Stand-alone Installer
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/8f/8f7b797dd0ff04a75801e34f6dea3627e89b0faf598144d06892f119eb64add1/jboss-devstudio-8.1.0.Beta1-installer-standalone.jar
+            file_size: 546MB
+          - name: Installer With EAP 6.3.0
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/a5/a5fd25450ba0b64c491fc9effab10351ed269cdc1ca90d0218d1d24496ab2b41/jboss-devstudio-8.1.0.Beta1-installer-eap.jar
+            file_size: 685MB
+        zips:
+          - name: Update site (including sources) bundle of JBoss Developer Studio
+            file_size: 524MB
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/5d/5d70ee2e8199a031152caf42b8a52b6d14b79b3f4960f03e6e8ad0341447ce37/jboss-devstudio-8.1.0.Beta1-updatesite-core.zip
+          - name: Target Platform for JBoss Developer Studio
+            file_size: 426MB
+            url: https://devstudio.redhat.com/updates/8.0.0/jboss-devstudio-8.1.0.Beta1-target-platform.zip
+            md5_url: https://devstudio.redhat.com/updates/8.0.0/jboss-devstudio-8.1.0.Beta1-target-platform.zip.MD5
       8.0.2.GA:
         archived: true
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
@@ -546,82 +546,82 @@ devstudio:
             file_size: 516MB
             url: https://www.jboss.org/download-manager/content/origin/files/sha256/da/da21079c31af1a7dd8ff7dc05a4003fa818307eb3cdad6e10139437b5022d161/jboss-devstudio-8.0.0.GA-v20141020-1042-B317-updatesite-core.zip
             #md5_url: n/a
-      # 8.0.0.CR1:
-      #   documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
-      #   release_date: 2014-09-18
-      #   archived: true
-      #   documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
-      #   release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/8.0/html/8.0.0_Release_Notes/index.html
-      #   blog_announcement_url: /blog/2014-09-17-CR1-for-luna.html
-      #   installers:
-      #     - name: Stand-alone Installer
-      #       url: https://www.jboss.org/download-manager/content/origin/files/sha256/5a/5a748e631b667f78fd6c9bd6e8aa13e29d9b4731555762df191aad684d866759/jboss-devstudio-8.0.0.CR1-v20140915-0805-B246-installer-standalone.jar
-      #       file_size: 552MB
-      #     - name: Installer With EAP 6.3.0
-      #       url: https://www.jboss.org/download-manager/content/origin/files/sha256/1e/1e0b9468604aa20ac8c44b63cd651cfba2c97ccc7a0f6f4ebb23b90a6244b2f1/jboss-devstudio-8.0.0.CR1-v20140915-0805-B246-installer-eap.jar
-      #       file_size: 691MB
-      #   zips:
-      #     - name: Update site (including sources) bundle of JBoss Developer Studio
-      #       file_size: 514MB
-      #       url: https://www.jboss.org/download-manager/content/origin/files/sha256/ea/ea08cbdc79fa982989d578cbb1c39cc3e42dd36b5cee598411d3814d4148c96b/jboss-devstudio-8.0.0.CR1-v20140915-0805-B246-updatesite-core.zip
-      #       #md5_url: n/a
-      # 8.0.0.Beta3:
-      #   documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
-      #   release_date: 2014-07-28
-      #   archived: true
-      #   documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
-      #   release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/8.0/html/8.0.0_Release_Notes/index.html
-      #   blog_announcement_url: /blog/2014-07-28-beta3-for-luna.html
-      #   installers:
-      #     - name: Stand-alone Installer
-      #       url: https://www.jboss.org/download-manager/content/origin/files/sha256/96/96d6ab7107c64283b9e92396f046ccec3301b263df81bd8b3a9abf4e7934deb9/jboss-devstudio-8.0.0.Beta3-v20140722-2011-B194-installer-standalone.jar
-      #       file_size: 504MB
-      #     - name: Installer With EAP 6.3.0.Beta
-      #       url: https://www.jboss.org/download-manager/content/origin/files/sha256/09/0998b448383eca6e74c86ac58d4a1b88c066a0a39e25b12df8ebb6a2ed72ba73/jboss-devstudio-8.0.0.Beta3-v20140722-2011-B194-installer-eap.jar
-      #       file_size: 643MB
-      #   zips:
-      #     - name: Update site (including sources) bundle of JBoss Developer Studio
-      #       file_size: 850MB
-      #       url: https://www.jboss.org/download-manager/content/origin/files/sha256/4a/4ad3df66a4e019827ad53681b7d3bea33a126230ce7e90b4195f1e13f9aba684/jboss-devstudio-8.0.0.Beta3-v20140722-2011-B194-updatesite-core.zip
-      #       #md5_url: n/a
+      8.0.0.CR1:
+        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        release_date: 2014-09-18
+        archived: true
+        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/8.0/html/8.0.0_Release_Notes/index.html
+        blog_announcement_url: /blog/2014-09-17-CR1-for-luna.html
+        installers:
+          - name: Stand-alone Installer
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/5a/5a748e631b667f78fd6c9bd6e8aa13e29d9b4731555762df191aad684d866759/jboss-devstudio-8.0.0.CR1-v20140915-0805-B246-installer-standalone.jar
+            file_size: 552MB
+          - name: Installer With EAP 6.3.0
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/1e/1e0b9468604aa20ac8c44b63cd651cfba2c97ccc7a0f6f4ebb23b90a6244b2f1/jboss-devstudio-8.0.0.CR1-v20140915-0805-B246-installer-eap.jar
+            file_size: 691MB
+        zips:
+          - name: Update site (including sources) bundle of JBoss Developer Studio
+            file_size: 514MB
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/ea/ea08cbdc79fa982989d578cbb1c39cc3e42dd36b5cee598411d3814d4148c96b/jboss-devstudio-8.0.0.CR1-v20140915-0805-B246-updatesite-core.zip
+            #md5_url: n/a
+      8.0.0.Beta3:
+        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        release_date: 2014-07-28
+        archived: true
+        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/8.0/html/8.0.0_Release_Notes/index.html
+        blog_announcement_url: /blog/2014-07-28-beta3-for-luna.html
+        installers:
+          - name: Stand-alone Installer
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/96/96d6ab7107c64283b9e92396f046ccec3301b263df81bd8b3a9abf4e7934deb9/jboss-devstudio-8.0.0.Beta3-v20140722-2011-B194-installer-standalone.jar
+            file_size: 504MB
+          - name: Installer With EAP 6.3.0.Beta
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/09/0998b448383eca6e74c86ac58d4a1b88c066a0a39e25b12df8ebb6a2ed72ba73/jboss-devstudio-8.0.0.Beta3-v20140722-2011-B194-installer-eap.jar
+            file_size: 643MB
+        zips:
+          - name: Update site (including sources) bundle of JBoss Developer Studio
+            file_size: 850MB
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/4a/4ad3df66a4e019827ad53681b7d3bea33a126230ce7e90b4195f1e13f9aba684/jboss-devstudio-8.0.0.Beta3-v20140722-2011-B194-updatesite-core.zip
+            #md5_url: n/a
 
-      # 8.0.0.Beta2:
-      #   documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
-      #   release_date: 2014-06-20
-      #   archived: true
-      #   documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
-      #   release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/8.0/html/8.0.0_Release_Notes/index.html
-      #   blog_announcement_url: /blog/2014-06-19-beta2-for-luna.html
-      #   installers:
-      #     - name: Stand-alone Installer
-      #       url: https://www.jboss.org/download-manager/content/origin/files/sha256/3c/3c4508c0c43f9aae305c289b946cfc963b8be01678dc9d538b9847872fa80ef6/jboss-devstudio-8.0.0.Beta2-v20140617-2058-B166-installer-standalone.jar
-      #       file_size: 550MB
-      #     - name: Installer With EAP 6.2.0
-      #       url: https://www.jboss.org/download-manager/content/origin/files/sha256/41/41bbfb910533778ac059a5fceafd814b06cc7e0b34086ef76c302cbddc687f0f/jboss-devstudio-8.0.0.Beta2-v20140617-2058-B166-installer-eap.jar
-      #       file_size: 676MB
-      #   zips:
-      #     - name: Update site (including sources) bundle of JBoss Developer Studio
-      #       file_size: 850MB
-      #       url: https://www.jboss.org/download-manager/content/origin/files/sha256/9d/9da04d293283afcff48c85d382e4f57dccce181382aa556e9b44d38f5cadf94a/jboss-devstudio-8.0.0.Beta2-v20140617-2058-B166-updatesite-core.zip
-      #       #md5_url: n/a
-      # 8.0.0.Beta1:
-      #   release_date: 2014-04-11
-      #   archived: true
-      #   documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
-      #   release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/8.0/html/8.0.0_Release_Notes/index.html
-      #   blog_announcement_url: /blog/2014-04-14-beta1-for-luna.html
-      #   installers:
-      #     - name: Stand-alone Installer
-      #       url: https://www.jboss.org/download-manager/content/origin/files/sha256/25/2550fbb912f42b6c0e60d124cc0d5b7c1a26b1767e27a0ecd6f2b9c36f3b3d9a/jbdevstudio-product-universal-8.0.0.Beta1-v20140408-2350-B93.jar
-      #       file_size: 482MB
-      #     - name: Installer With EAP 6.2.0
-      #       url: https://www.jboss.org/download-manager/content/origin/files/sha256/5f/5f7a06b642bf212a89c9526b2e477bab33cc9aa6b0bb2bb63e8e23e5586b4266/jbdevstudio-product-eap-universal-8.0.0.Beta1-v20140408-2350-B93.jar
-      #       file_size: 609MB
-      #   zips:
-      #     - name: Update site (including sources) bundle of JBoss Developer Studio
-      #       file_size: 725MB
-      #       url: https://www.jboss.org/download-manager/content/origin/files/sha256/b9/b9a4d822294c7457522238e81335b8dc5013e9835ce9b1837e4a5be241b6d4c3/jbdevstudio-product-Update-8.0.0.Beta1-v20140408-2350-B93.zip
-      #       #md5_url: n/a
+      8.0.0.Beta2:
+        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        release_date: 2014-06-20
+        archived: true
+        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/8.0/html/8.0.0_Release_Notes/index.html
+        blog_announcement_url: /blog/2014-06-19-beta2-for-luna.html
+        installers:
+          - name: Stand-alone Installer
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/3c/3c4508c0c43f9aae305c289b946cfc963b8be01678dc9d538b9847872fa80ef6/jboss-devstudio-8.0.0.Beta2-v20140617-2058-B166-installer-standalone.jar
+            file_size: 550MB
+          - name: Installer With EAP 6.2.0
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/41/41bbfb910533778ac059a5fceafd814b06cc7e0b34086ef76c302cbddc687f0f/jboss-devstudio-8.0.0.Beta2-v20140617-2058-B166-installer-eap.jar
+            file_size: 676MB
+        zips:
+          - name: Update site (including sources) bundle of JBoss Developer Studio
+            file_size: 850MB
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/9d/9da04d293283afcff48c85d382e4f57dccce181382aa556e9b44d38f5cadf94a/jboss-devstudio-8.0.0.Beta2-v20140617-2058-B166-updatesite-core.zip
+            #md5_url: n/a
+      8.0.0.Beta1:
+        release_date: 2014-04-11
+        archived: true
+        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/8.0/html/8.0.0_Release_Notes/index.html
+        blog_announcement_url: /blog/2014-04-14-beta1-for-luna.html
+        installers:
+          - name: Stand-alone Installer
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/25/2550fbb912f42b6c0e60d124cc0d5b7c1a26b1767e27a0ecd6f2b9c36f3b3d9a/jbdevstudio-product-universal-8.0.0.Beta1-v20140408-2350-B93.jar
+            file_size: 482MB
+          - name: Installer With EAP 6.2.0
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/5f/5f7a06b642bf212a89c9526b2e477bab33cc9aa6b0bb2bb63e8e23e5586b4266/jbdevstudio-product-eap-universal-8.0.0.Beta1-v20140408-2350-B93.jar
+            file_size: 609MB
+        zips:
+          - name: Update site (including sources) bundle of JBoss Developer Studio
+            file_size: 725MB
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/b9/b9a4d822294c7457522238e81335b8dc5013e9835ce9b1837e4a5be241b6d4c3/jbdevstudio-product-Update-8.0.0.Beta1-v20140408-2350-B93.zip
+            #md5_url: n/a
     kepler:
       7.1.1.GA:
         release_date: 2014-03-24
@@ -1290,69 +1290,69 @@ jbt_core:
             sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.2.Final-browsersim-standalone.zip.sha256
           - name: Release Notes
             url: https://tools.jboss.org/documentation/whatsnew/index.html
-      # 4.4.2.AM3:
-      #   archived: true
-      #   release_date: 2016-11-10
-      #   supported_jbt_is_version: 4.4.0.Final
-      #   blog_announcement_url: /blog/am3.4.4.2.neon.html
-      #   documentation_url: http://docs.jboss.org/tools/
-      #   zips:
-      #     - name: Update site (including sources) bundle of all JBoss Core Tools
-      #       file_size: 474MB
-      #       url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.2.AM3-updatesite-core.zip
-      #       sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.2.AM3-updatesite-core.zip.sha256
-      #     - name: Sources zip of all JBoss Core Tools
-      #       file_size: 244MB
-      #       url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.2.AM3-src.zip
-      #       sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.2.AM3-src.zip.sha256
-      #     - name: Stand-alone BrowserSim
-      #       file_size: 17MB
-      #       url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.2.AM3-browsersim-standalone.zip
-      #       sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.2.AM3-browsersim-standalone.zip.sha256
-      #     - name: Release Notes
-      #       url: https://tools.jboss.org/documentation/whatsnew/index.html
-      # 4.4.2.AM2:
-      #   archived: true
-      #   release_date: 2016-10-19
-      #   supported_jbt_is_version: 4.4.0.Final
-      #   blog_announcement_url: /blog/am2.4.4.2.neon.html
-      #   documentation_url: http://docs.jboss.org/tools/
-      #   zips:
-      #     - name: Update site (including sources) bundle of all JBoss Core Tools
-      #       file_size: 474MB
-      #       url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.2.AM2-updatesite-core.zip
-      #       sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.2.AM2-updatesite-core.zip.sha256
-      #     - name: Sources zip of all JBoss Core Tools
-      #       file_size: 244MB
-      #       url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.2.AM2-src.zip
-      #       sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.2.AM2-src.zip.sha256
-      #     - name: Stand-alone BrowserSim
-      #       file_size: 17MB
-      #       url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.2.AM2-browsersim-standalone.zip
-      #       sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.2.AM2-browsersim-standalone.zip.sha256
-      #     - name: Release Notes
-      #       url: https://tools.jboss.org/documentation/whatsnew/index.html
-      # 4.4.2.AM1:
-      #   archived: true
-      #   release_date: 2016-09-29
-      #   supported_jbt_is_version: 4.4.0.Final
-      #   blog_announcement_url: /blog/am1-for-neon.1.html
-      #   documentation_url: http://docs.jboss.org/tools/
-      #   zips:
-      #     - name: Update site (including sources) bundle of all JBoss Core Tools
-      #       file_size: 474MB
-      #       url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.2.AM1-updatesite-core.zip
-      #       sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.2.AM1-updatesite-core.zip.sha256
-      #     - name: Sources zip of all JBoss Core Tools
-      #       file_size: 244MB
-      #       url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.2.AM1-src.zip
-      #       sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.2.AM1-src.zip.sha256
-      #     - name: Stand-alone BrowserSim
-      #       file_size: 17MB
-      #       url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.2.AM1-browsersim-standalone.zip
-      #       sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.2.AM1-browsersim-standalone.zip.sha256
-      #     - name: Release Notes
-      #       url: https://tools.jboss.org/documentation/whatsnew/index.html
+      4.4.2.AM3:
+        archived: true
+        release_date: 2016-11-10
+        supported_jbt_is_version: 4.4.0.Final
+        blog_announcement_url: /blog/am3.4.4.2.neon.html
+        documentation_url: http://docs.jboss.org/tools/
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 474MB
+            url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.2.AM3-updatesite-core.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.2.AM3-updatesite-core.zip.sha256
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 244MB
+            url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.2.AM3-src.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.2.AM3-src.zip.sha256
+          - name: Stand-alone BrowserSim
+            file_size: 17MB
+            url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.2.AM3-browsersim-standalone.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.2.AM3-browsersim-standalone.zip.sha256
+          - name: Release Notes
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
+      4.4.2.AM2:
+        archived: true
+        release_date: 2016-10-19
+        supported_jbt_is_version: 4.4.0.Final
+        blog_announcement_url: /blog/am2.4.4.2.neon.html
+        documentation_url: http://docs.jboss.org/tools/
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 474MB
+            url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.2.AM2-updatesite-core.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.2.AM2-updatesite-core.zip.sha256
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 244MB
+            url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.2.AM2-src.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.2.AM2-src.zip.sha256
+          - name: Stand-alone BrowserSim
+            file_size: 17MB
+            url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.2.AM2-browsersim-standalone.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.2.AM2-browsersim-standalone.zip.sha256
+          - name: Release Notes
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
+      4.4.2.AM1:
+        archived: true
+        release_date: 2016-09-29
+        supported_jbt_is_version: 4.4.0.Final
+        blog_announcement_url: /blog/am1-for-neon.1.html
+        documentation_url: http://docs.jboss.org/tools/
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 474MB
+            url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.2.AM1-updatesite-core.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.2.AM1-updatesite-core.zip.sha256
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 244MB
+            url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.2.AM1-src.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.2.AM1-src.zip.sha256
+          - name: Stand-alone BrowserSim
+            file_size: 17MB
+            url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.2.AM1-browsersim-standalone.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.2.AM1-browsersim-standalone.zip.sha256
+          - name: Release Notes
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
       4.4.1.Final:
         archived: true
         update_site_url: http://download.jboss.org/jbosstools/neon/stable/updates/
@@ -1375,50 +1375,50 @@ jbt_core:
             sha256_url: http://download.jboss.org/jbosstools/static/neon/stable/updates/core/jbosstools-4.4.1.Final-browsersim-standalone.zip.sha256
           - name: Release Notes
             url: https://tools.jboss.org/documentation/whatsnew/index.html
-      # 4.4.1.AM3:
-      #   update_site_url: http://download.jboss.org/jbosstools/neon/development/updates/
-      #   archived: true
-      #   release_date: 2016-08-17
-      #   supported_jbt_is_version: 4.3.0.Final
-      #   blog_announcement_url: /blog/am3-for-neon.html
-      #   documentation_url: http://docs.jboss.org/tools/
-      #   zips:
-      #     - name: Update site (including sources) bundle of all JBoss Core Tools
-      #       file_size: 456MB
-      #       url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.1.AM3-updatesite-core.zip
-      #       sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.1.AM3-updatesite-core.zip.sha256
-      #     - name: Sources zip of all JBoss Core Tools
-      #       file_size: 244MB
-      #       url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.1.AM3-src.zip
-      #       sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.1.AM3-src.zip.sha256
-      #     - name: Stand-alone BrowserSim
-      #       file_size: 17MB
-      #       url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.1.AM3-browsersim-standalone.zip
-      #       sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.1.AM3-browsersim-standalone.zip.sha256
-      #     - name: Release Notes
-      #       url: https://tools.jboss.org/documentation/whatsnew/index.html
-      # 4.4.1.AM2:
-      #   update_site_url: http://download.jboss.org/jbosstools/neon/development/updates/
-      #   archived: true
-      #   release_date: 2016-07-29
-      #   supported_jbt_is_version: 4.3.0.Final
-      #   blog_announcement_url: /blog/am2-for-neon.html
-      #   documentation_url: http://docs.jboss.org/tools/
-      #   zips:
-      #     - name: Update site (including sources) bundle of all JBoss Core Tools
-      #       file_size: 456MB
-      #       url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.1.AM2-updatesite-core.zip
-      #       sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.1.AM2-updatesite-core.zip.sha256
-      #     - name: Sources zip of all JBoss Core Tools
-      #       file_size: 244MB
-      #       url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.1.AM2-src.zip
-      #       sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.1.AM2-src.zip.sha256
-      #     - name: Stand-alone BrowserSim
-      #       file_size: 17MB
-      #       url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.1.AM2-browsersim-standalone.zip
-      #       sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.1.AM2-browsersim-standalone.zip.sha256
-      #     - name: Release Notes
-      #       url: https://tools.jboss.org/documentation/whatsnew/index.html
+      4.4.1.AM3:
+        update_site_url: http://download.jboss.org/jbosstools/neon/development/updates/
+        archived: true
+        release_date: 2016-08-17
+        supported_jbt_is_version: 4.3.0.Final
+        blog_announcement_url: /blog/am3-for-neon.html
+        documentation_url: http://docs.jboss.org/tools/
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 456MB
+            url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.1.AM3-updatesite-core.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.1.AM3-updatesite-core.zip.sha256
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 244MB
+            url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.1.AM3-src.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.1.AM3-src.zip.sha256
+          - name: Stand-alone BrowserSim
+            file_size: 17MB
+            url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.1.AM3-browsersim-standalone.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.1.AM3-browsersim-standalone.zip.sha256
+          - name: Release Notes
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
+      4.4.1.AM2:
+        update_site_url: http://download.jboss.org/jbosstools/neon/development/updates/
+        archived: true
+        release_date: 2016-07-29
+        supported_jbt_is_version: 4.3.0.Final
+        blog_announcement_url: /blog/am2-for-neon.html
+        documentation_url: http://docs.jboss.org/tools/
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 456MB
+            url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.1.AM2-updatesite-core.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.1.AM2-updatesite-core.zip.sha256
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 244MB
+            url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.1.AM2-src.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.1.AM2-src.zip.sha256
+          - name: Stand-alone BrowserSim
+            file_size: 17MB
+            url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.1.AM2-browsersim-standalone.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.1.AM2-browsersim-standalone.zip.sha256
+          - name: Release Notes
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
       4.4.0.Final:
         update_site_url: http://download.jboss.org/jbosstools/neon/stable/updates/
         archived: true
@@ -1441,27 +1441,27 @@ jbt_core:
             sha256_url: http://download.jboss.org/jbosstools/static/neon/stable/updates/core/jbosstools-4.4.0.Final-browsersim-standalone.zip.sha256
           - name: Release Notes
             url: https://tools.jboss.org/documentation/whatsnew/index.html
-      # 4.4.0.Alpha2:
-      #   update_site_url: http://download.jboss.org/jbosstools/neon/development/updates/
-      #   archived: true
-      #   release_date: 2016-05-25
-      #   blog_announcement_url: /blog/alpha-for-neon.html
-      #   documentation_url: http://docs.jboss.org/tools/
-      #   zips:
-      #     - name: Update site (including sources) bundle of all JBoss Core Tools
-      #       file_size: 426MB
-      #       url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.0.Alpha2-updatesite-core.zip
-      #       sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.0.Alpha2-updatesite-core.zip.sha256
-      #     - name: Sources zip of all JBoss Core Tools
-      #       file_size: 222MB
-      #       url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.0.Alpha2-src.zip
-      #       sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.0.Alpha2-src.zip.sha256
-      #     - name: Stand-alone BrowserSim
-      #       file_size: 17MB
-      #       url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.0.Alpha2-browsersim-standalone.zip
-      #       sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.0.Alpha2-browsersim-standalone.zip.sha256
-      #     - name: Release Notes
-      #       url: https://tools.jboss.org/documentation/whatsnew/index.html
+      4.4.0.Alpha2:
+        update_site_url: http://download.jboss.org/jbosstools/neon/development/updates/
+        archived: true
+        release_date: 2016-05-25
+        blog_announcement_url: /blog/alpha-for-neon.html
+        documentation_url: http://docs.jboss.org/tools/
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 426MB
+            url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.0.Alpha2-updatesite-core.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.0.Alpha2-updatesite-core.zip.sha256
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 222MB
+            url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.0.Alpha2-src.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.0.Alpha2-src.zip.sha256
+          - name: Stand-alone BrowserSim
+            file_size: 17MB
+            url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.0.Alpha2-browsersim-standalone.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/neon/development/updates/core/jbosstools-4.4.0.Alpha2-browsersim-standalone.zip.sha256
+          - name: Release Notes
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
 
     mars:
       4.3.1.Final:
@@ -1958,9 +1958,9 @@ jbt_core:
           - name: Release Notes
             file_size: 13kB
             url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.x/zz_Release_Notes_4.1.2.Final.readme.html
-      # 4.1.2.CR1:
-      #   archived: true
-      #   renamed_as: 4.1.2.Final
+      4.1.2.CR1:
+        archived: true
+        renamed_as: 4.1.2.Final
       4.1.1.Final:
         archived: true
         release_date: 2013-12-16
