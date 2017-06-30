@@ -4,7 +4,7 @@
 :page-tags: [release, jbosstools, jbosscentral]
 :page-date: 2017-06-27
 
-Happy to announce 4.4.5.AM1 (Developer Milestone 1) build for Eclipse Oxygen.0.
+Happy to announce 4.5.0.AM1 (Developer Milestone 1) build for Eclipse Oxygen.0.
 
 Downloads available at link:/downloads/jbosstools/oxygen/4.5.0.AM1.html[JBoss Tools 4.5.0 AM1].
 
