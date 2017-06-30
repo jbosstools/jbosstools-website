@@ -7,7 +7,7 @@ tab: docs
 
 - if is_stable_version(page.build_info.version)
   -# Banner for .Final versions (it's an aggregate of non-.Final pages)
-  - related_whatsnew_pages = get_related_whatsnew_pages(site, page.build_info.product_id, page.build_info.version)
+  - related_whatsnew_pages = get_related_whatsnew_pages(site, page.build_info.product_id, page.build_info.version, true)
   - unless related_whatsnew_pages.empty? || related_whatsnew_pages.length == 1
     .row-fluid
       .span12.alert.alert-info><
@@ -63,7 +63,7 @@ tab: docs
                 %a{:href=>"##{component_id}"} #{site.components[component_id].name}
       -# link to older N&N
       %li
-        %a{:href=>"http://docs.jboss.org/tools/whatsnew/"} Previous Versions
+        %a{:href=>"http://docs.jboss.org/tools/whatsnew/"} Older Versions
 
 
   .span9.whatsnew.scrolledContent.well.post-bg
