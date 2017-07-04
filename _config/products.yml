@@ -1,59 +1,80 @@
 eclipse:
+  oxygen:
+    # TODO archive this as of Sep 2019
+    archived: false
+    url_path_fragment: oxygen
+    short_name: Oxygen
+    full_name: Eclipse Oxygen 4.7
+    download_url:  http://www.eclipse.org/downloads/packages/release/Oxygen/
+    requirements: Java 8
   neon:
+    # TODO archive this as of Jul 2019
+    archived: false
     url_path_fragment: neon
     short_name: Neon
-    full_name: Eclipse Neon 4.6.1
-    download_url:  http://www.eclipse.org/downloads/packages/release/Neon/1
+    full_name: Eclipse Neon 4.6.3
+    download_url:  http://www.eclipse.org/downloads/packages/release/Neon/3
     requirements: Java 8
   mars:
+    # TODO archive this as of Nov 2018
+    archived: false
     url_path_fragment: mars
     short_name: Mars
     full_name: Eclipse Mars 4.5.2
     download_url:  http://www.eclipse.org/downloads/packages/release/Mars/2
     requirements: Java 8
   luna:
+    # TODO archive this as of Nov 2017
+    archived: false
     url_path_fragment: luna
     short_name: Luna
     full_name: Eclipse Luna 4.4.2
     download_url: http://www.eclipse.org/downloads/packages/release/luna/sr2
     requirements: Java 7 or Java 8
   kepler:
+    archived: true
     url_path_fragment: kepler
     short_name: Kepler
     full_name: Eclipse Kepler 4.3.2
     download_url: http://www.eclipse.org/downloads/packages/release/kepler/sr2
     requirements: Java 6 or Java 7
   juno:
+    archived: true
     url_path_fragment: juno
     short_name: Juno
     full_name: Eclipse Juno 4.2.2
     download_url: http://www.eclipse.org/downloads/packages/release/juno/sr2
     requirements: Java 6
   indigo:
+    archived: true
     url_path_fragment: indigo
     short_name: Indigo
     full_name: Eclipse Indigo 3.7
     download_url: http://www.eclipse.org/downloads/packages/release/indigo/sr2
     requirements: Java 6
   helios:
+    archived: true
     url_path_fragment: helios
     short_name: Helios
     full_name: Eclipse Helios 3.6
     download_url: http://www.eclipse.org/downloads/packages/release/helios/sr2
     requirements: Java 6
   galileo:
+    archived: true
     url_path_fragment: galileo
     short_name: Galileo
     full_name: Eclipse Galileo 3.5
     download_url: http://www.eclipse.org/downloads/packages/release/galileo/sr2
     requirements: Java 5
   ganymede:
+    archived: true
     url_path_fragment: ganymede
     short_name: Ganymede
     full_name: Eclipse Ganymede 3.4
     download_url: http://www.eclipse.org/downloads/packages/release/ganymede/sr2
     requirements: Java 5
   europa:
+    archived: true
     url_path_fragment: europa
     short_name: Europa
     full_name: Eclipse Europa 3.3
@@ -73,6 +94,9 @@ devstudio:
   name: JBoss Developer Studio
   url_path_fragment: devstudio
   streams:
+    oxygen:
+      11.x.Nightly:
+        update_site_url: https://devstudio.redhat.com/11/snapshots/updates/
     neon:
       10.4.0.GA:
         update_site_url: https://devstudio.redhat.com/10.0/stable/updates/
@@ -101,6 +125,7 @@ devstudio:
             url: http://www.jboss.org/download-manager/content/origin/files/sha256/78/78a5e0ed4573601cc916019e1acf9ede688a0593da05f2156900529365f2bde8/devstudio-10.4.0.GA-updatesite-central.zip
             file_size: 99MB
       10.3.0.GA:
+        archived: true
         release_date: 2017-02-23
         supported_devstudio_is_version: 10.2.0.GA
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
@@ -394,6 +419,7 @@ devstudio:
             url: https://devstudio.redhat.com/9.0/development/updates/core/jboss-devstudio-9.0.0.Beta1-target-platform.zip
     luna:
       8.1.0.GA:
+        archived: false
         marketplace_url: http://marketplace.eclipse.org/node/1616973
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
         release_date: 2015-04-01
@@ -481,6 +507,7 @@ devstudio:
             url: https://devstudio.redhat.com/static/updates/8.0.0/jboss-devstudio-8.0.2.GA-updatesite-core.zip
             md5_url: https://devstudio.redhat.com/static/updates/8.0.0/jboss-devstudio-8.0.2.GA-updatesite-core.zip.MD5
       8.0.1.GA:
+        archived: true
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         release_date: 2014-12-15
         supported_devstudio_is_version: 8.0.0.Beta2
@@ -500,6 +527,7 @@ devstudio:
             url: https://devstudio.redhat.com/static/updates/8.0.0/jboss-devstudio-8.0.1.GA-v20141215-0057-B362-updatesite-core.zip
             #md5_url: n/a
       8.0.0.GA:
+        archived: true
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         release_date: 2014-10-21
         supported_devstudio_is_version: 8.0.0.Beta2
@@ -707,6 +735,7 @@ devstudio_is:
             url: https://devstudio.redhat.com/10.0/stable/updates/integration-stack/10.3.0.GA/devstudio-integration-stack-10.3.0.GA-updatesite.zip
             sha256_url: https://devstudio.redhat.com/10.0/stable/updates/integration-stack/10.3.0.GA/devstudio-integration-stack-10.3.0.GA-updatesite.zip.sha256
       10.2.0.GA:
+        archived: true
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/
         release_notes_url: https://access.redhat.com/documentation/en-us/red_hat_jboss_developer_studio_integration_stack/10.2/html/10.2.0_release_notes_and_known_issues/
         release_date: 2017-03-29
@@ -728,6 +757,7 @@ devstudio_is:
             url: https://devstudio.redhat.com/10.0/stable/updates/integration-stack/10.2.0.GA/devstudio-integration-stack-10.2.0.GA-updatesite.zip
             sha256_url: https://devstudio.redhat.com/10.0/stable/updates/integration-stack/10.2.0.GA/devstudio-integration-stack-10.2.0.GA-updatesite.zip.sha256
       10.1.0.GA:
+        archived: true
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/
         release_notes_url: https://access.redhat.com/documentation/en-us/red_hat_jboss_developer_studio_integration_stack/10.1/html/10.1.0.ga_release_notes_and_known_issues
         release_date: 2017-02-21
@@ -750,6 +780,7 @@ devstudio_is:
             url: https://devstudio.redhat.com/10.0/stable/updates/integration-stack/10.1.0.GA/devstudio-integration-stack-10.1.0.GA-updatesite.zip
             md5_url: https://devstudio.redhat.com/10.0/stable/updates/integration-stack/10.1.0.GA/devstudio-integration-stack-10.1.0.GA-updatesite.zip.MD5
       10.0.0.GA:
+        archived: true
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/
         release_date: 2016-11-17
         required_devstudio_version: 10.1.0.GA
@@ -769,6 +800,7 @@ devstudio_is:
             url: https://devstudio.redhat.com/10.0/stable/updates/integration-stack/devstudio-integration-stack-10.0.0.GA-updatesite-earlyaccess.zip
             md5_url: https://devstudio.redhat.com/10.0/stable/updates/integration-stack/devstudio-integration-stack-10.0.0.GA-updatesite-earlyaccess.zip.MD5
       10.0.0.Alpha1:
+        archived: true
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/
         release_date: 2016-09-27
         required_devstudio_version: 10.1.0.GA
@@ -795,6 +827,7 @@ devstudio_is:
             url: https://devstudio.redhat.com/9.0/stable/updates/integration-stack/devstudio-integration-stack-9.0.3.GA-updatesite.zip
             md5_url: https://devstudio.redhat.com/9.0/stable/updates/integration-stack/devstudio-integration-stack-9.0.3.GA-updatesite.zip.MD5
       9.0.2.GA:
+        archived: true
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/9.0
         release_notes_url: https://access.redhat.com/documentation/en/red-hat-jboss-developer-studio-integration-stack/9.0/paged/902ga-release-notes/
         release_date: 2016-10-06
@@ -811,6 +844,7 @@ devstudio_is:
             url: https://devstudio.redhat.com/9.0/stable/updates/integration-stack/devstudio-integration-stack-9.0.2.GA-updatesite.zip
             md5_url: https://devstudio.redhat.com/9.0/stable/updates/integration-stack/devstudio-integration-stack-9.0.2.GA-updatesite.zip.MD5
       9.0.1.GA:
+        archived: true
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/9.0
         release_notes_url: https://access.redhat.com/articles/2505131
         release_date: 2016-08-11
@@ -844,6 +878,7 @@ devstudio_is:
             url: https://devstudio.redhat.com/9.0/stable/updates/integration-stack/devstudio-integration-stack-9.0.0.GA-earlyaccess.zip
             md5_url: https://devstudio.redhat.com/9.0/stable/updates/integration-stack/devstudio-integration-stack-9.0.0.GA-earlyaccess.zip.MD5
       9.0.0.Beta1:
+        archived: true
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/9.0
         release_notes_url: https://access.redhat.com/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/9.0-Beta1/html/9.0.0_Beta1_Release_Notes/index.html
         release_date: 2016-03-11
@@ -856,6 +891,7 @@ devstudio_is:
             url: https://devstudio.redhat.com/9.0/development/updates/integration-stack/devstudio-integration-stack-9.0.0.Beta1-earlyaccess.zip
             md5_url: https://devstudio.redhat.com/9.0/development/updates/integration-stack/devstudio-integration-stack-9.0.0.Beta1-earlyaccess.zip.MD5
       9.0.0.Alpha2:
+        archived: true
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/9.0
         #release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/8.0/html/8.0.3_Release_Notes/index.html
         release_date: 2015-10-12
@@ -872,6 +908,7 @@ devstudio_is:
             md5_url: https://devstudio.redhat.com/9.0/development/updates/integration-stack/devstudio-integration-stack-9.0.0.Alpha2-earlyaccess.zip.MD5
     luna:
       8.0.7.GA:
+        archived: false
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/8.0
         release_notes_url: https://access.redhat.com/articles/2345171
         release_date: 2016-06-02
@@ -883,6 +920,7 @@ devstudio_is:
             url: https://devstudio.jboss.com/updates/8.0.0/jbdevstudio-integration-stack-updatesite-8.0.7.GA.zip
             md5_url: https://devstudio.jboss.com/updates/8.0.0/jbdevstudio-integration-stack-updatesite-8.0.7.GA.zip.MD5
       8.0.6.GA:
+        archived: true
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/8.0
         release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/8.0/html/8.0.6_Release_Notes/index.html
         release_date: 2016-03-30
@@ -894,6 +932,7 @@ devstudio_is:
             url: https://devstudio.jboss.com/updates/8.0.0/jbdevstudio-integration-stack-updatesite-8.0.6.GA.zip
             md5_url: https://devstudio.jboss.com/updates/8.0.0/jbdevstudio-integration-stack-updatesite-8.0.6.GA.zip.MD5
       8.0.5.GA:
+        archived: true
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/8.0
         release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/8.0/html/8.0.5_Release_Notes/index.html
         release_date: 2016-02-02
@@ -905,6 +944,7 @@ devstudio_is:
             url: https://devstudio.jboss.com/updates/8.0.0/jbdevstudio-integration-stack-updatesite-8.0.5.GA.zip
             md5_url: https://devstudio.jboss.com/updates/8.0.0/jbdevstudio-integration-stack-updatesite-8.0.5.GA.zip.MD5
       8.0.4.GA:
+        archived: true
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/8.0
         release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/8.0/html/8.0.4_Release_Notes/index.html
         release_date: 2015-12-07
@@ -916,6 +956,7 @@ devstudio_is:
             url: https://devstudio.jboss.com/updates/8.0.0/jbdevstudio-integration-stack-updatesite-8.0.4.GA.zip
             md5_url: https://devstudio.jboss.com/updates/8.0.0/jbdevstudio-integration-stack-updatesite-8.0.4.GA.zip.MD5
       8.0.3.GA:
+        archived: true
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/8.0
         release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/8.0/html/8.0.3_Release_Notes/index.html
         release_date: 2015-08-27
@@ -948,6 +989,7 @@ devstudio_is:
             url: https://devstudio.jboss.com/updates/8.0.0/jbdevstudio-integration-stack-updatesite-8.0.2.GA-earlyaccess.zip
             md5_url: https://devstudio.jboss.com/updates/8.0.0/jbdevstudio-integration-stack-updatesite-8.0.2.GA-earlyaccess.zip.MD5
       8.0.1.GA:
+        archived: true
         blog_announcement_url: /blog/2015-04-16-JBTIS-421-Final.html
         release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/8.0/html/8.0.1_Release_Notes/index.html
         release_date: 2015-04-16
@@ -963,6 +1005,7 @@ devstudio_is:
             url: https://devstudio.jboss.com/updates/8.0.0/jbdevstudio-integration-stack-updatesite-8.0.1.GA-earlyaccess.zip
             md5_url: https://devstudio.jboss.com/updates/8.0.0/jbdevstudio-integration-stack-updatesite-8.0.1.GA-earlyaccess.zip.MD5
       8.0.0.GA:
+        archived: true
         blog_announcement_url: /blog/2015-03-11-JBTIS-420-Final.html
         release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/8.0/html/8.0.0_Release_Notes/index.html
         release_date: 2015-03-11
@@ -974,6 +1017,7 @@ devstudio_is:
             url: https://devstudio.jboss.com/updates/8.0.0/jbdevstudio-integration-stack-updatesite-8.0.0.GA.zip
             md5_url: https://devstudio.jboss.com/updates/8.0.0/jbdevstudio-integration-stack-updatesite-8.0.0.GA.zip.MD5
       8.0.0.Beta2:
+        archived: true
         blog_announcement_url: /blog/2015-01-13-JBTIS-Beta2-for-luna.html
         #release_notes_url: https://devstudio.jboss.com/updates/8.0/integration-stack/release-notes/Release_Notes_8.0.0.html
         release_date: 2015-01-12
@@ -985,6 +1029,7 @@ devstudio_is:
             url: https://devstudio.jboss.com/updates/8.0.0/jbdevstudio-integration-stack-updatesite-8.0.0.Beta2a.zip
             md5_url: https://devstudio.jboss.com/updates/8.0.0/jbdevstudio-integration-stack-updatesite-8.0.0.Beta2a.zip.MD5
       8.0.0.Beta1:
+        archived: true
         blog_announcement_url: /blog/2014-11-13-JBTIS-Beta1-for-luna.html
         #release_notes_url: https://devstudio.jboss.com/updates/8.0/integration-stack/release-notes/Release_Notes_8.0.0.html
         release_date: 2014-11-12
@@ -1057,13 +1102,43 @@ jbt_core:
   name: JBoss Tools
   url_path_fragment: jbosstools
   streams:
-    neon:
-      4.4.x.Nightly:
-        update_site_url: http://download.jboss.org/jbosstools/neon/snapshots/updates/
+    oxygen:
+      4.5.x.Nightly:
+        update_site_url: http://download.jboss.org/jbosstools/oxygen/snapshots/updates/
         zips:
           - name: Stand-alone BrowserSim
             file_size: 16MB
-            url: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.jboss.tools.browsersim&a=org.jboss.tools.browsersim-standalone&v=3.8.0-SNAPSHOT&e=zip
+            url: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.jboss.tools.browsersim&a=org.jboss.tools.browsersim-standalone&v=3.8.4-SNAPSHOT&e=zip      
+      4.5.0.AM1:
+        update_site_url: http://download.jboss.org/jbosstools/oxygen/development/updates/
+        #marketplace_url: https://marketplace.eclipse.org/node/1617241 # broken for now - see https://bugs.eclipse.org/bugs/show_bug.cgi?id=518967
+        #marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1617241
+        release_date: 2017-06-29
+        #supported_jbt_is_version: 4.4.3.Final
+        blog_announcement_url: /blog/4.5.0.am1-for-oxygen.0.html
+        documentation_url: http://docs.jboss.org/tools/
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 680MB
+            url: http://download.jboss.org/jbosstools/static/oxygen/development/updates/core/jbosstools-4.5.0.AM1-updatesite-core.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/oxygen/development/updates/core/jbosstools-4.5.0.AM1-updatesite-core.zip.sha256
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 223MB
+            url: http://download.jboss.org/jbosstools/static/oxygen/development/updates/core/jbosstools-4.5.0.AM1-src.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/oxygen/development/updates/core/jbosstools-4.5.0.AM1-src.zip.sha256
+          - name: Stand-alone BrowserSim
+            file_size: 16MB
+            url: http://download.jboss.org/jbosstools/static/oxygen/development/updates/core/jbosstools-4.5.0.AM1-browsersim-standalone.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/oxygen/development/updates/core/jbosstools-4.5.0.AM1-browsersim-standalone.zip.sha256
+          - name: Release Notes
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
+    neon:
+      # 4.4.x.Nightly:
+      #   update_site_url: http://download.jboss.org/jbosstools/neon/snapshots/updates/
+      #   zips:
+      #     - name: Stand-alone BrowserSim
+      #       file_size: 16MB
+      #       url: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.jboss.tools.browsersim&a=org.jboss.tools.browsersim-standalone&v=3.8.3-SNAPSHOT&e=zip
       4.4.4.Final:
         update_site_url: http://download.jboss.org/jbosstools/neon/stable/updates/
         marketplace_url: https://marketplace.eclipse.org/node/1617241
@@ -1088,6 +1163,7 @@ jbt_core:
           - name: Release Notes
             url: https://tools.jboss.org/documentation/whatsnew/index.html
       4.4.4.AM3:
+        archived: true
         update_site_url: http://download.jboss.org/jbosstools/neon/development/updates/
         release_date: 2017-04-25
         supported_jbt_is_version: 4.4.2.Final
@@ -1109,6 +1185,7 @@ jbt_core:
           - name: Release Notes
             url: https://tools.jboss.org/documentation/whatsnew/index.html
       4.4.4.AM2:
+        archived: true
         release_date: 2017-04-04
         supported_jbt_is_version: 4.4.2.Final
         blog_announcement_url: /blog/4.4.4.am2-for-neon.3.html
@@ -1129,6 +1206,7 @@ jbt_core:
           - name: Release Notes
             url: https://tools.jboss.org/documentation/whatsnew/index.html
       4.4.4.AM1:
+        archived: true
         release_date: 2017-03-15
         supported_jbt_is_version: 4.4.2.Final
         blog_announcement_url: /blog/4.4.4.am1-for-neon.2.html
@@ -1149,6 +1227,7 @@ jbt_core:
           - name: Release Notes
             url: https://tools.jboss.org/documentation/whatsnew/index.html
       4.4.3.Final:
+        archived: true
         release_date: 2017-02-23
         supported_jbt_is_version: 4.4.2.Final
         blog_announcement_url: /blog/10.3.0.ga-for-neon.2.html
@@ -1169,6 +1248,7 @@ jbt_core:
           - name: Release Notes
             url: https://tools.jboss.org/documentation/whatsnew/index.html
       4.4.3.AM2:
+        archived: true
         update_site_url: http://download.jboss.org/jbosstools/neon/development/updates/
         release_date: 2017-02-01
         supported_jbt_is_version: 4.4.1.Final
@@ -1190,6 +1270,7 @@ jbt_core:
           - name: Release Notes
             url: https://tools.jboss.org/documentation/whatsnew/index.html
       4.4.3.AM1:
+        archived: true
         update_site_url: http://download.jboss.org/jbosstools/neon/development/updates/
         release_date: 2017-01-11
         supported_jbt_is_version: 4.4.1.Final
@@ -1211,6 +1292,7 @@ jbt_core:
           - name: Release Notes
             url: https://tools.jboss.org/documentation/whatsnew/index.html
       4.4.2.Final:
+        archived: true
         update_site_url: http://download.jboss.org/jbosstools/neon/stable/updates/
         release_date: 2016-12-07
         supported_jbt_is_version: 4.4.1.Final
@@ -1593,22 +1675,14 @@ jbt_core:
             md5_url: http://sourceforge.net/projects/jboss/files/JBossTools/jbosstools4.3.0.x/jbosstools-4.3.0.Alpha1_2015-02-15_14-44-55-B13-browsersim-standalone.zip.MD5
           - name: Release Notes
             url: https://tools.jboss.org/documentation/whatsnew/index.html
-      # 4.3.x.Nightly:
-      #   update_site_url: http://download.jboss.org/jbosstools/mars/snapshots/updates/
-      #   zips:
-      #     - name: Stand-alone BrowserSim
-      #       file_size: 16MB
-      #       url: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.jboss.tools.browsersim&a=org.jboss.tools.browsersim-standalone&v=3.7.1-SNAPSHOT&e=zip
-      #       url: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.jboss.tools.vpe.browsersim&a=org.jboss.tools.vpe.browsersim-standalone&v=3.7.0-SNAPSHOT&e=zip&c=standalone
-      #       url: http://download.jboss.org/jbosstools/mars/snapshots/builds/jbosstools-browsersim-standalone_4.3.mars/latest/jbosstools-4.3.0.Final-browsersim-standalone.zip
-      #       sha256_url: http://download.jboss.org/jbosstools/mars/snapshots/builds/jbosstools-browsersim-standalone_4.3.mars/latest/jbosstools-4.3.0.Final-browsersim-standalone.zip.sha256
 
     luna:
       4.2.3.Final:
+        archived: false
         update_site_url: http://download.jboss.org/jbosstools/updates/stable/luna/
         marketplace_url: http://marketplace.eclipse.org/node/1617241
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1617241
-        archived: true
+        archived: false
         release_date: 2015-04-02
         supported_jbt_is_version: 4.2.7.Final
         blog_announcement_url: /blog/2015-04-02-devstudio-8.1.0.GA-for-luna.html
@@ -1952,7 +2026,6 @@ jbt_core:
           - name: Release Notes
             file_size: 27.1kB
             url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/zz_Release_Notes_4.1.1.CR1.readme.html
-
       4.1.1.Beta1:
         archived: true
         release_date: 2013-11-08
@@ -1972,7 +2045,6 @@ jbt_core:
           - name: Release Notes
             file_size: 22.3kB
             url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/zz_Release_Notes_4.1.1.Beta1.readme.html
-
       4.1.1.Alpha2:
         archived: true
         release_date: 2013-10-14
@@ -1992,7 +2064,6 @@ jbt_core:
           - name: Release Notes
             file_size: 11.2kB
             url: http://sourceforge.net/projects/jboss/files/JBossTools/JBossTools4.1.1.x/zz_Release_Notes_4.1.1.Alpha2.readme.html
-
       4.1.1.Alpha1:
         archived: true
         release_date: 2013-09-12
@@ -2279,6 +2350,7 @@ jbt_is:
              url: http://download.jboss.org/jbosstools/neon/stable/updates/integration-stack/4.4.3.Final/jbosstools-integration-stack-4.4.3.Final-updatesite.zip
              sha256_url: http://download.jboss.org/jbosstools/neon/stable/updates/integration-stack/4.4.3.Final/jbosstools-integration-stack-4.4.3.Final-updatesite.zip.sha256
       4.4.2.Final:
+        archived: true
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/
         release_date: 2017-03-29
         required_jbt_core_version: 4.4.3.Final
@@ -2289,6 +2361,7 @@ jbt_is:
              url: http://download.jboss.org/jbosstools/neon/stable/updates/integration-stack/jbosstools-integration-stack-4.4.2.Final-updatesite.zip
              sha256_url: http://download.jboss.org/jbosstools/neon/stable/updates/integration-stack/jbosstools-integration-stack-4.4.2.Final-updatesite.zip.sha256
       4.4.1.Final:
+        archived: true
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/
         release_date: 2017-02-21
         required_jbt_core_version: 4.4.2.Final
@@ -2300,6 +2373,7 @@ jbt_is:
              url: http://download.jboss.org/jbosstools/neon/stable/updates/integration-stack/jbosstools-integration-stack-4.4.1.Final-updatesite.zip
              md5_url: http://download.jboss.org/jbosstools/neon/stable/updates/integration-stack/jbosstools-integration-stack-4.4.1.Final-updatesite.zip.MD5
       4.4.0.Final:
+        archived: true
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/
         release_date: 2016-11-17
         required_jbt_core_version: 4.4.1.Final
@@ -2404,6 +2478,7 @@ jbt_is:
     luna:
       4.2.7.Final:
         release_date: 2016-06-02
+        archived: false
         required_jbt_core_version: 4.2.3.Final
         update_site_url: http://download.jboss.org/jbosstools/updates/stable/luna/integration-stack/
         zips:

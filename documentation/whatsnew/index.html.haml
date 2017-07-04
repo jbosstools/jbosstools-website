@@ -15,65 +15,69 @@ status: yellow
 - for product_id in [:jbt_core, :jbt_is] do
   - unless site.whatsnew_pages[product_id].nil?
     - new_noteworthies[product_id] = Hash.new
-    - news = site.whatsnew_pages[product_id].values.select{|whatsnew_page| !whatsnew_page.build_info.build_type_label.nil? &&
-    -        !whatsnew_page.build_info.archived}.sort{|p1, p2| p2.build_info.version <=> p1.build_info.version}
+    - news = site.whatsnew_pages[product_id].values.select{|whatsnew_page| !whatsnew_page.build_info.build_type_label.nil? }.sort{|p1, p2| p2.build_info.version <=> p1.build_info.version}
     - news.each do |n|
       - puts "N&N #{n.build_info.version}: #{n.build_info.archived}"
       - if new_noteworthies[product_id][n.build_info.build_type_label].nil?
         - new_noteworthies[product_id][n.build_info.build_type_label] = n
-      - count += 1
+        - count += 1
 
 - spanValue = "span" << (12/count).to_s
 
+// show only the first maxcount items
+- count = 0
+-maxcount = 3
 .row-fluid.section-wrapper.whatsnew-index.flexbox.stretch-row
   - for product_id in [:jbt_core, :jbt_is] do
     - unless new_noteworthies[product_id].nil?
-      - site.whatsnew_pages[product_id].values.select{|whatsnew_page| !whatsnew_page.build_info.build_type_label.nil? && !whatsnew_page.build_info.archived}.sort{|p1, p2| p2.build_info.version <=> p1.build_info.version}.each do |whatsnew_page|
-        %section{:class=>"#{spanValue} well post-bg"}
-          %header
-            %h3
-              %a{:href=>relative(whatsnew_page.output_path)} #{site.products[product_id].name} #{whatsnew_page.build_info.version}
-              - unless whatsnew_page.build_info.build_type_label.nil?
-                %span{:class=>"label label_#{whatsnew_page.build_info.build_type_label}"}
-                  #{site.labels[whatsnew_page.build_info.build_type_label]}
+      - site.whatsnew_pages[product_id].values.select{|whatsnew_page| !whatsnew_page.build_info.build_type_label.nil? }.sort{|p1, p2| p2.build_info.version <=> p1.build_info.version}.each do |whatsnew_page|
+        - count += 1
+        - if count <= maxcount
+          %section{:class=>"#{spanValue} well post-bg"}
+            %header
+              %h3
+                %a{:href=>relative(whatsnew_page.output_path)} #{site.products[product_id].name} #{whatsnew_page.build_info.version}
+                - unless whatsnew_page.build_info.build_type_label.nil?
+                  %span{:class=>"label label_#{whatsnew_page.build_info.build_type_label}"}
+                    #{site.labels[whatsnew_page.build_info.build_type_label]}
 
-          .item
-            %p
-              - relevant_components = whatsnew_page.component_news.keys.select{|k| k != "general"}
+            .item
+              %p
+                - relevant_components = whatsnew_page.component_news.keys.select{|k| k != "general"}
 
-              - if whatsnew_page.build_type == :unreleased
-                %strong #{site.products[product_id].name} #{whatsnew_page.build_info.version}
-                is
-                %strong coming soon
-                \!
-                - if relevant_components.length > 0
-                  %p See what we are preparing in it, including changes for:
+                - if whatsnew_page.build_type == :unreleased
+                  %strong #{site.products[product_id].name} #{whatsnew_page.build_info.version}
+                  is
+                  %strong coming soon
+                  \!
+                  - if relevant_components.length > 0
+                    %p See what we are preparing in it, including changes for:
+                  - else
+                    %p This version is a primarily bug-fix release.
+
                 - else
-                  %p This version is a primarily bug-fix release.
+                  %strong #{site.products[product_id].name} #{whatsnew_page.build_info.version}
+                  is the latest
+                  %strong #{site.labels[whatsnew_page.build_info.build_type_label]}
+                  version available for download.
+                  - if relevant_components.length > 0
+                    %p See what's new in it, including changes for:
+                  - else
+                    %p This version is a primarily bug-fix release.
 
-              - else
-                %strong #{site.products[product_id].name} #{whatsnew_page.build_info.version}
-                is the latest
-                %strong #{site.labels[whatsnew_page.build_info.build_type_label]}
-                version available for download.
                 - if relevant_components.length > 0
-                  %p See what's new in it, including changes for:
-                - else
-                  %p This version is a primarily bug-fix release.
+                  - relevant_component_names = Hash.new
+                  - relevant_components.each do |component_id|
+                    - relevant_component_names[site.components[component_id].name] = component_id
+                  - relevant_component_names.keys.sort{|x,y| x <=> y}.each_index do |index|
+                    - component_name = relevant_component_names.keys[index]
+                    %a{:href=>relative("#{whatsnew_page.output_path}##{relevant_component_names[component_name]}")} #{component_name}
+                    - if index < relevant_component_names.keys.length - 3
+                      %span<>,&nbsp;
+                    - elsif index == relevant_component_names.keys.length - 2
+                      %span<> &nbsp; and &nbsp;
+                    - elsif index == relevant_component_names.keys.length - 1
+                      %span<> .
 
-              - if relevant_components.length > 0
-                - relevant_component_names = Hash.new
-                - relevant_components.each do |component_id|
-                  - relevant_component_names[site.components[component_id].name] = component_id
-                - relevant_component_names.keys.sort{|x,y| x <=> y}.each_index do |index|
-                  - component_name = relevant_component_names.keys[index]
-                  %a{:href=>relative("#{whatsnew_page.output_path}##{relevant_component_names[component_name]}")} #{component_name}
-                  - if index < relevant_component_names.keys.length - 3
-                    %span<>,&nbsp;
-                  - elsif index == relevant_component_names.keys.length - 2
-                    %span<> &nbsp; and &nbsp;
-                  - elsif index == relevant_component_names.keys.length - 1
-                    %span<> .
-
-          %footer
-            %a.btn.btn-small{:href=>relative(whatsnew_page.output_path)} Read more &raquo;
+            %footer
+              %a.btn.btn-small{:href=>relative(whatsnew_page.output_path)} Read more &raquo;
