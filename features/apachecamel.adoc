@@ -1,12 +1,11 @@
 = Camel Developer Tools
 :page-layout: features
-:page-product_id: jbt_is 
+:page-product_id: jbt_core 
 :page-feature_id: apachecamel
 :page-feature_image_url: images/fuseintegrationtooling_icon.gif
-:page-feature_highlighted: false
-:page-feature_order: 10
+:page-feature_order: 8
 :page-feature_tagline: Helps get you over the hump
-sectlinks
+:page-issues_url: https://issues.jboss.org/projects/FUSETOOLS
 
 == Camel Developer Tools
 === Helps get you over the hump
