@@ -1,21 +1,21 @@
-= Camel Developer Tools
+= Fuse Tooling
 :page-layout: features
 :page-product_id: jbt_core 
-:page-feature_id: apachecamel
+:page-feature_id: fusetools
 :page-feature_image_url: images/fuseintegrationtooling_icon.gif
 :page-feature_order: 8
 :page-feature_tagline: Helps get you over the hump
 :page-issues_url: https://issues.jboss.org/projects/FUSETOOLS
 
-== Camel Developer Tools
+== Fuse Tooling
 === Helps get you over the hump
 ====
 ====
 image::images/fuseintegrationtooling_icon_small.gif[Camel Integration Tools]
 
-The Camel Developer Tools is an Eclipse-based IDE for creating and testing small- and large-scale integration applications. Its key features are a graphical routing editor, a full-featured Camel debugger for debugging locally running routing contexts, and an integrated testing platform that uses JMX to communicate with the containers in a small-scale test environment.
+Fuse Tooling is an Eclipse-based IDE for creating and testing small- and large-scale integration applications. Its key features are a graphical routing editor, a full-featured Camel debugger for debugging locally running routing contexts, and an integrated testing platform that uses JMX to communicate with the containers in a small-scale test environment.
 
-The Camel Developer Tools provide an easy way to create integration applications using the powers of http://camel.apache.org[Apache Camel] and its vast http://camel.apache.org/components.html[Component Library]. 
+Fuse Tooling provides an easy way to create integration applications using the powers of http://camel.apache.org[Apache Camel] and its vast http://camel.apache.org/components.html[Component Library]. 
 
 *Key Features:*
 
