@@ -36,6 +36,9 @@ forge:
 freemarker:
   name: Freemarker
 
+fusetools:
+  name: Fuse Tooling
+
 hibernate:
   name: Hibernate Tools
 
