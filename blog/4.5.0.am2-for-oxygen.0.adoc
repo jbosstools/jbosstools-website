@@ -1,0 +1,78 @@
+= JBoss Tools 4.5.0.AM2 for Eclipse Oxygen.0
+:page-layout: blog
+:page-author: jeffmaury
+:page-tags: [release, jbosstools, jbosscentral]
+:page-date: 2017-07-18
+
+Happy to announce 4.5.0.AM2 (Developer Milestone 2) build for Eclipse Oxygen.0.
+
+Downloads available at link:/downloads/jbosstools/oxygen/4.5.0.AM2.html[JBoss Tools 4.5.0 AM2].
+
+== What is New?
+
+Full info is at link:/documentation/whatsnew/jbosstools/4.5.0.AM2.html[this page]. Some highlights are below.
+
+=== OpenShift 3
+
+==== OpenShift server and Kubernetes server versions displayed
+
+The OpenShift server and Kubernetes server versions are now displayed in the OpenShift connection properties.
+This information is retrieved using an un-authenticated request login to the OpenShift cluster is not required.
+This allow user to verify the OpenShift and Kubernetes level when interacting.
+
+Here is an example based on an OpenShift connection against CDK3:
+
+image::/documentation/whatsnew/openshift/images/openshift-k8s-versions.png[width=600]
+
+if the cluster is not started or accessible, then no values are displayed:
+
+image::/documentation/whatsnew/openshift/images/openshift-k8s-versions1.png[width=600]
+
+=== Docker
+
+==== New Security Options
+
+Support has been added when launching commands in a Container to specify a security option profile. This can be done in lieu of specifying privileged mode. For example, to run gdbserver, one can specify "seccomp:unprofiled" to allow ptrace commands to be run by the gdb server.
+
+The Run Image Wizard has been modified to allow specifying an unconfined seccomp profile to replace the default seccomp profile. 
+
+image::/documentation/whatsnew/docker/images/docker_oxygen0/LinuxToolsUnconfinedOption.png[]
+
+Security options are also now shown in the Properties View.
+
+image::/documentation/whatsnew/docker/images/docker_oxygen0/LinuxToolsUnconfinedProperty.png[]
+
+=== Fuse Tooling
+
+==== Bean Support
+
+We are happy to finally announce support for *Beans* (Spring / Blueprint).
+
+Using the Route Editor you can now access Spring / Blueprint Beans in your Camel Context through the *Configurations* tab.
+
+image::/documentation/whatsnew/fusetools/images/beansupporteditortab.png[Configurations tab in Editor]
+
+In the *Configurations* tab you can see all global configuration elements of your Camel Context. You can ``Add``, ``Edit`` and ``Delete`` elements using the buttons on the right side.
+
+image::/documentation/whatsnew/fusetools/images/beancreated.png[Configurations tab content]
+
+By clicking the ``Add`` or ``Edit`` button a wizard will be openend to guide you on the creation of the Bean.
+
+image::/documentation/whatsnew/fusetools/images/newbeanwizard.png[New Bean wizard]
+
+In the wizard you can select an existing bean class from your project or create a new bean class. You can also specify constructor arguments and bean properties.
+Once created you can then modify the properties of that Bean inside the ``Properties`` view.
+
+image::/documentation/whatsnew/fusetools/images/beanproperties.png[alt]
+
+=== Freemarker
+
+==== Freemarker component deprecation
+
+The Freemarker component has been marked deprecated as there is no more maintenance on the source code. It is still available in Red Hat Central
+and may be removed in the future.
+
+
+Enjoy!
+
+Jeff Maury
