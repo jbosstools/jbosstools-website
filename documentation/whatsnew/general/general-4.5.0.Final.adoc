@@ -1,0 +1,14 @@
+= General 4.5.0.Final What's New
+:page-layout: whatsnew
+:page-component_id: general
+:page-component_version: 4.5.0.Final
+:page-product_id: jbt_core 
+:page-product_version: 4.5.0.Final
+
+== General for JBoss Tools 4.5.0.Final
+
+JBoss Tools is now targeting Eclipse Oxygen.
+
+== Fuse Tooling integration
+
+Fuse Tooling was previously part of JBoss Tools Integration Stack. It is now part of JBoss Tools itself for easier availability of development of Fuse integration projects. If you don't know yet about this project, please have a look to https://tools.jboss.org/features/fusetools.html[this short overview].
