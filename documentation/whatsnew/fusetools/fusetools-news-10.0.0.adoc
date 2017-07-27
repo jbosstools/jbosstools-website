@@ -23,7 +23,7 @@ In the *Configurations* tab you can see all global configuration elements of you
 
 image::./images/beancreated.png[Configurations tab content]
 
-By clicking the ``Add`` or ``Edit`` button a wizard will be openend to guide you on the creation of the Bean.
+By clicking the ``Add`` or ``Edit`` button a wizard will be opened to guide you on the creation of the Bean.
 
 image::./images/newbeanwizard.png[New Bean wizard]
 
