@@ -1,0 +1,210 @@
+= Continous delivery and deployment of an Eclipse stack 
+:page-date: 2015-07-20
+:page-layout: blog
+:page-author: maxandersen
+:page-tags: [cd, jbosscentral]
+
+I've started pondering on how and if it is actually possible to do a
+continuous delivery and even deployment pipeline of an Eclipse stack of plugins.
+
+I do not yet have the full answer for this, but thought I should write down
+my notes to try find an answer and see if others have input.
+
+By an Eclipse stack I mean having continuous delivery of a *set* of
+eclipse plugins, not just a single plugin. Think testing and deliver
+all of JBoss Tools plugin every week or even every day, fully unit, 
+integration and acceptance tested and automatically uploaded to the release site for all users to use on their version of Eclipse.
+
+Note: I'm ignoring the organizational changes needed for this,
+trying to focus on the technology needed to enable such change instead.
+I believe the organizational changes needed are the same and described in depth
+elsewhere - basically: everyone on the team needs to be supportive of the idea.
+
+== Why do we need continuous delivery/deployment ?
+
+Before I started reading the link:https://en.wikipedia.org/wiki/The_Phoenix_Project:_A_Novel_About_IT,_DevOps,_and_Helping_Your_Business_Win[Phoenix Project] I actually did not fully grok
+why continuous delivery was *really* needed. 
+
+It is not just about constant building and testing to see if the code is working.
+
+It is about being able to get from an idea (whether from a user or your own) to release
+something of value to your users - faster and more reliable than any of your competition.
+
+This is done by constantly automating and optimizing your build pipeline wherever you can. You spend much more time on optimizing the process than I think the industry is used to do.
+ 
+In the continuous world this in the extreme translates to be able to build,
+test and deploy your whole product automatically on any change to your master repositories. Often quoted example of this is
+link:http://www.infoq.com/presentations/Facebook-Release-Process[Facebook deploying to production] twice a day or
+link:http://www.infoq.com/news/2014/03/etsy-deploy-50-times-a-day[Etsy deploying 50 times a day].
+
+Deploying this many times every day might be overkill for Eclipse tooling, but having that as a goal as opposed to say once a month - 
+makes you re-think how you can and how you must do things very differently.
+Just think about how there is no longer time for separate QE testing, no time for doing a respin, no time for 
+writing documentation after the code is submitted - all this have to be done when the code is done.
+
+But let me not get ahead of myself - lets make sure we are on the same page of what continuous delivery/deployment actually is and means for Eclipse plugins.
+
+== Defining continuous delivery/deployment
+
+There is a whole range of continuous terms out there, let me start by
+how I define the most popular/used ones in context of an Eclipse plugin stack:
+
+Continuous build::
+image:images/continuous/continuous-build.png[] +
+Have an automated build that checks if your individual plugin
+compiles, builds and the unit tests passes. If good you have the
+result posted as an snapshot to an updatesite for bleeding users to
+use.
+Continuous integration::
+image:images/continuous/continuous-integration.png[] +
+Continuous build + you also run build/tests for any dependent plugin to
+check that it does not break when integrated. This includes testing
+plugins that are dependent on the changed plugin, testing OS differences, testing against mulitple versions of Eclipse etc.. Result is published
+to one or more updatesites for less-bleeding users to use.
+Continuous delivery::
+image:images/continuous/continuous-delivery.png[] +
+Continuous integration + automatic acceptance tests that verifies
+things works together well enough to be released. Once the acceptance
+test have passed there is a manual step to deliver the result to a
+fully working updatesite to customers that expect a stable production release.
+Continuous deployment::
+image:images/continuous/continuous-deployment.png[] +
+The same as continuous delivery but the acceptance test is so trusted
+and automated that deployment can be done automatically to the production
+updatesite.
+
+One thing that is missing in the above diagrams and text is that every step should be possible to view the current status of and you add as many measures/monitoring you can to ensure every step is done properly. This concept of visualization and constant feedback is key to make it all work and to get full benefits of it. 
+
+If you cannot test nor visualize addition of a new feature you are wasting your time.
+
+== Where are we today ?
+
+Continuous builds are today more or less trivial to do for Eclipse plugins thanks to Tycho. You simply just run `mvn clean verify` and
+publish the content of your `site/target` folder to a website for others to
+get easy access. i.e. most link:/[jbosstools] publishes link:http://download.jboss.org/jbosstools/mars/snapshots/builds/[snapshots]
+builds of each of its components.
+
+In some ways Eclipse platform it self have been doing this even before Tycho existed and even before continuous was cool. 
+
+But I claim that majority of Eclipse plugins (including Eclipse platform) primarily has a variation of Continuous Builds and very few if any has *true* Continuous Integration, including JBoss Tools. Some do some kind of integration testing, but rarely beyond their own plugin. There is no automated setup of testing a new build of Eclipse JDT breaking Eclipse M2E usecases (as an example).
+
+Key point here is *automated*.
+
+I haven't seen a setup where a fully automated pipeline of Eclipse builds starting from the single component that changed to all the important ones (not necessarily all) dependent plugins are tested with the new build.
+
+Have you ? I would love to hear about them.
+
+== Eclipse specific challenges
+
+One of the thing I noticed when reading about continous delivery is that they all most focus around single-deployment applications and applications where the people building the software control the full stack. This is typical for web applications. Web applications also have the advantage of a simple roll-out mechanism - just click refresh in the browser and you have the latest version.
+
+With desktop applications like Eclipse IDE's these things are not self-evident.
+ 
+=== Cross-plugin testing
+
+How to get build pick up the right versions of recent builds in an isolated world ?
+
+How to make it go fast ? parallise is not always easy with maven/tycho/p2
+
+build-monolith vs build-modular vs build-clever
+
+=== eclipse release train/third party plugins
+
+How to keep up ? 
+
+How to adopt changes in plugins that releases way less often ? 
+
+How to move upto release train without too much overhead ?
+
+=== UI driven testing
+
+Is SWTBot enough ?
+
+
+
+sikuli
+  https://www.eclipse.org/forums/index.php/t/207446/
+how to handle OS / resolution differences ?
+
+
+mindmap
+  http://sjpknight.com/wp-content/uploads/2014/05/Continuous-Delivery-for-Desktop-Applications.pdf
+
+nice article about CD for desktop app
+ http://leanstack.com/deploying-desktop-based-software-continuously/
+ http://www.startuplessonslearned.com/2010/01/case-study-continuous-deployment-makes.html ( seems like same but with working links)
+
+lessons:
+ No standalone QE team - no time.
+ monitor monitor monitor - need to be able to see if users are able to install latest version.
+ have users be able to pull features for testing before it goes into release (??? Cat ? )
+ 
+ tons of functional unit tests - test as user would use it.
+   parrelization 
+
+ Test user activation flow - TTHW - make sure basics works.
+
+   
+ not able to rollback - what then ? get higher confidence ?
+     continuous rolling beta to cat
+     stable to stable
+     maybe have remote rollback to last “save-point”  ?  
+
+we kinda already have continous deployment with our nightlies (just not gated/guarded)
+
+updates need to be kept at minimum - can’t expect users to download several 100 mbs every month - nor can our servers support it.
+
+5 step primer on continuous deployment
+ http://radar.oreilly.com/2009/03/continuous-deployment-5-eas.html
+
+5 whys
+  http://www.startuplessonslearned.com/2008/11/five-whys.html
+
+work in small batches
+  http://www.startuplessonslearned.com/2009/02/work-in-small-batches.html
+
+
+
+CI - http://www.startuplessonslearned.com/2008/12/continuous-integration-step-by-step.html
+  Don’t start with all tests - too unreliable.
+
+
+Are we ok making users unhappy ? should they be able to rollback ?
+http://steveblank.com/2013/11/21/when-product-features-disappear-amazon-apple-and-tesla-and-troubled-future-of-21st-century-consumers/
+http://steveblank.com/2013/11/21/when-product-features-disappear-amazon-apple-and-tesla-and-troubled-future-of-21st-century-consumers/
+
+
+diagram to define continuos delivery/deployment
+http://blog.crisp.se/2013/02/05/yassalsundman/continuous-delivery-vs-continuous-deployment
+
+
+=== Handling updates
+
+how to avoid pushing 100 X MB to users every week ? (build-monolith simplifies but result in massive updates)
+
+
+
+
+Books:
+The Phoenix Project - http://www.amazon.com/The-Phoenix-Project-Helping-Business/dp/0988262509
+Continous Delivery - http://www.amazon.com/Continuous-Delivery-Deployment-Automation-Addison-Wesley/dp/0321601912/ref=sr_1_1?s=books&ie=UTF8&qid=1437691976&sr=1-1&keywords=continuous+delivery
+Lean Enterprise - http://www.amazon.com/Lean-Enterprise-Performance-Organizations-Innovate-ebook/dp/B00QL5MSF8/ref=sr_1_1?s=books&ie=UTF8&qid=1437692045&sr=1-1&keywords=lean+enterprise
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
