@@ -33,34 +33,25 @@ tab: docs
   .span3.bs-docs-sidebar
     %ul.nav.nav-list.bs-docs-sidenav
       -# puts " #{page.build_info.product_id} #{page.build_info.version} archived: #{page.build_info.archived}"
-      - if (page.build_info.archived == false)
-        - whatsnew_pages = get_active_whatsnew_pages(site, page.build_info.product_id, page.build_info.version)
-        -# sorting active versions in reverse order
-        - whatsnew_pages.sort{|x,y| y.build_info.version <=> x.build_info.version}.each_with_index do |whatsnew_page, index|
-          %li{:class=>("selected expanded" if whatsnew_page.build_info.version == page.build_info.version)}
-            %a{:href=>relative(whatsnew_page.output_path)}
-              #{whatsnew_page.build_info.version}
-              - unless whatsnew_page.build_info.build_type_label.nil?
-                %span.visible-desktop.visible-phone{:class=>"label label_#{whatsnew_page.build_info.build_type_label}"}
-                  #{site.labels[whatsnew_page.build_info.build_type_label]}
-            - if whatsnew_page.build_info.version == page.build_info.version
-              %ul.nav.nav-nested.components
-                - component_ids.each_with_index do |component_id, index|
-                  %li.component{:class=>(index == 0 ? "active" : "")}
-                    %a{:href=>"##{component_id}"} #{site.components[component_id].name}
-            - if index < (whatsnew_pages.length - 1)
-              %li.separator
-      - else
-        %li{:class=>("selected expanded")}
-          %a{:href=>relative(page.output_path)}
-            #{page.build_info.version}
-            - unless page.build_info.build_type_label.nil?
-              %span{:class=>"label label_#{page.build_info.build_type_label}"}
-                #{site.labels[page.build_info.build_type_label]}
-          %ul.nav.nav-nested.components
-            - component_ids.each_with_index do |component_id, index|
-              %li.component{:class=>(index == 0 ? "active" : "")}
-                %a{:href=>"##{component_id}"} #{site.components[component_id].name}
+      - whatsnew_pages = get_active_whatsnew_pages(site, page.build_info.product_id, page.build_info.version)
+      -# sorting active versions in reverse order
+      - whatsnew_pages.sort{|x,y| y.build_info.version <=> x.build_info.version}.each_with_index do |whatsnew_page, index|
+        %li{:class=>("selected expanded" if whatsnew_page.build_info.version == page.build_info.version)}
+          %a{:href=>relative(whatsnew_page.output_path)}
+            #{whatsnew_page.build_info.version}
+            - if ! whatsnew_page.build_info.build_type_label.nil?
+              %span.visible-desktop.visible-phone{:class=>"label label_#{whatsnew_page.build_info.build_type_label}"}
+                #{site.labels[whatsnew_page.build_info.build_type_label]}
+            - if (whatsnew_page.build_info.archived == true)
+              %span.visible-desktop.visible-phone{:class=>"label label_archived"}
+                Archived
+          - if whatsnew_page.build_info.version == page.build_info.version
+            %ul.nav.nav-nested.components
+              - component_ids.each_with_index do |component_id, index|
+                %li.component{:class=>(index == 0 ? "active" : "")}
+                  %a{:href=>"##{component_id}"} #{site.components[component_id].name}
+          - if index < (whatsnew_pages.length - 1)
+            %li.separator
       -# link to older N&N
       %li
         %a{:href=>"http://docs.jboss.org/tools/whatsnew/"} Older Versions

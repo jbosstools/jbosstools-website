@@ -5,6 +5,12 @@
 :page-product_id: jbt_core
 :page-product_version: 4.5.0.AM2
 
+== Devstudio installer
+
+Fuse Tooling is now available from within the Red Hat JBoss Developer Studio installer, as an additional feature to install.
+
+image::./images/fuse-in-devstudio-installer.png[Select Additional Features To Install - Fuse Tooling]
+
 == Bean Support
 
 We are happy to finally announce support for *Beans* (Spring / Blueprint).
@@ -17,11 +23,12 @@ In the *Configurations* tab you can see all global configuration elements of you
 
 image::./images/beancreated.png[Configurations tab content]
 
-By clicking the ``Add`` or ``Edit`` button a wizard will be openend to guide you on the creation of the Bean.
+By clicking the ``Add`` or ``Edit`` button a wizard will be opened to guide you on the creation of the Bean.
 
 image::./images/newbeanwizard.png[New Bean wizard]
 
 In the wizard you can select an existing bean class from your project or create a new bean class. You can also specify constructor arguments and bean properties.
 Once created you can then modify the properties of that Bean inside the ``Properties`` view.
 
-image::./images/beanproperties.png[alt]
+image::./images/beanproperties.png[Bean Properties tab]
+
