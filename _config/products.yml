@@ -1109,6 +1109,7 @@ jbt_core:
           - name: Stand-alone BrowserSim
             file_size: 16MB
             url: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.jboss.tools.browsersim&a=org.jboss.tools.browsersim-standalone&v=3.8.4-SNAPSHOT&e=zip      
+      4.5.0.Final:
       4.5.0.AM2:
         update_site_url: http://download.jboss.org/jbosstools/oxygen/development/updates/
         marketplace_url: https://marketplace.eclipse.org/node/1617241 # broken for now - see https://bugs.eclipse.org/bugs/show_bug.cgi?id=518967
