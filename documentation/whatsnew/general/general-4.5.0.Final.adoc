@@ -12,3 +12,9 @@ JBoss Tools is now targeting Eclipse Oxygen.
 == Fuse Tooling integration
 
 Fuse Tooling was previously part of JBoss Tools Integration Stack. It is now part of JBoss Tools itself for easier availability of development of Fuse integration projects. If you don't know yet about this project, please have a look to https://tools.jboss.org/features/fusetools.html[this short overview].
+
+== Seam component deprecation
+
+The Seam component has been marked deprecated as the Seam project has been stopped. It is still available in Red Hat Central
+and may be removed in the future.
+
