@@ -95,6 +95,29 @@ devstudio:
   url_path_fragment: devstudio
   streams:
     oxygen:
+      11.0.0.GA:
+        update_site_url: https://devstudio.redhat.com/11/stable/updates/
+        marketplace_url: https://marketplace.eclipse.org/node/1616973
+        marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
+        release_date: 2017-08-14
+        supported_devstudio_is_version: 11.0.0.AM1
+        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        blog_announcement_url: /blog/11.0.0.ga-for-oxygen.0.html
+        installers:
+          - name: Stand-alone Installer
+            url: http://www.jboss.org/download-manager/content/origin/files/sha256/59/59560c89b76f57ee72d9bd20bac047146f6f369fb42fba94ebaccd65c71209f5/devstudio-11.0.0.GA-installer-standalone.jar
+            file_size: 645MB
+        zips:
+          - name: Update site (including sources) bundle of JBoss Developer Studio
+            url: http://www.jboss.org/download-manager/content/origin/files/sha256/cc/cce2d46da31bb3b64e84aa9965dec186eee269f70d90398782530b9e1d8188de/devstudio-11.0.0.GA-updatesite-core.zip
+            file_size: 673MB
+          - name: JBoss Central Zip
+            url: http://www.jboss.org/download-manager/content/origin/files/sha256/3e/3e13eca37abe74957b3f775178fc6fbf7827f4f9789e6ebb2731c1f424125c5a/devstudio-11.0.0.GA-updatesite-central.zip
+            file_size:  79MB
+          - name: Target Platform for JBoss Developer Studio
+            url: https://devstudio.redhat.com/static/11/stable/updates/core/devstudio-11.0.0.GA-target-platform.zip
+            file_size: 827MB
       11.x.Nightly:
         update_site_url: https://devstudio.redhat.com/11/snapshots/updates/
     neon:
@@ -1110,10 +1133,30 @@ jbt_core:
             file_size: 16MB
             url: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.jboss.tools.browsersim&a=org.jboss.tools.browsersim-standalone&v=3.8.4-SNAPSHOT&e=zip      
       4.5.0.Final:
-      4.5.0.AM2:
-        update_site_url: http://download.jboss.org/jbosstools/oxygen/development/updates/
+        update_site_url: http://download.jboss.org/jbosstools/oxygen/stable/updates/
         marketplace_url: https://marketplace.eclipse.org/node/1617241 # broken for now - see https://bugs.eclipse.org/bugs/show_bug.cgi?id=518967
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1617241
+        release_date: 2017-08-14
+        supported_jbt_is_version: 4.5.0.AM1
+        blog_announcement_url: /blog/11.0.0.ga-for-oxygen.0.html
+        documentation_url: http://docs.jboss.org/tools/
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 620MB
+            url: http://download.jboss.org/jbosstools/static/oxygen/development/updates/core/jbosstools-4.5.0.Final-updatesite-core.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/oxygen/development/updates/core/jbosstools-4.5.0.Final-updatesite-core.zip.sha256
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 223MB
+            url: http://download.jboss.org/jbosstools/static/oxygen/development/updates/core/jbosstools-4.5.0.Final-src.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/oxygen/development/updates/core/jbosstools-4.5.0.Final-src.zip.sha256
+          - name: Stand-alone BrowserSim
+            file_size: 16MB
+            url: http://download.jboss.org/jbosstools/static/oxygen/development/updates/core/jbosstools-4.5.0.Final-browsersim-standalone.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/oxygen/development/updates/core/jbosstools-4.5.0.Final-browsersim-standalone.zip.sha256
+          - name: Release Notes
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
+      4.5.0.AM2:
+        update_site_url: http://download.jboss.org/jbosstools/oxygen/development/updates/
         release_date: 2017-07-18
         supported_jbt_is_version: 4.5.0.AM1
         blog_announcement_url: /blog/4.5.0.am2-for-oxygen.0.html
