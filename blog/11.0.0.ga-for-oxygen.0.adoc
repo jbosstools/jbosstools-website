@@ -2,7 +2,7 @@
 :page-layout: blog
 :page-author: jeffmaury
 :page-tags: [release, jbosstools, devstudio, jbosscentral]
-:page-date: 2017-08-15
+:page-date: 2017-08-14
 
 link:/downloads/jbosstools/oxygen/4.5.0.Final.html[JBoss Tools 4.5] and link:/downloads/devstudio/oxygen/11.0.0.GA.html[Red Hat JBoss Developer Studio 11.0] for Eclipse Oxygen are here waiting for you. Check it out!
 
