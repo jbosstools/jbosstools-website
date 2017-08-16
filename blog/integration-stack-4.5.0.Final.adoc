@@ -1,0 +1,78 @@
+= Integration Tooling for Eclipse Oxygen
+:page-layout: blog
+:page-author: pleacu
+:page-date: 2017-08-16
+:page-tags: [release, jbosstools, devstudio, jbosscentral]
+
+*Try our complete Eclipse-Oxygen capable, Devstudio 11 compatible integration tooling.*
+
+image::/blog/images/jbosstools-jbdevstudio-blog-header.png[caption=""]
+
+*JBoss Tools Integration Stack 4.5.0.Final / JBoss Developer Studio Integration Stack 11.0.0.GA*
+
+NOTE: All of the Integration Stack components have been verified to work with the same dependencies as JBoss Tools 4.5 and Developer Studio 11.
+
+== What's new for this release?
+
+This is the initial release in support of Eclipse Oxygen.  It syncs up with Devstudio 11.0.0, JBoss Tools 4.5.0 and Eclipse Oxygen.R.  It is also a maintenance release for SwitchYard and the BRMS tooling.  Note that Data Virtualization tooling support is not yet available (scheduled for the autumn) and SwitchYard is deprecated in this release.
+
+=== Released Tooling Highlights
+
+==== JBoss Business Process and Rules Development
+
+===== BPMN2 Modeler Known Issues
+
+See the link:https://access.redhat.com/documentation/en-us/red_hat_jboss_developer_studio_integration_stack/11.0/html/11.0.0_release_notes_and_known_issues/known_issues#bpmn2_1_4_0_final_2[BPMN2 1.4.0.Final Known Issues Section] of the Integration Stack 11.0.0.GA release notes.
+
+===== Drools/jBPM6 Known Issues
+
+See the link:https://access.redhat.com/documentation/en-us/red_hat_jboss_developer_studio_integration_stack/11.0/html/11.0.0_release_notes_and_known_issues/known_issues#drools_7_0_1_final_2[Drools 7.0.1.Final Known Issues Section] of the Integration Stack 11.0.0.GA release notes.
+
+===== SwitchYard Highlights
+
+See the link:https://access.redhat.com/documentation/en-us/red_hat_jboss_developer_studio_integration_stack/11.0/html/11.0.0_release_notes_and_known_issues/known_issues#switchyard_2_4_0_final_2[SwitchYard 2.4.0.Final Resolved Issues Section] of the Integration Stack 11.0.0.GA release notes.
+
+==== Data Virtualization Highlights
+
+===== Teiid Designer
+
+Not yet available for Oxygen.
+
+== What's an Integration Stack?
+
+Red Hat JBoss Developer Studio Integration Stack is a set of Eclipse-based development tools. It further enhances the IDE functionality provided by JBoss Developer Studio, with plug-ins specifically for use when developing for other Red Hat JBoss products.  It's where DataVirt Tooling, SOA tooling and BRMS tooling are aggregated.  The following frameworks are supported:
+
+=== JBoss Business Process and Rules Development
+
+JBoss Business Process and Rules Development plug-ins provide design, debug and testing tooling for developing business processes for Red Hat JBoss BRMS and Red Hat JBoss BPM Suite.
+
+* link:/features/bpel.html[BPEL Designer] - Orchestrating your business processes.
+* link:/features/bpmn2.html[BPMN2 Modeler] - A graphical modeling tool which allows creation and editing of Business Process Modeling Notation diagrams using graphiti.
+* link:/features/drools.html[Drools] - A Business Logic integration Platform which provides a unified and integrated platform for Rules, Workflow and Event Processing including KIE.
+* link:/features/jbpm.html[jBPM6] - A flexible Business Process Management (BPM) suite.
+
+=== JBoss Data Virtualization Development
+
+JBoss Data Virtualization Development plug-ins provide a graphical interface to manage various aspects of Red Hat JBoss Data Virtualization instances, including the ability to design virtual databases and interact with associated governance repositories.
+
+* link:/features/teiiddesigner.html[Teiid Designer] - A visual tool that enables rapid, model-driven definition, integration, management and testing of data services without programming using the Teiid runtime framework.
+
+=== JBoss Integration and SOA Development
+
+JBoss Integration and SOA Development plug-ins provide tooling for developing, configuring and deploying BRMS and SwitchYard to Red Hat JBoss Fuse and Fuse Fabric containers.
+
+* All of the Business Process and Rules Development plugins, plus SwitchYard.
+
+=== The JBoss Tools website features tab
+
+Don't miss the link:/features[Features tab] for up to date information on your favorite Integration Stack components.
+
+== Installation
+
+The easiest way to install the Integration Stack components is through the link:https://access.redhat.com/jbossnetwork/restricted/listSoftware.html?downloadType=distributions&product=jbossdeveloperstudio&version=11.0.0[stand-alone installer].
+
+For a complete set of Integration Stack installation instructions, see link:https://access.redhat.com/documentation/en/red-hat-jboss-developer-studio-integration-stack/10.0/paged/installation-guide/[Integration Stack Installation Instructions]
+
+_Be the first to try it on Oxygen!_
+
+Paul Leacu.
