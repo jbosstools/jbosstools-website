@@ -61,7 +61,7 @@ JBoss Data Virtualization Development plug-ins provide a graphical interface to 
 
 JBoss Integration and SOA Development plug-ins provide tooling for developing, configuring and deploying BRMS and SwitchYard to Red Hat JBoss Fuse and Fuse Fabric containers.
 
-* All of the Business Process and Rules Development plugins, plus SwitchYard.
+* All of the Business Process and Rules Development plugins plus SwitchYard.
 
 === The JBoss Tools website features tab
 
