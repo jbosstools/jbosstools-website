@@ -14,7 +14,7 @@ NOTE: All of the Integration Stack components have been verified to work with th
 
 == What's new for this release?
 
-This is the initial release in support of Eclipse Oxygen.  It syncs up with Devstudio 11.0.0, JBoss Tools 4.5.0 and Eclipse Oxygen.R.  It is also a maintenance release for SwitchYard and the BRMS tooling.  Note that Data Virtualization tooling support is not yet available (scheduled for the autumn) and SwitchYard is deprecated in this release.
+This is the initial release in support of Eclipse Oxygen.  It syncs up with Devstudio 11.0.0, JBoss Tools 4.5.0 and Eclipse Oxygen.R.  It is also a maintenance release for SwitchYard and BRMS tooling.  Note that Data Virtualization tooling support is not yet available (scheduled for the autumn) and SwitchYard is deprecated in this release.
 
 === Released Tooling Highlights
 
