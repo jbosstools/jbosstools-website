@@ -4,17 +4,23 @@
 :page-date: 2017-08-16
 :page-tags: [release, jbosstools, devstudio, jbosscentral]
 
-*Try our complete Eclipse-Oxygen capable, Devstudio 11 compatible integration tooling.*
+*Try our complete Eclipse Oxygen and Red Hat JBoss Developer Studio 11 compatible integration tooling.*
 
 image::/blog/images/jbosstools-jbdevstudio-blog-header.png[caption=""]
 
-*JBoss Tools Integration Stack 4.5.0.Final / JBoss Developer Studio Integration Stack 11.0.0.GA*
+*JBoss Tools Integration Stack 4.5.0.Final / Developer Studio Integration Stack 11.0.0.GA*
 
 NOTE: All of the Integration Stack components have been verified to work with the same dependencies as JBoss Tools 4.5 and Developer Studio 11.
 
 == What's new for this release?
 
-This is the initial release in support of Eclipse Oxygen.  It syncs up with Devstudio 11.0.0, JBoss Tools 4.5.0 and Eclipse Oxygen.R.  It is also a maintenance release for SwitchYard and BRMS tooling.  Note that Data Virtualization tooling support is not yet available (scheduled for the autumn) and SwitchYard is deprecated in this release.
+This is the initial release in support of Eclipse Oxygen.  It syncs up with Developer Studio 11.0.0, JBoss Tools 4.5.0 and Eclipse 4.7.0 (Oxygen.0).  It is also a maintenance release for SwitchYard and BRMS tooling.
+
+Data Virtualization tooling support is not yet available (scheduled for the autumn).
+
+SwitchYard is deprecated in this release.
+
+link:/features/fusetools.html[Fuse Tooling] has moved out of the Integration Stack to be a core part of JBoss Tools and Developer Studio.
 
 === Released Tooling Highlights
 
@@ -53,7 +59,7 @@ JBoss Business Process and Rules Development plug-ins provide design, debug and 
 
 === JBoss Data Virtualization Development
 
-JBoss Data Virtualization Development plug-ins provide a graphical interface to manage various aspects of Red Hat JBoss Data Virtualization instances, including the ability to design virtual databases and interact with associated governance repositories.
+JBoss Data Virtualization Development plug-ins provide a graphical interface to manage various aspects of Red Hat JBoss Data Virtualization instances, including the ability to design virtual databases and interact with associated governance repositories. Data Virtualization tooling support is not yet available (scheduled for the autumn).
 
 * link:/features/teiiddesigner.html[Teiid Designer] - A visual tool that enables rapid, model-driven definition, integration, management and testing of data services without programming using the Teiid runtime framework.
 
@@ -61,7 +67,8 @@ JBoss Data Virtualization Development plug-ins provide a graphical interface to 
 
 JBoss Integration and SOA Development plug-ins provide tooling for developing, configuring and deploying BRMS and SwitchYard to Red Hat JBoss Fuse and Fuse Fabric containers.
 
-* All of the Business Process and Rules Development plugins plus SwitchYard.
+* All of the Business Process and Rules Development plugins plus SwitchYard. Switchyard is deprecated as of this release.
+* link:/features/fusetools.html[Fuse Tooling] has moved out of the Integration Stack to be a core part of JBoss Tools and Developer Studio.
 
 === The JBoss Tools website features tab
 
