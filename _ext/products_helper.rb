@@ -140,6 +140,7 @@ module Awestruct
         #puts " Release date: #{info.version}: #{info.release_date}"
         info.renamed_as = build_info["renamed_as"] unless build_info.nil?
         info.eclipse_version = eclipse_version
+        info.eclipse_name = build_info["eclipse_name"] unless build_info.nil?
         info.build_type = get_build_type(site, product_id, product_version)
         info.build_type_label = get_build_type_label(site, product_id, product_version, info.build_type, info.archived)
         info.blog_announcement_url = build_info["blog_announcement_url"] unless build_info.nil?
