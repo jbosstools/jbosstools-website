@@ -5,6 +5,7 @@ MAINTAINER Max Rydahl Andersen <max@jboss.org>
 RUN yum install -y epel-release which tar bzip2 gcc ruby-devel libxml2 libxml2-devel libxslt libxslt-devel libcurl-devel git
 
 # when running with above nodejs was not available
+RUN curl --silent --location https://rpm.nodesource.com/setup_6.x | bash -
 RUN yum install -y nodejs
 
 RUN yum install -y wget
