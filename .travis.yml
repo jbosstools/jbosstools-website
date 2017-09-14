@@ -1,7 +1,9 @@
 sudo: false
 language: ruby
-cache: bundler
-bundler_args: --without development --path .bundle
+before_install:
+  - gem install bundler
+#cache: bundler
+#bundler_args: --without development --path .bundle
 rvm:
 - 2.2.1
 branches:
