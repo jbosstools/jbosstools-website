@@ -3,8 +3,8 @@ language: ruby
 before_install:
 - gem update bundler
 - gem cleanup bundler
-#cache: bundler
-#bundler_args: --without development --path .bundle
+cache: bundler
+bundler_args: --without development --path .bundle
 rvm:
 - 2.2.1
 branches:
