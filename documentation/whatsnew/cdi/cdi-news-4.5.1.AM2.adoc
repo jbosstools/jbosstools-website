@@ -1,0 +1,15 @@
+= CDI Tools What's New in 4.5.1.AM2
+:page-layout: whatsnew
+:page-component_id: cdi
+:page-component_version: 4.5.1.AM2
+:page-product_id: jbt_core 
+:page-product_version: 4.5.1.AM2
+
+== CDI 2.0
+	
+CDI Tools now support CDI 2.0 projects. If your CDI project (with enabled CDI support) has CDI 2.0 jars in its classpath, CDI Tools will recognize it as CDI 2.0 project automatically.
+There is no need to use any special settings to distinguish CDI 1.0 or CDI 1.1 from CDI 2.0 in CDI Tools.
+
+The new javax.enterprise.event.ObservesAsync is now being validated according to the CDI specifications. 
+
+related_jira::JBIDE-24949[]
