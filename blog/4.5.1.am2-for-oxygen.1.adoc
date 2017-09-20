@@ -1,0 +1,78 @@
+= JBoss Tools 4.5.1.AM2 for Eclipse Oxygen.1
+:page-layout: blog
+:page-author: jeffmaury
+:page-tags: [release, jbosstools, jbosscentral]
+:page-date: 2017-09-19
+
+Happy to announce 4.5.1.AM2 (Developer Milestone 2) build for Eclipse Oxygen.1.
+
+Downloads available at link:/downloads/jbosstools/oxygen/4.5.1.AM2.html[JBoss Tools 4.5.1 AM2].
+
+== What is New?
+
+Full info is at link:/documentation/whatsnew/jbosstools/4.5.0.AM2.html[this page]. Some highlights are below.
+
+=== OpenShift 3
+
+==== New command to tune resource limits
+
+A new command has been added to tune resource limits (CPU, memory) on an OpenShift deployment.
+It's available for a Service, a DeploymentConfig, a ReplicationController or a Pod.
+
+To activate it, go the the OpenShift explorer, select the OpenShift resource, right click and select `Edit resource limits`.
+The following dialog will show up:
+
+image::/documentation/whatsnew/openshift/images/edit-resource-limits.png[width=600]
+
+After you changed the resource limits for this deployment, it will be updated and new pods will be spawned (not for ReplicationController)
+
+image::/documentation/whatsnew/openshift/images/edit-resource-limits1.png[width=600]
+
+==== Discover Docker registry URL for OpenShift connections
+
+When an OpenShift connection is created, the Docker registry URL is empty. When the CDK is started through the CDK server adapter, an OpenShift
+connection is created or updated if a matching OpenShift connection is found. But what if you have several OpenShift connections, the remaining ones
+will be left with the empty URL.
+
+You can find the matching Docker registry URL when editing the OpenShift connection through the `Discover` button:
+
+image::/documentation/whatsnew/openshift/images/edit-connection-discover.png[width=600]
+
+Click on the `Discover` button and the Docker registry URL will be filled if a matching started CDK server adapter is found:
+
+image::/documentation/whatsnew/openshift/images/edit-connection-discover1.png[width=600]
+
+=== CDI Tools
+
+==== CDI 2.0
+	
+CDI Tools now support CDI 2.0 projects. If your CDI project (with enabled CDI support) has CDI 2.0 jars in its classpath, CDI Tools will recognize it as CDI 2.0 project automatically.
+There is no need to use any special settings to distinguish CDI 1.0 or CDI 1.1 from CDI 2.0 in CDI Tools.
+
+The new javax.enterprise.event.ObservesAsync is now being validated according to the CDI specifications. 
+
+=== Fuse Tooling
+
+==== Apache Karaf 4.x Server Adapter
+
+We are happy to announce the addition of new Apache Karaf server adapters. You can now download and install Apache Karaf 4.0 and 4.1 from within your development environment.
+
+image::/documentation/whatsnew/fusetools/images/karaf4xadapters.png[Apache Karaf 4x Server Adapters]
+
+==== Switch Apache Camel Version
+
+You can now change the Apache Camel version used in your project. To do that you invoke the context menu of the project in the project explorer and navigate into the ``Configure`` menu. There you will find the menu entry called ``Change Camel Version`` which
+will guide you through this process.
+
+image::/documentation/whatsnew/fusetools/images/switchcamelversion.png[Switch Camel Version]
+
+==== Improved Validation
+
+The validation in the editor has been improved to find containers which lack mandatory child elements. (for instance a Choice without a child element)
+
+image::/documentation/whatsnew/fusetools/images/containerchildvalidation.png[Improved validation]
+
+
+Enjoy!
+
+Jeff Maury
