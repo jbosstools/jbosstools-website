@@ -12,6 +12,7 @@ It is possible to login from JBoss Tools to OpenShift.io. A single account will 
 needed account information (tokens,...) will be stored securely.
 
 There are two ways to login onto OpenShift.io:
+
 * through the UI
 * via a third party service that will invoke the proper extension point
 
