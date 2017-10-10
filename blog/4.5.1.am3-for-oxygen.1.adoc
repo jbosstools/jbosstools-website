@@ -1,0 +1,98 @@
+= JBoss Tools 4.5.1.AM3 for Eclipse Oxygen.1
+:page-layout: blog
+:page-author: jeffmaury
+:page-tags: [release, jbosstools, jbosscentral]
+:page-date: 2017-10-10
+
+Happy to announce 4.5.1.AM3 (Developer Milestone 3) build for Eclipse Oxygen.1.
+
+Downloads available at link:/downloads/jbosstools/oxygen/4.5.1.AM3.html[JBoss Tools 4.5.1 AM3].
+
+== What is New?
+
+Full info is at link:/documentation/whatsnew/jbosstools/4.5.1.AM3.html[this page]. Some highlights are below.
+
+=== OpenShift.io
+
+==== OpenShift.io login
+
+It is possible to login from JBoss Tools to OpenShift.io. A single account will be maintained per workspace. Once you initially logged onto OpenShift.io, all
+needed account information (tokens,...) will be stored securely.
+
+There are two ways to login onto OpenShift.io:
+
+* through the UI
+* via a third party service that will invoke the proper extension point
+
+===== UI based login to OpenShift.io
+
+In the toobar, you should see a new icon image:/documentation/whatsnew/openshift/images/osio-16x16.png[Toolbar]. Click on it and it will launch the login.
+
+If this is the first time you login to OpenShift.io or if you OpenShift.io account tokens are not valid anymore, you should see a browser launched with the following content:
+
+image::/documentation/whatsnew/openshift/images/osio-browser.png[]
+
+Enter your RHDP login and the browser will then auto-close and an extract (for security reasons) of the OpenShift.io token will be displayed:
+
+image::/documentation/whatsnew/openshift/images/osio-token-dialog.png[]
+
+This dialog will be also shown if an OpenShift.io account was configured in the workspace and the account information is valid.
+
+===== Via extension point
+
+The OpenShift.io integration can be invoked by a third party service through the `org.jboss.tools.openshift.io.code.tokenProvider` extension point.
+This extension point will perform the same actions as the UI but basically will return an access token for OpenShift.io to the third party service.
+A detailed explanation of how to use this extension point is described here: https://github.com/jbosstools/jbosstools-openshift/wiki/OpenShift.io-token-provider[Wiki page]
+ 
+You can display the account information using the Eclipse `Jboss Tools -> OpenShift.io` preference node. If you workspace does not contain an OpenShift.io account yet, you should see the following:
+
+image::/documentation/whatsnew/openshift/images/osio-preferences.png[]
+
+If you have a configured OpenShift.io account, you should see this:
+
+image::/documentation/whatsnew/openshift/images/osio-preferences1.png[]
+
+==== CDK 3.2 Beta Server Adapter
+
+A new server adapter has been added to support the next generation of CDK 3.2. This is Tech Preview in this release as CDK 3.2 is Beta.
+While the server adapter itself has limited functionality, it is able to start and stop the CDK virtual machine via its minishift binary.
+Simply hit Ctrl+3 (Cmd+3 on OSX) and type CDK, that will bring up a command to setup and/or launch the CDK server adapter.
+You should see the old CDK 2 server adapter along with the new CDK 3 one (labeled *Red Hat Container Development Kit 3.2+* ).
+
+
+image::/documentation/whatsnew/openshift/images/cdk3.2-server-adapter.png[width=600]
+
+All you have to do is set the credentials for your Red Hat account, the location of the CDK’s minishift binary file, the type of virtualization hypervisor
+and an optional CDK profile name.
+
+image::/documentation/whatsnew/openshift/images/cdk3.2-server-adapter1.png[width=600]
+
+Once you’re finished, a new CDK Server adapter will then be created and visible in the Servers view.
+
+image::/documentation/whatsnew/openshift/images/cdk3.2-server-adapter2.png[width=600]
+
+Once the server is started, Docker and OpenShift connections should appear in their respective views, allowing the user to quickly create a new Openshift application and begin developing their AwesomeApp in a highly-replicatable environment.
+
+image::/documentation/whatsnew/openshift/images/cdk3.2-server-adapter3.png[width=600]
+image::/documentation/whatsnew/openshift/images/cdk3.2-server-adapter4.png[width=600]
+
+WARNING: This is Tech Preview. The implementation is subject to change, may not work with next releases of CDK 3.2 and testing has been limited.
+
+=== Fuse Tooling
+
+== Global Beans: improve support for Bean references
+
+It is now possible to set Bean references from User Interface when creating a new Bean:
+
+image::/documentation/whatsnew/fusetools/images/factoryBeanReference.png[Create Factory Bean Reference]
+
+Editing Bean references is also now available on the properties view when editing an existing Bean:
+
+image::/documentation/whatsnew/fusetools/images/factoryBeanReference-propertiesView.png[Edit Factory Bean Reference]
+
+Additional validation has been added to help users avoid mixing Beans defined with class names and Beans defined referencing other beans.
+
+
+Enjoy!
+
+Jeff Maury
