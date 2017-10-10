@@ -1151,6 +1151,30 @@ jbt_core:
           - name: Stand-alone BrowserSim
             file_size: 16MB
             url: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.jboss.tools.browsersim&a=org.jboss.tools.browsersim-standalone&v=3.8.100-SNAPSHOT&e=zip
+      4.5.1.AM3:
+        update_site_url: http://download.jboss.org/jbosstools/oxygen/development/updates/
+        #marketplace_url: https://marketplace.eclipse.org/node/1617241 # broken for now - see https://bugs.eclipse.org/bugs/show_bug.cgi?id=518967
+        #marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1617241
+        release_date: 2017-10-10
+        supported_jbt_is_version: 4.5.0.Final
+        blog_announcement_url: /blog/4.5.1.am3-for-oxygen.1.html
+        documentation_url: http://docs.jboss.org/tools/
+        eclipse_name: Eclipse Oxygen 4.7.1
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 621MB
+            url: http://download.jboss.org/jbosstools/static/oxygen/development/updates/core/jbosstools-4.5.1.AM3-updatesite-core.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/oxygen/development/updates/core/jbosstools-4.5.1.AM3-updatesite-core.zip.sha256
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 226MB
+            url: http://download.jboss.org/jbosstools/static/oxygen/development/updates/core/jbosstools-4.5.1.AM3-src.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/oxygen/development/updates/core/jbosstools-4.5.1.AM3-src.zip.sha256
+          - name: Stand-alone BrowserSim
+            file_size: 16MB
+            url: http://download.jboss.org/jbosstools/static/oxygen/development/updates/core/jbosstools-4.5.1.AM3-browsersim-standalone.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/oxygen/development/updates/core/jbosstools-4.5.1.AM3-browsersim-standalone.zip.sha256
+          - name: Release Notes
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
       4.5.1.AM2:
         update_site_url: http://download.jboss.org/jbosstools/oxygen/development/updates/
         #marketplace_url: https://marketplace.eclipse.org/node/1617241 # broken for now - see https://bugs.eclipse.org/bugs/show_bug.cgi?id=518967
