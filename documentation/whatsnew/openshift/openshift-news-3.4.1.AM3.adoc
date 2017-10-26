@@ -46,6 +46,7 @@ image::./images/osio-preferences1.png[]
 
 related_jira::JBIDE-24793[]
 
+ifndef::finalnn[]
 === CDK 3.2 Beta Server Adapter
 
 A new server adapter has been added to support the next generation of CDK 3.2. This is Tech Preview in this release as CDK 3.2 is Beta.
@@ -73,5 +74,6 @@ image::./images/cdk3.2-server-adapter4.png[width=600]
 WARNING: This is Tech Preview. The implementation is subject to change, may not work with next releases of CDK 3.2 and testing has been limited.
    
 related_jira::JBIDE-25055[]
+endif::finalnn[]
 
 
