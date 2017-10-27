@@ -1,0 +1,286 @@
+= JBoss Tools and Red Hat Developer Studio for Eclipse Oxygen
+:page-layout: blog
+:page-author: jeffmaury
+:page-tags: [release, jbosstools, devstudio, jbosscentral]
+:page-date: 2017-11-06
+
+link:/downloads/jbosstools/oxygen/4.5.1.Final.html[JBoss Tools 4.5.1] and link:/downloads/devstudio/oxygen/11.1.0.GA.html[Red Hat JBoss Developer Studio 11.1] for Eclipse Oxygen.1A are here waiting for you. Check it out!
+
+image::/blog/images/devstudio11.png[]
+
+== Installation
+
+JBoss Developer Studio comes with everything pre-bundled in its installer. Simply download it from our https://www.jboss.org/products/devstudio.html[JBoss Products page] and run it like this:
+ 
+    java -jar jboss-devstudio-<installername>.jar
+
+JBoss Tools or Bring-Your-Own-Eclipse (BYOE) JBoss Developer Studio require a bit more:
+
+This release requires at least Eclipse 4.7 (Oxygen) but we recommend
+using the latest http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/oxygen1a[Eclipse 4.7.1A Oxygen JEE Bundle] since then you get most of the dependencies preinstalled. 
+
+Once you have installed Eclipse, you can either find us on the Eclipse Marketplace under "JBoss Tools" or "Red Hat JBoss Developer Studio".
+
+For JBoss Tools, you can also use our update site directly.
+
+    http://download.jboss.org/jbosstools/oxygen/stable/updates/
+
+== What is new? 
+
+Our main focus for this release was on adoption of Java9, improvements for container based development and bug fixing.
+Eclipse Oxygen itself has link:https://www.youtube.com/playlist?list=PLy7t4z5SYNaTM66CahSlkMh5YkndYXMUq[a lot of new cool stuff] but let me highlight just a few updates in both Eclipse Oxygen and JBoss Tools plugins that I think are worth mentioning.
+
+=== OpenShift 3
+
+==== CDK 3.2 Server Adapter
+
+A new server adapter has been added to support the next generation of CDK 3.2.
+While the server adapter itself has limited functionality, it is able to start and stop the CDK virtual machine via its minishift binary.
+Simply hit Ctrl+3 (Cmd+3 on OSX) and type CDK, that will bring up a command to setup and/or launch the CDK server adapter.
+You should see the old CDK 2 server adapter along with the new CDK 3 one (labeled *Red Hat Container Development Kit 3.2+* ).
+
+
+image::/documentation/whatsnew/openshift/images/cdk3.2-server-adapter.png[width=600]
+
+All you have to do is set the credentials for your Red Hat account, the location of the CDK’s minishift binary file, the type of virtualization hypervisor
+and an optional CDK profile name.
+
+image::/documentation/whatsnew/openshift/images/cdk3.2-server-adapter1.png[width=600]
+
+Once you’re finished, a new CDK Server adapter will then be created and visible in the Servers view.
+
+image::/documentation/whatsnew/openshift/images/cdk3.2-server-adapter2.png[width=600]
+
+Once the server is started, Docker and OpenShift connections should appear in their respective views, allowing the user to quickly create a new Openshift application and begin developing their AwesomeApp in a highly-replicatable environment.
+
+image::/documentation/whatsnew/openshift/images/cdk3.2-server-adapter3.png[width=600]
+image::/documentation/whatsnew/openshift/images/cdk3.2-server-adapter4.png[width=600]
+
+==== New command to tune resource limits
+
+A new command has been added to tune resource limits (CPU, memory) on an OpenShift deployment.
+It's available for a Service, a DeploymentConfig, a ReplicationController or a Pod.
+
+To activate it, go the the OpenShift explorer, select the OpenShift resource, right click and select `Edit resource limits`.
+The following dialog will show up:
+
+image::/documentation/whatsnew/openshift/images/edit-resource-limits.png[width=600]
+
+After you changed the resource limits for this deployment, it will be updated and new pods will be spawned (not for ReplicationController)
+
+image::/documentation/whatsnew/openshift/images/edit-resource-limits1.png[width=600]
+
+==== Discover Docker registry URL for OpenShift connections
+
+When an OpenShift connection is created, the Docker registry URL is empty. When the CDK is started through the CDK server adapter, an OpenShift
+connection is created or updated if a matching OpenShift connection is found. But what if you have several OpenShift connections, the remaining ones
+will be left with the empty URL.
+
+You can find the matching Docker registry URL when editing the OpenShift connection through the `Discover` button:
+
+image::/documentation/whatsnew/openshift/images/edit-connection-discover.png[width=600]
+
+Click on the `Discover` button and the Docker registry URL will be filled if a matching started CDK server adapter is found:
+
+image::/documentation/whatsnew/openshift/images/edit-connection-discover1.png[width=600]
+ 
+==== OpenShift.io login
+
+It is possible to login from JBoss Tools to OpenShift.io. A single account will be maintained per workspace. Once you initially logged onto OpenShift.io, all
+needed account information (tokens,...) will be stored securely.
+
+There are two ways to login onto OpenShift.io:
+
+* through the UI
+* via a third party service that will invoke the proper extension point
+
+===== UI based login to OpenShift.io
+
+In the toobar, you should see a new icon image:./images/osio-16x16.png[Toolbar]. Click on it and it will launch the login.
+
+If this is the first time you login to OpenShift.io or if you OpenShift.io account tokens are not valid anymore, you should see a browser launched with the following content:
+
+image::/documentation/whatsnew/openshift/images/osio-browser.png[]
+
+Enter your RHDP login and the browser will then auto-close and an extract (for security reasons) of the OpenShift.io token will be displayed:
+
+image::/documentation/whatsnew/openshift/images/osio-token-dialog.png[]
+
+This dialog will be also shown if an OpenShift.io account was configured in the workspace and the account information is valid.
+
+===== Via extension point
+
+The OpenShift.io integration can be invoked by a third party service through the `org.jboss.tools.openshift.io.code.tokenProvider` extension point.
+This extension point will perform the same actions as the UI but basically will return an access token for OpenShift.io to the third party service.
+A detailed explanation of how to use this extension point is described here: https://github.com/jbosstools/jbosstools-openshift/wiki/OpenShift.io-token-provider[Wiki page]
+ 
+You can display the account information using the Eclipse `Jboss Tools -> OpenShift.io` preference node. If you workspace does not contain an OpenShift.io account yet, you should see the following:
+
+image::/documentation/whatsnew/openshift/images/osio-preferences.png[]
+
+If you have a configured OpenShift.io account, you should see this:
+
+image::/documentation/whatsnew/openshift/images/osio-preferences1.png[]
+
+=== Server tools
+
+==== EAP 7.1 Server Adapter
+
+A server adapter has been added to work with EAP 7.1 and Wildfly 11. It's based on WildFly 11. This new server adapter includes support for incremental management
+deployment like it's upstream WildFly 11 counterpart. 
+
+=== Fuse Tooling
+
+==== Global Beans: improve support for Bean references
+
+It is now possible to set Bean references from User Interface when creating a new Bean:
+
+image::/documentation/whatsnew/fusetools/images/factoryBeanReference.png[Create Factory Bean Reference]
+
+Editing Bean references is also now available on the properties view when editing an existing Bean:
+
+image::/documentation/whatsnew/fusetools/images/factoryBeanReference-propertiesView.png[Edit Factory Bean Reference]
+
+Additional validation has been added to help users avoid mixing Beans defined with class names and Beans defined referencing other beans.
+
+==== Apache Karaf 4.x Server Adapter
+
+We are happy to announce the addition of new Apache Karaf server adapters. You can now download and install Apache Karaf 4.0 and 4.1 from within your development environment.
+
+image::/documentation/whatsnew/fusetools/images/karaf4xadapters.png[Apache Karaf 4x Server Adapters]
+
+==== Switch Apache Camel Version
+
+You can now change the Apache Camel version used in your project. To do that you invoke the context menu of the project in the project explorer and navigate into the ``Configure`` menu. There you will find the menu entry called ``Change Camel Version`` which
+will guide you through this process.
+
+image::/documentation/whatsnew/fusetools/images/switchcamelversion.png[Switch Camel Version]
+
+==== Improved Validation
+
+The validation in the editor has been improved to find containers which lack mandatory child elements. (for instance a Choice without a child element)
+
+image::/documentation/whatsnew/fusetools/images/containerchildvalidation.png[Improved validation]
+
+=== Java Developement Tools (JDT)
+
+==== Support for Java™ 9
+
+Java™ 9 is here, and JDT fully supports it:
+
+* The Eclipse compiler for Java (ECJ) implements all the new Java 9 language enhancements
+
+* Updated significant features to support Java Modules, such as compiler, search and many editor features.
+
+[NOTE]
+====
+It is not mandatory to run Eclipse with Java Runtime 9 to get the Java 9 support. However, a Java runtime 9
+is required to be on a project's build path to compile a modular project against the system modules.
+====
+
+** When a Java Runtime 9 is added to a project's build path, the system modules are listed under the System library in the package explorer
+
+image::https://www.eclipse.org/eclipse/news/4.7.1a/images/java9-package-explorer.png[]
+
+** An existing non-modular Java project can be quickly converted to a module by creating a module-info.java for that project.
+This feature can be availed once the project has been moved to compliance 9
+
+image::https://www.eclipse.org/eclipse/news/4.7.1a/images/java9-create-module.png[]
+
+** With Java 9 support, a library or a container can now be added to the module path as opposed to the classpath
+
+image::https://www.eclipse.org/eclipse/news/4.7.1a/images/java9-module-path.png[]
+
+** Once a module has been added to a project's module path, its encapsulation properties can further be modified by clicking on the *Is Modular* option
+and editing the Module properties. The following example shows how module module.one can can be made to export its packages in the context of the current Java project
+
+image::https://www.eclipse.org/eclipse/news/4.7.1a/images/java9-module-properties.png[]
+
+** Java search now includes a new search scope - Module
+
+image::https://www.eclipse.org/eclipse/news/4.7.1a/images/java9-module-search.png[]
+
+==== Support for JUnit 5
+
+JUnit 5 support is now available in Eclipse.
+
+* Create a new JUnit Jupiter test via *New JUnit Test Case wizard:
+
+image::https://www.eclipse.org/eclipse/news/4.7.1a/images/new-junit-jupiter-test.png[]
+
+* Add JUnit 5 library to the build path
+
+** New JUnit Test Case wizard offers to add it while creating a new JUnit Jupiter test
+
+image::https://www.eclipse.org/eclipse/news/4.7.1a/images/add-junit-5-lib.png[]
+
+** Quick Fix *(Ctrl+1)* proposal on *@Test*, *@TestFactory*, *@ParameterizedTest* and *@RepeatedTest* annotations
+
+image::https://www.eclipse.org/eclipse/news/4.7.1a/images/add-junit-5-lib-quick-fix.png[]
+
+** Add JUnit library in Java Build Path dialog
+
+image::https://www.eclipse.org/eclipse/news/4.7.1a/images/add-junit-5-lib-java-build-path.png[]
+
+* Create a JUnit Jupiter test method with the new *test_jupiter* template
+
+image::https://www.eclipse.org/eclipse/news/4.7.1a/images/junit-jupiter-test-method-template.png[]
+
+* Create a *@TestFactory* method with the new *test_factory* template
+
+image::https://www.eclipse.org/eclipse/news/4.7.1a/images/junit-jupiter-test-factory-template.png[]
+
+* JUnit Jupiter’s *Assertions*, *Assumptions*, *DynamicContainer* and *DynamicTest* classes are now added to *Eclipse Favorites* by default
+
+image::https://www.eclipse.org/eclipse/news/4.7.1a/images/content-assist-favorites.png[]
+
+This allows you to quickly import the static methods from these classes in your code via Content Assist *(Ctrl + Space)* and Quick Fix *(Ctrl + 1)*.
+
+* View all the failures from grouped assertions in the same *Result Comparison* dialog opened from JUnit view
+
+image::https://www.eclipse.org/eclipse/news/4.7.1a/images/grouped-assertions-result-comparison.png[]
+
+* View the number of disabled tests and tests with assumption failures on hover in JUnit view
+
+image::https://www.eclipse.org/eclipse/news/4.7.1a/images/skipped-tests.png[]
+
+* Use *Go to File* action or just double-click to navigate to the test from JUnit view even when the test is displayed with a custom name
+
+image::https://www.eclipse.org/eclipse/news/4.7.1a/images/display-name.png[]
+
+* (Re-)Run a single *@Nested* test class by using the *Run* action in JUnit view or Outline view. You can even right-click on a nested test class name in the editor and use the *Run As* action
+
+image::https://www.eclipse.org/eclipse/news/4.7.1a/images/run-nested-class.png[]
+
+* The *Test Method Selection* dialog in JUnit launch configuration now shows the method parameter types also
+
+image::https://www.eclipse.org/eclipse/news/4.7.1a/images/test-method-selection-dialog.png[]
+
+* You can provide tags to be included in or excluded from a test run in the *Configure Tags* dialog of JUnit launch configuration
+
+image::https://www.eclipse.org/eclipse/news/4.7.1a/images/junit-tags.png[]
+
+[NOTE]
+====
+* If you are using an Eclipse workspace where you were running your JUnit 5 tests via @RunWith(JUnitPlatform.class) in Eclipse without JUnit 5 support then you
+will have JUnit 4 as the test runner in their launch configurations. Before executing these tests in Eclipse with JUnit 5 support, you should either change their test
+runner to JUnit 5 or delete them so that new launch configurations are created with JUnit 5 test runner while running the tests
+====
+
+image::https://www.eclipse.org/eclipse/news/4.7.1a/images/test-runner-update.png[]
+
+We do not support running tests in a setup where an old Eclipse build (not having JUnit 5 support) is using a new Eclipse build (having JUnit 5 support)
+as target. Also, developers who have the JDT JUnit runtime bundles (org.eclipse.jdt.junit.runtime, org.eclipse.jdt.junit4.runtime) checked out and pull
+the latest changes will run into the above issue. You are expected to use a new Eclipse build for the development.
+
+=== And more...
+
+You can find more noteworthy updates in on link:/documentation/whatsnew/jbosstools/4.5.1.Final.html[this page].
+
+== What is next?
+
+Having JBoss Tools 4.5.1 and Developer Studio 11.1 out we are already working on the next maintenance release for Eclipse Oxygen.
+
+Enjoy!
+
+Jeff Maury
