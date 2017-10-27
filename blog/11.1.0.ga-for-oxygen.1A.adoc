@@ -1,4 +1,4 @@
-= JBoss Tools and Red Hat Developer Studio for Eclipse Oxygen
+= JBoss Tools and Red Hat Developer Studio for Eclipse Oxygen.1A
 :page-layout: blog
 :page-author: jeffmaury
 :page-tags: [release, jbosstools, devstudio, jbosscentral]
