@@ -96,7 +96,7 @@ There are two ways to login onto OpenShift.io:
 
 ===== UI based login to OpenShift.io
 
-In the toobar, you should see a new icon image:./images/osio-16x16.png[Toolbar]. Click on it and it will launch the login.
+In the toobar, you should see a new icon image:/documentation/whatsnew/openshift/images/osio-16x16.png[Toolbar]. Click on it and it will launch the login.
 
 If this is the first time you login to OpenShift.io or if you OpenShift.io account tokens are not valid anymore, you should see a browser launched with the following content:
 
