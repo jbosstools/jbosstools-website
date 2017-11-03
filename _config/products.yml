@@ -104,8 +104,7 @@ devstudio:
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         blog_announcement_url: /blog/11.1.0.ga-for-oxygen.1a.html
-        required_jbt_core_version: 4.5.1
-        eclipse_name: Eclipse Oxygen 4.7.1a
+        eclipse_name: Eclipse Oxygen 4.7.1
         installers:
           - name: Stand-alone Installer
             url: http://www.jboss.org/download-manager/content/origin/files/sha256/e5/e53e8075968b4bff6019650aa54f716422db9c3a0193003c4af6cc3a0a6d6def/devstudio-11.1.0.GA-installer-standalone.jar
@@ -1182,7 +1181,7 @@ jbt_core:
         supported_jbt_is_version: 4.5.0.Final
         blog_announcement_url: /blog/11.1.0.ga-for-oxygen.1a.html
         documentation_url: http://docs.jboss.org/tools/
-        eclipse_name: Eclipse Oxygen 4.7.1a
+        eclipse_name: Eclipse Oxygen 4.7.1
         zips:
           - name: Update site (including sources) bundle of all JBoss Core Tools
             file_size: 616MB
