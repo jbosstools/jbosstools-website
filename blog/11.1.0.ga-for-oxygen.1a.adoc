@@ -1,23 +1,23 @@
-= JBoss Tools and Red Hat Developer Studio for Eclipse Oxygen.1A
+= JBoss Tools and Red Hat Developer Studio for Eclipse Oxygen.1a
 :page-layout: blog
 :page-author: jeffmaury
 :page-tags: [release, jbosstools, devstudio, jbosscentral]
 :page-date: 2017-11-06
 
-link:/downloads/jbosstools/oxygen/4.5.1.Final.html[JBoss Tools 4.5.1] and link:/downloads/devstudio/oxygen/11.1.0.GA.html[Red Hat JBoss Developer Studio 11.1] for Eclipse Oxygen.1A are here waiting for you. Check it out!
+link:/downloads/jbosstools/oxygen/4.5.1.Final.html[JBoss Tools 4.5.1] and link:/downloads/devstudio/oxygen/11.1.0.GA.html[Red Hat JBoss Developer Studio 11.1] for Eclipse Oxygen.1a are here waiting for you. Check it out!
 
 image::/blog/images/devstudio11.png[]
 
 == Installation
 
 JBoss Developer Studio comes with everything pre-bundled in its installer. Simply download it from our https://www.jboss.org/products/devstudio.html[JBoss Products page] and run it like this:
- 
+
     java -jar jboss-devstudio-<installername>.jar
 
 JBoss Tools or Bring-Your-Own-Eclipse (BYOE) JBoss Developer Studio require a bit more:
 
 This release requires at least Eclipse 4.7 (Oxygen) but we recommend
-using the latest http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/oxygen1a[Eclipse 4.7.1A Oxygen JEE Bundle] since then you get most of the dependencies preinstalled. 
+using the latest http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/oxygen1a[Eclipse 4.7.1a Oxygen JEE Bundle] since then you get most of the dependencies preinstalled.
 
 Once you have installed Eclipse, you can either find us on the Eclipse Marketplace under "JBoss Tools" or "Red Hat JBoss Developer Studio".
 
@@ -25,7 +25,7 @@ For JBoss Tools, you can also use our update site directly.
 
     http://download.jboss.org/jbosstools/oxygen/stable/updates/
 
-== What is new? 
+== What is new?
 
 Our main focus for this release was on adoption of Java9, improvements for container based development and bug fixing.
 Eclipse Oxygen itself has link:https://www.youtube.com/playlist?list=PLy7t4z5SYNaTM66CahSlkMh5YkndYXMUq[a lot of new cool stuff] but let me highlight just a few updates in both Eclipse Oxygen and JBoss Tools plugins that I think are worth mentioning.
@@ -83,7 +83,7 @@ image::/documentation/whatsnew/openshift/images/edit-connection-discover.png[wid
 Click on the `Discover` button and the Docker registry URL will be filled if a matching started CDK server adapter is found:
 
 image::/documentation/whatsnew/openshift/images/edit-connection-discover1.png[width=600]
- 
+
 ==== OpenShift.io login
 
 It is possible to login from JBoss Tools to OpenShift.io. A single account will be maintained per workspace. Once you initially logged onto OpenShift.io, all
@@ -113,7 +113,7 @@ This dialog will be also shown if an OpenShift.io account was configured in the 
 The OpenShift.io integration can be invoked by a third party service through the `org.jboss.tools.openshift.io.code.tokenProvider` extension point.
 This extension point will perform the same actions as the UI but basically will return an access token for OpenShift.io to the third party service.
 A detailed explanation of how to use this extension point is described here: https://github.com/jbosstools/jbosstools-openshift/wiki/OpenShift.io-token-provider[Wiki page]
- 
+
 You can display the account information using the Eclipse `Jboss Tools -> OpenShift.io` preference node. If you workspace does not contain an OpenShift.io account yet, you should see the following:
 
 image::/documentation/whatsnew/openshift/images/osio-preferences.png[]
@@ -127,7 +127,7 @@ image::/documentation/whatsnew/openshift/images/osio-preferences1.png[]
 ==== EAP 7.1 Server Adapter
 
 A server adapter has been added to work with EAP 7.1 and Wildfly 11. It's based on WildFly 11. This new server adapter includes support for incremental management
-deployment like it's upstream WildFly 11 counterpart. 
+deployment like it's upstream WildFly 11 counterpart.
 
 === Fuse Tooling
 
