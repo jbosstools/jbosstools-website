@@ -100,7 +100,7 @@ devstudio:
         marketplace_url: https://marketplace.eclipse.org/node/1616973
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
         release_date: 2017-11-06
-        supported_devstudio_is_version: 11.0.0.GA
+        supported_devstudio_is_version: 11.1.0.Beta1b
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         blog_announcement_url: /blog/11.1.0.ga-for-oxygen.1a.html
@@ -760,6 +760,26 @@ devstudio_is:
   url_path_fragment: devstudio_is
   streams:
     oxygen:
+      11.1.0.Beta1b:
+        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/
+        release_notes_url: https://access.redhat.com/documentation/en-us/red_hat_jboss_developer_studio_integration_stack/11.1-beta/html-single/11.1.0_beta_release_notes_and_known_issues/
+        #blog_announcement_url: /blog/integration-stack-4.5.0.Final.html
+        release_date: 2017-11-07
+        required_devstudio_version: 11.1.0.GA
+        update_site_url: https://devstudio.redhat.com/11/development/updates/integration-stack/
+        #installers:
+        #  - name: Integration Stack Stand-Alone Installer
+        #    file_size: 943MB
+        #    url: https://access.redhat.com/jbossnetwork/restricted/listSoftware.html?downloadType=distributions&product=jbossdeveloperstudio&version=11.0.0
+        zips:
+          - name: Update site bundle of JBoss Developer Studio Integration Stack
+            file_size: 295MB
+            url: https://devstudio.redhat.com/11/development/updates/integration-stack/11.1.0.Beta1b/devstudio-integration-stack-11.1.0.Beta1b-updatesite.zip
+            sha256_url: https://devstudio.redhat.com/11/development/updates/integration-stack/11.1.0.Beta1b/devstudio-integration-stack-11.1.0.Beta1b-updatesite.zip.sha256
+          - name: Update site bundle of JBoss Developer Studio Integration Stack (Early Access)
+            file_size: 293MB
+            url: https://devstudio.redhat.com/11/development/updates/integration-stack/11.1.0.Beta1b/devstudio-integration-stack-11.1.0.Beta1b-updatesite-earlyaccess.zip
+            sha256_url: https://devstudio.redhat.com/11/development/updates/integration-stack/11.1.0.Beta1b/devstudio-integration-stack-11.1.0.Beta1b-updatesite-earlyaccess.zip.sha256
       11.0.0.GA:
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/
         release_notes_url: https://access.redhat.com/documentation/en-us/red_hat_jboss_developer_studio_integration_stack/11.0/html/11.0.0_release_notes_and_known_issues/
@@ -1178,7 +1198,7 @@ jbt_core:
         marketplace_url: https://marketplace.eclipse.org/node/1617241
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1617241
         release_date: 2017-11-06
-        supported_jbt_is_version: 4.5.0.Final
+        supported_jbt_is_version: 4.5.1.Beta1b
         blog_announcement_url: /blog/11.1.0.ga-for-oxygen.1a.html
         documentation_url: http://docs.jboss.org/tools/
         eclipse_name: Eclipse Oxygen 4.7.1
@@ -2513,6 +2533,21 @@ jbt_is:
   url_path_fragment: jbosstools_is
   streams:
     oxygen:
+      4.5.1.Beta1b:
+        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/
+        #blog_announcement_url: /blog/integration-stack-4.5.0.Final.html
+        release_date: 2017-11-07
+        required_jbt_core_version: 4.5.1.Final
+        update_site_url: http://download.jboss.org/jbosstools/oxygen/development/updates/integration-stack/
+        zips:
+           - name: Update site bundle of JBoss Tools Integration Stack
+             file_size: 72MB
+             url: http://download.jboss.org/jbosstools/oxygen/development/updates/integration-stack/4.5.1.Beta1b/jbosstools-integration-stack-4.5.1.Beta1b-updatesite.zip
+             sha256_url: http://download.jboss.org/jbosstools/oxygen/development/updates/integration-stack/4.5.1.Beta1b/jbosstools-integration-stack-4.5.1.Beta1b-updatesite.zip.sha256
+           - name: Update site bundle of JBoss Tools Integration Stack (Early Access)
+             file_size: 70MB
+             url: http://download.jboss.org/jbosstools/oxygen/development/updates/integration-stack/4.5.1.Beta1b/jbosstools-integration-stack-4.5.1.Beta1b-updatesite-earlyaccess.zip
+             sha256_url: http://download.jboss.org/jbosstools/oxygen/development/updates/integration-stack/4.5.1.Beta1b/jbosstools-integration-stack-4.5.1.Beta1b-updatesite-earlyaccess.zip.sha256
       4.5.0.Final:
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/
         blog_announcement_url: /blog/integration-stack-4.5.0.Final.html
