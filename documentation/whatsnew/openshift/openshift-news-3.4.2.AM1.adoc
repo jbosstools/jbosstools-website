@@ -1,0 +1,32 @@
+= OpenShift What's New in 3.4.2.AM1
+:page-layout: whatsnew
+:page-component_id: openshift
+:page-component_version: 4.5.2.AM1
+:page-product_id: jbt_core
+:page-product_version: 4.5.2.AM1
+:page-include-previous: true
+
+=== Support for route timeouts and liveness probe for OpenShift Server Adapter debugging configurations
+
+While debugging your OpenShift deployment, you may face two different issues:
+
+ - if you launch your test through a Web browser, then it's likely that you will access your OpenShift deployment through an OpenShift
+route. The problem is that, by default, OpenShift routes have a 30 seconds timeout for each request. So if you're stepping through one
+of your breakpoints, you will get a timeout error message in the browser window even if you can still debug your OpenShift deployment.
+And you're now stuck will the navigation of your OpenShift application.
+ - if your OpenShift deployment has a liveness probe configured, depending on your virtual machine capabilities or how your debugger is
+configured, if your stepping into one of your breakpoints, the liveness probe may fail thus OpenShift so OpenShift will restart your
+container and your debugging session will be destroyed.
+
+So, from now, when the OpenShift server adapter is started in `debug` mode, the following action are being performed:
+
+ - if an OpenShift route is found that is linked to the OpenShift deployment you want to debug, the route timeout will be
+set or increased to 1 hour. The original or default value will be restored when the OpenShift server adapter will be restarted
+in `run` mode.
+ - if your OpenShift deployment has a liveness probe configured, the `initialDelay` field will be increased to 1 hour if the defined
+value for this field is lower than 1 hour. If the value of this field is defined to a value greater than 1 hour, it is left intact.
+The original value will be restored when the OpenShift server adapter will be restarted
+in `run` mode
+
+related_jira::JBIDE-24868[]
+
