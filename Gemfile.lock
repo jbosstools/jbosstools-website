@@ -26,7 +26,7 @@ GEM
       Platform (>= 0.4.0)
       open4
     Platform (0.4.0)
-    RedCloth (4.2.9)
+    RedCloth (4.3.2)
     ansi (1.5.0)
     asciidoctor (1.5.2)
     ast (2.0.0)
