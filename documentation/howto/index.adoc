@@ -67,6 +67,8 @@ link:os3_remote.html[Set up and Remotely Monitor an OpenShift Database Server]
 
 link:os3_deployimage.html[Deploy a Docker Image to an OpenShift 3 Cluster with the IDE]
 
+link:os3_deploying_resource.html[Deploying the OpenShift Container Platform 3 Resource]
+
 == Using the IDE Perspectives
 
 link:using_git.html[Using the Git Perspective]
