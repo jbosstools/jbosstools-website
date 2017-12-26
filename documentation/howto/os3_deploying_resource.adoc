@@ -1,0 +1,154 @@
+= Deploying the OpenShift Container Platform 3 Resource
+:page-layout: howto
+:page-tab: docs
+:page-status: green
+:experimental:
+:imagesdir: ./images
+:toc:
+
+In this article, you use the *s2i-spring-boot-cfx-jaxrs* template in OpenShift Container Platform as an example to define resources for your OpenShift Container Platform application. Use similar steps to define resources for any other OpenShift Container Platform application.
+
+*Prerequisite*
+
+* Install Red Hat Container Development Kit (CDK) 3. For detailed instructions to install CDK 3, see https://access.redhat.com/documentation/en-us/red_hat_container_development_kit/3.0/html/installation_guide/.
+
+== Deploying the s2i-spring-boot-cfx-jaxrs Template
+
+Set up the IDE to work with CDK 3 as described in http://tools.jboss.org/documentation/howto/cdk_howto.html[Using the IDE’s Container Development Kit Tooling]. The new connection for OpenShift Container Platform is listed in the *OpenShift Explorer* view, making the *s2i-spring-boot-cfx-jaxrs* template available for use.
+
+To deploy the template:
+
+. In the *OpenShift Explorer* view, expand the connection and right-click the _{project name}_ and click *New* > *Application*.
+. In the *New OpenShift Application* window:
+.. In the *OpenShift project* field, click the project that you want to create the new application in.
+.. In the *Server application source* tab, scroll through the list and locate and click *s2i-spring-boot-cfx-jaxrs (quickstart, java, springboot, fis) - openshift*.
+. Click *Finish*.
+. In the *Create Application Summary* window, click *OK*.
+. In the *Import OpenShift Application* window in the *Git Clone Location* field, enter the location where you want to clone the template and click *Finish*.
++
+.Selecting the s2i-spring-boot-cfx-jaxrs Template
+image::os3_deploy_resource_select_s2i_template.png[Selecting the s2i-spring-boot-cfx-jaxrs Template]
++
+. In the *OpenShift Explorer* view, expand the project, expand the *s2i-spring-boot-cfx-jaxrs* application and then right-click the *s2i-spring-boot-cfx-jaxrs-1* build and click *Build Log*. The *Console* view shows the progress of the build.
+
+*Result:* The *Console* view shows the *latest: digest: sha256:{checksum} size: 9033
+Push successful* message.
+
+== Viewing the Application in the Web Console
+
+[NOTE]
+====
+This section is required optionally if you want to see the application running on the terminal.
+====
+
+In the absence of a service or route, you can view the application through the *Pod* tab in the web console.
+
+To view the application in the Pod: 
+
+. In the web console, click *Applications* > *Pod* and then click the *s2i-spring-boot-cfx-jaxrs-1* pod.
+. Click the *Logs* tab.
+. In the logs, locate *Jolokia: Agent started with URL https://172.17.0.6:8778/jolokia/* and copy the IP address (*172.17.0.6*, in this example).
+. Click the *Terminal* tab.
+. In the terminal, type the following command: `curl http://_{IP_address}_:8080/services/helloservice/sayHello`. 
++
+Example: `curl http://172.17.0.6:8080/services/helloservice/sayHello` 
++
+. Press Enter. 
+. Append the next line with: `curl http://172.17.0.6:8080/services/helloservice/sayHello/_{your_name}_` and press Enter. 
++
+Example: `curl http://172.17.0.6:8080/services/helloservice/sayHello/John`
++
+*Result:* The *Hello John, Welcome to CXF RS Spring Boot World!!!* message appears, showing that application is up and running.
+
+.s2i-spring-boot-cfx-jaxrs Application in the Web Console
+image::os3_deploy_resource_app_in_web_console.png[s2i-spring-boot-cfx-jaxrs Application in the Web Console]
+
+== Defining Services and Routes Using a JSON File
+
+Use the `services-route.json` file to create the service for the *s2i-spring-boot-cfx-jaxrs* application and then create a route for the service. In this case the target port is 8080 where the route sends the request to the application.
+
+To define the resources:
+
+. Copy the following content and paste it in a file, name the file `services-routes.json`, and save it.
++
+[source, json]
+----
+{
+   "apiVersion": "v1",
+   "kind": "List",
+   "metadata": {},
+   "items": [
+      {
+         "apiVersion": "v1",
+         "kind": "Service",
+         "metadata": {
+            "name": "s2i-spring-boot-cxf-jaxrs"
+         },
+         "spec": {
+            "ports": [
+               {
+                  "name": "8080-tcp",
+                  "protocol": "TCP",
+                  "port": 8080,
+                  "targetPort": 8080
+               },
+               {
+                  "name": "8778-tcp",
+                  "protocol": "TCP",
+                  "port": 8778,
+                  "targetPort": 8778
+               }
+            ],
+            "selector": {
+               "deploymentconfig": "s2i-spring-boot-cxf-jaxrs"
+            }
+         }
+      },
+      {
+         "apiVersion": "v1",
+         "kind": "Route",
+         "metadata": {
+            "name": "s2i-spring-boot-cxf-jaxrs"
+         },
+         "spec": {
+            "to": {
+               "kind": "Service",
+               "name": "s2i-spring-boot-cxf-jaxrs",
+               "weight": 100
+            },
+            "port": {
+               "targetPort": "8080-tcp"
+            },
+            "wildcardPolicy": "None"
+         }
+      }
+   ]
+}
+----
++
+
+. In the *OpenShift Explorer* view, right-click the project and click *New* > *Resource*. 
+. In the *New OpenShift Resource* window:
+.. In the *OpenShift project* list, click the project that you deployed the application to.
+.. In the *Source* pane, click *Browse File System* and locate and select the `services-routes.json` file.
+.. Click *Finish*.
++
+.Selecting the service-routes.json File
+image::os3_deploy_resource_select_json_file.png[Selecting the service-routes.json File]
++
+. The *Create Resource Summary* window shows the details of the created service and route. Click *OK*.
+. In the *OpenShift Explorer* view, right-click the project and click *Show in* > *Web browser*. The *Whitelabel Error Page* shows that the application has no explicit mapping.
+. In the address bar, append the URL with `services/helloservice/sayHello/`. The URL should now look like: *http://s2i-spring-boot-cxf-jaxrs-_{project_name}_._{IP_address}_.nip.io/services/helloservice/sayHello/.*
+. Press Enter. The web browser shows the *Welcome to the CXF RS Spring Boot application, append /{name} to call the hello service* message.
+. At the end of the URL, append a name, for example: *http://s2i-spring-boot-cxf-jaxrs-{project_name}.{IP_address}.nip.io/services/helloservice/sayHello/John*.
+
+*Result:* The page displays the message: *Hello John, Welcome to CXF RS Spring Boot World!!!*
+
+.Viewing the s2i-spring-boot-cxf-jaxrs Application in the Web Browser
+image::os3_deploy_resource_app_in_web_browser.png[Viewing the s2i-spring-boot-cxf-jaxrs Application in the Web Browser]
+
+
+
+
+
+
