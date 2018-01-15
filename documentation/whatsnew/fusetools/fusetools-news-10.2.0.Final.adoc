@@ -16,11 +16,11 @@ Fuse Ignite comes as part of https://developers.redhat.com/products/fuse/overvie
 
 image::./images/igniteExtensionWizard.png[Fuse Ignite Technical Extension Wizard]
 
-The provided project template allows you to define a http://camel.apache.org[Apache Camel] route as base flow of your new technical extension.
+The provided project template allows you to define an http://camel.apache.org[Apache Camel] route as the base flow of your new technical extension.
 
 image::./images/igniteExtensionRoute.png[Fuse Ignite Technical Extension Route]
 
-To configure your new technical extension you can use the JSON file created with the new project. The JSON Schema for this file can be obtained from https://github.com/syndesisio/syndesis/blob/master/app/rest/model/src/main/resources/syndesis/syndesis-extension-definition-schema.json[Syndesis.io sources].
+To configure your new technical extension you can use the JSON file created with the new project. 
 
 image::./images/igniteExtensionConfig.png[Fuse Ignite Technical Extension Configuration]
 
