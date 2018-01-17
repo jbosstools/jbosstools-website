@@ -1,0 +1,10 @@
+= Forge Tools 4.5.2.Final What's New
+:page-layout: whatsnew
+:page-component_id: forge
+:page-component_version: 4.5.2.Final
+:page-product_id: jbt_core
+:page-product_version: 4.5.2.Final
+
+== Forge Runtime updated to 3.8.1.Final
+
+The included Forge runtime is now 3.8.1.Final. Read the official announcement http://forge.jboss.org/news/jboss-forge-3.8.1.final-is-here[here].
