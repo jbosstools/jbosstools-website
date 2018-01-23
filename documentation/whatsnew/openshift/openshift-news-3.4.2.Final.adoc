@@ -6,6 +6,24 @@
 :page-product_version: 4.5.2.Final
 :page-include-previous: true
 
+=== Spring Boot applications support in OpenShift server adapter
+
+The OpenShift server adapter allowed hotdeploy and debugging for JEE and NodeJS based applications.
+It now supports Spring Boot applications with some limitations: the Spring Boot devtools module must be added to your application as it monitors code changes and as the application must be launched in exploded mode, you must use the upstream image (docker.io/fabric8/s2i-java) rather than the downstream image builder fis-java-openshift.
+
+As an example, we've provided an OpenShift template that will create an OpenShift application based on the upstream application and a Git repository that added the Spring Boot devtools to the Fabric8 Spring Boot quickstart.
+
+[source,json]
+----
+include::documentation/whatsnew/openshift/spring.json[]
+----
+
+You can see a demo of the OpenShift server adapter for Spring Boot application here:
+
+video::M6q6tm1ztyU[youtube, width=640, height=400]
+
+related_jira::JBIDE-25303[]
+
 === Enhanced command to delete resource(s)
 
 When it comes to delete OpenShift resources, you had two different choices:
@@ -43,4 +61,8 @@ Close this dialog by pushing the *OK* button. The resources will be deleted and 
 image::./images/new-delete-resources-explorer1.png[]
 
 related_jira::JBIDE-25111[]
+
+
+
+
 
