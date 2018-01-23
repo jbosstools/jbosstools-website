@@ -156,6 +156,11 @@ To configure your new technical extension you can use the JSON file created with
 
 image::/documentation/whatsnew/fusetools/images/igniteExtensionConfig.png[Fuse Ignite Technical Extension Configuration]
 
+=== Forge Tools
+
+==== Forge Runtime updated to 3.8.1.Final
+
+The included Forge runtime is now 3.8.1.Final. Read the official announcement http://forge.jboss.org/news/jboss-forge-3.8.1.final-is-here[here].
 
 === And more...
 
