@@ -1,0 +1,170 @@
+= JBoss Tools and Red Hat Developer Studio for Eclipse Oxygen.2
+:page-layout: blog
+:page-author: jeffmaury
+:page-tags: [release, jbosstools, devstudio, jbosscentral]
+:page-date: 2018-01-29
+
+link:/downloads/jbosstools/oxygen/4.5.2.Final.html[JBoss Tools 4.5.2] and link:/downloads/devstudio/oxygen/11.2.0.GA.html[Red Hat JBoss Developer Studio 11.2] for Eclipse Oxygen.2 are here waiting for you. Check it out!
+
+image::/blog/images/devstudio11.png[]
+
+== Installation
+
+JBoss Developer Studio comes with everything pre-bundled in its installer. Simply download it from our https://www.jboss.org/products/devstudio.html[JBoss Products page] and run it like this:
+
+    java -jar jboss-devstudio-<installername>.jar
+
+JBoss Tools or Bring-Your-Own-Eclipse (BYOE) JBoss Developer Studio require a bit more:
+
+This release requires at least Eclipse 4.7 (Oxygen) but we recommend
+using the latest http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/oxygen2[Eclipse 4.7.2 Oxygen JEE Bundle] since then you get most of the dependencies preinstalled.
+
+Once you have installed Eclipse, you can either find us on the Eclipse Marketplace under "JBoss Tools" or "Red Hat JBoss Developer Studio".
+
+For JBoss Tools, you can also use our update site directly.
+
+    http://download.jboss.org/jbosstools/oxygen/stable/updates/
+
+== What is new?
+
+Our main focus for this release was on adoption of Java9, improvements for container based development and bug fixing.
+Eclipse Oxygen itself has link:https://www.youtube.com/playlist?list=PLy7t4z5SYNaTM66CahSlkMh5YkndYXMUq[a lot of new cool stuff] but let me highlight just a few updates in both Eclipse Oxygen and JBoss Tools plugins that I think are worth mentioning.
+
+=== OpenShift 3
+
+==== Spring Boot applications support in OpenShift server adapter
+
+The OpenShift server adapter allowed hotdeploy and debugging for JEE and NodeJS based applications.
+It now supports Spring Boot applications with some limitations: the Spring Boot devtools module must be added to your application as it monitors code changes and as the application must be launched in exploded mode, you must use the upstream image (docker.io/fabric8/s2i-java) rather than the downstream image builder fis-java-openshift.
+
+As an example, we've provided an OpenShift template that will create an OpenShift application based on the upstream application and a Git repository that added the Spring Boot devtools to the Fabric8 Spring Boot quickstart.
+
+[source,json]
+----
+include::/documentation/whatsnew/openshift/spring.json[]
+----
+
+You can see a demo of the OpenShift server adapter for Spring Boot application here:
+
+video::M6q6tm1ztyU[youtube, width=640, height=400]
+
+==== Support for route timeouts and liveness probe for OpenShift Server Adapter debugging configurations
+
+While debugging your OpenShift deployment, you may face two different issues:
+
+ - if you launch your test through a Web browser, then it's likely that you will access your OpenShift deployment through an OpenShift
+route. The problem is that, by default, OpenShift routes have a 30 seconds timeout for each request. So if you're stepping through one
+of your breakpoints, you will get a timeout error message in the browser window even if you can still debug your OpenShift deployment.
+And you're now stuck will the navigation of your OpenShift application.
+ - if your OpenShift deployment has a liveness probe configured, depending on your virtual machine capabilities or how your debugger is
+configured, if your stepping into one of your breakpoints, the liveness probe may fail thus OpenShift so OpenShift will restart your
+container and your debugging session will be destroyed.
+
+So, from now, when the OpenShift server adapter is started in `debug` mode, the following action are being performed:
+
+ - if an OpenShift route is found that is linked to the OpenShift deployment you want to debug, the route timeout will be
+set or increased to 1 hour. The original or default value will be restored when the OpenShift server adapter will be restarted
+in `run` mode.
+ - if your OpenShift deployment has a liveness probe configured, the `initialDelay` field will be increased to 1 hour if the defined
+value for this field is lower than 1 hour. If the value of this field is defined to a value greater than 1 hour, it is left intact.
+The original value will be restored when the OpenShift server adapter will be restarted
+in `run` mode
+
+=== Enhanced command to delete resource(s)
+
+When it comes to delete OpenShift resources, you had two different choices:
+
+- individually delete each resource but as some resources are hidden by the OpenShift explorer, it may become troublesome
+- delete the containing OpenShift project but you are then deleting more resources than required
+
+There is now a new enhanced command to delete resources. It is available at the OpenShift project level and it will first
+list all the available OpenShift resources for the selected OpenShift project. You can now select the ones you want to delete
+and you can also filter the list using a filter that will be applied to the labels for each retrieved OpenShift resource.
+
+So if you have two different deployments in a single OpenShift project (if you using OpenShift Online Starter for example) or if
+you have different kind of resources in a single deployment, you can now distinct them.
+
+Let's see this in action:
+
+In this example, I have deployed an EAP6.4 based application and an EAP7.0 based one. Here is what you  can see from the OpenShift explorer:
+
+image::/documentation/whatsnew/openshift/images/new-delete-resources-explorer.png[]
+
+Now, let's invoke the new delete command on the _eap_ OpenShift project: right click the OpenShift project and select *Delete Resources...*:
+
+image::/documentation/whatsnew/openshift/images/new-delete-resources-dialog.png[]
+
+Let suppose that we want to delete the EAP6.4 deployement. Enter _eap=6.4_ in the filter field:
+
+image::/documentation/whatsnew/openshift/images/new-delete-resources-dialog1.png[]
+
+Push the *Select All* button:
+
+image::/documentation/whatsnew/openshift/images/new-delete-resources-dialog2.png[]
+
+Close this dialog by pushing the *OK* button. The resources will be deleted and the OpenShift explorer will be updated accordingly:
+
+image::/documentation/whatsnew/openshift/images/new-delete-resources-explorer1.png[]
+
+=== Server tools
+
+==== EAP 7.1 Server Adapter
+
+A server adapter has been added to work with EAP 7.1 and Wildfly 11. It's based on WildFly 11. This new server adapter includes support for incremental management
+deployment like it's upstream WildFly 11 counterpart.
+
+=== Fuse Tooling
+
+==== Fuse 7 Karaf-based runtime Server adapter
+
+Fuse 7 is cooking and preliminary versions are already available on http://origin-repository.jboss.org/nexus/content/groups/ea/org/jboss/fuse/jboss-fuse-karaf[early-access repository]. Fuse Tooling is ready to leverage them so that you can try the upcoming major Fuse version.
+
+image::/documentation/whatsnew/fusetools/images/Fuse7-ServerAdapter.png[Fuse 7 Server Adapter]
+
+Classical functionalities with server adapters are available: automatic redeploy, Java debug, Graphical Camel debug through created JMX connection.
+Please note:
+- you can't retrieve the Fuse 7 Runtime yet directly from Fuse tooling, it is required to download it on your machine and point to it when creating the Server adapter.
+- the provided templates requires some modifications to have them working with Fuse 7, mainly adapting the bom. Please see work related to it in this https://issues.jboss.org/browse/FUSETOOLS-2578[JIRA task] and its children.
+
+
+==== Display routes defined inside "routeContext" in Camel Graphical Editor (Design tab)
+
+"routeContext" tag is a special tag used in Camel to provide the ability to reuse routes and to split them across different files. This is very useful on large projects. See Camel http://camel.apache.org/how-do-i-import-routes-from-other-xml-files.html[documentation] for more information.
+Since this version, the Design of the routes defined in "routeContext" tags are now displayed.
+
+==== Usability improvement: Progress bar when "Changing the Camel version"
+
+Since Fuse Tooling 10.1.0, it is possible to change the Camel version. In case the Camel version was not cached locally yet and for slow internet connections, this operation can take a while. There is now a progress bar to see the progress.
+
+image::/documentation/whatsnew/fusetools/images/switchCamelVersionWithProgressBar.png[Switch Camel Version with Progress Bar]
+
+==== Support for creating Fuse Ignite Technical Extensions
+
+We are happy to announce the addition of support for creating Technical Extension projects for *Fuse Ignite**. That includes the creation of the project using the _"New Fuse Ignite Extension Project"_ wizard as well as support for building the deployable artifact directly from inside the Eclipse environment.
+
+_**Fuse Ignite* is a JBoss Fuse feature that provides a web interface for integrating applications. Without writing code, a business expert can use Ignite to connect to applications and optionally operate on data between connections to different applications. In Ignite, a data operation is referred to as a step in an integration.
+Ignite provides steps for operations such as filtering and mapping data. To operate on data in ways that are not provided by Ignite built-in steps, you can develop an Ignite extension to define one or more custom steps.
+Fuse Ignite comes as part of https://developers.redhat.com/products/fuse/overview/[Fuse] and https://www.redhat.com/en/explore/fuse-online[Fuse Online]. Please refer to the https://access.redhat.com/documentation/en-us/red_hat_jboss_fuse/6.3/html-single/tooling_user_guide/#IgniteExtension[online documentation] for more information on how to create and configure technical extensions for Fuse Ignite._
+
+image::/documentation/whatsnew/fusetools/images/igniteExtensionWizard.png[Fuse Ignite Technical Extension Wizard]
+
+The provided project template allows you to define an http://camel.apache.org[Apache Camel] route as the base flow of your new technical extension.
+
+image::/documentation/whatsnew/fusetools/images/igniteExtensionRoute.png[Fuse Ignite Technical Extension Route]
+
+To configure your new technical extension you can use the JSON file created with the new project. 
+
+image::/documentation/whatsnew/fusetools/images/igniteExtensionConfig.png[Fuse Ignite Technical Extension Configuration]
+
+
+=== And more...
+
+You can find more noteworthy updates in on link:/documentation/whatsnew/jbosstools/4.5.2.Final.html[this page].
+
+== What is next?
+
+Having JBoss Tools 4.5.2 and Developer Studio 11.2 out we are already working on the next maintenance release for Eclipse Oxygen.
+
+Enjoy!
+
+Jeff Maury
