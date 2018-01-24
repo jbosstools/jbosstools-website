@@ -104,7 +104,7 @@ devstudio:
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         blog_announcement_url: /blog/11.2.0.ga-for-oxygen.2.html
-        eclipse_name: Eclipse Oxygen 4.7.1
+        eclipse_name: Eclipse Oxygen 4.7.2
         installers:
           - name: Stand-alone Installer
             url: http://www.jboss.org/download-manager/content/origin/files/sha256/fd/fd31907c4b45426ef0fbc7f435e3b0dc435c6667052a8527145fd51c24071546/devstudio-11.2.0.GA-installer-standalone.jar
