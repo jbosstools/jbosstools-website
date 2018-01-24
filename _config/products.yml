@@ -120,6 +120,7 @@ devstudio:
             url: https://devstudio.redhat.com/static/11/stable/updates/core/devstudio-11.2.0.GA-target-platform.zip
             file_size: 808MB
       11.1.0.GA:
+        archived: true
         release_date: 2017-11-06
         supported_devstudio_is_version: 11.1.0.Beta1b
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
@@ -1239,6 +1240,7 @@ jbt_core:
           - name: Release Notes
             url: https://tools.jboss.org/documentation/whatsnew/index.html
       4.5.2.AM2:
+        archived: true
         update_site_url: http://download.jboss.org/jbosstools/oxygen/development/updates/
         release_date: 2017-12-12
         supported_jbt_is_version: 4.5.1.Beta1b
@@ -1261,6 +1263,7 @@ jbt_core:
           - name: Release Notes
             url: https://tools.jboss.org/documentation/whatsnew/index.html
       4.5.2.AM1:
+        archived: true
         update_site_url: http://download.jboss.org/jbosstools/oxygen/development/updates/
         release_date: 2017-11-21
         supported_jbt_is_version: 4.5.1.Beta1b
@@ -1283,6 +1286,7 @@ jbt_core:
           - name: Release Notes
             url: https://tools.jboss.org/documentation/whatsnew/index.html
       4.5.1.Final:
+        archived: true
         release_date: 2017-11-06
         supported_jbt_is_version: 4.5.1.Beta1b
         blog_announcement_url: /blog/11.1.0.ga-for-oxygen.1a.html
