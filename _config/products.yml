@@ -103,7 +103,7 @@ devstudio:
         supported_devstudio_is_version: 11.1.0.Beta1b
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
-        blog_announcement_url: /blog/11.2.0.ga-for-oxygen.1a.html
+        blog_announcement_url: /blog/11.2.0.ga-for-oxygen.2.html
         eclipse_name: Eclipse Oxygen 4.7.1
         installers:
           - name: Stand-alone Installer
@@ -1220,7 +1220,7 @@ jbt_core:
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1617241
         release_date: 2018-01-30
         supported_jbt_is_version: 4.5.1.Beta1b
-        blog_announcement_url: /blog/11.2.0.ga-for-oxygen.1a.html
+        blog_announcement_url: /blog/11.2.0.ga-for-oxygen.2.html
         documentation_url: http://docs.jboss.org/tools/
         eclipse_name: Eclipse Oxygen 4.7.2
         zips:
