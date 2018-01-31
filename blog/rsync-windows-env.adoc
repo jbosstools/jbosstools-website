@@ -2,7 +2,7 @@
 :page-layout: blog
 :page-author: jeffmaury
 :page-tags: [jbosstools, devstudio]
-:page-date: 2018-01-25
+:page-date: 2018-01-31
 
 == Introduction
 
