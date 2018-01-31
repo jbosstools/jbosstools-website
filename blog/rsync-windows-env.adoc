@@ -1,0 +1,84 @@
+= Tuning rsync environment on Windows
+:page-layout: blog
+:page-author: jeffmaury
+:page-tags: [jbosstools, devstudio]
+:page-date: 2018-01-25
+
+== Introduction
+
+The JBoss Tools OpenShift tooling uses rsync between your local workstation and running pods on an
+OpenShift cluster. This is used by the OpenShift server adapter to provide hot deploy and debugging
+features to the developer.
+
+If you're running JBoss Tools and/or Red Hat JBoss Developer Studio on a Linux or MacOSX platform,
+you're not concerned by this article. If you're running on Windows platform, you may be aware that
+there are some permission relation issues that are painful. The aim of this article is to explain
+the root cause and how to fix it.
+
+== The problem
+
+The OpenShift tooling is using rsync to synchronize local changes to your project to remote pods
+running on an OpenShift cluster. The problem on Windows is that rsync is very Linux/UNIX based and
+by default, it tries to may users/permissions of files between the two platforms. As Windows user
+and permission management is totally different from the Linux one, it leads to strange permissions
+being set on your local files, this causing some failures when trying to update those files.
+
+It's possible to prevent rsync to map this user/permission through some rsync flag. Unfortunately,
+rsync is not launched by the OpenShift tooling but through the help of the OpenShift oc client which
+does not allow to pass this flags.
+
+== The solution
+
+On Windows, rsync is provided by several providers. The well known ones are https://www.cygwin.com[Cygwin] and https://itefix.net/cwrsync[cwRsync].
+
+The last one is based on Cygwin and both of them use a mapping between Windows paths (C: based) and
+Linux/UNIX ones. This mapping can be controlled through a file called etc/fstab. The solution that
+we are proposing here is to instruct not to map user and permissions at this level. Please note that
+this file may not be present, so may need to create one in this case.
+
+=== How to locate the file
+
+The fstab file is located into the rsync distribution your are using (Cygwin or cwRsync). In order
+to get the installation path, open a Windows command shell and type the following command:
+
+```
+where rsync.exe
+```
+
+This will give you the path of the rsync.exe executable that is used by default. It has the general
+form of $MY_RSYNC_DIST_DIR\bin\rsync.exe where $MY_RSYNC_DIST_DIR is the folder where your rsync
+distribution is installed.
+
+The fstab file is located at `$MY_RSYNC_DIST_DIR/etc/fstab`.
+
+=== Updating the file
+
+If you don't find the file at the proper location (cwRsync case), then it's very simple. Create the file at $MY_RSYNC_DIST_DIR/etc/fstab and paste the following content:
+
+[source]
+----
+# /etc/fstab
+#
+#    This file is read once by the first process in a Cygwin process tree.
+#    To pick up changes, restart all Cygwin processes.  For a description
+#    see https://cygwin.com/cygwin-ug-net/using.html#mount-table
+
+# This is default anyway:
+none /cygdrive cygdrive binary,posix=0,user,noacl 0 0
+----
+
+If the file already exists, then it's likely that you have a line like:
+[source]
+----
+none /cygdrive cygdrive binary,posix=0,user 0 0
+----
+
+So, just add the `noacl` flag to the list of options:
+[source]
+----
+none /cygdrive cygdrive binary,posix=0,user,noacl 0 0
+----
+
+Save the file, you're done and you should not have anymore permission errors during rsync operations !!!.
+
+Jeff Maury
