@@ -1,0 +1,64 @@
+= JBoss Tools 4.5.3.AM1 for Eclipse Oxygen.2
+:page-layout: blog
+:page-author: jeffmaury
+:page-tags: [release, jbosstools, jbosscentral]
+:page-date: 2018-02-13
+
+Happy to announce 4.5.3.AM1 (Developer Milestone 1) build for Eclipse Oxygen.2.
+
+Downloads available at link:/downloads/jbosstools/oxygen/4.5.3.AM1.html[JBoss Tools 4.5.3 AM1].
+
+== What is New?
+
+Full info is at link:/documentation/whatsnew/jbosstools/4.5.3.AM1.html[this page]. Some highlights are below.
+
+=== OpenShift
+
+==== Minishift Server Adapter
+
+A new server adapter has been added to support upstream Minishift.
+While the server adapter itself has limited functionality, it is able to start and stop the Minishift virtual machine via its minishift binary.
+From the Servers view, click *New* and then type minishift, that will bring up a command to setup and/or launch the Minishift server adapter.
+
+image::/documentation/whatsnew/openshift/images/minishift-server-adapter.png[width=600]
+
+All you have to do is set the location of the minishift binary file, the type of virtualization hypervisor
+and an optional Minishift profile name.
+
+image::/documentation/whatsnew/openshift/images/minishift-server-adapter1.png[width=600]
+
+Once you’re finished, a new Minishift Server adapter will then be created and visible in the Servers view.
+
+image::/documentation/whatsnew/openshift/images/minishift-server-adapter2.png[width=600]
+
+Once the server is started, Docker and OpenShift connections should appear in their respective views, allowing the user to quickly create a new Openshift application and begin developing their AwesomeApp in a highly-replicatable environment.
+
+image::/documentation/whatsnew/openshift/images/minishift-server-adapter3.png[width=600]
+image::/documentation/whatsnew/openshift/images/minishift-server-adapter4.png[width=600]
+
+=== Fuse Tooling
+
+==== New shortcuts in Fuse Integration perspective
+
+Shortcuts for the Java, Launch, and Debug perspectives and basic navigation operations are now provided within the Fuse Integration perspective.
+
+The result is a set of buttons in the Toolbar:
+
+image::/documentation/whatsnew/fusetools/images/newToolbarAction.png[New Toolbar action]
+
+All of the associated keyboard shortcuts are also available, such as Ctrl+Shift+T to open a Java Type.
+
+==== Performance improvement: Loading Advanced tab for Camel Endpoints
+
+The loading time of the "Advanced" tab in the Properties view for Camel Endpoints is greatly improved.
+
+image::/documentation/whatsnew/fusetools/images/advancedTab.png[Advanced Tab in Properties view]
+
+Previously, in the case of Camel Components that have a lot of parameters, it took several seconds to load the Advanced tab. For example, for the File component, it would take ~3.5s. It now takes ~350ms. The load time has been reduced by a factor of 10. (See this interesting https://www.nngroup.com/articles/response-times-3-important-limits/[article on response time])
+
+If you notice other places showing slow performance, you can file a report by using the https://issues.jboss.org/browse/FUSETOOLS[Fuse Tooling issue tracker]. The Fuse Tooling team really appreciates your help. Your feedback contributes to our development priorities and improves the Fuse Tooling user experience.
+
+
+Enjoy!
+
+Jeff Maury
