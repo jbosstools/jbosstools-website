@@ -32,8 +32,6 @@ When you open the Fuse Tooling preferences page for the editor you will recogniz
 
 image::./images/prefEIPLabels.png[Fuse Tooling editor preference page]
 
-Using the buttons next to the list you are able to define the displayed title for each EIP available except endpoints. 
+This feature enables you to define the displayed title for each EIP available except endpoints.
 
-image::./images/defineDisplayText.png[Dialog for defining the display text for an EIP]
-
-This feature enables you to further customize the graphical view of your routes to fit your needs.
+image::./images/prefEIPLabelsResult.png[Dialog for defining the display text for an EIP]
