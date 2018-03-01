@@ -28,10 +28,10 @@ When selecting factory method on a Global bean, a lot of possibilities were prop
 
 == Customize EIP labels in the diagram
 
-When you open the Fuse Tooling preferences page for the editor you will recognize a new list "Preferred Labels" on that page.
+The Fuse Tooling preferences page for the Editor view includes a new "Preferred Labels" option.
 
 image::./images/prefEIPLabels.png[Fuse Tooling editor preference page]
 
-This feature enables you to define the displayed title for each EIP available except endpoints.
+Use this option to define the label of EIP components (except endpoints) shown in the Editor's Design view.
 
 image::./images/prefEIPLabelsResult.png[Dialog for defining the display text for an EIP]
