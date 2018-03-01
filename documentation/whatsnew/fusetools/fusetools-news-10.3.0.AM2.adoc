@@ -26,3 +26,12 @@ For example:
 
 When selecting factory method on a Global bean, a lot of possibilities were proposed in the user interface. The list of factory methods for a global bean is now limited to only those methods that match the constraints of the bean's global definition type (bean or bean factory).
 
+== Customize EIP labels in the diagram
+
+The Fuse Tooling preferences page for the Editor view includes a new "Preferred Labels" option.
+
+image::./images/prefEIPLabels.png[Fuse Tooling editor preference page]
+
+Use this option to define the label of EIP components (except endpoints) shown in the Editor's Design view.
+
+image::./images/prefEIPLabelsResult.png[Dialog for defining the display text for an EIP]
