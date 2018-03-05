@@ -1,0 +1,12 @@
+= Freemarker What's New in 4.5.3.AM2
+:page-layout: whatsnew
+:page-component_id: freemarker
+:page-component_version: 4.5.3.AM2
+:page-product_id: jbt_core
+:page-product_version: 4.5.3.AM2
+
+== Freemarker component removal
+
+The Freemarker component has been removed from Red Hat Central as it has been deprecated a while ago.
+
+related_jira::JBIDE-25736[]
