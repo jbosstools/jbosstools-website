@@ -1,0 +1,16 @@
+= General 4.5.3.AM2 What's New
+:page-layout: whatsnew
+:page-component_id: general
+:page-component_version: 4.5.3.AM2
+:page-product_id: jbt_core
+:page-product_version: 4.5.3.AM2
+
+
+== Credentials Framework
+
+=== Sunsetting jboss.org credentials
+
+`Download Runtimes` and `CDK Server Adapter` used the credentials framework to manage credentials. However, the JBoss.org credentials cannot be used any more
+as the underlying service used by these components does not support these credentials.
+
+The credentials framework still supports the JBoss.org credentials in case other services / components require or use this credentials domain.
