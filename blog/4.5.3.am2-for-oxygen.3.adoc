@@ -1,10 +1,10 @@
-= JBoss Tools 4.5.3.AM2 for Eclipse Oxygen.2
+= JBoss Tools 4.5.3.AM2 for Eclipse Oxygen.3
 :page-layout: blog
 :page-author: jeffmaury
 :page-tags: [release, jbosstools, jbosscentral]
 :page-date: 2018-03-06
 
-Happy to announce 4.5.3.AM2 (Developer Milestone 2) build for Eclipse Oxygen.2.
+Happy to announce 4.5.3.AM2 (Developer Milestone 2) build for Eclipse Oxygen.3.
 
 Downloads available at link:/downloads/jbosstools/oxygen/4.5.3.AM2.html[JBoss Tools 4.5.3 AM2].
 
