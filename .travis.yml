@@ -6,7 +6,7 @@ before_install:
 cache: bundler
 bundler_args: --without development --path .bundle
 rvm:
-- 2.2.1
+- 2.4.1
 branches:
   only:
   - master

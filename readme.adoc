@@ -20,12 +20,13 @@ The command will now be:
    $ docker run -it --rm -p 4242:4242 -v `pwd`:/jbosstools-website:Z jbosstools/jbosstools-website /bin/bash
 ```
 
-
-Now in the Docker you can do:
+Then, in the Docker container, do:
 
 ```
-   $ cd /jbosstools-website
-   $ rake clean preview
+   # cd /jbosstools-website
+   # yum install ruby -y # ONLY if required!
+   # gem install bundler && bundle --version && bundle install # ONLY if required!
+   # rake clean preview
 ```
 
 and you can browse the result at http://$DOCKER_HOST:4242.
