@@ -95,7 +95,7 @@ GEM
     http-cookie (1.0.2)
       domain_name (~> 0.5)
     http_parser.rb (0.6.0)
-    json (1.8.2)
+    json (2.1.0)
     kramdown (1.0.2)
     less (2.6.0)
       commonjs (~> 0.2.7)
@@ -179,3 +179,9 @@ DEPENDENCIES
   tilt
   uglifier (~> 2.0.1)
   version (= 1.0.0)
+
+RUBY VERSION
+   ruby 2.4.1p111
+
+BUNDLED WITH
+   1.16.1
