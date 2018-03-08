@@ -1,0 +1,20 @@
+= Freemarker What's New in 4.5.3.AM2
+:page-layout: whatsnew
+:page-component_id: freemarker
+:page-component_version: 4.5.3.AM2
+:page-product_id: jbt_core
+:page-product_version: 4.5.3.AM2
+
+== Freemarker component removal
+
+<<<<<<< HEAD
+The Freemarker component has been removed from Red Hat Central as it has been deprecated a while ago.
+=======
+The Freemarker component has been removed from Red Hat Central as it has been deprecated since July 2017.
+
+The last available update site release is here:
+
+link:http://download.jboss.org/jbosstools/neon/stable/updates/core/freemarker/[Freemarker 1.5.300.v20161214-1103]
+>>>>>>> master
+
+related_jira::JBIDE-25736[]

@@ -1,0 +1,139 @@
+= JBoss Tools 4.5.3.AM2 for Eclipse Oxygen.3
+:page-layout: blog
+:page-author: jeffmaury
+:page-tags: [release, jbosstools, jbosscentral]
+:page-date: 2018-03-06
+
+Happy to announce 4.5.3.AM2 (Developer Milestone 2) build for Eclipse Oxygen.3.
+
+Downloads available at link:/downloads/jbosstools/oxygen/4.5.3.AM2.html[JBoss Tools 4.5.3 AM2].
+
+== What is New?
+
+Full info is at link:/documentation/whatsnew/jbosstools/4.5.3.AM2.html[this page]. Some highlights are below.
+
+=== OpenShift
+
+==== CDK and Minishift Server Adapter better developer experience
+
+When working with both CDK and upstream Minishift, it is recommanded to distinguish environments through the MINISHIFT_HOME variable.
+It was possible before to use this parameter but it requires a two steps process:
+
+- first create the server adapter (through the wizard)
+- then change the MINISHIFT_HOME in the server adapter editor
+
+It is now possible to set this parameter from the server adapter wizard. So now, everything is correctly setup when you create the
+server adapter.
+
+Let's see an example with the CDK server adapter.
+
+From the *Servers* view, select the new Server menu item and enter cdk in the filter:
+
+image::/documentation/whatsnew/openshift/images/cdk-server-adapter-wizard.png[width=600]
+
+Select Red Hat Container Development Kit 3.2+
+
+image::/documentation/whatsnew/openshift/images/cdk-server-adapter-wizard1.png[width=600]
+
+Click the *Next* button:
+
+image::/documentation/whatsnew/openshift/images/cdk-server-adapter-wizard2.png[width=600]
+
+The MINISHIFT_HOME parameter can be set here and is defaulted.
+
+=== Fuse Tooling
+
+==== Display Fuse version corresponding to Camel version proposed
+
+When you create a new project, you select the Camel version from a list. Now, the list of Camel versions includes the Fuse version to help you choose the version that corresponds to your production version.
+
+image::/documentation/whatsnew/fusetools/images/listOfFuseVersion.png[Fuse Version also displayed in drop-down list close to Camel version]
+
+==== Update validation for similar IDs between a component and its definition
+
+Starting with Camel 2.20, you can use similar IDs for the component name and its definition unless the specific property "registerEndpointIdsFromRoute" is provided.
+The validation process checks the Camel version and the value of the "registerEndpointIdsFromRoute" property.
+
+For example:
+[source,xml]
+----
+<from id="timer" uri="timer:timerName"/>
+----
+
+==== Improved guidance in method selection for factory methods on Global Bean
+
+When selecting factory method on a Global bean, a lot of possibilities were proposed in the user interface. The list of factory methods for a global bean is now limited to only those methods that match the constraints of the bean's global definition type (bean or bean factory).
+
+==== Customize EIP labels in the diagram
+
+The Fuse Tooling preferences page for the Editor view includes a new "Preferred Labels" option.
+
+image::/documentation/whatsnew/fusetools/images/prefEIPLabels.png[Fuse Tooling editor preference page]
+
+Use this option to define the label of EIP components (except endpoints) shown in the Editor's Design view.
+
+image::/documentation/whatsnew/fusetools/images/prefEIPLabelsResult.png[Dialog for defining the display text for an EIP]
+
+=== General
+
+==== Credentials Framework
+
+===== Sunsetting jboss.org credentials
+
+`Download Runtimes` and `CDK Server Adapter` used the credentials framework to manage credentials. However, the JBoss.org credentials cannot be used any more
+as the underlying service used by these components does not support these credentials.
+
+The credentials framework still supports the JBoss.org credentials in case other services / components require or use this credentials domain.
+
+=== Aerogear
+
+==== Aerogear component deprecation
+
+The Aerogear component has been marked deprecated as there is no more maintenance on the source code. It is still available in Red Hat Central
+and may be removed in the future.
+
+=== Arquillian
+
+==== Arquillian component removal
+
+<<<<<<< HEAD
+The Arquillian component has been removed from Red Hat Central as it has been deprecated a while ago.
+=======
+The Arquillian component has been removed from Red Hat Central as it has been deprecated since July 2017.
+
+The last available update site release is here:
+
+link:http://download.jboss.org/jbosstools/oxygen/stable/updates/core/arquillian/[Arquillian 1.2.601.v20171220-1317]
+>>>>>>> master
+
+=== BrowserSim
+
+==== BrowserSim component deprecation
+
+The BrowserSim component has been marked deprecated as there is no more maintenance on the source code. It is still available in Red Hat Central
+and may be removed in the future.
+
+=== Freemarker
+
+==== Freemarker component removal
+
+<<<<<<< HEAD
+The Freemarker component has been removed from Red Hat Central as it has been deprecated a while ago.
+=======
+The Freemarker component has been removed from Red Hat Central as it has been deprecated since July 2017.
+
+The last available update site release is here:
+
+link:http://download.jboss.org/jbosstools/neon/stable/updates/core/freemarker/[Freemarker 1.5.300.v20161214-1103]
+>>>>>>> master
+
+=== LiveReload
+
+==== LiveReload component deprecation
+
+The LiveReload component has been marked deprecated as there is no more maintenance on the source code. It is still available in Red Hat Central
+and may be removed in the future.
+
+Enjoy!
+
+Jeff Maury
