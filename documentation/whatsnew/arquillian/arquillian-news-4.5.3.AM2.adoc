@@ -7,6 +7,10 @@
 
 == Arquillian component removal
 
-The Arquillian component has been removed from Red Hat Central as it has been deprecated a while ago.
+The Arquillian component has been removed from Red Hat Central as it has been deprecated since July 2017.
+
+The last available update site release is here:
+
+link:http://download.jboss.org/jbosstools/oxygen/stable/updates/core/arquillian/[Arquillian 1.2.601.v20171220-1317]
 
 related_jira::JBIDE-25736[]
