@@ -196,13 +196,13 @@ bottom_javascripts: ["/javascripts/download_tabs.js"]
             %a{:href=>relative(is_page.output_path)} Click here to learn more or install.
           - elsif page.build_info.product_id.to_s == "devstudio_is" || page.build_info.product_id.to_s == "jbt_is"
             - if page.build_info.product_id.to_s == "jbt_is"
-              - installed_product_short = "jbt"
+              - installed_product_short = "jbt_core"
               - installed_product = "JBoss Tools #{page.build_info.required_jbt_core_version}"
-              - central_install_url = "http://download.jboss.org/jbosstools/central/install?connectors=jboss.integration-stack.bundle.bpr,jboss.integration-stack.bundle.ds,jboss.integration-stack.bundle.soa,jboss.integration-stack.bundle.fuse,com.jboss.jbds.bpel.feature,org.savara.tools.feature,org.drools.eclipse.feature,org.guvnor.tools.feature,org.jboss.jbpm.eclipse.feature,org.jboss.tools.esb.feature,org.switchyard.tools.feature,org.jboss.tools.modeshape.rest.feature,org.teiid.designer.feature,org.jboss.tools.runtime.drools.detector.feature"
+              - central_install_url = "http://download.jboss.org/jbosstools/central/install?connectors=jboss.integration-stack.bundle.bpr,jboss.integration-stack.bundle.ds,jboss.integration-stack.bundle.soa,org.jboss.tools.bpel.feature,org.eclipse.bpmn2.feature,org.drools.eclipse.feature,org.jboss.jbpm.eclipse.feature,org.switchyard.tools.feature"
             - else
-              - installed_product_short = "jbds"
+              - installed_product_short = "devstudio"
               - installed_product = "JBoss Developer Studio #{page.build_info.required_devstudio_version}"
-              - central_install_url = "https://devstudio.jboss.com/central/install?connectors=jboss.integration-stack.bundle.bpr,jboss.integration-stack.bundle.ds,jboss.integration-stack.bundle.soa,com.jboss.jbds.soatooling.bundle.soap,jboss.integration-stack.bundle.bpr"
+              - central_install_url = "https://devstudio.jboss.com/central/install?connectors=jboss.integration-stack.bundle.bpr,jboss.integration-stack.bundle.ds,jboss.integration-stack.bundle.soa,jboss.integration-stack.bundle.switchyard"
             %br
             Once you have installed and started
             %strong #{installed_product}
