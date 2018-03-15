@@ -73,11 +73,11 @@ bottom_javascripts: ["/javascripts/download_tabs.js"]
 
     - unless page.build_info.eclipse_version.requirements.nil?
       .alert.alert-requirements
-        - if page.build_info.product_id.to_s == "jbt_core"
+        - if page.build_info.product_id.to_s == "jbt"
           %strong Requirements:
           #{page.build_info.eclipse_version.requirements} and
           %a{:href=>page.build_info.eclipse_version.download_url} #{page.build_info.eclipse_version.full_name}
-        - elsif page.build_info.product_id.to_s == "devstudio"
+        - elsif page.build_info.product_id.to_s == "jbds"
           %strong Requirements:
           #{page.build_info.eclipse_version.requirements} only.
         - elsif page.build_info.product_id.to_s == "jbt_is"
