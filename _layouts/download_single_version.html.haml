@@ -73,11 +73,11 @@ bottom_javascripts: ["/javascripts/download_tabs.js"]
 
     - unless page.build_info.eclipse_version.requirements.nil?
       .alert.alert-requirements
-        - if page.build_info.product_id.to_s == "jbt"
+        - if page.build_info.product_id.to_s == "jbt_core"
           %strong Requirements:
           #{page.build_info.eclipse_version.requirements} and
           %a{:href=>page.build_info.eclipse_version.download_url} #{page.build_info.eclipse_version.full_name}
-        - elsif page.build_info.product_id.to_s == "jbds"
+        - elsif page.build_info.product_id.to_s == "devstudio"
           %strong Requirements:
           #{page.build_info.eclipse_version.requirements} only.
         - elsif page.build_info.product_id.to_s == "jbt_is"
@@ -196,11 +196,11 @@ bottom_javascripts: ["/javascripts/download_tabs.js"]
             %a{:href=>relative(is_page.output_path)} Click here to learn more or install.
           - elsif page.build_info.product_id.to_s == "devstudio_is" || page.build_info.product_id.to_s == "jbt_is"
             - if page.build_info.product_id.to_s == "jbt_is"
-              - installed_product_short = "jbt_core"
+              - installed_product_short = "jbt"
               - installed_product = "JBoss Tools #{page.build_info.required_jbt_core_version}"
               - central_install_url = "http://download.jboss.org/jbosstools/central/install?connectors=jboss.integration-stack.bundle.bpr,jboss.integration-stack.bundle.ds,jboss.integration-stack.bundle.soa,org.jboss.tools.bpel.feature,org.eclipse.bpmn2.feature,org.drools.eclipse.feature,org.jboss.jbpm.eclipse.feature,org.switchyard.tools.feature"
             - else
-              - installed_product_short = "devstudio"
+              - installed_product_short = "jbds"
               - installed_product = "JBoss Developer Studio #{page.build_info.required_devstudio_version}"
               - central_install_url = "https://devstudio.jboss.com/central/install?connectors=jboss.integration-stack.bundle.bpr,jboss.integration-stack.bundle.ds,jboss.integration-stack.bundle.soa,jboss.integration-stack.bundle.switchyard"
             %br
