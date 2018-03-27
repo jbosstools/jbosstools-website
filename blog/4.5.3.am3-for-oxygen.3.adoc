@@ -1,0 +1,148 @@
+= JBoss Tools 4.5.3.AM3 for Eclipse Oxygen.3
+:page-layout: blog
+:page-author: jeffmaury
+:page-tags: [release, jbosstools, jbosscentral]
+:page-date: 2018-03-27
+
+Happy to announce 4.5.3.AM3 (Developer Milestone 3) build for Eclipse Oxygen.3.
+
+Downloads available at link:/downloads/jbosstools/oxygen/4.5.3.AM3.html[JBoss Tools 4.5.3 AM3].
+
+== What is New?
+
+Full info is at link:/documentation/whatsnew/jbosstools/4.5.3.AM3.html[this page]. Some highlights are below.
+
+=== OpenShift
+
+==== CDK and Minishift Server Adapter runtime download
+
+When working with both CDK and upstream Minishift, you needed to have previously downloaded the CDK
+or Minishift binary. It is now possible to download the runtime to a specific folder when you create
+the server adapter.
+
+Let's see an example with the CDK server adapter.
+
+From the *Servers* view, select the new Server menu item and enter cdk in the filter:
+
+image::/documentation/whatsnew/openshift/images/cdk-server-adapter-wizard.png[width=600]
+
+Select Red Hat Container Development Kit 3.2+
+
+image::/documentation/whatsnew/openshift/images/cdk-server-adapter-wizard1.png[width=600]
+
+Click the *Next* button:
+
+image::/documentation/whatsnew/openshift/images/cdk-server-adapter-wizard3.png[width=600]
+
+In order to download the runtime, click the *Download and install runtime...* link:
+
+image::/documentation/whatsnew/openshift/images/cdk-server-adapter-wizard4.png[width=600]
+
+Select the version of the runtime you want to download
+
+image::/documentation/whatsnew/openshift/images/cdk-server-adapter-wizard5.png[width=600]
+
+Click the *Next* button:
+
+image::/documentation/whatsnew/openshift/images/cdk-server-adapter-wizard6.png[width=600]
+
+You need an account to download the CDK. If you already had configured credentials, select the one you
+want to use. If you didn't, click the *Add* button to add your credentials.
+
+image::/documentation/whatsnew/openshift/images/cdk-server-adapter-wizard7.png[width=600]
+
+Click the *Next* button. Your credentials will be validated, and upon success, you must accept
+the license agreement:
+
+image::/documentation/whatsnew/openshift/images/cdk-server-adapter-wizard8.png[width=600]
+
+Accept the license agreement and click the *Next* button:
+
+image::/documentation/whatsnew/openshift/images/cdk-server-adapter-wizard9.png[width=600]
+
+You can choose the folder where you want the runtime to be installed. Once you've set it,
+click the *Finish* button:
+
+The download of the runtime will be started and you should see the progression on the server adapter
+wizard:
+
+image::/documentation/whatsnew/openshift/images/cdk-server-adapter-wizard10.png[width=600]
+
+Once the download is completed, you will notice that the *Minishift Binary* and *Username* fields have been filled:
+
+image::/documentation/whatsnew/openshift/images/cdk-server-adapter-wizard11.png[width=600]
+
+Click the *Finish* button to create the server adapter.
+
+Please note that if it's the first time you install CDK, you must perform an initialization. In the *Servers* view, right click
+the server and select the *Setup CDK* menu item:
+
+image::/documentation/whatsnew/openshift/images/cdk-server-adapter-wizard12.png[width=600]
+
+
+image::/documentation/whatsnew/openshift/images/cdk-server-adapter-wizard13.png[width=600]
+
+=== Hibernate Tools
+
+==== Hibernate Runtime Provider Updates
+
+A number of additions and updates have been performed on the available Hibernate runtime  providers.
+
+===== New Hibernate 5.3 Runtime Provider
+
+With beta releases available in the Hibernate 5.3 stream, the time was right to make available a corresponding Hibernate 5.3 runtime provider. This runtime provider incorporates Hibernate Core version 5.3.0.Beta2 and Hibernate Tools version 5.3.0.Beta1.  
+
+image::/documentation/whatsnew/hibernate/images/4.5.3.AM3/hibernate_5_3.png[title="Hibernate 5.3 is available", width="381", align="center"]
+
+===== Other Runtime Provider Updates
+
+The Hibernate 5.0 runtime provider now incorporates Hibernate Core version 5.0.12.Final and Hibernate Tools version 5.0.6.Final.
+
+The Hibernate 5.1 runtime provider now incorporates Hibernate Core version 5.1.12.Final and Hibernate Tools version 5.1.7.Final.
+
+The Hibernate 5.2 runtime provider now incorporates Hibernate Core version 5.2.15.Final and Hibernate Tools version 5.2.10.Final.
+
+
+=== Fuse Tooling
+
+==== Fuse Ignite Technical Extension templates
+
+The existing template for "Custom step using a Camel Route" has been updated to work with Fuse 7 Tech Preview 4.
+
+Two new templates have been added:
+- Custom step using Java Bean
+- Custom connector
+
+image::/documentation/whatsnew/fusetools/images/igniteExtensionWizard10.3.0.AM3.png[New Fuse Ignite wizard with 3 options]
+
+==== Improvements of the wizard to create a Fuse Integration project
+
+The creation wizard provides better guidance for the targeted deployment environment:
+
+image::/documentation/whatsnew/fusetools/images/newFuseIntegrationWizard-environment.png[New Fuse Integration Project wizard page to select environment]
+
+More place is available to choose the templates and they are now filtered based on the targeted environment:
+
+image::/documentation/whatsnew/fusetools/images/newFuseIntegrationWizard-templates.png[New Fuse Integration Project wizard page to select templates]
+
+It also points out to other places to find different examples for advanced users (see the link at the bottom of the previous screenshot).
+
+==== Camel Rest DSL editor (Technical preview)
+
+Camel is providing a Rest DSL to help the integration through Rest endpoints. Fuse Tooling is now providing a new tab in read-only mode to visualize the Rest endpoints defined.
+
+image::/documentation/whatsnew/fusetools/images/restViewer.png[Rest DSL editor tab in read-only mode]
+
+It is currently in Tech Preview and needs to be activated in Window -> Preferences -> Fuse Tooling -> Editor -> Enable Read Only Tech preview REST DSL tab.
+
+Work is still ongoing and feedback is very welcome on this new feature, you can comment on link:https://issues.jboss.org/browse/FUSETOOLS-1287[this JIRA epic].
+
+==== Dozer upgrade and migration
+
+When upgrading from Camel < 2.20 to Camel > 2.20, the Dozer dependency has been upgraded to a version not backward-compatible 
+If you open a Data transformation based on Dozer in Fuse Tooling, it will propose to migrate the file used for the transformation (technically changing the namespace). It allow to continue to use the Data Transformation editor and have - in most cases - the Data Transformation working at runtime with Camel > 2.20.
+
+
+Enjoy!
+
+Jeff Maury
