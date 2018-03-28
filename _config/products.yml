@@ -1231,8 +1231,29 @@ jbt_core:
           - name: Stand-alone BrowserSim
             file_size: 16MB
             url: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.jboss.tools.browsersim&a=org.jboss.tools.browsersim-standalone&v=3.8.100-SNAPSHOT&e=zip
-      4.5.3.AM2:
+      4.5.3.AM3:
         update_site_url: http://download.jboss.org/jbosstools/oxygen/development/updates/
+        release_date: 2018-03-28
+        supported_jbt_is_version: 4.5.2.Final
+        blog_announcement_url: /blog/4.5.3.am3-for-oxygen.3.html
+        documentation_url: http://docs.jboss.org/tools/
+        eclipse_name: Eclipse Oxygen 4.7.3
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 612B
+            url: http://download.jboss.org/jbosstools/static/oxygen/development/updates/core/jbosstools-4.5.3.AM3-updatesite-core.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/oxygen/development/updates/core/jbosstools-4.5.3.AM3-updatesite-core.zip.sha256
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 223MB
+            url: http://download.jboss.org/jbosstools/static/oxygen/development/updates/core/jbosstools-4.5.3.AM3-src.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/oxygen/development/updates/core/jbosstools-4.5.3.AM3-src.zip.sha256
+          - name: Stand-alone BrowserSim
+            file_size: 16MB
+            url: http://download.jboss.org/jbosstools/static/oxygen/development/updates/core/jbosstools-4.5.3.AM3-browsersim-standalone.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/oxygen/development/updates/core/jbosstools-4.5.3.AM3-browsersim-standalone.zip.sha256
+          - name: Release Notes
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
+      4.5.3.AM2:
         release_date: 2018-03-06
         supported_jbt_is_version: 4.5.2.Final
         blog_announcement_url: /blog/4.5.3.am2-for-oxygen.3.html
