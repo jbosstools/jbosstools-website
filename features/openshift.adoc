@@ -7,17 +7,6 @@
 :page-feature_order: 2
 :page-feature_tagline: Cloud on steroids
 
-== OpenShift 2
-=== Integrated deployment to the cloud.
-image::images/features-openshift-applicationwizard-reduced.png[OpenShift Application Wizard]
-
-From developing to deploying on OpenShift 2, JBoss Tools provides you with a fully fledged
-environment for your project and aligns with the standard workflows within Eclipse.
-Using the tooling, you can create and configure your remote container, deploy your application,
-stream remote logs into your local console, access your data and remotely debug the running application.
-Creating a new OpenShift 2 Application along into a new or an existing Eclipse Project,
-or importing an existing OpenShift 2 Application into a new or an existing project, the Application Wizard supports all the combinations.
-
 == OpenShift 3
 === Discover the new OpenShift
 image::images/openshift3_create_app.png[]
@@ -80,3 +69,11 @@ but if you need more customization, you can choose to deploy Docker images to Op
 directly from either the Docker or OpenShift Explorer.
 
 image::images/deploy_image_menu.png[]
+
+== CDK integration
+=== Start/stop CDK from the IDE
+A new server adapter has been added to support the next generation of CDK 3.
+While the server adapter itself has limited functionality, it is able to start and stop the CDK virtual machine via its minishift binary.
+Simply hit Ctrl+3 (Cmd+3 on OSX) and type CDK, that will bring up a command to setup and/or launch the CDK server adapter.
+
+image::/documentation/whatsnew/openshift/images/cdk3-server-adapter2.png[]

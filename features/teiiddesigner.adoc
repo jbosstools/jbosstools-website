@@ -6,6 +6,7 @@
 :page-feature_highlighted: false
 :page-feature_order: 10
 :page-feature_tagline: modeling for data virtualization
+:page-feature_deprecated: true
 
 == Teiid Designer
 === Data Virtualization Modeling Tool

@@ -25,6 +25,9 @@ title: Features
         - feature = f.shift
         .span3.center.well
           %a.flexbox.stretch-column{:href=>relative(feature.url) }
+            - if feature.deprecated
+              .ribbon
+                %span Deprecated
             .title
               %h3.center< #{feature.name}
             .body

@@ -44,6 +44,7 @@ module Awestruct
             feature.order = page.feature_order != nil ? page.feature_order : 100
             feature.tagline = page.feature_tagline
             feature.image_url = URIHelper.concat(@path_prefix, page.feature_image_url)
+            feature.deprecated = page.feature_deprecated || false
             features[feature.product_id] = Array.new unless !features[feature.product_id].nil?
             features[feature.product_id] << feature
           end
