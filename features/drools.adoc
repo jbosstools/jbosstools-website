@@ -6,6 +6,7 @@
 :page-feature_highlighted: false
 :page-feature_order: 10
 :page-feature_tagline: Business Rules for the masses
+:page-feature_deprecated: true
 
 == Drools
 === Business Rules

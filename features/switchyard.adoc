@@ -6,6 +6,7 @@
 :page-feature_highlighted: false
 :page-feature_order: 10
 :page-feature_tagline: Your Service Delivery Framework
+:page-feature_deprecated: true
 
 == SwitchYard
 === Making SOA fun again

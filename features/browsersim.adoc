@@ -5,6 +5,7 @@
 :page-feature_order: 8
 :page-feature_tagline: Mobile Browser Simulator
 :page-feature_image_url: images/browsersim_icon_256px.png
+:page-feature_deprecated: true
 :page-issues_url: https://issues.jboss.org/browse/JBIDE/component/
 
 == Browser Simulator
