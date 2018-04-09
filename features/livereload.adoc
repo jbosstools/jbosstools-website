@@ -5,6 +5,7 @@
 :page-feature_image_url: images/cloud-reload-1-256x256.png
 :page-feature_order: 5
 :page-feature_tagline: Refresh without F5
+:page-feature_deprecated: true
 
 == LiveReload
 === Not pressing F5 is refreshing
