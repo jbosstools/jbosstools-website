@@ -1,0 +1,20 @@
+= OpenShift What's New in 3.4.3.Final
+:page-layout: whatsnew
+:page-component_id: openshift
+:page-component_version: 4.5.3.Final
+:page-product_id: jbt_core
+:page-product_version: 4.5.3.Final
+:page-include-previous: true
+
+=== CDK Server Adapter integrated setup
+
+When starting a CDK server adapter, a setup procedure must be previously run. Initially, this must be run
+outside the IDE through the ```minishift setup-cdk``` command. In the previous milestone, this has been
+possible from the IDE through a new action from the *Servers* view. It is now integrated in the *start* phase
+of the server adapter: if the MINISHIFT_HOME folder associated with the CDK server adapter is detected as
+uninitialized, then the user will be asked if ```setup-cdk``` command should be run and if approved by the
+user, it will be run prior to the ```start``` command.
+
+related_jira::JBIDE-25908[]
+
+
