@@ -1,0 +1,379 @@
+= JBoss Tools and Red Hat Developer Studio for Eclipse Oxygen.3a
+:page-layout: blog
+:page-author: jeffmaury
+:page-tags: [release, jbosstools, devstudio, jbosscentral]
+:page-date: 2018-04-23
+
+link:/downloads/jbosstools/oxygen/4.5.3.Final.html[JBoss Tools 4.5.3] and link:/downloads/devstudio/oxygen/11.3.0.GA.html[Red Hat JBoss Developer Studio 11.3] for Eclipse Oxygen.3a are here waiting for you. Check it out!
+
+image::/blog/images/devstudio11.png[]
+
+== Installation
+
+JBoss Developer Studio comes with everything pre-bundled in its installer. Simply download it from our https://www.jboss.org/products/devstudio.html[JBoss Products page] and run it like this:
+
+    java -jar jboss-devstudio-<installername>.jar
+
+JBoss Tools or Bring-Your-Own-Eclipse (BYOE) JBoss Developer Studio require a bit more:
+
+This release requires at least Eclipse 4.7 (Oxygen) but we recommend
+using the latest http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/oxygen3a[Eclipse 4.7.3a Oxygen JEE Bundle] since then you get most of the dependencies preinstalled.
+
+Once you have installed Eclipse, you can either find us on the Eclipse Marketplace under "JBoss Tools" or "Red Hat JBoss Developer Studio".
+
+For JBoss Tools, you can also use our update site directly.
+
+    http://download.jboss.org/jbosstools/oxygen/stable/updates/
+
+== What is new?
+
+Our main focus for this release was on adoption of Java10, improvements for container based development and bug fixing.
+Eclipse Oxygen itself has link:https://www.youtube.com/playlist?list=PLy7t4z5SYNaTM66CahSlkMh5YkndYXMUq[a lot of new cool stuff] but let me highlight just a few updates in both Eclipse Oxygen and JBoss Tools plugins that I think are worth mentioning.
+
+=== OpenShift 3
+
+==== CDK and Minishift Server Adapter better developer experience
+
+===== MINISHIFT_HOME setting
+
+When working with both CDK and upstream Minishift, it is recommanded to distinguish environments through the MINISHIFT_HOME variable.
+It was possible before to use this parameter but it requires a two steps process:
+
+- first create the server adapter (through the wizard)
+- then change the MINISHIFT_HOME in the server adapter editor
+
+It is now possible to set this parameter from the server adapter wizard. So now, everything is correctly setup when you create the
+server adapter.
+
+Let's see an example with the CDK server adapter.
+
+From the *Servers* view, select the new Server menu item and enter cdk in the filter:
+
+image::/documentation/whatsnew/openshift/images/cdk-server-adapter-wizard.png[width=600]
+
+Select Red Hat Container Development Kit 3.2+
+
+image::/documentation/whatsnew/openshift/images/cdk-server-adapter-wizard1.png[width=600]
+
+Click the *Next* button:
+
+image::/documentation/whatsnew/openshift/images/cdk-server-adapter-wizard2.png[width=600]
+
+The MINISHIFT_HOME parameter can be set here and is defaulted.
+
+===== CDK and Minishift Server Adapter runtime download
+
+When working with both CDK and upstream Minishift, you needed to have previously downloaded the CDK
+or Minishift binary. It is now possible to download the runtime to a specific folder when you create
+the server adapter.
+
+Let's see an example with the CDK server adapter.
+
+From the *Servers* view, select the new Server menu item and enter cdk in the filter:
+
+image::/documentation/whatsnew/openshift/images/cdk-server-adapter-wizard.png[width=600]
+
+Select Red Hat Container Development Kit 3.2+
+
+image::/documentation/whatsnew/openshift/images/cdk-server-adapter-wizard1.png[width=600]
+
+Click the *Next* button:
+
+image::/documentation/whatsnew/openshift/images/cdk-server-adapter-wizard3.png[width=600]
+
+In order to download the runtime, click the *Download and install runtime...* link:
+
+image::/documentation/whatsnew/openshift/images/cdk-server-adapter-wizard4.png[width=600]
+
+Select the version of the runtime you want to download
+
+image::/documentation/whatsnew/openshift/images/cdk-server-adapter-wizard5.png[width=600]
+
+Click the *Next* button:
+
+image::/documentation/whatsnew/openshift/images/cdk-server-adapter-wizard6.png[width=600]
+
+You need an account to download the CDK. If you already had configured credentials, select the one you
+want to use. If you didn't, click the *Add* button to add your credentials.
+
+image::/documentation/whatsnew/openshift/images/cdk-server-adapter-wizard7.png[width=600]
+
+Click the *Next* button. Your credentials will be validated, and upon success, you must accept
+the license agreement:
+
+image::/documentation/whatsnew/openshift/images/cdk-server-adapter-wizard8.png[width=600]
+
+Accept the license agreement and click the *Next* button:
+
+image::/documentation/whatsnew/openshift/images/cdk-server-adapter-wizard9.png[width=600]
+
+You can choose the folder where you want the runtime to be installed. Once you've set it,
+click the *Finish* button:
+
+The download of the runtime will be started and you should see the progression on the server adapter
+wizard:
+
+image::/documentation/whatsnew/openshift/images/cdk-server-adapter-wizard10.png[width=600]
+
+Once the download is completed, you will notice that the *Minishift Binary* and *Username* fields have been filled:
+
+image::/documentation/whatsnew/openshift/images/cdk-server-adapter-wizard11.png[width=600]
+
+Click the *Finish* button to create the server adapter.
+
+Please note that if it's the first time you install CDK, you must perform an initialization. In the *Servers* view, right click
+the server and select the *Setup CDK* menu item:
+
+image::/documentation/whatsnew/openshift/images/cdk-server-adapter-wizard12.png[width=600]
+
+
+image::/documentation/images/cdk-server-adapter-wizard13.png[width=600]
+
+Please note that the *setup-cdk* command will also be automatically run when you start the CDK server adapter if the
+MINISHIFT_HOME environment is detected uninitialized after user approval.
+
+==== Minishift Server Adapter
+
+A new server adapter has been added to support upstream Minishift.
+While the server adapter itself has limited functionality, it is able to start and stop the Minishift virtual machine via its minishift binary.
+From the Servers view, click *New* and then type minishift, that will bring up a command to setup and/or launch the Minishift server adapter.
+
+image::/documentation/whatsnew/openshift/images/minishift-server-adapter.png[width=600]
+
+All you have to do is set the location of the minishift binary file, the type of virtualization hypervisor
+and an optional Minishift profile name.
+
+image::/documentation/whatsnew/openshift/images/minishift-server-adapter1.png[width=600]
+
+Once you’re finished, a new Minishift Server adapter will then be created and visible in the Servers view.
+
+image::/documentation/whatsnew/openshift/images/minishift-server-adapter2.png[width=600]
+
+Once the server is started, Docker and OpenShift connections should appear in their respective views, allowing the user to quickly create a new Openshift application and begin developing their AwesomeApp in a highly-replicatable environment.
+
+image::/documentation/whatsnew/openshift/images/minishift-server-adapter3.png[width=600]
+image::/documentation/whatsnew/openshift/images/minishift-server-adapter4.png[width=600]
+
+The credentials framework still supports the JBoss.org credentials in case other services / components require or use this credentials domain.
+
+
+=== Fuse Tooling
+
+==== New shortcuts in Fuse Integration perspective
+
+Shortcuts for the Java, Launch, and Debug perspectives and basic navigation operations are now provided within the Fuse Integration perspective.
+
+The result is a set of buttons in the Toolbar:
+
+image::/documentation/whatsnew/fusetools/images/newToolbarAction.png[New Toolbar action]
+
+All of the associated keyboard shortcuts are also available, such as Ctrl+Shift+T to open a Java Type.
+
+==== Performance improvement: Loading Advanced tab for Camel Endpoints
+
+The loading time of the "Advanced" tab in the Properties view for Camel Endpoints is greatly improved.
+
+image::/documentation/whatsnew/fusetools/images/advancedTab.png[Advanced Tab in Properties view]
+
+Previously, in the case of Camel Components that have a lot of parameters, it took several seconds to load the Advanced tab. For example, for the File component, it would take ~3.5s. It now takes ~350ms. The load time has been reduced by a factor of 10. (See this interesting https://www.nngroup.com/articles/response-times-3-important-limits/[article on response time])
+
+If you notice other places showing slow performance, you can file a report by using the https://issues.jboss.org/browse/FUSETOOLS[Fuse Tooling issue tracker]. The Fuse Tooling team really appreciates your help. Your feedback contributes to our development priorities and improves the Fuse Tooling user experience.
+
+==== Display Fuse version corresponding to Camel version proposed
+
+When you create a new project, you select the Camel version from a list. Now, the list of Camel versions includes the Fuse version to help you choose the version that corresponds to your production version.
+
+image::/documentation/whatsnew/fusetools/images/listOfFuseVersion.png[Fuse Version also displayed in drop-down list close to Camel version]
+
+==== Update validation for similar IDs between a component and its definition
+
+Starting with Camel 2.20, you can use similar IDs for the component name and its definition unless the specific property "registerEndpointIdsFromRoute" is provided.
+The validation process checks the Camel version and the value of the "registerEndpointIdsFromRoute" property.
+
+For example:
+[source,xml]
+----
+<from id="timer" uri="timer:timerName"/>
+----
+
+==== Improved guidance in method selection for factory methods on Global Bean
+
+When selecting factory method on a Global bean, a lot of possibilities were proposed in the user interface. The list of factory methods for a global bean is now limited to only those methods that match the constraints of the bean's global definition type (bean or bean factory).
+
+==== Customize EIP labels in the diagram
+
+The Fuse Tooling preferences page for the Editor view includes a new "Preferred Labels" option.
+
+image::/documentation/whatsnew/fusetools/images/prefEIPLabels.png[Fuse Tooling editor preference page]
+
+Use this option to define the label of EIP components (except endpoints) shown in the Editor's Design view.
+
+image::/documentation/whatsnew/fusetools/images/prefEIPLabelsResult.png[Dialog for defining the display text for an EIP]
+
+==== Fuse Ignite Technical Extension templates
+
+The existing template for "Custom step using a Camel Route" has been updated to work with Fuse 7 Tech Preview 4.
+
+Two new templates have been added:
+- Custom step using Java Bean
+- Custom connector
+
+image::/documentation/whatsnew/fusetools/images/igniteExtensionWizard10.3.0.AM3.png[New Fuse Ignite wizard with 3 options]
+
+==== Improvements of the wizard to create a Fuse Integration project
+
+The creation wizard provides better guidance for the targeted deployment environment:
+
+image::/documentation/whatsnew/fusetools/images/newFuseIntegrationWizard-environment.png[New Fuse Integration Project wizard page to select environment]
+
+More place is available to choose the templates and they are now filtered based on the targeted environment:
+
+image::/documentation/whatsnew/fusetools/images/newFuseIntegrationWizard-templates.png[New Fuse Integration Project wizard page to select templates]
+
+It also points out to other places to find different examples for advanced users (see the link at the bottom of the previous screenshot).
+
+==== Camel Rest DSL editor (Technical preview)
+
+Camel is providing a Rest DSL to help the integration through Rest endpoints. Fuse Tooling is now providing a new tab in read-only mode to visualize the Rest endpoints defined.
+
+image::/documentation/whatsnew/fusetools/images/restViewer.png[Rest DSL editor tab in read-only mode]
+
+It is currently in Tech Preview and needs to be activated in Window -> Preferences -> Fuse Tooling -> Editor -> Enable Read Only Tech preview REST DSL tab.
+
+Work is still ongoing and feedback is very welcome on this new feature, you can comment on link:https://issues.jboss.org/browse/FUSETOOLS-1287[this JIRA epic].
+
+==== Dozer upgrade and migration
+
+When upgrading from Camel < 2.20 to Camel > 2.20, the Dozer dependency has been upgraded to a version not backward-compatible 
+If you open a Data transformation based on Dozer in Fuse Tooling, it will propose to migrate the file used for the transformation (technically changing the namespace). It allow to continue to use the Data Transformation editor and have - in most cases - the Data Transformation working at runtime with Camel > 2.20.
+
+
+=== Hibernate Tools
+
+==== Hibernate Runtime Provider Updates
+
+A number of additions and updates have been performed on the available Hibernate runtime  providers.
+
+===== New Hibernate 5.3 Runtime Provider
+
+With beta releases available in the Hibernate 5.3 stream, the time was right to make available a corresponding Hibernate 5.3 runtime provider. This runtime provider incorporates Hibernate Core version 5.3.0.Beta2 and Hibernate Tools version 5.3.0.Beta1.  
+
+image::/documentation/whatsnew/hibernate/images/4.5.3.AM3/hibernate_5_3.png[title="Hibernate 5.3 is available", width="381", align="center"]
+
+===== Other Runtime Provider Updates
+
+The Hibernate 5.0 runtime provider now incorporates Hibernate Core version 5.0.12.Final and Hibernate Tools version 5.0.6.Final.
+
+The Hibernate 5.1 runtime provider now incorporates Hibernate Core version 5.1.12.Final and Hibernate Tools version 5.1.7.Final.
+
+The Hibernate 5.2 runtime provider now incorporates Hibernate Core version 5.2.15.Final and Hibernate Tools version 5.2.10.Final.
+
+=== Java Developement Tools (JDT)
+
+==== Support for Java™ 10
+
+The biggest part is the support for local variable type inference. 
+
+===== Add Java 10 JRE
+
+Basic necessity of recognizing a Java 10 for launching
+
+image::https://www.eclipse.org/eclipse/news/4.7.3a/images/j10.png[]
+
+And the compiler compliance option of 10
+
+image::https://www.eclipse.org/eclipse/news/4.7.3a/images/j10.compliance.png[]
+
+===== JEP 286 var - compilation
+
+Support for compilation of var as shown below
+
+image::https://www.eclipse.org/eclipse/news/4.7.3a/images/var.compile.png[]
+
+Flagging of the compiler errors as expected, shown below
+
+image::https://www.eclipse.org/eclipse/news/4.7.3a/images/var.nocompile.png[]
+
+Completion at places var is allowed
+
+image::https://www.eclipse.org/eclipse/news/4.7.3a/images/var.complete.png[]
+
+Completion not offered at places var is not allowed
+
+image::https://www.eclipse.org/eclipse/news/4.7.3a/images/var.nocomplete.png[]
+
+Hover to reveal the javadoc
+
+image::https://www.eclipse.org/eclipse/news/4.7.3a/images/var.hover.png[]
+
+Convert from var to the appropriate type using quick assist
+
+image::https://www.eclipse.org/eclipse/news/4.7.3a/images/var.vartotype.png[]
+
+Convert from type to var using quick assist
+
+image::https://www.eclipse.org/eclipse/news/4.7.3a/images/var.typetovar.png[]
+
+=== General
+
+=== Credentials Framework
+
+==== Sunsetting jboss.org credentials
+
+`Download Runtimes` and `CDK Server Adapter` used the credentials framework to manage credentials. However, the JBoss.org credentials cannot be used any more
+as the underlying service used by these components does not support these credentials.
+
+
+=== Aerogear
+
+==== Aerogear component deprecation
+
+The Aerogear component has been marked deprecated as there is no more maintenance on the source code. It is still available in Red Hat Central
+and may be removed in the future.
+
+=== Arquillian
+
+==== Arquillian component removal
+
+The Arquillian component has been removed from Red Hat Central as it has been deprecated since July 2017.
+
+The last available update site release is here:
+
+link:http://download.jboss.org/jbosstools/oxygen/stable/updates/core/arquillian/[Arquillian 1.2.601.v20171220-1317]
+
+=== BrowserSim
+
+==== BrowserSim component deprecation
+
+The BrowserSim component has been marked deprecated as there is no more maintenance on the source code. It is still available in Red Hat Central
+and may be removed in the future.
+
+=== Freemarker
+
+==== Freemarker component removal
+
+The Freemarker component has been removed from Red Hat Central as it has been deprecated since July 2017.
+
+The last available update site release is here:
+
+link:http://download.jboss.org/jbosstools/oxygen/stable/updates/core/freemarker/[Freemarker 1.5.302.v20171212-1534]
+
+=== LiveReload
+
+==== LiveReload component deprecation
+
+The LiveReload component has been marked deprecated as there is no more maintenance on the source code. It is still available in Red Hat Central
+and may be removed in the future.
+
+
+=== And more...
+
+You can find more noteworthy updates in on link:/documentation/whatsnew/jbosstools/4.5.3.Final.html[this page].
+
+== What is next?
+
+Having JBoss Tools 4.5.3 and Developer Studio 11.3 out we are already working on the next release for Eclipse Photon.
+
+Enjoy!
+
+Jeff Maury
