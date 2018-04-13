@@ -127,7 +127,7 @@ the server and select the *Setup CDK* menu item:
 image::/documentation/whatsnew/openshift/images/cdk-server-adapter-wizard12.png[width=600]
 
 
-image::/documentation/images/cdk-server-adapter-wizard13.png[width=600]
+image::/documentation/whatsnew/openshift/images/cdk-server-adapter-wizard13.png[width=600]
 
 Please note that the *setup-cdk* command will also be automatically run when you start the CDK server adapter if the
 MINISHIFT_HOME environment is detected uninitialized after user approval.
