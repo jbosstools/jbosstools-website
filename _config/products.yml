@@ -1231,6 +1231,7 @@ jbt_core:
           - name: Stand-alone BrowserSim
             file_size: 16MB
             url: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.jboss.tools.browsersim&a=org.jboss.tools.browsersim-standalone&v=3.8.100-SNAPSHOT&e=zip
+      4.5.3.Final:
       4.5.3.AM3:
         update_site_url: http://download.jboss.org/jbosstools/oxygen/development/updates/
         release_date: 2018-03-28
