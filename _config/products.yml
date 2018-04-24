@@ -815,6 +815,7 @@ devstudio_is:
   url_path_fragment: devstudio_is
   streams:
     photon:
+      12.x.Nightly:
     oxygen:
       11.2.0.GA:
         documentation_url: https://access.redhat.com/documentation/en-us/red_hat_jboss_developer_studio_integration_stack/11.2/
@@ -2770,6 +2771,7 @@ jbt_is:
   url_path_fragment: jbosstools_is
   streams:
     photon:
+      4.6.x.Nightly:
     oxygen:
       4.5.2.Final:
         documentation_url: https://access.redhat.com/documentation/en-us/red_hat_jboss_developer_studio_integration_stack/11.2/
