@@ -832,6 +832,7 @@ devstudio_is:
             url: https://devstudio.redhat.com/11/stable/updates/integration-stack/11.2.0.GA/devstudio-integration-stack-11.2.0.GA-updatesite.zip
             sha256_url: https://devstudio.redhat.com/11/stable/updates/integration-stack/11.2.0.GA/devstudio-integration-stack-11.2.0.GA-updatesite.zip.sha256
       11.1.0.Beta1b:
+        archived: true
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/
         release_notes_url: https://access.redhat.com/documentation/en-us/red_hat_jboss_developer_studio_integration_stack/11.1-beta/html-single/11.1.0_beta_release_notes_and_known_issues/
         #blog_announcement_url: /blog/integration-stack-4.5.0.Final.html
@@ -852,6 +853,7 @@ devstudio_is:
             url: https://devstudio.redhat.com/11/development/updates/integration-stack/11.1.0.Beta1b/devstudio-integration-stack-11.1.0.Beta1b-updatesite-earlyaccess.zip
             sha256_url: https://devstudio.redhat.com/11/development/updates/integration-stack/11.1.0.Beta1b/devstudio-integration-stack-11.1.0.Beta1b-updatesite-earlyaccess.zip.sha256
       11.0.0.GA:
+        archived: true
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/
         release_notes_url: https://access.redhat.com/documentation/en-us/red_hat_jboss_developer_studio_integration_stack/11.0/html/11.0.0_release_notes_and_known_issues/
         blog_announcement_url: /blog/integration-stack-4.5.0.Final.html
@@ -1297,6 +1299,7 @@ jbt_core:
           - name: Release Notes
             url: https://tools.jboss.org/documentation/whatsnew/index.html
       4.5.3.AM3:
+        archived: true
         update_site_url: http://download.jboss.org/jbosstools/oxygen/development/updates/
         release_date: 2018-03-28
         supported_jbt_is_version: 4.5.2.Final
@@ -1319,6 +1322,7 @@ jbt_core:
           - name: Release Notes
             url: https://tools.jboss.org/documentation/whatsnew/index.html
       4.5.3.AM2:
+        archived: true
         release_date: 2018-03-06
         supported_jbt_is_version: 4.5.2.Final
         blog_announcement_url: /blog/4.5.3.am2-for-oxygen.3.html
@@ -2781,6 +2785,7 @@ jbt_is:
              url: http://download.jboss.org/jbosstools/oxygen/stable/updates/integration-stack/4.5.2.Final/jbosstools-integration-stack-4.5.2.Final-updatesite.zip
              sha256_url: http://download.jboss.org/jbosstools/oxygen/stable/updates/integration-stack/4.5.2.Final/jbosstools-integration-stack-4.5.2.Final-updatesite.zip.sha256
       4.5.1.Beta1b:
+        archived: true
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/
         #blog_announcement_url: /blog/integration-stack-4.5.0.Final.html
         release_date: 2017-11-07
@@ -2796,6 +2801,7 @@ jbt_is:
              url: http://download.jboss.org/jbosstools/oxygen/development/updates/integration-stack/4.5.1.Beta1b/jbosstools-integration-stack-4.5.1.Beta1b-updatesite-earlyaccess.zip
              sha256_url: http://download.jboss.org/jbosstools/oxygen/development/updates/integration-stack/4.5.1.Beta1b/jbosstools-integration-stack-4.5.1.Beta1b-updatesite-earlyaccess.zip.sha256
       4.5.0.Final:
+        archived: true
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/
         blog_announcement_url: /blog/integration-stack-4.5.0.Final.html
         release_date: 2017-08-16
@@ -2807,6 +2813,7 @@ jbt_is:
              url: http://download.jboss.org/jbosstools/oxygen/stable/updates/integration-stack/4.5.0.Final/jbosstools-integration-stack-4.5.0.Final-updatesite.zip
              sha256_url: http://download.jboss.org/jbosstools/oxygen/stable/updates/integration-stack/4.5.0.Final/jbosstools-integration-stack-4.5.0.Final-updatesite.zip.sha256
       4.5.0.AM1:
+        archived: true
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio_Integration_Stack/
         release_date: 2017-07-03
         required_jbt_core_version: 4.5.0.AM1
