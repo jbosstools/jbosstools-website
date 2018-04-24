@@ -1366,6 +1366,7 @@ jbt_core:
           - name: Release Notes
             url: https://tools.jboss.org/documentation/whatsnew/index.html
       4.5.2.Final:
+        archived: true
         update_site_url: http://download.jboss.org/jbosstools/oxygen/stable/updates/
         marketplace_url: https://marketplace.eclipse.org/node/1617241
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1617241
