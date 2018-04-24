@@ -1,10 +1,18 @@
 eclipse:
+  photon:
+    # TODO archive this as of July 2020
+    archived: false
+    url_path_fragment: photon
+    short_name: Photon
+    full_name: Eclipse Photon 4.8
+    download_url:  http://www.eclipse.org/downloads/packages/release/Photon/
+    requirements: Java 8
   oxygen:
     # TODO archive this as of Sep 2019
     archived: false
     url_path_fragment: oxygen
     short_name: Oxygen
-    full_name: Eclipse Oxygen 4.7.2
+    full_name: Eclipse Oxygen 4.7.3a
     download_url:  http://www.eclipse.org/downloads/packages/release/Oxygen/
     requirements: Java 8
   neon:
@@ -94,11 +102,38 @@ devstudio:
   name: JBoss Developer Studio
   url_path_fragment: devstudio
   streams:
+    photon:
+      12.x.Nightly:
+        update_site_url: https://devstudio.redhat.com/12/snapshots/updates/
     oxygen:
-      11.2.0.GA:
+      # 11.x.Nightly:
+      #   update_site_url: https://devstudio.redhat.com/11/snapshots/updates/
+      11.3.0.GA:
         update_site_url: https://devstudio.redhat.com/11/stable/updates/
         marketplace_url: https://marketplace.eclipse.org/node/1616973
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
+        release_date: 2018-04-23
+        supported_devstudio_is_version: 11.2.0.GA
+        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        blog_announcement_url: /blog/11.3.0.ga-for-oxygen.3a.html
+        eclipse_name: Eclipse Oxygen 4.7.3a
+        installers:
+          - name: Stand-alone Installer
+            url: http://www.jboss.org/download-manager/content/origin/files/sha256/50/5078af7e067e2ada3b7f52c4230ab48529e972d98c39d84b20236388d645881c/devstudio-11.3.0.GA-installer-standalone.jar
+            file_size: 649MB
+        zips:
+          - name: Update site (including sources) bundle of JBoss Developer Studio
+            url: http://www.jboss.org/download-manager/content/origin/files/sha256/c5/c506cde005a041b00ef90a1822e942db33c84bc2604e4f47f5b3fddaa967850f/devstudio-11.3.0.GA-updatesite-core.zip
+            file_size: 694MB
+          - name: JBoss Central Zip
+            url: http://www.jboss.org/download-manager/content/origin/files/sha256/54/5497541b8f0edd12756e8f936633b04c0705c84c69f557aa53b8c19f8e99f21b/devstudio-11.3.0.GA-updatesite-central.zip
+            file_size:  78MB
+          - name: Target Platform for JBoss Developer Studio
+            url: https://devstudio.redhat.com/static/11/stable/updates/core/devstudio-11.3.0.GA-target-platform.zip
+            file_size: 808MB
+      11.2.0.GA:
+        archived: true
         release_date: 2018-01-30
         supported_devstudio_is_version: 11.2.0.GA
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
@@ -164,8 +199,6 @@ devstudio:
           - name: Target Platform for JBoss Developer Studio
             url: https://devstudio.redhat.com/static/11/stable/updates/core/devstudio-11.0.0.GA-target-platform.zip
             file_size: 827MB
-      11.x.Nightly:
-        update_site_url: https://devstudio.redhat.com/11/snapshots/updates/
     neon:
       10.4.0.GA:
         update_site_url: https://devstudio.redhat.com/10.0/stable/updates/
@@ -781,6 +814,7 @@ devstudio_is:
   name: JBoss Developer Studio Integration Stack
   url_path_fragment: devstudio_is
   streams:
+    photon:
     oxygen:
       11.2.0.GA:
         documentation_url: https://access.redhat.com/documentation/en-us/red_hat_jboss_developer_studio_integration_stack/11.2/
@@ -1224,14 +1258,45 @@ jbt_core:
   name: JBoss Tools
   url_path_fragment: jbosstools
   streams:
+    photon:
+      4.6.x.Nightly:
+        update_site_url: http://download.jboss.org/jbosstools/photon/snapshots/updates/
+        ## deprecated in 4.5.3, removed in 4.6
+        # zips:
+        #   - name: Stand-alone BrowserSim
+        #     file_size: 16MB
+        #     url: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.jboss.tools.browsersim&a=org.jboss.tools.browsersim-standalone&v=3.8.100-SNAPSHOT&e=zip
     oxygen:
-      4.5.x.Nightly:
-        update_site_url: http://download.jboss.org/jbosstools/oxygen/snapshots/updates/
+      # 4.5.x.Nightly:
+      #   update_site_url: http://download.jboss.org/jbosstools/oxygen/snapshots/updates/
+      #   zips:
+      #     - name: Stand-alone BrowserSim
+      #       file_size: 16MB
+      #       url: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.jboss.tools.browsersim&a=org.jboss.tools.browsersim-standalone&v=3.8.100-SNAPSHOT&e=zip
+      4.5.3.Final:
+        update_site_url: http://download.jboss.org/jbosstools/oxygen/stable/updates/
+        marketplace_url: https://marketplace.eclipse.org/node/1617241
+        marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1617241
+        release_date: 2018-04-23
+        supported_jbt_is_version: 4.5.2.Final
+        blog_announcement_url: /blog/11.3.0.ga-for-oxygen.3a.html
+        documentation_url: http://docs.jboss.org/tools/
+        eclipse_name: Eclipse Oxygen 4.7.3a
         zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 612MB
+            url: http://download.jboss.org/jbosstools/static/oxygen/stable/updates/core/jbosstools-4.5.3.Final-updatesite-core.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/oxygen/stable/updates/core/jbosstools-4.5.3.Final-updatesite-core.zip.sha256
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 223MB
+            url: http://download.jboss.org/jbosstools/static/oxygen/stable/updates/core/jbosstools-4.5.3.Final-src.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/oxygen/stable/updates/core/jbosstools-4.5.3.Final-src.zip.sha256
           - name: Stand-alone BrowserSim
             file_size: 16MB
-            url: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.jboss.tools.browsersim&a=org.jboss.tools.browsersim-standalone&v=3.8.100-SNAPSHOT&e=zip
-      4.5.3.Final:
+            url: http://download.jboss.org/jbosstools/static/oxygen/stable/updates/core/jbosstools-4.5.3.Final-browsersim-standalone.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/oxygen/stable/updates/core/jbosstools-4.5.3.Final-browsersim-standalone.zip.sha256
+          - name: Release Notes
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
       4.5.3.AM3:
         update_site_url: http://download.jboss.org/jbosstools/oxygen/development/updates/
         release_date: 2018-03-28
@@ -2704,6 +2769,7 @@ jbt_is:
   name: JBoss Tools Integration Stack
   url_path_fragment: jbosstools_is
   streams:
+    photon:
     oxygen:
       4.5.2.Final:
         documentation_url: https://access.redhat.com/documentation/en-us/red_hat_jboss_developer_studio_integration_stack/11.2/
