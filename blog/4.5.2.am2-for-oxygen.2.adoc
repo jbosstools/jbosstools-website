@@ -16,7 +16,7 @@ Full info is at link:/documentation/whatsnew/jbosstools/4.5.2.AM2.html[this page
 
 ==== Fuse 7 Karaf-based runtime Server adapter
 
-Fuse 7 is cooking and preliminary versions are already available on http://origin-repository.jboss.org/nexus/content/groups/ea/org/jboss/fuse/jboss-fuse-karaf[early-access repository]. Fuse Tooling is ready to leverage them so that you can try the upcoming major Fuse version.
+Fuse 7 is cooking and preliminary versions are already available on http://repository.jboss.org/nexus/content/groups/ea/org/jboss/fuse/jboss-fuse-karaf[early-access repository]. Fuse Tooling is ready to leverage them so that you can try the upcoming major Fuse version.
 
 image::/documentation/whatsnew/fusetools/images/Fuse7-ServerAdapter.png[Fuse 7 Server Adapter]
 
