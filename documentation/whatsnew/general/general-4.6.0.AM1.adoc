@@ -1,0 +1,12 @@
+= General 4.6.0.AM1 What's New
+:page-layout: whatsnew
+:page-component_id: general
+:page-component_version: 4.6.0.AM1
+:page-product_id: jbt_core 
+:page-product_version: 4.6.0.AM1
+
+ifndef::finalnn[]
+== General for JBoss Tools 4.6.0.AM1
+
+JBoss Tools is now targeting Eclipse Photon M6.
+endif::finalnn[]
