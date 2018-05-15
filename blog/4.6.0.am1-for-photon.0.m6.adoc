@@ -1,0 +1,29 @@
+= JBoss Tools 4.6.0.AM1 for Eclipse Photon.0.M6
+:page-layout: blog
+:page-author: jeffmaury
+:page-tags: [release, jbosstools, devstudio, jbosscentral]
+:page-date: 2018-05-15
+
+Happy to announce 4.6.0.AM1 (Developer Milestone 1) build for Eclipse Photon.0.M6.
+
+Downloads available at link:/downloads/jbosstools/photon/4.6.0.AM1.html[JBoss Tools 4.6.0 AM1].
+
+== What is New?
+
+Full info is at link:/documentation/whatsnew/jbosstools/4.6.0.AM1.html[this page]. Some highlights are below.
+
+=== General
+
+==== Eclipse Photon
+
+JBoss Tools is now targeting Eclipse Photon M6.
+
+=== Forge Tools
+
+==== Forge Runtime updated to 3.9.0.Final
+
+The included Forge runtime is now 3.9.0.Final. Read the official announcement https://forge.jboss.org/news/jboss-forge-3.9.0.final-is-here[here].
+
+Enjoy!
+
+Jeff Maury
