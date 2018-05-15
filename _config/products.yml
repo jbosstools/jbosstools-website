@@ -4,7 +4,7 @@ eclipse:
     archived: false
     url_path_fragment: photon
     short_name: Photon
-    full_name: Eclipse Photon 4.8
+    full_name: Eclipse Photon 4.8.0.M6
     download_url:  http://www.eclipse.org/downloads/packages/release/Photon/
     requirements: Java 8
   oxygen:
@@ -1260,6 +1260,28 @@ jbt_core:
   url_path_fragment: jbosstools
   streams:
     photon:
+      4.6.0.AM1:
+        archived: true
+        release_date: 2018-05-14
+        supported_jbt_is_version: 4.5.2.Final
+        blog_announcement_url: /blog/4.6.0.am1-for-photon.0.m6.html
+        documentation_url: http://docs.jboss.org/tools/
+        eclipse_name: Eclipse Photon 4.8.0.M6
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 612B
+            url: http://download.jboss.org/jbosstools/static/oxygen/development/updates/core/jbosstools-4.6.0.AM1-updatesite-core.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/oxygen/development/updates/core/jbosstools-4.6.0.AM1-updatesite-core.zip.sha256
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 223MB
+            url: http://download.jboss.org/jbosstools/static/oxygen/development/updates/core/jbosstools-4.6.0.AM1-src.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/oxygen/development/updates/core/jbosstools-4.6.0.AM1-src.zip.sha256
+          - name: Stand-alone BrowserSim
+            file_size: 16MB
+            url: http://download.jboss.org/jbosstools/static/oxygen/development/updates/core/jbosstools-4.6.0.AM1-browsersim-standalone.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/oxygen/development/updates/core/jbosstools-4.6.0.AM1-browsersim-standalone.zip.sha256
+          - name: Release Notes
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
       4.6.x.Nightly:
         update_site_url: http://download.jboss.org/jbosstools/photon/snapshots/updates/
         ## deprecated in 4.5.3, removed in 4.6
