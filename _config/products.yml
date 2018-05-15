@@ -32,8 +32,7 @@ eclipse:
     download_url:  http://www.eclipse.org/downloads/packages/release/Mars/2
     requirements: Java 8
   luna:
-    # TODO archive this as of Nov 2017
-    archived: false
+    archived: true
     url_path_fragment: luna
     short_name: Luna
     full_name: Eclipse Luna 4.4.2
@@ -1261,7 +1260,7 @@ jbt_core:
   streams:
     photon:
       4.6.0.AM1:
-        archived: true
+        archived: false
         release_date: 2018-05-14
         supported_jbt_is_version: 4.5.2.Final
         blog_announcement_url: /blog/4.6.0.am1-for-photon.0.m6.html
