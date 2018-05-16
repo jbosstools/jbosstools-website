@@ -830,6 +830,7 @@ devstudio_is:
             url: https://devstudio.redhat.com/11/stable/updates/integration-stack/11.3.0.GA/devstudio-integration-stack-11.3.0.GA-updatesite.zip
             sha256_url: https://devstudio.redhat.com/11/stable/updates/integration-stack/11.3.0.GA/devstudio-integration-stack-11.3.0.GA-updatesite.zip.sha256
       11.2.0.GA:
+        archived: true
         documentation_url: https://access.redhat.com/documentation/en-us/red_hat_jboss_developer_studio_integration_stack/11.2/
         release_notes_url: https://access.redhat.com/documentation/en-us/red_hat_jboss_developer_studio_integration_stack/11.2/html/11.2.0_release_notes_and_known_issues/
         blog_announcement_url: /blog/integration-stack-4.5.2.Final.html
@@ -2817,6 +2818,7 @@ jbt_is:
              url: http://download.jboss.org/jbosstools/oxygen/stable/updates/integration-stack/4.5.3.Final/jbosstools-integration-stack-4.5.3.Final-updatesite.zip
              sha256_url: http://download.jboss.org/jbosstools/oxygen/stable/updates/integration-stack/4.5.3.Final/jbosstools-integration-stack-4.5.3.Final-updatesite.zip.sha256
       4.5.2.Final:
+        archived: true
         documentation_url: https://access.redhat.com/documentation/en-us/red_hat_jboss_developer_studio_integration_stack/11.2/
         blog_announcement_url: /blog/integration-stack-4.5.2.Final.html
         release_date: 2018-02-16
