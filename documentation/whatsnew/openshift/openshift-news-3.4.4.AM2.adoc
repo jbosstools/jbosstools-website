@@ -1,0 +1,18 @@
+= OpenShift What's New in 3.4.4.AM2
+:page-layout: whatsnew
+:page-component_id: openshift
+:page-component_version: 4.6.0.AM2
+:page-product_id: jbt_core
+:page-product_version: 4.6.0.AM2
+:page-include-previous: true
+
+=== Enhanced Spring Boot support for server adapter
+
+Spring Boot runtime was already supported by the OpenShift server adapter. However, it has one major limitation: files and
+resources were synchronized between the local workstation and the remote pod(s) only for the main project. If your Spring Boot
+application had dependencies that were present in the local workspace, any change to a file or resource of one of these dependencies
+was not handled. This is not true anymore.
+
+related_jira::JBIDE-25504[]
+
+
