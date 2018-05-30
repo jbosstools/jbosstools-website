@@ -1,0 +1,77 @@
+= JBoss Tools 4.6.0.AM2 for Eclipse Photon.0.M7
+:page-layout: blog
+:page-author: jeffmaury
+:page-tags: [release, jbosstools, devstudio, jbosscentral]
+:page-date: 2018-05-29
+
+Happy to announce 4.6.0.AM2 (Developer Milestone 2) build for Eclipse Photon.0.M7.
+
+Downloads available at link:/downloads/jbosstools/photon/4.6.0.AM2.html[JBoss Tools 4.6.0 AM2].
+
+== What is New?
+
+Full info is at link:/documentation/whatsnew/jbosstools/4.6.0.AM2.html[this page]. Some highlights are below.
+
+=== General
+
+==== Eclipse Photon
+
+JBoss Tools is now targeting Eclipse Photon M7.
+
+=== OpenShift
+
+==== Enhanced Spring Boot support for server adapter
+
+Spring Boot runtime was already supported by the OpenShift server adapter. However, it has one major limitation: files and
+resources were synchronized between the local workstation and the remote pod(s) only for the main project. If your Spring Boot
+application had dependencies that were present in the local workspace, any change to a file or resource of one of these dependencies
+was not handled. This is not true anymore.
+
+=== Fuse Tooling
+
+==== Camel Rest DSL from WSDL wizard
+
+There is a new _"Camel Rest DSL from WSDL"_ wizard. This wizard wraps the link:https://github.com/jboss-fuse/wsdl2rest[wsdl2rest tool] now included with the Fuse 7 distribution, which 
+takes a WSDL file for a SOAP-based (JAX-WS) web service and generates a combination of CXF-generated code and a Camel REST DSL route to make it accessible using REST operations. 
+
+To start, you need an existing Fuse Integration project in your workspace and access to the WSDL for the SOAP service. Then use 
+_File->New->Other..._ and select _Red Hat Fuse->Camel Rest DSL from WSDL_ wizard. 
+
+On the first page of the wizard, select your WSDL and the Fuse Integration project in which to generate the Java code and Camel configuration. 
+
+image::/documentation/whatsnew/fusetools/images/wsdl2rest-wizard-page-one.jpg[SOAP to REST Wizard page 1]
+
+On the second page, you can customize the Java folder path for your generated classes, the folder for the generated Camel file, plus any customization for the SOAP service 
+address and destination REST service address. 
+
+image::/documentation/whatsnew/fusetools//images/wsdl2rest-wizard-page-two.jpg[SOAP to REST Wizard page 2]
+
+Click _Finish_ and the new Camel configuration and associated Java code are generated in your project. The wizard determines whether your project is Blueprint, 
+Spring, or Spring Boot based, and it creates the corresponding artifacts without requiring any additional input. When the wizard is finished, you can open your 
+new Camel file in the Fuse Tooling Route Editor to view what it created. 
+
+image::/documentation/whatsnew/fusetools//images/fuse-editor-rest-tab-no-properties.jpg[Fuse Tooling editor Rest Tab]
+
+That brings us to another new functionality, the REST tab in the Fuse Tooling Route Editor.
+
+==== Camel Editor REST tab
+
+The Fuse Tooling Route Editor provides a new _REST_ tab. For this release, the contents of this tab is read-only and includes the following information:
+
+- Details for the REST Configuration element including the component (jetty, netty, servlet, etc.), the context path, the port, binding mode (JSON, XML, etc.), and host. There is only one REST Configuration element.
+
+- A list of REST elements that collect REST operations. A configuration can have more than one REST element. Each REST element has an associated property page that displays additional details such as the path and the data it consumes or produces.
+
+image::/documentation/whatsnew/fusetools//images/fuse-editor-rest-tab-rest-element-properties.jpg[Fuse Tooling Rest Elements Properties View]
+
+- A list of REST operations for the selected REST element. Each of the operations has an associated property page that provides details such as the URI and output type.
+
+image::/documentation/whatsnew/fusetools//images/fuse-editor-rest-tab-rest-operation-properties.jpg[Fuse Tooling Rest Operations Properties View]
+
+For this release, the REST tab is read-only. If you want to edit the REST DSL, use the Route Editor Source tab. When you make changes and save them in the Source tab, the 
+REST tab refreshes to show your updates.
+
+
+Enjoy!
+
+Jeff Maury
