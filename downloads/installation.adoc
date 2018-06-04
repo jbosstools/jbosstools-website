@@ -9,7 +9,7 @@ All downloads can be found at link:../downloads/overview.html[Download overview]
 
 === Installer
 
-Red Hat JBoss Developer Studio includes the supported plugins from
+Red Hat Developer Studio includes the supported plugins from
 JBoss Tools, plus some additional tools, and comes bundled in an
 easy-to-use installer for Windows, Mac, and Linux (32- and 64-bit). It
 can be link:../downloads[downloaded] for free. Perfect for offline
@@ -36,7 +36,7 @@ libraries. Simply add the update site URL to Eclipse's Install Manager
 ("p2"), and select the features you wish to install. While you may be
 able to download a zip of the update site for offline use, you must be
 connected to the internet to fetch any missing dependencies not
-included in the zip or already installed in your Eclipse. 
+included in the zip or already installed in your Eclipse.
 
 The zip for each release is available from the "zip" tab under each download.
 You can find all our downloads at link:../downloads/overview.html[download page].
@@ -58,7 +58,7 @@ several types of releases available.
 
 Stable releases are - as indicated by their name - stable.
 
-JBoss Tools attempt to have a release matching the years Eclipse release train and 
+JBoss Tools attempt to have a release matching the years Eclipse release train and
 1 or 2 updates after the Final release for bugfixes/enhancements.
 
 === Development
