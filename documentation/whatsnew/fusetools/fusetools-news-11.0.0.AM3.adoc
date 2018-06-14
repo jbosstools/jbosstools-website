@@ -7,12 +7,10 @@
 
 == Camel URI completion with XML DSL
 
-As announced link:https://developers.redhat.com/blog/2018/01/31/apache-camel-uri-completion-eclipse-xml-editor/[here], it was already possible to have Camel URI completion with XML DSL in the source tab of the Camel Route editor by installing the link:https://github.com/camel-tooling/camel-lsp-client-eclipse[Language Support for Apache Camel] on your IDE.
+As announced link:https://developers.redhat.com/blog/2018/01/31/apache-camel-uri-completion-eclipse-xml-editor/[here], it was already possible to have Camel URI completion with XML DSL in the source tab of the Camel Route editor by installing the link:https://github.com/camel-tooling/camel-lsp-client-eclipse[Language Support for Apache Camel] in your IDE.
 
 This feature is now installed by default with Fuse Tooling!
 
 image::./images/completionSourceEditor.gif[Camel URI completion in source tab of Camel Editor]
 
-Now you have the choice to use the properties view with UI help to configure Camel components or to use the source editor and benefit from completion features. It all depends on your coding style!
-
-
+Now you have the choice to use the properties view with UI help to configure Camel components or to use the source editor and benefit from completion features. It all depends on your development preferences!
