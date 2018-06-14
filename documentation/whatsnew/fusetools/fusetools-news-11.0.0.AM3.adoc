@@ -13,6 +13,6 @@ It is now installed by default with Fuse Tooling!
 
 image::./images/completionSourceEditor.gif[Camel URI completion in source tab of Camel Editor]
 
-You now have the choice to use the properties view with UI help to configure Camel components or to use textual edition and benefit from completion. All depends on your coding style!
+You now have the choice to use the properties view with UI help to configure Camel components or to use source editor and benefit from completion. All depends on your coding style!
 
 
