@@ -1,0 +1,47 @@
+= JBoss Tools 4.6.0.AM3 for Eclipse Photon.0.RC3
+:page-layout: blog
+:page-author: jeffmaury
+:page-tags: [release, jbosstools, devstudio, jbosscentral]
+:page-date: 2018-06-19
+
+Happy to announce 4.6.0.AM3 (Developer Milestone 3) build for Eclipse Photon.0.RC3.
+
+Downloads available at link:/downloads/jbosstools/photon/4.6.0.AM3.html[JBoss Tools 4.6.0 AM3].
+
+== What is New?
+
+Full info is at link:/documentation/whatsnew/jbosstools/4.6.0.AM3.html[this page]. Some highlights are below.
+
+=== General
+
+==== Eclipse Photon
+
+JBoss Tools is now targeting Eclipse Photon RC3.
+
+=== Fuse Tooling
+
+== Camel URI completion with XML DSL
+
+As announced link:https://developers.redhat.com/blog/2018/01/31/apache-camel-uri-completion-eclipse-xml-editor/[here], it was already possible to have Camel URI completion with XML DSL in the source tab of the Camel Route editor by installing the link:https://github.com/camel-tooling/camel-lsp-client-eclipse[Language Support for Apache Camel] in your IDE.
+
+This feature is now installed by default with Fuse Tooling!
+
+image::/documentation/whatsnew/fusetools/images/completionSourceEditor.gif[Camel URI completion in source tab of Camel Editor]
+
+Now you have the choice to use the properties view with UI help to configure Camel components or to use the source editor and benefit from completion features. It all depends on your development preferences!
+
+=== Webservices Tooling
+
+==== JAX-RS 2.1 Support
+
+JAX-RS 2.1 is part of JavaEE8 and JBoss Tools now provides you with support for this update of the specification. 
+
+===== Server side events
+
+JAX-RS 2.1 brought support for server side events. The `Sse` and `SseEventSink` resources can now be injected into 
+method arguments thanks to the @Context annotation.
+
+
+Enjoy!
+
+Jeff Maury
