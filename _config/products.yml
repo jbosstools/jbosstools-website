@@ -4,7 +4,7 @@ eclipse:
     archived: false
     url_path_fragment: photon
     short_name: Photon
-    full_name: Eclipse Photon 4.8.0.M7
+    full_name: Eclipse Photon 4.8.0.RC3
     download_url:  http://www.eclipse.org/downloads/packages/release/Photon/
     requirements: Java 8
   oxygen:
@@ -1275,12 +1275,33 @@ jbt_core:
   url_path_fragment: jbosstools
   streams:
     photon:
-      4.6.0.AM2:
+      4.6.0.AM3:
         update_site_url: http://download.jboss.org/jbosstools/photon/development/updates/
         # TODO enable these for .Final
         # marketplace_url: https://marketplace.eclipse.org/node/1617241
         # marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1617241
         archived: false
+        release_date: 2018-06-20
+        supported_jbt_is_version: 4.5.3.Final
+        blog_announcement_url: /blog/4.6.0.am3-for-photon.0.rc3.html
+        documentation_url: http://docs.jboss.org/tools/
+        eclipse_name: Eclipse Photon 4.8.0.RC3
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 612B
+            url: http://download.jboss.org/jbosstools/static/photon/development/updates/core/jbosstools-4.6.0.AM3-updatesite-core.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/photon/development/updates/core/jbosstools-4.6.0.AM3-updatesite-core.zip.sha256
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 223MB
+            url: http://download.jboss.org/jbosstools/static/photon/development/updates/core/jbosstools-4.6.0.AM3-src.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/photon/development/updates/core/jbosstools-4.6.0.AM3-src.zip.sha256
+          - name: Release Notes
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
+      4.6.0.AM2:
+        # TODO enable these for .Final
+        # marketplace_url: https://marketplace.eclipse.org/node/1617241
+        # marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1617241
+        archived: true
         release_date: 2018-05-30
         supported_jbt_is_version: 4.5.3.Final
         blog_announcement_url: /blog/4.6.0.am2-for-photon.0.m7.html
