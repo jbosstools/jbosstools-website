@@ -1275,6 +1275,7 @@ jbt_core:
   url_path_fragment: jbosstools
   streams:
     photon:
+      4.6.0.Final:
       4.6.0.AM3:
         update_site_url: http://download.jboss.org/jbosstools/photon/development/updates/
         # TODO enable these for .Final
