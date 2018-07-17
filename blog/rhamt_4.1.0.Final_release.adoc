@@ -1,0 +1,71 @@
+= RHAMT Eclipse Plugin 4.1.0.Final has been released!
+:page-layout: blog
+:page-author: josteele
+:page-tags: [rhamt, windup, redhat-rhamt, release, jbosstools, devstudio, jbosscentral]
+:page-date: 2018-07-17
+
+Happy to announce version 4.1.0.Final of the Red Hat Application Migration Toolkit (RHAMT) is now available.
+
+== Getting Started
+
+Downloads available through JBoss Central and from the link:http://download.jboss.org/jbosstools/photon/stable/updates/rhamt/[update site].
+
+== RHAMT in a Nutshel
+
+RHAMT is an application migration and assessment tool. The migrations supported include application platform upgrades, 
+migrations to a cloud-native deployment environment, and also migrations from several commercial products to the 
+Red Hat JBoss Enterprise Application Platform.
+
+== What is New?
+
+==== Eclipse Photon
+
+The tooling now targets Eclipse Photon.
+
+image::images/rhamt/4_1_0_final/eclipse_photon.png[Photon]
+
+==== Ignoring Patterns
+
+Specify locations of files to exclude from analysis (using regular expressions).
+
+image::images/rhamt/4_1_0_final/ignore_pattern.png[Ignore Patterns]
+
+==== External Report
+
+The generated report has been moved out of Eclipse and into the browser.
+
+image::images/rhamt/4_1_0_final/report_browser.png[Report View]
+
+==== Improved Ruleset Schema
+
+The XML ruleset schema has been relaxed providing flexible rule structures. 
+
+image::images/rhamt/4_1_0_final/ruleset_source.png[Schema]
+
+==== Custom Severities
+
+Custom severities are now included in the Issue Explorer.
+
+image::images/rhamt/4_1_0_final/custom_category.png[Custom Category]
+
+==== Stability
+
+A good amount of time has been spent on ensuring the tooling functions cosnsitantly across Windows, OSX, and Linux.
+
+{blank}
+
+You can find more detailed information link:https://access.redhat.com/documentation/en-us/red_hat_application_migration_toolkit/[here].
+
+Our goal is to make the RHAMT tooling easy to use. We look forward to your feedback and comments! +
+
+Have fun! +
+John Steele +
+link:https://github.com/johnsteele/[github/johnsteele]
+
+
+
+
+
+
+
+
