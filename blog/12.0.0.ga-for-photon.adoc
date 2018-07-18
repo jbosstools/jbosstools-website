@@ -1,0 +1,471 @@
+= JBoss Tools and Red Hat Developer Studio for Eclipse Photon
+:page-layout: blog
+:page-author: jeffmaury
+:page-tags: [release, jbosstools, devstudio, jbosscentral]
+:page-date: 2018-07-17
+
+link:/downloads/jbosstools/photon/4.6.0.Final.html[JBoss Tools 4.6.0] and link:/downloads/devstudio/photon/12.0.0.GA.html[Red Hat Developer Studio 12.0] for Eclipse Photon are here waiting for you. Check it out!
+
+image::/blog/images/devstudio12.png[]
+
+== Installation
+
+Red Hat Developer Studio comes with everything pre-bundled in its installer. Simply download it from our https://developers.redhat.com/products/devstudio/overview/[Red Hat Developer product page] and run it like this:
+
+    java -jar devstudio-<installername>.jar
+
+JBoss Tools or Bring-Your-Own-Eclipse (BYOE) Developer Studio require a bit more:
+
+This release requires at least Eclipse 4.8 (Photon) but we recommend
+using the latest http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/photonr[Eclipse 4.8 Photon JEE Bundle] since then you get most of the dependencies preinstalled.
+
+Once you have installed Eclipse, you can either find us on the Eclipse Marketplace under "JBoss Tools" or "Red Hat Developer Studio".
+
+For JBoss Tools, you can also use our update site directly.
+
+    http://download.jboss.org/jbosstools/photon/stable/updates/
+
+== What is new?
+
+Our main focus for this release was on adoption of Java10, improvements for container based development and bug fixing.
+Eclipse Photon itself has link:https://www.youtube.com/watch?v=gDAb_iyO5Fc&list=PLy7t4z5SYNaQjVGIS9YUfZzFQpNFYpCny[a lot of new cool stuff] but let me highlight just a few updates in both Eclipse Photon and JBoss Tools plugins that I think are worth mentioning.
+
+=== OpenShift 3
+
+==== Enhanced Spring Boot support for server adapter
+
+Spring Boot runtime was already supported by the OpenShift server adapter. However, it has one major limitation: files and
+resources were synchronized between the local workstation and the remote pod(s) only for the main project. If your Spring Boot
+application had dependencies that were present in the local workspace, any change to a file or resource of one of these dependencies
+was not handled. This is not true anymore.
+
+
+=== Server tools
+
+==== Wildfly 13 Server Adapter
+
+A server adapter has been added to work with Wildfly 13. It adds support for Servlet 4.0.
+
+
+=== Fuse Tooling
+
+==== Camel Rest DSL from WSDL wizard
+
+There is a new _"Camel Rest DSL from WSDL"_ wizard. This wizard wraps the link:https://github.com/jboss-fuse/wsdl2rest[wsdl2rest tool] now included with the Fuse 7 distribution, which
+takes a WSDL file for a SOAP-based (JAX-WS) web service and generates a combination of CXF-generated code and a Camel REST DSL route to make it accessible using REST operations.
+
+To start, you need an existing Fuse Integration project in your workspace and access to the WSDL for the SOAP service. Then use
+_File->New->Other..._ and select _Red Hat Fuse->Camel Rest DSL from WSDL_ wizard.
+
+On the first page of the wizard, select your WSDL and the Fuse Integration project in which to generate the Java code and Camel configuration.
+
+image::/documentation/whatsnew/fusetools/images/wsdl2rest-wizard-page-one.jpg[SOAP to REST Wizard page 1]
+
+On the second page, you can customize the Java folder path for your generated classes, the folder for the generated Camel file, plus any customization for the SOAP service
+address and destination REST service address.
+
+image::/documentation/whatsnew/fusetools/images/wsdl2rest-wizard-page-two.jpg[SOAP to REST Wizard page 2]
+
+Click _Finish_ and the new Camel configuration and associated Java code are generated in your project. The wizard determines whether your project is Blueprint,
+Spring, or Spring Boot based, and it creates the corresponding artifacts without requiring any additional input. When the wizard is finished, you can open your
+new Camel file in the Fuse Tooling Route Editor to view what it created.
+
+image::/documentation/whatsnew/fusetools/images/fuse-editor-rest-tab-no-properties.jpg[Fuse Tooling editor Rest Tab]
+
+That brings us to another new functionality, the REST tab in the Fuse Tooling Route Editor.
+
+==== Camel Editor REST tab
+
+The Fuse Tooling Route Editor provides a new _REST_ tab. For this release, the contents of this tab is read-only and includes the following information:
+
+- Details for the REST Configuration element including the component (jetty, netty, servlet, etc.), the context path, the port, binding mode (JSON, XML, etc.), and host. There is only one REST Configuration element.
+
+- A list of REST elements that collect REST operations. A configuration can have more than one REST element. Each REST element has an associated property page that displays additional details such as the path and the data it consumes or produces.
+
+image::/documentation/whatsnew/fusetools/images/fuse-editor-rest-tab-rest-element-properties.jpg[Fuse Tooling Rest Elements Properties View]
+
+- A list of REST operations for the selected REST element. Each of the operations has an associated property page that provides details such as the URI and output type.
+
+image::/documentation/whatsnew/fusetools/images/fuse-editor-rest-tab-rest-operation-properties.jpg[Fuse Tooling Rest Operations Properties View]
+
+For this release, the REST tab is read-only. If you want to edit the REST DSL, use the Route Editor Source tab. When you make changes and save them in the Source tab, the
+REST tab refreshes to show your updates.
+
+==== Camel URI completion with XML DSL
+
+As announced link:https://developers.redhat.com/blog/2018/01/31/apache-camel-uri-completion-eclipse-xml-editor/[here], it was already possible to have Camel URI completion with XML DSL in the source tab of the Camel Route editor by installing the link:https://github.com/camel-tooling/camel-lsp-client-eclipse[Language Support for Apache Camel] in your IDE.
+
+This feature is now installed by default with Fuse Tooling!
+
+image::/documentation/whatsnew/fusetools/images/completionSourceEditor.gif[Camel URI completion in source tab of Camel Editor]
+
+
+=== Maven
+
+==== Maven support updated to M2E 1.9.1
+
+The Maven support is based on Eclipse M2E 1.9.1, bringing the following features:
+
+===== Advanced classpath isolation
+Thanks to Eclipse Photon, there are new two different classpathes, the main and the test classpath.
+The main classes will now no longer see the test classes and dependencies
+
+===== Embedded Maven runtime
+The embedded Maven runtime is now based on Apache Maven 3.5.3.
+
+===== Archetype catalog management
+It is now possible to disable an archetype catalog.
+
+===== Java 9/10 support
+Support for Java 9/10 has been improved: bugs fixes, better handling of module path.
+
+
+=== Java Developement Tools (JDT)
+
+==== Support for Java™ 10
+
+===== Quick fix to change project compliance and JRE to 10
+
+A quick fix *Change project compliance and JRE to 10* is provided to quickly change the current project to be compatible with Java 10.
+
+image::https://www.eclipse.org/eclipse/news/4.8/images/quickfix-change-compliance-10.png[]
+
+==== Java Editor
+
+===== Quick Fix to add @NonNullByDefault to packages
+
+A new quick fix is offered to fix issues that are reported when the Missing '@NonNullByDefault' annotation on package warning is enabled.
+If the package already has a ```package-info.java```, the quick fix can be invoked from the editor:
+
+image::https://www.eclipse.org/eclipse/news/4.8/images/add-nnbd-existing-packageinfo.png[]
+
+Otherwise, the quick fix must be invoked from the problems view, and will create a ```package-info.java``` with the required annotation:
+
+image::https://www.eclipse.org/eclipse/news/4.8/images/add-nnbd-create-packageinfo.png[]
+
+When invoked from the problems view, both variations of the quick fix can fix the problem for multiple packages simultaneously.
+
+===== Navigate to 'switch' statement
+
+You can now *Ctrl+click* or use *Open Declaration (F3)* on case or default keywords to quickly navigate to the beginning of the switch statement.
+
+image::https://www.eclipse.org/eclipse/news/4.8/images/navigate-to-switch.png[]
+
+===== Escape non-ASCII characters when pasting into a string literal
+
+The *Java > Editor > Typing > Escape text when pasting into a string literal* preference option now has a suboption *Use Unicode escape syntax for non-ASCII characters*:
+
+image::https://www.eclipse.org/eclipse/news/4.8/images/escape-non-ascii-settings.png[]
+
+When enabled, characters outside the visible ASCII range will be replaced by unicode escape sequences when pasted into a string:
+
+image::https://www.eclipse.org/eclipse/news/4.8/images/escape-non-ascii-example.png[]
+
+===== Improved Java syntax coloring in the dark theme
+
+To improve readability in the dark theme, bold style usage has been reduced and some colors that were too close to each other have been altered.
+
+image::https://www.eclipse.org/eclipse/news/4.8/images/java-syntax-dark.png[]
+
+===== Improved coloring of links in code element information in the dark theme
+
+The colors of links in code element information control now takes the color settings of the *Hyperlink text color* and the *Active hyperlink text color* from the *Colors & Fonts* preference page into account. The readability in the dark theme has been improved a lot by this.
+
+Before:
+
+image::https://www.eclipse.org/eclipse/news/4.8/images/element_info_before.png[]
+
+After:
+
+image::https://www.eclipse.org/eclipse/news/4.8/images/element_info_after.png[]
+
+===== Improved coloring of inherited members in the Quick Outline in the dark theme
+
+The Eclipse default dark theme now includes styling of inherited members in JDT's *Quick Outline*. This improves readability in the dark theme a lot. The color can be configured via the *Java > Inherited Members* color definition on the *Colors and Fonts* preference page.
+
+Before:
+
+image::https://www.eclipse.org/eclipse/news/4.8/images/inherited_before.png[]
+
+After:
+
+image::https://www.eclipse.org/eclipse/news/4.8/images/inherited_after.png[]
+
+==== Java Views and Dialogs
+
+===== Test sources
+
+In the *Java Build Path* project settings, there is now an attribute *Contains test sources* to configure that a source folder contains test sources.
+(Note: test sources must have their own output folder).
+Similarly, for projects and libraries there is an attribute *Visible only for test sources*.
+This setting also exists for classpath containers, and if it is set to *Yes* for one of these, this value will be used for all contained libraries and projects.
+
+image::https://www.eclipse.org/eclipse/news/4.8/images/1-sourcefolder-settings-521330.png[]
+
+Test source folders and dependencies are shown with a darker icon in the build path settings, the package explorer and other locations.
+This can be disabled in *Preferences > Java > Appearance*:
+
+image::https://www.eclipse.org/eclipse/news/4.8/images/1a-modified-test-icon-preferences-530179.png[]
+
+Referenced projects can contain test sources and have test dependencies themselves.
+Usually, when test sources are compiled, the test code in projects on the build path will be visible.
+As this is not always desirable, it can be changed by setting the new build path attribute *Without test code*, that is available for projects, to *Yes*.
+
+image::https://www.eclipse.org/eclipse/news/4.8/images/2-without-test-code-526858.png[]
+
+Build path entries configured like this have a decoration [without test code] after the project name, which can be disabled in *Preferences > General > Appearance > Label Decorations*:
+
+image::https://www.eclipse.org/eclipse/news/4.8/images/2a-without-test-code-decorator-530179.png[]
+
+For each project, compilation is now done in two phases: First all main sources (which cannot see any test-code on the build-path) and then all test sources.
+
+image::https://www.eclipse.org/eclipse/news/4.8/images/3-visibilities-224708.png[]
+
+As a consequence, if the project is a modular Java 9 project, test dependencies like JUnit can not be referenced in the ```module-info.java```, as they will not be visible while compiling it.
+The solution used to handle this is the same, that Maven uses: When test dependencies are put on the classpath, the module being compiled will automatically be configured to read the unnamed module during the compilation of the test sources, so the test dependencies will be visible.
+
+Of course, code completion will not suggest test code in main sources:
+
+image::https://www.eclipse.org/eclipse/news/4.8/images/4a-completion-in-main-521331.png[]
+
+There are now two dynamic Java working sets *Java Main Sources* and *Java Test Sources* containing the source folders grouped according to value of the *Contains test sources* attribute.
+This can for example be used to remove warnings in test sources from the problems view:
+
+image::https://www.eclipse.org/eclipse/news/4.8/images/5a-problems-view-521336.png[]
+
+To achieve this, create a new filter that shows warnings for the *Java Main Sources* working set and select it with the *All Errors on Workspace* filter:
+
+image::https://www.eclipse.org/eclipse/news/4.8/images/5b-problems-view-filters-521336.png[]
+
+There are also dedicated filters to quickly remove hits in main code or test code from Java search results:
+
+image::https://www.eclipse.org/eclipse/news/4.8/images/6-filter-search-result-521332.png[]
+
+Similar, there is a filter to remove test code from *Call hierarchies*:
+
+image::https://www.eclipse.org/eclipse/news/4.8/images/7-filter-call-hierarchy-521335.png[]
+
+Another filter to remove test code exists for *Quick type hierarchies*:
+
+image::https://www.eclipse.org/eclipse/news/4.8/images/8-filter-quick-type-hierarchy-521333.png[]
+
+Test source folders will be preselected in the *New JUnit Test Case* wizard
+
+image::https://www.eclipse.org/eclipse/news/4.8/images/9-new-junit-332602.png[]
+
+In Run and Debug configurations, the *Classpath* tab (or *Dependencies* tab when launching with Java 9) contains a new option *Exclude Test Code*, that is automatically preselected when launching a Java Application from a source folder that is not marked to contain test sources:
+
+image::https://www.eclipse.org/eclipse/news/4.8/images/10-launching-529321.png[]
+
+When launching with Java 9 and this option is not selected, command line options will automatically be added so modules that have a non-empty classpath read the unnamed module.
+These command line options are part of what can be overridden using the new *Override Dependencies* button.
+
+===== Sort library entries alphabetically in Package Explorer
+
+The content of libraries are displayed in the order of the classpath.
+This makes it difficult to find specific libraries by their name, especially when projects have many dependencies.
+The library entries can now be sorted alphabetically when setting the preference *Sort library entries alphabetically in Package Explorer* on the *Java > Appearance* preference page:
+
+image::https://www.eclipse.org/eclipse/news/4.8/images/jdt_sort_library_pref.png[]
+image::https://www.eclipse.org/eclipse/news/4.8/images/jdt_library_entries_unsorted.png[]
+
+The default for this preference is *OFF*.
+
+===== Generate dialogs use verbs instead of OK
+
+The *Generate...* dialogs of the Java tools have been adapted to use verbs instead of OK.
+
+==== Java Compiler
+
+===== Option for Regex in Module Declaration Search
+
+This is an *experimental* support provided to allow the regular expression usage in search field while searching for module declaration.
+This can be considered as a wrapper of the API change.
+
+To invoke the regular expression search from the search field under *Java Search*, start the expression with "/r " i.e, a slash '/', the letter 'r' and a blank ' ' (not tab) followed by a regex, an example of which is shown below:
+
+image::https://www.eclipse.org/eclipse/news/4.8/images/mod.regex.trap.png[]
+
+In the above example, all the characters trailing "/r " form a Java regular expression to denote a module name which starts with zero or more 'n's followed by the string ".ver" and followed again by zero or more number of arbitrary characters.
+
+Another example would be to search for all modules that start with ```java.x``` followed by zero or more characters which is given by the regular expression ```/r java\.x.*``` - note the backslash for . to consider this as a "normal" character instead of the special regex].
+
+Yet another example would be search for all module names that start with j followed by zero or more characters and ending with .xml which in regex language translates to ```/r j.*\.xml```.
+Please note that here the first '.' is the special regex character while the second '.' is escaped to denote that this is a normal character.
+
+*Note*: You should use this only for *Declarations* search for modules as it is not implemented for module references.
+Selecting *All occurrences* in conjunction with regex will default to finding only the *Declarations* matching the regex ignoring the references.
+
+==== @NonNullByDefault per module
+
+If a module is annotated with ```@NonNullByDefault```, the compiler will interpret this as the global default for all types in this module:
+
+```java
+@org.eclipse.jdt.annotation.NonNullByDefault
+module my.nullsafe.mod { ...
+```
+
+Note, however, that this requires an annotation type declared either with target ```ElementType.MODULE```, or with no explicit target at all.
+Versions 2.2.0 and greater of bundle ```org.eclipse.jdt.annotation``` use the latter strategy and hence support a module-wide non-null default.
+
+===== @NonNullByDefault improvements
+
+When using annotation-based null analysis, there are now more ways to define which unannotated locations are implicitly assumed to be annotated as ```@NonNull```:
+
+- ```@NonNullByDefault``` annotations based on enum ```DefaultLocation``` can also be used if the primary nullness annotations are declaration annotations (previously this was supported only for ```TYPE_USE``` annotations).
+- Support for ```@NonNullByDefault``` annotations that are targeted at parameters has been implemented.
+- Multiple different ```@NonNullByDefault``` annotations (especially with different default values) may be placed at the same target, in which case the sets of affected locations are merged.
+- Annotations which use a meta annotation ```@TypeQualifierDefault``` instead of a ```DefaultLocation```-based specification are now understood, too, e.g. ```@org.springframework.lang.NonNullApi```.
+
+Version 2.2.0 of bundle ```org.eclipse.jdt.annotation``` contains an annotation type ```NonNullByDefault``` that can be applied to parameter and module declarations (in addition to the previously allowed targets).
+
+===== Test sources
+
+There is now support for running Java annotation processors on test sources.
+The output folder for files generated for these can be configured in the project properties in *Java Compiler > Annotation Processing* as *Generated test source directory*.
+
+image::https://www.eclipse.org/eclipse/news/4.8/images/testsources-apt-531072.png[]
+
+===== New preference added "Compiler Compliance does not match used JRE"
+
+A new preference *Compiler Compliance does not match used JRE* is added to *Compiler Preference Building Page*.
+
+This preference indicates the severity of the problem reported when project's used JRE does not match the compiler compliance level selected.
+(e.g. a project using JRE 1.8 as JRE System Library, and the compiler compliance is set to 1.7).
+
+The value of this preference is by default WARNING.
+
+If the JRE being used is 9 or above and the *--release* option is selected and even if the compiler compliance does not match the JRE being used, this option will be ignored.
+
+This preference can be set as shown below:
+
+image::https://www.eclipse.org/eclipse/news/4.8/images/jdt_compiler_compliance_mismatch_JRE.png[]
+
+==== Java Formatter
+
+===== New formatter profile page
+
+The formatter profile preference page (*Java > Code Style > Formatter > Edit...*) has a new look which makes it much easier to set preferences for formatting Java code.
+Instead of multiple tabs, all preferences are presented in an expandable tree.
+
+image::https://www.eclipse.org/eclipse/news/4.8/images/formatter-profile-overview.png[]
+
+You can use *filtering* to display only the settings with names matching a specific phrase. Filtering by values is also possible (prefix a value filter with a tilde).
+
+image::https://www.eclipse.org/eclipse/news/4.8/images/formatter-profile-filtering.png[]
+
+Most sections have a *Modify all* button in their header that lets you set all their preferences to the same value with one click.
+
+image::https://www.eclipse.org/eclipse/news/4.8/images/formatter-profile-modify-all.png[]
+
+Some preferences have more convenient controls. For example, number values can be easily modified with arrow buttons.
+Wrap policy settings are controlled by simple toolbars so that you can see and compare multiple policies at once.
+
+image::https://www.eclipse.org/eclipse/news/4.8/images/formatter-profile-wrap-settings.png[]
+
+In the preview panel you can now use your own code to immediately see how it will be affected by the modified settings.
+You can also see the raw form of standard preview samples and make temporary modifications to them.
+
+image::https://www.eclipse.org/eclipse/news/4.8/images/formatter-profile-preview.png[]
+
+===== Formatter: align Javadoc tags in columns
+
+The formatter can now *align names and/or descriptions* in Javadoc tags in new ways.
+The formatter profile editor is available for selection, under *Comments > Javadoc*.
+
+image::https://www.eclipse.org/eclipse/news/4.8/images/formatter-javadoc-prefs.png[]
+
+For example, the *Align descriptions, grouped by type* setting is now used in the built-in Eclipse profile.
+
+image::https://www.eclipse.org/eclipse/news/4.8/images/formatter-javadoc-preview.png[]
+
+The setting previously known as *Indent Javadoc tags* is now called *Align descriptions to tag width*.
+The two settings related to *@param tags* also had their labels changed to better describe what they do.
+
+===== Java code formatter preferences now styled for the dark theme
+
+The formatter preferences tree styling has been fixed to work properly in the dark theme.
+
+===== New Cleanup Action "Remove redundant modifiers"
+
+The new cleanup action "Remove redundant modifiers" removes unnecessary modifiers on types, methods and fields.
+The following modifiers are removed:
+
+- Interface field declarations: ```public```, ```static```, ```final```
+- Interface method declarations: ```public```, ```abstract```
+- Nested interfaces: ```static```
+- Method declarations in final classes: ```final```
+
+The cleanup action can be configured as save action on the *Unnecessary Code* page.
+
+image::https://www.eclipse.org/eclipse/news/4.8/images/jdt_remove_redundant_modifiers.png[]
+
+==== Debug
+
+===== Launch configuration prototypes for Java Launch Configurations
+
+A Java Launch Configuration can now be based on a prototype.
+
+image::https://www.eclipse.org/eclipse/news/4.8/images/prototype-java-launch-configuration.png[]
+
+A prototype seeds attributes in its associated Java Launch Configurations with the settings specified in the Prototype tab.
+
+image::https://www.eclipse.org/eclipse/news/4.8/images/prototype-tab-java-launch-configuration-1.png[]
+
+Once a Java Launch Configuration has been created, you can override any initial settings from the prototype.
+You can also reset the settings of a Java Launch Configuration with the ones from its prototype.
+A Java Launch Configuration maintains a link to its prototype, but is a complete stand-alone launch configuration that can be launched, exported, shared, etc.
+
+image::https://www.eclipse.org/eclipse/news/4.8/images/prototype-tab-java-launch-configuration-2.png[]
+
+===== Advanced source lookup implementation
+
+More precise *advanced* source lookup implementation, particularly useful when debugging applications that load classes dynamically at runtime.
+
+New ```org.eclipse.jdt.launching.workspaceProjectDescribers``` extension point can be used to enable advanced source lookup for projects with non-default layout, like PDE Plug-In projects.
+
+New ```org.eclipse.jdt.launching.sourceContainerResolvers``` can be used to download sources jar files from remote artifact repositories, like Maven Central or Eclipse P2.
+
+Advanced source lookup affects debug launches only and can be enabled or disabled with *Java > Debug > Use advanced source lookup (JRE 1.5 and higher)* preference option:
+
+image::https://www.eclipse.org/eclipse/news/4.8/images/advanced-source-lookup.png[]
+
+===== Debugger listens to thread name changes
+
+*Debug view* now automatically updates thread names if they are changed in the debuggee JVM. This shows live information for worker instances, as described above.
+
+Technically speaking, Java debugger automatically adds a new (user invisible) breakpoint in the JVM and notifies clients (like Debug view) on a breakpoint hit.
+If this behavior is undesired for some reason, product owners can disable it via product customization.
+
+The property value is: *org.eclipse.jdt.debug.ui/org.eclipse.jdt.debug.ui.javaDebug.ListenOnThreadNameChanges=false*
+
+===== Value displayed for method exit and exception breakpoints
+
+When a *method exit breakpoint* is hit, the value being returned is now shown in the variables view.
+
+image::https://www.eclipse.org/eclipse/news/4.8/images/returningvalue.png[]
+
+Similarly, when an *exception breakpoint* is hit, the exception being thrown is shown.
+
+image::https://www.eclipse.org/eclipse/news/4.8/images/throwingexception.png[]
+
+===== Display view renamed to Debug Shell
+
+The *Display view* has been renamed to *Debug Shell* to better match the features and purpose of this view.
+Also, a java comment is shown in the Debug Shell on fresh open that explains when and how to use it.
+
+image::https://www.eclipse.org/eclipse/news/4.8/images/debugShell.png[]
+
+
+
+=== And more...
+
+You can find more noteworthy updates in on link:/documentation/whatsnew/jbosstools/4.6.0.Final.html[this page].
+
+== What is next?
+
+Having JBoss Tools 4.6.0 and Red Hat Developer Studio 12.0 out we are already working on the next release for Eclipse 2018-09.
+
+Enjoy!
+
+Jeff Maury

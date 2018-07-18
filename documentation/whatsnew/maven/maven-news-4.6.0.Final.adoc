@@ -1,0 +1,24 @@
+= Maven Tools What's New in 4.6.0.Final
+:page-layout: whatsnew
+:page-component_id: maven
+:page-component_version: 4.6.0.Final
+:page-product_id: jbt_core
+:page-product_version: 4.6.0.Final
+:page-include-previous: false
+
+== Maven support updated to M2E 1.9.1
+
+The Maven support is based on Eclipse M2E 1.9.1, bringing the following features:
+
+=== Advanced classpath isolation
+Thanks to Eclipse Photon, there are new two different classpathes, the main and the test classpath.
+The main classes will now no longer see the test classes and dependencies
+
+=== Embedded Maven runtime
+The embedded Maven runtime is now based on Apache Maven 3.5.3.
+
+=== Archetype catalog management
+It is now possible to disable an archetype catalog.
+
+=== Java 9/10 support
+Support for Java 9/10 has been improved: bugs fixes, better handling of module path.

@@ -4,7 +4,7 @@ eclipse:
     archived: false
     url_path_fragment: photon
     short_name: Photon
-    full_name: Eclipse Photon 4.8.0.RC3
+    full_name: Eclipse Photon 4.8.0
     download_url:  http://www.eclipse.org/downloads/packages/release/Photon/
     requirements: Java 8
   oxygen:
@@ -104,6 +104,30 @@ devstudio:
     photon:
       12.x.Nightly:
         update_site_url: https://devstudio.redhat.com/12/snapshots/updates/
+      12.0.0.GA:
+        update_site_url: https://devstudio.redhat.com/12/stable/updates/
+        marketplace_url: https://marketplace.eclipse.org/node/1616973
+        marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
+        release_date: 2018-07-16
+        supported_devstudio_is_version: 11.3.0.GA
+        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        blog_announcement_url: /blog/12.0.0.ga-for-photon.html
+        eclipse_name: Eclipse Photon 4.8.0
+        installers:
+          - name: Stand-alone Installer
+            url: http://www.jboss.org/download-manager/content/origin/files/sha256/3a/3a329c01eff08db5199c8938d1f784362917e2a01560bee12a3be7bb22fae78b/devstudio-12.0.0.GA-installer-standalone.jar
+            file_size: 696MB
+        zips:
+          - name: Update site (including sources) bundle of JBoss Developer Studio
+            url: http://www.jboss.org/download-manager/content/origin/files/sha256/d9/d9a5872198e1708224a6cdbaf566a41d38aaadce741362ea03fc8780e69322c6/devstudio-12.0.0.GA-updatesite-core.zip
+            file_size: 724MB
+          - name: JBoss Central Zip
+            url: http://www.jboss.org/download-manager/content/origin/files/sha256/16/1615e59bd68b73f3dff801fff015e4fc88ff80d77d9512ced8f3db51c14017e1/devstudio-12.0.0.GA-updatesite-central.zip
+            file_size:  77MB
+          - name: Target Platform for JBoss Developer Studio
+            url: https://devstudio.redhat.com/static/12/stable/updates/core/devstudio-12.0.0.GA-target-platform.zip
+            file_size: 796MB
     oxygen:
       # 11.x.Nightly:
       #   update_site_url: https://devstudio.redhat.com/11/snapshots/updates/
@@ -1275,8 +1299,30 @@ jbt_core:
   url_path_fragment: jbosstools
   streams:
     photon:
+      4.6.0.Final:
+        update_site_url: http://download.jboss.org/jbosstools/photon/stable/updates/
+        # TODO enable these for .Final
+        marketplace_url: https://marketplace.eclipse.org/node/1617241
+        marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1617241
+        archived: false
+        release_date: 2018-07-16
+        supported_jbt_is_version: 4.5.3.Final
+        blog_announcement_url: /blog/12.0.0.ga-for-photon.html
+        documentation_url: http://docs.jboss.org/tools/
+        eclipse_name: Eclipse Photon 4.8.0
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 726MB
+            url: http://download.jboss.org/jbosstools/static/photon/stable/updates/core/jbosstools-4.6.0.Final-updatesite-core.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/photon/stable/updates/core/jbosstools-4.6.0.Final-updatesite-core.zip.sha256
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 218MB
+            url: http://download.jboss.org/jbosstools/static/photon/stable/updates/core/jbosstools-4.6.0.Final-src.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/photon/stable/updates/core/jbosstools-4.6.0.Final-src.zip.sha256
+          - name: Release Notes
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
       4.6.0.AM3:
-        update_site_url: http://download.jboss.org/jbosstools/photon/development/updates/
+        # update_site_url: http://download.jboss.org/jbosstools/photon/development/updates/
         # TODO enable these for .Final
         # marketplace_url: https://marketplace.eclipse.org/node/1617241
         # marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1617241
@@ -1288,7 +1334,7 @@ jbt_core:
         eclipse_name: Eclipse Photon 4.8.0.RC3
         zips:
           - name: Update site (including sources) bundle of all JBoss Core Tools
-            file_size: 612B
+            file_size: 727MB
             url: http://download.jboss.org/jbosstools/static/photon/development/updates/core/jbosstools-4.6.0.AM3-updatesite-core.zip
             sha256_url: http://download.jboss.org/jbosstools/static/photon/development/updates/core/jbosstools-4.6.0.AM3-updatesite-core.zip.sha256
           - name: Sources zip of all JBoss Core Tools
@@ -1309,7 +1355,7 @@ jbt_core:
         eclipse_name: Eclipse Photon 4.8.0.M7
         zips:
           - name: Update site (including sources) bundle of all JBoss Core Tools
-            file_size: 612B
+            file_size: 741MB
             url: http://download.jboss.org/jbosstools/static/photon/development/updates/core/jbosstools-4.6.0.AM2-updatesite-core.zip
             sha256_url: http://download.jboss.org/jbosstools/static/photon/development/updates/core/jbosstools-4.6.0.AM2-updatesite-core.zip.sha256
           - name: Sources zip of all JBoss Core Tools
@@ -1327,7 +1373,7 @@ jbt_core:
         eclipse_name: Eclipse Photon 4.8.0.M6
         zips:
           - name: Update site (including sources) bundle of all JBoss Core Tools
-            file_size: 612B
+            file_size: 667MB
             url: http://download.jboss.org/jbosstools/static/photon/development/updates/core/jbosstools-4.6.0.AM1-updatesite-core.zip
             sha256_url: http://download.jboss.org/jbosstools/static/photon/development/updates/core/jbosstools-4.6.0.AM1-updatesite-core.zip.sha256
           - name: Sources zip of all JBoss Core Tools
@@ -1384,7 +1430,7 @@ jbt_core:
         eclipse_name: Eclipse Oxygen 4.7.3
         zips:
           - name: Update site (including sources) bundle of all JBoss Core Tools
-            file_size: 612B
+            file_size: 612MB
             url: http://download.jboss.org/jbosstools/static/oxygen/development/updates/core/jbosstools-4.5.3.AM3-updatesite-core.zip
             sha256_url: http://download.jboss.org/jbosstools/static/oxygen/development/updates/core/jbosstools-4.5.3.AM3-updatesite-core.zip.sha256
           - name: Sources zip of all JBoss Core Tools
@@ -1406,7 +1452,7 @@ jbt_core:
         eclipse_name: Eclipse Oxygen 4.7.3
         zips:
           - name: Update site (including sources) bundle of all JBoss Core Tools
-            file_size: 612B
+            file_size: 612MB
             url: http://download.jboss.org/jbosstools/static/oxygen/development/updates/core/jbosstools-4.5.3.AM2-updatesite-core.zip
             sha256_url: http://download.jboss.org/jbosstools/static/oxygen/development/updates/core/jbosstools-4.5.3.AM2-updatesite-core.zip.sha256
           - name: Sources zip of all JBoss Core Tools
@@ -1428,7 +1474,7 @@ jbt_core:
         eclipse_name: Eclipse Oxygen 4.7.2
         zips:
           - name: Update site (including sources) bundle of all JBoss Core Tools
-            file_size: 612B
+            file_size: 612MB
             url: http://download.jboss.org/jbosstools/static/oxygen/development/updates/core/jbosstools-4.5.3.AM1-updatesite-core.zip
             sha256_url: http://download.jboss.org/jbosstools/static/oxygen/development/updates/core/jbosstools-4.5.3.AM1-updatesite-core.zip.sha256
           - name: Sources zip of all JBoss Core Tools

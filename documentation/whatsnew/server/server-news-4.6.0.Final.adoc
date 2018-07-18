@@ -1,0 +1,14 @@
+= Server What's New in 4.6.0.Final
+:page-layout: whatsnew
+:page-component_id: server
+:page-component_version: 4.6.0.Final
+:page-product_id: jbt_core
+:page-product_version: 4.6.0.Final
+
+== Wildfly 13 Server Adapter
+
+A server adapter has been added to work with Wildfly 13. It adds support for Servlet 4.0. 
+
+related_jira::JBIDE-26071[]
+
+
