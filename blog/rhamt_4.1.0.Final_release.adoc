@@ -50,7 +50,7 @@ image::images/rhamt/4_1_0_final/custom_category.png[Custom Category]
 
 ==== Stability
 
-A good amount of time has been spent on ensuring the tooling functions cosnsitantly across Windows, OSX, and Linux.
+A good amount of time has been spent on ensuring the tooling functions consistently across Windows, OSX, and Linux.
 
 {blank}
 
