@@ -11,35 +11,26 @@
 === Discover the new OpenShift
 image::images/openshift3_create_app.png[]
 
-JBoss Tools presents a TechPreview version or the OpenShift 3 tooling for Eclipse.
+JBoss Tools presents the OpenShift 3 tooling for Eclipse.
 Installable from JBoss Central, it will allow you to connect to OpenShift 3 servers using OAuth or Basic authentication,
-manage your OpenShit 3 Projects, deploy new applications in the Cloud,
+manage your OpenShift 3 Projects, deploy new applications in the Cloud,
 using pre-defined (or your own) templates, or even Docker images. You will be able to import
 existing applications in your workspace, monitor them via remote log streaming
 directly into your local console, or enable Port-Forwarding and access their data as if it was local.
-
-== OpenShift Enterprise Ready!
-=== Ready to go with OpenShift Enterprise 2.0
-image::images/features-openshift-connectiondialog-reduced.png[]
-
-If you use OpenShift Enterprise 2.0 on-site or in the cloud JBoss Tools can connect to it, too.
-JBoss Tools is your IDE whether you want to work with OpenShift Enterprise 2.0, Origin or Online.
 
 == OpenShift Explorer View
 === The embedded Web Console.
 image::images/features-openshift-explorerview-reduced.png[]
 
-The OpenShift Explorer View lets you connect to OpenShift 2 or 3 instances, create new applications, manage domains or projects,
- execute action such as Port-Forwarding and Tail Files (Log Streaming). Specific actions are available, depending on the
- version of the OpenShift instance you're connected to. For OpenShift 2 connections, you can configure
- cartridges, for OpenShift 3, you can access Pods, Routes, Services and deploy Docker images.
+The OpenShift Explorer View lets you connect to OpenShift 3 instances, create new applications, manage domains or projects,
+ execute action such as Port-Forwarding and Tail Files (Log Streaming). For OpenShift 3, you can access Pods, Routes, Services and deploy Docker images.
 
 == Server Adapter
 === Almost like a local server
 image::images/features-openshift-serversview-reduced.png[]
 
-The OpenShift 2 Server Adapter lets you publish your code changes in a single click.
-It relies on JGit to perform the git commit and push operation in background.
+The OpenShift 3 Server Adapter lets you publish your code changes in a single click.
+It relies on rsync to perform the synchronization operations in background.
 It also gives you access to actions such as 'Tail Files' and 'Port Forwarding'.
 
 == Port-forwarding
