@@ -109,7 +109,7 @@ devstudio:
         marketplace_url: https://marketplace.eclipse.org/node/1616973
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
         release_date: 2018-07-16
-        supported_devstudio_is_version: 11.3.0.GA
+        supported_devstudio_is_version: 12.0.0.GA
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         blog_announcement_url: /blog/12.0.0.ga-for-photon.html
@@ -837,6 +837,23 @@ devstudio_is:
   name: JBoss Developer Studio Integration Stack
   url_path_fragment: devstudio_is
   streams:
+    photon:
+      12.0.0.GA:
+        documentation_url: https://access.redhat.com/documentation/en-us/red_hat_jboss_developer_studio_integration_stack/12/
+        release_notes_url: https://access.redhat.com/documentation/en-us/red_hat_jboss_developer_studio_integration_stack/12.0/html/12.0.0_release_notes_and_known_issues/
+        blog_announcement_url: /blog/integration-stack-4.6.0.Final.html
+        release_date: 2018-08-09
+        required_devstudio_version: 12.0.0.GA
+        update_site_url: https://devstudio.redhat.com/12/stable/updates/integration-stack/
+        installers:
+          - name: Integration Stack Stand-Alone Installer
+            file_size: 1011MB
+            url: https://access.redhat.com/jbossnetwork/restricted/listSoftware.html?downloadType=distributions&product=developerstudio&version=12.0.0
+        zips:
+          - name: Update site bundle of JBoss Developer Studio Integration Stack
+            file_size: 350MB
+            url: https://devstudio.redhat.com/12/stable/updates/integration-stack/12.0.0.GA/devstudio-integration-stack-12.0.0.GA-updatesite.zip
+            sha256_url: https://devstudio.redhat.com/12/stable/updates/integration-stack/12.0.0.GA/devstudio-integration-stack-12.0.0.GA-updatesite.zip.sha256
     oxygen:
       11.3.0.GA:
         documentation_url: https://access.redhat.com/documentation/en-us/red_hat_jboss_developer_studio_integration_stack/11.3/
@@ -1306,7 +1323,7 @@ jbt_core:
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1617241
         archived: false
         release_date: 2018-07-16
-        supported_jbt_is_version: 4.5.3.Final
+        supported_jbt_is_version: 4.6.0.Final
         blog_announcement_url: /blog/12.0.0.ga-for-photon.html
         documentation_url: http://docs.jboss.org/tools/
         eclipse_name: Eclipse Photon 4.8.0
@@ -2895,6 +2912,18 @@ jbt_is:
   name: JBoss Tools Integration Stack
   url_path_fragment: jbosstools_is
   streams:
+    photon:
+      4.6.0.Final:
+        documentation_url: https://access.redhat.com/documentation/en-us/red_hat_jboss_developer_studio_integration_stack/12.0/
+        release_date: 2018-08-09
+        blog_announcement_url: /blog/integration-stack-4.6.0.Final.html
+        required_jbt_core_version: 4.6.0.Final
+        update_site_url: http://download.jboss.org/jbosstools/photon/stable/updates/integration-stack/
+        zips:
+           - name: Update site bundle of JBoss Tools Integration Stack
+             file_size: 139MB
+             url: http://download.jboss.org/jbosstools/photon/stable/updates/integration-stack/4.6.0.Final/jbosstools-integration-stack-4.6.0.Final-updatesite.zip
+             sha256_url: http://download.jboss.org/jbosstools/photon/stable/updates/integration-stack/4.6.0.Final/jbosstools-integration-stack-4.6.0.Final-updatesite.zip.sha256
     oxygen:
       4.5.3.Final:
         documentation_url: https://access.redhat.com/documentation/en-us/red_hat_jboss_developer_studio_integration_stack/11.3/
