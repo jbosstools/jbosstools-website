@@ -1,0 +1,10 @@
+= Fuse Tooling - What's New in 11.1
+:page-layout: whatsnew
+:page-component_id: fusetools
+:page-component_version: 11.1.0.AM2
+:page-product_id: jbt_core
+:page-product_version: 4.9.0.AM2
+
+== WSDL to Camel REST DSL improvements
+
+The version of the library used to generate Camel REST DSL from WSDl files has been updated. It allows to cover more WSDL files. See https://github.com/jboss-fuse/wsdl2rest/milestone/3?closed=1 for the list of improvements.
