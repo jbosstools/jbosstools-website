@@ -1,4 +1,12 @@
 eclipse:
+  simrel:
+    # TODO archive this as of Oct 2020
+    archived: false
+    url_path_fragment: simrel
+    short_name: SimRel 2018-09
+    full_name: Eclipse 4.9
+    download_url:  http://www.eclipse.org/downloads/packages/release/2018-09/
+    requirements: Java 8
   photon:
     # TODO archive this as of July 2020
     archived: false
@@ -101,9 +109,11 @@ devstudio:
   name: JBoss Developer Studio
   url_path_fragment: devstudio
   streams:
-    photon:
+    simrel:
+      12.9.0.GA:
       12.x.Nightly:
         update_site_url: https://devstudio.redhat.com/12/snapshots/updates/
+    photon:
       12.0.0.GA:
         update_site_url: https://devstudio.redhat.com/12/stable/updates/
         marketplace_url: https://marketplace.eclipse.org/node/1616973
@@ -837,6 +847,7 @@ devstudio_is:
   name: JBoss Developer Studio Integration Stack
   url_path_fragment: devstudio_is
   streams:
+    simrel:
     photon:
       12.0.0.GA:
         documentation_url: https://access.redhat.com/documentation/en-us/red_hat_jboss_developer_studio_integration_stack/12/
@@ -1315,6 +1326,27 @@ jbt_core:
   name: JBoss Tools
   url_path_fragment: jbosstools
   streams:
+    simrel:
+      4.9.0.AM2:
+        archived: false
+        release_date: 2018-08-22
+        supported_jbt_is_version: 4.6.0.Final
+        blog_announcement_url: /blog/4.9.0.am2.html
+        documentation_url: http://docs.jboss.org/tools/
+        eclipse_name: Eclipse 4.9
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 667MB
+            url: http://download.jboss.org/jbosstools/static/photon/development/updates/core/jbosstools-4.9.0.AM2-updatesite-core.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/photon/development/updates/core/jbosstools-4.9.0.AM2-updatesite-core.zip.sha256
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 223MB
+            url: http://download.jboss.org/jbosstools/static/photon/development/updates/core/jbosstools-4.9.0.AM2-src.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/photon/development/updates/core/jbosstools-4.9.0.AM2-src.zip.sha256
+          - name: Release Notes
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
+      4.9.x.Nightly:
+        update_site_url: http://download.jboss.org/jbosstools/photon/snapshots/updates/
     photon:
       4.6.0.Final:
         update_site_url: http://download.jboss.org/jbosstools/photon/stable/updates/
@@ -1399,13 +1431,6 @@ jbt_core:
             sha256_url: http://download.jboss.org/jbosstools/static/photon/development/updates/core/jbosstools-4.6.0.AM1-src.zip.sha256
           - name: Release Notes
             url: https://tools.jboss.org/documentation/whatsnew/index.html
-      4.6.x.Nightly:
-        update_site_url: http://download.jboss.org/jbosstools/photon/snapshots/updates/
-        ## deprecated in 4.5.3, removed in 4.6
-        # zips:
-        #   - name: Stand-alone BrowserSim
-        #     file_size: 16MB
-        #     url: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.jboss.tools.browsersim&a=org.jboss.tools.browsersim-standalone&v=3.8.100-SNAPSHOT&e=zip
     oxygen:
       # 4.5.x.Nightly:
       #   update_site_url: http://download.jboss.org/jbosstools/oxygen/snapshots/updates/
@@ -2912,6 +2937,7 @@ jbt_is:
   name: JBoss Tools Integration Stack
   url_path_fragment: jbosstools_is
   streams:
+    simrel:
     photon:
       4.6.0.Final:
         documentation_url: https://access.redhat.com/documentation/en-us/red_hat_jboss_developer_studio_integration_stack/12.0/
