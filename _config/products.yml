@@ -1,10 +1,10 @@
 eclipse:
-  simrel:
+  simrel-2018-09:
     # TODO archive this as of Oct 2020
     archived: false
-    url_path_fragment: simrel
-    short_name: SimRel 2018-09
-    full_name: Eclipse 4.9
+    url_path_fragment: 2018-09
+    short_name: 2018-09
+    full_name: Eclipse 4.9 (2018-09)
     download_url:  http://www.eclipse.org/downloads/packages/release/2018-09/
     requirements: Java 8
   photon:
@@ -109,7 +109,7 @@ devstudio:
   name: JBoss Developer Studio
   url_path_fragment: devstudio
   streams:
-    simrel:
+    simrel-2018-09:
       12.9.0.GA:
       12.x.Nightly:
         update_site_url: https://devstudio.redhat.com/12/snapshots/updates/
@@ -847,7 +847,6 @@ devstudio_is:
   name: JBoss Developer Studio Integration Stack
   url_path_fragment: devstudio_is
   streams:
-    simrel:
     photon:
       12.0.0.GA:
         documentation_url: https://access.redhat.com/documentation/en-us/red_hat_jboss_developer_studio_integration_stack/12/
@@ -1326,7 +1325,7 @@ jbt_core:
   name: JBoss Tools
   url_path_fragment: jbosstools
   streams:
-    simrel:
+    simrel-2018-09:
       4.9.0.AM2:
         archived: false
         release_date: 2018-08-22
@@ -2937,7 +2936,6 @@ jbt_is:
   name: JBoss Tools Integration Stack
   url_path_fragment: jbosstools_is
   streams:
-    simrel:
     photon:
       4.6.0.Final:
         documentation_url: https://access.redhat.com/documentation/en-us/red_hat_jboss_developer_studio_integration_stack/12.0/
