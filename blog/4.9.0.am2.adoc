@@ -1,4 +1,4 @@
-= JBoss Tools 4.9.0.AM2 for Eclipse 2018-09
+= JBoss Tools 4.9.0.AM2 for Eclipse 2018-09 M2
 :page-layout: blog
 :page-author: jeffmaury
 :page-tags: [release, jbosstools, devstudio, jbosscentral]
