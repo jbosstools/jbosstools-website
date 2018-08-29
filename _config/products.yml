@@ -1344,6 +1344,13 @@ jbt_core:
             sha256_url: http://download.jboss.org/jbosstools/static/photon/development/updates/core/jbosstools-4.9.0.AM2-src.zip.sha256
           - name: Release Notes
             url: https://tools.jboss.org/documentation/whatsnew/index.html
+      4.9.0.AM1:
+        archived: true
+        release_date: 2018-08-02
+        supported_jbt_is_version: 4.6.0.Final
+        blog_announcement_url: /blog/4.9.0.am1.html
+        documentation_url: http://docs.jboss.org/tools/
+        eclipse_name: Eclipse 4.9
       4.9.x.Nightly:
         update_site_url: http://download.jboss.org/jbosstools/photon/snapshots/updates/
     photon:
