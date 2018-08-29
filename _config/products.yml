@@ -1348,7 +1348,7 @@ jbt_core:
         archived: true
         release_date: 2018-08-02
         supported_jbt_is_version: 4.6.0.Final
-        blog_announcement_url: /blog/4.9.0.am1.html
+        # blog_announcement_url: /blog/4.9.0.am1.html
         documentation_url: http://docs.jboss.org/tools/
         eclipse_name: Eclipse 4.9
       4.9.x.Nightly:
