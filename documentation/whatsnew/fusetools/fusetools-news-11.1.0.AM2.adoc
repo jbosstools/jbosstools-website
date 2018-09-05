@@ -16,6 +16,7 @@ In the last milestone we began adding editing capabilities to the read-only REST
 image::./images/fuse-editor-rest-tab-properties-11.1.0.am2.jpg[Fully Editable REST Editor]
 
 You can now:
+
 * Create and delete REST Configurations
 * Create and delete new REST Elements
 * Create and delete new REST Operations
