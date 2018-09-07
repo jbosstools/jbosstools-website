@@ -1,0 +1,10 @@
+= Forge Tools 4.9.0.AM3 What's New
+:page-layout: whatsnew
+:page-component_id: forge
+:page-component_version: 4.9.0.AM3
+:page-product_id: jbt_core
+:page-product_version: 4.9.0.AM3
+
+== Forge Runtime updated to 3.9.1.Final
+
+The included Forge runtime is now 3.9.1.Final. Read the official announcement https://forge.jboss.org/news/jboss-forge-3.9.1.final-is-here[here].
