@@ -66,7 +66,7 @@ GEM
       http_parser.rb (~> 0.6.0)
     eventmachine (1.0.7)
     execjs (2.5.2)
-    ffi (1.9.8)
+    ffi (1.9.24)
     formatador (0.2.5)
     git (1.2.9.1)
     guard (2.12.5)
@@ -184,4 +184,4 @@ RUBY VERSION
    ruby 2.4.1p111
 
 BUNDLED WITH
-   1.16.1
+   1.16.2
