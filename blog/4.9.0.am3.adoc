@@ -1,0 +1,32 @@
+= JBoss Tools 4.9.0.AM3 for Eclipse 2018-09 M2
+:page-layout: blog
+:page-author: jeffmaury
+:page-tags: [release, jbosstools, devstudio, jbosscentral]
+:page-date: 2018-09-11
+
+Happy to announce 4.9.0.AM3 (Developer Milestone 3) build for Eclipse 2018-09 M2.
+
+Downloads available at link:/downloads/jbosstools/photon/4.9.0.AM3.html[JBoss Tools 4.9.0 AM3].
+
+== What is New?
+
+Full info is at link:/documentation/whatsnew/jbosstools/4.9.0.AM3.html[this page]. Some highlights are below.
+
+=== General
+
+=== Server Tools
+
+==== Wildfly 14 Server Adapter
+
+A server adapter has been added to work with Wildfly 14. It adds support for Java EE 8. 
+
+=== Forge Tools
+
+==== Forge Runtime updated to 3.9.1.Final
+
+The included Forge runtime is now 3.9.1.Final. Read the official announcement https://forge.jboss.org/news/jboss-forge-3.9.1.final-is-here[here].
+
+
+Enjoy!
+
+Jeff Maury
