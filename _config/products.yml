@@ -1326,8 +1326,26 @@ jbt_core:
   url_path_fragment: jbosstools
   streams:
     simrel-2018-09:
-      4.9.0.AM2:
+      4.9.0.AM3:
         archived: false
+        release_date: 2018-09-12
+        supported_jbt_is_version: 4.6.0.Final
+        blog_announcement_url: /blog/4.9.0.am3.html
+        documentation_url: http://docs.jboss.org/tools/
+        eclipse_name: Eclipse 4.9
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 667MB
+            url: http://download.jboss.org/jbosstools/static/photon/development/updates/core/jbosstools-4.9.0.AM3-updatesite-core.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/photon/development/updates/core/jbosstools-4.9.0.AM3-updatesite-core.zip.sha256
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 223MB
+            url: http://download.jboss.org/jbosstools/static/photon/development/updates/core/jbosstools-4.9.0.AM3-src.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/photon/development/updates/core/jbosstools-4.9.0.AM3-src.zip.sha256
+          - name: Release Notes
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
+      4.9.0.AM2:
+        archived: true
         release_date: 2018-08-22
         supported_jbt_is_version: 4.6.0.Final
         blog_announcement_url: /blog/4.9.0.am2.html
