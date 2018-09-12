@@ -6,7 +6,7 @@
 
 Happy to announce 4.9.0.AM2 (Developer Milestone 2) build for Eclipse 2018-09 M2.
 
-Downloads available at link:/downloads/jbosstools/photon/4.9.0.AM2.html[JBoss Tools 4.9.0 AM2].
+Downloads available at link:/downloads/jbosstools/2018-09/4.9.0.AM2.html[JBoss Tools 4.9.0 AM2].
 
 == What is New?
 

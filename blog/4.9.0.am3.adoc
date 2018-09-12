@@ -6,7 +6,7 @@
 
 Happy to announce 4.9.0.AM3 (Developer Milestone 3) build for Eclipse 2018-09 M2.
 
-Downloads available at link:/downloads/jbosstools/photon/4.9.0.AM3.html[JBoss Tools 4.9.0 AM3].
+Downloads available at link:/downloads/jbosstools/2018-09/4.9.0.AM3.html[JBoss Tools 4.9.0 AM3].
 
 == What is New?
 
