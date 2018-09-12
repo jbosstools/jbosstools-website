@@ -26,6 +26,23 @@ A server adapter has been added to work with Wildfly 14. It adds support for Jav
 
 The included Forge runtime is now 3.9.1.Final. Read the official announcement https://forge.jboss.org/news/jboss-forge-3.9.1.final-is-here[here].
 
+=== Fuse Tooling
+
+==== Know issues
+
+A regression has been introduced touching all functionalities using Jaxb. It includes:
+
+- Variable content display in debug
+- Data Transformation wizard
+- Tracing Camel route via Jolokia Connection
+
+It may affect other functionalities. In this case, you will have this kind of error in log:
+
+	java.lang.NullPointerException
+		at javax.xml.bind.ContextFinder.handleClassCastException(ContextFinder.java:95)
+	
+Please note that it has been already fixed on link:http://tools.jboss.org/downloads/jbosstools/2018-09/4.9.x.Nightly.html[nightly build]
+
 
 Enjoy!
 
