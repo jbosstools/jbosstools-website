@@ -1,0 +1,23 @@
+= Fuse Tooling - What's New in 11.1
+:page-layout: whatsnew
+:page-component_id: fusetools
+:page-component_version: 11.1.0.AM3
+:page-product_id: jbt_core
+:page-product_version: 4.9.0.AM3
+
+== Know issues
+
+A regression has been introduced touching all functionalities using Jaxb. It includes:
+
+- Variable content display in debug
+- Data Transformation wizard
+- Tracing Camel route via Jolokia Connection
+
+It may affect other functionalities. In this case, you will have this kind of error in log:
+
+	java.lang.NullPointerException
+		at javax.xml.bind.ContextFinder.handleClassCastException(ContextFinder.java:95)
+	
+Please note that it has been already fixed on link:http://tools.jboss.org/downloads/jbosstools/2018-09/4.9.x.Nightly.html[nightly build] .
+
+
