@@ -1326,6 +1326,7 @@ jbt_core:
   url_path_fragment: jbosstools
   streams:
     simrel-2018-09:
+      4.9.0.Final:
       4.9.0.AM3:
         archived: false
         release_date: 2018-09-12
