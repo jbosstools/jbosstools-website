@@ -5,6 +5,7 @@
 :page-product_id: jbt_core
 :page-product_version: 4.9.0.AM3
 
+ifndef::finalnn[]
 == Know issues
 
 A regression has been introduced touching all functionalities using Jaxb. It includes:
@@ -20,4 +21,4 @@ It may affect other functionalities. In this case, you will have this kind of er
 	
 Please note that it has been already fixed on link:http://tools.jboss.org/downloads/jbosstools/2018-09/4.9.x.Nightly.html[nightly build] .
 
-
+endifndef::finalnn[]

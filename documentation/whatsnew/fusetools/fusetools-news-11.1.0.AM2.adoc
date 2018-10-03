@@ -9,6 +9,8 @@
 
 The version of the library used to generate Camel REST DSL from WSDl files has been updated. It now covers more types of WSDL files. See https://github.com/jboss-fuse/wsdl2rest/milestone/3?closed=1 for the list of improvements.
 
+ifndef::finalnn[]
+
 == REST Editor tab improvements
 
 In the last milestone we began adding editing capabilities to the read-only REST tab to the route editor we added in the previous release. Those efforts have continued and we now have a fully editable REST tab.
@@ -23,4 +25,6 @@ You can now:
 * Edit properties for a selected REST Element in the Properties view
 * Edit properties for a selected REST Operation in the Properties view
 
-In addition, we've improved the look and feel by fixing the scrolling capabilities of the REST Element and REST Operations lists. 
+In addition, we've improved the look and feel by fixing the scrolling capabilities of the REST Element and REST Operations lists.
+
+endif::finalnn[]
