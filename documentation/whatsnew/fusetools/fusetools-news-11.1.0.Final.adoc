@@ -8,21 +8,7 @@
 
 == REST Viewer becoming an editor
 
-Previously, there was a REST editor which was read-only. It is useful to have a great overview of already defined Camel REST DSL definitions. Now the editor is also providing editing capabilities allowing to develop faster. It is possible to change parameters of Camel REST operations and Camel REST Elements using the properties tab. It is also possible to create/delete new REST elements with a simple click.
-
-image::./images/rest-editable.png[Editable REST Editor]
-
-Creation/deletion of Camel REST operations will come in next milestone with several other improvements, stay tuned!
-
-
-== WSDL to Camel REST DSL improvements
-
-The version of the library used to generate Camel REST DSL from WSDl files has been updated. It now covers more types of WSDL files. See https://github.com/jboss-fuse/wsdl2rest/milestone/3?closed=1 for the list of improvements.
-
-
-== REST Editor tab improvements
-
-In the last milestone we began adding editing capabilities to the read-only REST tab to the route editor we added in the previous release. Those efforts have continued and we now have a fully editable REST tab.
+Previously, there was a REST editor which was read-only. It is useful to have a great overview of already defined Camel REST DSL definitions. Now the editor and its related properties tab are also providing editing capabilities allowing to develop faster.
 
 image::./images/fuse-editor-rest-tab-properties-11.1.0.am2.jpg[Fully Editable REST Editor]
 

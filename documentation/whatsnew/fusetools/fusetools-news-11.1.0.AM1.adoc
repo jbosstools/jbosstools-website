@@ -5,6 +5,8 @@
 :page-product_id: jbt_core
 :page-product_version: 4.9.0.AM1
 
+ifndef::finalnn[]
+
 == REST Viewer becoming an editor
 
 Previously, there was a REST editor which was read-only. It is useful to have a great overview of already defined Camel REST DSL definitions. Now the editor is also providing editing capabilities allowing to develop faster. It is possible to change parameters of Camel REST operations and Camel REST Elements using the properties tab. It is also possible to create/delete new REST elements with a simple click.
@@ -12,3 +14,5 @@ Previously, there was a REST editor which was read-only. It is useful to have a 
 image::./images/rest-editable.png[Editable REST Editor]
 
 Creation/deletion of Camel REST operations will come in next milestone with several other improvements, stay tuned!
+
+endif::finalnn[]
