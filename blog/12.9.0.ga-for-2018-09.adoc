@@ -1,0 +1,573 @@
+= JBoss Tools and Red Hat Developer Studio for Eclipse 2018-09
+:page-layout: blog
+:page-author: jeffmaury
+:page-tags: [release, jbosstools, devstudio, jbosscentral]
+:page-date: 2018-10-08
+
+link:/downloads/jbosstools/2018-09/4.9.0.Final.html[JBoss Tools 4.9.0] and link:/downloads/devstudio/2018-09/12.9.0.GA.html[Red Hat Developer Studio 12.9] for Eclipse 2018-09 are here waiting for you. Check it out!
+
+image::/blog/images/devstudio12.png[]
+
+== Installation
+
+Red Hat Developer Studio comes with everything pre-bundled in its installer. Simply download it from our https://developers.redhat.com/products/devstudio/overview/[Red Hat Developer product page] and run it like this:
+
+    java -jar devstudio-<installername>.jar
+
+JBoss Tools or Bring-Your-Own-Eclipse (BYOE) Developer Studio require a bit more:
+
+This release requires at least Eclipse 4.9 (2018-09) but we recommend
+using the latest http://www.eclipse.org/downloads/packages/release/2018-09/r/eclipse-ide-java-ee-developers[Eclipse 4.9 2018-09 JEE Bundle] since then you get most of the dependencies preinstalled.
+
+Once you have installed Eclipse, you can either find us on the Eclipse Marketplace under "JBoss Tools" or "Red Hat Developer Studio".
+
+For JBoss Tools, you can also use our update site directly.
+
+    http://download.jboss.org/jbosstools/photon/stable/updates/
+
+== What is new?
+
+Our main focus for this release was on adoption of Java11, improvements for container based development and bug fixing.
+Eclipse 2018-09 itself has a lot of new cool stuff but let me highlight just a few updates in both Eclipse 2018-09 and JBoss Tools plugins that I think are worth mentioning.
+
+=== OpenShift 3
+
+==== Inner loop for Spring Boot applications
+
+Although Spring Boot applications were already supported by the OpenShift server adapter,
+the global developer experience has been enhanced. Let's complete the full workflow.
+
+===== Bootstrapping your Spring Boot applications
+
+A new generator (wizard) has been added to JBoss Tools. It's called the Launcher
+application as it's based on the fabric8-launcher project. When you launch JBoss
+Tools, you should see this in Red Hat Central:
+
+image::/documentation/whatsnew/openshift/images/spring-boot-inner-loop.png[]
+
+Click on the ```Launcher application``` link and the following wizard will appear:
+
+image::/documentation/whatsnew/openshift/images/spring-boot-inner-loop1.png[]
+
+Switch the ```Mission``` field to ```rest-http ``` as we want to generate a simple
+REST application and switch the ```Runtime``` field to ```spring-boot current-community```
+as we want to generate a Spring Boot based application.
+
+Then set the ```Project name``` field to ```myfirstrestapp``` and leave other fields as-is.
+
+image::/documentation/whatsnew/openshift/images/spring-boot-inner-loop2.png[]
+
+Click the ```Finish``` button. A new project will be added to your local workspace.
+It may takes some times as Maven will resolve all the Spring Boot dependencies and
+thus need to download them from the Internet.
+
+When the project is build and if you expand the ```myfirstrestapp``` in the ```Project explorer```
+window, you should see this:
+
+image::/documentation/whatsnew/openshift/images/spring-boot-inner-loop3.png[]
+
+===== Storing your source code on GitHub
+
+As OpenShift builder images retrieves code on a Git repository, we first need to push
+the just generated application code to GitHub. The following section assumes that you
+created a repository called ```myfirstrestapp``` under your GitHub account.
+
+We will first create a local Git repository for our application code then push it to
+GitHub.
+
+Select the ```myfirstrestapp``` project and right click the ```Team -> Share project...```
+menu item:
+
+image::/documentation/whatsnew/openshift/images/spring-boot-inner-loop4.png[]
+
+Then select the ```Git``` repository type and click the ```Next``` button:
+
+image::images/spring-boot-inner-loop5.png[]
+
+Select the ```Use or create repository in parent folder of project``` checkbox
+then select the ```myfirstrestapp``` project:
+
+image::/documentation/whatsnew/openshift/images/spring-boot-inner-loop6.png[]
+ 
+Click on the ```Create repository``` button and the on the ```Finish``` button.
+
+The ```Project explorer``` view is updated:
+
+image::/documentation/whatsnew/openshift/images/spring-boot-inner-loop7.png[]
+
+Select the ```myfirstrestapp``` project and right click
+the ```Team -> Show in Repositories View``` menu item. A new view
+called ```Git Repositories``` will be added to the perspective:
+
+image::/documentation/whatsnew/openshift/images/spring-boot-inner-loop8.png[]
+
+Inside this view, select the ```Remotes``` node and right click
+the ```Create Remote...``` menu item. The following dialog will be displayed:
+
+image::/documentation/whatsnew/openshift/images/spring-boot-inner-loop9.png[]
+
+Click on the ```OK``` button, the following dialog will be displayed:
+
+image::/documentation/whatsnew/openshift/images/spring-boot-inner-loop10.png[]
+
+Click on the ```Change...``` button and enter ```git@github.com:GITHUB_USER/myfirstrestapp```
+in the ```URI``` field, replacing ```GITHUB_USER``` by your real GitHub user name.
+
+Then click the ```Finish``` button and then on the ```Save``` button.
+
+====== Pushing code to GitHub
+
+We are now ready to push our application code to GitHub. Select the ```myfirstrestapp``` project
+in the ```Project explorer``` view, right click the ```Team -> Commit``` menu item. A new view
+call ```Git Staging``` will open:
+
+image::/documentation/whatsnew/openshift/images/spring-boot-inner-loop11.png[]
+
+Double click on the view title to maximize it:
+
+image::/documentation/whatsnew/openshift/images/spring-boot-inner-loop12.png[]
+
+Select all the files listed in the ```Unstaged changes``` list and click the '+' button. The
+files will then move to the ```Staged Changes``` list:
+
+image::/documentation/whatsnew/openshift/images/spring-boot-inner-loop13.png[]
+
+Enter a commit message (ex 'Initial version') and click the ```Commit and Push...``` button.
+the following dialog will be displayed:
+
+image::/documentation/whatsnew/openshift/images/spring-boot-inner-loop14.png[]
+
+Click on the ```Next``` button:
+
+image::/documentation/whatsnew/openshift/images/spring-boot-inner-loop15.png[]
+
+Click on the ```Finish``` button to start the push operation.
+
+A dialog with the result of the push operation will be displayed. Click the ```OK``` to
+dismiss it.
+
+====== Add Spring Boot Devtools to the packaged application
+
+In order to support live update on an OpenShift cluster, we must add Spring Boot
+DevTools to our Spring Boot application.
+
+Open the ```pom.xml``` in the  ```myfirstrestapp```. Locate the ```spring-boot-maven-plugin```
+and add the following section:
+
+```xml
+            <configuration>
+              <excludeDevtools>false</excludeDevtools>
+            </configuration>
+```
+
+The whole ```spring-boot-maven-plugin``` section is given below:
+
+```xml
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>repackage</goal>
+            </goals>
+            <configuration>
+              <excludeDevtools>false</excludeDevtools>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+```
+
+Close and save the ```pom.xml``` file.
+
+Push the change to GitHub: select the ```Team -> Commit...``` with a new commit
+message (ex 'With DevTools')
+
+===== Deploy the application on OpenShift
+
+Before we can deploy the application on OpenShift, we must first create an ImageStream on
+our OpenShift cluster. The reason is that the Spring Boot support relies on S2I builds
+that will explode the Spring Boot uber JAR when Spring Boot DevTools is present. As this
+is not supported by all Java based S2I images, we will use one that supports it, ie fabric8/s2i-java:2.2
+
+First, in the ```myfirstrestapp``` project, create a new JSON file called ```springboot.json```
+and set the content of this file to:
+
+```json
+{
+    "apiVersion": "image.openshift.io/v1",
+    "kind": "ImageStream",
+	"metadata": {
+		"name": "springboot"
+	},
+    "spec": {
+        "lookupPolicy": {
+            "local": false
+        },
+        "tags": [
+            {
+                "annotations": {
+					"tags": "builder,java"
+				},
+                "from": {
+                    "kind": "DockerImage",
+                    "name": "registry.access.redhat.com/fuse7/fuse-java-openshift:1.1"
+                },
+                "importPolicy": {},
+                "name": "1.1",
+                "referencePolicy": {
+                    "type": "Source"
+                }
+            }
+        ]
+    }
+}
+```
+
+Then, from the OpenShift explorer view, select the OpenShift connection for your cluster (if you don't have
+one already defined, you must define it), right click on the ```New -> Resource...``` menu item and the
+following dialog will be displayed:
+
+image::/documentation/whatsnew/openshift/images/spring-boot-inner-loop16.png[]
+
+You can select the OpenShift project you want to work with and then click on
+the ```Browse Workspace...``` button and select the ```springboot.json``` file
+in the ```myfirstrestapp``` project:
+
+image::/documentation/whatsnew/openshift/images/spring-boot-inner-loop17.png[]
+
+Click the ```OK``` and ```Finish``` buttons. The new ImageStream will be created and a status
+dialog will be displayed:
+
+image::/documentation/whatsnew/openshift/images/spring-boot-inner-loop18.png[]
+
+====== Create the application on OpenShift
+
+We're now ready to create the application on the OpenShift cluster. Select the OpenShift
+connection, right click the ```New -> Application...``` menu item. If you scroll down the
+list, you should see the ```springboot``` ImageStream we just created:
+
+image::/documentation/whatsnew/openshift/images/spring-boot-inner-loop19.png[]
+
+Select this ImageStream and click the ```Next``` button:
+
+image::/documentation/whatsnew/openshift/images/spring-boot-inner-loop20.png[]
+
+Enter ````myfirstrestapp``` in the ````Name````
+field, ```https://github.com/GITHUB_USER/myfirstrestapp``` in the ```Git Repository URL```
+field, replacing ```GITHUB_USER``` by your real GitHub user name and click
+the ```Next``` button.
+
+On the ```Deployment Configuration & Scalability``` dialog, click the ````Next``` button.
+
+On the ```Service & Routing Settings```, select the ```8778-tcp``` port and click
+the ```Edit``` button, change the 8787 value to 8080:
+
+image::/documentation/whatsnew/openshift/images/spring-boot-inner-loop21.png[]
+
+Click the ```OK``` button then the ```Finish``` button.
+
+The list of OpenShift resources created will be displayed by a dialog:
+
+image::/documentation/whatsnew/openshift/images/spring-boot-inner-loop22.png[]
+
+Click the ```OK``` button to dismiss it and when asked to import the application
+code, click the ```Cancel``` button as we already have the source code.
+
+After the build is run (this may takes several minutes as the Maven build will download
+lots of dependencies), you should see a running pod:
+
+image::/documentation/whatsnew/openshift/images/spring-boot-inner-loop23.png[]
+
+===== Inner loop setup
+
+We are going to synchronize the local Eclipse project with the remote OpenShift pod. Each time a file
+will be modified locally, then the pod will be updated accordingly.
+
+Select the running pod in the ```OpenShift explorer```, right click the ```Server Adapter...``` menu
+item, the following dialog will be displayed:
+
+image::/documentation/whatsnew/openshift/images/spring-boot-inner-loop24.png[]
+
+Click the ```OK``` button, the initial synchronization will be started and
+the ```Servers``` view will be displayed:
+
+image::/documentation/whatsnew/openshift/images/spring-boot-inner-loop25.png[]
+
+We've not setup the synchronization between our local Eclipse project and the remote
+OpenShift project. Each modification done locally will be reported on the remote
+OpenShift cluster.
+
+Let's modify our local application code and see the changes applied almost
+instantly:
+
+Edit the file ```src/main/java/io/openshift/booster/service/Greeting.java```
+in the ```myfirstrestapp``` project and change the ```FORMAT``` string
+value from ```Hello, %s!``` to ```Hello, Mr %s!``` and save the file.
+
+The file should be now:
+
+```java
+/*
+ * Copyright 2016-2017 Red Hat, Inc, and individual contributors.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package io.openshift.booster.service;
+
+// tag::snippet-greeting[]
+public class Greeting {
+
+    public static final String FORMAT = "Hello, Mr %s!";
+
+    private final String content;
+
+    public Greeting() {
+        this.content = null;
+    }
+
+    public Greeting(String content) {
+        this.content = content;
+    }
+
+    public String getContent() {
+        return content;
+    }
+}
+// end::snippet-greeting[]
+```
+
+Then, in the ``ÒpenShift explorer``` view, select the ```myfirstrestapp``` deployment
+and select the ````Show In -> Web Browser``` menu item and once the web browser is
+displayed, ckick the ```Invoke``` button, you should see the following view:
+
+image::/documentation/whatsnew/openshift/images/spring-boot-inner-loop26.png[]
+
+You've just experienced the inner loop on your Spring Boot application: any change done
+locally is reported and testable almost immedialtely on your OpenShift cluster.
+
+You can restart the deployment in debug mode and you'll be able to remote debug your
+Spring Boot application. Amazing, no ?
+
+
+=== Server tools
+
+==== Wildfly 14 Server Adapter
+
+A server adapter has been added to work with Wildfly 14. It adds support for Java EE 8. 
+
+=== Hibernate Tools
+
+==== Runtime Provider Updates
+
+The Hibernate 5.3 runtime provider now incorporates Hibernate Core version 5.3.6.Final and Hibernate Tools version 5.3.6.Final.
+
+The Hibernate 5.2 runtime provider now incorporates Hibernate Core version 5.2.17.Final and Hibernate Tools version 5.2.11.Final.
+
+The Hibernate 5.1 runtime provider now incorporates Hibernate Core version 5.1.16.Final and Hibernate Tools version 5.1.10.Final.
+
+
+=== Fuse Tooling
+
+==== REST Viewer becoming an editor
+
+Previously, there was a REST editor which was read-only. It is useful to have a great overview of already defined Camel REST DSL definitions. Now the editor and its related properties tab are also providing editing capabilities allowing to develop faster.
+
+image::/documentation/whatsnew/fusetools/images/fuse-editor-rest-tab-properties-11.1.0.am2.jpg[Fully Editable REST Editor]
+
+You can now:
+
+* Create and delete REST Configurations
+* Create and delete new REST Elements
+* Create and delete new REST Operations
+* Edit properties for a selected REST Element in the Properties view
+* Edit properties for a selected REST Operation in the Properties view
+
+In addition, we've improved the look and feel by fixing the scrolling capabilities of the REST Element and REST Operations lists. 
+
+=== Java Developement Tools (JDT)
+
+==== Java Editor
+
+===== Improved Breadcrumb for Dark theme
+
+The *Breadcrumb* in the *Java Editor* now uses a dark background in the Dark theme.
+
+image::https://www.eclipse.org/eclipse/news/4.9/images/breadcrumb_dark_and_light.png[]
+
+In the Light theme, the *Breadcrumb* uses a flat look style instead of a gradient.
+
+===== Quick fix to create abstract methods
+
+The existing quick fix to create missing methods has been improved to create abstract
+method declarations. The option only appears when the target class is an abstract class.
+
+image::https://www.eclipse.org/eclipse/news/4.9/images/quickfix_create_abstract_method_1.png[]
+
+===== Quick fix to convert to static import
+
+A new quick fix has been implemented that allows the user to convert static field accesses
+and static methods to use a static import. It's also possible to replace all occurrences at
+the same time.
+
+image::https://www.eclipse.org/eclipse/news/4.9/images/quickfix_convert_to_static_import.png[]
+
+==== Java Code Generation
+
+===== Improved hashCode() and equals() generation
+
+A new option in the *Source > Generate hashCode() and equals()...* tool allows you to create
+implementations using the Java 7 ```Objects.equals``` and ```Objects.hash``` methods.
+
+image::https://www.eclipse.org/eclipse/news/4.9/images/hashcode-equals-dialog.png[]
+
+The above setup generates the following code:
+
+image::https://www.eclipse.org/eclipse/news/4.9/images/hashcode-equals-generation.png[]
+
+Additionally, arrays are handled more cleverly. The generation prefers the ```Arrays.deepHashCode```
+and ```Arrays.deepEquals``` methods when dealing with ```Object[]```, ```Serializable[]```
+and ```Cloneable[]``` or any type variables extending these types.
+
+==== Java Views and Dialogs
+
+===== Quick Fix for JRE Compiler Compliance Problem Marker
+
+A new quick fix is provided on the *JRE Compiler Compilance* problem marker which is created
+when the compiler compliance does not match the JRE being used. This quick fix provides the
+option of opening the *Compiler Compliance* page of the project to fix the issue.
+
+image::https://www.eclipse.org/eclipse/news/4.9/images/quickfix_open_cc_page.png[]
+
+Selecting this option opens the *Compiler Compliance* property page for the specified project
+as shown below.
+
+image::https://www.eclipse.org/eclipse/news/4.9/images/quickfix_cc_page.png[]
+
+===== Open Type dialog now always shows the full path
+
+The *Open Type* dialog now always shows the full path of all the matching items.
+
+image::https://www.eclipse.org/eclipse/news/4.9/images/open_type_full_path.png[]
+
+==== Java Formatter
+
+===== Keep simple loops in one line
+
+New formatter settings have been added that make it possible to keep the bodies
+of simple loops (without braces) in the same line as their headers, similar to
+previously existing setting for simple 'if' statements. Different kind of loops
+('for', 'while', 'do while') can be controlled independently.
+
+The settings can be found in the profile editor under
+*New Lines > In control statements > Simple Loops*.
+
+image::https://www.eclipse.org/eclipse/news/4.9/images/formatter-compact-loops.png[]
+
+There's also a new setting to control how these loops should be handled if they
+exceed the maximum line width. It's located under
+*Line Wrapping > Wrapping settings > Statements > Compact loops ('for', 'while', 'do while')*.
+
+image::https://www.eclipse.org/eclipse/news/4.9/images/formatter-compact-loops-wrap.png[]
+
+===== Align items in columns
+
+A feature previously known as *align fields in columns* has been expanded and
+can now be used for *variable declarations* and *assignment statements* as well.
+
+An option has also been added to always *align with spaces*, even if tabs are
+used for general indentation. This is very similar to the *Use spaces to indent wrapped lines*
+option and is useful to make the code look good in editors with differing tab width.
+
+All the settings related to aligning are now in the new preferences subsection:
+ *Indentation > Align items in columns*.
+ 
+image::https://www.eclipse.org/eclipse/news/4.9/images/formatter-align-in-columns.png[]
+ 
+==== Debug
+
+===== Timeout for result of step operation
+
+Observing the result of step operations may slow down execution, which may be
+unusable if the step takes long already. Therefore a timeout (default: 7000 ms)
+has been introduced after which the observation mechanism is disabled until the
+end of the step operation. 
+
+image::https://www.eclipse.org/eclipse/news/4.9/images/result_timeout_537142.png[]
+
+The timeout can be configured
+in *Preferences > Java > Debug > Don't show if step operation takes longer than (ms)*.
+
+===== Option to hide running threads in Debug view
+
+A new option has been introduced in the *Debug* view to show or hide running threads.
+
+Hiding running threads can be useful when debugging heavily multithreaded application,
+when it is difficult to find threads stopped at breakpoints among hundreds or thousands
+of running threads.
+
+image::https://www.eclipse.org/eclipse/news/4.9/images/hide-running-threads.png[]
+
+===== Show Command Line button in Launch Configuration
+
+A new button *Show Command Line* has been added in the *Java Launch Configuration*
+dialog.
+
+image::https://www.eclipse.org/eclipse/news/4.9/images/show_command_line.png[]
+
+Clicking the button will open a dialog to show the command line used for launching
+the application.
+
+image::https://www.eclipse.org/eclipse/news/4.9/images/show_command_line_detail.png[]
+
+===== Option to disable thread name changes in Debug View
+
+Thread name changes in the debuggee JVM are reflected in the *Debug* View.
+A VM option can now be used to disable this behavior, in case the JVM communication
+necessary for the name updates is not desired.
+
+The functionality can be disabled by specifying the following VM option
+```
+-Dorg.eclipse.jdt.internal.debug.core.model.ThreadNameChangeListener.disable=true
+```
+
+===== Support for long classpath/modulepath
+
+Classpath and/or modulepath are now shortened if they are longer than current
+operating system limits.
+
+If a temporary jar is needed to shorten the classpath (Java 8 and previous versions),
+a dialog is shown asking for confirmation.
+
+image::https://www.eclipse.org/eclipse/news/4.9/images/enable-classpathonly-dialog.png[]
+
+The option *Use temporary jar to specify classpath (to avoid classpath length limitations)*
+is available in the *Classpath* tab of the *Run/Debug Configuration* dialog.
+
+image::https://www.eclipse.org/eclipse/news/4.9/images/enable-classpathonly-option.png[]
+
+
+
+
+=== And more...
+
+You can find more noteworthy updates in on link:/documentation/whatsnew/jbosstools/4.9.0.Final.html[this page].
+
+== What is next?
+
+Having JBoss Tools 4.9.0 and Red Hat Developer Studio 12.9 out we are already working on the next release for Eclipse 2018-12.
+
+Enjoy!
+
+Jeff Maury
