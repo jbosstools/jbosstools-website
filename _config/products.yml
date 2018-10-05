@@ -1373,12 +1373,12 @@ jbt_core:
         zips:
           - name: Update site (including sources) bundle of all JBoss Core Tools
             file_size: 667MB
-            url: http://download.jboss.org/jbosstools/static/photon/development/updates/core/jbosstools-4.9.0.Final-updatesite-core.zip
-            sha256_url: http://download.jboss.org/jbosstools/static/photon/development/updates/core/jbosstools-4.9.0.Final-updatesite-core.zip.sha256
+            url: http://download.jboss.org/jbosstools/static/photon/stable/updates/core/jbosstools-4.9.0.Final-updatesite-core.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/photon/stable/updates/core/jbosstools-4.9.0.Final-updatesite-core.zip.sha256
           - name: Sources zip of all JBoss Core Tools
             file_size: 223MB
-            url: http://download.jboss.org/jbosstools/static/photon/development/updates/core/jbosstools-4.9.0.Final-src.zip
-            sha256_url: http://download.jboss.org/jbosstools/static/photon/development/updates/core/jbosstools-4.9.0.AM3-src.zip.sha256
+            url: http://download.jboss.org/jbosstools/static/photon/stable/updates/core/jbosstools-4.9.0.Final-src.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/photon/stable/updates/core/jbosstools-4.9.0.Final-src.zip.sha256
           - name: Release Notes
             url: https://tools.jboss.org/documentation/whatsnew/index.html
       4.9.0.AM3:
