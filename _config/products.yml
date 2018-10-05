@@ -1,4 +1,12 @@
 eclipse:
+  simrel-2018-12:
+    # TODO archive this as of Jan 2021?
+    archived: false
+    url_path_fragment: 2018-12
+    short_name: 2018-12
+    full_name: Eclipse 4.10 (2018-12)
+    download_url:  http://www.eclipse.org/downloads/packages/release/2018-12/
+    requirements: Java 8
   simrel-2018-09:
     # TODO archive this as of Oct 2020
     archived: false
@@ -32,8 +40,7 @@ eclipse:
     download_url:  http://www.eclipse.org/downloads/packages/release/Neon/3
     requirements: Java 8
   mars:
-    # TODO archive this as of Nov 2018
-    archived: false
+    archived: true
     url_path_fragment: mars
     short_name: Mars
     full_name: Eclipse Mars 4.5.2
@@ -109,15 +116,42 @@ devstudio:
   name: JBoss Developer Studio
   url_path_fragment: devstudio
   streams:
-    simrel-2018-09:
-      12.9.0.GA:
+    simrel-2018-12:
+      12.10.0.GA:
       12.x.Nightly:
         update_site_url: https://devstudio.redhat.com/12/snapshots/updates/
-    photon:
-      12.0.0.GA:
+    simrel-2018-09:
+      12.9.0.GA:
+        archived: false
         update_site_url: https://devstudio.redhat.com/12/stable/updates/
         marketplace_url: https://marketplace.eclipse.org/node/1616973
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
+        release_date: 2018-07-16
+        supported_devstudio_is_version: 12.0.0.GA
+        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        blog_announcement_url: /blog/12.0.0.ga-for-photon.html
+        eclipse_name: Eclipse Photon 4.8.0
+        installers:
+          - name: Stand-alone Installer
+            url: http://www.jboss.org/download-manager/content/origin/files/sha256/f6/f6cbf8b116620cfd47ae84a3629e0f4ae1455985c2caf857fdef44e659b6882c/devstudio-12.9.0.GA-installer-standalone.jar
+            file_size: 716MB
+        zips:
+          - name: Update site (including sources) bundle of JBoss Developer Studio
+            url: http://www.jboss.org/download-manager/content/origin/files/sha256/ed/ed4cf6f22d87b13fecd5a58696c4e83009e368ed2c42ff0c5ad1c7321315fc9e/devstudio-12.9.0.GA-updatesite-core.zip
+            file_size: 747MB
+          - name: JBoss Central Zip
+            url: http://www.jboss.org/download-manager/content/origin/files/sha256/55/55ad790792094730f455d5be022ea246ba48db78ca6e1d11470ea7d4146dcb03/devstudio-12.9.0.GA-updatesite-central.zip
+            file_size:  77MB
+          - name: Target Platform for JBoss Developer Studio
+            url: https://devstudio.redhat.com/static/12/stable/updates/core/devstudio-12.9.0.GA-target-platform.zip
+            file_size: 771MB
+    photon:
+      12.0.0.GA:
+        archived: true
+        # update_site_url: https://devstudio.redhat.com/12/stable/updates/
+        # marketplace_url: https://marketplace.eclipse.org/node/1616973
+        # marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
         release_date: 2018-07-16
         supported_devstudio_is_version: 12.0.0.GA
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
@@ -1325,15 +1359,35 @@ jbt_core:
   name: JBoss Tools
   url_path_fragment: jbosstools
   streams:
+    simrel-2018-12:
+      4.10.x.Nightly:
+        update_site_url: http://download.jboss.org/jbosstools/photon/snapshots/updates/
     simrel-2018-09:
       4.9.0.Final:
-      4.9.0.AM3:
         archived: false
+        release_date: 2018-10-08
+        supported_jbt_is_version: 4.6.0.Final
+        blog_announcement_url: /blog/12.9.0.html
+        documentation_url: http://docs.jboss.org/tools/
+        eclipse_name: Eclipse 4.9 (2018-09)
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 667MB
+            url: http://download.jboss.org/jbosstools/static/photon/development/updates/core/jbosstools-4.9.0.Final-updatesite-core.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/photon/development/updates/core/jbosstools-4.9.0.Final-updatesite-core.zip.sha256
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 223MB
+            url: http://download.jboss.org/jbosstools/static/photon/development/updates/core/jbosstools-4.9.0.Final-src.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/photon/development/updates/core/jbosstools-4.9.0.AM3-src.zip.sha256
+          - name: Release Notes
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
+      4.9.0.AM3:
+        archived: true
         release_date: 2018-09-12
         supported_jbt_is_version: 4.6.0.Final
         blog_announcement_url: /blog/4.9.0.am3.html
         documentation_url: http://docs.jboss.org/tools/
-        eclipse_name: Eclipse 4.9
+        eclipse_name: Eclipse 4.9 (2018-09)
         zips:
           - name: Update site (including sources) bundle of all JBoss Core Tools
             file_size: 667MB
@@ -1351,7 +1405,7 @@ jbt_core:
         supported_jbt_is_version: 4.6.0.Final
         blog_announcement_url: /blog/4.9.0.am2.html
         documentation_url: http://docs.jboss.org/tools/
-        eclipse_name: Eclipse 4.9
+        eclipse_name: Eclipse 4.9 (2018-09)
         zips:
           - name: Update site (including sources) bundle of all JBoss Core Tools
             file_size: 667MB
@@ -1369,7 +1423,7 @@ jbt_core:
         supported_jbt_is_version: 4.6.0.Final
         # blog_announcement_url: /blog/4.9.0.am1.html
         documentation_url: http://docs.jboss.org/tools/
-        eclipse_name: Eclipse 4.9
+        eclipse_name: Eclipse 4.9 (2018-09)
       4.9.x.Nightly:
         update_site_url: http://download.jboss.org/jbosstools/photon/snapshots/updates/
     photon:
