@@ -126,12 +126,12 @@ devstudio:
         update_site_url: https://devstudio.redhat.com/12/stable/updates/
         marketplace_url: https://marketplace.eclipse.org/node/1616973
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
-        release_date: 2018-07-16
+        release_date: 2018-10-08
         supported_devstudio_is_version: 12.0.0.GA
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
-        blog_announcement_url: /blog/12.0.0.ga-for-photon.html
-        eclipse_name: Eclipse Photon 4.8.0
+        blog_announcement_url: /blog/12.9.0.html
+        eclipse_name: Eclipse 4.9 (2018-09)
         installers:
           - name: Stand-alone Installer
             url: http://www.jboss.org/download-manager/content/origin/files/sha256/f6/f6cbf8b116620cfd47ae84a3629e0f4ae1455985c2caf857fdef44e659b6882c/devstudio-12.9.0.GA-installer-standalone.jar
