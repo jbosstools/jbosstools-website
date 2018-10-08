@@ -82,7 +82,7 @@ image::/documentation/whatsnew/openshift/images/spring-boot-inner-loop4.png[]
 
 Then select the ```Git``` repository type and click the ```Next``` button:
 
-image::images/spring-boot-inner-loop5.png[]
+image::/documentation/whatsnew/openshift/images/spring-boot-inner-loop5.png[]
 
 Select the ```Use or create repository in parent folder of project``` checkbox
 then select the ```myfirstrestapp``` project:
