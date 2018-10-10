@@ -1387,6 +1387,7 @@ jbt_core:
         supported_jbt_is_version: 4.6.0.Final
         blog_announcement_url: /blog/4.9.0.am3.html
         documentation_url: http://docs.jboss.org/tools/
+        update_site_url: http://download.jboss.org/jbosstools/photon/development/updates/
         eclipse_name: Eclipse 4.9 (2018-09)
         zips:
           - name: Update site (including sources) bundle of all JBoss Core Tools
@@ -1405,6 +1406,7 @@ jbt_core:
         supported_jbt_is_version: 4.6.0.Final
         blog_announcement_url: /blog/4.9.0.am2.html
         documentation_url: http://docs.jboss.org/tools/
+        update_site_url: http://download.jboss.org/jbosstools/photon/development/updates/
         eclipse_name: Eclipse 4.9 (2018-09)
         zips:
           - name: Update site (including sources) bundle of all JBoss Core Tools
