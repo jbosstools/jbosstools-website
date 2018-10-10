@@ -1369,6 +1369,7 @@ jbt_core:
         supported_jbt_is_version: 4.6.0.Final
         blog_announcement_url: /blog/12.9.0.html
         documentation_url: http://docs.jboss.org/tools/
+        update_site_url: http://download.jboss.org/jbosstools/photon/stable/updates/
         eclipse_name: Eclipse 4.9 (2018-09)
         zips:
           - name: Update site (including sources) bundle of all JBoss Core Tools
@@ -1430,7 +1431,7 @@ jbt_core:
         update_site_url: http://download.jboss.org/jbosstools/photon/snapshots/updates/
     photon:
       4.6.0.Final:
-        update_site_url: http://download.jboss.org/jbosstools/photon/stable/updates/
+        # update_site_url: http://download.jboss.org/jbosstools/photon/stable/updates/
         # TODO enable these for .Final
         marketplace_url: https://marketplace.eclipse.org/node/1617241
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1617241
