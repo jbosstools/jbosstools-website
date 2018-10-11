@@ -1370,6 +1370,8 @@ jbt_core:
         blog_announcement_url: /blog/12.9.0.html
         documentation_url: http://docs.jboss.org/tools/
         update_site_url: http://download.jboss.org/jbosstools/photon/stable/updates/
+        marketplace_url: https://marketplace.eclipse.org/node/1617241
+        marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1617241
         eclipse_name: Eclipse 4.9 (2018-09)
         zips:
           - name: Update site (including sources) bundle of all JBoss Core Tools
@@ -1433,9 +1435,7 @@ jbt_core:
       4.6.0.Final:
         # update_site_url: http://download.jboss.org/jbosstools/photon/stable/updates/
         # TODO enable these for .Final
-        marketplace_url: https://marketplace.eclipse.org/node/1617241
-        marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1617241
-        archived: false
+        archived: true
         release_date: 2018-07-16
         supported_jbt_is_version: 4.6.0.Final
         blog_announcement_url: /blog/12.0.0.ga-for-photon.html
