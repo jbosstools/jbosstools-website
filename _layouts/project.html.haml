@@ -25,7 +25,10 @@
     %link{ :rel=>'stylesheet', :type=>"text/css", :href=>relative("/stylesheets/jbt-styles.css") }
     %link{ :rel=>"stylesheet", :type=>"text/css", :href=>relative("/fonts/font-awesome/font-awesome.min.css"), :media=>"screen, projection"}
     %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css", :media=>"screen, projection"}
-    %script(id="dpal" src="//www.redhat.com/dtm.js" type="text/javascript")
+    - if site["showwip"]
+      %script(id="dpal" src="//www.redhat.com/dtm-staging.js" type="text/javascript")
+    - else
+      %script(id="dpal" src="//www.redhat.com/dtm.js" type="text/javascript")
 
     -# RSS feeds
     %link{:rel=>"alternate", :type=>"application/rss+xml", :title=>"RSS", :href=>relative("/blog/news.atom")}
