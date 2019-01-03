@@ -2,7 +2,7 @@ FROM centos:centos7
 MAINTAINER Max Rydahl Andersen <max@jboss.org>
 
 # install deps required by our build
-RUN yum install -y epel-release which tar bzip2 gcc ruby-devel libxml2 libxml2-devel libxslt libxslt-devel libcurl-devel git
+RUN yum install -y epel-release which tar bzip2 gcc libyaml libxml2 libxml2-devel libxslt libxslt-devel libcurl-devel git
 
 # when running with above nodejs was not available
 RUN curl --silent --location https://rpm.nodesource.com/setup_6.x | bash -
@@ -11,7 +11,7 @@ RUN yum install -y nodejs
 RUN yum install -y wget
 
 # Add RVM keys
-RUN gpg2 --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
+RUN gpg2 --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
 
 # Install RVM
 RUN curl -L get.rvm.io | bash -s stable
@@ -29,6 +29,7 @@ WORKDIR /tmp/
 RUN /bin/bash -l -c "echo rvm_install_on_use_flag=1 > ~/.rvmrc"
 # rvm will get version from Gemfile
 RUN /bin/bash -l -c "rvm install ."
+RUN /bin/bash -l -c "gem update --system --no-document"
 RUN /bin/bash -l -c "gem install bundler"
 # install base gem's, if any changes user only need to install differences.
 RUN /bin/bash -l -c "bundle install"
