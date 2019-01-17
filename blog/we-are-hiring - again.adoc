@@ -1,0 +1,26 @@
+= We are hiring
+:page-date: 2019-01-17
+:page-layout: blog
+:page-author: jeffmaury
+:page-tags: [job, jbosscentral]
+
+The Developer Experience and Tooling group, of which JBoss Tools team is part, 
+is looking for an awesome developer. We are looking to continue
+improving the usability for developers around various IDEs including Eclipse, VSCode and IntelliJ and around the Red Hat product line, including JBoss Middleware.
+
+Topics range from Java to JavaScript, application servers to containers, source code tinkering to full blown CI/CD setups.
+
+If you are into making developers life easier and like to be able to get involved in many different technologies and get them to work great together then do apply.
+
+You can also ping me (jeffmaury@redhat.com) for questions.
+
+The current list of openings are:
+
+* https://global-redhat.icims.com/jobs/66514/software-engineer---jboss-and-openshift-tooling/job[Sofware engineer]
+
+Note: the job postings do list a specific location, but for the right candidate we are happy to consider many locations worldwide (anywhere there is a Red Hat office), as well as working from home.
+
+Have fun! +
+Jeff Maury +
+http://twitter.com/jeffmaury[@jeffmaury]
+http://twitter.com/jbosstools[@jbosstools]
