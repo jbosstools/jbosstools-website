@@ -15,7 +15,7 @@ Go to link:../../downloads[Downloads] to select the distribution that fits your 
 +
 Here you can:
 
-  * Choose an all-in-one install via link:https://www.jboss.org/products/devstudio[Red Hat Developer Studio], or
+  * Choose an all-in-one install via link:https://www.jboss.org/products/devstudio[Red Hat CodeReady Studio], or
   * Choose individual features from the link:/downloads/[JBoss Tools] update site, or
   * Install from the link:http://marketplace.eclipse.org/[Eclipse Marketplace].
 
