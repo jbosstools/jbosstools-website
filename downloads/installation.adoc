@@ -9,7 +9,7 @@ All downloads can be found at link:../downloads/overview.html[Download overview]
 
 === Installer
 
-Red Hat Developer Studio includes the supported plugins from
+Red Hat CodeReady Studio includes the supported plugins from
 JBoss Tools, plus some additional tools, and comes bundled in an
 easy-to-use installer for Windows, Mac, and Linux (32- and 64-bit). It
 can be link:../downloads[downloaded] for free. Perfect for offline

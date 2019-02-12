@@ -5,7 +5,7 @@
 :experimental:
 :imagesdir: ./images
 
-Red Hat Developer Studio offers Forge Tools for developing Java EE applications and to extend the IDE functionality in Eclipse. Start developing Java EE applications using either the Forge context menu or the command line from the IDE.
+Red Hat CodeReady Studio offers Forge Tools for developing Java EE applications and to extend the IDE functionality in Eclipse. Start developing Java EE applications using either the Forge context menu or the command line from the IDE.
 
 == Create a New Project
 
