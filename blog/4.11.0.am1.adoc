@@ -1,0 +1,44 @@
+= JBoss Tools 4.11.0.AM1 for Eclipse 2018-12
+:page-layout: blog
+:page-author: jeffmaury
+:page-tags: [release, jbosstools, devstudio, jbosscentral]
+:page-date: 2019-02-26
+
+Happy to announce 4.11.0.AM1 (Developer Milestone 1) build for Eclipse 2018-12.
+
+Downloads available at link:/downloads/jbosstools/2018-12/4.11.0.AM1.html[JBoss Tools 4.11.0 AM1].
+
+== What is New?
+
+Full info is at link:/documentation/whatsnew/jbosstools/4.11.0.AM1.html[this page]. Some highlights are below.
+
+=== Server Tools
+
+==== EAP 7.2 Server Adapter
+
+A server adapter has been added to work with EAP 7.2.
+
+=== OpenShift 3
+
+==== New OpenShift connection helper
+
+When you need to defined a new OpenShift connection, you need to provide the following information:
+
+- cluster URL
+- username and password or token
+
+If you've already logged in your cluster through the OpenShift Web Console, you can copy an `oc` command
+in the clipboard that contains both the cluster URL and your token. 
+
+So, from now, there is a new option that allows you to initialize the wizard fields from the copied `oc`
+command:
+
+image::/documentation/whatsnew/openshift/images/connection-wizard-paste.png[]
+
+Click on the `Paste Login Command` button and the fields will be initialized:
+
+image::/documentation/whatsnew/openshift/images/connection-wizard-paste1.png[]
+
+Enjoy!
+
+Jeff Maury
