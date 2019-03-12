@@ -6,12 +6,12 @@
 
 We are extremely pleased to announce that the preview release of the Red Hat OpenShift Connector
 for JetBrains products (IntelliJ IDEA, WebStorm,....) is now available. You can download the
-OpenShift Connector plugins from the link:https://pluins.jetbrains.com[JetBrains marketplace]
+OpenShift Connector plugin from the link:https://pluins.jetbrains.com[JetBrains marketplace]
 or install it directly from the plugins gallery in JetBrains products.
 
 This article provides describes the features and benefits of the plugin and provides installation details.
 It also provides a demo of how using the plugin improves the end-to-end experience of developing
-and deploying Spring Boot applications to your local OpenShift cluster.
+and deploying Spring Boot applications to your OpenShift cluster.
 
 == Benefits of using the extension
 
@@ -19,24 +19,22 @@ link:https://www.openshiftcom[Red Hat OpenShift] is a container application plat
 the power of Kubernetes and containers to the enterprise. Regardless of the applications architecture,
 OpenShift lets you easily and quickly build, develop, and deploy in nearly any infrastructure, public or private.
 
-Therefore, whether it’s on-premises, in a public cloud, or hosted, you have an award-winning platform
+Therefore, whether it's on-premises, in a public cloud, or hosted, you have an award-winning platform
 to get your next big idea to market ahead of your competition.
 
-Using OpenShift Connector, you can interact with Red Hat OpenShift using a local instance of OpenShift
+Using OpenShift Connector, you can interact with any Red Hat OpenShift including a local instance of OpenShift
 clusters such as link:https://developers.redhat.com/products/cdk/overview/[minishift/Red Hat Container Development Kit].
 Leveraging the OpenShift Application Explorer view, you can improve the end-to-end experience of developing applications.
 
-The extension enables you to perform all this directly using JetBrains products ((IntelliJ IDEA, WebStorm,....)
+The plugin enables you to perform all this directly using JetBrains products (IntelliJ IDEA, WebStorm,....)
 and removes the complexity of memorizing some fairly complicated CLI commands.
 
-== Developer use-case
-
-Therefore, once the OpenShift Connector is installed, OpenShift view is enabled on the Explorer panel.
-Then, you can access the view and connect to a running OpenShift cluster and perform the required operations.
+Once the OpenShift Connector is installed, a new panel, the OpenShift view, is enabled in the Explorer panel.
+Then, you can access the view and connect to a running OpenShift cluster to perform the required operations.
 
 == Installation
 
-First, you will need to install any JetBrains product ((IntelliJ IDEA, WebStorm,....) 2018.1 or later.
+First, you will need to install any JetBrains product (IntelliJ IDEA, WebStorm,....) 2018.1 or later.
 
 To install the plugin, bring up the plugins configuration dialog: `File -> Settings -> Plugins`:
 
@@ -60,11 +58,11 @@ Select the `OpenShift` item:
 
 image::images/ij-openshift-connector4.png[]
 
-== The extension in action
+== The plugin in action
 
 === Connecting to your OpenShift instance
 
-. Start the local OpenShift instance using link:https://developers.redhat.com/products/cdk/overview/[minishift/Red Hat Container Development Kit]
+. If you're working locally, start the local OpenShift instance using link:https://developers.redhat.com/products/cdk/overview/[minishift/Red Hat Container Development Kit]
 . You then need to log in to the running OpenShift cluster: right click on the cluster URL tree node and select `Log in to cluster`.
 
 image::images/ij-openshift-connector5.png[]
@@ -86,6 +84,10 @@ Enter `https://github.com/openshift-evangelists/Wild-West-Backend` in the `URL` 
 the `Clone` button.
 
 === Create a project for the application
+
+The application will be hosted in an OpenShift project (similar to Kubernetes namespaces).
+For more information about OpenShift projects, see the
+https://docs.openshift.com/container-platform/3.11/admin_guide/managing_projects.html[official documentation]
 
 In the `OpenShift` view, right click on the cluster node (the one with the URL) and select `New Project`:
 
@@ -134,7 +136,9 @@ image::images/ij-openshift-connector17.png[]
 
 WARNING: On IntelliJ IDEA 2018.3 or 2018.3 based JetBrains products, the terminal window will be
 automatically closed when the underlying command process is terminated. We are working for a 
-workaround but we recommanded to use previous versions until the plugin will be updated.
+workaround but we recommend to use previous versions until the plugin will be updated.
+See the https://github.com/redhat-developer/intellij-openshift-connector/issues/33[issue] for
+more information
 
 Once deployed, the component will appear in the `OpenShift` view:
 
