@@ -211,6 +211,7 @@ with the following content:
 
 Refresh the browser window and you should see the following output:
 
+image::images/ij-openshift-connector25.png[]
 
 Enjoy!
 
