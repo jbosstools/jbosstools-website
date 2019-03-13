@@ -27,10 +27,19 @@ clusters such as link:https://developers.redhat.com/products/cdk/overview/[minis
 Leveraging the OpenShift Application Explorer view, you can improve the end-to-end experience of developing applications.
 
 The plugin enables you to perform all this directly using JetBrains products (IntelliJ IDEA, WebStorm,....)
-and removes the complexity of memorizing some fairly complicated CLI commands.
+on Windows, Linux and macOS platforms and removes the complexity of memorizing some fairly complicated
+CLI commands.
 
 Once the OpenShift Connector is installed, a new panel, the OpenShift view, is enabled in the Explorer panel.
 Then, you can access the view and connect to a running OpenShift cluster to perform the required operations.
+
+== Demo
+
+You can see a live demo of the plugin here:
+
+video::kCESA7a5i3M[youtube]
+
+Below are the steps to run the demonstration by yourself
 
 == Installation
 
@@ -201,12 +210,6 @@ with the following content:
 ```
 
 Refresh the browser window and you should see the following output:
-
-== Demo
-
-You can see a video capture of this demo:
-
-video::kCESA7a5i3M[youtube]
 
 
 Enjoy!
