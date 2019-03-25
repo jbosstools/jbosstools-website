@@ -1,0 +1,11 @@
+= Maven Tools What's New in 4.11.0.Final
+:page-layout: whatsnew
+:page-component_id: maven
+:page-component_version: 4.11.0.Final
+:page-product_id: jbt_core
+:page-product_version: 4.11.0.Final
+:page-include-previous: false
+
+== Maven support updated to M2E 1.11
+
+The Maven support is based on Eclipse M2E 1.11
