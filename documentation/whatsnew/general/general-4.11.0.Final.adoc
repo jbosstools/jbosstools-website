@@ -1,0 +1,204 @@
+= General 4.11.0.Final What's New
+:page-layout: whatsnew
+:page-component_id: general
+:page-component_version: 4.11.0.Final
+:page-product_id: jbt_core 
+:page-product_version: 4.11.0.Final
+
+== General for JBoss Tools 4.11.0.Final
+
+JBoss Tools is now targeting Eclipse 2019-03.
+
+=== Platform
+
+==== Views, Dialogs and Toolbar
+ 
+===== User defined resource filters in Project Explorer
+
+The *Filters and Customization...* menu in *Project Explorer* now shows an additional *User filters*
+tab which can be used to exclude some resources from Project Explorer based on their name.
+
+Full name and regular expressions are supported.
+
+image::https://www.eclipse.org/eclipse/news/4.11/images/user-filters.png[]
+
+===== Error Log view added to Platform
+
+The *Error Log* view has been moved from the PDE project to the Platform project. See
+https://bugs.eclipse.org/bugs/show_bug.cgi?id=50517[bug 50517] for details.
+
+===== Copy to clipboard in Installation Details
+
+A copy to clipboard action has been added to all tabs of the *Installation Details* dialog.
+
+image::https://www.eclipse.org/eclipse/news/4.11/images/copy-installation-details.png[]
+
+===== Copy & paste of Environment Variables
+
+The *Environment* tab in a *Launch configuration* dialog supports copy & paste actions now. The environment
+variables are transferred as text data, so it is not only possible to copy & paste between two different
+launch configurations, but also between the launch configuration and e.g. some text editor or the command line. 
+
+image::https://www.eclipse.org/eclipse/news/4.11/images/env-var-copy-paste.png[]
+
+This feature is available in all launch configurations which use the common *Environment* tab.
+
+===== Useful links to add projects to empty workspace
+
+When Eclipse IDE is started for the first time or with a new workspace, it may not be intuitive for new users
+on how to proceed. To help the users in getting started, the following useful links have been provided to add
+a project to the workspace:
+
+* Perspective specific project creation wizard
+* Generic New Project wizard
+* Import projects wizard
+
+image::https://www.eclipse.org/eclipse/news/4.11/images/ProjectExplorer.png[]
+
+===== New mnemonics in Error Log view
+
+New mnemonics have been added for *Export Entry...* and *Event Detail* entries in the context menu of *Error Log* view.
+
+image::https://www.eclipse.org/eclipse/news/4.11/images/mneumonics.png[]
+
+==== Themes and Styling 
+
+===== Improved Dark theme for Mac
+
+The Dark theme for Mac has been improved to use the colors from the macOS system dark appearance. Some of the
+notable changes in Eclipse IDE are the dark window title bar, menus, file dialogs, combos and buttons.  
+
+Note: This change is available on macOS Mojave and later.
+
+Before:
+
+image::https://www.eclipse.org/eclipse/news/4.11/images/darktheme-before.png[]
+
+After:
+
+image::https://www.eclipse.org/eclipse/news/4.11/images/darktheme-after.png[]
+
+===== Improved Dark theme for Windows
+
+The drawing operations have been improved in Windows so the custom drawn icons look better now.
+For example, check the close icon below.
+
+Before:
+
+image::https://www.eclipse.org/eclipse/news/4.11/images/closebutton_before.png[]
+
+After:
+
+image::https://www.eclipse.org/eclipse/news/4.11/images/closebutton_after.png[]
+
+==== General Updates
+
+===== Performance improvements
+
+The startup and interactive performance of multiple operations has been improved again in this release.
+
+=== Java Developement Tools (JDT)
+
+==== Java 12 Support
+
+===== Java 12
+
+http://jdk.java.net/12/[Java 12] is out and Eclipse JDT supports Java 12 for 4.11 via
+https://marketplace.eclipse.org/content/java-12-support-eclipse-2019-03-411[Marketplace]. The release
+notably includes the following Java 12 feature:
+http://openjdk.java.net/jeps/325[JEP 325: Switch Expressions (Preview)]. Please note that this is a
+http://openjdk.java.net/jeps/12[preview language feature] and hence enable preview option should be on.
+For an informal introduction of the support, please refer to
+https://wiki.eclipse.org/Java12/Examples[Java 12 Examples wiki].
+
+==== JUnit
+
+===== JUnit 5.4
+
+https://junit.org/junit5/docs/5.4.0/release-notes/[JUnit 5.4] is here and Eclipse JDT has been
+updated to use this version.
+
+===== Test factory template
+
+JUnit Jupiter now allows test factory methods to return a single ```DynamicNode```. The ```test_factory```
+template has been updated to include ```DynamicNode``` in the return type.
+
+image::https://www.eclipse.org/eclipse/news/4.11/images/junit-test-template.png[]
+
+==== Java Editor 
+
+===== Default and constant values in content assist information pop-up
+
+The additional information pop-up of a content assist proposal now shows the default value
+of an annotation type element:
+
+image::https://www.eclipse.org/eclipse/news/4.11/images/default-value-annotation-type-elelemt.png[]
+
+and the value of a constant:
+
+image::https://www.eclipse.org/eclipse/news/4.11/images/constant-value.png[]
+
+===== Create service provider method
+
+If a service defined in a ```module-info.java``` file has an invalid service provider implementation,
+a *Quick Fix (Ctrl + 1)* is now available to create the new provider method:
+
+image::https://www.eclipse.org/eclipse/news/4.11/images/service-provider-proposal.png[]
+
+image::https://www.eclipse.org/eclipse/news/4.11/images/service-provider-linked-proposal.png[]
+
+==== Java Formatter 
+
+===== Line wrapping settings for binary operators
+
+Instead of a single line wrapping setting for binary expressions, there's now a whole section of settings
+for various kinds of *binary operators* (multiplicative, additive, logical, etc.). There are settings
+for _relational_ (including equality) and _shift_ operators, which were not covered by the old setting.
+Also, _string concatenation_ can now be treated differently from arithmetic sum.
+
+The settings can be found in the Profile Editor (*Preferences > Java > Code Style > Formatter > Edit...*)
+under the *Line Wrapping > Wrapping settings > Binary expressions* subsection.
+
+image::https://www.eclipse.org/eclipse/news/4.11/images/formatter-wrap-binary-expressions.png[]
+
+===== White space settings for binary operators
+
+The white space around operators in *binary expressions* can now be controlled separately for different groups
+of operators, consistent with the line wrapping settings.
+
+The new *Binary operators* sub-section has been added under White Space > Expressions in the Formatter
+profile editor.
+
+image::https://www.eclipse.org/eclipse/news/4.11/images/formatter-spaces-binary-expressions.png[]
+
+===== Wrapping setting for chained conditional expressions
+
+A chain of _nested conditional expressions_ (using ternary operator) can be now wrapped as a single group,
+with all of them indented at the same level. It's only possible for right-sided nesting.
+
+Find the *Chained conditionals* setting in the Profile Editor under the
+*Line Wrapping > Wrapping settings > Other expressions* subsection.
+
+image::https://www.eclipse.org/eclipse/news/4.11/images/formatter-wrap-chained-conditionals.png[]
+
+===== Indent Javadoc tag descriptions
+
+The Formatter Profile has a new setting that indents wrapped Javadoc tag descriptions.
+It's called _Indent other tag descriptions when wrapped_, in contrast to the preexisting _Indent wrapped
+@param/@throws descriptions_ setting. It affects tags like ```@return``` or ```@deprecated```.
+
+The settings can be found in the Profile Editor (*Preferences > Java > Code Style > Formatter > Edit...*)
+under the *Comments > Javadocs* section.
+
+image::https://www.eclipse.org/eclipse/news/4.11/images/formatter-indent-tags.png[]
+
+==== Debug
+
+===== History for expressions in the Variables view
+
+The *Variables* view now stores a history of the expressions used in the *Detail* pane. You can choose
+a _previously entered expression_ for a variable from the new drop-down menu. The expression will be
+copied to the *Detail* pane where you can select it to perform various actions present in the context menu.
+
+image::https://www.eclipse.org/eclipse/news/4.11/images/expressions-history.png[]
+
