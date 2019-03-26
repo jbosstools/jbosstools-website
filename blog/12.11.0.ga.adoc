@@ -1,4 +1,4 @@
-= JBoss Tools and Red Hat Developer Studio for Eclipse 2019-03
+= JBoss Tools and Red Hat CodeReady Studio for Eclipse 2019-03
 :page-layout: blog
 :page-author: jeffmaury
 :page-tags: [release, jbosstools, devstudio, jbosscentral]
