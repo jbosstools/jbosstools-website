@@ -1,0 +1,12 @@
+= Quarkus
+:page-layout: blog
+:page-author: jeffmaury
+:page-tags: [jbosstools, codereadystudio, eclipse]
+:page-date: 2019-05-13
+
+You’ve probably heard about https://quarkus.io[Quarkus], the Supersonic Subatomic Java framework tailored for Kubernetes and containers.
+
+We wrote an article on how to create your first Quarkus project in an Eclipse based IDE (like https://developers.redhat.com/products/codeready-studio/overview[Red Hat CodeReady Studio]).
+
+You can read it at https://developers.redhat.com/blog/2019/05/09/create-your-first-quarkus-project-with-eclipse-ide-red-hat-codeready-studio/
+
