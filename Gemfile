@@ -5,7 +5,7 @@ ruby '2.4.1'
 #gem 'awestruct', '0.5.5'         # Framework for creating static HTML sites
 #gem 'awestruct', :git => 'git://github.com/aslakknutsen/awestruct.git', :branch => 'lazy_gen'
 #gem 'awestruct', :git => 'git://github.com/lightguard/awestruct.git', :branch => 'switch_from_rexml_to_oga'
-gem 'awestruct', :git => 'git://github.com/awestruct/awestruct.git', :branch => 'b8ad2ea56a38839b44659d47d56ef338e69d8a88'
+gem 'awestruct', :git => 'https://github.com/awestruct/awestruct.git', :ref => 'b8ad2ea56a38839b44659d47d56ef338e69d8a88'
 
 
 gem 'uglifier', '~> 2.0.1'        # Ruby wrapper for UglifyJS JavaScript compressor
