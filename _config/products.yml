@@ -1413,7 +1413,7 @@ jbt_core:
         supported_jbt_is_version: 4.6.0.Final
         blog_announcement_url: /blog/4.11.0.ga.html
         documentation_url: http://docs.jboss.org/tools/
-        update_site_url: http://download.jboss.org/jbosstools/photon/development/updates/
+        update_site_url: http://download.jboss.org/jbosstools/photon/stable/updates/
         eclipse_name: Eclipse 4.11 (2019-03)
         zips:
           - name: Update site (including sources) bundle of all JBoss Core Tools
