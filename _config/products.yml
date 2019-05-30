@@ -142,7 +142,7 @@ devstudio:
         marketplace_url: https://marketplace.eclipse.org/node/1616973
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
         release_date: 2019-04-01
-        supported_devstudio_is_version: 12.0.0.GA
+        supported_devstudio_is_version: 12.11.0.GA
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         blog_announcement_url: /blog/12.11.0.ga.html
@@ -925,6 +925,23 @@ devstudio_is:
   name: JBoss Developer Studio Integration Stack
   url_path_fragment: devstudio_is
   streams:
+    simrel-2019-03:
+      12.11.0.GA:
+        documentation_url: https://access.redhat.com/documentation/en-us/red_hat_codeready_studio_integration_stack/12.11/
+        release_notes_url: https://access.redhat.com/documentation/en-us/red_hat_codeready_studio_integration_stack/12.11/html/12.11.0_release_notes_and_known_issues/
+        blog_announcement_url: /blog/integration-stack-4.11.0.Final.html
+        release_date: 2019-05-30
+        required_devstudio_version: 12.11.0.GA
+        update_site_url: https://devstudio.redhat.com/12/stable/updates/integration-stack/
+        installers:
+          - name: Integration Stack Stand-Alone Installer
+            file_size: 1011MB
+            url: https://access.redhat.com/jbossnetwork/restricted/listSoftware.html?downloadType=distributions&product=developerstudio&version=12.11.0
+        zips:
+          - name: Update site bundle of JBoss Developer Studio Integration Stack
+            file_size: 350MB
+            url: https://devstudio.redhat.com/12/stable/updates/integration-stack/12.11.0.GA/devstudio-integration-stack-12.11.0.GA-updatesite.zip
+            sha256_url: https://devstudio.redhat.com/12/stable/updates/integration-stack/12.11.0.GA/devstudio-integration-stack-12.11.0.GA-updatesite.zip.sha256
     photon:
       12.0.0.GA:
         documentation_url: https://access.redhat.com/documentation/en-us/red_hat_jboss_developer_studio_integration_stack/12/
@@ -1410,7 +1427,7 @@ jbt_core:
       4.11.0.Final:
         archived: false
         release_date: 2019-04-01
-        supported_jbt_is_version: 4.6.0.Final
+        supported_jbt_is_version: 4.11.0.Final
         blog_announcement_url: /blog/4.11.0.ga.html
         documentation_url: http://docs.jboss.org/tools/
         update_site_url: http://download.jboss.org/jbosstools/photon/stable/updates/
@@ -1430,7 +1447,7 @@ jbt_core:
       4.11.0.AM1:
         archived: true
         release_date: 2019-02-26
-        supported_jbt_is_version: 4.6.0.Final
+        supported_jbt_is_version: 4.11.0.Final
         blog_announcement_url: /blog/4.11.0.am1.html
         documentation_url: http://docs.jboss.org/tools/
         update_site_url: http://download.jboss.org/jbosstools/photon/development/updates/
@@ -3101,6 +3118,18 @@ jbt_is:
   name: JBoss Tools Integration Stack
   url_path_fragment: jbosstools_is
   streams:
+    simrel-2019-03:
+      4.11.0.Final:
+        documentation_url: https://access.redhat.com/documentation/en-us/red_hat_codeready_studio_integration_stack/12.11/
+        release_date: 2019-05-30
+        blog_announcement_url: /blog/integration-stack-4.11.0.Final.html
+        required_jbt_core_version: 4.11.0.Final
+        update_site_url: http://download.jboss.org/jbosstools/photon/stable/updates/integration-stack/
+        zips:
+           - name: Update site bundle of JBoss Tools Integration Stack
+             file_size: 139MB
+             url: http://download.jboss.org/jbosstools/photon/stable/updates/integration-stack/4.11.0.Final/jbosstools-integration-stack-4.11.0.Final-updatesite.zip
+             sha256_url: http://download.jboss.org/jbosstools/photon/stable/updates/integration-stack/4.11.0.Final/jbosstools-integration-stack-4.11.0.Final-updatesite.zip.sha256
     photon:
       4.6.0.Final:
         documentation_url: https://access.redhat.com/documentation/en-us/red_hat_jboss_developer_studio_integration_stack/12.0/
