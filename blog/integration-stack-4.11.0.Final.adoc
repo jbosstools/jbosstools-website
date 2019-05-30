@@ -1,0 +1,58 @@
+= Integration Tooling for Eclipse 2019-03
+:page-layout: blog
+:page-author: pleacu
+:page-date: 2019-05-30
+:page-tags: [release, jbosstools, devstudio, jbosscentral]
+
+*Check out our new branding for Eclipse 2019-03.  We're now Red Hat CodeReady Studio 12 Integration Stack.*
+
+image::/blog/images/crstudio12.png[]
+
+*JBoss Tools Integration Stack 4.11.0.Final / Red Hat CodeReady Studio Integration Stack 12.11.0.GA*
+
+NOTE: All of the Integration Stack components have been verified to work with the same dependencies as JBoss Tools 4.11 and Red Hat CodeReady Studio 12.
+
+== What's new for this release?
+
+DataVirtualization support from Teiid Designer is no longer available through the Integration Stack.  It can be installed directly from link:http://download.jboss.org/jbosstools/photon/stable/updates/integration-stack/teiiddesigner[Teiid Designer]
+
+This release has an updated BPMN2 Modeler and jBPM/Drools/KIE.
+
+=== Released Tooling Highlights
+
+==== Business Process and Rules Development
+
+===== BPMN2 Modeler Known Issues
+
+See the link:https://access.redhat.com/documentation/en-us/red_hat_codeready_studio_integration_stack/12.11/html/12.11.0_release_notes_and_known_issues/known_issues#bpmn2_1_5_1_final_2[BPMN2 1.5.1.Final Known Issues Section] of the Integration Stack 12.11.0.GA release notes.
+
+===== Drools/jBPM6 Known Issues
+
+See the link:https://access.redhat.com/documentation/en-us/red_hat_codeready_studio_integration_stack/12.11/html/12.11.0_release_notes_and_known_issues/resolved_issues#drools_7_21_0_final[Drools 7.21.0.Final Known Issues Section] of the Integration Stack 12.11.0.GA release notes.
+
+== What's an Integration Stack?
+
+Red Hat CodeReady Studio Integration Stack is a set of Eclipse-based development tools. It further enhances the IDE functionality provided by Developer Studio, with plug-ins specifically for use when developing for other Red Hat products.  It's where BRMS tooling is aggregated.  The following frameworks are supported:
+
+=== Red Hat Business Process and Rules Development
+
+Business Process and Rules Development plug-ins provide design, debug and testing tooling for developing business processes for Red Hat BRMS and Red Hat BPM Suite.
+
+* link:/features/bpel.html[BPEL Designer] - Orchestrating your business processes.
+* link:/features/bpmn2.html[BPMN2 Modeler] - A graphical modeling tool which allows creation and editing of Business Process Modeling Notation diagrams using graphiti.
+* link:/features/drools.html[Drools] - A Business Logic integration Platform which provides a unified and integrated platform for Rules, Workflow and Event Processing including KIE.
+* link:/features/jbpm.html[jBPM] - A flexible Business Process Management (BPM) suite.
+
+=== The JBoss Tools website features tab
+
+Don't miss the link:/features[Features tab] for up to date information on your favorite Integration Stack components.
+
+== Installation
+
+The easiest way to install the Integration Stack components is through the link:https://access.redhat.com/jbossnetwork/restricted/listSoftware.html?downloadType=distributions&product=jbossdeveloperstudio&version=12.11.0[stand-alone installer] or through our link:http://tools.jboss.org/downloads/overview.html[JBoss Tools Download Site].
+
+For a complete set of Integration Stack installation instructions, see link:https://access.redhat.com/documentation/en-us/red_hat_jboss_developer_studio_integration_stack/12.0/html/installation_guide/[Integration Stack Installation Guide]
+
+_Let us know how it goes!_
+
+Paul Leacu.
