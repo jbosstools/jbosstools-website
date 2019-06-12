@@ -1,0 +1,23 @@
+= JBoss Tools 4.12.0.AM1 for Eclipse 2019-06
+:page-layout: blog
+:page-author: jeffmaury
+:page-tags: [release, jbosstools, devstudio, jbosscentral]
+:page-date: 2019-06-12
+
+Happy to announce 4.12.0.AM1 (Developer Milestone 1) build for Eclipse 2019-06.
+
+Downloads available at link:/downloads/jbosstools/2019-06/4.12.0.AM1.html[JBoss Tools 4.12.0 AM1].
+
+== What is New?
+
+Full info is at link:/documentation/whatsnew/jbosstools/4.12.0.AM1.html[this page]. Some highlights are below.
+
+=== Server Tools
+
+==== Wildfly 17 Server Adapter
+
+A server adapter has been added to work with Wildfly 17. It adds support for Java EE 8.
+
+Enjoy!
+
+Jeff Maury
