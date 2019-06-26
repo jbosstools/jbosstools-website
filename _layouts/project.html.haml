@@ -7,6 +7,7 @@
     %meta(name="description" content="#{page.description}")
     %meta(name="author" content="#{page.author}")
     %meta(http-equiv="Last-Modified" content="#{site.buildTime}")
+    %meta(http-equiv="Strict-Transport-Security" content="max-age=31556952")
 
     - pageStyle = page.style ;
     %link(href="#{pageStyle ? site[pageStyle].bootstrap_css_url : site.bootstrap_css_url}#{site.minified}.css" rel="stylesheet" media="screen")
