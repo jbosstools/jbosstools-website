@@ -25,11 +25,11 @@
 
     %link{ :rel=>'stylesheet', :type=>"text/css", :href=>relative("/stylesheets/jbt-styles.css") }
     %link{ :rel=>"stylesheet", :type=>"text/css", :href=>relative("/fonts/font-awesome/font-awesome.min.css"), :media=>"screen, projection"}
-    %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css", :media=>"screen, projection"}
+    %link{ :rel=>"stylesheet", :type=>"text/css", :href=>"https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css", :media=>"screen, projection"}
     - if site["showwip"]
-      %script(id="dpal" src="//www.redhat.com/dtm-staging.js" type="text/javascript")
+      %script(id="dpal" src="https://www.redhat.com/dtm-staging.js" type="text/javascript")
     - else
-      %script(id="dpal" src="//www.redhat.com/dtm.js" type="text/javascript")
+      %script(id="dpal" src="https://www.redhat.com/dtm.js" type="text/javascript")
 
     -# RSS feeds
     %link{:rel=>"alternate", :type=>"application/rss+xml", :title=>"RSS", :href=>relative("/blog/news.atom")}
@@ -65,7 +65,7 @@
 
       .dropup
         %div#ajbossproject A JBoss Project
-        %a#tab.tabnav-closed{:href=>"//www.jboss.org"} Red Hat
+        %a#tab.tabnav-closed{:href=>"https://www.jboss.org"} Red Hat
         %script
           window.addEventListener('load', function() { renderTabzilla("#{site.project_name}","#{site.project}" , false ) }, false);
 
@@ -113,10 +113,10 @@
                       %b.caret>
                   %ul.dropdown-menu.projectsocialmedia
                     %li<
-                      %a{:href=>"http://twitter.com/jbosstools"}<
+                      %a{:href=>"https://twitter.com/jbosstools"}<
                         %img{:src=>"#{site.jborg_images_url}/common/socialmedia_icon40_twitter.png", :width=>40, :height=>40}
                     %li<
-                      %a{:href=>"//plus.google.com/109915195368578219327"}<
+                      %a{:href=>"https://plus.google.com/109915195368578219327"}<
                         %img{:src=>"#{site.jborg_images_url}/common/socialmedia_icon40_googleplus.png", :width=>40, :height=>40}
 
 
@@ -162,13 +162,13 @@
             %li
               %a{:href=>relative("/documentation/videos")} Video Tutorials
             %li
-              %a{:href=>relative("http://docs.jboss.org/tools")} Reference Guides
+              %a{:href=>relative("https://docs.jboss.org/tools")} Reference Guides
 
         .span2
           %h4 Follow Us
           %ul
             %li
-              %a{:href=>"http://twitter.com/jbosstools", :title => "Twitter"} Twitter
+              %a{:href=>"https://twitter.com/jbosstools", :title => "Twitter"} Twitter
             %li
               %a{:href=>"https://plus.google.com/+jbosstools", :title => "Google+"} Google+
           %h4 Contribute
@@ -178,7 +178,7 @@
             %li
               %a{:href=>"https://github.com/jbosstools", :title => "Write code"} Write Code
             %li
-              %a{:href=>"http://community.jboss.org/community/tools?view=discussions", :title => "Ask questions on the forum"} Ask questions on the forum
+              %a{:href=>"https://community.jboss.org/community/tools?view=discussions", :title => "Ask questions on the forum"} Ask questions on the forum
             %li
               %a{:href=>"irc://irc.freenode.org/jbosstools", :title => "Talk on IRC"} Talk with us on IRC
         .span3.offset1
@@ -201,19 +201,19 @@
     - if page.bottom_javascripts
       - page.bottom_javascripts.each do |javascript|
         %script{:src=>relative(javascript), :type=>'text/javascript'}
-    %script{:src=>"//cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"}
+    %script{:src=>"https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"}
     :plain
       <!-- begin eloqua tracking -->
-      <script type='text/javascript' language='JavaScript' src='//www.redhat.com/j/elqNow/elqCfg.js'></script>
-      <script type='text/javascript' language='JavaScript' src='//www.redhat.com/j/elqNow/elqImg.js'></script>
+      <script type='text/javascript' language='JavaScript' src='https://www.redhat.com/j/elqNow/elqCfg.js'></script>
+      <script type='text/javascript' language='JavaScript' src='https://www.redhat.com/j/elqNow/elqImg.js'></script>
       <!-- end eloqua tracking -->
 
       <div id="oTags">
         <script language="JavaScript" type="text/javascript"><!--
         if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
         //--></script>
-        <noscript><a href="http://www.omniture.com" title="Web Analytics"><img
-        src="//smtrcs.redhat.com/b/ss/redhatcom,redhatglobal/1/H.25.4--NS/0?[AQB]&cdp=3&[AQE]"
+        <noscript><a href="https://www.omniture.com" title="Web Analytics"><img
+        src="https://smtrcs.redhat.com/b/ss/redhatcom,redhatglobal/1/H.25.4--NS/0?[AQB]&cdp=3&[AQE]"
         height="1" width="1" border="0" alt="" /></a></noscript>
         <script type="text/javascript">
         if (("undefined" !== typeof _satellite) && ("function" === typeof _satellite.pageBottom)) {
@@ -229,9 +229,9 @@
         dataLayer = [{'channel' : 'jbosstools', 'additional_tracking_code' : '#{site.google_analytics.account}'}];
       :plain
         <!-- Google Tag Manager -->
-        <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NJWS5L" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NJWS5L" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <script>
         (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
-        var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;
+        var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
         f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NJWS5L');</script>
         <!-- End Google Tag Manager -->

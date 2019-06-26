@@ -83,12 +83,12 @@ profiles:
     minified: .min
     css_minifier: enabled
     js_minifier: enabled
-    jborg_fonts_url: //static.jboss.org/theme/fonts
-    jborg_images_url: //static.jboss.org/theme/images
-    jborg_js_url: //static.jboss.org/theme/js
-    project_images_url: //static.jboss.org/tools/images
-    bootstrap_css_url: //static.jboss.org/theme/css/bootstrap-community/2.3.1.6/bootstrap-community
-    bootstrap_js_url: //static.jboss.org/theme/js/libs/bootstrap-community/2.3.1.6/bootstrap-community
+    jborg_fonts_url: https://static.jboss.org/theme/fonts
+    jborg_images_url: https://static.jboss.org/theme/images
+    jborg_js_url: https://static.jboss.org/theme/js
+    project_images_url: https://static.jboss.org/tools/images
+    bootstrap_css_url: https://static.jboss.org/theme/css/bootstrap-community/2.3.1.6/bootstrap-community
+    bootstrap_js_url: https://static.jboss.org/theme/js/libs/bootstrap-community/2.3.1.6/bootstrap-community
     disqus: jbosstools-preview
     deploy:
       host: github_pages
