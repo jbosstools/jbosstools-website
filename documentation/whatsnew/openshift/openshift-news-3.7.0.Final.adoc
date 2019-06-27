@@ -1,0 +1,19 @@
+= OpenShift What's New in 3.7.0.Final
+:page-layout: whatsnew
+:page-component_id: openshift
+:page-component_version: 4.12.0.Final
+:page-product_id: jbt_core
+:page-product_version: 4.12.0.Final
+:page-include-previous: true
+
+=== OpenShift Container Platform 4 support
+
+With the new OpenShift Container Platform (OCP) 4 now available (see this 
+https://www.redhat.com/en/about/press-releases/red-hat-redefines-enterprise-kubernetes-through-full-stack-automation-red-hat-openshift-4?source=pressreleaselisting[article,window=_blank]),
+even if this is a major shift compared to OCP 3, JBoss Tools is compatible with
+this major release in a transparent way. Just define your connection to your
+OCP 4 based cluster as you did before for an OCP 3 cluster, and use the tooling !
+
+related_jira::OSJC-286[]
+
+

@@ -57,17 +57,19 @@ link:openshift_debug.html[Debug an OpenShift Online Java App]
 
 link:openshift_configssh.html[Configure SSH Keys for OpenShift Online]
 
-== Developing Apps for the Cloud (OpenShift 3)
+== Developing Apps for the Cloud (OpenShift)
 
-https://docs.openshift.com/enterprise/3.0/getting_started/overview.html[OpenShift 3 Documentation^]
+https://docs.openshift.com/enterprise/3.0/getting_started/overview.html[OpenShift 3.x Documentation^]
 
-link:os3_startusing.html[Create and Build OpenShift 3 Apps with the IDE]
+https://docs.openshift.com/enterprise/4.1/getting_started/overview.html[OpenShift 4.x Documentation^]
+
+link:os3_startusing.html[Create and Build OpenShift Apps with the IDE]
 
 link:os3_remote.html[Set up and Remotely Monitor an OpenShift Database Server]
 
-link:os3_deployimage.html[Deploy a Docker Image to an OpenShift 3 Cluster with the IDE]
+link:os3_deployimage.html[Deploy a Docker Image to an OpenShift Cluster with the IDE]
 
-link:os3_deploying_resource.html[Deploying the OpenShift Container Platform 3 Resource]
+link:os3_deploying_resource.html[Deploying the OpenShift Container Platform Resource]
 
 == Using the IDE Perspectives
 
