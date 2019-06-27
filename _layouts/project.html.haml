@@ -8,7 +8,7 @@
     %meta(name="author" content="#{page.author}")
     %meta(http-equiv="Last-Modified" content="#{site.buildTime}")
     %meta(http-equiv="Strict-Transport-Security" content="max-age=31556952")
-    %meta(http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.redhat.com https://cdn.rawgit.com jsonip.com assets.adobedtm.com https://www.googletagmanager.com disqus.com; style-src 'self' 'unsafe-inline' https://static.jboss.org https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; img-src 'self' https://static.jboss.org; media-src 'none'; font-src 'self' https://static.jboss.org; base-uri 'none'; form-action 'none'; frame-ancestors 'none'")
+    %meta(http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://static.jboss.org https://www.redhat.com https://cdn.rawgit.com https://img.en25.com jsonip.com assets.adobedtm.com https://www.googletagmanager.com https://ssl.google-analytics.com disqus.com; style-src 'self' 'unsafe-inline' https://static.jboss.org https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; img-src 'self' https://static.jboss.org; media-src 'none'; font-src 'self' https://static.jboss.org; base-uri 'none'; form-action 'none'; frame-ancestors 'none'")
 
     - pageStyle = page.style ;
     %link(href="#{pageStyle ? site[pageStyle].bootstrap_css_url : site.bootstrap_css_url}#{site.minified}.css" rel="stylesheet" media="screen")
