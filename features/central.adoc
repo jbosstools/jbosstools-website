@@ -33,7 +33,7 @@ Amongst all the plugins, you'll find:
 * JBoss SOA and Business Rules Tooling
 * Android Development Tools
 * Hybrid Mobile/Cordova tooling
-* OpenShift 3 tooling
+* OpenShift tooling
 * Spring IDE
 * AngularJS for Web Tools
 * Several Mylyn plugins

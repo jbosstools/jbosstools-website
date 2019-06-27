@@ -186,7 +186,7 @@ The CDK server adapter creates the OpenShift Container Platform connection when 
 
 === Next Steps for the OpenShift Tooling
 
-For additional tasks to be performed using the OpenShift Container Platform tooling, see http://tools.jboss.org/documentation/howto/index.html#developing-apps-for-the-cloud-openshift-3[Developing Apps for the Cloud with OpenShift 3]. 
+For additional tasks to be performed using the OpenShift Container Platform tooling, see http://tools.jboss.org/documentation/howto/index.html#developing-apps-for-the-cloud-openshift-3[Developing Apps for the Cloud with OpenShift]. 
 
 [[known]]
 == Known Issues

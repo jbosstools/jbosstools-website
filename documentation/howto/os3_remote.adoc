@@ -5,7 +5,7 @@
 :experimental:
 :imagesdir: ./images
 
-In some scenarios, the user may already have a remote instance of OpenShift 3 running with various applications on it and wants to monitor it. The IDE allows users to set up a connection to a remote instance of OpenShift 3 and then use logs (such as the application and build logs) to troubleshoot and monitor running applications. Use the following tasks to connect to and work with a remote OpenShift instance:
+In some scenarios, the user may already have a remote instance of OpenShift running with various applications on it and wants to monitor it. The IDE allows users to set up a connection to a remote instance of OpenShift and then use logs (such as the application and build logs) to troubleshoot and monitor running applications. Use the following tasks to connect to and work with a remote OpenShift instance:
 
 . <<setup_binaries, Set up OpenShift Client Binaries>>
 . <<port_forwarding, Set up Port Forwarding>>
@@ -62,7 +62,7 @@ image::os3_setupapp_start_portforward.png[Start Port Forwarding]
 [[pod_logs]]
 == Stream Pod Logs
 
-Pod logs are general logs for an application running on a remote OpenShift 3 instance. The streaming application logs feature in the IDE is used to monitor applications and use the previous pod log to troubleshoot if the application fails or returns errors.
+Pod logs are general logs for an application running on a remote OpenShift instance. The streaming application logs feature in the IDE is used to monitor applications and use the previous pod log to troubleshoot if the application fails or returns errors.
 
 `Prerequisite:` Ensure that the OpenShift Client Binaries are set up (see <<setup_binaries, Set up OpenShift Client Binaries>> for instructions).
 
@@ -80,7 +80,7 @@ image::os3_setupapp_podlog.png[Stream Pod Log]
 [[build_logs]]
 == Stream Build Logs
 
-Build logs are logs documenting changes to applications running on a remote OpenShift 3 instance. The streaming build logs feature in the IDE is used to view the progress of the application build process and to debug the application.
+Build logs are logs documenting changes to applications running on a remote OpenShift instance. The streaming build logs feature in the IDE is used to view the progress of the application build process and to debug the application.
 
 `Prerequisite:` Ensure that the OpenShift Client Binaries are set up (see <<setup_binaries, Set up OpenShift Client Binaries>> for instructions).
 
