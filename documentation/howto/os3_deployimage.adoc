@@ -1,4 +1,4 @@
-= Deploy a Docker Image to OpenShift 3
+= Deploy a Docker Image to OpenShift
 :page-layout: howto
 :page-tab: docs
 :page-status: green
@@ -6,7 +6,7 @@
 :imagesdir: ./images
 :toc:
 
-JBoss Tools' OpenShift 3 tooling allows users to deploy a Docker image to an OpenShift cluster from a Docker daemon.
+JBoss Tools' OpenShift tooling allows users to deploy a Docker image to an OpenShift cluster from a Docker daemon.
 Deploying an image to an OpenShift cluster generates several resources to support the image which include:
 
 - ImageStream
@@ -19,8 +19,8 @@ Deploying an image to an OpenShift cluster generates several resources to suppor
 The following steps require that:
 
 - A connection to a Docker daemon already exists
-- A connection to an OpenShift 3 cluster already exists
-- An OpenShift 3 project exists
+- A connection to an OpenShift cluster already exists
+- An OpenShift project exists
 - A Docker image explicitly exposes at least one port
 ==========================================================
 
@@ -37,7 +37,7 @@ image::os3_deploy_image_menu.png[Docker Deployment Configuration]
 image::os3_deploy_image.png[Docker Deployment Configuration]
 
 ==== b) The OpenShift Explorer
-From the OpenShift Explorer choose an OpenShift 3 cluster:
+From the OpenShift Explorer choose an OpenShift cluster:
 
 image::os3_deploy_image_menu_from_ose.png[Docker Deployment Configuration from OpenShift Explorer]
 
@@ -75,7 +75,7 @@ image::os3_deploy_image_routing.png[Docker Deployment Configuration]
 
 [[openshift_labels]]
 == Add labels
-Labels are a key concept in OpenShift 3 which allow a user to attach metadata to their deployed resources.
+Labels are a key concept in OpenShift which allow a user to attach metadata to their deployed resources.
 These labels can be used to query or filter their resources based on desired keys and values.
 
 image::os3_deploy_image_labels.png[Docker Deployment Configuration]
@@ -92,7 +92,7 @@ was included), or retrieve the pod logs.
 =================================
 *Did you know?*
 
-- The name specified initially in the workflow is used to name all the OpenShift 3 resources
+- The name specified initially in the workflow is used to name all the OpenShift resources
 - Resource names are validated before they are created
 - The labels are added to all the created resources
 - The deployment config is generated with a config and image change trigger

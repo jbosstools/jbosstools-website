@@ -7,13 +7,13 @@
 :page-feature_order: 2
 :page-feature_tagline: Cloud on steroids
 
-== OpenShift 3
+== OpenShift
 === Discover the new OpenShift
 image::images/openshift3_create_app.png[]
 
-JBoss Tools presents the OpenShift 3 tooling for Eclipse.
-Installable from JBoss Central, it will allow you to connect to OpenShift 3 servers using OAuth or Basic authentication,
-manage your OpenShift 3 Projects, deploy new applications in the Cloud,
+JBoss Tools presents the OpenShift tooling for Eclipse.
+Installable from JBoss Central, it will allow you to connect to OpenShift servers using OAuth or Basic authentication,
+manage your OpenShift Projects, deploy new applications in the Cloud,
 using pre-defined (or your own) templates, or even Docker images. You will be able to import
 existing applications in your workspace, monitor them via remote log streaming
 directly into your local console, or enable Port-Forwarding and access their data as if it was local.
@@ -22,8 +22,8 @@ directly into your local console, or enable Port-Forwarding and access their dat
 === The embedded Web Console.
 image::images/features-openshift-explorerview-reduced.png[]
 
-The OpenShift Explorer View lets you connect to OpenShift 3 instances, create new applications, manage domains or projects,
- execute action such as Port-Forwarding and Tail Files (Log Streaming). For OpenShift 3, you can access Pods, Routes, Services and deploy Docker images.
+The OpenShift Explorer View lets you connect to OpenShift instances, create new applications, manage domains or projects,
+ execute action such as Port-Forwarding and Tail Files (Log Streaming). For OpenShift, you can access Pods, Routes, Services and deploy Docker images.
 
 == Server Adapter
 === Almost like a local server
@@ -49,14 +49,14 @@ With OpenShift tooling, you can 'tail' log files, which are streamed live into t
 == Webhook build triggers
 === Push to build!
 image::images/openshift3_webhook.png[]
-OpenShift 3 is capable of accessing remote Git repositories.
+OpenShift is capable of accessing remote Git repositories.
 You can easily install Webhook build triggers to your GitHub or your company's Git repository, as long as OpenShift can access it.
 Redeploying your application is as simple as pushing your changes to your canonical Git repository, a new build will automatically be triggered.
 
 == Docker integration
-=== Deploy Docker images on OpenShift 3
+=== Deploy Docker images on OpenShift
 The default application templates provide a good starting point to bootstrap an application,
-but if you need more customization, you can choose to deploy Docker images to OpenShift 3,
+but if you need more customization, you can choose to deploy Docker images to OpenShift,
 directly from either the Docker or OpenShift Explorer.
 
 image::images/deploy_image_menu.png[]

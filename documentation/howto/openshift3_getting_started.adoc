@@ -1,20 +1,20 @@
-= Getting Started with OpenShift 3
+= Getting Started with OpenShift
 :page-layout: howto
 :page-tab: docs
 :page-status: red
 
 :imagesdir: ./images
 
-NOTE: No public instance of OpenShift 3 is currently available. You can check the https://install.openshift.com/[installlation instructions] to deploy OpenShift 3 on premise.
+This section contains articles describing the OpenShift tooling in JBoss Tools and CodeReady Studio with a focus on how to do specific tasks.
 
-This section contains articles describing the OpenShift 3 tooling in JBoss Tools and Developer Studio with a focus on how to do specific tasks.
+https://docs.openshift.com/enterprise/3.0/getting_started/overview.html[OpenShift 3.x Documentation^]
 
-https://docs.openshift.com/enterprise/3.0/getting_started/overview.html[OpenShift 3 Documentation^]
+https://docs.openshift.com/enterprise/4.1/getting_started/overview.html[OpenShift 4.x Documentation^]
 
-link:os3_evaluate.html[Evaluate the OpenShift 3 Tooling with the IDE]
+link:os3_evaluate.html[Evaluate the OpenShift Tooling with the IDE]
 
-link:os3_startusing.html[Create and Build OpenShift 3 Apps with the IDE]
+link:os3_startusing.html[Create and Build OpenShift Apps with the IDE]
 
 link:os3_remote.html[Set up and Remotely Monitor an OpenShift Database Server]
 
-link:os3_deployimage.html[Deploy a Docker Image to an OpenShift 3 Cluster with the IDE]
+link:os3_deployimage.html[Deploy a Docker Image to an OpenShift Cluster with the IDE]

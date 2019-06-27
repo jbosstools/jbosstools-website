@@ -1,24 +1,24 @@
-= Create an OpenShift 3 Application in the IDE
+= Create an OpenShift Application in the IDE
 :page-layout: howto
 :page-tab: docs
 :page-status: green
 :experimental:
 :imagesdir: ./images
 
-The OpenShift 3 Tooling allows users to create, import, and modify OpenShift 3 applications as follows:
+The OpenShift Tooling allows users to create, import, and modify OpenShift applications as follows:
 
-. <<connection, Create a New OpenShift 3 Connection>>
-. <<project, Create a New OpenShift 3 Project>>
-. <<application, Create a New OpenShift 3 Application>>
-. <<import_app, Import an Existing OpenShift 3 Application into the IDE>>
+. <<connection, Create a New OpenShift Connection>>
+. <<project, Create a New OpenShift Project>>
+. <<application, Create a New OpenShift Application>>
+. <<import_app, Import an Existing OpenShift Application into the IDE>>
 . <<deploy_app, Deploy an Application Using the Server Adapter>>
 . <<view_app,View an Existing Application in a Web Browser>>
 . <<delete_app, Delete an OpenShift Project>>
 
 [[connection]]
-== Create a New OpenShift 3 Connection
-To be able to use the OpenShift 3 tooling in the IDE, you must first create an OpenShift 3 connection.
-To create a new OpenShift 3 connection:
+== Create a New OpenShift Connection
+To be able to use the OpenShift tooling in the IDE, you must first create an OpenShift connection.
+To create a new OpenShift connection:
 
 . In the `OpenShift Explorer` view, click `New Connection Wizard`. In case the `OpenShift Explorer` view is not available, click `Window` > `Show View` > `Other` and then in the `Show View` window search for `OpenShift Explorer` and click `OK` after you find it.
 
@@ -26,22 +26,20 @@ To create a new OpenShift 3 connection:
 +
 	a. In the `Connection` list, click `<New Connection>`.
 
-	b. In the `Server type` list, click `OpenShift 3`.
+   	b. In the `Server` field, type the URL for an OpenShift server.
 
-   	c. In the `Server` field, type the URL for an OpenShift 3 server.
-
-   	d. In the `Authentication` section, in the `Protocol` list, click `OAuth` to authenticate using the token or click `Basic` to authenticate using login credentials.
+   	c. In the `Authentication` section, in the `Protocol` list, click `OAuth` to authenticate using the token or click `Basic` to authenticate using login credentials.
 +
 . Click `Finish`.
 
-.Set up a New OpenShift3 Connection
-image::os3_createapp_newconnection.png[Set up a New OpenShift3 Connection]
+.Set up a New OpenShift Connection
+image::os3_createapp_newconnection.png[Set up a New OpenShift Connection]
 
 `Result:` The connection is listed in the `OpenShift Explorer` view.
 
 [[project]]
-== Create a New OpenShift 3 Project
-To create a new OpenShift 3 project:
+== Create a New OpenShift Project
+To create a new OpenShift project:
 
 . In the `OpenShift Explorer` view, right-click the connection and click `New` > `Project`.
 
@@ -58,12 +56,12 @@ To create a new OpenShift 3 project:
 `Result:` The project is listed in the `OpenShift Explorer` view, under the relevant connection.
 
 [[application]]
-== Create a New OpenShift 3 Application
+== Create a New OpenShift Application
 Use the `New OpenShift Application` wizard to create OpenShift applications from default or custom templates. Using a template to create an application is useful because the same template can be used to create multiple similar applications with different or identical configurations for each of them.
 
 [NOTE]
 ====
-To learn more about using and creating templates with OpenShift 3, see https://docs.openshift.org/latest/dev_guide/templates.html[Using Templates with OpenShift 3].
+To learn more about using and creating templates with OpenShift, see https://docs.openshift.org/latest/dev_guide/templates.html[Using Templates with OpenShift].
 ====
 
 . In the `OpenShift Explorer` view, right-click the connection and click `New` > `Application`.
@@ -107,7 +105,7 @@ image::os3_createapp_gitcloneerror.png[Git Clone Location Reuse]
 `Result:` The application appears in the `Project Explorer` view.
 
 [[import_app]]
-== Import an Existing OpenShift 3 Application into the IDE
+== Import an Existing OpenShift Application into the IDE
 
 [NOTE]
 ====
@@ -116,7 +114,7 @@ Only an application that has its source specified in the `build config` file can
 
 Applications associated with your OpenShift account(s) are listed in the `OpenShift Explorer` view. The source code for these applications can be individually imported into the IDE using the OpenShift tools `Import OpenShift Application` wizard. Once imported, the user can easily modify the application source code, as required, build the application and view it in a web browser.
 
-To import an existing OpenShift 3 application as a new project in the existing IDE workspace:
+To import an existing OpenShift application as a new project in the existing IDE workspace:
 
 . If required, sign into your OpenShift server using the `Basic` protocol or the `OAuth` protocol.
 
@@ -171,7 +169,7 @@ To view an application in the internal web browser, after it has been successful
 
 You may choose to delete a project from the workspace to make a fresh start in project development or after you have concluded development in a project. All resources associated with a project get deleted when the project is deleted.
 
-To delete an OpenShift 3 project:
+To delete an OpenShift project:
 
 . In the `OpenShift Explorer` view, expand the connection and then the project to locate the application you want to delete.
 
