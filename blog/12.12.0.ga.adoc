@@ -1,0 +1,407 @@
+= JBoss Tools and Red Hat CodeReady Studio for Eclipse 2019-06
+:page-layout: blog
+:page-author: jeffmaury
+:page-tags: [release, jbosstools, devstudio, jbosscentral, codereadystudio]
+:page-date: 2019-07-08
+
+link:/downloads/jbosstools/2019-06/4.12.0.Final.html[JBoss Tools 4.12.0] and link:/downloads/devstudio/2019-06/12.12.0.GA.html[Red Hat CodeReady Studio 12.12] for Eclipse 2019-06 are here waiting for you. Check it out!
+
+image::/blog/images/crstudio12.png[]
+
+== Installation
+
+Red Hat CodeReady Studio comes with everything pre-bundled in its installer. Simply download it from our https://developers.redhat.com/products/codeready-studio/overview/[Red Hat CodeReady product page] and run it like this:
+
+    java -jar codereadystudio-<installername>.jar
+
+JBoss Tools or Bring-Your-Own-Eclipse (BYOE) CodeReady Studio require a bit more:
+
+This release requires at least Eclipse 4.12 (2019-06) but we recommend
+using the latest http://www.eclipse.org/downloads/packages/release/2019-06/r/eclipse-ide-java-ee-developers[Eclipse 4.12 2019-06 JEE Bundle] since then you get most of the dependencies preinstalled.
+
+Once you have installed Eclipse, you can either find us on the Eclipse Marketplace under "JBoss Tools" or "Red Hat CodeReady Studio".
+
+For JBoss Tools, you can also use our update site directly.
+
+    http://download.jboss.org/jbosstools/photon/stable/updates/
+
+== What is new?
+
+Our main focus for this release was improvements for container based development and bug fixing.
+Eclipse 2019-06 itself has a lot of new cool stuff but let me highlight just a few updates in both Eclipse 2019-06 and JBoss Tools plugins that I think are worth mentioning.
+
+=== OpenShift
+
+==== OpenShift Container Platform 4 support
+
+With the new OpenShift Container Platform (OCP) 4 now available (see this 
+https://www.redhat.com/en/about/press-releases/red-hat-redefines-enterprise-kubernetes-through-full-stack-automation-red-hat-openshift-4?source=pressreleaselisting[article,window=_blank]),
+even if this is a major shift compared to OCP 3, JBoss Tools is compatible with
+this major release in a transparent way. Just define your connection to your
+OCP 4 based cluster as you did before for an OCP 3 cluster, and use the tooling !
+
+
+=== Server tools
+
+==== Wildfly 17 Server Adapter
+
+A server adapter has been added to work with Wildfly 17. It adds support for Java EE 8. 
+
+=== Hibernate Tools
+
+==== New Runtime Provider
+
+The new Hibernate 5.4 runtime provider has been added. It incorporates Hibernate Core version 5.4.3.Final and Hibernate Tools version 5.4.3.Final
+
+==== Runtime Provider Updates
+
+The Hibernate 5.3 runtime provider now incorporates Hibernate Core version 5.3.10.Final and Hibernate Tools version 5.3.10.Final.
+
+
+=== Maven
+
+==== Maven support updated to M2E 1.12
+
+The Maven support is based on Eclipse M2E 1.12
+
+=== Platform
+
+==== Views, Dialogs and Toolbar
+ 
+===== Import project by passing it as command-line argument
+
+You can import a project into Eclipse by passing its path as a parameter to the
+launcher. The command would look like ```eclipse /path/to/project``` on Linux and Windows,
+or ```open Eclipse.app -a /path/to/project``` on macOS.
+
+image::https://www.eclipse.org/eclipse/news/4.12/images/pass-directory-to-launcher.png[]
+
+===== Launch Run and Debug configurations from Quick Access
+
+From the *Quick Access* proposals (accessible with ```Ctrl+3``` shortcut) you can now directly launch
+any of the Run or Debug configurations available in your workspace. 
+
+image::https://www.eclipse.org/eclipse/news/4.12/images/run-debug-quickaccess.png[]
+
+NOTE: For performance reasons, the extra *Quick Access* entries are only visible if the ```org.eclipse.debug.ui```
+bundle was already activated by some previous action in the workbench such as editing a launch configuration,
+or expanding the _Run As..._ menus.
+
+==== Themes and Styling 
+
+===== Improved View Menu Icon
+
+The icon used for the view menu has been improved. It is now crisp on high resolution
+displays and also looks much better in the dark theme.
+
+Compare the old version at the top and the new version at the bottom:
+
+image::https://www.eclipse.org/eclipse/news/4.12/images/view_menu.png[]
+
+===== High resolution images drawn on Mac
+
+On Mac, images and text are now drawn in high resolution during GC operations.
+You can see crisp images on high resolution displays in the editor rulers, forms, etc in Eclipse.
+
+Compare the old version at the top and the new version at the bottom:
+
+image::https://www.eclipse.org/eclipse/news/4.12/images/hidpi-mac-old-behavior.png[]
+
+image::https://www.eclipse.org/eclipse/news/4.12/images/hidpi-mac-new-behavior.png[]
+
+===== Table/Tree background lines shown in dark theme on Mac
+
+In dark theme on Mac, the *Table* and *Trees* in Eclipse now show the alternating dark lines
+in the background when ```setLinesVisible(true)``` is set. Earlier they had a gray background
+even if line visibility was true. 
+
+Example of a Tree and Table in Eclipse with alternating dark lines in the background: 
+
+image::https://www.eclipse.org/eclipse/news/4.12/images/dark-theme-alternating-lines.png[]
+
+
+==== Equinox
+
+When the *Equinox OSGi Framework* is launched the installed bundles are activated according
+to their configured start-level. The bundles with lower start-levels are activated first.
+Bundles within the same start-level are activated sequentially from a single thread.
+
+A new configuration option ```equinox.start.level.thread.count``` has been added that enables
+the framework to start bundles within the same start-level in parallel. The default value is ```1```
+which keeps the previous behavior of activating bundles from a single thread.
+Setting the value to ```0``` enables parallel activation using a thread count equal
+to ```Runtime.getRuntime().availableProcessors()```. Setting the value to a number greater than ```1```
+will use the specified number as the thread count for parallel bundle activation.
+
+The default is ```1``` because of the risk of possible deadlock when activating bundles in parallel.
+Extensive testing must be done on the set of bundle installed in the framework before considering
+enabling this option in a product.
+
+ 
+=== Java Developement Tools (JDT)
+
+==== Java 12 Support
+
+===== Change project compliance and JRE to 12
+
+A quick fix *Change project compliance and JRE to 12* is provided to change the current project
+to be compatible with Java 12. 
+
+image::https://www.eclipse.org/eclipse/news/4.12/images/quickfix-change-compliance-12.png[]
+
+===== Enable preview features
+
+Preview features in Java 12 can be enabled using *Preferences > Java > Compiler > Enable preview features*
+option. The problem severity of these preview features can be configured using the
+*Preview features with severity level* option.
+
+image::https://www.eclipse.org/eclipse/news/4.12/images/enable-preview.png[]
+
+===== Set Enable preview features
+
+A quick fix *Configure problem severity* is provided to update the problem severity of
+preview features in Java 12.  
+
+image::https://www.eclipse.org/eclipse/news/4.12/images/quickfix-configure-severity-12.png[]
+
+===== Add default case to switch statement
+
+A quick fix *Add 'default' case* is provided to add default case to a enhanced switch statement in Java 12. 
+
+image::https://www.eclipse.org/eclipse/news/4.12/images/quickfix-default-switch-statement.png[]
+
+===== Add missing case statements to switch statement
+
+A quick fix *Add missing case statements* is provided for a enhanced switch statement in Java 12. 
+
+image::https://www.eclipse.org/eclipse/news/4.12/images/quickfix-missing-case-switch-statement.png[]
+
+===== Add default case to switch expression
+
+A quick fix *Add 'default' case* is provided to add default case to a switch expression.
+
+image::https://www.eclipse.org/eclipse/news/4.12/images/quickfix-default-switch-expression.png[]
+
+===== Add missing case statements to switch expression
+
+A quick fix *Add missing case statements* is provided for switch expressions.
+
+image::https://www.eclipse.org/eclipse/news/4.12/images/quickfix-missing-case-switch-expression.png[]
+
+===== Format whitespaces in 'switch'
+
+As Java 12 introduced some new features into the ```switch``` construct, the formatter profile
+has some new settings for it. The settings allow you to control spaces around the arrow operator
+(separately for ```case``` and ```default```) and around commas in a multi-value case.
+
+The settings can be found in the *Profile Editor (Preferences > Java > Code Style > Formatter > Edit...)*
+under the *White space > Control statements > 'switch'* subsection.
+
+image::https://www.eclipse.org/eclipse/news/4.12/images/formatter-switch.png[]
+
+===== Split Switch Case Labels
+
+As Java 12 introduced the ability to group multiple ```switch``` case labels into a single case expression,
+a quick assist is provided that allows these grouped labels to be split into separate case statements.
+
+image::https://www.eclipse.org/eclipse/news/4.12/images/split-switch-case-labels.png[]
+
+
+==== Java Editor 
+
+===== Show method parameter names on code as code minings
+
+In the *Java > Editor > Code Mining* preferences, you can now enable the *Show parameter names* option.
+This will show the parameter names as code minings in method or constructor calls, for cases where
+the resolution may not be obvious for a human reader.
+
+For example, the code mining will be shown if the argument name in the method call is not an exact match
+of the parameter name or if the argument name doesn't contain the parameter name as a substring.
+
+image::https://www.eclipse.org/eclipse/news/4.12/images/parameter-name-codeminings.png[]
+
+===== Show number of implementations of methods as code minings
+
+In the *Java > Editor > Code Mining* preferences, selecting
+*Show implementations with the Show References (including implementations) for -> Methods* option now
+shows implementations of methods.
+
+image::https://www.eclipse.org/eclipse/news/4.12/images/method-implementation-codeminings.png[]
+
+Clicking on method implementations brings up the *Search* view that shows all implementations of the method in sub-types.
+
+image::https://www.eclipse.org/eclipse/news/4.12/images/method-implementation-codeminings-click.png[]
+
+===== Open single implementation/reference in editor from code mining
+
+When the *Java > Editor > Code Mining* preferences are enabled and a single implementation or reference is shown,
+moving the cursor over the annotation and using *Ctrl+Click* will open the editor and display the single
+implementation or reference.
+
+image::https://www.eclipse.org/eclipse/news/4.12/images/ctrlclickimpl.png[]
+
+===== Additional quick fixes for service provider constructors
+
+Appropriate quick fixes are offered when a service defined in a ```module-info.java``` file has a service provider
+implementation whose no-arg constructor is not visible, or is non-existent.
+
+image::https://www.eclipse.org/eclipse/news/4.12/images/service-provider-create-constructor.png[]
+
+image::https://www.eclipse.org/eclipse/news/4.12/images/service-provider-change-constructor-visibility.png[]
+
+===== Template to create Switch Labeled Statement and Switch Expressions
+
+The *Java Editor* now offers new templates for the creation of switch labeled statements and switch expressions.
+On a switch statement, three new templates: *switch labeled statement*, *switch case expression* and
+*switch labeled expression* are available as shown below. These new templates are available on Java projects
+having compliance level of Java 12 or above.
+
+image::https://www.eclipse.org/eclipse/news/4.12/images/switch_labeled_statement.png[]
+
+image::https://www.eclipse.org/eclipse/news/4.12/images/switch_case_expression.png[]
+
+image::https://www.eclipse.org/eclipse/news/4.12/images/switch_labeled_expression.png[]
+
+If *switch* is being used as an expression, then only *switch case expression*
+and *switch labeled expression* templates are available as shown below:
+
+image::https://www.eclipse.org/eclipse/news/4.12/images/switch_expression_templates.png[]
+
+==== Java Views and Dialogs
+
+===== Enable comment generation in modules and packages
+
+An option is now available to enable/disable the comment generation while
+creating ```module-info.java``` or ```package-info.java```.
+
+image::https://www.eclipse.org/eclipse/news/4.12/images/module-info-comment-generation-check-box.png[]
+
+image::https://www.eclipse.org/eclipse/news/4.12/images/package-info-comment-generation-checkbox.png[]
+
+===== Improved 'create getter and setter' quick assist
+
+The quick assist for creating getter and setter methods from fields no longer forces you to create both.
+
+image::https://www.eclipse.org/eclipse/news/4.12/images/getter-setter-dialog-new.png[]
+
+===== Quick fix to open all required closed projects
+
+A quick fix to open all required closed projects is now available in the *Problems* view.
+
+image::https://www.eclipse.org/eclipse/news/4.12/images/quickfix-open-missing-projects-problem-view.png[]
+
+image::https://www.eclipse.org/eclipse/news/4.12/images/quickfix-open-missing-projects.png[]
+
+===== New UI for configuring Module Dependencies
+
+The *Java Build Path* configuration now has a new tab *Module Dependencies*, which will gradually replace
+the options previously hidden behind the *Is Modular* node on other tabs of this dialog. The new tab provides
+an intuitive way for configuring all those module-related options for which Java 9 had introduced new command
+line options like ```--limit-modules``` etc.
+
+image::https://www.eclipse.org/eclipse/news/4.12/images/module-dependencies-cropped.png[]
+
+The dialog focuses on how to build one Java Project, here "org.greetings".
+
+Below this focus module, the left hand pane shows all modules that participate in the build, where decorations
+A and S mark automatic modules and system modules, respectively. The extent of system modules (from JRE)
+can be modified with the *Add System Module...* and *Remove* buttons (corresponds to ```--add-modules```
+and ```--limit-modules```).
+
+When a module is selected in the left hand pane, the right hand pane allows to configure the following properties
+for this module:
+
+*Read Module:*
+
+Select additional modules that should be accessible from the selected module (corresponds to ```--add-reads```)
+
+*Expose Package:*
+
+Select additional packages to be exposed ("exports" or "opens") from the selected module (corresponds
+to ```--add-exports``` or ```--add-opens```)
+
+*Patch with:*
+
+Add more packages and classes to the selected module (corresponds to ```--patch-module```)
+         
+==== Java Compiler 
+
+===== Experimental Java index retired
+
+Eclipse 4.7 introduced a new experimental Java index which was disabled by default.
+
+Due to lack of resources to properly support all Java 9+ language changes, this index
+is not available anymore starting with Eclipse 4.12.
+
+The preference to enable it in *Preferences > Java* is removed and the old index will be always used.
+
+NOTE: *Preferences > Java > Rebuild Index* button can be used to delete the existing index files and free disk space.
+
+
+==== Debug
+
+===== 'Run to Line' on Ctrl+Alt+Click in annotation ruler
+
+A new shortcut, *Ctrl+Alt+Click*, has been added to the annotation ruler that will invoke the *'Run to Line'*
+command and take the program execution to the line of invocation.
+
+image::https://www.eclipse.org/eclipse/news/4.12/images/run-to-line.png[]
+
+===== Content assist in Debug Shell
+
+Content assist (*Ctrl+Space*) support is now available in the *Debug Shell*.
+
+image::https://www.eclipse.org/eclipse/news/4.12/images/content-assist-debug-shell.png[]
+
+===== Clear Java Stack Trace Console usage hint on first edit
+
+The *Java Stack Trace Console* shows a usage hint when opened the first time. This message
+is now automatically removed when the user starts typing or pasting a stack trace.
+
+image::https://www.eclipse.org/eclipse/news/4.12/images/jstc-initial-clear.png[]
+
+===== Lambda variable names shown in Variables view
+
+The Lambda variable names are now shown in the *Variables* view while debugging projects in the workspace.
+
+image::https://www.eclipse.org/eclipse/news/4.12/images/lambda-variables-view.png[]
+
+==== JDT Developers
+
+===== Support for new Javadoc tags
+
+The following Javadoc tags are now supported by the compiler and auto-complete.
+
+Tags introduced in JDK 8:
+
+`@apiNote`
+
+`@implSpec`
+
+`@implNote`
+
+Tags introduced in JDK 9:
+
+`@index`
+
+`@hidden`
+
+`@provides`
+
+`@uses`
+
+Tags introduced in JDK 10:
+
+`@summary`
+
+=== And more...
+
+You can find more noteworthy updates in on link:/documentation/whatsnew/jbosstools/4.11.0.Final.html[this page].
+
+== What is next?
+
+Having JBoss Tools 4.12.0 and Red Hat CodeReady Studio 12.12 out we are already working on the next release for Eclipse 2019-09.
+
+Enjoy!
+
+Jeff Maury
