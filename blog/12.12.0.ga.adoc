@@ -396,7 +396,7 @@ Tags introduced in JDK 10:
 
 === And more...
 
-You can find more noteworthy updates in on link:/documentation/whatsnew/jbosstools/4.11.0.Final.html[this page].
+You can find more noteworthy updates in on link:/documentation/whatsnew/jbosstools/4.12.0.Final.html[this page].
 
 == What is next?
 
