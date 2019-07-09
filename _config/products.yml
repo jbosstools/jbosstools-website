@@ -135,6 +135,31 @@ devstudio:
     simrel-2019-06:
       12.x.Nightly:
         update_site_url: https://devstudio.redhat.com/12/snapshots/updates/
+      12.12.0.GA:
+        archived: false
+        update_site_url: https://devstudio.redhat.com/12/stable/updates/
+        marketplace_url: https://marketplace.eclipse.org/node/1616973
+        marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
+        release_date: 2019-07-09
+        supported_devstudio_is_version: 12.11.0.GA
+        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        blog_announcement_url: /blog/12.12.0.ga.html
+        eclipse_name: Eclipse 4.12 (2019-06)
+        installers:
+          - name: Stand-alone Installer
+            url: http://www.jboss.org/download-manager/content/origin/files/sha256/b9/b9a976373ffb908dccee4149c99d86bf7048a2139305df09b0649f047a8ffc4b/codereadystudio-12.12.0.GA-installer-standalone.jar
+            file_size: 770MB
+        zips:
+          - name: Update site (including sources) bundle of Red Hat CodeReady Studio
+            url: url: http://www.jboss.org/download-manager/content/origin/files/sha256/98/98c816fb1f932e0756a33516393a0554c6ba0d8dc9da81f6fcf004a680f8297e/codereadystudio-12.12.0.GA-updatesite-core.zip
+            file_size: 802MB
+          - name: JBoss Central Zip
+            url: url: http://www.jboss.org/download-manager/content/origin/files/sha256/e9/e9345f6a29d2b6adf877fc4f04ab497971a5343e1dfe27ca715f9933b9060147/codereadystudio-12.12.0.GA-updatesite-central.zip
+            file_size:  84MB
+          - name: Target Platform for Red Hat CodeReady Studio
+            url: url: http://www.jboss.org/download-manager/content/origin/files/sha256/27/27f65fb319f8ec707e446f4268f44e86d0face7be1d3428741306b095bccad35/devstudio-12.12.0.GA-target-platform.zip
+            file_size: 872MB
     simrel-2019-03:
       12.11.0.GA:
         archived: false
@@ -1423,8 +1448,27 @@ jbt_core:
     simrel-2019-06:
       4.12.x.Nightly:
         update_site_url: http://download.jboss.org/jbosstools/photon/snapshots/updates/
-      4.12.0.AM1:
+      4.12.0.Final:
         archived: false
+        release_date: 2019-07-09
+        supported_jbt_is_version: 4.12.0.Final
+        blog_announcement_url: /blog/12.12.0.ga.html
+        documentation_url: http://docs.jboss.org/tools/
+        update_site_url: http://download.jboss.org/jbosstools/photon/development/updates/
+        eclipse_name: Eclipse 4.12 (2019-06)
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 841MB
+            url: http://download.jboss.org/jbosstools/static/photon/development/updates/core/jbosstools-4.12.0.Final-updatesite-core.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/photon/development/updates/core/jbosstools-4.12.0.Final-updatesite-core.zip.sha256
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 201MB
+            url: http://download.jboss.org/jbosstools/static/photon/development/updates/core/jbosstools-4.12.0.Final-src.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/photon/development/updates/core/jbosstools-4.12.0.Final-src.zip.sha256
+          - name: Release Notes
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
+      4.12.0.AM1:
+        archived: true
         release_date: 2019-06-12
         supported_jbt_is_version: 4.11.0.Final
         blog_announcement_url: /blog/4.12.0.am1.html
