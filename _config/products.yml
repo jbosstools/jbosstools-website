@@ -1,4 +1,12 @@
 eclipse:
+  simrel-2019-09:
+    # TODO archive this as of Oct 2021?
+    archived: false
+    url_path_fragment: 2019-09
+    short_name: 2019-09
+    full_name: Eclipse 4.13 (2019-09)
+    download_url:  http://www.eclipse.org/downloads/packages/release/2019-09/
+    requirements: Java 8
   simrel-2019-06:
     # TODO archive this as of Jul 2021?
     archived: false
@@ -132,9 +140,10 @@ devstudio:
   name: Red Hat CodeReady Studio
   url_path_fragment: devstudio
   streams:
-    simrel-2019-06:
+    simrel-2019-09:
       12.x.Nightly:
         update_site_url: https://devstudio.redhat.com/12/snapshots/updates/
+    simrel-2019-06:
       12.12.0.GA:
         archived: false
         update_site_url: https://devstudio.redhat.com/12/stable/updates/
@@ -1445,9 +1454,10 @@ jbt_core:
   name: JBoss Tools
   url_path_fragment: jbosstools
   streams:
-    simrel-2019-06:
-      4.12.x.Nightly:
+    simrel-2019-09:
+      4.13.x.Nightly:
         update_site_url: http://download.jboss.org/jbosstools/photon/snapshots/updates/
+    simrel-2019-06:
       4.12.0.Final:
         archived: false
         release_date: 2019-07-09
