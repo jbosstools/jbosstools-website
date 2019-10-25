@@ -49,7 +49,7 @@ eclipse:
     requirements: Java 8
   oxygen:
     # TODO archive this as of Sep 2019
-    archived: false
+    archived: true
     url_path_fragment: oxygen
     short_name: Oxygen
     full_name: Eclipse Oxygen 4.7.3a
@@ -57,7 +57,7 @@ eclipse:
     requirements: Java 8
   neon:
     # TODO archive this as of Jul 2019
-    archived: false
+    archived: true
     url_path_fragment: neon
     short_name: Neon
     full_name: Eclipse Neon 4.6.3
@@ -171,7 +171,7 @@ devstudio:
             file_size: 872MB
     simrel-2019-03:
       12.11.0.GA:
-        archived: false
+        archived: true
         update_site_url: https://devstudio.redhat.com/12/stable/updates/
         marketplace_url: https://marketplace.eclipse.org/node/1616973
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
@@ -197,7 +197,7 @@ devstudio:
             file_size: 792MB
     simrel-2018-09:
       12.9.0.GA:
-        archived: false
+        archived: true
         update_site_url: https://devstudio.redhat.com/12/stable/updates/
         marketplace_url: https://marketplace.eclipse.org/node/1616973
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
@@ -223,7 +223,7 @@ devstudio:
             file_size: 771MB
     photon:
       12.0.0.GA:
-        archived: false
+        archived: true
         # update_site_url: https://devstudio.redhat.com/12/stable/updates/
         # marketplace_url: https://marketplace.eclipse.org/node/1616973
         # marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
@@ -251,7 +251,7 @@ devstudio:
       # 11.x.Nightly:
       #   update_site_url: https://devstudio.redhat.com/11/snapshots/updates/
       11.3.0.GA:
-        archived: false
+        archived: true
         update_site_url: https://devstudio.redhat.com/11/stable/updates/
         marketplace_url: https://marketplace.eclipse.org/node/1616973
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
@@ -1498,7 +1498,7 @@ jbt_core:
             url: https://tools.jboss.org/documentation/whatsnew/index.html
     simrel-2019-03:
       4.11.0.Final:
-        archived: false
+        archived: true
         release_date: 2019-04-01
         supported_jbt_is_version: 4.11.0.Final
         blog_announcement_url: /blog/4.11.0.ga.html
@@ -1538,7 +1538,7 @@ jbt_core:
             url: https://tools.jboss.org/documentation/whatsnew/index.html
     simrel-2018-09:
       4.9.0.Final:
-        archived: false
+        archived: true
         release_date: 2018-10-08
         supported_jbt_is_version: 4.6.0.Final
         blog_announcement_url: /blog/12.9.0.html
@@ -1607,7 +1607,7 @@ jbt_core:
       4.6.0.Final:
         # update_site_url: http://download.jboss.org/jbosstools/photon/stable/updates/
         # TODO enable these for .Final
-        archived: false
+        archived: true
         release_date: 2018-07-16
         supported_jbt_is_version: 4.6.0.Final
         blog_announcement_url: /blog/12.0.0.ga-for-photon.html
@@ -1693,6 +1693,7 @@ jbt_core:
       #       file_size: 16MB
       #       url: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.jboss.tools.browsersim&a=org.jboss.tools.browsersim-standalone&v=3.8.100-SNAPSHOT&e=zip
       4.5.3.Final:
+        archived: true
         update_site_url: http://download.jboss.org/jbosstools/oxygen/stable/updates/
         marketplace_url: https://marketplace.eclipse.org/node/1617241
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1617241
@@ -1992,6 +1993,7 @@ jbt_core:
       #       file_size: 16MB
       #       url: https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=snapshots&g=org.jboss.tools.browsersim&a=org.jboss.tools.browsersim-standalone&v=3.8.3-SNAPSHOT&e=zip
       4.4.4.Final:
+        archived: true
         update_site_url: http://download.jboss.org/jbosstools/neon/stable/updates/
         marketplace_url: https://marketplace.eclipse.org/node/1617241
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1617241
@@ -2340,6 +2342,7 @@ jbt_core:
 
     mars:
       4.3.1.Final:
+        archived: true
         update_site_url: http://download.jboss.org/jbosstools/mars/stable/updates/
         marketplace_url: https://marketplace.eclipse.org/node/1617241
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1617241
@@ -2530,7 +2533,7 @@ jbt_core:
 
     luna:
       4.2.3.Final:
-        archived: false
+        archived: true
         update_site_url: http://download.jboss.org/jbosstools/updates/stable/luna/
         marketplace_url: http://marketplace.eclipse.org/node/1617241
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1617241
