@@ -1,11 +1,19 @@
 eclipse:
+  simrel-2019-12:
+    # TODO archive this as of Jan 2022?
+    archived: false
+    url_path_fragment: 2019-12
+    short_name: 2019-12
+    full_name: Eclipse 4.14 (2019-12)
+    download_url: http://www.eclipse.org/downloads/packages/release/2019-12/
+    requirements: Java 8
   simrel-2019-09:
     # TODO archive this as of Oct 2021?
     archived: false
     url_path_fragment: 2019-09
     short_name: 2019-09
     full_name: Eclipse 4.13 (2019-09)
-    download_url:  http://www.eclipse.org/downloads/packages/release/2019-09/
+    download_url: http://www.eclipse.org/downloads/packages/release/2019-09/
     requirements: Java 8
   simrel-2019-06:
     # TODO archive this as of Jul 2021?
@@ -13,7 +21,7 @@ eclipse:
     url_path_fragment: 2019-06
     short_name: 2019-06
     full_name: Eclipse 4.12 (2019-06)
-    download_url:  http://www.eclipse.org/downloads/packages/release/2019-06/
+    download_url: http://www.eclipse.org/downloads/packages/release/2019-06/
     requirements: Java 8
   simrel-2019-03:
     # TODO archive this as of Apr 2021?
@@ -21,7 +29,7 @@ eclipse:
     url_path_fragment: 2019-03
     short_name: 2019-03
     full_name: Eclipse 4.11 (2019-03)
-    download_url:  http://www.eclipse.org/downloads/packages/release/2019-03/
+    download_url: http://www.eclipse.org/downloads/packages/release/2019-03/
     requirements: Java 8
   simrel-2018-12:
     # TODO archive this as of Jan 2021?
@@ -29,7 +37,7 @@ eclipse:
     url_path_fragment: 2018-12
     short_name: 2018-12
     full_name: Eclipse 4.10 (2018-12)
-    download_url:  http://www.eclipse.org/downloads/packages/release/2018-12/
+    download_url: http://www.eclipse.org/downloads/packages/release/2018-12/
     requirements: Java 8
   simrel-2018-09:
     # TODO archive this as of Oct 2020
@@ -37,7 +45,7 @@ eclipse:
     url_path_fragment: 2018-09
     short_name: 2018-09
     full_name: Eclipse 4.9 (2018-09)
-    download_url:  http://www.eclipse.org/downloads/packages/release/2018-09/
+    download_url: http://www.eclipse.org/downloads/packages/release/2018-09/
     requirements: Java 8
   photon:
     # TODO archive this as of July 2020
@@ -45,7 +53,7 @@ eclipse:
     url_path_fragment: photon
     short_name: Photon
     full_name: Eclipse Photon 4.8.0
-    download_url:  http://www.eclipse.org/downloads/packages/release/Photon/
+    download_url: http://www.eclipse.org/downloads/packages/release/Photon/
     requirements: Java 8
   oxygen:
     # TODO archive this as of Sep 2019
@@ -53,7 +61,7 @@ eclipse:
     url_path_fragment: oxygen
     short_name: Oxygen
     full_name: Eclipse Oxygen 4.7.3a
-    download_url:  http://www.eclipse.org/downloads/packages/release/Oxygen/
+    download_url: http://www.eclipse.org/downloads/packages/release/Oxygen/
     requirements: Java 8
   neon:
     # TODO archive this as of Jul 2019
@@ -61,14 +69,14 @@ eclipse:
     url_path_fragment: neon
     short_name: Neon
     full_name: Eclipse Neon 4.6.3
-    download_url:  http://www.eclipse.org/downloads/packages/release/Neon/3
+    download_url: http://www.eclipse.org/downloads/packages/release/Neon/3
     requirements: Java 8
   mars:
     archived: true
     url_path_fragment: mars
     short_name: Mars
     full_name: Eclipse Mars 4.5.2
-    download_url:  http://www.eclipse.org/downloads/packages/release/Mars/2
+    download_url: http://www.eclipse.org/downloads/packages/release/Mars/2
     requirements: Java 8
   luna:
     archived: true
@@ -140,12 +148,38 @@ devstudio:
   name: Red Hat CodeReady Studio
   url_path_fragment: devstudio
   streams:
-    simrel-2019-09:
-      12.x.Nightly:
+    simrel-2019-12:
+      12.14.x.Nightly:
         update_site_url: https://devstudio.redhat.com/12/snapshots/updates/
+    simrel-2019-09:
+      12.13.0.GA:
+        archived: false
+        update_site_url: https://devstudio.redhat.com/12/stable/updates/
+        marketplace_url: https://marketplace.eclipse.org/node/1616973
+        marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
+        release_date: 2019-11-06
+        supported_devstudio_is_version: 12.11.0.GA
+        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        blog_announcement_url: /blog/12.13.0.ga.html
+        eclipse_name: Eclipse 4.13 (2019-09)
+        installers:
+          - name: Stand-alone Installer
+            url: http://www.jboss.org/download-manager/content/origin/files/sha256/24/2457a641b7fa0aa0475a836bf590f81dc9e7236b1e931dfd0b5be8a6d1f062e9/codereadystudio-12.13.0.GA-installer-standalone.jar
+            file_size: 809MB
+        zips:
+          - name: Update site (including sources) bundle of Red Hat CodeReady Studio
+            url: http://www.jboss.org/download-manager/content/origin/files/sha256/bf/bf15099285ca391321a864dbf672534f710070dd957b7942d8ddd839fd6dbca9/codereadystudio-12.13.0.GA-updatesite-core.zip
+            file_size: 841MB
+          - name: JBoss Central Zip
+            url: http://www.jboss.org/download-manager/content/origin/files/sha256/b2/b251a80eed5bd63f0c6c07ae5bc216f0381f0d8e90718e660fbaf427751265bb/codereadystudio-12.13.0.GA-updatesite-central.zip
+            file_size:  85MB
+          - name: Target Platform for Red Hat CodeReady Studio
+            url: https://devstudio.redhat.com/static/12/stable/updates/core/devstudio-12.13.0.GA-target-platform.zip
+            file_size: 839MB
     simrel-2019-06:
       12.12.0.GA:
-        archived: false
+        archived: true
         update_site_url: https://devstudio.redhat.com/12/stable/updates/
         marketplace_url: https://marketplace.eclipse.org/node/1616973
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
@@ -1454,12 +1488,32 @@ jbt_core:
   name: JBoss Tools
   url_path_fragment: jbosstools
   streams:
-    simrel-2019-09:
-      4.13.x.Nightly:
+    simrel-2019-12:
+      4.14.x.Nightly:
         update_site_url: http://download.jboss.org/jbosstools/photon/snapshots/updates/
+    simrel-2019-09:
+      4.13.0.Final:
+        archived: false
+        release_date: 2019-11-06
+        supported_jbt_is_version: 4.11.0.Final
+        blog_announcement_url: /blog/12.13.0.ga.html
+        documentation_url: http://docs.jboss.org/tools/
+        update_site_url: http://download.jboss.org/jbosstools/photon/stable/updates/
+        eclipse_name: Eclipse 4.13 (2019-09)
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 910MB
+            url: http://download.jboss.org/jbosstools/static/photon/stable/updates/core/jbosstools-4.13.0.Final-updatesite-core.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/photon/stable/updates/core/jbosstools-4.13.0.Final-updatesite-core.zip.sha256
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 201MB
+            url: http://download.jboss.org/jbosstools/static/photon/stable/updates/core/jbosstools-4.13.0.Final-src.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/photon/stable/updates/core/jbosstools-4.13.0.Final-src.zip.sha256
+          - name: Release Notes
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
     simrel-2019-06:
       4.12.0.Final:
-        archived: false
+        archived: true
         release_date: 2019-07-09
         supported_jbt_is_version: 4.12.0.Final
         blog_announcement_url: /blog/12.12.0.ga.html
