@@ -77,3 +77,7 @@ vpe:
 
 webservices:
   name: Web Services Tools
+  
+quarkus:
+  name: Quarkus Tools
+
