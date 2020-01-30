@@ -1491,6 +1491,25 @@ jbt_core:
     simrel-2019-12:
       4.14.x.Nightly:
         update_site_url: http://download.jboss.org/jbosstools/photon/snapshots/updates/
+      4.14.0.AM1:
+        archived: false
+        release_date: 2020-01-29
+        supported_jbt_is_version: 4.11.0.Final
+        blog_announcement_url: /blog/4.14.0.am1.html
+        documentation_url: http://docs.jboss.org/tools/
+        update_site_url: http://download.jboss.org/jbosstools/photon/development/updates/
+        eclipse_name: Eclipse 4.14 (2019-12)
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 970MB
+            url: http://download.jboss.org/jbosstools/static/photon/development/updates/core/jbosstools-4.14.0.AM1-updatesite-core.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/photon/development/updates/core/jbosstools-4.14.0.AM1-updatesite-core.zip.sha256
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 209MB
+            url: http://download.jboss.org/jbosstools/static/photon/development/updates/core/jbosstools-4.14.0.AM1-src.zip
+            sha256_url: http://download.jboss.org/jbosstools/static/photon/development/updates/core/jbosstools-4.14.0.AM1-src.zip.sha256
+          - name: Release Notes
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
     simrel-2019-09:
       4.13.0.Final:
         archived: false
