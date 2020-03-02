@@ -1,0 +1,818 @@
+= JBoss Tools and Red Hat CodeReady Studio for Eclipse 2019-12
+:page-layout: blog
+:page-author: jeffmaury
+:page-tags: [release, jbosstools, devstudio, jbosscentral, codereadystudio]
+:page-date: 2020-03-10
+
+link:/downloads/jbosstools/2019-12/4.14.0.Final.html[JBoss Tools 4.14.0] and
+link:/downloads/devstudio/2019-12/12.14.0.GA.html[Red Hat CodeReady Studio 12.14]
+for Eclipse 2019-12 are here waiting for you. Check it out!
+
+image::/blog/images/crstudio12.png[]
+
+== Installation
+
+Red Hat CodeReady Studio comes with everything pre-bundled in its installer. Simply download it from our https://developers.redhat.com/products/codeready-studio/overview/[Red Hat CodeReady product page] and run it like this:
+
+    java -jar codereadystudio-<installername>.jar
+
+JBoss Tools or Bring-Your-Own-Eclipse (BYOE) CodeReady Studio require a bit more:
+
+This release requires at least Eclipse 4.14 (2019-12) but we recommend
+using the latest https://www.eclipse.org/downloads/packages/release/2019-12/r/eclipse-ide-enterprise-java-developers[Eclipse 4.14 2019-12 JEE Bundle]
+since then you get most of the dependencies preinstalled.
+
+Once you have installed Eclipse, you can either find us on the Eclipse Marketplace under "JBoss Tools" or "Red Hat CodeReady Studio".
+
+For JBoss Tools, you can also use our update site directly.
+
+    http://download.jboss.org/jbosstools/photon/stable/updates/
+
+== What is new?
+
+Our main focus for this release was a new tooling for the Quarkus framework, improvements for container based development and bug fixing.
+Eclipse 2019-12 itself has a lot of new cool stuff but let me highlight just a few updates in both Eclipse 2019-12 and JBoss Tools plugins that I think are worth mentioning.
+
+=== OpenShift
+
+==== OpenShift Container Platform 4.3 support
+
+With the new OpenShift Container Platform (OCP) 4.3 now available (see this 
+https://blog.openshift.com/introducing-red-hat-openshift-4-3-to-enhance-kubernetes-security/[article,window=_blank]),
+JBoss Tools is compatible with
+this major release in a transparent way. Just define your connection to your
+OCP 4.3 based cluster as you did before for an OCP 3 cluster, and use the tooling !
+
+==== New OpenShift Application Explorer view
+
+A new OpenShift Application Explorer window has been added in addition to the OpenShift Explorer. It is based on
+https://github.com/openshift/odo/[OpenShift Do,,window=_blank]. It provides a different and simplified
+user experience allowing easy and rapid feedback through 
+inner loop and debugging.
+
+Let's see it in action.
+
+===== Opening the OpenShift Application Explorer view
+
+If you opened a brand new workspace, you should see the
+OpenShift Application Explorer view in the list of views
+available on the botton part of the screen:
+
+image::/documentation/whatsnew/openshift/images/application-explorer.png[width=600]
+
+If you don't see the view being listed, you can open it
+through the ```Window --> Show View --> Other``` menu,
+enter ```open``` in the filter text box and then select
+ ```OpenShift Application Explorer```:
+
+image::/documentation/whatsnew/openshift/images/application-explorer1.png[width=600]
+
+image::/documentation/whatsnew/openshift/images/application-explorer2.png[width=600]
+
+Expanding the root node will display the list of projects
+available on the cluster:
+
+image::/documentation/whatsnew/openshift/images/application-explorer3.png[width=600]
+
+===== Java based micro service
+
+We will show how to deploy a Java based microservice and
+how to use the various features. But we first need to load
+the component source code in our workspace. Thanks to the 
+launcher wizard, we can do that easilly. Try ```Ctrl+N```
+and select the ```Launcher project``` wizard:
+
+image::/documentation/whatsnew/openshift/images/application-explorer4.png[width=600]
+
+Then click the ```Next``` button:
+
+Select ```rest-http``` in the ```Mission``` field,
+ ```vert.x community``` in the ```Runtime``` field,
+ ```myservice``` in the ```Project name``` field:
+ 
+image::/documentation/whatsnew/openshift/images/application-explorer5.png[width=600]
+
+Then click the ```Finish``` button: a new project will be
+added to your workspace. Once the dependencies resolution
+has been completed, we're ready to start playing with the
+cluster.
+
+====== Create the component
+
+Now that we have the source code, we can create the component. From the OpenShift Application Explorer view,
+right select the project (myproject), and the click the
+ ```New -> Component``` menu:
+ 
+image::/documentation/whatsnew/openshift/images/application-explorer6.png[width=600]
+
+Enter ```myservice``` in the ```Name``` field, click the ```Browse``` button to select the project we have just created, select ```java``` in the
+ ```Component type``` field, select ```8``` in the ```Component version``` field,
+enter ```myapp``` in the ```Application``` field and uncheck the
+ ```Push after create``` check-box:
+ 
+image::/documentation/whatsnew/openshift/images/application-explorer7.png[width=600]
+
+Then click the ```Finish``` button. The component will be created and expanding
+the project node will now show the application that contains our component:
+
+image::/documentation/whatsnew/openshift/images/application-explorer8.png[width=600]
+
+Expanding the application will now display our component:
+
+image::/documentation/whatsnew/openshift/images/application-explorer9.png[width=600]
+
+The component has been created but it is not yet deployed on the cluster (as we
+unchecked the ```Push after create``` check-box. In order to deploy it,right
+select the component and click the ```Push``` menu. The deployment will be
+created and then a build will be launched. A new window will be created in the
+ ```Console``` view. After a while, you should see the following output:
+ 
+image::/documentation/whatsnew/openshift/images/application-explorer10.png[width=600]
+
+The component is now deployed to the cluster but we cannot access it as we need
+to define an URL to access it externally. Right select the component and click
+the ```New -> URL``` menu:
+
+image::/documentation/whatsnew/openshift/images/application-explorer11.png[width=600]
+
+Enter ```url1``` in the ```Name``` field and select ```8080``` in the ```Port```
+field:
+
+image::/documentation/whatsnew/openshift/images/application-explorer12.png[width=600]
+
+Then click on the ```Finish``` button. The URL is created but not on the cluster,
+so we need to push again the component so that the local configuration is
+synchronized with the configuration on the cluster. The ```Console``` window
+will display a message claiming that a push is now required:
+
+image::/documentation/whatsnew/openshift/images/application-explorer13.png[width=600]
+
+So push the component again (```component -> Push```).
+
+Let's check that we can now access the service. Expand the component level so
+that we can see the URL we have just created:
+
+image::/documentation/whatsnew/openshift/images/application-explorer14.png[width=600]
+
+Right select the URL and click the ```Open in Browser``` menu, you should see the new browser window:
+
+image::/documentation/whatsnew/openshift/images/application-explorer15.png[width=600]
+
+You can test the service: enter ```demo``` in the text box and click the
+ ```Invoke``` button:
+ 
+image::/documentation/whatsnew/openshift/images/application-explorer16.png[width=600]
+
+====== Feedback loop
+
+We will now see how we can get fast feedback on code changes. So let's modify the
+application code and see how we can synchronize the changes to the cluster.
+
+In the ```Project Explorer``` view, locate the ```HttpApplication.java``` file:
+
+image::/documentation/whatsnew/openshift/images/application-explorer17.png[width=600]
+
+Double click on the file to open the editor:
+
+image::/documentation/whatsnew/openshift/images/application-explorer18.png[width=600]
+
+On line 14, change the line:
+
+```java
+  protected static final String template = "Hello, %s!";
+```
+
+to
+
+```java
+  protected static final String template = "Hello, %s!, we modified the code";
+```
+and press the ```Ctrl+S``` key in order to save the file.
+
+For the OpenShift Application Explorer, right click the component (myservice) and
+click the ```Push``` menu to send the changes to the cluster: the component will be
+built again on the cluster with the next changes and after a few seconds, it will be
+available again:
+
+image::/documentation/whatsnew/openshift/images/application-explorer19.png[width=600]
+
+Select the browser window again, enter ```demo1``` in the textbox (we need to change
+the value we used before in order to make sure cache is not involved) and click the
+ ```Invoke``` button again:
+
+image::/documentation/whatsnew/openshift/images/application-explorer20.png[width=600]
+
+We've seen that, through a sequence of code modification(s) followed by a synchronize
+action (push) to the cluster, we can get a very fast feedback. If you don't want to
+manually synchronize the the cluster (push), you can opt to automatically synchronize
+to the cluster with the ```Watch``` action: each time a code modification is done locally
+on your workstation, a new build will be automatically launched on the cluster.
+
+====== Going further: debug your application on the cluster
+
+Testing an application through code changes is a great achievement so far but it
+may be difficult for complex applications where we need to understand how the code behaves
+without the need to use the UI. That's why the next step is to be able to debug our application live on the cluster.
+
+The new OpenShift Application Explorer allow such a scenario. We will first set up a breakpoint
+in our application code. Select again the ```HttpApplication.java``` file and scroll
+down to the ```greeting``` method:
+
+image::/documentation/whatsnew/openshift/images/application-explorer21.png[width=600]
+
+On line 41, double click in the left ruler column so that a breakpoint is set:
+
+image::/documentation/whatsnew/openshift/images/application-explorer22.png[width=600]
+
+We are now ready to debug our application. In order to do that, we need to launch
+a local (Java in our case) debugger that will be connected to our application on the
+cluster. This is what the ```Debug``` action is doing: right select the component
+(myservice) and click the ```Debug``` menu: you will see that port forwarding has been
+started so that our local (Java) debugger can connect to the remote Java virtual
+machine:
+
+image::/documentation/whatsnew/openshift/images/application-explorer23.png[width=600]
+
+and then a local (Java) debugger is launched and connected to that port. Let's check now that we can debug our application:
+
+Select the browser window again, enter ```demo2``` in the textbox (we need to change
+the value we used before in order to make sure cache is not involved) and click the
+ ```Invoke``` button again: as our breakpoint is hit, you will be asked if you want to
+switch to the ```Debug``` perspective (this may not be displayed if you previously
+selected the ```Remember my decision``` checkbox:
+
+image::/documentation/whatsnew/openshift/images/application-explorer24.png[width=600]
+
+Click the ```Switch``` button and you will see the ```Debug``` perspective:
+
+image::/documentation/whatsnew/openshift/images/application-explorer25.png[width=600]
+
+You are now debugging a Java component running on a remote cluster just like it was
+running locally on your workstation. Please note that we demoed this feature using
+a Java based component but we also support the same feature to NodeJS based components.
+
+
+=== Quarkus
+
+Starting with this release, we've added a new Quarkus tooling for applications built
+on top of the Supersonic Subatomic Java https://quarkus.io[Quarkus] framework.
+
+==== Quarkus project creation wizard
+
+A new wizard has been added to create a new Quarkus application project in your workspace.
+In order to launch it, first enter Ctrl+N to get the list of available wizards
+
+image::/documentation/whatsnew/quarkus/images/quarkus1.png[]
+
+In the filter text box, enter the ```qu``` characters to filter the list of wizards:
+
+image::/documentation/whatsnew/quarkus/images/quarkus2.png[]
+
+Select the *Quarkus Project* wizard and click the *Next* button:
+
+image::/documentation/whatsnew/quarkus/images/quarkus3.png[]
+
+The *Project type* combo allows you to choose between Maven or Gradle tool used to
+manage your project. We'll go with Maven for this tutorial.
+
+Enter a project name (we will use code-with-quarkus) and click the *Next* button:
+
+image::/documentation/whatsnew/quarkus/images/quarkus4.png[]
+
+This dialog allows you to choose various parameters for you project, like the project
+coordinates (group id, artifact id and version) along with the base REST endpoint information.
+We'll use the default so click on the *Next* button:
+
+image::/documentation/whatsnew/quarkus/images/quarkus5.png[]
+
+This dialog allows to select which Quarkus extensions you want to add to your project.
+The extensions are grouped by categories, so first select a specific category in
+the left table. We will choose the *Web* one:
+
+image::/documentation/whatsnew/quarkus/images/quarkus6-1.png[]
+
+You should have noticed that the middle table has been updated. In order to add an extension,
+double click on the extension in the middle table. We will add *RESTEasy JAX-RS* and
+*RESTEasy Qute* (a templating engine):
+
+image::/documentation/whatsnew/quarkus/images/quarkus7-1.png[]
+
+You should have noticed that the extensions that you double clicked on are now being added
+to the right table. If you want to remove an extension from the list of selected ones,
+double click again either in the center table or in the right table.
+
+We are now all set so click on the *Finish* button to launch the project creation.
+The project creation job is then launched, dependencies are being retrieved and
+after a while, the new project will appear in the *Project Explorer* window:
+
+image::/documentation/whatsnew/quarkus/images/quarkus8.png[]
+
+We have successfully created our first Quarkus project. Let's see now how we can launch this application and debug it.
+
+==== Running the Quarkus application
+
+Running a Quarkus application can be done from the workbench Run configurations.
+Select the *Run -> Run Configurations...* menu to display the dialog allowing to create a Run configuration.
+
+image::/documentation/whatsnew/quarkus/images/quarkus9.png[]
+
+Scrool down until the *Quarkus Application* is visible and select it:
+
+image::/documentation/whatsnew/quarkus/images/quarkus10-1.png[]
+
+Click on the *New configuration* button (top left):
+
+image::/documentation/whatsnew/quarkus/images/quarkus11-1.png[]
+
+A workspace project needs to be associated with the configuration so click on the *Browse*
+button to see the project selection dialog:
+
+image::/documentation/whatsnew/quarkus/images/quarkus12-1.png[]
+
+As the workspace contains a single project, it is automatically selected and we can click
+on the *OK* button:
+
+image::/documentation/whatsnew/quarkus/images/quarkus13-1.png[]
+
+The configuration is not ready to be used. So let's start our Quarkus application by clicking
+on the *Run* button:
+
+You should see a new Console being displayed.
+
+image::/documentation/whatsnew/quarkus/images/quarkus14.png[]
+
+The application is being built and after a while, it will be started:
+
+image::/documentation/whatsnew/quarkus/images/quarkus15.png[]
+
+==== Debugging the Quarkus application
+
+Debugging a Quarkus application is just a simple as launching the previous configuration
+we've just created in Debug.
+You just need to open the **Run -> Debug Configurations...**. menu and click on the *Debug* button.
+
+It will start the Quarkus application like in the previous paragraph but also connect
+a remote JVM debug configuration to your running Quarkus application. So if you have set breakpoints
+in your application source files, the execution will automatically stops there.
+
+==== application.properties content assist
+
+Every Quarkus application is configured through a configuration called
+**application.properties**.
+
+The content of this configuration file is dependent of the set of Quarkus
+extensions that your application is using. Some settings are mandatory, some others
+are not and the possible values are specific to the nature of the setting:
+boolean, integer, limited set of values (enumerations).
+
+So, as a developer, you need to look at various guides and documentations
+(the core Quarkus and the extension specific ones)
+
+So Quarkus Tools provides content assist on those specific files that:
+
+- validates the content of the application.properties files
+- provides you with the possible setting names and values
+
+Let's see it in action.
+
+Go to *src/main/resources/application.properties* in the project and right click and select **Open With -> Generic Text Editor**:
+
+image::/documentation/whatsnew/quarkus/images/quarkus16.png[]
+
+Go the third line of the file and invoke code completion (Ctrl + Space):
+
+image::/documentation/whatsnew/quarkus/images/quarkus17.png[]
+
+For each setting, a documentation is displayed when you mouse over the setting.
+Let try to add **quarkus.http.port** to the file and mouse over this name:
+
+image::/documentation/whatsnew/quarkus/images/quarkus18.png[]
+
+If we enter a wrong value (false instead of a numeric value), then the error will be highlighted:
+
+image::/documentation/whatsnew/quarkus/images/quarkus19.png[]
+
+This is the first set of features that will be integration into the next version
+of JBoss Tools. We encourage you to used it and if you are missing features and/or enhancements, don't hesitate to report them here: https://issues.redhat.com/issues/?jql=project%20%3D%20JBIDE%20AND%20component%20%3D%20quarkus%20and%20status%20!%3D%20Closed%20and%20status%20!%3D%20Resolved%20[JBoss Tools issue tracker]
+
+
+=== Hibernate Tools
+
+==== Hibernate Runtime Provider Updates
+
+A number of additions and updates have been performed on the available Hibernate runtime  providers.
+
+===== Runtime Provider Updates
+
+The Hibernate 5.4 runtime provider now incorporates Hibernate Core version 5.4.12.Final and Hibernate Tools version 5.4.12.Final.
+
+The Hibernate 5.3 runtime provider now incorporates Hibernate Core version 5.3.15.Final and Hibernate Tools version 5.3.15.Final.
+
+=== Deprecation
+
+The Forge, Java Server Tools (JST) and Visual Page Editor (VPE) have been deprecated.
+Even though they received an update with this release, we have no plan to maintain or
+add new features and they may be removed in the future.
+
+In addition, the adapters for Red Hat JBoss Enterprise Application Server 4.3 and 5.0
+have also been deprecated.
+
+=== Platform
+
+==== Views, Dialogs and Toolbar
+
+===== New view menu icon
+
+The view menu chevron icon (▽) is replaced by a modern equivalent, the vertical ellipsis ( ⠇).
+
+Almost every view has a menu that may contain additional configuration settings
+like filters, layout settings, and so on. The view menu was often overlooked and
+we expect that this change will help users to find it. 
+
+image::https://www.eclipse.org/eclipse/news/4.14/images/view_menu.png[]
+
+===== Find Actions: The improved Quick Access
+
+The formerly called *Quick Access* action has been retitled to *Find Actions*
+to better emphasize its goal.
+
+The related UI has changed a bit to improve its usage and accessibility:
+
+- The widget item is now a regular toolbar item (button-like)
+- An icon is shown
+- Right-clicking on the tool item works and shows typical actions, including *Hide*
+- The proposals are now a regular dialog, centered on the workbench
+
+These changes will greatly improve the experience if you're using a screen reader
+as it relies on a more standardized focus state. This also leverages all the default
+and usual accessibility features of dialogs (moveable, resizable...).
+
+Loading the proposals has been improved as well to avoid UI freezes when loading proposals.
+
+===== Find Actions finds text in file contents
+
+*Find Actions* is now extended by the *Quick Text Search* feature to show the potential text
+matches in file contents also in the proposals.
+
+image::https://www.eclipse.org/eclipse/news/4.14/images/file-content-find-action.png[]
+
+If the Quick Text Search bundle wasn't started yet, you may miss those matches. In this case,
+you can use *Find Actions* itself to activate the Quick Text Search by finding and selecting
+the *Activate bundle for 'File content'* proposals entry.
+
+image::https://www.eclipse.org/eclipse/news/4.14/images/activate-file-content.png[]
+
+===== Find Actions lists workspace files
+
+*Find Actions* can now list matching file names from the workspace (similar to the
+*Open Resource* dialog). Upon selection the file is opened in the editor.
+
+image::https://www.eclipse.org/eclipse/news/4.14/images/find-actions-resources.png[]
+
+===== Inline rename for simple resources while in Project Explorer. 
+
+In the *Project Explorer*, renaming (with the ```F2``` shortcut or Rename context menu)
+will start an inline rename for normal resources when other files aren't affected by
+the rename.
+
+image::https://www.eclipse.org/eclipse/news/4.14/images/project-explorer-inline-renaming.png[]
+
+In cases where other files are affected by the rename, or the rename operation
+is customized, the rename dialog will appear as it previously did.
+
+==== Text Editors 
+
+===== Show problem markers inline
+
+You can now see the *errors, warnings, and info markers* inline in most of the
+text editors. No more mousing around to see the actual error message!
+
+image::https://www.eclipse.org/eclipse/news/4.14/images/annotation-code-mining-jdt.png[]
+
+You can see the available quick fixes by clicking on the message.
+
+image::https://www.eclipse.org/eclipse/news/4.14/images/annotation-code-mining-quickfix.png[]
+
+You can enable it on the *General > Editors > Text Editors* preference page and set
+*Show Code Minings for Annotations* to:
+
+- None (default)
+- Errors only
+- Errors and Warnings
+- Errors, Warnings and Info
+ 
+===== Backspace/delete can treat spaces as tabs
+
+If you use the *Insert spaces for tabs* option, now you can also change the
+backspace and delete keys behavior to remove multiple spaces at once, as if
+they were a tab.
+
+The new setting is called *Remove multiple spaces on backspace/delete* and is
+found on the *General > Editors > Text Editors* preference page.
+
+image::https://www.eclipse.org/eclipse/news/4.14/images/delete-spaces-as-tabs.png[]
+         
+==== Debug
+
+===== Collapse All Button in the Debug View
+
+In the *Debug* View, now you can now use the new *Collapse All* button to collapse
+all the launches.
+
+Before collapsing: 
+
+image::https://www.eclipse.org/eclipse/news/4.14/images/collapse-all-debug-view-before.png[]
+
+After collapsing:
+
+image::https://www.eclipse.org/eclipse/news/4.14/images/collapse-all-debug-view-after.png[]
+
+===== Control character interpretation in Console View
+
+The *Console* View can now interpret the control characters backslash (```\b```)
+and carriage return (```\r```).
+
+This feature is disabled by default. You can enable it on the *Run/Debug > Console*
+preference page.
+
+image::https://www.eclipse.org/eclipse/news/4.14/images/animated-progress-in-console.gif[]
+
+==== Themes and Styling 
+
+===== Improvements in UI Forms Styling
+
+CSS customization of ```ExpandableComposite``` and ```Section``` was reworked to
+give you more control over their styling. In dark mode, those elements now
+integrate better with other Form elements.
+
+Old:
+
+image::https://www.eclipse.org/eclipse/news/4.14/images/pom_dark_old.png[]
+
+New:
+
+image::https://www.eclipse.org/eclipse/news/4.14/images/pom_dark_new.png[]
+
+===== Perspective switcher gets aligned with normal toolbar styling
+
+The special styling of the *Perspective switcher* has been removed to make the
+Toolbar look consistent. This also reduces OS specific styling issues with the
+perspective switcher.     
+
+Old:
+
+image::https://www.eclipse.org/eclipse/news/4.14/images/old-perspective-switcher.png[]
+
+New:
+
+image::https://www.eclipse.org/eclipse/news/4.14/images/new-perspective-switcher.png[]
+
+===== Usage of consistent colors for the dark theme
+
+The usage of different shades of gray in the dark theme was reduced.
+
+The styling of the widgets is also not based on the selected view anymore, which
+makes the UI more consistent.
+
+==== General Updates
+
+===== Ant 1.10.7
+
+Eclipse has adopted Ant version 1.10.7.
+
+===== Support for the Ant include task added
+
+The Ant ```include``` task (available in the Ant library since 1.8.0) is now
+fully recognized by the ant-ui-plugin and validated accordingly.
+
+ 
+=== Java Developement Tools (JDT)
+
+==== Java 13 Support
+
+===== Java 13
+
+Java™ 13 is available and Eclipse JDT supports Java 13 for the Eclipse 4.14 release. 
+
+The release notably includes the following Java 13 features:
+
+- JEP 354: Switch Expressions (Preview).
+- JEP 355: Text Blocks (Preview).
+
+Please note that these are preview language feature and hence enable preview option
+should be on. For an informal introduction of the support, please refer to
+https://wiki.eclipse.org/Java13/Examples[Java 13 Examples wiki].
+
+===== Keyboard shortcut for Text Block creation
+
+A keyboard shortcut *Ctrl + Shift + '* is added in the Java Editor for *text
+blocks*, which is a preview feature added in Java 13.
+
+Conditions under which this keyboard shortcut works are:
+
+- The Java Project should have a compliance of 13 or above and the preview features should be enabled.
+- The selection in the editor should not be part of a string or a comment or a text block.
+
+Examples: 
+
+image::https://www.eclipse.org/eclipse/news/4.14/images/textblock-pre-creation1.png[]
+
+Pressing the shortcut gives:
+
+image::https://www.eclipse.org/eclipse/news/4.14/images/textblock-post-creation1.png[]
+
+You can also encompass a selected text in text block as below:
+
+image::https://www.eclipse.org/eclipse/news/4.14/images/textblock-pre-creation2.png[]
+
+On pressing the shortcut, you get this:
+
+image::https://www.eclipse.org/eclipse/news/4.14/images/textblock-post-creation2.png[]
+
+
+==== Java Editor
+
+===== Remove unnecessary array creation
+
+A new cleanup action *Remove unnecessary array creation* has been added. It will
+remove explicit array creation for ```varargs``` parameters.
+
+image::https://www.eclipse.org/eclipse/news/4.14/images/unnecessary-array-creation-option.png[]
+
+For the given code: 
+
+image::https://www.eclipse.org/eclipse/news/4.14/images/unnecessary-array-creation-before.png[]
+
+After cleanup, you get this:
+
+image::https://www.eclipse.org/eclipse/news/4.14/images/unnecessary-array-creation-after.png[]
+
+===== Push negation down in expression
+
+A new Java cleanup/save action *Push down negation* has been added. It reduces
+the double negation by reverting the arithmetic expressions.
+
+For instance:
+
+`!!isValid;` becomes `isValid;`
+
+`!(a != b);` becomes `(a == b);`
+
+image::https://www.eclipse.org/eclipse/news/4.14/images/push-down-negation.png[]
+
+===== Provide templates for empty Java source files
+
+When dealing with empty Java source files, some basic templates (class, interface, enum)
+will now be available from the content assist popup.
+
+image::https://www.eclipse.org/eclipse/news/4.14/images/templates-empty-java-file.png[]
+
+===== Postfix completion proposal category
+
+Postfix completion allows certain kinds of language constructs to be applied to
+the previously entered text.
+
+For example: Entering ```"input text".var``` and selecting the
+*var - Creates a new variable* proposal, will result in ```String name = "input text"```.
+
+image::https://www.eclipse.org/eclipse/news/4.14/images/postfix-completion.png[]
+
+===== try-with-resources quickfix
+
+A quickfix has been added to create a ```try-with-resources``` statement based on
+the selected lines. Lines that are selected must start with declarations of objects
+that implement ```AutoCloseable```. These declarations are added as the resources
+of the ```try-with-resources``` statement.
+
+If there are selected statements that are not eligible resources (such as Objects
+that don't implement ```AutoCloseable```), then the first such statement and all
+the following selected statements will be placed in the ```try-with-resources```
+body.
+
+Method before applying try-with-resources: 
+
+image::https://www.eclipse.org/eclipse/news/4.14/images/tryWithResource1.png[]
+
+Select all the lines inside the method, then use the short-cut *Ctrl+1* and click
+on *Surround with try-with-resources* from the list:
+ 
+image::https://www.eclipse.org/eclipse/news/4.14/images/tryWithResource2.png[]
+
+This results in: 
+
+image::https://www.eclipse.org/eclipse/news/4.14/images/tryWithResource3.png[]
+
+===== Javadoc tag checking for modules
+
+Support has been added to check the Javadoc of a module-info.java file to report
+missing and duplicate ```@uses``` and ```@provides``` tags depending on the
+compiler settings (*Preferences > Java > Compiler > Javadoc*).
+
+image::https://www.eclipse.org/eclipse/news/4.14/images/checkModuleJavadoc.png[]
+
+
+==== Java Formatter
+
+===== Formatting of text blocks
+
+The code formatter can now handle *text blocks*, which is a preview feature added
+in Java 13. It's controlled by the *Text block indentation* setting, found right
+in the *Indentation* section of the *Profile Editor (Preferences > Java > Code Style > Formatter > Edit...*).
+
+By default, text block lines are indented the same way as wrapped code lines,
+that is with two extra tabs relative to the starting indentation (or whatever is
+set as *Default indentation for wrapped lines* in the *Line Wrapping* section).
+You can also set it to use only one tab for indentation (*Indent by one*), align
+all lines to the position of the opening quotes (*Indent on column*), or preserve
+the original formatting (*Do not touch*).
+
+image::https://www.eclipse.org/eclipse/news/4.14/images/formatter-text-block.png[]
+
+===== Blank lines between Javadoc tags
+
+The code formatter can now divide Javadoc tags into groups (by type, for example
+ ```@param```, ```@throws```, ```@returns```) and separate these groups with blank
+lines. This feature can be turned on in the *Comments > Javadocs* section by
+checking the *Blank lines between tags of different type* box. 
+ 
+===== Space after not operator
+
+A new setting has been added to control whether a space should be added *after not
+(```!```) operator*, independently from other unary operators. To find it, expand
+sections *Whitespace > Expressions > Unary* operators and go to the last checkbox.
+
+image::https://www.eclipse.org/eclipse/news/4.14/images/formatter-space-after-not.png[]
+ 
+==== JUnit
+
+===== BREE update for org.eclipse.jdt.junit.runtime
+
+The Bundle Required Execution Environment (BREE) for the
+ ```org.eclipse.jdt.junit.runtime``` bundle is now J2SE-1.5.
+
+==== Debug
+
+===== No suspending on exception recurrence
+
+A new workspace preference has been added for exception breakpoints: *Suspend
+policy for recurring exception instances* controls whether the same exception
+instance may cause the debugger to suspend more than once.
+
+image::https://www.eclipse.org/eclipse/news/4.14/images/preference-exception-recurrence.png[] 
+
+This option is relevant when debugging an application that has ```try``` blocks at
+several levels of the architecture. In this situation an exception breakpoint
+may fire multiple times for the same actual exception instance: A ```throw```
+statement inside a ```catch``` block may re-throw the same exception. The same
+holds for each ```finally``` block or ```try-with-resources``` block.
+
+When the debugger stops due to an exception breakpoint, you may want to continue
+your debug session by pressing *Resume (F8)*, but all that catching and re-throwing
+will force you to observe all locations where the same exception will surface again
+and again. Suspending at all ```try``` blocks on the call stack may also spoil your
+context of open Java editors, by opening more editors of classes that are likely
+irrelevant for the debugging task at hand.
+
+The *JDT Debugger* will now detect this situation, and the first time it notices the
+same exception instance recurring at the surface, a new question dialog is shown:
+
+image::https://www.eclipse.org/eclipse/news/4.14/images/dialog-exception-recurrence.png[]
+
+If you select *Skip* in this dialog, the current exception instance will be dismissed for good.
+Still, new instances of the same exception type will cause suspending when they are thrown.
+
+If you check *Remember my decision* your choice will be stored in the mentioned workspace
+preference to be effective for all exception breakpoints.
+
+Even after choosing *Skip* — resp. *Only once* in the preferences — you can have the old
+behavior simply by pressing *Step Return (F7)* instead of *Resume*.
+
+==== JDT Developers
+
+===== Flag whether content assist extension needs to run in UI thread
+
+The existing ```org.eclipse.jdt.ui.javaCompletionProposalComputer```,
+ ```org.eclipse.jdt.ui.javadocCompletionProposalComputer``` and
+ ```org.eclipse.jdt.ui.javaCompletionProposalSorters``` extension points now allow
+a new attribute *requiresUIThread* that allows a developer to declare whether running
+in the UI thread is required or not.
+
+This information will be used by the *Content Assist* operation to allow some
+optimizations and prevent UI freezes by reducing the amount of work happening
+in the UI thread.
+
+To preserve backward compatibility, the default value for this attribute (if unset)
+is ```true```, meaning the extension is expected to run in the UI thread.
+  
+
+=== And more...
+
+You can find more noteworthy updates in on link:/documentation/whatsnew/jbosstools/4.14.0.Final.html[this page].
+
+== What is next?
+
+Having JBoss Tools 4.14.0 and Red Hat CodeReady Studio 12.14 out we are already working on the next release for Eclipse 2020-03.
+
+Enjoy!
+
+Jeff Maury

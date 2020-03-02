@@ -5,6 +5,7 @@
 :page-feature_order: 6
 :page-feature_image_url: images/jbossforge_icon_256px.png
 :page-feature_tagline: Forging a bond between Command Line and IDE
+:page-feature_deprecated: true
 :page-issues_url: https://issues.jboss.org/browse/JBIDE/component/12313831
 
 == Forge
