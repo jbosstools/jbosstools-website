@@ -1,4 +1,12 @@
 eclipse:
+  simrel-2020-03:
+    # TODO archive this as of Apr 2022?
+    archived: false
+    url_path_fragment: 2020-03
+    short_name: 2020-03
+    full_name: Eclipse 4.15 (2020-03)
+    download_url: http://www.eclipse.org/downloads/packages/release/2020-03/
+    requirements: Java 8
   simrel-2019-12:
     # TODO archive this as of Jan 2022?
     archived: false
@@ -148,9 +156,35 @@ devstudio:
   name: Red Hat CodeReady Studio
   url_path_fragment: devstudio
   streams:
-    simrel-2019-12:
-      12.14.x.Nightly:
+    simrel-2020-03:
+      12.15.x.Nightly:
         update_site_url: https://devstudio.redhat.com/12/snapshots/updates/
+    simrel-2019-12:
+      12.14.0.GA:
+        archived: false
+        update_site_url: https://devstudio.redhat.com/12/stable/updates/
+        marketplace_url: https://marketplace.eclipse.org/node/1616973
+        marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
+        release_date: 2020-03-17
+        supported_devstudio_is_version: 12.11.0.GA
+        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        blog_announcement_url: /blog/12.14.0.ga.html
+        eclipse_name: Eclipse 4.14 (2020-03)
+        installers:
+          - name: Stand-alone Installer
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/cf/cfb17bfaf3c88ea2b83e093aa113607d98dab78c31093ee371cd9c22d861d583/codereadystudio-12.14.0.GA-installer-standalone.jar
+            file_size: 870MB
+        zips:
+          - name: Update site (including sources) bundle of Red Hat CodeReady Studio
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/18/18efbe6f9d371bbd4a244aaec72c1a3bddb96723b2f5914701d8c149ebfea2b2/codereadystudio-12.14.0.GA-updatesite-core.zip
+            file_size: 901MB
+          - name: JBoss Central Zip
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/df/df31dd2eba30b8528a67f34d4bbd5e7cf3b5ff96eda2da1ccb755497fc339a13/codereadystudio-12.14.0.GA-updatesite-central.zip
+            file_size:  86MB
+          - name: Target Platform for Red Hat CodeReady Studio
+            url: https://devstudio.redhat.com/static/12/stable/updates/core/devstudio-12.14.0.GA-target-platform.zip
+            file_size: 916MB
     simrel-2019-09:
       12.13.0.GA:
         archived: false
@@ -1488,11 +1522,31 @@ jbt_core:
   name: JBoss Tools
   url_path_fragment: jbosstools
   streams:
-    simrel-2019-12:
-      4.14.x.Nightly:
+    simrel-2020-03:
+      4.15.x.Nightly:
         update_site_url: http://download.jboss.org/jbosstools/photon/snapshots/updates/
-      4.14.0.AM1:
+    simrel-2019-12:
+      4.14.0.Final:
         archived: false
+        release_date: 2020-03-17
+        supported_jbt_is_version: 4.11.0.Final
+        blog_announcement_url: /blog/12.14.0.ga.html
+        documentation_url: http://docs.jboss.org/tools/
+        update_site_url: http://download.jboss.org/jbosstools/photon/development/updates/
+        eclipse_name: Eclipse 4.14 (2019-12)
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            url: https://download.jboss.org/jbosstools/static/photon/stable/updates/core/jbosstools-4.14.0.Final-updatesite-core.zip
+            file_size: 1GB
+            sha256_url: http://download.jboss.org/jbosstools/static/photon/stable/updates/core/jbosstools-4.14.0.Final-updatesite-core.zip.sha256
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 209MB
+            url: https://download.jboss.org/jbosstools/static/photon/stable/updates/core/jbosstools-4.14.0.Final-src.zip
+            sha256_url: https://download.jboss.org/jbosstools/static/photon/stable/updates/core/jbosstools-4.14.0.Final-src.zip.sha256
+          - name: Release Notes
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
+      4.14.0.AM1:
+        archived: true
         release_date: 2020-01-29
         supported_jbt_is_version: 4.11.0.Final
         blog_announcement_url: /blog/4.14.0.am1.html
@@ -1512,7 +1566,7 @@ jbt_core:
             url: https://tools.jboss.org/documentation/whatsnew/index.html
     simrel-2019-09:
       4.13.0.Final:
-        archived: false
+        archived: true
         release_date: 2019-11-06
         supported_jbt_is_version: 4.11.0.Final
         blog_announcement_url: /blog/12.13.0.ga.html
