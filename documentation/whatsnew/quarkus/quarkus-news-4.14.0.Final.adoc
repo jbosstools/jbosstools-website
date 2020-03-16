@@ -74,7 +74,7 @@ Select the *Run -> Run Configurations...* menu to display the dialog allowing to
 
 image::images/quarkus9.png[]
 
-Scrool down until the *Quarkus Application* is visible and select it:
+Scroll down until the *Quarkus Application* is visible and select it:
 
 image::images/quarkus10-1.png[]
 
