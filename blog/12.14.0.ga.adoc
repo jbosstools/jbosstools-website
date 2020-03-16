@@ -2,7 +2,7 @@
 :page-layout: blog
 :page-author: jeffmaury
 :page-tags: [release, jbosstools, devstudio, jbosscentral, codereadystudio]
-:page-date: 2020-03-10
+:page-date: 2020-03-17
 
 link:/downloads/jbosstools/2019-12/4.14.0.Final.html[JBoss Tools 4.14.0] and
 link:/downloads/devstudio/2019-12/12.14.0.GA.html[Red Hat CodeReady Studio 12.14]
@@ -316,7 +316,7 @@ Select the *Run -> Run Configurations...* menu to display the dialog allowing to
 
 image::/documentation/whatsnew/quarkus/images/quarkus9.png[]
 
-Scrool down until the *Quarkus Application* is visible and select it:
+Scroll down until the *Quarkus Application* is visible and select it:
 
 image::/documentation/whatsnew/quarkus/images/quarkus10-1.png[]
 
