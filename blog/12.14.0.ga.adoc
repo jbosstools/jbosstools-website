@@ -334,7 +334,7 @@ on the *OK* button:
 
 image::/documentation/whatsnew/quarkus/images/quarkus13-1.png[]
 
-The configuration is not ready to be used. So let's start our Quarkus application by clicking
+The configuration is now ready to be used. So let's start our Quarkus application by clicking
 on the *Run* button:
 
 You should see a new Console being displayed.
