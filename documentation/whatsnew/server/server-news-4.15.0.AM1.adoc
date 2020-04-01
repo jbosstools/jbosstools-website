@@ -1,0 +1,24 @@
+= Server What's New in 4.15.0.AM1
+:page-layout: whatsnew
+:page-component_id: server
+:page-component_version: 4.15.0.AM1
+:page-product_id: jbt_core
+:page-product_version: 4.15.0.AM1
+
+== Wildfly 19 Server Adapter
+
+A server adapter has been added to work with Wildfly 19. It adds support for
+Java EE 8, Jakarta EE 8 and Microprofile 3.3.
+
+Please note that while creating a Wildfly 19 server adapter, you may get a warning.
+This is going to be fixed for the release. 
+
+related_jira::JBIDE-27092[]
+
+== EAP 7.3 Server Adapter
+
+The server adapter has been adapted to work with EAP 7.3.
+
+related_jira::JBIDE-27143[]
+
+
