@@ -1,0 +1,163 @@
+= JBoss Tools 4.15.0.AM1 for Eclipse 2020-03
+:page-layout: blog
+:page-author: jeffmaury
+:page-tags: [release, jbosstools, devstudio, jbosscentral]
+:page-date: 2020-03-31
+
+Happy to announce 4.15.0.AM1 (Developer Milestone 1) build for Eclipse 2020-03.
+
+Downloads available at link:/downloads/jbosstools/2020-03/4.15.0.AM1.html[JBoss Tools 4.15.0 AM1].
+
+== What is New?
+
+Full info is at link:/documentation/whatsnew/jbosstools/4.15.0.AM1.html[this page]. Some highlights are below.
+
+Please note that a regression has been found in the Fuse Tools. This is going
+to be fixed for the release (4.15.0.Final). Please find more information in this
+https://issues.redhat.com/browse/FUSETOOLS-3333[ticket].
+
+=== Quarkus Tools
+
+==== Language support for Kubernetes, Openshift, S2i and Docker properties
+
+There is now completion, hover, documentation and validation for kubernetes.*,
+openshift.*, s2i.*, docker.* properties
+
+image::images/quarkus20.png[]
+
+Enter `kubernetes` prefix:
+
+image::/documentation/whatsnew/quarkus/images/quarkus21.png[]
+
+Enter `openshift` prefix:
+
+image::/documentation/whatsnew/quarkus/images/quarkus22.png[]
+
+Enter `s2i` prefix:
+
+image::/documentation/whatsnew/quarkus/images/quarkus23.png[]
+
+==== Language support for MicroProfile REST Client properties
+
+Likewise, there is now completion, hover, documentation and validation for the
+MicroProfile properties from REST Client.
+
+After registering a REST client using `@RegisterRestClient` like so:
+[source,java]
+----
+package org.acme;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.core.Response;
+
+import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
+
+@RegisterRestClient
+public interface MyServiceClient {
+	@GET
+    @Path("/greet")
+    Response greet();
+}
+----
+
+The related MicroProfile Rest config properties will have language feature support
+(completion, hover, validation, etc.).
+
+image::/documentation/whatsnew/quarkus/images/quarkus24.png[]
+
+Change the Java code so that the configuration key is changed:
+[source,java]
+----
+package org.acme;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.core.Response;
+
+import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
+
+@RegisterRestClient(configKey = "myclient")
+public interface MyServiceClient {
+	@GET
+    @Path("/greet")
+    Response greet();
+}
+----
+
+and notice the code assist is changed accordingly:
+
+image::/documentation/whatsnew/quarkus/images/quarkus25.png[]
+
+==== Language support for MicroProfile Health
+
+Likewise, there is now completion, hover, documentation and validation for the
+MicroProfile Health artifacts.
+
+So if you have the following Health class:
+
+[source,java]
+----
+package org.acme;
+
+import org.eclipse.microprofile.health.Health;
+
+@Health
+public class MyHealth {
+
+}
+----
+
+you will get a validation error (as the class does not implement the `HealthCheck`
+interface:
+
+image::/documentation/whatsnew/quarkus/images/quarkus26.png[]
+
+Similarely, if you have a class that implements `HealthCheck` but is not annotated with `Health`, some workflow applies:
+
+[source,java]
+----
+package org.acme;
+
+import org.eclipse.microprofile.health.HealthCheck;
+import org.eclipse.microprofile.health.HealthCheckResponse;
+
+public class MyHealth implements HealthCheck {
+
+	@Override
+	public HealthCheckResponse call() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
+----
+
+you will get a validation error (as the class is not annotated with `Health`
+interface:
+
+image::/documentation/whatsnew/quarkus/images/quarkus27.png[]
+
+As there are several ways to fix the problem, then several quick fixes are proposed.
+
+=== Server Tools
+
+==== Wildfly 19 Server Adapter
+
+A server adapter has been added to work with Wildfly 19. It adds support for
+Java EE 8, Jakarta EE 8 and Microprofile 3.3.
+
+Please note that while creating a Wildfly 19 server adapter, you may get a warning.
+This is going to be fixed for the release. 
+
+related_jira::JBIDE-27092[]
+
+==== EAP 7.3 Server Adapter
+
+The server adapter has been adapted to work with EAP 7.3.
+
+
+
+Enjoy!
+
+Jeff Maury
