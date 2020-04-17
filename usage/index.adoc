@@ -16,6 +16,7 @@ To do that there are two separate functionalities:
   wish.
 
 <<Error reporting>>::
+  *Notice - As of April 28, 2020, JBoss Tools 4.15 will suspend AERI feature operations. Many thanks to everyone who participated!*
   Since March 2016 JBoss Tools 4.3 enables use of Eclipse AERI to detect
   errors and offer the user to submit data to us for helping in categorising,
   reporting and resolving issues. Users can submit these anonymously or
@@ -92,6 +93,8 @@ foun
 https://github.com/jbosstools/jbosstools-base/tree/master/usage[here]
 
 == Error Reporting
+
+*Notice - As of April 28, 2020, JBoss Tools 4.15 will suspend AERI feature operations. Many thanks to everyone who participated!*
 
 The error reporting uses https://wiki.eclipse.org/EPP/Logging[Eclipse AERI] which
 been successfully used by Eclipse Foundation to gather error reports from core Eclipse
