@@ -159,8 +159,8 @@ public class MyHealth implements HealthCheck {
 }
 ----
 
-you will get a validation error (as the class is not annotated with `Health`
-interface:
+you will get a validation message (as the class is not annotated with `Health`
+interface):
 
 image::/documentation/whatsnew/quarkus/images/quarkus27.png[]
 
