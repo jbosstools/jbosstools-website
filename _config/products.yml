@@ -1,4 +1,12 @@
 eclipse:
+  simrel-2020-06:
+    # TODO archive this as of Jul 2022?
+    archived: false
+    url_path_fragment: 2020-06
+    short_name: 2020-06
+    full_name: Eclipse 4.16 (2020-06)
+    download_url: http://www.eclipse.org/downloads/packages/release/2020-06/
+    requirements: Java 8
   simrel-2020-03:
     # TODO archive this as of Apr 2022?
     archived: false
@@ -156,12 +164,38 @@ devstudio:
   name: Red Hat CodeReady Studio
   url_path_fragment: devstudio
   streams:
-    simrel-2020-03:
-      12.15.x.Nightly:
+    simrel-2020-06:
+      12.16.x.Nightly:
         update_site_url: https://devstudio.redhat.com/12/snapshots/updates/
+    simrel-2020-03:
+      12.15.0.GA:
+        archived: false
+        update_site_url: https://devstudio.redhat.com/12/stable/updates/
+        marketplace_url: https://marketplace.eclipse.org/node/1616973
+        marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
+        release_date: 2020-04-28
+        supported_devstudio_is_version: 12.11.0.GA
+        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        blog_announcement_url: /tbd
+        eclipse_name: Eclipse 4.15 (2020-03)
+        installers:
+          - name: Stand-alone Installer
+            url: http://www.jboss.org/download-manager/content/origin/files/sha256/fc/fc4026c5c4de5c9d07faf04226080c8c92ad246f3e82bf45d3ea2f5ccb7cf1b1/codereadystudio-12.15.0.GA-installer-standalone.jar
+            file_size: 890MB
+        zips:
+          - name: Update site (including sources) bundle of Red Hat CodeReady Studio
+            url: http://www.jboss.org/download-manager/content/origin/files/sha256/11/114cd4947594bd24599878d13c13e26b6838e331de23c0e8defe30aa464d1c01/codereadystudio-12.15.0.GA-updatesite-core.zip
+            file_size: 922MB
+          - name: JBoss Central Zip
+            url: http://www.jboss.org/download-manager/content/origin/files/sha256/65/65d3717e8852cdcf089a7dab1a603bc871073650dedb54398488c1e6587d939e/codereadystudio-12.15.0.GA-updatesite-central.zip
+            file_size: 85MB
+          - name: Target Platform for Red Hat CodeReady Studio
+            url: https://devstudio.redhat.com/static/12/stable/updates/core/devstudio-12.15.0.GA-target-platform.zip
+            file_size: 922MB
     simrel-2019-12:
       12.14.0.GA:
-        archived: false
+        archived: true
         update_site_url: https://devstudio.redhat.com/12/stable/updates/
         marketplace_url: https://marketplace.eclipse.org/node/1616973
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
@@ -170,7 +204,7 @@ devstudio:
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         blog_announcement_url: /blog/12.14.0.ga.html
-        eclipse_name: Eclipse 4.14 (2020-03)
+        eclipse_name: Eclipse 4.14 (2019-12)
         installers:
           - name: Stand-alone Installer
             url: https://www.jboss.org/download-manager/content/origin/files/sha256/cf/cfb17bfaf3c88ea2b83e093aa113607d98dab78c31093ee371cd9c22d861d583/codereadystudio-12.14.0.GA-installer-standalone.jar
@@ -181,7 +215,7 @@ devstudio:
             file_size: 901MB
           - name: JBoss Central Zip
             url: https://www.jboss.org/download-manager/content/origin/files/sha256/df/df31dd2eba30b8528a67f34d4bbd5e7cf3b5ff96eda2da1ccb755497fc339a13/codereadystudio-12.14.0.GA-updatesite-central.zip
-            file_size:  86MB
+            file_size: 86MB
           - name: Target Platform for Red Hat CodeReady Studio
             url: https://devstudio.redhat.com/static/12/stable/updates/core/devstudio-12.14.0.GA-target-platform.zip
             file_size: 916MB
@@ -207,7 +241,7 @@ devstudio:
             file_size: 841MB
           - name: JBoss Central Zip
             url: http://www.jboss.org/download-manager/content/origin/files/sha256/b2/b251a80eed5bd63f0c6c07ae5bc216f0381f0d8e90718e660fbaf427751265bb/codereadystudio-12.13.0.GA-updatesite-central.zip
-            file_size:  85MB
+            file_size: 85MB
           - name: Target Platform for Red Hat CodeReady Studio
             url: https://devstudio.redhat.com/static/12/stable/updates/core/devstudio-12.13.0.GA-target-platform.zip
             file_size: 839MB
@@ -233,7 +267,7 @@ devstudio:
             file_size: 802MB
           - name: JBoss Central Zip
             url: http://www.jboss.org/download-manager/content/origin/files/sha256/e9/e9345f6a29d2b6adf877fc4f04ab497971a5343e1dfe27ca715f9933b9060147/codereadystudio-12.12.0.GA-updatesite-central.zip
-            file_size:  84MB
+            file_size: 84MB
           - name: Target Platform for Red Hat CodeReady Studio
             url: https://devstudio.redhat.com/static/12/stable/updates/core/devstudio-12.12.0.GA-target-platform.zip
             file_size: 872MB
@@ -259,7 +293,7 @@ devstudio:
             file_size: 817MB
           - name: JBoss Central Zip
             url: http://www.jboss.org/download-manager/content/origin/files/sha256/61/61ba66f0e19d2af9424e35b0d3ba22a4f8f7c7599110783b6d6fe80839951365/devstudio-12.11.0.GA-updatesite-central.zip
-            file_size:  77MB
+            file_size: 77MB
           - name: Target Platform for Red Hat CodeReady Studio
             url: https://devstudio.redhat.com/static/12/stable/updates/core/devstudio-12.11.0.GA-target-platform.zip
             file_size: 792MB
@@ -285,7 +319,7 @@ devstudio:
             file_size: 747MB
           - name: JBoss Central Zip
             url: http://www.jboss.org/download-manager/content/origin/files/sha256/55/55ad790792094730f455d5be022ea246ba48db78ca6e1d11470ea7d4146dcb03/devstudio-12.9.0.GA-updatesite-central.zip
-            file_size:  77MB
+            file_size: 77MB
           - name: Target Platform for JBoss Developer Studio
             url: https://devstudio.redhat.com/static/12/stable/updates/core/devstudio-12.9.0.GA-target-platform.zip
             file_size: 771MB
@@ -311,7 +345,7 @@ devstudio:
             file_size: 724MB
           - name: JBoss Central Zip
             url: http://www.jboss.org/download-manager/content/origin/files/sha256/16/1615e59bd68b73f3dff801fff015e4fc88ff80d77d9512ced8f3db51c14017e1/devstudio-12.0.0.GA-updatesite-central.zip
-            file_size:  77MB
+            file_size: 77MB
           - name: Target Platform for JBoss Developer Studio
             url: https://devstudio.redhat.com/static/12/stable/updates/core/devstudio-12.0.0.GA-target-platform.zip
             file_size: 796MB
@@ -339,7 +373,7 @@ devstudio:
             file_size: 694MB
           - name: JBoss Central Zip
             url: http://www.jboss.org/download-manager/content/origin/files/sha256/54/5497541b8f0edd12756e8f936633b04c0705c84c69f557aa53b8c19f8e99f21b/devstudio-11.3.0.GA-updatesite-central.zip
-            file_size:  78MB
+            file_size: 78MB
           - name: Target Platform for JBoss Developer Studio
             url: https://devstudio.redhat.com/static/11/stable/updates/core/devstudio-11.3.0.GA-target-platform.zip
             file_size: 808MB
@@ -361,7 +395,7 @@ devstudio:
             file_size: 670MB
           - name: JBoss Central Zip
             url: http://www.jboss.org/download-manager/content/origin/files/sha256/42/420fb1d8c8ed28c63005a0fc5d714143dee0c35a0613ad5a624b0390c6a1ff79/devstudio-11.2.0.GA-updatesite-central.zip
-            file_size:  79MB
+            file_size: 79MB
           - name: Target Platform for JBoss Developer Studio
             url: https://devstudio.redhat.com/static/11/stable/updates/core/devstudio-11.2.0.GA-target-platform.zip
             file_size: 808MB
@@ -383,7 +417,7 @@ devstudio:
             file_size: 674MB
           - name: JBoss Central Zip
             url: http://www.jboss.org/download-manager/content/origin/files/sha256/fe/fe6ddaee4e4b63542e4332df19639d7c9f722055f8aec7f9d8917fe71bcf67df/devstudio-11.1.0.GA-updatesite-central.zip
-            file_size:  78MB
+            file_size: 78MB
           - name: Target Platform for JBoss Developer Studio
             url: https://devstudio.redhat.com/static/11/stable/updates/core/devstudio-11.1.0.GA-target-platform.zip
             file_size: 808MB
@@ -406,7 +440,7 @@ devstudio:
             file_size: 673MB
           - name: JBoss Central Zip
             url: http://www.jboss.org/download-manager/content/origin/files/sha256/3e/3e13eca37abe74957b3f775178fc6fbf7827f4f9789e6ebb2731c1f424125c5a/devstudio-11.0.0.GA-updatesite-central.zip
-            file_size:  79MB
+            file_size: 79MB
           - name: Target Platform for JBoss Developer Studio
             url: https://devstudio.redhat.com/static/11/stable/updates/core/devstudio-11.0.0.GA-target-platform.zip
             file_size: 827MB
@@ -1522,11 +1556,31 @@ jbt_core:
   name: JBoss Tools
   url_path_fragment: jbosstools
   streams:
-    simrel-2020-03:
-      4.15.x.Nightly:
+    simrel-2020-06:
+      4.16.x.Nightly:
         update_site_url: http://download.jboss.org/jbosstools/photon/snapshots/updates/
-      4.15.0.AM1:
+    simrel-2020-03:
+      4.15.0.Final:
         archived: false
+        release_date: 2020-04-28
+        supported_jbt_is_version: 4.11.0.Final
+        blog_announcement_url: /tbd
+        documentation_url: http://docs.jboss.org/tools/
+        update_site_url: http://download.jboss.org/jbosstools/photon/development/updates/
+        eclipse_name: Eclipse 4.15 (2020-03)
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            url: https://download.jboss.org/jbosstools/static/photon/stable/updates/core/jbosstools-4.15.0.Final-updatesite-core.zip
+            file_size: 1GB
+            sha256_url: http://download.jboss.org/jbosstools/static/photon/stable/updates/core/jbosstools-4.15.0.Final-updatesite-core.zip.sha256
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 209MB
+            url: https://download.jboss.org/jbosstools/static/photon/stable/updates/core/jbosstools-4.15.0.Final-src.zip
+            sha256_url: https://download.jboss.org/jbosstools/static/photon/stable/updates/core/jbosstools-4.15.0.Final-src.zip.sha256
+          - name: Release Notes
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
+      4.15.0.AM1:
+        archived: true
         release_date: 2020-03-31
         supported_jbt_is_version: 4.11.0.Final
         blog_announcement_url: /blog/4.15.0.am1.html
@@ -1546,7 +1600,7 @@ jbt_core:
             url: https://tools.jboss.org/documentation/whatsnew/index.html
     simrel-2019-12:
       4.14.0.Final:
-        archived: false
+        archived: true
         release_date: 2020-03-17
         supported_jbt_is_version: 4.11.0.Final
         blog_announcement_url: /blog/12.14.0.ga.html
