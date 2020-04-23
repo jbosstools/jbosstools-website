@@ -177,7 +177,7 @@ devstudio:
         supported_devstudio_is_version: 12.11.0.GA
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
-        blog_announcement_url: /tbd
+        blog_announcement_url: /blog/12.15.0.ga.html
         eclipse_name: Eclipse 4.15 (2020-03)
         installers:
           - name: Stand-alone Installer
@@ -1564,7 +1564,7 @@ jbt_core:
         archived: false
         release_date: 2020-04-28
         supported_jbt_is_version: 4.11.0.Final
-        blog_announcement_url: /tbd
+        blog_announcement_url: /blog/12.15.0.ga.html
         documentation_url: http://docs.jboss.org/tools/
         update_site_url: http://download.jboss.org/jbosstools/photon/development/updates/
         eclipse_name: Eclipse 4.15 (2020-03)
