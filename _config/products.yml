@@ -1670,7 +1670,7 @@ jbt_core:
           - name: Update site (including sources) bundle of all JBoss Core Tools
             file_size: 841MB
             url: http://download.jboss.org/jbosstools/static/photon/stable/updates/core/jbosstools-4.12.0.Final-updatesite-core.zip
-            sha256_url: http://download.jboss.org/jbosstools/static/photon/development/updates/core/jbosstools-4.12.0.Final-updatesite-core.zip.sha256
+            sha256_url: http://download.jboss.org/jbosstools/static/photon/stable/updates/core/jbosstools-4.12.0.Final-updatesite-core.zip.sha256
           - name: Sources zip of all JBoss Core Tools
             file_size: 201MB
             url: http://download.jboss.org/jbosstools/static/photon/stable/updates/core/jbosstools-4.12.0.Final-src.zip
@@ -1693,7 +1693,6 @@ jbt_core:
           - name: Sources zip of all JBoss Core Tools
             file_size: 201MB
             url: http://download.jboss.org/jbosstools/static/photon/development/updates/core/jbosstools-4.12.0.AM1-src.zip
-            sha256_url: http://download.jboss.org/jbosstools/static/photon/development/updates/core/jbosstools-4.12.0.AM1-src.zip.sha256
           - name: Release Notes
             url: https://tools.jboss.org/documentation/whatsnew/index.html
     simrel-2019-03:
