@@ -113,7 +113,7 @@ interface:
 
 image::/documentation/whatsnew/quarkus/images/quarkus26.png[]
 
-Similarely, if you have a class that implements `HealthCheck` but is not annotated with `Health`, some workflow applies:
+Similarly, if you have a class that implements `HealthCheck` but is not annotated with `Health`, some workflow applies:
 
 [source,java]
 ----
