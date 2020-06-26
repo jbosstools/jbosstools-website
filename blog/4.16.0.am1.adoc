@@ -1,0 +1,50 @@
+= JBoss Tools 4.16.0.AM1 for Eclipse 2020-06
+:page-layout: blog
+:page-author: jeffmaury
+:page-tags: [release, jbosstools, devstudio, jbosscentral]
+:page-date: 2020-06-24
+
+Happy to announce 4.16.0.AM1 (Developer Milestone 1) build for Eclipse 2020-06.
+
+Downloads available at link:/downloads/jbosstools/2020-06/4.16.0.AM1.html[JBoss Tools 4.16.0 AM1].
+
+== What is New?
+
+Full info is at link:/documentation/whatsnew/jbosstools/4.16.0.AM1.html[this page]. Some highlights are below.
+
+=== OpenShift
+
+==== Secure URL support
+
+It is now possible to create secured URLs in the Application Explorer View.
+If you select this option, the created URL will be accessible through `https`.
+
+image::/documentation/whatsnew/openshift/images/secure-url.png[width=600]
+
+When such an URL is displayed in the tree, the icon now has a secure lock indicator.
+
+image::/documentation/whatsnew/openshift/images/secure-url1.png[width=600]
+
+=== Hibernate Tools
+
+==== Hibernate Runtime Provider Updates
+
+A number of additions and updates have been performed on the available Hibernate runtime  providers.
+
+==== Runtime Provider Updates
+
+The Hibernate 5.4 runtime provider now incorporates Hibernate Core version 5.4.17.Final and Hibernate Tools version 5.4.14.Final.
+
+The Hibernate 5.3 runtime provider now incorporates Hibernate Core version 5.3.17.Final and Hibernate Tools version 5.3.16.Final.
+
+=== Server Tools
+
+==== Wildfly 20 Server Adapter
+
+A server adapter has been added to work with Wildfly 20. It adds support for
+Java EE 8, Jakarta EE 8 and Microprofile 3.3.
+
+
+Enjoy!
+
+Jeff Maury
