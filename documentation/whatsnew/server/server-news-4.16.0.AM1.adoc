@@ -1,0 +1,14 @@
+= Server What's New in 4.16.0.AM1
+:page-layout: whatsnew
+:page-component_id: server
+:page-component_version: 4.16.0.AM1
+:page-product_id: jbt_core
+:page-product_version: 4.16.0.AM1
+
+== Wildfly 20 Server Adapter
+
+A server adapter has been added to work with Wildfly 20. It adds support for
+Java EE 8, Jakarta EE 8 and Microprofile 3.3.
+
+related_jira::JBIDE-27285[]
+
