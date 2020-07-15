@@ -11,8 +11,8 @@ A number of additions and updates have been performed on the available Hibernate
 
 === Runtime Provider Updates
 
-The Hibernate 5.4 runtime provider now incorporates Hibernate Core version 5.4.17.Final and Hibernate Tools version 5.4.14.Final.
+The Hibernate 5.4 runtime provider now incorporates Hibernate Core version 5.4.17.Final and Hibernate Tools version 5.4.17.Final.
 
-The Hibernate 5.3 runtime provider now incorporates Hibernate Core version 5.3.17.Final and Hibernate Tools version 5.3.16.Final.
+The Hibernate 5.3 runtime provider now incorporates Hibernate Core version 5.3.17.Final and Hibernate Tools version 5.3.17.Final.
 
 
