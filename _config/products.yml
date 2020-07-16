@@ -1,4 +1,12 @@
 eclipse:
+  simrel-2020-09:
+    # TODO archive this as of Oct 2022?
+    archived: false
+    url_path_fragment: 2020-09
+    short_name: 2020-09
+    full_name: Eclipse 4.17 (2020-09)
+    download_url: http://www.eclipse.org/downloads/packages/release/2020-09/
+    requirements: Java 11
   simrel-2020-06:
     # TODO archive this as of Jul 2022?
     archived: false
@@ -64,15 +72,13 @@ eclipse:
     download_url: http://www.eclipse.org/downloads/packages/release/2018-09/
     requirements: Java 8
   photon:
-    # TODO archive this as of July 2020
-    archived: false
+    archived: true
     url_path_fragment: photon
     short_name: Photon
     full_name: Eclipse Photon 4.8.0
     download_url: http://www.eclipse.org/downloads/packages/release/Photon/
     requirements: Java 8
   oxygen:
-    # TODO archive this as of Sep 2019
     archived: true
     url_path_fragment: oxygen
     short_name: Oxygen
@@ -80,7 +86,6 @@ eclipse:
     download_url: http://www.eclipse.org/downloads/packages/release/Oxygen/
     requirements: Java 8
   neon:
-    # TODO archive this as of Jul 2019
     archived: true
     url_path_fragment: neon
     short_name: Neon
@@ -164,12 +169,38 @@ devstudio:
   name: Red Hat CodeReady Studio
   url_path_fragment: devstudio
   streams:
-    simrel-2020-06:
-      12.16.x.Nightly:
+    simrel-2020-09:
+      12.17.x.Nightly:
         update_site_url: https://devstudio.redhat.com/12/snapshots/updates/
+    simrel-2020-06:
+      12.16.0.GA:
+        archived: false
+        update_site_url: https://devstudio.redhat.com/12/stable/updates/
+        marketplace_url: https://marketplace.eclipse.org/node/1616973
+        marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
+        release_date: 2020-07-21
+        supported_devstudio_is_version: 12.11.0.GA
+        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        blog_announcement_url: /blog/12.16.0.ga.html
+        eclipse_name: Eclipse 4.16 (2020-06)
+        installers:
+          - name: Stand-alone Installer
+            url: http://www.jboss.org/download-manager/content/origin/files/sha256/e0/e010caec8c1c24478b9f0ea93c6ac621546b6fcd6e99e3fed1b2bf8a3567c519/codereadystudio-12.16.0.GA-installer-standalone.jar
+            file_size: 895MB
+        zips:
+          - name: Update site (including sources) bundle of Red Hat CodeReady Studio
+            url: http://www.jboss.org/download-manager/content/origin/files/sha256/e5/e53d392ffd6ed722cd1cce85cf1a4fe659e9c5afe4b980bb38324b8bab6801f6/codereadystudio-12.16.0.GA-updatesite-core.zip
+            file_size: 927MB
+          - name: JBoss Central Zip
+            url: http://www.jboss.org/download-manager/content/origin/files/sha256/89/89bb662f694883969b3ef7e7914f428ae57a866f80a42d976ecc156c90f8c343/codereadystudio-12.16.0.GA-updatesite-central.zip
+            file_size: 99MB
+          - name: Target Platform for Red Hat CodeReady Studio
+            url: https://devstudio.redhat.com/static/12/stable/updates/core/devstudio-12.16.0.GA-target-platform.zip
+            file_size: 923MB
     simrel-2020-03:
       12.15.0.GA:
-        archived: false
+        archived: true
         update_site_url: https://devstudio.redhat.com/12/stable/updates/
         marketplace_url: https://marketplace.eclipse.org/node/1616973
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
@@ -1556,11 +1587,31 @@ jbt_core:
   name: JBoss Tools
   url_path_fragment: jbosstools
   streams:
-    simrel-2020-06:
-      4.16.x.Nightly:
+    simrel-2020-09:
+      4.17.x.Nightly:
         update_site_url: http://download.jboss.org/jbosstools/photon/snapshots/updates/
-      4.16.0.AM1:
+    simrel-2020-06:
+      4.16.0.Final:
         archived: false
+        release_date: 2020-07-21
+        supported_jbt_is_version: 4.11.0.Final
+        blog_announcement_url: /blog/12.16.0.ga.html
+        documentation_url: http://docs.jboss.org/tools/
+        update_site_url: http://download.jboss.org/jbosstools/photon/stable/updates/
+        eclipse_name: Eclipse 4.16 (2020-06)
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            url: https://download.jboss.org/jbosstools/static/photon/stable/updates/core/jbosstools-4.16.0.Final-updatesite-core.zip
+            file_size: 1GB
+            sha256_url: http://download.jboss.org/jbosstools/static/photon/stable/updates/core/jbosstools-4.16.0.Final-updatesite-core.zip.sha256
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 210MB
+            url: https://download.jboss.org/jbosstools/static/photon/stable/updates/core/jbosstools-4.16.0.Final-src.zip
+            sha256_url: https://download.jboss.org/jbosstools/static/photon/stable/updates/core/jbosstools-4.16.0.Final-src.zip.sha256
+          - name: Release Notes
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
+      4.16.0.AM1:
+        archived: true
         release_date: 2020-06-24
         supported_jbt_is_version: 4.11.0.Final
         blog_announcement_url: /blog/4.16.0.am1.html
@@ -1580,7 +1631,7 @@ jbt_core:
             url: https://tools.jboss.org/documentation/whatsnew/index.html
     simrel-2020-03:
       4.15.0.Final:
-        archived: false
+        archived: true
         release_date: 2020-04-28
         supported_jbt_is_version: 4.11.0.Final
         blog_announcement_url: /blog/12.15.0.ga.html
