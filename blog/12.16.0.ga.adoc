@@ -1,0 +1,349 @@
+= JBoss Tools and Red Hat CodeReady Studio for Eclipse 2020-06
+:page-layout: blog
+:page-author: jeffmaury
+:page-tags: [release, jbosstools, devstudio, jbosscentral, codereadystudio]
+:page-date: 2020-07-21
+
+link:/downloads/jbosstools/2020-06/4.16.0.Final.html[JBoss Tools 4.16.0] and
+link:/downloads/devstudio/2020-06/12.16.0.GA.html[Red Hat CodeReady Studio 12.16]
+for Eclipse 2020-06 are here waiting for you. Check it out!
+
+image::/blog/images/crstudio12.png[]
+
+== Installation
+
+Red Hat CodeReady Studio comes with everything pre-bundled in its installer. Simply download it from our https://developers.redhat.com/products/codeready-studio/overview/[Red Hat CodeReady product page] and run it like this:
+
+    java -jar codereadystudio-<installername>.jar
+
+JBoss Tools or Bring-Your-Own-Eclipse (BYOE) CodeReady Studio require a bit more:
+
+This release requires at least Eclipse 4.16 (2020-06) but we recommend
+using the latest https://www.eclipse.org/downloads/packages/release/2020-06/r/eclipse-ide-enterprise-java-developers[Eclipse 4.16 2020-06 JEE Bundle]
+since then you get most of the dependencies preinstalled.
+
+Once you have installed Eclipse, you can either find us on the Eclipse Marketplace under "JBoss Tools" or "Red Hat CodeReady Studio".
+
+For JBoss Tools, you can also use our update site directly.
+
+    http://download.jboss.org/jbosstools/photon/stable/updates/
+
+== What is new?
+
+Our main focus for this release was a new tooling for the Quarkus framework, improvements for container based development and bug fixing.
+Eclipse 2020-06 itself has a lot of new cool stuff but let me highlight just a few updates in both Eclipse 2020-06 and JBoss Tools plugins that I think are worth mentioning.
+
+=== OpenShift
+
+==== Secure URL support
+
+It is now possible to create secured URLs in the Application Explorer View.
+If you select this option, the created URL will be accessible through `https`.
+
+image::/documentation/whatsnew/openshift/images/secure-url.png[width=600]
+
+When such an URL is displayed in the tree, the icon now has a secure lock indicator.
+
+image::/documentation/whatsnew/openshift/images/secure-url1.png[width=600]
+
+
+==== OpenShift Container Platform 4.5 support
+
+With the new OpenShift Container Platform (OCP) 4.5 now available, JBoss Tools
+is compatible with this major release in a transparent way. Just define your
+connection to your OCP 4.4 based cluster as you did before for an OCP 3 cluster,
+and use the tooling !
+
+=== Quarkus
+
+=== Server Tools
+
+==== Wildfly 20 Server Adapter
+
+A server adapter has been added to work with Wildfly 20. It adds support for
+Java EE 8, Jakarta EE 8 and Microprofile 3.3.
+
+=== Hibernate Tools
+
+==== Hibernate Runtime Provider Updates
+
+A number of additions and updates have been performed on the available Hibernate runtime  providers.
+
+===== Runtime Provider Updates
+
+The Hibernate 5.4 runtime provider now incorporates Hibernate Core version 5.4.17.Final and Hibernate Tools version 5.4.17.Final.
+
+The Hibernate 5.3 runtime provider now incorporates Hibernate Core version 5.3.17.Final and Hibernate Tools version 5.3.17.Final.
+
+
+=== Platform
+
+==== Views, Dialogs and Toolbar
+
+===== Create missing folders from the New File wizard
+
+You can now create missing folders directly via the New File wizard, without explicitly creating folders beforehand.
+
+image::https://www.eclipse.org/eclipse/news/4.16/images/file-and-folder.png[]
+
+==== Text Editors
+
+===== Support for ligatures on Windows
+
+Eclipse now supports font ligatures on Windows. It was already supported on Linux and macOS. You can specify the font with ligatures to be used by the *Text editors* using the preference:
+
+*General > Appearance > Colors and Font > Basic > Text Font*
+
+Screenshot of ligatures rendered in the Java Editor on Windows 10:
+
+image::https://www.eclipse.org/eclipse/news/4.16/images/eclipse_ligatures_support_win.png[]
+
+==== Themes and Styling 
+
+===== Native dark scrollbars in Windows dark theme
+
+The Eclipse dark theme now uses the native dark scrollbars and retired the software solution for the editor area. 
+
+image::https://www.eclipse.org/eclipse/news/4.16/images/dark-theme-scrollbars.png[]
+
+===== Eclipse toolbar's styling on Windows aligned with Win 10
+
+The default Eclipse light theme has been updated to align better with the Windows 10 default theme.
+
+Old: 
+
+image::https://www.eclipse.org/eclipse/news/4.16/images/old-light-theme.png[]
+
+New:
+
+image::https://www.eclipse.org/eclipse/news/4.16/images/new-light-theme.png[]
+
+===== Square tabs for views
+
+Square tabs are now used by default for the views in the Eclipse IDE.
+
+image::https://www.eclipse.org/eclipse/news/4.16/images/dark_theme_square_tabs.png[]
+
+In order to switch back to using round tabs, a preference has been added.
+
+image::https://www.eclipse.org/eclipse/news/4.16/images/round_tabs_preference_option.png[]
+
+===== Consistent toolbar colors in dark theme
+
+The toolbar styling in the dark theme is now consistent.
+
+image::https://www.eclipse.org/eclipse/news/4.16/images/dark-theme-toolbar.png[]
+
+==== Preferences
+
+===== Verify installation operations against current JRE
+
+A new option (on by default) is available in the *Install/Update* preference page: _Verify provisioning operation is compatible with current running JRE_. This enables some extra check when installing, updating or uninstalling content using the standard dialogs so the operation will fail with a useful message if the units you're installing require a newer or incompatible Java runtime than the one that's currently in use to run the IDE.
+
+image::https://www.eclipse.org/eclipse/news/4.16/images/incompatibleJREPref.png[]
+
+Here is how the error message looks like, for example when you're trying to install a unit that requires Java 14 and you're running the Eclipse IDE with an older Java version: 
+
+image::https://www.eclipse.org/eclipse/news/4.16/images/incompatibleJREMessage.png[]
+
+===== Preference to inline rename resource
+
+The preference to rename resource inline or using dialog was added in 4.15 as a radio button and has now been changed to a check box.
+
+image::https://www.eclipse.org/eclipse/news/4.16/images/inlineRenameResource.png[]
+
+
+==== Debug
+
+==== 'Select All' and 'Deselect All' for Import breakpoints wizard
+
+You can now use *Select All* or *Deselect All* buttons to select or deselect all the breakpoint markers during import of breakpoints.
+
+image::https://www.eclipse.org/eclipse/news/4.16/images/import-selectall.png[]
+
+==== General Updates
+
+===== Show key bindings when command is invoked
+
+For presentations, screen casts and learning purposes, it is very helpful to show the corresponding key binding when a command is invoked. This was added some releases ago.
+
+image::https://www.eclipse.org/eclipse/news/4.16/images/show_keybindings.png[]
+
+It is now possible to enable this feature separately for keyboard interaction and mouse clicks. So you can enable it for mouse clicks only, for keyboard interaction only or for both. Enabling this only for mouse clicks is very helpful for users who want to learn existing key bindings.
+
+You can enable this on the *Preferences* dialog via the _Show key binding when command is invoked_ group on the *General > Keys* preference page. To change this setting quickly the command 'Toggle Show Key Bindings' can be used (e.g. via the find actions dialog). 
+
+image::https://www.eclipse.org/eclipse/news/4.16/images/show_keybindings_pref.png[]
+
+===== Ant 1.10.8
+
+Eclipse has adopted Ant version 1.10.8. 
+
+
+=== Java Developement Tools (JDT)
+
+==== Java 14 Support
+
+===== Java 14
+
+Java™ 14 is available and Eclipse JDT supports Java 14 for the Eclipse 4.16 release. 
+
+The release notably includes the following Java 14 features:
+
+- JEP 361: Switch Expressions (Standard).
+- JEP 359: Records (Preview).
+- JEP 368: Text Blocks (Second Preview).
+- JEP 305: Pattern Matching for Instanceof (Preview). 
+
+Please note that preview option should be on for preview language features.
+For an informal introduction of the support, please refer to https://wiki.eclipse.org/Java14/Examples[Java 14 Examples wiki]. 
+
+===== Set JDK Compliance to 14
+
+You can set the JDK compliance to 14 and enable the preview features in *Preferences > Java > Compiler*:
+
+image::https://www.eclipse.org/eclipse/news/4.16/images/jdk-compliance-14.png[]
+
+===== Template to create new record
+
+You can use the `new_record` template to create a record in an empty `.java` file:
+
+image::https://www.eclipse.org/eclipse/news/4.16/images/newrecord.png[]
+
+===== Record Creation Wizard
+
+You can create a new record using the Record creation wizard that can be opened by:
+
+- Right Click on the *Project > New > Record*
+- Right Click on the *Project > New > Other and search for Record*
+- Right Click on the *Project > New > Other > Java > Record*
+
+The Record creation wizard comes up as shown below. 
+
+image::https://www.eclipse.org/eclipse/news/4.16/images/fileAddJ14RecordCreation.png[]
+
+_Note: In older workspaces the "Record" entry may not appear directly under the "New" menu in the Java perspective. To resolve this, either use a new workspace or launch eclipse with the option `-clearPersistedState` for your existing workspace._
+
+==== Enable preview features
+
+You can now quickly enable the preview features on an applicable Java project by right-clicking on it and selecting *Configure > Enable preview features*:
+
+image::https://www.eclipse.org/eclipse/news/4.16/images/enable-preview.png[]
+
+You can also change the default severity (warning) of the preview features compile problem in the opened *Project properties* dialog:
+
+image::https://www.eclipse.org/eclipse/news/4.16/images/preview-severity.png[]
+
+
+==== Java Editor
+
+===== Non-blocking Java code completion
+
+By default, code completions in the *Java editor* are now configured to be computed (when possible) in a separate non-UI thread in order to prevent UI freezes in case of long computations.
+
+Users can restore the legacy behavior in *Preferences > Java > Editor > Content Assist > Advanced* by unchecking the enable non-blocking completion checkbox; integrators can change the value of the `org.eclipse.jdt.ui.content_assist_noUIThread_computation` to `false`.
+
+image::https://www.eclipse.org/eclipse/news/4.16/images/jdtNonBlockingCompletionPref.png[]
+
+===== Merge control workflows
+
+A new clean up has been added that merges conditions of if/else if/else that have the same blocks when it is possible.
+
+The code in the blocks should be the same. An else block may be different and won't be merged. One condition may be made opposite to allow the merge. The conditions are merged with `||` to keep the control workflow the same. Parenthesis is added to avoid priority issue. Most of the brackets, formatting and comments are kept.
+
+To select the clean up, invoke *Source > Clean Up...*, use a custom profile, and on the *Configure...* dialog select *Merge conditions of if/else if/else that have the same blocks* on the *Unnecessary Code* tab.
+
+image::https://www.eclipse.org/eclipse/news/4.16/images/merge-control-workflows-preferences.png[]
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.16/images/merge-control-workflows-before.png[]
+
+You get this after the clean up:
+
+image::https://www.eclipse.org/eclipse/news/4.16/images/merge-control-workflows-after.png[]
+
+===== Local variable type inference
+
+A new clean up has been added that makes use of the `var`  keyword for the local variable when it is possible and is enabled only for Java 10 and higher.
+
+The clean up replaces the explicit variable type by `var` when this type can be known by the variable initialization. It also replaces the diamond operator in instance creation by a parameterized type. Eventually, it adds a suffix to initialization number literal to match the variable type. In any case, the variable type is still exactly the same.
+
+To select the clean up, invoke *Source > Clean Up...*, use a custom profile, and on the *Configure...* dialog select *Use the local variable type inference* on the *Code Style* tab.
+
+image::https://www.eclipse.org/eclipse/news/4.16/images/var-preferences.png[]
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.16/images/var-before.png[]
+
+You get this after the clean up:
+
+image::https://www.eclipse.org/eclipse/news/4.16/images/var-after.png[]
+
+===== Prefer lazy logical operators
+
+A new clean up has been added that replaces eager logical operators by lazy operators when it is possible.
+
+The clean up respectively replaces `|` and & by `||` and `&&` when the following operands can't make side effect. Any assignments, increments, decrements, object creations or method call may cause side effect. So, in such case, it will keep the eager operator. It also leaves the binary operations as it is.
+
+To select the clean up, invoke *Source > Clean Up...*, use a custom profile, and on the *Configure...* dialog select *Use the lazy logical operator* on the *Code Style* tab.
+
+image::https://www.eclipse.org/eclipse/news/4.16/images/lazy-logical-preferences.png[]
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.16/images/lazy-logical-before.png[]
+
+You get this after the clean up:
+
+image::https://www.eclipse.org/eclipse/news/4.16/images/lazy-logical-after.png[]
+
+===== Quick fix to change return statement to yield statement in Switch Expression
+
+A quick fix has been added to convert a `return` statement in a `Switch Expression` to `yield` statement.
+
+image::https://www.eclipse.org/eclipse/news/4.16/images/quickfix-switch-expression-return-to-yield.png[]
+
+==== Java Formatter
+
+===== Record declarations support
+
+A lot of new settings have appeared in the formatter profile to control the formatting of *record declarations*. They are very similar to existing settings related to other type declarations. To see them all, you can use the filter field and type in the keyword `record`.
+
+image::https://www.eclipse.org/eclipse/news/4.16/images/formatter-records.png[]
+
+==== Debug
+
+===== Synthetic variables inspection
+
+The *JDT debugger* is now capable of inspecting synthetic variables which are generated by the Java compilers. One such example is debugging the following method ` java.util.stream.ReferencePipeline.filter(Predicate<? super P_OUT>)`  and inspecting the predicate variable.
+
+Before:
+
+image::https://www.eclipse.org/eclipse/news/4.16/images/synthetic_var_without_fix.png[]
+
+Now:
+
+image::https://www.eclipse.org/eclipse/news/4.16/images/synthetic_var_with_fix.png[]
+
+==== Preferences
+
+===== Substring Matching
+
+The content assist preference option *Show Substring Matches* has been removed and the feature is now always enabled.
+
+Any application or user can still disable it using the VM property: *-Djdt.codeCompleteSubstringMatch=false*
+
+
+=== And more...
+
+You can find more noteworthy updates in on link:/documentation/whatsnew/jbosstools/4.16.0.Final.html[this page].
+
+== What is next?
+
+Having JBoss Tools 4.16.0 and Red Hat CodeReady Studio 12.16 out we are already working on the next release for Eclipse 2020-09.
+
+Enjoy!
+
+Jeff Maury
