@@ -98,7 +98,7 @@ GEM
     http-cookie (1.0.3)
       domain_name (~> 0.5)
     http_parser.rb (0.6.0)
-    json (2.1.0)
+    json (2.3.1)
     kramdown (1.0.2)
     less (2.6.0)
       commonjs (~> 0.2.7)
