@@ -1,0 +1,46 @@
+= JBoss Tools 4.17.0.AM1 for Eclipse 2020-09
+:page-layout: blog
+:page-author: jeffmaury
+:page-tags: [release, jbosstools, devstudio, jbosscentral]
+:page-date: 2020-09-15
+
+Happy to announce 4.17.0.AM1 (Developer Milestone 1) build for Eclipse 2020-09.
+
+Downloads available at link:/downloads/jbosstools/2020-09/4.17.0.AM1.html[JBoss Tools 4.17.0 AM1].
+
+== What is New?
+
+Full info is at link:/documentation/whatsnew/jbosstools/4.17.0.AM1.html[this page]. Some highlights are below.
+
+=== Quarkus
+
+==== Support for YAML configuration file
+
+Quarkus supports configuration through YAML format. For more information,
+see the https://quarkus.io/guides/config#yaml[Quarkus documentation]
+
+In order to use it, follow the steps:
+
+- create a Quarkus project using the new Quarkus wizard
+- create a new `application.yaml` or `application.yml` next to the `application.properties` in `src/main/resources`
+
+The editor will open and you will get content assist and syntax validation.
+
+=== Hibernate Tools
+
+A number of additions and updates have been performed on the available Hibernate runtime  providers.
+
+==== New Runtime Provider
+
+A new runtime provider has been added for Hibernate 6.0. It incorporates Hibernate Core version 6.0.0.Alpha6 and Hibernate Tools version 6.0.0.Alpha2.
+
+==== Runtime Provider Updates
+
+The Hibernate 5.4 runtime provider now incorporates Hibernate Core version 5.4.21.Final and Hibernate Tools version 5.4.21.Final.
+
+The Hibernate 5.3 runtime provider now incorporates Hibernate Core version 5.3.18.Final and Hibernate Tools version 5.3.18.Final.
+
+
+Enjoy!
+
+Jeff Maury
