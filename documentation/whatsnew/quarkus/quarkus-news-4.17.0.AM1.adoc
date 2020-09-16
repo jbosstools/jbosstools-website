@@ -1,0 +1,18 @@
+= Quarkus What's New in 4.17.0.AM1
+:page-layout: whatsnew
+:page-component_id: quarkus
+:page-component_version: 4.17.0.AM1
+:page-product_id: jbt_core
+:page-product_version: 4.17.0.AM1
+
+== Support for YAML configuration file
+
+Quarkus supports configuration through YAML format. For more information,
+see the https://quarkus.io/guides/config#yaml[Quarkus documentation]
+
+In order to use it, follow the steps:
+
+- create a Quarkus project using the new Quarkus wizard
+- create a new `application.yaml` or `application.yml` next to the `application.properties` in `src/main/resources`
+
+The editor will open and you will get content assist and syntax validation.
