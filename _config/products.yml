@@ -868,7 +868,6 @@ devstudio:
             md5_url: https://devstudio.redhat.com/updates/8.0.0/jboss-devstudio-8.1.0.Beta1-target-platform.zip.MD5
       8.0.2.GA:
         archived: true
-        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         release_date: 2015-01-12
         supported_devstudio_is_version: 8.0.0.GA
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
@@ -888,7 +887,6 @@ devstudio:
             md5_url: https://devstudio.redhat.com/static/updates/8.0.0/jboss-devstudio-8.0.2.GA-updatesite-core.zip.MD5
       8.0.1.GA:
         archived: true
-        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         release_date: 2014-12-15
         supported_devstudio_is_version: 8.0.0.Beta2
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
@@ -908,7 +906,6 @@ devstudio:
             #md5_url: n/a
       8.0.0.GA:
         archived: true
-        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         release_date: 2014-10-21
         supported_devstudio_is_version: 8.0.0.Beta2
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
@@ -927,7 +924,6 @@ devstudio:
             url: https://www.jboss.org/download-manager/content/origin/files/sha256/da/da21079c31af1a7dd8ff7dc05a4003fa818307eb3cdad6e10139437b5022d161/jboss-devstudio-8.0.0.GA-v20141020-1042-B317-updatesite-core.zip
             #md5_url: n/a
       8.0.0.CR1:
-        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         release_date: 2014-09-18
         archived: true
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
@@ -946,7 +942,6 @@ devstudio:
             url: https://www.jboss.org/download-manager/content/origin/files/sha256/ea/ea08cbdc79fa982989d578cbb1c39cc3e42dd36b5cee598411d3814d4148c96b/jboss-devstudio-8.0.0.CR1-v20140915-0805-B246-updatesite-core.zip
             #md5_url: n/a
       8.0.0.Beta3:
-        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         release_date: 2014-07-28
         archived: true
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
@@ -966,7 +961,6 @@ devstudio:
             #md5_url: n/a
 
       8.0.0.Beta2:
-        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
         release_date: 2014-06-20
         archived: true
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
@@ -2826,7 +2820,6 @@ jbt_core:
         update_site_url: http://download.jboss.org/jbosstools/updates/stable/luna/
         marketplace_url: http://marketplace.eclipse.org/node/1617241
         marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1617241
-        archived: false
         release_date: 2015-04-02
         supported_jbt_is_version: 4.2.7.Final
         blog_announcement_url: /blog/2015-04-02-devstudio-8.1.0.GA-for-luna.html
