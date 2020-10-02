@@ -1,0 +1,376 @@
+= JBoss Tools and Red Hat CodeReady Studio for Eclipse 2020-09
+:page-layout: blog
+:page-author: jeffmaury
+:page-tags: [release, jbosstools, devstudio, jbosscentral, codereadystudio]
+:page-date: 2020-10-13
+
+link:/downloads/jbosstools/2020-09/4.17.0.Final.html[JBoss Tools 4.17.0] and
+link:/downloads/devstudio/2020-09/12.17.0.GA.html[Red Hat CodeReady Studio 12.17]
+for Eclipse 2020-09 are here waiting for you. Check it out!
+
+image::/blog/images/crstudio12.png[]
+
+== Installation
+
+Red Hat CodeReady Studio comes with everything pre-bundled in its installer. Simply download it from our https://developers.redhat.com/products/codeready-studio/overview/[Red Hat CodeReady product page] and run it like this:
+
+    java -jar codereadystudio-<installername>.jar
+
+JBoss Tools or Bring-Your-Own-Eclipse (BYOE) CodeReady Studio require a bit more:
+
+This release requires at least Eclipse 4.17 (2020-09) but we recommend
+using the latest https://www.eclipse.org/downloads/packages/release/2020-09/r/eclipse-ide-enterprise-java-developers[Eclipse 4.17 2020-06 JEE Bundle]
+since then you get most of the dependencies preinstalled.
+
+Once you have installed Eclipse, you can either find us on the Eclipse Marketplace under "JBoss Tools" or "Red Hat CodeReady Studio".
+
+For JBoss Tools, you can also use our update site directly.
+
+    http://download.jboss.org/jbosstools/photon/stable/updates/
+
+== What is new?
+
+Our main focus for this release was an improved tooling for the Quarkus framework, improvements for container based development and bug fixing.
+Eclipse 2020-09 itself has a lot of new cool stuff but let me highlight just a few updates in both Eclipse 2020-09 and JBoss Tools plugins that I think are worth mentioning.
+
+=== OpenShift
+
+==== OpenShift Container Platform 4.6 support
+
+With the new OpenShift Container Platform (OCP) 4.6 now available, JBoss Tools
+is compatible with this major release in a transparent way. Just define your
+connection to your OCP 4.6 based cluster as you did before for an OCP 3 cluster,
+and use the tooling !
+
+=== Quarkus
+
+==== Support for YAML configuration file
+
+Quarkus supports configuration through YAML format. For more information,
+see the https://quarkus.io/guides/config#yaml[Quarkus documentation]
+
+In order to use it, follow the steps:
+
+- create a Quarkus project using the new Quarkus wizard
+- create a new `application.yaml` or `application.yml` next to the `application.properties` in `src/main/resources`
+
+The editor will open and you will get content assist and syntax validation.
+
+
+=== Server Tools
+
+==== Wildfly 21 Server Adapter
+
+A server adapter has been added to work with Wildfly 21. It adds support for
+Java EE 8, Jakarta EE 8 and Microprofile 3.3.
+
+=== Hibernate Tools
+
+==== Hibernate Runtime Provider Updates
+
+A number of additions and updates have been performed on the available Hibernate runtime  providers.
+
+===== Runtime Provider Updates
+
+The Hibernate 5.4 runtime provider now incorporates Hibernate Core version 5.4.21.Final and Hibernate Tools version 5.4.21.Final.
+
+The Hibernate 5.3 runtime provider now incorporates Hibernate Core version 5.3.18.Final and Hibernate Tools version 5.3.18.Final.
+
+
+=== Platform
+
+==== Views, Dialogs and Toolbar
+
+===== Adjustable view fonts
+
+The font used for tree and table views can now be customized with a font preference. This preference is called "Tree and Table font for views" and can be found in Window > Preferences > General > Appearance > Colors and Fonts under the "View and Editor Folders" category. 
+
+image::https://www.eclipse.org/eclipse/news/4.17/images/adjustable-view-font-preference.png[]
+
+The Project Explorer is an example of a view that gets affected by this font preference. 
+
+image::https://www.eclipse.org/eclipse/news/4.17/images/adjustable-view-font.png[]
+
+===== Remove gifs from views
+
+Several years ago, the icons of the platform views were migrated to .png files. As already opened views store their reference to the image, the .gif files were left in the code. These have been removed now. If you are using the same workspace for multiple years and view icons are missing due to that removal, you have to close and reopen the view. 
+
+===== Default changed for confirm on exit for last window
+
+By default, Eclipse now closes if you select the close icon on the last window without additional confirmation dialog. If you want to get a confirmation dialog, you can enable that via Window > Preferences > General > Startup and Shutdown > Confirm exit when closing last window.
+
+===== Workbench models created in releases before 2014 are not automatically converted
+
+Workbench models (workbench.xmi) stored in workspaces created with releases before 2014 and never opened with a later release are not automatically converted anymore if opened with the 2020-09 release. 
+
+==== Text Editors
+
+===== Multiple Last Edit Locations
+
+*Previous Edit Location* navigation (formerly named Last Edit Location) is now expanded to remember multiple edit locations.
+
+The last 15 edit locations are now remembered. For convenience, similar edit locations in close proximity to each other are also merged so that each of the 15 remembered locations remains distinct.
+
+image::https://www.eclipse.org/eclipse/news/4.17/images/multiple-last-edit-locations.png[]
+
+How to use
+
+Two new keyboard shortcuts are introduced:
+
+- *Ctrl+Alt+LEFT_ARROW* (or on Mac *Ctrl+Opt+LEFT_ARROW*) navigates to the most recent edit location, just as *Ctrl+Q* always has in prior releases.
++
+However, now continuing to hold *Ctrl+Alt* and then pressing *LEFT_ARROW* again begins a traversal through the history of prior edit locations, with each additional press of *LEFT_ARROW* moving a step further back in history. Once traversal stops, future *Ctrl+Alt+LEFT_ARROW* actions are now temporarily anchored to this older historical location for easy exploration of that code region.
++
+The classic *Ctrl+Q* mapping has been likewise enhanced with this new functionality, so that *Ctrl+Q* and *Ctrl+Alt+LEFT_ARROW* are synonymous.
+- *Ctrl+Alt+RIGHT_ARROW* (or on Mac *Ctrl+Opt+RIGHT_ARROW*) conversely moves the anchor forward through edit history, so after traversing backward with *Ctrl+Alt+LEFT_ARROW*, you can go forward again by holding *Ctrl+Alt* and repeatedly pressing *RIGHT_ARROW*. A new menu item has likewise been added for this forward navigation as well.
+
+New edit locations are always inserted at the end, so original historical ordering is always maintained. New edits also reset the last location "anchor" back to the most recent edit, so that pressing *Ctrl+Alt+LEFT_ARROW* once again brings you to the most recent edit rather than a historical one.
+
+===== Printing editor content adds date in header
+
+Printing editor content now includes the current date in addition to the filename in the header of each printed page. 
+
+image::https://www.eclipse.org/eclipse/news/4.17/images/print-header-date.png[]
+
+
+==== Themes and Styling 
+
+===== Improved GTK light theme
+
+The GTK light theme has been updated to align better with the default GTK3 Adwaita theme.
+
+Old:
+
+image::https://www.eclipse.org/eclipse/news/4.17/images/gtk-light-old.png[]
+
+New:
+
+image::https://www.eclipse.org/eclipse/news/4.17/images/gtk-light-new.png[]
+
+===== Windows menus are styled in the dark theme
+
+SWT now natively styles the menu under Windows in the dark theme.
+
+Old: 
+
+image::https://www.eclipse.org/eclipse/news/4.17/images/menu-background-old.png[]
+
+New:
+
+image::https://www.eclipse.org/eclipse/news/4.17/images/menu-background-dark.png[]
+
+===== Dropbox boxes (Combos) are styled under Windows in the dark theme
+
+SWT now natively styles drop-down boxes under Windows in the dark theme.
+
+Old: 
+
+image::https://www.eclipse.org/eclipse/news/4.17/images/combo-win32-dark-old.png[]
+
+New:
+
+image::https://www.eclipse.org/eclipse/news/4.17/images/combo-win32-dark-new.png[]
+
+===== Selection highlighter for dark theme
+
+The active tab selection highlighter has been enabled for Eclipse's default dark themes. This will help users identify which tab is active at a glance. 
+
+image::https://www.eclipse.org/eclipse/news/4.17/images/dark-selection-highlighter.png[]
+
+===== Selection highlighter for tables under Windows in the dark theme
+
+SWT now natively supports selection highlighter in tables under Windows in the dark theme. 
+
+image::https://www.eclipse.org/eclipse/news/4.17/images/selection-highlight.png[]
+
+
+==== Debug
+
+===== Filter null bytes from console output
+
+The interpretation of ASCII control characters in the *Console View* was extended to recognize the characters: `\0` - null byte. If interpretation is enabled, any null byte will be stripped and not shown in console view. This is most relevant for the Linux platform where a null byte in console view causes anything after it on the same line to be not rendered.
+
+This feature is disabled by default. You can enable it on the *Run/Debug > Console* preference page. 
+
+
+==== General Updates
+
+===== Builds for Linux AArch64 (aka Arm64) added
+
+Binaries for Linux AArch64 (Arm64) are available for testing. With the raising popularity of this architecture people can continue using the Eclipse IDE even when changing their machine.
+
+
+=== Java Developement Tools (JDT)
+
+==== Java 15 Support
+
+===== Java 15
+
+Java 15 is out and Eclipse JDT supports Java 15 for 4.17 via Marketplace.
+
+The release notably includes the following Java 15 features:
+
+- JEP 378: Text Blocks (Standard).
+- JEP 384: Records (Second Preview).
+- JEP 375: Pattern Matching for Instanceof (Second Preview).
+- JEP 360: Sealed Classes (Preview).
+
+Please note that preview option should be on for preview language features. For an informal introduction of the support, please refer to https://wiki.eclipse.org/Java15/Examples[Java 15 Examples wiki]. 
+
+==== JUnit
+
+===== Collapse all nodes in JUnit view
+
+JUnit view now provides a context-menu option to collapse all nodes: 
+
+image::https://www.eclipse.org/eclipse/news/4.17/images/junit-collapse-all.png[]
+
+===== Sort test results by execution time
+
+JUnit view now provides the ability to sort results by execution time. By default, results will be sorted by execution order. Choosing *Sort By > Execution Time* from the *JUnit View* menu will reorder the results once all tests are complete. While tests are still running, they will be shown in execution order.
+
+image::https://www.eclipse.org/eclipse/news/4.17/images/junit-sort-time-before.png[]
+
+Sorting by execution order results in:
+
+image::https://www.eclipse.org/eclipse/news/4.17/images/junit-sort-time-after.png[]
+
+==== Java Editor
+
+===== Substring/Subword matches for types
+
+Content Assist now fully supports both substring and subword matches for types: 
+
+image::https://www.eclipse.org/eclipse/news/4.17/images/substring-types.png[]
+
+Substring matches are always shown and subword matches can be enabled/disabled with the existing *Show subword matches* option on the *Java > Editor > Content Assist* preference page. 
+
+===== Optimization tab
+
+A new tab has been added that gathers cleanups that improve the time performance: the existing lazy operator cleanup and the regex precompiler cleanup.
+
+image::https://www.eclipse.org/eclipse/news/4.17/images/regex-preferences.png[]
+
+===== Objects.equals()
+
+A new clean up has been added that makes use of `Objects.equals()` to implement the `equals(Object)` method.
+
+It reduces the code and improves the reading. The cleanup is only available for Java 7 or higher. Although this kind of comparison is almost exclusively seen in the `equals(Object)` method, it can also reduce code in other methods.
+
+To select the clean up, invoke *Source > Clean Up...*, use a custom profile, and on the *Configure...* dialog select *Use Objects.equals() in the equals method implementation* on the *Unnecessary Code* tab.
+
+image::https://www.eclipse.org/eclipse/news/4.17/images/objects-equals-preferences.png[]
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.17/images/objects-equals-before.png[]
+
+You get this after the clean up:
+
+image::https://www.eclipse.org/eclipse/news/4.17/images/objects-equals-after.png[]
+
+===== Precompiles the regular expressions
+
+A new clean up has been added that optimizes the regular expression execution by precompiling it.
+
+It replaces some usages of `java.lang.String` by usages of `java.util.regex.Pattern`. The cleanup is done only if it is sure that the string is used as a regular expression. If there is any doubt, nothing is done. The regular expression must be explicitly used several times to be sure the cleanup is useful.
+
+To select the clean up, invoke *Source > Clean Up...*, use a custom profile, and on the *Configure...* dialog select *Precompiles reused regular expressions* on the *Optimization* tab. 
+
+image::https://www.eclipse.org/eclipse/news/4.17/images/regex-preferences.png[]
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.17/images/regex-before.png[]
+
+You get this after the clean up: 
+
+image::https://www.eclipse.org/eclipse/news/4.17/images/regex-after.png[]
+
+===== String.format quickfix
+
+A new quickfix has been added to replace string concatenation with `String.format`, similar to the existing ones for `StringBuilder` and `MessageFormat`.
+
+image::https://www.eclipse.org/eclipse/news/4.17/images/String.format-quickfix.png[]
+
+===== Method reference quickfix
+
+A new quickfix has been added to create missing methods for method references.
+
+NOTE: *Current restriction is that this quickfix is only available on current class*.
+
+[NOTE]
+====
+*Expect current implementation to work on simple cases only*.
+
+*Method references invoking nested generics or type parameters might be problematic to resolve correct*.
+====
+
+
+image::https://www.eclipse.org/eclipse/news/4.17/images/methodreference_1.png[]
+
+==== Java Views and Dialog
+
+===== Toggle Code Minings From Find Actions Menu
+
+The code minings within an editor can be enabled/disabled through the Find Actions menu (*Ctrl+3*).
+
+image::https://www.eclipse.org/eclipse/news/4.17/images/toggle-code-minings.png[]
+
+==== Java Formatter
+
+===== Assert statement wrapping
+
+A new setting in the Formatter profile controls *line wrapping of assert statements*. A line wrap can be added between the assert condition and its error message. The setting can be found in the *Profile Editor (Preferences > Java > Code Style > Formatter > Edit...*) in the *Line Wrapping > Wrapping Settings > Statemtens > 'assert' messages* node.
+
+image::https://www.eclipse.org/eclipse/news/4.17/images/formatter-wrap-assert.png[]
+
+
+==== Debug
+
+===== Anonymous class instance in evaluation
+
+The *JDT debugger* is now capable of inspecting/evaluating expressions with anonymous class instances.
+
+image::https://www.eclipse.org/eclipse/news/4.17/images/anon-instance-inspection-code.png[]
+image::https://www.eclipse.org/eclipse/news/4.17/images/anon-instance-inspection.png[]
+
+===== JEP 358: Helpful NullPointerExceptions
+
+The *JDT debugger* has now a checkbox option to activate the command line support for JEP 358. This is disabled below Java 14 and enabled by default for Java programs launched with Java 14 and above.
+
+*-XX:+ShowCodeDetailsInExceptionMessages*
+
+image::https://www.eclipse.org/eclipse/news/4.17/images/helpfulNullPointerExceptions.png[]
+
+JVM is now capable of analyzing which variable was null at the point of NullPointerException and describe the variable with a null-detail message in the NPE. 
+
+===== Actual type in Variables view
+
+The option *Show Type Names* in the *Variables* and *Expressions* views now displays the value's actual type instead of its declared type. This simplifies debugging especially when variable details (`toString()`) is shown *As the label for all variables*.
+
+To enable *Show Type Names* in the *Variables* view, column mode must be disabled (*View Menu > Layout > Show Columns*).
+
+Example:
+
+```java
+Object s = "some string";
+	Collection<?> c = Arrays.asList(s, 1);
+	// breakpoint
+```
+
+image::https://www.eclipse.org/eclipse/news/4.17/images/variables-actual-type.png[]
+
+
+
+=== And more...
+
+You can find more noteworthy updates in on link:/documentation/whatsnew/jbosstools/4.17.0.Final.html[this page].
+
+== What is next?
+
+Having JBoss Tools 4.17.0 and Red Hat CodeReady Studio 12.17 out we are already working on the next release.
+
+Enjoy!
+
+Jeff Maury
