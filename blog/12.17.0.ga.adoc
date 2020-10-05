@@ -22,6 +22,12 @@ This release requires at least Eclipse 4.17 (2020-09) but we recommend
 using the latest https://www.eclipse.org/downloads/packages/release/2020-09/r/eclipse-ide-enterprise-java-developers[Eclipse 4.17 2020-06 JEE Bundle]
 since then you get most of the dependencies preinstalled.
 
+[WARNING]
+====
+Java11 is now required to run Red Hat Developer Studio or JBoss Tools (this is a requirement from Eclipse 4.17). So make sure to select a Java11 JDK in the installer.
+You can still work with pre-Java11 JDK/JRE and projects in the tool.
+====
+
 Once you have installed Eclipse, you can either find us on the Eclipse Marketplace under "JBoss Tools" or "Red Hat CodeReady Studio".
 
 For JBoss Tools, you can also use our update site directly.
