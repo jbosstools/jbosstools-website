@@ -175,7 +175,7 @@ devstudio:
         archived: false
         update_site_url: https://devstudio.redhat.com/12/stable/updates/
         marketplace_url: https://marketplace.eclipse.org/node/1616973
-        marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
+        marketplace_install_url: https://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
         release_date: 2020-10-13
         supported_devstudio_is_version: 
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
@@ -201,7 +201,7 @@ devstudio:
         archived: true
         update_site_url: https://devstudio.redhat.com/12/stable/updates/
         marketplace_url: https://marketplace.eclipse.org/node/1616973
-        marketplace_install_url: https://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
+        marketplace_install_url: http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
         release_date: 2020-07-21
         supported_devstudio_is_version: 12.11.0.GA
         documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
