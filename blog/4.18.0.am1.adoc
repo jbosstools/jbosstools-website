@@ -1,0 +1,73 @@
+= JBoss Tools 4.18.0.AM1 for Eclipse 2020-09
+:page-layout: blog
+:page-author: jeffmaury
+:page-tags: [release, jbosstools, devstudio, jbosscentral]
+:page-date: 2020-12-22
+
+Happy to announce 4.18.0.AM1 (Developer Milestone 1) build for Eclipse 2020-09.
+
+Downloads available at link:/downloads/jbosstools/2020-09/4.18.0.AM1.html[JBoss Tools 4.18.0 AM1].
+
+== What is New?
+
+Full info is at link:/documentation/whatsnew/jbosstools/4.18.0.AM1.html[this page]. Some highlights are below.
+
+=== Quarkus
+
+==== Support for codestarts in New Quarkus project wizard
+
+code.quarkus.io has added a new option codestart that allows extension that support
+this new feature to contribute sample code in the generated project. It is enabled
+by default and is accessible from the second step in the wizard:
+
+image::/documentation/whatsnew/quarkus/images/quarkus30.png[]
+
+=== OpenShift
+
+==== Devfile based deployments
+
+The Application Explorer view is now based on odo 2.x, which allows deployments
+to be based on devfile (developer oriented manifest file). The components from
+the default odo registry are listed with legacy S2I components:
+
+image::/documentation/whatsnew/openshift/images/devfile.png[width=600]
+
+It is also now possible to bootstrap from an empty project as the components
+from the registry may expose starter projects (sample code that will initialize
+your empty project).
+
+image::/documentation/whatsnew/openshift/images/devfile1.png[width=600]
+
+=== Hibernate Tools
+
+A number of additions and updates have been performed on the available Hibernate runtime  providers.
+
+==== Runtime Provider Updates
+
+The Hibernate 5.4 runtime provider now incorporates Hibernate Core version 5.4.25.Final and Hibernate Tools version 5.4.25.Final.
+
+The Hibernate 5.3 runtime provider now incorporates Hibernate Core version 5.3.20.Final and Hibernate Tools version 5.3.20.Final.
+
+=== Server Tools
+
+==== Wildfly 22 Server Adapter
+
+A server adapter has been added to work with Wildfly 22.
+
+=== CDI Tools
+
+==== Eclipse Microprofile support
+	
+CDI Tools now support Eclipse Microprofile. Eclipse Microprofile related assets
+are checked against @Inject injections points and are validated according to rules
+specified in various Eclipse Microprofile specifications. 
+
+=== Forge Tools
+
+==== Forge Runtime updated to 3.9.8.Final
+
+The included Forge runtime is now 3.9.8.Final.
+
+Enjoy!
+
+Jeff Maury
