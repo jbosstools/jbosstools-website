@@ -1,0 +1,14 @@
+= CDI Tools What's New in 4.18.0.AM1
+:page-layout: whatsnew
+:page-component_id: cdi
+:page-component_version: 4.18.0.AM1
+:page-product_id: jbt_core 
+:page-product_version: 4.18.0.AM1
+
+== Eclipse Microprofile support
+	
+CDI Tools now support Eclipse Microprofile. Eclipse Microprofile related assets
+are checked against @Inject injections points and are validated according to rules
+specified in various Eclipse Microprofile specifications. 
+
+related_jira::JBIDE-27533[]
