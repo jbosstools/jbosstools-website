@@ -253,6 +253,63 @@ puts 'Looking for awestruct errors in output:'
   end
   puts 'No errors found!'
 end
+
+############################################################################
+#
+# Build web site on GitHub Actions
+#
+############################################################################
+desc 'Generate site from GitHub Actions and publish site'
+task :actions do
+  # if this is a pull request, do a simple build of the site and stop
+  if ENV['GITHUB_EVENT_NAME'] == 'pull_request'
+    puts 'Pull request detected. Executing build only.'
+    system "bundle exec awestruct -P development -g"
+    errorcheck
+    next
+  end
+  
+  tag = false
+
+  if ENV['GITHUB_REF'].to_s.scan(/^production$/).length > 0
+    tag = true
+    puts 'Building production branch build.'
+    profile = 'production'
+    deploy_url = "tools@filemgmt.jboss.org:/www_htdocs/tools"
+
+  elsif ENV['GITHUB_REF'].to_s.scan(/^master$/).length > 0
+   
+    puts 'Building staging(master) branch build.'
+    profile = 'staging'
+    deploy_url = "tools@filemgmt.jboss.org:/stg_htdocs/tools/"
+
+  else
+
+    puts ENV['GITHUB_REF'].to_s + ' branch is not configured for GitHub Actions builds - skipping.'
+    next
+
+  end
+
+  # Build execution
+  system "bundle exec awestruct -P #{profile} -g"
+
+  # Workaround for not having the above separated out properly in subtasks
+  errorcheck
+
+  puts "## Deploying website via rsync to #{deploy_url}"
+  success = system("rsync -Pqr --protocol=28 --delete-after _site/* #{deploy_url}")
+
+  if tag
+    puts '## Tagging repo'
+    system("git config --global user.email 'tools@jboss.org'")
+    system("git config --global user.name 'JBoss Tools CI'")
+    system("git remote add travis ${REPO_URL}")
+    system('git tag $GIT_TAG -a -m "Published to production from TravisCI build $TRAVIS_BUILD_NUMBER"')
+    system("git push travis $GIT_TAG")
+  end
+  fail unless success
+end
+
 ############################################################################
 #
 # Build web site on Travis-CI
