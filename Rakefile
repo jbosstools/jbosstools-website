@@ -246,7 +246,7 @@ end
 
 def errorcheck
 puts 'Looking for awestruct errors in output:'
-  success = system "grep -lr 'awestruct/engine' --exclude=Rakefile --exclude-dir=_site/"
+  success = system "grep -lr 'awestruct/engine' --exclude=Rakefile _site/"
   if success
     puts 'Errors found in output. Check files listed above.'
     fail
