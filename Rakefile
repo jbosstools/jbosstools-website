@@ -246,7 +246,7 @@ end
 
 def errorcheck
 puts 'Looking for awestruct errors in output:'
-  success = system "grep -lr 'awestruct/engine' --exclude=Rakefile _site/"
+  success = system "grep -lr 'awestruct/engine' --exclude=Rakefile --exclude-dir=_site/"
   if success
     puts 'Errors found in output. Check files listed above.'
     fail
@@ -303,9 +303,8 @@ task :actions do
     puts '## Tagging repo'
     system("git config --global user.email 'tools@jboss.org'")
     system("git config --global user.name 'JBoss Tools CI'")
-    system("git remote add travis ${REPO_URL}")
-    system('git tag $GIT_TAG -a -m "Published to production from TravisCI build $TRAVIS_BUILD_NUMBER"')
-    system("git push travis $GIT_TAG")
+    system('git tag $GIT_TAG -a -m "Published to production from GitHub Actions build $GITHUB_RUN_ID"')
+    system("git push origin $GIT_TAG")
   end
   fail unless success
 end
