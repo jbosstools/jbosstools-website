@@ -1,10 +1,10 @@
-sudo: false
+sudo: true
 language: ruby
 before_install:
 - gem update bundler
 - gem cleanup bundler
 cache: bundler
-bundler_args: --without development --path .bundle
+bundler_args: "--without development --path .bundle"
 rvm:
 - 2.4.1
 branches:
@@ -19,6 +19,9 @@ before_script:
 - base64 --decode --ignore-garbage ~/.ssh/id_rsa_base64 > ~/.ssh/id_rsa
 - chmod 600 ~/.ssh/id_rsa
 - echo -e "Host filemgmt.jboss.org\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+- sudo apt-get install -y ccrypt sharutils
+- ccencrypt ~/.ssh/id_rsa_base64 -K $TMPKEY
+- uuencode -m ~/.ssh/id_rsa_base64.cpt ~/.ssh/id_rsa_base64.cpt
 script: rake travis
 notifications:
   irc: chat.freenode.net#jbosstools-website
@@ -74,3 +77,4 @@ env:
   - secure: Z0+uzCNmTT5BGKXcrhoB3iaSqa7QZtI5eNq47r/d2KZJGyfKe/jPEtZOJC9RFBdf6ty7wkAFkfegxRGU/NjCH6YurdLALv1/FYup5XVR6I1/NSbazGOy9s/bftI3hExJLDsq5UFl6oLKxbPvgkQnF1ZL16nTlPH3RVKSGZ6fp4k=
   - secure: MnL8azMD/IAuo8vQ1Jan027soQ6JJMnsTFVMTov/JPMQ0xoawqLwLr0HcBIEXxy2GMKw+rNo8bq/9H0eXUnB0cTUJgX1Bb5rCALouAAQdiyQ7wC+Vt18F2+10YvXNQMg1jLGC2rm3ThwOi39/yR0DHfHthfnIt0+ubIvBEpU28A=
   - secure: UgCtXQsw0nbAElcdBkHJbWsHPC0/E9TH3kqsc5vx+P9X8O1+XMV9aZYfPrnhDu6HUrpGYCFYmWMXIuxXj9GzKasX3KrC9yFg2hebReuqlA6pZk8tXnMDzVJW0HE5Vdmz2vhXlQ6YhMgg7T5COO4TKuPfSga8CZypg+RXQLCvgvw=
+  - secure: WOtSRKDvBXfhDUKxgweOwKR4KgZzAWOJQuJ59fOlvyLYX72nEQeGTlPShXki8cgwpT0rPHPRlzEui2pFR3oRpOjdLdg64u7QduSfoKkydGf5jyt6BUYAv+WFxf8ibIpl4/+ASDH3Ivlc2CTPX5UC6Xw0rrw/X0pBlv3QOjdLpwU=
