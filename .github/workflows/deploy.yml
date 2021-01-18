@@ -1,0 +1,25 @@
+name: Deploy
+
+on:
+  pull_request:
+    branches: [ $default-branch ]
+  push:
+    branches: [ $default-branch, 'production' ]
+
+jobs:
+  deploy:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 2.4.1
+        bundler-cache: true
+    - name: Generate site
+      run: |
+        branch_name=`basename $GITHUB_REF`
+        export GIT_TAG=build-$branch_name-$(date -u "+%Y-%m-%d-%H-%M-%S")-$GITHUB_RUN_ID
+        bundle exec rake actions
