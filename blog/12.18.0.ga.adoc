@@ -1,0 +1,98 @@
+= JBoss Tools and Red Hat CodeReady Studio for Eclipse 2020-09
+:page-layout: blog
+:page-author: jeffmaury
+:page-tags: [release, jbosstools, devstudio, jbosscentral, codereadystudio]
+:page-date: 2021-01-26
+
+link:/downloads/jbosstools/2020-09/4.18.0.Final.html[JBoss Tools 4.18.0] and
+link:/downloads/devstudio/2020-09/12.18.0.GA.html[Red Hat CodeReady Studio 12.18]
+for Eclipse 2020-09 are here waiting for you. Check it out!
+
+image::/blog/images/crstudio12.png[]
+
+== Installation
+
+Red Hat CodeReady Studio comes with everything pre-bundled in its installer. Simply download it from our https://developers.redhat.com/products/codeready-studio/overview/[Red Hat CodeReady product page] and run it like this:
+
+    java -jar codereadystudio-<installername>.jar
+
+JBoss Tools or Bring-Your-Own-Eclipse (BYOE) CodeReady Studio require a bit more:
+
+This release requires at least Eclipse 4.17 (2020-09) but we recommend
+using the latest https://www.eclipse.org/downloads/packages/release/2020-09/r/eclipse-ide-enterprise-java-developers[Eclipse 4.17 2020-06 JEE Bundle]
+since then you get most of the dependencies preinstalled.
+
+[WARNING]
+====
+Java11 is now required to run Red Hat Developer Studio or JBoss Tools (this is a requirement from Eclipse 4.17). So make sure to select a Java11 JDK in the installer.
+You can still work with pre-Java11 JDK/JRE and projects in the tool.
+====
+
+Once you have installed Eclipse, you can either find us on the Eclipse Marketplace under "JBoss Tools" or "Red Hat CodeReady Studio".
+
+For JBoss Tools, you can also use our update site directly.
+
+    http://download.jboss.org/jbosstools/photon/stable/updates/
+
+== What is new?
+
+Our main focus for this release was an improved tooling for the Quarkus framework, improvements for container based development and bug fixing.
+
+=== OpenShift
+
+==== Devfile based deployments
+
+The Application Explorer view is now based on odo 2.x, which allows deployments
+to be based on devfile (developer oriented manifest file). The components from
+the default odo registry are listed with legacy S2I components:
+
+image::/documentation/whatsnew/openshift/images/devfile.png[width=600]
+
+It is also now possible to bootstrap from an empty project as the components
+from the registry may expose starter projects (sample code that will initialize
+your empty project).
+
+image::/documentation/whatsnew/openshift/images/devfile1.png[width=600]
+
+
+=== Quarkus
+
+==== Support for codestarts in New Quarkus project wizard
+
+code.quarkus.io has added a new option codestart that allows extension that support
+this new feature to contribute sample code in the generated project. It is enabled
+by default and is accessible from the second step in the wizard:
+
+image::/documentation/whatsnew/quarkus/images/quarkus30.png[]
+
+
+=== Server Tools
+
+==== Wildfly 22 Server Adapter
+
+A server adapter has been added to work with Wildfly 22.
+
+=== Hibernate Tools
+
+==== Hibernate Runtime Provider Updates
+
+A number of additions and updates have been performed on the available Hibernate runtime  providers.
+
+===== Runtime Provider Updates
+
+The Hibernate 5.4 runtime provider now incorporates Hibernate Core version 5.4.27.Final and Hibernate Tools version 5.4.27.Final.
+
+The Hibernate 5.3 runtime provider now incorporates Hibernate Core version 5.3.20.Final and Hibernate Tools version 5.3.20.Final.
+
+
+=== And more...
+
+You can find more noteworthy updates in on link:/documentation/whatsnew/jbosstools/4.17.0.Final.html[this page].
+
+== What is next?
+
+Having JBoss Tools 4.18.0 and Red Hat CodeReady Studio 12.18 out we are already working on the next release.
+
+Enjoy!
+
+Jeff Maury

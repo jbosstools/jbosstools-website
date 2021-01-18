@@ -1,14 +1,8 @@
-FROM centos:centos7
+FROM centos:centos8
 MAINTAINER Max Rydahl Andersen <max@jboss.org>
 
 # install deps required by our build
-RUN yum install -y epel-release which tar bzip2 gcc libyaml libxml2 libxml2-devel libxslt libxslt-devel libcurl-devel git
-
-# when running with above nodejs was not available
-RUN curl --silent --location https://rpm.nodesource.com/setup_6.x | bash -
-RUN yum install -y nodejs
-
-RUN yum install -y wget
+RUN yum install -y epel-release which tar bzip2 gcc libyaml libxml2 libxml2-devel libxslt libxslt-devel libcurl-devel git nodejs wget
 
 # Add RVM keys
 RUN gpg2 --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
