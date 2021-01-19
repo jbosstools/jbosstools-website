@@ -2,9 +2,9 @@ name: Deploy
 
 on:
   pull_request:
-    branches: [ $default-branch ]
+    branches: [ master ]
   push:
-    branches: [ $default-branch, 'production' ]
+    branches: [ master, production ]
 
 jobs:
   deploy:
