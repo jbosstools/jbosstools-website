@@ -19,7 +19,7 @@ Red Hat CodeReady Studio comes with everything pre-bundled in its installer. Sim
 JBoss Tools or Bring-Your-Own-Eclipse (BYOE) CodeReady Studio require a bit more:
 
 This release requires at least Eclipse 4.17 (2020-09) but we recommend
-using the latest https://www.eclipse.org/downloads/packages/release/2020-09/r/eclipse-ide-enterprise-java-developers[Eclipse 4.17 2020-06 JEE Bundle]
+using the latest https://www.eclipse.org/downloads/packages/release/2020-09/r/eclipse-ide-enterprise-java-developers[Eclipse 4.17 2020-09 JEE Bundle]
 since then you get most of the dependencies preinstalled.
 
 [WARNING]
