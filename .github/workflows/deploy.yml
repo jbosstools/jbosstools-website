@@ -4,7 +4,7 @@ on:
   pull_request:
     branches: [ $default-branch ]
   push:
-    branches: [ $default-branch, 'production' ]
+    branches: [ $default-branch, production ]
 
 jobs:
   deploy:
