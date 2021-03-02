@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        ref: ${{github.event.workflow_run.head_sha}}
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
