@@ -1,13 +1,12 @@
-name: Deploy
+name: Pull Request
 
 on:
-  push:
+  pull_request:
     branches:
       - master
-      - production
 
 jobs:
-  deploy:
+  generate:
 
     runs-on: ubuntu-latest
 
