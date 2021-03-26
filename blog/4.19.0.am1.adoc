@@ -1,0 +1,96 @@
+= JBoss Tools 4.19.0.AM1 for Eclipse 2021-03
+:page-layout: blog
+:page-author: jeffmaury
+:page-tags: [release, jbosstools, devstudio, jbosscentral]
+:page-date: 2021-03-24
+
+Happy to announce 4.19.0.AM1 (Developer Milestone 1) build for Eclipse 2021-03.
+
+Downloads available at link:/downloads/jbosstools/2021-03/4.19.0.AM1.html[JBoss Tools 4.19.0 AM1].
+
+== What is New?
+
+Full info is at link:/documentation/whatsnew/jbosstools/4.19.0.AM1.html[this page]. Some highlights are below.
+
+
+=== OpenShift
+
+==== Browser based login to an OpenShift cluster
+
+When it comes to login to a cluster, OpenShift Tools supported two different authentication mechanisms:
+
+- user/password
+- token
+
+The drawback is that it does not cover clusters where a more enhanced and modern authentication infrastructure is in place. So it is now possible to login to the cluster through an embedded web browser.
+
+In order to use it, go to the Login context menu from the Application Explorer view:
+
+
+image::/documentation/whatsnew/openshift/images/weblogin1.png[width=600]
+
+Click on the `Retrieve token` button and an embedded web browser will be displayed:
+
+image::/documentation/whatsnew/openshift/images/weblogin2.png[width=600]
+
+Complete the workflow until you see a page that contains `Display Token`:
+
+image::/documentation/whatsnew/openshift/images/weblogin3.png[width=600]
+
+Click on `Display Token`:
+
+The web browser is automatically closed and you'll notice that the retrieved token has been set in the original dialog:
+
+image::/documentation/whatsnew/openshift/images/weblogin4.png[width=600]
+
+==== Devfile registries management
+
+Since JBoss Tools 4.18.0.Final, the preferred way of developing components is now based on devfile, which is a YAML file that describe how to build the component and if required, launch other containers with other containers.
+When you create a component, you need to specify a devfile that describe your component. So either you component source contains its own devfile or you need to pick a devfile that is related to your component.
+In the second case, OpenShift Tools supports devfile registries that contains a set of different devfiles. There is a default registry (https://github.com/odo-devfiles/registry) but you may want to have your own registries. It is now possible to add and remove registries as you want.
+
+The registries are displayed in the OpenShift Application Explorer under the `Devfile registries` node:
+
+image::/documentation/whatsnew/openshift/images/registries1.png[width=600]
+
+Please note that expanding the registry node will list all devfiles from that registry with a description:
+
+image::/documentation/whatsnew/openshift/images/registries2.png[width=600]
+
+A context menu on the `Devfile registries` node allows you to add new registries, and on the registry node to delete it.
+
+==== Devfile enhanced editing experience
+
+Although devfile registries can provide ready-to-use devfiles, there may be some advanced cases where users need to write their own devfile. As the syntax is quite complex, the YAML editor has been completed so that to provide:
+
+- syntax validation
+- content assist
+
+==== Support for Python based components
+
+Python-based components were supported but debugging was not possible. This release brings integration between the Eclipse debugger and the Python runtime.
+
+=== Hibernate Tools
+
+A number of additions and updates have been performed on the available Hibernate runtime  providers.
+
+==== Runtime Provider Updates
+
+The Hibernate 5.4 runtime provider now incorporates Hibernate Core version 5.4.29.Final and Hibernate Tools version 5.4.29a.Final.
+
+
+=== Server Tools
+
+==== Wildfly 23 Server Adapter
+
+A server adapter has been added to work with Wildfly 23.
+
+
+==== EAP 7.4 Beta Server Adapter
+
+The server adapter has been adapted to work with EAP 7.4 Beta.
+
+
+Enjoy!
+
+Jeff Maury
