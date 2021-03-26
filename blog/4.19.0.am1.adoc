@@ -22,7 +22,7 @@ When it comes to login to a cluster, OpenShift Tools supported two different aut
 - user/password
 - token
 
-The drawback is that it does not cover clusters where more enhanced and modern authentication infrastructure is in place. So it is now possible to login to the cluster though an embedded web browser.
+The drawback is that it does not cover clusters where a more enhanced and modern authentication infrastructure is in place. So it is now possible to login to the cluster through an embedded web browser.
 
 In order to use it, go to the Login context menu from the Application Explorer view:
 
@@ -39,7 +39,7 @@ image::/documentation/whatsnew/openshift/images/weblogin3.png[width=600]
 
 Click on `Display Token`:
 
-The web browser is automatically closed and you'll notice that the retrieve token has been set in the original dialog:
+The web browser is automatically closed and you'll notice that the retrieved token has been set in the original dialog:
 
 image::/documentation/whatsnew/openshift/images/weblogin4.png[width=600]
 
@@ -53,7 +53,7 @@ The registries are displayed in the OpenShift Application Explorer under the `De
 
 image::/documentation/whatsnew/openshift/images/registries1.png[width=600]
 
-Please note that expanding the registry node with list all devfiles from that registry with a description:
+Please note that expanding the registry node will list all devfiles from that registry with a description:
 
 image::/documentation/whatsnew/openshift/images/registries2.png[width=600]
 
@@ -61,14 +61,14 @@ A context menu on the `Devfile registries` node allows you to add new registries
 
 ==== Devfile enhanced editing experience
 
-Although devfile registries can provide ready to use devfile, there may be some advance cases where users needs to writer their own devfile. As the syntax is quite complex, the YAML editor has been completed so that to provide:
+Although devfile registries can provide ready-to-use devfile, there may be some advanced cases where users need to write their own devfile. As the syntax is quite complex, the YAML editor has been completed so that to provide:
 
 - syntax validation
 - content assist
 
 ==== Support for Python based components
 
-Python based components were supported but debugging was not possible. This released brings integration between the Eclipse debugger and the Python runtime.
+Python-based components were supported but debugging was not possible. This release brings integration between the Eclipse debugger and the Python runtime.
 
 === Hibernate Tools
 
