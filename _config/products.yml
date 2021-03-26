@@ -1643,7 +1643,7 @@ jbt_core:
         update_site_url: https://download.jboss.org/jbosstools/photon/snapshots/updates/
       4.19.0.AM1:
         archived: false
-        release_date: 2020-12-25
+        release_date: 2021-03-25
         supported_jbt_is_version: 
         blog_announcement_url: /blog/4.19.0.am1.html
         documentation_url: http://docs.jboss.org/tools/
