@@ -33,7 +33,7 @@ Click on the `Retrieve token` button and an embedded web browser will be display
 
 image::/documentation/whatsnew/openshift/images/weblogin2.png[width=600]
 
-Complete the workflow until you see a page that contains ` Display Token`:
+Complete the workflow until you see a page that contains `Display Token`:
 
 image::/documentation/whatsnew/openshift/images/weblogin3.png[width=600]
 
@@ -61,7 +61,7 @@ A context menu on the `Devfile registries` node allows you to add new registries
 
 ==== Devfile enhanced editing experience
 
-Although devfile registries can provide ready-to-use devfile, there may be some advanced cases where users need to write their own devfile. As the syntax is quite complex, the YAML editor has been completed so that to provide:
+Although devfile registries can provide ready-to-use devfiles, there may be some advanced cases where users need to write their own devfile. As the syntax is quite complex, the YAML editor has been completed so that to provide:
 
 - syntax validation
 - content assist

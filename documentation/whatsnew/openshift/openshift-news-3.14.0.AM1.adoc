@@ -13,7 +13,7 @@ When it comes to login to a cluster, OpenShift Tools supported two different aut
 - user/password
 - token
 
-The drawback is that it does not cover clusters where more enhanced and modern authentication infrastructure is in place. So it is now possible to login to the cluster though an embedded web browser.
+The drawback is that it does not cover clusters where a more enhanced and modern authentication infrastructure is in place. So it is now possible to login to the cluster through an embedded web browser.
 
 In order to use it, go to the Login context menu from the Application Explorer view:
 
@@ -24,13 +24,13 @@ Click on the `Retrieve token` button and an embedded web browser will be display
 
 image::./images/weblogin2.png[width=600]
 
-Complete the workflow until you see a page that contains ` Display Token`:
+Complete the workflow until you see a page that contains `Display Token`:
 
 image::./images/weblogin3.png[width=600]
 
 Click on `Display Token`:
 
-The web browser is automatically closed and you'll notice that the retrieve token has been set in the original dialog:
+The web browser is automatically closed and you'll notice that the retrieved token has been set in the original dialog:
 
 image::./images/weblogin4.png[width=600]
 
@@ -46,7 +46,7 @@ The registries are displayed in the OpenShift Application Explorer under the `De
 
 image::./images/registries1.png[width=600]
 
-Please note that expanding the registry node with list all devfiles from that registry with a description:
+Please note that expanding the registry node will list all devfiles from that registry with a description:
 
 image::./images/registries2.png[width=600]
 
@@ -56,7 +56,7 @@ related_jira::JBIDE-27610[]
 
 === Devfile enhanced editing experience
 
-Although devfile registries can provide ready to use devfile, there may be some advance cases where users needs to writer their own devfile. As the syntax is quite complex, the YAML editor has been completed so that to provide:
+Although devfile registries can provide ready-to-use devfiles, there may be some advanced cases where users need to write their own devfile. As the syntax is quite complex, the YAML editor has been completed so that to provide:
 
 - syntax validation
 - content assist
