@@ -56,8 +56,7 @@ eclipse:
     download_url: http://www.eclipse.org/downloads/packages/release/2019-06/
     requirements: Java 8
   simrel-2019-03:
-    # TODO archive this as of Apr 2021?
-    archived: false
+    archived: true
     url_path_fragment: 2019-03
     short_name: 2019-03
     full_name: Eclipse 4.11 (2019-03)
@@ -178,9 +177,34 @@ devstudio:
     simrel-2021-03:
       12.19.x.Nightly:
         update_site_url: https://devstudio.redhat.com/12/snapshots/updates/
+      12.19.0.GA:
+        archived: false
+        update_site_url: https://devstudio.redhat.com/12/stable/updates/
+        marketplace_url: https://marketplace.eclipse.org/node/1616973
+        marketplace_install_url: https://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
+        release_date: 2021-04-20
+        supported_devstudio_is_version: 
+        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        blog_announcement_url: /blog/12.19.0.ga.html
+        eclipse_name: Eclipse 4.19 (2021-03)
+        installers:
+          - name: Stand-alone Installer
+            url: http://www.jboss.org/download-manager/content/origin/files/sha256/51/51a8d80f556d3cb8fd0a45ed242cebef8c43fb79cdc8afb6662376b05d38b824/codereadystudio-12.19.0.GA-installer-standalone.jar
+            file_size: 957MB
+        zips:
+          - name: Update site (including sources) bundle of Red Hat CodeReady Studio
+            url: http://www.jboss.org/download-manager/content/origin/files/sha256/00/003c4bcea904bb9dab6071b5b571c5ee56af792aea1e9109491149fd83551095/codereadystudio-12.19.0.GA-updatesite-core.zip
+            file_size: 1.0GB
+          - name: JBoss Central Zip
+            url: http://www.jboss.org/download-manager/content/origin/files/sha256/56/5619b7feade889d0a58aa0622c6c82ea75eead788a126e8184e3123a6498310b/codereadystudio-12.19.0.GA-updatesite-central.zip
+            file_size: 123MB
+          - name: Target Platform for Red Hat CodeReady Studio
+            url: https://devstudio.redhat.com/static/12/stable/updates/core/devstudio-12.19.0.GA-target-platform.zip
+            file_size: 1.2GB
     simrel-2020-09:
       12.18.0.GA:
-        archived: false
+        archived: true
         update_site_url: https://devstudio.redhat.com/12/stable/updates/
         marketplace_url: https://marketplace.eclipse.org/node/1616973
         marketplace_install_url: https://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
@@ -1641,8 +1665,27 @@ jbt_core:
     simrel-2021-03:
       4.19.x.Nightly:
         update_site_url: https://download.jboss.org/jbosstools/photon/snapshots/updates/
-      4.19.0.AM1:
+      4.19.0.Final:
         archived: false
+        release_date: 2021-04-20
+        supported_jbt_is_version:
+        blog_announcement_url: /blog/12.19.0.ga.html
+        documentation_url: http://docs.jboss.org/tools/
+        update_site_url: https://download.jboss.org/jbosstools/photon/stable/updates/
+        eclipse_name: Eclipse 4.19 (2021-03)
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 1.0GB
+            url: https://download.jboss.org/jbosstools/static/photon/stable/updates/core/jbosstools-4.19.0.Final-updatesite-core.zip
+            sha256_url: https://download.jboss.org/jbosstools/static/photon/stable/updates/core/jbosstools-4.19.0.Final-updatesite-core.zip.sha256
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 210MB
+            url: https://download.jboss.org/jbosstools/static/photon/stable/updates/core/jbosstools-4.19.0.Final-src.zip
+            sha256_url: https://download.jboss.org/jbosstools/static/photon/stable/updates/core/jbosstools-4.19.0.Final-src.zip.sha256
+          - name: Release Notes
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
+      4.19.0.AM1:
+        archived: true
         release_date: 2021-03-25
         supported_jbt_is_version: 
         blog_announcement_url: /blog/4.19.0.am1.html
