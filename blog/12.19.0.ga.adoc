@@ -1,0 +1,1337 @@
+= JBoss Tools and Red Hat CodeReady Studio for Eclipse 2021-03
+:page-layout: blog
+:page-author: jeffmaury
+:page-tags: [release, jbosstools, devstudio, jbosscentral, codereadystudio]
+:page-date: 2021-04-20
+
+link:/downloads/jbosstools/2021-03/4.19.0.Final.html[JBoss Tools 4.19.0] and
+link:/downloads/devstudio/2021-03/12.19.0.GA.html[Red Hat CodeReady Studio 12.19]
+for Eclipse 2021-03 are here waiting for you. Check it out!
+
+image::/blog/images/crstudio12.png[]
+
+== Installation
+
+Red Hat CodeReady Studio comes with everything pre-bundled in its installer. Simply download it from our https://developers.redhat.com/products/codeready-studio/overview/[Red Hat CodeReady product page] and run it like this:
+
+    java -jar codereadystudio-<installername>.jar
+
+JBoss Tools or Bring-Your-Own-Eclipse (BYOE) CodeReady Studio require a bit more:
+
+This release requires at least Eclipse 4.19 (2021-03) but we recommend
+using the latest https://www.eclipse.org/downloads/packages/release/2021-03/r/eclipse-ide-java-developers[Eclipse 4.19 2021-03 JEE Bundle]
+since then you get most of the dependencies preinstalled.
+
+[WARNING]
+====
+Java11 is now required to run Red Hat Developer Studio or JBoss Tools (this is a requirement from Eclipse 4.17). So make sure to select a Java11 JDK in the installer.
+You can still work with pre-Java11 JDK/JRE and projects in the tool.
+====
+
+Once you have installed Eclipse, you can either find us on the Eclipse Marketplace under "JBoss Tools" or "Red Hat CodeReady Studio".
+
+For JBoss Tools, you can also use our update site directly.
+
+    http://download.jboss.org/jbosstools/photon/stable/updates/
+
+== What is new?
+
+Our main focus for this release was an improved tooling for the Quarkus framework, improvements for container based development and bug fixing.
+
+=== OpenShift
+
+==== Login to Developer Sandbox from the tooling
+
+Red Hat provides an online OpenShift environment called 
+https://red.ht/dev-sandbox[Developer Sandbox] that makes it easy for developers to build, test and deploy cloud
+native applications and microservices.
+
+In order to use Developer Sandbox, you must own a Red Hat SSO account (which can be linked to social accounts like
+GitHub,...). Once logged in into Red Hat SSO, you will get an environment provisioned in Developer Sandbox but
+the first time you will try to login in to Developer Sandbox, your account needs to be verified (in order to
+prevent crypto miners and robots) thus you need to go through a verification phase where you will be asked to provide:
+
+- first your phone number and country code
+- then a verification code that you will receive on your smartphone.
+
+So it is now possible to provision and log in to Developer Sandbox from the OpenShift tooling and connect it to the Developer Sandbox environment.
+
+Open the `OpenShift Application Explorer` view (`Window -> Show View -> Other...`, enter `open` and double click on `OpenShift Application Explorer`):
+
+image::/documentation/whatsnew/openshift/images/devsandbox1.png[width=600]
+
+Right click on the first node and select the `Login` context menu:
+
+image::/documentation/whatsnew/openshift/images/devsandbox2.png[width=600]
+
+In order to provision the Developer Sandbox environment, click on the `Red Hat Developer Sandbox` link: a browser window will open and you will be required to login to your Red Hat SSO account:
+
+image::/documentation/whatsnew/openshift/images/devsandbox3.png[width=600]
+
+Login to your account (please note that if you don't have a Red Hat account, you can create a new one). Once
+you're logged in, you should see the following window:
+
+image::/documentation/whatsnew/openshift/images/devsandbox4.png[width=600]
+
+Enter your contry code (+XX) and phone number and click the `Verify` button:
+
+You will be required to provide the verification code that you should have received on your phone:
+
+image::/documentation/whatsnew/openshift/images/devsandbox5.png[width=600]
+
+Once your Developer Sandbox environment is provisioned; you will see the following window:
+
+image::/documentation/whatsnew/openshift/images/devsandbox6.png[width=600]
+
+Click on the `Ǹext` button to log in to your Developer Sandbox environment:
+
+image::/documentation/whatsnew/openshift/images/devsandbox7.png[width=600]
+
+Click on the `DevSandbox` link and log in with the same credentials: you will see the following window:
+
+image::/documentation/whatsnew/openshift/images/devsandbox8.png[width=600]
+
+Click on the `Display Token` link and the click on the `Finish` button, you should be back to the Login wizard:
+
+image::/documentation/whatsnew/openshift/images/devsandbox9.png[width=600]
+
+Please note that the `URL` and `Token` fields have been updated. Click the `Finish` button, the `OpenShift Application Explorer` will be updated with the Developer
+Sandbox URL and if you expand it, you will see 3 namespaces/projects available for you to start playing with:
+
+image::/documentation/whatsnew/openshift/images/devsandbox10.png[width=600]
+
+You're now ready to work against this environment for free !!!.
+
+==== Browser based login to an OpenShift cluster
+
+When it comes to login to a cluster, OpenShift Tools supported two different authentication mechanisms:
+
+- user/password
+- token
+
+The drawback is that it does not cover clusters where a more enhanced and modern authentication infrastructure is in place. So it is now possible to login to the cluster through an embedded web browser.
+
+In order to use it, go to the Login context menu from the Application Explorer view:
+
+
+image::/documentation/whatsnew/openshift/images/weblogin1.png[width=600]
+
+Click on the `Retrieve token` button and an embedded web browser will be displayed:
+
+image::/documentation/whatsnew/openshift/images/weblogin2.png[width=600]
+
+Complete the workflow until you see a page that contains `Display Token`:
+
+image::/documentation/whatsnew/openshift/images/weblogin3.png[width=600]
+
+Click on `Display Token`:
+
+The web browser is automatically closed and you'll notice that the retrieved token has been set in the original dialog:
+
+image::/documentation/whatsnew/openshift/images/weblogin4.png[width=600]
+
+==== Devfile registries management
+
+Since JBoss Tools 4.18.0.Final, the preferred way of developing components is now based on devfile, which is a YAML file that describe how to build the component and if required, launch other containers with other containers.
+When you create a component, you need to specify a devfile that describe your component. So either you component source contains its own devfile or you need to pick a devfile that is related to your component.
+In the second case, OpenShift Tools supports devfile registries that contains a set of different devfiles. There is a default registry (https://github.com/odo-devfiles/registry) but you may want to have your own registries. It is now possible to add and remove registries as you want.
+
+The registries are displayed in the OpenShift Application Explorer under the `Devfile registries` node:
+
+image::/documentation/whatsnew/openshift/images/registries1.png[width=600]
+
+Please note that expanding the registry node will list all devfiles from that registry with a description:
+
+image::/documentation/whatsnew/openshift/images/registries2.png[width=600]
+
+A context menu on the `Devfile registries` node allows you to add new registries, and on the registry node to delete it.
+
+==== Devfile enhanced editing experience
+
+Although devfile registries can provide ready-to-use devfiles, there may be some advanced cases where users need to write their own devfile. As the syntax is quite complex, the YAML editor has been completed so that to provide:
+
+- syntax validation
+- content assist
+
+==== Support for Python based components
+
+Python-based components were supported but debugging was not possible. This release brings integration between the Eclipse debugger and the Python runtime.
+
+
+
+=== Quarkus
+
+==== Support for environment variables in Run/debug Quarkus configurations
+
+Environment variables is one way to override properties values in the Quarkus properties file. It is now possible
+to specify environment variables in a Run/debug Quarkus configuration.
+
+
+=== Server Tools
+
+==== Wildfly 23 Server Adapter
+
+A server adapter has been added to work with Wildfly 23.
+
+==== EAP 7.4 Beta Server Adapter
+
+The server adapter has been adapted to work with EAP 7.4 Beta.
+
+=== Hibernate Tools
+
+==== Hibernate Runtime Provider Updates
+
+A number of additions and updates have been performed on the available Hibernate runtime  providers.
+
+===== Runtime Provider Updates
+
+The Hibernate 5.4 runtime provider now incorporates Hibernate Core version 5.4.30.Final and Hibernate Tools version 5.4.30.Final.
+
+=== Platform
+
+==== Views, Dialogs and Toolbar
+
+===== Filter field for configuration details
+
+A filter field has been added to the *Installation Details > Configuration* tab. This allows much faster lookup of specific information from the system details by showing only lines containing the filter criteria.
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/configuration-filter.png[]
+
+===== Preference to remember the last used page in search dialog
+
+The *Remember last used page* check box was previously available from the *Search dialog > Customize... > Search Page Selection* dialog, which was not intuitive and hard to find. Now, the check box is moved to the Search preference page.
+
+A new preference *Remember last used page in the Search dialog* has been added to *Preferences > General > Search* page. This new preference is enabled by default. 
+image::https://www.eclipse.org/eclipse/news/4.18/images/remember-last-used.png[]
+
+==== Text Editors
+
+===== Horizontal Scrolling in Text Editor
+
+You can now scroll horizontally in the *Text Editor* using *Shift+Mouse Wheel* and *touchpad gestures* on Windows. Horizontal scrolling with touchpad already works on Linux and macOS.
+
+===== Open-with does not store the editor relationship anymore
+
+The menu entry *"Open With > ..."* does not store the selected editor as default editor for the selected file as this was undesired in most cases and lead to confusion. Also, removing this association was not easy for the end user. The user can still assign a editor to a certain file type via the *"Open With > Other..."* dialog. 
+
+==== Debug
+
+===== Find Next/Previous in Console View
+
+In the *Console* view, you can repeat your last search in the forward or backward direction in the following ways:
+
+- Right-click in the Console view, then select *Find Next* or *Find Previous*.
+- Use the keyboard shortcuts *Ctrl+K* or *Ctrl+Shift+K*.
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/console-find-next-find-previous-45017.png[]
+
+===== Disable All in Breakpoints view
+
+In the *Breakpoints* view, you can disable all the breakpoints using the new *Disable All* context-menu option available on right-click.
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/disable-allbreakpoints.png[]
+
+===== Terminate descendants of operating-system processes launched by Eclipse
+
+Some types of launch-configurations start operating-system processes when launched from Eclipse. When you terminate the corresponding process before it completes (for example by clicking the *terminate* button, the red square) that operating-system process is destroyed. Now the descendants of that process, its child-processes created by the main-process and their children recursively, are destroyed too.
+
+===== Termination of child processes of launched OS processes can be configured
+
+Since Eclipse 4.18 child processes (descendants) of an operating system process launched from Eclipse are terminated too, when the launched process is terminated (for example by clicking the terminate button).
+
+It is now possible to configure in the Launch Configuration whether the child processes of a launched process should be terminated too or if they should stay alive, in case the launched processes is terminated. You can control this with the checkbox *Terminate child processes if terminating the launched process* in the *Common* tab of the *Run/Debug Configurations* dialog. By default this checkbox is selected and child processes are terminated too. 
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/configure-child-process-termination.png[]
+
+==== Preferences 
+
+===== External browsers on Windows
+
+On Windows, the list of recognized External web browsers has been updated to include:
+
+- *Microsoft Edge* (%ProgramFiles(x86)%\Microsoft\Edge\Application\msedge.exe)
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/browsers-windows-update.png[]
+
+==== Enable word wrap on console output
+
+A new preference *Enable word wrap* is available in the *Console* preference page. This setting persists the current state of the "Word wrap" toggle on the console view between user sessions. By default, word wrapping is disabled on console output.
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/console-preferences-word-wrap.png[]
+
+==== Themes and Styling
+
+===== New "System" theme
+
+A new *"System"* theme is available in the *Appearance* preference page. This theme is built using system colors, and as a consequence integrates well in any OS and OS theme.
+
+This screenshot shows the System theme in action under several GTK themes:
+
+GTK Adwaita:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/systemTheme-gtkAdawaita.png[]
+
+GTK Adwaita Dark:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/systemTheme-gtkAdawaitaDark.png[]
+
+GTK Kripton:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/systemTheme-gtkKripton.png[]
+
+GTK Dark Mint:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/systemTheme-gtkDarkMint.png[]
+
+===== Windows dark theme styles progress bars
+
+The progress bar in the dark theme on Windows OS is now styled: 
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/progressbar-dark-win32.png[]
+
+===== Light theme on macOS
+
+The *Light* theme for macOS has been updated to fit the latest macOS design.
+
+Old:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/macTheme-light-old.png[]
+
+New:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/macTheme-light-new.png[]
+
+
+
+==== General Updates
+
+===== Equinox Linux Security JNA Fragment
+
+A new fragment has been added for Linux password security using JNA. This new fragment replaces the old JNI x86_64-specific fragment and supports all Linux architectures.
+
+===== Ant 1.10.9
+
+Eclipse has adopted Ant version 1.10.9.
+
+=== Java Developement Tools (JDT)
+
+==== JUnit
+
+===== JUnit 5.7.1
+
+JUnit 5.7.1 is here and Eclipse JDT has been updated to use this version. 
+
+==== Java Editor
+
+===== Quick assist to create try-with-resources
+
+For expressions returning a type that is `AutoCloseable` there's a new quick assist (*Ctrl+1*) available: *Assign to new local variable in try-with-resources*.
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/try-with-resources-before.png[]
+
+It creates a new try-with-resources block with the expression assigned to a resource variable. The variable type and name can be selected from a few suggestions: 
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/try-with-resources-after.png[]
+
+The default hotkey sequence for this quick assist is *Ctrl+2* followed by *T*.
+
+===== Add catch clause to try-with-resources assists
+
+There are multiple assists to surround auto-closeable statements in a try-with-resources statement including *Surround with > Try-with-resources Block*. Now, all forms will add a `catch` clause for any exceptions (such as `IOException`) thrown by the auto-close if not already handled via an existing `catch` clause or `throws` directive. In the case where the existing code catches or throws an exception that sub-classes the exceptions of the new `catch` clause, an additional `catch`  clause will be added to rethrow the exception to ensure code logic remains consistent. 
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/add-catch-clause-to-try-with-resources-before.png[]
+image::https://www.eclipse.org/eclipse/news/4.19/images/add-catch-clause-to-try-with-resources-after.png[]
+
+===== Quick fix to create permitted type declaration
+
+You can use the following quick fixes (*Ctrl+1*) to create a new permitted class or interface declaration: 
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/create-permitted-type-declaration.png[]
+
+The created type will declare the `sealed` type as its super type and it can be declared as final, non-sealed, or sealed with the available quick fixes for further inheritance control.
+
+===== Java Feature clean ups
+
+A new tab named *Java Feature* has been added to the *Clean Up* preferences. It lists the clean up options that introduce the use of language features from different Java versions. Relevant clean up options from other tabs have also been moved to this new tab.
+
+You can use these clean ups while upgrading the Java version in your code.
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/java-feature-preferences.png[]
+
+===== Pattern matching for instanceof clean up
+
+A new clean up has been added that uses pattern matching for the `instanceof` operator when possible.
+
+It is only applicable for Java 15 or higher when preview features are enabled.
+
+To apply the clean up, select *Pattern matching for instanceof* check box on the *Java Feature* tab in your clean up profile.
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/pattern-matching-preferences.png[]
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/pattern-matching-before.png[]
+
+One gets: 
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/pattern-matching-after.png[]
+
+===== Reduce indentation clean up
+
+A new clean up has been added that removes useless indentation when the opposite workflow falls through.
+
+When several blocks fall through, it reduces the block with the greatest indentation. It can negate an `if` condition if the else statements fall through.
+
+To apply the clean up, select *Reduce indentation when possible* check box on the *Code Style* tab in your clean up profile.
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/reduce-indentation-preferences.png[]
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/reduce-indentation-before.png[]
+
+One gets:
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/reduce-indentation-after.png[]
+
+===== Extract increment clean up
+
+A new clean up has been added that moves increment or decrement outside an expression.
+
+A prefix increment/decrement (`++i`) first changes the value of the variable and then returns the updated value. A postfix increment/decrement (`i++`) first returns the original value and then changes the value of the variable.
+
+But let's look at this code:
+[source,java]
+----
+int i = j++;
+----
+
+Most of the developers hardly remember which from the increment or the assignment comes first. One way to make the code obvious is to write the increment/decrement in a dedicated statement:
+[source,java]
+----
+int i = j;
+j++;
+----
+
+And so for the prefix expressions:
+[source,java]
+----
+int i = ++j;
+----
+
+...it goes like this:
+[source,java]
+----
+j++;
+int i = j;
+----
+
+The cleanup moves a prefix expression above the statement and a postfix expression below. It does not move increments from loop condition and it does not cleanup several increments in the same statement. The increment/decrement is always rewritten as a postfix expression for standardization.
+
+To apply the clean up, select *Extract increment/decrement from statement* check box on the *Code Style* tab in your clean up profile. 
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/extract-increment-preferences.png[]
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/extract-increment-before.png[]
+
+One gets:
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/extract-increment-after.png[]
+
+===== Use Comparator.comparing() clean up
+
+A new clean up has been added that replaces a plain comparator instance by a lambda expression passed to a `Comparator.comparing()` method.
+
+The feature is enabled only with Java 8 or higher.
+
+The `Comparator` type must be inferred by the destination of the comparator. The algorithm of the comparator must be standard and based on one field or method. The cleanup can handle the null values and reversed orders.
+
+To apply the clean up, select *Use Comparator.comparing()* check box on the *Java Feature* tab in your clean up profile.
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/comparator-comparing-preferences.png[]
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/comparator-comparing-before.png[]
+
+One gets:
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/comparator-comparing-after.png[]
+
+===== Multi-catch clean up
+
+A new clean up has been added that converts catch clauses with same body to Java 7's multi-catch.
+
+The feature is enabled only with Java 7 or higher.
+
+To apply the clean up, select *Use Multi-catch* check box on the *Java Feature* tab in your clean up profile.
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/multi-catch-preferences.png[]
+
+For the given code: 
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/multi-catch-before.png[]
+
+One gets:
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/multi-catch-after.png[]
+
+===== Convert fields into local variables
+
+A new clean up has been added that refactors a field into a local variable if its use is only local.
+
+The previous value should not be read. The field should be `private`. The field should not be `final`. The field should be primitive. The field should not have annotations.
+
+To apply the clean up, select *Convert fields into local variables if the use is only local* check box on the *Optimization* tab in your clean up profile.
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/convert-fields-preferences.png[]
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/convert-fields-before.png[]
+
+One gets:
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/convert-fields-after.png[]
+
+===== Static inner class clean up
+
+A new clean up has been added that makes inner class `static` if it doesn't use top level class members.
+
+To apply the clean up, select *Make inner classes static where possible* check box on the *Optimization* tab in your clean up profile. 
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/static-inner-class-preferences.png[]
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/static-inner-class-before.png[]
+
+One gets:
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/static-inner-class-after.png[]
+
+===== Use String.replace() clean up
+
+A new clean up has been added that replaces `String.replaceAll()` by `String.replace()` when the pattern is a plain text.
+
+The pattern must be constant.
+
+To apply the clean up, select *Use String.replace() instead of String.replaceAll() when no regex used* check box on the *Optimization* tab in your clean up profile.
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/string-replace-preferences.png[]
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/string-replace-before.png[]
+
+One gets:
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/string-replace-after.png[]
+
+===== Primitive comparison clean up
+
+A new clean up has been added that replaces the `compareTo()` method by a comparison on primitive.
+
+It improves the space and time performance. The compared value must be a primitive.
+
+To apply the clean up, select *Primitive comparison* check box on the *Optimization* tab in your clean up profile.
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/primitive-comparison-preferences.png[]
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/primitive-comparison-before.png[]
+
+One gets:
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/primitive-comparison-after.png[]
+
+===== Primitive parsing clean up
+
+A new clean up has been added that avoids to create primitive wrapper when parsing a string.
+
+The object should be used as a primitive and not as a wrapper.
+
+To apply the clean up, select *Primitive parsing* check box on the *Optimization* tab in your clean up profile.
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/primitive-parsing-preferences.png[]
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/primitive-parsing-before.png[]
+
+One gets:
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/primitive-parsing-after.png[]
+
+===== Pull down common code from if/else statement clean up
+
+A new clean up has been added that extracts common code from the end of an `if / else if / else` control flow.
+
+Ultimately it removes the empty and passive `if` conditions.
+
+The control flow should have an `else` clause and the duplicate code should not rely on variables declared in the block.
+
+The statement matching performs a deep analysis. All the blocks should end with the same set of statements, or the blocks with different code should fall through with a jump statement (`return`, `throw`, `continue` or `break`).
+
+To apply the clean up, select *Pull down common code from if/else statement* check box on the *Duplicate code* tab in your clean up profile.
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/control-flow-merge-preferences.png[]
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/control-flow-merge-before.png[]
+
+One gets:
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/control-flow-merge-after.png[]
+
+And for the given code where all tails of blocks are identical except one block which falls through: 
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/control-flow-merge-jump-statement-before.png[]
+
+The identical tails of blocks have been pulled down from the control flow and the falling through block has been left as it is: 
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/control-flow-merge-jump-statement-after.png[]
+
+===== String.substring() clean up
+
+A new clean up has been added that removes the second `substring()` parameter if this parameter is the length of the string. It's the default value.
+
+It must reference the same expression.
+
+The expression must be passive.
+
+To apply the clean up, select *Redundant String.substring() parameter* check box on the *Unnecessary code* tab in your clean up profile.
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/substring-preferences.png[]
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/substring-before.png[]
+
+One gets:
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/substring-after.png[]
+
+===== Unreachable block clean up
+
+A new clean up has been added that detects two `if` conditions that are identical and removes the second one.
+
+The conditions should be passive.
+
+No exceptions should be awaited.
+
+It doesn't create unreachable code below the `if` statement which would create a compile error. That is to say it avoids the case where only the removed block doesn't fall through, all the other cases fall through, there are an `else` clause (not only `if/else` clauses) and a statement after the control workflow.
+
+To apply the clean up, select *Unreachable block* check box on the *Unnecessary code* tab in your clean up profile.
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/unreachable-block-preferences.png[]
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/unreachable-block-before.png[]
+
+One gets:
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/unreachable-block-after.png[]
+
+===== Unlooped while clean up
+
+A new clean up has been added that replaces a `while` loop that always terminates during the first iteration by an if.
+
+The loop should not contain any `continue` statement.
+
+The loop should only contain `break` statements without statements after.
+
+To apply the clean up, select *Convert loop into if when possible* check box on the *Unnecessary code* tab in your clean up profile.
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/unlooped-while-preferences.png[]
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/unlooped-while-before.png[]
+
+One gets:
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/unlooped-while-after.png[]
+
+===== Source Fixing clean ups
+
+A new tab named *Source Fixing* has been added to the *Clean Up* preferences. It lists the clean up options that fixes the behavior of the code. The *Compare with != 0 for bitwise expression* clean up option from *Code style* tab have also been moved to this new tab.
+
+[WARNING]
+====
+Use it carefully. You may get an unexpected behavior. It may trigger zombie code. A zombie code is a dead code that is dead because an error occurs before. The day someone fixes the error, the zombie code comes back to life and alters the behavior. Although most of the cleanups need review, those ones need testing.
+
+====
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/source-fixing-preferences.png[]
+
+===== Object.equals() on non null clean up
+
+A new clean up has been added that inverts calls to `Object.equals(Object)`  and `String.equalsIgnoreCase(String)` to avoid useless null pointer exception.
+
+The caller must be nullable.
+
+The parameter must not be nullable.
+
+Beware! By avoiding null pointer exceptions, the behavior may change!
+
+To apply the clean up, select *Avoid Object.equals() or String.equalsIgnoreCase() on null objects* check box on the *Source Fixing* tab in your clean up profile.
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/invert-equals-preferences.png[]
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/invert-equals-before.png[]
+
+One gets:
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/invert-equals-after.png[]
+
+===== Comparison to zero clean up
+
+A new clean up has been added that fixes `Comparable.compareTo()` usage.
+
+The code is not supposed to predict the `1` and `-1` values; it is supposed to get zero or a value lesser or greater than zero.
+
+Beware! The behavior may change if you implement a custom comparator!
+
+To apply the clean up, select *Compare to zero* check box on the *Source Fixing* tab in your clean up profile.
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/comparison-zero-preferences.png[]
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/comparison-zero-before.png[]
+
+One gets:
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/comparison-zero-after.png[]
+
+===== Completion overwrites in Java editor
+
+The *Java Editor* now uses Completion overwrites as the default. If Completion overwrites is on, the completion text replaces the characters following the caret position until the end of the word. If Completion inserts is on, the completion text is inserted at the caret position, so it never overwrites any existing text. Note that pressing Ctrl when applying a completion proposal toggles between the two insertion modes.
+
+You can change the default in the *Java > Editor > Content Assist* preference page.
+
+===== Insert best guessed parameters in Java editor
+
+Instead of simply inserting the method parameter names as placeholders, when a method is completed, the *Java Editor* now inserts the best guessed parameters by default.
+
+You can change the default in the *Java > Editor > Content Assist* preference page.
+
+===== Quick assist to create new implementation
+
+Invoking the *Quick Assist* (*Ctrl+1*) to create new implementation on an interface or abstract class declaration launches the *New Java Class* wizard:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/quick_assist_interface.png[]
+
+===== Quick fixes on permitted types
+
+You can add `sealed`, `non-sealed`, or `final` modifiers on permitted type declarations, as applicable, using the new *Quick Fixes* (*Ctrl+1*).
+
+On a permitted class declaration:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/permitted_class.png[]
+
+On a permitted interface declaration:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/permitted_interface.png[]
+
+===== Convert to switch expression
+
+A new quick assist and clean up has been added that converts switch statements to switch expressions (Java 14 or higher) where possible.
+
+Switch statements that use control statements such as nested switch statements, if/else blocks, for/while loops are not considered as is the case for return/continue statements. All cases of the switch statement must either have a last assignment statement that sets the same variable/field as other cases, or else has a `throw` statement. Fall-through is allowed between cases but only if there are no other statements in between. The switch statement must have a `default` case unless the switch expression is an enum type and all possible enum values are represented in the cases.
+
+To apply the quick assist, press *Ctrl+1* on the target switch statement and select *Convert to switch expression*, if offered.
+
+To apply the clean up, invoke *Source > Clean Up...*, use a custom profile, and on the *Configure...* dialog, select *Convert to switch expression* check box on the *Code Style* tab (or the *Java Feature* tab starting from Eclipse 2021-03).
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/switch-expressions-preferences.png[]
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/switch-expressions-before.png[]
+
+One gets:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/switch-expressions-after.png[]
+
+===== Uses the else-if pseudo keyword
+
+A new clean up has been added that combines nested `if` statement in `else` block to `else if`.
+
+Beware for any comments after the `else` keyword. It will be lost.
+
+To apply the clean up, invoke *Source > Clean Up...*, use a custom profile, and on the *Configure...* dialog, select *Combine nested 'if' statement in 'else' block to 'else if'* check box on the *Code Style* tab.
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/else-if-before.png[]
+
+One gets:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/else-if-after.png[]
+
+===== Bitwise expressions in comparisons
+
+A new clean up has been added that replaces the `>` operator with `!=` when the comparison expression has a bitwise expression operand and a `0` operand.
+
+This resolves an anti-pattern for such kind of comparisons, which can also be a bug when the bitwise expression is involving a negative constant value. This code smell is further described by the FindBugs project as bug description "BIT: Check for sign of bitwise operation".
+
+To apply the clean up, invoke *Source > Clean Up...*, use a custom profile, and on the *Configure...* dialog select *Compare with != 0 for bitwise expression* on the *Code Style* tab (or the *Source fixing* tab starting from Eclipse 2021-03).
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/bitwise-expressions-preferences.png[]
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/bitwise-expressions-before.png[]
+
+You get this after the clean up:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/bitwise-expressions-after.png[]
+
+===== Pull up assignment
+
+A new clean up has been added that moves assignments inside an `if` condition above the `if` node.
+
+It improves the readability of the code.
+
+To apply the clean up, invoke *Source > Clean Up...*, use a custom profile, and on the *Configure...* dialog, select *Pull up assignment* check box on the *Code Style* tab.
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/pull-up-assignment-before.png[]
+
+One gets:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/pull-up-assignment-after.png[]
+
+===== Use switch
+
+A new clean up has been added that replaces `if/else if/else` blocks to use `switch` when possible.
+
+It converts to `switch` when there are more than two cases.
+
+It does not convert if the discriminant can be `null`, that is to say only primitive.
+
+It does a variable conflict analyze.
+
+The case value can be literals or constants.
+
+To apply the clean up, invoke *Source > Clean Up...*, use a custom profile, and on the *Configure...* dialog, select *Convert if/else if/else chain to switch* check box on the *Code Style* tab.
+
+For the given code: 
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/use-switch-before.png[]
+
+One gets:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/use-switch-after.png[]
+
+===== Add elements in collections without loop
+
+A new clean up has been added that uses `Collection.addAll()` or `Collections.addAll()` instead of a `for` loop.
+
+It refactors `for` loops with index, `for` loops with iterator and `foreach` loops.
+
+If the source is an array, the list is raw, and the Java version is 1.5 or higher, we use `Arrays.asList()` to handle the erasure type. It doesn't decrease the performance.
+
+To apply the clean up, invoke *Source > Clean Up...*, use a custom profile, and on the *Configure...* dialog, select *Add elements in collections without loop* check box on the *Code Style* tab.
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/add-remove-preferences.png[]
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/add-remove-before.png[]
+
+One gets:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/add-remove-after.png[]
+
+===== Use ternary operator
+
+A new clean up has been added that replaces `(X && Y) || (!X && Z)` by `X ? Y : Z`.
+
+The operands must be passive and boolean.
+
+To apply the clean up, invoke *Source > Clean Up...*, use a custom profile, and on the *Configure...* dialog, select *Replace (X && Y) || (!X && Z) by X ? Y : Z* check box on the *Duplicate Code* tab.
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/ternary-operator-preferences.png[]
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/ternary-operator-before.png[]
+
+One gets:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/ternary-operator-after.png[]
+
+===== Use '==' or '^' on booleans
+
+A new clean up has been added that replaces `(X && !Y) || (!X && Y)` by `X ^ Y` and replaces `(X && Y) || (!X && !Y)` by `X == Y`.
+
+It only works on boolean.
+
+It works with lazy or eager operators.
+
+The operands must be passive.
+
+It does not matter an operand is on the left or right.
+
+It does a deep negation expression analyze.
+
+To apply the clean up, invoke *Source > Clean Up...*, use a custom profile, and on the *Configure...* dialog, select *Use '==' or '^' on booleans* check box on the *Duplicate Code* tab.
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/xor-before.png[]
+
+One gets:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/xor-after.png[]
+
+===== Redundant falling through blocks
+
+A new clean up has been added that detects a list of statements that ends with a jump statement (`return`, `break`, `continue` or `throw`), and has the same list of statements below that.
+
+It detects similar statements. It also checks that the declarations of the variables in the statements are the same. It looks for redundant statements in `if`, `else`, `catch` and `finally` but not in loops.
+
+To apply the clean up, invoke *Source > Clean Up...*, use a custom profile, and on the *Configure...* dialog, select *Remove redundant end of block with jump statement* check box on the *Duplicate Code* tab.
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/redundant-falling-blocks-before.png[]
+
+One gets:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/redundant-falling-blocks-after.png[]
+
+===== Redundant if condition
+
+A new clean up has been added that removes a condition on an `else` that is negative to the condition of the previous `if`.
+
+The condition must be passive. The removed code should not throw an expected exception. The cleanup uses a deep condition comparison algorithm.
+
+To apply the clean up, invoke *Source > Clean Up...*, use a custom profile, and on the *Configure...* dialog, select *Redundant if condition* check box on the *Duplicate Code* tab.
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/if-condition-before.png[]
+
+One gets:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/if-condition-after.png[]
+
+===== Use Objects.hash()
+
+A new clean up has been added that rewrites Eclipse-autogenerated `hashCode()` method by Eclipse-autogenerated `hashCode()` method for Java 7 using `Objects.hash()`.
+
+Let's remind that you can autogenerate your `hashCode()` and `equals()` methods by right-clicking on your class, selecting *Source* and clicking on *Generate hashCode() and equals() methods....* Since Eclipse 2018-09, a checkbox allows you to generate your methods using Java 7 API. This cleanup rewrites your method as if it has been generated using this option.
+
+This clean up does not generate again your method from scratch, it rewrites it using a more modern syntax. That is to say, if your method is missing or voluntary does not process a field, this field still won't be processed.
+
+To apply the clean up, invoke *Source > Clean Up...*, use a custom profile, and on the *Configure...* dialog, select *Use Objects.hash()* check box on the *Unnecessary Code* tab (or the *Java Feature* tab starting from Eclipse 2021-03).
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/hash-preferences.png[]
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/hash-before.png[]
+
+One gets:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/hash-after.png[]
+
+===== Use String.join()
+A new clean up has been added that uses `String.join()` when possible.
+
+It detects all types of for loops. The delimiter can be added before or after. The condition can be a boolean or an index comparison.
+
+To apply the clean up, invoke *Source > Clean Up...*, use a custom profile, and on the *Configure...* dialog, select *Use String.join()* check box on the *Unnecessary Code* tab (or the Java Feature tab starting from Eclipse 2021-03).
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/string-join-before.png[]
+
+One gets:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/string-join-after.png[]
+
+===== Use Arrays.fill()
+
+A new clean up has been added that replaces for loops to use `Arrays.fill()` where possible.
+
+The value must be hard-coded.
+
+To apply the clean up, invoke *Source > Clean Up...*, use a custom profile, and on the *Configure...* dialog, select *Use Arrays.fill()* check box on the *Unnecessary Code* tab.
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/arrays-fill-before.png[]
+
+One gets:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/arrays-fill-after.png[]
+
+===== Evaluate without null check
+
+A new clean up has been added that removes redundant null checks.
+
+It removes null check on value before `equals()` or `equalsIgnoreCase()` method and before `instanceof` expression.
+
+It only removes redundant passive expressions.
+
+To apply the clean up, invoke *Source > Clean Up...*, use a custom profile, and on the *Configure...* dialog, select *Evaluate without null check* check box on the *Unnecessary Code* tab.
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/redundant-null-check-before.png[]
+
+One gets:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/redundant-null-check-after.png[]
+
+===== Avoid double negation
+
+A new clean up has been added that reduces double negation in `boolean` expression.
+
+It removes negations on both operands in an equality/difference operation.
+
+It prefers equality/difference operation rather than negated operand.
+
+To apply the clean up, invoke *Source > Clean Up...*, use a custom profile, and on the *Configure...* dialog, select *Double negation* check box on the *Unnecessary Code* tab.
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/double-negation-before.png[]
+
+One gets:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/double-negation-after.png[]
+
+===== Redundant comparison statement
+
+Removes useless bad value checks before assignments or `return` statements. Such useless bad value checks are comparing an expression against bad value, then either assigning bad value or the expression depending on the result of the bad value check. It is simpler to directly assign the expression.
+
+The expression should be passive.
+
+The excluded value should be hard coded.
+
+To apply the clean up, invoke *Source > Clean Up...*, use a custom profile, and on the *Configure...* dialog, select *Remove redundant comparison statement* check box on the *Unnecessary Code* tab.
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/redundant-comparison-statement-before.png[]
+
+One gets:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/redundant-comparison-statement-after.png[]
+
+===== Unnecessary super() call
+
+A new clean up has been added that removes call to `super` constructor with empty arguments.
+
+Such a call is redundant. See JLS section 12.5 for more info.
+
+To apply the clean up, invoke *Source > Clean Up...*, use a custom profile, and on the *Configure...* dialog, select *Remove redundant super() call in constructor* check box on the *Unnecessary Code* tab.
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/redundant-super-before.png[]
+
+One gets:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/redundant-super-after.png[]
+
+===== Initialize collection at creation
+
+A new clean up has been added that replaces the creation of a new `Collection`, then invoking `Collection.addAll()` on it, by the creation of the new `Collection` with the other `Collection` as parameter.
+
+Only well known collection classes are refactored to avoid behavior changes. The cleanup is enabled only if there is no useful instantiation parameters.
+
+To apply the clean up, invoke *Source > Clean Up...*, use a custom profile, and on the *Configure...* dialog, select *Initialize collection at creation* check box on the *Unnecessary Code* tab.
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/collection-cloning-before.png[]
+
+One gets:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/collection-cloning-after.png[]
+
+===== Initialize map at creation
+
+A new clean up has been added that replaces creating a new `Map`, then invoking `Map.putAll()` on it, by creating the new `Map` with the other `Map` as parameter.
+
+Only well known map classes are refactored to avoid behavior changes. The cleanup is enabled only if there is no useful instantiation parameters.
+
+To apply the clean up, invoke *Source > Clean Up...*, use a custom profile, and on the *Configure...* dialog, select *Initialize map at creation* check box on the *Unnecessary Code* tab.
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/map-cloning-before.png[]
+
+One gets:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/map-cloning-after.png[]
+
+===== Remove overridden assignment
+
+A new clean up has been added that removes passive assignment when the variable is reassigned before being read.
+
+To apply the clean up, invoke *Source > Clean Up...*, use a custom profile, and on the *Configure...* dialog, select *Remove overridden assignment* check box on the *Unnecessary Code* tab.
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/overridden-assignment-before.png[]
+
+One gets:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/overridden-assignment-after.png[]
+
+===== Raise embedded if into parent if
+
+A new clean up has been added that merges inner `if` statement into the parent `if` statement.
+
+The cleanup checks that there is no `else` statement.
+
+To apply the clean up, invoke *Source > Clean Up...*, use a custom profile, and on the *Configure...* dialog, select *Raise embedded if into parent if* check box on the *Unnecessary Code* tab.
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/embedded-if-before.png[]
+
+One gets:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/embedded-if-after.png[]
+
+===== Redundant return
+
+A new clean up has been added that removes useless lone `return` at the end of a method or lambda.
+
+The cleanup checks that there is no value on the `return` statement.
+
+To apply the clean up, invoke *Source > Clean Up...*, use a custom profile, and on the *Configure...* dialog, select *Remove useless return* check box on the *Unnecessary Code* tab.
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/redundant-return-before.png[]
+
+One gets:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/redundant-return-after.png[]
+
+===== Redundant continue
+
+A new clean up has been added that removes useless lone `continue` at the end of a loop.
+
+A `continue` statement at the end of a loop is removed. A `continue` statement at the end of a control statement is removed if the control statement is at the end of a loop. A `continue` statement is kept if it has a label.
+
+To apply the clean up, invoke *Source > Clean Up...*, use a custom profile, and on the *Configure...* dialog, select *Remove useless continue* check box on the *Unnecessary Code* tab.
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/redundant-continue-before.png[]
+
+One gets:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/redundant-continue-after.png[]
+
+===== Use try-with-resource
+
+A new clean up has been added that changes code to make use of Java 7 try-with-resources feature. In particular, it removes now useless `finally` clauses.
+
+It may move an inner closeable assignment as a resource. It handles `finally` with a simple `close()` invocation, a null-check and remaining statements below.
+
+It is only enabled from Java 7 and it also handles the Java 9 syntax.
+
+To apply the clean up, invoke *Source > Clean Up...*, use a custom profile, and on the *Configure...* dialog, select *Use try-with-resource* check box on the *Unnecessary Code* tab (or the *Java Feature* tab starting from Eclipse 2021-03).
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/try-with-resource-before.png[]
+
+One gets:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/try-with-resource-after.png[]
+
+===== Exit loop earlier
+
+A new clean up has been added that adds a `break` to avoid passive `for` loop iterations.
+
+The inner assignments must not do other different assignments after (assign other values or assign into other variables).
+
+There must be no side effects after the first assignments.
+
+To apply the clean up, invoke *Source > Clean Up...*, use a custom profile, and on the *Configure...* dialog, select *Exit loop earlier* check box on the *Optimization* tab.
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/break-loop-before.png[]
+
+One gets:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/break-loop-after.png[]
+
+===== Use StringBuilder
+
+A new clean up has been added that replaces `String` concatenation by `StringBuilder` when possible.
+
+It uses StringBuffer for Java 1.4-.
+
+It only replaces strings on several statements and the concatenation should have more than two pieces.
+
+The variable should be only concatenated and it should retrieve the string once.
+
+To apply the clean up, invoke *Source > Clean Up...*, use a custom profile, and on the *Configure...* dialog, select *Replace String concatenation by StringBuilder* check box on the *Optimization* tab.
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/stringbuilder-before.png[]
+
+One gets:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/stringbuilder-after.png[]
+
+===== Primitive serialization
+
+A new clean up has been added that replaces a primitive boxing to serialize by a call to the static `toString()` method.
+
+It works for all the primitive types: `boolean`, `char`, `byte`, `short`, `int`, `long`, `float` and `double`.
+
+To apply the clean up, invoke *Source > Clean Up...*, use a custom profile, and on the *Configure...* dialog, select *Primitive serialization* check box on the *Optimization* tab.
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/primitive-serialization-before.png[]
+
+One gets:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/primitive-serialization-after.png[]
+
+===== Prefer boolean literal
+
+A new clean up has been added that replaces `Boolean.TRUE`/`Boolean.FALSE` by `true`/`false` when used as primitive.
+
+To apply the clean up, invoke *Source > Clean Up...*, use a custom profile, and on the *Configure...* dialog, select *Prefer boolean literals* check box on the *Optimization* tab.
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/boolean-literal-preferences.png[]
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/boolean-literal-before.png[]
+
+One gets:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/boolean-literal-after.png[]
+
+===== Diamond operator <> (Remove redundant type arguments)
+
+The clean up *Remove redundant type arguments* has been renamed *Use diamond operator* and is still available in the *Unnecessary Code* tab in Eclipse 2020-12.
+
+The clean up will be moved to the future *Java Feature* tab in Eclipse 2021-03.
+
+==== Java Views and Dialogs
+
+===== Parallel index search
+
+A new preference option has been added and enabled by default: *Preferences > Java > Enable parallel index search*. Depending on the available hardware, this option should improve performance for all index based Java search operations, but could also lead to possible regressions. To switch back to the old sequential index search, turn this option off: 
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/parallel-index-search.png[]
+
+===== Coloring restricted identifiers
+
+A new option named *Restricted identifiers* has been added under Java category in *Java > Editor > Syntax Coloring* preferences.
+
+Some identifiers (e.g. var, yield, record etc.) are restricted identifiers because they are not allowed in some contexts. Semantic highlighting options for such identifiers can be controlled by the element *Restricted identifiers* under *Java* category in *Java > Editor > Syntax Coloring* preference page.
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/restricted-identifier-preference.png[]
+
+===== Externally annotate sources
+
+The concept of external null annotations has been extended to apply to source folders, too.
+
+External annotations were introduced in Eclipse 4.5 in order to overlay not-editable library classes with null annotations to specify the null contract against which library calls should be analysed. You can now apply the same concept for another kind of classes that should not be edited: generated source code.
+
+In the *Java Build Path* dialog, also source folders now have a node *External annotations* where a path to Eclipse External Annotation files (.eea) can be configured.
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/annotate-sources-config.png[]
+
+Given a project that is configured for annotation based null analysis, and given a Java class inside a source folder configured for external annotations, the editor now offers a quick assist (*Ctrl+1*) for annotating individual type references in the signatures of methods and fields. 
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/annotate-sources-assist.png[]
+
+The selected option will record that the return type should be interpreted as `@NonNull List<Attribute>` (the popup to the right showing the internal format how this annotation will be stored in an .eea file). With this annotation in place, the annotated signature will be shown in hovers and will be used for null analysis: 
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/annotate-sources-effect.png[]
+
+===== static import org.mockito.Mockito.* available as favorite
+
+Imports for static `org.mockito.Mockito.*` are added to the Java favorites in the preferences under *Java > Editor > Content Assists > Favorites*. This way the organize imports action in the IDE will automatically add static imports to this class when you use the Mockito library in your tests.
+
+===== Fine-grained search for permitted types
+
+You can perform a fine-grained search for permitted type declarations in the *Search dialog (Ctrl+H) > Java Search > Limit To > Match Locations* with the new option:
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/search_permitted_type.png[]
+
+===== Sort library entries alphabetically in Package Explorer enabled by default
+
+The *Preferences > Java > Appearance > [x] Sort library entries alphabetically in Package Explorer* is now enabled by default. This makes it easier for you to see if a library is available or not.
+
+If you want to see the order in which the libraries are added to the classpath, e.g. to understand classpath loading issues, you can disable the preference. 
+
+==== Debug
+
+===== Toggle tracepoints in editor ruler
+
+A new *Toggle Tracepoint* context-menu entry has been added to the *Java Editor* line ruler. Both the *Toggle Tracepoint* options i.e. the new context-menu entry and the existing option under *Run* menu have a new icon and are now available for Java class files also along with Java source files. 
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/toggle-tracepoints.png[]
+
+===== Toggle breakpoint on a list of methods including abstract method
+
+You can now *Toggle Method Breakpoint* on a list of methods which includes an abstract method.
+
+image::https://www.eclipse.org/eclipse/news/4.19/images/debug-toggle-breakpoint.png[]
+
+===== Support for @argfiles when launching
+
+A new check box was added to the *Arguments* tab for Java based launch configurations (Java Application, JUnit, and others) for writing arguments into an @argfile. This is disabled below Java 9 and can be enabled for Java programs launched with Java 9 and above.
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/launch-with-argfile.png[]
+
+===== Stabilized logical structures in Variables view with active GC
+
+The *Debug* view no longer breaks when logical structures are shown while the application's garbage collector is active (`com.sun.jdi.ObjectCollectedException` occurred while retrieving value). 
+
+==== Java Formatter
+
+===== Annotations wrapping
+
+The formatter now allows more control over *how multiple annotations on a single element should be divided into lines*. Previously, they could either all be placed in a single line along with the annotated element, or each in a separate line. The settings that controlled this behavior (in the *New Lines > After annotations* section) now only control a line break between the last annotation and the annotated element. Line breaks between annotations are controlled by a new group of settings in the *Line Wrapping > Wrapping Settings > Annotations* section.
+
+Just like with standard wrapping settings, they can be set to keep everything in a single line (*Do not wrap*), each annotation in a separate line (*Wrap all elements*), or only break lines that exceed the width limit (*Wrap where necessary*). The last option along with the *Never join already wrapped lines* setting effectively means manual control over each case. The annotation wrapping settings differ from other wrapping settings in that the indentation control is not available.
+
+The formatter configuration sections can be found in the *Profile Editor (Preferences > Java > Code Style > Formatter > Edit...*).
+
+image::https://www.eclipse.org/eclipse/news/4.18/images/formatter-wrap-annotations.png[]
+
+
+=== And more...
+
+You can find more noteworthy updates in on link:/documentation/whatsnew/jbosstools/4.17.0.Final.html[this page].
+
+== What is next?
+
+Having JBoss Tools 4.19.0 and Red Hat CodeReady Studio 12.19 out we are already working on the next release.
+
+Enjoy!
+
+Jeff Maury
