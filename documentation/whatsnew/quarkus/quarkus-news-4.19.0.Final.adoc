@@ -1,0 +1,12 @@
+= Quarkus What's New in 4.19.0.Final
+:page-layout: whatsnew
+:page-component_id: quarkus
+:page-component_version: 4.19.0.Final
+:page-product_id: jbt_core
+:page-product_version: 4.19.0.Final
+
+== Support for environment variables in Run/debug Quarkus configurations
+
+Environment variables is one way to override properties values in the Quarkus properties file. It is now possible
+to specify environment variables in a Run/debug Quarkus configuration.
+
