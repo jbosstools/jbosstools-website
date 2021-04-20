@@ -1,4 +1,4 @@
 = Nick Boldt
-:page-photo_64px: https://developer.jboss.org/people/nickboldt/avatar/64.png
-:page-photo_32px: https://developer.jboss.org/people/nickboldt/avatar/32.png
+:page-photo_64px: https://avatars.githubusercontent.com/u/227597?s=64
+:page-photo_32px: https://avatars.githubusercontent.com/u/227597?s=32
 :page-developer_page: https://developer.jboss.org/people/nickboldt
