@@ -1,4 +1,4 @@
 = Tomas Milata
-:page-photo_64px: https://static.jboss.org/developer/people/tomas_milata/avatar/64.png
-:page-photo_32px: https://static.jboss.org/developer/people/tomas_milata/avatar/32.png
+:page-photo_64px: https://eu.ui-avatars.com/api/?name=tomas milata&size=64
+:page-photo_32px: https://eu.ui-avatars.com/api/?name=tomas milata&size=32
 :page-developer_page: https://developer.jboss.org/people/tomas_milata

@@ -1,6 +1,6 @@
 = Andre Dietisheim
-:page-photo_64px: https://static.jboss.org/developer/people/adietish/avatar/64.png
-:page-photo_32px: https://static.jboss.org/developer/people/adietish/avatar/32.png
+:page-photo_64px: https://avatars.githubusercontent.com/u/25126?s=64
+:page-photo_32px: https://avatars.githubusercontent.com/u/25126?s=32
 :page-developer_page: https://developer.jboss.org/people/adietish
 
 
