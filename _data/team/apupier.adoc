@@ -1,4 +1,4 @@
 = Aurélien Pupier
-:page-photo_64px: https://static.jboss.org/developer/people/aurelien.pupier/avatar/64.png
-:page-photo_32px: https://static.jboss.org/developer/people/aurelien.pupier/avatar/32.png
+:page-photo_64px: https://avatars.githubusercontent.com/u/1105127?s=64
+:page-photo_32px: https://avatars.githubusercontent.com/u/1105127?s=32
 :page-developer_page: https://developer.jboss.org/people/aurelien.pupier
