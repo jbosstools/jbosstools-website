@@ -1,0 +1,47 @@
+= JBoss Tools 4.19.1.AM1 for Eclipse 2021-03
+:page-layout: blog
+:page-author: jeffmaury
+:page-tags: [release, jbosstools, devstudio, jbosscentral]
+:page-date: 2021-06-15
+
+Happy to announce 4.19.1.AM1 (Developer Milestone 1) build for Eclipse 2021-03.
+
+Downloads available at link:/downloads/jbosstools/2021-03/4.19.1.AM1.html[JBoss Tools 4.19.1 AM1].
+
+== What is New?
+
+Full info is at link:/documentation/whatsnew/jbosstools/4.19.1.AM1.html[this page]. Some highlights are below.
+
+
+=== OpenShift
+
+==== Improved OpenShift Application explorer
+
+When the OpenShift cluster has no applications or projects, user is required to create them. However,
+it may not be obvious for the user that the corresponding function is available from a sub menu of the
+New context menu.
+
+So now, a link will be provided within the tree with an explanation message.
+
+If no projects are available, user will be guided to create one:
+
+image::/documentation/whatsnew/openshift/images/application-explorer-enhanced-navigation1.gif[width=80%]
+
+If no applications are available in a project, user will be guided to create a new component:
+
+image::/documentation/whatsnew/openshift/images/application-explorer-enhanced-navigation2.gif[width=80%]
+
+
+=== Hibernate Tools
+
+A number of additions and updates have been performed on the available Hibernate runtime  providers.
+
+==== Runtime Provider Updates
+
+The Hibernate 5.4 runtime provider now incorporates Hibernate Core version 5.4.32.Final and Hibernate Tools version 5.4.32.Final.
+
+
+
+Enjoy!
+
+Jeff Maury
