@@ -8,7 +8,7 @@ http://jobs.redhat.com/jobs/descriptions/principal-software-engineer-middleware-
 for an Eclipse Developer] to primarily work on JBoss Tools Fuse
 tooling.
 
-image::http://images.rapgenius.com/769fcbdf1939cbdf43002be6e4330e9c.936x690x1.jpg[]
+image::https://images.rapgenius.com/769fcbdf1939cbdf43002be6e4330e9c.936x690x1.jpg[]
 
 If you are interested read the http://jobs.redhat.com/jobs/descriptions/principal-software-engineer-middleware-job-1-5487701[job description] and apply.
 
