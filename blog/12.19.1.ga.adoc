@@ -1,0 +1,95 @@
+= JBoss Tools and Red Hat CodeReady Studio for Eclipse 2021-03
+:page-layout: blog
+:page-author: jeffmaury
+:page-tags: [release, jbosstools, devstudio, jbosscentral, codereadystudio]
+:page-date: 2021-07-16
+
+link:/downloads/jbosstools/2021-03/4.19.1.Final.html[JBoss Tools 4.19.1] and
+link:/downloads/devstudio/2021-03/12.19.1.GA.html[Red Hat CodeReady Studio 12.19.1]
+for Eclipse 2021-03 are here waiting for you. Check it out!
+
+image::/blog/images/crstudio12.png[]
+
+== Installation
+
+Red Hat CodeReady Studio comes with everything pre-bundled in its installer. Simply download it from our https://developers.redhat.com/products/codeready-studio/overview/[Red Hat CodeReady product page] and run it like this:
+
+    java -jar codereadystudio-<installername>.jar
+
+JBoss Tools or Bring-Your-Own-Eclipse (BYOE) CodeReady Studio require a bit more:
+
+This release requires at least Eclipse 4.19 (2021-03) but we recommend
+using the latest https://www.eclipse.org/downloads/packages/release/2021-03/r/eclipse-ide-java-developers[Eclipse 4.19 2021-03 JEE Bundle]
+since then you get most of the dependencies preinstalled.
+
+[WARNING]
+====
+Java11 is now required to run Red Hat Developer Studio or JBoss Tools (this is a requirement from Eclipse 4.17). So make sure to select a Java11 JDK in the installer.
+You can still work with pre-Java11 JDK/JRE and projects in the tool.
+====
+
+Once you have installed Eclipse, you can either find us on the Eclipse Marketplace under "JBoss Tools" or "Red Hat CodeReady Studio".
+
+For JBoss Tools, you can also use our update site directly.
+
+    http://download.jboss.org/jbosstools/photon/stable/updates/
+
+== What is new?
+
+Our main focus for this release was an improved tooling for the Quarkus framework, improvements for container based development and bug fixing.
+
+=== OpenShift
+
+==== Improved OpenShift Application explorer
+
+When the OpenShift cluster has no applications or projects, user is required to create them. However,
+it may not be obvious for the user that the corresponding function is available from a sub menu of the
+New context menu.
+
+So now, a link will be provided within the tree with an explanation message.
+
+If no projects are available, user will be guided to create one:
+
+image::/documentation/whatsnew/openshift/images/application-explorer-enhanced-navigation1.gif[width=80%]
+
+If no applications are available in a project, user will be guided to create a new component:
+
+image::/documentation/whatsnew/openshift/images/application-explorer-enhanced-navigation2.gif[width=80%]
+
+=== Server Tools
+
+==== Wildfly 24 Server Adapter
+
+A server adapter has been added to work with Wildfly 24.
+
+==== EAP 7.4 Beta Server Adapter
+
+The server adapter has been adapted to work with EAP 7.4 Beta.
+
+=== Hibernate Tools
+
+==== Hibernate Runtime Provider Updates
+
+A number of additions and updates have been performed on the available Hibernate runtime  providers.
+
+===== New Runtime Provider
+
+The new Hibernate 5.5 runtime provider has been added. It incorporates Hibernate Core version 5.5.3.Final and Hibernate Tools version 5.5.3.Final
+
+===== Runtime Provider Updates
+
+The Hibernate 5.4 runtime provider now incorporates Hibernate Core version 5.4.32.Final and Hibernate Tools version 5.4.32.Final.
+
+
+
+=== And more...
+
+You can find more noteworthy updates in on link:/documentation/whatsnew/jbosstools/4.19.1.Final.html[this page].
+
+== What is next?
+
+Having JBoss Tools 4.19.1 and Red Hat CodeReady Studio 12.19.1 out we are already working on the next release.
+
+Enjoy!
+
+Jeff Maury
