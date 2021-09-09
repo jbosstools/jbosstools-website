@@ -1,0 +1,58 @@
+= JBoss Tools 4.21.0.AM1 for Eclipse 2021-09
+:page-layout: blog
+:page-author: jeffmaury
+:page-tags: [release, jbosstools, devstudio, jbosscentral]
+:page-date: 2021-09-07
+
+Happy to announce 4.21.0.AM1 (Developer Milestone 1) build for Eclipse 2021-09.
+
+Downloads available at link:/downloads/jbosstools/2021-09/4.21.0.AM1.html[JBoss Tools 4.21.0 AM1].
+
+== What is New?
+
+Full info is at link:/documentation/whatsnew/jbosstools/4.21.0.AM1.html[this page]. Some highlights are below.
+
+
+=== OpenShift
+
+==== Operator based services
+
+When developing cloud native applications on OpenShift, developer may need to
+launch services (databases, messaging system,...) that the application under
+development may need to connect to. The OpenShift tooling allowed to launch such
+services but it was based on the service catalog which is not available anymore on OpenShift 4.
+
+The new feature is based on operators which is the devops way of installing and
+managing software on Kubernetes clusters. So when you want to launch a service
+for your application, you will have to choose from the list of installed
+operators on your cluster and then select type of deployment you want.
+
+In the following example, there are two operators installed on our cluster:
+the https://strimzi.io[Strimzi] operator for setting up Kafka clusters on Kubernetes
+and a Postgresql operator.
+
+For each operator, we can select the type of deployment we want to setup.
+
+image::/documentation/whatsnew/openshift/images/operator-based-services1.gif[width=80%]
+
+After you've entered the name of your service, it will appear in the application explorer view:
+
+
+image::/documentation/whatsnew/openshift/images/operator-based-services2.png[width=80%]
+
+
+
+=== Hibernate Tools
+
+A number of additions and updates have been performed on the available Hibernate runtime  providers.
+
+==== Runtime Provider Updates
+
+The Hibernate 5.5 runtime provider now incorporates Hibernate Core version 5.5.7.Final and Hibernate Tools version 5.5.7.Final.
+
+The Hibernate 5.3 runtime provider now incorporates Hibernate Core version 5.3.22.Final and Hibernate Tools version 5.3.22.Final.
+
+
+Enjoy!
+
+Jeff Maury
