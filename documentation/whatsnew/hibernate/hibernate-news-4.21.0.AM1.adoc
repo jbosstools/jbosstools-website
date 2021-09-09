@@ -1,0 +1,22 @@
+= Hibernate Tools 4.21.0.AM1 What's New
+:page-layout: whatsnew
+:page-component_id: hibernate
+:page-component_version: 4.21.0.AM1
+:page-product_id: jbt_core
+:page-product_version: 4.21.0.AM1
+
+ifndef::finalnn[]
+== Hibernate Runtime Provider Updates
+
+A number of additions and updates have been performed on the available Hibernate runtime  providers.
+
+=== Runtime Provider Updates
+
+The Hibernate 5.5 runtime provider now incorporates Hibernate Core version 5.5.7.Final and Hibernate Tools version 5.5.7.Final.
+
+The Hibernate 5.3 runtime provider now incorporates Hibernate Core version 5.3.22.Final and Hibernate Tools version 5.3.22.Final.
+endif::finalnn[]
+endif::finalnn[]
+
+
+
