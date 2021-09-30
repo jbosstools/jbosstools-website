@@ -48,8 +48,7 @@ eclipse:
     download_url: http://www.eclipse.org/downloads/packages/release/2019-12/
     requirements: Java 8
   simrel-2019-09:
-    # TODO archive this as of Oct 2021?
-    archived: false
+    archived: true
     url_path_fragment: 2019-09
     short_name: 2019-09
     full_name: Eclipse 4.13 (2019-09)
@@ -197,14 +196,14 @@ devstudio:
         eclipse_name: Eclipse 4.21 (2021-09)
         installers:
           - name: Stand-alone Installer
-            url: http://www.jboss.org/download-manager/content/origin/files/sha256/94/941c313c7d9c58fb3c644173f86bdbd88c45da9de5e45ffe53b4e25d0c2b35df/codereadystudio-12.21.0.GA-installer-standalone.jar
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/94/941c313c7d9c58fb3c644173f86bdbd88c45da9de5e45ffe53b4e25d0c2b35df/codereadystudio-12.21.0.GA-installer-standalone.jar
             file_size: 1.0GB
         zips:
           - name: Update site (including sources) bundle of Red Hat CodeReady Studio
-            url: http://www.jboss.org/download-manager/content/origin/files/sha256/e0/e0727a5057825cac78735a9035dacb14c39320fe6665f52ec0d7b3ea31eae75d/codereadystudio-12.21.0.GA-updatesite-core.zip
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/e0/e0727a5057825cac78735a9035dacb14c39320fe6665f52ec0d7b3ea31eae75d/codereadystudio-12.21.0.GA-updatesite-core.zip
             file_size: 1.0GB
           - name: JBoss Central Zip
-            url: http://www.jboss.org/download-manager/content/origin/files/sha256/1d/1dcc7fd9f59a55a688fe9d3275bb9ad59d651da294833848a5934d26d4ff4b77/codereadystudio-12.21.0.GA-updatesite-central.zip
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/1d/1dcc7fd9f59a55a688fe9d3275bb9ad59d651da294833848a5934d26d4ff4b77/codereadystudio-12.21.0.GA-updatesite-central.zip
             file_size: 125MB
           - name: Target Platform for Red Hat CodeReady Studio
             url: https://devstudio.redhat.com/static/12/stable/updates/core/devstudio-12.21.0.GA-target-platform.zip
@@ -1748,16 +1747,16 @@ jbt_core:
         supported_jbt_is_version: 
         blog_announcement_url: /blog/4.21.0.am1.html
         documentation_url: http://docs.jboss.org/tools/
-        update_site_url: http://download.jboss.org/jbosstools/photon/development/updates/
+        update_site_url: https://download.jboss.org/jbosstools/photon/development/updates/
         eclipse_name: Eclipse 4.21 (2021-09)
         zips:
           - name: Update site (including sources) bundle of all JBoss Core Tools
             file_size: 1GB
-            url: http://download.jboss.org/jbosstools/static/photon/development/updates/core/jbosstools-4.21.0.AM1-updatesite-core.zip
+            url: https://download.jboss.org/jbosstools/static/photon/development/updates/core/jbosstools-4.21.0.AM1-updatesite-core.zip
             sha256_url: http://download.jboss.org/jbosstools/static/photon/development/updates/core/jbosstools-4.21.0.AM1-updatesite-core.zip.sha256
           - name: Sources zip of all JBoss Core Tools
             file_size: 213MB
-            url: http://download.jboss.org/jbosstools/static/photon/development/updates/core/jbosstools-4.21.0.AM1-src.zip
+            url: https://download.jboss.org/jbosstools/static/photon/development/updates/core/jbosstools-4.21.0.AM1-src.zip
             sha256_url: http://download.jboss.org/jbosstools/static/photon/development/updates/core/jbosstools-4.21.0.AM1-src.zip.sha256
           - name: Release Notes
             url: https://tools.jboss.org/documentation/whatsnew/index.html
