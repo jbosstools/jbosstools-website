@@ -1,0 +1,599 @@
+= JBoss Tools and Red Hat CodeReady Studio for Eclipse 2021-09
+:page-layout: blog
+:page-author: jeffmaury
+:page-tags: [release, jbosstools, devstudio, jbosscentral, codereadystudio]
+:page-date: 2021-10-05
+
+link:/downloads/jbosstools/2021-09/4.21.0.Final.html[JBoss Tools 4.21.0] and
+link:/downloads/devstudio/2021-09/12.21.0.GA.html[Red Hat CodeReady Studio 12.21.0]
+for Eclipse 2021-09 are here waiting for you. Check it out!
+
+image::/blog/images/crstudio12.png[]
+
+== Installation
+
+Red Hat CodeReady Studio comes with everything pre-bundled in its installer. Simply download it from our https://developers.redhat.com/products/codeready-studio/overview/[Red Hat CodeReady product page] and run it like this:
+
+    java -jar codereadystudio-<installername>.jar
+
+JBoss Tools or Bring-Your-Own-Eclipse (BYOE) CodeReady Studio require a bit more:
+
+This release requires at least Eclipse 4.21 (2021-09) but we recommend
+using the latest https://www.eclipse.org/downloads/packages/release/2021-09/r/eclipse-ide-enterprise-java-and-web-developers[Eclipse 4.21 2021-09 JEE Bundle]
+
+since then you get most of the dependencies preinstalled.
+
+[WARNING]
+====
+Java11 is now required to run Red Hat Developer Studio or JBoss Tools (this is a requirement from Eclipse 4.17). So make sure to select a Java11 JDK in the installer.
+You can still work with pre-Java11 JDK/JRE and projects in the tool.
+====
+
+Once you have installed Eclipse, you can either find us on the Eclipse Marketplace under "JBoss Tools" or "Red Hat CodeReady Studio".
+
+For JBoss Tools, you can also use our update site directly.
+
+    http://download.jboss.org/jbosstools/photon/stable/updates/
+
+== What is new?
+
+Our main focus for this release was an improved tooling for container based development and bug fixing.
+
+=== OpenShift
+
+==== Operator based services
+
+When developing cloud native applications on OpenShift, developer may need to
+launch services (databases, messaging system,...) that the application under
+development may need to connect to. The OpenShift tooling allowed to launch such
+services but it was based on the service catalog which is not available anymore on OpenShift 4.
+
+The new feature is based on operators which is the devops way of installing and
+managing software on Kubernetes clusters. So when you want to launch a service
+for your application, you will have to choose from the list of installed
+operators on your cluster and then select type of deployment you want.
+
+In the following example, there are two operators installed on our cluster:
+the https://strimzi.io[Strimzi] operator for setting up Kafka clusters on Kubernetes
+and a Postgresql operator.
+
+For each operator, we can select the type of deployment we want to setup. For each type
+of deployment, specific parameters may be specified. In this example, we decided to
+set the replicas number to 4 for a Kafka cluster.
+
+image::/documentation/whatsnew/openshift/images/operator-based-services3.gif[width=80%]
+
+After you've entered the name of your service, it will appear in the application explorer view:
+
+
+image::/documentation/whatsnew/openshift/images/operator-based-services2.png[width=80%]
+
+
+=== Hibernate Tools
+
+==== Hibernate Runtime Provider Updates
+
+A number of additions and updates have been performed on the available Hibernate runtime  providers.
+
+===== New Runtime Provider
+
+A new runtime provider has been added for Hibernate 5.6. It incorporates Hibernate Core version 5.6.0.Beta2 and Hibernate Tools version 5.6.0.Beta2. This runtime is in preview mode.
+
+===== Runtime Provider Updates
+
+The Hibernate 5.5 runtime provider now incorporates Hibernate Core version 5.5.7.Final and Hibernate Tools version 5.5.7.Final.
+
+The Hibernate 5.3 runtime provider now incorporates Hibernate Core version 5.3.22.Final and Hibernate Tools version 5.3.22.Final.
+
+=== Platform
+
+==== Views, Dialogs and Toolbar
+
+==== New clean message dialog api
+
+A new API in the class PlainMessageDialog is introduced. It uses a builder pattern to create an immutable instance of PlainMessageDialog. It has a clean API and consists of methods for e.g. the button labels, the message and the image.
+
+Example Usage:
+`int answer = PlainMessageDialog.getBuilder(myShell, "The new dialog").image(SWT.ICON_Question).message("Like it?").buttLabels(Arrays.asList(IDialogConstants.YES_LABEL, IDialogConstants.NO_LABEL)).build().open();`
+
+image::https://www.eclipse.org/eclipse/news/4.21/images/plain_message_dialog_usage.png[]
+
+===== Accepted licenses remembered permanently
+
+Before accepted licenses were only remembered during runtime and not persisted between restarts. The user selection of accepted licenses is now persisted between restarts.
+
+===== Export certificate during installation
+
+When installing a software into the workbench and the software is signed but with an untrusted certificate, the dialog to review trusted certificates now shows a button to 📥 *Export...* the selected certificate into their own *.der file. This can facilitate review of the certificate, for example in order to get it audited by some other external service, tool or workflow before approval.
+
+===== Quick Search mentions max occurrences reached
+
+The Quick Search dialog features a label to depict the number of matches that were found. Additionally, if the result set exceeds a now configurable limit, the label shows that the limit has been reached and the search process stops. Besides this new "Max Results" configuration option, the preference page has been overhauled with information decorators to describe the properties in more detail.
+
+image::https://www.eclipse.org/eclipse/news/4.20/images/quick-search.png[]
+image::https://www.eclipse.org/eclipse/news/4.20/images/quick-search-preferences.png[]
+
+==== Themes and Styling 
+
+===== New close icon on tabs
+
+The drawing of the close icon of tabs has been updated to align better with the operating system.
+
+Old:
+
+image::https://www.eclipse.org/eclipse/news/4.21/images/old-light-x.png[]
+image::https://www.eclipse.org/eclipse/news/4.21/images/old-dark-x.png[]
+
+New:
+
+image::https://www.eclipse.org/eclipse/news/4.21/images/new-light-x.png[]
+image::https://www.eclipse.org/eclipse/news/4.21/images/new-dark-x.png[]
+
+===== Eclipse Windows now supports dark-theme tool-tips
+
+Eclipse on Windows now support dark-theme tool-tips. Refer below screens-shot which show various tool-tips@dark-theme:
+
+image::https://www.eclipse.org/eclipse/news/4.21/images/swt-win-darkthemed-tooltips.png[]
+
+==== Preferences
+
+===== History for derived files
+
+The Local history for derived files is now *disabled* by default. The behaviour can now be configured to the previous (enabled) behaviour in *Preferences > General > Workspace > Local History* page, by checking the *History for derived files* checkbox.
+
+Derived files are for example automatically created as the output of java annotation processing or XText. As they are automatically created one could also recreate old versions of the output by compiling older versions of the input, thereby wasting time and space to store the history of the derived files for most users.
+
+image::https://www.eclipse.org/eclipse/news/4.20/images/history-for-derived-files-preferences.png[]
+
+==== General Updates
+
+===== Eclipse support for Mac AArch64(Arm64)
+
+Eclipse SDK downloads for the Mac AArch64(Arm64) architecture are now available. Please note that a Mac AArch64 JVM is required to run Eclipse for Mac AArch64. Eclipse for Mac AArch64 will be formally supported in the Target Environments in a future release.
+
+Eclipse and SWT for Mac x86_64 architecture can already run on Apple Silicon hardware under Rosetta translation mode using a x86_64 JVM.
+
+===== New method create(int style) in GridDataFactory
+
+GridDataFactory contains a new static method `create(int style)` which returns a new GridDataFactory instance.
+This method is similar to `new GridData(int style)`.
+
+===== Minimum Java version for SWT
+
+SWT now requires minimum Java 11 to run SWT.
+
+===== Ant 1.10.11
+
+Eclipse has adopted Ant version 1.10.11.
+
+=== Java Developement Tools (JDT)
+
+==== Java™ 17 Support
+
+==== Java 17
+
+Java 17 is out and Eclipse JDT supports Java 17 in 4.21 via Marketplace.
+
+The release notably includes the following Java 17 features:
+
+- JEP 306: Restore Always-Strict Floating-Point Semantics.
+- JEP 406: Pattern Matching for switch (Preview).
+- JEP 409: Sealed Classes (Final).
+
+Please note that preview option should be on for preview language features. For an informal introduction of the support, please refer to https://wiki.eclipse.org/Java17/Examples[Java 17 Examples wiki]. 
+
+==== Java™ 16 Support
+
+==== Java 16
+
+Java 16 is out and Eclipse JDT supports Java 16 in 4.20.
+
+The release notably includes the following Java 16 features:
+
+- JEP 394: Pattern Matching for Instanceof (Final).
+- JEP 395: Records (Final).
+- JEP 397: Sealed Classes (Second Preview).
+
+Please note that preview option should be on for preview language features. For an informal introduction of the support, please refer to https://wiki.eclipse.org/Java16/Examples[Java 16 Examples wiki].
+
+==== JUnit
+
+==== mockito ArgumentMatchers.* added to favorites in Java tooling
+
+Mockito based tests frequently use `org.mockito.ArgumentMatchers.***`. This has been added to the Java favorites in the preferences under *Java > Editor > Content Assist > Favorites*. This way the organize imports action in the IDE will automatically add static imports for these classes if you use them in your tests. 
+
+===== BREE update for JDT JUnit runtime bundles
+
+The bundle required execution environment (BREE) for the `org.eclipse.jdt.junit.runtime` and `org.eclipse.jdt.junit4.runtime` bundles is now JavaSE-1.8.
+
+==== Java Editor
+
+===== Use StringBuilder instead of StringBuffer clean up
+
+A new clean up has been added that converts code to use `StringBuilder` (added in Java 1.5) rather than `StringBuffer` which has synchronized methods and is slower than using `StringBuilder`.
+
+There is a sub-option where changes will only occur to local variables which is on by default. When this sub-option is on, changes will only occur to `StringBuffer` variables that are local to a method. When a method calls other methods with such variables or assigns to/from fields/parameters, the method contents will not be converted. It is permitted to append `StringBuffer` fields or parameters to local `StringBuffer` variables which can then still be converted to `StringBuilder`.
+
+When the option is selected and the sub-option for local variables is off,all usage of `StringBuffer` in the selected files are changed to `StringBuilder` regardless of usage. It should be noted that in this case, the clean up will not track down non-selected classes and methods that are referenced and might require changes to compile successfully.
+
+To apply the clean up, select the *Use StringBuilder instead of StringBuffer* check box on the *Performance* tab in your clean up profile. To specify just for local variables, select the *Only for local variables* check box found just below.
+
+image::https://www.eclipse.org/eclipse/news/4.21/images/stringbuffer-to-stringbuilder-prefs.png[]
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.21/images/stringbuffer-to-stringbuilder-before.png[]
+
+One gets:
+
+image::https://www.eclipse.org/eclipse/news/4.21/images/stringbuffer-to-stringbuilder-after.png[]
+
+===== Convert while to do/while
+
+A new quick-assist has been added to convert appropriate *while* loops into *do/while* loops. Appropriate *while* loops require the first evaluation of the while expression is guaranteed to be true and that the evaluation is passive.
+
+For the following loop:
+
+image::https://www.eclipse.org/eclipse/news/4.21/images/while-to-do-while-before.png[]
+
+One is offered:
+
+image::https://www.eclipse.org/eclipse/news/4.21/images/while-to-do-while-after.png[]
+
+===== Extract Superclass Enhancement
+
+The *Extract Superclass* refactoring has been enhanced to support movement of uninitialized non-static final fields. In the past, a warning was issued for extracting uninitialized non-static final fields as the resultant code would be in error. The refactoring has been enhanced to add additional parameters to the moved constructors and to pass initialization values from the original class constructors.
+
+For the following class:
+
+image::https://www.eclipse.org/eclipse/news/4.21/images/extract-superclass-original-before.png[]
+
+Extracting to Superclass and choosing all fields, one gets:
+
+image::https://www.eclipse.org/eclipse/news/4.21/images/extract-superclass-original-after.png[]
+
+and
+
+image::https://www.eclipse.org/eclipse/news/4.21/images/extract-superclass-superclass-after.png[]
+
+===== Raw Paste
+
+A new menu item has been added for doing a raw paste when editing Java files. The menu item *Raw Paste* can be found in the *Edit* pull-down menu and by right-clicking in the edit window to bring up the context-menu. The menu item performs a paste action but toggles off the smart insert feature, if required, and restores it, if necessary, after the paste. For end-users in smart insert mode, this is the same as doing a *Shift+Ctrl+Insert* followed by *Ctrl+V*, followed by *Shift+Ctrl+Insert* to retoggle into smart insert mode again.
+
+===== Default Type Filters
+
+Default values have been added to the *Java > Appearance > Type Filters* preferences. Types matching these filters will be excluded from appearing in the Open Type dialog, content assist, quick fix, and organize imports. These filter patterns do not affect the Package Explorer and Type Hierarchy views.
+
+image::https://www.eclipse.org/eclipse/news/4.21/images/default-type-filters.png[]
+
+===== Change project compliance and JRE on using multi-constant case labels
+
+A new quick fix (*Ctrl+1*) has been added to change the project compliance and JRE when multi-constant case labels are used in a project below Java 14:
+
+image::https://www.eclipse.org/eclipse/news/4.21/images/change-compliance-jre-multi-constant-labels.png[]
+
+===== Quick fix to declare sealed interface as super interface
+
+You can use the following quick fix (*Ctrl+1*) to declare a sealed interface as super interface of its permitted types:
+
+image::https://www.eclipse.org/eclipse/news/4.21/images/declare-sealed-interface-as-super-interface.png[]
+
+===== Quick fix to declare sealed class as super class
+
+You can use the following quick fix (*Ctrl+1*) to declare a sealed class as super class of its permitted classes:
+
+image::https://www.eclipse.org/eclipse/news/4.21/images/declare-sealed-class-as-super-class.png[]
+
+===== Quick fix to add the sub type to permitted types of sealed super type
+
+You can use the following quick fix (*Ctrl+1*) to add a sub type to permitted types of a sealed super type:
+
+image::https://www.eclipse.org/eclipse/news/4.21/images/add-subtype-to-permitted-types-of-supertype.png[]
+
+===== Better type for the local variable creation quick fix
+
+The quick fix *Create a new local variable* has been enhanced. When it creates a variable that is the expression on which a foreach loop iterates, its type is an array of the type of the loop parameter:
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.20/images/foreach-expression-type-before.png[]
+
+One gets:
+
+image::https://www.eclipse.org/eclipse/news/4.20/images/foreach-expression-type-after.png[]
+
+===== Use instanceof clean up
+
+A new clean up has been added that uses an `instanceof` expression to check an object against a hardcoded class.
+
+The expression must be a supertype of the targeted class.
+
+To apply the clean up, select *Use instanceof keyword instead of Class.isInstance()* check box on the *Code Style* tab in your clean up profile.
+
+image::https://www.eclipse.org/eclipse/news/4.20/images/use-instanceof-preferences.png[]
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.20/images/use-instanceof-before.png[]
+
+One gets:
+
+image::https://www.eclipse.org/eclipse/news/4.20/images/use-instanceof-after.png[]
+
+===== Operand factorization clean up
+
+A new clean up has been added that replaces `(X && Y) || (X && Z) by (X && (Y || Y))`.
+
+The operands must be passive and primitive.
+
+To apply the clean up, select *Replace (X && Y) || (X && Z) by (X && (Y || Z))* check box on the *Duplicate code* tab in your clean up profile.
+
+image::https://www.eclipse.org/eclipse/news/4.20/images/operand-factorization-preferences.png[]
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.20/images/operand-factorization-before.png[]
+
+One gets:
+
+image::https://www.eclipse.org/eclipse/news/4.20/images/operand-factorization-after.png[]
+
+===== Pull out a duplicate 'if' from an if/else clean up
+
+A new clean up has been added that moves a duplicate inner `if` condition around an outer `if` condition.
+
+The inner `if` condition should be common to both `if/else` clauses of the outer `if` statement.
+
+The `if` conditions should be passive.
+
+To apply the clean up, select *Pull out a duplicate 'if' from an if/else* check box on the *Duplicate code* tab in your clean up profile.
+
+image::https://www.eclipse.org/eclipse/news/4.20/images/pull-out-if-preferences.png[]
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.20/images/pull-out-if-before.png[]
+
+One gets:
+
+image::https://www.eclipse.org/eclipse/news/4.20/images/pull-out-if-after.png[]
+
+===== One if rather than duplicate blocks that fall through clean up
+
+A new clean up has been added that merges consecutive `if` statements with same code block that end with a jump statement.
+
+To apply the clean up, select *Single 'if' statement rather than duplicate blocks that fall through* check box on the *Duplicate code* tab in your clean up profile.
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.20/images/one-falling-through-if-before.png[]
+
+One gets:
+
+image::https://www.eclipse.org/eclipse/news/4.20/images/one-falling-through-if-after.png[]
+
+===== Uses String.isBlank() clean up
+
+A new clean up has been added that replaces the check of the emptiness of `String.strip()` by the use of `String.isBlank()`.
+
+It avoids the cost of the creation of a stripped string.
+
+You may use Java 11 or higher to use it.
+
+In order to apply this cleanup also to `trim().isEmpty()`, you might consider to replace `trim()`, which exists since the beginning of Java, with `strip()` that has been introduced in Java 11 together with `isBlank()`,
+
+But watch out, `trim()` and `strip()` differ: `trim()` removes leading and trailing characters with an ASCII code up to 32, including some non white space ASCII control characters and missing some Unicode white space characters, whereas `strip()` removes all and only leading and trailing white space.
+
+To apply the clean up, select *String.isBlank()` rather than `String.strip().isEmpty()* check box on the *Optimization* tab (the *Performance* tab in Eclipse 2021-09) in your clean up profile.
+
+image::https://www.eclipse.org/eclipse/news/4.20/images/isblank-preferences.png[]
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.20/images/isblank-before.png[]
+
+One gets:
+
+image::https://www.eclipse.org/eclipse/news/4.20/images/isblank-after.png[]
+
+===== valueOf() rather than instantiation clean up
+
+A new clean up has been added that replaces unnecessary primitive wrappers instance creations by using static factory methods (`valueOf()`).
+
+It dramatically improves the space performance.
+
+To apply the clean up, select *valueOf() rather than instantiation* check box on the *Optimization* tab (the *Performance* tab in Eclipse 2021-09) in your clean up profile.
+
+image::https://www.eclipse.org/eclipse/news/4.20/images/valueof-rather-than-instantiation-preferences.png[]
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.20/images/valueof-rather-than-instantiation-before.png[]
+
+One gets:
+
+image::https://www.eclipse.org/eclipse/news/4.20/images/valueof-rather-than-instantiation-after.png[]
+
+===== Primitive rather than wrapper clean up
+
+A new clean up has been added that replaces a primitive wrapper object by the primitive type when an object is not necessary.
+
+The variable must be not `null`. The result should not make more autoboxing/unboxing than the original code.
+
+To apply the clean up, select *Primitive type rather than wrapper class* check box on the *Optimization* tab (the *Performance* tab in Eclipse 2021-09) in your clean up profile.
+
+image::https://www.eclipse.org/eclipse/news/4.20/images/primitive-rather-than-wrapper-preferences.png[]
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.20/images/primitive-rather-than-wrapper-before.png[]
+
+One gets:
+
+image::https://www.eclipse.org/eclipse/news/4.20/images/primitive-rather-than-wrapper-after.png[]
+
+===== Redundant truth clean up
+
+A new clean up has been added that directly checks boolean values instead of comparing them with `true/false`.
+
+The operator can be equals, not equals or XOR. The constants can be a literal or a `java.lang.Boolean` constant. One operand should be primitive so no new `null` pointer exceptions may occur.
+
+To apply the clean up, select *Boolean value rather than comparison* check box on the *Unnecessary Code* tab in your clean up profile.
+
+image::https://www.eclipse.org/eclipse/news/4.20/images/redundant-truth-preferences.png[]
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.20/images/redundant-truth-before.png[]
+
+One gets:
+
+image::https://www.eclipse.org/eclipse/news/4.20/images/redundant-truth-after.png[]
+
+===== Implicit comparator clean up
+
+A new clean up has been added that removes the comparator declaration if it is the default one.
+
+The declared comparator should be an equivalent to the natural order. It removes anonymous class, lambda, `Comparator.comparing()`, `Comparator.naturalOrder()` and `null`. It applies on `List.sort(Comparator)`, `Collections.sort(List, Comparator)`, `Collections.max(Collection, Comparator)` and `Collections.min(Collection, Comparator)`. If the comparator is used in the method `List.sort(Comparator)`, the method is converted into `Collections.sort(List)`.
+
+To apply the clean up, select *Use implicit comparator when possible* check box on the *Unnecessary Code* tab in your clean up profile.
+
+image::https://www.eclipse.org/eclipse/news/4.20/images/implicit-comparator-preferences.png[]
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.20/images/implicit-comparator-before.png[]
+
+One gets:
+
+image::https://www.eclipse.org/eclipse/news/4.20/images/implicit-comparator-after.png[]
+
+===== Initialize array with curly clean up
+
+A new clean up has been added that replaces the new instance syntax by curly brackets to create an array.
+
+It must be an initialization of a declaration. The declaration must have the same type.
+
+To apply the clean up, select *Create array with curly when possible* check box on the *Unnecessary Code* tab in your clean up profile.
+
+image::https://www.eclipse.org/eclipse/news/4.20/images/array-with-curly-preferences.png[]
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.20/images/array-with-curly-before.png[]
+
+One gets:
+
+image::https://www.eclipse.org/eclipse/news/4.20/images/array-with-curly-after.png[]
+
+===== Remove variable assignment before return clean up
+
+A new clean up has been added that removes unnecessary local variable declaration or unnecessary variable assignment before a return statement.
+
+An explicit type is added for arrays.
+
+To apply the clean up, select *Remove variable assignment before return* check box on the *Unnecessary Code* tab in your clean up profile.
+
+image::https://www.eclipse.org/eclipse/news/4.20/images/return-without-assignment-preferences.png[]
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.20/images/return-without-assignment-before.png[]
+
+One gets:
+
+image::https://www.eclipse.org/eclipse/news/4.20/images/return-without-assignment-after.png[]
+
+===== Replace System.getProperty() calls clean up
+
+A new clean up has been added that replaces certain `System.getProperty()` calls with alternative Java method calls or constants instead. Using these calls/constants may end up using system defaults (e.g. system default file separator) and thus can no longer be overridden at runtime.
+
+To apply the clean up, select *Replace system property with constant* check box on the *Java Feature* tab in your clean up profile. This enables you to check one or more sub-options: *File separator*, *Path separator*, *Line separator*, *File encoding*, or *Boolean property*. The last option is used for arbitrary boolean options specified by *-Dsome-arbitrary-option*.
+
+image::https://www.eclipse.org/eclipse/news/4.20/images/system-properties-preferences.png[]
+
+For the given code:
+
+image::https://www.eclipse.org/eclipse/news/4.20/images/system-properties-before.png[]
+
+One gets:
+
+image::https://www.eclipse.org/eclipse/news/4.20/images/system-properties-after.png[]
+
+==== Java Compiler
+
+===== Find external annotations anywhere
+
+External annotations, which are used for annotation based null analysis, can now be associated to unannotated classes more freely.
+
+Previously, all external annotations where declared per build path entry. I.e., whenever a project of yours uses a library for which external annotations exist, you would need to explicitly declare where the corresponding external annotations for this particular library can be found.
+
+A new compiler preference has been added by which you can instruct the compiler to search for external annotations in all build path locations of the current project.
+
+image::https://www.eclipse.org/eclipse/news/4.21/images/external_annotations_all_locations.png[]
+
+When enabled, this strategy will be applied to all class files encountered during compilation.
+
+Some examples, where this option is useful:
+
+- A project A contains generated sources (in a separate source folder), which are decorated using external annotations in the same project. When project A ships a jar containing also the external annotations, any client of A will immediately see the generated classes with their external annotations applied.
+- When dedicated jars have been created, each containing external annotations for a set of libraries, you only have to add these annotation jars to your build path and enable the new option, without worrying which annotation jar corresponds to which individual dependency (dependencies). The compiler will match external annotations to class files with no further help.
+
+For batch compilation a corresponding option already exists. To match the above strategy in CI-builds, just add the following to the compiler command line (verbatim):
+`-annotationpath CLASSPATH` 
+
+==== Java Views and Dialogs
+
+===== Differentiate search filter for normal imports from static imports
+
+The *Search* view now supports a new filter dedicated for *static imports*. Consequently, the existing imports filter is dedicated for non-static imports only. As a result, you will now by default find statically imported references of a class or an interface.
+
+image::https://www.eclipse.org/eclipse/news/4.20/images/static-import-filter.png[]
+
+===== Create module-info.java option during New Java Project creation
+
+*Create module-info.java* option has been moved to the first page of *New Java Project* creation wizard. This option will be enabled only for Java projects with JRE 9 or above. New Java Project creation wizard will also remember the previous choice made by the user and select this option by default accordingly.
+
+image::https://www.eclipse.org/eclipse/news/4.20/images/create-moduleinfo.png[]
+
+===== Default Java cleanup profile of Eclipse has been updated
+
+The default cleanup profile of the Java development tools has been updated to include more cleanups. All included cleanups have been well tested and proven to be stable in the Eclipse code base. Please see the preference under *Java > Clean-up* for details.
+
+image::https://www.eclipse.org/eclipse/news/4.20/images/cleanup-profile.png[]
+
+==== Debug
+
+===== Evaluate variables in current execution stack
+
+In debug mode, regardless of the selected stack frame now you can evaluate variables which are in the scope of the current execution stack frame and stack frames below it which are defined in the current focused java class.
+
+image::https://www.eclipse.org/eclipse/news/4.21/images/debug_eval_intrim_stack.png[]
+
+===== Copy Run Configuration item details
+
+A new *Copy* button has been added to the *Dependencies/Classpath* tab of Run Configuration dialog. This can be used to copy the details of the selected item.
+
+image::https://www.eclipse.org/eclipse/news/4.20/images/configuration-copyjars.png[]
+
+===== Debug hover for chain of variables
+
+When hovering over chain of variables, the debug hover will now show the variable value under the cursor.
+
+image::https://www.eclipse.org/eclipse/news/4.20/images/debug_hover_chain_var.png[]
+
+It even works for array length.
+
+image::https://www.eclipse.org/eclipse/news/4.20/images/debug_hover_array_length.png[]
+
+=== And more...
+
+You can find more noteworthy updates in on link:/documentation/whatsnew/jbosstools/4.19.1.Final.html[this page].
+
+== What is next?
+
+Having JBoss Tools 4.21.0 and Red Hat CodeReady Studio 12.21.0 out we are already working on the next release.
+
+Enjoy!
+
+Jeff Maury
