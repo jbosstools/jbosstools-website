@@ -1,0 +1,34 @@
+= Apache Log4j CVE-2021-44228 statement
+:page-layout: blog
+:page-author: jeffmaury
+:page-tags: [release, jbosstools, devstudio, jbosscentral, codereadystudio]
+:page-date: 2021-12-13
+
+A remote code execution vulnerability in the Apache Log4j 2 Java library dubbed Log4Shell (see https://logging.apache.org/log4j/2.x/index.html#Newsor https://nvd.nist.gov/vuln/detail/CVE-2021-44228) have been releaved to the public audience on Friday Dec 9th, 2021.
+
+This post is describing the impact on existing and future installations of Red Hat CodeReady Studio.
+
+== Existing installation of Red Hat CodeReady Studio
+
+Existing releases of Red Hat CodeReady Studio (up to 12.21.0.GA) are based on Apache Log4J 2 2.13.3 thus affected.
+
+There is a fix to prevent the attack: in the installation folder for Red Hat CodeReady Studio, you should have a `studio`  sub folder. Inside this folder, you shoud have a file called `codereadystudio.ini`.
+
+The content of this file should ends by:
+
+```
+-vmargs
+-Xms512m
+-Xmx1024m
+--add-modules=ALL-SYSTEM
+-Dosgi.instance.area.default=@user.home/workspace
+```
+
+Append the following line to the file:
+```
+-Dlog4j2.formatMsgNoLookups=true
+```
+
+Save the file and restart Red Hat CodeReady Studio.
+
+If you have not installed Red Hat CodeReady Studio but rather have installed JBoss Tools in an existing installation of Eclipse IDE, you are impacted only if you have installed the OpenShift component of JBoss Tools. If this is the case, execute the same update but the file is called `eclipse.ini` instead of `codereadystudio.ini`
