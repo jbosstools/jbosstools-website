@@ -183,8 +183,33 @@ devstudio:
     simrel-2021-09:
       12.21.x.Nightly:
         update_site_url: https://devstudio.redhat.com/12/snapshots/updates/
-      12.21.0.GA:
+      12.21.1.GA:
         archived: false
+        update_site_url: https://devstudio.redhat.com/12/stable/updates/
+        marketplace_url: https://marketplace.eclipse.org/node/1616973
+        marketplace_install_url: https://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
+        release_date: 2021-12-16
+        supported_devstudio_is_version: 
+        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        blog_announcement_url: /blog/12.21.1.ga.html
+        eclipse_name: Eclipse 4.21 (2021-09)
+        installers:
+          - name: Stand-alone Installer
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/d4/d4c8ed40fde455a1208fc424a2d3cef0e81afab5c65e698463d4b6a21a981c88/codereadystudio-12.21.1.GA-installer-standalone.jar
+            file_size: 1.0GB
+        zips:
+          - name: Update site (including sources) bundle of Red Hat CodeReady Studio
+            url:  https://www.jboss.org/download-manager/content/origin/files/sha256/99/99fa260255ff6ab19b1c8aad6d2b8386365bc17d2391f298d0817165ef6c988d/codereadystudio-12.21.1.GA-updatesite-core.zip
+            file_size: 1.0GB
+          - name: JBoss Central Zip
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/1d/1dcc7fd9f59a55a688fe9d3275bb9ad59d651da294833848a5934d26d4ff4b77/codereadystudio-12.21.1.GA-updatesite-central.zip
+            file_size: 125MB
+          - name: Target Platform for Red Hat CodeReady Studio
+            url: https://devstudio.redhat.com/static/12/stable/updates/core/devstudio-12.21.1.GA-target-platform.zip
+            file_size: 1.0GB
+      12.21.0.GA:
+        archived: true
         update_site_url: https://devstudio.redhat.com/12/stable/updates/
         marketplace_url: https://marketplace.eclipse.org/node/1616973
         marketplace_install_url: https://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
