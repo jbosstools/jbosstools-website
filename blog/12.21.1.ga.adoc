@@ -1,0 +1,42 @@
+= JBoss Tools and Red Hat CodeReady Studio for Eclipse 2021-09 security fix release for Apache Log4j CVE-2021-44228
+:page-layout: blog
+:page-author: jeffmaury
+:page-tags: [release, jbosstools, devstudio, jbosscentral, codereadystudio]
+:page-date: 2021-12-16
+
+== Apache Log4j CVE-2021-44228 statement
+
+A remote code execution vulnerability in the Apache Log4j 2 Java library dubbed Log4Shell (see https://logging.apache.org/log4j/2.x/index.html#News or https://nvd.nist.gov/vuln/detail/CVE-2021-44228) has been releaved to the public audience on Friday Dec 9th, 2021.
+
+We've released new versions of JBoss Tools and Red Hat CodeReady Studio that switches the version of Apache Log4j to 2.16.0.
+
+We highly recommand to download or update to this latest version.
+
+
+image::/blog/images/crstudio12.png[]
+
+== Installation
+
+Red Hat CodeReady Studio comes with everything pre-bundled in its installer. Simply download it from our https://developers.redhat.com/products/codeready-studio/overview/[Red Hat CodeReady product page] and run it like this:
+
+    java -jar codereadystudio-<installername>.jar
+
+JBoss Tools or Bring-Your-Own-Eclipse (BYOE) CodeReady Studio require a bit more:
+
+This release requires at least Eclipse 4.21 (2021-09) but we recommend
+using the latest https://www.eclipse.org/downloads/packages/release/2021-09/r/eclipse-ide-enterprise-java-and-web-developers[Eclipse 4.21 2021-09 JEE Bundle]
+
+since then you get most of the dependencies preinstalled.
+
+[WARNING]
+====
+Java11 is now required to run Red Hat Developer Studio or JBoss Tools (this is a requirement from Eclipse 4.17). So make sure to select a Java11 JDK in the installer.
+You can still work with pre-Java11 JDK/JRE and projects in the tool.
+====
+
+Once you have installed Eclipse, you can either find us on the Eclipse Marketplace under "JBoss Tools" or "Red Hat CodeReady Studio".
+
+For JBoss Tools, you can also use our update site directly.
+
+    http://download.jboss.org/jbosstools/photon/stable/updates/
+
