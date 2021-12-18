@@ -6,9 +6,9 @@
 
 == Apache Log4j CVE-2021-44228 statement
 
-A remote code execution vulnerability in the Apache Log4j 2 Java library dubbed Log4Shell (see https://logging.apache.org/log4j/2.x/index.html#News or https://nvd.nist.gov/vuln/detail/CVE-2021-44228) have been releaved to the public audience on Friday Dec 9th, 2021.
+A remote code execution vulnerability in the Apache Log4j 2 Java library dubbed Log4Shell (see https://logging.apache.org/log4j/2.x/index.html#News or https://nvd.nist.gov/vuln/detail/CVE-2021-44228) has been releaved to the public audience on Friday Dec 9th, 2021.
 
-We've released new versions of JBoss Tools and Red Hat CodeReady Studio that switches the version of Apache Log4j to 2.61.0.
+We've released new versions of JBoss Tools and Red Hat CodeReady Studio that switches the version of Apache Log4j to 2.16.0.
 
 We highly recommand to download or update to this latest version.
 
