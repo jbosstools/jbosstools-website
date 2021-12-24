@@ -1,0 +1,54 @@
+= JBoss Tools 4.21.2.AM1 for Eclipse 2021-09
+:page-layout: blog
+:page-author: jeffmaury
+:page-tags: [release, jbosstools, devstudio, jbosscentral]
+:page-date: 2021-12-22
+
+Happy to announce 4.21.2.AM1 (Developer Milestone 1) build for Eclipse 2021-09.
+
+Downloads available at link:/downloads/jbosstools/2021-09/4.21.2.AM1.html[JBoss Tools 4.21.2.AM1].
+
+== What is New?
+
+Full info is at link:/documentation/whatsnew/jbosstools/4.21.2.AM1.html[this page]. Some highlights are below.
+
+
+=== Quarkus Tools
+
+== Quarkus stream selection in the new Quarkus project wizard
+
+When a new Quarkus project/module is to be generated, it is now possible to select the Quarkus stream (see https://quarkus.io/blog/quarkus-2x-platform-quarkiverse-registry/[this article]) on which the generated application will be based on.
+
+By default, the recommended (latest release) will be selected but you can choose another one:
+
+image::/documentation/whatsnew/quarkus/images/quarkus31.gif[]
+
+== Enhanced code completion in Java files
+
+When you want to define a fallback method thanks to the `@Fallback` annotation from MicroProfile Fault Tolerance, the code completion is activated on the `fallbackMethod` member and will propose you available target methods.
+
+image::/documentation/whatsnew/quarkus/images/quarkus32.gif[]
+
+== Quarkus launch configuration workspace resolution
+
+
+When you define a Quarkus launch/debug configuration, it is linked to a specific project from your workspace. If this project has a dependency on another project from the workspace, it will be resolved against the workspace and you don't have to install the dependency in the local Maven/Gradle cache so that it can be resolved.
+
+
+
+=== Hibernate Tools
+
+A number of additions and updates have been performed on the available Hibernate runtime  providers.
+
+==== Runtime Provider Updates
+
+The Hibernate 5.6 runtime provider now incorporates Hibernate Core version 5.6.1.Final and Hibernate Tools version 5.6.1.Final.
+
+The Hibernate 5.4 runtime provider now incorporates Hibernate Core version 5.4.8.Final and Hibernate Tools version 5.4.8.Final.
+
+The Hibernate 5.3 runtime provider now incorporates Hibernate Core version 5.3.24.Final and Hibernate Tools version 5.3.24.Final.
+
+
+Enjoy!
+
+Jeff Maury
