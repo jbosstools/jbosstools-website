@@ -30,7 +30,7 @@ status: green
           %h2
             %a{:href=>"/features"} Highlighted Features
         .row-fluid.flexbox.stretch-row
-          - features = site.features["jbt_core"].find_all{|feature| ["forge", "server", "cdi"].include?(feature.feature_id)}
+          - features = site.features["jbt_core"].find_all{|feature| ["quarkus", "server", "cdi", "openshift2"].include?(feature.feature_id)}
           - for feature in features
             .span4.center
               %a{:href=>relative(feature.url)}
