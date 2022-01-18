@@ -183,8 +183,33 @@ devstudio:
     simrel-2021-09:
       12.21.x.Nightly:
         update_site_url: https://devstudio.redhat.com/12/snapshots/updates/
-      12.21.1.GA:
+      12.21.2.GA:
         archived: false
+        update_site_url: https://devstudio.redhat.com/12/stable/updates/
+        marketplace_url: https://marketplace.eclipse.org/node/1616973
+        marketplace_install_url: https://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
+        release_date: 2022-01-13
+        supported_devstudio_is_version: 
+        documentation_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        release_notes_url: https://access.redhat.com/site/documentation/en-US/Red_Hat_JBoss_Developer_Studio/
+        blog_announcement_url: /blog/12.21.2.ga.html
+        eclipse_name: Eclipse 4.21 (2021-09)
+        installers:
+          - name: Stand-alone Installer
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/e9/e9a65f2e314eb7c257cf19662cfc8688c04486b63d9856a063718b8d64b13e8d/codereadystudio-12.21.2.GA-installer-standalone.jar
+            file_size: 1.0GB
+        zips:
+          - name: Update site (including sources) bundle of Red Hat CodeReady Studio
+            url:  https://www.jboss.org/download-manager/content/origin/files/sha256/69/69eca7edd0dd1f48afbe8607c907f780eb90b09fceca833fabc37e66d79b4373/codereadystudio-12.21.2.GA-updatesite-core.zip
+            file_size: 1.0GB
+          - name: JBoss Central Zip
+            url: https://www.jboss.org/download-manager/content/origin/files/sha256/a4/a4854f1ff1d382fbe364a00a60f5a03e637c0228dbb3368f5ff8229b9412a67d/codereadystudio-12.21.2.GA-updatesite-central.zip
+            file_size: 123MB
+          - name: Target Platform for Red Hat CodeReady Studio
+            url: https://devstudio.redhat.com/static/12/stable/updates/core/devstudio-12.21.2.GA-target-platform.zip
+            file_size: 1.0GB
+      12.21.1.GA:
+        archived: true
         update_site_url: https://devstudio.redhat.com/12/stable/updates/
         marketplace_url: https://marketplace.eclipse.org/node/1616973
         marketplace_install_url: https://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1616973
@@ -1766,8 +1791,27 @@ jbt_core:
             sha256_url: https://download.jboss.org/jbosstools/static/photon/development/updates/core/jbosstools-4.21.2.AM1-src.zip.sha256
           - name: Release Notes
             url: https://tools.jboss.org/documentation/whatsnew/index.html
-      4.21.1.Final:
+      4.21.2.Final:
         archived: false
+        release_date: 2022-01-13
+        supported_jbt_is_version: 
+        blog_announcement_url: /blog/12.21.2.ga.html
+        documentation_url: http://docs.jboss.org/tools/
+        update_site_url: https://download.jboss.org/jbosstools/photon/stable/updates/
+        eclipse_name: Eclipse 4.21 (2021-09)
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 611MB
+            url: https://download.jboss.org/jbosstools/static/photon/stable/updates/core/jbosstools-4.21.2.Final-updatesite-core.zip
+            sha256_url: https://download.jboss.org/jbosstools/static/photon/stable/updates/core/jbosstools-4.21.2.Final-updatesite-core.zip.sha256
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 213MB
+            url: https://download.jboss.org/jbosstools/static/photon/stable/updates/core/jbosstools-4.21.2.Final-src.zip
+            sha256_url: https://download.jboss.org/jbosstools/static/photon/stable/updates/core/jbosstools-4.21.2.Final-src.zip.sha256
+          - name: Release Notes
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
+      4.21.1.Final:
+        archived: true
         release_date: 2021-12-16
         supported_jbt_is_version: 
         blog_announcement_url: /blog/12.21.1.ga.html
