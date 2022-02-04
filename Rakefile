@@ -277,9 +277,9 @@ task :actions do
     profile = 'production'
     deploy_url = "tools@filemgmt.jboss.org:/www_htdocs/tools"
 
-  elsif ENV['GITHUB_REF'].to_s.scan(/master$/).length > 0
+  elsif ENV['GITHUB_REF'].to_s.scan(/main$/).length > 0
    
-    puts 'Building staging(master) branch build.'
+    puts 'Building staging(main) branch build.'
     profile = 'staging'
     deploy_url = "tools@filemgmt.jboss.org:/stg_htdocs/tools/"
 
@@ -331,9 +331,9 @@ task :travis do
     profile = 'production'
     deploy_url = "tools@filemgmt.jboss.org:/www_htdocs/tools"
 
-  elsif ENV['TRAVIS_BRANCH'].to_s.scan(/^master$/).length > 0
+  elsif ENV['TRAVIS_BRANCH'].to_s.scan(/^main$/).length > 0
    
-    puts 'Building staging(master) branch build.'
+    puts 'Building staging(main) branch build.'
     profile = 'staging'
     deploy_url = "tools@filemgmt.jboss.org:/stg_htdocs/tools/"
 
