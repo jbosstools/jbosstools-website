@@ -1,0 +1,32 @@
+= General 4.21.3.Final What's New
+:page-layout: whatsnew
+:page-component_id: general
+:page-component_version: 4.21.3.Final
+:page-product_id: jbt_core 
+:page-product_version: 4.21.3.Final
+
+== General for JBoss Tools 4.21.3.Final
+
+JBoss Tools is now targeting Eclipse 2021-09.
+
+=== Platform
+
+==== Apache Log4j CVEs
+
+The platform now embeds Apache Log4j 2.17.1.
+
+So the following CVEs:
+
+- CVE-2021-44228
+- CVE-2021-45046
+- CVE-2021-45105
+- CVE-2021-44832
+
+have been fixed.
+
+As Apache Log4j 1.x is also embedded but is not maintained anymore, the Apache Log4j bundle (1.2.15) has been patched in order to remove:
+
+- JMSSink
+- JBDCAppender
+- Chainsaw
+ 
