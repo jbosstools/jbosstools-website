@@ -1,0 +1,29 @@
+= Hibernate Tools 4.21.3.Final What's New
+:page-layout: whatsnew
+:page-component_id: hibernate
+:page-component_version: 4.21.3.Final
+:page-product_id: jbt_core
+:page-product_version: 4.21.3.Final
+
+== Hibernate Runtime Provider Updates
+
+A number of additions and updates have been performed on the available Hibernate runtime  providers.
+
+
+=== Runtime Provider Updates
+
+The Hibernate 6.0 runtime provider (Preview) now incorporates Hibernate Core version 6.0.0.Beta2 and Hibernate Tools version 6.0.0.Beta2.
+
+The Hibernate 5.6 runtime provider now incorporates Hibernate Core version 5.6.3.Final and Hibernate Tools version 5.6.3.Final.
+
+The Hibernate 5.5 runtime provider now incorporates Hibernate Core version 5.5.9.Final and Hibernate Tools version 5.5.9.Final.
+
+The Hibernate 5.4 runtime provider now incorporates Hibernate Core version 5.4.33.Final and Hibernate Tools version 5.4.33.Final.
+
+The Hibernate 5.3 runtime provider now incorporates Hibernate Core version 5.3.25.Final and Hibernate Tools version 5.3.25.Final.
+
+The Hibernate 5.2 runtime provider now incorporates Hibernate Core version 5.2.13.Final and Hibernate Tools version 5.2.13.Final.
+
+The Hibernate 5.1 runtime provider now incorporates Hibernate Core version 5.1.12.Final and Hibernate Tools version 5.1.12.Final.
+
+The Hibernate 5.0 runtime provider now incorporates Hibernate Core version 5.0.7.Final and Hibernate Tools version 5.0.7.Final.

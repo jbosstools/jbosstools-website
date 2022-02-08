@@ -1,0 +1,102 @@
+= JBoss Tools and Red Hat CodeReady Studio for Eclipse 2021-09
+:page-layout: blog
+:page-author: jeffmaury
+:page-tags: [release, jbosstools, devstudio, jbosscentral, codereadystudio]
+:page-date: 2022-02-08
+
+link:/downloads/jbosstools/2021-09/4.21.3.Final.html[JBoss Tools 4.21.3] and
+link:/downloads/devstudio/2021-09/12.21.3.GA.html[Red Hat CodeReady Studio 12.21.3]
+for Eclipse 2021-09 are here waiting for you. Check it out!
+
+We've released new versions of JBoss Tools and Red Hat CodeReady Studio that switches the version of Apache Log4j to 2.17.1.
+
+We highly recommand to download or update to this latest version.
+
+
+image::/blog/images/crstudio12.png[]
+
+== Installation
+
+Red Hat CodeReady Studio comes with everything pre-bundled in its installer. Simply download it from our https://developers.redhat.com/products/codeready-studio/overview/[Red Hat CodeReady product page] and run it like this:
+
+    java -jar codereadystudio-<installername>.jar
+
+JBoss Tools or Bring-Your-Own-Eclipse (BYOE) CodeReady Studio require a bit more:
+
+This release requires at least Eclipse 4.21 (2021-09) but we recommend
+using the latest https://www.eclipse.org/downloads/packages/release/2021-09/r/eclipse-ide-enterprise-java-and-web-developers[Eclipse 4.21 2021-09 JEE Bundle]
+
+since then you get most of the dependencies preinstalled.
+
+[WARNING]
+====
+Java11 is now required to run Red Hat Developer Studio or JBoss Tools (this is a requirement from Eclipse 4.17). So make sure to select a Java11 JDK in the installer.
+You can still work with pre-Java11 JDK/JRE and projects in the tool.
+====
+
+Once you have installed Eclipse, you can either find us on the Eclipse Marketplace under "JBoss Tools" or "Red Hat CodeReady Studio".
+
+For JBoss Tools, you can also use our update site directly.
+
+    http://download.jboss.org/jbosstools/photon/stable/updates/
+
+=== General
+
+==== Platform
+
+===== Apache Log4j CVEs
+
+The platform now embeds Apache Log4j 2.17.1.
+
+So the following CVEs:
+
+- CVE-2021-44228
+- CVE-2021-45046
+- CVE-2021-45105
+- CVE-2021-44832
+
+have been fixed.
+
+As Apache Log4j 1.x is also embedded but is not maintained anymore, the Apache Log4j bundle (1.2.15) has been patched in order to remove:
+
+- JMSSink
+- JBDCAppender
+- Chainsaw
+
+=== Hibernate Tools
+
+==== Hibernate Runtime Provider Updates
+
+A number of additions and updates have been performed on the available Hibernate runtime  providers.
+
+
+===== Runtime Provider Updates
+
+The Hibernate 6.0 runtime provider (Preview) now incorporates Hibernate Core version 6.0.0.Beta2 and Hibernate Tools version 6.0.0.Beta2.
+
+The Hibernate 5.6 runtime provider now incorporates Hibernate Core version 5.6.3.Final and Hibernate Tools version 5.6.3.Final.
+
+The Hibernate 5.5 runtime provider now incorporates Hibernate Core version 5.5.9.Final and Hibernate Tools version 5.5.9.Final.
+
+The Hibernate 5.4 runtime provider now incorporates Hibernate Core version 5.4.33.Final and Hibernate Tools version 5.4.33.Final.
+
+The Hibernate 5.3 runtime provider now incorporates Hibernate Core version 5.3.25.Final and Hibernate Tools version 5.3.25.Final.
+
+The Hibernate 5.2 runtime provider now incorporates Hibernate Core version 5.2.13.Final and Hibernate Tools version 5.2.13.Final.
+
+The Hibernate 5.1 runtime provider now incorporates Hibernate Core version 5.1.12.Final and Hibernate Tools version 5.1.12.Final.
+
+The Hibernate 5.0 runtime provider now incorporates Hibernate Core version 5.0.7.Final and Hibernate Tools version 5.0.7.Final.
+
+=== And more...
+
+You can find more noteworthy updates in on link:/documentation/whatsnew/jbosstools/4.19.1.Final.html[this page].
+
+== What is next?
+
+Having JBoss Tools 4.21.3 and Red Hat CodeReady Studio 12.21.3 out we are already working on the next release.
+
+Enjoy!
+
+Jeff Maury
+
