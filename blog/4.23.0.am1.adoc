@@ -1,0 +1,38 @@
+= JBoss Tools and Red Hat CodeReady Studio for Eclipse 2022-03RC1
+:page-layout: blog
+:page-author: jeffmaury
+:page-tags: [release, jbosstools, devstudio, jbosscentral, codereadystudio]
+:page-date: 2022-03-24
+
+Happy to announce 4.23.0.AM1 (Developer Milestone 1) build for Eclipse 2022-03RC1.
+
+Downloads available at link:/downloads/jbosstools/2022-03/4.23.0.AM1.html[JBoss Tools 4.23.0 AM1].
+
+== What is New?
+
+Full info is at link:/documentation/whatsnew/jbosstools/4.23.0.AM1.html[this page]. Some highlights are below.
+
+
+=== Hibernate Tools
+
+==== Hibernate Runtime Provider Updates
+
+A number of additions and updates have been performed on the available Hibernate runtime  providers.
+
+
+===== Runtime Provider Updates
+
+The Hibernate 6.0 runtime provider (Preview) now incorporates Hibernate Core version 6.0.0.CR1 and Hibernate Tools version 6.0.0.CR1.
+
+The Hibernate 5.6 runtime provider now incorporates Hibernate Core version 5.6.5.Final and Hibernate Tools version 5.6.5.Final.
+
+
+=== And more...
+
+You can find more noteworthy updates in on link:/documentation/whatsnew/jbosstools/4.23.0.AM1.html[this page].
+
+
+Enjoy!
+
+Jeff Maury
+
