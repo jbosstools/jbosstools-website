@@ -275,13 +275,13 @@ task :actions do
     tag = true
     puts 'Building production branch build.'
     profile = 'production'
-    deploy_url = "tools@filemgmt.jboss.org:/www_htdocs/tools"
+    deploy_url = "tools@filemgmt-prod-sync.jboss.org:/www_htdocs/tools"
 
   elsif ENV['GITHUB_REF'].to_s.scan(/main$/).length > 0
    
     puts 'Building staging(main) branch build.'
     profile = 'staging'
-    deploy_url = "tools@filemgmt.jboss.org:/stg_htdocs/tools/"
+    deploy_url = "tools@filemgmt-prod-sync.jboss.org:/stg_htdocs/tools/"
 
   else
 
@@ -297,7 +297,7 @@ task :actions do
   errorcheck
 
   puts "## Deploying website via rsync to #{deploy_url}"
-  success = system("rsync -Pqr --protocol=28 --delete-after _site/* #{deploy_url}")
+  success = system("rsync -Pqr --protocol=28 --delete-after -e 'ssh -p 2222' _site/* #{deploy_url}")
 
   if tag
     puts '## Tagging repo'
@@ -329,13 +329,13 @@ task :travis do
     tag = true
     puts 'Building production branch build.'
     profile = 'production'
-    deploy_url = "tools@filemgmt.jboss.org:/www_htdocs/tools"
+    deploy_url = "tools@filemgmt-prod-sync.jboss.org:/www_htdocs/tools"
 
   elsif ENV['TRAVIS_BRANCH'].to_s.scan(/^main$/).length > 0
    
     puts 'Building staging(main) branch build.'
     profile = 'staging'
-    deploy_url = "tools@filemgmt.jboss.org:/stg_htdocs/tools/"
+    deploy_url = "tools@filemgmt-prod-sync.jboss.org:/stg_htdocs/tools/"
 
   else
 
@@ -351,7 +351,7 @@ task :travis do
   errorcheck
 
   puts "## Deploying website via rsync to #{deploy_url}"
-  success = system("rsync -Pqr --protocol=28 --delete-after _site/* #{deploy_url}")
+  success = system("rsync -Pqr --protocol=28 --delete-after -e 'ssh -p 2222' _site/* #{deploy_url}")
 
   if tag
     puts '## Tagging repo'
@@ -366,7 +366,7 @@ end
 
 task :rultormerge do
   profile = 'staging'
-  deploy_url = "tools@filemgmt.jboss.org:/stg_htdocs/tools/pr/${pull_id}"
+  deploy_url = "tools@filemgmt-prod-sync.jboss.org:/stg_htdocs/tools/pr/${pull_id}"
 
   # Build execution
   system "bundle exec awestruct -P #{profile} -g"
