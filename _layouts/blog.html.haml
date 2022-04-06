@@ -29,9 +29,9 @@ tab: blog
               %strong #{site.team[page.author].title}
             on 
             %strong #{page.date.strftime( '%b %d, %Y' )}.
-            %a{:href=>"https://github.com/jbosstools/jbosstools-website/edit/master#{page.relative_source_path}", :title=>"Edit on github"}
+            %a{:href=>"https://github.com/jbosstools/jbosstools-website/edit/main#{page.relative_source_path}", :title=>"Edit on github"}
               %i.icon-edit
-            %a{:href=>"https://github.com/jbosstools/jbosstools-website/commits/master#{page.relative_source_path}", :title=>"See history on github"}
+            %a{:href=>"https://github.com/jbosstools/jbosstools-website/commits/main#{page.relative_source_path}", :title=>"See history on github"}
               %i.icon-github
             %p
               - if(page.tags != nil && !page.tags.empty?)
