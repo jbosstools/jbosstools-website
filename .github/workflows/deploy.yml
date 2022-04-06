@@ -23,7 +23,7 @@ jobs:
         mkdir ~/.ssh 2>/dev/null
         echo "$SSH_KEY" >>~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
-        echo -e "Host filemgmt.jboss.org\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+        echo -e "Host filemgmt-prod-sync.jboss.org\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
       env:
         SSH_KEY: ${{ secrets.DOWNLOAD_KEY }}
     - name: Generate site
