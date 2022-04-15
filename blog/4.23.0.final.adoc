@@ -1,0 +1,164 @@
+= JBoss Tools for Eclipse 2022-03
+:page-layout: blog
+:page-author: jeffmaury
+:page-tags: [release, jbosstools, jbosscentral]
+:page-date: 2022-04-15
+
+link:/downloads/jbosstools/2022-03/4.23.0.Final.html[JBoss Tools 4.23.0] 
+for Eclipse 2022-03 is here waiting for you. Check it out!
+
+We highly recommand to download or update to this latest version.
+
+== Note for Red Hat CodeReady Studio users
+
+The Red Hat CodeReady Studio product has reached end of life. The last release for the product was 12.21.3.GA. So there is no equivalent version of 
+Red Hat CodeReady Studio for this version of JBoss Tools. Existing users of Red Hat CodeReady Studio can upgrade to this version of JBoss Tools.
+
+For more information, see https://developers.redhat.com/articles/2022/04/06/announcement-red-hat-codeready-studio-reaches-end-life[this article]
+
+== Installation
+
+JBoss Tools or Bring-Your-Own-Eclipse (BYOE) CodeReady Studio require a bit more:
+
+This release requires at least Eclipse 4.23 (2022-03) but we recommend
+using the latest https://www.eclipse.org/downloads/packages/release/2022-03/r/eclipse-ide-enterprise-java-and-web-developers[Eclipse 4.23 2022-03 JEE Bundle]
+
+since then you get most of the dependencies preinstalled.
+
+[WARNING]
+====
+Java11 is now required to run JBoss Tools (this is a requirement from Eclipse 4.17). So make sure to select a Java11 JDK in the installer.
+You can still work with pre-Java11 JDK/JRE and projects in the tool.
+====
+
+Once you have installed Eclipse, you can either find us on the Eclipse Marketplace under "JBoss Tools".
+
+You can also use our update site directly.
+
+    https://download.jboss.org/jbosstools/photon/stable/updates/
+
+=== Hibernate Tools
+
+==== Hibernate Runtime Provider Updates
+
+A number of additions and updates have been performed on the available Hibernate runtime  providers.
+
+
+===== Runtime Provider Updates
+
+The Hibernate 6.0 runtime provider (Preview) now incorporates Hibernate Core version 6.0.0.CR2 and Hibernate Tools version 6.0.0.CR2.
+
+The Hibernate 5.6 runtime provider now incorporates Hibernate Core version 5.6.7.Final and Hibernate Tools version 5.6.7.Final.
+
+The Hibernate 4.3 runtime provider now incorporates Hibernate Tools version 4.3.6.Final.
+
+The Hibernate 3.6 runtime provider now incorporates Hibernate Tools version 3.6.2.Final.
+
+The Hibernate 3.5 runtime provider now incorporates Hibernate Tools version 3.5.3.Final.
+
+=== Quarkus Tools
+
+==== Qute templates support
+
+Qute templates support has been added. This allows Quarkus developers to get enhanced editing experience to Qute templates located in their projects.
+
+A Qute template is any file located under `src/main/resources/templates`  and with the `html`, `yaml`, `yml`, `json` or `txt` extension.
+
+Qute support is enabled on any project that has a dependency on the Qute library.
+
+You can generate a Qute enabled project with the Quarkus project wizard and choosing the RESTEasy Classic Qute extension
+
+image::/documentation/whatsnew/quarkus/images/quarkus33.gif[]
+
+==== Qute features
+
+Features included into the Qute support are:
+
+- Integration between Java files and Qute templates files
+- Method parameter support in Qute template files
+- Java Type Hover Support for Qute Templates
+- Linked Editing Range Support in Qute Templates
+- Qute Section Completion
+- Support for Qute Validation
+- Completion for Qute Value Resolvers
+- Support for @TemplateExtension Methods
+- Support for Directly Injecting Beans into Qute Templates
+
+==== Integration between Java files and Qute templates files
+
+Any reference to a Qute template file from a Java file show the option to generate the Qute template file (if the Qute template file has not been found in the project) or navigate to the Qute template file.
+
+image::/documentation/whatsnew/quarkus/images/quarkus34.gif[]
+
+==== Method parameter support in Qute template files
+
+The Qute language server has support for built-in and user-defined Java classes, including parameter completion and validation for their methods. Take advantage of this to easily avoid Java related mistakes.
+
+image::/documentation/whatsnew/quarkus/images/quarkus35.gif[]
+
+==== Java Type Hover Support for Qute Templates
+
+When hovering over an expression in a Qute template, the Java type (built-in or user defined) will be displayed.
+
+
+image::/documentation/whatsnew/quarkus/images/quarkus36.gif[]
+
+==== Linked Editing Range Support in Qute Templates
+
+Similar to most language, linked editing is now supported for Qute templates , allowing for simultaneous renaming of multiple parameter expressions.
+
+image::/documentation/whatsnew/quarkus/images/quarkus37.gif[]
+
+==== Qute Section Completion
+
+Qute templates use sections in its templating language to power any logic required when compiling and displaying the resulting document. To support this, the extension’s Qute support populates a completion list with all available Qute sections, along with any parameters they take and a small code snippet of its usage.
+
+image::/documentation/whatsnew/quarkus/images/quarkus38.gif[]
+
+==== Support for Qute Validation
+
+Java and Qute validation is included for Qute templates with Quarkus Tools, including diagnostics and quick fix suggestions.
+
+
+image::/documentation/whatsnew/quarkus/images/quarkus39.gif[]
+
+The developer has the ability to disable this validation in their settings through the `Window` -> `Preferences` -> `JBoss Tools` -> `Qute`.
+
+image::/documentation/whatsnew/quarkus/images/quarkus40.png[]
+
+The second table contains a list of Qute templates (as regular expressions) for which validation will be excluded.
+
+If any of the available validation is disturbing your development, you can disable Qute validation for the file project with a single click, using a “Quick Fix” that appears on every Qute related diagnostic
+
+image::/documentation/whatsnew/quarkus/images/quarkus41.gif[]
+
+==== Completion for Qute Value Resolvers
+
+Paired with corresponding Java methods, built-in Java classes also have built-in Qute value resolvers made available by the Qute templating engine that is evaluated and outputs, or resolves to, a value. Quarkus Tools supports completion, hover and snippet generation for these built-in value resolvers.
+
+image::/documentation/whatsnew/quarkus/images/quarkus42.gif[]
+
+==== Support for @TemplateExtension Methods
+
+Template extension methods are used to extend the set of accessible properties of data objects. Qute support in Quarkus Tools has support for marked @TemplateExtension Java methods, which extend a given data model.
+
+image::/documentation/whatsnew/quarkus/images/quarkus43.gif[]
+
+==== Support for Directly Injecting Beans into Qute Templates
+
+A CDI bean annotated with @Named can be referenced in any template through cdi and/or inject namespaces. Quarkus Tools provides completion and definition navigation support for Beans.
+
+image::/documentation/whatsnew/quarkus/images/quarkus44.gif[]
+
+=== And more...
+
+You can find more noteworthy updates in on link:/documentation/whatsnew/jbosstools/4.23.0.Final.html[this page].
+
+== What is next?
+
+Having JBoss Tools 4.23.0 out we are already working on the next release.
+
+Enjoy!
+
+Jeff Maury
+
