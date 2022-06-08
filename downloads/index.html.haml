@@ -21,14 +21,13 @@ issues: [JBIDE-17047]
     %header
       %h3
         =partial('product_link.html.haml', { :parent => page, :product_info => devstudio_current_stable_release })
-      
+
     .item
       :markdown
         * One click install - for Windows, Linux and Mac
         * Based on **JBoss Tools #{devstudio_current_stable_release.build_info.required_jbt_core_version}** supported plugins
         * Full IDE installer or install to existing **#{devstudio_current_stable_release.build_info.eclipse_name}**
         * JBoss Central to install extra features
-        *  **Supported by Red Hat**
         * Released on #{devstudio_current_stable_release.build_info.release_date}
 
     %footer.center
@@ -40,13 +39,13 @@ issues: [JBIDE-17047]
         or try&nbsp;
         %a{:href=>relative(devstudio_current_development_release.output_path)}> the latest development build
         \.
-      
+
 
   %section.span6.well
     %header
       %h3
         =partial('product_link.html.haml', { :parent => page, :product_info => jbtcore_current_stable_release })
-        
+
     .item
       :markdown
         * Individual plugins for Eclipse, including experimental plugins
@@ -67,7 +66,7 @@ issues: [JBIDE-17047]
         \.
 
 
-      
+
 
 .row-fluid
   .span12
