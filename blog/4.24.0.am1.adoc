@@ -1,0 +1,55 @@
+= JBoss Tools and Red Hat CodeReady Studio for Eclipse 2022-06M2
+:page-layout: blog
+:page-author: jeffmaury
+:page-tags: [release, jbosstools, devstudio, jbosscentral, codereadystudio]
+:page-date: 2022-06-14
+
+Happy to announce 4.24.0.AM1 (Developer Milestone 1) build for Eclipse 2022-06M2.
+
+Downloads available at link:/downloads/jbosstools/2022-06/4.24.0.AM1.html[JBoss Tools 4.24.0 AM1].
+
+== What is New?
+
+Full info is at link:/documentation/whatsnew/jbosstools/4.24.0.AM1.html[this page]. Some highlights are below.
+
+
+=== Quarkus Tools
+
+==== Improvement to the new Quarkus project wizard
+
+When the new Quarkus project wizard was initially design, there were a few Quarkus extensions so it was not difficult to find one from the
+total list. Now that the Quarkus ecosystem is growing fast, it was difficult even of the extensions were grouped into categories.
+
+In order to cope with this issue, the extensions and categories are now displayed in a tree (first level is categories, second level is
+extensions).
+
+This new tree can now be filtered through a text field. If user enter some characters, only extensions matching this filter will be displayed
+in the tree.
+
+image::/documentation/whatsnew/quarkus/images/quarkus45.gif[]
+
+=== Hibernate Tools
+
+==== Hibernate Runtime Provider Updates
+
+A number of additions and updates have been performed on the available Hibernate runtime  providers.
+
+
+===== Runtime Provider Updates
+
+The Hibernate 6.0 runtime provider (Preview) now incorporates Hibernate Core version 6.0.2.Final and Hibernate Tools version 6.0.2.Final.
+
+The Hibernate 5.6 runtime provider now incorporates Hibernate Core version 5.6.9.Final and Hibernate Tools version 5.6.9.Final.
+
+The Hibernate 5.3 runtime provider now incorporates Hibernate Core version 5.3.26.Final and Hibernate Tools version 5.3.26.Final.
+
+
+=== And more...
+
+You can find more noteworthy updates in on link:/documentation/whatsnew/jbosstools/4.24.0.AM1.html[this page].
+
+
+Enjoy!
+
+Jeff Maury
+
