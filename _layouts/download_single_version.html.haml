@@ -198,7 +198,7 @@ bottom_javascripts: ["/javascripts/download_tabs.js"]
             - if page.build_info.product_id.to_s == "jbt_is"
               - installed_product_short = "jbt"
               - installed_product = "JBoss Tools #{page.build_info.required_jbt_core_version}"
-              - central_install_url = "http://download.jboss.org/jbosstools/central/install?connectors=jboss.integration-stack.bundle.bpr,jboss.integration-stack.bundle.ds,jboss.integration-stack.bundle.soa,org.jboss.tools.bpel.feature,org.eclipse.bpmn2.feature,org.drools.eclipse.feature,org.jboss.jbpm.eclipse.feature,org.switchyard.tools.feature"
+              - central_install_url = "https://download.jboss.org/jbosstools/central/install?connectors=jboss.integration-stack.bundle.bpr,jboss.integration-stack.bundle.ds,jboss.integration-stack.bundle.soa,org.jboss.tools.bpel.feature,org.eclipse.bpmn2.feature,org.drools.eclipse.feature,org.jboss.jbpm.eclipse.feature,org.switchyard.tools.feature"
             - else
               - installed_product_short = "jbds"
               - installed_product = "JBoss Developer Studio #{page.build_info.required_devstudio_version}"
