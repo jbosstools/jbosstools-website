@@ -1,4 +1,4 @@
-= JBoss Tools and Red Hat CodeReady Studio for Eclipse 2022-03RC1
+= JBoss Tools for Eclipse 2022-03RC1
 :page-layout: blog
 :page-author: jeffmaury
 :page-tags: [release, jbosstools, devstudio, jbosscentral, codereadystudio]
