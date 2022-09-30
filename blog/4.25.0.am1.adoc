@@ -1,0 +1,53 @@
+= JBoss Tools for Eclipse 2022-09RC1
+:page-layout: blog
+:page-author: jeffmaury
+:page-tags: [release, jbosstools, devstudio, jbosscentral, codereadystudio]
+:page-date: 2022-09-29
+
+Happy to announce 4.25.0.AM1 (Developer Milestone 1) build for Eclipse 2022-09RC1.
+
+Downloads available at link:/downloads/jbosstools/2022-09/4.25.0.AM1.html[JBoss Tools 4.25.0 AM1].
+
+== What is New?
+
+Full info is at link:/documentation/whatsnew/jbosstools/4.25.0.AM1.html[this page]. Some highlights are below.
+
+=== General
+
+==== Java 17 requirement
+
+Java 17 is now a minimum requirement to *run* JBoss Tools.
+JBoss Tools continues to support running servers and applications with older Java versions.
+
+=== Quarkus Tools
+
+==== Improvement to the new Quarkus project wizard
+
+The Quarkus extension ecosystem is composed of extensions that are part of the platform and the others. The Quarkus project wizard has
+been extended to allow exclusion of extensions that are not part of the platform.
+
+
+image::/documentation/whatsnew/quarkus/images/quarkus46.gif[]
+
+
+=== Hibernate Tools
+
+==== New Runtime Provider
+
+A new runtime provider has been added for Hibernate 6.1. It incorporates Hibernate Core version 6.1.1.Final and Hibernate Tools version 6.1.1.Final.
+
+
+==== Runtime Provider Updates
+
+The Hibernate 5.6 runtime provider now incorporates Hibernate Core version 5.6.10.Final and Hibernate Tools version 5.6.10.Final.
+
+
+=== And more...
+
+You can find more noteworthy updates in on link:/documentation/whatsnew/jbosstools/4.24.0.AM1.html[this page].
+
+
+Enjoy!
+
+Jeff Maury
+
