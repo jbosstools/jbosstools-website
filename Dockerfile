@@ -1,11 +1,15 @@
 FROM centos:centos8
 MAINTAINER Max Rydahl Andersen <max@jboss.org>
 
+RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
+
+RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
+
 # install deps required by our build
 RUN yum install -y epel-release which tar bzip2 gcc libyaml libxml2 libxml2-devel libxslt libxslt-devel libcurl-devel git nodejs wget
 
 # Add RVM keys
-RUN gpg2 --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+RUN gpg2 --keyserver hkp://keys.openpgp.org --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
 
 # Install RVM
 RUN curl -L get.rvm.io | bash -s stable
@@ -29,7 +33,7 @@ RUN /bin/bash -l -c "gem install bundler"
 RUN /bin/bash -l -c "bundle install"
 
 # Enable GPG support
-VOLUME /gnupg
+RUN mkdir /gnupg
 ENV GNUPGHOME /gnupg
 RUN touch /tmp/gpg-agent.conf
 RUN echo 'export GPG_TTY=$(tty); eval $(gpg-agent --daemon --no-use-standard-socket --options /tmp/gpg-agent.conf );' >> ~/.bash_profile
