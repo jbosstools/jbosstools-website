@@ -279,12 +279,6 @@ task :actions do
     profile = 'production'
     deploy_url = "tools@filemgmt-prod-sync.jboss.org:/www_htdocs/tools"
 
-  elsif ENV['GITHUB_REF'].to_s.scan(/main$/).length > 0
-   
-    puts 'Building staging(main) branch build.'
-    profile = 'staging'
-    deploy_url = "tools@filemgmt-prod-sync.jboss.org:/stg_htdocs/tools/"
-
   else
 
     puts ENV['GITHUB_REF'].to_s + ' branch is not configured for GitHub Actions builds - skipping.'
