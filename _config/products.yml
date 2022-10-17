@@ -1,4 +1,12 @@
 eclipse:
+  simrel-2022-12:
+    # TODO archive this as of Jan 2025?
+    archived: false
+    url_path_fragment: 2022-12
+    short_name: 2022-12
+    full_name: Eclipse 4.26 (2022-12)
+    download_url: http://www.eclipse.org/downloads/packages/release/2022-12/
+    requirements: Java 17
   simrel-2022-09:
     # TODO archive this as of Oct 2024?
     archived: false
@@ -40,8 +48,7 @@ eclipse:
     download_url: http://www.eclipse.org/downloads/packages/release/2021-03/
     requirements: Java 11
   simrel-2020-09:
-    # TODO archive this as of Oct 2022?
-    archived: false
+    archived: true
     url_path_fragment: 2020-09
     short_name: 2020-09
     full_name: Eclipse 4.17 (2020-09)
@@ -1809,15 +1816,41 @@ devstudio_is:
             url: https://devstudio.jboss.com/updates/7.0.0/jbdevstudio-integration-stack-updatesite-7.0.0.GA.zip
             md5_url: https://devstudio.jboss.com/updates/7.0.0/jbdevstudio-integration-stack-updatesite-7.0.0.GA.zip.MD5
 
+#########################################
+#
+# JBossTools
+#
+#########################################
+
 jbt_core:
   name: JBoss Tools
   url_path_fragment: jbosstools
   streams:
-    simrel-2022-09:
-      4.25.x.Nightly:
+    simrel-2022-12:
+      4.26.x.Nightly:
         update_site_url: https://download.jboss.org/jbosstools/photon/snapshots/updates/
-      4.25.0.AM1:
+    simrel-2022-09:
+      4.25.0.Final:
         archived: false
+        release_date: 2022-10-17
+        supported_jbt_is_version: 
+        blog_announcement_url: /blog/4.25.0.final.html
+        documentation_url: https://docs.jboss.org/tools/
+        update_site_url: https://download.jboss.org/jbosstools/photon/stable/updates/
+        eclipse_name: Eclipse 4.25 (2022-09)
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 622MB
+            url: https://download.jboss.org/jbosstools/static/photon/stable/updates/core/jbosstools-4.25.0.Final-updatesite-core.zip
+            sha256_url: https://download.jboss.org/jbosstools/static/photon/stable/updates/core/jbosstools-4.25.0.Final-updatesite-core.zip.sha256
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 214MB
+            url: https://download.jboss.org/jbosstools/static/photon/stable/updates/core/jbosstools-4.25.0.Final-src.zip
+            sha256_url: https://download.jboss.org/jbosstools/static/photon/stable/updates/core/jbosstools-4.25.0.Final-src.zip.sha256
+          - name: Release Notes
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
+      4.25.0.AM1:
+        archived: true
         release_date: 2022-09-28
         supported_jbt_is_version: 
         blog_announcement_url: /blog/4.25.0.am1.html
@@ -1837,7 +1870,7 @@ jbt_core:
             url: https://tools.jboss.org/documentation/whatsnew/index.html
     simrel-2022-06:
       4.24.0.Final:
-        archived: false
+        archived: true
         release_date: 2022-07-04
         supported_jbt_is_version: 
         blog_announcement_url: /blog/4.24.0.final.html
