@@ -5,6 +5,7 @@
 :page-product_id: jbt_core
 :page-product_version: 4.25.0.AM1
 
+ifndef::finalnn[]
 == Hibernate Runtime Provider Updates
 
 A number of additions and updates have been performed on the available Hibernate runtime  providers.
@@ -17,5 +18,7 @@ A new runtime provider has been added for Hibernate 6.1. It incorporates Hiberna
 === Runtime Provider Updates
 
 The Hibernate 5.6 runtime provider now incorporates Hibernate Core version 5.6.10.Final and Hibernate Tools version 5.6.10.Final.
+endif::finalnn[]
+
 
 
