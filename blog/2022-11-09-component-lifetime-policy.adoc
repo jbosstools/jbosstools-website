@@ -25,12 +25,12 @@ So we decided to follow the following policy for those components:
 
 - such a component will first be declared obsolete but will still be part of the next
 Jboss Tools release. It will be listed as such in the release notes
-- this component will be removed from the following JBoss Tools release
+- then this component will be removed from the following JBoss Tools release
 
 We think that let users react accordingly as they will have at least 3 monthes before the
 component is removed from the distribution.
 
-So the next JBoss Tools release (4.26.0.Final), we are declaring obsolete the following
+So in the next JBoss Tools release (4.26.0.Final), we are declaring obsolete the following
 components:
 
 - WebServices
