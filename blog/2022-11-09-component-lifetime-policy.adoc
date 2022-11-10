@@ -1,0 +1,49 @@
+= Deprecating and removing components from JBoss Tools
+:page-layout: blog
+:page-author: jeffmaury
+:page-tags: [release, jbosstools]
+:page-date: 2022-11-09
+
+JBoss Tools is a set of Eclipse plugins and features that can be installed from the
+link:https://marketplace.eclipse.com[Eclipse marketplace].
+
+It represents a huge link:https://github.com/jbosstools[code base] and is divided into
+bigger artificats that are called components. The component grouping of plugins and
+features represents major and independant functionnality: there is one component for
+OpenShift and another one for Quarkus for example.
+
+So there are components that have been started a while ago as the JBoss Tools code base
+is quite old and other ones that have been started quite recently (eg Quarkus).
+
+So there are components that are related to a technology that is not anymore widely used
+so the component code base is not updated at all.
+
+Those components are candidates to be removed from the bits that are published with each
+JBoss Tools release.
+
+So we decided to follow the following policy for those components:
+
+- such a component will first be declared obsolete but will still be part of the next
+Jboss Tools release. It will be listed as such in the release notes
+- then this component will be removed from the following JBoss Tools release
+
+We think that let users react accordingly as they will have at least 3 monthes before the
+component is removed from the distribution.
+
+So in the next JBoss Tools release (4.26.0.Final), we are declaring obsolete the following
+components:
+
+- WebServices
+- JSF
+- Seam
+- Batch
+- Visual Page Editor
+- Central installation
+
+Also, as they were declared obsolete a while ago, we are removing the following components:
+
+- Forge
+- Livereload
+- Angular
+- JSDT
+
