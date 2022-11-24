@@ -1,0 +1,44 @@
+= JBoss Tools for Eclipse 2022-12M2
+:page-layout: blog
+:page-author: sbouchet
+:page-tags: [release, jbosstools, jbosscentral]
+:page-date: 2022-11-23
+
+Happy to announce 4.26.0.AM1 (Developer Milestone 1) build for Eclipse 2022-12M2.
+
+Downloads available at link:/downloads/jbosstools/2022-12/4.26.0.AM1.html[JBoss Tools 4.26.0 AM1].
+
+== What is New?
+
+Full info is at link:/documentation/whatsnew/jbosstools/4.26.0.AM1.html[this page]. Some highlights are below.
+
+=== General
+
+==== Components Removal
+
+As previously announced, we removed some components in this release :
+
+- Forge
+- Livereload
+- Angular
+- JSDT
+
+=== Hibernate Tools
+
+==== Runtime Provider Updates
+
+The Hibernate 6.1 runtime provider now incorporates Hibernate Core version 6.1.5.Final, Hibernate Ant version 6.1.5.Final and Hibernate Tools version 6.1.5.Final.
+
+The Hibernate 5.6 runtime provider now incorporates Hibernate Core version 5.6.13.Final and Hibernate Tools version 5.6.13.Final.
+
+The Hibernate 5.3 runtime provider now incorporates Hibernate Core version 5.3.28.Final and Hibernate Tools version 5.3.28.Final.
+
+
+=== And more...
+
+You can find more noteworthy updates in on link:/documentation/whatsnew/jbosstools/4.26.0.AM1.html[this page].
+
+
+Enjoy!
+
+Stéphane Bouchet
