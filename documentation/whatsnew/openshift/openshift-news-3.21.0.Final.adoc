@@ -1,0 +1,41 @@
+= OpenShift What's New in 3.21.0.Final
+:page-layout: whatsnew
+:page-component_id: openshift
+:page-component_version: 4.26.0.Final
+:page-product_id: jbt_core
+:page-product_version: 4.26.0.Final
+:page-include-previous: true
+
+=== OpenShift Application Explorer view based on odo 3.x
+
+The OpenShift Application Explorer view based based on odo 2.x in previous versions of
+JBoss Tools. It already leverages the power of devfiles to describe your development
+environment, odo 3.x enhances and simplifies the workflow.
+
+With odo 3.x, you can create a component (unit of deployment) from your source files and once
+the component is created, you can start it in dev mode: a new deployment will be created on the
+cluster, application will be built on the cluster and then, each time you modify some of the source
+files on your local workstation, the change will be broadcasted to the remote cluster.
+
+In order to test your application, you can open a browser of the OpenShift Application Explorer and
+browse your application running on the cluster.
+
+Once your component is running in dev mode, you can start a local debugger (Java, Node.js, Python) that
+will connect to the deployment on the cluster and let's you troubleshoot and analyze more complex use cases.
+
+This addresses the inner loop style of development where you can get instant feedback on your changes.
+
+odo 3.x also supports outloop style of development: once you think your application in ready to be deployed
+on an staging, integration or production cluster, you can start your component in deploy mode: a new image
+defined by yourself will then be built and deployed on the cluster.
+
+In the following example, we will start from a Quarkus application generated from https://code.quarkus.io,
+create the component, start the dev mode, check that we can access the application, start the debugger and
+check that we can reach a breakpoint.
+
+
+image::./images/odo3-workflow.gif[width=80%]
+
+
+
+related_jira::JBIDE-28679[]

@@ -1,0 +1,88 @@
+= JBoss Tools 4.26.0.Final for Eclipse 2022-12
+:page-layout: blog
+:page-author: jeffmaury
+:page-tags: [release, jbosstools, jbosscentral]
+:page-date: 2022-12-20
+
+Happy to announce 4.26.0.Final build for Eclipse 2022-12.
+
+Downloads available at link:/downloads/jbosstools/2022-12/4.26.0.Final.html[JBoss Tools 4.26.0 Final].
+
+== What is New?
+
+Full info is at link:/documentation/whatsnew/jbosstools/4.26.0.Final.html[this page]. Some highlights are below.
+
+=== General
+
+==== Components removal
+
+As planned and communicated in a previous blog article, the following components have been
+removed from the JBoss Tools distribution:
+
+- Forge
+- Livereload
+- Angular
+- JSDT
+
+Please note that the following components are obsoleted so they are still part of this JBoss
+Tools distribution but they will be removed from the next JBoss Tools release:
+
+- WebServices
+- JSF
+- Seam
+- Batch
+- Visual Page Editor
+- Central installation
+
+=== OpenShift
+
+==== OpenShift Application Explorer view based on odo 3.x
+
+The OpenShift Application Explorer view based based on odo 2.x in previous versions of
+JBoss Tools. It already leverages the power of devfiles to describe your development
+environment, odo 3.x enhances and simplifies the workflow.
+
+With odo 3.x, you can create a component (unit of deployment) from your source files and once
+the component is created, you can start it in dev mode: a new deployment will be created on the
+cluster, application will be built on the cluster and then, each time you modify some of the source
+files on your local workstation, the change will be broadcasted to the remote cluster.
+
+In order to test your application, you can open a browser of the OpenShift Application Explorer and
+browse your application running on the cluster.
+
+Once your component is running in dev mode, you can start a local debugger (Java, Node.js, Python) that
+will connect to the deployment on the cluster and let's you troubleshoot and analyze more complex use cases.
+
+This addresses the inner loop style of development where you can get instant feedback on your changes.
+
+odo 3.x also supports outloop style of development: once you think your application in ready to be deployed
+on an staging, integration or production cluster, you can start your component in deploy mode: a new image
+defined by yourself will then be built and deployed on the cluster.
+
+In the following example, we will start from a Quarkus application generated from https://code.quarkus.io,
+create the component, start the dev mode, check that we can access the application, start the debugger and
+check that we can reach a breakpoint.
+
+
+image::/documentation/whatsnew/openshift/images/odo3-workflow.gif[width=80%]
+
+
+=== Hibernate Tools
+
+==== Runtime Provider Updates
+
+The Hibernate 6.1 runtime provider now incorporates Hibernate Core version 6.1.5.Final, Hibernate Ant version 6.1.5.Final and Hibernate Tools version 6.1.5.Final.
+
+The Hibernate 5.6 runtime provider now incorporates Hibernate Core version 5.6.14.Final and Hibernate Tools version 5.6.14.Final.
+
+The Hibernate 5.3 runtime provider now incorporates Hibernate Core version 5.3.27.Final and Hibernate Tools version 5.3.27.Final.
+
+
+=== And more...
+
+You can find more noteworthy updates in on link:/documentation/whatsnew/jbosstools/4.26.0.AM1.html[this page].
+
+
+Enjoy!
+
+Stéphane Bouchet
