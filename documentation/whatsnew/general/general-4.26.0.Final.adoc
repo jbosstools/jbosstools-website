@@ -1,0 +1,30 @@
+= General 4.26.0.Final What's New
+:page-layout: whatsnew
+:page-component_id: general
+:page-component_version: 4.26.0.Final
+:page-product_id: jbt_core
+:page-product_version: 4.26.0.Final
+
+
+== Components removal
+
+As planned and communicated in a previous blog article, the following components have been
+removed from the JBoss Tools distribution:
+
+- Forge
+- Livereload
+- Angular
+- JSDT
+
+Please note that the following components are obsoleted so they are still part of this JBoss
+Tools distribution but they will be removed from the next JBoss Tools release:
+
+- WebServices
+- JSF
+- Seam
+- Batch
+- Visual Page Editor
+- Central installation
+
+
+
