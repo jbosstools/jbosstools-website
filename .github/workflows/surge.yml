@@ -13,14 +13,14 @@ jobs:
         with:
           ref: ${{github.event.workflow_run.head_sha}}
       - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
+        uses: ruby/setup-ruby@d3c9825d67b0d8720afdfdde5af56c79fdb38d16 #v1
         with:
           ruby-version: 2.4.1
           bundler-cache: true
       - name: Generate site
         run: |
           bundle exec rake actions
-      - uses: afc163/surge-preview@v1
+      - uses: afc163/surge-preview@aef1ba438fafc353616c0bf225b6803bdd6367d2 #v1
         id: preview_step
         with:
           surge_token: ${{ secrets.SURGE_TOKEN }}
