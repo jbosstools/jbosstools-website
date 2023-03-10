@@ -26,7 +26,7 @@ Most of those additional features are already present in the https://marketplace
 
 ==== OpenShift Application Explorer view service creation support
 
-The missing create service feature is now back in this release.
+The missing create service feature that was available with odo 2.X is now back in this release.
 
 https://tools.jboss.org/documentation/whatsnew/jbosstools/4.21.0.AM1.html#operator-based-services[See the previous annoucement] on this feature
 
@@ -34,7 +34,7 @@ https://tools.jboss.org/documentation/whatsnew/jbosstools/4.21.0.AM1.html#operat
 
 Once you have created a service, you can link it to a component using a binding.
 
-image::/documentation/whatsnew/openshift/images/link-webservice.webm[width=80%]
+video::/documentation/whatsnew/openshift/images/link-webservice.webm[width=80%]
 
 === Hibernate Tools
 
