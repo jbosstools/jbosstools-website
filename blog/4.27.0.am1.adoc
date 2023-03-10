@@ -34,7 +34,7 @@ https://tools.jboss.org/documentation/whatsnew/jbosstools/4.21.0.AM1.html#operat
 
 Once you have created a service, you can link it to a component using a binding.
 
-video::/documentation/whatsnew/openshift/images/link-webservice.webm[width=80%]
+image::/documentation/whatsnew/openshift/images/link-service.gif[width=80%]
 
 === Hibernate Tools
 
