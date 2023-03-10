@@ -1,0 +1,57 @@
+= JBoss Tools for Eclipse 2023-03M3
+:page-layout: blog
+:page-author: sbouchet
+:page-tags: [release, jbosstools, jbosscentral]
+:page-date: 2023-03-10
+
+Happy to announce 4.27.0.AM1 (Developer Milestone 1) build for Eclipse 2023-03M3.
+
+Downloads available at link:/downloads/jbosstools/2023-03/4.27.0.AM1.html[JBoss Tools 4.27.0 AM1].
+
+== What is New?
+
+Full info is at link:/documentation/whatsnew/jbosstools/4.27.0.AM1.html[this page]. Some highlights are below.
+
+=== General
+
+==== Components Depreciation
+
+As previously announced https://issues.redhat.com/browse/JBIDE-28678[here], we're in the process to remove the Central / update tab from JBossTools in next release. This work can be followed https://issues.redhat.com/browse/JBIDE-28852[here]. 
+
+That means that all the current extra features that can be installed via this tab needs to be available through a new channel. This channel already exists as p2 repo, but using https://www.eclipse.org/mpc/[Eclipse Marketplace Client] is more close to what's existing right now. 
+
+Most of those additional features are already present in the https://marketplace.eclipse.org/content/jboss-tools[Jboss marketplace entry], so it's just a matter of use it to install your favorite feature.
+
+=== OpenShift
+
+==== OpenShift Application Explorer view service creation support
+
+The missing create service feature is now back in this release.
+
+https://tools.jboss.org/documentation/whatsnew/jbosstools/4.21.0.AM1.html#operator-based-services[See the previous annoucement] on this feature
+
+==== OpenShift Application Explorer view service binding support 
+
+Once you have created a service, you can link it to a component using a binding.
+
+image::/documentation/whatsnew/openshift/images/link-webservice.webm[width=80%]
+
+=== Hibernate Tools
+
+==== Runtime Provider Updates
+
+A new Hibernate 6.2 runtime provider incorporates Hibernate Core version 6.2.0.CR2, Hibernate Ant version 6.2.0.CR2 and Hibernate Tools version 6.2.0.CR2.
+
+The Hibernate 6.1 runtime provider now incorporates Hibernate Core version 6.1.7.Final, Hibernate Ant version 6.1.7.Final and Hibernate Tools version 6.1.7.Final.
+
+The Hibernate 5.6 runtime provider now incorporates Hibernate Core version 5.6.15.Final and Hibernate Tools version 5.6.15.Final.
+
+
+=== And more...
+
+You can find more noteworthy updates in on link:/documentation/whatsnew/jbosstools/4.27.0.AM1.html[this page].
+
+
+Enjoy!
+
+Stéphane Bouchet
