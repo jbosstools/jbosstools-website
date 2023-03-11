@@ -15,7 +15,7 @@ gem 'kramdown', '~> 1.0.1' # Kramdown works on all platforms, rdiscount only on 
 gem 'htmlcompressor', '~> 0.0.3' # Adds in HTML minification, helps remove the warning on awestruct startup
 gem 'RedCloth'
 gem 'listen'
-gem 'asciidoctor', '1.5.2'
+gem 'asciidoctor', '1.5.8'
 gem 'slim'
 gem 'less'
 #gem 'therubyracer'
