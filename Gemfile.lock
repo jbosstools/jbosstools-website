@@ -28,14 +28,13 @@ GEM
     Platform (0.4.0)
     RedCloth (4.3.2)
     ansi (1.5.0)
-    asciidoctor (1.5.2)
+    asciidoctor (1.5.8)
     ast (2.4.0)
     autoprefixer-rails (5.2.1)
       execjs
       json
     bootstrap-sass (3.4.1)
       autoprefixer-rails (>= 5.2.1)
-      sass (>= 3.2.19)
       sassc (>= 2.0.0)
     builder (3.2.4)
     celluloid (0.16.0)
@@ -182,7 +181,7 @@ PLATFORMS
 
 DEPENDENCIES
   RedCloth
-  asciidoctor (= 1.5.2)
+  asciidoctor (= 1.5.8)
   awestruct!
   bootstrap-sass
   coderay
