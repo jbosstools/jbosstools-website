@@ -105,7 +105,6 @@ dependencies.
 [source]
 ----
 # do *not* run these as root
-gem update --system 3.2.3
 gem install bundler
 bundle install
 ----
