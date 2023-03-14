@@ -21,5 +21,5 @@ jobs:
       run: |
         branch_name=`basename $GITHUB_REF`
         export GIT_TAG=build-$branch_name-$(date -u "+%Y-%m-%d-%H-%M-%S")-$GITHUB_RUN_ID
-        gem update --system
+        gem update --system 3.2.3
         bundle exec rake actions
