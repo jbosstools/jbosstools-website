@@ -180,7 +180,7 @@ PLATFORMS
 DEPENDENCIES
   RedCloth
   asciidoctor (= 1.5.8)
-  awestruct (~> 0.5.7)
+  awestruct (~> 0.5.6.beta8)
   bootstrap-sass
   coderay
   coffee-script (~> 2.2.0)

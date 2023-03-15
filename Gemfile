@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 # older ruby versions have problems! Lets be specific. use 'rvm use 1.9.3@sites --create' to use specific ruby version
 ruby '2.4.1'
 #gem 'awestruct', '0.5.5'         # Framework for creating static HTML sites
-gem 'awestruct', '~> 0.5.7'
+gem 'awestruct', '~> 0.5.6.beta8'
 
 gem 'uglifier', '~> 2.0.1'          # Ruby wrapper for UglifyJS JavaScript compressor
 gem 'cssminify', '~> 1.0.2'         # CSS compression using YUI compressor
