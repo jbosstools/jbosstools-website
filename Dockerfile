@@ -29,7 +29,6 @@ RUN /bin/bash -l -c "echo rvm_install_on_use_flag=1 > ~/.rvmrc"
 RUN /bin/bash -l -c "rvm install ."
 RUN /bin/bash -l -c "gem update --system --no-document"
 RUN /bin/bash -l -c "gem install bundler"
-RUN /bin/bash -l -c "bundle config set --local path '/opt/build/cache/bundle"
 # install base gem's, if any changes user only need to install differences.
 RUN /bin/bash -l -c "bundle install"
 
