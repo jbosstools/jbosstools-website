@@ -1,3 +1,4 @@
 = Stéphane Bouchet
 :page-photo_64px: https://avatars.githubusercontent.com/u/600414?s=64
 :page-photo_32px: https://avatars.githubusercontent.com/u/600414?s=32
+:page-developer_page: https://developers.redhat.com/author/stephane-bouchet

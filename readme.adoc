@@ -2,7 +2,8 @@
 :awestruct-layout: title-nocol
 :toc:
 
-image:https://travis-ci.org/jbosstools/jbosstools-website.png?branch=develop["Build Status", link="https://travis-ci.org/jbosstools/jbosstools-website"]
+image:https://github.com/jbosstools/jbosstools-website/actions/workflows/deploy.yml/badge.svg?branch=main["Build Status", link="https://github.com/jbosstools/jbosstools-website/actions/workflows/deploy.yml"]
+
 
 A bit of Git, a bit of Ruby and you will get your local tools.jboss.org served..
 
@@ -36,7 +37,7 @@ Everything else below is if you want to run awestruct "natively".
 == Prerequisites
 
 * Get http://git-scm.com/[Git]
-* Get http://www.ruby-lang.org/en/[Ruby 2.2.0] (part of the RVM install if you follow that path - see below)
+* Get http://www.ruby-lang.org/en/[Ruby 2.4+] (part of the RVM install if you follow that path - see below)
 * Get http://rubygems.org/[RubyGems 1.3.6] or above
 * Get http://www.gnu.org/software/wget/[GNU Wget 1.14]
 * If on Linux, you might need to install stuff for nokogiri (`sudo yum install libxml libxml-devel libxslt libxslt-devel`)
@@ -70,8 +71,8 @@ you are running in a proper terminal/login.
 # The purpose of using rvm is to have non-root, user isolated and reproducible gem/ruby environment
 # During the rvm install it might ask to install system level packages, for these your user need to have sudo permissions
 # or you have to run those installs as root seperately and then run rvm install again as a normal user
-rvm install 2.2
-rvm use 2.2
+rvm install 2.4
+rvm use 2.4
 rvm gemset create jbosstools-website
 ----
 
@@ -211,13 +212,13 @@ You should be back to millisecond serving :)
 
 == Publishing/Deploying
 
-Publishing of the site is done automatically via https://travis-ci.org/jbosstools[Travis CI] when you publish to the 'main' or 'production' branch.
+Publishing of the site is done automatically via https://github.com/jbosstools/jbosstools-website/actions/workflows/deploy.yml[this github action] when you publish to the 'main' or 'production' branch.
 
-image:https://travis-ci.org/jbosstools/jbosstools-website.png?branch=develop["Build Status", link="https://travis-ci.org/jbosstools/jbosstools-website"]
+image:https://github.com/jbosstools/jbosstools-website/actions/workflows/deploy.yml/badge.svg?branch=main["Build Status", link="https://github.com/jbosstools/jbosstools-website/actions/workflows/deploy.yml"]
 
-If Travis build successfully it will automatically publish the result to the proper site.
+If build successfully it will automatically publish the result to the proper site.
 
-* staging (https://tools.stage.jboss.org) uses 'main'
+* staging (https://github.com/afc163/surge-preview[using Surge PR Preview Action]) uses 'main', with a temporary url
 * production (https://tools.jboss.org) uses 'production' branch.
 
 === Profile parameters
