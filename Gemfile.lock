@@ -110,7 +110,7 @@ GEM
       rexml
     less (2.6.0)
       commonjs (~> 0.2.7)
-    libv8 (3.16.14.19-x86_64-linux)
+    libv8 (3.16.14.19)
     listen (2.10.1)
       celluloid (~> 0.16.0)
       rb-fsevent (>= 0.9.3)
@@ -183,7 +183,7 @@ GEM
       POpen4 (>= 0.1.4)
 
 PLATFORMS
-  x86_64-linux
+  ruby
 
 DEPENDENCIES
   RedCloth
@@ -211,7 +211,7 @@ DEPENDENCIES
   version (= 1.0.0)
 
 RUBY VERSION
-   ruby 2.6.10p210
+   ruby 2.4.1p111
 
 BUNDLED WITH
-   2.4.9
+   1.17.3
