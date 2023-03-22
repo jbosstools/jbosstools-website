@@ -266,7 +266,7 @@ task :actions do
   puts 'Event name ' + ENV['GITHUB_EVENT_NAME']
   if ENV['GITHUB_EVENT_NAME'] == 'pull_request' or ENV['GITHUB_EVENT_NAME'] == 'workflow_run'
     puts 'Pull request detected. Executing build only.'
-    system "bundle version && bundle exec awestruct -P development -g"
+    system "bundle exec awestruct -P development -g"
     errorcheck
     next
   end
@@ -293,7 +293,7 @@ task :actions do
   errorcheck
 
   puts "## Deploying website via rsync to #{deploy_url}"
-  success = system("rsync -Pqr --protocol=28 --delete-after -e 'ssh -p 2222' _site/* #{deploy_url}")
+  success = system("rsync -Pqrt --protocol=28 --delete-after -e 'ssh -p 2222' _site/* #{deploy_url}")
 
   if tag
     puts '## Tagging repo'

@@ -21,7 +21,7 @@
       %entry
         %id #{site.base_url}#{entry.url}
         %title= escape_once( entry.title )
-        %updated= File.mtime(File.join(File.dirname(__FILE__), entry.relative_path)).xmlschema
+        %updated= last_commit_or_modifed_date(".#{entry.relative_path}").xmlschema
         %published= entry.date.xmlschema
         %link{:rel=>"alternate", :type=>"text/html", :href=>"#{site.base_url}#{entry.url}" }
         - if ( not entry.author.nil? )
