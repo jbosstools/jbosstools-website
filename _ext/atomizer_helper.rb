@@ -1,5 +1,3 @@
-require 'products_helper'
-
 require 'git'
 
 module Awestruct
