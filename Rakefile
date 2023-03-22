@@ -266,7 +266,7 @@ task :actions do
   puts 'Event name ' + ENV['GITHUB_EVENT_NAME']
   if ENV['GITHUB_EVENT_NAME'] == 'pull_request' or ENV['GITHUB_EVENT_NAME'] == 'workflow_run'
     puts 'Pull request detected. Executing build only.'
-    system "bundle exec awestruct -P development -g"
+    system "bundle version && bundle exec awestruct -P development -g"
     errorcheck
     next
   end
