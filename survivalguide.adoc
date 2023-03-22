@@ -160,7 +160,7 @@ https://github.com/jbosstools/jbosstools-website[jbosstools/jbosstools-website].
 
 If you push changes to the +main+ branch,
 the updated website will be visible after roughly a minute to
-https://main--jbosstools-website.netlify.app/.
+https://main\--jbosstools-website.netlify.app/[netlify].
 
 This is good to share experiments with others. Be aware that if you push content to +main+ that is not ready/complete it "blocks" urgent updates. Better to do local rendering for longer lasting experiments. Eventually we will have a setup of the site that builds and publish content per PR instead of just for the two branches.
 
