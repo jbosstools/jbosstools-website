@@ -142,6 +142,7 @@ GEM
       method_source (~> 1.0)
     public_suffix (4.0.7)
     rack (1.6.13)
+    rake (13.0.6)
     rb-fsevent (0.9.8)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
@@ -201,6 +202,7 @@ DEPENDENCIES
   listen
   markaby (>= 0.9)
   org-ruby (>= 0.8)
+  rake
   rb-fsevent (~> 0.9.3)
   slim
   therubyracer
