@@ -19,6 +19,7 @@ jobs:
           bundler-cache: true
       - name: Generate site
         run: |
+          bundle version
           bundle exec rake actions
       - uses: afc163/surge-preview@aef1ba438fafc353616c0bf225b6803bdd6367d2 #v1
         id: preview_step

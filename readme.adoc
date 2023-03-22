@@ -218,7 +218,7 @@ image:https://github.com/jbosstools/jbosstools-website/actions/workflows/deploy.
 
 If build successfully it will automatically publish the result to the proper site.
 
-* staging (https://github.com/afc163/surge-preview[using Surge PR Preview Action]) uses 'main', with a temporary url
+* staging (https://main--jbosstools-website.netlify.app/[using Surge Preview Action]) uses 'main'
 * production (https://tools.jboss.org) uses 'production' branch.
 
 === Profile parameters
