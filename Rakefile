@@ -291,7 +291,7 @@ task :actions do
   errorcheck
 
   puts "## Deploying website via rsync to #{deploy_url}"
-  success = system("rsync -Pqr --protocol=28 --delete-after -e 'ssh -p 2222' _site/* #{deploy_url}")
+  success = system("rsync -Pqrt --protocol=28 --delete-after -e 'ssh -p 2222' _site/* #{deploy_url}")
 
   if tag
     puts '## Tagging repo'
