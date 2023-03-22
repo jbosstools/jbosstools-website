@@ -7,7 +7,7 @@ ruby '2.4.1'
 #gem 'awestruct', :git => 'git://github.com/lightguard/awestruct.git', :branch => 'switch_from_rexml_to_oga'
 gem 'awestruct', :git => 'https://github.com/awestruct/awestruct.git', :ref => 'b8ad2ea56a38839b44659d47d56ef338e69d8a88'
 
-
+gem 'rake'
 gem 'uglifier', '~> 2.0.1'        # Ruby wrapper for UglifyJS JavaScript compressor
 gem 'cssminify', '~> 1.0.2'        # CSS compression using YUI compressor
 gem 'rb-fsevent', '~> 0.9.3'        # FSEvents API with Signals catching (without RubyCocoa)
