@@ -183,7 +183,7 @@ GEM
       POpen4 (>= 0.1.4)
 
 PLATFORMS
-  ruby
+  x86_64-linux
 
 DEPENDENCIES
   RedCloth
@@ -211,7 +211,7 @@ DEPENDENCIES
   version (= 1.0.0)
 
 RUBY VERSION
-   ruby 2.4.1p111
+   ruby 2.6.10p210
 
 BUNDLED WITH
-   2.3.26
+   2.4.9

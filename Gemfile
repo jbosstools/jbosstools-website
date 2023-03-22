@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # older ruby versions have problems! Lets be specific. use 'rvm use 1.9.3@sites --create' to use specific ruby version
-ruby '2.4.1'
+ruby '2.6.10'
 #gem 'awestruct', '0.5.5'         # Framework for creating static HTML sites
 #gem 'awestruct', :git => 'git://github.com/aslakknutsen/awestruct.git', :branch => 'lazy_gen'
 #gem 'awestruct', :git => 'git://github.com/lightguard/awestruct.git', :branch => 'switch_from_rexml_to_oga'
