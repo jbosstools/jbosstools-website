@@ -12,7 +12,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
+      with:
+          fetch-depth: 0
     - name: Set up Ruby
       uses: ruby/setup-ruby@d3c9825d67b0d8720afdfdde5af56c79fdb38d16 #v1
       with:
