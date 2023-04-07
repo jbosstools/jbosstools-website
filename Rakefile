@@ -51,7 +51,6 @@ task :default => :preview
 
 task :my_task, :arg1, :arg2 do |t, args|
   puts "Args were: #{args}"
-  puts "Args were: #{args[0]}"
 end
 
 desc 'retrieve local git repo information'
@@ -263,7 +262,6 @@ end
 desc 'Generate site from GitHub Actions and publish site'
 task :actions do
   # if this is a pull request, do a simple build of the site and stop
-  puts 'Event name ' + ENV['GITHUB_EVENT_NAME']
   if ENV['GITHUB_EVENT_NAME'] == 'pull_request' or ENV['GITHUB_EVENT_NAME'] == 'workflow_run'
     puts 'Pull request detected. Executing build only.'
     system "bundle exec awestruct -P development -g"
@@ -293,7 +291,7 @@ task :actions do
   errorcheck
 
   puts "## Deploying website via rsync to #{deploy_url}"
-  success = system("rsync -Pqrt --protocol=28 --delete-after -e 'ssh -p 2222' _site/* #{deploy_url}")
+  success = system("rsync -Pqr --protocol=28 -e 'ssh -p 2222' _site/* #{deploy_url}")
 
   if tag
     puts '## Tagging repo'
@@ -301,61 +299,6 @@ task :actions do
     system("git config --global user.name 'JBoss Tools CI'")
     system('git tag $GIT_TAG -a -m "Published to production from GitHub Actions build $GITHUB_RUN_ID"')
     system("git push origin $GIT_TAG")
-  end
-  fail unless success
-end
-
-############################################################################
-#
-# Build web site on Travis-CI
-#
-############################################################################
-desc 'Generate site from Travis CI and publish site'
-task :travis do
-  # if this is a pull request, do a simple build of the site and stop
-  if ENV['TRAVIS_PULL_REQUEST'].to_s.to_i > 0
-    puts 'Pull request detected. Executing build only.'
-    errorcheck
-    next
-  end
-  
-  tag = false
-
-  if ENV['TRAVIS_BRANCH'].to_s.scan(/^production$/).length > 0
-    tag = true
-    puts 'Building production branch build.'
-    profile = 'production'
-    deploy_url = "tools@filemgmt-prod-sync.jboss.org:/www_htdocs/tools"
-
-  elsif ENV['TRAVIS_BRANCH'].to_s.scan(/^main$/).length > 0
-   
-    puts 'Building staging(main) branch build.'
-    profile = 'staging'
-    deploy_url = "tools@filemgmt-prod-sync.jboss.org:/stg_htdocs/tools/"
-
-  else
-
-    puts ENV['TRAVIS_BRANCH'].to_s + ' branch is not configured for Travis builds - skipping.'
-    next
-
-  end
-
-  # Build execution
-  system "bundle exec awestruct -P #{profile} -g"
-
-  # Workaround for not having the above separated out properly in subtasks
-  errorcheck
-
-  puts "## Deploying website via rsync to #{deploy_url}"
-  success = system("rsync -Pqr --protocol=28 --delete-after -e 'ssh -p 2222' _site/* #{deploy_url}")
-
-  if tag
-    puts '## Tagging repo'
-    system("git config --global user.email 'tools@jboss.org'")
-    system("git config --global user.name 'JBoss Tools CI'")
-    system("git remote add travis ${REPO_URL}")
-    system('git tag $GIT_TAG -a -m "Published to production from TravisCI build $TRAVIS_BUILD_NUMBER"')
-    system("git push travis $GIT_TAG")
   end
   fail unless success
 end
