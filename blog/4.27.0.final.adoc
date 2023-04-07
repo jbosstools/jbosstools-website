@@ -1,0 +1,33 @@
+= JBoss Tools 4.27.0.Final for Eclipse 2023-03
+:page-layout: blog
+:page-author: sbouchet
+:page-tags: [release, jbosstools, jbosscentral]
+:page-date: 2023-04-07
+
+Happy to announce 4.27.0.Final build for Eclipse 2023-03.
+
+Downloads available at link:/downloads/jbosstools/2023-03/4.27.0.Final.html[JBoss Tools 4.27.0 Final].
+
+== What is New?
+
+Full info is at link:/documentation/whatsnew/jbosstools/4.27.0.Final.html[this page]. Some highlights are below.
+
+=== General
+
+We made several fixes in our server and javaee component to support jakarta namespaces.
+
+=== Hibernate Tools
+
+==== Runtime Provider Updates
+
+The Hibernate 6.2 runtime provider now incorporates Hibernate Core version 6.2.0.CR4, Hibernate Ant version 6.2.0.CR4 and Hibernate Tools version 6.2.0.CR4.Final.
+
+
+=== And more...
+
+You can find more noteworthy updates in on link:/documentation/whatsnew/jbosstools/4.27.0.Final.html[this page].
+
+
+Enjoy!
+
+Stéphane Bouchet
