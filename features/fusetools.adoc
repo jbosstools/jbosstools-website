@@ -1,4 +1,5 @@
 = Fuse Tooling
+:page-feature_deprecated: true
 :page-layout: features
 :page-product_id: jbt_core 
 :page-feature_id: fusetools
@@ -7,7 +8,7 @@
 :page-feature_tagline: Helps get you over the hump
 :page-issues_url: https://issues.jboss.org/projects/FUSETOOLS
 
-== Fuse Tooling
+== [Deprecated] Fuse Tooling
 === Helps get you over the hump
 ====
 ====
