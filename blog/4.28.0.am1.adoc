@@ -1,0 +1,44 @@
+= JBoss Tools for Eclipse 2023-06M2
+:page-layout: blog
+:page-author: sbouchet
+:page-tags: [release, jbosstools, jbosscentral]
+:page-date: 2023-06-05
+
+Happy to announce 4.28.0.AM1 (Developer Milestone 1) build for Eclipse 2023-06M2.
+
+Downloads available at link:/downloads/jbosstools/2023-06/4.28.0.AM1.html[JBoss Tools 4.28.0 AM1].
+
+== What is New?
+
+Full info is at link:/documentation/whatsnew/jbosstools/4.28.0.AM1.html[this page]. Some highlights are below.
+
+=== General
+
+==== Components Depreciation
+
+Fuse Tooling is now deprecated. https://issues.redhat.com/browse/FUSETOOLS-3685[more information here]
+
+==== Components Removal
+As previously announced https://issues.redhat.com/browse/JBIDE-28678[here], we've removed the Central / update tab , SEAM and JSF support from JBossTools. 
+
+For central update tab, all the existing central entries can be insatlled with the marketplace client, using the entries listed https://issues.redhat.com/browse/JBIDE-28853[here]
+
+=== Future releases cadences
+Starting from 4.28.0.Final, there will be no more AM1 releases. The .Final releases can be now scheduled close to the Eclipse releases.
+
+
+=== Hibernate Tools
+
+==== Runtime Provider Updates
+
+A new Hibernate 6.2 runtime provider incorporates Hibernate Core version 6.2.3.Final, Hibernate Ant version 6.2.3.Final and Hibernate Tools version 6.2.3.Final.
+
+
+=== And more...
+
+You can find more noteworthy updates in on link:/documentation/whatsnew/jbosstools/4.28.0.AM1.html[this page].
+
+
+Enjoy!
+
+Stéphane Bouchet
