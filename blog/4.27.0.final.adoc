@@ -20,7 +20,7 @@ We made several fixes in our server and javaee component to support jakarta name
 
 ==== Runtime Provider Updates
 
-The Hibernate 6.2 runtime provider now incorporates Hibernate Core version 6.2.0.CR4, Hibernate Ant version 6.2.0.CR4 and Hibernate Tools version 6.2.0.CR4.Final.
+The Hibernate 6.2 runtime provider now incorporates Hibernate Core version 6.2.0.CR4, Hibernate Ant version 6.2.0.CR4 and Hibernate Tools version 6.2.0.CR4.
 
 
 === And more...

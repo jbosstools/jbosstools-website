@@ -1,0 +1,15 @@
+= General 4.27.0.AM1 What's New
+:page-layout: whatsnew
+:page-component_id: general
+:page-component_version: 4.27.0.AM1
+:page-product_id: jbt_core
+:page-product_version: 4.27.0.AM1
+
+== Components Depreciation
+
+As previously announced https://issues.redhat.com/browse/JBIDE-28678[here], we're in the process to remove the Central / update tab from JBossTools in next release. This work can be followed https://issues.redhat.com/browse/JBIDE-28852[here]. 
+
+That means that all the current extra features that can be installed via this tab needs to be available through a new channel. This channel already exists as p2 repo, but using https://www.eclipse.org/mpc/[Eclipse Marketplace Client] is more close to what's existing right now. 
+
+Most of those additional features are already present in the https://marketplace.eclipse.org/content/jboss-tools[Jboss marketplace entry], so it's just a matter of use it to install your favorite feature.
+

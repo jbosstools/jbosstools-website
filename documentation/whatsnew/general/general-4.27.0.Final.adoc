@@ -1,0 +1,11 @@
+= General 4.27.0.Final What's New
+:page-layout: whatsnew
+:page-component_id: general
+:page-component_version: 4.27.0.Final
+:page-product_id: jbt_core
+:page-product_version: 4.27.0.Final
+
+== Jakarta Namespace support
+
+We made several fixes in our server and javaee component to support jakarta namespaces.
+

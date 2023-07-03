@@ -1,0 +1,14 @@
+= Usage What's New in 4.28.0.Final
+:page-layout: whatsnew
+:page-component_id: usage
+:page-component_version: 4.28.0.Final
+:page-product_id: jbt_core
+:page-product_version: 4.28.0.Final
+
+== New Back-end usage
+
+We changed the backend system used in the usage bundle from Google Analytocs to Segment. This as no impact on how we collected usage inforamtion, neither change the opt-in choice made in previous version of JBossTools.
+
+As always, neither Eclipse nor JBoss will use any information unless a user has opted in, nor is there ever any personal information sent unless it is provided on the Preferences page.
+
+
