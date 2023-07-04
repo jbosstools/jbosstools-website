@@ -172,9 +172,9 @@ GEM
     tilt (2.0.11)
     timers (4.0.4)
       hitimes
-    uglifier (2.0.1)
+    uglifier (2.7.2)
       execjs (>= 0.3.0)
-      multi_json (~> 1.0, >= 1.0.2)
+      json (>= 1.8.0)
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.8.2)
@@ -207,7 +207,7 @@ DEPENDENCIES
   slim
   therubyracer
   tilt
-  uglifier (~> 2.0.1)
+  uglifier (~> 2.7.2)
   version (= 1.0.0)
 
 RUBY VERSION

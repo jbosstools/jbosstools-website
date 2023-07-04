@@ -8,7 +8,7 @@ ruby '2.4.1'
 gem 'awestruct', :git => 'https://github.com/awestruct/awestruct.git', :ref => 'b8ad2ea56a38839b44659d47d56ef338e69d8a88'
 
 gem 'rake'
-gem 'uglifier', '~> 2.0.1'        # Ruby wrapper for UglifyJS JavaScript compressor
+gem 'uglifier', '~> 2.7.2'        # Ruby wrapper for UglifyJS JavaScript compressor
 gem 'cssminify', '~> 1.0.2'        # CSS compression using YUI compressor
 gem 'rb-fsevent', '~> 0.9.3'        # FSEvents API with Signals catching (without RubyCocoa)
 gem 'kramdown', '~> 2.3.1' # Kramdown works on all platforms, rdiscount only on mri
