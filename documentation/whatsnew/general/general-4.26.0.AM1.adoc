@@ -1,0 +1,18 @@
+= General 4.26.0.AM1 What's New
+:page-layout: whatsnew
+:page-component_id: general
+:page-component_version: 4.26.0.AM1
+:page-product_id: jbt_core
+:page-product_version: 4.26.0.AM1
+
+ifndef::finalnn[]
+
+=== Components Removal
+
+As previously announced, we removed some components in this release :
+
+- Forge
+- Livereload
+- Angular
+- JSDT
+endif::finalnn[]

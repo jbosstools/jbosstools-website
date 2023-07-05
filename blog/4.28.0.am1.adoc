@@ -30,7 +30,7 @@ Starting from 4.28.0.Final, there will be no more .AM1 releases. The .Final rele
 
 ==== Runtime Provider Updates
 
-A new Hibernate 6.2 runtime provider incorporates Hibernate Core version 6.2.3.Final, Hibernate Ant version 6.2.3.Final and Hibernate Tools version 6.2.3.Final.
+The Hibernate 6.2 runtime provider incorporates Hibernate Core version 6.2.3.Final, Hibernate Ant version 6.2.3.Final and Hibernate Tools version 6.2.3.Final.
 
 === And more...
 

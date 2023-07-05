@@ -1,0 +1,24 @@
+= General 4.28.0.AM1 What's New
+:page-layout: whatsnew
+:page-component_id: general
+:page-component_version: 4.28.0.AM1
+:page-product_id: jbt_core
+:page-product_version: 4.28.0.AM1
+
+
+ifndef::finalnn[]
+== Components Depreciation
+
+Fuse Tooling is now deprecated. https://issues.redhat.com/browse/FUSETOOLS-3685[More information here.]
+
+
+endif::finalnn[]
+
+== Components Removal
+As previously announced https://issues.redhat.com/browse/JBIDE-28678[here], we've removed the Central / update tab, SEAM and JSF support from JBossTools. 
+
+For central update tab, all the existing central extensions can be installed with the marketplace client, using the entries listed https://issues.redhat.com/browse/JBIDE-28853[here.]
+
+== Future releases cadences
+Starting from 4.28.0.Final, there will be no more .AM1 releases. The .Final releases can be now scheduled close to the Eclipse releases.
+

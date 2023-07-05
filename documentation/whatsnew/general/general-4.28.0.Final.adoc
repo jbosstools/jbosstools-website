@@ -1,0 +1,17 @@
+= General 4.28.0.Final What's New
+:page-layout: whatsnew
+:page-component_id: general
+:page-component_version: 4.28.0.Final
+:page-product_id: jbt_core
+:page-product_version: 4.28.0.Final
+
+== Components Depreciation
+
+As communicated in a previous blog article, the following components are now deprecated:
+
+- Openshift CDK Tooling
+- Openshift Explorer view (already hidden by default) and wizards, targeting Openshift v3
+
+The current openshift Application Explorer view, based on odo v3 is now the default supported tooling.
+
+related_jira::JBIDE-29044[]
