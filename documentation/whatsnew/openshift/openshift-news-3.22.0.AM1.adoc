@@ -1,0 +1,19 @@
+= OpenShift What's New in 3.22.0.AM1
+:page-layout: whatsnew
+:page-component_id: openshift
+:page-component_version: 4.27.0.AM1
+:page-product_id: jbt_core
+:page-product_version: 4.27.0.AM1
+:page-include-previous: true
+
+== OpenShift Application Explorer view service creation support
+
+The missing create service feature that was available with odo 2.X is now back in this release.
+
+https://tools.jboss.org/documentation/whatsnew/jbosstools/4.21.0.AM1.html#operator-based-services[See the previous annoucement] on this feature
+
+== OpenShift Application Explorer view service binding support 
+
+Once you have created a service, you can link it to a component using a binding.
+
+image::/documentation/whatsnew/openshift/images/link-service.gif[width=80%]

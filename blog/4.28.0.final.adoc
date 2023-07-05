@@ -1,0 +1,50 @@
+= JBoss Tools 4.28.0.Final for Eclipse 2023-03
+:page-layout: blog
+:page-author: sbouchet
+:page-tags: [release, jbosstools, jbosscentral]
+:page-date: 2023-07-03
+
+Happy to announce 4.28.0.Final build for Eclipse 2023-06.
+
+Downloads available at link:/downloads/jbosstools/2023-06/4.28.0.Final.html[JBoss Tools 4.28.0 Final].
+
+== What is New?
+
+Full info is at link:/documentation/whatsnew/jbosstools/4.28.0.Final.html[this page]. Some highlights are below.
+
+=== General
+
+==== Components Depreciation
+
+As communicated in a previous blog article, the following components are now deprecated:
+
+- Openshift CDK Tooling
+- Openshift Explorer view (already hidden by default) and wizards, targeting Openshift v3
+
+The current openshift Application Explorer view, based on odo v3 is now the default supported tooling.
+
+related_jira::JBIDE-29044[]
+
+=== Hibernate Tools
+
+==== Runtime Provider Updates
+
+The Hibernate 6.2 runtime provider now incorporates Hibernate Core version 6.2.5.Final, Hibernate Ant version 6.2.5.Final and Hibernate Tools version 6.2.5.Final.
+
+The Hibernate 5.3 runtime provider now incorporates Hibernate Core version 5.3.30.Final and Hibernate Tools version 5.3.30.Final.
+
+=== New Back-end usage
+
+We changed the backend system used in the usage bundle from Google Analytocs to Segment. This as no impact on how we collected usage inforamtion, neither change the opt-in choice made in previous version of JBossTools.
+
+As always, neither Eclipse nor JBoss will use any information unless a user has opted in, nor is there ever any personal information sent unless it is provided on the Preferences page.
+
+
+=== And more...
+
+You can find more noteworthy updates in on link:/documentation/whatsnew/jbosstools/4.28.0.Final.html[this page].
+
+
+Enjoy!
+
+Stéphane Bouchet
