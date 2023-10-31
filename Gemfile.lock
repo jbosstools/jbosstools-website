@@ -194,6 +194,7 @@ DEPENDENCIES
   coffee-script (~> 2.2.0)
   compass
   cssminify (~> 1.0.2)
+  ffi (~> 1.15)
   git
   html_press (~> 0.8.1)
   htmlcompressor (~> 0.0.3)
@@ -214,4 +215,4 @@ RUBY VERSION
    ruby 2.4.1p111
 
 BUNDLED WITH
-   2.2.5
+   2.3.26

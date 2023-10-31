@@ -1,4 +1,12 @@
 eclipse:
+  simrel-2023-12:
+    # TODO archive this as of Jan 2026?
+    archived: false
+    url_path_fragment: 2023-12
+    short_name: 2023-12
+    full_name: Eclipse 4.30 (2023-12)
+    download_url: http://www.eclipse.org/downloads/packages/release/2023-12/
+    requirements: Java 17
   simrel-2023-09:
     # TODO archive this as of Oct 2025?
     archived: false
@@ -56,8 +64,7 @@ eclipse:
     download_url: http://www.eclipse.org/downloads/packages/release/2022-03/
     requirements: Java 11
   simrel-2021-09:
-    # TODO archive this as of Oct 2023?
-    archived: false
+    archived: true
     url_path_fragment: 2021-09
     short_name: 2021-09
     full_name: Eclipse 4.21 (2021-09)
@@ -1849,12 +1856,32 @@ jbt_core:
   name: JBoss Tools
   url_path_fragment: jbosstools
   streams:
-    simrel-2023-09:
-      4.29.x.Nightly:
+    simrel-2023-12:
+      4.30.x.Nightly:
         update_site_url: https://download.jboss.org/jbosstools/photon/snapshots/updates/
+    simrel-2023-09:
+      4.29.0.Final:
+        archived: false
+        release_date: 2023-11-02
+        supported_jbt_is_version: 
+        blog_announcement_url: /blog/4.29.0.final.html
+        documentation_url: https://docs.jboss.org/tools/
+        update_site_url: https://download.jboss.org/jbosstools/photon/stable/updates/
+        eclipse_name: Eclipse 4.29 (2023-09)
+        zips:
+          - name: Update site (including sources) bundle of all JBoss Core Tools
+            file_size: 559MB
+            url: https://download.jboss.org/jbosstools/static/photon/stable/updates/core/jbosstools-4.29.0.Final-updatesite-core.zip
+            sha256_url: https://download.jboss.org/jbosstools/static/photon/stable/updates/core/jbosstools-4.29.0.Final-updatesite-core.zip.sha256
+          - name: Sources zip of all JBoss Core Tools
+            file_size: 202MB
+            url: https://download.jboss.org/jbosstools/static/photon/stable/updates/core/jbosstools-4.29.0.Final-src.zip
+            sha256_url: https://download.jboss.org/jbosstools/static/photon/stable/updates/core/jbosstools-4.29.0.Final-src.zip.sha256
+          - name: Release Notes
+            url: https://tools.jboss.org/documentation/whatsnew/index.html
     simrel-2023-06:
       4.28.0.Final:
-        archived: false
+        archived: true
         release_date: 2023-07-03
         supported_jbt_is_version: 
         blog_announcement_url: /blog/4.28.0.final.html

@@ -1,0 +1,95 @@
+= JBoss Tools 4.29.0.Final for Eclipse 2023-09
+:page-layout: blog
+:page-author: sbouchet
+:page-tags: [release, jbosstools, jbosscentral]
+:page-date: 2023-11-02
+
+Happy to announce 4.29.0.Final build for Eclipse 2023-09.
+
+Downloads available at link:/downloads/jbosstools/2023-09/4.29.0.Final.html[JBoss Tools 4.29.0 Final].
+
+== What is New?
+
+Full info is at link:/documentation/whatsnew/jbosstools/4.29.0.Final.html[this page]. Some highlights are below.
+
+=== General
+
+==== Components Removal
+
+As planned and communicated in a previous blog article, the following components have been
+removed from the JBoss Tools distribution:
+
+- WebServices
+- Batch
+
+=== Hibernate Tools
+
+== Hibernate Runtime Provider Updates
+
+A number of additions and updates have been performed on the available Hibernate runtime  providers.
+
+=== New Runtime Provider
+
+A new Hibernate 6.3 runtime provider incorporates Hibernate Core version 6.3.1.Final, Hibernate Ant version 6.3.1.Final and Hibernate Tools version 6.3.1.Final.
+
+
+=== Runtime Provider Updates
+
+The Hibernate 6.2 runtime provider now incorporates Hibernate Core version 6.2.13.Final, Hibernate Ant version 6.2.13.Final and Hibernate Tools version 6.2.13.Final.
+
+The Hibernate 5.3 runtime provider now incorporates Hibernate Core version 5.3.32.Final and Hibernate Tools version 5.3.32.Final.
+
+=== Server Tools
+
+==== New Server view based on RSP
+
+A new view using RSP (Remote Server Protocol) as been added in JBossTools, called "RSP Servers View".
+
+image::/documentation/whatsnew/server/images/RSP_View_1.png[Empty RSP View at start]
+
+First, the server connector used to handle the servers needs to be started. Right click on any Server connector entry, and select "Start RSP".
+
+The server connector is now starting and it's status will change to [STARTED].
+
+image::/documentation/whatsnew/server/images/RSP_View_2.png[Empty RSP View started]
+
+You can then choose between download a server or use a local server.
+
+Let's create a new server. Right click on the started Server connector and select "Download Server". Select any runtime on the list and click OK.
+
+image::/documentation/whatsnew/server/images/RSP_View_3.png[Selecting Wildfly server runtime]
+
+Follow the dialog steps for additional parameters and  wait for the installation to finish. You can see a new entry on the server view with the selected server.
+
+image::/documentation/whatsnew/server/images/RSP_View_4.png[Wildfly server runtime installed]
+
+Now start the server runtime using "Start Server" context menu action. The console view opens and display any message from the server.
+
+image::/documentation/whatsnew/server/images/RSP_View_5.png[Wildfly server runtime started]
+
+Now you can add any deployment to the server. This can be either a folder or a file, present on your local computer. For example, let's deploy a basic web application.
+
+Right click on the started server runtime and select "Add deployment". Then select a web archive to be added to the server.
+
+image::/documentation/whatsnew/server/images/RSP_View_6.png[Adding a simple web application to the runtime]
+
+It will automatically deploy the application and display any message in the console.
+
+image::/documentation/whatsnew/server/images/RSP_View_7.png[Simple web application added to the runtime]
+
+Now you can enjoy the application on your browser !
+
+image::/documentation/whatsnew/server/images/RSP_View_8.png[Simple web application running]
+
+We are welcoming any suggestion to this new view, either on our JIRA/Github, or using our https://matrix.to/#/#redhat-developer_server-connector:gitter.im[gitter chatroom]
+
+
+
+=== And more...
+
+You can find more noteworthy updates in on link:/documentation/whatsnew/jbosstools/4.29.0.Final.html[this page].
+
+
+Enjoy!
+
+Stéphane Bouchet
