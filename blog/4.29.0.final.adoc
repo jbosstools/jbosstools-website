@@ -16,8 +16,7 @@ Full info is at link:/documentation/whatsnew/jbosstools/4.29.0.Final.html[this p
 
 ==== Components Removal
 
-As planned and communicated in a previous blog article, the following components have been
-removed from the JBoss Tools distribution:
+As outlined and announced in a prior blog post, the subsequent components have been excluded from the latest JBoss Tools distribution:
 
 - WebServices
 - Batch
@@ -43,11 +42,11 @@ The Hibernate 5.3 runtime provider now incorporates Hibernate Core version 5.3.3
 
 ==== New Server view based on RSP
 
-A new view using RSP (Remote Server Protocol) as been added in JBossTools, called "RSP Servers View".
+In JBoss Tools, a fresh perspective has been introduced, known as the "RSP Servers View," which utilizes the Remote Server Protocol (RSP).
 
 image::/documentation/whatsnew/server/images/RSP_View_1.png[Empty RSP View at start]
 
-First, the server connector used to handle the servers needs to be started. Right click on any Server connector entry, and select "Start RSP".
+To begin, you must initiate the server connector responsible for managing the servers. Simply right-click on any entry for the Server connector, and choose the "Start RSP" option.
 
 The server connector is now starting and it's status will change to [STARTED].
 
@@ -55,7 +54,7 @@ image::/documentation/whatsnew/server/images/RSP_View_2.png[Empty RSP View start
 
 You can then choose between download a server or use a local server.
 
-Let's create a new server. Right click on the started Server connector and select "Download Server". Select any runtime on the list and click OK.
+Now, let's create a new server. Simply right-click on the active Server connector and select "Download Server." Choose any runtime from the list and confirm by clicking OK.
 
 image::/documentation/whatsnew/server/images/RSP_View_3.png[Selecting Wildfly server runtime]
 
