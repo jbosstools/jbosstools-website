@@ -37,3 +37,5 @@ gem 'compass'
 
 # to allow for proper product version comparison
 gem 'version', '1.0.0'
+
+gem "ffi", "~> 1.15"

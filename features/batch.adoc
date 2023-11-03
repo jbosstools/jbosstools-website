@@ -5,6 +5,7 @@
 :page-feature_order: 8
 :page-feature_tagline: JavaEE 7 Batch Processing
 :page-feature_image_url: images/batch_icon_256px.png
+:page-feature_deprecated: true
 :page-issues_url: https://issues.jboss.org/browse/JBIDE/component/12320844
 
 == JavaEE 7 Batch Processing
