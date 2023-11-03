@@ -1,4 +1,4 @@
-= JBoss Tools 4.28.0.Final for Eclipse 2023-03
+= JBoss Tools 4.28.0.Final for Eclipse 2023-06
 :page-layout: blog
 :page-author: sbouchet
 :page-tags: [release, jbosstools, jbosscentral]
