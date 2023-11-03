@@ -26,7 +26,7 @@ removed from the JBoss Tools distribution:
 
 == Hibernate Runtime Provider Updates
 
-A number of additions and updates have been performed on the available Hibernate runtime  providers.
+Multiple additions and updates have been performed on the available Hibernate runtime providers.
 
 === New Runtime Provider
 
