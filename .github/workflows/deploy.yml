@@ -28,6 +28,7 @@ jobs:
         echo -e "Host filemgmt-prod-sync.jboss.org\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
       env:
         SSH_KEY: ${{ secrets.DOWNLOAD_KEY }}
+        GITHUB_REF: ${{ github.ref }}
     - name: Generate site
       run: |
         branch_name=`basename $GITHUB_REF`
