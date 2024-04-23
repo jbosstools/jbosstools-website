@@ -1,0 +1,19 @@
+= Announcement - JBoss Tools reaches end of life
+:page-layout: blog
+:page-author: sbouchet
+:page-tags: [release, jbosstools, jbosscentral]
+:page-date: 2024-05-01
+
+Hello to our dear JBoss community. 
+
+We, the developer and our management team, have made the decision to no longer support Eclipe IDE for our tooling offering.
+
+Our focus is to provide great tools to the developers, but with limited resources, we decided to focus on others IDEs, VScode and Intellij IDEA.
+Our source code respositories are still open and available on https://github.com/jbosstools[GitHub]. 
+
+
+It has been a great ride and we wish you all the best.
+
+Thanks for everything and goodbye.
+
+The JBoss Team
