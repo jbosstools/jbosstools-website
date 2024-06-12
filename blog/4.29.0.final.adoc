@@ -23,16 +23,16 @@ As outlined and announced in a prior blog post, the subsequent components have b
 
 === Hibernate Tools
 
-== Hibernate Runtime Provider Updates
+==== Hibernate Runtime Provider Updates
 
 Multiple additions and updates have been performed on the available Hibernate runtime providers.
 
-=== New Runtime Provider
+===== New Runtime Provider
 
 A new Hibernate 6.3 runtime provider incorporates Hibernate Core version 6.3.1.Final, Hibernate Ant version 6.3.1.Final and Hibernate Tools version 6.3.1.Final.
 
 
-=== Runtime Provider Updates
+===== Runtime Provider Updates
 
 The Hibernate 6.2 runtime provider now incorporates Hibernate Core version 6.2.13.Final, Hibernate Ant version 6.2.13.Final and Hibernate Tools version 6.2.13.Final.
 
@@ -42,7 +42,7 @@ The Hibernate 5.3 runtime provider now incorporates Hibernate Core version 5.3.3
 
 ==== New Server view based on RSP
 
-In JBoss Tools, a fresh perspective has been introduced, known as the "RSP Servers View," which utilizes the Remote Server Protocol (RSP).
+In JBoss Tools, a fresh perspective has been introduced, known as the "RSP Servers View," which utilizes the Runtime Server Protocol (RSP).
 
 image::/documentation/whatsnew/server/images/RSP_View_1.png[Empty RSP View at start]
 
