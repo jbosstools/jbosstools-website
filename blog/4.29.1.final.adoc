@@ -18,7 +18,7 @@ Full details can be found at link:/documentation/whatsnew/jbosstools/4.29.1.Fina
 
 ==== Older hibernate runtime disabled by default
 
-The old 5.4, 5.5, 6.0, 6.1, 6.2, 6.3 and 6.4 Hibernate Runtiles are now disabled by default.
+The old Hibernate Runtimes for versions 5.4, 5.5, 6.0, 6.1, 6.2, 6.3, and 6.4 are now disabled by default.
 
 ==== Hibernate Runtime Provider Updates
 
