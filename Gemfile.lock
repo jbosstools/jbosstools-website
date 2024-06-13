@@ -26,7 +26,7 @@ GEM
       Platform (>= 0.4.0)
       open4
     Platform (0.4.2)
-    RedCloth (4.3.2)
+    RedCloth (4.3.3)
     addressable (2.8.1)
       public_suffix (>= 2.0.2, < 6.0)
     ansi (1.5.0)
