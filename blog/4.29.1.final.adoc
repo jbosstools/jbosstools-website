@@ -10,7 +10,7 @@ Downloads available at link:/downloads/jbosstools/2023-09/4.29.1.Final.html[JBos
 
 == What is New?
 
-Full info is at link:/documentation/whatsnew/jbosstools/4.29.1.Final.html[this page]. Some highlights are below.
+Full details can be found at link:/documentation/whatsnew/jbosstools/4.29.1.Final.html[this page]. Here are some highlights:
 
 === General
 
