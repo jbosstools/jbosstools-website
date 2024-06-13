@@ -50,7 +50,7 @@ However, this feature was not available on the JBossTools update site. This has 
 
 === And more...
 
-You can find more noteworthy updates in on link:/documentation/whatsnew/jbosstools/4.29.1.Final.html[this page].
+You can find more noteworthy updates on link:/documentation/whatsnew/jbosstools/4.29.1.Final.html[this page].
 
 
 Enjoy!
