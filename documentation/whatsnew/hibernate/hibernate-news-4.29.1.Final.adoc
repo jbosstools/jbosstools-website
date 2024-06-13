@@ -17,7 +17,7 @@ Multiple additions and updates have been performed on the available Hibernate ru
 
 A new Hibernate 6.5 runtime provider includes Hibernate Core version 6.5.2.Final, Hibernate Ant version 6.5.2.Final, and Hibernate Tools version 6.5.2.Final.
 
-A new Hibernate 6.6 runtime provider incorporates Hibernate Core version 6.6.0.Alpha1, Hibernate Ant version 6.6.0.Alpha1 and Hibernate Tools version 6.6.0.Alpha1.
+A new Hibernate 6.6 runtime provider includes Hibernate Core version 6.6.0.Alpha1, Hibernate Ant version 6.6.0.Alpha1, and Hibernate Tools version 6.6.0.Alpha1.
 
 === Runtime Provider Updates
 
