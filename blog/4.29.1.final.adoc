@@ -4,7 +4,7 @@
 :page-tags: [release, jbosstools, jbosscentral]
 :page-date: 2024-06-13
 
-Happy to announce 4.29.1.Final build for Eclipse 2023-09.
+We are pleased to announce the release of build 4.29.1.Final for Eclipse 2023-09.
 
 Downloads available at link:/downloads/jbosstools/2023-09/4.29.1.Final.html[JBoss Tools 4.29.1 Final].
 
