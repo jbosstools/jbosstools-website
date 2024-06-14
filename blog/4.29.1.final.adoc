@@ -1,0 +1,58 @@
+= JBoss Tools 4.29.1.Final for Eclipse 2023-09
+:page-layout: blog
+:page-author: sbouchet
+:page-tags: [release, jbosstools, jbosscentral]
+:page-date: 2024-06-13
+
+We are pleased to announce the release of build 4.29.1.Final for Eclipse 2023-09.
+
+Downloads available at link:/downloads/jbosstools/2023-09/4.29.1.Final.html[JBoss Tools 4.29.1 Final].
+
+== What is New?
+
+Full details can be found at link:/documentation/whatsnew/jbosstools/4.29.1.Final.html[this page]. Here are some highlights:
+
+=== General
+
+=== Hibernate Tools
+
+==== Older hibernate runtime disabled by default
+
+The old Hibernate Runtimes for versions 5.4, 5.5, 6.0, 6.1, 6.2, 6.3, and 6.4 are now disabled by default.
+
+==== Hibernate Runtime Provider Updates
+
+Multiple additions and updates have been performed on the available Hibernate runtime providers.
+
+===== New Runtime Providers
+
+A new Hibernate 6.5 runtime provider incorporates Hibernate Core version 6.5.2.Final, Hibernate Ant version 6.5.2.Final and Hibernate Tools version 6.5.2.Final.
+
+A new Hibernate 6.6 runtime provider incorporates Hibernate Core version 6.6.0.Alpha1, Hibernate Ant version 6.6.0.Alpha1 and Hibernate Tools version 6.6.0.Alpha1.
+
+===== Runtime Provider Updates
+
+The Hibernate 6.4 runtime provider now incorporates Hibernate Core version 6.4.8.Final, Hibernate Ant version 6.4.8.Final and Hibernate Tools version 6.4.8.Final.
+
+The Hibernate 6.3 runtime provider now incorporates Hibernate Core version 6.3.2.Final, Hibernate Ant version 6.3.2.Final and Hibernate Tools version 6.3.2.Final.
+
+The Hibernate 6.2 runtime provider now incorporates Hibernate Core version 6.2.25.Final, Hibernate Ant version 6.2.25.Final and Hibernate Tools version 6.2.25.Final.
+
+The Hibernate 5.3 runtime provider now incorporates Hibernate Core version 5.3.36.Final and Hibernate Tools version 5.3.36.Final.
+
+=== Server Tools
+
+==== New Server view based on RSP available in the update site
+
+In JBoss Tools, a fresh perspective has been introduced, known as the "RSP Servers View," which utilizes the Runtime Server Protocol (RSP). More information on link:/documentation/whatsnew/server/server-news-4.29.0.Final.html[this page].
+
+However, this feature was not available on the JBossTools update site. This has been resolved and now the feature appears as "Runtime Server Protocol Server Tooling by Red Hat", under the "JBoss Application Server Adapters" category.
+
+=== And more...
+
+You can find more noteworthy updates on link:/documentation/whatsnew/jbosstools/4.29.1.Final.html[this page].
+
+
+Enjoy!
+
+Stéphane Bouchet
