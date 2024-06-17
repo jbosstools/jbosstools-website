@@ -7,7 +7,7 @@
 
 == New Server view based on RSP
 
-In JBoss Tools, a fresh perspective has been introduced, known as the "RSP Servers View," which utilizes the Remote Server Protocol (RSP).
+In JBoss Tools, a fresh perspective has been introduced, known as the "RSP Servers View," which utilizes the Runtime Server Protocol (RSP).
 
 image::/documentation/whatsnew/server/images/RSP_View_1.png[Empty RSP View at start]
 

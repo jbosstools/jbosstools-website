@@ -1,0 +1,12 @@
+= Server What's New in 4.29.1.Final
+:page-layout: whatsnew
+:page-component_id: server
+:page-component_version: 4.29.1.Final
+:page-product_id: jbt_core
+:page-product_version: 4.29.1.Final
+
+== New Server view based on RSP available in the update site
+
+In JBoss Tools, a fresh perspective has been introduced, known as the "RSP Servers View," which utilizes the Runtime Server Protocol (RSP). More information on link:/documentation/whatsnew/server/server-news-4.29.0.Final.html[this page].
+
+However, this feature was not available on the JBossTools update site. This has been resolved and now the feature appears as "Runtime Server Protocol Server Tooling by Red Hat", under the "JBoss Application Server Adapters" category.
