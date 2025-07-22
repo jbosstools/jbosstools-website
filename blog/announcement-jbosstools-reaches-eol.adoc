@@ -2,15 +2,19 @@
 :page-layout: blog
 :page-author: sbouchet
 :page-tags: [release, jbosstools, jbosscentral]
-:page-date: 2024-05-01
+:page-date: 2025-08-01
 
-Hello to our dear JBoss community. 
+Hello to our dear JBoss community and users.
 
 We, the developer and our management team, have made the decision to no longer support Eclipe IDE for our tooling offering.
 
-Our focus is to provide great tools to the developers, but with limited resources, we decided to focus on others IDEs, VScode and Intellij IDEA.
-Our source code respositories are still open and available on https://github.com/jbosstools[GitHub]. 
+== Why this decision?
 
+The active development of the suite has been supported by a dedicated team, but over time, available resources have dwindled. Our focus is to provide great tools to the developers, but with limited resources, we decided to focus on others IDEs, VScode and Intellij IDEA.
+That being said, our source code respositories are still open and available on https://github.com/jbosstools[GitHub].
+
+== What does this mean for users?
+For current users, there are no immediate changes. The last stable version of JBossTools (https://tools.jboss.org/downloads/jbosstools/2023-09/4.29.1.Final.html[4.29.1.Final]) will remain available for use as all other older versions. However, no new features nor major updates will be developed.
 
 It has been a great ride and we wish you all the best.
 
