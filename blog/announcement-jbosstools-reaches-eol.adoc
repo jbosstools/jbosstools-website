@@ -6,7 +6,7 @@
 
 Hello to our dear JBoss community and users.
 
-We, the developer and our management team, have made the decision to no longer support Eclipe IDE for our tooling offering.
+We, the developers and our management team, have made the decision to no longer support Eclipe IDE for our tooling offering.
 
 == Why this decision?
 
